@@ -1,0 +1,10 @@
+# CollectionTag
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       | Example                                                                           |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `ID`                                                                              | *string*                                                                          | :heavy_check_mark:                                                                | A unique identifier for an object.                                                | 12345                                                                             |
+| `Name`                                                                            | **string*                                                                         | :heavy_minus_sign:                                                                | The name of the tag.                                                              | User Experience                                                                   |
+| `CustomMappings`                                                                  | [*components.CustomMappings](../../models/components/custommappings.md)           | :heavy_minus_sign:                                                                | When custom mappings are configured on the resource, the result is included here. |                                                                                   |

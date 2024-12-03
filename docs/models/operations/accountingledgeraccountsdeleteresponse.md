@@ -1,0 +1,10 @@
+# AccountingLedgerAccountsDeleteResponse
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                        | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                | :heavy_check_mark:                                                                                | N/A                                                                                               |
+| `DeleteLedgerAccountResponse`                                                                     | [*components.DeleteLedgerAccountResponse](../../models/components/deleteledgeraccountresponse.md) | :heavy_minus_sign:                                                                                | LedgerAccount deleted                                                                             |
+| `UnexpectedErrorResponse`                                                                         | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)         | :heavy_minus_sign:                                                                                | Unexpected error                                                                                  |

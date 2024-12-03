@@ -1,0 +1,10 @@
+# IssueTrackingCollectionUsersOneResponse
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                    | [components.HTTPMetadata](../../models/components/httpmetadata.md)                            | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `GetCollectionUserResponse`                                                                   | [*components.GetCollectionUserResponse](../../models/components/getcollectionuserresponse.md) | :heavy_minus_sign:                                                                            | User                                                                                          |
+| `UnexpectedErrorResponse`                                                                     | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)     | :heavy_minus_sign:                                                                            | Unexpected error                                                                              |

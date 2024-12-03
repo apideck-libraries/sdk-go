@@ -1,0 +1,10 @@
+# HrisDepartmentsUpdateResponse
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                  | [components.HTTPMetadata](../../models/components/httpmetadata.md)                          | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| `UpdateDepartmentResponse`                                                                  | [*components.UpdateDepartmentResponse](../../models/components/updatedepartmentresponse.md) | :heavy_minus_sign:                                                                          | Departments                                                                                 |
+| `UnexpectedErrorResponse`                                                                   | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)   | :heavy_minus_sign:                                                                          | Unexpected error                                                                            |

@@ -1,0 +1,10 @@
+# AccountingBillPaymentsAddResponse
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                    | [components.HTTPMetadata](../../models/components/httpmetadata.md)                            | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `CreateBillPaymentResponse`                                                                   | [*components.CreateBillPaymentResponse](../../models/components/createbillpaymentresponse.md) | :heavy_minus_sign:                                                                            | Bill Payment created                                                                          |
+| `UnexpectedErrorResponse`                                                                     | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)     | :heavy_minus_sign:                                                                            | Unexpected error                                                                              |

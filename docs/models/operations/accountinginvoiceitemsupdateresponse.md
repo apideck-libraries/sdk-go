@@ -1,0 +1,10 @@
+# AccountingInvoiceItemsUpdateResponse
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                      | [components.HTTPMetadata](../../models/components/httpmetadata.md)                              | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `UpdateInvoiceItemsResponse`                                                                    | [*components.UpdateInvoiceItemsResponse](../../models/components/updateinvoiceitemsresponse.md) | :heavy_minus_sign:                                                                              | InvoiceItems                                                                                    |
+| `UnexpectedErrorResponse`                                                                       | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)       | :heavy_minus_sign:                                                                              | Unexpected error                                                                                |

@@ -1,0 +1,10 @@
+# CrmOpportunitiesAddResponse
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                    | [components.HTTPMetadata](../../models/components/httpmetadata.md)                            | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `CreateOpportunityResponse`                                                                   | [*components.CreateOpportunityResponse](../../models/components/createopportunityresponse.md) | :heavy_minus_sign:                                                                            | Opportunity created                                                                           |
+| `UnexpectedErrorResponse`                                                                     | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)     | :heavy_minus_sign:                                                                            | Unexpected error                                                                              |

@@ -1,0 +1,10 @@
+# EcommerceOrdersAllResponse
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                      | [components.HTTPMetadata](../../models/components/httpmetadata.md)                              | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `GetEcommerceOrdersResponse`                                                                    | [*components.GetEcommerceOrdersResponse](../../models/components/getecommerceordersresponse.md) | :heavy_minus_sign:                                                                              | Orders                                                                                          |
+| `UnexpectedErrorResponse`                                                                       | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)       | :heavy_minus_sign:                                                                              | Unexpected error                                                                                |

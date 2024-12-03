@@ -1,0 +1,12 @@
+# DeleteConsumerResponse
+
+Consumer deleted
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    | Example                                                                                        |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `StatusCode`                                                                                   | *int64*                                                                                        | :heavy_check_mark:                                                                             | HTTP Response Status Code                                                                      | 200                                                                                            |
+| `Status`                                                                                       | *string*                                                                                       | :heavy_check_mark:                                                                             | HTTP Response Status                                                                           | OK                                                                                             |
+| `Data`                                                                                         | [components.DeleteConsumerResponseData](../../models/components/deleteconsumerresponsedata.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |                                                                                                |

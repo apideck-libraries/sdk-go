@@ -1,0 +1,14 @@
+# PersonInput
+
+
+## Fields
+
+| Field                                                   | Type                                                    | Required                                                | Description                                             | Example                                                 |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `FirstName`                                             | **string*                                               | :heavy_minus_sign:                                      | The first name of the person.                           | Elon                                                    |
+| `LastName`                                              | **string*                                               | :heavy_minus_sign:                                      | The last name of the person.                            | Musk                                                    |
+| `MiddleName`                                            | **string*                                               | :heavy_minus_sign:                                      | Middle name of the person.                              | D.                                                      |
+| `Gender`                                                | [*components.Gender](../../models/components/gender.md) | :heavy_minus_sign:                                      | The gender represents the gender identity of a person.  | male                                                    |
+| `Initials`                                              | **string*                                               | :heavy_minus_sign:                                      | Initials of the person                                  | EM                                                      |
+| `Birthday`                                              | [*types.Date](../../types/date.md)                      | :heavy_minus_sign:                                      | Date of birth                                           | 2000-08-12                                              |
+| `DeceasedOn`                                            | [*types.Date](../../types/date.md)                      | :heavy_minus_sign:                                      | Date of death                                           | 2000-08-12                                              |

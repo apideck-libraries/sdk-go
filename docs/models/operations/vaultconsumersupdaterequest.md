@@ -1,0 +1,9 @@
+# VaultConsumersUpdateRequest
+
+
+## Fields
+
+| Field                                                                                | Type                                                                                 | Required                                                                             | Description                                                                          | Example                                                                              |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ConsumerID`                                                                         | *string*                                                                             | :heavy_check_mark:                                                                   | ID of the consumer to return                                                         | test_user_id                                                                         |
+| `UpdateConsumerRequest`                                                              | [components.UpdateConsumerRequest](../../models/components/updateconsumerrequest.md) | :heavy_check_mark:                                                                   | N/A                                                                                  |                                                                                      |

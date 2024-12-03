@@ -1,0 +1,10 @@
+# CrmOpportunitiesDeleteResponse
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                    | [components.HTTPMetadata](../../models/components/httpmetadata.md)                            | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `DeleteOpportunityResponse`                                                                   | [*components.DeleteOpportunityResponse](../../models/components/deleteopportunityresponse.md) | :heavy_minus_sign:                                                                            | Opportunity deleted                                                                           |
+| `UnexpectedErrorResponse`                                                                     | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)     | :heavy_minus_sign:                                                                            | Unexpected error                                                                              |

@@ -1,0 +1,10 @@
+# WebhookEventLogsAllResponse
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                        | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                | :heavy_check_mark:                                                                                | N/A                                                                                               |
+| `GetWebhookEventLogsResponse`                                                                     | [*components.GetWebhookEventLogsResponse](../../models/components/getwebhookeventlogsresponse.md) | :heavy_minus_sign:                                                                                | EventLogs                                                                                         |
+| `UnexpectedErrorResponse`                                                                         | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)         | :heavy_minus_sign:                                                                                | Unexpected error                                                                                  |

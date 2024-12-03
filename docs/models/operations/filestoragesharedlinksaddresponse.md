@@ -1,0 +1,10 @@
+# FileStorageSharedLinksAddResponse
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                  | [components.HTTPMetadata](../../models/components/httpmetadata.md)                          | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| `CreateSharedLinkResponse`                                                                  | [*components.CreateSharedLinkResponse](../../models/components/createsharedlinkresponse.md) | :heavy_minus_sign:                                                                          | Shared Links                                                                                |
+| `UnexpectedErrorResponse`                                                                   | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)   | :heavy_minus_sign:                                                                          | Unexpected error                                                                            |

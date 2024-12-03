@@ -1,0 +1,10 @@
+# FileStorageDriveGroupsAddResponse
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                  | [components.HTTPMetadata](../../models/components/httpmetadata.md)                          | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| `CreateDriveGroupResponse`                                                                  | [*components.CreateDriveGroupResponse](../../models/components/createdrivegroupresponse.md) | :heavy_minus_sign:                                                                          | DriveGroups                                                                                 |
+| `UnexpectedErrorResponse`                                                                   | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)   | :heavy_minus_sign:                                                                          | Unexpected error                                                                            |

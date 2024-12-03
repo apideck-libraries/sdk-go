@@ -1,0 +1,10 @@
+# AccountingLocationsOneResponse
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                            | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                    | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
+| `GetAccountingLocationResponse`                                                                       | [*components.GetAccountingLocationResponse](../../models/components/getaccountinglocationresponse.md) | :heavy_minus_sign:                                                                                    | Location                                                                                              |
+| `UnexpectedErrorResponse`                                                                             | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)             | :heavy_minus_sign:                                                                                    | Unexpected error                                                                                      |

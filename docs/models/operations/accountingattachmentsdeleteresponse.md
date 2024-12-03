@@ -1,0 +1,10 @@
+# AccountingAttachmentsDeleteResponse
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                  | [components.HTTPMetadata](../../models/components/httpmetadata.md)                          | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| `DeleteAttachmentResponse`                                                                  | [*components.DeleteAttachmentResponse](../../models/components/deleteattachmentresponse.md) | :heavy_minus_sign:                                                                          | Attachments                                                                                 |
+| `UnexpectedErrorResponse`                                                                   | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)   | :heavy_minus_sign:                                                                          | Unexpected error                                                                            |

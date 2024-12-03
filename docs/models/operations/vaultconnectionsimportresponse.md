@@ -1,0 +1,10 @@
+# VaultConnectionsImportResponse
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                  | [components.HTTPMetadata](../../models/components/httpmetadata.md)                          | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| `CreateConnectionResponse`                                                                  | [*components.CreateConnectionResponse](../../models/components/createconnectionresponse.md) | :heavy_minus_sign:                                                                          | Connection created                                                                          |
+| `UnexpectedErrorResponse`                                                                   | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)   | :heavy_minus_sign:                                                                          | Unexpected error                                                                            |

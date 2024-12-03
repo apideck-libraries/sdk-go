@@ -1,0 +1,13 @@
+# WebhookSupport
+
+How webhooks are supported for the connector. Sometimes the connector natively supports webhooks, other times Apideck virtualizes them based on polling.
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   | Example                                                                       |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `Mode`                                                                        | [*components.Mode](../../models/components/mode.md)                           | :heavy_minus_sign:                                                            | Mode of the webhook support.                                                  | native                                                                        |
+| `SubscriptionLevel`                                                           | [*components.SubscriptionLevel](../../models/components/subscriptionlevel.md) | :heavy_minus_sign:                                                            | Received events are scoped to connection or across integration.               | integration                                                                   |
+| `ManagedVia`                                                                  | [*components.ManagedVia](../../models/components/managedvia.md)               | :heavy_minus_sign:                                                            | How the subscription is managed in the downstream.                            | api                                                                           |
+| `VirtualWebhooks`                                                             | [*components.VirtualWebhooks](../../models/components/virtualwebhooks.md)     | :heavy_minus_sign:                                                            | Virtual webhook config for the connector.                                     |                                                                               |

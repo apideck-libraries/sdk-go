@@ -1,0 +1,10 @@
+# HrisEmployeeSchedulesAllResponse
+
+
+## Fields
+
+| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                          | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                  | :heavy_check_mark:                                                                                  | N/A                                                                                                 |
+| `GetEmployeeSchedulesResponse`                                                                      | [*components.GetEmployeeSchedulesResponse](../../models/components/getemployeeschedulesresponse.md) | :heavy_minus_sign:                                                                                  | EmployeeSchedules                                                                                   |
+| `UnexpectedErrorResponse`                                                                           | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)           | :heavy_minus_sign:                                                                                  | Unexpected error                                                                                    |

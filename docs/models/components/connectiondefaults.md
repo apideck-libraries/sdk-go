@@ -1,0 +1,10 @@
+# ConnectionDefaults
+
+
+## Fields
+
+| Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                | Example                                                                    |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `ID`                                                                       | **string*                                                                  | :heavy_minus_sign:                                                         | N/A                                                                        | ProductInterest                                                            |
+| `Options`                                                                  | [][components.FormFieldOption](../../models/components/formfieldoption.md) | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
+| `Value`                                                                    | [*components.ConnectionValue](../../models/components/connectionvalue.md)  | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |

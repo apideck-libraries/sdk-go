@@ -1,0 +1,10 @@
+# AccountingInvoiceItemsAddResponse
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                    | [components.HTTPMetadata](../../models/components/httpmetadata.md)                            | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `CreateInvoiceItemResponse`                                                                   | [*components.CreateInvoiceItemResponse](../../models/components/createinvoiceitemresponse.md) | :heavy_minus_sign:                                                                            | InvoiceItems                                                                                  |
+| `UnexpectedErrorResponse`                                                                     | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)     | :heavy_minus_sign:                                                                            | Unexpected error                                                                              |

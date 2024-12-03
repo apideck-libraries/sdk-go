@@ -1,0 +1,10 @@
+# HrisTimeOffRequestsUpdateResponse
+
+
+## Fields
+
+| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                          | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                  | :heavy_check_mark:                                                                                  | N/A                                                                                                 |
+| `UpdateTimeOffRequestResponse`                                                                      | [*components.UpdateTimeOffRequestResponse](../../models/components/updatetimeoffrequestresponse.md) | :heavy_minus_sign:                                                                                  | TimeOffRequests                                                                                     |
+| `UnexpectedErrorResponse`                                                                           | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)           | :heavy_minus_sign:                                                                                  | Unexpected error                                                                                    |

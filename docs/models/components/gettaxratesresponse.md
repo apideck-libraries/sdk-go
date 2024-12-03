@@ -1,0 +1,17 @@
+# GetTaxRatesResponse
+
+TaxRates
+
+
+## Fields
+
+| Field                                                       | Type                                                        | Required                                                    | Description                                                 | Example                                                     |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `StatusCode`                                                | *int64*                                                     | :heavy_check_mark:                                          | HTTP Response Status Code                                   | 200                                                         |
+| `Status`                                                    | *string*                                                    | :heavy_check_mark:                                          | HTTP Response Status                                        | OK                                                          |
+| `Service`                                                   | *string*                                                    | :heavy_check_mark:                                          | Apideck ID of service provider                              | xero                                                        |
+| `Resource`                                                  | *string*                                                    | :heavy_check_mark:                                          | Unified API resource name                                   | tax-rates                                                   |
+| `Operation`                                                 | *string*                                                    | :heavy_check_mark:                                          | Operation performed                                         | all                                                         |
+| `Data`                                                      | [][components.TaxRate](../../models/components/taxrate.md)  | :heavy_check_mark:                                          | N/A                                                         |                                                             |
+| `Meta`                                                      | [*components.Meta](../../models/components/meta.md)         | :heavy_minus_sign:                                          | Response metadata                                           |                                                             |
+| `Links`                                                     | [*components.Links](../../models/components/links.md)       | :heavy_minus_sign:                                          | Links to navigate to previous or next pages through the API |                                                             |

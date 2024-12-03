@@ -1,0 +1,10 @@
+# EcommerceCustomersAllResponse
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                            | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                    | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
+| `GetEcommerceCustomersResponse`                                                                       | [*components.GetEcommerceCustomersResponse](../../models/components/getecommercecustomersresponse.md) | :heavy_minus_sign:                                                                                    | Customers                                                                                             |
+| `UnexpectedErrorResponse`                                                                             | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)             | :heavy_minus_sign:                                                                                    | Unexpected error                                                                                      |
