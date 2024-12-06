@@ -103,9 +103,9 @@ func main() {
 
 This SDK supports the following security scheme globally:
 
-| Name     | Type   | Scheme  | Environment Variable |
-| -------- | ------ | ------- | -------------------- |
-| `APIKey` | apiKey | API key | `APIDECK_API_KEY`    |
+| Name     | Type | Scheme      | Environment Variable |
+| -------- | ---- | ----------- | -------------------- |
+| `APIKey` | http | HTTP Bearer | `APIDECK_API_KEY`    |
 
 You can configure it using the `WithSecurity` option when initializing the SDK client instance. For example:
 ```go

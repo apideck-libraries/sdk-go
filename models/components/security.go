@@ -3,7 +3,7 @@
 package components
 
 type Security struct {
-	APIKey *string `security:"scheme,type=apiKey,subtype=header,name=Authorization,env=apideck_api_key"`
+	APIKey *string `security:"scheme,type=http,subtype=bearer,name=Authorization,env=apideck_api_key"`
 }
 
 func (o *Security) GetAPIKey() *string {

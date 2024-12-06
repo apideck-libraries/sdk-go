@@ -74,6 +74,18 @@ func (e *TaxRateStatus) UnmarshalJSON(data []byte) error {
 	}
 }
 
+type Subsidiaries struct {
+	// The ID of the subsidiary.
+	ID *string `json:"id,omitempty"`
+}
+
+func (o *Subsidiaries) GetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
 type TaxRate struct {
 	// ID assigned to identify this tax rate.
 	ID *string `json:"id,omitempty"`
@@ -114,6 +126,8 @@ type TaxRate struct {
 	CreatedAt *time.Time `json:"created_at,omitempty"`
 	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+	// The subsidiaries this belongs to.
+	Subsidiaries []Subsidiaries `json:"subsidiaries,omitempty"`
 }
 
 func (t TaxRate) MarshalJSON() ([]byte, error) {
@@ -267,6 +281,13 @@ func (o *TaxRate) GetPassThrough() []PassThroughBody {
 	return o.PassThrough
 }
 
+func (o *TaxRate) GetSubsidiaries() []Subsidiaries {
+	if o == nil {
+		return nil
+	}
+	return o.Subsidiaries
+}
+
 type TaxRateInput struct {
 	// ID assigned to identify this tax rate.
 	ID *string `json:"id,omitempty"`
@@ -297,6 +318,8 @@ type TaxRateInput struct {
 	RowVersion *string `json:"row_version,omitempty"`
 	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+	// The subsidiaries this belongs to.
+	Subsidiaries []Subsidiaries `json:"subsidiaries,omitempty"`
 }
 
 func (o *TaxRateInput) GetID() *string {
@@ -402,4 +425,11 @@ func (o *TaxRateInput) GetPassThrough() []PassThroughBody {
 		return nil
 	}
 	return o.PassThrough
+}
+
+func (o *TaxRateInput) GetSubsidiaries() []Subsidiaries {
+	if o == nil {
+		return nil
+	}
+	return o.Subsidiaries
 }

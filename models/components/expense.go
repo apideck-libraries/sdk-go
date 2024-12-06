@@ -9,6 +9,36 @@ import (
 	"time"
 )
 
+// ExpensePaymentType - The type of payment for the expense.
+type ExpensePaymentType string
+
+const (
+	ExpensePaymentTypeCash       ExpensePaymentType = "cash"
+	ExpensePaymentTypeCheck      ExpensePaymentType = "check"
+	ExpensePaymentTypeCreditCard ExpensePaymentType = "credit_card"
+)
+
+func (e ExpensePaymentType) ToPointer() *ExpensePaymentType {
+	return &e
+}
+func (e *ExpensePaymentType) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "cash":
+		fallthrough
+	case "check":
+		fallthrough
+	case "credit_card":
+		*e = ExpensePaymentType(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for ExpensePaymentType: %v", v)
+	}
+}
+
 // ExpenseType - The type of expense.
 type ExpenseType string
 
@@ -53,6 +83,8 @@ type Expense struct {
 	CompanyID *string `json:"company_id,omitempty"`
 	// The ID of the department this expense is linked to.
 	DepartmentID *string `json:"department_id,omitempty"`
+	// The type of payment for the expense.
+	PaymentType *ExpensePaymentType `json:"payment_type,omitempty"`
 	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
 	Currency *Currency `json:"currency,omitempty"`
 	// Currency Exchange Rate at the time entity was recorded/generated.
@@ -144,6 +176,13 @@ func (o *Expense) GetDepartmentID() *string {
 		return nil
 	}
 	return o.DepartmentID
+}
+
+func (o *Expense) GetPaymentType() *ExpensePaymentType {
+	if o == nil {
+		return nil
+	}
+	return o.PaymentType
 }
 
 func (o *Expense) GetCurrency() *Currency {
@@ -252,6 +291,8 @@ type ExpenseInput struct {
 	CompanyID *string `json:"company_id,omitempty"`
 	// The ID of the department this expense is linked to.
 	DepartmentID *string `json:"department_id,omitempty"`
+	// The type of payment for the expense.
+	PaymentType *ExpensePaymentType `json:"payment_type,omitempty"`
 	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
 	Currency *Currency `json:"currency,omitempty"`
 	// Currency Exchange Rate at the time entity was recorded/generated.
@@ -330,6 +371,13 @@ func (o *ExpenseInput) GetDepartmentID() *string {
 		return nil
 	}
 	return o.DepartmentID
+}
+
+func (o *ExpenseInput) GetPaymentType() *ExpensePaymentType {
+	if o == nil {
+		return nil
+	}
+	return o.PaymentType
 }
 
 func (o *ExpenseInput) GetCurrency() *Currency {

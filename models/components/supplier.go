@@ -101,6 +101,8 @@ type Supplier struct {
 	RowVersion *string `json:"row_version,omitempty"`
 	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+	// The subsidiary the supplier belongs to.
+	SubsidiaryID *string `json:"subsidiary_id,omitempty"`
 }
 
 func (s Supplier) MarshalJSON() ([]byte, error) {
@@ -338,6 +340,13 @@ func (o *Supplier) GetPassThrough() []PassThroughBody {
 	return o.PassThrough
 }
 
+func (o *Supplier) GetSubsidiaryID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.SubsidiaryID
+}
+
 type SupplierInput struct {
 	// Display ID
 	DisplayID *string `json:"display_id,omitempty"`
@@ -380,6 +389,8 @@ type SupplierInput struct {
 	RowVersion *string `json:"row_version,omitempty"`
 	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+	// The subsidiary the supplier belongs to.
+	SubsidiaryID *string `json:"subsidiary_id,omitempty"`
 }
 
 func (o *SupplierInput) GetDisplayID() *string {
@@ -555,4 +566,11 @@ func (o *SupplierInput) GetPassThrough() []PassThroughBody {
 		return nil
 	}
 	return o.PassThrough
+}
+
+func (o *SupplierInput) GetSubsidiaryID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.SubsidiaryID
 }
