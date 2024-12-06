@@ -9,6 +9,4 @@ package hooks
  */
 
 func initHooks(h *Hooks) {
-	authHook := &AuthHook{}
-	h.registerBeforeRequestHook(authHook)
 }

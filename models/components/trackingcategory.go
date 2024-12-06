@@ -36,6 +36,18 @@ func (e *TrackingCategoryStatus) UnmarshalJSON(data []byte) error {
 	}
 }
 
+type TrackingCategorySubsidiaries struct {
+	// The ID of the subsidiary.
+	ID *string `json:"id,omitempty"`
+}
+
+func (o *TrackingCategorySubsidiaries) GetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
 type TrackingCategory struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
@@ -61,6 +73,8 @@ type TrackingCategory struct {
 	CreatedAt *time.Time `json:"created_at,omitempty"`
 	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+	// The subsidiaries the account belongs to.
+	Subsidiaries []TrackingCategorySubsidiaries `json:"subsidiaries,omitempty"`
 }
 
 func (t TrackingCategory) MarshalJSON() ([]byte, error) {
@@ -158,6 +172,13 @@ func (o *TrackingCategory) GetPassThrough() []PassThroughBody {
 	return o.PassThrough
 }
 
+func (o *TrackingCategory) GetSubsidiaries() []TrackingCategorySubsidiaries {
+	if o == nil {
+		return nil
+	}
+	return o.Subsidiaries
+}
+
 type TrackingCategoryInput struct {
 	// A unique identifier for an object.
 	ParentID *string `json:"parent_id,omitempty"`
@@ -171,6 +192,8 @@ type TrackingCategoryInput struct {
 	RowVersion *string `json:"row_version,omitempty"`
 	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+	// The subsidiaries the account belongs to.
+	Subsidiaries []TrackingCategorySubsidiaries `json:"subsidiaries,omitempty"`
 }
 
 func (o *TrackingCategoryInput) GetParentID() *string {
@@ -213,4 +236,11 @@ func (o *TrackingCategoryInput) GetPassThrough() []PassThroughBody {
 		return nil
 	}
 	return o.PassThrough
+}
+
+func (o *TrackingCategoryInput) GetSubsidiaries() []TrackingCategorySubsidiaries {
+	if o == nil {
+		return nil
+	}
+	return o.Subsidiaries
 }

@@ -690,19 +690,12 @@ func (s *InvoiceItems) Create(ctx context.Context, invoiceItem components.Invoic
 
 // Get Invoice Item
 // Get Invoice Item
-func (s *InvoiceItems) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.AccountingInvoiceItemsOneResponse, error) {
+func (s *InvoiceItems) Get(ctx context.Context, request operations.AccountingInvoiceItemsOneRequest, opts ...operations.Option) (*operations.AccountingInvoiceItemsOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.invoiceItemsOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingInvoiceItemsOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.AccountingInvoiceItemsOneGlobals{

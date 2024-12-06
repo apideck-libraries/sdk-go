@@ -243,12 +243,12 @@ func (o *SubAccounts) GetAccountSubName() *string {
 	return o.AccountSubName
 }
 
-type Subsidiaries struct {
+type LedgerAccountSubsidiaries struct {
 	// The ID of the subsidiary.
 	ID *string `json:"id,omitempty"`
 }
 
-func (o *Subsidiaries) GetID() *string {
+func (o *LedgerAccountSubsidiaries) GetID() *string {
 	if o == nil {
 		return nil
 	}
@@ -305,7 +305,7 @@ type LedgerAccount struct {
 	// Reconciliation Date means the last calendar day of each Reconciliation Period.
 	LastReconciliationDate *types.Date `json:"last_reconciliation_date,omitempty"`
 	// The subsidiaries the account belongs to.
-	Subsidiaries []Subsidiaries `json:"subsidiaries,omitempty"`
+	Subsidiaries []LedgerAccountSubsidiaries `json:"subsidiaries,omitempty"`
 	// When custom mappings are configured on the resource, the result is included here.
 	CustomMappings *CustomMappings `json:"custom_mappings,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -508,7 +508,7 @@ func (o *LedgerAccount) GetLastReconciliationDate() *types.Date {
 	return o.LastReconciliationDate
 }
 
-func (o *LedgerAccount) GetSubsidiaries() []Subsidiaries {
+func (o *LedgerAccount) GetSubsidiaries() []LedgerAccountSubsidiaries {
 	if o == nil {
 		return nil
 	}
@@ -608,7 +608,7 @@ type LedgerAccountInput struct {
 	// Reconciliation Date means the last calendar day of each Reconciliation Period.
 	LastReconciliationDate *types.Date `json:"last_reconciliation_date,omitempty"`
 	// The subsidiaries the account belongs to.
-	Subsidiaries []Subsidiaries `json:"subsidiaries,omitempty"`
+	Subsidiaries []LedgerAccountSubsidiaries `json:"subsidiaries,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
 	RowVersion *string `json:"row_version,omitempty"`
 	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
@@ -780,7 +780,7 @@ func (o *LedgerAccountInput) GetLastReconciliationDate() *types.Date {
 	return o.LastReconciliationDate
 }
 
-func (o *LedgerAccountInput) GetSubsidiaries() []Subsidiaries {
+func (o *LedgerAccountInput) GetSubsidiaries() []LedgerAccountSubsidiaries {
 	if o == nil {
 		return nil
 	}

@@ -10,19 +10,19 @@ import (
 	"time"
 )
 
-// InvoiceItemType - Item type
-type InvoiceItemType string
+// InvoiceItemTypeType - Item type
+type InvoiceItemTypeType string
 
 const (
-	InvoiceItemTypeInventory InvoiceItemType = "inventory"
-	InvoiceItemTypeService   InvoiceItemType = "service"
-	InvoiceItemTypeOther     InvoiceItemType = "other"
+	InvoiceItemTypeTypeInventory InvoiceItemTypeType = "inventory"
+	InvoiceItemTypeTypeService   InvoiceItemTypeType = "service"
+	InvoiceItemTypeTypeOther     InvoiceItemTypeType = "other"
 )
 
-func (e InvoiceItemType) ToPointer() *InvoiceItemType {
+func (e InvoiceItemTypeType) ToPointer() *InvoiceItemTypeType {
 	return &e
 }
-func (e *InvoiceItemType) UnmarshalJSON(data []byte) error {
+func (e *InvoiceItemTypeType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -33,10 +33,10 @@ func (e *InvoiceItemType) UnmarshalJSON(data []byte) error {
 	case "service":
 		fallthrough
 	case "other":
-		*e = InvoiceItemType(v)
+		*e = InvoiceItemTypeType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for InvoiceItemType: %v", v)
+		return fmt.Errorf("invalid value for InvoiceItemTypeType: %v", v)
 	}
 }
 
@@ -134,7 +134,7 @@ type InvoiceItem struct {
 	// The date of opening balance if inventory item is tracked - YYYY-MM-DD.
 	InventoryDate *types.Date `json:"inventory_date,omitempty"`
 	// Item type
-	Type            *InvoiceItemType     `json:"type,omitempty"`
+	Type            *InvoiceItemTypeType `json:"type,omitempty"`
 	SalesDetails    *SalesDetails        `json:"sales_details,omitempty"`
 	PurchaseDetails *PurchaseDetails     `json:"purchase_details,omitempty"`
 	Quantity        *float64             `json:"quantity,omitempty"`
@@ -237,7 +237,7 @@ func (o *InvoiceItem) GetInventoryDate() *types.Date {
 	return o.InventoryDate
 }
 
-func (o *InvoiceItem) GetType() *InvoiceItemType {
+func (o *InvoiceItem) GetType() *InvoiceItemTypeType {
 	if o == nil {
 		return nil
 	}
@@ -455,7 +455,7 @@ type InvoiceItemInput struct {
 	// The date of opening balance if inventory item is tracked - YYYY-MM-DD.
 	InventoryDate *types.Date `json:"inventory_date,omitempty"`
 	// Item type
-	Type            *InvoiceItemType            `json:"type,omitempty"`
+	Type            *InvoiceItemTypeType        `json:"type,omitempty"`
 	SalesDetails    *InvoiceItemSalesDetails    `json:"sales_details,omitempty"`
 	PurchaseDetails *InvoiceItemPurchaseDetails `json:"purchase_details,omitempty"`
 	Quantity        *float64                    `json:"quantity,omitempty"`
@@ -541,7 +541,7 @@ func (o *InvoiceItemInput) GetInventoryDate() *types.Date {
 	return o.InventoryDate
 }
 
-func (o *InvoiceItemInput) GetType() *InvoiceItemType {
+func (o *InvoiceItemInput) GetType() *InvoiceItemTypeType {
 	if o == nil {
 		return nil
 	}
