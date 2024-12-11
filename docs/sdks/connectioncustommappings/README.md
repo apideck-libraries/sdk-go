@@ -17,20 +17,21 @@ This endpoint returns a list of custom mappings for a connection.
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.Vault.ConnectionCustomMappings.List(ctx, "crm", "pipedrive", "leads", sdkgo.String("1234"))
     if err != nil {
         log.Fatal(err)

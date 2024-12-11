@@ -64,13 +64,14 @@ import (
 )
 
 func main() {
+	ctx := context.Background()
+
 	s := sdkgo.New(
 		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 		sdkgo.WithConsumerID("test-consumer"),
 		sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
 	)
 
-	ctx := context.Background()
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
 		ServiceID: sdkgo.String("salesforce"),
 		Filter: &components.TaxRatesFilter{
@@ -121,13 +122,14 @@ import (
 )
 
 func main() {
+	ctx := context.Background()
+
 	s := sdkgo.New(
 		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 		sdkgo.WithConsumerID("test-consumer"),
 		sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
 	)
 
-	ctx := context.Background()
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
 		ServiceID: sdkgo.String("salesforce"),
 		Filter: &components.TaxRatesFilter{
@@ -701,13 +703,14 @@ import (
 )
 
 func main() {
+	ctx := context.Background()
+
 	s := sdkgo.New(
 		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 		sdkgo.WithConsumerID("test-consumer"),
 		sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
 	)
 
-	ctx := context.Background()
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
 		ServiceID: sdkgo.String("salesforce"),
 		Filter: &components.TaxRatesFilter{
@@ -757,6 +760,8 @@ import (
 )
 
 func main() {
+	ctx := context.Background()
+
 	s := sdkgo.New(
 		sdkgo.WithRetryConfig(
 			retry.Config{
@@ -774,7 +779,6 @@ func main() {
 		sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
 	)
 
-	ctx := context.Background()
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
 		ServiceID: sdkgo.String("salesforce"),
 		Filter: &components.TaxRatesFilter{
@@ -835,13 +839,14 @@ import (
 )
 
 func main() {
+	ctx := context.Background()
+
 	s := sdkgo.New(
 		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 		sdkgo.WithConsumerID("test-consumer"),
 		sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
 	)
 
-	ctx := context.Background()
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
 		ServiceID: sdkgo.String("salesforce"),
 		Filter: &components.TaxRatesFilter{
@@ -918,6 +923,8 @@ import (
 )
 
 func main() {
+	ctx := context.Background()
+
 	s := sdkgo.New(
 		sdkgo.WithServerURL("https://unify.apideck.com"),
 		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
@@ -925,7 +932,6 @@ func main() {
 		sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
 	)
 
-	ctx := context.Background()
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
 		ServiceID: sdkgo.String("salesforce"),
 		Filter: &components.TaxRatesFilter{
@@ -966,13 +972,14 @@ import (
 )
 
 func main() {
+	ctx := context.Background()
+
 	s := sdkgo.New(
 		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 		sdkgo.WithConsumerID("test-consumer"),
 		sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
 	)
 
-	ctx := context.Background()
 	res, err := s.FileStorage.UploadSessions.Create(ctx, components.CreateUploadSessionRequest{
 		Name:           "Documents",
 		ParentFolderID: "1234",
