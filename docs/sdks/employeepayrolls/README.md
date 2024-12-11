@@ -18,22 +18,23 @@ List payrolls for employee
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.Hris.EmployeePayrolls.List(ctx, operations.HrisEmployeePayrollsAllRequest{
         EmployeeID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
@@ -88,21 +89,22 @@ Get payroll for employee
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/operations"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.Hris.EmployeePayrolls.Get(ctx, operations.HrisEmployeePayrollsOneRequest{
         PayrollID: "<id>",
         EmployeeID: "<id>",

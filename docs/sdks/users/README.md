@@ -21,21 +21,22 @@ List users
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/operations"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.Crm.Users.List(ctx, operations.CrmUsersAllRequest{
         ServiceID: sdkgo.String("salesforce"),
         PassThrough: map[string]any{
@@ -85,21 +86,22 @@ Create user
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.Crm.Users.Create(ctx, components.UserInput{
         ParentID: sdkgo.String("54321"),
         Username: sdkgo.String("masterofcoin"),
@@ -227,20 +229,21 @@ Get user
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.Crm.Users.Get(ctx, "<id>", sdkgo.String("salesforce"), nil, sdkgo.String("id,updated_at"))
     if err != nil {
         log.Fatal(err)
@@ -287,21 +290,22 @@ Update user
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.Crm.Users.Update(ctx, "<id>", components.UserInput{
         ParentID: sdkgo.String("54321"),
         Username: sdkgo.String("masterofcoin"),
@@ -532,20 +536,21 @@ Delete user
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.Crm.Users.Delete(ctx, "<id>", sdkgo.String("salesforce"), nil)
     if err != nil {
         log.Fatal(err)

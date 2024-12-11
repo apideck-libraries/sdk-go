@@ -21,23 +21,24 @@ List Suppliers
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.Accounting.Suppliers.List(ctx, operations.AccountingSuppliersAllRequest{
         ServiceID: sdkgo.String("salesforce"),
         Filter: &components.SuppliersFilter{
@@ -99,21 +100,22 @@ Create Supplier
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.Accounting.Suppliers.Create(ctx, components.SupplierInput{
         DisplayID: sdkgo.String("EMP00101"),
         DisplayName: sdkgo.String("Windsurf Shop"),
@@ -318,20 +320,21 @@ Get Supplier
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.Accounting.Suppliers.Get(ctx, "<id>", sdkgo.String("salesforce"), nil, sdkgo.String("id,updated_at"))
     if err != nil {
         log.Fatal(err)
@@ -378,21 +381,22 @@ Update Supplier
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.Accounting.Suppliers.Update(ctx, "<id>", components.SupplierInput{
         DisplayID: sdkgo.String("EMP00101"),
         DisplayName: sdkgo.String("Windsurf Shop"),
@@ -647,20 +651,21 @@ Delete Supplier
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.Accounting.Suppliers.Delete(ctx, "<id>", sdkgo.String("salesforce"), nil)
     if err != nil {
         log.Fatal(err)

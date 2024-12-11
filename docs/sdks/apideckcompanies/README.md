@@ -21,21 +21,22 @@ List Companies
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/operations"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.Hris.Companies.List(ctx, operations.HrisCompaniesAllRequest{
         ServiceID: sdkgo.String("salesforce"),
         PassThrough: map[string]any{
@@ -85,21 +86,22 @@ Create Company
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.Hris.Companies.Create(ctx, components.HrisCompanyInput{
         LegalName: sdkgo.String("SpaceX"),
         DisplayName: sdkgo.String("SpaceX"),
@@ -228,20 +230,21 @@ Get Company
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.Hris.Companies.Get(ctx, "<id>", sdkgo.String("salesforce"), nil, sdkgo.String("id,updated_at"))
     if err != nil {
         log.Fatal(err)
@@ -288,21 +291,22 @@ Update Company
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.Hris.Companies.Update(ctx, "<id>", components.HrisCompanyInput{
         LegalName: sdkgo.String("SpaceX"),
         DisplayName: sdkgo.String("SpaceX"),
@@ -523,20 +527,21 @@ Delete Company
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.Hris.Companies.Delete(ctx, "<id>", sdkgo.String("salesforce"), nil)
     if err != nil {
         log.Fatal(err)

@@ -21,22 +21,23 @@ List Tickets
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.IssueTracking.CollectionTickets.List(ctx, operations.IssueTrackingCollectionTicketsAllRequest{
         ServiceID: sdkgo.String("salesforce"),
         CollectionID: "apideck-io",
@@ -96,22 +97,23 @@ Create Ticket
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/types"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.IssueTracking.CollectionTickets.Create(ctx, "apideck-io", components.TicketInput{
         ParentID: sdkgo.String("12345"),
         Type: sdkgo.String("Technical"),
@@ -194,21 +196,22 @@ Get Ticket
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/operations"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.IssueTracking.CollectionTickets.Get(ctx, operations.IssueTrackingCollectionTicketsOneRequest{
         TicketID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
@@ -257,23 +260,24 @@ Update Ticket
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/operations"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.IssueTracking.CollectionTickets.Update(ctx, operations.IssueTrackingCollectionTicketsUpdateRequest{
         TicketID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
@@ -380,20 +384,21 @@ Delete Ticket
 package main
 
 import(
+	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    ctx := context.Background()
     res, err := s.IssueTracking.CollectionTickets.Delete(ctx, "<id>", "apideck-io", sdkgo.String("salesforce"), nil)
     if err != nil {
         log.Fatal(err)
