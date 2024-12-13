@@ -102,6 +102,8 @@ type CrmPipelinesAllResponse struct {
 	GetPipelinesResponse *components.GetPipelinesResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*CrmPipelinesAllResponse, error)
 }
 
 func (o *CrmPipelinesAllResponse) GetHTTPMeta() components.HTTPMetadata {

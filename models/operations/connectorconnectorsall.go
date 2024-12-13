@@ -66,6 +66,8 @@ type ConnectorConnectorsAllResponse struct {
 	GetConnectorsResponse *components.GetConnectorsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*ConnectorConnectorsAllResponse, error)
 }
 
 func (o *ConnectorConnectorsAllResponse) GetHTTPMeta() components.HTTPMetadata {

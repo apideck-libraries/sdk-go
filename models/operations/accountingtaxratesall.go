@@ -111,6 +111,8 @@ type AccountingTaxRatesAllResponse struct {
 	GetTaxRatesResponse *components.GetTaxRatesResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*AccountingTaxRatesAllResponse, error)
 }
 
 func (o *AccountingTaxRatesAllResponse) GetHTTPMeta() components.HTTPMetadata {

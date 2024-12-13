@@ -93,6 +93,8 @@ type AccountingSubsidiariesAllResponse struct {
 	GetSubsidiariesResponse *components.GetSubsidiariesResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*AccountingSubsidiariesAllResponse, error)
 }
 
 func (o *AccountingSubsidiariesAllResponse) GetHTTPMeta() components.HTTPMetadata {

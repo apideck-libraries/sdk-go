@@ -57,6 +57,8 @@ type VaultConsumersAllResponse struct {
 	GetConsumersResponse *components.GetConsumersResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*VaultConsumersAllResponse, error)
 }
 
 func (o *VaultConsumersAllResponse) GetHTTPMeta() components.HTTPMetadata {

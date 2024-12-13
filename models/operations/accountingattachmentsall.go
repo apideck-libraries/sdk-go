@@ -111,6 +111,8 @@ type AccountingAttachmentsAllResponse struct {
 	GetAttachmentsResponse *components.GetAttachmentsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*AccountingAttachmentsAllResponse, error)
 }
 
 func (o *AccountingAttachmentsAllResponse) GetHTTPMeta() components.HTTPMetadata {

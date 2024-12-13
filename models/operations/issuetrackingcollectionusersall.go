@@ -111,6 +111,8 @@ type IssueTrackingCollectionUsersAllResponse struct {
 	GetCollectionUsersResponse *components.GetCollectionUsersResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*IssueTrackingCollectionUsersAllResponse, error)
 }
 
 func (o *IssueTrackingCollectionUsersAllResponse) GetHTTPMeta() components.HTTPMetadata {

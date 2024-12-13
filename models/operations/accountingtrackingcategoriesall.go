@@ -102,6 +102,8 @@ type AccountingTrackingCategoriesAllResponse struct {
 	GetTrackingCategoriesResponse *components.GetTrackingCategoriesResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*AccountingTrackingCategoriesAllResponse, error)
 }
 
 func (o *AccountingTrackingCategoriesAllResponse) GetHTTPMeta() components.HTTPMetadata {

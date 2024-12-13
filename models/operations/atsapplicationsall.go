@@ -93,6 +93,8 @@ type AtsApplicationsAllResponse struct {
 	GetApplicationsResponse *components.GetApplicationsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*AtsApplicationsAllResponse, error)
 }
 
 func (o *AtsApplicationsAllResponse) GetHTTPMeta() components.HTTPMetadata {

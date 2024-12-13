@@ -120,6 +120,8 @@ type AccountingJournalEntriesAllResponse struct {
 	GetJournalEntriesResponse *components.GetJournalEntriesResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*AccountingJournalEntriesAllResponse, error)
 }
 
 func (o *AccountingJournalEntriesAllResponse) GetHTTPMeta() components.HTTPMetadata {

@@ -120,6 +120,8 @@ type AccountingSuppliersAllResponse struct {
 	GetSuppliersResponse *components.GetSuppliersResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*AccountingSuppliersAllResponse, error)
 }
 
 func (o *AccountingSuppliersAllResponse) GetHTTPMeta() components.HTTPMetadata {

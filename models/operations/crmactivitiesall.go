@@ -120,6 +120,8 @@ type CrmActivitiesAllResponse struct {
 	GetActivitiesResponse *components.GetActivitiesResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*CrmActivitiesAllResponse, error)
 }
 
 func (o *CrmActivitiesAllResponse) GetHTTPMeta() components.HTTPMetadata {

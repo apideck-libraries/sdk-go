@@ -75,6 +75,8 @@ type VaultLogsAllResponse struct {
 	GetLogsResponse *components.GetLogsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*VaultLogsAllResponse, error)
 }
 
 func (o *VaultLogsAllResponse) GetHTTPMeta() components.HTTPMetadata {

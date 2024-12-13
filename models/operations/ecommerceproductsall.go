@@ -102,6 +102,8 @@ type EcommerceProductsAllResponse struct {
 	GetProductsResponse *components.GetProductsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*EcommerceProductsAllResponse, error)
 }
 
 func (o *EcommerceProductsAllResponse) GetHTTPMeta() components.HTTPMetadata {

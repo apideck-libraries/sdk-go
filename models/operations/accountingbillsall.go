@@ -120,6 +120,8 @@ type AccountingBillsAllResponse struct {
 	GetBillsResponse *components.GetBillsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*AccountingBillsAllResponse, error)
 }
 
 func (o *AccountingBillsAllResponse) GetHTTPMeta() components.HTTPMetadata {

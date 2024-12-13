@@ -39,9 +39,9 @@ func main() {
     )
 
     res, err := s.IssueTracking.CollectionTicketComments.List(ctx, operations.IssueTrackingCollectionTicketCommentsAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
         CollectionID: "apideck-io",
         TicketID: "<id>",
+        ServiceID: sdkgo.String("salesforce"),
         Sort: &components.CommentsSort{
             By: components.CommentsSortByCreatedAt.ToPointer(),
             Direction: components.SortDirectionDesc.ToPointer(),
@@ -55,7 +55,19 @@ func main() {
         log.Fatal(err)
     }
     if res.GetCommentsResponse != nil {
-        // handle response
+        for {
+            // handle items
+
+            res, err = res.Next()
+
+            if err != nil {
+                // handle error
+            }
+
+            if res == nil {
+                break
+            }
+        }
     }
 }
 ```
@@ -201,16 +213,28 @@ func main() {
 
     res, err := s.IssueTracking.CollectionTicketComments.Get(ctx, operations.IssueTrackingCollectionTicketCommentsOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
         CollectionID: "apideck-io",
         TicketID: "<id>",
+        ServiceID: sdkgo.String("salesforce"),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
     }
     if res.GetCommentResponse != nil {
-        // handle response
+        for {
+            // handle items
+
+            res, err = res.Next()
+
+            if err != nil {
+                // handle error
+            }
+
+            if res == nil {
+                break
+            }
+        }
     }
 }
 ```

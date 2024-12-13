@@ -102,6 +102,8 @@ type CrmNotesAllResponse struct {
 	GetNotesResponse *components.GetNotesResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*CrmNotesAllResponse, error)
 }
 
 func (o *CrmNotesAllResponse) GetHTTPMeta() components.HTTPMetadata {

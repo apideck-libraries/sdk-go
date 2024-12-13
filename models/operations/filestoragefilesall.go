@@ -120,6 +120,8 @@ type FileStorageFilesAllResponse struct {
 	GetFilesResponse *components.GetFilesResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*FileStorageFilesAllResponse, error)
 }
 
 func (o *FileStorageFilesAllResponse) GetHTTPMeta() components.HTTPMetadata {
