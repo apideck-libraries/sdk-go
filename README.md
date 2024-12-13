@@ -164,6 +164,14 @@ func main() {
 ### [Accounting](docs/sdks/accounting/README.md)
 
 
+#### [Accounting.AgedCreditors](docs/sdks/agedcreditors/README.md)
+
+* [Get](docs/sdks/agedcreditors/README.md#get) - Get Aged Creditors
+
+#### [Accounting.AgedDebtors](docs/sdks/ageddebtors/README.md)
+
+* [Get](docs/sdks/ageddebtors/README.md#get) - Get Aged Debtors
+
 #### [Accounting.Attachments](docs/sdks/attachments/README.md)
 
 * [List](docs/sdks/attachments/README.md#list) - List Attachments
