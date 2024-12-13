@@ -102,6 +102,8 @@ type AtsJobsAllResponse struct {
 	GetJobsResponse *components.GetJobsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*AtsJobsAllResponse, error)
 }
 
 func (o *AtsJobsAllResponse) GetHTTPMeta() components.HTTPMetadata {

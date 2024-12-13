@@ -60,7 +60,19 @@ func main() {
         log.Fatal(err)
     }
     if res.GetContactsResponse != nil {
-        // handle response
+        for {
+            // handle items
+
+            res, err = res.Next()
+
+            if err != nil {
+                // handle error
+            }
+
+            if res == nil {
+                break
+            }
+        }
     }
 }
 ```

@@ -31,6 +31,10 @@ func (o *IssueTrackingCollectionTicketCommentsOneGlobals) GetAppID() *string {
 type IssueTrackingCollectionTicketCommentsOneRequest struct {
 	// ID of the record you are acting upon.
 	ID string `pathParam:"style=simple,explode=false,name=id"`
+	// The collection ID
+	CollectionID string `pathParam:"style=simple,explode=false,name=collection_id"`
+	// ID of the ticket you are acting upon.
+	TicketID string `pathParam:"style=simple,explode=false,name=ticket_id"`
 	// Include raw response. Mostly used for debugging purposes
 	Raw *bool `default:"false" queryParam:"style=form,explode=true,name=raw"`
 	// Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.
@@ -39,10 +43,6 @@ type IssueTrackingCollectionTicketCommentsOneRequest struct {
 	Cursor *string `queryParam:"style=form,explode=true,name=cursor"`
 	// Number of results to return. Minimum 1, Maximum 200, Default 20
 	Limit *int64 `default:"20" queryParam:"style=form,explode=true,name=limit"`
-	// The collection ID
-	CollectionID string `pathParam:"style=simple,explode=false,name=collection_id"`
-	// ID of the ticket you are acting upon.
-	TicketID string `pathParam:"style=simple,explode=false,name=ticket_id"`
 	// The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 	Fields *string `queryParam:"style=form,explode=true,name=fields"`
 }
@@ -63,6 +63,20 @@ func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetID() string {
 		return ""
 	}
 	return o.ID
+}
+
+func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetCollectionID() string {
+	if o == nil {
+		return ""
+	}
+	return o.CollectionID
+}
+
+func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetTicketID() string {
+	if o == nil {
+		return ""
+	}
+	return o.TicketID
 }
 
 func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetRaw() *bool {
@@ -93,20 +107,6 @@ func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetLimit() *int64 {
 	return o.Limit
 }
 
-func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetCollectionID() string {
-	if o == nil {
-		return ""
-	}
-	return o.CollectionID
-}
-
-func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetTicketID() string {
-	if o == nil {
-		return ""
-	}
-	return o.TicketID
-}
-
 func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetFields() *string {
 	if o == nil {
 		return nil
@@ -120,6 +120,8 @@ type IssueTrackingCollectionTicketCommentsOneResponse struct {
 	GetCommentResponse *components.GetCommentResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*IssueTrackingCollectionTicketCommentsOneResponse, error)
 }
 
 func (o *IssueTrackingCollectionTicketCommentsOneResponse) GetHTTPMeta() components.HTTPMetadata {

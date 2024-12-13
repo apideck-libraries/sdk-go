@@ -12,8 +12,10 @@ import (
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"github.com/apideck-libraries/sdk-go/retry"
+	"github.com/spyzhov/ajson"
 	"net/http"
 	"net/url"
+	"strconv"
 )
 
 type TaxRates struct {
@@ -187,6 +189,54 @@ func (s *TaxRates) List(ctx context.Context, request operations.AccountingTaxRat
 			Request:  req,
 			Response: httpRes,
 		},
+	}
+	res.Next = func() (*operations.AccountingTaxRatesAllResponse, error) {
+		rawBody, err := utils.ConsumeRawBody(httpRes)
+		if err != nil {
+			return nil, err
+		}
+
+		b, err := ajson.Unmarshal(rawBody)
+		if err != nil {
+			return nil, err
+		}
+		nC, err := ajson.Eval(b, "$.meta.cursors.next")
+		if err != nil {
+			return nil, err
+		}
+		var nCVal string
+
+		if nC.IsNumeric() {
+			numVal, err := nC.GetNumeric()
+			if err != nil {
+				return nil, err
+			}
+			// GetNumeric returns as float64 so convert to the appropriate type.
+			nCVal = strconv.FormatFloat(numVal, 'f', 0, 64)
+		} else {
+			val, err := nC.Value()
+			if err != nil {
+				return nil, err
+			}
+			if val == nil {
+				return nil, nil
+			}
+			nCVal = val.(string)
+		}
+
+		return s.List(
+			ctx,
+			operations.AccountingTaxRatesAllRequest{
+				Raw:         request.Raw,
+				ServiceID:   request.ServiceID,
+				Cursor:      &nCVal,
+				Limit:       request.Limit,
+				Filter:      request.Filter,
+				PassThrough: request.PassThrough,
+				Fields:      request.Fields,
+			},
+			opts...,
+		)
 	}
 
 	switch {

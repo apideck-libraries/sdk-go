@@ -93,6 +93,8 @@ type SmsMessagesAllResponse struct {
 	GetMessagesResponse *components.GetMessagesResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*SmsMessagesAllResponse, error)
 }
 
 func (o *SmsMessagesAllResponse) GetHTTPMeta() components.HTTPMetadata {

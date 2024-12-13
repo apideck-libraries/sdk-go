@@ -111,6 +111,8 @@ type IssueTrackingCollectionTagsAllResponse struct {
 	GetCollectionTagsResponse *components.GetCollectionTagsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*IssueTrackingCollectionTagsAllResponse, error)
 }
 
 func (o *IssueTrackingCollectionTagsAllResponse) GetHTTPMeta() components.HTTPMetadata {

@@ -120,6 +120,8 @@ type HrisEmployeesAllResponse struct {
 	GetEmployeesResponse *components.GetEmployeesResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*HrisEmployeesAllResponse, error)
 }
 
 func (o *HrisEmployeesAllResponse) GetHTTPMeta() components.HTTPMetadata {

@@ -194,9 +194,9 @@ func New(opts ...SDKOption) *Apideck {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "10.9.0",
-			SDKVersion:        "0.1.0",
+			SDKVersion:        "0.2.0",
 			GenVersion:        "2.477.4",
-			UserAgent:         "speakeasy-sdk/go 0.1.0 2.477.4 10.9.0 github.com/apideck-libraries/sdk-go",
+			UserAgent:         "speakeasy-sdk/go 0.2.0 2.477.4 10.9.0 github.com/apideck-libraries/sdk-go",
 			Globals:           globals.Globals{},
 			Hooks:             hooks.New(),
 		},

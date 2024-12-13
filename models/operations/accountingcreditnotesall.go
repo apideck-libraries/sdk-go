@@ -120,6 +120,8 @@ type AccountingCreditNotesAllResponse struct {
 	GetCreditNotesResponse *components.GetCreditNotesResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*AccountingCreditNotesAllResponse, error)
 }
 
 func (o *AccountingCreditNotesAllResponse) GetHTTPMeta() components.HTTPMetadata {

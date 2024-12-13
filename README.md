@@ -26,6 +26,7 @@ For more information about the API: [Apideck Developer Docs](https://developers.
   * [SDK Example Usage](#sdk-example-usage)
   * [Authentication](#authentication)
   * [Available Resources and Operations](#available-resources-and-operations)
+  * [Pagination](#pagination)
   * [Retries](#retries)
   * [Error Handling](#error-handling)
   * [Server Selection](#server-selection)
@@ -90,7 +91,19 @@ func main() {
 		log.Fatal(err)
 	}
 	if res.GetTaxRatesResponse != nil {
-		// handle response
+		for {
+			// handle items
+
+			res, err = res.Next()
+
+			if err != nil {
+				// handle error
+			}
+
+			if res == nil {
+				break
+			}
+		}
 	}
 }
 
@@ -148,7 +161,19 @@ func main() {
 		log.Fatal(err)
 	}
 	if res.GetTaxRatesResponse != nil {
-		// handle response
+		for {
+			// handle items
+
+			res, err = res.Next()
+
+			if err != nil {
+				// handle error
+			}
+
+			if res == nil {
+				break
+			}
+		}
 	}
 }
 
@@ -690,6 +715,72 @@ func main() {
 </details>
 <!-- End Available Resources and Operations [operations] -->
 
+<!-- Start Pagination [pagination] -->
+## Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `Next` method that can be called to pull down the next group of results. If the
+return value of `Next` is `nil`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+```go
+package main
+
+import (
+	"context"
+	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/components"
+	"github.com/apideck-libraries/sdk-go/models/operations"
+	"log"
+	"os"
+)
+
+func main() {
+	ctx := context.Background()
+
+	s := sdkgo.New(
+		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
+		sdkgo.WithConsumerID("test-consumer"),
+		sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+	)
+
+	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
+		ServiceID: sdkgo.String("salesforce"),
+		Filter: &components.TaxRatesFilter{
+			Assets:      sdkgo.Bool(true),
+			Equity:      sdkgo.Bool(true),
+			Expenses:    sdkgo.Bool(true),
+			Liabilities: sdkgo.Bool(true),
+			Revenue:     sdkgo.Bool(true),
+		},
+		PassThrough: map[string]any{
+			"search": "San Francisco",
+		},
+		Fields: sdkgo.String("id,updated_at"),
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	if res.GetTaxRatesResponse != nil {
+		for {
+			// handle items
+
+			res, err = res.Next()
+
+			if err != nil {
+				// handle error
+			}
+
+			if res == nil {
+				break
+			}
+		}
+	}
+}
+
+```
+<!-- End Pagination [pagination] -->
+
 <!-- Start Retries [retries] -->
 ## Retries
 
@@ -747,7 +838,19 @@ func main() {
 		log.Fatal(err)
 	}
 	if res.GetTaxRatesResponse != nil {
-		// handle response
+		for {
+			// handle items
+
+			res, err = res.Next()
+
+			if err != nil {
+				// handle error
+			}
+
+			if res == nil {
+				break
+			}
+		}
 	}
 }
 
@@ -805,7 +908,19 @@ func main() {
 		log.Fatal(err)
 	}
 	if res.GetTaxRatesResponse != nil {
-		// handle response
+		for {
+			// handle items
+
+			res, err = res.Next()
+
+			if err != nil {
+				// handle error
+			}
+
+			if res == nil {
+				break
+			}
+		}
 	}
 }
 
@@ -958,7 +1073,19 @@ func main() {
 		log.Fatal(err)
 	}
 	if res.GetTaxRatesResponse != nil {
-		// handle response
+		for {
+			// handle items
+
+			res, err = res.Next()
+
+			if err != nil {
+				// handle error
+			}
+
+			if res == nil {
+				break
+			}
+		}
 	}
 }
 

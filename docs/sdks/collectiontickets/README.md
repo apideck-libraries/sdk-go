@@ -39,8 +39,8 @@ func main() {
     )
 
     res, err := s.IssueTracking.CollectionTickets.List(ctx, operations.IssueTrackingCollectionTicketsAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
         CollectionID: "apideck-io",
+        ServiceID: sdkgo.String("salesforce"),
         Sort: &components.TicketsSort{
             By: components.TicketsSortByCreatedAt.ToPointer(),
             Direction: components.SortDirectionDesc.ToPointer(),
@@ -59,7 +59,19 @@ func main() {
         log.Fatal(err)
     }
     if res.GetTicketsResponse != nil {
-        // handle response
+        for {
+            // handle items
+
+            res, err = res.Next()
+
+            if err != nil {
+                // handle error
+            }
+
+            if res == nil {
+                break
+            }
+        }
     }
 }
 ```

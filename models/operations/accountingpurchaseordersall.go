@@ -111,6 +111,8 @@ type AccountingPurchaseOrdersAllResponse struct {
 	GetPurchaseOrdersResponse *components.GetPurchaseOrdersResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*AccountingPurchaseOrdersAllResponse, error)
 }
 
 func (o *AccountingPurchaseOrdersAllResponse) GetHTTPMeta() components.HTTPMetadata {

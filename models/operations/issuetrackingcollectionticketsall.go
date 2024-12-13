@@ -29,6 +29,8 @@ func (o *IssueTrackingCollectionTicketsAllGlobals) GetAppID() *string {
 }
 
 type IssueTrackingCollectionTicketsAllRequest struct {
+	// The collection ID
+	CollectionID string `pathParam:"style=simple,explode=false,name=collection_id"`
 	// Include raw response. Mostly used for debugging purposes
 	Raw *bool `default:"false" queryParam:"style=form,explode=true,name=raw"`
 	// Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.
@@ -37,8 +39,6 @@ type IssueTrackingCollectionTicketsAllRequest struct {
 	Cursor *string `queryParam:"style=form,explode=true,name=cursor"`
 	// Number of results to return. Minimum 1, Maximum 200, Default 20
 	Limit *int64 `default:"20" queryParam:"style=form,explode=true,name=limit"`
-	// The collection ID
-	CollectionID string `pathParam:"style=simple,explode=false,name=collection_id"`
 	// Apply sorting
 	Sort *components.TicketsSort `queryParam:"style=deepObject,explode=true,name=sort"`
 	// Apply filters
@@ -58,6 +58,13 @@ func (i *IssueTrackingCollectionTicketsAllRequest) UnmarshalJSON(data []byte) er
 		return err
 	}
 	return nil
+}
+
+func (o *IssueTrackingCollectionTicketsAllRequest) GetCollectionID() string {
+	if o == nil {
+		return ""
+	}
+	return o.CollectionID
 }
 
 func (o *IssueTrackingCollectionTicketsAllRequest) GetRaw() *bool {
@@ -86,13 +93,6 @@ func (o *IssueTrackingCollectionTicketsAllRequest) GetLimit() *int64 {
 		return nil
 	}
 	return o.Limit
-}
-
-func (o *IssueTrackingCollectionTicketsAllRequest) GetCollectionID() string {
-	if o == nil {
-		return ""
-	}
-	return o.CollectionID
 }
 
 func (o *IssueTrackingCollectionTicketsAllRequest) GetSort() *components.TicketsSort {
@@ -129,6 +129,8 @@ type IssueTrackingCollectionTicketsAllResponse struct {
 	GetTicketsResponse *components.GetTicketsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*IssueTrackingCollectionTicketsAllResponse, error)
 }
 
 func (o *IssueTrackingCollectionTicketsAllResponse) GetHTTPMeta() components.HTTPMetadata {

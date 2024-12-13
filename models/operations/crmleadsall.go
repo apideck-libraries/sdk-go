@@ -120,6 +120,8 @@ type CrmLeadsAllResponse struct {
 	GetLeadsResponse *components.GetLeadsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*CrmLeadsAllResponse, error)
 }
 
 func (o *CrmLeadsAllResponse) GetHTTPMeta() components.HTTPMetadata {

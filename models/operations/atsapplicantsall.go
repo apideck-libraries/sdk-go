@@ -111,6 +111,8 @@ type AtsApplicantsAllResponse struct {
 	GetApplicantsResponse *components.GetApplicantsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*AtsApplicantsAllResponse, error)
 }
 
 func (o *AtsApplicantsAllResponse) GetHTTPMeta() components.HTTPMetadata {

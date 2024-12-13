@@ -57,6 +57,8 @@ type WebhookWebhooksAllResponse struct {
 	GetWebhooksResponse *components.GetWebhooksResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*WebhookWebhooksAllResponse, error)
 }
 
 func (o *WebhookWebhooksAllResponse) GetHTTPMeta() components.HTTPMetadata {

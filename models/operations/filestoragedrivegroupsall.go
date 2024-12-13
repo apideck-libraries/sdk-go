@@ -111,6 +111,8 @@ type FileStorageDriveGroupsAllResponse struct {
 	GetDriveGroupsResponse *components.GetDriveGroupsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*FileStorageDriveGroupsAllResponse, error)
 }
 
 func (o *FileStorageDriveGroupsAllResponse) GetHTTPMeta() components.HTTPMetadata {

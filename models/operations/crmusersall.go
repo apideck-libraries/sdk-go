@@ -102,6 +102,8 @@ type CrmUsersAllResponse struct {
 	GetUsersResponse *components.GetUsersResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*CrmUsersAllResponse, error)
 }
 
 func (o *CrmUsersAllResponse) GetHTTPMeta() components.HTTPMetadata {

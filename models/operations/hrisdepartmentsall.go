@@ -102,6 +102,8 @@ type HrisDepartmentsAllResponse struct {
 	GetDepartmentsResponse *components.GetDepartmentsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+
+	Next func() (*HrisDepartmentsAllResponse, error)
 }
 
 func (o *HrisDepartmentsAllResponse) GetHTTPMeta() components.HTTPMetadata {
