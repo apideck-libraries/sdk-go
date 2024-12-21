@@ -74,9 +74,9 @@ const (
 )
 
 type Value5 struct {
-	Str     *string
-	Integer *int64
-	Number  *float64
+	Str     *string  `queryParam:"inline"`
+	Integer *int64   `queryParam:"inline"`
+	Number  *float64 `queryParam:"inline"`
 
 	Type Value5Type
 }
@@ -161,11 +161,11 @@ const (
 )
 
 type ConnectionValue struct {
-	Str           *string
-	Integer       *int64
-	Number        *float64
-	Boolean       *bool
-	ArrayOfValue5 []Value5
+	Str           *string  `queryParam:"inline"`
+	Integer       *int64   `queryParam:"inline"`
+	Number        *float64 `queryParam:"inline"`
+	Boolean       *bool    `queryParam:"inline"`
+	ArrayOfValue5 []Value5 `queryParam:"inline"`
 
 	Type ConnectionValueType
 }
