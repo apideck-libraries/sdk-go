@@ -26,12 +26,12 @@ const (
 )
 
 type Value struct {
-	Str        *string
-	Number     *float64
-	Boolean    *bool
-	Four       *Four
-	ArrayOfStr []string
-	ArrayOf6   []Six
+	Str        *string  `queryParam:"inline"`
+	Number     *float64 `queryParam:"inline"`
+	Boolean    *bool    `queryParam:"inline"`
+	Four       *Four    `queryParam:"inline"`
+	ArrayOfStr []string `queryParam:"inline"`
+	ArrayOf6   []Six    `queryParam:"inline"`
 
 	Type ValueType
 }

@@ -17,9 +17,9 @@ const (
 )
 
 type Five struct {
-	Str     *string
-	Integer *int64
-	Number  *float64
+	Str     *string  `queryParam:"inline"`
+	Integer *int64   `queryParam:"inline"`
+	Number  *float64 `queryParam:"inline"`
 
 	Type FiveType
 }
@@ -104,11 +104,11 @@ const (
 )
 
 type SimpleFormFieldOptionValue struct {
-	Str      *string
-	Integer  *int64
-	Number   *float64
-	Boolean  *bool
-	ArrayOf5 []Five
+	Str      *string  `queryParam:"inline"`
+	Integer  *int64   `queryParam:"inline"`
+	Number   *float64 `queryParam:"inline"`
+	Boolean  *bool    `queryParam:"inline"`
+	ArrayOf5 []Five   `queryParam:"inline"`
 
 	Type SimpleFormFieldOptionValueType
 }
