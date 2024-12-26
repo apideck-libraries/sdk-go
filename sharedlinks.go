@@ -55,7 +55,12 @@ func (s *SharedLinks) List(ctx context.Context, request operations.FileStorageSh
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := url.JoinPath(baseURL, "/file-storage/shared-links")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -87,6 +92,10 @@ func (s *SharedLinks) List(ctx context.Context, request operations.FileStorageSh
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig
@@ -433,7 +442,12 @@ func (s *SharedLinks) Create(ctx context.Context, sharedLink components.SharedLi
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := url.JoinPath(baseURL, "/file-storage/shared-links")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -471,6 +485,10 @@ func (s *SharedLinks) Create(ctx context.Context, sharedLink components.SharedLi
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig
@@ -771,7 +789,12 @@ func (s *SharedLinks) Get(ctx context.Context, id string, serviceID *string, raw
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/file-storage/shared-links/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -803,6 +826,10 @@ func (s *SharedLinks) Get(ctx context.Context, id string, serviceID *string, raw
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig
@@ -1103,7 +1130,12 @@ func (s *SharedLinks) Update(ctx context.Context, id string, sharedLink componen
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/file-storage/shared-links/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -1141,6 +1173,10 @@ func (s *SharedLinks) Update(ctx context.Context, id string, sharedLink componen
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig
@@ -1440,7 +1476,12 @@ func (s *SharedLinks) Delete(ctx context.Context, id string, serviceID *string, 
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/file-storage/shared-links/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -1472,6 +1513,10 @@ func (s *SharedLinks) Delete(ctx context.Context, id string, serviceID *string, 
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig

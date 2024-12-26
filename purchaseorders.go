@@ -55,7 +55,12 @@ func (s *PurchaseOrders) List(ctx context.Context, request operations.Accounting
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := url.JoinPath(baseURL, "/accounting/purchase-orders")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -87,6 +92,10 @@ func (s *PurchaseOrders) List(ctx context.Context, request operations.Accounting
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig
@@ -434,7 +443,12 @@ func (s *PurchaseOrders) Create(ctx context.Context, purchaseOrder components.Pu
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := url.JoinPath(baseURL, "/accounting/purchase-orders")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -472,6 +486,10 @@ func (s *PurchaseOrders) Create(ctx context.Context, purchaseOrder components.Pu
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig
@@ -771,7 +789,12 @@ func (s *PurchaseOrders) Get(ctx context.Context, id string, serviceID *string, 
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/purchase-orders/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -803,6 +826,10 @@ func (s *PurchaseOrders) Get(ctx context.Context, id string, serviceID *string, 
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig
@@ -1103,7 +1130,12 @@ func (s *PurchaseOrders) Update(ctx context.Context, id string, purchaseOrder co
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/purchase-orders/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -1141,6 +1173,10 @@ func (s *PurchaseOrders) Update(ctx context.Context, id string, purchaseOrder co
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig
@@ -1440,7 +1476,12 @@ func (s *PurchaseOrders) Delete(ctx context.Context, id string, serviceID *strin
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/purchase-orders/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -1472,6 +1513,10 @@ func (s *PurchaseOrders) Delete(ctx context.Context, id string, serviceID *strin
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig

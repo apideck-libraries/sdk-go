@@ -55,7 +55,12 @@ func (s *TaxRates) List(ctx context.Context, request operations.AccountingTaxRat
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := url.JoinPath(baseURL, "/accounting/tax-rates")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -87,6 +92,10 @@ func (s *TaxRates) List(ctx context.Context, request operations.AccountingTaxRat
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig
@@ -434,7 +443,12 @@ func (s *TaxRates) Create(ctx context.Context, taxRate components.TaxRateInput, 
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := url.JoinPath(baseURL, "/accounting/tax-rates")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -472,6 +486,10 @@ func (s *TaxRates) Create(ctx context.Context, taxRate components.TaxRateInput, 
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig
@@ -772,7 +790,12 @@ func (s *TaxRates) Get(ctx context.Context, id string, serviceID *string, raw *b
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/tax-rates/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -804,6 +827,10 @@ func (s *TaxRates) Get(ctx context.Context, id string, serviceID *string, raw *b
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig
@@ -1104,7 +1131,12 @@ func (s *TaxRates) Update(ctx context.Context, id string, taxRate components.Tax
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/tax-rates/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -1142,6 +1174,10 @@ func (s *TaxRates) Update(ctx context.Context, id string, taxRate components.Tax
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig
@@ -1441,7 +1477,12 @@ func (s *TaxRates) Delete(ctx context.Context, id string, serviceID *string, raw
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/tax-rates/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -1473,6 +1514,10 @@ func (s *TaxRates) Delete(ctx context.Context, id string, serviceID *string, raw
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig

@@ -59,7 +59,12 @@ func (s *Webhooks) List(ctx context.Context, cursor *string, limit *int64, opts 
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := url.JoinPath(baseURL, "/webhook/webhooks")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -91,6 +96,10 @@ func (s *Webhooks) List(ctx context.Context, cursor *string, limit *int64, opts 
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig
@@ -424,7 +433,12 @@ func (s *Webhooks) Create(ctx context.Context, request components.CreateWebhookR
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := url.JoinPath(baseURL, "/webhook/webhooks")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -458,6 +472,10 @@ func (s *Webhooks) Create(ctx context.Context, request components.CreateWebhookR
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig
@@ -754,7 +772,12 @@ func (s *Webhooks) Get(ctx context.Context, id string, opts ...operations.Option
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/webhook/webhooks/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -782,6 +805,10 @@ func (s *Webhooks) Get(ctx context.Context, id string, opts ...operations.Option
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig
@@ -1079,7 +1106,12 @@ func (s *Webhooks) Update(ctx context.Context, id string, updateWebhookRequest c
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/webhook/webhooks/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -1113,6 +1145,10 @@ func (s *Webhooks) Update(ctx context.Context, id string, updateWebhookRequest c
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig
@@ -1409,7 +1445,12 @@ func (s *Webhooks) Delete(ctx context.Context, id string, opts ...operations.Opt
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/webhook/webhooks/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -1437,6 +1478,10 @@ func (s *Webhooks) Delete(ctx context.Context, id string, opts ...operations.Opt
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig
