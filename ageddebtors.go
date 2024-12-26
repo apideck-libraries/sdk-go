@@ -53,7 +53,12 @@ func (s *AgedDebtors) Get(ctx context.Context, request operations.AccountingAged
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := url.JoinPath(baseURL, "/accounting/aged-debtors")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -85,6 +90,10 @@ func (s *AgedDebtors) Get(ctx context.Context, request operations.AccountingAged
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
+	}
+
+	for k, v := range o.SetHeaders {
+		req.Header.Set(k, v)
 	}
 
 	globalRetryConfig := s.sdkConfiguration.RetryConfig
