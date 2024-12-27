@@ -16,8 +16,8 @@ type AgedCreditors struct {
 	// Number of aging periods shown in the report.
 	PeriodCount *int64 `default:"4" json:"period_count"`
 	// Length of each aging period in days.
-	PeriodLength        *int64               `default:"30" json:"period_length"`
-	OutstandingBalances []OutstandingBalance `json:"outstanding_balances,omitempty"`
+	PeriodLength        *int64                         `default:"30" json:"period_length"`
+	OutstandingBalances []OutstandingBalanceBySupplier `json:"outstanding_balances,omitempty"`
 }
 
 func (a AgedCreditors) MarshalJSON() ([]byte, error) {
@@ -59,7 +59,7 @@ func (o *AgedCreditors) GetPeriodLength() *int64 {
 	return o.PeriodLength
 }
 
-func (o *AgedCreditors) GetOutstandingBalances() []OutstandingBalance {
+func (o *AgedCreditors) GetOutstandingBalances() []OutstandingBalanceBySupplier {
 	if o == nil {
 		return nil
 	}

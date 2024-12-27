@@ -17,7 +17,7 @@ const (
 	TransactionTypeCreditNote  TransactionType = "credit_note"
 	TransactionTypeBill        TransactionType = "bill"
 	TransactionTypePayment     TransactionType = "payment"
-	TransactionTypeBillPayment TransactionType = "bill-payment"
+	TransactionTypeBillPayment TransactionType = "bill_payment"
 )
 
 func (e TransactionType) ToPointer() *TransactionType {
@@ -37,7 +37,7 @@ func (e *TransactionType) UnmarshalJSON(data []byte) error {
 		fallthrough
 	case "payment":
 		fallthrough
-	case "bill-payment":
+	case "bill_payment":
 		*e = TransactionType(v)
 		return nil
 	default:
@@ -58,6 +58,8 @@ type BalanceByTransaction struct {
 	OriginalAmount *float64 `json:"original_amount,omitempty"`
 	// Outstanding balance of the transaction.
 	OutstandingBalance *float64 `json:"outstanding_balance,omitempty"`
+	// Transaction number of the transaction.
+	TransactionNumber *string `json:"transaction_number,omitempty"`
 }
 
 func (b BalanceByTransaction) MarshalJSON() ([]byte, error) {
@@ -111,4 +113,11 @@ func (o *BalanceByTransaction) GetOutstandingBalance() *float64 {
 		return nil
 	}
 	return o.OutstandingBalance
+}
+
+func (o *BalanceByTransaction) GetTransactionNumber() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TransactionNumber
 }
