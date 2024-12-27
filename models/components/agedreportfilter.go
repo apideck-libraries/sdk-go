@@ -5,6 +5,8 @@ package components
 type AgedReportFilter struct {
 	// Filter by customer id
 	CustomerID *string `queryParam:"name=customer_id"`
+	// Filter by supplier id
+	SupplierID *string `queryParam:"name=supplier_id"`
 	// The cutoff date for considering transactions
 	ReportAsOfDate *string `queryParam:"name=report_as_of_date"`
 	// Number of periods to split the aged creditors report into
@@ -18,6 +20,13 @@ func (o *AgedReportFilter) GetCustomerID() *string {
 		return nil
 	}
 	return o.CustomerID
+}
+
+func (o *AgedReportFilter) GetSupplierID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.SupplierID
 }
 
 func (o *AgedReportFilter) GetReportAsOfDate() *string {

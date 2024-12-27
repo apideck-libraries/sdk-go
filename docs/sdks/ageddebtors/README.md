@@ -38,6 +38,7 @@ func main() {
         ServiceID: sdkgo.String("salesforce"),
         Filter: &components.AgedReportFilter{
             CustomerID: sdkgo.String("123abc"),
+            SupplierID: sdkgo.String("123abc"),
             ReportAsOfDate: sdkgo.String("2024-01-01"),
             PeriodCount: sdkgo.Int64(3),
             PeriodLength: sdkgo.Int64(30),

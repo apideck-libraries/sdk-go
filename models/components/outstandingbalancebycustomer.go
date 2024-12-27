@@ -2,29 +2,29 @@
 
 package components
 
-type OutstandingBalance struct {
-	// Unique identifier for the customer or supplier.
+type OutstandingBalanceByCustomer struct {
+	// Unique identifier for the customer.
 	CustomerID *string `json:"customer_id,omitempty"`
-	// Full name of the customer or supplier.
+	// Full name of the customer.
 	CustomerName                  *string                        `json:"customer_name,omitempty"`
 	OutstandingBalancesByCurrency []OutstandingBalanceByCurrency `json:"outstanding_balances_by_currency,omitempty"`
 }
 
-func (o *OutstandingBalance) GetCustomerID() *string {
+func (o *OutstandingBalanceByCustomer) GetCustomerID() *string {
 	if o == nil {
 		return nil
 	}
 	return o.CustomerID
 }
 
-func (o *OutstandingBalance) GetCustomerName() *string {
+func (o *OutstandingBalanceByCustomer) GetCustomerName() *string {
 	if o == nil {
 		return nil
 	}
 	return o.CustomerName
 }
 
-func (o *OutstandingBalance) GetOutstandingBalancesByCurrency() []OutstandingBalanceByCurrency {
+func (o *OutstandingBalanceByCustomer) GetOutstandingBalancesByCurrency() []OutstandingBalanceByCurrency {
 	if o == nil {
 		return nil
 	}
