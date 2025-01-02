@@ -308,6 +308,7 @@ type LedgerAccount struct {
 	Subsidiaries []LedgerAccountSubsidiaries `json:"subsidiaries,omitempty"`
 	// When custom mappings are configured on the resource, the result is included here.
 	CustomMappings *CustomMappings `json:"custom_mappings,omitempty"`
+	CustomFields   []CustomField   `json:"custom_fields,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
 	RowVersion *string `json:"row_version,omitempty"`
 	// The user who last updated the object.
@@ -522,6 +523,13 @@ func (o *LedgerAccount) GetCustomMappings() *CustomMappings {
 	return o.CustomMappings
 }
 
+func (o *LedgerAccount) GetCustomFields() []CustomField {
+	if o == nil {
+		return nil
+	}
+	return o.CustomFields
+}
+
 func (o *LedgerAccount) GetRowVersion() *string {
 	if o == nil {
 		return nil
@@ -609,6 +617,7 @@ type LedgerAccountInput struct {
 	LastReconciliationDate *types.Date `json:"last_reconciliation_date,omitempty"`
 	// The subsidiaries the account belongs to.
 	Subsidiaries []LedgerAccountSubsidiaries `json:"subsidiaries,omitempty"`
+	CustomFields []CustomField               `json:"custom_fields,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
 	RowVersion *string `json:"row_version,omitempty"`
 	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
@@ -785,6 +794,13 @@ func (o *LedgerAccountInput) GetSubsidiaries() []LedgerAccountSubsidiaries {
 		return nil
 	}
 	return o.Subsidiaries
+}
+
+func (o *LedgerAccountInput) GetCustomFields() []CustomField {
+	if o == nil {
+		return nil
+	}
+	return o.CustomFields
 }
 
 func (o *LedgerAccountInput) GetRowVersion() *string {
