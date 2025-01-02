@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 7dcfb4378c6b67f6f82c84503a30eb9f
+  docChecksum: acdbd94ea7dcac1efe718acbf408db84
   docVersion: 10.9.0
   speakeasyVersion: 1.460.3
   generationVersion: 2.484.0
-  releaseVersion: 0.3.1
-  configChecksum: c7678461f47273744c07cf26aedc353c
+  releaseVersion: 0.3.2
+  configChecksum: fd52952a6a6bc34d1ecf1e6afcce1e3b
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 features:
@@ -60,7 +60,6 @@ generatedFiles:
   - /models/components/activity.go
   - /models/components/activityattendee.go
   - /models/components/address.go
-  - /models/components/agedcreditors.go
   - /models/components/ageddebtors.go
   - /models/components/agedreportfilter.go
   - /models/components/allocation.go
@@ -154,7 +153,6 @@ generatedFiles:
   - /models/components/createnoteresponse.go
   - /models/components/createopportunityresponse.go
   - /models/components/createpaymentresponse.go
-  - /models/components/createpipelineresponse.go
   - /models/components/createpurchaseorderresponse.go
   - /models/components/createsessionresponse.go
   - /models/components/createsharedlinkresponse.go
@@ -212,7 +210,6 @@ generatedFiles:
   - /models/components/deletenoteresponse.go
   - /models/components/deleteopportunityresponse.go
   - /models/components/deletepaymentresponse.go
-  - /models/components/deletepipelineresponse.go
   - /models/components/deletepurchaseorderresponse.go
   - /models/components/deletesharedlinkresponse.go
   - /models/components/deletesubsidiaryresponse.go
@@ -273,7 +270,6 @@ generatedFiles:
   - /models/components/getaccountinglocationsresponse.go
   - /models/components/getactivitiesresponse.go
   - /models/components/getactivityresponse.go
-  - /models/components/getagedcreditorsresponse.go
   - /models/components/getageddebtorsresponse.go
   - /models/components/getapiresourcecoverageresponse.go
   - /models/components/getapiresourceresponse.go
@@ -360,7 +356,6 @@ generatedFiles:
   - /models/components/getpaymentsresponse.go
   - /models/components/getpayrollresponse.go
   - /models/components/getpayrollsresponse.go
-  - /models/components/getpipelineresponse.go
   - /models/components/getpipelinesresponse.go
   - /models/components/getproductresponse.go
   - /models/components/getproductsresponse.go
@@ -444,7 +439,6 @@ generatedFiles:
   - /models/components/orderssort.go
   - /models/components/outstandingbalancebycurrency.go
   - /models/components/outstandingbalancebycustomer.go
-  - /models/components/outstandingbalancebysupplier.go
   - /models/components/owner.go
   - /models/components/paginationcoverage.go
   - /models/components/passthroughbody.go
@@ -463,7 +457,6 @@ generatedFiles:
   - /models/components/personinput.go
   - /models/components/phonenumber.go
   - /models/components/pipeline.go
-  - /models/components/pipelineinput.go
   - /models/components/profitandloss.go
   - /models/components/profitandlossfilter.go
   - /models/components/purchaseorder.go
@@ -536,7 +529,6 @@ generatedFiles:
   - /models/components/updatenoteresponse.go
   - /models/components/updateopportunityresponse.go
   - /models/components/updatepaymentresponse.go
-  - /models/components/updatepipelineresponse.go
   - /models/components/updatepurchaseorderresponse.go
   - /models/components/updatesharedlinkresponse.go
   - /models/components/updatesubsidiaryresponse.go
@@ -559,7 +551,6 @@ generatedFiles:
   - /models/components/webhooksubscription.go
   - /models/components/webhooksupport.go
   - /models/components/website.go
-  - /models/operations/accountingagedcreditorsone.go
   - /models/operations/accountingageddebtorsone.go
   - /models/operations/accountingattachmentsall.go
   - /models/operations/accountingattachmentsdelete.go
@@ -703,11 +694,7 @@ generatedFiles:
   - /models/operations/crmopportunitiesdelete.go
   - /models/operations/crmopportunitiesone.go
   - /models/operations/crmopportunitiesupdate.go
-  - /models/operations/crmpipelinesadd.go
   - /models/operations/crmpipelinesall.go
-  - /models/operations/crmpipelinesdelete.go
-  - /models/operations/crmpipelinesone.go
-  - /models/operations/crmpipelinesupdate.go
   - /models/operations/crmusersadd.go
   - /models/operations/crmusersall.go
   - /models/operations/crmusersdelete.go
@@ -827,7 +814,6 @@ generatedFiles:
   - USAGE.md
   - accounting.go
   - activities.go
-  - agedcreditors.go
   - ageddebtors.go
   - apideck.go
   - apideckcompanies.go
@@ -895,7 +881,6 @@ generatedFiles:
   - docs/models/components/activitytype.md
   - docs/models/components/address.md
   - docs/models/components/addresses.md
-  - docs/models/components/agedcreditors.md
   - docs/models/components/ageddebtors.md
   - docs/models/components/agedreportfilter.md
   - docs/models/components/allocation.md
@@ -1042,7 +1027,6 @@ generatedFiles:
   - docs/models/components/createnoteresponse.md
   - docs/models/components/createopportunityresponse.md
   - docs/models/components/createpaymentresponse.md
-  - docs/models/components/createpipelineresponse.md
   - docs/models/components/createpurchaseorderresponse.md
   - docs/models/components/createsessionresponse.md
   - docs/models/components/createsessionresponsedata.md
@@ -1115,7 +1099,6 @@ generatedFiles:
   - docs/models/components/deletenoteresponse.md
   - docs/models/components/deleteopportunityresponse.md
   - docs/models/components/deletepaymentresponse.md
-  - docs/models/components/deletepipelineresponse.md
   - docs/models/components/deletepurchaseorderresponse.md
   - docs/models/components/deletesharedlinkresponse.md
   - docs/models/components/deletesubsidiaryresponse.md
@@ -1212,7 +1195,6 @@ generatedFiles:
   - docs/models/components/getaccountinglocationsresponse.md
   - docs/models/components/getactivitiesresponse.md
   - docs/models/components/getactivityresponse.md
-  - docs/models/components/getagedcreditorsresponse.md
   - docs/models/components/getageddebtorsresponse.md
   - docs/models/components/getapiresourcecoverageresponse.md
   - docs/models/components/getapiresourceresponse.md
@@ -1299,7 +1281,6 @@ generatedFiles:
   - docs/models/components/getpaymentsresponse.md
   - docs/models/components/getpayrollresponse.md
   - docs/models/components/getpayrollsresponse.md
-  - docs/models/components/getpipelineresponse.md
   - docs/models/components/getpipelinesresponse.md
   - docs/models/components/getproductresponse.md
   - docs/models/components/getproductsresponse.md
@@ -1429,7 +1410,6 @@ generatedFiles:
   - docs/models/components/orderssortby.md
   - docs/models/components/outstandingbalancebycurrency.md
   - docs/models/components/outstandingbalancebycustomer.md
-  - docs/models/components/outstandingbalancebysupplier.md
   - docs/models/components/owner.md
   - docs/models/components/paginationcoverage.md
   - docs/models/components/paginationcoveragemode.md
@@ -1454,8 +1434,6 @@ generatedFiles:
   - docs/models/components/phonenumber.md
   - docs/models/components/phonenumbertype.md
   - docs/models/components/pipeline.md
-  - docs/models/components/pipelineinput.md
-  - docs/models/components/pipelinestages.md
   - docs/models/components/price.md
   - docs/models/components/priority.md
   - docs/models/components/probationperiod.md
@@ -1582,7 +1560,6 @@ generatedFiles:
   - docs/models/components/updatenoteresponse.md
   - docs/models/components/updateopportunityresponse.md
   - docs/models/components/updatepaymentresponse.md
-  - docs/models/components/updatepipelineresponse.md
   - docs/models/components/updatepurchaseorderresponse.md
   - docs/models/components/updatesharedlinkresponse.md
   - docs/models/components/updatesubsidiaryresponse.md
@@ -1617,9 +1594,6 @@ generatedFiles:
   - docs/models/components/websites.md
   - docs/models/components/websitetype.md
   - docs/models/components/workpattern.md
-  - docs/models/operations/accountingagedcreditorsoneglobals.md
-  - docs/models/operations/accountingagedcreditorsonerequest.md
-  - docs/models/operations/accountingagedcreditorsoneresponse.md
   - docs/models/operations/accountingageddebtorsoneglobals.md
   - docs/models/operations/accountingageddebtorsonerequest.md
   - docs/models/operations/accountingageddebtorsoneresponse.md
@@ -2049,21 +2023,9 @@ generatedFiles:
   - docs/models/operations/crmopportunitiesupdateglobals.md
   - docs/models/operations/crmopportunitiesupdaterequest.md
   - docs/models/operations/crmopportunitiesupdateresponse.md
-  - docs/models/operations/crmpipelinesaddglobals.md
-  - docs/models/operations/crmpipelinesaddrequest.md
-  - docs/models/operations/crmpipelinesaddresponse.md
   - docs/models/operations/crmpipelinesallglobals.md
   - docs/models/operations/crmpipelinesallrequest.md
   - docs/models/operations/crmpipelinesallresponse.md
-  - docs/models/operations/crmpipelinesdeleteglobals.md
-  - docs/models/operations/crmpipelinesdeleterequest.md
-  - docs/models/operations/crmpipelinesdeleteresponse.md
-  - docs/models/operations/crmpipelinesoneglobals.md
-  - docs/models/operations/crmpipelinesonerequest.md
-  - docs/models/operations/crmpipelinesoneresponse.md
-  - docs/models/operations/crmpipelinesupdateglobals.md
-  - docs/models/operations/crmpipelinesupdaterequest.md
-  - docs/models/operations/crmpipelinesupdateresponse.md
   - docs/models/operations/crmusersaddglobals.md
   - docs/models/operations/crmusersaddrequest.md
   - docs/models/operations/crmusersaddresponse.md
@@ -2412,7 +2374,6 @@ generatedFiles:
   - docs/models/operations/webhookwebhooksupdateresponse.md
   - docs/sdks/accounting/README.md
   - docs/sdks/activities/README.md
-  - docs/sdks/agedcreditors/README.md
   - docs/sdks/ageddebtors/README.md
   - docs/sdks/apideck/README.md
   - docs/sdks/apideckcompanies/README.md

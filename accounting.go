@@ -24,7 +24,6 @@ type Accounting struct {
 	TrackingCategories *TrackingCategories
 	BillPayments       *BillPayments
 	Expenses           *Expenses
-	AgedCreditors      *AgedCreditors
 	AgedDebtors        *AgedDebtors
 
 	sdkConfiguration sdkConfiguration
@@ -54,7 +53,6 @@ func newAccounting(sdkConfig sdkConfiguration) *Accounting {
 		TrackingCategories: newTrackingCategories(sdkConfig),
 		BillPayments:       newBillPayments(sdkConfig),
 		Expenses:           newExpenses(sdkConfig),
-		AgedCreditors:      newAgedCreditors(sdkConfig),
 		AgedDebtors:        newAgedDebtors(sdkConfig),
 	}
 }
