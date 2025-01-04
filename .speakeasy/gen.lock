@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: acdbd94ea7dcac1efe718acbf408db84
+  docChecksum: 0573f979a398585490a8b196046afc66
   docVersion: 10.9.0
-  speakeasyVersion: 1.460.3
-  generationVersion: 2.484.0
-  releaseVersion: 0.3.2
-  configChecksum: fd52952a6a6bc34d1ecf1e6afcce1e3b
+  speakeasyVersion: 1.462.2
+  generationVersion: 2.486.1
+  releaseVersion: 0.3.3
+  configChecksum: 7f8f91f24ea9ffac367f64a430bf1e39
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 features:
@@ -17,7 +17,7 @@ features:
     core: 3.6.2
     deepObjectParams: 0.1.1
     defaultEnabledRetries: 0.2.0
-    deprecations: 2.81.1
+    deprecations: 2.81.2
     devContainers: 2.90.0
     downloadStreams: 0.1.2
     envVarSecurityUsage: 0.3.2
