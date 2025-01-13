@@ -35,7 +35,8 @@ type JournalEntryInput struct {
 	// Accounting period
 	AccountingPeriod *string `json:"accounting_period,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-	RowVersion *string `json:"row_version,omitempty"`
+	RowVersion   *string       `json:"row_version,omitempty"`
+	CustomFields []CustomField `json:"custom_fields,omitempty"`
 	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
@@ -147,6 +148,13 @@ func (o *JournalEntryInput) GetRowVersion() *string {
 		return nil
 	}
 	return o.RowVersion
+}
+
+func (o *JournalEntryInput) GetCustomFields() []CustomField {
+	if o == nil {
+		return nil
+	}
+	return o.CustomFields
 }
 
 func (o *JournalEntryInput) GetPassThrough() []PassThroughBody {
