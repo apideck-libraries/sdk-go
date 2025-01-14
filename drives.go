@@ -475,7 +475,9 @@ func (s *Drives) Create(ctx context.Context, drive components.DriveInput, raw *b
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
-	req.Header.Set("Content-Type", reqContentType)
+	if reqContentType != "" {
+		req.Header.Set("Content-Type", reqContentType)
+	}
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
@@ -1163,7 +1165,9 @@ func (s *Drives) Update(ctx context.Context, id string, drive components.DriveIn
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
-	req.Header.Set("Content-Type", reqContentType)
+	if reqContentType != "" {
+		req.Header.Set("Content-Type", reqContentType)
+	}
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 

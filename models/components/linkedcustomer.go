@@ -12,7 +12,7 @@ type LinkedCustomer struct {
 	DisplayName *string `json:"display_name,omitempty"`
 	// The name of the customer. Deprecated, use display_name instead.
 	//
-	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	Name *string `json:"name,omitempty"`
 	// The company name of the customer.
 	CompanyName *string `json:"company_name,omitempty"`

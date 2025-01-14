@@ -91,7 +91,9 @@ func (s *CreateCallback) State(ctx context.Context, serviceID string, unifiedAPI
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
-	req.Header.Set("Content-Type", reqContentType)
+	if reqContentType != "" {
+		req.Header.Set("Content-Type", reqContentType)
+	}
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 

@@ -313,21 +313,10 @@ func main() {
             },
         },
         Emails: []components.Email{
-            components.Email{
-                ID: sdkgo.String("123"),
-                Email: sdkgo.String("elon@musk.com"),
-                Type: components.EmailTypePrimary.ToPointer(),
-            },
+
         },
         CustomFields: []components.CustomField{
-            components.CustomField{
-                ID: sdkgo.String("2389328923893298"),
-                Name: sdkgo.String("employee_level"),
-                Description: sdkgo.String("Employee Level"),
-                Value: sdkgo.Pointer(components.CreateValueFour(
-                    components.Four{},
-                )),
-            },
+
         },
         SocialLinks: []components.SocialLink{
             components.SocialLink{
@@ -403,19 +392,7 @@ func main() {
         RowVersion: sdkgo.String("1-12345"),
         Deleted: sdkgo.Bool(true),
         PassThrough: []components.PassThroughBody{
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                },
-            },
+
         },
     }, nil, sdkgo.String("salesforce"))
     if err != nil {
@@ -894,14 +871,7 @@ func main() {
             components.PassThroughBody{
                 ServiceID: "<id>",
                 ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
+
                 },
             },
         },

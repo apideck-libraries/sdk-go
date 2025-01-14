@@ -258,13 +258,13 @@ type Job struct {
 	Salary      *Salary     `json:"salary,omitempty"`
 	// URL of the job description
 	//
-	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	URL *string `json:"url,omitempty"`
 	// URL of the job portal
 	//
-	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	JobPortalURL *string `json:"job_portal_url,omitempty"`
-	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	RecordURL    *string    `json:"record_url,omitempty"`
 	Links        []JobLinks `json:"links,omitempty"`
 	Confidential *bool      `json:"confidential,omitempty"`

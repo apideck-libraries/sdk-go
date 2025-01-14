@@ -262,7 +262,7 @@ type LedgerAccount struct {
 	DisplayID *string `json:"display_id,omitempty"`
 	// The nominal code of the ledger account.
 	//
-	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	NominalCode *string `json:"nominal_code,omitempty"`
 	// The code assigned to the account.
 	Code *string `json:"code,omitempty"`
@@ -577,7 +577,7 @@ type LedgerAccountInput struct {
 	DisplayID *string `json:"display_id,omitempty"`
 	// The nominal code of the ledger account.
 	//
-	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	NominalCode *string `json:"nominal_code,omitempty"`
 	// The code assigned to the account.
 	Code *string `json:"code,omitempty"`

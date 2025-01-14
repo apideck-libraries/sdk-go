@@ -199,21 +199,10 @@ func main() {
             },
         },
         SocialLinks: []components.SocialLink{
-            components.SocialLink{
-                ID: sdkgo.String("12345"),
-                URL: "https://www.twitter.com/apideck",
-                Type: sdkgo.String("twitter"),
-            },
+
         },
         PhoneNumbers: []components.PhoneNumber{
-            components.PhoneNumber{
-                ID: sdkgo.String("12345"),
-                CountryCode: sdkgo.String("1"),
-                AreaCode: sdkgo.String("323"),
-                Number: "111-111-1111",
-                Extension: sdkgo.String("105"),
-                Type: components.PhoneNumberTypePrimary.ToPointer(),
-            },
+
         },
         Emails: []components.Email{
             components.Email{
@@ -649,19 +638,7 @@ func main() {
         Salutation: sdkgo.String("Mr"),
         Birthday: types.MustNewDateFromString("2000-08-12"),
         PassThrough: []components.PassThroughBody{
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                },
-            },
+
         },
     }, nil, sdkgo.String("salesforce"))
     if err != nil {

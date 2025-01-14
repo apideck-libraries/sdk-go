@@ -205,20 +205,7 @@ func main() {
                     components.ConnectionDefaults{
                         ID: sdkgo.String("ProductInterest"),
                         Options: []components.FormFieldOption{
-                            components.CreateFormFieldOptionFormFieldOptionGroup(
-                                components.FormFieldOptionGroup{
-                                    ID: sdkgo.String("1234"),
-                                    Label: sdkgo.String("General Channel"),
-                                    Options: []components.SimpleFormFieldOption{
-                                        components.SimpleFormFieldOption{
-                                            Label: sdkgo.String("General Channel"),
-                                            Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueBoolean(
-                                                true,
-                                            )),
-                                        },
-                                    },
-                                },
-                            ),
+
                         },
                         Value: sdkgo.Pointer(components.CreateConnectionValueBoolean(
                             true,
@@ -237,12 +224,7 @@ func main() {
                                     ID: sdkgo.String("1234"),
                                     Label: sdkgo.String("General Channel"),
                                     Options: []components.SimpleFormFieldOption{
-                                        components.SimpleFormFieldOption{
-                                            Label: sdkgo.String("General Channel"),
-                                            Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueNumber(
-                                                12.5,
-                                            )),
-                                        },
+
                                     },
                                 },
                             ),
@@ -339,9 +321,7 @@ func main() {
             },
         },
         CustomMappings: []components.CustomMappingInput{
-            components.CustomMappingInput{
-                Value: sdkgo.String("$.root.training.first_aid"),
-            },
+
         },
     })
     if err != nil {

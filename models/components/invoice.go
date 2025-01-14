@@ -145,7 +145,7 @@ type Invoice struct {
 	Deposit *float64 `json:"deposit,omitempty"`
 	// Customer memo
 	CustomerMemo *string `json:"customer_memo,omitempty"`
-	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
 	// A list of linked tracking categories.
 	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
@@ -563,7 +563,7 @@ type InvoiceInput struct {
 	Deposit *float64 `json:"deposit,omitempty"`
 	// Customer memo
 	CustomerMemo *string `json:"customer_memo,omitempty"`
-	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
 	// A list of linked tracking categories.
 	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`

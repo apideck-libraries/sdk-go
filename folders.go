@@ -93,7 +93,9 @@ func (s *Folders) Create(ctx context.Context, createFolderRequest components.Cre
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
-	req.Header.Set("Content-Type", reqContentType)
+	if reqContentType != "" {
+		req.Header.Set("Content-Type", reqContentType)
+	}
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
@@ -781,7 +783,9 @@ func (s *Folders) Update(ctx context.Context, id string, updateFolderRequest com
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
-	req.Header.Set("Content-Type", reqContentType)
+	if reqContentType != "" {
+		req.Header.Set("Content-Type", reqContentType)
+	}
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
@@ -1461,7 +1465,9 @@ func (s *Folders) Copy(ctx context.Context, request operations.FileStorageFolder
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
-	req.Header.Set("Content-Type", reqContentType)
+	if reqContentType != "" {
+		req.Header.Set("Content-Type", reqContentType)
+	}
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 

@@ -477,7 +477,9 @@ func (s *Activities) Create(ctx context.Context, activity components.ActivityInp
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
-	req.Header.Set("Content-Type", reqContentType)
+	if reqContentType != "" {
+		req.Header.Set("Content-Type", reqContentType)
+	}
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
@@ -1165,7 +1167,9 @@ func (s *Activities) Update(ctx context.Context, id string, activity components.
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
-	req.Header.Set("Content-Type", reqContentType)
+	if reqContentType != "" {
+		req.Header.Set("Content-Type", reqContentType)
+	}
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 

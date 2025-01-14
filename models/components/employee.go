@@ -256,7 +256,7 @@ type Employee struct {
 	DivisionID *string `json:"division_id,omitempty"`
 	// The department the person is currently in. [Deprecated](https://developers.apideck.com/changelog) in favor of the dedicated department_id and department_name field.
 	//
-	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	Department *string `json:"department,omitempty"`
 	// Unique identifier of the department ID this employee belongs to.
 	DepartmentID *string `json:"department_id,omitempty"`
@@ -848,7 +848,7 @@ type EmployeeInput struct {
 	DivisionID *string `json:"division_id,omitempty"`
 	// The department the person is currently in. [Deprecated](https://developers.apideck.com/changelog) in favor of the dedicated department_id and department_name field.
 	//
-	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	Department *string `json:"department,omitempty"`
 	// Unique identifier of the department ID this employee belongs to.
 	DepartmentID *string `json:"department_id,omitempty"`

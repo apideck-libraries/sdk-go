@@ -4,7 +4,7 @@ package components
 
 // DeprecatedLinkedSupplier - The supplier this entity is linked to.
 //
-// Deprecated type: This will be removed in a future release, please migrate away from it as soon as possible.
+// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 type DeprecatedLinkedSupplier struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`

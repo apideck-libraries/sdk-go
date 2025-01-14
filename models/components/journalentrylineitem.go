@@ -48,7 +48,7 @@ type JournalEntryLineItem struct {
 	// Debit entries are considered positive, and credit entries are considered negative.
 	Type    JournalEntryLineItemType `json:"type"`
 	TaxRate *LinkedTaxRate           `json:"tax_rate,omitempty"`
-	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
 	// A list of linked tracking categories.
 	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
@@ -182,7 +182,7 @@ type JournalEntryLineItemInput struct {
 	// Debit entries are considered positive, and credit entries are considered negative.
 	Type    JournalEntryLineItemType `json:"type"`
 	TaxRate *LinkedTaxRateInput      `json:"tax_rate,omitempty"`
-	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
 	// A list of linked tracking categories.
 	TrackingCategories []LinkedTrackingCategory  `json:"tracking_categories,omitempty"`

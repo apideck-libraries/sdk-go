@@ -193,26 +193,10 @@ func main() {
             },
         },
         Websites: []components.Website{
-            components.Website{
-                ID: sdkgo.String("12345"),
-                URL: "http://example.com",
-                Type: components.WebsiteTypePrimary.ToPointer(),
-            },
+
         },
         BankAccounts: []components.BankAccount{
-            components.BankAccount{
-                BankName: sdkgo.String("Monzo"),
-                AccountNumber: sdkgo.String("123465"),
-                AccountName: sdkgo.String("SPACEX LLC"),
-                AccountType: components.AccountTypeCreditCard.ToPointer(),
-                Iban: sdkgo.String("CH2989144532982975332"),
-                Bic: sdkgo.String("AUDSCHGGXXX"),
-                RoutingNumber: sdkgo.String("012345678"),
-                BsbNumber: sdkgo.String("062-001"),
-                BranchIdentifier: sdkgo.String("001"),
-                BankCode: sdkgo.String("BNH"),
-                Currency: components.CurrencyUsd.ToPointer(),
-            },
+
         },
         Notes: sdkgo.String("Some notes about this supplier"),
         TaxRate: &components.LinkedTaxRateInput{
@@ -263,27 +247,13 @@ func main() {
             components.PassThroughBody{
                 ServiceID: "<id>",
                 ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
+
                 },
             },
             components.PassThroughBody{
                 ServiceID: "<id>",
                 ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
+
                 },
             },
         },

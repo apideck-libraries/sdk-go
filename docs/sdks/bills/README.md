@@ -248,19 +248,7 @@ func main() {
         },
         RowVersion: sdkgo.String("1-12345"),
         PassThrough: []components.PassThroughBody{
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                },
-            },
+
         },
         AccountingPeriod: sdkgo.String("01-24"),
     }, nil, sdkgo.String("salesforce"))

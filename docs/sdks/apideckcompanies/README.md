@@ -175,27 +175,11 @@ func main() {
             },
         },
         Websites: []components.Website{
-            components.Website{
-                ID: sdkgo.String("12345"),
-                URL: "http://example.com",
-                Type: components.WebsiteTypePrimary.ToPointer(),
-            },
+
         },
         DebtorID: sdkgo.String("12345"),
         PassThrough: []components.PassThroughBody{
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                },
-            },
+
         },
     }, nil, sdkgo.String("salesforce"))
     if err != nil {
