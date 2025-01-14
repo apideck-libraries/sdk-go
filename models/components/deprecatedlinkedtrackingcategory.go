@@ -4,7 +4,7 @@ package components
 
 // DeprecatedLinkedTrackingCategory
 //
-// Deprecated type: This will be removed in a future release, please migrate away from it as soon as possible.
+// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 type DeprecatedLinkedTrackingCategory struct {
 	// The unique identifier for the tracking category.
 	ID *string `json:"id,omitempty"`

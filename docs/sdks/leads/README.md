@@ -212,21 +212,10 @@ func main() {
             },
         },
         PhoneNumbers: []components.PhoneNumber{
-            components.PhoneNumber{
-                ID: sdkgo.String("12345"),
-                CountryCode: sdkgo.String("1"),
-                AreaCode: sdkgo.String("323"),
-                Number: "111-111-1111",
-                Extension: sdkgo.String("105"),
-                Type: components.PhoneNumberTypePrimary.ToPointer(),
-            },
+
         },
         Emails: []components.Email{
-            components.Email{
-                ID: sdkgo.String("123"),
-                Email: sdkgo.String("elon@musk.com"),
-                Type: components.EmailTypePrimary.ToPointer(),
-            },
+
         },
         CustomFields: []components.CustomField{
             components.CustomField{
@@ -637,14 +626,7 @@ func main() {
             components.PassThroughBody{
                 ServiceID: "<id>",
                 ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
+
                 },
             },
         },

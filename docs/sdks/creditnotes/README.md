@@ -206,11 +206,7 @@ func main() {
             },
         },
         Allocations: []components.AllocationInput{
-            components.AllocationInput{
-                ID: sdkgo.String("123456"),
-                Amount: sdkgo.Float64(49.99),
-                AllocationID: sdkgo.String("123456"),
-            },
+
         },
         Note: sdkgo.String("Some notes about this credit note"),
         Terms: sdkgo.String("Some terms about this credit note"),
@@ -675,10 +671,7 @@ func main() {
                     Rate: sdkgo.Float64(10),
                 },
                 TrackingCategories: []components.LinkedTrackingCategory{
-                    components.LinkedTrackingCategory{
-                        ID: sdkgo.String("123456"),
-                        Name: sdkgo.String("New York"),
-                    },
+
                 },
                 LedgerAccount: &components.LinkedLedgerAccountInput{
                     ID: sdkgo.String("123456"),
@@ -686,14 +679,7 @@ func main() {
                     Code: sdkgo.String("453"),
                 },
                 CustomFields: []components.CustomField{
-                    components.CustomField{
-                        ID: sdkgo.String("2389328923893298"),
-                        Name: sdkgo.String("employee_level"),
-                        Description: sdkgo.String("Employee Level"),
-                        Value: sdkgo.Pointer(components.CreateValueFour(
-                            components.Four{},
-                        )),
-                    },
+
                 },
                 RowVersion: sdkgo.String("1-12345"),
             },
@@ -832,14 +818,7 @@ func main() {
             components.PassThroughBody{
                 ServiceID: "<id>",
                 ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
+
                 },
             },
         },

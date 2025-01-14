@@ -107,7 +107,7 @@ type Contact struct {
 	Gender *ContactGender `json:"gender,omitempty"`
 	// The birthday of the contact.
 	Birthday *string `json:"birthday,omitempty"`
-	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	Image *string `json:"image,omitempty"`
 	// The URL of the photo of a person.
 	PhotoURL *string `json:"photo_url,omitempty"`
@@ -480,7 +480,7 @@ type ContactInput struct {
 	Gender *ContactGender `json:"gender,omitempty"`
 	// The birthday of the contact.
 	Birthday *string `json:"birthday,omitempty"`
-	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	Image *string `json:"image,omitempty"`
 	// The URL of the photo of a person.
 	PhotoURL *string `json:"photo_url,omitempty"`

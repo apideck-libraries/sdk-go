@@ -142,7 +142,7 @@ type InvoiceItem struct {
 	AssetAccount    *LinkedLedgerAccount `json:"asset_account,omitempty"`
 	IncomeAccount   *LinkedLedgerAccount `json:"income_account,omitempty"`
 	ExpenseAccount  *LinkedLedgerAccount `json:"expense_account,omitempty"`
-	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
 	// A list of linked tracking categories.
 	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
@@ -463,7 +463,7 @@ type InvoiceItemInput struct {
 	AssetAccount    *LinkedLedgerAccountInput   `json:"asset_account,omitempty"`
 	IncomeAccount   *LinkedLedgerAccountInput   `json:"income_account,omitempty"`
 	ExpenseAccount  *LinkedLedgerAccountInput   `json:"expense_account,omitempty"`
-	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
 	// A list of linked tracking categories.
 	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
