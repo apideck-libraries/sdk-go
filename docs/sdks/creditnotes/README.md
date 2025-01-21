@@ -40,7 +40,9 @@ func main() {
     )
 
     res, err := s.Accounting.CreditNotes.List(ctx, operations.AccountingCreditNotesAllRequest{
+        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
+        Limit: sdkgo.Int64(20),
         Filter: &components.CreditNotesFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
         },
@@ -201,12 +203,106 @@ func main() {
                             "Uses Salesforce and Marketo",
                         )),
                     },
+                    components.CustomField{
+                        ID: sdkgo.String("2389328923893298"),
+                        Name: sdkgo.String("employee_level"),
+                        Description: sdkgo.String("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
+                },
+                RowVersion: sdkgo.String("1-12345"),
+            },
+            components.InvoiceLineItemInput{
+                ID: sdkgo.String("12345"),
+                RowID: sdkgo.String("12345"),
+                Code: sdkgo.String("120-C"),
+                LineNumber: sdkgo.Int64(1),
+                Description: sdkgo.String("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
+                Type: components.InvoiceLineItemTypeSalesItem.ToPointer(),
+                TaxAmount: sdkgo.Float64(27500),
+                TotalAmount: sdkgo.Float64(27500),
+                Quantity: sdkgo.Float64(1),
+                UnitPrice: sdkgo.Float64(27500.5),
+                UnitOfMeasure: sdkgo.String("pc."),
+                DiscountPercentage: sdkgo.Float64(0.01),
+                DiscountAmount: sdkgo.Float64(19.99),
+                LocationID: sdkgo.String("1234"),
+                DepartmentID: sdkgo.String("1234"),
+                Item: &components.LinkedInvoiceItem{
+                    ID: sdkgo.String("12344"),
+                    Code: sdkgo.String("120-C"),
+                    Name: sdkgo.String("Model Y"),
+                },
+                TaxRate: &components.LinkedTaxRateInput{
+                    ID: sdkgo.String("123456"),
+                    Rate: sdkgo.Float64(10),
+                },
+                TrackingCategories: []components.LinkedTrackingCategory{
+                    components.LinkedTrackingCategory{
+                        ID: sdkgo.String("123456"),
+                        Name: sdkgo.String("New York"),
+                    },
+                    components.LinkedTrackingCategory{
+                        ID: sdkgo.String("123456"),
+                        Name: sdkgo.String("New York"),
+                    },
+                    components.LinkedTrackingCategory{
+                        ID: sdkgo.String("123456"),
+                        Name: sdkgo.String("New York"),
+                    },
+                },
+                LedgerAccount: &components.LinkedLedgerAccountInput{
+                    ID: sdkgo.String("123456"),
+                    NominalCode: sdkgo.String("N091"),
+                    Code: sdkgo.String("453"),
+                },
+                CustomFields: []components.CustomField{
+                    components.CustomField{
+                        ID: sdkgo.String("2389328923893298"),
+                        Name: sdkgo.String("employee_level"),
+                        Description: sdkgo.String("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
+                    components.CustomField{
+                        ID: sdkgo.String("2389328923893298"),
+                        Name: sdkgo.String("employee_level"),
+                        Description: sdkgo.String("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateValueNumber(
+                            10,
+                        )),
+                    },
+                    components.CustomField{
+                        ID: sdkgo.String("2389328923893298"),
+                        Name: sdkgo.String("employee_level"),
+                        Description: sdkgo.String("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
                 },
                 RowVersion: sdkgo.String("1-12345"),
             },
         },
         Allocations: []components.AllocationInput{
-
+            components.AllocationInput{
+                ID: sdkgo.String("123456"),
+                Amount: sdkgo.Float64(49.99),
+                AllocationID: sdkgo.String("123456"),
+            },
+            components.AllocationInput{
+                ID: sdkgo.String("123456"),
+                Amount: sdkgo.Float64(49.99),
+                AllocationID: sdkgo.String("123456"),
+            },
+            components.AllocationInput{
+                ID: sdkgo.String("123456"),
+                Amount: sdkgo.Float64(49.99),
+                AllocationID: sdkgo.String("123456"),
+            },
         },
         Note: sdkgo.String("Some notes about this credit note"),
         Terms: sdkgo.String("Some terms about this credit note"),
@@ -281,24 +377,20 @@ func main() {
                 ID: sdkgo.String("2389328923893298"),
                 Name: sdkgo.String("employee_level"),
                 Description: sdkgo.String("Employee Level"),
-                Value: sdkgo.Pointer(components.CreateValueStr(
-                    "Uses Salesforce and Marketo",
+                Value: sdkgo.Pointer(components.CreateValueArrayOfStr(
+                    []string{
+                        "<value>",
+                        "<value>",
+                        "<value>",
+                    },
                 )),
             },
             components.CustomField{
                 ID: sdkgo.String("2389328923893298"),
                 Name: sdkgo.String("employee_level"),
                 Description: sdkgo.String("Employee Level"),
-                Value: sdkgo.Pointer(components.CreateValueNumber(
-                    10,
-                )),
-            },
-            components.CustomField{
-                ID: sdkgo.String("2389328923893298"),
-                Name: sdkgo.String("employee_level"),
-                Description: sdkgo.String("Employee Level"),
-                Value: sdkgo.Pointer(components.CreateValueStr(
-                    "Uses Salesforce and Marketo",
+                Value: sdkgo.Pointer(components.CreateValueBoolean(
+                    true,
                 )),
             },
         },
@@ -315,76 +407,10 @@ func main() {
                             },
                         },
                     },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                },
-            },
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                },
-            },
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
                 },
             },
         },
-    }, nil, sdkgo.String("salesforce"))
+    }, sdkgo.Bool(false), sdkgo.String("salesforce"))
     if err != nil {
         log.Fatal(err)
     }
@@ -444,7 +470,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Accounting.CreditNotes.Get(ctx, "<id>", sdkgo.String("salesforce"), nil, sdkgo.String("id,updated_at"))
+    res, err := s.Accounting.CreditNotes.Get(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false), sdkgo.String("id,updated_at"))
     if err != nil {
         log.Fatal(err)
     }
@@ -580,6 +606,78 @@ func main() {
                         ID: sdkgo.String("2389328923893298"),
                         Name: sdkgo.String("employee_level"),
                         Description: sdkgo.String("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateValueArrayOf6(
+                            []components.Six{
+                                components.Six{},
+                                components.Six{},
+                            },
+                        )),
+                    },
+                    components.CustomField{
+                        ID: sdkgo.String("2389328923893298"),
+                        Name: sdkgo.String("employee_level"),
+                        Description: sdkgo.String("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateValueBoolean(
+                            true,
+                        )),
+                    },
+                },
+                RowVersion: sdkgo.String("1-12345"),
+            },
+            components.InvoiceLineItemInput{
+                ID: sdkgo.String("12345"),
+                RowID: sdkgo.String("12345"),
+                Code: sdkgo.String("120-C"),
+                LineNumber: sdkgo.Int64(1),
+                Description: sdkgo.String("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
+                Type: components.InvoiceLineItemTypeSalesItem.ToPointer(),
+                TaxAmount: sdkgo.Float64(27500),
+                TotalAmount: sdkgo.Float64(27500),
+                Quantity: sdkgo.Float64(1),
+                UnitPrice: sdkgo.Float64(27500.5),
+                UnitOfMeasure: sdkgo.String("pc."),
+                DiscountPercentage: sdkgo.Float64(0.01),
+                DiscountAmount: sdkgo.Float64(19.99),
+                LocationID: sdkgo.String("1234"),
+                DepartmentID: sdkgo.String("1234"),
+                Item: &components.LinkedInvoiceItem{
+                    ID: sdkgo.String("12344"),
+                    Code: sdkgo.String("120-C"),
+                    Name: sdkgo.String("Model Y"),
+                },
+                TaxRate: &components.LinkedTaxRateInput{
+                    ID: sdkgo.String("123456"),
+                    Rate: sdkgo.Float64(10),
+                },
+                TrackingCategories: []components.LinkedTrackingCategory{
+                    components.LinkedTrackingCategory{
+                        ID: sdkgo.String("123456"),
+                        Name: sdkgo.String("New York"),
+                    },
+                    components.LinkedTrackingCategory{
+                        ID: sdkgo.String("123456"),
+                        Name: sdkgo.String("New York"),
+                    },
+                    components.LinkedTrackingCategory{
+                        ID: sdkgo.String("123456"),
+                        Name: sdkgo.String("New York"),
+                    },
+                },
+                LedgerAccount: &components.LinkedLedgerAccountInput{
+                    ID: sdkgo.String("123456"),
+                    NominalCode: sdkgo.String("N091"),
+                    Code: sdkgo.String("453"),
+                },
+                CustomFields: []components.CustomField{
+                    components.CustomField{
+                        ID: sdkgo.String("2389328923893298"),
+                        Name: sdkgo.String("employee_level"),
+                        Description: sdkgo.String("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateValueArrayOf6(
+                            []components.Six{
+                                components.Six{},
+                            },
+                        )),
                     },
                 },
                 RowVersion: sdkgo.String("1-12345"),
@@ -629,57 +727,6 @@ func main() {
                             "Uses Salesforce and Marketo",
                         )),
                     },
-                    components.CustomField{
-                        ID: sdkgo.String("2389328923893298"),
-                        Name: sdkgo.String("employee_level"),
-                        Description: sdkgo.String("Employee Level"),
-                    },
-                    components.CustomField{
-                        ID: sdkgo.String("2389328923893298"),
-                        Name: sdkgo.String("employee_level"),
-                        Description: sdkgo.String("Employee Level"),
-                        Value: sdkgo.Pointer(components.CreateValueNumber(
-                            10,
-                        )),
-                    },
-                },
-                RowVersion: sdkgo.String("1-12345"),
-            },
-            components.InvoiceLineItemInput{
-                ID: sdkgo.String("12345"),
-                RowID: sdkgo.String("12345"),
-                Code: sdkgo.String("120-C"),
-                LineNumber: sdkgo.Int64(1),
-                Description: sdkgo.String("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
-                Type: components.InvoiceLineItemTypeSalesItem.ToPointer(),
-                TaxAmount: sdkgo.Float64(27500),
-                TotalAmount: sdkgo.Float64(27500),
-                Quantity: sdkgo.Float64(1),
-                UnitPrice: sdkgo.Float64(27500.5),
-                UnitOfMeasure: sdkgo.String("pc."),
-                DiscountPercentage: sdkgo.Float64(0.01),
-                DiscountAmount: sdkgo.Float64(19.99),
-                LocationID: sdkgo.String("1234"),
-                DepartmentID: sdkgo.String("1234"),
-                Item: &components.LinkedInvoiceItem{
-                    ID: sdkgo.String("12344"),
-                    Code: sdkgo.String("120-C"),
-                    Name: sdkgo.String("Model Y"),
-                },
-                TaxRate: &components.LinkedTaxRateInput{
-                    ID: sdkgo.String("123456"),
-                    Rate: sdkgo.Float64(10),
-                },
-                TrackingCategories: []components.LinkedTrackingCategory{
-
-                },
-                LedgerAccount: &components.LinkedLedgerAccountInput{
-                    ID: sdkgo.String("123456"),
-                    NominalCode: sdkgo.String("N091"),
-                    Code: sdkgo.String("453"),
-                },
-                CustomFields: []components.CustomField{
-
                 },
                 RowVersion: sdkgo.String("1-12345"),
             },
@@ -800,6 +847,35 @@ func main() {
                             },
                         },
                     },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                },
+            },
+            components.PassThroughBody{
+                ServiceID: "<id>",
+                ExtendPaths: []components.ExtendPaths{
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
                 },
             },
             components.PassThroughBody{
@@ -815,14 +891,8 @@ func main() {
                     },
                 },
             },
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-
-                },
-            },
         },
-    }, sdkgo.String("salesforce"), nil)
+    }, sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }
@@ -883,7 +953,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Accounting.CreditNotes.Delete(ctx, "<id>", sdkgo.String("salesforce"), nil)
+    res, err := s.Accounting.CreditNotes.Delete(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }

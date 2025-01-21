@@ -32,7 +32,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Ecommerce.Stores.Get(ctx, sdkgo.String("salesforce"), nil, sdkgo.String("id,updated_at"))
+    res, err := s.Ecommerce.Stores.Get(ctx, sdkgo.String("salesforce"), sdkgo.Bool(false), sdkgo.String("id,updated_at"))
     if err != nil {
         log.Fatal(err)
     }

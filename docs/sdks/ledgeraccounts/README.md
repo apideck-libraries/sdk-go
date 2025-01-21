@@ -40,7 +40,9 @@ func main() {
     )
 
     res, err := s.Accounting.LedgerAccounts.List(ctx, operations.AccountingLedgerAccountsAllRequest{
+        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
+        Limit: sdkgo.Int64(20),
         Filter: &components.LedgerAccountsFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
         },
@@ -165,6 +167,24 @@ func main() {
         },
         SubAccount: sdkgo.Bool(false),
         LastReconciliationDate: types.MustNewDateFromString("2020-09-30"),
+        CustomFields: []components.CustomField{
+            components.CustomField{
+                ID: sdkgo.String("2389328923893298"),
+                Name: sdkgo.String("employee_level"),
+                Description: sdkgo.String("Employee Level"),
+                Value: sdkgo.Pointer(components.CreateValueFour(
+                    components.Four{},
+                )),
+            },
+            components.CustomField{
+                ID: sdkgo.String("2389328923893298"),
+                Name: sdkgo.String("employee_level"),
+                Description: sdkgo.String("Employee Level"),
+                Value: sdkgo.Pointer(components.CreateValueBoolean(
+                    true,
+                )),
+            },
+        },
         RowVersion: sdkgo.String("1-12345"),
         PassThrough: []components.PassThroughBody{
             components.PassThroughBody{
@@ -178,18 +198,10 @@ func main() {
                             },
                         },
                     },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
                 },
             },
         },
-    }, nil, sdkgo.String("salesforce"))
+    }, sdkgo.Bool(false), sdkgo.String("salesforce"))
     if err != nil {
         log.Fatal(err)
     }
@@ -249,7 +261,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Accounting.LedgerAccounts.Get(ctx, "<id>", sdkgo.String("salesforce"), nil, sdkgo.String("id,updated_at"))
+    res, err := s.Accounting.LedgerAccounts.Get(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false), sdkgo.String("id,updated_at"))
     if err != nil {
         log.Fatal(err)
     }
@@ -353,6 +365,35 @@ func main() {
         },
         SubAccount: sdkgo.Bool(false),
         LastReconciliationDate: types.MustNewDateFromString("2020-09-30"),
+        CustomFields: []components.CustomField{
+            components.CustomField{
+                ID: sdkgo.String("2389328923893298"),
+                Name: sdkgo.String("employee_level"),
+                Description: sdkgo.String("Employee Level"),
+                Value: sdkgo.Pointer(components.CreateValueFour(
+                    components.Four{},
+                )),
+            },
+            components.CustomField{
+                ID: sdkgo.String("2389328923893298"),
+                Name: sdkgo.String("employee_level"),
+                Description: sdkgo.String("Employee Level"),
+                Value: sdkgo.Pointer(components.CreateValueBoolean(
+                    true,
+                )),
+            },
+            components.CustomField{
+                ID: sdkgo.String("2389328923893298"),
+                Name: sdkgo.String("employee_level"),
+                Description: sdkgo.String("Employee Level"),
+                Value: sdkgo.Pointer(components.CreateValueArrayOf6(
+                    []components.Six{
+                        components.Six{},
+                        components.Six{},
+                    },
+                )),
+            },
+        },
         RowVersion: sdkgo.String("1-12345"),
         PassThrough: []components.PassThroughBody{
             components.PassThroughBody{
@@ -374,11 +415,6 @@ func main() {
                             },
                         },
                     },
-                },
-            },
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
                     components.ExtendPaths{
                         Path: "$.nested.property",
                         Value: map[string]any{
@@ -392,22 +428,6 @@ func main() {
             components.PassThroughBody{
                 ServiceID: "<id>",
                 ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
                     components.ExtendPaths{
                         Path: "$.nested.property",
                         Value: map[string]any{
@@ -419,7 +439,7 @@ func main() {
                 },
             },
         },
-    }, sdkgo.String("salesforce"), nil)
+    }, sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }
@@ -480,7 +500,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Accounting.LedgerAccounts.Delete(ctx, "<id>", sdkgo.String("salesforce"), nil)
+    res, err := s.Accounting.LedgerAccounts.Delete(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }

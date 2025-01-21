@@ -35,6 +35,7 @@ func main() {
 
     res, err := s.Hris.EmployeeSchedules.List(ctx, operations.HrisEmployeeSchedulesAllRequest{
         EmployeeID: "<id>",
+        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",

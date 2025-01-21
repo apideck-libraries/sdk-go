@@ -39,7 +39,9 @@ func main() {
     )
 
     res, err := s.Hris.TimeOffRequests.List(ctx, operations.HrisTimeOffRequestsAllRequest{
+        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
+        Limit: sdkgo.Int64(20),
         Filter: &components.TimeOffRequestsFilter{
             StartDate: sdkgo.String("2022-04-08"),
             EndDate: sdkgo.String("2022-04-21"),
@@ -162,9 +164,30 @@ func main() {
                     },
                 },
             },
+            components.PassThroughBody{
+                ServiceID: "<id>",
+                ExtendPaths: []components.ExtendPaths{
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                },
+            },
         },
         PolicyType: sdkgo.String("sick"),
-    }, nil, sdkgo.String("salesforce"))
+    }, sdkgo.Bool(false), sdkgo.String("salesforce"))
     if err != nil {
         log.Fatal(err)
     }
@@ -228,6 +251,7 @@ func main() {
     res, err := s.Hris.TimeOffRequests.Get(ctx, operations.HrisTimeOffRequestsOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
+        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
         EmployeeID: "<id>",
     })
@@ -293,6 +317,7 @@ func main() {
     res, err := s.Hris.TimeOffRequests.Update(ctx, operations.HrisTimeOffRequestsUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
+        Raw: sdkgo.Bool(false),
         EmployeeID: "<id>",
         TimeOffRequest: components.TimeOffRequestInput{
             EmployeeID: sdkgo.String("12345"),
@@ -336,6 +361,14 @@ func main() {
                 components.PassThroughBody{
                     ServiceID: "<id>",
                     ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
                         components.ExtendPaths{
                             Path: "$.nested.property",
                             Value: map[string]any{
@@ -436,7 +469,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Hris.TimeOffRequests.Delete(ctx, "<id>", "<id>", sdkgo.String("salesforce"), nil)
+    res, err := s.Hris.TimeOffRequests.Delete(ctx, "<id>", "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }

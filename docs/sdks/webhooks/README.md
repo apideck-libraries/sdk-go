@@ -36,7 +36,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Webhook.Webhooks.List(ctx, nil, nil)
+    res, err := s.Webhook.Webhooks.List(ctx, nil, sdkgo.Int64(20))
     if err != nil {
         log.Fatal(err)
     }

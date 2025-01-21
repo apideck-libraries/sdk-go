@@ -36,7 +36,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Accounting.Expenses.List(ctx, nil, sdkgo.String("salesforce"), nil, nil)
+    res, err := s.Accounting.Expenses.List(ctx, sdkgo.Bool(false), sdkgo.String("salesforce"), nil, sdkgo.Int64(20))
     if err != nil {
         log.Fatal(err)
     }
@@ -119,6 +119,7 @@ func main() {
         SupplierID: sdkgo.String("12345"),
         CompanyID: sdkgo.String("12345"),
         DepartmentID: sdkgo.String("12345"),
+        PaymentType: components.ExpensePaymentTypeCash.ToPointer(),
         Currency: components.CurrencyUsd.ToPointer(),
         CurrencyRate: sdkgo.Float64(0.69),
         Type: components.ExpenseTypeExpense.ToPointer(),
@@ -162,12 +163,74 @@ func main() {
                     "Uses Salesforce and Marketo",
                 )),
             },
+            components.CustomField{
+                ID: sdkgo.String("2389328923893298"),
+                Name: sdkgo.String("employee_level"),
+                Description: sdkgo.String("Employee Level"),
+                Value: sdkgo.Pointer(components.CreateValueStr(
+                    "Uses Salesforce and Marketo",
+                )),
+            },
         },
         RowVersion: sdkgo.String("1-12345"),
         PassThrough: []components.PassThroughBody{
-
+            components.PassThroughBody{
+                ServiceID: "<id>",
+                ExtendPaths: []components.ExtendPaths{
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                },
+            },
+            components.PassThroughBody{
+                ServiceID: "<id>",
+                ExtendPaths: []components.ExtendPaths{
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                },
+            },
+            components.PassThroughBody{
+                ServiceID: "<id>",
+                ExtendPaths: []components.ExtendPaths{
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                },
+            },
         },
-    }, nil, sdkgo.String("salesforce"))
+    }, sdkgo.Bool(false), sdkgo.String("salesforce"))
     if err != nil {
         log.Fatal(err)
     }
@@ -227,7 +290,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Accounting.Expenses.Get(ctx, "<id>", sdkgo.String("salesforce"), nil)
+    res, err := s.Accounting.Expenses.Get(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }
@@ -297,6 +360,7 @@ func main() {
         SupplierID: sdkgo.String("12345"),
         CompanyID: sdkgo.String("12345"),
         DepartmentID: sdkgo.String("12345"),
+        PaymentType: components.ExpensePaymentTypeCash.ToPointer(),
         Currency: components.CurrencyUsd.ToPointer(),
         CurrencyRate: sdkgo.Float64(0.69),
         Type: components.ExpenseTypeExpense.ToPointer(),
@@ -332,6 +396,10 @@ func main() {
             },
             components.ExpenseLineItemInput{
                 TrackingCategories: []components.LinkedTrackingCategory{
+                    components.LinkedTrackingCategory{
+                        ID: sdkgo.String("123456"),
+                        Name: sdkgo.String("New York"),
+                    },
                     components.LinkedTrackingCategory{
                         ID: sdkgo.String("123456"),
                         Name: sdkgo.String("New York"),
@@ -408,6 +476,14 @@ func main() {
                             },
                         },
                     },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
                 },
             },
             components.PassThroughBody{
@@ -426,11 +502,18 @@ func main() {
             components.PassThroughBody{
                 ServiceID: "<id>",
                 ExtendPaths: []components.ExtendPaths{
-
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
                 },
             },
         },
-    }, sdkgo.String("salesforce"), nil)
+    }, sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }
@@ -491,7 +574,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Accounting.Expenses.Delete(ctx, "<id>", sdkgo.String("salesforce"), nil)
+    res, err := s.Accounting.Expenses.Delete(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }

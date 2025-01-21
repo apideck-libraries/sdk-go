@@ -38,7 +38,9 @@ func main() {
     )
 
     res, err := s.Hris.Departments.List(ctx, operations.HrisDepartmentsAllRequest{
+        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
+        Limit: sdkgo.Int64(20),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
@@ -140,8 +142,29 @@ func main() {
                     },
                 },
             },
+            components.PassThroughBody{
+                ServiceID: "<id>",
+                ExtendPaths: []components.ExtendPaths{
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                },
+            },
         },
-    }, nil, sdkgo.String("salesforce"))
+    }, sdkgo.Bool(false), sdkgo.String("salesforce"))
     if err != nil {
         log.Fatal(err)
     }
@@ -201,7 +224,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Hris.Departments.Get(ctx, "<id>", sdkgo.String("salesforce"), nil, sdkgo.String("id,updated_at"))
+    res, err := s.Hris.Departments.Get(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false), sdkgo.String("id,updated_at"))
     if err != nil {
         log.Fatal(err)
     }
@@ -300,6 +323,14 @@ func main() {
                             },
                         },
                     },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
                 },
             },
             components.PassThroughBody{
@@ -332,7 +363,7 @@ func main() {
                 },
             },
         },
-    }, sdkgo.String("salesforce"), nil)
+    }, sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }
@@ -393,7 +424,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Hris.Departments.Delete(ctx, "<id>", sdkgo.String("salesforce"), nil)
+    res, err := s.Hris.Departments.Delete(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }

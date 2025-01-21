@@ -40,7 +40,9 @@ func main() {
     )
 
     res, err := s.Crm.Activities.List(ctx, operations.CrmActivitiesAllRequest{
+        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
+        Limit: sdkgo.Int64(20),
         Filter: &components.ActivitiesFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
         },
@@ -195,6 +197,17 @@ func main() {
                 ID: sdkgo.String("2389328923893298"),
                 Name: sdkgo.String("employee_level"),
                 Description: sdkgo.String("Employee Level"),
+                Value: sdkgo.Pointer(components.CreateValueFour(
+                    components.Four{},
+                )),
+            },
+            components.CustomField{
+                ID: sdkgo.String("2389328923893298"),
+                Name: sdkgo.String("employee_level"),
+                Description: sdkgo.String("Employee Level"),
+                Value: sdkgo.Pointer(components.CreateValueBoolean(
+                    true,
+                )),
             },
         },
         Attendees: []components.ActivityAttendeeInput{
@@ -211,9 +224,37 @@ func main() {
             },
         },
         PassThrough: []components.PassThroughBody{
-
+            components.PassThroughBody{
+                ServiceID: "<id>",
+                ExtendPaths: []components.ExtendPaths{
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                },
+            },
         },
-    }, nil, sdkgo.String("salesforce"))
+    }, sdkgo.Bool(false), sdkgo.String("salesforce"))
     if err != nil {
         log.Fatal(err)
     }
@@ -273,7 +314,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Crm.Activities.Get(ctx, "<id>", sdkgo.String("salesforce"), nil, sdkgo.String("id,updated_at"))
+    res, err := s.Crm.Activities.Get(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false), sdkgo.String("id,updated_at"))
     if err != nil {
         log.Fatal(err)
     }
@@ -407,6 +448,9 @@ func main() {
                 ID: sdkgo.String("2389328923893298"),
                 Name: sdkgo.String("employee_level"),
                 Description: sdkgo.String("Employee Level"),
+                Value: sdkgo.Pointer(components.CreateValueFour(
+                    components.Four{},
+                )),
             },
             components.CustomField{
                 ID: sdkgo.String("2389328923893298"),
@@ -420,9 +464,26 @@ func main() {
                 ID: sdkgo.String("2389328923893298"),
                 Name: sdkgo.String("employee_level"),
                 Description: sdkgo.String("Employee Level"),
+                Value: sdkgo.Pointer(components.CreateValueArrayOf6(
+                    []components.Six{
+                        components.Six{},
+                        components.Six{},
+                    },
+                )),
             },
         },
         Attendees: []components.ActivityAttendeeInput{
+            components.ActivityAttendeeInput{
+                Name: sdkgo.String("Elon Musk"),
+                FirstName: sdkgo.String("Elon"),
+                MiddleName: sdkgo.String("D."),
+                LastName: sdkgo.String("Musk"),
+                Prefix: sdkgo.String("Mr."),
+                Suffix: sdkgo.String("PhD"),
+                EmailAddress: sdkgo.String("elon@musk.com"),
+                IsOrganizer: sdkgo.Bool(true),
+                Status: components.ActivityAttendeeStatusAccepted.ToPointer(),
+            },
             components.ActivityAttendeeInput{
                 Name: sdkgo.String("Elon Musk"),
                 FirstName: sdkgo.String("Elon"),
@@ -439,28 +500,6 @@ func main() {
             components.PassThroughBody{
                 ServiceID: "<id>",
                 ExtendPaths: []components.ExtendPaths{
-
-                },
-            },
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
                     components.ExtendPaths{
                         Path: "$.nested.property",
                         Value: map[string]any{
@@ -474,6 +513,43 @@ func main() {
             components.PassThroughBody{
                 ServiceID: "<id>",
                 ExtendPaths: []components.ExtendPaths{
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                },
+            },
+            components.PassThroughBody{
+                ServiceID: "<id>",
+                ExtendPaths: []components.ExtendPaths{
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
                     components.ExtendPaths{
                         Path: "$.nested.property",
                         Value: map[string]any{
@@ -485,7 +561,7 @@ func main() {
                 },
             },
         },
-    }, sdkgo.String("salesforce"), nil)
+    }, sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }
@@ -546,7 +622,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Crm.Activities.Delete(ctx, "<id>", sdkgo.String("salesforce"), nil)
+    res, err := s.Crm.Activities.Delete(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }
