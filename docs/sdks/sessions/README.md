@@ -49,7 +49,15 @@ func main() {
             UnifiedApis: []components.UnifiedAPIID{
                 components.UnifiedAPIIDCrm,
             },
-            SessionLength: sdkgo.String("30m"),
+            HideResourceSettings: sdkgo.Bool(false),
+            SandboxMode: sdkgo.Bool(false),
+            IsolationMode: sdkgo.Bool(false),
+            SessionLength: sdkgo.String("1h"),
+            ShowLogs: sdkgo.Bool(true),
+            ShowSuggestions: sdkgo.Bool(false),
+            ShowSidebar: sdkgo.Bool(true),
+            AutoRedirect: sdkgo.Bool(false),
+            HideGuides: sdkgo.Bool(false),
         },
         Theme: &components.Theme{
             Favicon: sdkgo.String("https://res.cloudinary.com/apideck/icons/intercom"),

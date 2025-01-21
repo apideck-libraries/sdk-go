@@ -40,7 +40,9 @@ func main() {
 
     res, err := s.IssueTracking.CollectionTickets.List(ctx, operations.IssueTrackingCollectionTicketsAllRequest{
         CollectionID: "apideck-io",
+        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
+        Limit: sdkgo.Int64(20),
         Sort: &components.TicketsSort{
             By: components.TicketsSortByCreatedAt.ToPointer(),
             Direction: components.SortDirectionDesc.ToPointer(),
@@ -137,6 +139,9 @@ func main() {
             components.AssigneeInput{
                 ID: "12345",
             },
+            components.AssigneeInput{
+                ID: "12345",
+            },
         },
         DueDate: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
         Tags: []components.CollectionTagInput{
@@ -151,11 +156,31 @@ func main() {
             components.PassThroughBody{
                 ServiceID: "<id>",
                 ExtendPaths: []components.ExtendPaths{
-
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                },
+            },
+            components.PassThroughBody{
+                ServiceID: "<id>",
+                ExtendPaths: []components.ExtendPaths{
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
                 },
             },
         },
-    }, nil, sdkgo.String("salesforce"))
+    }, sdkgo.Bool(false), sdkgo.String("salesforce"))
     if err != nil {
         log.Fatal(err)
     }
@@ -220,6 +245,7 @@ func main() {
     res, err := s.IssueTracking.CollectionTickets.Get(ctx, operations.IssueTrackingCollectionTicketsOneRequest{
         TicketID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
+        Raw: sdkgo.Bool(false),
         CollectionID: "apideck-io",
         Fields: sdkgo.String("id,updated_at"),
     })
@@ -286,6 +312,7 @@ func main() {
     res, err := s.IssueTracking.CollectionTickets.Update(ctx, operations.IssueTrackingCollectionTicketsUpdateRequest{
         TicketID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
+        Raw: sdkgo.Bool(false),
         CollectionID: "apideck-io",
         Ticket: components.TicketInput{
             ParentID: sdkgo.String("12345"),
@@ -326,6 +353,27 @@ func main() {
                                 },
                             },
                         },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                    },
+                },
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
                         components.ExtendPaths{
                             Path: "$.nested.property",
                             Value: map[string]any{
@@ -404,7 +452,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.IssueTracking.CollectionTickets.Delete(ctx, "<id>", "apideck-io", sdkgo.String("salesforce"), nil)
+    res, err := s.IssueTracking.CollectionTickets.Delete(ctx, "<id>", "apideck-io", sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }

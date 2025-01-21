@@ -39,7 +39,9 @@ func main() {
     )
 
     res, err := s.Ats.Applicants.List(ctx, operations.AtsApplicantsAllRequest{
+        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
+        Limit: sdkgo.Int64(20),
         Filter: &components.ApplicantsFilter{
             JobID: sdkgo.String("1234"),
         },
@@ -136,6 +138,11 @@ func main() {
                 Email: sdkgo.String("elon@musk.com"),
                 Type: components.EmailTypePrimary.ToPointer(),
             },
+            components.Email{
+                ID: sdkgo.String("123"),
+                Email: sdkgo.String("elon@musk.com"),
+                Type: components.EmailTypePrimary.ToPointer(),
+            },
         },
         CustomFields: []components.CustomField{
             components.CustomField{
@@ -156,7 +163,14 @@ func main() {
             },
         },
         PhoneNumbers: []components.PhoneNumber{
-
+            components.PhoneNumber{
+                ID: sdkgo.String("12345"),
+                CountryCode: sdkgo.String("1"),
+                AreaCode: sdkgo.String("323"),
+                Number: "111-111-1111",
+                Extension: sdkgo.String("105"),
+                Type: components.PhoneNumberTypePrimary.ToPointer(),
+            },
         },
         Addresses: []components.Address{
             components.Address{
@@ -256,7 +270,11 @@ func main() {
             },
         },
         SocialLinks: []components.SocialLinks{
-
+            components.SocialLinks{
+                ID: sdkgo.String("12345"),
+                URL: "https://www.twitter.com/apideck",
+                Type: sdkgo.String("twitter"),
+            },
         },
         StageID: sdkgo.String("12345"),
         RecruiterID: sdkgo.String("12345"),
@@ -286,9 +304,21 @@ func main() {
         RecordURL: sdkgo.String("https://app.intercom.io/contacts/12345"),
         Deleted: sdkgo.Bool(true),
         PassThrough: []components.PassThroughBody{
-
+            components.PassThroughBody{
+                ServiceID: "<id>",
+                ExtendPaths: []components.ExtendPaths{
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                },
+            },
         },
-    }, nil, sdkgo.String("salesforce"))
+    }, sdkgo.Bool(false), sdkgo.String("salesforce"))
     if err != nil {
         log.Fatal(err)
     }
@@ -348,7 +378,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Ats.Applicants.Get(ctx, "<id>", sdkgo.String("salesforce"), nil, sdkgo.String("id,updated_at"))
+    res, err := s.Ats.Applicants.Get(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false), sdkgo.String("id,updated_at"))
     if err != nil {
         log.Fatal(err)
     }
@@ -452,9 +482,23 @@ func main() {
                 ID: sdkgo.String("2389328923893298"),
                 Name: sdkgo.String("employee_level"),
                 Description: sdkgo.String("Employee Level"),
+                Value: sdkgo.Pointer(components.CreateValueArrayOf6(
+                    []components.Six{
+                        components.Six{},
+                        components.Six{},
+                    },
+                )),
             },
         },
         PhoneNumbers: []components.PhoneNumber{
+            components.PhoneNumber{
+                ID: sdkgo.String("12345"),
+                CountryCode: sdkgo.String("1"),
+                AreaCode: sdkgo.String("323"),
+                Number: "111-111-1111",
+                Extension: sdkgo.String("105"),
+                Type: components.PhoneNumberTypePrimary.ToPointer(),
+            },
             components.PhoneNumber{
                 ID: sdkgo.String("12345"),
                 CountryCode: sdkgo.String("1"),
@@ -545,7 +589,11 @@ func main() {
             },
         },
         Websites: []components.Websites{
-
+            components.Websites{
+                ID: sdkgo.String("12345"),
+                URL: "http://example.com",
+                Type: components.ApplicantTypePrimary.ToPointer(),
+            },
         },
         SocialLinks: []components.SocialLinks{
             components.SocialLinks{
@@ -605,8 +653,21 @@ func main() {
                     },
                 },
             },
+            components.PassThroughBody{
+                ServiceID: "<id>",
+                ExtendPaths: []components.ExtendPaths{
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                },
+            },
         },
-    }, sdkgo.String("salesforce"), nil)
+    }, sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }
@@ -667,7 +728,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Ats.Applicants.Delete(ctx, "<id>", sdkgo.String("salesforce"), nil)
+    res, err := s.Ats.Applicants.Delete(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }

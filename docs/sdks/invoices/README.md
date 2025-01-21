@@ -40,7 +40,9 @@ func main() {
     )
 
     res, err := s.Accounting.Invoices.List(ctx, operations.AccountingInvoicesAllRequest{
+        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
+        Limit: sdkgo.Int64(20),
         Filter: &components.InvoicesFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
             CreatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
@@ -159,6 +161,10 @@ func main() {
                 ID: sdkgo.String("123456"),
                 Name: sdkgo.String("New York"),
             },
+            components.LinkedTrackingCategory{
+                ID: sdkgo.String("123456"),
+                Name: sdkgo.String("New York"),
+            },
         },
         LineItems: []components.InvoiceLineItemInput{
             components.InvoiceLineItemInput{
@@ -191,6 +197,10 @@ func main() {
                         ID: sdkgo.String("123456"),
                         Name: sdkgo.String("New York"),
                     },
+                    components.LinkedTrackingCategory{
+                        ID: sdkgo.String("123456"),
+                        Name: sdkgo.String("New York"),
+                    },
                 },
                 LedgerAccount: &components.LinkedLedgerAccountInput{
                     ID: sdkgo.String("123456"),
@@ -198,7 +208,14 @@ func main() {
                     Code: sdkgo.String("453"),
                 },
                 CustomFields: []components.CustomField{
-
+                    components.CustomField{
+                        ID: sdkgo.String("2389328923893298"),
+                        Name: sdkgo.String("employee_level"),
+                        Description: sdkgo.String("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
                 },
                 RowVersion: sdkgo.String("1-12345"),
             },
@@ -228,7 +245,18 @@ func main() {
                     Rate: sdkgo.Float64(10),
                 },
                 TrackingCategories: []components.LinkedTrackingCategory{
-
+                    components.LinkedTrackingCategory{
+                        ID: sdkgo.String("123456"),
+                        Name: sdkgo.String("New York"),
+                    },
+                    components.LinkedTrackingCategory{
+                        ID: sdkgo.String("123456"),
+                        Name: sdkgo.String("New York"),
+                    },
+                    components.LinkedTrackingCategory{
+                        ID: sdkgo.String("123456"),
+                        Name: sdkgo.String("New York"),
+                    },
                 },
                 LedgerAccount: &components.LinkedLedgerAccountInput{
                     ID: sdkgo.String("123456"),
@@ -240,8 +268,8 @@ func main() {
                         ID: sdkgo.String("2389328923893298"),
                         Name: sdkgo.String("employee_level"),
                         Description: sdkgo.String("Employee Level"),
-                        Value: sdkgo.Pointer(components.CreateValueFour(
-                            components.Four{},
+                        Value: sdkgo.Pointer(components.CreateValueStr(
+                            "Uses Salesforce and Marketo",
                         )),
                     },
                     components.CustomField{
@@ -378,11 +406,18 @@ func main() {
             components.PassThroughBody{
                 ServiceID: "<id>",
                 ExtendPaths: []components.ExtendPaths{
-
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
                 },
             },
         },
-    }, nil, sdkgo.String("salesforce"))
+    }, sdkgo.Bool(false), sdkgo.String("salesforce"))
     if err != nil {
         log.Fatal(err)
     }
@@ -442,7 +477,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Accounting.Invoices.Get(ctx, "<id>", sdkgo.String("salesforce"), nil, sdkgo.String("id,updated_at"))
+    res, err := s.Accounting.Invoices.Get(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false), sdkgo.String("id,updated_at"))
     if err != nil {
         log.Fatal(err)
     }
@@ -578,6 +613,10 @@ func main() {
                         ID: sdkgo.String("123456"),
                         Name: sdkgo.String("New York"),
                     },
+                    components.LinkedTrackingCategory{
+                        ID: sdkgo.String("123456"),
+                        Name: sdkgo.String("New York"),
+                    },
                 },
                 LedgerAccount: &components.LinkedLedgerAccountInput{
                     ID: sdkgo.String("123456"),
@@ -589,6 +628,9 @@ func main() {
                         ID: sdkgo.String("2389328923893298"),
                         Name: sdkgo.String("employee_level"),
                         Description: sdkgo.String("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateValueFour(
+                            components.Four{},
+                        )),
                     },
                     components.CustomField{
                         ID: sdkgo.String("2389328923893298"),
@@ -654,6 +696,14 @@ func main() {
                     Code: sdkgo.String("453"),
                 },
                 CustomFields: []components.CustomField{
+                    components.CustomField{
+                        ID: sdkgo.String("2389328923893298"),
+                        Name: sdkgo.String("employee_level"),
+                        Description: sdkgo.String("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateValueNumber(
+                            10,
+                        )),
+                    },
                     components.CustomField{
                         ID: sdkgo.String("2389328923893298"),
                         Name: sdkgo.String("employee_level"),
@@ -743,13 +793,44 @@ func main() {
             Code: sdkgo.String("453"),
         },
         CustomFields: []components.CustomField{
-
+            components.CustomField{
+                ID: sdkgo.String("2389328923893298"),
+                Name: sdkgo.String("employee_level"),
+                Description: sdkgo.String("Employee Level"),
+                Value: sdkgo.Pointer(components.CreateValueArrayOfStr(
+                    []string{
+                        "<value>",
+                        "<value>",
+                        "<value>",
+                    },
+                )),
+            },
         },
         RowVersion: sdkgo.String("1-12345"),
         PassThrough: []components.PassThroughBody{
-
+            components.PassThroughBody{
+                ServiceID: "<id>",
+                ExtendPaths: []components.ExtendPaths{
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                },
+            },
         },
-    }, sdkgo.String("salesforce"), nil)
+    }, sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }
@@ -810,7 +891,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Accounting.Invoices.Delete(ctx, "<id>", sdkgo.String("salesforce"), nil)
+    res, err := s.Accounting.Invoices.Delete(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }

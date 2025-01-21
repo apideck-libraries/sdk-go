@@ -38,7 +38,7 @@ func main() {
         ConnectorID: sdkgo.String("crm+salesforce"),
         StatusCode: sdkgo.Float64(201),
         ExcludeUnifiedApis: sdkgo.String("vault,proxy"),
-    }, nil, nil)
+    }, nil, sdkgo.Int64(20))
     if err != nil {
         log.Fatal(err)
     }

@@ -35,6 +35,7 @@ func main() {
     )
 
     res, err := s.Accounting.ProfitAndLoss.Get(ctx, operations.AccountingProfitAndLossOneRequest{
+        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         Filter: &components.ProfitAndLossFilter{
             CustomerID: sdkgo.String("123abc"),

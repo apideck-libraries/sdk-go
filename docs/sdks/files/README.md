@@ -41,7 +41,9 @@ func main() {
     )
 
     res, err := s.FileStorage.Files.List(ctx, operations.FileStorageFilesAllRequest{
+        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
+        Limit: sdkgo.Int64(20),
         Filter: &components.FilesFilter{
             DriveID: sdkgo.String("1234"),
             FolderID: sdkgo.String("root"),
@@ -133,6 +135,7 @@ func main() {
             "search": "San Francisco",
         },
         Fields: sdkgo.String("id,updated_at"),
+        Limit: sdkgo.Int64(20),
         Filter: &components.FilesFilter{
             DriveID: sdkgo.String("1234"),
             FolderID: sdkgo.String("root"),
@@ -199,7 +202,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.FileStorage.Files.Get(ctx, "<id>", sdkgo.String("salesforce"), nil, sdkgo.String("id,updated_at"))
+    res, err := s.FileStorage.Files.Get(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false), sdkgo.String("id,updated_at"))
     if err != nil {
         log.Fatal(err)
     }
@@ -298,6 +301,14 @@ func main() {
                             },
                         },
                     },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
                 },
             },
             components.PassThroughBody{
@@ -330,7 +341,7 @@ func main() {
                 },
             },
         },
-    }, sdkgo.String("salesforce"), nil)
+    }, sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }
@@ -391,7 +402,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.FileStorage.Files.Delete(ctx, "<id>", sdkgo.String("salesforce"), nil)
+    res, err := s.FileStorage.Files.Delete(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }

@@ -40,7 +40,9 @@ func main() {
     )
 
     res, err := s.Accounting.Customers.List(ctx, operations.AccountingCustomersAllRequest{
+        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
+        Limit: sdkgo.Int64(20),
         Filter: &components.CustomersFilter{
             CompanyName: sdkgo.String("SpaceX"),
             DisplayName: sdkgo.String("Elon Musk"),
@@ -168,6 +170,32 @@ func main() {
                 Notes: sdkgo.String("Address notes or delivery instructions."),
                 RowVersion: sdkgo.String("1-12345"),
             },
+            components.Address{
+                ID: sdkgo.String("123"),
+                Type: components.TypePrimary.ToPointer(),
+                String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
+                Name: sdkgo.String("HQ US"),
+                Line1: sdkgo.String("Main street"),
+                Line2: sdkgo.String("apt #"),
+                Line3: sdkgo.String("Suite #"),
+                Line4: sdkgo.String("delivery instructions"),
+                StreetNumber: sdkgo.String("25"),
+                City: sdkgo.String("San Francisco"),
+                State: sdkgo.String("CA"),
+                PostalCode: sdkgo.String("94104"),
+                Country: sdkgo.String("US"),
+                Latitude: sdkgo.String("40.759211"),
+                Longitude: sdkgo.String("-73.984638"),
+                County: sdkgo.String("Santa Clara"),
+                ContactName: sdkgo.String("Elon Musk"),
+                Salutation: sdkgo.String("Mr"),
+                PhoneNumber: sdkgo.String("111-111-1111"),
+                Fax: sdkgo.String("122-111-1111"),
+                Email: sdkgo.String("elon@musk.com"),
+                Website: sdkgo.String("https://elonmusk.com"),
+                Notes: sdkgo.String("Address notes or delivery instructions."),
+                RowVersion: sdkgo.String("1-12345"),
+            },
         },
         PhoneNumbers: []components.PhoneNumber{
             components.PhoneNumber{
@@ -193,12 +221,33 @@ func main() {
                 Email: sdkgo.String("elon@musk.com"),
                 Type: components.EmailTypePrimary.ToPointer(),
             },
+            components.Email{
+                ID: sdkgo.String("123"),
+                Email: sdkgo.String("elon@musk.com"),
+                Type: components.EmailTypePrimary.ToPointer(),
+            },
         },
         Websites: []components.Website{
-
+            components.Website{
+                ID: sdkgo.String("12345"),
+                URL: "http://example.com",
+                Type: components.WebsiteTypePrimary.ToPointer(),
+            },
         },
         BankAccounts: []components.BankAccount{
-
+            components.BankAccount{
+                BankName: sdkgo.String("Monzo"),
+                AccountNumber: sdkgo.String("123465"),
+                AccountName: sdkgo.String("SPACEX LLC"),
+                AccountType: components.AccountTypeCreditCard.ToPointer(),
+                Iban: sdkgo.String("CH2989144532982975332"),
+                Bic: sdkgo.String("AUDSCHGGXXX"),
+                RoutingNumber: sdkgo.String("012345678"),
+                BsbNumber: sdkgo.String("062-001"),
+                BranchIdentifier: sdkgo.String("001"),
+                BankCode: sdkgo.String("BNH"),
+                Currency: components.CurrencyUsd.ToPointer(),
+            },
         },
         Notes: sdkgo.String("Some notes about this customer"),
         TaxRate: &components.LinkedTaxRateInput{
@@ -219,6 +268,32 @@ func main() {
         Status: components.CustomerStatusStatusActive.ToPointer(),
         PaymentMethod: sdkgo.String("cash"),
         Channel: sdkgo.String("email"),
+        CustomFields: []components.CustomField{
+            components.CustomField{
+                ID: sdkgo.String("2389328923893298"),
+                Name: sdkgo.String("employee_level"),
+                Description: sdkgo.String("Employee Level"),
+                Value: sdkgo.Pointer(components.CreateValueFour(
+                    components.Four{},
+                )),
+            },
+            components.CustomField{
+                ID: sdkgo.String("2389328923893298"),
+                Name: sdkgo.String("employee_level"),
+                Description: sdkgo.String("Employee Level"),
+                Value: sdkgo.Pointer(components.CreateValueNumber(
+                    10,
+                )),
+            },
+            components.CustomField{
+                ID: sdkgo.String("2389328923893298"),
+                Name: sdkgo.String("employee_level"),
+                Description: sdkgo.String("Employee Level"),
+                Value: sdkgo.Pointer(components.CreateValueStr(
+                    "Uses Salesforce and Marketo",
+                )),
+            },
+        },
         RowVersion: sdkgo.String("1-12345"),
         PassThrough: []components.PassThroughBody{
             components.PassThroughBody{
@@ -253,17 +328,55 @@ func main() {
             components.PassThroughBody{
                 ServiceID: "<id>",
                 ExtendPaths: []components.ExtendPaths{
-
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
                 },
             },
             components.PassThroughBody{
                 ServiceID: "<id>",
                 ExtendPaths: []components.ExtendPaths{
-
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
                 },
             },
         },
-    }, nil, sdkgo.String("salesforce"))
+    }, sdkgo.Bool(false), sdkgo.String("salesforce"))
     if err != nil {
         log.Fatal(err)
     }
@@ -323,7 +436,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Accounting.Customers.Get(ctx, "<id>", sdkgo.String("salesforce"), nil, sdkgo.String("id,updated_at"))
+    res, err := s.Accounting.Customers.Get(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false), sdkgo.String("id,updated_at"))
     if err != nil {
         log.Fatal(err)
     }
@@ -501,6 +614,11 @@ func main() {
                 Email: sdkgo.String("elon@musk.com"),
                 Type: components.EmailTypePrimary.ToPointer(),
             },
+            components.Email{
+                ID: sdkgo.String("123"),
+                Email: sdkgo.String("elon@musk.com"),
+                Type: components.EmailTypePrimary.ToPointer(),
+            },
         },
         Websites: []components.Website{
             components.Website{
@@ -566,6 +684,26 @@ func main() {
         Status: components.CustomerStatusStatusActive.ToPointer(),
         PaymentMethod: sdkgo.String("cash"),
         Channel: sdkgo.String("email"),
+        CustomFields: []components.CustomField{
+            components.CustomField{
+                ID: sdkgo.String("2389328923893298"),
+                Name: sdkgo.String("employee_level"),
+                Description: sdkgo.String("Employee Level"),
+                Value: sdkgo.Pointer(components.CreateValueFour(
+                    components.Four{},
+                )),
+            },
+            components.CustomField{
+                ID: sdkgo.String("2389328923893298"),
+                Name: sdkgo.String("employee_level"),
+                Description: sdkgo.String("Employee Level"),
+                Value: sdkgo.Pointer(components.CreateValueArrayOf6(
+                    []components.Six{
+                        components.Six{},
+                    },
+                )),
+            },
+        },
         RowVersion: sdkgo.String("1-12345"),
         PassThrough: []components.PassThroughBody{
             components.PassThroughBody{
@@ -579,26 +717,10 @@ func main() {
                             },
                         },
                     },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
                 },
             },
         },
-    }, sdkgo.String("salesforce"), nil)
+    }, sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }
@@ -659,7 +781,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Accounting.Customers.Delete(ctx, "<id>", sdkgo.String("salesforce"), nil)
+    res, err := s.Accounting.Customers.Delete(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }

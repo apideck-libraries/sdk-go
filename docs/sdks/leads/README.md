@@ -39,7 +39,9 @@ func main() {
     )
 
     res, err := s.Crm.Leads.List(ctx, operations.CrmLeadsAllRequest{
+        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
+        Limit: sdkgo.Int64(20),
         Filter: &components.LeadsFilter{
             FirstName: sdkgo.String("Elon"),
             LastName: sdkgo.String("Musk"),
@@ -149,6 +151,11 @@ func main() {
                 URL: "http://example.com",
                 Type: components.WebsiteTypePrimary.ToPointer(),
             },
+            components.Website{
+                ID: sdkgo.String("12345"),
+                URL: "http://example.com",
+                Type: components.WebsiteTypePrimary.ToPointer(),
+            },
         },
         Addresses: []components.Address{
             components.Address{
@@ -210,12 +217,28 @@ func main() {
                 URL: "https://www.twitter.com/apideck",
                 Type: sdkgo.String("twitter"),
             },
+            components.SocialLink{
+                ID: sdkgo.String("12345"),
+                URL: "https://www.twitter.com/apideck",
+                Type: sdkgo.String("twitter"),
+            },
         },
         PhoneNumbers: []components.PhoneNumber{
-
+            components.PhoneNumber{
+                ID: sdkgo.String("12345"),
+                CountryCode: sdkgo.String("1"),
+                AreaCode: sdkgo.String("323"),
+                Number: "111-111-1111",
+                Extension: sdkgo.String("105"),
+                Type: components.PhoneNumberTypePrimary.ToPointer(),
+            },
         },
         Emails: []components.Email{
-
+            components.Email{
+                ID: sdkgo.String("123"),
+                Email: sdkgo.String("elon@musk.com"),
+                Type: components.EmailTypePrimary.ToPointer(),
+            },
         },
         CustomFields: []components.CustomField{
             components.CustomField{
@@ -327,7 +350,7 @@ func main() {
                 },
             },
         },
-    }, nil, sdkgo.String("salesforce"))
+    }, sdkgo.Bool(false), sdkgo.String("salesforce"))
     if err != nil {
         log.Fatal(err)
     }
@@ -387,7 +410,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Crm.Leads.Get(ctx, "<id>", sdkgo.String("salesforce"), nil, sdkgo.String("id,updated_at"))
+    res, err := s.Crm.Leads.Get(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false), sdkgo.String("id,updated_at"))
     if err != nil {
         log.Fatal(err)
     }
@@ -544,6 +567,11 @@ func main() {
                 URL: "https://www.twitter.com/apideck",
                 Type: sdkgo.String("twitter"),
             },
+            components.SocialLink{
+                ID: sdkgo.String("12345"),
+                URL: "https://www.twitter.com/apideck",
+                Type: sdkgo.String("twitter"),
+            },
         },
         PhoneNumbers: []components.PhoneNumber{
             components.PhoneNumber{
@@ -592,6 +620,16 @@ func main() {
                     components.Four{},
                 )),
             },
+            components.CustomField{
+                ID: sdkgo.String("2389328923893298"),
+                Name: sdkgo.String("employee_level"),
+                Description: sdkgo.String("Employee Level"),
+                Value: sdkgo.Pointer(components.CreateValueArrayOf6(
+                    []components.Six{
+                        components.Six{},
+                    },
+                )),
+            },
         },
         Tags: []string{
             "New",
@@ -610,27 +648,8 @@ func main() {
                     },
                 },
             },
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                },
-            },
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-
-                },
-            },
         },
-    }, sdkgo.String("salesforce"), nil)
+    }, sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }
@@ -691,7 +710,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Crm.Leads.Delete(ctx, "<id>", sdkgo.String("salesforce"), nil)
+    res, err := s.Crm.Leads.Delete(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }

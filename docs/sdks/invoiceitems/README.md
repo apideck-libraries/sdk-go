@@ -39,7 +39,9 @@ func main() {
     )
 
     res, err := s.Accounting.InvoiceItems.List(ctx, operations.AccountingInvoiceItemsAllRequest{
+        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
+        Limit: sdkgo.Int64(20),
         Filter: &components.InvoiceItemsFilter{
             Name: sdkgo.String("Widgets Large"),
             Type: components.InvoiceItemTypeService.ToPointer(),
@@ -170,6 +172,10 @@ func main() {
                 ID: sdkgo.String("123456"),
                 Name: sdkgo.String("New York"),
             },
+            components.LinkedTrackingCategory{
+                ID: sdkgo.String("123456"),
+                Name: sdkgo.String("New York"),
+            },
         },
         Active: sdkgo.Bool(true),
         RowVersion: sdkgo.String("1-12345"),
@@ -185,16 +191,31 @@ func main() {
                             },
                         },
                     },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
                 },
             },
             components.PassThroughBody{
                 ServiceID: "<id>",
                 ExtendPaths: []components.ExtendPaths{
-
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
                 },
             },
         },
-    }, nil, sdkgo.String("salesforce"))
+    }, sdkgo.Bool(false), sdkgo.String("salesforce"))
     if err != nil {
         log.Fatal(err)
     }
@@ -259,6 +280,7 @@ func main() {
     res, err := s.Accounting.InvoiceItems.Get(ctx, operations.AccountingInvoiceItemsOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
+        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
         Filter: &components.InvoiceItemFilter{
             Type: components.InvoiceItemFilterInvoiceItemTypeService.ToPointer(),
@@ -396,6 +418,14 @@ func main() {
                             },
                         },
                     },
+                    components.ExtendPaths{
+                        Path: "$.nested.property",
+                        Value: map[string]any{
+                            "TaxClassificationRef": map[string]any{
+                                "value": "EUC-99990201-V1-00020000",
+                            },
+                        },
+                    },
                 },
             },
             components.PassThroughBody{
@@ -428,7 +458,7 @@ func main() {
                 },
             },
         },
-    }, sdkgo.String("salesforce"), nil)
+    }, sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }
@@ -489,7 +519,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Accounting.InvoiceItems.Delete(ctx, "<id>", sdkgo.String("salesforce"), nil)
+    res, err := s.Accounting.InvoiceItems.Delete(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }

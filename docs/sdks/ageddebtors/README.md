@@ -35,6 +35,7 @@ func main() {
     )
 
     res, err := s.Accounting.AgedDebtors.Get(ctx, operations.AccountingAgedDebtorsOneRequest{
+        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         Filter: &components.AgedReportFilter{
             CustomerID: sdkgo.String("123abc"),

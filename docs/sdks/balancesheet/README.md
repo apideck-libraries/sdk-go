@@ -40,7 +40,7 @@ func main() {
         EndDate: sdkgo.String("2021-12-31"),
         PeriodCount: sdkgo.Int64(3),
         PeriodType: components.PeriodTypeMonth.ToPointer(),
-    }, nil)
+    }, sdkgo.Bool(false))
     if err != nil {
         log.Fatal(err)
     }
