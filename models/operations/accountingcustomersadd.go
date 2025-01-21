@@ -31,6 +31,10 @@ func (o *AccountingCustomersAddGlobals) GetAppID() *string {
 type AccountingCustomersAddRequest struct {
 	// Include raw response. Mostly used for debugging purposes
 	Raw *bool `default:"false" queryParam:"style=form,explode=true,name=raw"`
+	// ID of the consumer which you want to get or push data from
+	ConsumerID *string `header:"style=simple,explode=false,name=x-apideck-consumer-id"`
+	// The ID of your Unify application
+	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 	// Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.
 	ServiceID *string                  `header:"style=simple,explode=false,name=x-apideck-service-id"`
 	Customer  components.CustomerInput `request:"mediaType=application/json"`
@@ -52,6 +56,20 @@ func (o *AccountingCustomersAddRequest) GetRaw() *bool {
 		return nil
 	}
 	return o.Raw
+}
+
+func (o *AccountingCustomersAddRequest) GetConsumerID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ConsumerID
+}
+
+func (o *AccountingCustomersAddRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
 }
 
 func (o *AccountingCustomersAddRequest) GetServiceID() *string {

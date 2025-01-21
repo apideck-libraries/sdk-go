@@ -19,8 +19,17 @@ func (o *ConnectorConnectorsOneGlobals) GetAppID() *string {
 }
 
 type ConnectorConnectorsOneRequest struct {
+	// The ID of your Unify application
+	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 	// ID of the record you are acting upon.
 	ID string `pathParam:"style=simple,explode=false,name=id"`
+}
+
+func (o *ConnectorConnectorsOneRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
 }
 
 func (o *ConnectorConnectorsOneRequest) GetID() string {

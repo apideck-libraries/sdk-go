@@ -113,6 +113,7 @@ import(
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
+	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
 
@@ -125,69 +126,73 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Hris.TimeOffRequests.Create(ctx, components.TimeOffRequestInput{
-        EmployeeID: sdkgo.String("12345"),
-        PolicyID: sdkgo.String("12345"),
-        Status: components.TimeOffRequestStatusStatusApproved.ToPointer(),
-        Description: sdkgo.String("Enjoying some sun."),
-        StartDate: sdkgo.String("2022-04-01"),
-        EndDate: sdkgo.String("2022-04-01"),
-        RequestDate: sdkgo.String("2022-03-21"),
-        RequestType: components.RequestTypeVacation.ToPointer(),
-        ApprovalDate: sdkgo.String("2022-03-21"),
-        Units: components.UnitsHours.ToPointer(),
-        Amount: sdkgo.Float64(3.5),
-        DayPart: sdkgo.String("morning"),
-        Notes: &components.Notes{
-            Employee: sdkgo.String("Relaxing on the beach for a few hours."),
-            Manager: sdkgo.String("Enjoy!"),
-        },
-        PassThrough: []components.PassThroughBody{
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
+    res, err := s.Hris.TimeOffRequests.Create(ctx, operations.HrisTimeOffRequestsAddRequest{
+        Raw: sdkgo.Bool(false),
+        ServiceID: sdkgo.String("salesforce"),
+        TimeOffRequest: components.TimeOffRequestInput{
+            EmployeeID: sdkgo.String("12345"),
+            PolicyID: sdkgo.String("12345"),
+            Status: components.TimeOffRequestStatusStatusApproved.ToPointer(),
+            Description: sdkgo.String("Enjoying some sun."),
+            StartDate: sdkgo.String("2022-04-01"),
+            EndDate: sdkgo.String("2022-04-01"),
+            RequestDate: sdkgo.String("2022-03-21"),
+            RequestType: components.RequestTypeVacation.ToPointer(),
+            ApprovalDate: sdkgo.String("2022-03-21"),
+            Units: components.UnitsHours.ToPointer(),
+            Amount: sdkgo.Float64(3.5),
+            DayPart: sdkgo.String("morning"),
+            Notes: &components.Notes{
+                Employee: sdkgo.String("Relaxing on the beach for a few hours."),
+                Manager: sdkgo.String("Enjoy!"),
+            },
+            PassThrough: []components.PassThroughBody{
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
                             },
                         },
                     },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
+                },
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
                             },
                         },
                     },
                 },
             },
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                },
-            },
+            PolicyType: sdkgo.String("sick"),
         },
-        PolicyType: sdkgo.String("sick"),
-    }, sdkgo.Bool(false), sdkgo.String("salesforce"))
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -199,13 +204,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                     | Type                                                                                                                                          | Required                                                                                                                                      | Description                                                                                                                                   | Example                                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                         | [context.Context](https://pkg.go.dev/context#Context)                                                                                         | :heavy_check_mark:                                                                                                                            | The context to use for the request.                                                                                                           |                                                                                                                                               |
-| `timeOffRequest`                                                                                                                              | [components.TimeOffRequestInput](../../models/components/timeoffrequestinput.md)                                                              | :heavy_check_mark:                                                                                                                            | N/A                                                                                                                                           |                                                                                                                                               |
-| `raw`                                                                                                                                         | **bool*                                                                                                                                       | :heavy_minus_sign:                                                                                                                            | Include raw response. Mostly used for debugging purposes                                                                                      |                                                                                                                                               |
-| `serviceID`                                                                                                                                   | **string*                                                                                                                                     | :heavy_minus_sign:                                                                                                                            | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | salesforce                                                                                                                                    |
-| `opts`                                                                                                                                        | [][operations.Option](../../models/operations/option.md)                                                                                      | :heavy_minus_sign:                                                                                                                            | The options for this request.                                                                                                                 |                                                                                                                                               |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                | :heavy_check_mark:                                                                                   | The context to use for the request.                                                                  |
+| `request`                                                                                            | [operations.HrisTimeOffRequestsAddRequest](../../models/operations/hristimeoffrequestsaddrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `opts`                                                                                               | [][operations.Option](../../models/operations/option.md)                                             | :heavy_minus_sign:                                                                                   | The options for this request.                                                                        |
 
 ### Response
 
@@ -457,6 +460,7 @@ import(
 	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
 
@@ -469,7 +473,12 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Hris.TimeOffRequests.Delete(ctx, "<id>", "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false))
+    res, err := s.Hris.TimeOffRequests.Delete(ctx, operations.HrisTimeOffRequestsDeleteRequest{
+        ID: "<id>",
+        ServiceID: sdkgo.String("salesforce"),
+        Raw: sdkgo.Bool(false),
+        EmployeeID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -481,14 +490,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                     | Type                                                                                                                                          | Required                                                                                                                                      | Description                                                                                                                                   | Example                                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                         | [context.Context](https://pkg.go.dev/context#Context)                                                                                         | :heavy_check_mark:                                                                                                                            | The context to use for the request.                                                                                                           |                                                                                                                                               |
-| `id`                                                                                                                                          | *string*                                                                                                                                      | :heavy_check_mark:                                                                                                                            | ID of the record you are acting upon.                                                                                                         |                                                                                                                                               |
-| `employeeID`                                                                                                                                  | *string*                                                                                                                                      | :heavy_check_mark:                                                                                                                            | ID of the employee you are acting upon.                                                                                                       |                                                                                                                                               |
-| `serviceID`                                                                                                                                   | **string*                                                                                                                                     | :heavy_minus_sign:                                                                                                                            | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | salesforce                                                                                                                                    |
-| `raw`                                                                                                                                         | **bool*                                                                                                                                       | :heavy_minus_sign:                                                                                                                            | Include raw response. Mostly used for debugging purposes                                                                                      |                                                                                                                                               |
-| `opts`                                                                                                                                        | [][operations.Option](../../models/operations/option.md)                                                                                      | :heavy_minus_sign:                                                                                                                            | The options for this request.                                                                                                                 |                                                                                                                                               |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                      | :heavy_check_mark:                                                                                         | The context to use for the request.                                                                        |
+| `request`                                                                                                  | [operations.HrisTimeOffRequestsDeleteRequest](../../models/operations/hristimeoffrequestsdeleterequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `opts`                                                                                                     | [][operations.Option](../../models/operations/option.md)                                                   | :heavy_minus_sign:                                                                                         | The options for this request.                                                                              |
 
 ### Response
 

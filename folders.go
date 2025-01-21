@@ -28,19 +28,12 @@ func newFolders(sdkConfig sdkConfiguration) *Folders {
 
 // Create Folder
 // Create Folder
-func (s *Folders) Create(ctx context.Context, createFolderRequest components.CreateFolderRequest, raw *bool, serviceID *string, fields *string, opts ...operations.Option) (*operations.FileStorageFoldersAddResponse, error) {
+func (s *Folders) Create(ctx context.Context, request operations.FileStorageFoldersAddRequest, opts ...operations.Option) (*operations.FileStorageFoldersAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.foldersAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageFoldersAddRequest{
-		Raw:                 raw,
-		ServiceID:           serviceID,
-		Fields:              fields,
-		CreateFolderRequest: createFolderRequest,
 	}
 
 	globals := operations.FileStorageFoldersAddGlobals{
@@ -381,19 +374,12 @@ func (s *Folders) Create(ctx context.Context, createFolderRequest components.Cre
 
 // Get Folder
 // Get Folder
-func (s *Folders) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.FileStorageFoldersOneResponse, error) {
+func (s *Folders) Get(ctx context.Context, request operations.FileStorageFoldersOneRequest, opts ...operations.Option) (*operations.FileStorageFoldersOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.foldersOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageFoldersOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.FileStorageFoldersOneGlobals{
@@ -726,19 +712,12 @@ func (s *Folders) Get(ctx context.Context, id string, serviceID *string, raw *bo
 
 // Update - Rename or move Folder
 // Rename or move Folder
-func (s *Folders) Update(ctx context.Context, id string, updateFolderRequest components.UpdateFolderRequest, serviceID *string, raw *bool, opts ...operations.Option) (*operations.FileStorageFoldersUpdateResponse, error) {
+func (s *Folders) Update(ctx context.Context, request operations.FileStorageFoldersUpdateRequest, opts ...operations.Option) (*operations.FileStorageFoldersUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.foldersUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageFoldersUpdateRequest{
-		ID:                  id,
-		ServiceID:           serviceID,
-		Raw:                 raw,
-		UpdateFolderRequest: updateFolderRequest,
 	}
 
 	globals := operations.FileStorageFoldersUpdateGlobals{
@@ -1079,18 +1058,12 @@ func (s *Folders) Update(ctx context.Context, id string, updateFolderRequest com
 
 // Delete Folder
 // Delete Folder
-func (s *Folders) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.FileStorageFoldersDeleteResponse, error) {
+func (s *Folders) Delete(ctx context.Context, request operations.FileStorageFoldersDeleteRequest, opts ...operations.Option) (*operations.FileStorageFoldersDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.foldersDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageFoldersDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.FileStorageFoldersDeleteGlobals{

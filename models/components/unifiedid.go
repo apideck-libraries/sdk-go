@@ -2,6 +2,7 @@
 
 package components
 
+// UnifiedID - A object containing a unique identifier for the resource that was created, updated, or deleted.
 type UnifiedID struct {
 	// The unique identifier of the resource
 	ID string `json:"id"`

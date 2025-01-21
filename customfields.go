@@ -27,19 +27,12 @@ func newCustomFields(sdkConfig sdkConfiguration) *CustomFields {
 
 // List - Get resource custom fields
 // This endpoint returns an custom fields on a connection resource.
-func (s *CustomFields) List(ctx context.Context, unifiedAPI string, serviceID string, resource string, resourceID *string, opts ...operations.Option) (*operations.VaultCustomFieldsAllResponse, error) {
+func (s *CustomFields) List(ctx context.Context, request operations.VaultCustomFieldsAllRequest, opts ...operations.Option) (*operations.VaultCustomFieldsAllResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.customFieldsAll",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.VaultCustomFieldsAllRequest{
-		UnifiedAPI: unifiedAPI,
-		ServiceID:  serviceID,
-		Resource:   resource,
-		ResourceID: resourceID,
 	}
 
 	globals := operations.VaultCustomFieldsAllGlobals{

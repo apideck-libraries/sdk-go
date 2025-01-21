@@ -21,6 +21,8 @@ func (o *WebhookWebhooksOneGlobals) GetAppID() *string {
 type WebhookWebhooksOneRequest struct {
 	// JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.
 	ID string `pathParam:"style=simple,explode=false,name=id"`
+	// The ID of your Unify application
+	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
 func (o *WebhookWebhooksOneRequest) GetID() string {
@@ -28,6 +30,13 @@ func (o *WebhookWebhooksOneRequest) GetID() string {
 		return ""
 	}
 	return o.ID
+}
+
+func (o *WebhookWebhooksOneRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
 }
 
 type WebhookWebhooksOneResponse struct {

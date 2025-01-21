@@ -19,12 +19,21 @@ func (o *VaultConsumerRequestCountsAllGlobals) GetAppID() *string {
 }
 
 type VaultConsumerRequestCountsAllRequest struct {
+	// The ID of your Unify application
+	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 	// ID of the consumer to return
 	ConsumerID string `pathParam:"style=simple,explode=false,name=consumer_id"`
 	// Scopes results to requests that happened after datetime
 	StartDatetime string `queryParam:"style=form,explode=true,name=start_datetime"`
 	// Scopes results to requests that happened before datetime
 	EndDatetime string `queryParam:"style=form,explode=true,name=end_datetime"`
+}
+
+func (o *VaultConsumerRequestCountsAllRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
 }
 
 func (o *VaultConsumerRequestCountsAllRequest) GetConsumerID() string {

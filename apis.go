@@ -30,7 +30,7 @@ func newApis(sdkConfig sdkConfiguration) *Apis {
 
 // List APIs
 // List APIs
-func (s *Apis) List(ctx context.Context, cursor *string, limit *int64, filter *components.ApisFilter, opts ...operations.Option) (*operations.ConnectorApisAllResponse, error) {
+func (s *Apis) List(ctx context.Context, appID *string, cursor *string, limit *int64, filter *components.ApisFilter, opts ...operations.Option) (*operations.ConnectorApisAllResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "connector.apisAll",
@@ -39,6 +39,7 @@ func (s *Apis) List(ctx context.Context, cursor *string, limit *int64, filter *c
 	}
 
 	request := operations.ConnectorApisAllRequest{
+		AppID:  appID,
 		Cursor: cursor,
 		Limit:  limit,
 		Filter: filter,
@@ -240,6 +241,7 @@ func (s *Apis) List(ctx context.Context, cursor *string, limit *int64, filter *c
 
 		return s.List(
 			ctx,
+			appID,
 			&nCVal,
 			limit,
 			filter,
@@ -373,7 +375,7 @@ func (s *Apis) List(ctx context.Context, cursor *string, limit *int64, filter *c
 
 // Get API
 // Get API
-func (s *Apis) Get(ctx context.Context, id string, opts ...operations.Option) (*operations.ConnectorApisOneResponse, error) {
+func (s *Apis) Get(ctx context.Context, id string, appID *string, opts ...operations.Option) (*operations.ConnectorApisOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "connector.apisOne",
@@ -382,7 +384,8 @@ func (s *Apis) Get(ctx context.Context, id string, opts ...operations.Option) (*
 	}
 
 	request := operations.ConnectorApisOneRequest{
-		ID: id,
+		AppID: appID,
+		ID:    id,
 	}
 
 	globals := operations.ConnectorApisOneGlobals{

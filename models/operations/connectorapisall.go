@@ -20,6 +20,8 @@ func (o *ConnectorApisAllGlobals) GetAppID() *string {
 }
 
 type ConnectorApisAllRequest struct {
+	// The ID of your Unify application
+	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 	// Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 	Cursor *string `queryParam:"style=form,explode=true,name=cursor"`
 	// Number of results to return. Minimum 1, Maximum 200, Default 20
@@ -37,6 +39,13 @@ func (c *ConnectorApisAllRequest) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
+}
+
+func (o *ConnectorApisAllRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
 }
 
 func (o *ConnectorApisAllRequest) GetCursor() *string {

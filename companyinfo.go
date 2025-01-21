@@ -28,18 +28,12 @@ func newCompanyInfo(sdkConfig sdkConfiguration) *CompanyInfo {
 
 // Get company info
 // Get company info
-func (s *CompanyInfo) Get(ctx context.Context, raw *bool, serviceID *string, fields *string, opts ...operations.Option) (*operations.AccountingCompanyInfoOneResponse, error) {
+func (s *CompanyInfo) Get(ctx context.Context, request operations.AccountingCompanyInfoOneRequest, opts ...operations.Option) (*operations.AccountingCompanyInfoOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.companyInfoOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingCompanyInfoOneRequest{
-		Raw:       raw,
-		ServiceID: serviceID,
-		Fields:    fields,
 	}
 
 	globals := operations.AccountingCompanyInfoOneGlobals{

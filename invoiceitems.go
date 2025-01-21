@@ -237,6 +237,8 @@ func (s *InvoiceItems) List(ctx context.Context, request operations.AccountingIn
 			ctx,
 			operations.AccountingInvoiceItemsAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -416,18 +418,12 @@ func (s *InvoiceItems) List(ctx context.Context, request operations.AccountingIn
 
 // Create Invoice Item
 // Create Invoice Item
-func (s *InvoiceItems) Create(ctx context.Context, invoiceItem components.InvoiceItemInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.AccountingInvoiceItemsAddResponse, error) {
+func (s *InvoiceItems) Create(ctx context.Context, request operations.AccountingInvoiceItemsAddRequest, opts ...operations.Option) (*operations.AccountingInvoiceItemsAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.invoiceItemsAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingInvoiceItemsAddRequest{
-		Raw:         raw,
-		ServiceID:   serviceID,
-		InvoiceItem: invoiceItem,
 	}
 
 	globals := operations.AccountingInvoiceItemsAddGlobals{
@@ -1106,19 +1102,12 @@ func (s *InvoiceItems) Get(ctx context.Context, request operations.AccountingInv
 
 // Update Invoice Item
 // Update Invoice Item
-func (s *InvoiceItems) Update(ctx context.Context, id string, invoiceItem components.InvoiceItemInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingInvoiceItemsUpdateResponse, error) {
+func (s *InvoiceItems) Update(ctx context.Context, request operations.AccountingInvoiceItemsUpdateRequest, opts ...operations.Option) (*operations.AccountingInvoiceItemsUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.invoiceItemsUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingInvoiceItemsUpdateRequest{
-		ID:          id,
-		ServiceID:   serviceID,
-		Raw:         raw,
-		InvoiceItem: invoiceItem,
 	}
 
 	globals := operations.AccountingInvoiceItemsUpdateGlobals{
@@ -1459,18 +1448,12 @@ func (s *InvoiceItems) Update(ctx context.Context, id string, invoiceItem compon
 
 // Delete Invoice Item
 // Delete Invoice Item
-func (s *InvoiceItems) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingInvoiceItemsDeleteResponse, error) {
+func (s *InvoiceItems) Delete(ctx context.Context, request operations.AccountingInvoiceItemsDeleteRequest, opts ...operations.Option) (*operations.AccountingInvoiceItemsDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.invoiceItemsDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingInvoiceItemsDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AccountingInvoiceItemsDeleteGlobals{

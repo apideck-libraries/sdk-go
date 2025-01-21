@@ -237,6 +237,8 @@ func (s *TimeOffRequests) List(ctx context.Context, request operations.HrisTimeO
 			ctx,
 			operations.HrisTimeOffRequestsAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -416,18 +418,12 @@ func (s *TimeOffRequests) List(ctx context.Context, request operations.HrisTimeO
 
 // Create Time Off Request
 // Create Time Off Request
-func (s *TimeOffRequests) Create(ctx context.Context, timeOffRequest components.TimeOffRequestInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.HrisTimeOffRequestsAddResponse, error) {
+func (s *TimeOffRequests) Create(ctx context.Context, request operations.HrisTimeOffRequestsAddRequest, opts ...operations.Option) (*operations.HrisTimeOffRequestsAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "hris.timeOffRequestsAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.HrisTimeOffRequestsAddRequest{
-		Raw:            raw,
-		ServiceID:      serviceID,
-		TimeOffRequest: timeOffRequest,
 	}
 
 	globals := operations.HrisTimeOffRequestsAddGlobals{
@@ -1452,19 +1448,12 @@ func (s *TimeOffRequests) Update(ctx context.Context, request operations.HrisTim
 
 // Delete Time Off Request
 // Delete Time Off Request
-func (s *TimeOffRequests) Delete(ctx context.Context, id string, employeeID string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.HrisTimeOffRequestsDeleteResponse, error) {
+func (s *TimeOffRequests) Delete(ctx context.Context, request operations.HrisTimeOffRequestsDeleteRequest, opts ...operations.Option) (*operations.HrisTimeOffRequestsDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "hris.timeOffRequestsDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.HrisTimeOffRequestsDeleteRequest{
-		ID:         id,
-		ServiceID:  serviceID,
-		Raw:        raw,
-		EmployeeID: employeeID,
 	}
 
 	globals := operations.HrisTimeOffRequestsDeleteGlobals{

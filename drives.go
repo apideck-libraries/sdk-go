@@ -236,12 +236,14 @@ func (s *Drives) List(ctx context.Context, request operations.FileStorageDrivesA
 		return s.List(
 			ctx,
 			operations.FileStorageDrivesAllRequest{
-				Raw:       request.Raw,
-				ServiceID: request.ServiceID,
-				Cursor:    &nCVal,
-				Limit:     request.Limit,
-				Filter:    request.Filter,
-				Fields:    request.Fields,
+				Raw:        request.Raw,
+				ConsumerID: request.ConsumerID,
+				AppID:      request.AppID,
+				ServiceID:  request.ServiceID,
+				Cursor:     &nCVal,
+				Limit:      request.Limit,
+				Filter:     request.Filter,
+				Fields:     request.Fields,
 			},
 			opts...,
 		)
@@ -415,18 +417,12 @@ func (s *Drives) List(ctx context.Context, request operations.FileStorageDrivesA
 
 // Create Drive
 // Create Drive
-func (s *Drives) Create(ctx context.Context, drive components.DriveInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.FileStorageDrivesAddResponse, error) {
+func (s *Drives) Create(ctx context.Context, request operations.FileStorageDrivesAddRequest, opts ...operations.Option) (*operations.FileStorageDrivesAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.drivesAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageDrivesAddRequest{
-		Raw:       raw,
-		ServiceID: serviceID,
-		Drive:     drive,
 	}
 
 	globals := operations.FileStorageDrivesAddGlobals{
@@ -767,19 +763,12 @@ func (s *Drives) Create(ctx context.Context, drive components.DriveInput, raw *b
 
 // Get Drive
 // Get Drive
-func (s *Drives) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.FileStorageDrivesOneResponse, error) {
+func (s *Drives) Get(ctx context.Context, request operations.FileStorageDrivesOneRequest, opts ...operations.Option) (*operations.FileStorageDrivesOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.drivesOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageDrivesOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.FileStorageDrivesOneGlobals{
@@ -1112,19 +1101,12 @@ func (s *Drives) Get(ctx context.Context, id string, serviceID *string, raw *boo
 
 // Update Drive
 // Update Drive
-func (s *Drives) Update(ctx context.Context, id string, drive components.DriveInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.FileStorageDrivesUpdateResponse, error) {
+func (s *Drives) Update(ctx context.Context, request operations.FileStorageDrivesUpdateRequest, opts ...operations.Option) (*operations.FileStorageDrivesUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.drivesUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageDrivesUpdateRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Drive:     drive,
 	}
 
 	globals := operations.FileStorageDrivesUpdateGlobals{
@@ -1465,18 +1447,12 @@ func (s *Drives) Update(ctx context.Context, id string, drive components.DriveIn
 
 // Delete Drive
 // Delete Drive
-func (s *Drives) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.FileStorageDrivesDeleteResponse, error) {
+func (s *Drives) Delete(ctx context.Context, request operations.FileStorageDrivesDeleteRequest, opts ...operations.Option) (*operations.FileStorageDrivesDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.drivesDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageDrivesDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.FileStorageDrivesDeleteGlobals{

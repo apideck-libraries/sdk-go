@@ -30,18 +30,12 @@ func newLogs(sdkConfig sdkConfiguration) *Logs {
 
 // List - Get all consumer request logs
 // This endpoint includes all consumer request logs.
-func (s *Logs) List(ctx context.Context, filter *components.LogsFilter, cursor *string, limit *int64, opts ...operations.Option) (*operations.VaultLogsAllResponse, error) {
+func (s *Logs) List(ctx context.Context, request operations.VaultLogsAllRequest, opts ...operations.Option) (*operations.VaultLogsAllResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.logsAll",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.VaultLogsAllRequest{
-		Filter: filter,
-		Cursor: cursor,
-		Limit:  limit,
 	}
 
 	globals := operations.VaultLogsAllGlobals{
@@ -241,9 +235,13 @@ func (s *Logs) List(ctx context.Context, filter *components.LogsFilter, cursor *
 
 		return s.List(
 			ctx,
-			filter,
-			&nCVal,
-			limit,
+			operations.VaultLogsAllRequest{
+				AppID:      request.AppID,
+				ConsumerID: request.ConsumerID,
+				Filter:     request.Filter,
+				Cursor:     &nCVal,
+				Limit:      request.Limit,
+			},
 			opts...,
 		)
 	}

@@ -13,8 +13,9 @@ type CreateContactResponse struct {
 	// Unified API resource name
 	Resource string `json:"resource"`
 	// Operation performed
-	Operation string    `json:"operation"`
-	Data      UnifiedID `json:"data"`
+	Operation string `json:"operation"`
+	// A object containing a unique identifier for the resource that was created, updated, or deleted.
+	Data UnifiedID `json:"data"`
 }
 
 func (o *CreateContactResponse) GetStatusCode() int64 {

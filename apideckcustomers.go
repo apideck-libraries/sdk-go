@@ -237,6 +237,8 @@ func (s *ApideckCustomers) List(ctx context.Context, request operations.Ecommerc
 			ctx,
 			operations.EcommerceCustomersAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -416,19 +418,12 @@ func (s *ApideckCustomers) List(ctx context.Context, request operations.Ecommerc
 
 // Get Customer
 // Get Customer
-func (s *ApideckCustomers) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.EcommerceCustomersOneResponse, error) {
+func (s *ApideckCustomers) Get(ctx context.Context, request operations.EcommerceCustomersOneRequest, opts ...operations.Option) (*operations.EcommerceCustomersOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "ecommerce.customersOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.EcommerceCustomersOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.EcommerceCustomersOneGlobals{

@@ -237,6 +237,8 @@ func (s *Collections) List(ctx context.Context, request operations.IssueTracking
 			ctx,
 			operations.IssueTrackingCollectionsAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -416,19 +418,12 @@ func (s *Collections) List(ctx context.Context, request operations.IssueTracking
 
 // Get Collection
 // Get Collection
-func (s *Collections) Get(ctx context.Context, collectionID string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.IssueTrackingCollectionsOneResponse, error) {
+func (s *Collections) Get(ctx context.Context, request operations.IssueTrackingCollectionsOneRequest, opts ...operations.Option) (*operations.IssueTrackingCollectionsOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "issueTracking.collectionsOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.IssueTrackingCollectionsOneRequest{
-		CollectionID: collectionID,
-		ServiceID:    serviceID,
-		Raw:          raw,
-		Fields:       fields,
 	}
 
 	globals := operations.IssueTrackingCollectionsOneGlobals{

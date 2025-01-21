@@ -237,6 +237,8 @@ func (s *TrackingCategories) List(ctx context.Context, request operations.Accoun
 			ctx,
 			operations.AccountingTrackingCategoriesAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -415,18 +417,12 @@ func (s *TrackingCategories) List(ctx context.Context, request operations.Accoun
 
 // Create Tracking Category
 // Create Tracking Category
-func (s *TrackingCategories) Create(ctx context.Context, trackingCategory components.TrackingCategoryInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.AccountingTrackingCategoriesAddResponse, error) {
+func (s *TrackingCategories) Create(ctx context.Context, request operations.AccountingTrackingCategoriesAddRequest, opts ...operations.Option) (*operations.AccountingTrackingCategoriesAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.trackingCategoriesAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingTrackingCategoriesAddRequest{
-		Raw:              raw,
-		ServiceID:        serviceID,
-		TrackingCategory: trackingCategory,
 	}
 
 	globals := operations.AccountingTrackingCategoriesAddGlobals{
@@ -767,19 +763,12 @@ func (s *TrackingCategories) Create(ctx context.Context, trackingCategory compon
 
 // Get Tracking Category
 // Get Tracking Category
-func (s *TrackingCategories) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.AccountingTrackingCategoriesOneResponse, error) {
+func (s *TrackingCategories) Get(ctx context.Context, request operations.AccountingTrackingCategoriesOneRequest, opts ...operations.Option) (*operations.AccountingTrackingCategoriesOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.trackingCategoriesOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingTrackingCategoriesOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.AccountingTrackingCategoriesOneGlobals{
@@ -1112,19 +1101,12 @@ func (s *TrackingCategories) Get(ctx context.Context, id string, serviceID *stri
 
 // Update Tracking Category
 // Update Tracking Category
-func (s *TrackingCategories) Update(ctx context.Context, id string, trackingCategory components.TrackingCategoryInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingTrackingCategoriesUpdateResponse, error) {
+func (s *TrackingCategories) Update(ctx context.Context, request operations.AccountingTrackingCategoriesUpdateRequest, opts ...operations.Option) (*operations.AccountingTrackingCategoriesUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.trackingCategoriesUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingTrackingCategoriesUpdateRequest{
-		ID:               id,
-		ServiceID:        serviceID,
-		Raw:              raw,
-		TrackingCategory: trackingCategory,
 	}
 
 	globals := operations.AccountingTrackingCategoriesUpdateGlobals{
@@ -1465,18 +1447,12 @@ func (s *TrackingCategories) Update(ctx context.Context, id string, trackingCate
 
 // Delete Tracking Category
 // Delete Tracking Category
-func (s *TrackingCategories) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingTrackingCategoriesDeleteResponse, error) {
+func (s *TrackingCategories) Delete(ctx context.Context, request operations.AccountingTrackingCategoriesDeleteRequest, opts ...operations.Option) (*operations.AccountingTrackingCategoriesDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.trackingCategoriesDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingTrackingCategoriesDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AccountingTrackingCategoriesDeleteGlobals{

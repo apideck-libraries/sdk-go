@@ -237,6 +237,8 @@ func (s *Bills) List(ctx context.Context, request operations.AccountingBillsAllR
 			ctx,
 			operations.AccountingBillsAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -417,18 +419,12 @@ func (s *Bills) List(ctx context.Context, request operations.AccountingBillsAllR
 
 // Create Bill
 // Create Bill
-func (s *Bills) Create(ctx context.Context, bill components.BillInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.AccountingBillsAddResponse, error) {
+func (s *Bills) Create(ctx context.Context, request operations.AccountingBillsAddRequest, opts ...operations.Option) (*operations.AccountingBillsAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.billsAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingBillsAddRequest{
-		Raw:       raw,
-		ServiceID: serviceID,
-		Bill:      bill,
 	}
 
 	globals := operations.AccountingBillsAddGlobals{
@@ -769,19 +765,12 @@ func (s *Bills) Create(ctx context.Context, bill components.BillInput, raw *bool
 
 // Get Bill
 // Get Bill
-func (s *Bills) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.AccountingBillsOneResponse, error) {
+func (s *Bills) Get(ctx context.Context, request operations.AccountingBillsOneRequest, opts ...operations.Option) (*operations.AccountingBillsOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.billsOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingBillsOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.AccountingBillsOneGlobals{
@@ -1114,19 +1103,12 @@ func (s *Bills) Get(ctx context.Context, id string, serviceID *string, raw *bool
 
 // Update Bill
 // Update Bill
-func (s *Bills) Update(ctx context.Context, id string, bill components.BillInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingBillsUpdateResponse, error) {
+func (s *Bills) Update(ctx context.Context, request operations.AccountingBillsUpdateRequest, opts ...operations.Option) (*operations.AccountingBillsUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.billsUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingBillsUpdateRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Bill:      bill,
 	}
 
 	globals := operations.AccountingBillsUpdateGlobals{
@@ -1467,18 +1449,12 @@ func (s *Bills) Update(ctx context.Context, id string, bill components.BillInput
 
 // Delete Bill
 // Delete Bill
-func (s *Bills) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingBillsDeleteResponse, error) {
+func (s *Bills) Delete(ctx context.Context, request operations.AccountingBillsDeleteRequest, opts ...operations.Option) (*operations.AccountingBillsDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.billsDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingBillsDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AccountingBillsDeleteGlobals{

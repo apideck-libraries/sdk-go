@@ -237,6 +237,8 @@ func (s *Contacts) List(ctx context.Context, request operations.CrmContactsAllRe
 			ctx,
 			operations.CrmContactsAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -417,18 +419,12 @@ func (s *Contacts) List(ctx context.Context, request operations.CrmContactsAllRe
 
 // Create contact
 // Create contact
-func (s *Contacts) Create(ctx context.Context, contact components.ContactInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.CrmContactsAddResponse, error) {
+func (s *Contacts) Create(ctx context.Context, request operations.CrmContactsAddRequest, opts ...operations.Option) (*operations.CrmContactsAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.contactsAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmContactsAddRequest{
-		Raw:       raw,
-		ServiceID: serviceID,
-		Contact:   contact,
 	}
 
 	globals := operations.CrmContactsAddGlobals{
@@ -1107,19 +1103,12 @@ func (s *Contacts) Get(ctx context.Context, request operations.CrmContactsOneReq
 
 // Update contact
 // Update contact
-func (s *Contacts) Update(ctx context.Context, id string, contact components.ContactInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.CrmContactsUpdateResponse, error) {
+func (s *Contacts) Update(ctx context.Context, request operations.CrmContactsUpdateRequest, opts ...operations.Option) (*operations.CrmContactsUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.contactsUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmContactsUpdateRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Contact:   contact,
 	}
 
 	globals := operations.CrmContactsUpdateGlobals{
@@ -1460,18 +1449,12 @@ func (s *Contacts) Update(ctx context.Context, id string, contact components.Con
 
 // Delete contact
 // Delete contact
-func (s *Contacts) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.CrmContactsDeleteResponse, error) {
+func (s *Contacts) Delete(ctx context.Context, request operations.CrmContactsDeleteRequest, opts ...operations.Option) (*operations.CrmContactsDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.contactsDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmContactsDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.CrmContactsDeleteGlobals{

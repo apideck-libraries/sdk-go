@@ -31,11 +31,29 @@ type VaultConnectionsTokenRequestBody struct {
 }
 
 type VaultConnectionsTokenRequest struct {
+	// ID of the consumer which you want to get or push data from
+	ConsumerID *string `header:"style=simple,explode=false,name=x-apideck-consumer-id"`
+	// The ID of your Unify application
+	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 	// Service ID of the resource to return
 	ServiceID string `pathParam:"style=simple,explode=false,name=service_id"`
 	// Unified API
 	UnifiedAPI  string                            `pathParam:"style=simple,explode=false,name=unified_api"`
 	RequestBody *VaultConnectionsTokenRequestBody `request:"mediaType=application/json"`
+}
+
+func (o *VaultConnectionsTokenRequest) GetConsumerID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ConsumerID
+}
+
+func (o *VaultConnectionsTokenRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
 }
 
 func (o *VaultConnectionsTokenRequest) GetServiceID() string {

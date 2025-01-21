@@ -28,10 +28,28 @@ func (o *VaultConnectionsAllGlobals) GetAppID() *string {
 }
 
 type VaultConnectionsAllRequest struct {
+	// ID of the consumer which you want to get or push data from
+	ConsumerID *string `header:"style=simple,explode=false,name=x-apideck-consumer-id"`
+	// The ID of your Unify application
+	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 	// Scope results to Unified API
 	API *string `queryParam:"style=form,explode=true,name=api"`
 	// Scopes results to connections that have been configured or not
 	Configured *bool `queryParam:"style=form,explode=true,name=configured"`
+}
+
+func (o *VaultConnectionsAllRequest) GetConsumerID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ConsumerID
+}
+
+func (o *VaultConnectionsAllRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
 }
 
 func (o *VaultConnectionsAllRequest) GetAPI() *string {

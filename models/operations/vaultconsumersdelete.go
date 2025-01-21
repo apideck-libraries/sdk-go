@@ -19,8 +19,17 @@ func (o *VaultConsumersDeleteGlobals) GetAppID() *string {
 }
 
 type VaultConsumersDeleteRequest struct {
+	// The ID of your Unify application
+	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 	// ID of the consumer to return
 	ConsumerID string `pathParam:"style=simple,explode=false,name=consumer_id"`
+}
+
+func (o *VaultConsumersDeleteRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
 }
 
 func (o *VaultConsumersDeleteRequest) GetConsumerID() string {

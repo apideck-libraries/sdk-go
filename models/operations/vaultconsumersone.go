@@ -19,8 +19,17 @@ func (o *VaultConsumersOneGlobals) GetAppID() *string {
 }
 
 type VaultConsumersOneRequest struct {
+	// The ID of your Unify application
+	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 	// ID of the consumer to return
 	ConsumerID string `pathParam:"style=simple,explode=false,name=consumer_id"`
+}
+
+func (o *VaultConsumersOneRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
 }
 
 func (o *VaultConsumersOneRequest) GetConsumerID() string {

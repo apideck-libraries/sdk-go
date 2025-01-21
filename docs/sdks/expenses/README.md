@@ -24,6 +24,7 @@ import(
 	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
 
@@ -36,7 +37,11 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Accounting.Expenses.List(ctx, sdkgo.Bool(false), sdkgo.String("salesforce"), nil, sdkgo.Int64(20))
+    res, err := s.Accounting.Expenses.List(ctx, operations.AccountingExpensesAllRequest{
+        Raw: sdkgo.Bool(false),
+        ServiceID: sdkgo.String("salesforce"),
+        Limit: sdkgo.Int64(20),
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -60,14 +65,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                     | Type                                                                                                                                          | Required                                                                                                                                      | Description                                                                                                                                   | Example                                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                         | [context.Context](https://pkg.go.dev/context#Context)                                                                                         | :heavy_check_mark:                                                                                                                            | The context to use for the request.                                                                                                           |                                                                                                                                               |
-| `raw`                                                                                                                                         | **bool*                                                                                                                                       | :heavy_minus_sign:                                                                                                                            | Include raw response. Mostly used for debugging purposes                                                                                      |                                                                                                                                               |
-| `serviceID`                                                                                                                                   | **string*                                                                                                                                     | :heavy_minus_sign:                                                                                                                            | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | salesforce                                                                                                                                    |
-| `cursor`                                                                                                                                      | **string*                                                                                                                                     | :heavy_minus_sign:                                                                                                                            | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.                              |                                                                                                                                               |
-| `limit`                                                                                                                                       | **int64*                                                                                                                                      | :heavy_minus_sign:                                                                                                                            | Number of results to return. Minimum 1, Maximum 200, Default 20                                                                               |                                                                                                                                               |
-| `opts`                                                                                                                                        | [][operations.Option](../../models/operations/option.md)                                                                                      | :heavy_minus_sign:                                                                                                                            | The options for this request.                                                                                                                 |                                                                                                                                               |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
+| `request`                                                                                          | [operations.AccountingExpensesAllRequest](../../models/operations/accountingexpensesallrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `opts`                                                                                             | [][operations.Option](../../models/operations/option.md)                                           | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
 
 ### Response
 
@@ -99,6 +101,7 @@ import(
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/components"
+	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
 
@@ -111,126 +114,130 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Accounting.Expenses.Create(ctx, components.ExpenseInput{
-        Number: sdkgo.String("OIT00546"),
-        TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
-        AccountID: "123456",
-        CustomerID: sdkgo.String("12345"),
-        SupplierID: sdkgo.String("12345"),
-        CompanyID: sdkgo.String("12345"),
-        DepartmentID: sdkgo.String("12345"),
-        PaymentType: components.ExpensePaymentTypeCash.ToPointer(),
-        Currency: components.CurrencyUsd.ToPointer(),
-        CurrencyRate: sdkgo.Float64(0.69),
-        Type: components.ExpenseTypeExpense.ToPointer(),
-        Memo: sdkgo.String("For travel expenses incurred on 2024-05-15"),
-        TaxRate: &components.LinkedTaxRateInput{
-            ID: sdkgo.String("123456"),
-            Rate: sdkgo.Float64(10),
-        },
-        TotalAmount: sdkgo.Float64(275),
-        LineItems: []components.ExpenseLineItemInput{
-            components.ExpenseLineItemInput{
-                TrackingCategories: []components.LinkedTrackingCategory{
-                    components.LinkedTrackingCategory{
+    res, err := s.Accounting.Expenses.Create(ctx, operations.AccountingExpensesAddRequest{
+        Raw: sdkgo.Bool(false),
+        ServiceID: sdkgo.String("salesforce"),
+        Expense: components.ExpenseInput{
+            Number: sdkgo.String("OIT00546"),
+            TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
+            AccountID: "123456",
+            CustomerID: sdkgo.String("12345"),
+            SupplierID: sdkgo.String("12345"),
+            CompanyID: sdkgo.String("12345"),
+            DepartmentID: sdkgo.String("12345"),
+            PaymentType: components.ExpensePaymentTypeCash.ToPointer(),
+            Currency: components.CurrencyUsd.ToPointer(),
+            CurrencyRate: sdkgo.Float64(0.69),
+            Type: components.ExpenseTypeExpense.ToPointer(),
+            Memo: sdkgo.String("For travel expenses incurred on 2024-05-15"),
+            TaxRate: &components.LinkedTaxRateInput{
+                ID: sdkgo.String("123456"),
+                Rate: sdkgo.Float64(10),
+            },
+            TotalAmount: sdkgo.Float64(275),
+            LineItems: []components.ExpenseLineItemInput{
+                components.ExpenseLineItemInput{
+                    TrackingCategories: []components.LinkedTrackingCategory{
+                        components.LinkedTrackingCategory{
+                            ID: sdkgo.String("123456"),
+                            Name: sdkgo.String("New York"),
+                        },
+                        components.LinkedTrackingCategory{
+                            ID: sdkgo.String("123456"),
+                            Name: sdkgo.String("New York"),
+                        },
+                    },
+                    AccountID: sdkgo.String("123456"),
+                    CustomerID: sdkgo.String("12345"),
+                    DepartmentID: sdkgo.String("12345"),
+                    LocationID: sdkgo.String("12345"),
+                    TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.String("123456"),
-                        Name: sdkgo.String("New York"),
+                        Rate: sdkgo.Float64(10),
                     },
-                    components.LinkedTrackingCategory{
-                        ID: sdkgo.String("123456"),
-                        Name: sdkgo.String("New York"),
-                    },
+                    Description: sdkgo.String("Travel US."),
+                    TotalAmount: sdkgo.Float64(275),
+                    Billable: sdkgo.Bool(true),
                 },
-                AccountID: sdkgo.String("123456"),
-                CustomerID: sdkgo.String("12345"),
-                DepartmentID: sdkgo.String("12345"),
-                LocationID: sdkgo.String("12345"),
-                TaxRate: &components.LinkedTaxRateInput{
-                    ID: sdkgo.String("123456"),
-                    Rate: sdkgo.Float64(10),
+            },
+            CustomFields: []components.CustomField{
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueStr(
+                        "Uses Salesforce and Marketo",
+                    )),
                 },
-                Description: sdkgo.String("Travel US."),
-                TotalAmount: sdkgo.Float64(275),
-                Billable: sdkgo.Bool(true),
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueStr(
+                        "Uses Salesforce and Marketo",
+                    )),
+                },
             },
-        },
-        CustomFields: []components.CustomField{
-            components.CustomField{
-                ID: sdkgo.String("2389328923893298"),
-                Name: sdkgo.String("employee_level"),
-                Description: sdkgo.String("Employee Level"),
-                Value: sdkgo.Pointer(components.CreateValueStr(
-                    "Uses Salesforce and Marketo",
-                )),
-            },
-            components.CustomField{
-                ID: sdkgo.String("2389328923893298"),
-                Name: sdkgo.String("employee_level"),
-                Description: sdkgo.String("Employee Level"),
-                Value: sdkgo.Pointer(components.CreateValueStr(
-                    "Uses Salesforce and Marketo",
-                )),
-            },
-        },
-        RowVersion: sdkgo.String("1-12345"),
-        PassThrough: []components.PassThroughBody{
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
+            RowVersion: sdkgo.String("1-12345"),
+            PassThrough: []components.PassThroughBody{
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
                             },
                         },
-                    },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
                             },
                         },
-                    },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
                             },
                         },
                     },
                 },
-            },
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
                             },
                         },
                     },
                 },
-            },
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
                             },
                         },
                     },
                 },
             },
         },
-    }, sdkgo.Bool(false), sdkgo.String("salesforce"))
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -242,13 +249,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                     | Type                                                                                                                                          | Required                                                                                                                                      | Description                                                                                                                                   | Example                                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                         | [context.Context](https://pkg.go.dev/context#Context)                                                                                         | :heavy_check_mark:                                                                                                                            | The context to use for the request.                                                                                                           |                                                                                                                                               |
-| `expense`                                                                                                                                     | [components.ExpenseInput](../../models/components/expenseinput.md)                                                                            | :heavy_check_mark:                                                                                                                            | N/A                                                                                                                                           |                                                                                                                                               |
-| `raw`                                                                                                                                         | **bool*                                                                                                                                       | :heavy_minus_sign:                                                                                                                            | Include raw response. Mostly used for debugging purposes                                                                                      |                                                                                                                                               |
-| `serviceID`                                                                                                                                   | **string*                                                                                                                                     | :heavy_minus_sign:                                                                                                                            | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | salesforce                                                                                                                                    |
-| `opts`                                                                                                                                        | [][operations.Option](../../models/operations/option.md)                                                                                      | :heavy_minus_sign:                                                                                                                            | The options for this request.                                                                                                                 |                                                                                                                                               |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
+| `request`                                                                                          | [operations.AccountingExpensesAddRequest](../../models/operations/accountingexpensesaddrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `opts`                                                                                             | [][operations.Option](../../models/operations/option.md)                                           | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
 
 ### Response
 
@@ -278,6 +283,7 @@ import(
 	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
 
@@ -290,7 +296,11 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Accounting.Expenses.Get(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false))
+    res, err := s.Accounting.Expenses.Get(ctx, operations.AccountingExpensesOneRequest{
+        ID: "<id>",
+        ServiceID: sdkgo.String("salesforce"),
+        Raw: sdkgo.Bool(false),
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -302,13 +312,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                     | Type                                                                                                                                          | Required                                                                                                                                      | Description                                                                                                                                   | Example                                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                         | [context.Context](https://pkg.go.dev/context#Context)                                                                                         | :heavy_check_mark:                                                                                                                            | The context to use for the request.                                                                                                           |                                                                                                                                               |
-| `id`                                                                                                                                          | *string*                                                                                                                                      | :heavy_check_mark:                                                                                                                            | ID of the record you are acting upon.                                                                                                         |                                                                                                                                               |
-| `serviceID`                                                                                                                                   | **string*                                                                                                                                     | :heavy_minus_sign:                                                                                                                            | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | salesforce                                                                                                                                    |
-| `raw`                                                                                                                                         | **bool*                                                                                                                                       | :heavy_minus_sign:                                                                                                                            | Include raw response. Mostly used for debugging purposes                                                                                      |                                                                                                                                               |
-| `opts`                                                                                                                                        | [][operations.Option](../../models/operations/option.md)                                                                                      | :heavy_minus_sign:                                                                                                                            | The options for this request.                                                                                                                 |                                                                                                                                               |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
+| `request`                                                                                          | [operations.AccountingExpensesOneRequest](../../models/operations/accountingexpensesonerequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `opts`                                                                                             | [][operations.Option](../../models/operations/option.md)                                           | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
 
 ### Response
 
@@ -340,6 +348,7 @@ import(
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/components"
+	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
 
@@ -352,168 +361,173 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Accounting.Expenses.Update(ctx, "<id>", components.ExpenseInput{
-        Number: sdkgo.String("OIT00546"),
-        TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
-        AccountID: "123456",
-        CustomerID: sdkgo.String("12345"),
-        SupplierID: sdkgo.String("12345"),
-        CompanyID: sdkgo.String("12345"),
-        DepartmentID: sdkgo.String("12345"),
-        PaymentType: components.ExpensePaymentTypeCash.ToPointer(),
-        Currency: components.CurrencyUsd.ToPointer(),
-        CurrencyRate: sdkgo.Float64(0.69),
-        Type: components.ExpenseTypeExpense.ToPointer(),
-        Memo: sdkgo.String("For travel expenses incurred on 2024-05-15"),
-        TaxRate: &components.LinkedTaxRateInput{
-            ID: sdkgo.String("123456"),
-            Rate: sdkgo.Float64(10),
-        },
-        TotalAmount: sdkgo.Float64(275),
-        LineItems: []components.ExpenseLineItemInput{
-            components.ExpenseLineItemInput{
-                TrackingCategories: []components.LinkedTrackingCategory{
-                    components.LinkedTrackingCategory{
-                        ID: sdkgo.String("123456"),
-                        Name: sdkgo.String("New York"),
-                    },
-                    components.LinkedTrackingCategory{
-                        ID: sdkgo.String("123456"),
-                        Name: sdkgo.String("New York"),
-                    },
-                },
-                AccountID: sdkgo.String("123456"),
-                CustomerID: sdkgo.String("12345"),
-                DepartmentID: sdkgo.String("12345"),
-                LocationID: sdkgo.String("12345"),
-                TaxRate: &components.LinkedTaxRateInput{
-                    ID: sdkgo.String("123456"),
-                    Rate: sdkgo.Float64(10),
-                },
-                Description: sdkgo.String("Travel US."),
-                TotalAmount: sdkgo.Float64(275),
-                Billable: sdkgo.Bool(true),
+    res, err := s.Accounting.Expenses.Update(ctx, operations.AccountingExpensesUpdateRequest{
+        ID: "<id>",
+        ServiceID: sdkgo.String("salesforce"),
+        Raw: sdkgo.Bool(false),
+        Expense: components.ExpenseInput{
+            Number: sdkgo.String("OIT00546"),
+            TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
+            AccountID: "123456",
+            CustomerID: sdkgo.String("12345"),
+            SupplierID: sdkgo.String("12345"),
+            CompanyID: sdkgo.String("12345"),
+            DepartmentID: sdkgo.String("12345"),
+            PaymentType: components.ExpensePaymentTypeCash.ToPointer(),
+            Currency: components.CurrencyUsd.ToPointer(),
+            CurrencyRate: sdkgo.Float64(0.69),
+            Type: components.ExpenseTypeExpense.ToPointer(),
+            Memo: sdkgo.String("For travel expenses incurred on 2024-05-15"),
+            TaxRate: &components.LinkedTaxRateInput{
+                ID: sdkgo.String("123456"),
+                Rate: sdkgo.Float64(10),
             },
-            components.ExpenseLineItemInput{
-                TrackingCategories: []components.LinkedTrackingCategory{
-                    components.LinkedTrackingCategory{
-                        ID: sdkgo.String("123456"),
-                        Name: sdkgo.String("New York"),
-                    },
-                    components.LinkedTrackingCategory{
-                        ID: sdkgo.String("123456"),
-                        Name: sdkgo.String("New York"),
-                    },
-                },
-                AccountID: sdkgo.String("123456"),
-                CustomerID: sdkgo.String("12345"),
-                DepartmentID: sdkgo.String("12345"),
-                LocationID: sdkgo.String("12345"),
-                TaxRate: &components.LinkedTaxRateInput{
-                    ID: sdkgo.String("123456"),
-                    Rate: sdkgo.Float64(10),
-                },
-                Description: sdkgo.String("Travel US."),
-                TotalAmount: sdkgo.Float64(275),
-                Billable: sdkgo.Bool(true),
-            },
-            components.ExpenseLineItemInput{
-                TrackingCategories: []components.LinkedTrackingCategory{
-                    components.LinkedTrackingCategory{
-                        ID: sdkgo.String("123456"),
-                        Name: sdkgo.String("New York"),
-                    },
-                    components.LinkedTrackingCategory{
-                        ID: sdkgo.String("123456"),
-                        Name: sdkgo.String("New York"),
-                    },
-                    components.LinkedTrackingCategory{
-                        ID: sdkgo.String("123456"),
-                        Name: sdkgo.String("New York"),
-                    },
-                },
-                AccountID: sdkgo.String("123456"),
-                CustomerID: sdkgo.String("12345"),
-                DepartmentID: sdkgo.String("12345"),
-                LocationID: sdkgo.String("12345"),
-                TaxRate: &components.LinkedTaxRateInput{
-                    ID: sdkgo.String("123456"),
-                    Rate: sdkgo.Float64(10),
-                },
-                Description: sdkgo.String("Travel US."),
-                TotalAmount: sdkgo.Float64(275),
-                Billable: sdkgo.Bool(true),
-            },
-        },
-        CustomFields: []components.CustomField{
-            components.CustomField{
-                ID: sdkgo.String("2389328923893298"),
-                Name: sdkgo.String("employee_level"),
-                Description: sdkgo.String("Employee Level"),
-                Value: sdkgo.Pointer(components.CreateValueBoolean(
-                    true,
-                )),
-            },
-            components.CustomField{
-                ID: sdkgo.String("2389328923893298"),
-                Name: sdkgo.String("employee_level"),
-                Description: sdkgo.String("Employee Level"),
-                Value: sdkgo.Pointer(components.CreateValueFour(
-                    components.Four{},
-                )),
-            },
-        },
-        RowVersion: sdkgo.String("1-12345"),
-        PassThrough: []components.PassThroughBody{
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
+            TotalAmount: sdkgo.Float64(275),
+            LineItems: []components.ExpenseLineItemInput{
+                components.ExpenseLineItemInput{
+                    TrackingCategories: []components.LinkedTrackingCategory{
+                        components.LinkedTrackingCategory{
+                            ID: sdkgo.String("123456"),
+                            Name: sdkgo.String("New York"),
+                        },
+                        components.LinkedTrackingCategory{
+                            ID: sdkgo.String("123456"),
+                            Name: sdkgo.String("New York"),
                         },
                     },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
+                    AccountID: sdkgo.String("123456"),
+                    CustomerID: sdkgo.String("12345"),
+                    DepartmentID: sdkgo.String("12345"),
+                    LocationID: sdkgo.String("12345"),
+                    TaxRate: &components.LinkedTaxRateInput{
+                        ID: sdkgo.String("123456"),
+                        Rate: sdkgo.Float64(10),
+                    },
+                    Description: sdkgo.String("Travel US."),
+                    TotalAmount: sdkgo.Float64(275),
+                    Billable: sdkgo.Bool(true),
+                },
+                components.ExpenseLineItemInput{
+                    TrackingCategories: []components.LinkedTrackingCategory{
+                        components.LinkedTrackingCategory{
+                            ID: sdkgo.String("123456"),
+                            Name: sdkgo.String("New York"),
+                        },
+                        components.LinkedTrackingCategory{
+                            ID: sdkgo.String("123456"),
+                            Name: sdkgo.String("New York"),
                         },
                     },
+                    AccountID: sdkgo.String("123456"),
+                    CustomerID: sdkgo.String("12345"),
+                    DepartmentID: sdkgo.String("12345"),
+                    LocationID: sdkgo.String("12345"),
+                    TaxRate: &components.LinkedTaxRateInput{
+                        ID: sdkgo.String("123456"),
+                        Rate: sdkgo.Float64(10),
+                    },
+                    Description: sdkgo.String("Travel US."),
+                    TotalAmount: sdkgo.Float64(275),
+                    Billable: sdkgo.Bool(true),
+                },
+                components.ExpenseLineItemInput{
+                    TrackingCategories: []components.LinkedTrackingCategory{
+                        components.LinkedTrackingCategory{
+                            ID: sdkgo.String("123456"),
+                            Name: sdkgo.String("New York"),
+                        },
+                        components.LinkedTrackingCategory{
+                            ID: sdkgo.String("123456"),
+                            Name: sdkgo.String("New York"),
+                        },
+                        components.LinkedTrackingCategory{
+                            ID: sdkgo.String("123456"),
+                            Name: sdkgo.String("New York"),
+                        },
+                    },
+                    AccountID: sdkgo.String("123456"),
+                    CustomerID: sdkgo.String("12345"),
+                    DepartmentID: sdkgo.String("12345"),
+                    LocationID: sdkgo.String("12345"),
+                    TaxRate: &components.LinkedTaxRateInput{
+                        ID: sdkgo.String("123456"),
+                        Rate: sdkgo.Float64(10),
+                    },
+                    Description: sdkgo.String("Travel US."),
+                    TotalAmount: sdkgo.Float64(275),
+                    Billable: sdkgo.Bool(true),
                 },
             },
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
+            CustomFields: []components.CustomField{
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueBoolean(
+                        true,
+                    )),
+                },
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueFour(
+                        components.Four{},
+                    )),
+                },
+            },
+            RowVersion: sdkgo.String("1-12345"),
+            PassThrough: []components.PassThroughBody{
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
                             },
                         },
                     },
                 },
-            },
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                    },
+                },
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
                             },
                         },
                     },
                 },
             },
         },
-    }, sdkgo.String("salesforce"), sdkgo.Bool(false))
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -525,14 +539,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                     | Type                                                                                                                                          | Required                                                                                                                                      | Description                                                                                                                                   | Example                                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                         | [context.Context](https://pkg.go.dev/context#Context)                                                                                         | :heavy_check_mark:                                                                                                                            | The context to use for the request.                                                                                                           |                                                                                                                                               |
-| `id`                                                                                                                                          | *string*                                                                                                                                      | :heavy_check_mark:                                                                                                                            | ID of the record you are acting upon.                                                                                                         |                                                                                                                                               |
-| `expense`                                                                                                                                     | [components.ExpenseInput](../../models/components/expenseinput.md)                                                                            | :heavy_check_mark:                                                                                                                            | N/A                                                                                                                                           |                                                                                                                                               |
-| `serviceID`                                                                                                                                   | **string*                                                                                                                                     | :heavy_minus_sign:                                                                                                                            | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | salesforce                                                                                                                                    |
-| `raw`                                                                                                                                         | **bool*                                                                                                                                       | :heavy_minus_sign:                                                                                                                            | Include raw response. Mostly used for debugging purposes                                                                                      |                                                                                                                                               |
-| `opts`                                                                                                                                        | [][operations.Option](../../models/operations/option.md)                                                                                      | :heavy_minus_sign:                                                                                                                            | The options for this request.                                                                                                                 |                                                                                                                                               |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                    | :heavy_check_mark:                                                                                       | The context to use for the request.                                                                      |
+| `request`                                                                                                | [operations.AccountingExpensesUpdateRequest](../../models/operations/accountingexpensesupdaterequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `opts`                                                                                                   | [][operations.Option](../../models/operations/option.md)                                                 | :heavy_minus_sign:                                                                                       | The options for this request.                                                                            |
 
 ### Response
 
@@ -562,6 +573,7 @@ import(
 	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
 
@@ -574,7 +586,11 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Accounting.Expenses.Delete(ctx, "<id>", sdkgo.String("salesforce"), sdkgo.Bool(false))
+    res, err := s.Accounting.Expenses.Delete(ctx, operations.AccountingExpensesDeleteRequest{
+        ID: "<id>",
+        ServiceID: sdkgo.String("salesforce"),
+        Raw: sdkgo.Bool(false),
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -586,13 +602,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                     | Type                                                                                                                                          | Required                                                                                                                                      | Description                                                                                                                                   | Example                                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                         | [context.Context](https://pkg.go.dev/context#Context)                                                                                         | :heavy_check_mark:                                                                                                                            | The context to use for the request.                                                                                                           |                                                                                                                                               |
-| `id`                                                                                                                                          | *string*                                                                                                                                      | :heavy_check_mark:                                                                                                                            | ID of the record you are acting upon.                                                                                                         |                                                                                                                                               |
-| `serviceID`                                                                                                                                   | **string*                                                                                                                                     | :heavy_minus_sign:                                                                                                                            | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | salesforce                                                                                                                                    |
-| `raw`                                                                                                                                         | **bool*                                                                                                                                       | :heavy_minus_sign:                                                                                                                            | Include raw response. Mostly used for debugging purposes                                                                                      |                                                                                                                                               |
-| `opts`                                                                                                                                        | [][operations.Option](../../models/operations/option.md)                                                                                      | :heavy_minus_sign:                                                                                                                            | The options for this request.                                                                                                                 |                                                                                                                                               |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                    | :heavy_check_mark:                                                                                       | The context to use for the request.                                                                      |
+| `request`                                                                                                | [operations.AccountingExpensesDeleteRequest](../../models/operations/accountingexpensesdeleterequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `opts`                                                                                                   | [][operations.Option](../../models/operations/option.md)                                                 | :heavy_minus_sign:                                                                                       | The options for this request.                                                                            |
 
 ### Response
 

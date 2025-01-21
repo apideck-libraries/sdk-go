@@ -31,6 +31,10 @@ func (o *AccountingInvoicesUpdateGlobals) GetAppID() *string {
 type AccountingInvoicesUpdateRequest struct {
 	// ID of the record you are acting upon.
 	ID string `pathParam:"style=simple,explode=false,name=id"`
+	// ID of the consumer which you want to get or push data from
+	ConsumerID *string `header:"style=simple,explode=false,name=x-apideck-consumer-id"`
+	// The ID of your Unify application
+	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 	// Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.
 	ServiceID *string `header:"style=simple,explode=false,name=x-apideck-service-id"`
 	// Include raw response. Mostly used for debugging purposes
@@ -54,6 +58,20 @@ func (o *AccountingInvoicesUpdateRequest) GetID() string {
 		return ""
 	}
 	return o.ID
+}
+
+func (o *AccountingInvoicesUpdateRequest) GetConsumerID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ConsumerID
+}
+
+func (o *AccountingInvoicesUpdateRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
 }
 
 func (o *AccountingInvoicesUpdateRequest) GetServiceID() *string {

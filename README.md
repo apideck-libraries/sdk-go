@@ -1121,56 +1121,60 @@ func main() {
 		sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
 	)
 
-	res, err := s.FileStorage.UploadSessions.Create(ctx, components.CreateUploadSessionRequest{
-		Name:           "Documents",
-		ParentFolderID: "1234",
-		DriveID:        sdkgo.String("1234"),
-		Size:           sdkgo.Int64(1810673),
-		PassThrough: []components.PassThroughBody{
-			components.PassThroughBody{
-				ServiceID: "<id>",
-				ExtendPaths: []components.ExtendPaths{
-					components.ExtendPaths{
-						Path: "$.nested.property",
-						Value: map[string]any{
-							"TaxClassificationRef": map[string]any{
-								"value": "EUC-99990201-V1-00020000",
+	res, err := s.FileStorage.UploadSessions.Create(ctx, operations.FileStorageUploadSessionsAddRequest{
+		Raw:       sdkgo.Bool(false),
+		ServiceID: sdkgo.String("salesforce"),
+		CreateUploadSessionRequest: components.CreateUploadSessionRequest{
+			Name:           "Documents",
+			ParentFolderID: "1234",
+			DriveID:        sdkgo.String("1234"),
+			Size:           sdkgo.Int64(1810673),
+			PassThrough: []components.PassThroughBody{
+				components.PassThroughBody{
+					ServiceID: "<id>",
+					ExtendPaths: []components.ExtendPaths{
+						components.ExtendPaths{
+							Path: "$.nested.property",
+							Value: map[string]any{
+								"TaxClassificationRef": map[string]any{
+									"value": "EUC-99990201-V1-00020000",
+								},
 							},
 						},
-					},
-					components.ExtendPaths{
-						Path: "$.nested.property",
-						Value: map[string]any{
-							"TaxClassificationRef": map[string]any{
-								"value": "EUC-99990201-V1-00020000",
+						components.ExtendPaths{
+							Path: "$.nested.property",
+							Value: map[string]any{
+								"TaxClassificationRef": map[string]any{
+									"value": "EUC-99990201-V1-00020000",
+								},
 							},
 						},
 					},
 				},
-			},
-			components.PassThroughBody{
-				ServiceID: "<id>",
-				ExtendPaths: []components.ExtendPaths{
-					components.ExtendPaths{
-						Path: "$.nested.property",
-						Value: map[string]any{
-							"TaxClassificationRef": map[string]any{
-								"value": "EUC-99990201-V1-00020000",
+				components.PassThroughBody{
+					ServiceID: "<id>",
+					ExtendPaths: []components.ExtendPaths{
+						components.ExtendPaths{
+							Path: "$.nested.property",
+							Value: map[string]any{
+								"TaxClassificationRef": map[string]any{
+									"value": "EUC-99990201-V1-00020000",
+								},
 							},
 						},
-					},
-					components.ExtendPaths{
-						Path: "$.nested.property",
-						Value: map[string]any{
-							"TaxClassificationRef": map[string]any{
-								"value": "EUC-99990201-V1-00020000",
+						components.ExtendPaths{
+							Path: "$.nested.property",
+							Value: map[string]any{
+								"TaxClassificationRef": map[string]any{
+									"value": "EUC-99990201-V1-00020000",
+								},
 							},
 						},
 					},
 				},
 			},
 		},
-	}, sdkgo.Bool(false), sdkgo.String("salesforce"), operations.WithServerURL("https://upload.apideck.com"))
+	}, operations.WithServerURL("https://upload.apideck.com"))
 	if err != nil {
 		log.Fatal(err)
 	}

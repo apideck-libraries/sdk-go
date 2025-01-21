@@ -27,6 +27,36 @@ func (o *VaultSessionsCreateGlobals) GetAppID() *string {
 	return o.AppID
 }
 
+type VaultSessionsCreateRequest struct {
+	// ID of the consumer which you want to get or push data from
+	ConsumerID *string `header:"style=simple,explode=false,name=x-apideck-consumer-id"`
+	// The ID of your Unify application
+	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
+	// Additional redirect uri and/or consumer metadata
+	Session *components.Session `request:"mediaType=application/json"`
+}
+
+func (o *VaultSessionsCreateRequest) GetConsumerID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ConsumerID
+}
+
+func (o *VaultSessionsCreateRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
+}
+
+func (o *VaultSessionsCreateRequest) GetSession() *components.Session {
+	if o == nil {
+		return nil
+	}
+	return o.Session
+}
+
 type VaultSessionsCreateResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// Session created

@@ -40,7 +40,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Vault.Connections.List(ctx, sdkgo.String("crm"), sdkgo.Bool(true))
+    res, err := s.Vault.Connections.List(ctx, nil, nil, sdkgo.String("crm"), sdkgo.Bool(true))
     if err != nil {
         log.Fatal(err)
     }
@@ -55,6 +55,8 @@ func main() {
 | Parameter                                                      | Type                                                           | Required                                                       | Description                                                    | Example                                                        |
 | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
 | `ctx`                                                          | [context.Context](https://pkg.go.dev/context#Context)          | :heavy_check_mark:                                             | The context to use for the request.                            |                                                                |
+| `consumerID`                                                   | **string*                                                      | :heavy_minus_sign:                                             | ID of the consumer which you want to get or push data from     | test-consumer                                                  |
+| `appID`                                                        | **string*                                                      | :heavy_minus_sign:                                             | The ID of your Unify application                               | dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX                        |
 | `api`                                                          | **string*                                                      | :heavy_minus_sign:                                             | Scope results to Unified API                                   | crm                                                            |
 | `configured`                                                   | **bool*                                                        | :heavy_minus_sign:                                             | Scopes results to connections that have been configured or not | true                                                           |
 | `opts`                                                         | [][operations.Option](../../models/operations/option.md)       | :heavy_minus_sign:                                             | The options for this request.                                  |                                                                |
@@ -99,7 +101,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Vault.Connections.Get(ctx, "pipedrive", "crm")
+    res, err := s.Vault.Connections.Get(ctx, "pipedrive", "crm", nil, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -111,12 +113,14 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              | Example                                                  |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |                                                          |
-| `serviceID`                                              | *string*                                                 | :heavy_check_mark:                                       | Service ID of the resource to return                     | pipedrive                                                |
-| `unifiedAPI`                                             | *string*                                                 | :heavy_check_mark:                                       | Unified API                                              | crm                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |                                                          |
+| Parameter                                                  | Type                                                       | Required                                                   | Description                                                | Example                                                    |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `ctx`                                                      | [context.Context](https://pkg.go.dev/context#Context)      | :heavy_check_mark:                                         | The context to use for the request.                        |                                                            |
+| `serviceID`                                                | *string*                                                   | :heavy_check_mark:                                         | Service ID of the resource to return                       | pipedrive                                                  |
+| `unifiedAPI`                                               | *string*                                                   | :heavy_check_mark:                                         | Unified API                                                | crm                                                        |
+| `consumerID`                                               | **string*                                                  | :heavy_minus_sign:                                         | ID of the consumer which you want to get or push data from | test-consumer                                              |
+| `appID`                                                    | **string*                                                  | :heavy_minus_sign:                                         | The ID of your Unify application                           | dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX                    |
+| `opts`                                                     | [][operations.Option](../../models/operations/option.md)   | :heavy_minus_sign:                                         | The options for this request.                              |                                                            |
 
 ### Response
 
@@ -147,6 +151,7 @@ import(
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
+	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
 
@@ -159,262 +164,266 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Vault.Connections.Update(ctx, "pipedrive", "crm", components.ConnectionInput{
-        Enabled: sdkgo.Bool(true),
-        Settings: map[string]any{
-            "instance_url": "https://eu28.salesforce.com",
-            "api_key": "12345xxxxxx",
-        },
-        Metadata: map[string]any{
-            "account": map[string]any{
-                "name": "My Company",
-                "id": "c01458a5-7276-41ce-bc19-639906b0450a",
+    res, err := s.Vault.Connections.Update(ctx, operations.VaultConnectionsUpdateRequest{
+        ServiceID: "pipedrive",
+        UnifiedAPI: "crm",
+        Connection: components.ConnectionInput{
+            Enabled: sdkgo.Bool(true),
+            Settings: map[string]any{
+                "instance_url": "https://eu28.salesforce.com",
+                "api_key": "12345xxxxxx",
             },
-            "plan": "enterprise",
-        },
-        Configuration: []components.ConnectionConfiguration{
-            components.ConnectionConfiguration{
-                Resource: sdkgo.String("leads"),
-                Defaults: []components.ConnectionDefaults{
-                    components.ConnectionDefaults{
-                        ID: sdkgo.String("ProductInterest"),
-                        Options: []components.FormFieldOption{
-                            components.CreateFormFieldOptionFormFieldOptionGroup(
-                                components.FormFieldOptionGroup{
-                                    ID: sdkgo.String("1234"),
-                                    Label: sdkgo.String("General Channel"),
-                                    Options: []components.SimpleFormFieldOption{
-                                        components.SimpleFormFieldOption{
-                                            Label: sdkgo.String("General Channel"),
-                                            Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueNumber(
-                                                12.5,
-                                            )),
-                                        },
-                                        components.SimpleFormFieldOption{
-                                            Label: sdkgo.String("General Channel"),
-                                            Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueArrayOf5(
-                                                []components.Five{
-                                                    components.CreateFiveStr(
-                                                        "team",
-                                                    ),
-                                                    components.CreateFiveStr(
-                                                        "general",
-                                                    ),
-                                                },
-                                            )),
+            Metadata: map[string]any{
+                "account": map[string]any{
+                    "name": "My Company",
+                    "id": "c01458a5-7276-41ce-bc19-639906b0450a",
+                },
+                "plan": "enterprise",
+            },
+            Configuration: []components.ConnectionConfiguration{
+                components.ConnectionConfiguration{
+                    Resource: sdkgo.String("leads"),
+                    Defaults: []components.ConnectionDefaults{
+                        components.ConnectionDefaults{
+                            ID: sdkgo.String("ProductInterest"),
+                            Options: []components.FormFieldOption{
+                                components.CreateFormFieldOptionFormFieldOptionGroup(
+                                    components.FormFieldOptionGroup{
+                                        ID: sdkgo.String("1234"),
+                                        Label: sdkgo.String("General Channel"),
+                                        Options: []components.SimpleFormFieldOption{
+                                            components.SimpleFormFieldOption{
+                                                Label: sdkgo.String("General Channel"),
+                                                Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueNumber(
+                                                    12.5,
+                                                )),
+                                            },
+                                            components.SimpleFormFieldOption{
+                                                Label: sdkgo.String("General Channel"),
+                                                Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueArrayOf5(
+                                                    []components.Five{
+                                                        components.CreateFiveStr(
+                                                            "team",
+                                                        ),
+                                                        components.CreateFiveStr(
+                                                            "general",
+                                                        ),
+                                                    },
+                                                )),
+                                            },
                                         },
                                     },
-                                },
-                            ),
-                            components.CreateFormFieldOptionSimpleFormFieldOption(
-                                components.SimpleFormFieldOption{
-                                    Label: sdkgo.String("General Channel"),
-                                    Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueArrayOf5(
-                                        []components.Five{
-                                            components.CreateFiveStr(
-                                                "team",
-                                            ),
-                                            components.CreateFiveStr(
-                                                "general",
-                                            ),
-                                        },
-                                    )),
-                                },
-                            ),
+                                ),
+                                components.CreateFormFieldOptionSimpleFormFieldOption(
+                                    components.SimpleFormFieldOption{
+                                        Label: sdkgo.String("General Channel"),
+                                        Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueArrayOf5(
+                                            []components.Five{
+                                                components.CreateFiveStr(
+                                                    "team",
+                                                ),
+                                                components.CreateFiveStr(
+                                                    "general",
+                                                ),
+                                            },
+                                        )),
+                                    },
+                                ),
+                            },
+                            Value: sdkgo.Pointer(components.CreateConnectionValueNumber(
+                                10.5,
+                            )),
                         },
-                        Value: sdkgo.Pointer(components.CreateConnectionValueNumber(
-                            10.5,
-                        )),
+                        components.ConnectionDefaults{
+                            ID: sdkgo.String("ProductInterest"),
+                            Options: []components.FormFieldOption{
+                                components.CreateFormFieldOptionSimpleFormFieldOption(
+                                    components.SimpleFormFieldOption{
+                                        Label: sdkgo.String("General Channel"),
+                                        Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueStr(
+                                            "general",
+                                        )),
+                                    },
+                                ),
+                            },
+                            Value: sdkgo.Pointer(components.CreateConnectionValueBoolean(
+                                true,
+                            )),
+                        },
                     },
-                    components.ConnectionDefaults{
-                        ID: sdkgo.String("ProductInterest"),
-                        Options: []components.FormFieldOption{
-                            components.CreateFormFieldOptionSimpleFormFieldOption(
-                                components.SimpleFormFieldOption{
-                                    Label: sdkgo.String("General Channel"),
-                                    Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueStr(
-                                        "general",
-                                    )),
-                                },
-                            ),
+                },
+                components.ConnectionConfiguration{
+                    Resource: sdkgo.String("leads"),
+                    Defaults: []components.ConnectionDefaults{
+                        components.ConnectionDefaults{
+                            ID: sdkgo.String("ProductInterest"),
+                            Options: []components.FormFieldOption{
+                                components.CreateFormFieldOptionSimpleFormFieldOption(
+                                    components.SimpleFormFieldOption{
+                                        Label: sdkgo.String("General Channel"),
+                                        Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueBoolean(
+                                            true,
+                                        )),
+                                    },
+                                ),
+                            },
+                            Value: sdkgo.Pointer(components.CreateConnectionValueBoolean(
+                                true,
+                            )),
                         },
-                        Value: sdkgo.Pointer(components.CreateConnectionValueBoolean(
-                            true,
-                        )),
+                        components.ConnectionDefaults{
+                            ID: sdkgo.String("ProductInterest"),
+                            Options: []components.FormFieldOption{
+                                components.CreateFormFieldOptionSimpleFormFieldOption(
+                                    components.SimpleFormFieldOption{
+                                        Label: sdkgo.String("General Channel"),
+                                        Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueBoolean(
+                                            true,
+                                        )),
+                                    },
+                                ),
+                                components.CreateFormFieldOptionFormFieldOptionGroup(
+                                    components.FormFieldOptionGroup{
+                                        ID: sdkgo.String("1234"),
+                                        Label: sdkgo.String("General Channel"),
+                                        Options: []components.SimpleFormFieldOption{
+                                            components.SimpleFormFieldOption{
+                                                Label: sdkgo.String("General Channel"),
+                                                Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueNumber(
+                                                    12.5,
+                                                )),
+                                            },
+                                            components.SimpleFormFieldOption{
+                                                Label: sdkgo.String("General Channel"),
+                                                Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueStr(
+                                                    "general",
+                                                )),
+                                            },
+                                        },
+                                    },
+                                ),
+                            },
+                            Value: sdkgo.Pointer(components.CreateConnectionValueInteger(
+                                10,
+                            )),
+                        },
+                        components.ConnectionDefaults{
+                            ID: sdkgo.String("ProductInterest"),
+                            Options: []components.FormFieldOption{
+                                components.CreateFormFieldOptionFormFieldOptionGroup(
+                                    components.FormFieldOptionGroup{
+                                        ID: sdkgo.String("1234"),
+                                        Label: sdkgo.String("General Channel"),
+                                        Options: []components.SimpleFormFieldOption{
+                                            components.SimpleFormFieldOption{
+                                                Label: sdkgo.String("General Channel"),
+                                                Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueArrayOf5(
+                                                    []components.Five{
+                                                        components.CreateFiveStr(
+                                                            "team",
+                                                        ),
+                                                        components.CreateFiveStr(
+                                                            "general",
+                                                        ),
+                                                    },
+                                                )),
+                                            },
+                                            components.SimpleFormFieldOption{
+                                                Label: sdkgo.String("General Channel"),
+                                                Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueBoolean(
+                                                    true,
+                                                )),
+                                            },
+                                            components.SimpleFormFieldOption{
+                                                Label: sdkgo.String("General Channel"),
+                                                Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueNumber(
+                                                    12.5,
+                                                )),
+                                            },
+                                        },
+                                    },
+                                ),
+                                components.CreateFormFieldOptionSimpleFormFieldOption(
+                                    components.SimpleFormFieldOption{
+                                        Label: sdkgo.String("General Channel"),
+                                        Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueNumber(
+                                            12.5,
+                                        )),
+                                    },
+                                ),
+                            },
+                            Value: sdkgo.Pointer(components.CreateConnectionValueNumber(
+                                10.5,
+                            )),
+                        },
+                    },
+                },
+                components.ConnectionConfiguration{
+                    Resource: sdkgo.String("leads"),
+                    Defaults: []components.ConnectionDefaults{
+                        components.ConnectionDefaults{
+                            ID: sdkgo.String("ProductInterest"),
+                            Options: []components.FormFieldOption{
+                                components.CreateFormFieldOptionSimpleFormFieldOption(
+                                    components.SimpleFormFieldOption{
+                                        Label: sdkgo.String("General Channel"),
+                                        Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueStr(
+                                            "general",
+                                        )),
+                                    },
+                                ),
+                                components.CreateFormFieldOptionSimpleFormFieldOption(
+                                    components.SimpleFormFieldOption{
+                                        Label: sdkgo.String("General Channel"),
+                                        Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueBoolean(
+                                            true,
+                                        )),
+                                    },
+                                ),
+                                components.CreateFormFieldOptionSimpleFormFieldOption(
+                                    components.SimpleFormFieldOption{
+                                        Label: sdkgo.String("General Channel"),
+                                        Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueBoolean(
+                                            true,
+                                        )),
+                                    },
+                                ),
+                            },
+                            Value: sdkgo.Pointer(components.CreateConnectionValueStr(
+                                "GC5000 series",
+                            )),
+                        },
+                        components.ConnectionDefaults{
+                            ID: sdkgo.String("ProductInterest"),
+                            Options: []components.FormFieldOption{
+                                components.CreateFormFieldOptionSimpleFormFieldOption(
+                                    components.SimpleFormFieldOption{
+                                        Label: sdkgo.String("General Channel"),
+                                        Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueBoolean(
+                                            true,
+                                        )),
+                                    },
+                                ),
+                                components.CreateFormFieldOptionSimpleFormFieldOption(
+                                    components.SimpleFormFieldOption{
+                                        Label: sdkgo.String("General Channel"),
+                                        Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueInteger(
+                                            123,
+                                        )),
+                                    },
+                                ),
+                            },
+                            Value: sdkgo.Pointer(components.CreateConnectionValueNumber(
+                                10.5,
+                            )),
+                        },
                     },
                 },
             },
-            components.ConnectionConfiguration{
-                Resource: sdkgo.String("leads"),
-                Defaults: []components.ConnectionDefaults{
-                    components.ConnectionDefaults{
-                        ID: sdkgo.String("ProductInterest"),
-                        Options: []components.FormFieldOption{
-                            components.CreateFormFieldOptionSimpleFormFieldOption(
-                                components.SimpleFormFieldOption{
-                                    Label: sdkgo.String("General Channel"),
-                                    Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueBoolean(
-                                        true,
-                                    )),
-                                },
-                            ),
-                        },
-                        Value: sdkgo.Pointer(components.CreateConnectionValueBoolean(
-                            true,
-                        )),
-                    },
-                    components.ConnectionDefaults{
-                        ID: sdkgo.String("ProductInterest"),
-                        Options: []components.FormFieldOption{
-                            components.CreateFormFieldOptionSimpleFormFieldOption(
-                                components.SimpleFormFieldOption{
-                                    Label: sdkgo.String("General Channel"),
-                                    Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueBoolean(
-                                        true,
-                                    )),
-                                },
-                            ),
-                            components.CreateFormFieldOptionFormFieldOptionGroup(
-                                components.FormFieldOptionGroup{
-                                    ID: sdkgo.String("1234"),
-                                    Label: sdkgo.String("General Channel"),
-                                    Options: []components.SimpleFormFieldOption{
-                                        components.SimpleFormFieldOption{
-                                            Label: sdkgo.String("General Channel"),
-                                            Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueNumber(
-                                                12.5,
-                                            )),
-                                        },
-                                        components.SimpleFormFieldOption{
-                                            Label: sdkgo.String("General Channel"),
-                                            Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueStr(
-                                                "general",
-                                            )),
-                                        },
-                                    },
-                                },
-                            ),
-                        },
-                        Value: sdkgo.Pointer(components.CreateConnectionValueInteger(
-                            10,
-                        )),
-                    },
-                    components.ConnectionDefaults{
-                        ID: sdkgo.String("ProductInterest"),
-                        Options: []components.FormFieldOption{
-                            components.CreateFormFieldOptionFormFieldOptionGroup(
-                                components.FormFieldOptionGroup{
-                                    ID: sdkgo.String("1234"),
-                                    Label: sdkgo.String("General Channel"),
-                                    Options: []components.SimpleFormFieldOption{
-                                        components.SimpleFormFieldOption{
-                                            Label: sdkgo.String("General Channel"),
-                                            Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueArrayOf5(
-                                                []components.Five{
-                                                    components.CreateFiveStr(
-                                                        "team",
-                                                    ),
-                                                    components.CreateFiveStr(
-                                                        "general",
-                                                    ),
-                                                },
-                                            )),
-                                        },
-                                        components.SimpleFormFieldOption{
-                                            Label: sdkgo.String("General Channel"),
-                                            Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueBoolean(
-                                                true,
-                                            )),
-                                        },
-                                        components.SimpleFormFieldOption{
-                                            Label: sdkgo.String("General Channel"),
-                                            Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueNumber(
-                                                12.5,
-                                            )),
-                                        },
-                                    },
-                                },
-                            ),
-                            components.CreateFormFieldOptionSimpleFormFieldOption(
-                                components.SimpleFormFieldOption{
-                                    Label: sdkgo.String("General Channel"),
-                                    Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueNumber(
-                                        12.5,
-                                    )),
-                                },
-                            ),
-                        },
-                        Value: sdkgo.Pointer(components.CreateConnectionValueNumber(
-                            10.5,
-                        )),
-                    },
+            CustomMappings: []components.CustomMappingInput{
+                components.CustomMappingInput{
+                    Value: sdkgo.String("$.root.training.first_aid"),
                 },
-            },
-            components.ConnectionConfiguration{
-                Resource: sdkgo.String("leads"),
-                Defaults: []components.ConnectionDefaults{
-                    components.ConnectionDefaults{
-                        ID: sdkgo.String("ProductInterest"),
-                        Options: []components.FormFieldOption{
-                            components.CreateFormFieldOptionSimpleFormFieldOption(
-                                components.SimpleFormFieldOption{
-                                    Label: sdkgo.String("General Channel"),
-                                    Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueStr(
-                                        "general",
-                                    )),
-                                },
-                            ),
-                            components.CreateFormFieldOptionSimpleFormFieldOption(
-                                components.SimpleFormFieldOption{
-                                    Label: sdkgo.String("General Channel"),
-                                    Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueBoolean(
-                                        true,
-                                    )),
-                                },
-                            ),
-                            components.CreateFormFieldOptionSimpleFormFieldOption(
-                                components.SimpleFormFieldOption{
-                                    Label: sdkgo.String("General Channel"),
-                                    Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueBoolean(
-                                        true,
-                                    )),
-                                },
-                            ),
-                        },
-                        Value: sdkgo.Pointer(components.CreateConnectionValueStr(
-                            "GC5000 series",
-                        )),
-                    },
-                    components.ConnectionDefaults{
-                        ID: sdkgo.String("ProductInterest"),
-                        Options: []components.FormFieldOption{
-                            components.CreateFormFieldOptionSimpleFormFieldOption(
-                                components.SimpleFormFieldOption{
-                                    Label: sdkgo.String("General Channel"),
-                                    Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueBoolean(
-                                        true,
-                                    )),
-                                },
-                            ),
-                            components.CreateFormFieldOptionSimpleFormFieldOption(
-                                components.SimpleFormFieldOption{
-                                    Label: sdkgo.String("General Channel"),
-                                    Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueInteger(
-                                        123,
-                                    )),
-                                },
-                            ),
-                        },
-                        Value: sdkgo.Pointer(components.CreateConnectionValueNumber(
-                            10.5,
-                        )),
-                    },
-                },
-            },
-        },
-        CustomMappings: []components.CustomMappingInput{
-            components.CustomMappingInput{
-                Value: sdkgo.String("$.root.training.first_aid"),
             },
         },
     })
@@ -429,13 +438,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              | Example                                                                  |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `ctx`                                                                    | [context.Context](https://pkg.go.dev/context#Context)                    | :heavy_check_mark:                                                       | The context to use for the request.                                      |                                                                          |
-| `serviceID`                                                              | *string*                                                                 | :heavy_check_mark:                                                       | Service ID of the resource to return                                     | pipedrive                                                                |
-| `unifiedAPI`                                                             | *string*                                                                 | :heavy_check_mark:                                                       | Unified API                                                              | crm                                                                      |
-| `connection`                                                             | [components.ConnectionInput](../../models/components/connectioninput.md) | :heavy_check_mark:                                                       | Fields that need to be updated on the resource                           |                                                                          |
-| `opts`                                                                   | [][operations.Option](../../models/operations/option.md)                 | :heavy_minus_sign:                                                       | The options for this request.                                            |                                                                          |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                | :heavy_check_mark:                                                                                   | The context to use for the request.                                                                  |
+| `request`                                                                                            | [operations.VaultConnectionsUpdateRequest](../../models/operations/vaultconnectionsupdaterequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `opts`                                                                                               | [][operations.Option](../../models/operations/option.md)                                             | :heavy_minus_sign:                                                                                   | The options for this request.                                                                        |
 
 ### Response
 
@@ -477,7 +484,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Vault.Connections.Delete(ctx, "pipedrive", "crm")
+    res, err := s.Vault.Connections.Delete(ctx, "pipedrive", "crm", nil, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -489,12 +496,14 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              | Example                                                  |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |                                                          |
-| `serviceID`                                              | *string*                                                 | :heavy_check_mark:                                       | Service ID of the resource to return                     | pipedrive                                                |
-| `unifiedAPI`                                             | *string*                                                 | :heavy_check_mark:                                       | Unified API                                              | crm                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |                                                          |
+| Parameter                                                  | Type                                                       | Required                                                   | Description                                                | Example                                                    |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `ctx`                                                      | [context.Context](https://pkg.go.dev/context#Context)      | :heavy_check_mark:                                         | The context to use for the request.                        |                                                            |
+| `serviceID`                                                | *string*                                                   | :heavy_check_mark:                                         | Service ID of the resource to return                       | pipedrive                                                  |
+| `unifiedAPI`                                               | *string*                                                   | :heavy_check_mark:                                         | Unified API                                                | crm                                                        |
+| `consumerID`                                               | **string*                                                  | :heavy_minus_sign:                                         | ID of the consumer which you want to get or push data from | test-consumer                                              |
+| `appID`                                                    | **string*                                                  | :heavy_minus_sign:                                         | The ID of your Unify application                           | dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX                    |
+| `opts`                                                     | [][operations.Option](../../models/operations/option.md)   | :heavy_minus_sign:                                         | The options for this request.                              |                                                            |
 
 ### Response
 
@@ -526,6 +535,7 @@ import(
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
+	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
 
@@ -538,17 +548,21 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Vault.Connections.Imports(ctx, "pipedrive", "crm", components.ConnectionImportData{
-        Credentials: &components.Credentials{
-            RefreshToken: sdkgo.String("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ"),
-            AccessToken: sdkgo.String("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"),
-        },
-        Metadata: map[string]any{
-            "account": map[string]any{
-                "name": "My Company",
-                "id": "c01458a5-7276-41ce-bc19-639906b0450a",
+    res, err := s.Vault.Connections.Imports(ctx, operations.VaultConnectionsImportRequest{
+        ServiceID: "pipedrive",
+        UnifiedAPI: "crm",
+        ConnectionImportData: components.ConnectionImportData{
+            Credentials: &components.Credentials{
+                RefreshToken: sdkgo.String("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ"),
+                AccessToken: sdkgo.String("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"),
             },
-            "plan": "enterprise",
+            Metadata: map[string]any{
+                "account": map[string]any{
+                    "name": "My Company",
+                    "id": "c01458a5-7276-41ce-bc19-639906b0450a",
+                },
+                "plan": "enterprise",
+            },
         },
     })
     if err != nil {
@@ -562,13 +576,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        | Example                                                                            |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |                                                                                    |
-| `serviceID`                                                                        | *string*                                                                           | :heavy_check_mark:                                                                 | Service ID of the resource to return                                               | pipedrive                                                                          |
-| `unifiedAPI`                                                                       | *string*                                                                           | :heavy_check_mark:                                                                 | Unified API                                                                        | crm                                                                                |
-| `connectionImportData`                                                             | [components.ConnectionImportData](../../models/components/connectionimportdata.md) | :heavy_check_mark:                                                                 | Fields that need to be persisted on the resource                                   |                                                                                    |
-| `opts`                                                                             | [][operations.Option](../../models/operations/option.md)                           | :heavy_minus_sign:                                                                 | The options for this request.                                                      |                                                                                    |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                | :heavy_check_mark:                                                                                   | The context to use for the request.                                                                  |
+| `request`                                                                                            | [operations.VaultConnectionsImportRequest](../../models/operations/vaultconnectionsimportrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `opts`                                                                                               | [][operations.Option](../../models/operations/option.md)                                             | :heavy_minus_sign:                                                                                   | The options for this request.                                                                        |
 
 ### Response
 
@@ -604,6 +616,7 @@ import(
 	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
 
@@ -616,7 +629,10 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Vault.Connections.Token(ctx, "pipedrive", "crm", nil)
+    res, err := s.Vault.Connections.Token(ctx, operations.VaultConnectionsTokenRequest{
+        ServiceID: "pipedrive",
+        UnifiedAPI: "crm",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -628,13 +644,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 | Example                                                                                                     |
-| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                       | [context.Context](https://pkg.go.dev/context#Context)                                                       | :heavy_check_mark:                                                                                          | The context to use for the request.                                                                         |                                                                                                             |
-| `serviceID`                                                                                                 | *string*                                                                                                    | :heavy_check_mark:                                                                                          | Service ID of the resource to return                                                                        | pipedrive                                                                                                   |
-| `unifiedAPI`                                                                                                | *string*                                                                                                    | :heavy_check_mark:                                                                                          | Unified API                                                                                                 | crm                                                                                                         |
-| `requestBody`                                                                                               | [*operations.VaultConnectionsTokenRequestBody](../../models/operations/vaultconnectionstokenrequestbody.md) | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |                                                                                                             |
-| `opts`                                                                                                      | [][operations.Option](../../models/operations/option.md)                                                    | :heavy_minus_sign:                                                                                          | The options for this request.                                                                               |                                                                                                             |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
+| `request`                                                                                          | [operations.VaultConnectionsTokenRequest](../../models/operations/vaultconnectionstokenrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `opts`                                                                                             | [][operations.Option](../../models/operations/option.md)                                           | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
 
 ### Response
 

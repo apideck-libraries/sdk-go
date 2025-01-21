@@ -19,10 +19,19 @@ func (o *ConnectorConnectorDocsOneGlobals) GetAppID() *string {
 }
 
 type ConnectorConnectorDocsOneRequest struct {
+	// The ID of your Unify application
+	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 	// ID of the record you are acting upon.
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 	// ID of the Doc
 	DocID string `pathParam:"style=simple,explode=false,name=doc_id"`
+}
+
+func (o *ConnectorConnectorDocsOneRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
 }
 
 func (o *ConnectorConnectorDocsOneRequest) GetID() string {

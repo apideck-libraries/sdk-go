@@ -28,19 +28,12 @@ func newBalanceSheet(sdkConfig sdkConfiguration) *BalanceSheet {
 
 // Get BalanceSheet
 // Get BalanceSheet
-func (s *BalanceSheet) Get(ctx context.Context, serviceID *string, passThrough map[string]any, filter *components.BalanceSheetFilter, raw *bool, opts ...operations.Option) (*operations.AccountingBalanceSheetOneResponse, error) {
+func (s *BalanceSheet) Get(ctx context.Context, request operations.AccountingBalanceSheetOneRequest, opts ...operations.Option) (*operations.AccountingBalanceSheetOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.balanceSheetOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingBalanceSheetOneRequest{
-		ServiceID:   serviceID,
-		PassThrough: passThrough,
-		Filter:      filter,
-		Raw:         raw,
 	}
 
 	globals := operations.AccountingBalanceSheetOneGlobals{

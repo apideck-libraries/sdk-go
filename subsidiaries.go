@@ -236,11 +236,13 @@ func (s *Subsidiaries) List(ctx context.Context, request operations.AccountingSu
 		return s.List(
 			ctx,
 			operations.AccountingSubsidiariesAllRequest{
-				Raw:       request.Raw,
-				ServiceID: request.ServiceID,
-				Cursor:    &nCVal,
-				Limit:     request.Limit,
-				Fields:    request.Fields,
+				Raw:        request.Raw,
+				ConsumerID: request.ConsumerID,
+				AppID:      request.AppID,
+				ServiceID:  request.ServiceID,
+				Cursor:     &nCVal,
+				Limit:      request.Limit,
+				Fields:     request.Fields,
 			},
 			opts...,
 		)
@@ -414,18 +416,12 @@ func (s *Subsidiaries) List(ctx context.Context, request operations.AccountingSu
 
 // Create Subsidiary
 // Create Subsidiary
-func (s *Subsidiaries) Create(ctx context.Context, subsidiary components.SubsidiaryInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.AccountingSubsidiariesAddResponse, error) {
+func (s *Subsidiaries) Create(ctx context.Context, request operations.AccountingSubsidiariesAddRequest, opts ...operations.Option) (*operations.AccountingSubsidiariesAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.subsidiariesAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingSubsidiariesAddRequest{
-		Raw:        raw,
-		ServiceID:  serviceID,
-		Subsidiary: subsidiary,
 	}
 
 	globals := operations.AccountingSubsidiariesAddGlobals{
@@ -766,19 +762,12 @@ func (s *Subsidiaries) Create(ctx context.Context, subsidiary components.Subsidi
 
 // Get Subsidiary
 // Get Subsidiary
-func (s *Subsidiaries) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.AccountingSubsidiariesOneResponse, error) {
+func (s *Subsidiaries) Get(ctx context.Context, request operations.AccountingSubsidiariesOneRequest, opts ...operations.Option) (*operations.AccountingSubsidiariesOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.subsidiariesOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingSubsidiariesOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.AccountingSubsidiariesOneGlobals{
@@ -1111,19 +1100,12 @@ func (s *Subsidiaries) Get(ctx context.Context, id string, serviceID *string, ra
 
 // Update Subsidiary
 // Update Subsidiary
-func (s *Subsidiaries) Update(ctx context.Context, id string, subsidiary components.SubsidiaryInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingSubsidiariesUpdateResponse, error) {
+func (s *Subsidiaries) Update(ctx context.Context, request operations.AccountingSubsidiariesUpdateRequest, opts ...operations.Option) (*operations.AccountingSubsidiariesUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.subsidiariesUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingSubsidiariesUpdateRequest{
-		ID:         id,
-		ServiceID:  serviceID,
-		Raw:        raw,
-		Subsidiary: subsidiary,
 	}
 
 	globals := operations.AccountingSubsidiariesUpdateGlobals{
@@ -1464,18 +1446,12 @@ func (s *Subsidiaries) Update(ctx context.Context, id string, subsidiary compone
 
 // Delete Subsidiary
 // Delete Subsidiary
-func (s *Subsidiaries) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingSubsidiariesDeleteResponse, error) {
+func (s *Subsidiaries) Delete(ctx context.Context, request operations.AccountingSubsidiariesDeleteRequest, opts ...operations.Option) (*operations.AccountingSubsidiariesDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.subsidiariesDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingSubsidiariesDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AccountingSubsidiariesDeleteGlobals{

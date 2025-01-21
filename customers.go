@@ -237,6 +237,8 @@ func (s *Customers) List(ctx context.Context, request operations.AccountingCusto
 			ctx,
 			operations.AccountingCustomersAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -417,18 +419,12 @@ func (s *Customers) List(ctx context.Context, request operations.AccountingCusto
 
 // Create Customer
 // Create Customer
-func (s *Customers) Create(ctx context.Context, customer components.CustomerInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.AccountingCustomersAddResponse, error) {
+func (s *Customers) Create(ctx context.Context, request operations.AccountingCustomersAddRequest, opts ...operations.Option) (*operations.AccountingCustomersAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.customersAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingCustomersAddRequest{
-		Raw:       raw,
-		ServiceID: serviceID,
-		Customer:  customer,
 	}
 
 	globals := operations.AccountingCustomersAddGlobals{
@@ -769,19 +765,12 @@ func (s *Customers) Create(ctx context.Context, customer components.CustomerInpu
 
 // Get Customer
 // Get Customer
-func (s *Customers) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.AccountingCustomersOneResponse, error) {
+func (s *Customers) Get(ctx context.Context, request operations.AccountingCustomersOneRequest, opts ...operations.Option) (*operations.AccountingCustomersOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.customersOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingCustomersOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.AccountingCustomersOneGlobals{
@@ -1114,19 +1103,12 @@ func (s *Customers) Get(ctx context.Context, id string, serviceID *string, raw *
 
 // Update Customer
 // Update Customer
-func (s *Customers) Update(ctx context.Context, id string, customer components.CustomerInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingCustomersUpdateResponse, error) {
+func (s *Customers) Update(ctx context.Context, request operations.AccountingCustomersUpdateRequest, opts ...operations.Option) (*operations.AccountingCustomersUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.customersUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingCustomersUpdateRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Customer:  customer,
 	}
 
 	globals := operations.AccountingCustomersUpdateGlobals{
@@ -1467,18 +1449,12 @@ func (s *Customers) Update(ctx context.Context, id string, customer components.C
 
 // Delete Customer
 // Delete Customer
-func (s *Customers) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingCustomersDeleteResponse, error) {
+func (s *Customers) Delete(ctx context.Context, request operations.AccountingCustomersDeleteRequest, opts ...operations.Option) (*operations.AccountingCustomersDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.customersDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingCustomersDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AccountingCustomersDeleteGlobals{
