@@ -116,6 +116,7 @@ import(
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/types"
+	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
 
@@ -128,59 +129,64 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.IssueTracking.CollectionTickets.Create(ctx, "apideck-io", components.TicketInput{
-        ParentID: sdkgo.String("12345"),
-        Type: sdkgo.String("Technical"),
-        Subject: sdkgo.String("Technical Support Request"),
-        Description: sdkgo.String("I am facing issues with my internet connection"),
-        Status: sdkgo.String("open"),
-        Priority: components.PriorityHigh.ToPointer(),
-        Assignees: []components.AssigneeInput{
-            components.AssigneeInput{
-                ID: "12345",
+    res, err := s.IssueTracking.CollectionTickets.Create(ctx, operations.IssueTrackingCollectionTicketsAddRequest{
+        Raw: sdkgo.Bool(false),
+        ServiceID: sdkgo.String("salesforce"),
+        CollectionID: "apideck-io",
+        Ticket: components.TicketInput{
+            ParentID: sdkgo.String("12345"),
+            Type: sdkgo.String("Technical"),
+            Subject: sdkgo.String("Technical Support Request"),
+            Description: sdkgo.String("I am facing issues with my internet connection"),
+            Status: sdkgo.String("open"),
+            Priority: components.PriorityHigh.ToPointer(),
+            Assignees: []components.AssigneeInput{
+                components.AssigneeInput{
+                    ID: "12345",
+                },
+                components.AssigneeInput{
+                    ID: "12345",
+                },
             },
-            components.AssigneeInput{
-                ID: "12345",
+            DueDate: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
+            Tags: []components.CollectionTagInput{
+                components.CollectionTagInput{
+                    ID: sdkgo.String("12345"),
+                },
+                components.CollectionTagInput{
+                    ID: sdkgo.String("12345"),
+                },
             },
-        },
-        DueDate: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
-        Tags: []components.CollectionTagInput{
-            components.CollectionTagInput{
-                ID: sdkgo.String("12345"),
-            },
-            components.CollectionTagInput{
-                ID: sdkgo.String("12345"),
-            },
-        },
-        PassThrough: []components.PassThroughBody{
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
+            PassThrough: []components.PassThroughBody{
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                    },
+                },
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
                             },
                         },
                     },
                 },
             },
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                },
-            },
         },
-    }, sdkgo.Bool(false), sdkgo.String("salesforce"))
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -192,14 +198,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                     | Type                                                                                                                                          | Required                                                                                                                                      | Description                                                                                                                                   | Example                                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                         | [context.Context](https://pkg.go.dev/context#Context)                                                                                         | :heavy_check_mark:                                                                                                                            | The context to use for the request.                                                                                                           |                                                                                                                                               |
-| `collectionID`                                                                                                                                | *string*                                                                                                                                      | :heavy_check_mark:                                                                                                                            | The collection ID                                                                                                                             | apideck-io                                                                                                                                    |
-| `ticket`                                                                                                                                      | [components.TicketInput](../../models/components/ticketinput.md)                                                                              | :heavy_check_mark:                                                                                                                            | N/A                                                                                                                                           |                                                                                                                                               |
-| `raw`                                                                                                                                         | **bool*                                                                                                                                       | :heavy_minus_sign:                                                                                                                            | Include raw response. Mostly used for debugging purposes                                                                                      |                                                                                                                                               |
-| `serviceID`                                                                                                                                   | **string*                                                                                                                                     | :heavy_minus_sign:                                                                                                                            | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | salesforce                                                                                                                                    |
-| `opts`                                                                                                                                        | [][operations.Option](../../models/operations/option.md)                                                                                      | :heavy_minus_sign:                                                                                                                            | The options for this request.                                                                                                                 |                                                                                                                                               |
+| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                                      | :heavy_check_mark:                                                                                                         | The context to use for the request.                                                                                        |
+| `request`                                                                                                                  | [operations.IssueTrackingCollectionTicketsAddRequest](../../models/operations/issuetrackingcollectionticketsaddrequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
+| `opts`                                                                                                                     | [][operations.Option](../../models/operations/option.md)                                                                   | :heavy_minus_sign:                                                                                                         | The options for this request.                                                                                              |
 
 ### Response
 
@@ -440,6 +443,7 @@ import(
 	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
 
@@ -452,7 +456,12 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.IssueTracking.CollectionTickets.Delete(ctx, "<id>", "apideck-io", sdkgo.String("salesforce"), sdkgo.Bool(false))
+    res, err := s.IssueTracking.CollectionTickets.Delete(ctx, operations.IssueTrackingCollectionTicketsDeleteRequest{
+        TicketID: "<id>",
+        ServiceID: sdkgo.String("salesforce"),
+        Raw: sdkgo.Bool(false),
+        CollectionID: "apideck-io",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -464,14 +473,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                     | Type                                                                                                                                          | Required                                                                                                                                      | Description                                                                                                                                   | Example                                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                         | [context.Context](https://pkg.go.dev/context#Context)                                                                                         | :heavy_check_mark:                                                                                                                            | The context to use for the request.                                                                                                           |                                                                                                                                               |
-| `ticketID`                                                                                                                                    | *string*                                                                                                                                      | :heavy_check_mark:                                                                                                                            | ID of the ticket you are acting upon.                                                                                                         |                                                                                                                                               |
-| `collectionID`                                                                                                                                | *string*                                                                                                                                      | :heavy_check_mark:                                                                                                                            | The collection ID                                                                                                                             | apideck-io                                                                                                                                    |
-| `serviceID`                                                                                                                                   | **string*                                                                                                                                     | :heavy_minus_sign:                                                                                                                            | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | salesforce                                                                                                                                    |
-| `raw`                                                                                                                                         | **bool*                                                                                                                                       | :heavy_minus_sign:                                                                                                                            | Include raw response. Mostly used for debugging purposes                                                                                      |                                                                                                                                               |
-| `opts`                                                                                                                                        | [][operations.Option](../../models/operations/option.md)                                                                                      | :heavy_minus_sign:                                                                                                                            | The options for this request.                                                                                                                 |                                                                                                                                               |
+| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                            | :heavy_check_mark:                                                                                                               | The context to use for the request.                                                                                              |
+| `request`                                                                                                                        | [operations.IssueTrackingCollectionTicketsDeleteRequest](../../models/operations/issuetrackingcollectionticketsdeleterequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
+| `opts`                                                                                                                           | [][operations.Option](../../models/operations/option.md)                                                                         | :heavy_minus_sign:                                                                                                               | The options for this request.                                                                                                    |
 
 ### Response
 

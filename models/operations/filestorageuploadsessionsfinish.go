@@ -40,6 +40,10 @@ type FileStorageUploadSessionsFinishRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 	// Include raw response. Mostly used for debugging purposes
 	Raw *bool `default:"false" queryParam:"style=form,explode=true,name=raw"`
+	// ID of the consumer which you want to get or push data from
+	ConsumerID *string `header:"style=simple,explode=false,name=x-apideck-consumer-id"`
+	// The ID of your Unify application
+	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 	// Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.
 	ServiceID *string `header:"style=simple,explode=false,name=x-apideck-service-id"`
 	// The RFC3230 message digest of the uploaded part. Only required for the Box connector. More information on the Box API docs [here](https://developer.box.com/reference/put-files-upload-sessions-id/#param-digest)
@@ -70,6 +74,20 @@ func (o *FileStorageUploadSessionsFinishRequest) GetRaw() *bool {
 		return nil
 	}
 	return o.Raw
+}
+
+func (o *FileStorageUploadSessionsFinishRequest) GetConsumerID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ConsumerID
+}
+
+func (o *FileStorageUploadSessionsFinishRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
 }
 
 func (o *FileStorageUploadSessionsFinishRequest) GetServiceID() *string {

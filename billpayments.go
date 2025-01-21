@@ -237,6 +237,8 @@ func (s *BillPayments) List(ctx context.Context, request operations.AccountingBi
 			ctx,
 			operations.AccountingBillPaymentsAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -417,18 +419,12 @@ func (s *BillPayments) List(ctx context.Context, request operations.AccountingBi
 
 // Create Bill Payment
 // Create Bill Payment
-func (s *BillPayments) Create(ctx context.Context, billPayment components.BillPaymentInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.AccountingBillPaymentsAddResponse, error) {
+func (s *BillPayments) Create(ctx context.Context, request operations.AccountingBillPaymentsAddRequest, opts ...operations.Option) (*operations.AccountingBillPaymentsAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.billPaymentsAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingBillPaymentsAddRequest{
-		Raw:         raw,
-		ServiceID:   serviceID,
-		BillPayment: billPayment,
 	}
 
 	globals := operations.AccountingBillPaymentsAddGlobals{
@@ -769,19 +765,12 @@ func (s *BillPayments) Create(ctx context.Context, billPayment components.BillPa
 
 // Get Bill Payment
 // Get Bill Payment
-func (s *BillPayments) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.AccountingBillPaymentsOneResponse, error) {
+func (s *BillPayments) Get(ctx context.Context, request operations.AccountingBillPaymentsOneRequest, opts ...operations.Option) (*operations.AccountingBillPaymentsOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.billPaymentsOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingBillPaymentsOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.AccountingBillPaymentsOneGlobals{
@@ -1114,19 +1103,12 @@ func (s *BillPayments) Get(ctx context.Context, id string, serviceID *string, ra
 
 // Update Bill Payment
 // Update Bill Payment
-func (s *BillPayments) Update(ctx context.Context, id string, billPayment components.BillPaymentInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingBillPaymentsUpdateResponse, error) {
+func (s *BillPayments) Update(ctx context.Context, request operations.AccountingBillPaymentsUpdateRequest, opts ...operations.Option) (*operations.AccountingBillPaymentsUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.billPaymentsUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingBillPaymentsUpdateRequest{
-		ID:          id,
-		ServiceID:   serviceID,
-		Raw:         raw,
-		BillPayment: billPayment,
 	}
 
 	globals := operations.AccountingBillPaymentsUpdateGlobals{
@@ -1467,18 +1449,12 @@ func (s *BillPayments) Update(ctx context.Context, id string, billPayment compon
 
 // Delete Bill Payment
 // Delete Bill Payment
-func (s *BillPayments) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingBillPaymentsDeleteResponse, error) {
+func (s *BillPayments) Delete(ctx context.Context, request operations.AccountingBillPaymentsDeleteRequest, opts ...operations.Option) (*operations.AccountingBillPaymentsDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.billPaymentsDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingBillPaymentsDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AccountingBillPaymentsDeleteGlobals{

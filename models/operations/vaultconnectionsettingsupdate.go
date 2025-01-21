@@ -28,6 +28,10 @@ func (o *VaultConnectionSettingsUpdateGlobals) GetAppID() *string {
 }
 
 type VaultConnectionSettingsUpdateRequest struct {
+	// ID of the consumer which you want to get or push data from
+	ConsumerID *string `header:"style=simple,explode=false,name=x-apideck-consumer-id"`
+	// The ID of your Unify application
+	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 	// Service ID of the resource to return
 	ServiceID string `pathParam:"style=simple,explode=false,name=service_id"`
 	// Unified API
@@ -36,6 +40,20 @@ type VaultConnectionSettingsUpdateRequest struct {
 	Resource string `pathParam:"style=simple,explode=false,name=resource"`
 	// Fields that need to be updated on the resource
 	Connection components.ConnectionInput `request:"mediaType=application/json"`
+}
+
+func (o *VaultConnectionSettingsUpdateRequest) GetConsumerID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ConsumerID
+}
+
+func (o *VaultConnectionSettingsUpdateRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
 }
 
 func (o *VaultConnectionSettingsUpdateRequest) GetServiceID() string {

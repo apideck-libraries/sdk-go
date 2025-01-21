@@ -28,18 +28,12 @@ func newUploadSessions(sdkConfig sdkConfiguration) *UploadSessions {
 
 // Create - Start Upload Session
 // Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
-func (s *UploadSessions) Create(ctx context.Context, createUploadSessionRequest components.CreateUploadSessionRequest, raw *bool, serviceID *string, opts ...operations.Option) (*operations.FileStorageUploadSessionsAddResponse, error) {
+func (s *UploadSessions) Create(ctx context.Context, request operations.FileStorageUploadSessionsAddRequest, opts ...operations.Option) (*operations.FileStorageUploadSessionsAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.uploadSessionsAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageUploadSessionsAddRequest{
-		Raw:                        raw,
-		ServiceID:                  serviceID,
-		CreateUploadSessionRequest: createUploadSessionRequest,
 	}
 
 	globals := operations.FileStorageUploadSessionsAddGlobals{
@@ -379,19 +373,12 @@ func (s *UploadSessions) Create(ctx context.Context, createUploadSessionRequest 
 
 // Get Upload Session
 // Get Upload Session. Use the `part_size` to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
-func (s *UploadSessions) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.FileStorageUploadSessionsOneResponse, error) {
+func (s *UploadSessions) Get(ctx context.Context, request operations.FileStorageUploadSessionsOneRequest, opts ...operations.Option) (*operations.FileStorageUploadSessionsOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.uploadSessionsOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageUploadSessionsOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.FileStorageUploadSessionsOneGlobals{
@@ -723,18 +710,12 @@ func (s *UploadSessions) Get(ctx context.Context, id string, serviceID *string, 
 
 // Delete - Abort Upload Session
 // Abort Upload Session. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
-func (s *UploadSessions) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.FileStorageUploadSessionsDeleteResponse, error) {
+func (s *UploadSessions) Delete(ctx context.Context, request operations.FileStorageUploadSessionsDeleteRequest, opts ...operations.Option) (*operations.FileStorageUploadSessionsDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.uploadSessionsDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageUploadSessionsDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.FileStorageUploadSessionsDeleteGlobals{

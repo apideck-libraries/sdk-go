@@ -18,6 +18,26 @@ func (o *VaultConsumersAddGlobals) GetAppID() *string {
 	return o.AppID
 }
 
+type VaultConsumersAddRequest struct {
+	// The ID of your Unify application
+	AppID    *string                  `header:"style=simple,explode=false,name=x-apideck-app-id"`
+	Consumer components.ConsumerInput `request:"mediaType=application/json"`
+}
+
+func (o *VaultConsumersAddRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
+}
+
+func (o *VaultConsumersAddRequest) GetConsumer() components.ConsumerInput {
+	if o == nil {
+		return components.ConsumerInput{}
+	}
+	return o.Consumer
+}
+
 type VaultConsumersAddResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// Consumer created

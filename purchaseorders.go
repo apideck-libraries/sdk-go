@@ -237,6 +237,8 @@ func (s *PurchaseOrders) List(ctx context.Context, request operations.Accounting
 			ctx,
 			operations.AccountingPurchaseOrdersAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				PassThrough: request.PassThrough,
@@ -416,18 +418,12 @@ func (s *PurchaseOrders) List(ctx context.Context, request operations.Accounting
 
 // Create Purchase Order
 // Create Purchase Order
-func (s *PurchaseOrders) Create(ctx context.Context, purchaseOrder components.PurchaseOrderInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.AccountingPurchaseOrdersAddResponse, error) {
+func (s *PurchaseOrders) Create(ctx context.Context, request operations.AccountingPurchaseOrdersAddRequest, opts ...operations.Option) (*operations.AccountingPurchaseOrdersAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.purchaseOrdersAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingPurchaseOrdersAddRequest{
-		Raw:           raw,
-		ServiceID:     serviceID,
-		PurchaseOrder: purchaseOrder,
 	}
 
 	globals := operations.AccountingPurchaseOrdersAddGlobals{
@@ -768,18 +764,12 @@ func (s *PurchaseOrders) Create(ctx context.Context, purchaseOrder components.Pu
 
 // Get Purchase Order
 // Get Purchase Order
-func (s *PurchaseOrders) Get(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingPurchaseOrdersOneResponse, error) {
+func (s *PurchaseOrders) Get(ctx context.Context, request operations.AccountingPurchaseOrdersOneRequest, opts ...operations.Option) (*operations.AccountingPurchaseOrdersOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.purchaseOrdersOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingPurchaseOrdersOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AccountingPurchaseOrdersOneGlobals{
@@ -1112,19 +1102,12 @@ func (s *PurchaseOrders) Get(ctx context.Context, id string, serviceID *string, 
 
 // Update Purchase Order
 // Update Purchase Order
-func (s *PurchaseOrders) Update(ctx context.Context, id string, purchaseOrder components.PurchaseOrderInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingPurchaseOrdersUpdateResponse, error) {
+func (s *PurchaseOrders) Update(ctx context.Context, request operations.AccountingPurchaseOrdersUpdateRequest, opts ...operations.Option) (*operations.AccountingPurchaseOrdersUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.purchaseOrdersUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingPurchaseOrdersUpdateRequest{
-		ID:            id,
-		ServiceID:     serviceID,
-		Raw:           raw,
-		PurchaseOrder: purchaseOrder,
 	}
 
 	globals := operations.AccountingPurchaseOrdersUpdateGlobals{
@@ -1465,18 +1448,12 @@ func (s *PurchaseOrders) Update(ctx context.Context, id string, purchaseOrder co
 
 // Delete Purchase Order
 // Delete Purchase Order
-func (s *PurchaseOrders) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingPurchaseOrdersDeleteResponse, error) {
+func (s *PurchaseOrders) Delete(ctx context.Context, request operations.AccountingPurchaseOrdersDeleteRequest, opts ...operations.Option) (*operations.AccountingPurchaseOrdersDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.purchaseOrdersDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingPurchaseOrdersDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AccountingPurchaseOrdersDeleteGlobals{

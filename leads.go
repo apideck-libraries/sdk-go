@@ -237,6 +237,8 @@ func (s *Leads) List(ctx context.Context, request operations.CrmLeadsAllRequest,
 			ctx,
 			operations.CrmLeadsAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -417,18 +419,12 @@ func (s *Leads) List(ctx context.Context, request operations.CrmLeadsAllRequest,
 
 // Create lead
 // Create lead
-func (s *Leads) Create(ctx context.Context, lead components.LeadInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.CrmLeadsAddResponse, error) {
+func (s *Leads) Create(ctx context.Context, request operations.CrmLeadsAddRequest, opts ...operations.Option) (*operations.CrmLeadsAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.leadsAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmLeadsAddRequest{
-		Raw:       raw,
-		ServiceID: serviceID,
-		Lead:      lead,
 	}
 
 	globals := operations.CrmLeadsAddGlobals{
@@ -769,19 +765,12 @@ func (s *Leads) Create(ctx context.Context, lead components.LeadInput, raw *bool
 
 // Get lead
 // Get lead
-func (s *Leads) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.CrmLeadsOneResponse, error) {
+func (s *Leads) Get(ctx context.Context, request operations.CrmLeadsOneRequest, opts ...operations.Option) (*operations.CrmLeadsOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.leadsOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmLeadsOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.CrmLeadsOneGlobals{
@@ -1114,19 +1103,12 @@ func (s *Leads) Get(ctx context.Context, id string, serviceID *string, raw *bool
 
 // Update lead
 // Update lead
-func (s *Leads) Update(ctx context.Context, id string, lead components.LeadInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.CrmLeadsUpdateResponse, error) {
+func (s *Leads) Update(ctx context.Context, request operations.CrmLeadsUpdateRequest, opts ...operations.Option) (*operations.CrmLeadsUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.leadsUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmLeadsUpdateRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Lead:      lead,
 	}
 
 	globals := operations.CrmLeadsUpdateGlobals{
@@ -1467,18 +1449,12 @@ func (s *Leads) Update(ctx context.Context, id string, lead components.LeadInput
 
 // Delete lead
 // Delete lead
-func (s *Leads) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.CrmLeadsDeleteResponse, error) {
+func (s *Leads) Delete(ctx context.Context, request operations.CrmLeadsDeleteRequest, opts ...operations.Option) (*operations.CrmLeadsDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.leadsDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmLeadsDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.CrmLeadsDeleteGlobals{

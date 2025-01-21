@@ -27,19 +27,12 @@ func newConnectionCustomMappings(sdkConfig sdkConfiguration) *ConnectionCustomMa
 
 // List connection custom mappings
 // This endpoint returns a list of custom mappings for a connection.
-func (s *ConnectionCustomMappings) List(ctx context.Context, unifiedAPI string, serviceID string, resource string, resourceID *string, opts ...operations.Option) (*operations.VaultConnectionCustomMappingsAllResponse, error) {
+func (s *ConnectionCustomMappings) List(ctx context.Context, request operations.VaultConnectionCustomMappingsAllRequest, opts ...operations.Option) (*operations.VaultConnectionCustomMappingsAllResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.connectionCustomMappingsAll",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.VaultConnectionCustomMappingsAllRequest{
-		UnifiedAPI: unifiedAPI,
-		ServiceID:  serviceID,
-		Resource:   resource,
-		ResourceID: resourceID,
 	}
 
 	globals := operations.VaultConnectionCustomMappingsAllGlobals{

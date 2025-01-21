@@ -237,6 +237,8 @@ func (s *Jobs) List(ctx context.Context, request operations.AtsJobsAllRequest, o
 			ctx,
 			operations.AtsJobsAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -415,19 +417,12 @@ func (s *Jobs) List(ctx context.Context, request operations.AtsJobsAllRequest, o
 
 // Get Job
 // Get Job
-func (s *Jobs) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.AtsJobsOneResponse, error) {
+func (s *Jobs) Get(ctx context.Context, request operations.AtsJobsOneRequest, opts ...operations.Option) (*operations.AtsJobsOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "ats.jobsOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AtsJobsOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.AtsJobsOneGlobals{

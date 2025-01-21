@@ -27,7 +27,7 @@ func newAPIResources(sdkConfig sdkConfiguration) *APIResources {
 
 // Get API Resource
 // Get API Resource
-func (s *APIResources) Get(ctx context.Context, id string, resourceID string, opts ...operations.Option) (*operations.ConnectorAPIResourcesOneResponse, error) {
+func (s *APIResources) Get(ctx context.Context, id string, resourceID string, appID *string, opts ...operations.Option) (*operations.ConnectorAPIResourcesOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "connector.apiResourcesOne",
@@ -36,6 +36,7 @@ func (s *APIResources) Get(ctx context.Context, id string, resourceID string, op
 	}
 
 	request := operations.ConnectorAPIResourcesOneRequest{
+		AppID:      appID,
 		ID:         id,
 		ResourceID: resourceID,
 	}

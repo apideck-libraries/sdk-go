@@ -237,6 +237,8 @@ func (s *SharedLinks) List(ctx context.Context, request operations.FileStorageSh
 			ctx,
 			operations.FileStorageSharedLinksAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -415,18 +417,12 @@ func (s *SharedLinks) List(ctx context.Context, request operations.FileStorageSh
 
 // Create Shared Link
 // Create Shared Link
-func (s *SharedLinks) Create(ctx context.Context, sharedLink components.SharedLinkInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.FileStorageSharedLinksAddResponse, error) {
+func (s *SharedLinks) Create(ctx context.Context, request operations.FileStorageSharedLinksAddRequest, opts ...operations.Option) (*operations.FileStorageSharedLinksAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.sharedLinksAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageSharedLinksAddRequest{
-		Raw:        raw,
-		ServiceID:  serviceID,
-		SharedLink: sharedLink,
 	}
 
 	globals := operations.FileStorageSharedLinksAddGlobals{
@@ -767,19 +763,12 @@ func (s *SharedLinks) Create(ctx context.Context, sharedLink components.SharedLi
 
 // Get Shared Link
 // Get Shared Link
-func (s *SharedLinks) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.FileStorageSharedLinksOneResponse, error) {
+func (s *SharedLinks) Get(ctx context.Context, request operations.FileStorageSharedLinksOneRequest, opts ...operations.Option) (*operations.FileStorageSharedLinksOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.sharedLinksOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageSharedLinksOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.FileStorageSharedLinksOneGlobals{
@@ -1112,19 +1101,12 @@ func (s *SharedLinks) Get(ctx context.Context, id string, serviceID *string, raw
 
 // Update Shared Link
 // Update Shared Link
-func (s *SharedLinks) Update(ctx context.Context, id string, sharedLink components.SharedLinkInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.FileStorageSharedLinksUpdateResponse, error) {
+func (s *SharedLinks) Update(ctx context.Context, request operations.FileStorageSharedLinksUpdateRequest, opts ...operations.Option) (*operations.FileStorageSharedLinksUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.sharedLinksUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageSharedLinksUpdateRequest{
-		ID:         id,
-		ServiceID:  serviceID,
-		Raw:        raw,
-		SharedLink: sharedLink,
 	}
 
 	globals := operations.FileStorageSharedLinksUpdateGlobals{
@@ -1465,18 +1447,12 @@ func (s *SharedLinks) Update(ctx context.Context, id string, sharedLink componen
 
 // Delete Shared Link
 // Delete Shared Link
-func (s *SharedLinks) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.FileStorageSharedLinksDeleteResponse, error) {
+func (s *SharedLinks) Delete(ctx context.Context, request operations.FileStorageSharedLinksDeleteRequest, opts ...operations.Option) (*operations.FileStorageSharedLinksDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.sharedLinksDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageSharedLinksDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.FileStorageSharedLinksDeleteGlobals{

@@ -237,6 +237,8 @@ func (s *LedgerAccounts) List(ctx context.Context, request operations.Accounting
 			ctx,
 			operations.AccountingLedgerAccountsAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -417,18 +419,12 @@ func (s *LedgerAccounts) List(ctx context.Context, request operations.Accounting
 
 // Create Ledger Account
 // Create Ledger Account
-func (s *LedgerAccounts) Create(ctx context.Context, ledgerAccount components.LedgerAccountInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.AccountingLedgerAccountsAddResponse, error) {
+func (s *LedgerAccounts) Create(ctx context.Context, request operations.AccountingLedgerAccountsAddRequest, opts ...operations.Option) (*operations.AccountingLedgerAccountsAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.ledgerAccountsAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingLedgerAccountsAddRequest{
-		Raw:           raw,
-		ServiceID:     serviceID,
-		LedgerAccount: ledgerAccount,
 	}
 
 	globals := operations.AccountingLedgerAccountsAddGlobals{
@@ -769,19 +765,12 @@ func (s *LedgerAccounts) Create(ctx context.Context, ledgerAccount components.Le
 
 // Get Ledger Account
 // Get Ledger Account
-func (s *LedgerAccounts) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.AccountingLedgerAccountsOneResponse, error) {
+func (s *LedgerAccounts) Get(ctx context.Context, request operations.AccountingLedgerAccountsOneRequest, opts ...operations.Option) (*operations.AccountingLedgerAccountsOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.ledgerAccountsOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingLedgerAccountsOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.AccountingLedgerAccountsOneGlobals{
@@ -1114,19 +1103,12 @@ func (s *LedgerAccounts) Get(ctx context.Context, id string, serviceID *string, 
 
 // Update Ledger Account
 // Update Ledger Account
-func (s *LedgerAccounts) Update(ctx context.Context, id string, ledgerAccount components.LedgerAccountInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingLedgerAccountsUpdateResponse, error) {
+func (s *LedgerAccounts) Update(ctx context.Context, request operations.AccountingLedgerAccountsUpdateRequest, opts ...operations.Option) (*operations.AccountingLedgerAccountsUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.ledgerAccountsUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingLedgerAccountsUpdateRequest{
-		ID:            id,
-		ServiceID:     serviceID,
-		Raw:           raw,
-		LedgerAccount: ledgerAccount,
 	}
 
 	globals := operations.AccountingLedgerAccountsUpdateGlobals{
@@ -1467,18 +1449,12 @@ func (s *LedgerAccounts) Update(ctx context.Context, id string, ledgerAccount co
 
 // Delete Ledger Account
 // Delete Ledger Account
-func (s *LedgerAccounts) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingLedgerAccountsDeleteResponse, error) {
+func (s *LedgerAccounts) Delete(ctx context.Context, request operations.AccountingLedgerAccountsDeleteRequest, opts ...operations.Option) (*operations.AccountingLedgerAccountsDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.ledgerAccountsDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingLedgerAccountsDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AccountingLedgerAccountsDeleteGlobals{

@@ -237,6 +237,8 @@ func (s *Pipelines) List(ctx context.Context, request operations.CrmPipelinesAll
 			ctx,
 			operations.CrmPipelinesAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,

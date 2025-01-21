@@ -31,6 +31,10 @@ func (o *CrmNotesAddGlobals) GetAppID() *string {
 type CrmNotesAddRequest struct {
 	// Include raw response. Mostly used for debugging purposes
 	Raw *bool `default:"false" queryParam:"style=form,explode=true,name=raw"`
+	// ID of the consumer which you want to get or push data from
+	ConsumerID *string `header:"style=simple,explode=false,name=x-apideck-consumer-id"`
+	// The ID of your Unify application
+	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 	// Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.
 	ServiceID *string              `header:"style=simple,explode=false,name=x-apideck-service-id"`
 	Note      components.NoteInput `request:"mediaType=application/json"`
@@ -52,6 +56,20 @@ func (o *CrmNotesAddRequest) GetRaw() *bool {
 		return nil
 	}
 	return o.Raw
+}
+
+func (o *CrmNotesAddRequest) GetConsumerID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ConsumerID
+}
+
+func (o *CrmNotesAddRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
 }
 
 func (o *CrmNotesAddRequest) GetServiceID() *string {

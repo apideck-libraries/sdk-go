@@ -19,12 +19,21 @@ func (o *ConnectorConnectorResourcesOneGlobals) GetAppID() *string {
 }
 
 type ConnectorConnectorResourcesOneRequest struct {
+	// The ID of your Unify application
+	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 	// ID of the record you are acting upon.
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 	// ID of the resource you are acting upon.
 	ResourceID string `pathParam:"style=simple,explode=false,name=resource_id"`
 	// Specify unified API for the connector resource. This is useful when a resource appears in multiple APIs
 	UnifiedAPI *components.UnifiedAPIID `queryParam:"style=form,explode=true,name=unified_api"`
+}
+
+func (o *ConnectorConnectorResourcesOneRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
 }
 
 func (o *ConnectorConnectorResourcesOneRequest) GetID() string {

@@ -237,6 +237,8 @@ func (s *Activities) List(ctx context.Context, request operations.CrmActivitiesA
 			ctx,
 			operations.CrmActivitiesAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -417,18 +419,12 @@ func (s *Activities) List(ctx context.Context, request operations.CrmActivitiesA
 
 // Create activity
 // Create activity
-func (s *Activities) Create(ctx context.Context, activity components.ActivityInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.CrmActivitiesAddResponse, error) {
+func (s *Activities) Create(ctx context.Context, request operations.CrmActivitiesAddRequest, opts ...operations.Option) (*operations.CrmActivitiesAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.activitiesAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmActivitiesAddRequest{
-		Raw:       raw,
-		ServiceID: serviceID,
-		Activity:  activity,
 	}
 
 	globals := operations.CrmActivitiesAddGlobals{
@@ -769,19 +765,12 @@ func (s *Activities) Create(ctx context.Context, activity components.ActivityInp
 
 // Get activity
 // Get activity
-func (s *Activities) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.CrmActivitiesOneResponse, error) {
+func (s *Activities) Get(ctx context.Context, request operations.CrmActivitiesOneRequest, opts ...operations.Option) (*operations.CrmActivitiesOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.activitiesOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmActivitiesOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.CrmActivitiesOneGlobals{
@@ -1114,19 +1103,12 @@ func (s *Activities) Get(ctx context.Context, id string, serviceID *string, raw 
 
 // Update activity
 // Update activity
-func (s *Activities) Update(ctx context.Context, id string, activity components.ActivityInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.CrmActivitiesUpdateResponse, error) {
+func (s *Activities) Update(ctx context.Context, request operations.CrmActivitiesUpdateRequest, opts ...operations.Option) (*operations.CrmActivitiesUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.activitiesUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmActivitiesUpdateRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Activity:  activity,
 	}
 
 	globals := operations.CrmActivitiesUpdateGlobals{
@@ -1467,18 +1449,12 @@ func (s *Activities) Update(ctx context.Context, id string, activity components.
 
 // Delete activity
 // Delete activity
-func (s *Activities) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.CrmActivitiesDeleteResponse, error) {
+func (s *Activities) Delete(ctx context.Context, request operations.CrmActivitiesDeleteRequest, opts ...operations.Option) (*operations.CrmActivitiesDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.activitiesDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmActivitiesDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.CrmActivitiesDeleteGlobals{

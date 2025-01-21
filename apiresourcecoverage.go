@@ -27,7 +27,7 @@ func newAPIResourceCoverage(sdkConfig sdkConfiguration) *APIResourceCoverage {
 
 // Get API Resource Coverage
 // Get API Resource Coverage
-func (s *APIResourceCoverage) Get(ctx context.Context, id string, resourceID string, opts ...operations.Option) (*operations.ConnectorAPIResourceCoverageOneResponse, error) {
+func (s *APIResourceCoverage) Get(ctx context.Context, id string, resourceID string, appID *string, opts ...operations.Option) (*operations.ConnectorAPIResourceCoverageOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "connector.apiResourceCoverageOne",
@@ -36,6 +36,7 @@ func (s *APIResourceCoverage) Get(ctx context.Context, id string, resourceID str
 	}
 
 	request := operations.ConnectorAPIResourceCoverageOneRequest{
+		AppID:      appID,
 		ID:         id,
 		ResourceID: resourceID,
 	}

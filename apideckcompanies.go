@@ -237,6 +237,8 @@ func (s *ApideckCompanies) List(ctx context.Context, request operations.HrisComp
 			ctx,
 			operations.HrisCompaniesAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -415,18 +417,12 @@ func (s *ApideckCompanies) List(ctx context.Context, request operations.HrisComp
 
 // Create Company
 // Create Company
-func (s *ApideckCompanies) Create(ctx context.Context, hrisCompany components.HrisCompanyInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.HrisCompaniesAddResponse, error) {
+func (s *ApideckCompanies) Create(ctx context.Context, request operations.HrisCompaniesAddRequest, opts ...operations.Option) (*operations.HrisCompaniesAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "hris.companiesAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.HrisCompaniesAddRequest{
-		Raw:         raw,
-		ServiceID:   serviceID,
-		HrisCompany: hrisCompany,
 	}
 
 	globals := operations.HrisCompaniesAddGlobals{
@@ -767,19 +763,12 @@ func (s *ApideckCompanies) Create(ctx context.Context, hrisCompany components.Hr
 
 // Get Company
 // Get Company
-func (s *ApideckCompanies) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.HrisCompaniesOneResponse, error) {
+func (s *ApideckCompanies) Get(ctx context.Context, request operations.HrisCompaniesOneRequest, opts ...operations.Option) (*operations.HrisCompaniesOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "hris.companiesOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.HrisCompaniesOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.HrisCompaniesOneGlobals{
@@ -1112,19 +1101,12 @@ func (s *ApideckCompanies) Get(ctx context.Context, id string, serviceID *string
 
 // Update Company
 // Update Company
-func (s *ApideckCompanies) Update(ctx context.Context, id string, hrisCompany components.HrisCompanyInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.HrisCompaniesUpdateResponse, error) {
+func (s *ApideckCompanies) Update(ctx context.Context, request operations.HrisCompaniesUpdateRequest, opts ...operations.Option) (*operations.HrisCompaniesUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "hris.companiesUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.HrisCompaniesUpdateRequest{
-		ID:          id,
-		ServiceID:   serviceID,
-		Raw:         raw,
-		HrisCompany: hrisCompany,
 	}
 
 	globals := operations.HrisCompaniesUpdateGlobals{
@@ -1465,18 +1447,12 @@ func (s *ApideckCompanies) Update(ctx context.Context, id string, hrisCompany co
 
 // Delete Company
 // Delete Company
-func (s *ApideckCompanies) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.HrisCompaniesDeleteResponse, error) {
+func (s *ApideckCompanies) Delete(ctx context.Context, request operations.HrisCompaniesDeleteRequest, opts ...operations.Option) (*operations.HrisCompaniesDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "hris.companiesDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.HrisCompaniesDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.HrisCompaniesDeleteGlobals{

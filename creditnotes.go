@@ -237,6 +237,8 @@ func (s *CreditNotes) List(ctx context.Context, request operations.AccountingCre
 			ctx,
 			operations.AccountingCreditNotesAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -417,18 +419,12 @@ func (s *CreditNotes) List(ctx context.Context, request operations.AccountingCre
 
 // Create Credit Note
 // Create Credit Note
-func (s *CreditNotes) Create(ctx context.Context, creditNote components.CreditNoteInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.AccountingCreditNotesAddResponse, error) {
+func (s *CreditNotes) Create(ctx context.Context, request operations.AccountingCreditNotesAddRequest, opts ...operations.Option) (*operations.AccountingCreditNotesAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.creditNotesAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingCreditNotesAddRequest{
-		Raw:        raw,
-		ServiceID:  serviceID,
-		CreditNote: creditNote,
 	}
 
 	globals := operations.AccountingCreditNotesAddGlobals{
@@ -769,19 +765,12 @@ func (s *CreditNotes) Create(ctx context.Context, creditNote components.CreditNo
 
 // Get Credit Note
 // Get Credit Note
-func (s *CreditNotes) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.AccountingCreditNotesOneResponse, error) {
+func (s *CreditNotes) Get(ctx context.Context, request operations.AccountingCreditNotesOneRequest, opts ...operations.Option) (*operations.AccountingCreditNotesOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.creditNotesOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingCreditNotesOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.AccountingCreditNotesOneGlobals{
@@ -1114,19 +1103,12 @@ func (s *CreditNotes) Get(ctx context.Context, id string, serviceID *string, raw
 
 // Update Credit Note
 // Update Credit Note
-func (s *CreditNotes) Update(ctx context.Context, id string, creditNote components.CreditNoteInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingCreditNotesUpdateResponse, error) {
+func (s *CreditNotes) Update(ctx context.Context, request operations.AccountingCreditNotesUpdateRequest, opts ...operations.Option) (*operations.AccountingCreditNotesUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.creditNotesUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingCreditNotesUpdateRequest{
-		ID:         id,
-		ServiceID:  serviceID,
-		Raw:        raw,
-		CreditNote: creditNote,
 	}
 
 	globals := operations.AccountingCreditNotesUpdateGlobals{
@@ -1467,18 +1449,12 @@ func (s *CreditNotes) Update(ctx context.Context, id string, creditNote componen
 
 // Delete Credit Note
 // Delete Credit Note
-func (s *CreditNotes) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingCreditNotesDeleteResponse, error) {
+func (s *CreditNotes) Delete(ctx context.Context, request operations.AccountingCreditNotesDeleteRequest, opts ...operations.Option) (*operations.AccountingCreditNotesDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.creditNotesDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingCreditNotesDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AccountingCreditNotesDeleteGlobals{

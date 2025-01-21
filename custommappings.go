@@ -27,7 +27,7 @@ func newCustomMappings(sdkConfig sdkConfiguration) *CustomMappings {
 
 // List custom mappings
 // This endpoint returns a list of custom mappings.
-func (s *CustomMappings) List(ctx context.Context, unifiedAPI string, serviceID string, opts ...operations.Option) (*operations.VaultCustomMappingsAllResponse, error) {
+func (s *CustomMappings) List(ctx context.Context, unifiedAPI string, serviceID string, consumerID *string, appID *string, opts ...operations.Option) (*operations.VaultCustomMappingsAllResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.customMappingsAll",
@@ -36,6 +36,8 @@ func (s *CustomMappings) List(ctx context.Context, unifiedAPI string, serviceID 
 	}
 
 	request := operations.VaultCustomMappingsAllRequest{
+		ConsumerID: consumerID,
+		AppID:      appID,
 		UnifiedAPI: unifiedAPI,
 		ServiceID:  serviceID,
 	}

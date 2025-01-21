@@ -237,6 +237,8 @@ func (s *Payments) List(ctx context.Context, request operations.AccountingPaymen
 			ctx,
 			operations.AccountingPaymentsAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -417,18 +419,12 @@ func (s *Payments) List(ctx context.Context, request operations.AccountingPaymen
 
 // Create Payment
 // Create Payment
-func (s *Payments) Create(ctx context.Context, payment components.PaymentInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.AccountingPaymentsAddResponse, error) {
+func (s *Payments) Create(ctx context.Context, request operations.AccountingPaymentsAddRequest, opts ...operations.Option) (*operations.AccountingPaymentsAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.paymentsAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingPaymentsAddRequest{
-		Raw:       raw,
-		ServiceID: serviceID,
-		Payment:   payment,
 	}
 
 	globals := operations.AccountingPaymentsAddGlobals{
@@ -769,19 +765,12 @@ func (s *Payments) Create(ctx context.Context, payment components.PaymentInput, 
 
 // Get Payment
 // Get Payment
-func (s *Payments) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.AccountingPaymentsOneResponse, error) {
+func (s *Payments) Get(ctx context.Context, request operations.AccountingPaymentsOneRequest, opts ...operations.Option) (*operations.AccountingPaymentsOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.paymentsOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingPaymentsOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.AccountingPaymentsOneGlobals{
@@ -1114,19 +1103,12 @@ func (s *Payments) Get(ctx context.Context, id string, serviceID *string, raw *b
 
 // Update Payment
 // Update Payment
-func (s *Payments) Update(ctx context.Context, id string, payment components.PaymentInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingPaymentsUpdateResponse, error) {
+func (s *Payments) Update(ctx context.Context, request operations.AccountingPaymentsUpdateRequest, opts ...operations.Option) (*operations.AccountingPaymentsUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.paymentsUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingPaymentsUpdateRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Payment:   payment,
 	}
 
 	globals := operations.AccountingPaymentsUpdateGlobals{
@@ -1467,18 +1449,12 @@ func (s *Payments) Update(ctx context.Context, id string, payment components.Pay
 
 // Delete Payment
 // Delete Payment
-func (s *Payments) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingPaymentsDeleteResponse, error) {
+func (s *Payments) Delete(ctx context.Context, request operations.AccountingPaymentsDeleteRequest, opts ...operations.Option) (*operations.AccountingPaymentsDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.paymentsDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingPaymentsDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AccountingPaymentsDeleteGlobals{

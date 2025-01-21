@@ -22,6 +22,7 @@ import(
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
+	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
 
@@ -34,8 +35,12 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Vault.CreateCallback.State(ctx, "pipedrive", "crm", components.CreateCallbackState{
-        RedirectURI: sdkgo.String("https://example.com/callback"),
+    res, err := s.Vault.CreateCallback.State(ctx, operations.VaultCreateCallbackStateRequest{
+        ServiceID: "pipedrive",
+        UnifiedAPI: "crm",
+        CreateCallbackState: components.CreateCallbackState{
+            RedirectURI: sdkgo.String("https://example.com/callback"),
+        },
     })
     if err != nil {
         log.Fatal(err)
@@ -48,13 +53,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      | Example                                                                          |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |                                                                                  |
-| `serviceID`                                                                      | *string*                                                                         | :heavy_check_mark:                                                               | Service ID of the resource to return                                             | pipedrive                                                                        |
-| `unifiedAPI`                                                                     | *string*                                                                         | :heavy_check_mark:                                                               | Unified API                                                                      | crm                                                                              |
-| `createCallbackState`                                                            | [components.CreateCallbackState](../../models/components/createcallbackstate.md) | :heavy_check_mark:                                                               | Callback state data                                                              |                                                                                  |
-| `opts`                                                                           | [][operations.Option](../../models/operations/option.md)                         | :heavy_minus_sign:                                                               | The options for this request.                                                    |                                                                                  |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                    | :heavy_check_mark:                                                                                       | The context to use for the request.                                                                      |
+| `request`                                                                                                | [operations.VaultCreateCallbackStateRequest](../../models/operations/vaultcreatecallbackstaterequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `opts`                                                                                                   | [][operations.Option](../../models/operations/option.md)                                                 | :heavy_minus_sign:                                                                                       | The options for this request.                                                                            |
 
 ### Response
 

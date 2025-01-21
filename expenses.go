@@ -30,19 +30,12 @@ func newExpenses(sdkConfig sdkConfiguration) *Expenses {
 
 // List Expenses
 // List Expenses
-func (s *Expenses) List(ctx context.Context, raw *bool, serviceID *string, cursor *string, limit *int64, opts ...operations.Option) (*operations.AccountingExpensesAllResponse, error) {
+func (s *Expenses) List(ctx context.Context, request operations.AccountingExpensesAllRequest, opts ...operations.Option) (*operations.AccountingExpensesAllResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.expensesAll",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingExpensesAllRequest{
-		Raw:       raw,
-		ServiceID: serviceID,
-		Cursor:    cursor,
-		Limit:     limit,
 	}
 
 	globals := operations.AccountingExpensesAllGlobals{
@@ -242,10 +235,14 @@ func (s *Expenses) List(ctx context.Context, raw *bool, serviceID *string, curso
 
 		return s.List(
 			ctx,
-			raw,
-			serviceID,
-			&nCVal,
-			limit,
+			operations.AccountingExpensesAllRequest{
+				Raw:        request.Raw,
+				ConsumerID: request.ConsumerID,
+				AppID:      request.AppID,
+				ServiceID:  request.ServiceID,
+				Cursor:     &nCVal,
+				Limit:      request.Limit,
+			},
 			opts...,
 		)
 	}
@@ -418,18 +415,12 @@ func (s *Expenses) List(ctx context.Context, raw *bool, serviceID *string, curso
 
 // Create Expense
 // Create Expense
-func (s *Expenses) Create(ctx context.Context, expense components.ExpenseInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.AccountingExpensesAddResponse, error) {
+func (s *Expenses) Create(ctx context.Context, request operations.AccountingExpensesAddRequest, opts ...operations.Option) (*operations.AccountingExpensesAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.expensesAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingExpensesAddRequest{
-		Raw:       raw,
-		ServiceID: serviceID,
-		Expense:   expense,
 	}
 
 	globals := operations.AccountingExpensesAddGlobals{
@@ -770,18 +761,12 @@ func (s *Expenses) Create(ctx context.Context, expense components.ExpenseInput, 
 
 // Get Expense
 // Get Expense
-func (s *Expenses) Get(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingExpensesOneResponse, error) {
+func (s *Expenses) Get(ctx context.Context, request operations.AccountingExpensesOneRequest, opts ...operations.Option) (*operations.AccountingExpensesOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.expensesOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingExpensesOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AccountingExpensesOneGlobals{
@@ -1114,19 +1099,12 @@ func (s *Expenses) Get(ctx context.Context, id string, serviceID *string, raw *b
 
 // Update Expense
 // Update Expense
-func (s *Expenses) Update(ctx context.Context, id string, expense components.ExpenseInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingExpensesUpdateResponse, error) {
+func (s *Expenses) Update(ctx context.Context, request operations.AccountingExpensesUpdateRequest, opts ...operations.Option) (*operations.AccountingExpensesUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.expensesUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingExpensesUpdateRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Expense:   expense,
 	}
 
 	globals := operations.AccountingExpensesUpdateGlobals{
@@ -1467,18 +1445,12 @@ func (s *Expenses) Update(ctx context.Context, id string, expense components.Exp
 
 // Delete Expense
 // Delete Expense
-func (s *Expenses) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingExpensesDeleteResponse, error) {
+func (s *Expenses) Delete(ctx context.Context, request operations.AccountingExpensesDeleteRequest, opts ...operations.Option) (*operations.AccountingExpensesDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.expensesDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingExpensesDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AccountingExpensesDeleteGlobals{

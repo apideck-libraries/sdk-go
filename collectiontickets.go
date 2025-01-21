@@ -237,6 +237,8 @@ func (s *CollectionTickets) List(ctx context.Context, request operations.IssueTr
 			operations.IssueTrackingCollectionTicketsAllRequest{
 				CollectionID: request.CollectionID,
 				Raw:          request.Raw,
+				ConsumerID:   request.ConsumerID,
+				AppID:        request.AppID,
 				ServiceID:    request.ServiceID,
 				Cursor:       &nCVal,
 				Limit:        request.Limit,
@@ -417,19 +419,12 @@ func (s *CollectionTickets) List(ctx context.Context, request operations.IssueTr
 
 // Create Ticket
 // Create Ticket
-func (s *CollectionTickets) Create(ctx context.Context, collectionID string, ticket components.TicketInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.IssueTrackingCollectionTicketsAddResponse, error) {
+func (s *CollectionTickets) Create(ctx context.Context, request operations.IssueTrackingCollectionTicketsAddRequest, opts ...operations.Option) (*operations.IssueTrackingCollectionTicketsAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "issueTracking.collectionTicketsAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.IssueTrackingCollectionTicketsAddRequest{
-		Raw:          raw,
-		ServiceID:    serviceID,
-		CollectionID: collectionID,
-		Ticket:       ticket,
 	}
 
 	globals := operations.IssueTrackingCollectionTicketsAddGlobals{
@@ -1454,19 +1449,12 @@ func (s *CollectionTickets) Update(ctx context.Context, request operations.Issue
 
 // Delete Ticket
 // Delete Ticket
-func (s *CollectionTickets) Delete(ctx context.Context, ticketID string, collectionID string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.IssueTrackingCollectionTicketsDeleteResponse, error) {
+func (s *CollectionTickets) Delete(ctx context.Context, request operations.IssueTrackingCollectionTicketsDeleteRequest, opts ...operations.Option) (*operations.IssueTrackingCollectionTicketsDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "issueTracking.collectionTicketsDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.IssueTrackingCollectionTicketsDeleteRequest{
-		TicketID:     ticketID,
-		ServiceID:    serviceID,
-		Raw:          raw,
-		CollectionID: collectionID,
 	}
 
 	globals := operations.IssueTrackingCollectionTicketsDeleteGlobals{

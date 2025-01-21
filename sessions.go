@@ -31,12 +31,18 @@ func newSessions(sdkConfig sdkConfiguration) *Sessions {
 // URL to allow temporary access to manage their integrations and settings.
 //
 // Note: This is a short lived token that will expire after 1 hour (TTL: 3600).
-func (s *Sessions) Create(ctx context.Context, request *components.Session, opts ...operations.Option) (*operations.VaultSessionsCreateResponse, error) {
+func (s *Sessions) Create(ctx context.Context, consumerID *string, appID *string, session *components.Session, opts ...operations.Option) (*operations.VaultSessionsCreateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.sessionsCreate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
+	}
+
+	request := operations.VaultSessionsCreateRequest{
+		ConsumerID: consumerID,
+		AppID:      appID,
+		Session:    session,
 	}
 
 	globals := operations.VaultSessionsCreateGlobals{
@@ -67,7 +73,7 @@ func (s *Sessions) Create(ctx context.Context, request *components.Session, opts
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Session", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}

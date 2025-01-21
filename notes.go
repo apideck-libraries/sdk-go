@@ -237,6 +237,8 @@ func (s *Notes) List(ctx context.Context, request operations.CrmNotesAllRequest,
 			ctx,
 			operations.CrmNotesAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -415,18 +417,12 @@ func (s *Notes) List(ctx context.Context, request operations.CrmNotesAllRequest,
 
 // Create note
 // Create note
-func (s *Notes) Create(ctx context.Context, note components.NoteInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.CrmNotesAddResponse, error) {
+func (s *Notes) Create(ctx context.Context, request operations.CrmNotesAddRequest, opts ...operations.Option) (*operations.CrmNotesAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.notesAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmNotesAddRequest{
-		Raw:       raw,
-		ServiceID: serviceID,
-		Note:      note,
 	}
 
 	globals := operations.CrmNotesAddGlobals{
@@ -767,19 +763,12 @@ func (s *Notes) Create(ctx context.Context, note components.NoteInput, raw *bool
 
 // Get note
 // Get note
-func (s *Notes) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.CrmNotesOneResponse, error) {
+func (s *Notes) Get(ctx context.Context, request operations.CrmNotesOneRequest, opts ...operations.Option) (*operations.CrmNotesOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.notesOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmNotesOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.CrmNotesOneGlobals{
@@ -1112,19 +1101,12 @@ func (s *Notes) Get(ctx context.Context, id string, serviceID *string, raw *bool
 
 // Update note
 // Update note
-func (s *Notes) Update(ctx context.Context, id string, note components.NoteInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.CrmNotesUpdateResponse, error) {
+func (s *Notes) Update(ctx context.Context, request operations.CrmNotesUpdateRequest, opts ...operations.Option) (*operations.CrmNotesUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.notesUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmNotesUpdateRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Note:      note,
 	}
 
 	globals := operations.CrmNotesUpdateGlobals{
@@ -1465,18 +1447,12 @@ func (s *Notes) Update(ctx context.Context, id string, note components.NoteInput
 
 // Delete note
 // Delete note
-func (s *Notes) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.CrmNotesDeleteResponse, error) {
+func (s *Notes) Delete(ctx context.Context, request operations.CrmNotesDeleteRequest, opts ...operations.Option) (*operations.CrmNotesDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.notesDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmNotesDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.CrmNotesDeleteGlobals{

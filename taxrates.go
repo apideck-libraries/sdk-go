@@ -237,6 +237,8 @@ func (s *TaxRates) List(ctx context.Context, request operations.AccountingTaxRat
 			ctx,
 			operations.AccountingTaxRatesAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -416,18 +418,12 @@ func (s *TaxRates) List(ctx context.Context, request operations.AccountingTaxRat
 
 // Create Tax Rate
 // Create Tax Rate
-func (s *TaxRates) Create(ctx context.Context, taxRate components.TaxRateInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.AccountingTaxRatesAddResponse, error) {
+func (s *TaxRates) Create(ctx context.Context, request operations.AccountingTaxRatesAddRequest, opts ...operations.Option) (*operations.AccountingTaxRatesAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.taxRatesAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingTaxRatesAddRequest{
-		Raw:       raw,
-		ServiceID: serviceID,
-		TaxRate:   taxRate,
 	}
 
 	globals := operations.AccountingTaxRatesAddGlobals{
@@ -768,19 +764,12 @@ func (s *TaxRates) Create(ctx context.Context, taxRate components.TaxRateInput, 
 
 // Get Tax Rate
 // Get Tax Rate. Note: Not all connectors return the actual rate/percentage value. In this case, only the tax code or reference is returned. Support will soon be added to return the actual rate/percentage by doing additional calls in the background to provide the full view of a given tax rate. Connectors Affected: Quickbooks
-func (s *TaxRates) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.AccountingTaxRatesOneResponse, error) {
+func (s *TaxRates) Get(ctx context.Context, request operations.AccountingTaxRatesOneRequest, opts ...operations.Option) (*operations.AccountingTaxRatesOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.taxRatesOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingTaxRatesOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.AccountingTaxRatesOneGlobals{
@@ -1113,19 +1102,12 @@ func (s *TaxRates) Get(ctx context.Context, id string, serviceID *string, raw *b
 
 // Update Tax Rate
 // Update Tax Rate
-func (s *TaxRates) Update(ctx context.Context, id string, taxRate components.TaxRateInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingTaxRatesUpdateResponse, error) {
+func (s *TaxRates) Update(ctx context.Context, request operations.AccountingTaxRatesUpdateRequest, opts ...operations.Option) (*operations.AccountingTaxRatesUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.taxRatesUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingTaxRatesUpdateRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		TaxRate:   taxRate,
 	}
 
 	globals := operations.AccountingTaxRatesUpdateGlobals{
@@ -1466,18 +1448,12 @@ func (s *TaxRates) Update(ctx context.Context, id string, taxRate components.Tax
 
 // Delete Tax Rate
 // Delete Tax Rate
-func (s *TaxRates) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingTaxRatesDeleteResponse, error) {
+func (s *TaxRates) Delete(ctx context.Context, request operations.AccountingTaxRatesDeleteRequest, opts ...operations.Option) (*operations.AccountingTaxRatesDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.taxRatesDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingTaxRatesDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AccountingTaxRatesDeleteGlobals{

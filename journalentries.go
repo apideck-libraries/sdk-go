@@ -237,6 +237,8 @@ func (s *JournalEntries) List(ctx context.Context, request operations.Accounting
 			ctx,
 			operations.AccountingJournalEntriesAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -417,18 +419,12 @@ func (s *JournalEntries) List(ctx context.Context, request operations.Accounting
 
 // Create Journal Entry
 // Create Journal Entry
-func (s *JournalEntries) Create(ctx context.Context, journalEntry components.JournalEntryInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.AccountingJournalEntriesAddResponse, error) {
+func (s *JournalEntries) Create(ctx context.Context, request operations.AccountingJournalEntriesAddRequest, opts ...operations.Option) (*operations.AccountingJournalEntriesAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.journalEntriesAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingJournalEntriesAddRequest{
-		Raw:          raw,
-		ServiceID:    serviceID,
-		JournalEntry: journalEntry,
 	}
 
 	globals := operations.AccountingJournalEntriesAddGlobals{
@@ -769,19 +765,12 @@ func (s *JournalEntries) Create(ctx context.Context, journalEntry components.Jou
 
 // Get Journal Entry
 // Get Journal Entry
-func (s *JournalEntries) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.AccountingJournalEntriesOneResponse, error) {
+func (s *JournalEntries) Get(ctx context.Context, request operations.AccountingJournalEntriesOneRequest, opts ...operations.Option) (*operations.AccountingJournalEntriesOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.journalEntriesOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingJournalEntriesOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.AccountingJournalEntriesOneGlobals{
@@ -1114,19 +1103,12 @@ func (s *JournalEntries) Get(ctx context.Context, id string, serviceID *string, 
 
 // Update Journal Entry
 // Update Journal Entry
-func (s *JournalEntries) Update(ctx context.Context, id string, journalEntry components.JournalEntryInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingJournalEntriesUpdateResponse, error) {
+func (s *JournalEntries) Update(ctx context.Context, request operations.AccountingJournalEntriesUpdateRequest, opts ...operations.Option) (*operations.AccountingJournalEntriesUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.journalEntriesUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingJournalEntriesUpdateRequest{
-		ID:           id,
-		ServiceID:    serviceID,
-		Raw:          raw,
-		JournalEntry: journalEntry,
 	}
 
 	globals := operations.AccountingJournalEntriesUpdateGlobals{
@@ -1467,18 +1449,12 @@ func (s *JournalEntries) Update(ctx context.Context, id string, journalEntry com
 
 // Delete Journal Entry
 // Delete Journal Entry
-func (s *JournalEntries) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingJournalEntriesDeleteResponse, error) {
+func (s *JournalEntries) Delete(ctx context.Context, request operations.AccountingJournalEntriesDeleteRequest, opts ...operations.Option) (*operations.AccountingJournalEntriesDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.journalEntriesDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingJournalEntriesDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AccountingJournalEntriesDeleteGlobals{

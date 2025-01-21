@@ -27,18 +27,12 @@ func newConnectionSettings(sdkConfig sdkConfiguration) *ConnectionSettings {
 
 // List - Get resource settings
 // This endpoint returns custom settings and their defaults required by connection for a given resource.
-func (s *ConnectionSettings) List(ctx context.Context, unifiedAPI string, serviceID string, resource string, opts ...operations.Option) (*operations.VaultConnectionSettingsAllResponse, error) {
+func (s *ConnectionSettings) List(ctx context.Context, request operations.VaultConnectionSettingsAllRequest, opts ...operations.Option) (*operations.VaultConnectionSettingsAllResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.connectionSettingsAll",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.VaultConnectionSettingsAllRequest{
-		UnifiedAPI: unifiedAPI,
-		ServiceID:  serviceID,
-		Resource:   resource,
 	}
 
 	globals := operations.VaultConnectionSettingsAllGlobals{
@@ -367,19 +361,12 @@ func (s *ConnectionSettings) List(ctx context.Context, unifiedAPI string, servic
 
 // Update settings
 // Update default values for a connection's resource settings
-func (s *ConnectionSettings) Update(ctx context.Context, serviceID string, unifiedAPI string, resource string, connection components.ConnectionInput, opts ...operations.Option) (*operations.VaultConnectionSettingsUpdateResponse, error) {
+func (s *ConnectionSettings) Update(ctx context.Context, request operations.VaultConnectionSettingsUpdateRequest, opts ...operations.Option) (*operations.VaultConnectionSettingsUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.connectionSettingsUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.VaultConnectionSettingsUpdateRequest{
-		ServiceID:  serviceID,
-		UnifiedAPI: unifiedAPI,
-		Resource:   resource,
-		Connection: connection,
 	}
 
 	globals := operations.VaultConnectionSettingsUpdateGlobals{

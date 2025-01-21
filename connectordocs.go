@@ -27,7 +27,7 @@ func newConnectorDocs(sdkConfig sdkConfiguration) *ConnectorDocs {
 
 // Get Connector Doc content
 // Get Connector Doc content
-func (s *ConnectorDocs) Get(ctx context.Context, id string, docID string, opts ...operations.Option) (*operations.ConnectorConnectorDocsOneResponse, error) {
+func (s *ConnectorDocs) Get(ctx context.Context, id string, docID string, appID *string, opts ...operations.Option) (*operations.ConnectorConnectorDocsOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "connector.connectorDocsOne",
@@ -36,6 +36,7 @@ func (s *ConnectorDocs) Get(ctx context.Context, id string, docID string, opts .
 	}
 
 	request := operations.ConnectorConnectorDocsOneRequest{
+		AppID: appID,
 		ID:    id,
 		DocID: docID,
 	}

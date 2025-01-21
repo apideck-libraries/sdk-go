@@ -26,6 +26,7 @@ import(
 	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
 
@@ -38,7 +39,10 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Vault.ValidateConnection.State(ctx, "pipedrive", "crm", nil)
+    res, err := s.Vault.ValidateConnection.State(ctx, operations.VaultValidateConnectionStateRequest{
+        ServiceID: "pipedrive",
+        UnifiedAPI: "crm",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -50,13 +54,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                 | Type                                                                                                                      | Required                                                                                                                  | Description                                                                                                               | Example                                                                                                                   |
-| ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                     | [context.Context](https://pkg.go.dev/context#Context)                                                                     | :heavy_check_mark:                                                                                                        | The context to use for the request.                                                                                       |                                                                                                                           |
-| `serviceID`                                                                                                               | *string*                                                                                                                  | :heavy_check_mark:                                                                                                        | Service ID of the resource to return                                                                                      | pipedrive                                                                                                                 |
-| `unifiedAPI`                                                                                                              | *string*                                                                                                                  | :heavy_check_mark:                                                                                                        | Unified API                                                                                                               | crm                                                                                                                       |
-| `requestBody`                                                                                                             | [*operations.VaultValidateConnectionStateRequestBody](../../models/operations/vaultvalidateconnectionstaterequestbody.md) | :heavy_minus_sign:                                                                                                        | N/A                                                                                                                       |                                                                                                                           |
-| `opts`                                                                                                                    | [][operations.Option](../../models/operations/option.md)                                                                  | :heavy_minus_sign:                                                                                                        | The options for this request.                                                                                             |                                                                                                                           |
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                            | :heavy_check_mark:                                                                                               | The context to use for the request.                                                                              |
+| `request`                                                                                                        | [operations.VaultValidateConnectionStateRequest](../../models/operations/vaultvalidateconnectionstaterequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+| `opts`                                                                                                           | [][operations.Option](../../models/operations/option.md)                                                         | :heavy_minus_sign:                                                                                               | The options for this request.                                                                                    |
 
 ### Response
 
