@@ -236,12 +236,14 @@ func (s *Departments) List(ctx context.Context, request operations.AccountingDep
 		return s.List(
 			ctx,
 			operations.AccountingDepartmentsAllRequest{
-				Raw:       request.Raw,
-				ServiceID: request.ServiceID,
-				Cursor:    &nCVal,
-				Limit:     request.Limit,
-				Fields:    request.Fields,
-				Filter:    request.Filter,
+				Raw:        request.Raw,
+				ConsumerID: request.ConsumerID,
+				AppID:      request.AppID,
+				ServiceID:  request.ServiceID,
+				Cursor:     &nCVal,
+				Limit:      request.Limit,
+				Fields:     request.Fields,
+				Filter:     request.Filter,
 			},
 			opts...,
 		)
@@ -415,18 +417,12 @@ func (s *Departments) List(ctx context.Context, request operations.AccountingDep
 
 // Create Department
 // Create Department
-func (s *Departments) Create(ctx context.Context, accountingDepartment components.AccountingDepartmentInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.AccountingDepartmentsAddResponse, error) {
+func (s *Departments) Create(ctx context.Context, request operations.AccountingDepartmentsAddRequest, opts ...operations.Option) (*operations.AccountingDepartmentsAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.departmentsAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingDepartmentsAddRequest{
-		Raw:                  raw,
-		ServiceID:            serviceID,
-		AccountingDepartment: accountingDepartment,
 	}
 
 	globals := operations.AccountingDepartmentsAddGlobals{
@@ -767,19 +763,12 @@ func (s *Departments) Create(ctx context.Context, accountingDepartment component
 
 // Get Department
 // Get Department
-func (s *Departments) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.AccountingDepartmentsOneResponse, error) {
+func (s *Departments) Get(ctx context.Context, request operations.AccountingDepartmentsOneRequest, opts ...operations.Option) (*operations.AccountingDepartmentsOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.departmentsOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingDepartmentsOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.AccountingDepartmentsOneGlobals{
@@ -1112,19 +1101,12 @@ func (s *Departments) Get(ctx context.Context, id string, serviceID *string, raw
 
 // Update Department
 // Update Department
-func (s *Departments) Update(ctx context.Context, id string, accountingDepartment components.AccountingDepartmentInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingDepartmentsUpdateResponse, error) {
+func (s *Departments) Update(ctx context.Context, request operations.AccountingDepartmentsUpdateRequest, opts ...operations.Option) (*operations.AccountingDepartmentsUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.departmentsUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingDepartmentsUpdateRequest{
-		ID:                   id,
-		ServiceID:            serviceID,
-		Raw:                  raw,
-		AccountingDepartment: accountingDepartment,
 	}
 
 	globals := operations.AccountingDepartmentsUpdateGlobals{
@@ -1465,18 +1447,12 @@ func (s *Departments) Update(ctx context.Context, id string, accountingDepartmen
 
 // Delete Department
 // Delete Department
-func (s *Departments) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingDepartmentsDeleteResponse, error) {
+func (s *Departments) Delete(ctx context.Context, request operations.AccountingDepartmentsDeleteRequest, opts ...operations.Option) (*operations.AccountingDepartmentsDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.departmentsDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingDepartmentsDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AccountingDepartmentsDeleteGlobals{

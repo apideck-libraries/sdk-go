@@ -237,6 +237,8 @@ func (s *ApideckDepartments) List(ctx context.Context, request operations.HrisDe
 			ctx,
 			operations.HrisDepartmentsAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -415,18 +417,12 @@ func (s *ApideckDepartments) List(ctx context.Context, request operations.HrisDe
 
 // Create Department
 // Create Department
-func (s *ApideckDepartments) Create(ctx context.Context, department components.DepartmentInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.HrisDepartmentsAddResponse, error) {
+func (s *ApideckDepartments) Create(ctx context.Context, request operations.HrisDepartmentsAddRequest, opts ...operations.Option) (*operations.HrisDepartmentsAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "hris.departmentsAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.HrisDepartmentsAddRequest{
-		Raw:        raw,
-		ServiceID:  serviceID,
-		Department: department,
 	}
 
 	globals := operations.HrisDepartmentsAddGlobals{
@@ -767,19 +763,12 @@ func (s *ApideckDepartments) Create(ctx context.Context, department components.D
 
 // Get Department
 // Get Department
-func (s *ApideckDepartments) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.HrisDepartmentsOneResponse, error) {
+func (s *ApideckDepartments) Get(ctx context.Context, request operations.HrisDepartmentsOneRequest, opts ...operations.Option) (*operations.HrisDepartmentsOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "hris.departmentsOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.HrisDepartmentsOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.HrisDepartmentsOneGlobals{
@@ -1112,19 +1101,12 @@ func (s *ApideckDepartments) Get(ctx context.Context, id string, serviceID *stri
 
 // Update Department
 // Update Department
-func (s *ApideckDepartments) Update(ctx context.Context, id string, department components.DepartmentInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.HrisDepartmentsUpdateResponse, error) {
+func (s *ApideckDepartments) Update(ctx context.Context, request operations.HrisDepartmentsUpdateRequest, opts ...operations.Option) (*operations.HrisDepartmentsUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "hris.departmentsUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.HrisDepartmentsUpdateRequest{
-		ID:         id,
-		ServiceID:  serviceID,
-		Raw:        raw,
-		Department: department,
 	}
 
 	globals := operations.HrisDepartmentsUpdateGlobals{
@@ -1465,18 +1447,12 @@ func (s *ApideckDepartments) Update(ctx context.Context, id string, department c
 
 // Delete Department
 // Delete Department
-func (s *ApideckDepartments) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.HrisDepartmentsDeleteResponse, error) {
+func (s *ApideckDepartments) Delete(ctx context.Context, request operations.HrisDepartmentsDeleteRequest, opts ...operations.Option) (*operations.HrisDepartmentsDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "hris.departmentsDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.HrisDepartmentsDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.HrisDepartmentsDeleteGlobals{

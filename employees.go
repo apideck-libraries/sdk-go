@@ -237,6 +237,8 @@ func (s *Employees) List(ctx context.Context, request operations.HrisEmployeesAl
 			ctx,
 			operations.HrisEmployeesAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -417,18 +419,12 @@ func (s *Employees) List(ctx context.Context, request operations.HrisEmployeesAl
 
 // Create Employee
 // Create Employee
-func (s *Employees) Create(ctx context.Context, employee components.EmployeeInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.HrisEmployeesAddResponse, error) {
+func (s *Employees) Create(ctx context.Context, request operations.HrisEmployeesAddRequest, opts ...operations.Option) (*operations.HrisEmployeesAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "hris.employeesAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.HrisEmployeesAddRequest{
-		Raw:       raw,
-		ServiceID: serviceID,
-		Employee:  employee,
 	}
 
 	globals := operations.HrisEmployeesAddGlobals{
@@ -1107,19 +1103,12 @@ func (s *Employees) Get(ctx context.Context, request operations.HrisEmployeesOne
 
 // Update Employee
 // Update Employee
-func (s *Employees) Update(ctx context.Context, id string, employee components.EmployeeInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.HrisEmployeesUpdateResponse, error) {
+func (s *Employees) Update(ctx context.Context, request operations.HrisEmployeesUpdateRequest, opts ...operations.Option) (*operations.HrisEmployeesUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "hris.employeesUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.HrisEmployeesUpdateRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Employee:  employee,
 	}
 
 	globals := operations.HrisEmployeesUpdateGlobals{
@@ -1460,18 +1449,12 @@ func (s *Employees) Update(ctx context.Context, id string, employee components.E
 
 // Delete Employee
 // Delete Employee
-func (s *Employees) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.HrisEmployeesDeleteResponse, error) {
+func (s *Employees) Delete(ctx context.Context, request operations.HrisEmployeesDeleteRequest, opts ...operations.Option) (*operations.HrisEmployeesDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "hris.employeesDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.HrisEmployeesDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.HrisEmployeesDeleteGlobals{

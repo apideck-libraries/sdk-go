@@ -236,11 +236,13 @@ func (s *Messages) List(ctx context.Context, request operations.SmsMessagesAllRe
 		return s.List(
 			ctx,
 			operations.SmsMessagesAllRequest{
-				Raw:       request.Raw,
-				ServiceID: request.ServiceID,
-				Cursor:    &nCVal,
-				Limit:     request.Limit,
-				Fields:    request.Fields,
+				Raw:        request.Raw,
+				ConsumerID: request.ConsumerID,
+				AppID:      request.AppID,
+				ServiceID:  request.ServiceID,
+				Cursor:     &nCVal,
+				Limit:      request.Limit,
+				Fields:     request.Fields,
 			},
 			opts...,
 		)
@@ -414,18 +416,12 @@ func (s *Messages) List(ctx context.Context, request operations.SmsMessagesAllRe
 
 // Create Message
 // Create Message
-func (s *Messages) Create(ctx context.Context, message components.MessageInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.SmsMessagesAddResponse, error) {
+func (s *Messages) Create(ctx context.Context, request operations.SmsMessagesAddRequest, opts ...operations.Option) (*operations.SmsMessagesAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "sms.messagesAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.SmsMessagesAddRequest{
-		Raw:       raw,
-		ServiceID: serviceID,
-		Message:   message,
 	}
 
 	globals := operations.SmsMessagesAddGlobals{
@@ -766,19 +762,12 @@ func (s *Messages) Create(ctx context.Context, message components.MessageInput, 
 
 // Get Message
 // Get Message
-func (s *Messages) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.SmsMessagesOneResponse, error) {
+func (s *Messages) Get(ctx context.Context, request operations.SmsMessagesOneRequest, opts ...operations.Option) (*operations.SmsMessagesOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "sms.messagesOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.SmsMessagesOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.SmsMessagesOneGlobals{
@@ -1111,19 +1100,12 @@ func (s *Messages) Get(ctx context.Context, id string, serviceID *string, raw *b
 
 // Update Message
 // Update Message
-func (s *Messages) Update(ctx context.Context, id string, message components.MessageInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.SmsMessagesUpdateResponse, error) {
+func (s *Messages) Update(ctx context.Context, request operations.SmsMessagesUpdateRequest, opts ...operations.Option) (*operations.SmsMessagesUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "sms.messagesUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.SmsMessagesUpdateRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Message:   message,
 	}
 
 	globals := operations.SmsMessagesUpdateGlobals{
@@ -1464,18 +1446,12 @@ func (s *Messages) Update(ctx context.Context, id string, message components.Mes
 
 // Delete Message
 // Delete Message
-func (s *Messages) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.SmsMessagesDeleteResponse, error) {
+func (s *Messages) Delete(ctx context.Context, request operations.SmsMessagesDeleteRequest, opts ...operations.Option) (*operations.SmsMessagesDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "sms.messagesDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.SmsMessagesDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.SmsMessagesDeleteGlobals{

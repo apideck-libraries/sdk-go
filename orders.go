@@ -237,6 +237,8 @@ func (s *Orders) List(ctx context.Context, request operations.EcommerceOrdersAll
 			ctx,
 			operations.EcommerceOrdersAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -417,19 +419,12 @@ func (s *Orders) List(ctx context.Context, request operations.EcommerceOrdersAll
 
 // Get Order
 // Get Order
-func (s *Orders) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.EcommerceOrdersOneResponse, error) {
+func (s *Orders) Get(ctx context.Context, request operations.EcommerceOrdersOneRequest, opts ...operations.Option) (*operations.EcommerceOrdersOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "ecommerce.ordersOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.EcommerceOrdersOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.EcommerceOrdersOneGlobals{

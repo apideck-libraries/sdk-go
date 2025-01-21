@@ -237,6 +237,8 @@ func (s *Users) List(ctx context.Context, request operations.CrmUsersAllRequest,
 			ctx,
 			operations.CrmUsersAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -415,18 +417,12 @@ func (s *Users) List(ctx context.Context, request operations.CrmUsersAllRequest,
 
 // Create user
 // Create user
-func (s *Users) Create(ctx context.Context, user components.UserInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.CrmUsersAddResponse, error) {
+func (s *Users) Create(ctx context.Context, request operations.CrmUsersAddRequest, opts ...operations.Option) (*operations.CrmUsersAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.usersAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmUsersAddRequest{
-		Raw:       raw,
-		ServiceID: serviceID,
-		User:      user,
 	}
 
 	globals := operations.CrmUsersAddGlobals{
@@ -767,19 +763,12 @@ func (s *Users) Create(ctx context.Context, user components.UserInput, raw *bool
 
 // Get user
 // Get user
-func (s *Users) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.CrmUsersOneResponse, error) {
+func (s *Users) Get(ctx context.Context, request operations.CrmUsersOneRequest, opts ...operations.Option) (*operations.CrmUsersOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.usersOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmUsersOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.CrmUsersOneGlobals{
@@ -1112,19 +1101,12 @@ func (s *Users) Get(ctx context.Context, id string, serviceID *string, raw *bool
 
 // Update user
 // Update user
-func (s *Users) Update(ctx context.Context, id string, user components.UserInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.CrmUsersUpdateResponse, error) {
+func (s *Users) Update(ctx context.Context, request operations.CrmUsersUpdateRequest, opts ...operations.Option) (*operations.CrmUsersUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.usersUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmUsersUpdateRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		User:      user,
 	}
 
 	globals := operations.CrmUsersUpdateGlobals{
@@ -1465,18 +1447,12 @@ func (s *Users) Update(ctx context.Context, id string, user components.UserInput
 
 // Delete user
 // Delete user
-func (s *Users) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.CrmUsersDeleteResponse, error) {
+func (s *Users) Delete(ctx context.Context, request operations.CrmUsersDeleteRequest, opts ...operations.Option) (*operations.CrmUsersDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.usersDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmUsersDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.CrmUsersDeleteGlobals{

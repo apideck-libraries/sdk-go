@@ -237,6 +237,8 @@ func (s *Applicants) List(ctx context.Context, request operations.AtsApplicantsA
 			ctx,
 			operations.AtsApplicantsAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -416,18 +418,12 @@ func (s *Applicants) List(ctx context.Context, request operations.AtsApplicantsA
 
 // Create Applicant
 // Create Applicant
-func (s *Applicants) Create(ctx context.Context, applicant components.ApplicantInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.AtsApplicantsAddResponse, error) {
+func (s *Applicants) Create(ctx context.Context, request operations.AtsApplicantsAddRequest, opts ...operations.Option) (*operations.AtsApplicantsAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "ats.applicantsAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AtsApplicantsAddRequest{
-		Raw:       raw,
-		ServiceID: serviceID,
-		Applicant: applicant,
 	}
 
 	globals := operations.AtsApplicantsAddGlobals{
@@ -768,19 +764,12 @@ func (s *Applicants) Create(ctx context.Context, applicant components.ApplicantI
 
 // Get Applicant
 // Get Applicant
-func (s *Applicants) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.AtsApplicantsOneResponse, error) {
+func (s *Applicants) Get(ctx context.Context, request operations.AtsApplicantsOneRequest, opts ...operations.Option) (*operations.AtsApplicantsOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "ats.applicantsOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AtsApplicantsOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.AtsApplicantsOneGlobals{
@@ -1113,19 +1102,12 @@ func (s *Applicants) Get(ctx context.Context, id string, serviceID *string, raw 
 
 // Update Applicant
 // Update Applicant
-func (s *Applicants) Update(ctx context.Context, id string, applicant components.ApplicantInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AtsApplicantsUpdateResponse, error) {
+func (s *Applicants) Update(ctx context.Context, request operations.AtsApplicantsUpdateRequest, opts ...operations.Option) (*operations.AtsApplicantsUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "ats.applicantsUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AtsApplicantsUpdateRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Applicant: applicant,
 	}
 
 	globals := operations.AtsApplicantsUpdateGlobals{
@@ -1466,18 +1448,12 @@ func (s *Applicants) Update(ctx context.Context, id string, applicant components
 
 // Delete Applicant
 // Delete Applicant
-func (s *Applicants) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AtsApplicantsDeleteResponse, error) {
+func (s *Applicants) Delete(ctx context.Context, request operations.AtsApplicantsDeleteRequest, opts ...operations.Option) (*operations.AtsApplicantsDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "ats.applicantsDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AtsApplicantsDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AtsApplicantsDeleteGlobals{

@@ -28,18 +28,12 @@ func newStores(sdkConfig sdkConfiguration) *Stores {
 
 // Get Store
 // Get Store
-func (s *Stores) Get(ctx context.Context, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.EcommerceStoresOneResponse, error) {
+func (s *Stores) Get(ctx context.Context, request operations.EcommerceStoresOneRequest, opts ...operations.Option) (*operations.EcommerceStoresOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "ecommerce.storesOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.EcommerceStoresOneRequest{
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.EcommerceStoresOneGlobals{

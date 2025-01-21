@@ -27,18 +27,12 @@ func newCreateCallback(sdkConfig sdkConfiguration) *CreateCallback {
 
 // State - Create Callback State
 // This endpoint creates a callback state that can be used to issue requests to the callback endpoint.
-func (s *CreateCallback) State(ctx context.Context, serviceID string, unifiedAPI string, createCallbackState components.CreateCallbackState, opts ...operations.Option) (*operations.VaultCreateCallbackStateResponse, error) {
+func (s *CreateCallback) State(ctx context.Context, request operations.VaultCreateCallbackStateRequest, opts ...operations.Option) (*operations.VaultCreateCallbackStateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.createCallbackState",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.VaultCreateCallbackStateRequest{
-		ServiceID:           serviceID,
-		UnifiedAPI:          unifiedAPI,
-		CreateCallbackState: createCallbackState,
 	}
 
 	globals := operations.VaultCreateCallbackStateGlobals{

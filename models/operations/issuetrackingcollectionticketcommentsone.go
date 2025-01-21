@@ -37,6 +37,10 @@ type IssueTrackingCollectionTicketCommentsOneRequest struct {
 	TicketID string `pathParam:"style=simple,explode=false,name=ticket_id"`
 	// Include raw response. Mostly used for debugging purposes
 	Raw *bool `default:"false" queryParam:"style=form,explode=true,name=raw"`
+	// ID of the consumer which you want to get or push data from
+	ConsumerID *string `header:"style=simple,explode=false,name=x-apideck-consumer-id"`
+	// The ID of your Unify application
+	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 	// Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.
 	ServiceID *string `header:"style=simple,explode=false,name=x-apideck-service-id"`
 	// Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
@@ -84,6 +88,20 @@ func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetRaw() *bool {
 		return nil
 	}
 	return o.Raw
+}
+
+func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetConsumerID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ConsumerID
+}
+
+func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
 }
 
 func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetServiceID() *string {

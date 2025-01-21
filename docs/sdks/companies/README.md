@@ -113,6 +113,7 @@ import(
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/types"
+	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
 
@@ -125,272 +126,276 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Crm.Companies.Create(ctx, components.CompanyInput{
-        Name: sdkgo.String("SpaceX"),
-        OwnerID: sdkgo.String("12345"),
-        Image: sdkgo.String("https://www.spacex.com/static/images/share.jpg"),
-        Description: sdkgo.String("Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California."),
-        VatNumber: sdkgo.String("BE0689615164"),
-        Currency: components.CurrencyUsd.ToPointer(),
-        Status: sdkgo.String("Open"),
-        Fax: sdkgo.String("+12129876543"),
-        AnnualRevenue: sdkgo.String("+$35m"),
-        NumberOfEmployees: sdkgo.String("500-1000"),
-        Industry: sdkgo.String("Apparel"),
-        Ownership: sdkgo.String("Public"),
-        SalesTaxNumber: sdkgo.String("12456EN"),
-        PayeeNumber: sdkgo.String("78932EN"),
-        AbnOrTfn: sdkgo.String("46 115 614 695"),
-        AbnBranch: sdkgo.String("123"),
-        Acn: sdkgo.String("XXX XXX XXX"),
-        FirstName: sdkgo.String("Elon"),
-        LastName: sdkgo.String("Musk"),
-        BankAccounts: []components.BankAccount{
-            components.BankAccount{
-                BankName: sdkgo.String("Monzo"),
-                AccountNumber: sdkgo.String("123465"),
-                AccountName: sdkgo.String("SPACEX LLC"),
-                AccountType: components.AccountTypeCreditCard.ToPointer(),
-                Iban: sdkgo.String("CH2989144532982975332"),
-                Bic: sdkgo.String("AUDSCHGGXXX"),
-                RoutingNumber: sdkgo.String("012345678"),
-                BsbNumber: sdkgo.String("062-001"),
-                BranchIdentifier: sdkgo.String("001"),
-                BankCode: sdkgo.String("BNH"),
-                Currency: components.CurrencyUsd.ToPointer(),
+    res, err := s.Crm.Companies.Create(ctx, operations.CrmCompaniesAddRequest{
+        Raw: sdkgo.Bool(false),
+        ServiceID: sdkgo.String("salesforce"),
+        Company: components.CompanyInput{
+            Name: sdkgo.String("SpaceX"),
+            OwnerID: sdkgo.String("12345"),
+            Image: sdkgo.String("https://www.spacex.com/static/images/share.jpg"),
+            Description: sdkgo.String("Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California."),
+            VatNumber: sdkgo.String("BE0689615164"),
+            Currency: components.CurrencyUsd.ToPointer(),
+            Status: sdkgo.String("Open"),
+            Fax: sdkgo.String("+12129876543"),
+            AnnualRevenue: sdkgo.String("+$35m"),
+            NumberOfEmployees: sdkgo.String("500-1000"),
+            Industry: sdkgo.String("Apparel"),
+            Ownership: sdkgo.String("Public"),
+            SalesTaxNumber: sdkgo.String("12456EN"),
+            PayeeNumber: sdkgo.String("78932EN"),
+            AbnOrTfn: sdkgo.String("46 115 614 695"),
+            AbnBranch: sdkgo.String("123"),
+            Acn: sdkgo.String("XXX XXX XXX"),
+            FirstName: sdkgo.String("Elon"),
+            LastName: sdkgo.String("Musk"),
+            BankAccounts: []components.BankAccount{
+                components.BankAccount{
+                    BankName: sdkgo.String("Monzo"),
+                    AccountNumber: sdkgo.String("123465"),
+                    AccountName: sdkgo.String("SPACEX LLC"),
+                    AccountType: components.AccountTypeCreditCard.ToPointer(),
+                    Iban: sdkgo.String("CH2989144532982975332"),
+                    Bic: sdkgo.String("AUDSCHGGXXX"),
+                    RoutingNumber: sdkgo.String("012345678"),
+                    BsbNumber: sdkgo.String("062-001"),
+                    BranchIdentifier: sdkgo.String("001"),
+                    BankCode: sdkgo.String("BNH"),
+                    Currency: components.CurrencyUsd.ToPointer(),
+                },
+                components.BankAccount{
+                    BankName: sdkgo.String("Monzo"),
+                    AccountNumber: sdkgo.String("123465"),
+                    AccountName: sdkgo.String("SPACEX LLC"),
+                    AccountType: components.AccountTypeCreditCard.ToPointer(),
+                    Iban: sdkgo.String("CH2989144532982975332"),
+                    Bic: sdkgo.String("AUDSCHGGXXX"),
+                    RoutingNumber: sdkgo.String("012345678"),
+                    BsbNumber: sdkgo.String("062-001"),
+                    BranchIdentifier: sdkgo.String("001"),
+                    BankCode: sdkgo.String("BNH"),
+                    Currency: components.CurrencyUsd.ToPointer(),
+                },
             },
-            components.BankAccount{
-                BankName: sdkgo.String("Monzo"),
-                AccountNumber: sdkgo.String("123465"),
-                AccountName: sdkgo.String("SPACEX LLC"),
-                AccountType: components.AccountTypeCreditCard.ToPointer(),
-                Iban: sdkgo.String("CH2989144532982975332"),
-                Bic: sdkgo.String("AUDSCHGGXXX"),
-                RoutingNumber: sdkgo.String("012345678"),
-                BsbNumber: sdkgo.String("062-001"),
-                BranchIdentifier: sdkgo.String("001"),
-                BankCode: sdkgo.String("BNH"),
-                Currency: components.CurrencyUsd.ToPointer(),
+            Websites: []components.Website{
+                components.Website{
+                    ID: sdkgo.String("12345"),
+                    URL: "http://example.com",
+                    Type: components.WebsiteTypePrimary.ToPointer(),
+                },
+                components.Website{
+                    ID: sdkgo.String("12345"),
+                    URL: "http://example.com",
+                    Type: components.WebsiteTypePrimary.ToPointer(),
+                },
             },
-        },
-        Websites: []components.Website{
-            components.Website{
+            Addresses: []components.Address{
+                components.Address{
+                    ID: sdkgo.String("123"),
+                    Type: components.TypePrimary.ToPointer(),
+                    String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
+                    Name: sdkgo.String("HQ US"),
+                    Line1: sdkgo.String("Main street"),
+                    Line2: sdkgo.String("apt #"),
+                    Line3: sdkgo.String("Suite #"),
+                    Line4: sdkgo.String("delivery instructions"),
+                    StreetNumber: sdkgo.String("25"),
+                    City: sdkgo.String("San Francisco"),
+                    State: sdkgo.String("CA"),
+                    PostalCode: sdkgo.String("94104"),
+                    Country: sdkgo.String("US"),
+                    Latitude: sdkgo.String("40.759211"),
+                    Longitude: sdkgo.String("-73.984638"),
+                    County: sdkgo.String("Santa Clara"),
+                    ContactName: sdkgo.String("Elon Musk"),
+                    Salutation: sdkgo.String("Mr"),
+                    PhoneNumber: sdkgo.String("111-111-1111"),
+                    Fax: sdkgo.String("122-111-1111"),
+                    Email: sdkgo.String("elon@musk.com"),
+                    Website: sdkgo.String("https://elonmusk.com"),
+                    Notes: sdkgo.String("Address notes or delivery instructions."),
+                    RowVersion: sdkgo.String("1-12345"),
+                },
+                components.Address{
+                    ID: sdkgo.String("123"),
+                    Type: components.TypePrimary.ToPointer(),
+                    String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
+                    Name: sdkgo.String("HQ US"),
+                    Line1: sdkgo.String("Main street"),
+                    Line2: sdkgo.String("apt #"),
+                    Line3: sdkgo.String("Suite #"),
+                    Line4: sdkgo.String("delivery instructions"),
+                    StreetNumber: sdkgo.String("25"),
+                    City: sdkgo.String("San Francisco"),
+                    State: sdkgo.String("CA"),
+                    PostalCode: sdkgo.String("94104"),
+                    Country: sdkgo.String("US"),
+                    Latitude: sdkgo.String("40.759211"),
+                    Longitude: sdkgo.String("-73.984638"),
+                    County: sdkgo.String("Santa Clara"),
+                    ContactName: sdkgo.String("Elon Musk"),
+                    Salutation: sdkgo.String("Mr"),
+                    PhoneNumber: sdkgo.String("111-111-1111"),
+                    Fax: sdkgo.String("122-111-1111"),
+                    Email: sdkgo.String("elon@musk.com"),
+                    Website: sdkgo.String("https://elonmusk.com"),
+                    Notes: sdkgo.String("Address notes or delivery instructions."),
+                    RowVersion: sdkgo.String("1-12345"),
+                },
+            },
+            SocialLinks: []components.SocialLink{
+                components.SocialLink{
+                    ID: sdkgo.String("12345"),
+                    URL: "https://www.twitter.com/apideck",
+                    Type: sdkgo.String("twitter"),
+                },
+            },
+            PhoneNumbers: []components.PhoneNumber{
+                components.PhoneNumber{
+                    ID: sdkgo.String("12345"),
+                    CountryCode: sdkgo.String("1"),
+                    AreaCode: sdkgo.String("323"),
+                    Number: "111-111-1111",
+                    Extension: sdkgo.String("105"),
+                    Type: components.PhoneNumberTypePrimary.ToPointer(),
+                },
+            },
+            Emails: []components.Email{
+                components.Email{
+                    ID: sdkgo.String("123"),
+                    Email: sdkgo.String("elon@musk.com"),
+                    Type: components.EmailTypePrimary.ToPointer(),
+                },
+                components.Email{
+                    ID: sdkgo.String("123"),
+                    Email: sdkgo.String("elon@musk.com"),
+                    Type: components.EmailTypePrimary.ToPointer(),
+                },
+                components.Email{
+                    ID: sdkgo.String("123"),
+                    Email: sdkgo.String("elon@musk.com"),
+                    Type: components.EmailTypePrimary.ToPointer(),
+                },
+            },
+            RowType: &components.CompanyRowType{
                 ID: sdkgo.String("12345"),
-                URL: "http://example.com",
-                Type: components.WebsiteTypePrimary.ToPointer(),
+                Name: sdkgo.String("Customer Account"),
             },
-            components.Website{
-                ID: sdkgo.String("12345"),
-                URL: "http://example.com",
-                Type: components.WebsiteTypePrimary.ToPointer(),
+            CustomFields: []components.CustomField{
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueStr(
+                        "Uses Salesforce and Marketo",
+                    )),
+                },
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueNumber(
+                        10,
+                    )),
+                },
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueStr(
+                        "Uses Salesforce and Marketo",
+                    )),
+                },
             },
-        },
-        Addresses: []components.Address{
-            components.Address{
-                ID: sdkgo.String("123"),
-                Type: components.TypePrimary.ToPointer(),
-                String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
-                Name: sdkgo.String("HQ US"),
-                Line1: sdkgo.String("Main street"),
-                Line2: sdkgo.String("apt #"),
-                Line3: sdkgo.String("Suite #"),
-                Line4: sdkgo.String("delivery instructions"),
-                StreetNumber: sdkgo.String("25"),
-                City: sdkgo.String("San Francisco"),
-                State: sdkgo.String("CA"),
-                PostalCode: sdkgo.String("94104"),
-                Country: sdkgo.String("US"),
-                Latitude: sdkgo.String("40.759211"),
-                Longitude: sdkgo.String("-73.984638"),
-                County: sdkgo.String("Santa Clara"),
-                ContactName: sdkgo.String("Elon Musk"),
-                Salutation: sdkgo.String("Mr"),
-                PhoneNumber: sdkgo.String("111-111-1111"),
-                Fax: sdkgo.String("122-111-1111"),
-                Email: sdkgo.String("elon@musk.com"),
-                Website: sdkgo.String("https://elonmusk.com"),
-                Notes: sdkgo.String("Address notes or delivery instructions."),
-                RowVersion: sdkgo.String("1-12345"),
+            Tags: []string{
+                "New",
             },
-            components.Address{
-                ID: sdkgo.String("123"),
-                Type: components.TypePrimary.ToPointer(),
-                String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
-                Name: sdkgo.String("HQ US"),
-                Line1: sdkgo.String("Main street"),
-                Line2: sdkgo.String("apt #"),
-                Line3: sdkgo.String("Suite #"),
-                Line4: sdkgo.String("delivery instructions"),
-                StreetNumber: sdkgo.String("25"),
-                City: sdkgo.String("San Francisco"),
-                State: sdkgo.String("CA"),
-                PostalCode: sdkgo.String("94104"),
-                Country: sdkgo.String("US"),
-                Latitude: sdkgo.String("40.759211"),
-                Longitude: sdkgo.String("-73.984638"),
-                County: sdkgo.String("Santa Clara"),
-                ContactName: sdkgo.String("Elon Musk"),
-                Salutation: sdkgo.String("Mr"),
-                PhoneNumber: sdkgo.String("111-111-1111"),
-                Fax: sdkgo.String("122-111-1111"),
-                Email: sdkgo.String("elon@musk.com"),
-                Website: sdkgo.String("https://elonmusk.com"),
-                Notes: sdkgo.String("Address notes or delivery instructions."),
-                RowVersion: sdkgo.String("1-12345"),
-            },
-        },
-        SocialLinks: []components.SocialLink{
-            components.SocialLink{
-                ID: sdkgo.String("12345"),
-                URL: "https://www.twitter.com/apideck",
-                Type: sdkgo.String("twitter"),
-            },
-        },
-        PhoneNumbers: []components.PhoneNumber{
-            components.PhoneNumber{
-                ID: sdkgo.String("12345"),
-                CountryCode: sdkgo.String("1"),
-                AreaCode: sdkgo.String("323"),
-                Number: "111-111-1111",
-                Extension: sdkgo.String("105"),
-                Type: components.PhoneNumberTypePrimary.ToPointer(),
-            },
-        },
-        Emails: []components.Email{
-            components.Email{
-                ID: sdkgo.String("123"),
-                Email: sdkgo.String("elon@musk.com"),
-                Type: components.EmailTypePrimary.ToPointer(),
-            },
-            components.Email{
-                ID: sdkgo.String("123"),
-                Email: sdkgo.String("elon@musk.com"),
-                Type: components.EmailTypePrimary.ToPointer(),
-            },
-            components.Email{
-                ID: sdkgo.String("123"),
-                Email: sdkgo.String("elon@musk.com"),
-                Type: components.EmailTypePrimary.ToPointer(),
-            },
-        },
-        RowType: &components.CompanyRowType{
-            ID: sdkgo.String("12345"),
-            Name: sdkgo.String("Customer Account"),
-        },
-        CustomFields: []components.CustomField{
-            components.CustomField{
-                ID: sdkgo.String("2389328923893298"),
-                Name: sdkgo.String("employee_level"),
-                Description: sdkgo.String("Employee Level"),
-                Value: sdkgo.Pointer(components.CreateValueStr(
-                    "Uses Salesforce and Marketo",
-                )),
-            },
-            components.CustomField{
-                ID: sdkgo.String("2389328923893298"),
-                Name: sdkgo.String("employee_level"),
-                Description: sdkgo.String("Employee Level"),
-                Value: sdkgo.Pointer(components.CreateValueNumber(
-                    10,
-                )),
-            },
-            components.CustomField{
-                ID: sdkgo.String("2389328923893298"),
-                Name: sdkgo.String("employee_level"),
-                Description: sdkgo.String("Employee Level"),
-                Value: sdkgo.Pointer(components.CreateValueStr(
-                    "Uses Salesforce and Marketo",
-                )),
-            },
-        },
-        Tags: []string{
-            "New",
-        },
-        ReadOnly: sdkgo.Bool(false),
-        Salutation: sdkgo.String("Mr"),
-        Birthday: types.MustNewDateFromString("2000-08-12"),
-        PassThrough: []components.PassThroughBody{
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
+            ReadOnly: sdkgo.Bool(false),
+            Salutation: sdkgo.String("Mr"),
+            Birthday: types.MustNewDateFromString("2000-08-12"),
+            PassThrough: []components.PassThroughBody{
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
                             },
                         },
                     },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
+                },
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
                             },
                         },
                     },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
+                },
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
                             },
                         },
                     },
                 },
             },
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                },
-            },
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
-                            },
-                        },
-                    },
-                },
-            },
         },
-    }, sdkgo.Bool(false), sdkgo.String("salesforce"))
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -402,13 +407,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                     | Type                                                                                                                                          | Required                                                                                                                                      | Description                                                                                                                                   | Example                                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                         | [context.Context](https://pkg.go.dev/context#Context)                                                                                         | :heavy_check_mark:                                                                                                                            | The context to use for the request.                                                                                                           |                                                                                                                                               |
-| `company`                                                                                                                                     | [components.CompanyInput](../../models/components/companyinput.md)                                                                            | :heavy_check_mark:                                                                                                                            | N/A                                                                                                                                           |                                                                                                                                               |
-| `raw`                                                                                                                                         | **bool*                                                                                                                                       | :heavy_minus_sign:                                                                                                                            | Include raw response. Mostly used for debugging purposes                                                                                      |                                                                                                                                               |
-| `serviceID`                                                                                                                                   | **string*                                                                                                                                     | :heavy_minus_sign:                                                                                                                            | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | salesforce                                                                                                                                    |
-| `opts`                                                                                                                                        | [][operations.Option](../../models/operations/option.md)                                                                                      | :heavy_minus_sign:                                                                                                                            | The options for this request.                                                                                                                 |                                                                                                                                               |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
+| `request`                                                                              | [operations.CrmCompaniesAddRequest](../../models/operations/crmcompaniesaddrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `opts`                                                                                 | [][operations.Option](../../models/operations/option.md)                               | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
 
 ### Response
 
@@ -438,6 +441,7 @@ import(
 	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
 
@@ -450,7 +454,12 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Crm.Companies.Get(ctx, "<id>", sdkgo.Bool(false), sdkgo.String("salesforce"), sdkgo.String("id,updated_at"))
+    res, err := s.Crm.Companies.Get(ctx, operations.CrmCompaniesOneRequest{
+        ID: "<id>",
+        Raw: sdkgo.Bool(false),
+        ServiceID: sdkgo.String("salesforce"),
+        Fields: sdkgo.String("id,updated_at"),
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -462,14 +471,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Required                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Example                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | :heavy_check_mark:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | The context to use for the request.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| `id`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | *string*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | :heavy_check_mark:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | ID of the record you are acting upon.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| `raw`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | **bool*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Include raw response. Mostly used for debugging purposes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| `serviceID`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | **string*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | salesforce                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| `fields`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | **string*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded. | id,updated_at                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| `opts`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | [][operations.Option](../../models/operations/option.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | The options for this request.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
+| `request`                                                                              | [operations.CrmCompaniesOneRequest](../../models/operations/crmcompaniesonerequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `opts`                                                                                 | [][operations.Option](../../models/operations/option.md)                               | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
 
 ### Response
 
@@ -501,6 +507,7 @@ import(
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/types"
+	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
 
@@ -513,234 +520,239 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Crm.Companies.Update(ctx, "<id>", components.CompanyInput{
-        Name: sdkgo.String("SpaceX"),
-        OwnerID: sdkgo.String("12345"),
-        Image: sdkgo.String("https://www.spacex.com/static/images/share.jpg"),
-        Description: sdkgo.String("Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California."),
-        VatNumber: sdkgo.String("BE0689615164"),
-        Currency: components.CurrencyUsd.ToPointer(),
-        Status: sdkgo.String("Open"),
-        Fax: sdkgo.String("+12129876543"),
-        AnnualRevenue: sdkgo.String("+$35m"),
-        NumberOfEmployees: sdkgo.String("500-1000"),
-        Industry: sdkgo.String("Apparel"),
-        Ownership: sdkgo.String("Public"),
-        SalesTaxNumber: sdkgo.String("12456EN"),
-        PayeeNumber: sdkgo.String("78932EN"),
-        AbnOrTfn: sdkgo.String("46 115 614 695"),
-        AbnBranch: sdkgo.String("123"),
-        Acn: sdkgo.String("XXX XXX XXX"),
-        FirstName: sdkgo.String("Elon"),
-        LastName: sdkgo.String("Musk"),
-        BankAccounts: []components.BankAccount{
-            components.BankAccount{
-                BankName: sdkgo.String("Monzo"),
-                AccountNumber: sdkgo.String("123465"),
-                AccountName: sdkgo.String("SPACEX LLC"),
-                AccountType: components.AccountTypeCreditCard.ToPointer(),
-                Iban: sdkgo.String("CH2989144532982975332"),
-                Bic: sdkgo.String("AUDSCHGGXXX"),
-                RoutingNumber: sdkgo.String("012345678"),
-                BsbNumber: sdkgo.String("062-001"),
-                BranchIdentifier: sdkgo.String("001"),
-                BankCode: sdkgo.String("BNH"),
-                Currency: components.CurrencyUsd.ToPointer(),
+    res, err := s.Crm.Companies.Update(ctx, operations.CrmCompaniesUpdateRequest{
+        ID: "<id>",
+        Raw: sdkgo.Bool(false),
+        ServiceID: sdkgo.String("salesforce"),
+        Company: components.CompanyInput{
+            Name: sdkgo.String("SpaceX"),
+            OwnerID: sdkgo.String("12345"),
+            Image: sdkgo.String("https://www.spacex.com/static/images/share.jpg"),
+            Description: sdkgo.String("Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California."),
+            VatNumber: sdkgo.String("BE0689615164"),
+            Currency: components.CurrencyUsd.ToPointer(),
+            Status: sdkgo.String("Open"),
+            Fax: sdkgo.String("+12129876543"),
+            AnnualRevenue: sdkgo.String("+$35m"),
+            NumberOfEmployees: sdkgo.String("500-1000"),
+            Industry: sdkgo.String("Apparel"),
+            Ownership: sdkgo.String("Public"),
+            SalesTaxNumber: sdkgo.String("12456EN"),
+            PayeeNumber: sdkgo.String("78932EN"),
+            AbnOrTfn: sdkgo.String("46 115 614 695"),
+            AbnBranch: sdkgo.String("123"),
+            Acn: sdkgo.String("XXX XXX XXX"),
+            FirstName: sdkgo.String("Elon"),
+            LastName: sdkgo.String("Musk"),
+            BankAccounts: []components.BankAccount{
+                components.BankAccount{
+                    BankName: sdkgo.String("Monzo"),
+                    AccountNumber: sdkgo.String("123465"),
+                    AccountName: sdkgo.String("SPACEX LLC"),
+                    AccountType: components.AccountTypeCreditCard.ToPointer(),
+                    Iban: sdkgo.String("CH2989144532982975332"),
+                    Bic: sdkgo.String("AUDSCHGGXXX"),
+                    RoutingNumber: sdkgo.String("012345678"),
+                    BsbNumber: sdkgo.String("062-001"),
+                    BranchIdentifier: sdkgo.String("001"),
+                    BankCode: sdkgo.String("BNH"),
+                    Currency: components.CurrencyUsd.ToPointer(),
+                },
+                components.BankAccount{
+                    BankName: sdkgo.String("Monzo"),
+                    AccountNumber: sdkgo.String("123465"),
+                    AccountName: sdkgo.String("SPACEX LLC"),
+                    AccountType: components.AccountTypeCreditCard.ToPointer(),
+                    Iban: sdkgo.String("CH2989144532982975332"),
+                    Bic: sdkgo.String("AUDSCHGGXXX"),
+                    RoutingNumber: sdkgo.String("012345678"),
+                    BsbNumber: sdkgo.String("062-001"),
+                    BranchIdentifier: sdkgo.String("001"),
+                    BankCode: sdkgo.String("BNH"),
+                    Currency: components.CurrencyUsd.ToPointer(),
+                },
+                components.BankAccount{
+                    BankName: sdkgo.String("Monzo"),
+                    AccountNumber: sdkgo.String("123465"),
+                    AccountName: sdkgo.String("SPACEX LLC"),
+                    AccountType: components.AccountTypeCreditCard.ToPointer(),
+                    Iban: sdkgo.String("CH2989144532982975332"),
+                    Bic: sdkgo.String("AUDSCHGGXXX"),
+                    RoutingNumber: sdkgo.String("012345678"),
+                    BsbNumber: sdkgo.String("062-001"),
+                    BranchIdentifier: sdkgo.String("001"),
+                    BankCode: sdkgo.String("BNH"),
+                    Currency: components.CurrencyUsd.ToPointer(),
+                },
             },
-            components.BankAccount{
-                BankName: sdkgo.String("Monzo"),
-                AccountNumber: sdkgo.String("123465"),
-                AccountName: sdkgo.String("SPACEX LLC"),
-                AccountType: components.AccountTypeCreditCard.ToPointer(),
-                Iban: sdkgo.String("CH2989144532982975332"),
-                Bic: sdkgo.String("AUDSCHGGXXX"),
-                RoutingNumber: sdkgo.String("012345678"),
-                BsbNumber: sdkgo.String("062-001"),
-                BranchIdentifier: sdkgo.String("001"),
-                BankCode: sdkgo.String("BNH"),
-                Currency: components.CurrencyUsd.ToPointer(),
+            Websites: []components.Website{
+                components.Website{
+                    ID: sdkgo.String("12345"),
+                    URL: "http://example.com",
+                    Type: components.WebsiteTypePrimary.ToPointer(),
+                },
+                components.Website{
+                    ID: sdkgo.String("12345"),
+                    URL: "http://example.com",
+                    Type: components.WebsiteTypePrimary.ToPointer(),
+                },
             },
-            components.BankAccount{
-                BankName: sdkgo.String("Monzo"),
-                AccountNumber: sdkgo.String("123465"),
-                AccountName: sdkgo.String("SPACEX LLC"),
-                AccountType: components.AccountTypeCreditCard.ToPointer(),
-                Iban: sdkgo.String("CH2989144532982975332"),
-                Bic: sdkgo.String("AUDSCHGGXXX"),
-                RoutingNumber: sdkgo.String("012345678"),
-                BsbNumber: sdkgo.String("062-001"),
-                BranchIdentifier: sdkgo.String("001"),
-                BankCode: sdkgo.String("BNH"),
-                Currency: components.CurrencyUsd.ToPointer(),
+            Addresses: []components.Address{
+                components.Address{
+                    ID: sdkgo.String("123"),
+                    Type: components.TypePrimary.ToPointer(),
+                    String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
+                    Name: sdkgo.String("HQ US"),
+                    Line1: sdkgo.String("Main street"),
+                    Line2: sdkgo.String("apt #"),
+                    Line3: sdkgo.String("Suite #"),
+                    Line4: sdkgo.String("delivery instructions"),
+                    StreetNumber: sdkgo.String("25"),
+                    City: sdkgo.String("San Francisco"),
+                    State: sdkgo.String("CA"),
+                    PostalCode: sdkgo.String("94104"),
+                    Country: sdkgo.String("US"),
+                    Latitude: sdkgo.String("40.759211"),
+                    Longitude: sdkgo.String("-73.984638"),
+                    County: sdkgo.String("Santa Clara"),
+                    ContactName: sdkgo.String("Elon Musk"),
+                    Salutation: sdkgo.String("Mr"),
+                    PhoneNumber: sdkgo.String("111-111-1111"),
+                    Fax: sdkgo.String("122-111-1111"),
+                    Email: sdkgo.String("elon@musk.com"),
+                    Website: sdkgo.String("https://elonmusk.com"),
+                    Notes: sdkgo.String("Address notes or delivery instructions."),
+                    RowVersion: sdkgo.String("1-12345"),
+                },
+                components.Address{
+                    ID: sdkgo.String("123"),
+                    Type: components.TypePrimary.ToPointer(),
+                    String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
+                    Name: sdkgo.String("HQ US"),
+                    Line1: sdkgo.String("Main street"),
+                    Line2: sdkgo.String("apt #"),
+                    Line3: sdkgo.String("Suite #"),
+                    Line4: sdkgo.String("delivery instructions"),
+                    StreetNumber: sdkgo.String("25"),
+                    City: sdkgo.String("San Francisco"),
+                    State: sdkgo.String("CA"),
+                    PostalCode: sdkgo.String("94104"),
+                    Country: sdkgo.String("US"),
+                    Latitude: sdkgo.String("40.759211"),
+                    Longitude: sdkgo.String("-73.984638"),
+                    County: sdkgo.String("Santa Clara"),
+                    ContactName: sdkgo.String("Elon Musk"),
+                    Salutation: sdkgo.String("Mr"),
+                    PhoneNumber: sdkgo.String("111-111-1111"),
+                    Fax: sdkgo.String("122-111-1111"),
+                    Email: sdkgo.String("elon@musk.com"),
+                    Website: sdkgo.String("https://elonmusk.com"),
+                    Notes: sdkgo.String("Address notes or delivery instructions."),
+                    RowVersion: sdkgo.String("1-12345"),
+                },
             },
-        },
-        Websites: []components.Website{
-            components.Website{
+            SocialLinks: []components.SocialLink{
+                components.SocialLink{
+                    ID: sdkgo.String("12345"),
+                    URL: "https://www.twitter.com/apideck",
+                    Type: sdkgo.String("twitter"),
+                },
+                components.SocialLink{
+                    ID: sdkgo.String("12345"),
+                    URL: "https://www.twitter.com/apideck",
+                    Type: sdkgo.String("twitter"),
+                },
+                components.SocialLink{
+                    ID: sdkgo.String("12345"),
+                    URL: "https://www.twitter.com/apideck",
+                    Type: sdkgo.String("twitter"),
+                },
+            },
+            PhoneNumbers: []components.PhoneNumber{
+                components.PhoneNumber{
+                    ID: sdkgo.String("12345"),
+                    CountryCode: sdkgo.String("1"),
+                    AreaCode: sdkgo.String("323"),
+                    Number: "111-111-1111",
+                    Extension: sdkgo.String("105"),
+                    Type: components.PhoneNumberTypePrimary.ToPointer(),
+                },
+                components.PhoneNumber{
+                    ID: sdkgo.String("12345"),
+                    CountryCode: sdkgo.String("1"),
+                    AreaCode: sdkgo.String("323"),
+                    Number: "111-111-1111",
+                    Extension: sdkgo.String("105"),
+                    Type: components.PhoneNumberTypePrimary.ToPointer(),
+                },
+            },
+            Emails: []components.Email{
+                components.Email{
+                    ID: sdkgo.String("123"),
+                    Email: sdkgo.String("elon@musk.com"),
+                    Type: components.EmailTypePrimary.ToPointer(),
+                },
+                components.Email{
+                    ID: sdkgo.String("123"),
+                    Email: sdkgo.String("elon@musk.com"),
+                    Type: components.EmailTypePrimary.ToPointer(),
+                },
+            },
+            RowType: &components.CompanyRowType{
                 ID: sdkgo.String("12345"),
-                URL: "http://example.com",
-                Type: components.WebsiteTypePrimary.ToPointer(),
+                Name: sdkgo.String("Customer Account"),
             },
-            components.Website{
-                ID: sdkgo.String("12345"),
-                URL: "http://example.com",
-                Type: components.WebsiteTypePrimary.ToPointer(),
+            CustomFields: []components.CustomField{
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueStr(
+                        "Uses Salesforce and Marketo",
+                    )),
+                },
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueArrayOf6(
+                        []components.Six{
+                            components.Six{},
+                        },
+                    )),
+                },
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueNumber(
+                        10,
+                    )),
+                },
             },
-        },
-        Addresses: []components.Address{
-            components.Address{
-                ID: sdkgo.String("123"),
-                Type: components.TypePrimary.ToPointer(),
-                String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
-                Name: sdkgo.String("HQ US"),
-                Line1: sdkgo.String("Main street"),
-                Line2: sdkgo.String("apt #"),
-                Line3: sdkgo.String("Suite #"),
-                Line4: sdkgo.String("delivery instructions"),
-                StreetNumber: sdkgo.String("25"),
-                City: sdkgo.String("San Francisco"),
-                State: sdkgo.String("CA"),
-                PostalCode: sdkgo.String("94104"),
-                Country: sdkgo.String("US"),
-                Latitude: sdkgo.String("40.759211"),
-                Longitude: sdkgo.String("-73.984638"),
-                County: sdkgo.String("Santa Clara"),
-                ContactName: sdkgo.String("Elon Musk"),
-                Salutation: sdkgo.String("Mr"),
-                PhoneNumber: sdkgo.String("111-111-1111"),
-                Fax: sdkgo.String("122-111-1111"),
-                Email: sdkgo.String("elon@musk.com"),
-                Website: sdkgo.String("https://elonmusk.com"),
-                Notes: sdkgo.String("Address notes or delivery instructions."),
-                RowVersion: sdkgo.String("1-12345"),
+            Tags: []string{
+                "New",
             },
-            components.Address{
-                ID: sdkgo.String("123"),
-                Type: components.TypePrimary.ToPointer(),
-                String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
-                Name: sdkgo.String("HQ US"),
-                Line1: sdkgo.String("Main street"),
-                Line2: sdkgo.String("apt #"),
-                Line3: sdkgo.String("Suite #"),
-                Line4: sdkgo.String("delivery instructions"),
-                StreetNumber: sdkgo.String("25"),
-                City: sdkgo.String("San Francisco"),
-                State: sdkgo.String("CA"),
-                PostalCode: sdkgo.String("94104"),
-                Country: sdkgo.String("US"),
-                Latitude: sdkgo.String("40.759211"),
-                Longitude: sdkgo.String("-73.984638"),
-                County: sdkgo.String("Santa Clara"),
-                ContactName: sdkgo.String("Elon Musk"),
-                Salutation: sdkgo.String("Mr"),
-                PhoneNumber: sdkgo.String("111-111-1111"),
-                Fax: sdkgo.String("122-111-1111"),
-                Email: sdkgo.String("elon@musk.com"),
-                Website: sdkgo.String("https://elonmusk.com"),
-                Notes: sdkgo.String("Address notes or delivery instructions."),
-                RowVersion: sdkgo.String("1-12345"),
-            },
-        },
-        SocialLinks: []components.SocialLink{
-            components.SocialLink{
-                ID: sdkgo.String("12345"),
-                URL: "https://www.twitter.com/apideck",
-                Type: sdkgo.String("twitter"),
-            },
-            components.SocialLink{
-                ID: sdkgo.String("12345"),
-                URL: "https://www.twitter.com/apideck",
-                Type: sdkgo.String("twitter"),
-            },
-            components.SocialLink{
-                ID: sdkgo.String("12345"),
-                URL: "https://www.twitter.com/apideck",
-                Type: sdkgo.String("twitter"),
-            },
-        },
-        PhoneNumbers: []components.PhoneNumber{
-            components.PhoneNumber{
-                ID: sdkgo.String("12345"),
-                CountryCode: sdkgo.String("1"),
-                AreaCode: sdkgo.String("323"),
-                Number: "111-111-1111",
-                Extension: sdkgo.String("105"),
-                Type: components.PhoneNumberTypePrimary.ToPointer(),
-            },
-            components.PhoneNumber{
-                ID: sdkgo.String("12345"),
-                CountryCode: sdkgo.String("1"),
-                AreaCode: sdkgo.String("323"),
-                Number: "111-111-1111",
-                Extension: sdkgo.String("105"),
-                Type: components.PhoneNumberTypePrimary.ToPointer(),
-            },
-        },
-        Emails: []components.Email{
-            components.Email{
-                ID: sdkgo.String("123"),
-                Email: sdkgo.String("elon@musk.com"),
-                Type: components.EmailTypePrimary.ToPointer(),
-            },
-            components.Email{
-                ID: sdkgo.String("123"),
-                Email: sdkgo.String("elon@musk.com"),
-                Type: components.EmailTypePrimary.ToPointer(),
-            },
-        },
-        RowType: &components.CompanyRowType{
-            ID: sdkgo.String("12345"),
-            Name: sdkgo.String("Customer Account"),
-        },
-        CustomFields: []components.CustomField{
-            components.CustomField{
-                ID: sdkgo.String("2389328923893298"),
-                Name: sdkgo.String("employee_level"),
-                Description: sdkgo.String("Employee Level"),
-                Value: sdkgo.Pointer(components.CreateValueStr(
-                    "Uses Salesforce and Marketo",
-                )),
-            },
-            components.CustomField{
-                ID: sdkgo.String("2389328923893298"),
-                Name: sdkgo.String("employee_level"),
-                Description: sdkgo.String("Employee Level"),
-                Value: sdkgo.Pointer(components.CreateValueArrayOf6(
-                    []components.Six{
-                        components.Six{},
-                    },
-                )),
-            },
-            components.CustomField{
-                ID: sdkgo.String("2389328923893298"),
-                Name: sdkgo.String("employee_level"),
-                Description: sdkgo.String("Employee Level"),
-                Value: sdkgo.Pointer(components.CreateValueNumber(
-                    10,
-                )),
-            },
-        },
-        Tags: []string{
-            "New",
-        },
-        ReadOnly: sdkgo.Bool(false),
-        Salutation: sdkgo.String("Mr"),
-        Birthday: types.MustNewDateFromString("2000-08-12"),
-        PassThrough: []components.PassThroughBody{
-            components.PassThroughBody{
-                ServiceID: "<id>",
-                ExtendPaths: []components.ExtendPaths{
-                    components.ExtendPaths{
-                        Path: "$.nested.property",
-                        Value: map[string]any{
-                            "TaxClassificationRef": map[string]any{
-                                "value": "EUC-99990201-V1-00020000",
+            ReadOnly: sdkgo.Bool(false),
+            Salutation: sdkgo.String("Mr"),
+            Birthday: types.MustNewDateFromString("2000-08-12"),
+            PassThrough: []components.PassThroughBody{
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
                             },
                         },
                     },
                 },
             },
         },
-    }, sdkgo.Bool(false), sdkgo.String("salesforce"))
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -752,14 +764,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                     | Type                                                                                                                                          | Required                                                                                                                                      | Description                                                                                                                                   | Example                                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                         | [context.Context](https://pkg.go.dev/context#Context)                                                                                         | :heavy_check_mark:                                                                                                                            | The context to use for the request.                                                                                                           |                                                                                                                                               |
-| `id`                                                                                                                                          | *string*                                                                                                                                      | :heavy_check_mark:                                                                                                                            | ID of the record you are acting upon.                                                                                                         |                                                                                                                                               |
-| `company`                                                                                                                                     | [components.CompanyInput](../../models/components/companyinput.md)                                                                            | :heavy_check_mark:                                                                                                                            | N/A                                                                                                                                           |                                                                                                                                               |
-| `raw`                                                                                                                                         | **bool*                                                                                                                                       | :heavy_minus_sign:                                                                                                                            | Include raw response. Mostly used for debugging purposes                                                                                      |                                                                                                                                               |
-| `serviceID`                                                                                                                                   | **string*                                                                                                                                     | :heavy_minus_sign:                                                                                                                            | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | salesforce                                                                                                                                    |
-| `opts`                                                                                                                                        | [][operations.Option](../../models/operations/option.md)                                                                                      | :heavy_minus_sign:                                                                                                                            | The options for this request.                                                                                                                 |                                                                                                                                               |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
+| `request`                                                                                    | [operations.CrmCompaniesUpdateRequest](../../models/operations/crmcompaniesupdaterequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `opts`                                                                                       | [][operations.Option](../../models/operations/option.md)                                     | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
 
 ### Response
 
@@ -789,6 +798,7 @@ import(
 	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
 
@@ -801,7 +811,11 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Crm.Companies.Delete(ctx, "<id>", sdkgo.Bool(false), sdkgo.String("salesforce"))
+    res, err := s.Crm.Companies.Delete(ctx, operations.CrmCompaniesDeleteRequest{
+        ID: "<id>",
+        Raw: sdkgo.Bool(false),
+        ServiceID: sdkgo.String("salesforce"),
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -813,13 +827,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                     | Type                                                                                                                                          | Required                                                                                                                                      | Description                                                                                                                                   | Example                                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                         | [context.Context](https://pkg.go.dev/context#Context)                                                                                         | :heavy_check_mark:                                                                                                                            | The context to use for the request.                                                                                                           |                                                                                                                                               |
-| `id`                                                                                                                                          | *string*                                                                                                                                      | :heavy_check_mark:                                                                                                                            | ID of the record you are acting upon.                                                                                                         |                                                                                                                                               |
-| `raw`                                                                                                                                         | **bool*                                                                                                                                       | :heavy_minus_sign:                                                                                                                            | Include raw response. Mostly used for debugging purposes                                                                                      |                                                                                                                                               |
-| `serviceID`                                                                                                                                   | **string*                                                                                                                                     | :heavy_minus_sign:                                                                                                                            | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | salesforce                                                                                                                                    |
-| `opts`                                                                                                                                        | [][operations.Option](../../models/operations/option.md)                                                                                      | :heavy_minus_sign:                                                                                                                            | The options for this request.                                                                                                                 |                                                                                                                                               |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
+| `request`                                                                                    | [operations.CrmCompaniesDeleteRequest](../../models/operations/crmcompaniesdeleterequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `opts`                                                                                       | [][operations.Option](../../models/operations/option.md)                                     | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
 
 ### Response
 

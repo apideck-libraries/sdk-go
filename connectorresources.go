@@ -27,7 +27,7 @@ func newConnectorResources(sdkConfig sdkConfiguration) *ConnectorResources {
 
 // Get Connector Resource
 // Get Connector Resource
-func (s *ConnectorResources) Get(ctx context.Context, id string, resourceID string, unifiedAPI *components.UnifiedAPIID, opts ...operations.Option) (*operations.ConnectorConnectorResourcesOneResponse, error) {
+func (s *ConnectorResources) Get(ctx context.Context, id string, resourceID string, appID *string, unifiedAPI *components.UnifiedAPIID, opts ...operations.Option) (*operations.ConnectorConnectorResourcesOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "connector.connectorResourcesOne",
@@ -36,6 +36,7 @@ func (s *ConnectorResources) Get(ctx context.Context, id string, resourceID stri
 	}
 
 	request := operations.ConnectorConnectorResourcesOneRequest{
+		AppID:      appID,
 		ID:         id,
 		ResourceID: resourceID,
 		UnifiedAPI: unifiedAPI,

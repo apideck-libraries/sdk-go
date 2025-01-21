@@ -237,6 +237,8 @@ func (s *Companies) List(ctx context.Context, request operations.CrmCompaniesAll
 			ctx,
 			operations.CrmCompaniesAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -417,18 +419,12 @@ func (s *Companies) List(ctx context.Context, request operations.CrmCompaniesAll
 
 // Create company
 // Create company
-func (s *Companies) Create(ctx context.Context, company components.CompanyInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.CrmCompaniesAddResponse, error) {
+func (s *Companies) Create(ctx context.Context, request operations.CrmCompaniesAddRequest, opts ...operations.Option) (*operations.CrmCompaniesAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.companiesAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmCompaniesAddRequest{
-		Raw:       raw,
-		ServiceID: serviceID,
-		Company:   company,
 	}
 
 	globals := operations.CrmCompaniesAddGlobals{
@@ -769,19 +765,12 @@ func (s *Companies) Create(ctx context.Context, company components.CompanyInput,
 
 // Get company
 // Get company
-func (s *Companies) Get(ctx context.Context, id string, raw *bool, serviceID *string, fields *string, opts ...operations.Option) (*operations.CrmCompaniesOneResponse, error) {
+func (s *Companies) Get(ctx context.Context, request operations.CrmCompaniesOneRequest, opts ...operations.Option) (*operations.CrmCompaniesOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.companiesOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmCompaniesOneRequest{
-		ID:        id,
-		Raw:       raw,
-		ServiceID: serviceID,
-		Fields:    fields,
 	}
 
 	globals := operations.CrmCompaniesOneGlobals{
@@ -1114,19 +1103,12 @@ func (s *Companies) Get(ctx context.Context, id string, raw *bool, serviceID *st
 
 // Update company
 // Update company
-func (s *Companies) Update(ctx context.Context, id string, company components.CompanyInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.CrmCompaniesUpdateResponse, error) {
+func (s *Companies) Update(ctx context.Context, request operations.CrmCompaniesUpdateRequest, opts ...operations.Option) (*operations.CrmCompaniesUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.companiesUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmCompaniesUpdateRequest{
-		ID:        id,
-		Raw:       raw,
-		ServiceID: serviceID,
-		Company:   company,
 	}
 
 	globals := operations.CrmCompaniesUpdateGlobals{
@@ -1467,18 +1449,12 @@ func (s *Companies) Update(ctx context.Context, id string, company components.Co
 
 // Delete company
 // Delete company
-func (s *Companies) Delete(ctx context.Context, id string, raw *bool, serviceID *string, opts ...operations.Option) (*operations.CrmCompaniesDeleteResponse, error) {
+func (s *Companies) Delete(ctx context.Context, request operations.CrmCompaniesDeleteRequest, opts ...operations.Option) (*operations.CrmCompaniesDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.companiesDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmCompaniesDeleteRequest{
-		ID:        id,
-		Raw:       raw,
-		ServiceID: serviceID,
 	}
 
 	globals := operations.CrmCompaniesDeleteGlobals{

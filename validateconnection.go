@@ -32,18 +32,12 @@ func newValidateConnection(sdkConfig sdkConfiguration) *ValidateConnection {
 // Note:
 //   - Do not include any credentials in the request body. This operation does not persist changes, but only triggers the validation of connection state.
 //   - If a refresh token flow was performed and successful, the new access token will then be used for subsequent API requests.
-func (s *ValidateConnection) State(ctx context.Context, serviceID string, unifiedAPI string, requestBody *operations.VaultValidateConnectionStateRequestBody, opts ...operations.Option) (*operations.VaultValidateConnectionStateResponse, error) {
+func (s *ValidateConnection) State(ctx context.Context, request operations.VaultValidateConnectionStateRequest, opts ...operations.Option) (*operations.VaultValidateConnectionStateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.validateConnectionState",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.VaultValidateConnectionStateRequest{
-		ServiceID:   serviceID,
-		UnifiedAPI:  unifiedAPI,
-		RequestBody: requestBody,
 	}
 
 	globals := operations.VaultValidateConnectionStateGlobals{

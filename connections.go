@@ -30,7 +30,7 @@ func newConnections(sdkConfig sdkConfiguration) *Connections {
 // This endpoint includes all the configured integrations and contains the required assets
 // to build an integrations page where your users can install integrations.
 // OAuth2 supported integrations will contain authorize and revoke links to handle the authentication flows.
-func (s *Connections) List(ctx context.Context, api *string, configured *bool, opts ...operations.Option) (*operations.VaultConnectionsAllResponse, error) {
+func (s *Connections) List(ctx context.Context, consumerID *string, appID *string, api *string, configured *bool, opts ...operations.Option) (*operations.VaultConnectionsAllResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.connectionsAll",
@@ -39,6 +39,8 @@ func (s *Connections) List(ctx context.Context, api *string, configured *bool, o
 	}
 
 	request := operations.VaultConnectionsAllRequest{
+		ConsumerID: consumerID,
+		AppID:      appID,
 		API:        api,
 		Configured: configured,
 	}
@@ -373,7 +375,7 @@ func (s *Connections) List(ctx context.Context, api *string, configured *bool, o
 
 // Get connection
 // Get a connection
-func (s *Connections) Get(ctx context.Context, serviceID string, unifiedAPI string, opts ...operations.Option) (*operations.VaultConnectionsOneResponse, error) {
+func (s *Connections) Get(ctx context.Context, serviceID string, unifiedAPI string, consumerID *string, appID *string, opts ...operations.Option) (*operations.VaultConnectionsOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.connectionsOne",
@@ -382,6 +384,8 @@ func (s *Connections) Get(ctx context.Context, serviceID string, unifiedAPI stri
 	}
 
 	request := operations.VaultConnectionsOneRequest{
+		ConsumerID: consumerID,
+		AppID:      appID,
 		ServiceID:  serviceID,
 		UnifiedAPI: unifiedAPI,
 	}
@@ -712,18 +716,12 @@ func (s *Connections) Get(ctx context.Context, serviceID string, unifiedAPI stri
 
 // Update connection
 // Update a connection
-func (s *Connections) Update(ctx context.Context, serviceID string, unifiedAPI string, connection components.ConnectionInput, opts ...operations.Option) (*operations.VaultConnectionsUpdateResponse, error) {
+func (s *Connections) Update(ctx context.Context, request operations.VaultConnectionsUpdateRequest, opts ...operations.Option) (*operations.VaultConnectionsUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.connectionsUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.VaultConnectionsUpdateRequest{
-		ServiceID:  serviceID,
-		UnifiedAPI: unifiedAPI,
-		Connection: connection,
 	}
 
 	globals := operations.VaultConnectionsUpdateGlobals{
@@ -1060,7 +1058,7 @@ func (s *Connections) Update(ctx context.Context, serviceID string, unifiedAPI s
 
 // Delete - Deletes a connection
 // Deletes a connection
-func (s *Connections) Delete(ctx context.Context, serviceID string, unifiedAPI string, opts ...operations.Option) (*operations.VaultConnectionsDeleteResponse, error) {
+func (s *Connections) Delete(ctx context.Context, serviceID string, unifiedAPI string, consumerID *string, appID *string, opts ...operations.Option) (*operations.VaultConnectionsDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.connectionsDelete",
@@ -1069,6 +1067,8 @@ func (s *Connections) Delete(ctx context.Context, serviceID string, unifiedAPI s
 	}
 
 	request := operations.VaultConnectionsDeleteRequest{
+		ConsumerID: consumerID,
+		AppID:      appID,
 		ServiceID:  serviceID,
 		UnifiedAPI: unifiedAPI,
 	}
@@ -1379,18 +1379,12 @@ func (s *Connections) Delete(ctx context.Context, serviceID string, unifiedAPI s
 
 // Imports - Import connection
 // Import an authorized connection.
-func (s *Connections) Imports(ctx context.Context, serviceID string, unifiedAPI string, connectionImportData components.ConnectionImportData, opts ...operations.Option) (*operations.VaultConnectionsImportResponse, error) {
+func (s *Connections) Imports(ctx context.Context, request operations.VaultConnectionsImportRequest, opts ...operations.Option) (*operations.VaultConnectionsImportResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.connectionsImport",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.VaultConnectionsImportRequest{
-		ServiceID:            serviceID,
-		UnifiedAPI:           unifiedAPI,
-		ConnectionImportData: connectionImportData,
 	}
 
 	globals := operations.VaultConnectionsImportGlobals{
@@ -1732,18 +1726,12 @@ func (s *Connections) Imports(ctx context.Context, serviceID string, unifiedAPI 
 //   - Do not include any credentials in the request body. This operation does not persist changes, but only triggers the exchange of persisted connection credentials for an access token.
 //   - The access token will not be returned in the response. A 200 response code indicates the authorization was successful and that a valid access token was stored on the connection.
 //   - The access token will be used for subsequent API requests.
-func (s *Connections) Token(ctx context.Context, serviceID string, unifiedAPI string, requestBody *operations.VaultConnectionsTokenRequestBody, opts ...operations.Option) (*operations.VaultConnectionsTokenResponse, error) {
+func (s *Connections) Token(ctx context.Context, request operations.VaultConnectionsTokenRequest, opts ...operations.Option) (*operations.VaultConnectionsTokenResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.connectionsToken",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.VaultConnectionsTokenRequest{
-		ServiceID:   serviceID,
-		UnifiedAPI:  unifiedAPI,
-		RequestBody: requestBody,
 	}
 
 	globals := operations.VaultConnectionsTokenGlobals{

@@ -28,6 +28,10 @@ func (o *VaultCustomFieldsAllGlobals) GetAppID() *string {
 }
 
 type VaultCustomFieldsAllRequest struct {
+	// ID of the consumer which you want to get or push data from
+	ConsumerID *string `header:"style=simple,explode=false,name=x-apideck-consumer-id"`
+	// The ID of your Unify application
+	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 	// Unified API
 	UnifiedAPI string `pathParam:"style=simple,explode=false,name=unified_api"`
 	// Service ID of the resource to return
@@ -36,6 +40,20 @@ type VaultCustomFieldsAllRequest struct {
 	Resource string `pathParam:"style=simple,explode=false,name=resource"`
 	// This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id.
 	ResourceID *string `queryParam:"style=form,explode=true,name=resource_id"`
+}
+
+func (o *VaultCustomFieldsAllRequest) GetConsumerID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ConsumerID
+}
+
+func (o *VaultCustomFieldsAllRequest) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
 }
 
 func (o *VaultCustomFieldsAllRequest) GetUnifiedAPI() string {

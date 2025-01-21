@@ -30,7 +30,7 @@ func newConsumers(sdkConfig sdkConfiguration) *Consumers {
 
 // Create consumer
 // Create a consumer
-func (s *Consumers) Create(ctx context.Context, consumerID string, metadata *components.ConsumerMetadata, opts ...operations.Option) (*operations.VaultConsumersAddResponse, error) {
+func (s *Consumers) Create(ctx context.Context, consumer components.ConsumerInput, appID *string, opts ...operations.Option) (*operations.VaultConsumersAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.consumersAdd",
@@ -38,9 +38,9 @@ func (s *Consumers) Create(ctx context.Context, consumerID string, metadata *com
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
-	request := components.ConsumerInput{
-		ConsumerID: consumerID,
-		Metadata:   metadata,
+	request := operations.VaultConsumersAddRequest{
+		AppID:    appID,
+		Consumer: consumer,
 	}
 
 	globals := operations.VaultConsumersAddGlobals{
@@ -70,7 +70,7 @@ func (s *Consumers) Create(ctx context.Context, consumerID string, metadata *com
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Consumer", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -376,7 +376,7 @@ func (s *Consumers) Create(ctx context.Context, consumerID string, metadata *com
 
 // List - Get all consumers
 // This endpoint includes all application consumers, along with an aggregated count of requests made.
-func (s *Consumers) List(ctx context.Context, cursor *string, limit *int64, opts ...operations.Option) (*operations.VaultConsumersAllResponse, error) {
+func (s *Consumers) List(ctx context.Context, appID *string, cursor *string, limit *int64, opts ...operations.Option) (*operations.VaultConsumersAllResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.consumersAll",
@@ -385,6 +385,7 @@ func (s *Consumers) List(ctx context.Context, cursor *string, limit *int64, opts
 	}
 
 	request := operations.VaultConsumersAllRequest{
+		AppID:  appID,
 		Cursor: cursor,
 		Limit:  limit,
 	}
@@ -585,6 +586,7 @@ func (s *Consumers) List(ctx context.Context, cursor *string, limit *int64, opts
 
 		return s.List(
 			ctx,
+			appID,
 			&nCVal,
 			limit,
 			opts...,
@@ -759,7 +761,7 @@ func (s *Consumers) List(ctx context.Context, cursor *string, limit *int64, opts
 
 // Get consumer
 // Consumer detail including their aggregated counts with the connections they have authorized.
-func (s *Consumers) Get(ctx context.Context, consumerID string, opts ...operations.Option) (*operations.VaultConsumersOneResponse, error) {
+func (s *Consumers) Get(ctx context.Context, consumerID string, appID *string, opts ...operations.Option) (*operations.VaultConsumersOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.consumersOne",
@@ -768,6 +770,7 @@ func (s *Consumers) Get(ctx context.Context, consumerID string, opts ...operatio
 	}
 
 	request := operations.VaultConsumersOneRequest{
+		AppID:      appID,
 		ConsumerID: consumerID,
 	}
 
@@ -1096,7 +1099,7 @@ func (s *Consumers) Get(ctx context.Context, consumerID string, opts ...operatio
 
 // Update consumer
 // Update consumer metadata such as name and email.
-func (s *Consumers) Update(ctx context.Context, consumerID string, updateConsumerRequest components.UpdateConsumerRequest, opts ...operations.Option) (*operations.VaultConsumersUpdateResponse, error) {
+func (s *Consumers) Update(ctx context.Context, consumerID string, updateConsumerRequest components.UpdateConsumerRequest, appID *string, opts ...operations.Option) (*operations.VaultConsumersUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.consumersUpdate",
@@ -1105,6 +1108,7 @@ func (s *Consumers) Update(ctx context.Context, consumerID string, updateConsume
 	}
 
 	request := operations.VaultConsumersUpdateRequest{
+		AppID:                 appID,
 		ConsumerID:            consumerID,
 		UpdateConsumerRequest: updateConsumerRequest,
 	}
@@ -1442,7 +1446,7 @@ func (s *Consumers) Update(ctx context.Context, consumerID string, updateConsume
 
 // Delete consumer
 // Delete consumer and all their connections, including credentials.
-func (s *Consumers) Delete(ctx context.Context, consumerID string, opts ...operations.Option) (*operations.VaultConsumersDeleteResponse, error) {
+func (s *Consumers) Delete(ctx context.Context, consumerID string, appID *string, opts ...operations.Option) (*operations.VaultConsumersDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "vault.consumersDelete",
@@ -1451,6 +1455,7 @@ func (s *Consumers) Delete(ctx context.Context, consumerID string, opts ...opera
 	}
 
 	request := operations.VaultConsumersDeleteRequest{
+		AppID:      appID,
 		ConsumerID: consumerID,
 	}
 

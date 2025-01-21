@@ -238,6 +238,8 @@ func (s *Attachments) List(ctx context.Context, request operations.AccountingAtt
 				ReferenceType: request.ReferenceType,
 				ReferenceID:   request.ReferenceID,
 				Raw:           request.Raw,
+				ConsumerID:    request.ConsumerID,
+				AppID:         request.AppID,
 				ServiceID:     request.ServiceID,
 				Cursor:        &nCVal,
 				Limit:         request.Limit,

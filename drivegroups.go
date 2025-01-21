@@ -237,6 +237,8 @@ func (s *DriveGroups) List(ctx context.Context, request operations.FileStorageDr
 			ctx,
 			operations.FileStorageDriveGroupsAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -416,18 +418,12 @@ func (s *DriveGroups) List(ctx context.Context, request operations.FileStorageDr
 
 // Create DriveGroup
 // Create DriveGroup
-func (s *DriveGroups) Create(ctx context.Context, driveGroup components.DriveGroupInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.FileStorageDriveGroupsAddResponse, error) {
+func (s *DriveGroups) Create(ctx context.Context, request operations.FileStorageDriveGroupsAddRequest, opts ...operations.Option) (*operations.FileStorageDriveGroupsAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.driveGroupsAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageDriveGroupsAddRequest{
-		Raw:        raw,
-		ServiceID:  serviceID,
-		DriveGroup: driveGroup,
 	}
 
 	globals := operations.FileStorageDriveGroupsAddGlobals{
@@ -768,19 +764,12 @@ func (s *DriveGroups) Create(ctx context.Context, driveGroup components.DriveGro
 
 // Get DriveGroup
 // Get DriveGroup
-func (s *DriveGroups) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.FileStorageDriveGroupsOneResponse, error) {
+func (s *DriveGroups) Get(ctx context.Context, request operations.FileStorageDriveGroupsOneRequest, opts ...operations.Option) (*operations.FileStorageDriveGroupsOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.driveGroupsOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageDriveGroupsOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.FileStorageDriveGroupsOneGlobals{
@@ -1113,19 +1102,12 @@ func (s *DriveGroups) Get(ctx context.Context, id string, serviceID *string, raw
 
 // Update DriveGroup
 // Update DriveGroup
-func (s *DriveGroups) Update(ctx context.Context, id string, driveGroup components.DriveGroupInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.FileStorageDriveGroupsUpdateResponse, error) {
+func (s *DriveGroups) Update(ctx context.Context, request operations.FileStorageDriveGroupsUpdateRequest, opts ...operations.Option) (*operations.FileStorageDriveGroupsUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.driveGroupsUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageDriveGroupsUpdateRequest{
-		ID:         id,
-		ServiceID:  serviceID,
-		Raw:        raw,
-		DriveGroup: driveGroup,
 	}
 
 	globals := operations.FileStorageDriveGroupsUpdateGlobals{
@@ -1466,18 +1448,12 @@ func (s *DriveGroups) Update(ctx context.Context, id string, driveGroup componen
 
 // Delete DriveGroup
 // Delete DriveGroup
-func (s *DriveGroups) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.FileStorageDriveGroupsDeleteResponse, error) {
+func (s *DriveGroups) Delete(ctx context.Context, request operations.FileStorageDriveGroupsDeleteRequest, opts ...operations.Option) (*operations.FileStorageDriveGroupsDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.driveGroupsDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageDriveGroupsDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.FileStorageDriveGroupsDeleteGlobals{

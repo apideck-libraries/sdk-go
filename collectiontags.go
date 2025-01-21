@@ -237,6 +237,8 @@ func (s *CollectionTags) List(ctx context.Context, request operations.IssueTrack
 			operations.IssueTrackingCollectionTagsAllRequest{
 				CollectionID: request.CollectionID,
 				Raw:          request.Raw,
+				ConsumerID:   request.ConsumerID,
+				AppID:        request.AppID,
 				ServiceID:    request.ServiceID,
 				Cursor:       &nCVal,
 				Limit:        request.Limit,

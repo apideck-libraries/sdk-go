@@ -237,6 +237,8 @@ func (s *Suppliers) List(ctx context.Context, request operations.AccountingSuppl
 			ctx,
 			operations.AccountingSuppliersAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -417,18 +419,12 @@ func (s *Suppliers) List(ctx context.Context, request operations.AccountingSuppl
 
 // Create Supplier
 // Create Supplier
-func (s *Suppliers) Create(ctx context.Context, supplier components.SupplierInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.AccountingSuppliersAddResponse, error) {
+func (s *Suppliers) Create(ctx context.Context, request operations.AccountingSuppliersAddRequest, opts ...operations.Option) (*operations.AccountingSuppliersAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.suppliersAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingSuppliersAddRequest{
-		Raw:       raw,
-		ServiceID: serviceID,
-		Supplier:  supplier,
 	}
 
 	globals := operations.AccountingSuppliersAddGlobals{
@@ -769,19 +765,12 @@ func (s *Suppliers) Create(ctx context.Context, supplier components.SupplierInpu
 
 // Get Supplier
 // Get Supplier
-func (s *Suppliers) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.AccountingSuppliersOneResponse, error) {
+func (s *Suppliers) Get(ctx context.Context, request operations.AccountingSuppliersOneRequest, opts ...operations.Option) (*operations.AccountingSuppliersOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.suppliersOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingSuppliersOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.AccountingSuppliersOneGlobals{
@@ -1114,19 +1103,12 @@ func (s *Suppliers) Get(ctx context.Context, id string, serviceID *string, raw *
 
 // Update Supplier
 // Update Supplier
-func (s *Suppliers) Update(ctx context.Context, id string, supplier components.SupplierInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingSuppliersUpdateResponse, error) {
+func (s *Suppliers) Update(ctx context.Context, request operations.AccountingSuppliersUpdateRequest, opts ...operations.Option) (*operations.AccountingSuppliersUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.suppliersUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingSuppliersUpdateRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Supplier:  supplier,
 	}
 
 	globals := operations.AccountingSuppliersUpdateGlobals{
@@ -1467,18 +1449,12 @@ func (s *Suppliers) Update(ctx context.Context, id string, supplier components.S
 
 // Delete Supplier
 // Delete Supplier
-func (s *Suppliers) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingSuppliersDeleteResponse, error) {
+func (s *Suppliers) Delete(ctx context.Context, request operations.AccountingSuppliersDeleteRequest, opts ...operations.Option) (*operations.AccountingSuppliersDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.suppliersDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingSuppliersDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AccountingSuppliersDeleteGlobals{

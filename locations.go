@@ -236,12 +236,14 @@ func (s *Locations) List(ctx context.Context, request operations.AccountingLocat
 		return s.List(
 			ctx,
 			operations.AccountingLocationsAllRequest{
-				Raw:       request.Raw,
-				ServiceID: request.ServiceID,
-				Cursor:    &nCVal,
-				Limit:     request.Limit,
-				Fields:    request.Fields,
-				Filter:    request.Filter,
+				Raw:        request.Raw,
+				ConsumerID: request.ConsumerID,
+				AppID:      request.AppID,
+				ServiceID:  request.ServiceID,
+				Cursor:     &nCVal,
+				Limit:      request.Limit,
+				Fields:     request.Fields,
+				Filter:     request.Filter,
 			},
 			opts...,
 		)
@@ -415,18 +417,12 @@ func (s *Locations) List(ctx context.Context, request operations.AccountingLocat
 
 // Create Location
 // Create Location
-func (s *Locations) Create(ctx context.Context, accountingLocation components.AccountingLocationInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.AccountingLocationsAddResponse, error) {
+func (s *Locations) Create(ctx context.Context, request operations.AccountingLocationsAddRequest, opts ...operations.Option) (*operations.AccountingLocationsAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.locationsAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingLocationsAddRequest{
-		Raw:                raw,
-		ServiceID:          serviceID,
-		AccountingLocation: accountingLocation,
 	}
 
 	globals := operations.AccountingLocationsAddGlobals{
@@ -767,19 +763,12 @@ func (s *Locations) Create(ctx context.Context, accountingLocation components.Ac
 
 // Get Location
 // Get Location
-func (s *Locations) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.AccountingLocationsOneResponse, error) {
+func (s *Locations) Get(ctx context.Context, request operations.AccountingLocationsOneRequest, opts ...operations.Option) (*operations.AccountingLocationsOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.locationsOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingLocationsOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.AccountingLocationsOneGlobals{
@@ -1112,19 +1101,12 @@ func (s *Locations) Get(ctx context.Context, id string, serviceID *string, raw *
 
 // Update Location
 // Update Location
-func (s *Locations) Update(ctx context.Context, id string, accountingLocation components.AccountingLocationInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingLocationsUpdateResponse, error) {
+func (s *Locations) Update(ctx context.Context, request operations.AccountingLocationsUpdateRequest, opts ...operations.Option) (*operations.AccountingLocationsUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.locationsUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingLocationsUpdateRequest{
-		ID:                 id,
-		ServiceID:          serviceID,
-		Raw:                raw,
-		AccountingLocation: accountingLocation,
 	}
 
 	globals := operations.AccountingLocationsUpdateGlobals{
@@ -1465,18 +1447,12 @@ func (s *Locations) Update(ctx context.Context, id string, accountingLocation co
 
 // Delete Location
 // Delete Location
-func (s *Locations) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.AccountingLocationsDeleteResponse, error) {
+func (s *Locations) Delete(ctx context.Context, request operations.AccountingLocationsDeleteRequest, opts ...operations.Option) (*operations.AccountingLocationsDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "accounting.locationsDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.AccountingLocationsDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.AccountingLocationsDeleteGlobals{

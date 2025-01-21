@@ -366,19 +366,12 @@ func (s *Payrolls) List(ctx context.Context, request operations.HrisPayrollsAllR
 
 // Get Payroll
 // Get Payroll
-func (s *Payrolls) Get(ctx context.Context, payrollID string, raw *bool, serviceID *string, fields *string, opts ...operations.Option) (*operations.HrisPayrollsOneResponse, error) {
+func (s *Payrolls) Get(ctx context.Context, request operations.HrisPayrollsOneRequest, opts ...operations.Option) (*operations.HrisPayrollsOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "hris.payrollsOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.HrisPayrollsOneRequest{
-		PayrollID: payrollID,
-		Raw:       raw,
-		ServiceID: serviceID,
-		Fields:    fields,
 	}
 
 	globals := operations.HrisPayrollsOneGlobals{

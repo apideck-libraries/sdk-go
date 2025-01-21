@@ -237,6 +237,8 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 			ctx,
 			operations.FileStorageFilesAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -763,19 +765,12 @@ func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesS
 
 // Get File
 // Get File
-func (s *Files) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.FileStorageFilesOneResponse, error) {
+func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneRequest, opts ...operations.Option) (*operations.FileStorageFilesOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.filesOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageFilesOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.FileStorageFilesOneGlobals{
@@ -1108,19 +1103,12 @@ func (s *Files) Get(ctx context.Context, id string, serviceID *string, raw *bool
 
 // Update - Rename or move File
 // Rename or move File
-func (s *Files) Update(ctx context.Context, id string, updateFileRequest components.UpdateFileRequest, serviceID *string, raw *bool, opts ...operations.Option) (*operations.FileStorageFilesUpdateResponse, error) {
+func (s *Files) Update(ctx context.Context, request operations.FileStorageFilesUpdateRequest, opts ...operations.Option) (*operations.FileStorageFilesUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.filesUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageFilesUpdateRequest{
-		ID:                id,
-		ServiceID:         serviceID,
-		Raw:               raw,
-		UpdateFileRequest: updateFileRequest,
 	}
 
 	globals := operations.FileStorageFilesUpdateGlobals{
@@ -1461,18 +1449,12 @@ func (s *Files) Update(ctx context.Context, id string, updateFileRequest compone
 
 // Delete File
 // Delete File
-func (s *Files) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.FileStorageFilesDeleteResponse, error) {
+func (s *Files) Delete(ctx context.Context, request operations.FileStorageFilesDeleteRequest, opts ...operations.Option) (*operations.FileStorageFilesDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.filesDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageFilesDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.FileStorageFilesDeleteGlobals{
@@ -1805,18 +1787,12 @@ func (s *Files) Delete(ctx context.Context, id string, serviceID *string, raw *b
 
 // Download File
 // Download File
-func (s *Files) Download(ctx context.Context, id string, serviceID *string, fields *string, opts ...operations.Option) (*operations.FileStorageFilesDownloadResponse, error) {
+func (s *Files) Download(ctx context.Context, request operations.FileStorageFilesDownloadRequest, opts ...operations.Option) (*operations.FileStorageFilesDownloadResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.filesDownload",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageFilesDownloadRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Fields:    fields,
 	}
 
 	globals := operations.FileStorageFilesDownloadGlobals{
@@ -2147,19 +2123,12 @@ func (s *Files) Download(ctx context.Context, id string, serviceID *string, fiel
 
 // Export File
 // Export File
-func (s *Files) Export(ctx context.Context, id string, format string, serviceID *string, fields *string, opts ...operations.Option) (*operations.FileStorageFilesExportResponse, error) {
+func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesExportRequest, opts ...operations.Option) (*operations.FileStorageFilesExportResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "fileStorage.filesExport",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.FileStorageFilesExportRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Fields:    fields,
-		Format:    format,
 	}
 
 	globals := operations.FileStorageFilesExportGlobals{

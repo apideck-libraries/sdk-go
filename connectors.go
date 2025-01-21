@@ -30,7 +30,7 @@ func newConnectors(sdkConfig sdkConfiguration) *Connectors {
 
 // List Connectors
 // List Connectors
-func (s *Connectors) List(ctx context.Context, cursor *string, limit *int64, filter *components.ConnectorsFilter, opts ...operations.Option) (*operations.ConnectorConnectorsAllResponse, error) {
+func (s *Connectors) List(ctx context.Context, appID *string, cursor *string, limit *int64, filter *components.ConnectorsFilter, opts ...operations.Option) (*operations.ConnectorConnectorsAllResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "connector.connectorsAll",
@@ -39,6 +39,7 @@ func (s *Connectors) List(ctx context.Context, cursor *string, limit *int64, fil
 	}
 
 	request := operations.ConnectorConnectorsAllRequest{
+		AppID:  appID,
 		Cursor: cursor,
 		Limit:  limit,
 		Filter: filter,
@@ -240,6 +241,7 @@ func (s *Connectors) List(ctx context.Context, cursor *string, limit *int64, fil
 
 		return s.List(
 			ctx,
+			appID,
 			&nCVal,
 			limit,
 			filter,
@@ -373,7 +375,7 @@ func (s *Connectors) List(ctx context.Context, cursor *string, limit *int64, fil
 
 // Get Connector
 // Get Connector
-func (s *Connectors) Get(ctx context.Context, id string, opts ...operations.Option) (*operations.ConnectorConnectorsOneResponse, error) {
+func (s *Connectors) Get(ctx context.Context, id string, appID *string, opts ...operations.Option) (*operations.ConnectorConnectorsOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "connector.connectorsOne",
@@ -382,7 +384,8 @@ func (s *Connectors) Get(ctx context.Context, id string, opts ...operations.Opti
 	}
 
 	request := operations.ConnectorConnectorsOneRequest{
-		ID: id,
+		AppID: appID,
+		ID:    id,
 	}
 
 	globals := operations.ConnectorConnectorsOneGlobals{

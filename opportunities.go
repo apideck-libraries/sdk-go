@@ -237,6 +237,8 @@ func (s *Opportunities) List(ctx context.Context, request operations.CrmOpportun
 			ctx,
 			operations.CrmOpportunitiesAllRequest{
 				Raw:         request.Raw,
+				ConsumerID:  request.ConsumerID,
+				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
@@ -417,18 +419,12 @@ func (s *Opportunities) List(ctx context.Context, request operations.CrmOpportun
 
 // Create opportunity
 // Create opportunity
-func (s *Opportunities) Create(ctx context.Context, opportunity components.OpportunityInput, raw *bool, serviceID *string, opts ...operations.Option) (*operations.CrmOpportunitiesAddResponse, error) {
+func (s *Opportunities) Create(ctx context.Context, request operations.CrmOpportunitiesAddRequest, opts ...operations.Option) (*operations.CrmOpportunitiesAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.opportunitiesAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmOpportunitiesAddRequest{
-		Raw:         raw,
-		ServiceID:   serviceID,
-		Opportunity: opportunity,
 	}
 
 	globals := operations.CrmOpportunitiesAddGlobals{
@@ -769,19 +765,12 @@ func (s *Opportunities) Create(ctx context.Context, opportunity components.Oppor
 
 // Get opportunity
 // Get opportunity
-func (s *Opportunities) Get(ctx context.Context, id string, serviceID *string, raw *bool, fields *string, opts ...operations.Option) (*operations.CrmOpportunitiesOneResponse, error) {
+func (s *Opportunities) Get(ctx context.Context, request operations.CrmOpportunitiesOneRequest, opts ...operations.Option) (*operations.CrmOpportunitiesOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.opportunitiesOne",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmOpportunitiesOneRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
-		Fields:    fields,
 	}
 
 	globals := operations.CrmOpportunitiesOneGlobals{
@@ -1114,19 +1103,12 @@ func (s *Opportunities) Get(ctx context.Context, id string, serviceID *string, r
 
 // Update opportunity
 // Update opportunity
-func (s *Opportunities) Update(ctx context.Context, id string, opportunity components.OpportunityInput, serviceID *string, raw *bool, opts ...operations.Option) (*operations.CrmOpportunitiesUpdateResponse, error) {
+func (s *Opportunities) Update(ctx context.Context, request operations.CrmOpportunitiesUpdateRequest, opts ...operations.Option) (*operations.CrmOpportunitiesUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.opportunitiesUpdate",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmOpportunitiesUpdateRequest{
-		ID:          id,
-		ServiceID:   serviceID,
-		Raw:         raw,
-		Opportunity: opportunity,
 	}
 
 	globals := operations.CrmOpportunitiesUpdateGlobals{
@@ -1467,18 +1449,12 @@ func (s *Opportunities) Update(ctx context.Context, id string, opportunity compo
 
 // Delete opportunity
 // Delete opportunity
-func (s *Opportunities) Delete(ctx context.Context, id string, serviceID *string, raw *bool, opts ...operations.Option) (*operations.CrmOpportunitiesDeleteResponse, error) {
+func (s *Opportunities) Delete(ctx context.Context, request operations.CrmOpportunitiesDeleteRequest, opts ...operations.Option) (*operations.CrmOpportunitiesDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "crm.opportunitiesDelete",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.CrmOpportunitiesDeleteRequest{
-		ID:        id,
-		ServiceID: serviceID,
-		Raw:       raw,
 	}
 
 	globals := operations.CrmOpportunitiesDeleteGlobals{

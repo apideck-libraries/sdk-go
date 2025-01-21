@@ -30,7 +30,7 @@ func newEventLogs(sdkConfig sdkConfiguration) *EventLogs {
 
 // List event logs
 // List event logs
-func (s *EventLogs) List(ctx context.Context, cursor *string, limit *int64, filter *components.WebhookEventLogsFilter, opts ...operations.Option) (*operations.WebhookEventLogsAllResponse, error) {
+func (s *EventLogs) List(ctx context.Context, appID *string, cursor *string, limit *int64, filter *components.WebhookEventLogsFilter, opts ...operations.Option) (*operations.WebhookEventLogsAllResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "webhook.eventLogsAll",
@@ -39,6 +39,7 @@ func (s *EventLogs) List(ctx context.Context, cursor *string, limit *int64, filt
 	}
 
 	request := operations.WebhookEventLogsAllRequest{
+		AppID:  appID,
 		Cursor: cursor,
 		Limit:  limit,
 		Filter: filter,
@@ -240,6 +241,7 @@ func (s *EventLogs) List(ctx context.Context, cursor *string, limit *int64, filt
 
 		return s.List(
 			ctx,
+			appID,
 			&nCVal,
 			limit,
 			filter,

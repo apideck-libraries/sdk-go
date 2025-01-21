@@ -30,7 +30,7 @@ func newWebhooks(sdkConfig sdkConfiguration) *Webhooks {
 
 // List webhook subscriptions
 // List all webhook subscriptions
-func (s *Webhooks) List(ctx context.Context, cursor *string, limit *int64, opts ...operations.Option) (*operations.WebhookWebhooksAllResponse, error) {
+func (s *Webhooks) List(ctx context.Context, appID *string, cursor *string, limit *int64, opts ...operations.Option) (*operations.WebhookWebhooksAllResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "webhook.webhooksAll",
@@ -39,6 +39,7 @@ func (s *Webhooks) List(ctx context.Context, cursor *string, limit *int64, opts 
 	}
 
 	request := operations.WebhookWebhooksAllRequest{
+		AppID:  appID,
 		Cursor: cursor,
 		Limit:  limit,
 	}
@@ -239,6 +240,7 @@ func (s *Webhooks) List(ctx context.Context, cursor *string, limit *int64, opts 
 
 		return s.List(
 			ctx,
+			appID,
 			&nCVal,
 			limit,
 			opts...,
@@ -413,12 +415,17 @@ func (s *Webhooks) List(ctx context.Context, cursor *string, limit *int64, opts 
 
 // Create webhook subscription
 // Create a webhook subscription to receive events
-func (s *Webhooks) Create(ctx context.Context, request components.CreateWebhookRequest, opts ...operations.Option) (*operations.WebhookWebhooksAddResponse, error) {
+func (s *Webhooks) Create(ctx context.Context, createWebhookRequest components.CreateWebhookRequest, appID *string, opts ...operations.Option) (*operations.WebhookWebhooksAddResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "webhook.webhooksAdd",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
+	}
+
+	request := operations.WebhookWebhooksAddRequest{
+		AppID:                appID,
+		CreateWebhookRequest: createWebhookRequest,
 	}
 
 	globals := operations.WebhookWebhooksAddGlobals{
@@ -448,7 +455,7 @@ func (s *Webhooks) Create(ctx context.Context, request components.CreateWebhookR
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateWebhookRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -754,7 +761,7 @@ func (s *Webhooks) Create(ctx context.Context, request components.CreateWebhookR
 
 // Get webhook subscription
 // Get the webhook subscription details
-func (s *Webhooks) Get(ctx context.Context, id string, opts ...operations.Option) (*operations.WebhookWebhooksOneResponse, error) {
+func (s *Webhooks) Get(ctx context.Context, id string, appID *string, opts ...operations.Option) (*operations.WebhookWebhooksOneResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "webhook.webhooksOne",
@@ -763,7 +770,8 @@ func (s *Webhooks) Get(ctx context.Context, id string, opts ...operations.Option
 	}
 
 	request := operations.WebhookWebhooksOneRequest{
-		ID: id,
+		ID:    id,
+		AppID: appID,
 	}
 
 	globals := operations.WebhookWebhooksOneGlobals{
@@ -1091,7 +1099,7 @@ func (s *Webhooks) Get(ctx context.Context, id string, opts ...operations.Option
 
 // Update webhook subscription
 // Update a webhook subscription
-func (s *Webhooks) Update(ctx context.Context, id string, updateWebhookRequest components.UpdateWebhookRequest, opts ...operations.Option) (*operations.WebhookWebhooksUpdateResponse, error) {
+func (s *Webhooks) Update(ctx context.Context, id string, updateWebhookRequest components.UpdateWebhookRequest, appID *string, opts ...operations.Option) (*operations.WebhookWebhooksUpdateResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "webhook.webhooksUpdate",
@@ -1101,6 +1109,7 @@ func (s *Webhooks) Update(ctx context.Context, id string, updateWebhookRequest c
 
 	request := operations.WebhookWebhooksUpdateRequest{
 		ID:                   id,
+		AppID:                appID,
 		UpdateWebhookRequest: updateWebhookRequest,
 	}
 
@@ -1437,7 +1446,7 @@ func (s *Webhooks) Update(ctx context.Context, id string, updateWebhookRequest c
 
 // Delete webhook subscription
 // Delete a webhook subscription
-func (s *Webhooks) Delete(ctx context.Context, id string, opts ...operations.Option) (*operations.WebhookWebhooksDeleteResponse, error) {
+func (s *Webhooks) Delete(ctx context.Context, id string, appID *string, opts ...operations.Option) (*operations.WebhookWebhooksDeleteResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "webhook.webhooksDelete",
@@ -1446,7 +1455,8 @@ func (s *Webhooks) Delete(ctx context.Context, id string, opts ...operations.Opt
 	}
 
 	request := operations.WebhookWebhooksDeleteRequest{
-		ID: id,
+		ID:    id,
+		AppID: appID,
 	}
 
 	globals := operations.WebhookWebhooksDeleteGlobals{
