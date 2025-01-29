@@ -14,7 +14,7 @@ type Opportunity struct {
 	// The title or name of the opportunity.
 	Title string `json:"title"`
 	// The unique identifier of the primary contact associated with the opportunity.
-	PrimaryContactID *string `json:"primary_contact_id"`
+	PrimaryContactID *string `json:"primary_contact_id,omitempty"`
 	// A description of the opportunity.
 	Description *string `json:"description,omitempty"`
 	// The type of the opportunity

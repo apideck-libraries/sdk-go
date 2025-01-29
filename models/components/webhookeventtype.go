@@ -115,6 +115,15 @@ const (
 	WebhookEventTypeAccountingExpenseCreated          WebhookEventType = "accounting.expense.created"
 	WebhookEventTypeAccountingExpenseUpdated          WebhookEventType = "accounting.expense.updated"
 	WebhookEventTypeAccountingExpenseDeleted          WebhookEventType = "accounting.expense.deleted"
+	WebhookEventTypeEcommerceOrderCreated             WebhookEventType = "ecommerce.order.created"
+	WebhookEventTypeEcommerceOrderUpdated             WebhookEventType = "ecommerce.order.updated"
+	WebhookEventTypeEcommerceOrderDeleted             WebhookEventType = "ecommerce.order.deleted"
+	WebhookEventTypeEcommerceProductCreated           WebhookEventType = "ecommerce.product.created"
+	WebhookEventTypeEcommerceProductUpdated           WebhookEventType = "ecommerce.product.updated"
+	WebhookEventTypeEcommerceProductDeleted           WebhookEventType = "ecommerce.product.deleted"
+	WebhookEventTypeEcommerceCustomerCreated          WebhookEventType = "ecommerce.customer.created"
+	WebhookEventTypeEcommerceCustomerUpdated          WebhookEventType = "ecommerce.customer.updated"
+	WebhookEventTypeEcommerceCustomerDeleted          WebhookEventType = "ecommerce.customer.deleted"
 )
 
 func (e WebhookEventType) ToPointer() *WebhookEventType {
@@ -335,6 +344,24 @@ func (e *WebhookEventType) UnmarshalJSON(data []byte) error {
 	case "accounting.expense.updated":
 		fallthrough
 	case "accounting.expense.deleted":
+		fallthrough
+	case "ecommerce.order.created":
+		fallthrough
+	case "ecommerce.order.updated":
+		fallthrough
+	case "ecommerce.order.deleted":
+		fallthrough
+	case "ecommerce.product.created":
+		fallthrough
+	case "ecommerce.product.updated":
+		fallthrough
+	case "ecommerce.product.deleted":
+		fallthrough
+	case "ecommerce.customer.created":
+		fallthrough
+	case "ecommerce.customer.updated":
+		fallthrough
+	case "ecommerce.customer.deleted":
 		*e = WebhookEventType(v)
 		return nil
 	default:

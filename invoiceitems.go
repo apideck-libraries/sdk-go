@@ -243,6 +243,7 @@ func (s *InvoiceItems) List(ctx context.Context, request operations.AccountingIn
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
 				Filter:      request.Filter,
+				Sort:        request.Sort,
 				PassThrough: request.PassThrough,
 				Fields:      request.Fields,
 			},

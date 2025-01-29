@@ -46,6 +46,10 @@ func main() {
             Name: sdkgo.String("Widgets Large"),
             Type: components.InvoiceItemTypeService.ToPointer(),
         },
+        Sort: &components.InvoiceItemsSort{
+            By: components.InvoiceItemsSortByUpdatedAt.ToPointer(),
+            Direction: components.SortDirectionDesc.ToPointer(),
+        },
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
