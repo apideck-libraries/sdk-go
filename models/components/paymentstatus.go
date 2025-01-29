@@ -11,7 +11,9 @@ import (
 type PaymentStatus string
 
 const (
+	PaymentStatusDraft      PaymentStatus = "draft"
 	PaymentStatusAuthorised PaymentStatus = "authorised"
+	PaymentStatusRejected   PaymentStatus = "rejected"
 	PaymentStatusPaid       PaymentStatus = "paid"
 	PaymentStatusVoided     PaymentStatus = "voided"
 	PaymentStatusDeleted    PaymentStatus = "deleted"
@@ -26,7 +28,11 @@ func (e *PaymentStatus) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	switch v {
+	case "draft":
+		fallthrough
 	case "authorised":
+		fallthrough
+	case "rejected":
 		fallthrough
 	case "paid":
 		fallthrough

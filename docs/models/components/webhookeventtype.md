@@ -110,3 +110,12 @@
 | `WebhookEventTypeAccountingExpenseCreated`          | accounting.expense.created                          |
 | `WebhookEventTypeAccountingExpenseUpdated`          | accounting.expense.updated                          |
 | `WebhookEventTypeAccountingExpenseDeleted`          | accounting.expense.deleted                          |
+| `WebhookEventTypeEcommerceOrderCreated`             | ecommerce.order.created                             |
+| `WebhookEventTypeEcommerceOrderUpdated`             | ecommerce.order.updated                             |
+| `WebhookEventTypeEcommerceOrderDeleted`             | ecommerce.order.deleted                             |
+| `WebhookEventTypeEcommerceProductCreated`           | ecommerce.product.created                           |
+| `WebhookEventTypeEcommerceProductUpdated`           | ecommerce.product.updated                           |
+| `WebhookEventTypeEcommerceProductDeleted`           | ecommerce.product.deleted                           |
+| `WebhookEventTypeEcommerceCustomerCreated`          | ecommerce.customer.created                          |
+| `WebhookEventTypeEcommerceCustomerUpdated`          | ecommerce.customer.updated                          |
+| `WebhookEventTypeEcommerceCustomerDeleted`          | ecommerce.customer.deleted                          |
