@@ -32,7 +32,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Connector.ConnectorDocs.Get(ctx, "<id>", "application_owner+oauth_credentials", nil)
+    res, err := s.Connector.ConnectorDocs.Get(ctx, "<id>", "application_owner+oauth_credentials", sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"))
     if err != nil {
         log.Fatal(err)
     }

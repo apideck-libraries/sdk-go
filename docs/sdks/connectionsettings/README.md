@@ -36,6 +36,8 @@ func main() {
     )
 
     res, err := s.Vault.ConnectionSettings.List(ctx, operations.VaultConnectionSettingsAllRequest{
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         UnifiedAPI: "crm",
         ServiceID: "pipedrive",
         Resource: "leads",
@@ -100,6 +102,8 @@ func main() {
     )
 
     res, err := s.Vault.ConnectionSettings.Update(ctx, operations.VaultConnectionSettingsUpdateRequest{
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: "pipedrive",
         UnifiedAPI: "crm",
         Resource: "leads",

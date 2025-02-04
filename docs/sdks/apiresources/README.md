@@ -32,7 +32,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Connector.APIResources.Get(ctx, "<id>", "<id>", nil)
+    res, err := s.Connector.APIResources.Get(ctx, "<id>", "<id>", sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"))
     if err != nil {
         log.Fatal(err)
     }

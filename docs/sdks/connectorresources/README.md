@@ -33,7 +33,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Connector.ConnectorResources.Get(ctx, "<id>", "<id>", nil, components.UnifiedAPIIDCrm.ToPointer())
+    res, err := s.Connector.ConnectorResources.Get(ctx, "<id>", "<id>", sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"), components.UnifiedAPIIDCrm.ToPointer())
     if err != nil {
         log.Fatal(err)
     }

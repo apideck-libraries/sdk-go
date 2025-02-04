@@ -32,7 +32,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Vault.CustomMappings.List(ctx, "crm", "pipedrive", nil, nil)
+    res, err := s.Vault.CustomMappings.List(ctx, "crm", "pipedrive", sdkgo.String("test-consumer"), sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"))
     if err != nil {
         log.Fatal(err)
     }

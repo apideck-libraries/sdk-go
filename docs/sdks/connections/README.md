@@ -40,7 +40,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Vault.Connections.List(ctx, nil, nil, sdkgo.String("crm"), sdkgo.Bool(true))
+    res, err := s.Vault.Connections.List(ctx, sdkgo.String("test-consumer"), sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"), sdkgo.String("crm"), sdkgo.Bool(true))
     if err != nil {
         log.Fatal(err)
     }
@@ -101,7 +101,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Vault.Connections.Get(ctx, "pipedrive", "crm", nil, nil)
+    res, err := s.Vault.Connections.Get(ctx, "pipedrive", "crm", sdkgo.String("test-consumer"), sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"))
     if err != nil {
         log.Fatal(err)
     }
@@ -165,6 +165,8 @@ func main() {
     )
 
     res, err := s.Vault.Connections.Update(ctx, operations.VaultConnectionsUpdateRequest{
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: "pipedrive",
         UnifiedAPI: "crm",
         Connection: components.ConnectionInput{
@@ -484,7 +486,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Vault.Connections.Delete(ctx, "pipedrive", "crm", nil, nil)
+    res, err := s.Vault.Connections.Delete(ctx, "pipedrive", "crm", sdkgo.String("test-consumer"), sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"))
     if err != nil {
         log.Fatal(err)
     }
@@ -549,6 +551,8 @@ func main() {
     )
 
     res, err := s.Vault.Connections.Imports(ctx, operations.VaultConnectionsImportRequest{
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: "pipedrive",
         UnifiedAPI: "crm",
         ConnectionImportData: components.ConnectionImportData{
@@ -630,6 +634,8 @@ func main() {
     )
 
     res, err := s.Vault.Connections.Token(ctx, operations.VaultConnectionsTokenRequest{
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: "pipedrive",
         UnifiedAPI: "crm",
     })

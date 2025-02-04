@@ -35,9 +35,9 @@ func main() {
 
     res, err := s.IssueTracking.CollectionTags.List(ctx, operations.IssueTrackingCollectionTagsAllRequest{
         CollectionID: "apideck-io",
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },

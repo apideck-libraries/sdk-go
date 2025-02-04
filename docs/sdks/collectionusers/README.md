@@ -36,9 +36,9 @@ func main() {
 
     res, err := s.IssueTracking.CollectionUsers.List(ctx, operations.IssueTrackingCollectionUsersAllRequest{
         CollectionID: "apideck-io",
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
@@ -117,8 +117,9 @@ func main() {
     res, err := s.IssueTracking.CollectionUsers.Get(ctx, operations.IssueTrackingCollectionUsersOneRequest{
         CollectionID: "apideck-io",
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {

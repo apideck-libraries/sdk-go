@@ -39,9 +39,9 @@ func main() {
     )
 
     res, err := s.Hris.TimeOffRequests.List(ctx, operations.HrisTimeOffRequestsAllRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.TimeOffRequestsFilter{
             StartDate: sdkgo.String("2022-04-08"),
             EndDate: sdkgo.String("2022-04-21"),
@@ -127,7 +127,8 @@ func main() {
     )
 
     res, err := s.Hris.TimeOffRequests.Create(ctx, operations.HrisTimeOffRequestsAddRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         TimeOffRequest: components.TimeOffRequestInput{
             EmployeeID: sdkgo.String("12345"),
@@ -253,8 +254,9 @@ func main() {
 
     res, err := s.Hris.TimeOffRequests.Get(ctx, operations.HrisTimeOffRequestsOneRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
         EmployeeID: "<id>",
     })
@@ -319,8 +321,9 @@ func main() {
 
     res, err := s.Hris.TimeOffRequests.Update(ctx, operations.HrisTimeOffRequestsUpdateRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         EmployeeID: "<id>",
         TimeOffRequest: components.TimeOffRequestInput{
             EmployeeID: sdkgo.String("12345"),
@@ -475,8 +478,9 @@ func main() {
 
     res, err := s.Hris.TimeOffRequests.Delete(ctx, operations.HrisTimeOffRequestsDeleteRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         EmployeeID: "<id>",
     })
     if err != nil {

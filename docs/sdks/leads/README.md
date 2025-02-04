@@ -39,9 +39,9 @@ func main() {
     )
 
     res, err := s.Crm.Leads.List(ctx, operations.CrmLeadsAllRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.LeadsFilter{
             FirstName: sdkgo.String("Elon"),
             LastName: sdkgo.String("Musk"),
@@ -50,7 +50,6 @@ func main() {
         },
         Sort: &components.LeadsSort{
             By: components.LeadsSortByCreatedAt.ToPointer(),
-            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -129,7 +128,8 @@ func main() {
     )
 
     res, err := s.Crm.Leads.Create(ctx, operations.CrmLeadsAddRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         Lead: components.LeadInput{
             Name: "Elon Musk",
@@ -416,8 +416,9 @@ func main() {
 
     res, err := s.Crm.Leads.Get(ctx, operations.CrmLeadsOneRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -481,8 +482,9 @@ func main() {
 
     res, err := s.Crm.Leads.Update(ctx, operations.CrmLeadsUpdateRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Lead: components.LeadInput{
             Name: "Elon Musk",
             CompanyName: sdkgo.String("Spacex"),
@@ -722,8 +724,9 @@ func main() {
 
     res, err := s.Crm.Leads.Delete(ctx, operations.CrmLeadsDeleteRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

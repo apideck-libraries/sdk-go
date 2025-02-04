@@ -38,12 +38,12 @@ func main() {
     )
 
     res, err := s.Ats.Applications.List(ctx, operations.AtsApplicationsAllRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Limit: sdkgo.Int64(20),
     })
     if err != nil {
         log.Fatal(err)
@@ -117,7 +117,8 @@ func main() {
     )
 
     res, err := s.Ats.Applications.Create(ctx, operations.AtsApplicationsAddRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         Application: components.ApplicationInput{
             ApplicantID: sdkgo.String("12345"),
@@ -233,8 +234,9 @@ func main() {
 
     res, err := s.Ats.Applications.Get(ctx, operations.AtsApplicationsOneRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -297,8 +299,9 @@ func main() {
 
     res, err := s.Ats.Applications.Update(ctx, operations.AtsApplicationsUpdateRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Application: components.ApplicationInput{
             ApplicantID: sdkgo.String("12345"),
             JobID: sdkgo.String("12345"),
@@ -442,8 +445,9 @@ func main() {
 
     res, err := s.Ats.Applications.Delete(ctx, operations.AtsApplicationsDeleteRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

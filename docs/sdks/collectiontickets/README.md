@@ -40,12 +40,11 @@ func main() {
 
     res, err := s.IssueTracking.CollectionTickets.List(ctx, operations.IssueTrackingCollectionTicketsAllRequest{
         CollectionID: "apideck-io",
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Sort: &components.TicketsSort{
             By: components.TicketsSortByCreatedAt.ToPointer(),
-            Direction: components.SortDirectionDesc.ToPointer(),
         },
         Filter: &components.IssuesFilter{
             Status: []string{
@@ -130,7 +129,8 @@ func main() {
     )
 
     res, err := s.IssueTracking.CollectionTickets.Create(ctx, operations.IssueTrackingCollectionTicketsAddRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         CollectionID: "apideck-io",
         Ticket: components.TicketInput{
@@ -247,8 +247,9 @@ func main() {
 
     res, err := s.IssueTracking.CollectionTickets.Get(ctx, operations.IssueTrackingCollectionTicketsOneRequest{
         TicketID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         CollectionID: "apideck-io",
         Fields: sdkgo.String("id,updated_at"),
     })
@@ -314,8 +315,9 @@ func main() {
 
     res, err := s.IssueTracking.CollectionTickets.Update(ctx, operations.IssueTrackingCollectionTicketsUpdateRequest{
         TicketID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         CollectionID: "apideck-io",
         Ticket: components.TicketInput{
             ParentID: sdkgo.String("12345"),
@@ -458,8 +460,9 @@ func main() {
 
     res, err := s.IssueTracking.CollectionTickets.Delete(ctx, operations.IssueTrackingCollectionTicketsDeleteRequest{
         TicketID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         CollectionID: "apideck-io",
     })
     if err != nil {

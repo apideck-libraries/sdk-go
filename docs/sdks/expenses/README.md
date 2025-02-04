@@ -38,9 +38,9 @@ func main() {
     )
 
     res, err := s.Accounting.Expenses.List(ctx, operations.AccountingExpensesAllRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
     })
     if err != nil {
         log.Fatal(err)
@@ -115,7 +115,8 @@ func main() {
     )
 
     res, err := s.Accounting.Expenses.Create(ctx, operations.AccountingExpensesAddRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         Expense: components.ExpenseInput{
             Number: sdkgo.String("OIT00546"),
@@ -298,8 +299,9 @@ func main() {
 
     res, err := s.Accounting.Expenses.Get(ctx, operations.AccountingExpensesOneRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -363,8 +365,9 @@ func main() {
 
     res, err := s.Accounting.Expenses.Update(ctx, operations.AccountingExpensesUpdateRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Expense: components.ExpenseInput{
             Number: sdkgo.String("OIT00546"),
             TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
@@ -588,8 +591,9 @@ func main() {
 
     res, err := s.Accounting.Expenses.Delete(ctx, operations.AccountingExpensesDeleteRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

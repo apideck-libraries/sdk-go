@@ -34,7 +34,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Connector.Connectors.List(ctx, nil, nil, sdkgo.Int64(20), &components.ConnectorsFilter{
+    res, err := s.Connector.Connectors.List(ctx, sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"), nil, nil, &components.ConnectorsFilter{
         UnifiedAPI: components.UnifiedAPIIDFileStorage.ToPointer(),
     })
     if err != nil {
@@ -107,7 +107,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Connector.Connectors.Get(ctx, "<id>", nil)
+    res, err := s.Connector.Connectors.Get(ctx, "<id>", sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"))
     if err != nil {
         log.Fatal(err)
     }

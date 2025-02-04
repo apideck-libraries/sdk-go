@@ -35,6 +35,8 @@ func main() {
     )
 
     res, err := s.Accounting.BalanceSheet.Get(ctx, operations.AccountingBalanceSheetOneRequest{
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -45,7 +47,6 @@ func main() {
             PeriodCount: sdkgo.Int64(3),
             PeriodType: components.PeriodTypeMonth.ToPointer(),
         },
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

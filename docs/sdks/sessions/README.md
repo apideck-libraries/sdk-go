@@ -37,7 +37,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Vault.Sessions.Create(ctx, nil, nil, &components.Session{
+    res, err := s.Vault.Sessions.Create(ctx, sdkgo.String("test-consumer"), sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"), &components.Session{
         ConsumerMetadata: &components.ConsumerMetadata{
             AccountName: sdkgo.String("SpaceX"),
             UserName: sdkgo.String("Elon Musk"),
@@ -49,15 +49,6 @@ func main() {
             UnifiedApis: []components.UnifiedAPIID{
                 components.UnifiedAPIIDCrm,
             },
-            HideResourceSettings: sdkgo.Bool(false),
-            SandboxMode: sdkgo.Bool(false),
-            IsolationMode: sdkgo.Bool(false),
-            SessionLength: sdkgo.String("1h"),
-            ShowLogs: sdkgo.Bool(true),
-            ShowSuggestions: sdkgo.Bool(false),
-            ShowSidebar: sdkgo.Bool(true),
-            AutoRedirect: sdkgo.Bool(false),
-            HideGuides: sdkgo.Bool(false),
         },
         Theme: &components.Theme{
             Favicon: sdkgo.String("https://res.cloudinary.com/apideck/icons/intercom"),

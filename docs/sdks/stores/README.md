@@ -34,8 +34,9 @@ func main() {
     )
 
     res, err := s.Ecommerce.Stores.Get(ctx, operations.EcommerceStoresOneRequest{
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {

@@ -39,15 +39,14 @@ func main() {
     )
 
     res, err := s.Crm.Companies.List(ctx, operations.CrmCompaniesAllRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.CompaniesFilter{
             Name: sdkgo.String("SpaceX"),
         },
         Sort: &components.CompaniesSort{
             By: components.CompaniesSortByCreatedAt.ToPointer(),
-            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -127,7 +126,8 @@ func main() {
     )
 
     res, err := s.Crm.Companies.Create(ctx, operations.CrmCompaniesAddRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         Company: components.CompanyInput{
             Name: sdkgo.String("SpaceX"),
@@ -456,7 +456,8 @@ func main() {
 
     res, err := s.Crm.Companies.Get(ctx, operations.CrmCompaniesOneRequest{
         ID: "<id>",
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         Fields: sdkgo.String("id,updated_at"),
     })
@@ -522,7 +523,8 @@ func main() {
 
     res, err := s.Crm.Companies.Update(ctx, operations.CrmCompaniesUpdateRequest{
         ID: "<id>",
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         Company: components.CompanyInput{
             Name: sdkgo.String("SpaceX"),
@@ -813,7 +815,8 @@ func main() {
 
     res, err := s.Crm.Companies.Delete(ctx, operations.CrmCompaniesDeleteRequest{
         ID: "<id>",
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
     })
     if err != nil {

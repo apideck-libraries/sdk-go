@@ -36,7 +36,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Webhook.Webhooks.List(ctx, nil, nil, sdkgo.Int64(20))
+    res, err := s.Webhook.Webhooks.List(ctx, sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"), nil, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -118,7 +118,7 @@ func main() {
             components.WebhookEventTypeVaultConnectionCreated,
             components.WebhookEventTypeVaultConnectionUpdated,
         },
-    }, nil)
+    }, sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"))
     if err != nil {
         log.Fatal(err)
     }
@@ -177,7 +177,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Webhook.Webhooks.Get(ctx, "<id>", nil)
+    res, err := s.Webhook.Webhooks.Get(ctx, "<id>", sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"))
     if err != nil {
         log.Fatal(err)
     }
@@ -245,7 +245,7 @@ func main() {
             components.WebhookEventTypeVaultConnectionCreated,
             components.WebhookEventTypeVaultConnectionUpdated,
         },
-    }, nil)
+    }, sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"))
     if err != nil {
         log.Fatal(err)
     }
@@ -305,7 +305,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Webhook.Webhooks.Delete(ctx, "<id>", nil)
+    res, err := s.Webhook.Webhooks.Delete(ctx, "<id>", sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"))
     if err != nil {
         log.Fatal(err)
     }
