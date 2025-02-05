@@ -38,9 +38,7 @@ func main() {
     )
 
     res, err := s.Crm.Notes.List(ctx, operations.CrmNotesAllRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
@@ -118,7 +116,6 @@ func main() {
     )
 
     res, err := s.Crm.Notes.Create(ctx, operations.CrmNotesAddRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         Note: components.NoteInput{
             Title: sdkgo.String("Meeting Notes"),
@@ -236,7 +233,6 @@ func main() {
     res, err := s.Crm.Notes.Get(ctx, operations.CrmNotesOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -301,7 +297,6 @@ func main() {
     res, err := s.Crm.Notes.Update(ctx, operations.CrmNotesUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Note: components.NoteInput{
             Title: sdkgo.String("Meeting Notes"),
             Content: sdkgo.String("Office hours are 9AM-6PM"),
@@ -447,7 +442,6 @@ func main() {
     res, err := s.Crm.Notes.Delete(ctx, operations.CrmNotesDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

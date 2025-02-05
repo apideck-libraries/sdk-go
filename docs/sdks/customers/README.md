@@ -40,9 +40,7 @@ func main() {
     )
 
     res, err := s.Accounting.Customers.List(ctx, operations.AccountingCustomersAllRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.CustomersFilter{
             CompanyName: sdkgo.String("SpaceX"),
             DisplayName: sdkgo.String("Elon Musk"),
@@ -54,7 +52,6 @@ func main() {
         },
         Sort: &components.CustomersSort{
             By: components.CustomersSortByUpdatedAt.ToPointer(),
-            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -133,7 +130,6 @@ func main() {
     )
 
     res, err := s.Accounting.Customers.Create(ctx, operations.AccountingCustomersAddRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         Customer: components.CustomerInput{
             DisplayID: sdkgo.String("EMP00101"),
@@ -443,7 +439,6 @@ func main() {
     res, err := s.Accounting.Customers.Get(ctx, operations.AccountingCustomersOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -508,7 +503,6 @@ func main() {
     res, err := s.Accounting.Customers.Update(ctx, operations.AccountingCustomersUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Customer: components.CustomerInput{
             DisplayID: sdkgo.String("EMP00101"),
             DisplayName: sdkgo.String("Windsurf Shop"),
@@ -794,7 +788,6 @@ func main() {
     res, err := s.Accounting.Customers.Delete(ctx, operations.AccountingCustomersDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

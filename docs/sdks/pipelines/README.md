@@ -34,9 +34,7 @@ func main() {
     )
 
     res, err := s.Crm.Pipelines.List(ctx, operations.CrmPipelinesAllRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },

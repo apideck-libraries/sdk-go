@@ -105,7 +105,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Vault.Consumers.List(ctx, nil, nil, sdkgo.Int64(20))
+    res, err := s.Vault.Consumers.List(ctx, nil, nil, nil)
     if err != nil {
         log.Fatal(err)
     }

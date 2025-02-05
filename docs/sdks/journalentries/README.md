@@ -40,15 +40,12 @@ func main() {
     )
 
     res, err := s.Accounting.JournalEntries.List(ctx, operations.AccountingJournalEntriesAllRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.JournalEntriesFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
         },
         Sort: &components.JournalEntriesSort{
             By: components.JournalEntriesSortByUpdatedAt.ToPointer(),
-            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -128,7 +125,6 @@ func main() {
     )
 
     res, err := s.Accounting.JournalEntries.Create(ctx, operations.AccountingJournalEntriesAddRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         JournalEntry: components.JournalEntryInput{
             Title: sdkgo.String("Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry"),
@@ -367,7 +363,6 @@ func main() {
     res, err := s.Accounting.JournalEntries.Get(ctx, operations.AccountingJournalEntriesOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -433,7 +428,6 @@ func main() {
     res, err := s.Accounting.JournalEntries.Update(ctx, operations.AccountingJournalEntriesUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         JournalEntry: components.JournalEntryInput{
             Title: sdkgo.String("Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry"),
             CurrencyRate: sdkgo.Float64(0.69),
@@ -747,7 +741,6 @@ func main() {
     res, err := s.Accounting.JournalEntries.Delete(ctx, operations.AccountingJournalEntriesDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

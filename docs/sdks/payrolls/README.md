@@ -36,7 +36,6 @@ func main() {
     )
 
     res, err := s.Hris.Payrolls.List(ctx, operations.HrisPayrollsAllRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         Filter: &components.PayrollsFilter{
             StartDate: sdkgo.String("2022-04-08"),
@@ -107,7 +106,6 @@ func main() {
 
     res, err := s.Hris.Payrolls.Get(ctx, operations.HrisPayrollsOneRequest{
         PayrollID: "<id>",
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         Fields: sdkgo.String("id,updated_at"),
     })

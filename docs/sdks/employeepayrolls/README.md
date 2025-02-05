@@ -37,7 +37,6 @@ func main() {
 
     res, err := s.Hris.EmployeePayrolls.List(ctx, operations.HrisEmployeePayrollsAllRequest{
         EmployeeID: "<id>",
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         Filter: &components.PayrollsFilter{
             StartDate: sdkgo.String("2022-04-08"),
@@ -109,7 +108,6 @@ func main() {
     res, err := s.Hris.EmployeePayrolls.Get(ctx, operations.HrisEmployeePayrollsOneRequest{
         PayrollID: "<id>",
         EmployeeID: "<id>",
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         Fields: sdkgo.String("id,updated_at"),
     })

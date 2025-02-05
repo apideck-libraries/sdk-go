@@ -74,9 +74,7 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		Raw:       sdkgo.Bool(false),
 		ServiceID: sdkgo.String("salesforce"),
-		Limit:     sdkgo.Int64(20),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Bool(true),
 			Equity:      sdkgo.Bool(true),
@@ -146,9 +144,7 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		Raw:       sdkgo.Bool(false),
 		ServiceID: sdkgo.String("salesforce"),
-		Limit:     sdkgo.Int64(20),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Bool(true),
 			Equity:      sdkgo.Bool(true),
@@ -741,9 +737,7 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		Raw:       sdkgo.Bool(false),
 		ServiceID: sdkgo.String("salesforce"),
-		Limit:     sdkgo.Int64(20),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Bool(true),
 			Equity:      sdkgo.Bool(true),
@@ -809,9 +803,7 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		Raw:       sdkgo.Bool(false),
 		ServiceID: sdkgo.String("salesforce"),
-		Limit:     sdkgo.Int64(20),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Bool(true),
 			Equity:      sdkgo.Bool(true),
@@ -891,9 +883,7 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		Raw:       sdkgo.Bool(false),
 		ServiceID: sdkgo.String("salesforce"),
-		Limit:     sdkgo.Int64(20),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Bool(true),
 			Equity:      sdkgo.Bool(true),
@@ -973,9 +963,7 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		Raw:       sdkgo.Bool(false),
 		ServiceID: sdkgo.String("salesforce"),
-		Limit:     sdkgo.Int64(20),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Bool(true),
 			Equity:      sdkgo.Bool(true),
@@ -1060,9 +1048,7 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		Raw:       sdkgo.Bool(false),
 		ServiceID: sdkgo.String("salesforce"),
-		Limit:     sdkgo.Int64(20),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Bool(true),
 			Equity:      sdkgo.Bool(true),
@@ -1122,7 +1108,6 @@ func main() {
 	)
 
 	res, err := s.FileStorage.UploadSessions.Create(ctx, operations.FileStorageUploadSessionsAddRequest{
-		Raw:       sdkgo.Bool(false),
 		ServiceID: sdkgo.String("salesforce"),
 		CreateUploadSessionRequest: components.CreateUploadSessionRequest{
 			Name:           "Documents",

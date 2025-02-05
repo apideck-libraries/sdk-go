@@ -39,9 +39,7 @@ func main() {
     )
 
     res, err := s.Crm.Contacts.List(ctx, operations.CrmContactsAllRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.ContactsFilter{
             FirstName: sdkgo.String("Elon"),
             LastName: sdkgo.String("Musk"),
@@ -51,7 +49,6 @@ func main() {
         },
         Sort: &components.ContactsSort{
             By: components.ContactsSortByCreatedAt.ToPointer(),
-            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -130,7 +127,6 @@ func main() {
     )
 
     res, err := s.Crm.Contacts.Create(ctx, operations.CrmContactsAddRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         Contact: components.ContactInput{
             Name: sdkgo.String("Elon Musk"),
@@ -429,7 +425,6 @@ func main() {
     res, err := s.Crm.Contacts.Get(ctx, operations.CrmContactsOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
         Filter: &components.ContactsFilter{
             FirstName: sdkgo.String("Elon"),
@@ -501,7 +496,6 @@ func main() {
     res, err := s.Crm.Contacts.Update(ctx, operations.CrmContactsUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Contact: components.ContactInput{
             Name: sdkgo.String("Elon Musk"),
             OwnerID: sdkgo.String("54321"),
@@ -752,7 +746,6 @@ func main() {
     res, err := s.Crm.Contacts.Delete(ctx, operations.CrmContactsDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

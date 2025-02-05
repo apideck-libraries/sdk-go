@@ -45,7 +45,6 @@ func main() {
             PeriodCount: sdkgo.Int64(3),
             PeriodType: components.PeriodTypeMonth.ToPointer(),
         },
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

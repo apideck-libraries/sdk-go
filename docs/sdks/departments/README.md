@@ -39,9 +39,7 @@ func main() {
     )
 
     res, err := s.Accounting.Departments.List(ctx, operations.AccountingDepartmentsAllRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Fields: sdkgo.String("id,updated_at"),
         Filter: &components.AccountingDepartmentsFilter{
             Subsidiary: sdkgo.String("1"),
@@ -119,7 +117,6 @@ func main() {
     )
 
     res, err := s.Accounting.Departments.Create(ctx, operations.AccountingDepartmentsAddRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         AccountingDepartment: components.AccountingDepartmentInput{
             ParentID: sdkgo.String("12345"),
@@ -233,7 +230,6 @@ func main() {
     res, err := s.Accounting.Departments.Get(ctx, operations.AccountingDepartmentsOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -298,7 +294,6 @@ func main() {
     res, err := s.Accounting.Departments.Update(ctx, operations.AccountingDepartmentsUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         AccountingDepartment: components.AccountingDepartmentInput{
             ParentID: sdkgo.String("12345"),
             Name: sdkgo.String("Sales"),
@@ -430,7 +425,6 @@ func main() {
     res, err := s.Accounting.Departments.Delete(ctx, operations.AccountingDepartmentsDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

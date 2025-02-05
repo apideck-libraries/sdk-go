@@ -36,9 +36,7 @@ func main() {
     )
 
     res, err := s.Ecommerce.Customers.List(ctx, operations.EcommerceCustomersAllRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.EcommerceCustomersFilter{
             Email: sdkgo.String("elon@musk.com"),
             PhoneNumber: sdkgo.String("111-111-1111"),
@@ -121,7 +119,6 @@ func main() {
     res, err := s.Ecommerce.Customers.Get(ctx, operations.EcommerceCustomersOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {

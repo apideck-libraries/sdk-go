@@ -35,9 +35,7 @@ func main() {
     )
 
     res, err := s.Ecommerce.Products.List(ctx, operations.EcommerceProductsAllRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
@@ -116,7 +114,6 @@ func main() {
     res, err := s.Ecommerce.Products.Get(ctx, operations.EcommerceProductsOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {

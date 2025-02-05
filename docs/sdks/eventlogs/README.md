@@ -33,7 +33,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Webhook.EventLogs.List(ctx, nil, nil, sdkgo.Int64(20), &components.WebhookEventLogsFilter{
+    res, err := s.Webhook.EventLogs.List(ctx, nil, nil, nil, &components.WebhookEventLogsFilter{
         ExcludeApis: sdkgo.String("vault,proxy"),
         ConsumerID: sdkgo.String("test_user_id"),
         EntityType: sdkgo.String("Connection"),

@@ -41,7 +41,6 @@ func main() {
             StatusCode: sdkgo.Float64(201),
             ExcludeUnifiedApis: sdkgo.String("vault,proxy"),
         },
-        Limit: sdkgo.Int64(20),
     })
     if err != nil {
         log.Fatal(err)

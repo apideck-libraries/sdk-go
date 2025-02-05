@@ -40,15 +40,12 @@ func main() {
     )
 
     res, err := s.Accounting.LedgerAccounts.List(ctx, operations.AccountingLedgerAccountsAllRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.LedgerAccountsFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
         },
         Sort: &components.LedgerAccountsSort{
             By: components.LedgerAccountsSortByUpdatedAt.ToPointer(),
-            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -128,7 +125,6 @@ func main() {
     )
 
     res, err := s.Accounting.LedgerAccounts.Create(ctx, operations.AccountingLedgerAccountsAddRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         LedgerAccount: components.LedgerAccountInput{
             DisplayID: sdkgo.String("1-12345"),
@@ -268,7 +264,6 @@ func main() {
     res, err := s.Accounting.LedgerAccounts.Get(ctx, operations.AccountingLedgerAccountsOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -334,7 +329,6 @@ func main() {
     res, err := s.Accounting.LedgerAccounts.Update(ctx, operations.AccountingLedgerAccountsUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         LedgerAccount: components.LedgerAccountInput{
             DisplayID: sdkgo.String("1-12345"),
             Code: sdkgo.String("453"),
@@ -513,7 +507,6 @@ func main() {
     res, err := s.Accounting.LedgerAccounts.Delete(ctx, operations.AccountingLedgerAccountsDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)
