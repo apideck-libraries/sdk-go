@@ -39,7 +39,6 @@ func main() {
     )
 
     res, err := s.FileStorage.Folders.Create(ctx, operations.FileStorageFoldersAddRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         Fields: sdkgo.String("id,updated_at"),
         CreateFolderRequest: components.CreateFolderRequest{
@@ -154,7 +153,6 @@ func main() {
     res, err := s.FileStorage.Folders.Get(ctx, operations.FileStorageFoldersOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -219,7 +217,6 @@ func main() {
     res, err := s.FileStorage.Folders.Update(ctx, operations.FileStorageFoldersUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         UpdateFolderRequest: components.UpdateFolderRequest{
             Name: sdkgo.String("Documents"),
             Description: sdkgo.String("My Personal Documents"),
@@ -360,7 +357,6 @@ func main() {
     res, err := s.FileStorage.Folders.Delete(ctx, operations.FileStorageFoldersDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -424,7 +420,6 @@ func main() {
     res, err := s.FileStorage.Folders.Copy(ctx, operations.FileStorageFoldersCopyRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
         CopyFolderRequest: components.CopyFolderRequest{
             Name: sdkgo.String("Documents"),

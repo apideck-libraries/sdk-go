@@ -38,9 +38,7 @@ func main() {
     )
 
     res, err := s.FileStorage.SharedLinks.List(ctx, operations.FileStorageSharedLinksAllRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
@@ -118,7 +116,6 @@ func main() {
     )
 
     res, err := s.FileStorage.SharedLinks.Create(ctx, operations.FileStorageSharedLinksAddRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         SharedLink: components.SharedLinkInput{
             DownloadURL: sdkgo.String("https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg"),
@@ -231,7 +228,6 @@ func main() {
     res, err := s.FileStorage.SharedLinks.Get(ctx, operations.FileStorageSharedLinksOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -296,7 +292,6 @@ func main() {
     res, err := s.FileStorage.SharedLinks.Update(ctx, operations.FileStorageSharedLinksUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         SharedLink: components.SharedLinkInput{
             DownloadURL: sdkgo.String("https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg"),
             TargetID: sdkgo.String("<id>"),
@@ -437,7 +432,6 @@ func main() {
     res, err := s.FileStorage.SharedLinks.Delete(ctx, operations.FileStorageSharedLinksDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

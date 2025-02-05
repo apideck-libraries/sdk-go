@@ -34,7 +34,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Connector.Apis.List(ctx, nil, nil, sdkgo.Int64(20), &components.ApisFilter{
+    res, err := s.Connector.Apis.List(ctx, nil, nil, nil, &components.ApisFilter{
         Status: components.APIStatusBeta.ToPointer(),
     })
     if err != nil {

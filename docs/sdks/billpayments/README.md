@@ -40,15 +40,12 @@ func main() {
     )
 
     res, err := s.Accounting.BillPayments.List(ctx, operations.AccountingBillPaymentsAllRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.PaymentsFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
         },
         Sort: &components.PaymentsSort{
             By: components.PaymentsSortByUpdatedAt.ToPointer(),
-            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -128,7 +125,6 @@ func main() {
     )
 
     res, err := s.Accounting.BillPayments.Create(ctx, operations.AccountingBillPaymentsAddRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         BillPayment: components.BillPaymentInput{
             Currency: components.CurrencyUsd.ToPointer(),
@@ -344,7 +340,6 @@ func main() {
     res, err := s.Accounting.BillPayments.Get(ctx, operations.AccountingBillPaymentsOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -410,7 +405,6 @@ func main() {
     res, err := s.Accounting.BillPayments.Update(ctx, operations.AccountingBillPaymentsUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         BillPayment: components.BillPaymentInput{
             Currency: components.CurrencyUsd.ToPointer(),
             CurrencyRate: sdkgo.Float64(0.69),
@@ -642,7 +636,6 @@ func main() {
     res, err := s.Accounting.BillPayments.Delete(ctx, operations.AccountingBillPaymentsDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

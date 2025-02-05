@@ -39,16 +39,13 @@ func main() {
     )
 
     res, err := s.Accounting.InvoiceItems.List(ctx, operations.AccountingInvoiceItemsAllRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.InvoiceItemsFilter{
             Name: sdkgo.String("Widgets Large"),
             Type: components.InvoiceItemTypeService.ToPointer(),
         },
         Sort: &components.InvoiceItemsSort{
             By: components.InvoiceItemsSortByUpdatedAt.ToPointer(),
-            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -128,7 +125,6 @@ func main() {
     )
 
     res, err := s.Accounting.InvoiceItems.Create(ctx, operations.AccountingInvoiceItemsAddRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         InvoiceItem: components.InvoiceItemInput{
             Name: sdkgo.String("Model Y"),
@@ -287,7 +283,6 @@ func main() {
     res, err := s.Accounting.InvoiceItems.Get(ctx, operations.AccountingInvoiceItemsOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
         Filter: &components.InvoiceItemFilter{
             Type: components.InvoiceItemFilterInvoiceItemTypeService.ToPointer(),
@@ -356,7 +351,6 @@ func main() {
     res, err := s.Accounting.InvoiceItems.Update(ctx, operations.AccountingInvoiceItemsUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         InvoiceItem: components.InvoiceItemInput{
             Name: sdkgo.String("Model Y"),
             Description: sdkgo.String("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
@@ -533,7 +527,6 @@ func main() {
     res, err := s.Accounting.InvoiceItems.Delete(ctx, operations.AccountingInvoiceItemsDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

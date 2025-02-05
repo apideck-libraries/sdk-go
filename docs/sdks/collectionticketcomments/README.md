@@ -41,12 +41,9 @@ func main() {
     res, err := s.IssueTracking.CollectionTicketComments.List(ctx, operations.IssueTrackingCollectionTicketCommentsAllRequest{
         CollectionID: "apideck-io",
         TicketID: "<id>",
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Sort: &components.CommentsSort{
             By: components.CommentsSortByCreatedAt.ToPointer(),
-            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -125,7 +122,6 @@ func main() {
     )
 
     res, err := s.IssueTracking.CollectionTicketComments.Create(ctx, operations.IssueTrackingCollectionTicketCommentsAddRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         CollectionID: "apideck-io",
         TicketID: "<id>",
@@ -239,9 +235,7 @@ func main() {
         ID: "<id>",
         CollectionID: "apideck-io",
         TicketID: "<id>",
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -318,7 +312,6 @@ func main() {
     res, err := s.IssueTracking.CollectionTicketComments.Update(ctx, operations.IssueTrackingCollectionTicketCommentsUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         CollectionID: "apideck-io",
         TicketID: "<id>",
         CollectionTicketComment: components.CollectionTicketCommentInput{
@@ -459,7 +452,6 @@ func main() {
     res, err := s.IssueTracking.CollectionTicketComments.Delete(ctx, operations.IssueTrackingCollectionTicketCommentsDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         CollectionID: "apideck-io",
         TicketID: "<id>",
     })

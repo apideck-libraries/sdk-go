@@ -39,9 +39,7 @@ func main() {
     )
 
     res, err := s.Accounting.Locations.List(ctx, operations.AccountingLocationsAllRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Fields: sdkgo.String("id,updated_at"),
         Filter: &components.AccountingLocationsFilter{
             Subsidiary: sdkgo.String("1"),
@@ -119,7 +117,6 @@ func main() {
     )
 
     res, err := s.Accounting.Locations.Create(ctx, operations.AccountingLocationsAddRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         AccountingLocation: components.AccountingLocationInput{
             ParentID: sdkgo.String("12345"),
@@ -280,7 +277,6 @@ func main() {
     res, err := s.Accounting.Locations.Get(ctx, operations.AccountingLocationsOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -345,7 +341,6 @@ func main() {
     res, err := s.Accounting.Locations.Update(ctx, operations.AccountingLocationsUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         AccountingLocation: components.AccountingLocationInput{
             ParentID: sdkgo.String("12345"),
             CompanyName: sdkgo.String("SpaceX"),
@@ -555,7 +550,6 @@ func main() {
     res, err := s.Accounting.Locations.Delete(ctx, operations.AccountingLocationsDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

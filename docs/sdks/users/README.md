@@ -38,9 +38,7 @@ func main() {
     )
 
     res, err := s.Crm.Users.List(ctx, operations.CrmUsersAllRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
@@ -118,7 +116,6 @@ func main() {
     )
 
     res, err := s.Crm.Users.Create(ctx, operations.CrmUsersAddRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         User: components.UserInput{
             ParentID: sdkgo.String("54321"),
@@ -291,7 +288,6 @@ func main() {
     res, err := s.Crm.Users.Get(ctx, operations.CrmUsersOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -356,7 +352,6 @@ func main() {
     res, err := s.Crm.Users.Update(ctx, operations.CrmUsersUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         User: components.UserInput{
             ParentID: sdkgo.String("54321"),
             Username: sdkgo.String("masterofcoin"),
@@ -612,7 +607,6 @@ func main() {
     res, err := s.Crm.Users.Delete(ctx, operations.CrmUsersDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

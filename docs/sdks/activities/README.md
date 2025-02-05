@@ -40,15 +40,12 @@ func main() {
     )
 
     res, err := s.Crm.Activities.List(ctx, operations.CrmActivitiesAllRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.ActivitiesFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
         },
         Sort: &components.ActivitiesSort{
             By: components.ActivitiesSortByCreatedAt.ToPointer(),
-            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -127,7 +124,6 @@ func main() {
     )
 
     res, err := s.Crm.Activities.Create(ctx, operations.CrmActivitiesAddRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         Activity: components.ActivityInput{
             ActivityDatetime: sdkgo.String("2021-05-01T12:00:00.000Z"),
@@ -321,7 +317,6 @@ func main() {
     res, err := s.Crm.Activities.Get(ctx, operations.CrmActivitiesOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -386,7 +381,6 @@ func main() {
     res, err := s.Crm.Activities.Update(ctx, operations.CrmActivitiesUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Activity: components.ActivityInput{
             ActivityDatetime: sdkgo.String("2021-05-01T12:00:00.000Z"),
             DurationSeconds: sdkgo.Int64(1800),
@@ -635,7 +629,6 @@ func main() {
     res, err := s.Crm.Activities.Delete(ctx, operations.CrmActivitiesDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

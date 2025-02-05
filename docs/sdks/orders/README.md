@@ -36,9 +36,7 @@ func main() {
     )
 
     res, err := s.Ecommerce.Orders.List(ctx, operations.EcommerceOrdersAllRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.EcommerceOrdersFilter{
             Email: sdkgo.String("elon@musk.com"),
             CustomerID: sdkgo.String("123"),
@@ -47,7 +45,6 @@ func main() {
         },
         Sort: &components.OrdersSort{
             By: components.OrdersSortByCreatedAt.ToPointer(),
-            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -127,7 +124,6 @@ func main() {
     res, err := s.Ecommerce.Orders.Get(ctx, operations.EcommerceOrdersOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {

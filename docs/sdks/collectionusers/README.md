@@ -36,9 +36,7 @@ func main() {
 
     res, err := s.IssueTracking.CollectionUsers.List(ctx, operations.IssueTrackingCollectionUsersAllRequest{
         CollectionID: "apideck-io",
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
@@ -118,7 +116,6 @@ func main() {
         CollectionID: "apideck-io",
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {

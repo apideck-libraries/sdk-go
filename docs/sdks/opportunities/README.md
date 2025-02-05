@@ -39,16 +39,13 @@ func main() {
     )
 
     res, err := s.Crm.Opportunities.List(ctx, operations.CrmOpportunitiesAllRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.OpportunitiesFilter{
             Status: sdkgo.String("Completed"),
             MonetaryAmount: sdkgo.Float64(75000),
         },
         Sort: &components.OpportunitiesSort{
             By: components.OpportunitiesSortByCreatedAt.ToPointer(),
-            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -128,7 +125,6 @@ func main() {
     )
 
     res, err := s.Crm.Opportunities.Create(ctx, operations.CrmOpportunitiesAddRequest{
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
         Opportunity: components.OpportunityInput{
             Title: "New Rocket",
@@ -258,7 +254,6 @@ func main() {
     res, err := s.Crm.Opportunities.Get(ctx, operations.CrmOpportunitiesOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -324,7 +319,6 @@ func main() {
     res, err := s.Crm.Opportunities.Update(ctx, operations.CrmOpportunitiesUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Opportunity: components.OpportunityInput{
             Title: "New Rocket",
             PrimaryContactID: sdkgo.String("12345"),
@@ -493,7 +487,6 @@ func main() {
     res, err := s.Crm.Opportunities.Delete(ctx, operations.CrmOpportunitiesDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

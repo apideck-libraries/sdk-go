@@ -40,9 +40,7 @@ func main() {
     res, err := s.Accounting.Attachments.List(ctx, operations.AccountingAttachmentsAllRequest{
         ReferenceType: components.AttachmentReferenceTypeInvoice,
         ReferenceID: "123456",
-        Raw: sdkgo.Bool(false),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -121,7 +119,6 @@ func main() {
         ReferenceID: "123456",
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -188,7 +185,6 @@ func main() {
         ReferenceID: "123456",
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)
