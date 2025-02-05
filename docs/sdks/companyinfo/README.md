@@ -34,7 +34,8 @@ func main() {
     )
 
     res, err := s.Accounting.CompanyInfo.Get(ctx, operations.AccountingCompanyInfoOneRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         Fields: sdkgo.String("id,updated_at"),
     })

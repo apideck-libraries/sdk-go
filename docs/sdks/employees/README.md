@@ -39,9 +39,9 @@ func main() {
     )
 
     res, err := s.Hris.Employees.List(ctx, operations.HrisEmployeesAllRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.EmployeesFilter{
             CompanyID: sdkgo.String("1234"),
             Email: sdkgo.String("elon@tesla.com"),
@@ -55,7 +55,6 @@ func main() {
         },
         Sort: &components.EmployeesSort{
             By: components.EmployeesSortByCreatedAt.ToPointer(),
-            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -135,7 +134,8 @@ func main() {
     )
 
     res, err := s.Hris.Employees.Create(ctx, operations.HrisEmployeesAddRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         Employee: components.EmployeeInput{
             ID: sdkgo.String("12345"),
@@ -517,8 +517,9 @@ func main() {
 
     res, err := s.Hris.Employees.Get(ctx, operations.HrisEmployeesOneRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
         Filter: &components.EmployeesOneFilter{
             CompanyID: sdkgo.String("1234"),
@@ -589,8 +590,9 @@ func main() {
 
     res, err := s.Hris.Employees.Update(ctx, operations.HrisEmployeesUpdateRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Employee: components.EmployeeInput{
             ID: sdkgo.String("12345"),
             FirstName: sdkgo.String("Elon"),
@@ -1030,8 +1032,9 @@ func main() {
 
     res, err := s.Hris.Employees.Delete(ctx, operations.HrisEmployeesDeleteRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

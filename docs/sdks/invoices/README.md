@@ -40,9 +40,9 @@ func main() {
     )
 
     res, err := s.Accounting.Invoices.List(ctx, operations.AccountingInvoicesAllRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.InvoicesFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
             CreatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
@@ -50,7 +50,6 @@ func main() {
         },
         Sort: &components.InvoicesSort{
             By: components.InvoicesSortByUpdatedAt.ToPointer(),
-            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -130,7 +129,8 @@ func main() {
     )
 
     res, err := s.Accounting.Invoices.Create(ctx, operations.AccountingInvoicesAddRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         Invoice: components.InvoiceInput{
             Type: components.InvoiceTypeService.ToPointer(),
@@ -483,8 +483,9 @@ func main() {
 
     res, err := s.Accounting.Invoices.Get(ctx, operations.AccountingInvoicesOneRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -549,8 +550,9 @@ func main() {
 
     res, err := s.Accounting.Invoices.Update(ctx, operations.AccountingInvoicesUpdateRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Invoice: components.InvoiceInput{
             Type: components.InvoiceTypeService.ToPointer(),
             Number: sdkgo.String("OIT00546"),
@@ -903,8 +905,9 @@ func main() {
 
     res, err := s.Accounting.Invoices.Delete(ctx, operations.AccountingInvoicesDeleteRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

@@ -36,6 +36,8 @@ func main() {
     )
 
     res, err := s.Vault.CreateCallback.State(ctx, operations.VaultCreateCallbackStateRequest{
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: "pipedrive",
         UnifiedAPI: "crm",
         CreateCallbackState: components.CreateCallbackState{

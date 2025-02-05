@@ -45,7 +45,7 @@ func main() {
             Email: sdkgo.String("elon@musk.com"),
             Image: sdkgo.String("https://www.spacex.com/static/images/share.jpg"),
         },
-    }, nil)
+    }, sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"))
     if err != nil {
         log.Fatal(err)
     }
@@ -105,7 +105,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Vault.Consumers.List(ctx, nil, nil, sdkgo.Int64(20))
+    res, err := s.Vault.Consumers.List(ctx, sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"), nil, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -178,7 +178,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Vault.Consumers.Get(ctx, "test_user_id", nil)
+    res, err := s.Vault.Consumers.Get(ctx, "test_user_id", sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"))
     if err != nil {
         log.Fatal(err)
     }
@@ -245,7 +245,7 @@ func main() {
             Email: sdkgo.String("elon@musk.com"),
             Image: sdkgo.String("https://www.spacex.com/static/images/share.jpg"),
         },
-    }, nil)
+    }, sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"))
     if err != nil {
         log.Fatal(err)
     }
@@ -305,7 +305,7 @@ func main() {
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
     )
 
-    res, err := s.Vault.Consumers.Delete(ctx, "test_user_id", nil)
+    res, err := s.Vault.Consumers.Delete(ctx, "test_user_id", sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"))
     if err != nil {
         log.Fatal(err)
     }

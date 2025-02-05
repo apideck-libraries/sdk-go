@@ -38,9 +38,9 @@ func main() {
     )
 
     res, err := s.Hris.Departments.List(ctx, operations.HrisDepartmentsAllRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
@@ -118,7 +118,8 @@ func main() {
     )
 
     res, err := s.Hris.Departments.Create(ctx, operations.HrisDepartmentsAddRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         Department: components.DepartmentInput{
             Name: sdkgo.String("R&D"),
@@ -230,8 +231,9 @@ func main() {
 
     res, err := s.Hris.Departments.Get(ctx, operations.HrisDepartmentsOneRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -295,8 +297,9 @@ func main() {
 
     res, err := s.Hris.Departments.Update(ctx, operations.HrisDepartmentsUpdateRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Department: components.DepartmentInput{
             Name: sdkgo.String("R&D"),
             Code: sdkgo.String("2"),
@@ -436,8 +439,9 @@ func main() {
 
     res, err := s.Hris.Departments.Delete(ctx, operations.HrisDepartmentsDeleteRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

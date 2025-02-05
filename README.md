@@ -74,9 +74,9 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		Raw:       sdkgo.Bool(false),
-		ServiceID: sdkgo.String("salesforce"),
-		Limit:     sdkgo.Int64(20),
+		ConsumerID: sdkgo.String("test-consumer"),
+		AppID:      sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+		ServiceID:  sdkgo.String("salesforce"),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Bool(true),
 			Equity:      sdkgo.Bool(true),
@@ -146,9 +146,9 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		Raw:       sdkgo.Bool(false),
-		ServiceID: sdkgo.String("salesforce"),
-		Limit:     sdkgo.Int64(20),
+		ConsumerID: sdkgo.String("test-consumer"),
+		AppID:      sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+		ServiceID:  sdkgo.String("salesforce"),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Bool(true),
 			Equity:      sdkgo.Bool(true),
@@ -741,9 +741,9 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		Raw:       sdkgo.Bool(false),
-		ServiceID: sdkgo.String("salesforce"),
-		Limit:     sdkgo.Int64(20),
+		ConsumerID: sdkgo.String("test-consumer"),
+		AppID:      sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+		ServiceID:  sdkgo.String("salesforce"),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Bool(true),
 			Equity:      sdkgo.Bool(true),
@@ -809,9 +809,9 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		Raw:       sdkgo.Bool(false),
-		ServiceID: sdkgo.String("salesforce"),
-		Limit:     sdkgo.Int64(20),
+		ConsumerID: sdkgo.String("test-consumer"),
+		AppID:      sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+		ServiceID:  sdkgo.String("salesforce"),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Bool(true),
 			Equity:      sdkgo.Bool(true),
@@ -891,9 +891,9 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		Raw:       sdkgo.Bool(false),
-		ServiceID: sdkgo.String("salesforce"),
-		Limit:     sdkgo.Int64(20),
+		ConsumerID: sdkgo.String("test-consumer"),
+		AppID:      sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+		ServiceID:  sdkgo.String("salesforce"),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Bool(true),
 			Equity:      sdkgo.Bool(true),
@@ -973,9 +973,9 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		Raw:       sdkgo.Bool(false),
-		ServiceID: sdkgo.String("salesforce"),
-		Limit:     sdkgo.Int64(20),
+		ConsumerID: sdkgo.String("test-consumer"),
+		AppID:      sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+		ServiceID:  sdkgo.String("salesforce"),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Bool(true),
 			Equity:      sdkgo.Bool(true),
@@ -1060,9 +1060,9 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		Raw:       sdkgo.Bool(false),
-		ServiceID: sdkgo.String("salesforce"),
-		Limit:     sdkgo.Int64(20),
+		ConsumerID: sdkgo.String("test-consumer"),
+		AppID:      sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+		ServiceID:  sdkgo.String("salesforce"),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Bool(true),
 			Equity:      sdkgo.Bool(true),
@@ -1122,8 +1122,9 @@ func main() {
 	)
 
 	res, err := s.FileStorage.UploadSessions.Create(ctx, operations.FileStorageUploadSessionsAddRequest{
-		Raw:       sdkgo.Bool(false),
-		ServiceID: sdkgo.String("salesforce"),
+		ConsumerID: sdkgo.String("test-consumer"),
+		AppID:      sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+		ServiceID:  sdkgo.String("salesforce"),
 		CreateUploadSessionRequest: components.CreateUploadSessionRequest{
 			Name:           "Documents",
 			ParentFolderID: "1234",

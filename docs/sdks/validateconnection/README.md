@@ -40,6 +40,8 @@ func main() {
     )
 
     res, err := s.Vault.ValidateConnection.State(ctx, operations.VaultValidateConnectionStateRequest{
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: "pipedrive",
         UnifiedAPI: "crm",
     })

@@ -38,9 +38,9 @@ func main() {
     )
 
     res, err := s.Accounting.TrackingCategories.List(ctx, operations.AccountingTrackingCategoriesAllRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
@@ -118,7 +118,8 @@ func main() {
     )
 
     res, err := s.Accounting.TrackingCategories.Create(ctx, operations.AccountingTrackingCategoriesAddRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         TrackingCategory: components.TrackingCategoryInput{
             ParentID: sdkgo.String("12345"),
@@ -232,8 +233,9 @@ func main() {
 
     res, err := s.Accounting.TrackingCategories.Get(ctx, operations.AccountingTrackingCategoriesOneRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -297,8 +299,9 @@ func main() {
 
     res, err := s.Accounting.TrackingCategories.Update(ctx, operations.AccountingTrackingCategoriesUpdateRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         TrackingCategory: components.TrackingCategoryInput{
             ParentID: sdkgo.String("12345"),
             Name: sdkgo.String("Department"),
@@ -440,8 +443,9 @@ func main() {
 
     res, err := s.Accounting.TrackingCategories.Delete(ctx, operations.AccountingTrackingCategoriesDeleteRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

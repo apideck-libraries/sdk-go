@@ -34,6 +34,8 @@ func main() {
     )
 
     res, err := s.Vault.ConnectionCustomMappings.List(ctx, operations.VaultConnectionCustomMappingsAllRequest{
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         UnifiedAPI: "crm",
         ServiceID: "pipedrive",
         Resource: "leads",

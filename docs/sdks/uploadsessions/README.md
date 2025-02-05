@@ -38,7 +38,8 @@ func main() {
     )
 
     res, err := s.FileStorage.UploadSessions.Create(ctx, operations.FileStorageUploadSessionsAddRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         CreateUploadSessionRequest: components.CreateUploadSessionRequest{
             Name: "Documents",
@@ -151,8 +152,9 @@ func main() {
 
     res, err := s.FileStorage.UploadSessions.Get(ctx, operations.FileStorageUploadSessionsOneRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -215,8 +217,9 @@ func main() {
 
     res, err := s.FileStorage.UploadSessions.Delete(ctx, operations.FileStorageUploadSessionsDeleteRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -278,7 +281,8 @@ func main() {
 
     res, err := s.FileStorage.UploadSessions.Finish(ctx, operations.FileStorageUploadSessionsFinishRequest{
         ID: "<id>",
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         Digest: sdkgo.String("sha=fpRyg5eVQletdZqEKaFlqwBXJzM="),
     })

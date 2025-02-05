@@ -39,9 +39,9 @@ func main() {
     )
 
     res, err := s.FileStorage.Drives.List(ctx, operations.FileStorageDrivesAllRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.DrivesFilter{
             GroupID: sdkgo.String("1234"),
         },
@@ -119,7 +119,8 @@ func main() {
     )
 
     res, err := s.FileStorage.Drives.Create(ctx, operations.FileStorageDrivesAddRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         Drive: components.DriveInput{
             Name: "Project Resources",
@@ -230,8 +231,9 @@ func main() {
 
     res, err := s.FileStorage.Drives.Get(ctx, operations.FileStorageDrivesOneRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -295,8 +297,9 @@ func main() {
 
     res, err := s.FileStorage.Drives.Update(ctx, operations.FileStorageDrivesUpdateRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Drive: components.DriveInput{
             Name: "Project Resources",
             Description: sdkgo.String("A description"),
@@ -435,8 +438,9 @@ func main() {
 
     res, err := s.FileStorage.Drives.Delete(ctx, operations.FileStorageDrivesDeleteRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

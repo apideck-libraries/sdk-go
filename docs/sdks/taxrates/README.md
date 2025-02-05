@@ -40,9 +40,9 @@ func main() {
     )
 
     res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.TaxRatesFilter{
             Assets: sdkgo.Bool(true),
             Equity: sdkgo.Bool(true),
@@ -127,7 +127,8 @@ func main() {
     )
 
     res, err := s.Accounting.TaxRates.Create(ctx, operations.AccountingTaxRatesAddRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         TaxRate: components.TaxRateInput{
             ID: sdkgo.String("1234"),
@@ -270,8 +271,9 @@ func main() {
 
     res, err := s.Accounting.TaxRates.Get(ctx, operations.AccountingTaxRatesOneRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -335,8 +337,9 @@ func main() {
 
     res, err := s.Accounting.TaxRates.Update(ctx, operations.AccountingTaxRatesUpdateRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         TaxRate: components.TaxRateInput{
             ID: sdkgo.String("1234"),
             Name: sdkgo.String("GST on Purchases"),
@@ -503,8 +506,9 @@ func main() {
 
     res, err := s.Accounting.TaxRates.Delete(ctx, operations.AccountingTaxRatesDeleteRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

@@ -40,15 +40,14 @@ func main() {
     )
 
     res, err := s.Accounting.CreditNotes.List(ctx, operations.AccountingCreditNotesAllRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.CreditNotesFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
         },
         Sort: &components.CreditNotesSort{
             By: components.CreditNotesSortByUpdatedAt.ToPointer(),
-            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -128,7 +127,8 @@ func main() {
     )
 
     res, err := s.Accounting.CreditNotes.Create(ctx, operations.AccountingCreditNotesAddRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         CreditNote: components.CreditNoteInput{
             Number: sdkgo.String("OIT00546"),
@@ -476,8 +476,9 @@ func main() {
 
     res, err := s.Accounting.CreditNotes.Get(ctx, operations.AccountingCreditNotesOneRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -542,8 +543,9 @@ func main() {
 
     res, err := s.Accounting.CreditNotes.Update(ctx, operations.AccountingCreditNotesUpdateRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         CreditNote: components.CreditNoteInput{
             Number: sdkgo.String("OIT00546"),
             Customer: &components.LinkedCustomerInput{
@@ -965,8 +967,9 @@ func main() {
 
     res, err := s.Accounting.CreditNotes.Delete(ctx, operations.AccountingCreditNotesDeleteRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

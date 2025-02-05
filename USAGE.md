@@ -21,9 +21,9 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		Raw:       sdkgo.Bool(false),
-		ServiceID: sdkgo.String("salesforce"),
-		Limit:     sdkgo.Int64(20),
+		ConsumerID: sdkgo.String("test-consumer"),
+		AppID:      sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+		ServiceID:  sdkgo.String("salesforce"),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Bool(true),
 			Equity:      sdkgo.Bool(true),

@@ -36,12 +36,13 @@ func main() {
     )
 
     res, err := s.Vault.Logs.List(ctx, operations.VaultLogsAllRequest{
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        ConsumerID: sdkgo.String("test-consumer"),
         Filter: &components.LogsFilter{
             ConnectorID: sdkgo.String("crm+salesforce"),
             StatusCode: sdkgo.Float64(201),
             ExcludeUnifiedApis: sdkgo.String("vault,proxy"),
         },
-        Limit: sdkgo.Int64(20),
     })
     if err != nil {
         log.Fatal(err)

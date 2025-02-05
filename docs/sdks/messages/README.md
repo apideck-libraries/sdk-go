@@ -38,9 +38,9 @@ func main() {
     )
 
     res, err := s.Sms.Messages.List(ctx, operations.SmsMessagesAllRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -116,7 +116,8 @@ func main() {
     )
 
     res, err := s.Sms.Messages.Create(ctx, operations.SmsMessagesAddRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         Message: components.MessageInput{
             From: "+15017122661",
@@ -234,8 +235,9 @@ func main() {
 
     res, err := s.Sms.Messages.Get(ctx, operations.SmsMessagesOneRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -300,8 +302,9 @@ func main() {
 
     res, err := s.Sms.Messages.Update(ctx, operations.SmsMessagesUpdateRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Message: components.MessageInput{
             From: "+15017122661",
             To: "+15017122662",
@@ -447,8 +450,9 @@ func main() {
 
     res, err := s.Sms.Messages.Delete(ctx, operations.SmsMessagesDeleteRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

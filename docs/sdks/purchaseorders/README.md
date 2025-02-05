@@ -40,19 +40,18 @@ func main() {
     )
 
     res, err := s.Accounting.PurchaseOrders.List(ctx, operations.AccountingPurchaseOrdersAllRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Limit: sdkgo.Int64(20),
         Filter: &components.PurchaseOrdersFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
             SupplierID: sdkgo.String("1234"),
         },
         Sort: &components.PurchaseOrdersSort{
             By: components.PurchaseOrdersSortByUpdatedAt.ToPointer(),
-            Direction: components.SortDirectionDesc.ToPointer(),
         },
     })
     if err != nil {
@@ -128,7 +127,8 @@ func main() {
     )
 
     res, err := s.Accounting.PurchaseOrders.Create(ctx, operations.AccountingPurchaseOrdersAddRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         PurchaseOrder: components.PurchaseOrderInput{
             PoNumber: sdkgo.String("90000117"),
@@ -518,8 +518,9 @@ func main() {
 
     res, err := s.Accounting.PurchaseOrders.Get(ctx, operations.AccountingPurchaseOrdersOneRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -583,8 +584,9 @@ func main() {
 
     res, err := s.Accounting.PurchaseOrders.Update(ctx, operations.AccountingPurchaseOrdersUpdateRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         PurchaseOrder: components.PurchaseOrderInput{
             PoNumber: sdkgo.String("90000117"),
             Reference: sdkgo.String("123456"),
@@ -994,8 +996,9 @@ func main() {
 
     res, err := s.Accounting.PurchaseOrders.Delete(ctx, operations.AccountingPurchaseOrdersDeleteRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)

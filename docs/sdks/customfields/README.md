@@ -35,6 +35,8 @@ func main() {
     )
 
     res, err := s.Vault.CustomFields.List(ctx, operations.VaultCustomFieldsAllRequest{
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         UnifiedAPI: "crm",
         ServiceID: "pipedrive",
         Resource: "leads",

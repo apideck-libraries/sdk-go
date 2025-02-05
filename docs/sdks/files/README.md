@@ -41,9 +41,9 @@ func main() {
     )
 
     res, err := s.FileStorage.Files.List(ctx, operations.FileStorageFilesAllRequest{
-        Raw: sdkgo.Bool(false),
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.FilesFilter{
             DriveID: sdkgo.String("1234"),
             FolderID: sdkgo.String("root"),
@@ -51,7 +51,6 @@ func main() {
         },
         Sort: &components.FilesSort{
             By: components.FilesSortByUpdatedAt.ToPointer(),
-            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -130,12 +129,13 @@ func main() {
     )
 
     res, err := s.FileStorage.Files.Search(ctx, operations.FileStorageFilesSearchRequest{
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
         Fields: sdkgo.String("id,updated_at"),
-        Limit: sdkgo.Int64(20),
         Filter: &components.FilesFilter{
             DriveID: sdkgo.String("1234"),
             FolderID: sdkgo.String("root"),
@@ -205,8 +205,9 @@ func main() {
 
     res, err := s.FileStorage.Files.Get(ctx, operations.FileStorageFilesOneRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {
@@ -270,8 +271,9 @@ func main() {
 
     res, err := s.FileStorage.Files.Update(ctx, operations.FileStorageFilesUpdateRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
         UpdateFileRequest: components.UpdateFileRequest{
             Name: sdkgo.String("New Name.pdf"),
             Description: sdkgo.String("Renamed PDF Document"),
@@ -411,8 +413,9 @@ func main() {
 
     res, err := s.FileStorage.Files.Delete(ctx, operations.FileStorageFilesDeleteRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
-        Raw: sdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -474,6 +477,8 @@ func main() {
 
     res, err := s.FileStorage.Files.Download(ctx, operations.FileStorageFilesDownloadRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         Fields: sdkgo.String("id,updated_at"),
     })
@@ -537,6 +542,8 @@ func main() {
 
     res, err := s.FileStorage.Files.Export(ctx, operations.FileStorageFilesExportRequest{
         ID: "<id>",
+        ConsumerID: sdkgo.String("test-consumer"),
+        AppID: sdkgo.String("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
         ServiceID: sdkgo.String("salesforce"),
         Fields: sdkgo.String("id,updated_at"),
         Format: "pdf",
