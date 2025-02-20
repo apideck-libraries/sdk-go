@@ -31,13 +31,6 @@ func newInvoices(sdkConfig sdkConfiguration) *Invoices {
 // List Invoices
 // List Invoices
 func (s *Invoices) List(ctx context.Context, request operations.AccountingInvoicesAllRequest, opts ...operations.Option) (*operations.AccountingInvoicesAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.invoicesAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingInvoicesAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *Invoices) List(ctx context.Context, request operations.AccountingInvoic
 	opURL, err := url.JoinPath(baseURL, "/accounting/invoices")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.invoicesAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -420,13 +421,6 @@ func (s *Invoices) List(ctx context.Context, request operations.AccountingInvoic
 // Create Invoice
 // Create Invoice
 func (s *Invoices) Create(ctx context.Context, request operations.AccountingInvoicesAddRequest, opts ...operations.Option) (*operations.AccountingInvoicesAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.invoicesAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingInvoicesAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -455,6 +449,13 @@ func (s *Invoices) Create(ctx context.Context, request operations.AccountingInvo
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.invoicesAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Invoice", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -766,13 +767,6 @@ func (s *Invoices) Create(ctx context.Context, request operations.AccountingInvo
 // Get Invoice
 // Get Invoice
 func (s *Invoices) Get(ctx context.Context, request operations.AccountingInvoicesOneRequest, opts ...operations.Option) (*operations.AccountingInvoicesOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.invoicesOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingInvoicesOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -799,6 +793,14 @@ func (s *Invoices) Get(ctx context.Context, request operations.AccountingInvoice
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/invoices/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.invoicesOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1104,13 +1106,6 @@ func (s *Invoices) Get(ctx context.Context, request operations.AccountingInvoice
 // Update Invoice
 // Update Invoice
 func (s *Invoices) Update(ctx context.Context, request operations.AccountingInvoicesUpdateRequest, opts ...operations.Option) (*operations.AccountingInvoicesUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.invoicesUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingInvoicesUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1139,6 +1134,13 @@ func (s *Invoices) Update(ctx context.Context, request operations.AccountingInvo
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.invoicesUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Invoice", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1450,13 +1452,6 @@ func (s *Invoices) Update(ctx context.Context, request operations.AccountingInvo
 // Delete Invoice
 // Delete Invoice
 func (s *Invoices) Delete(ctx context.Context, request operations.AccountingInvoicesDeleteRequest, opts ...operations.Option) (*operations.AccountingInvoicesDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.invoicesDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingInvoicesDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1483,6 +1478,14 @@ func (s *Invoices) Delete(ctx context.Context, request operations.AccountingInvo
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/invoices/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.invoicesDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

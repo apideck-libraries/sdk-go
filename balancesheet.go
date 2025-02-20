@@ -29,13 +29,6 @@ func newBalanceSheet(sdkConfig sdkConfiguration) *BalanceSheet {
 // Get BalanceSheet
 // Get BalanceSheet
 func (s *BalanceSheet) Get(ctx context.Context, request operations.AccountingBalanceSheetOneRequest, opts ...operations.Option) (*operations.AccountingBalanceSheetOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.balanceSheetOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingBalanceSheetOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -62,6 +55,14 @@ func (s *BalanceSheet) Get(ctx context.Context, request operations.AccountingBal
 	opURL, err := url.JoinPath(baseURL, "/accounting/balance-sheet")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.balanceSheetOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

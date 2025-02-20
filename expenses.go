@@ -31,13 +31,6 @@ func newExpenses(sdkConfig sdkConfiguration) *Expenses {
 // List Expenses
 // List Expenses
 func (s *Expenses) List(ctx context.Context, request operations.AccountingExpensesAllRequest, opts ...operations.Option) (*operations.AccountingExpensesAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.expensesAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingExpensesAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *Expenses) List(ctx context.Context, request operations.AccountingExpens
 	opURL, err := url.JoinPath(baseURL, "/accounting/expenses")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.expensesAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -416,13 +417,6 @@ func (s *Expenses) List(ctx context.Context, request operations.AccountingExpens
 // Create Expense
 // Create Expense
 func (s *Expenses) Create(ctx context.Context, request operations.AccountingExpensesAddRequest, opts ...operations.Option) (*operations.AccountingExpensesAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.expensesAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingExpensesAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -451,6 +445,13 @@ func (s *Expenses) Create(ctx context.Context, request operations.AccountingExpe
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.expensesAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Expense", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -762,13 +763,6 @@ func (s *Expenses) Create(ctx context.Context, request operations.AccountingExpe
 // Get Expense
 // Get Expense
 func (s *Expenses) Get(ctx context.Context, request operations.AccountingExpensesOneRequest, opts ...operations.Option) (*operations.AccountingExpensesOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.expensesOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingExpensesOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -795,6 +789,14 @@ func (s *Expenses) Get(ctx context.Context, request operations.AccountingExpense
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/expenses/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.expensesOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1100,13 +1102,6 @@ func (s *Expenses) Get(ctx context.Context, request operations.AccountingExpense
 // Update Expense
 // Update Expense
 func (s *Expenses) Update(ctx context.Context, request operations.AccountingExpensesUpdateRequest, opts ...operations.Option) (*operations.AccountingExpensesUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.expensesUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingExpensesUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1135,6 +1130,13 @@ func (s *Expenses) Update(ctx context.Context, request operations.AccountingExpe
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.expensesUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Expense", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1446,13 +1448,6 @@ func (s *Expenses) Update(ctx context.Context, request operations.AccountingExpe
 // Delete Expense
 // Delete Expense
 func (s *Expenses) Delete(ctx context.Context, request operations.AccountingExpensesDeleteRequest, opts ...operations.Option) (*operations.AccountingExpensesDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.expensesDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingExpensesDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1479,6 +1474,14 @@ func (s *Expenses) Delete(ctx context.Context, request operations.AccountingExpe
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/expenses/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.expensesDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

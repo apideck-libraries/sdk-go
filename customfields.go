@@ -28,13 +28,6 @@ func newCustomFields(sdkConfig sdkConfiguration) *CustomFields {
 // List - Get resource custom fields
 // This endpoint returns an custom fields on a connection resource.
 func (s *CustomFields) List(ctx context.Context, request operations.VaultCustomFieldsAllRequest, opts ...operations.Option) (*operations.VaultCustomFieldsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.customFieldsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.VaultCustomFieldsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -61,6 +54,14 @@ func (s *CustomFields) List(ctx context.Context, request operations.VaultCustomF
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/vault/connections/{unified_api}/{service_id}/{resource}/custom-fields", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.customFieldsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

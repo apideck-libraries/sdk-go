@@ -31,13 +31,6 @@ func newApis(sdkConfig sdkConfiguration) *Apis {
 // List APIs
 // List APIs
 func (s *Apis) List(ctx context.Context, appID *string, cursor *string, limit *int64, filter *components.ApisFilter, opts ...operations.Option) (*operations.ConnectorApisAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "connector.apisAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.ConnectorApisAllRequest{
 		AppID:  appID,
 		Cursor: cursor,
@@ -70,6 +63,14 @@ func (s *Apis) List(ctx context.Context, appID *string, cursor *string, limit *i
 	opURL, err := url.JoinPath(baseURL, "/connector/apis")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "connector.apisAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -376,13 +377,6 @@ func (s *Apis) List(ctx context.Context, appID *string, cursor *string, limit *i
 // Get API
 // Get API
 func (s *Apis) Get(ctx context.Context, id string, appID *string, opts ...operations.Option) (*operations.ConnectorApisOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "connector.apisOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.ConnectorApisOneRequest{
 		AppID: appID,
 		ID:    id,
@@ -413,6 +407,14 @@ func (s *Apis) Get(ctx context.Context, id string, appID *string, opts ...operat
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/connector/apis/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "connector.apisOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

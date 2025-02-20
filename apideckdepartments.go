@@ -31,13 +31,6 @@ func newApideckDepartments(sdkConfig sdkConfiguration) *ApideckDepartments {
 // List Departments
 // List Departments
 func (s *ApideckDepartments) List(ctx context.Context, request operations.HrisDepartmentsAllRequest, opts ...operations.Option) (*operations.HrisDepartmentsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "hris.departmentsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.HrisDepartmentsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *ApideckDepartments) List(ctx context.Context, request operations.HrisDe
 	opURL, err := url.JoinPath(baseURL, "/hris/departments")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "hris.departmentsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -418,13 +419,6 @@ func (s *ApideckDepartments) List(ctx context.Context, request operations.HrisDe
 // Create Department
 // Create Department
 func (s *ApideckDepartments) Create(ctx context.Context, request operations.HrisDepartmentsAddRequest, opts ...operations.Option) (*operations.HrisDepartmentsAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "hris.departmentsAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.HrisDepartmentsAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -453,6 +447,13 @@ func (s *ApideckDepartments) Create(ctx context.Context, request operations.Hris
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "hris.departmentsAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Department", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -764,13 +765,6 @@ func (s *ApideckDepartments) Create(ctx context.Context, request operations.Hris
 // Get Department
 // Get Department
 func (s *ApideckDepartments) Get(ctx context.Context, request operations.HrisDepartmentsOneRequest, opts ...operations.Option) (*operations.HrisDepartmentsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "hris.departmentsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.HrisDepartmentsOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -797,6 +791,14 @@ func (s *ApideckDepartments) Get(ctx context.Context, request operations.HrisDep
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/hris/departments/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "hris.departmentsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1102,13 +1104,6 @@ func (s *ApideckDepartments) Get(ctx context.Context, request operations.HrisDep
 // Update Department
 // Update Department
 func (s *ApideckDepartments) Update(ctx context.Context, request operations.HrisDepartmentsUpdateRequest, opts ...operations.Option) (*operations.HrisDepartmentsUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "hris.departmentsUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.HrisDepartmentsUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1137,6 +1132,13 @@ func (s *ApideckDepartments) Update(ctx context.Context, request operations.Hris
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "hris.departmentsUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Department", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1448,13 +1450,6 @@ func (s *ApideckDepartments) Update(ctx context.Context, request operations.Hris
 // Delete Department
 // Delete Department
 func (s *ApideckDepartments) Delete(ctx context.Context, request operations.HrisDepartmentsDeleteRequest, opts ...operations.Option) (*operations.HrisDepartmentsDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "hris.departmentsDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.HrisDepartmentsDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1481,6 +1476,14 @@ func (s *ApideckDepartments) Delete(ctx context.Context, request operations.Hris
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/hris/departments/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "hris.departmentsDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

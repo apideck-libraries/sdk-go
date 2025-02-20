@@ -31,13 +31,6 @@ func newDrives(sdkConfig sdkConfiguration) *Drives {
 // List Drives
 // List Drives
 func (s *Drives) List(ctx context.Context, request operations.FileStorageDrivesAllRequest, opts ...operations.Option) (*operations.FileStorageDrivesAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.drivesAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageDrivesAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *Drives) List(ctx context.Context, request operations.FileStorageDrivesA
 	opURL, err := url.JoinPath(baseURL, "/file-storage/drives")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.drivesAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -418,13 +419,6 @@ func (s *Drives) List(ctx context.Context, request operations.FileStorageDrivesA
 // Create Drive
 // Create Drive
 func (s *Drives) Create(ctx context.Context, request operations.FileStorageDrivesAddRequest, opts ...operations.Option) (*operations.FileStorageDrivesAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.drivesAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageDrivesAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -453,6 +447,13 @@ func (s *Drives) Create(ctx context.Context, request operations.FileStorageDrive
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.drivesAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Drive", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -764,13 +765,6 @@ func (s *Drives) Create(ctx context.Context, request operations.FileStorageDrive
 // Get Drive
 // Get Drive
 func (s *Drives) Get(ctx context.Context, request operations.FileStorageDrivesOneRequest, opts ...operations.Option) (*operations.FileStorageDrivesOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.drivesOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageDrivesOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -797,6 +791,14 @@ func (s *Drives) Get(ctx context.Context, request operations.FileStorageDrivesOn
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/file-storage/drives/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.drivesOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1102,13 +1104,6 @@ func (s *Drives) Get(ctx context.Context, request operations.FileStorageDrivesOn
 // Update Drive
 // Update Drive
 func (s *Drives) Update(ctx context.Context, request operations.FileStorageDrivesUpdateRequest, opts ...operations.Option) (*operations.FileStorageDrivesUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.drivesUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageDrivesUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1137,6 +1132,13 @@ func (s *Drives) Update(ctx context.Context, request operations.FileStorageDrive
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.drivesUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Drive", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1448,13 +1450,6 @@ func (s *Drives) Update(ctx context.Context, request operations.FileStorageDrive
 // Delete Drive
 // Delete Drive
 func (s *Drives) Delete(ctx context.Context, request operations.FileStorageDrivesDeleteRequest, opts ...operations.Option) (*operations.FileStorageDrivesDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.drivesDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageDrivesDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1481,6 +1476,14 @@ func (s *Drives) Delete(ctx context.Context, request operations.FileStorageDrive
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/file-storage/drives/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.drivesDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

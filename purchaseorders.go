@@ -31,13 +31,6 @@ func newPurchaseOrders(sdkConfig sdkConfiguration) *PurchaseOrders {
 // List Purchase Orders
 // List Purchase Orders
 func (s *PurchaseOrders) List(ctx context.Context, request operations.AccountingPurchaseOrdersAllRequest, opts ...operations.Option) (*operations.AccountingPurchaseOrdersAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.purchaseOrdersAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingPurchaseOrdersAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *PurchaseOrders) List(ctx context.Context, request operations.Accounting
 	opURL, err := url.JoinPath(baseURL, "/accounting/purchase-orders")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.purchaseOrdersAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -419,13 +420,6 @@ func (s *PurchaseOrders) List(ctx context.Context, request operations.Accounting
 // Create Purchase Order
 // Create Purchase Order
 func (s *PurchaseOrders) Create(ctx context.Context, request operations.AccountingPurchaseOrdersAddRequest, opts ...operations.Option) (*operations.AccountingPurchaseOrdersAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.purchaseOrdersAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingPurchaseOrdersAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -454,6 +448,13 @@ func (s *PurchaseOrders) Create(ctx context.Context, request operations.Accounti
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.purchaseOrdersAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "PurchaseOrder", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -765,13 +766,6 @@ func (s *PurchaseOrders) Create(ctx context.Context, request operations.Accounti
 // Get Purchase Order
 // Get Purchase Order
 func (s *PurchaseOrders) Get(ctx context.Context, request operations.AccountingPurchaseOrdersOneRequest, opts ...operations.Option) (*operations.AccountingPurchaseOrdersOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.purchaseOrdersOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingPurchaseOrdersOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -798,6 +792,14 @@ func (s *PurchaseOrders) Get(ctx context.Context, request operations.AccountingP
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/purchase-orders/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.purchaseOrdersOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1103,13 +1105,6 @@ func (s *PurchaseOrders) Get(ctx context.Context, request operations.AccountingP
 // Update Purchase Order
 // Update Purchase Order
 func (s *PurchaseOrders) Update(ctx context.Context, request operations.AccountingPurchaseOrdersUpdateRequest, opts ...operations.Option) (*operations.AccountingPurchaseOrdersUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.purchaseOrdersUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingPurchaseOrdersUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1138,6 +1133,13 @@ func (s *PurchaseOrders) Update(ctx context.Context, request operations.Accounti
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.purchaseOrdersUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "PurchaseOrder", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1449,13 +1451,6 @@ func (s *PurchaseOrders) Update(ctx context.Context, request operations.Accounti
 // Delete Purchase Order
 // Delete Purchase Order
 func (s *PurchaseOrders) Delete(ctx context.Context, request operations.AccountingPurchaseOrdersDeleteRequest, opts ...operations.Option) (*operations.AccountingPurchaseOrdersDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.purchaseOrdersDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingPurchaseOrdersDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1482,6 +1477,14 @@ func (s *PurchaseOrders) Delete(ctx context.Context, request operations.Accounti
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/purchase-orders/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.purchaseOrdersDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

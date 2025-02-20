@@ -28,13 +28,6 @@ func newConnectionSettings(sdkConfig sdkConfiguration) *ConnectionSettings {
 // List - Get resource settings
 // This endpoint returns custom settings and their defaults required by connection for a given resource.
 func (s *ConnectionSettings) List(ctx context.Context, request operations.VaultConnectionSettingsAllRequest, opts ...operations.Option) (*operations.VaultConnectionSettingsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.connectionSettingsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.VaultConnectionSettingsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -61,6 +54,14 @@ func (s *ConnectionSettings) List(ctx context.Context, request operations.VaultC
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/vault/connections/{unified_api}/{service_id}/{resource}/config", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.connectionSettingsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -362,13 +363,6 @@ func (s *ConnectionSettings) List(ctx context.Context, request operations.VaultC
 // Update settings
 // Update default values for a connection's resource settings
 func (s *ConnectionSettings) Update(ctx context.Context, request operations.VaultConnectionSettingsUpdateRequest, opts ...operations.Option) (*operations.VaultConnectionSettingsUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.connectionSettingsUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.VaultConnectionSettingsUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -397,6 +391,13 @@ func (s *ConnectionSettings) Update(ctx context.Context, request operations.Vaul
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.connectionSettingsUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Connection", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err

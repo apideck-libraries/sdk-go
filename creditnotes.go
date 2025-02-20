@@ -31,13 +31,6 @@ func newCreditNotes(sdkConfig sdkConfiguration) *CreditNotes {
 // List Credit Notes
 // List Credit Notes
 func (s *CreditNotes) List(ctx context.Context, request operations.AccountingCreditNotesAllRequest, opts ...operations.Option) (*operations.AccountingCreditNotesAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.creditNotesAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingCreditNotesAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *CreditNotes) List(ctx context.Context, request operations.AccountingCre
 	opURL, err := url.JoinPath(baseURL, "/accounting/credit-notes")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.creditNotesAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -420,13 +421,6 @@ func (s *CreditNotes) List(ctx context.Context, request operations.AccountingCre
 // Create Credit Note
 // Create Credit Note
 func (s *CreditNotes) Create(ctx context.Context, request operations.AccountingCreditNotesAddRequest, opts ...operations.Option) (*operations.AccountingCreditNotesAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.creditNotesAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingCreditNotesAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -455,6 +449,13 @@ func (s *CreditNotes) Create(ctx context.Context, request operations.AccountingC
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.creditNotesAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreditNote", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -766,13 +767,6 @@ func (s *CreditNotes) Create(ctx context.Context, request operations.AccountingC
 // Get Credit Note
 // Get Credit Note
 func (s *CreditNotes) Get(ctx context.Context, request operations.AccountingCreditNotesOneRequest, opts ...operations.Option) (*operations.AccountingCreditNotesOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.creditNotesOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingCreditNotesOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -799,6 +793,14 @@ func (s *CreditNotes) Get(ctx context.Context, request operations.AccountingCred
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/credit-notes/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.creditNotesOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1104,13 +1106,6 @@ func (s *CreditNotes) Get(ctx context.Context, request operations.AccountingCred
 // Update Credit Note
 // Update Credit Note
 func (s *CreditNotes) Update(ctx context.Context, request operations.AccountingCreditNotesUpdateRequest, opts ...operations.Option) (*operations.AccountingCreditNotesUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.creditNotesUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingCreditNotesUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1139,6 +1134,13 @@ func (s *CreditNotes) Update(ctx context.Context, request operations.AccountingC
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.creditNotesUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreditNote", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1450,13 +1452,6 @@ func (s *CreditNotes) Update(ctx context.Context, request operations.AccountingC
 // Delete Credit Note
 // Delete Credit Note
 func (s *CreditNotes) Delete(ctx context.Context, request operations.AccountingCreditNotesDeleteRequest, opts ...operations.Option) (*operations.AccountingCreditNotesDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.creditNotesDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingCreditNotesDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1483,6 +1478,14 @@ func (s *CreditNotes) Delete(ctx context.Context, request operations.AccountingC
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/credit-notes/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.creditNotesDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

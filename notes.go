@@ -31,13 +31,6 @@ func newNotes(sdkConfig sdkConfiguration) *Notes {
 // List notes
 // List notes
 func (s *Notes) List(ctx context.Context, request operations.CrmNotesAllRequest, opts ...operations.Option) (*operations.CrmNotesAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.notesAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmNotesAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *Notes) List(ctx context.Context, request operations.CrmNotesAllRequest,
 	opURL, err := url.JoinPath(baseURL, "/crm/notes")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.notesAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -418,13 +419,6 @@ func (s *Notes) List(ctx context.Context, request operations.CrmNotesAllRequest,
 // Create note
 // Create note
 func (s *Notes) Create(ctx context.Context, request operations.CrmNotesAddRequest, opts ...operations.Option) (*operations.CrmNotesAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.notesAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmNotesAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -453,6 +447,13 @@ func (s *Notes) Create(ctx context.Context, request operations.CrmNotesAddReques
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.notesAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Note", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -764,13 +765,6 @@ func (s *Notes) Create(ctx context.Context, request operations.CrmNotesAddReques
 // Get note
 // Get note
 func (s *Notes) Get(ctx context.Context, request operations.CrmNotesOneRequest, opts ...operations.Option) (*operations.CrmNotesOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.notesOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmNotesOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -797,6 +791,14 @@ func (s *Notes) Get(ctx context.Context, request operations.CrmNotesOneRequest, 
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/crm/notes/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.notesOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1102,13 +1104,6 @@ func (s *Notes) Get(ctx context.Context, request operations.CrmNotesOneRequest, 
 // Update note
 // Update note
 func (s *Notes) Update(ctx context.Context, request operations.CrmNotesUpdateRequest, opts ...operations.Option) (*operations.CrmNotesUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.notesUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmNotesUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1137,6 +1132,13 @@ func (s *Notes) Update(ctx context.Context, request operations.CrmNotesUpdateReq
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.notesUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Note", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1448,13 +1450,6 @@ func (s *Notes) Update(ctx context.Context, request operations.CrmNotesUpdateReq
 // Delete note
 // Delete note
 func (s *Notes) Delete(ctx context.Context, request operations.CrmNotesDeleteRequest, opts ...operations.Option) (*operations.CrmNotesDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.notesDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmNotesDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1481,6 +1476,14 @@ func (s *Notes) Delete(ctx context.Context, request operations.CrmNotesDeleteReq
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/crm/notes/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.notesDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

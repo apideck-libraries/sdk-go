@@ -28,13 +28,6 @@ func newEmployeePayrolls(sdkConfig sdkConfiguration) *EmployeePayrolls {
 // List Employee Payrolls
 // List payrolls for employee
 func (s *EmployeePayrolls) List(ctx context.Context, request operations.HrisEmployeePayrollsAllRequest, opts ...operations.Option) (*operations.HrisEmployeePayrollsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "hris.employeePayrollsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.HrisEmployeePayrollsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -61,6 +54,14 @@ func (s *EmployeePayrolls) List(ctx context.Context, request operations.HrisEmpl
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/hris/payrolls/employees/{employee_id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "hris.employeePayrollsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -366,13 +367,6 @@ func (s *EmployeePayrolls) List(ctx context.Context, request operations.HrisEmpl
 // Get Employee Payroll
 // Get payroll for employee
 func (s *EmployeePayrolls) Get(ctx context.Context, request operations.HrisEmployeePayrollsOneRequest, opts ...operations.Option) (*operations.HrisEmployeePayrollsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "hris.employeePayrollsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.HrisEmployeePayrollsOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -399,6 +393,14 @@ func (s *EmployeePayrolls) Get(ctx context.Context, request operations.HrisEmplo
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/hris/payrolls/employees/{employee_id}/payrolls/{payroll_id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "hris.employeePayrollsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

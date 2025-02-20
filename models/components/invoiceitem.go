@@ -145,8 +145,8 @@ type InvoiceItem struct {
 	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
-	Active             *bool                    `json:"active,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	Active             *bool                     `json:"active,omitempty"`
 	// When custom mappings are configured on the resource, the result is included here.
 	CustomMappings *CustomMappings `json:"custom_mappings,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -300,7 +300,7 @@ func (o *InvoiceItem) GetTrackingCategory() *DeprecatedLinkedTrackingCategory {
 	return o.TrackingCategory
 }
 
-func (o *InvoiceItem) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *InvoiceItem) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}
@@ -466,8 +466,8 @@ type InvoiceItemInput struct {
 	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
-	Active             *bool                    `json:"active,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	Active             *bool                     `json:"active,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
 	RowVersion *string `json:"row_version,omitempty"`
 	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
@@ -604,7 +604,7 @@ func (o *InvoiceItemInput) GetTrackingCategory() *DeprecatedLinkedTrackingCatego
 	return o.TrackingCategory
 }
 
-func (o *InvoiceItemInput) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *InvoiceItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}

@@ -101,7 +101,7 @@ type PurchaseOrder struct {
 	// Message for the supplier. This text appears on the Purchase Order.
 	Memo *string `json:"memo,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// When custom mappings are configured on the resource, the result is included here.
 	CustomMappings *CustomMappings `json:"custom_mappings,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -325,7 +325,7 @@ func (o *PurchaseOrder) GetMemo() *string {
 	return o.Memo
 }
 
-func (o *PurchaseOrder) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *PurchaseOrder) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}
@@ -430,7 +430,7 @@ type PurchaseOrderInput struct {
 	// Message for the supplier. This text appears on the Purchase Order.
 	Memo *string `json:"memo,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
 	RowVersion *string `json:"row_version,omitempty"`
 	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
@@ -630,7 +630,7 @@ func (o *PurchaseOrderInput) GetMemo() *string {
 	return o.Memo
 }
 
-func (o *PurchaseOrderInput) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *PurchaseOrderInput) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}

@@ -29,13 +29,6 @@ func newCompanyInfo(sdkConfig sdkConfiguration) *CompanyInfo {
 // Get company info
 // Get company info
 func (s *CompanyInfo) Get(ctx context.Context, request operations.AccountingCompanyInfoOneRequest, opts ...operations.Option) (*operations.AccountingCompanyInfoOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.companyInfoOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingCompanyInfoOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -62,6 +55,14 @@ func (s *CompanyInfo) Get(ctx context.Context, request operations.AccountingComp
 	opURL, err := url.JoinPath(baseURL, "/accounting/company-info")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.companyInfoOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

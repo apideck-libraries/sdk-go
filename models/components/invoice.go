@@ -148,10 +148,10 @@ type Invoice struct {
 	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
-	LineItems          []InvoiceLineItem        `json:"line_items,omitempty"`
-	BillingAddress     *Address                 `json:"billing_address,omitempty"`
-	ShippingAddress    *Address                 `json:"shipping_address,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	LineItems          []InvoiceLineItem         `json:"line_items,omitempty"`
+	BillingAddress     *Address                  `json:"billing_address,omitempty"`
+	ShippingAddress    *Address                  `json:"shipping_address,omitempty"`
 	// Optional invoice template
 	TemplateID *string `json:"template_id,omitempty"`
 	// URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.
@@ -376,7 +376,7 @@ func (o *Invoice) GetTrackingCategory() *DeprecatedLinkedTrackingCategory {
 	return o.TrackingCategory
 }
 
-func (o *Invoice) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *Invoice) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}
@@ -566,10 +566,10 @@ type InvoiceInput struct {
 	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
-	LineItems          []InvoiceLineItemInput   `json:"line_items,omitempty"`
-	BillingAddress     *Address                 `json:"billing_address,omitempty"`
-	ShippingAddress    *Address                 `json:"shipping_address,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	LineItems          []InvoiceLineItemInput    `json:"line_items,omitempty"`
+	BillingAddress     *Address                  `json:"billing_address,omitempty"`
+	ShippingAddress    *Address                  `json:"shipping_address,omitempty"`
 	// Optional invoice template
 	TemplateID *string `json:"template_id,omitempty"`
 	// URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.
@@ -770,7 +770,7 @@ func (o *InvoiceInput) GetTrackingCategory() *DeprecatedLinkedTrackingCategory {
 	return o.TrackingCategory
 }
 
-func (o *InvoiceInput) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *InvoiceInput) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}

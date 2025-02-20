@@ -31,13 +31,6 @@ func newTaxRates(sdkConfig sdkConfiguration) *TaxRates {
 // List Tax Rates
 // List Tax Rates. Note: Not all connectors return the actual rate/percentage value. In this case, only the tax code or reference is returned. Connectors Affected: Quickbooks
 func (s *TaxRates) List(ctx context.Context, request operations.AccountingTaxRatesAllRequest, opts ...operations.Option) (*operations.AccountingTaxRatesAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.taxRatesAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingTaxRatesAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *TaxRates) List(ctx context.Context, request operations.AccountingTaxRat
 	opURL, err := url.JoinPath(baseURL, "/accounting/tax-rates")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.taxRatesAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -419,13 +420,6 @@ func (s *TaxRates) List(ctx context.Context, request operations.AccountingTaxRat
 // Create Tax Rate
 // Create Tax Rate
 func (s *TaxRates) Create(ctx context.Context, request operations.AccountingTaxRatesAddRequest, opts ...operations.Option) (*operations.AccountingTaxRatesAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.taxRatesAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingTaxRatesAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -454,6 +448,13 @@ func (s *TaxRates) Create(ctx context.Context, request operations.AccountingTaxR
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.taxRatesAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "TaxRate", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -765,13 +766,6 @@ func (s *TaxRates) Create(ctx context.Context, request operations.AccountingTaxR
 // Get Tax Rate
 // Get Tax Rate. Note: Not all connectors return the actual rate/percentage value. In this case, only the tax code or reference is returned. Support will soon be added to return the actual rate/percentage by doing additional calls in the background to provide the full view of a given tax rate. Connectors Affected: Quickbooks
 func (s *TaxRates) Get(ctx context.Context, request operations.AccountingTaxRatesOneRequest, opts ...operations.Option) (*operations.AccountingTaxRatesOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.taxRatesOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingTaxRatesOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -798,6 +792,14 @@ func (s *TaxRates) Get(ctx context.Context, request operations.AccountingTaxRate
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/tax-rates/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.taxRatesOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1103,13 +1105,6 @@ func (s *TaxRates) Get(ctx context.Context, request operations.AccountingTaxRate
 // Update Tax Rate
 // Update Tax Rate
 func (s *TaxRates) Update(ctx context.Context, request operations.AccountingTaxRatesUpdateRequest, opts ...operations.Option) (*operations.AccountingTaxRatesUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.taxRatesUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingTaxRatesUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1138,6 +1133,13 @@ func (s *TaxRates) Update(ctx context.Context, request operations.AccountingTaxR
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.taxRatesUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "TaxRate", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1449,13 +1451,6 @@ func (s *TaxRates) Update(ctx context.Context, request operations.AccountingTaxR
 // Delete Tax Rate
 // Delete Tax Rate
 func (s *TaxRates) Delete(ctx context.Context, request operations.AccountingTaxRatesDeleteRequest, opts ...operations.Option) (*operations.AccountingTaxRatesDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.taxRatesDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingTaxRatesDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1482,6 +1477,14 @@ func (s *TaxRates) Delete(ctx context.Context, request operations.AccountingTaxR
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/tax-rates/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.taxRatesDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

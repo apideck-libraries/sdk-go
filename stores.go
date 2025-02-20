@@ -29,13 +29,6 @@ func newStores(sdkConfig sdkConfiguration) *Stores {
 // Get Store
 // Get Store
 func (s *Stores) Get(ctx context.Context, request operations.EcommerceStoresOneRequest, opts ...operations.Option) (*operations.EcommerceStoresOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "ecommerce.storesOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.EcommerceStoresOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -62,6 +55,14 @@ func (s *Stores) Get(ctx context.Context, request operations.EcommerceStoresOneR
 	opURL, err := url.JoinPath(baseURL, "/ecommerce/store")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "ecommerce.storesOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

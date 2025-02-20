@@ -299,9 +299,9 @@ type Employee struct {
 	// The preferred pronouns of the person.
 	Pronouns *string `json:"pronouns,omitempty"`
 	// language code according to ISO 639-1. For the United States - EN
-	PreferredLanguage *string  `json:"preferred_language,omitempty"`
-	Languages         []string `json:"languages,omitempty"`
-	Nationalities     []string `json:"nationalities,omitempty"`
+	PreferredLanguage *string   `json:"preferred_language,omitempty"`
+	Languages         []*string `json:"languages,omitempty"`
+	Nationalities     []*string `json:"nationalities,omitempty"`
 	// The URL of the photo of a person.
 	PhotoURL *string `json:"photo_url,omitempty"`
 	// The time zone related to the resource. The value is a string containing a standard time zone identifier, e.g. Europe/London.
@@ -610,14 +610,14 @@ func (o *Employee) GetPreferredLanguage() *string {
 	return o.PreferredLanguage
 }
 
-func (o *Employee) GetLanguages() []string {
+func (o *Employee) GetLanguages() []*string {
 	if o == nil {
 		return nil
 	}
 	return o.Languages
 }
 
-func (o *Employee) GetNationalities() []string {
+func (o *Employee) GetNationalities() []*string {
 	if o == nil {
 		return nil
 	}
@@ -891,9 +891,9 @@ type EmployeeInput struct {
 	// The preferred pronouns of the person.
 	Pronouns *string `json:"pronouns,omitempty"`
 	// language code according to ISO 639-1. For the United States - EN
-	PreferredLanguage *string  `json:"preferred_language,omitempty"`
-	Languages         []string `json:"languages,omitempty"`
-	Nationalities     []string `json:"nationalities,omitempty"`
+	PreferredLanguage *string   `json:"preferred_language,omitempty"`
+	Languages         []*string `json:"languages,omitempty"`
+	Nationalities     []*string `json:"nationalities,omitempty"`
 	// The URL of the photo of a person.
 	PhotoURL *string `json:"photo_url,omitempty"`
 	// The time zone related to the resource. The value is a string containing a standard time zone identifier, e.g. Europe/London.
@@ -1192,14 +1192,14 @@ func (o *EmployeeInput) GetPreferredLanguage() *string {
 	return o.PreferredLanguage
 }
 
-func (o *EmployeeInput) GetLanguages() []string {
+func (o *EmployeeInput) GetLanguages() []*string {
 	if o == nil {
 		return nil
 	}
 	return o.Languages
 }
 
-func (o *EmployeeInput) GetNationalities() []string {
+func (o *EmployeeInput) GetNationalities() []*string {
 	if o == nil {
 		return nil
 	}

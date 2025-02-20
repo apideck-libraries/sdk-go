@@ -30,13 +30,6 @@ func newAttachments(sdkConfig sdkConfiguration) *Attachments {
 // List Attachments
 // List Attachments
 func (s *Attachments) List(ctx context.Context, request operations.AccountingAttachmentsAllRequest, opts ...operations.Option) (*operations.AccountingAttachmentsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.attachmentsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingAttachmentsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -63,6 +56,14 @@ func (s *Attachments) List(ctx context.Context, request operations.AccountingAtt
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/attachments/{reference_type}/{reference_id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.attachmentsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -418,13 +419,6 @@ func (s *Attachments) List(ctx context.Context, request operations.AccountingAtt
 // Get Attachment
 // Get Attachment
 func (s *Attachments) Get(ctx context.Context, request operations.AccountingAttachmentsOneRequest, opts ...operations.Option) (*operations.AccountingAttachmentsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.attachmentsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingAttachmentsOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -451,6 +445,14 @@ func (s *Attachments) Get(ctx context.Context, request operations.AccountingAtta
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/attachments/{reference_type}/{reference_id}/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.attachmentsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -756,13 +758,6 @@ func (s *Attachments) Get(ctx context.Context, request operations.AccountingAtta
 // Delete Attachment
 // Delete Attachment
 func (s *Attachments) Delete(ctx context.Context, request operations.AccountingAttachmentsDeleteRequest, opts ...operations.Option) (*operations.AccountingAttachmentsDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.attachmentsDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingAttachmentsDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -789,6 +784,14 @@ func (s *Attachments) Delete(ctx context.Context, request operations.AccountingA
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/attachments/{reference_type}/{reference_id}/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.attachmentsDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1094,13 +1097,6 @@ func (s *Attachments) Delete(ctx context.Context, request operations.AccountingA
 // Download Attachment
 // Download Attachment
 func (s *Attachments) Download(ctx context.Context, request operations.AccountingAttachmentsDownloadRequest, opts ...operations.Option) (*operations.AccountingAttachmentsDownloadResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.attachmentsDownload",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingAttachmentsDownloadGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1128,6 +1124,14 @@ func (s *Attachments) Download(ctx context.Context, request operations.Accountin
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/attachments/{reference_type}/{reference_id}/{id}/download", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.attachmentsDownload",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

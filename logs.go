@@ -31,13 +31,6 @@ func newLogs(sdkConfig sdkConfiguration) *Logs {
 // List - Get all consumer request logs
 // This endpoint includes all consumer request logs.
 func (s *Logs) List(ctx context.Context, request operations.VaultLogsAllRequest, opts ...operations.Option) (*operations.VaultLogsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.logsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.VaultLogsAllGlobals{
 		AppID:      s.sdkConfiguration.Globals.AppID,
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
@@ -64,6 +57,14 @@ func (s *Logs) List(ctx context.Context, request operations.VaultLogsAllRequest,
 	opURL, err := url.JoinPath(baseURL, "/vault/logs")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.logsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

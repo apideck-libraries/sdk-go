@@ -31,13 +31,6 @@ func newLeads(sdkConfig sdkConfiguration) *Leads {
 // List leads
 // List leads
 func (s *Leads) List(ctx context.Context, request operations.CrmLeadsAllRequest, opts ...operations.Option) (*operations.CrmLeadsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.leadsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmLeadsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *Leads) List(ctx context.Context, request operations.CrmLeadsAllRequest,
 	opURL, err := url.JoinPath(baseURL, "/crm/leads")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.leadsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -420,13 +421,6 @@ func (s *Leads) List(ctx context.Context, request operations.CrmLeadsAllRequest,
 // Create lead
 // Create lead
 func (s *Leads) Create(ctx context.Context, request operations.CrmLeadsAddRequest, opts ...operations.Option) (*operations.CrmLeadsAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.leadsAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmLeadsAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -455,6 +449,13 @@ func (s *Leads) Create(ctx context.Context, request operations.CrmLeadsAddReques
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.leadsAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Lead", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -766,13 +767,6 @@ func (s *Leads) Create(ctx context.Context, request operations.CrmLeadsAddReques
 // Get lead
 // Get lead
 func (s *Leads) Get(ctx context.Context, request operations.CrmLeadsOneRequest, opts ...operations.Option) (*operations.CrmLeadsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.leadsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmLeadsOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -799,6 +793,14 @@ func (s *Leads) Get(ctx context.Context, request operations.CrmLeadsOneRequest, 
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/crm/leads/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.leadsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1104,13 +1106,6 @@ func (s *Leads) Get(ctx context.Context, request operations.CrmLeadsOneRequest, 
 // Update lead
 // Update lead
 func (s *Leads) Update(ctx context.Context, request operations.CrmLeadsUpdateRequest, opts ...operations.Option) (*operations.CrmLeadsUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.leadsUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmLeadsUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1139,6 +1134,13 @@ func (s *Leads) Update(ctx context.Context, request operations.CrmLeadsUpdateReq
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.leadsUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Lead", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1450,13 +1452,6 @@ func (s *Leads) Update(ctx context.Context, request operations.CrmLeadsUpdateReq
 // Delete lead
 // Delete lead
 func (s *Leads) Delete(ctx context.Context, request operations.CrmLeadsDeleteRequest, opts ...operations.Option) (*operations.CrmLeadsDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.leadsDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmLeadsDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1483,6 +1478,14 @@ func (s *Leads) Delete(ctx context.Context, request operations.CrmLeadsDeleteReq
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/crm/leads/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.leadsDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

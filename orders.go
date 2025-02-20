@@ -31,13 +31,6 @@ func newOrders(sdkConfig sdkConfiguration) *Orders {
 // List Orders
 // List Orders
 func (s *Orders) List(ctx context.Context, request operations.EcommerceOrdersAllRequest, opts ...operations.Option) (*operations.EcommerceOrdersAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "ecommerce.ordersAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.EcommerceOrdersAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *Orders) List(ctx context.Context, request operations.EcommerceOrdersAll
 	opURL, err := url.JoinPath(baseURL, "/ecommerce/orders")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "ecommerce.ordersAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -420,13 +421,6 @@ func (s *Orders) List(ctx context.Context, request operations.EcommerceOrdersAll
 // Get Order
 // Get Order
 func (s *Orders) Get(ctx context.Context, request operations.EcommerceOrdersOneRequest, opts ...operations.Option) (*operations.EcommerceOrdersOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "ecommerce.ordersOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.EcommerceOrdersOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -453,6 +447,14 @@ func (s *Orders) Get(ctx context.Context, request operations.EcommerceOrdersOneR
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/ecommerce/orders/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "ecommerce.ordersOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

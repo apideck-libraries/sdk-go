@@ -31,13 +31,6 @@ func newPipelines(sdkConfig sdkConfiguration) *Pipelines {
 // List pipelines
 // List pipelines
 func (s *Pipelines) List(ctx context.Context, request operations.CrmPipelinesAllRequest, opts ...operations.Option) (*operations.CrmPipelinesAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.pipelinesAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmPipelinesAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *Pipelines) List(ctx context.Context, request operations.CrmPipelinesAll
 	opURL, err := url.JoinPath(baseURL, "/crm/pipelines")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.pipelinesAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

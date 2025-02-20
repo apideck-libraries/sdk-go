@@ -1,29 +1,29 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 068bc54ce549b3d15555126d167f788e
-  docVersion: 10.11.2
-  speakeasyVersion: 1.484.1
-  generationVersion: 2.503.2
-  releaseVersion: 0.6.1
-  configChecksum: 6f1255907bcd4cdc0ec0706c04e55765
+  docChecksum: 8a84b005337515a4311dec5a8c491146
+  docVersion: 10.11.5
+  speakeasyVersion: 1.497.0
+  generationVersion: 2.517.3
+  releaseVersion: 0.7.0
+  configChecksum: 4ca431ad4763bbb799c4cdf70c43d9fb
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 features:
   go:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
-    constsAndDefaults: 0.1.6
-    core: 3.6.12
+    constsAndDefaults: 0.1.10
+    core: 3.7.1
     deepObjectParams: 0.1.1
     defaultEnabledRetries: 0.2.0
-    deprecations: 2.81.2
+    deprecations: 2.81.3
     devContainers: 2.90.0
     downloadStreams: 0.1.2
     envVarSecurityUsage: 0.3.2
     errors: 2.83.0
     flattening: 2.81.1
-    globalSecurity: 2.82.10
+    globalSecurity: 2.82.11
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.2
@@ -33,7 +33,7 @@ features:
     intellisenseMarkdownSupport: 0.1.0
     methodServerURLs: 2.82.1
     nameOverrides: 2.81.2
-    nullables: 0.1.0
+    nullables: 0.1.1
     pagination: 2.82.2
     responseFormat: 0.1.2
     retries: 2.83.2
@@ -6572,6 +6572,7 @@ examples:
           fields: "id,updated_at"
           limit: 20
           filter: {"drive_id": "1234", "folder_id": "root", "shared": true}
+          raw: false
         header:
           x-apideck-consumer-id: "test-consumer"
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"

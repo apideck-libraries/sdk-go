@@ -43,6 +43,8 @@ type FileStorageFilesSearchRequest struct {
 	Cursor *string `queryParam:"style=form,explode=true,name=cursor"`
 	// Number of results to return. Minimum 1, Maximum 200, Default 20
 	Limit *int64 `default:"20" queryParam:"style=form,explode=true,name=limit"`
+	// Include raw response. Mostly used for debugging purposes
+	Raw *bool `default:"false" queryParam:"style=form,explode=true,name=raw"`
 	// Apply filters
 	Filter      *components.FilesFilter `queryParam:"style=deepObject,explode=true,name=filter"`
 	FilesSearch components.FilesSearch  `request:"mediaType=application/json"`
@@ -106,6 +108,13 @@ func (o *FileStorageFilesSearchRequest) GetLimit() *int64 {
 		return nil
 	}
 	return o.Limit
+}
+
+func (o *FileStorageFilesSearchRequest) GetRaw() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }
 
 func (o *FileStorageFilesSearchRequest) GetFilter() *components.FilesFilter {

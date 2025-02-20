@@ -72,7 +72,7 @@ type BillLineItem struct {
 	TaxRate       *LinkedTaxRate       `json:"tax_rate,omitempty"`
 	LedgerAccount *LinkedLedgerAccount `json:"ledger_account,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
 	RowVersion *string `json:"row_version,omitempty"`
 	// The user who last updated the object.
@@ -222,7 +222,7 @@ func (o *BillLineItem) GetLedgerAccount() *LinkedLedgerAccount {
 	return o.LedgerAccount
 }
 
-func (o *BillLineItem) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *BillLineItem) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}
@@ -295,7 +295,7 @@ type BillLineItemInput struct {
 	TaxRate       *LinkedTaxRateInput       `json:"tax_rate,omitempty"`
 	LedgerAccount *LinkedLedgerAccountInput `json:"ledger_account,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
 	RowVersion *string `json:"row_version,omitempty"`
 }
@@ -419,7 +419,7 @@ func (o *BillLineItemInput) GetLedgerAccount() *LinkedLedgerAccountInput {
 	return o.LedgerAccount
 }
 
-func (o *BillLineItemInput) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *BillLineItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}

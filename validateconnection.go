@@ -33,13 +33,6 @@ func newValidateConnection(sdkConfig sdkConfiguration) *ValidateConnection {
 //   - Do not include any credentials in the request body. This operation does not persist changes, but only triggers the validation of connection state.
 //   - If a refresh token flow was performed and successful, the new access token will then be used for subsequent API requests.
 func (s *ValidateConnection) State(ctx context.Context, request operations.VaultValidateConnectionStateRequest, opts ...operations.Option) (*operations.VaultValidateConnectionStateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.validateConnectionState",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.VaultValidateConnectionStateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -68,6 +61,13 @@ func (s *ValidateConnection) State(ctx context.Context, request operations.Vault
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.validateConnectionState",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err

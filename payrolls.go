@@ -29,13 +29,6 @@ func newPayrolls(sdkConfig sdkConfiguration) *Payrolls {
 // List Payroll
 // List Payroll
 func (s *Payrolls) List(ctx context.Context, request operations.HrisPayrollsAllRequest, opts ...operations.Option) (*operations.HrisPayrollsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "hris.payrollsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.HrisPayrollsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -62,6 +55,14 @@ func (s *Payrolls) List(ctx context.Context, request operations.HrisPayrollsAllR
 	opURL, err := url.JoinPath(baseURL, "/hris/payrolls")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "hris.payrollsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -367,13 +368,6 @@ func (s *Payrolls) List(ctx context.Context, request operations.HrisPayrollsAllR
 // Get Payroll
 // Get Payroll
 func (s *Payrolls) Get(ctx context.Context, request operations.HrisPayrollsOneRequest, opts ...operations.Option) (*operations.HrisPayrollsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "hris.payrollsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.HrisPayrollsOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -400,6 +394,14 @@ func (s *Payrolls) Get(ctx context.Context, request operations.HrisPayrollsOneRe
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/hris/payrolls/{payroll_id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "hris.payrollsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

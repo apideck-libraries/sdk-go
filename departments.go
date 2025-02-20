@@ -31,13 +31,6 @@ func newDepartments(sdkConfig sdkConfiguration) *Departments {
 // List Departments
 // List Departments
 func (s *Departments) List(ctx context.Context, request operations.AccountingDepartmentsAllRequest, opts ...operations.Option) (*operations.AccountingDepartmentsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.departmentsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingDepartmentsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *Departments) List(ctx context.Context, request operations.AccountingDep
 	opURL, err := url.JoinPath(baseURL, "/accounting/departments")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.departmentsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -418,13 +419,6 @@ func (s *Departments) List(ctx context.Context, request operations.AccountingDep
 // Create Department
 // Create Department
 func (s *Departments) Create(ctx context.Context, request operations.AccountingDepartmentsAddRequest, opts ...operations.Option) (*operations.AccountingDepartmentsAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.departmentsAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingDepartmentsAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -453,6 +447,13 @@ func (s *Departments) Create(ctx context.Context, request operations.AccountingD
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.departmentsAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "AccountingDepartment", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -764,13 +765,6 @@ func (s *Departments) Create(ctx context.Context, request operations.AccountingD
 // Get Department
 // Get Department
 func (s *Departments) Get(ctx context.Context, request operations.AccountingDepartmentsOneRequest, opts ...operations.Option) (*operations.AccountingDepartmentsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.departmentsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingDepartmentsOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -797,6 +791,14 @@ func (s *Departments) Get(ctx context.Context, request operations.AccountingDepa
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/departments/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.departmentsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1102,13 +1104,6 @@ func (s *Departments) Get(ctx context.Context, request operations.AccountingDepa
 // Update Department
 // Update Department
 func (s *Departments) Update(ctx context.Context, request operations.AccountingDepartmentsUpdateRequest, opts ...operations.Option) (*operations.AccountingDepartmentsUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.departmentsUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingDepartmentsUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1137,6 +1132,13 @@ func (s *Departments) Update(ctx context.Context, request operations.AccountingD
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.departmentsUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "AccountingDepartment", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1448,13 +1450,6 @@ func (s *Departments) Update(ctx context.Context, request operations.AccountingD
 // Delete Department
 // Delete Department
 func (s *Departments) Delete(ctx context.Context, request operations.AccountingDepartmentsDeleteRequest, opts ...operations.Option) (*operations.AccountingDepartmentsDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.departmentsDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingDepartmentsDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1481,6 +1476,14 @@ func (s *Departments) Delete(ctx context.Context, request operations.AccountingD
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/departments/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.departmentsDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

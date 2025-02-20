@@ -196,12 +196,12 @@ func main() {
                         ID: sdkgo.String("123456"),
                         Rate: sdkgo.Float64(10),
                     },
-                    TrackingCategories: []components.LinkedTrackingCategory{
-                        components.LinkedTrackingCategory{
+                    TrackingCategories: []*components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
-                        components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
@@ -256,16 +256,16 @@ func main() {
                         ID: sdkgo.String("123456"),
                         Rate: sdkgo.Float64(10),
                     },
-                    TrackingCategories: []components.LinkedTrackingCategory{
-                        components.LinkedTrackingCategory{
+                    TrackingCategories: []*components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
-                        components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
-                        components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
@@ -356,16 +356,16 @@ func main() {
             TaxCode: sdkgo.String("1234"),
             Channel: sdkgo.String("email"),
             Memo: sdkgo.String("Thank you for the partnership and have a great day!"),
-            TrackingCategories: []components.LinkedTrackingCategory{
-                components.LinkedTrackingCategory{
+            TrackingCategories: []*components.LinkedTrackingCategory{
+                &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },
-                components.LinkedTrackingCategory{
+                &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },
-                components.LinkedTrackingCategory{
+                &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },
@@ -649,12 +649,12 @@ func main() {
                         ID: sdkgo.String("123456"),
                         Rate: sdkgo.Float64(10),
                     },
-                    TrackingCategories: []components.LinkedTrackingCategory{
-                        components.LinkedTrackingCategory{
+                    TrackingCategories: []*components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
-                        components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
@@ -712,16 +712,16 @@ func main() {
                         ID: sdkgo.String("123456"),
                         Rate: sdkgo.Float64(10),
                     },
-                    TrackingCategories: []components.LinkedTrackingCategory{
-                        components.LinkedTrackingCategory{
+                    TrackingCategories: []*components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
-                        components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
-                        components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
@@ -770,8 +770,8 @@ func main() {
                         ID: sdkgo.String("123456"),
                         Rate: sdkgo.Float64(10),
                     },
-                    TrackingCategories: []components.LinkedTrackingCategory{
-                        components.LinkedTrackingCategory{
+                    TrackingCategories: []*components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
@@ -846,16 +846,16 @@ func main() {
             TaxCode: sdkgo.String("1234"),
             Channel: sdkgo.String("email"),
             Memo: sdkgo.String("Thank you for the partnership and have a great day!"),
-            TrackingCategories: []components.LinkedTrackingCategory{
-                components.LinkedTrackingCategory{
+            TrackingCategories: []*components.LinkedTrackingCategory{
+                &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },
-                components.LinkedTrackingCategory{
+                &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },
-                components.LinkedTrackingCategory{
+                &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },

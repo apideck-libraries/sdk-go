@@ -31,13 +31,6 @@ func newCollections(sdkConfig sdkConfiguration) *Collections {
 // List Collections
 // List Collections
 func (s *Collections) List(ctx context.Context, request operations.IssueTrackingCollectionsAllRequest, opts ...operations.Option) (*operations.IssueTrackingCollectionsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "issueTracking.collectionsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.IssueTrackingCollectionsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *Collections) List(ctx context.Context, request operations.IssueTracking
 	opURL, err := url.JoinPath(baseURL, "/issue-tracking/collections")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "issueTracking.collectionsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -419,13 +420,6 @@ func (s *Collections) List(ctx context.Context, request operations.IssueTracking
 // Get Collection
 // Get Collection
 func (s *Collections) Get(ctx context.Context, request operations.IssueTrackingCollectionsOneRequest, opts ...operations.Option) (*operations.IssueTrackingCollectionsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "issueTracking.collectionsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.IssueTrackingCollectionsOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -452,6 +446,14 @@ func (s *Collections) Get(ctx context.Context, request operations.IssueTrackingC
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/issue-tracking/collections/{collection_id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "issueTracking.collectionsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

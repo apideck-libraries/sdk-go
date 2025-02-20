@@ -30,13 +30,6 @@ func newCollectionTags(sdkConfig sdkConfiguration) *CollectionTags {
 // List Tags
 // List Tags
 func (s *CollectionTags) List(ctx context.Context, request operations.IssueTrackingCollectionTagsAllRequest, opts ...operations.Option) (*operations.IssueTrackingCollectionTagsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "issueTracking.collectionTagsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.IssueTrackingCollectionTagsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -63,6 +56,14 @@ func (s *CollectionTags) List(ctx context.Context, request operations.IssueTrack
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/issue-tracking/collections/{collection_id}/tags", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "issueTracking.collectionTagsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

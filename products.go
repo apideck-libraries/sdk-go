@@ -31,13 +31,6 @@ func newProducts(sdkConfig sdkConfiguration) *Products {
 // List Products
 // List Products
 func (s *Products) List(ctx context.Context, request operations.EcommerceProductsAllRequest, opts ...operations.Option) (*operations.EcommerceProductsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "ecommerce.productsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.EcommerceProductsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *Products) List(ctx context.Context, request operations.EcommerceProduct
 	opURL, err := url.JoinPath(baseURL, "/ecommerce/products")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "ecommerce.productsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -418,13 +419,6 @@ func (s *Products) List(ctx context.Context, request operations.EcommerceProduct
 // Get Product
 // Get Product
 func (s *Products) Get(ctx context.Context, request operations.EcommerceProductsOneRequest, opts ...operations.Option) (*operations.EcommerceProductsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "ecommerce.productsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.EcommerceProductsOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -451,6 +445,14 @@ func (s *Products) Get(ctx context.Context, request operations.EcommerceProducts
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/ecommerce/products/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "ecommerce.productsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

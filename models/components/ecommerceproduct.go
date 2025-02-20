@@ -61,8 +61,8 @@ type EcommerceProductOptions struct {
 	// A unique identifier for the option of the product.
 	ID *string `json:"id,omitempty"`
 	// The name of the option for the product.
-	Name   *string  `json:"name,omitempty"`
-	Values []string `json:"values,omitempty"`
+	Name   *string   `json:"name,omitempty"`
+	Values []*string `json:"values,omitempty"`
 }
 
 func (o *EcommerceProductOptions) GetID() *string {
@@ -79,7 +79,7 @@ func (o *EcommerceProductOptions) GetName() *string {
 	return o.Name
 }
 
-func (o *EcommerceProductOptions) GetValues() []string {
+func (o *EcommerceProductOptions) GetValues() []*string {
 	if o == nil {
 		return nil
 	}
@@ -265,7 +265,7 @@ type EcommerceProduct struct {
 	Options  []EcommerceProductOptions `json:"options,omitempty"`
 	Variants []Variants                `json:"variants,omitempty"`
 	// An array of tags for the product, used for organization and searching.
-	Tags []string `json:"tags,omitempty"`
+	Tags []*string `json:"tags,omitempty"`
 	// An array of categories for the product, used for organization and searching.
 	Categories []EcommerceProductCategories `json:"categories,omitempty"`
 	// When custom mappings are configured on the resource, the result is included here.
@@ -371,7 +371,7 @@ func (o *EcommerceProduct) GetVariants() []Variants {
 	return o.Variants
 }
 
-func (o *EcommerceProduct) GetTags() []string {
+func (o *EcommerceProduct) GetTags() []*string {
 	if o == nil {
 		return nil
 	}

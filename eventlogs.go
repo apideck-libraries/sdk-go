@@ -31,13 +31,6 @@ func newEventLogs(sdkConfig sdkConfiguration) *EventLogs {
 // List event logs
 // List event logs
 func (s *EventLogs) List(ctx context.Context, appID *string, cursor *string, limit *int64, filter *components.WebhookEventLogsFilter, opts ...operations.Option) (*operations.WebhookEventLogsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "webhook.eventLogsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.WebhookEventLogsAllRequest{
 		AppID:  appID,
 		Cursor: cursor,
@@ -70,6 +63,14 @@ func (s *EventLogs) List(ctx context.Context, appID *string, cursor *string, lim
 	opURL, err := url.JoinPath(baseURL, "/webhook/logs")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "webhook.eventLogsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

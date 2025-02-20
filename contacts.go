@@ -31,13 +31,6 @@ func newContacts(sdkConfig sdkConfiguration) *Contacts {
 // List contacts
 // List contacts
 func (s *Contacts) List(ctx context.Context, request operations.CrmContactsAllRequest, opts ...operations.Option) (*operations.CrmContactsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.contactsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmContactsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *Contacts) List(ctx context.Context, request operations.CrmContactsAllRe
 	opURL, err := url.JoinPath(baseURL, "/crm/contacts")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.contactsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -420,13 +421,6 @@ func (s *Contacts) List(ctx context.Context, request operations.CrmContactsAllRe
 // Create contact
 // Create contact
 func (s *Contacts) Create(ctx context.Context, request operations.CrmContactsAddRequest, opts ...operations.Option) (*operations.CrmContactsAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.contactsAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmContactsAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -455,6 +449,13 @@ func (s *Contacts) Create(ctx context.Context, request operations.CrmContactsAdd
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.contactsAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Contact", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -766,13 +767,6 @@ func (s *Contacts) Create(ctx context.Context, request operations.CrmContactsAdd
 // Get contact
 // Get contact
 func (s *Contacts) Get(ctx context.Context, request operations.CrmContactsOneRequest, opts ...operations.Option) (*operations.CrmContactsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.contactsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmContactsOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -799,6 +793,14 @@ func (s *Contacts) Get(ctx context.Context, request operations.CrmContactsOneReq
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/crm/contacts/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.contactsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1104,13 +1106,6 @@ func (s *Contacts) Get(ctx context.Context, request operations.CrmContactsOneReq
 // Update contact
 // Update contact
 func (s *Contacts) Update(ctx context.Context, request operations.CrmContactsUpdateRequest, opts ...operations.Option) (*operations.CrmContactsUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.contactsUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmContactsUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1139,6 +1134,13 @@ func (s *Contacts) Update(ctx context.Context, request operations.CrmContactsUpd
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.contactsUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Contact", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1450,13 +1452,6 @@ func (s *Contacts) Update(ctx context.Context, request operations.CrmContactsUpd
 // Delete contact
 // Delete contact
 func (s *Contacts) Delete(ctx context.Context, request operations.CrmContactsDeleteRequest, opts ...operations.Option) (*operations.CrmContactsDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.contactsDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmContactsDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1483,6 +1478,14 @@ func (s *Contacts) Delete(ctx context.Context, request operations.CrmContactsDel
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/crm/contacts/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.contactsDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
