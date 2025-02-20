@@ -28,13 +28,6 @@ func newConsumerRequestCounts(sdkConfig sdkConfiguration) *ConsumerRequestCounts
 // List - Consumer request counts
 // Get consumer request counts within a given datetime range.
 func (s *ConsumerRequestCounts) List(ctx context.Context, consumerID string, startDatetime string, endDatetime string, appID *string, opts ...operations.Option) (*operations.VaultConsumerRequestCountsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.consumerRequestCountsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.VaultConsumerRequestCountsAllRequest{
 		AppID:         appID,
 		ConsumerID:    consumerID,
@@ -67,6 +60,14 @@ func (s *ConsumerRequestCounts) List(ctx context.Context, consumerID string, sta
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/vault/consumers/{consumer_id}/stats", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.consumerRequestCountsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

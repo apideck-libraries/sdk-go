@@ -31,13 +31,6 @@ func newSubsidiaries(sdkConfig sdkConfiguration) *Subsidiaries {
 // List Subsidiaries
 // List Subsidiaries
 func (s *Subsidiaries) List(ctx context.Context, request operations.AccountingSubsidiariesAllRequest, opts ...operations.Option) (*operations.AccountingSubsidiariesAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.subsidiariesAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingSubsidiariesAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *Subsidiaries) List(ctx context.Context, request operations.AccountingSu
 	opURL, err := url.JoinPath(baseURL, "/accounting/subsidiaries")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.subsidiariesAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -417,13 +418,6 @@ func (s *Subsidiaries) List(ctx context.Context, request operations.AccountingSu
 // Create Subsidiary
 // Create Subsidiary
 func (s *Subsidiaries) Create(ctx context.Context, request operations.AccountingSubsidiariesAddRequest, opts ...operations.Option) (*operations.AccountingSubsidiariesAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.subsidiariesAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingSubsidiariesAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -452,6 +446,13 @@ func (s *Subsidiaries) Create(ctx context.Context, request operations.Accounting
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.subsidiariesAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Subsidiary", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -763,13 +764,6 @@ func (s *Subsidiaries) Create(ctx context.Context, request operations.Accounting
 // Get Subsidiary
 // Get Subsidiary
 func (s *Subsidiaries) Get(ctx context.Context, request operations.AccountingSubsidiariesOneRequest, opts ...operations.Option) (*operations.AccountingSubsidiariesOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.subsidiariesOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingSubsidiariesOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -796,6 +790,14 @@ func (s *Subsidiaries) Get(ctx context.Context, request operations.AccountingSub
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/subsidiaries/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.subsidiariesOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1101,13 +1103,6 @@ func (s *Subsidiaries) Get(ctx context.Context, request operations.AccountingSub
 // Update Subsidiary
 // Update Subsidiary
 func (s *Subsidiaries) Update(ctx context.Context, request operations.AccountingSubsidiariesUpdateRequest, opts ...operations.Option) (*operations.AccountingSubsidiariesUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.subsidiariesUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingSubsidiariesUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1136,6 +1131,13 @@ func (s *Subsidiaries) Update(ctx context.Context, request operations.Accounting
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.subsidiariesUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Subsidiary", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1447,13 +1449,6 @@ func (s *Subsidiaries) Update(ctx context.Context, request operations.Accounting
 // Delete Subsidiary
 // Delete Subsidiary
 func (s *Subsidiaries) Delete(ctx context.Context, request operations.AccountingSubsidiariesDeleteRequest, opts ...operations.Option) (*operations.AccountingSubsidiariesDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.subsidiariesDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingSubsidiariesDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1480,6 +1475,14 @@ func (s *Subsidiaries) Delete(ctx context.Context, request operations.Accounting
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/subsidiaries/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.subsidiariesDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

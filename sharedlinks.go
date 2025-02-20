@@ -31,13 +31,6 @@ func newSharedLinks(sdkConfig sdkConfiguration) *SharedLinks {
 // List SharedLinks
 // List SharedLinks
 func (s *SharedLinks) List(ctx context.Context, request operations.FileStorageSharedLinksAllRequest, opts ...operations.Option) (*operations.FileStorageSharedLinksAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.sharedLinksAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageSharedLinksAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *SharedLinks) List(ctx context.Context, request operations.FileStorageSh
 	opURL, err := url.JoinPath(baseURL, "/file-storage/shared-links")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.sharedLinksAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -418,13 +419,6 @@ func (s *SharedLinks) List(ctx context.Context, request operations.FileStorageSh
 // Create Shared Link
 // Create Shared Link
 func (s *SharedLinks) Create(ctx context.Context, request operations.FileStorageSharedLinksAddRequest, opts ...operations.Option) (*operations.FileStorageSharedLinksAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.sharedLinksAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageSharedLinksAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -453,6 +447,13 @@ func (s *SharedLinks) Create(ctx context.Context, request operations.FileStorage
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.sharedLinksAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "SharedLink", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -764,13 +765,6 @@ func (s *SharedLinks) Create(ctx context.Context, request operations.FileStorage
 // Get Shared Link
 // Get Shared Link
 func (s *SharedLinks) Get(ctx context.Context, request operations.FileStorageSharedLinksOneRequest, opts ...operations.Option) (*operations.FileStorageSharedLinksOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.sharedLinksOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageSharedLinksOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -797,6 +791,14 @@ func (s *SharedLinks) Get(ctx context.Context, request operations.FileStorageSha
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/file-storage/shared-links/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.sharedLinksOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1102,13 +1104,6 @@ func (s *SharedLinks) Get(ctx context.Context, request operations.FileStorageSha
 // Update Shared Link
 // Update Shared Link
 func (s *SharedLinks) Update(ctx context.Context, request operations.FileStorageSharedLinksUpdateRequest, opts ...operations.Option) (*operations.FileStorageSharedLinksUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.sharedLinksUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageSharedLinksUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1137,6 +1132,13 @@ func (s *SharedLinks) Update(ctx context.Context, request operations.FileStorage
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.sharedLinksUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "SharedLink", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1448,13 +1450,6 @@ func (s *SharedLinks) Update(ctx context.Context, request operations.FileStorage
 // Delete Shared Link
 // Delete Shared Link
 func (s *SharedLinks) Delete(ctx context.Context, request operations.FileStorageSharedLinksDeleteRequest, opts ...operations.Option) (*operations.FileStorageSharedLinksDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.sharedLinksDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageSharedLinksDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1481,6 +1476,14 @@ func (s *SharedLinks) Delete(ctx context.Context, request operations.FileStorage
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/file-storage/shared-links/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.sharedLinksDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

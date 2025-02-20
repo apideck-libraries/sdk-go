@@ -6,7 +6,7 @@ type ExpenseLineItem struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// The unique identifier for the ledger account.
 	AccountID *string `json:"account_id,omitempty"`
 	// The ID of the customer this expense item is linked to.
@@ -31,7 +31,7 @@ func (o *ExpenseLineItem) GetID() *string {
 	return o.ID
 }
 
-func (o *ExpenseLineItem) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *ExpenseLineItem) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}

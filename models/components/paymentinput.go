@@ -53,8 +53,8 @@ type PaymentInput struct {
 	// Number associated with the transaction
 	Number *string `json:"number,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
-	CustomFields       []CustomField            `json:"custom_fields,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	CustomFields       []CustomField             `json:"custom_fields,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
 	RowVersion *string `json:"row_version,omitempty"`
 	// Id to be displayed.
@@ -214,7 +214,7 @@ func (o *PaymentInput) GetNumber() *string {
 	return o.Number
 }
 
-func (o *PaymentInput) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *PaymentInput) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}

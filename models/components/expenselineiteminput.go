@@ -4,7 +4,7 @@ package components
 
 type ExpenseLineItemInput struct {
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// The unique identifier for the ledger account.
 	AccountID *string `json:"account_id,omitempty"`
 	// The ID of the customer this expense item is linked to.
@@ -22,7 +22,7 @@ type ExpenseLineItemInput struct {
 	Billable *bool `json:"billable,omitempty"`
 }
 
-func (o *ExpenseLineItemInput) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *ExpenseLineItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}

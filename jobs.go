@@ -31,13 +31,6 @@ func newJobs(sdkConfig sdkConfiguration) *Jobs {
 // List Jobs
 // List Jobs
 func (s *Jobs) List(ctx context.Context, request operations.AtsJobsAllRequest, opts ...operations.Option) (*operations.AtsJobsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "ats.jobsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AtsJobsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *Jobs) List(ctx context.Context, request operations.AtsJobsAllRequest, o
 	opURL, err := url.JoinPath(baseURL, "/ats/jobs")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "ats.jobsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -418,13 +419,6 @@ func (s *Jobs) List(ctx context.Context, request operations.AtsJobsAllRequest, o
 // Get Job
 // Get Job
 func (s *Jobs) Get(ctx context.Context, request operations.AtsJobsOneRequest, opts ...operations.Option) (*operations.AtsJobsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "ats.jobsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AtsJobsOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -451,6 +445,14 @@ func (s *Jobs) Get(ctx context.Context, request operations.AtsJobsOneRequest, op
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/ats/jobs/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "ats.jobsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

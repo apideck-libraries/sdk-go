@@ -31,13 +31,6 @@ func newFiles(sdkConfig sdkConfiguration) *Files {
 // List Files
 // List Files
 func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAllRequest, opts ...operations.Option) (*operations.FileStorageFilesAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.filesAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageFilesAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 	opURL, err := url.JoinPath(baseURL, "/file-storage/files")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.filesAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -420,13 +421,6 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 // Search Files
 // Search Files
 func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesSearchRequest, opts ...operations.Option) (*operations.FileStorageFilesSearchResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.filesSearch",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageFilesSearchGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -455,6 +449,13 @@ func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesS
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.filesSearch",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "FilesSearch", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -766,13 +767,6 @@ func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesS
 // Get File
 // Get File
 func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneRequest, opts ...operations.Option) (*operations.FileStorageFilesOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.filesOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageFilesOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -799,6 +793,14 @@ func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneR
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/file-storage/files/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.filesOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1104,13 +1106,6 @@ func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneR
 // Update - Rename or move File
 // Rename or move File
 func (s *Files) Update(ctx context.Context, request operations.FileStorageFilesUpdateRequest, opts ...operations.Option) (*operations.FileStorageFilesUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.filesUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageFilesUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1139,6 +1134,13 @@ func (s *Files) Update(ctx context.Context, request operations.FileStorageFilesU
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.filesUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateFileRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1450,13 +1452,6 @@ func (s *Files) Update(ctx context.Context, request operations.FileStorageFilesU
 // Delete File
 // Delete File
 func (s *Files) Delete(ctx context.Context, request operations.FileStorageFilesDeleteRequest, opts ...operations.Option) (*operations.FileStorageFilesDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.filesDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageFilesDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1483,6 +1478,14 @@ func (s *Files) Delete(ctx context.Context, request operations.FileStorageFilesD
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/file-storage/files/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.filesDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1788,13 +1791,6 @@ func (s *Files) Delete(ctx context.Context, request operations.FileStorageFilesD
 // Download File
 // Download File
 func (s *Files) Download(ctx context.Context, request operations.FileStorageFilesDownloadRequest, opts ...operations.Option) (*operations.FileStorageFilesDownloadResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.filesDownload",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageFilesDownloadGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1822,6 +1818,14 @@ func (s *Files) Download(ctx context.Context, request operations.FileStorageFile
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/file-storage/files/{id}/download", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.filesDownload",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -2124,13 +2128,6 @@ func (s *Files) Download(ctx context.Context, request operations.FileStorageFile
 // Export File
 // Export File
 func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesExportRequest, opts ...operations.Option) (*operations.FileStorageFilesExportResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.filesExport",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageFilesExportGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -2158,6 +2155,14 @@ func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesE
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/file-storage/files/{id}/export", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.filesExport",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

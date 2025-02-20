@@ -31,13 +31,6 @@ func newLedgerAccounts(sdkConfig sdkConfiguration) *LedgerAccounts {
 // List Ledger Accounts
 // List Ledger Accounts
 func (s *LedgerAccounts) List(ctx context.Context, request operations.AccountingLedgerAccountsAllRequest, opts ...operations.Option) (*operations.AccountingLedgerAccountsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.ledgerAccountsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingLedgerAccountsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *LedgerAccounts) List(ctx context.Context, request operations.Accounting
 	opURL, err := url.JoinPath(baseURL, "/accounting/ledger-accounts")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.ledgerAccountsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -420,13 +421,6 @@ func (s *LedgerAccounts) List(ctx context.Context, request operations.Accounting
 // Create Ledger Account
 // Create Ledger Account
 func (s *LedgerAccounts) Create(ctx context.Context, request operations.AccountingLedgerAccountsAddRequest, opts ...operations.Option) (*operations.AccountingLedgerAccountsAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.ledgerAccountsAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingLedgerAccountsAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -455,6 +449,13 @@ func (s *LedgerAccounts) Create(ctx context.Context, request operations.Accounti
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.ledgerAccountsAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "LedgerAccount", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -766,13 +767,6 @@ func (s *LedgerAccounts) Create(ctx context.Context, request operations.Accounti
 // Get Ledger Account
 // Get Ledger Account
 func (s *LedgerAccounts) Get(ctx context.Context, request operations.AccountingLedgerAccountsOneRequest, opts ...operations.Option) (*operations.AccountingLedgerAccountsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.ledgerAccountsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingLedgerAccountsOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -799,6 +793,14 @@ func (s *LedgerAccounts) Get(ctx context.Context, request operations.AccountingL
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/ledger-accounts/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.ledgerAccountsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1104,13 +1106,6 @@ func (s *LedgerAccounts) Get(ctx context.Context, request operations.AccountingL
 // Update Ledger Account
 // Update Ledger Account
 func (s *LedgerAccounts) Update(ctx context.Context, request operations.AccountingLedgerAccountsUpdateRequest, opts ...operations.Option) (*operations.AccountingLedgerAccountsUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.ledgerAccountsUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingLedgerAccountsUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1139,6 +1134,13 @@ func (s *LedgerAccounts) Update(ctx context.Context, request operations.Accounti
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.ledgerAccountsUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "LedgerAccount", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1450,13 +1452,6 @@ func (s *LedgerAccounts) Update(ctx context.Context, request operations.Accounti
 // Delete Ledger Account
 // Delete Ledger Account
 func (s *LedgerAccounts) Delete(ctx context.Context, request operations.AccountingLedgerAccountsDeleteRequest, opts ...operations.Option) (*operations.AccountingLedgerAccountsDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.ledgerAccountsDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingLedgerAccountsDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1483,6 +1478,14 @@ func (s *LedgerAccounts) Delete(ctx context.Context, request operations.Accounti
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/ledger-accounts/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.ledgerAccountsDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

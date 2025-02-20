@@ -51,8 +51,8 @@ type JournalEntryLineItem struct {
 	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
-	LedgerAccount      *LinkedLedgerAccount     `json:"ledger_account"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	LedgerAccount      *LinkedLedgerAccount      `json:"ledger_account"`
 	// The customer this entity is linked to.
 	Customer *LinkedCustomer `json:"customer,omitempty"`
 	// The supplier this entity is linked to.
@@ -121,7 +121,7 @@ func (o *JournalEntryLineItem) GetTrackingCategory() *DeprecatedLinkedTrackingCa
 	return o.TrackingCategory
 }
 
-func (o *JournalEntryLineItem) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *JournalEntryLineItem) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}
@@ -185,7 +185,7 @@ type JournalEntryLineItemInput struct {
 	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory  `json:"tracking_categories,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	LedgerAccount      *LinkedLedgerAccountInput `json:"ledger_account"`
 	// The customer this entity is linked to.
 	Customer *LinkedCustomerInput `json:"customer,omitempty"`
@@ -244,7 +244,7 @@ func (o *JournalEntryLineItemInput) GetTrackingCategory() *DeprecatedLinkedTrack
 	return o.TrackingCategory
 }
 
-func (o *JournalEntryLineItemInput) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *JournalEntryLineItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}

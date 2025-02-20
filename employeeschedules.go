@@ -28,13 +28,6 @@ func newEmployeeSchedules(sdkConfig sdkConfiguration) *EmployeeSchedules {
 // List Employee Schedules
 // List schedules for employee, a schedule is a work pattern, not the actual worked hours, for an employee.
 func (s *EmployeeSchedules) List(ctx context.Context, request operations.HrisEmployeeSchedulesAllRequest, opts ...operations.Option) (*operations.HrisEmployeeSchedulesAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "hris.employeeSchedulesAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.HrisEmployeeSchedulesAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -61,6 +54,14 @@ func (s *EmployeeSchedules) List(ctx context.Context, request operations.HrisEmp
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/hris/schedules/employees/{employee_id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "hris.employeeSchedulesAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

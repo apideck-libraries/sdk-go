@@ -31,13 +31,6 @@ func newApideckCustomers(sdkConfig sdkConfiguration) *ApideckCustomers {
 // List Customers
 // List Customers
 func (s *ApideckCustomers) List(ctx context.Context, request operations.EcommerceCustomersAllRequest, opts ...operations.Option) (*operations.EcommerceCustomersAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "ecommerce.customersAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.EcommerceCustomersAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *ApideckCustomers) List(ctx context.Context, request operations.Ecommerc
 	opURL, err := url.JoinPath(baseURL, "/ecommerce/customers")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "ecommerce.customersAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -419,13 +420,6 @@ func (s *ApideckCustomers) List(ctx context.Context, request operations.Ecommerc
 // Get Customer
 // Get Customer
 func (s *ApideckCustomers) Get(ctx context.Context, request operations.EcommerceCustomersOneRequest, opts ...operations.Option) (*operations.EcommerceCustomersOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "ecommerce.customersOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.EcommerceCustomersOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -452,6 +446,14 @@ func (s *ApideckCustomers) Get(ctx context.Context, request operations.Ecommerce
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/ecommerce/customers/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "ecommerce.customersOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

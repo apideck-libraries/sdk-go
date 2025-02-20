@@ -30,13 +30,6 @@ func newCollectionTickets(sdkConfig sdkConfiguration) *CollectionTickets {
 // List Tickets
 // List Tickets
 func (s *CollectionTickets) List(ctx context.Context, request operations.IssueTrackingCollectionTicketsAllRequest, opts ...operations.Option) (*operations.IssueTrackingCollectionTicketsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "issueTracking.collectionTicketsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.IssueTrackingCollectionTicketsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -63,6 +56,14 @@ func (s *CollectionTickets) List(ctx context.Context, request operations.IssueTr
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/issue-tracking/collections/{collection_id}/tickets", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "issueTracking.collectionTicketsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -420,13 +421,6 @@ func (s *CollectionTickets) List(ctx context.Context, request operations.IssueTr
 // Create Ticket
 // Create Ticket
 func (s *CollectionTickets) Create(ctx context.Context, request operations.IssueTrackingCollectionTicketsAddRequest, opts ...operations.Option) (*operations.IssueTrackingCollectionTicketsAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "issueTracking.collectionTicketsAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.IssueTrackingCollectionTicketsAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -455,6 +449,13 @@ func (s *CollectionTickets) Create(ctx context.Context, request operations.Issue
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "issueTracking.collectionTicketsAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Ticket", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -766,13 +767,6 @@ func (s *CollectionTickets) Create(ctx context.Context, request operations.Issue
 // Get Ticket
 // Get Ticket
 func (s *CollectionTickets) Get(ctx context.Context, request operations.IssueTrackingCollectionTicketsOneRequest, opts ...operations.Option) (*operations.IssueTrackingCollectionTicketsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "issueTracking.collectionTicketsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.IssueTrackingCollectionTicketsOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -799,6 +793,14 @@ func (s *CollectionTickets) Get(ctx context.Context, request operations.IssueTra
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/issue-tracking/collections/{collection_id}/tickets/{ticket_id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "issueTracking.collectionTicketsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1104,13 +1106,6 @@ func (s *CollectionTickets) Get(ctx context.Context, request operations.IssueTra
 // Update Ticket
 // Update Ticket
 func (s *CollectionTickets) Update(ctx context.Context, request operations.IssueTrackingCollectionTicketsUpdateRequest, opts ...operations.Option) (*operations.IssueTrackingCollectionTicketsUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "issueTracking.collectionTicketsUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.IssueTrackingCollectionTicketsUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1139,6 +1134,13 @@ func (s *CollectionTickets) Update(ctx context.Context, request operations.Issue
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "issueTracking.collectionTicketsUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Ticket", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1450,13 +1452,6 @@ func (s *CollectionTickets) Update(ctx context.Context, request operations.Issue
 // Delete Ticket
 // Delete Ticket
 func (s *CollectionTickets) Delete(ctx context.Context, request operations.IssueTrackingCollectionTicketsDeleteRequest, opts ...operations.Option) (*operations.IssueTrackingCollectionTicketsDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "issueTracking.collectionTicketsDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.IssueTrackingCollectionTicketsDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1483,6 +1478,14 @@ func (s *CollectionTickets) Delete(ctx context.Context, request operations.Issue
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/issue-tracking/collections/{collection_id}/tickets/{ticket_id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "issueTracking.collectionTicketsDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

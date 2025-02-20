@@ -28,13 +28,6 @@ func newConnectorDocs(sdkConfig sdkConfiguration) *ConnectorDocs {
 // Get Connector Doc content
 // Get Connector Doc content
 func (s *ConnectorDocs) Get(ctx context.Context, id string, docID string, appID *string, opts ...operations.Option) (*operations.ConnectorConnectorDocsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "connector.connectorDocsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.ConnectorConnectorDocsOneRequest{
 		AppID: appID,
 		ID:    id,
@@ -67,6 +60,14 @@ func (s *ConnectorDocs) Get(ctx context.Context, id string, docID string, appID 
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/connector/connectors/{id}/docs/{doc_id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "connector.connectorDocsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

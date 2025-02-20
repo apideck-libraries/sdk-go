@@ -119,7 +119,7 @@ type CreditNote struct {
 	BillingAddress  *Address `json:"billing_address,omitempty"`
 	ShippingAddress *Address `json:"shipping_address,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// When custom mappings are configured on the resource, the result is included here.
 	CustomMappings *CustomMappings `json:"custom_mappings,omitempty"`
 	CustomFields   []CustomField   `json:"custom_fields,omitempty"`
@@ -323,7 +323,7 @@ func (o *CreditNote) GetShippingAddress() *Address {
 	return o.ShippingAddress
 }
 
-func (o *CreditNote) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *CreditNote) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}
@@ -431,8 +431,8 @@ type CreditNoteInput struct {
 	BillingAddress  *Address `json:"billing_address,omitempty"`
 	ShippingAddress *Address `json:"shipping_address,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
-	CustomFields       []CustomField            `json:"custom_fields,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	CustomFields       []CustomField             `json:"custom_fields,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
 	RowVersion *string `json:"row_version,omitempty"`
 	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
@@ -618,7 +618,7 @@ func (o *CreditNoteInput) GetShippingAddress() *Address {
 	return o.ShippingAddress
 }
 
-func (o *CreditNoteInput) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *CreditNoteInput) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}

@@ -28,13 +28,6 @@ func newConnectionCustomMappings(sdkConfig sdkConfiguration) *ConnectionCustomMa
 // List connection custom mappings
 // This endpoint returns a list of custom mappings for a connection.
 func (s *ConnectionCustomMappings) List(ctx context.Context, request operations.VaultConnectionCustomMappingsAllRequest, opts ...operations.Option) (*operations.VaultConnectionCustomMappingsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.connectionCustomMappingsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.VaultConnectionCustomMappingsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -61,6 +54,14 @@ func (s *ConnectionCustomMappings) List(ctx context.Context, request operations.
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/vault/connections/{unified_api}/{service_id}/{resource}/custom-mappings", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.connectionCustomMappingsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

@@ -31,13 +31,6 @@ func newMessages(sdkConfig sdkConfiguration) *Messages {
 // List Messages
 // List Messages
 func (s *Messages) List(ctx context.Context, request operations.SmsMessagesAllRequest, opts ...operations.Option) (*operations.SmsMessagesAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "sms.messagesAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.SmsMessagesAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *Messages) List(ctx context.Context, request operations.SmsMessagesAllRe
 	opURL, err := url.JoinPath(baseURL, "/sms/messages")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "sms.messagesAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -417,13 +418,6 @@ func (s *Messages) List(ctx context.Context, request operations.SmsMessagesAllRe
 // Create Message
 // Create Message
 func (s *Messages) Create(ctx context.Context, request operations.SmsMessagesAddRequest, opts ...operations.Option) (*operations.SmsMessagesAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "sms.messagesAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.SmsMessagesAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -452,6 +446,13 @@ func (s *Messages) Create(ctx context.Context, request operations.SmsMessagesAdd
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "sms.messagesAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Message", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -763,13 +764,6 @@ func (s *Messages) Create(ctx context.Context, request operations.SmsMessagesAdd
 // Get Message
 // Get Message
 func (s *Messages) Get(ctx context.Context, request operations.SmsMessagesOneRequest, opts ...operations.Option) (*operations.SmsMessagesOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "sms.messagesOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.SmsMessagesOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -796,6 +790,14 @@ func (s *Messages) Get(ctx context.Context, request operations.SmsMessagesOneReq
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/sms/messages/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "sms.messagesOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1101,13 +1103,6 @@ func (s *Messages) Get(ctx context.Context, request operations.SmsMessagesOneReq
 // Update Message
 // Update Message
 func (s *Messages) Update(ctx context.Context, request operations.SmsMessagesUpdateRequest, opts ...operations.Option) (*operations.SmsMessagesUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "sms.messagesUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.SmsMessagesUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1136,6 +1131,13 @@ func (s *Messages) Update(ctx context.Context, request operations.SmsMessagesUpd
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "sms.messagesUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Message", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1447,13 +1449,6 @@ func (s *Messages) Update(ctx context.Context, request operations.SmsMessagesUpd
 // Delete Message
 // Delete Message
 func (s *Messages) Delete(ctx context.Context, request operations.SmsMessagesDeleteRequest, opts ...operations.Option) (*operations.SmsMessagesDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "sms.messagesDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.SmsMessagesDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1480,6 +1475,14 @@ func (s *Messages) Delete(ctx context.Context, request operations.SmsMessagesDel
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/sms/messages/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "sms.messagesDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

@@ -31,13 +31,6 @@ func newJournalEntries(sdkConfig sdkConfiguration) *JournalEntries {
 // List Journal Entries
 // List Journal Entries
 func (s *JournalEntries) List(ctx context.Context, request operations.AccountingJournalEntriesAllRequest, opts ...operations.Option) (*operations.AccountingJournalEntriesAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.journalEntriesAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingJournalEntriesAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *JournalEntries) List(ctx context.Context, request operations.Accounting
 	opURL, err := url.JoinPath(baseURL, "/accounting/journal-entries")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.journalEntriesAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -420,13 +421,6 @@ func (s *JournalEntries) List(ctx context.Context, request operations.Accounting
 // Create Journal Entry
 // Create Journal Entry
 func (s *JournalEntries) Create(ctx context.Context, request operations.AccountingJournalEntriesAddRequest, opts ...operations.Option) (*operations.AccountingJournalEntriesAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.journalEntriesAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingJournalEntriesAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -455,6 +449,13 @@ func (s *JournalEntries) Create(ctx context.Context, request operations.Accounti
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.journalEntriesAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "JournalEntry", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -766,13 +767,6 @@ func (s *JournalEntries) Create(ctx context.Context, request operations.Accounti
 // Get Journal Entry
 // Get Journal Entry
 func (s *JournalEntries) Get(ctx context.Context, request operations.AccountingJournalEntriesOneRequest, opts ...operations.Option) (*operations.AccountingJournalEntriesOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.journalEntriesOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingJournalEntriesOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -799,6 +793,14 @@ func (s *JournalEntries) Get(ctx context.Context, request operations.AccountingJ
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/journal-entries/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.journalEntriesOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1104,13 +1106,6 @@ func (s *JournalEntries) Get(ctx context.Context, request operations.AccountingJ
 // Update Journal Entry
 // Update Journal Entry
 func (s *JournalEntries) Update(ctx context.Context, request operations.AccountingJournalEntriesUpdateRequest, opts ...operations.Option) (*operations.AccountingJournalEntriesUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.journalEntriesUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingJournalEntriesUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1139,6 +1134,13 @@ func (s *JournalEntries) Update(ctx context.Context, request operations.Accounti
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.journalEntriesUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "JournalEntry", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1450,13 +1452,6 @@ func (s *JournalEntries) Update(ctx context.Context, request operations.Accounti
 // Delete Journal Entry
 // Delete Journal Entry
 func (s *JournalEntries) Delete(ctx context.Context, request operations.AccountingJournalEntriesDeleteRequest, opts ...operations.Option) (*operations.AccountingJournalEntriesDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.journalEntriesDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingJournalEntriesDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1483,6 +1478,14 @@ func (s *JournalEntries) Delete(ctx context.Context, request operations.Accounti
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/journal-entries/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.journalEntriesDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

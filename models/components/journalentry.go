@@ -33,7 +33,7 @@ type JournalEntry struct {
 	// Journal entry number.
 	Number *string `json:"number,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// Accounting period
 	AccountingPeriod *string `json:"accounting_period,omitempty"`
 	// When custom mappings are configured on the resource, the result is included here.
@@ -148,7 +148,7 @@ func (o *JournalEntry) GetNumber() *string {
 	return o.Number
 }
 
-func (o *JournalEntry) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *JournalEntry) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}

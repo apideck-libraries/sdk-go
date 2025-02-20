@@ -109,8 +109,8 @@ import(
 	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
-	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/components"
+	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -171,12 +171,12 @@ func main() {
                 NominalCode: sdkgo.String("N091"),
                 Code: sdkgo.String("453"),
             },
-            TrackingCategories: []components.LinkedTrackingCategory{
-                components.LinkedTrackingCategory{
+            TrackingCategories: []*components.LinkedTrackingCategory{
+                &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },
-                components.LinkedTrackingCategory{
+                &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },
@@ -333,8 +333,8 @@ import(
 	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
-	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/components"
+	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -396,16 +396,16 @@ func main() {
                 NominalCode: sdkgo.String("N091"),
                 Code: sdkgo.String("453"),
             },
-            TrackingCategories: []components.LinkedTrackingCategory{
-                components.LinkedTrackingCategory{
+            TrackingCategories: []*components.LinkedTrackingCategory{
+                &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },
-                components.LinkedTrackingCategory{
+                &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },
-                components.LinkedTrackingCategory{
+                &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },

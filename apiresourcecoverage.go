@@ -28,13 +28,6 @@ func newAPIResourceCoverage(sdkConfig sdkConfiguration) *APIResourceCoverage {
 // Get API Resource Coverage
 // Get API Resource Coverage
 func (s *APIResourceCoverage) Get(ctx context.Context, id string, resourceID string, appID *string, opts ...operations.Option) (*operations.ConnectorAPIResourceCoverageOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "connector.apiResourceCoverageOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.ConnectorAPIResourceCoverageOneRequest{
 		AppID:      appID,
 		ID:         id,
@@ -66,6 +59,14 @@ func (s *APIResourceCoverage) Get(ctx context.Context, id string, resourceID str
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/connector/apis/{id}/resources/{resource_id}/coverage", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "connector.apiResourceCoverageOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

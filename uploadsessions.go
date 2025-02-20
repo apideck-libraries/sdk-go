@@ -29,13 +29,6 @@ func newUploadSessions(sdkConfig sdkConfiguration) *UploadSessions {
 // Create - Start Upload Session
 // Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
 func (s *UploadSessions) Create(ctx context.Context, request operations.FileStorageUploadSessionsAddRequest, opts ...operations.Option) (*operations.FileStorageUploadSessionsAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.uploadSessionsAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageUploadSessionsAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -63,6 +56,13 @@ func (s *UploadSessions) Create(ctx context.Context, request operations.FileStor
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.uploadSessionsAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateUploadSessionRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -374,13 +374,6 @@ func (s *UploadSessions) Create(ctx context.Context, request operations.FileStor
 // Get Upload Session
 // Get Upload Session. Use the `part_size` to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
 func (s *UploadSessions) Get(ctx context.Context, request operations.FileStorageUploadSessionsOneRequest, opts ...operations.Option) (*operations.FileStorageUploadSessionsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.uploadSessionsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageUploadSessionsOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -406,6 +399,14 @@ func (s *UploadSessions) Get(ctx context.Context, request operations.FileStorage
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/file-storage/upload-sessions/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.uploadSessionsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -711,13 +712,6 @@ func (s *UploadSessions) Get(ctx context.Context, request operations.FileStorage
 // Delete - Abort Upload Session
 // Abort Upload Session. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
 func (s *UploadSessions) Delete(ctx context.Context, request operations.FileStorageUploadSessionsDeleteRequest, opts ...operations.Option) (*operations.FileStorageUploadSessionsDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.uploadSessionsDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageUploadSessionsDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -744,6 +738,14 @@ func (s *UploadSessions) Delete(ctx context.Context, request operations.FileStor
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/file-storage/upload-sessions/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.uploadSessionsDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1049,13 +1051,6 @@ func (s *UploadSessions) Delete(ctx context.Context, request operations.FileStor
 // Finish Upload Session
 // Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
 func (s *UploadSessions) Finish(ctx context.Context, request operations.FileStorageUploadSessionsFinishRequest, opts ...operations.Option) (*operations.FileStorageUploadSessionsFinishResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.uploadSessionsFinish",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageUploadSessionsFinishGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1083,6 +1078,13 @@ func (s *UploadSessions) Finish(ctx context.Context, request operations.FileStor
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.uploadSessionsFinish",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err

@@ -29,13 +29,6 @@ func newFolders(sdkConfig sdkConfiguration) *Folders {
 // Create Folder
 // Create Folder
 func (s *Folders) Create(ctx context.Context, request operations.FileStorageFoldersAddRequest, opts ...operations.Option) (*operations.FileStorageFoldersAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.foldersAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageFoldersAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,13 @@ func (s *Folders) Create(ctx context.Context, request operations.FileStorageFold
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.foldersAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateFolderRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -375,13 +375,6 @@ func (s *Folders) Create(ctx context.Context, request operations.FileStorageFold
 // Get Folder
 // Get Folder
 func (s *Folders) Get(ctx context.Context, request operations.FileStorageFoldersOneRequest, opts ...operations.Option) (*operations.FileStorageFoldersOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.foldersOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageFoldersOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -408,6 +401,14 @@ func (s *Folders) Get(ctx context.Context, request operations.FileStorageFolders
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/file-storage/folders/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.foldersOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -713,13 +714,6 @@ func (s *Folders) Get(ctx context.Context, request operations.FileStorageFolders
 // Update - Rename or move Folder
 // Rename or move Folder
 func (s *Folders) Update(ctx context.Context, request operations.FileStorageFoldersUpdateRequest, opts ...operations.Option) (*operations.FileStorageFoldersUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.foldersUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageFoldersUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -748,6 +742,13 @@ func (s *Folders) Update(ctx context.Context, request operations.FileStorageFold
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.foldersUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateFolderRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1059,13 +1060,6 @@ func (s *Folders) Update(ctx context.Context, request operations.FileStorageFold
 // Delete Folder
 // Delete Folder
 func (s *Folders) Delete(ctx context.Context, request operations.FileStorageFoldersDeleteRequest, opts ...operations.Option) (*operations.FileStorageFoldersDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.foldersDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageFoldersDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1092,6 +1086,14 @@ func (s *Folders) Delete(ctx context.Context, request operations.FileStorageFold
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/file-storage/folders/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.foldersDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1397,13 +1399,6 @@ func (s *Folders) Delete(ctx context.Context, request operations.FileStorageFold
 // Copy Folder
 // Copy Folder
 func (s *Folders) Copy(ctx context.Context, request operations.FileStorageFoldersCopyRequest, opts ...operations.Option) (*operations.FileStorageFoldersCopyResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "fileStorage.foldersCopy",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.FileStorageFoldersCopyGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1432,6 +1427,13 @@ func (s *Folders) Copy(ctx context.Context, request operations.FileStorageFolder
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "fileStorage.foldersCopy",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CopyFolderRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err

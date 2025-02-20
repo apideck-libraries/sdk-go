@@ -31,13 +31,6 @@ func newOpportunities(sdkConfig sdkConfiguration) *Opportunities {
 // List opportunities
 // List opportunities
 func (s *Opportunities) List(ctx context.Context, request operations.CrmOpportunitiesAllRequest, opts ...operations.Option) (*operations.CrmOpportunitiesAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.opportunitiesAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmOpportunitiesAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *Opportunities) List(ctx context.Context, request operations.CrmOpportun
 	opURL, err := url.JoinPath(baseURL, "/crm/opportunities")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.opportunitiesAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -420,13 +421,6 @@ func (s *Opportunities) List(ctx context.Context, request operations.CrmOpportun
 // Create opportunity
 // Create opportunity
 func (s *Opportunities) Create(ctx context.Context, request operations.CrmOpportunitiesAddRequest, opts ...operations.Option) (*operations.CrmOpportunitiesAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.opportunitiesAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmOpportunitiesAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -455,6 +449,13 @@ func (s *Opportunities) Create(ctx context.Context, request operations.CrmOpport
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.opportunitiesAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Opportunity", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -766,13 +767,6 @@ func (s *Opportunities) Create(ctx context.Context, request operations.CrmOpport
 // Get opportunity
 // Get opportunity
 func (s *Opportunities) Get(ctx context.Context, request operations.CrmOpportunitiesOneRequest, opts ...operations.Option) (*operations.CrmOpportunitiesOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.opportunitiesOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmOpportunitiesOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -799,6 +793,14 @@ func (s *Opportunities) Get(ctx context.Context, request operations.CrmOpportuni
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/crm/opportunities/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.opportunitiesOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1104,13 +1106,6 @@ func (s *Opportunities) Get(ctx context.Context, request operations.CrmOpportuni
 // Update opportunity
 // Update opportunity
 func (s *Opportunities) Update(ctx context.Context, request operations.CrmOpportunitiesUpdateRequest, opts ...operations.Option) (*operations.CrmOpportunitiesUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.opportunitiesUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmOpportunitiesUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1139,6 +1134,13 @@ func (s *Opportunities) Update(ctx context.Context, request operations.CrmOpport
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.opportunitiesUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Opportunity", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1450,13 +1452,6 @@ func (s *Opportunities) Update(ctx context.Context, request operations.CrmOpport
 // Delete opportunity
 // Delete opportunity
 func (s *Opportunities) Delete(ctx context.Context, request operations.CrmOpportunitiesDeleteRequest, opts ...operations.Option) (*operations.CrmOpportunitiesDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "crm.opportunitiesDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.CrmOpportunitiesDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1483,6 +1478,14 @@ func (s *Opportunities) Delete(ctx context.Context, request operations.CrmOpport
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/crm/opportunities/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "crm.opportunitiesDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

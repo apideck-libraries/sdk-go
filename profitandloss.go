@@ -29,13 +29,6 @@ func newProfitAndLoss(sdkConfig sdkConfiguration) *ProfitAndLoss {
 // Get Profit and Loss
 // Get Profit and Loss
 func (s *ProfitAndLoss) Get(ctx context.Context, request operations.AccountingProfitAndLossOneRequest, opts ...operations.Option) (*operations.AccountingProfitAndLossOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.profitAndLossOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingProfitAndLossOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -62,6 +55,14 @@ func (s *ProfitAndLoss) Get(ctx context.Context, request operations.AccountingPr
 	opURL, err := url.JoinPath(baseURL, "/accounting/profit-and-loss")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.profitAndLossOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

@@ -67,6 +67,9 @@
 | `WebhookEventTypeAccountingPurchaseOrderCreated`    | accounting.purchase_order.created                   |
 | `WebhookEventTypeAccountingPurchaseOrderUpdated`    | accounting.purchase_order.updated                   |
 | `WebhookEventTypeAccountingPurchaseOrderDeleted`    | accounting.purchase_order.deleted                   |
+| `WebhookEventTypeAccountingCreditNoteCreated`       | accounting.credit_note.created                      |
+| `WebhookEventTypeAccountingCreditNoteUpdated`       | accounting.credit_note.updated                      |
+| `WebhookEventTypeAccountingCreditNoteDeleted`       | accounting.credit_note.deleted                      |
 | `WebhookEventTypePosOrderCreated`                   | pos.order.created                                   |
 | `WebhookEventTypePosOrderUpdated`                   | pos.order.updated                                   |
 | `WebhookEventTypePosOrderDeleted`                   | pos.order.deleted                                   |

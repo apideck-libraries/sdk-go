@@ -31,13 +31,6 @@ func newConnectors(sdkConfig sdkConfiguration) *Connectors {
 // List Connectors
 // List Connectors
 func (s *Connectors) List(ctx context.Context, appID *string, cursor *string, limit *int64, filter *components.ConnectorsFilter, opts ...operations.Option) (*operations.ConnectorConnectorsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "connector.connectorsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.ConnectorConnectorsAllRequest{
 		AppID:  appID,
 		Cursor: cursor,
@@ -70,6 +63,14 @@ func (s *Connectors) List(ctx context.Context, appID *string, cursor *string, li
 	opURL, err := url.JoinPath(baseURL, "/connector/connectors")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "connector.connectorsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -376,13 +377,6 @@ func (s *Connectors) List(ctx context.Context, appID *string, cursor *string, li
 // Get Connector
 // Get Connector
 func (s *Connectors) Get(ctx context.Context, id string, appID *string, opts ...operations.Option) (*operations.ConnectorConnectorsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "connector.connectorsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.ConnectorConnectorsOneRequest{
 		AppID: appID,
 		ID:    id,
@@ -413,6 +407,14 @@ func (s *Connectors) Get(ctx context.Context, id string, appID *string, opts ...
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/connector/connectors/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "connector.connectorsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

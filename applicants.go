@@ -31,13 +31,6 @@ func newApplicants(sdkConfig sdkConfiguration) *Applicants {
 // List Applicants
 // List Applicants
 func (s *Applicants) List(ctx context.Context, request operations.AtsApplicantsAllRequest, opts ...operations.Option) (*operations.AtsApplicantsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "ats.applicantsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AtsApplicantsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *Applicants) List(ctx context.Context, request operations.AtsApplicantsA
 	opURL, err := url.JoinPath(baseURL, "/ats/applicants")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "ats.applicantsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -419,13 +420,6 @@ func (s *Applicants) List(ctx context.Context, request operations.AtsApplicantsA
 // Create Applicant
 // Create Applicant
 func (s *Applicants) Create(ctx context.Context, request operations.AtsApplicantsAddRequest, opts ...operations.Option) (*operations.AtsApplicantsAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "ats.applicantsAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AtsApplicantsAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -454,6 +448,13 @@ func (s *Applicants) Create(ctx context.Context, request operations.AtsApplicant
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "ats.applicantsAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Applicant", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -765,13 +766,6 @@ func (s *Applicants) Create(ctx context.Context, request operations.AtsApplicant
 // Get Applicant
 // Get Applicant
 func (s *Applicants) Get(ctx context.Context, request operations.AtsApplicantsOneRequest, opts ...operations.Option) (*operations.AtsApplicantsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "ats.applicantsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AtsApplicantsOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -798,6 +792,14 @@ func (s *Applicants) Get(ctx context.Context, request operations.AtsApplicantsOn
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/ats/applicants/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "ats.applicantsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1103,13 +1105,6 @@ func (s *Applicants) Get(ctx context.Context, request operations.AtsApplicantsOn
 // Update Applicant
 // Update Applicant
 func (s *Applicants) Update(ctx context.Context, request operations.AtsApplicantsUpdateRequest, opts ...operations.Option) (*operations.AtsApplicantsUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "ats.applicantsUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AtsApplicantsUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1138,6 +1133,13 @@ func (s *Applicants) Update(ctx context.Context, request operations.AtsApplicant
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "ats.applicantsUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Applicant", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1449,13 +1451,6 @@ func (s *Applicants) Update(ctx context.Context, request operations.AtsApplicant
 // Delete Applicant
 // Delete Applicant
 func (s *Applicants) Delete(ctx context.Context, request operations.AtsApplicantsDeleteRequest, opts ...operations.Option) (*operations.AtsApplicantsDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "ats.applicantsDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AtsApplicantsDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1482,6 +1477,14 @@ func (s *Applicants) Delete(ctx context.Context, request operations.AtsApplicant
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/ats/applicants/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "ats.applicantsDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

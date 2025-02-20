@@ -28,13 +28,6 @@ func newConnectorResources(sdkConfig sdkConfiguration) *ConnectorResources {
 // Get Connector Resource
 // Get Connector Resource
 func (s *ConnectorResources) Get(ctx context.Context, id string, resourceID string, appID *string, unifiedAPI *components.UnifiedAPIID, opts ...operations.Option) (*operations.ConnectorConnectorResourcesOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "connector.connectorResourcesOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.ConnectorConnectorResourcesOneRequest{
 		AppID:      appID,
 		ID:         id,
@@ -67,6 +60,14 @@ func (s *ConnectorResources) Get(ctx context.Context, id string, resourceID stri
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/connector/connectors/{id}/resources/{resource_id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "connector.connectorResourcesOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

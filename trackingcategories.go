@@ -31,13 +31,6 @@ func newTrackingCategories(sdkConfig sdkConfiguration) *TrackingCategories {
 // List Tracking Categories
 // List Tracking Categories
 func (s *TrackingCategories) List(ctx context.Context, request operations.AccountingTrackingCategoriesAllRequest, opts ...operations.Option) (*operations.AccountingTrackingCategoriesAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.trackingCategoriesAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingTrackingCategoriesAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *TrackingCategories) List(ctx context.Context, request operations.Accoun
 	opURL, err := url.JoinPath(baseURL, "/accounting/tracking-categories")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.trackingCategoriesAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -418,13 +419,6 @@ func (s *TrackingCategories) List(ctx context.Context, request operations.Accoun
 // Create Tracking Category
 // Create Tracking Category
 func (s *TrackingCategories) Create(ctx context.Context, request operations.AccountingTrackingCategoriesAddRequest, opts ...operations.Option) (*operations.AccountingTrackingCategoriesAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.trackingCategoriesAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingTrackingCategoriesAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -453,6 +447,13 @@ func (s *TrackingCategories) Create(ctx context.Context, request operations.Acco
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.trackingCategoriesAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "TrackingCategory", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -764,13 +765,6 @@ func (s *TrackingCategories) Create(ctx context.Context, request operations.Acco
 // Get Tracking Category
 // Get Tracking Category
 func (s *TrackingCategories) Get(ctx context.Context, request operations.AccountingTrackingCategoriesOneRequest, opts ...operations.Option) (*operations.AccountingTrackingCategoriesOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.trackingCategoriesOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingTrackingCategoriesOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -797,6 +791,14 @@ func (s *TrackingCategories) Get(ctx context.Context, request operations.Account
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/tracking-categories/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.trackingCategoriesOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1102,13 +1104,6 @@ func (s *TrackingCategories) Get(ctx context.Context, request operations.Account
 // Update Tracking Category
 // Update Tracking Category
 func (s *TrackingCategories) Update(ctx context.Context, request operations.AccountingTrackingCategoriesUpdateRequest, opts ...operations.Option) (*operations.AccountingTrackingCategoriesUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.trackingCategoriesUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingTrackingCategoriesUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1137,6 +1132,13 @@ func (s *TrackingCategories) Update(ctx context.Context, request operations.Acco
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.trackingCategoriesUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "TrackingCategory", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1448,13 +1450,6 @@ func (s *TrackingCategories) Update(ctx context.Context, request operations.Acco
 // Delete Tracking Category
 // Delete Tracking Category
 func (s *TrackingCategories) Delete(ctx context.Context, request operations.AccountingTrackingCategoriesDeleteRequest, opts ...operations.Option) (*operations.AccountingTrackingCategoriesDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.trackingCategoriesDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingTrackingCategoriesDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1481,6 +1476,14 @@ func (s *TrackingCategories) Delete(ctx context.Context, request operations.Acco
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/tracking-categories/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.trackingCategoriesDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

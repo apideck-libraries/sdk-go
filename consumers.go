@@ -31,13 +31,6 @@ func newConsumers(sdkConfig sdkConfiguration) *Consumers {
 // Create consumer
 // Create a consumer
 func (s *Consumers) Create(ctx context.Context, consumer components.ConsumerInput, appID *string, opts ...operations.Option) (*operations.VaultConsumersAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.consumersAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.VaultConsumersAddRequest{
 		AppID:    appID,
 		Consumer: consumer,
@@ -70,6 +63,13 @@ func (s *Consumers) Create(ctx context.Context, consumer components.ConsumerInpu
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.consumersAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Consumer", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -377,13 +377,6 @@ func (s *Consumers) Create(ctx context.Context, consumer components.ConsumerInpu
 // List - Get all consumers
 // This endpoint includes all application consumers, along with an aggregated count of requests made.
 func (s *Consumers) List(ctx context.Context, appID *string, cursor *string, limit *int64, opts ...operations.Option) (*operations.VaultConsumersAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.consumersAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.VaultConsumersAllRequest{
 		AppID:  appID,
 		Cursor: cursor,
@@ -415,6 +408,14 @@ func (s *Consumers) List(ctx context.Context, appID *string, cursor *string, lim
 	opURL, err := url.JoinPath(baseURL, "/vault/consumers")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.consumersAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -762,13 +763,6 @@ func (s *Consumers) List(ctx context.Context, appID *string, cursor *string, lim
 // Get consumer
 // Consumer detail including their aggregated counts with the connections they have authorized.
 func (s *Consumers) Get(ctx context.Context, consumerID string, appID *string, opts ...operations.Option) (*operations.VaultConsumersOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.consumersOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.VaultConsumersOneRequest{
 		AppID:      appID,
 		ConsumerID: consumerID,
@@ -799,6 +793,14 @@ func (s *Consumers) Get(ctx context.Context, consumerID string, appID *string, o
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/vault/consumers/{consumer_id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.consumersOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1100,13 +1102,6 @@ func (s *Consumers) Get(ctx context.Context, consumerID string, appID *string, o
 // Update consumer
 // Update consumer metadata such as name and email.
 func (s *Consumers) Update(ctx context.Context, consumerID string, updateConsumerRequest components.UpdateConsumerRequest, appID *string, opts ...operations.Option) (*operations.VaultConsumersUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.consumersUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.VaultConsumersUpdateRequest{
 		AppID:                 appID,
 		ConsumerID:            consumerID,
@@ -1140,6 +1135,13 @@ func (s *Consumers) Update(ctx context.Context, consumerID string, updateConsume
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.consumersUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateConsumerRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1447,13 +1449,6 @@ func (s *Consumers) Update(ctx context.Context, consumerID string, updateConsume
 // Delete consumer
 // Delete consumer and all their connections, including credentials.
 func (s *Consumers) Delete(ctx context.Context, consumerID string, appID *string, opts ...operations.Option) (*operations.VaultConsumersDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.consumersDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.VaultConsumersDeleteRequest{
 		AppID:      appID,
 		ConsumerID: consumerID,
@@ -1484,6 +1479,14 @@ func (s *Consumers) Delete(ctx context.Context, consumerID string, appID *string
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/vault/consumers/{consumer_id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.consumersDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

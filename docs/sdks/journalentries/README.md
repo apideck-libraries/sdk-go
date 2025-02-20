@@ -142,12 +142,12 @@ func main() {
                         ID: sdkgo.String("123456"),
                         Rate: sdkgo.Float64(10),
                     },
-                    TrackingCategories: []components.LinkedTrackingCategory{
-                        components.LinkedTrackingCategory{
+                    TrackingCategories: []*components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
-                        components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
@@ -204,12 +204,12 @@ func main() {
                         ID: sdkgo.String("123456"),
                         Rate: sdkgo.Float64(10),
                     },
-                    TrackingCategories: []components.LinkedTrackingCategory{
-                        components.LinkedTrackingCategory{
+                    TrackingCategories: []*components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
-                        components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
@@ -263,8 +263,8 @@ func main() {
             TaxType: sdkgo.String("sales"),
             TaxCode: sdkgo.String("1234"),
             Number: sdkgo.String("OIT00546"),
-            TrackingCategories: []components.LinkedTrackingCategory{
-                components.LinkedTrackingCategory{
+            TrackingCategories: []*components.LinkedTrackingCategory{
+                &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },
@@ -444,74 +444,12 @@ func main() {
                         ID: sdkgo.String("123456"),
                         Rate: sdkgo.Float64(10),
                     },
-                    TrackingCategories: []components.LinkedTrackingCategory{
-                        components.LinkedTrackingCategory{
+                    TrackingCategories: []*components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
-                        components.LinkedTrackingCategory{
-                            ID: sdkgo.String("123456"),
-                            Name: sdkgo.String("New York"),
-                        },
-                    },
-                    LedgerAccount: &components.LinkedLedgerAccountInput{
-                        ID: sdkgo.String("123456"),
-                        NominalCode: sdkgo.String("N091"),
-                        Code: sdkgo.String("453"),
-                    },
-                    Customer: &components.LinkedCustomerInput{
-                        ID: sdkgo.String("12345"),
-                        DisplayName: sdkgo.String("Windsurf Shop"),
-                        Email: sdkgo.String("boring@boring.com"),
-                    },
-                    Supplier: &components.LinkedSupplierInput{
-                        ID: sdkgo.String("12345"),
-                        DisplayName: sdkgo.String("Windsurf Shop"),
-                        Address: &components.Address{
-                            ID: sdkgo.String("123"),
-                            Type: components.TypePrimary.ToPointer(),
-                            String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
-                            Name: sdkgo.String("HQ US"),
-                            Line1: sdkgo.String("Main street"),
-                            Line2: sdkgo.String("apt #"),
-                            Line3: sdkgo.String("Suite #"),
-                            Line4: sdkgo.String("delivery instructions"),
-                            StreetNumber: sdkgo.String("25"),
-                            City: sdkgo.String("San Francisco"),
-                            State: sdkgo.String("CA"),
-                            PostalCode: sdkgo.String("94104"),
-                            Country: sdkgo.String("US"),
-                            Latitude: sdkgo.String("40.759211"),
-                            Longitude: sdkgo.String("-73.984638"),
-                            County: sdkgo.String("Santa Clara"),
-                            ContactName: sdkgo.String("Elon Musk"),
-                            Salutation: sdkgo.String("Mr"),
-                            PhoneNumber: sdkgo.String("111-111-1111"),
-                            Fax: sdkgo.String("122-111-1111"),
-                            Email: sdkgo.String("elon@musk.com"),
-                            Website: sdkgo.String("https://elonmusk.com"),
-                            Notes: sdkgo.String("Address notes or delivery instructions."),
-                            RowVersion: sdkgo.String("1-12345"),
-                        },
-                    },
-                    LineNumber: sdkgo.Int64(1),
-                },
-                components.JournalEntryLineItemInput{
-                    Description: sdkgo.String("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
-                    TaxAmount: sdkgo.Float64(27500),
-                    SubTotal: sdkgo.Float64(27500),
-                    TotalAmount: sdkgo.Float64(27500),
-                    Type: components.JournalEntryLineItemTypeDebit,
-                    TaxRate: &components.LinkedTaxRateInput{
-                        ID: sdkgo.String("123456"),
-                        Rate: sdkgo.Float64(10),
-                    },
-                    TrackingCategories: []components.LinkedTrackingCategory{
-                        components.LinkedTrackingCategory{
-                            ID: sdkgo.String("123456"),
-                            Name: sdkgo.String("New York"),
-                        },
-                        components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
@@ -568,16 +506,78 @@ func main() {
                         ID: sdkgo.String("123456"),
                         Rate: sdkgo.Float64(10),
                     },
-                    TrackingCategories: []components.LinkedTrackingCategory{
-                        components.LinkedTrackingCategory{
+                    TrackingCategories: []*components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
-                        components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
-                        components.LinkedTrackingCategory{
+                    },
+                    LedgerAccount: &components.LinkedLedgerAccountInput{
+                        ID: sdkgo.String("123456"),
+                        NominalCode: sdkgo.String("N091"),
+                        Code: sdkgo.String("453"),
+                    },
+                    Customer: &components.LinkedCustomerInput{
+                        ID: sdkgo.String("12345"),
+                        DisplayName: sdkgo.String("Windsurf Shop"),
+                        Email: sdkgo.String("boring@boring.com"),
+                    },
+                    Supplier: &components.LinkedSupplierInput{
+                        ID: sdkgo.String("12345"),
+                        DisplayName: sdkgo.String("Windsurf Shop"),
+                        Address: &components.Address{
+                            ID: sdkgo.String("123"),
+                            Type: components.TypePrimary.ToPointer(),
+                            String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
+                            Name: sdkgo.String("HQ US"),
+                            Line1: sdkgo.String("Main street"),
+                            Line2: sdkgo.String("apt #"),
+                            Line3: sdkgo.String("Suite #"),
+                            Line4: sdkgo.String("delivery instructions"),
+                            StreetNumber: sdkgo.String("25"),
+                            City: sdkgo.String("San Francisco"),
+                            State: sdkgo.String("CA"),
+                            PostalCode: sdkgo.String("94104"),
+                            Country: sdkgo.String("US"),
+                            Latitude: sdkgo.String("40.759211"),
+                            Longitude: sdkgo.String("-73.984638"),
+                            County: sdkgo.String("Santa Clara"),
+                            ContactName: sdkgo.String("Elon Musk"),
+                            Salutation: sdkgo.String("Mr"),
+                            PhoneNumber: sdkgo.String("111-111-1111"),
+                            Fax: sdkgo.String("122-111-1111"),
+                            Email: sdkgo.String("elon@musk.com"),
+                            Website: sdkgo.String("https://elonmusk.com"),
+                            Notes: sdkgo.String("Address notes or delivery instructions."),
+                            RowVersion: sdkgo.String("1-12345"),
+                        },
+                    },
+                    LineNumber: sdkgo.Int64(1),
+                },
+                components.JournalEntryLineItemInput{
+                    Description: sdkgo.String("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
+                    TaxAmount: sdkgo.Float64(27500),
+                    SubTotal: sdkgo.Float64(27500),
+                    TotalAmount: sdkgo.Float64(27500),
+                    Type: components.JournalEntryLineItemTypeDebit,
+                    TaxRate: &components.LinkedTaxRateInput{
+                        ID: sdkgo.String("123456"),
+                        Rate: sdkgo.Float64(10),
+                    },
+                    TrackingCategories: []*components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
+                            ID: sdkgo.String("123456"),
+                            Name: sdkgo.String("New York"),
+                        },
+                        &components.LinkedTrackingCategory{
+                            ID: sdkgo.String("123456"),
+                            Name: sdkgo.String("New York"),
+                        },
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
@@ -631,12 +631,12 @@ func main() {
             TaxType: sdkgo.String("sales"),
             TaxCode: sdkgo.String("1234"),
             Number: sdkgo.String("OIT00546"),
-            TrackingCategories: []components.LinkedTrackingCategory{
-                components.LinkedTrackingCategory{
+            TrackingCategories: []*components.LinkedTrackingCategory{
+                &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },
-                components.LinkedTrackingCategory{
+                &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },

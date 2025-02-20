@@ -31,13 +31,6 @@ func newInvoiceItems(sdkConfig sdkConfiguration) *InvoiceItems {
 // List Invoice Items
 // List Invoice Items
 func (s *InvoiceItems) List(ctx context.Context, request operations.AccountingInvoiceItemsAllRequest, opts ...operations.Option) (*operations.AccountingInvoiceItemsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.invoiceItemsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingInvoiceItemsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *InvoiceItems) List(ctx context.Context, request operations.AccountingIn
 	opURL, err := url.JoinPath(baseURL, "/accounting/invoice-items")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.invoiceItemsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -420,13 +421,6 @@ func (s *InvoiceItems) List(ctx context.Context, request operations.AccountingIn
 // Create Invoice Item
 // Create Invoice Item
 func (s *InvoiceItems) Create(ctx context.Context, request operations.AccountingInvoiceItemsAddRequest, opts ...operations.Option) (*operations.AccountingInvoiceItemsAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.invoiceItemsAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingInvoiceItemsAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -455,6 +449,13 @@ func (s *InvoiceItems) Create(ctx context.Context, request operations.Accounting
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.invoiceItemsAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "InvoiceItem", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -766,13 +767,6 @@ func (s *InvoiceItems) Create(ctx context.Context, request operations.Accounting
 // Get Invoice Item
 // Get Invoice Item
 func (s *InvoiceItems) Get(ctx context.Context, request operations.AccountingInvoiceItemsOneRequest, opts ...operations.Option) (*operations.AccountingInvoiceItemsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.invoiceItemsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingInvoiceItemsOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -799,6 +793,14 @@ func (s *InvoiceItems) Get(ctx context.Context, request operations.AccountingInv
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/invoice-items/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.invoiceItemsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1104,13 +1106,6 @@ func (s *InvoiceItems) Get(ctx context.Context, request operations.AccountingInv
 // Update Invoice Item
 // Update Invoice Item
 func (s *InvoiceItems) Update(ctx context.Context, request operations.AccountingInvoiceItemsUpdateRequest, opts ...operations.Option) (*operations.AccountingInvoiceItemsUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.invoiceItemsUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingInvoiceItemsUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1139,6 +1134,13 @@ func (s *InvoiceItems) Update(ctx context.Context, request operations.Accounting
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.invoiceItemsUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "InvoiceItem", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1450,13 +1452,6 @@ func (s *InvoiceItems) Update(ctx context.Context, request operations.Accounting
 // Delete Invoice Item
 // Delete Invoice Item
 func (s *InvoiceItems) Delete(ctx context.Context, request operations.AccountingInvoiceItemsDeleteRequest, opts ...operations.Option) (*operations.AccountingInvoiceItemsDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.invoiceItemsDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingInvoiceItemsDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1483,6 +1478,14 @@ func (s *InvoiceItems) Delete(ctx context.Context, request operations.Accounting
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/invoice-items/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.invoiceItemsDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

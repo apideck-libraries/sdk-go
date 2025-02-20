@@ -31,7 +31,7 @@ type JournalEntryInput struct {
 	// Journal entry number.
 	Number *string `json:"number,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// Accounting period
 	AccountingPeriod *string `json:"accounting_period,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -129,7 +129,7 @@ func (o *JournalEntryInput) GetNumber() *string {
 	return o.Number
 }
 
-func (o *JournalEntryInput) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *JournalEntryInput) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}

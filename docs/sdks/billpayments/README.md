@@ -190,12 +190,12 @@ func main() {
             },
             Note: sdkgo.String("Some notes about this transaction"),
             Number: sdkgo.String("123456"),
-            TrackingCategories: []components.LinkedTrackingCategory{
-                components.LinkedTrackingCategory{
+            TrackingCategories: []*components.LinkedTrackingCategory{
+                &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },
-                components.LinkedTrackingCategory{
+                &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },
@@ -475,12 +475,12 @@ func main() {
             },
             Note: sdkgo.String("Some notes about this transaction"),
             Number: sdkgo.String("123456"),
-            TrackingCategories: []components.LinkedTrackingCategory{
-                components.LinkedTrackingCategory{
+            TrackingCategories: []*components.LinkedTrackingCategory{
+                &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },
-                components.LinkedTrackingCategory{
+                &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },

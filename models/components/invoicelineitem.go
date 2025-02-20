@@ -77,9 +77,9 @@ type InvoiceLineItem struct {
 	Item         *LinkedInvoiceItem `json:"item,omitempty"`
 	TaxRate      *LinkedTaxRate     `json:"tax_rate,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
-	LedgerAccount      *LinkedLedgerAccount     `json:"ledger_account,omitempty"`
-	CustomFields       []CustomField            `json:"custom_fields,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	LedgerAccount      *LinkedLedgerAccount      `json:"ledger_account,omitempty"`
+	CustomFields       []CustomField             `json:"custom_fields,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
 	RowVersion *string `json:"row_version,omitempty"`
 	// The user who last updated the object.
@@ -222,7 +222,7 @@ func (o *InvoiceLineItem) GetTaxRate() *LinkedTaxRate {
 	return o.TaxRate
 }
 
-func (o *InvoiceLineItem) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *InvoiceLineItem) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}
@@ -310,7 +310,7 @@ type InvoiceLineItemInput struct {
 	Item         *LinkedInvoiceItem  `json:"item,omitempty"`
 	TaxRate      *LinkedTaxRateInput `json:"tax_rate,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory  `json:"tracking_categories,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	LedgerAccount      *LinkedLedgerAccountInput `json:"ledger_account,omitempty"`
 	CustomFields       []CustomField             `json:"custom_fields,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -436,7 +436,7 @@ func (o *InvoiceLineItemInput) GetTaxRate() *LinkedTaxRateInput {
 	return o.TaxRate
 }
 
-func (o *InvoiceLineItemInput) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *InvoiceLineItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}

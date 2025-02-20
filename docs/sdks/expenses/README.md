@@ -134,12 +134,12 @@ func main() {
             TotalAmount: sdkgo.Float64(275),
             LineItems: []components.ExpenseLineItemInput{
                 components.ExpenseLineItemInput{
-                    TrackingCategories: []components.LinkedTrackingCategory{
-                        components.LinkedTrackingCategory{
+                    TrackingCategories: []*components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
-                        components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
@@ -380,35 +380,12 @@ func main() {
             TotalAmount: sdkgo.Float64(275),
             LineItems: []components.ExpenseLineItemInput{
                 components.ExpenseLineItemInput{
-                    TrackingCategories: []components.LinkedTrackingCategory{
-                        components.LinkedTrackingCategory{
+                    TrackingCategories: []*components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
-                        components.LinkedTrackingCategory{
-                            ID: sdkgo.String("123456"),
-                            Name: sdkgo.String("New York"),
-                        },
-                    },
-                    AccountID: sdkgo.String("123456"),
-                    CustomerID: sdkgo.String("12345"),
-                    DepartmentID: sdkgo.String("12345"),
-                    LocationID: sdkgo.String("12345"),
-                    TaxRate: &components.LinkedTaxRateInput{
-                        ID: sdkgo.String("123456"),
-                        Rate: sdkgo.Float64(10),
-                    },
-                    Description: sdkgo.String("Travel US."),
-                    TotalAmount: sdkgo.Float64(275),
-                    Billable: sdkgo.Bool(true),
-                },
-                components.ExpenseLineItemInput{
-                    TrackingCategories: []components.LinkedTrackingCategory{
-                        components.LinkedTrackingCategory{
-                            ID: sdkgo.String("123456"),
-                            Name: sdkgo.String("New York"),
-                        },
-                        components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
@@ -426,16 +403,39 @@ func main() {
                     Billable: sdkgo.Bool(true),
                 },
                 components.ExpenseLineItemInput{
-                    TrackingCategories: []components.LinkedTrackingCategory{
-                        components.LinkedTrackingCategory{
+                    TrackingCategories: []*components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
-                        components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },
-                        components.LinkedTrackingCategory{
+                    },
+                    AccountID: sdkgo.String("123456"),
+                    CustomerID: sdkgo.String("12345"),
+                    DepartmentID: sdkgo.String("12345"),
+                    LocationID: sdkgo.String("12345"),
+                    TaxRate: &components.LinkedTaxRateInput{
+                        ID: sdkgo.String("123456"),
+                        Rate: sdkgo.Float64(10),
+                    },
+                    Description: sdkgo.String("Travel US."),
+                    TotalAmount: sdkgo.Float64(275),
+                    Billable: sdkgo.Bool(true),
+                },
+                components.ExpenseLineItemInput{
+                    TrackingCategories: []*components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
+                            ID: sdkgo.String("123456"),
+                            Name: sdkgo.String("New York"),
+                        },
+                        &components.LinkedTrackingCategory{
+                            ID: sdkgo.String("123456"),
+                            Name: sdkgo.String("New York"),
+                        },
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.String("123456"),
                             Name: sdkgo.String("New York"),
                         },

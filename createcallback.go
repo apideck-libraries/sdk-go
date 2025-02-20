@@ -28,13 +28,6 @@ func newCreateCallback(sdkConfig sdkConfiguration) *CreateCallback {
 // State - Create Callback State
 // This endpoint creates a callback state that can be used to issue requests to the callback endpoint.
 func (s *CreateCallback) State(ctx context.Context, request operations.VaultCreateCallbackStateRequest, opts ...operations.Option) (*operations.VaultCreateCallbackStateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.createCallbackState",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.VaultCreateCallbackStateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -63,6 +56,13 @@ func (s *CreateCallback) State(ctx context.Context, request operations.VaultCrea
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.createCallbackState",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateCallbackState", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err

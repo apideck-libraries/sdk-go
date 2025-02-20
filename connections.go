@@ -31,13 +31,6 @@ func newConnections(sdkConfig sdkConfiguration) *Connections {
 // to build an integrations page where your users can install integrations.
 // OAuth2 supported integrations will contain authorize and revoke links to handle the authentication flows.
 func (s *Connections) List(ctx context.Context, consumerID *string, appID *string, api *string, configured *bool, opts ...operations.Option) (*operations.VaultConnectionsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.connectionsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.VaultConnectionsAllRequest{
 		ConsumerID: consumerID,
 		AppID:      appID,
@@ -71,6 +64,14 @@ func (s *Connections) List(ctx context.Context, consumerID *string, appID *strin
 	opURL, err := url.JoinPath(baseURL, "/vault/connections")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.connectionsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -376,13 +377,6 @@ func (s *Connections) List(ctx context.Context, consumerID *string, appID *strin
 // Get connection
 // Get a connection
 func (s *Connections) Get(ctx context.Context, serviceID string, unifiedAPI string, consumerID *string, appID *string, opts ...operations.Option) (*operations.VaultConnectionsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.connectionsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.VaultConnectionsOneRequest{
 		ConsumerID: consumerID,
 		AppID:      appID,
@@ -416,6 +410,14 @@ func (s *Connections) Get(ctx context.Context, serviceID string, unifiedAPI stri
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/vault/connections/{unified_api}/{service_id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.connectionsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -717,13 +719,6 @@ func (s *Connections) Get(ctx context.Context, serviceID string, unifiedAPI stri
 // Update connection
 // Update a connection
 func (s *Connections) Update(ctx context.Context, request operations.VaultConnectionsUpdateRequest, opts ...operations.Option) (*operations.VaultConnectionsUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.connectionsUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.VaultConnectionsUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -752,6 +747,13 @@ func (s *Connections) Update(ctx context.Context, request operations.VaultConnec
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.connectionsUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Connection", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1059,13 +1061,6 @@ func (s *Connections) Update(ctx context.Context, request operations.VaultConnec
 // Delete - Deletes a connection
 // Deletes a connection
 func (s *Connections) Delete(ctx context.Context, serviceID string, unifiedAPI string, consumerID *string, appID *string, opts ...operations.Option) (*operations.VaultConnectionsDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.connectionsDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.VaultConnectionsDeleteRequest{
 		ConsumerID: consumerID,
 		AppID:      appID,
@@ -1099,6 +1094,14 @@ func (s *Connections) Delete(ctx context.Context, serviceID string, unifiedAPI s
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/vault/connections/{unified_api}/{service_id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.connectionsDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1380,13 +1383,6 @@ func (s *Connections) Delete(ctx context.Context, serviceID string, unifiedAPI s
 // Imports - Import connection
 // Import an authorized connection.
 func (s *Connections) Imports(ctx context.Context, request operations.VaultConnectionsImportRequest, opts ...operations.Option) (*operations.VaultConnectionsImportResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.connectionsImport",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.VaultConnectionsImportGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1415,6 +1411,13 @@ func (s *Connections) Imports(ctx context.Context, request operations.VaultConne
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.connectionsImport",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "ConnectionImportData", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1727,13 +1730,6 @@ func (s *Connections) Imports(ctx context.Context, request operations.VaultConne
 //   - The access token will not be returned in the response. A 200 response code indicates the authorization was successful and that a valid access token was stored on the connection.
 //   - The access token will be used for subsequent API requests.
 func (s *Connections) Token(ctx context.Context, request operations.VaultConnectionsTokenRequest, opts ...operations.Option) (*operations.VaultConnectionsTokenResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "vault.connectionsToken",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.VaultConnectionsTokenGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1762,6 +1758,13 @@ func (s *Connections) Token(ctx context.Context, request operations.VaultConnect
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "vault.connectionsToken",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err

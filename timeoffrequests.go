@@ -31,13 +31,6 @@ func newTimeOffRequests(sdkConfig sdkConfiguration) *TimeOffRequests {
 // List Time Off Requests
 // List Time Off Requests
 func (s *TimeOffRequests) List(ctx context.Context, request operations.HrisTimeOffRequestsAllRequest, opts ...operations.Option) (*operations.HrisTimeOffRequestsAllResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "hris.timeOffRequestsAll",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.HrisTimeOffRequestsAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -64,6 +57,14 @@ func (s *TimeOffRequests) List(ctx context.Context, request operations.HrisTimeO
 	opURL, err := url.JoinPath(baseURL, "/hris/time-off-requests")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "hris.timeOffRequestsAll",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -419,13 +420,6 @@ func (s *TimeOffRequests) List(ctx context.Context, request operations.HrisTimeO
 // Create Time Off Request
 // Create Time Off Request
 func (s *TimeOffRequests) Create(ctx context.Context, request operations.HrisTimeOffRequestsAddRequest, opts ...operations.Option) (*operations.HrisTimeOffRequestsAddResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "hris.timeOffRequestsAdd",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.HrisTimeOffRequestsAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -454,6 +448,13 @@ func (s *TimeOffRequests) Create(ctx context.Context, request operations.HrisTim
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "hris.timeOffRequestsAdd",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "TimeOffRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -765,13 +766,6 @@ func (s *TimeOffRequests) Create(ctx context.Context, request operations.HrisTim
 // Get Time Off Request
 // Get Time Off Request
 func (s *TimeOffRequests) Get(ctx context.Context, request operations.HrisTimeOffRequestsOneRequest, opts ...operations.Option) (*operations.HrisTimeOffRequestsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "hris.timeOffRequestsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.HrisTimeOffRequestsOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -798,6 +792,14 @@ func (s *TimeOffRequests) Get(ctx context.Context, request operations.HrisTimeOf
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "hris.timeOffRequestsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1103,13 +1105,6 @@ func (s *TimeOffRequests) Get(ctx context.Context, request operations.HrisTimeOf
 // Update Time Off Request
 // Update Time Off Request
 func (s *TimeOffRequests) Update(ctx context.Context, request operations.HrisTimeOffRequestsUpdateRequest, opts ...operations.Option) (*operations.HrisTimeOffRequestsUpdateResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "hris.timeOffRequestsUpdate",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.HrisTimeOffRequestsUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1138,6 +1133,13 @@ func (s *TimeOffRequests) Update(ctx context.Context, request operations.HrisTim
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "hris.timeOffRequestsUpdate",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "TimeOffRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1449,13 +1451,6 @@ func (s *TimeOffRequests) Update(ctx context.Context, request operations.HrisTim
 // Delete Time Off Request
 // Delete Time Off Request
 func (s *TimeOffRequests) Delete(ctx context.Context, request operations.HrisTimeOffRequestsDeleteRequest, opts ...operations.Option) (*operations.HrisTimeOffRequestsDeleteResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "hris.timeOffRequestsDelete",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.HrisTimeOffRequestsDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -1482,6 +1477,14 @@ func (s *TimeOffRequests) Delete(ctx context.Context, request operations.HrisTim
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "hris.timeOffRequestsDelete",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

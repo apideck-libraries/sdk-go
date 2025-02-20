@@ -29,13 +29,6 @@ func newAgedDebtors(sdkConfig sdkConfiguration) *AgedDebtors {
 // Get Aged Debtors
 // Get Aged Debtors
 func (s *AgedDebtors) Get(ctx context.Context, request operations.AccountingAgedDebtorsOneRequest, opts ...operations.Option) (*operations.AccountingAgedDebtorsOneResponse, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "accounting.agedDebtorsOne",
-		OAuth2Scopes:   []string{},
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.AccountingAgedDebtorsOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
@@ -62,6 +55,14 @@ func (s *AgedDebtors) Get(ctx context.Context, request operations.AccountingAged
 	opURL, err := url.JoinPath(baseURL, "/accounting/aged-debtors")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "accounting.agedDebtorsOne",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

@@ -72,6 +72,9 @@ const (
 	WebhookEventTypeAccountingPurchaseOrderCreated    WebhookEventType = "accounting.purchase_order.created"
 	WebhookEventTypeAccountingPurchaseOrderUpdated    WebhookEventType = "accounting.purchase_order.updated"
 	WebhookEventTypeAccountingPurchaseOrderDeleted    WebhookEventType = "accounting.purchase_order.deleted"
+	WebhookEventTypeAccountingCreditNoteCreated       WebhookEventType = "accounting.credit_note.created"
+	WebhookEventTypeAccountingCreditNoteUpdated       WebhookEventType = "accounting.credit_note.updated"
+	WebhookEventTypeAccountingCreditNoteDeleted       WebhookEventType = "accounting.credit_note.deleted"
 	WebhookEventTypePosOrderCreated                   WebhookEventType = "pos.order.created"
 	WebhookEventTypePosOrderUpdated                   WebhookEventType = "pos.order.updated"
 	WebhookEventTypePosOrderDeleted                   WebhookEventType = "pos.order.deleted"
@@ -258,6 +261,12 @@ func (e *WebhookEventType) UnmarshalJSON(data []byte) error {
 	case "accounting.purchase_order.updated":
 		fallthrough
 	case "accounting.purchase_order.deleted":
+		fallthrough
+	case "accounting.credit_note.created":
+		fallthrough
+	case "accounting.credit_note.updated":
+		fallthrough
+	case "accounting.credit_note.deleted":
 		fallthrough
 	case "pos.order.created":
 		fallthrough

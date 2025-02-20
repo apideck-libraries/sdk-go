@@ -113,7 +113,7 @@ type Bill struct {
 	// Discount percentage applied to this transaction.
 	DiscountPercentage *float64 `json:"discount_percentage,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// The user who last updated the object.
 	UpdatedBy *string `json:"updated_by,omitempty"`
 	// The user who created the object.
@@ -354,7 +354,7 @@ func (o *Bill) GetDiscountPercentage() *float64 {
 	return o.DiscountPercentage
 }
 
-func (o *Bill) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *Bill) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}
@@ -478,7 +478,7 @@ type BillInput struct {
 	// Discount percentage applied to this transaction.
 	DiscountPercentage *float64 `json:"discount_percentage,omitempty"`
 	// A list of linked tracking categories.
-	TrackingCategories []LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
 	RowVersion   *string       `json:"row_version,omitempty"`
 	CustomFields []CustomField `json:"custom_fields,omitempty"`
@@ -695,7 +695,7 @@ func (o *BillInput) GetDiscountPercentage() *float64 {
 	return o.DiscountPercentage
 }
 
-func (o *BillInput) GetTrackingCategories() []LinkedTrackingCategory {
+func (o *BillInput) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
 	}

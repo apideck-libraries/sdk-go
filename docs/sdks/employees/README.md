@@ -189,11 +189,11 @@ func main() {
             Gender: components.GenderMale.ToPointer(),
             Pronouns: sdkgo.String("she,her"),
             PreferredLanguage: sdkgo.String("EN"),
-            Languages: []string{
-                "EN",
+            Languages: []*string{
+                sdkgo.String("EN"),
             },
-            Nationalities: []string{
-                "US",
+            Nationalities: []*string{
+                sdkgo.String("US"),
             },
             PhotoURL: sdkgo.String("https://unavatar.io/elon-musk"),
             Timezone: sdkgo.String("Europe/London"),
@@ -641,11 +641,11 @@ func main() {
             Gender: components.GenderMale.ToPointer(),
             Pronouns: sdkgo.String("she,her"),
             PreferredLanguage: sdkgo.String("EN"),
-            Languages: []string{
-                "EN",
+            Languages: []*string{
+                sdkgo.String("EN"),
             },
-            Nationalities: []string{
-                "US",
+            Nationalities: []*string{
+                sdkgo.String("US"),
             },
             PhotoURL: sdkgo.String("https://unavatar.io/elon-musk"),
             Timezone: sdkgo.String("Europe/London"),
