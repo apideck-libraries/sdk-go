@@ -21,6 +21,8 @@ type DeleteConsumerResponse struct {
 	// HTTP Response Status
 	Status string                     `json:"status"`
 	Data   DeleteConsumerResponseData `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *DeleteConsumerResponse) GetStatusCode() int64 {
@@ -42,4 +44,11 @@ func (o *DeleteConsumerResponse) GetData() DeleteConsumerResponseData {
 		return DeleteConsumerResponseData{}
 	}
 	return o.Data
+}
+
+func (o *DeleteConsumerResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

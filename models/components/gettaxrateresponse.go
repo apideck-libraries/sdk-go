@@ -15,6 +15,8 @@ type GetTaxRateResponse struct {
 	// Operation performed
 	Operation string  `json:"operation"`
 	Data      TaxRate `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *GetTaxRateResponse) GetStatusCode() int64 {
@@ -57,4 +59,11 @@ func (o *GetTaxRateResponse) GetData() TaxRate {
 		return TaxRate{}
 	}
 	return o.Data
+}
+
+func (o *GetTaxRateResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

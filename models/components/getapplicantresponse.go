@@ -15,6 +15,8 @@ type GetApplicantResponse struct {
 	// Operation performed
 	Operation string    `json:"operation"`
 	Data      Applicant `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *GetApplicantResponse) GetStatusCode() int64 {
@@ -57,4 +59,11 @@ func (o *GetApplicantResponse) GetData() Applicant {
 		return Applicant{}
 	}
 	return o.Data
+}
+
+func (o *GetApplicantResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

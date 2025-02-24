@@ -89,6 +89,8 @@ type GetConsumersResponse struct {
 	Meta *Meta `json:"meta,omitempty"`
 	// Links to navigate to previous or next pages through the API
 	Links *Links `json:"links,omitempty"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *GetConsumersResponse) GetStatusCode() int64 {
@@ -124,4 +126,11 @@ func (o *GetConsumersResponse) GetLinks() *Links {
 		return nil
 	}
 	return o.Links
+}
+
+func (o *GetConsumersResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

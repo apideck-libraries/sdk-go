@@ -15,6 +15,8 @@ type GetSharedLinkResponse struct {
 	// Operation performed
 	Operation string     `json:"operation"`
 	Data      SharedLink `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *GetSharedLinkResponse) GetStatusCode() int64 {
@@ -57,4 +59,11 @@ func (o *GetSharedLinkResponse) GetData() SharedLink {
 		return SharedLink{}
 	}
 	return o.Data
+}
+
+func (o *GetSharedLinkResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

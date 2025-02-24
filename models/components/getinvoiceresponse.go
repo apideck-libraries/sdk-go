@@ -15,6 +15,8 @@ type GetInvoiceResponse struct {
 	// Operation performed
 	Operation string  `json:"operation"`
 	Data      Invoice `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *GetInvoiceResponse) GetStatusCode() int64 {
@@ -57,4 +59,11 @@ func (o *GetInvoiceResponse) GetData() Invoice {
 		return Invoice{}
 	}
 	return o.Data
+}
+
+func (o *GetInvoiceResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

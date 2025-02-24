@@ -9,6 +9,8 @@ type GetAPIResourceCoverageResponse struct {
 	// HTTP Response Status
 	Status string              `json:"status"`
 	Data   APIResourceCoverage `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 	// Response metadata
 	Meta *Meta `json:"meta,omitempty"`
 	// Links to navigate to previous or next pages through the API
@@ -34,6 +36,13 @@ func (o *GetAPIResourceCoverageResponse) GetData() APIResourceCoverage {
 		return APIResourceCoverage{}
 	}
 	return o.Data
+}
+
+func (o *GetAPIResourceCoverageResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }
 
 func (o *GetAPIResourceCoverageResponse) GetMeta() *Meta {

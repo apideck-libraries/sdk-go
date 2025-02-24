@@ -15,6 +15,8 @@ type GetJournalEntryResponse struct {
 	// Operation performed
 	Operation string       `json:"operation"`
 	Data      JournalEntry `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *GetJournalEntryResponse) GetStatusCode() int64 {
@@ -57,4 +59,11 @@ func (o *GetJournalEntryResponse) GetData() JournalEntry {
 		return JournalEntry{}
 	}
 	return o.Data
+}
+
+func (o *GetJournalEntryResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

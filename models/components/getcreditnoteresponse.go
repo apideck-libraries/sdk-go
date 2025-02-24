@@ -15,6 +15,8 @@ type GetCreditNoteResponse struct {
 	// Operation performed
 	Operation string     `json:"operation"`
 	Data      CreditNote `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *GetCreditNoteResponse) GetStatusCode() int64 {
@@ -57,4 +59,11 @@ func (o *GetCreditNoteResponse) GetData() CreditNote {
 		return CreditNote{}
 	}
 	return o.Data
+}
+
+func (o *GetCreditNoteResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

@@ -15,6 +15,8 @@ type GetTrackingCategoryResponse struct {
 	// Operation performed
 	Operation string           `json:"operation"`
 	Data      TrackingCategory `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *GetTrackingCategoryResponse) GetStatusCode() int64 {
@@ -57,4 +59,11 @@ func (o *GetTrackingCategoryResponse) GetData() TrackingCategory {
 		return TrackingCategory{}
 	}
 	return o.Data
+}
+
+func (o *GetTrackingCategoryResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

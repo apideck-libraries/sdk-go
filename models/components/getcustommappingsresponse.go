@@ -9,6 +9,8 @@ type GetCustomMappingsResponse struct {
 	// HTTP Response Status
 	Status string          `json:"status"`
 	Data   []CustomMapping `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *GetCustomMappingsResponse) GetStatusCode() int64 {
@@ -30,4 +32,11 @@ func (o *GetCustomMappingsResponse) GetData() []CustomMapping {
 		return []CustomMapping{}
 	}
 	return o.Data
+}
+
+func (o *GetCustomMappingsResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

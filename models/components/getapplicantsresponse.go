@@ -15,6 +15,8 @@ type GetApplicantsResponse struct {
 	// Operation performed
 	Operation string      `json:"operation"`
 	Data      []Applicant `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 	// Response metadata
 	Meta *Meta `json:"meta,omitempty"`
 	// Links to navigate to previous or next pages through the API
@@ -61,6 +63,13 @@ func (o *GetApplicantsResponse) GetData() []Applicant {
 		return []Applicant{}
 	}
 	return o.Data
+}
+
+func (o *GetApplicantsResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }
 
 func (o *GetApplicantsResponse) GetMeta() *Meta {

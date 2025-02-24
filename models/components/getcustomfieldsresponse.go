@@ -9,6 +9,8 @@ type GetCustomFieldsResponse struct {
 	// HTTP Response Status
 	Status string              `json:"status"`
 	Data   []CustomFieldFinder `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *GetCustomFieldsResponse) GetStatusCode() int64 {
@@ -30,4 +32,11 @@ func (o *GetCustomFieldsResponse) GetData() []CustomFieldFinder {
 		return []CustomFieldFinder{}
 	}
 	return o.Data
+}
+
+func (o *GetCustomFieldsResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

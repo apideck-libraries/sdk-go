@@ -16,6 +16,8 @@ type UpdateDriveResponse struct {
 	Operation string `json:"operation"`
 	// A object containing a unique identifier for the resource that was created, updated, or deleted.
 	Data UnifiedID `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *UpdateDriveResponse) GetStatusCode() int64 {
@@ -58,4 +60,11 @@ func (o *UpdateDriveResponse) GetData() UnifiedID {
 		return UnifiedID{}
 	}
 	return o.Data
+}
+
+func (o *UpdateDriveResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }
