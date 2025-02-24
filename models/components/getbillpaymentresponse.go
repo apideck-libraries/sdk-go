@@ -15,6 +15,8 @@ type GetBillPaymentResponse struct {
 	// Operation performed
 	Operation string      `json:"operation"`
 	Data      BillPayment `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *GetBillPaymentResponse) GetStatusCode() int64 {
@@ -57,4 +59,11 @@ func (o *GetBillPaymentResponse) GetData() BillPayment {
 		return BillPayment{}
 	}
 	return o.Data
+}
+
+func (o *GetBillPaymentResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

@@ -15,6 +15,8 @@ type GetEmployeePayrollResponse struct {
 	// Operation performed
 	Operation string          `json:"operation"`
 	Data      EmployeePayroll `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *GetEmployeePayrollResponse) GetStatusCode() int64 {
@@ -57,4 +59,11 @@ func (o *GetEmployeePayrollResponse) GetData() EmployeePayroll {
 		return EmployeePayroll{}
 	}
 	return o.Data
+}
+
+func (o *GetEmployeePayrollResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

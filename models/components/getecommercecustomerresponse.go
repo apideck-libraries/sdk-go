@@ -15,6 +15,8 @@ type GetEcommerceCustomerResponse struct {
 	// Operation performed
 	Operation string            `json:"operation"`
 	Data      EcommerceCustomer `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *GetEcommerceCustomerResponse) GetStatusCode() int64 {
@@ -57,4 +59,11 @@ func (o *GetEcommerceCustomerResponse) GetData() EcommerceCustomer {
 		return EcommerceCustomer{}
 	}
 	return o.Data
+}
+
+func (o *GetEcommerceCustomerResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

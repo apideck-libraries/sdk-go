@@ -30,6 +30,8 @@ type ValidateConnectionStateResponse struct {
 	// HTTP Response Status
 	Status string                              `json:"status"`
 	Data   ValidateConnectionStateResponseData `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *ValidateConnectionStateResponse) GetStatusCode() int64 {
@@ -51,4 +53,11 @@ func (o *ValidateConnectionStateResponse) GetData() ValidateConnectionStateRespo
 		return ValidateConnectionStateResponseData{}
 	}
 	return o.Data
+}
+
+func (o *ValidateConnectionStateResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

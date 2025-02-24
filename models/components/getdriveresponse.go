@@ -15,6 +15,8 @@ type GetDriveResponse struct {
 	// Operation performed
 	Operation string `json:"operation"`
 	Data      Drive  `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *GetDriveResponse) GetStatusCode() int64 {
@@ -57,4 +59,11 @@ func (o *GetDriveResponse) GetData() Drive {
 		return Drive{}
 	}
 	return o.Data
+}
+
+func (o *GetDriveResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

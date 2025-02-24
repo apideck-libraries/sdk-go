@@ -15,6 +15,8 @@ type GetOpportunityResponse struct {
 	// Operation performed
 	Operation string      `json:"operation"`
 	Data      Opportunity `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *GetOpportunityResponse) GetStatusCode() int64 {
@@ -57,4 +59,11 @@ func (o *GetOpportunityResponse) GetData() Opportunity {
 		return Opportunity{}
 	}
 	return o.Data
+}
+
+func (o *GetOpportunityResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

@@ -28,6 +28,8 @@ type CreateSessionResponse struct {
 	// HTTP Response Status
 	Status string                    `json:"status"`
 	Data   CreateSessionResponseData `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *CreateSessionResponse) GetStatusCode() int64 {
@@ -49,4 +51,11 @@ func (o *CreateSessionResponse) GetData() CreateSessionResponseData {
 		return CreateSessionResponseData{}
 	}
 	return o.Data
+}
+
+func (o *CreateSessionResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

@@ -15,6 +15,8 @@ type GetFileResponse struct {
 	// Operation performed
 	Operation string      `json:"operation"`
 	Data      UnifiedFile `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *GetFileResponse) GetStatusCode() int64 {
@@ -57,4 +59,11 @@ func (o *GetFileResponse) GetData() UnifiedFile {
 		return UnifiedFile{}
 	}
 	return o.Data
+}
+
+func (o *GetFileResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }

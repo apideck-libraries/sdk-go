@@ -15,6 +15,8 @@ type GetLeadResponse struct {
 	// Operation performed
 	Operation string `json:"operation"`
 	Data      Lead   `json:"data"`
+	// Raw response from the integration when raw=true query param is provided
+	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (o *GetLeadResponse) GetStatusCode() int64 {
@@ -57,4 +59,11 @@ func (o *GetLeadResponse) GetData() Lead {
 		return Lead{}
 	}
 	return o.Data
+}
+
+func (o *GetLeadResponse) GetRaw() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Raw
 }
