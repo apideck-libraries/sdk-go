@@ -31,7 +31,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
@@ -109,7 +109,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
@@ -218,7 +218,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
@@ -282,7 +282,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
@@ -421,7 +421,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),

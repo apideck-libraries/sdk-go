@@ -31,7 +31,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
@@ -113,7 +113,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
@@ -176,7 +176,7 @@ func main() {
             Addresses: []components.Address{
                 components.Address{
                     ID: sdkgo.String("123"),
-                    Type: components.TypePrimary.ToPointer(),
+                    Type: components.AddressTypePrimary.ToPointer(),
                     String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
                     Name: sdkgo.String("HQ US"),
                     Line1: sdkgo.String("Main street"),
@@ -202,7 +202,7 @@ func main() {
                 },
                 components.Address{
                     ID: sdkgo.String("123"),
-                    Type: components.TypePrimary.ToPointer(),
+                    Type: components.AddressTypePrimary.ToPointer(),
                     String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
                     Name: sdkgo.String("HQ US"),
                     Line1: sdkgo.String("Main street"),
@@ -228,7 +228,7 @@ func main() {
                 },
                 components.Address{
                     ID: sdkgo.String("123"),
-                    Type: components.TypePrimary.ToPointer(),
+                    Type: components.AddressTypePrimary.ToPointer(),
                     String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
                     Name: sdkgo.String("HQ US"),
                     Line1: sdkgo.String("Main street"),
@@ -372,7 +372,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
@@ -437,7 +437,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
@@ -517,7 +517,7 @@ func main() {
             Addresses: []components.Address{
                 components.Address{
                     ID: sdkgo.String("123"),
-                    Type: components.TypePrimary.ToPointer(),
+                    Type: components.AddressTypePrimary.ToPointer(),
                     String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
                     Name: sdkgo.String("HQ US"),
                     Line1: sdkgo.String("Main street"),
@@ -543,7 +543,7 @@ func main() {
                 },
                 components.Address{
                     ID: sdkgo.String("123"),
-                    Type: components.TypePrimary.ToPointer(),
+                    Type: components.AddressTypePrimary.ToPointer(),
                     String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
                     Name: sdkgo.String("HQ US"),
                     Line1: sdkgo.String("Main street"),
@@ -569,7 +569,7 @@ func main() {
                 },
                 components.Address{
                     ID: sdkgo.String("123"),
-                    Type: components.TypePrimary.ToPointer(),
+                    Type: components.AddressTypePrimary.ToPointer(),
                     String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
                     Name: sdkgo.String("HQ US"),
                     Line1: sdkgo.String("Main street"),
@@ -726,7 +726,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := sdkgo.New(
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
