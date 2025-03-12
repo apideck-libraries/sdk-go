@@ -56,6 +56,8 @@ type CustomersFilter struct {
 	// Status of customer to filter on
 	Status       *CustomersFilterStatus `queryParam:"name=status"`
 	UpdatedSince *time.Time             `queryParam:"name=updated_since"`
+	// Supplier ID of customer to search for
+	SupplierID *string `queryParam:"name=supplier_id"`
 }
 
 func (c CustomersFilter) MarshalJSON() ([]byte, error) {
@@ -116,4 +118,11 @@ func (o *CustomersFilter) GetUpdatedSince() *time.Time {
 		return nil
 	}
 	return o.UpdatedSince
+}
+
+func (o *CustomersFilter) GetSupplierID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.SupplierID
 }

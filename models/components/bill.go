@@ -112,6 +112,8 @@ type Bill struct {
 	BankAccount     *BankAccount `json:"bank_account,omitempty"`
 	// Discount percentage applied to this transaction.
 	DiscountPercentage *float64 `json:"discount_percentage,omitempty"`
+	// URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.
+	SourceDocumentURL *string `json:"source_document_url,omitempty"`
 	// A list of linked tracking categories.
 	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// The user who last updated the object.
@@ -354,6 +356,13 @@ func (o *Bill) GetDiscountPercentage() *float64 {
 	return o.DiscountPercentage
 }
 
+func (o *Bill) GetSourceDocumentURL() *string {
+	if o == nil {
+		return nil
+	}
+	return o.SourceDocumentURL
+}
+
 func (o *Bill) GetTrackingCategories() []*LinkedTrackingCategory {
 	if o == nil {
 		return nil
@@ -477,6 +486,8 @@ type BillInput struct {
 	BankAccount     *BankAccount `json:"bank_account,omitempty"`
 	// Discount percentage applied to this transaction.
 	DiscountPercentage *float64 `json:"discount_percentage,omitempty"`
+	// URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.
+	SourceDocumentURL *string `json:"source_document_url,omitempty"`
 	// A list of linked tracking categories.
 	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -693,6 +704,13 @@ func (o *BillInput) GetDiscountPercentage() *float64 {
 		return nil
 	}
 	return o.DiscountPercentage
+}
+
+func (o *BillInput) GetSourceDocumentURL() *string {
+	if o == nil {
+		return nil
+	}
+	return o.SourceDocumentURL
 }
 
 func (o *BillInput) GetTrackingCategories() []*LinkedTrackingCategory {

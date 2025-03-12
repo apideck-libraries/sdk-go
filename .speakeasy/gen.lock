@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: d7135fd6bec8d864fcc4b9f14f36dfd2
-  docVersion: 10.11.5
-  speakeasyVersion: 1.509.1
-  generationVersion: 2.539.1
-  releaseVersion: 0.7.2
-  configChecksum: 8bdbfebde885274c313c316e2489a140
+  docChecksum: 1c457e5380748926df036f79bf4d8520
+  docVersion: 10.12.3
+  speakeasyVersion: 1.517.0
+  generationVersion: 2.548.1
+  releaseVersion: 0.8.0
+  configChecksum: 261e2abc46c0b96b90884cc42c615bad
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 features:
@@ -34,7 +34,7 @@ features:
     methodServerURLs: 2.82.1
     nameOverrides: 2.81.2
     nullables: 0.1.1
-    pagination: 2.82.3
+    pagination: 2.82.4
     responseFormat: 0.1.2
     retries: 2.83.2
     sdkHooks: 0.1.0
@@ -459,6 +459,8 @@ generatedFiles:
   - /models/components/pipeline.go
   - /models/components/profitandloss.go
   - /models/components/profitandlossfilter.go
+  - /models/components/profitandlossindicator.go
+  - /models/components/profitandlosstype.go
   - /models/components/purchaseorder.go
   - /models/components/purchaseordersfilter.go
   - /models/components/purchaseorderssort.go
@@ -991,6 +993,7 @@ generatedFiles:
   - docs/models/components/contactssort.md
   - docs/models/components/contactssortby.md
   - docs/models/components/copyfolderrequest.md
+  - docs/models/components/costofgoodssold.md
   - docs/models/components/coverage.md
   - docs/models/components/createaccountingdepartmentresponse.md
   - docs/models/components/createaccountinglocationresponse.md
@@ -1307,7 +1310,6 @@ generatedFiles:
   - docs/models/components/getwebhookeventlogsresponse.md
   - docs/models/components/getwebhookresponse.md
   - docs/models/components/getwebhooksresponse.md
-  - docs/models/components/grossprofit.md
   - docs/models/components/hriscompany.md
   - docs/models/components/hriscompanyinput.md
   - docs/models/components/hriscompanystatus.md
@@ -1391,8 +1393,6 @@ generatedFiles:
   - docs/models/components/messagetype.md
   - docs/models/components/meta.md
   - docs/models/components/mode.md
-  - docs/models/components/netincome.md
-  - docs/models/components/netoperatingincome.md
   - docs/models/components/note.md
   - docs/models/components/noteinput.md
   - docs/models/components/notes.md
@@ -1409,6 +1409,8 @@ generatedFiles:
   - docs/models/components/optionsobj.md
   - docs/models/components/orderssort.md
   - docs/models/components/orderssortby.md
+  - docs/models/components/otherexpenses.md
+  - docs/models/components/otherincome.md
   - docs/models/components/outstandingbalancebycurrency.md
   - docs/models/components/outstandingbalancebycustomer.md
   - docs/models/components/owner.md
@@ -1441,6 +1443,8 @@ generatedFiles:
   - docs/models/components/productstatus.md
   - docs/models/components/profitandloss.md
   - docs/models/components/profitandlossfilter.md
+  - docs/models/components/profitandlossindicator.md
+  - docs/models/components/profitandlosstype.md
   - docs/models/components/purchasedetails.md
   - docs/models/components/purchaseorder.md
   - docs/models/components/purchaseorderinput.md
@@ -1519,6 +1523,7 @@ generatedFiles:
   - docs/models/components/trackingitem.md
   - docs/models/components/transactiontype.md
   - docs/models/components/type.md
+  - docs/models/components/uncategorizedaccounts.md
   - docs/models/components/unexpectederrorresponse.md
   - docs/models/components/unifiedapi.md
   - docs/models/components/unifiedapiid.md
@@ -3355,7 +3360,7 @@ examples:
         query:
           raw: false
           limit: 20
-          filter: {"company_name": "SpaceX", "display_name": "Elon Musk", "first_name": "Elon", "last_name": "Musk", "email": "elon@musk.com", "status": "active", "updated_since": "2020-09-30T07:43:32.000Z"}
+          filter: {"company_name": "SpaceX", "display_name": "Elon Musk", "first_name": "Elon", "last_name": "Musk", "email": "elon@musk.com", "status": "active", "updated_since": "2020-09-30T07:43:32.000Z", "supplier_id": "123"}
           sort: {"by": "updated_at", "direction": "desc"}
           pass_through: {"search": "San Francisco"}
           fields: "id,updated_at"
@@ -3822,7 +3827,7 @@ examples:
           x-apideck-service-id: "salesforce"
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "ProfitAndLosses", "operation": "one", "data": {"id": "12345", "report_name": "ProfitAndLoss", "start_date": "2017-01-01", "end_date": "2017-01-01", "currency": "USD", "customer_id": "123", "income": {"total": 200000, "records": [{"id": "123", "name": "Income 1", "amount": 10000}, {"id": "456", "name": "Income 2", "amount": 20000}]}, "expenses": {"total": 200000, "records": [{"id": "123", "name": "Expense 1", "amount": 10000}, {"id": "456", "name": "Expense 2", "amount": 20000}]}, "net_income": {"total": 200000, "records": "<value>"}, "net_operating_income": {"total": 200000, "records": "<value>"}, "gross_profit": {"total": 200000, "records": "<value>"}}}
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "ProfitAndLosses", "operation": "one", "data": {"id": "12345", "report_name": "ProfitAndLoss", "start_date": "2017-01-01", "end_date": "2017-01-01", "currency": "USD", "income": {"total": 200000, "records": [{"id": "123", "name": "Income 1", "amount": 10000}, {"id": "456", "name": "Income 2", "amount": 20000}]}, "expenses": {"total": 200000, "records": [{"id": "123", "name": "Expense 1", "amount": 10000}, {"id": "456", "name": "Expense 2", "amount": 20000}]}, "gross_profit": {"total": 200000}, "net_operating_income": {"total": 200000}, "net_income": {"total": 200000}}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": {"missing": [{"foobar": "required"}]}, "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
         "401":

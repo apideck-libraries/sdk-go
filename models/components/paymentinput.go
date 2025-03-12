@@ -12,7 +12,7 @@ type PaymentInput struct {
 	Currency *Currency `json:"currency,omitempty"`
 	// Currency Exchange Rate at the time entity was recorded/generated.
 	CurrencyRate *float64 `json:"currency_rate,omitempty"`
-	// The total amount of the transaction
+	// The total amount of the transaction or record
 	TotalAmount *float64 `json:"total_amount"`
 	// Optional transaction reference message ie: Debit remittance detail.
 	Reference *string `json:"reference,omitempty"`
