@@ -49,6 +49,7 @@ func main() {
             Email: sdkgo.String("elon@musk.com"),
             Status: components.CustomersFilterStatusActive.ToPointer(),
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
+            SupplierID: sdkgo.String("123"),
         },
         Sort: &components.CustomersSort{
             By: components.CustomersSortByUpdatedAt.ToPointer(),

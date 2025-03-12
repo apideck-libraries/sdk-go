@@ -39,6 +39,8 @@ func (e *PeriodType) UnmarshalJSON(data []byte) error {
 
 type BalanceSheetFilter struct {
 	// The start date of the period to include in the resource.
+	//
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	StartDate *string `queryParam:"name=start_date"`
 	// The end date of the period to include in the resource.
 	EndDate *string `queryParam:"name=end_date"`
