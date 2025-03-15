@@ -9,20 +9,20 @@ import (
 	"time"
 )
 
-// Type - The type of the contact.
-type Type string
+// ContactType - The type of the contact.
+type ContactType string
 
 const (
-	TypeCustomer Type = "customer"
-	TypeSupplier Type = "supplier"
-	TypeEmployee Type = "employee"
-	TypePersonal Type = "personal"
+	ContactTypeCustomer ContactType = "customer"
+	ContactTypeSupplier ContactType = "supplier"
+	ContactTypeEmployee ContactType = "employee"
+	ContactTypePersonal ContactType = "personal"
 )
 
-func (e Type) ToPointer() *Type {
+func (e ContactType) ToPointer() *ContactType {
 	return &e
 }
-func (e *Type) UnmarshalJSON(data []byte) error {
+func (e *ContactType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -35,10 +35,10 @@ func (e *Type) UnmarshalJSON(data []byte) error {
 	case "employee":
 		fallthrough
 	case "personal":
-		*e = Type(v)
+		*e = ContactType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for Type: %v", v)
+		return fmt.Errorf("invalid value for ContactType: %v", v)
 	}
 }
 
@@ -80,7 +80,7 @@ type Contact struct {
 	// The owner of the contact.
 	OwnerID *string `json:"owner_id,omitempty"`
 	// The type of the contact.
-	Type *Type `json:"type,omitempty"`
+	Type *ContactType `json:"type,omitempty"`
 	// The company the contact is associated with.
 	CompanyID *string `json:"company_id,omitempty"`
 	// The name of the company the contact is associated with.
@@ -181,7 +181,7 @@ func (o *Contact) GetOwnerID() *string {
 	return o.OwnerID
 }
 
-func (o *Contact) GetType() *Type {
+func (o *Contact) GetType() *ContactType {
 	if o == nil {
 		return nil
 	}
@@ -453,7 +453,7 @@ type ContactInput struct {
 	// The owner of the contact.
 	OwnerID *string `json:"owner_id,omitempty"`
 	// The type of the contact.
-	Type *Type `json:"type,omitempty"`
+	Type *ContactType `json:"type,omitempty"`
 	// The company the contact is associated with.
 	CompanyID *string `json:"company_id,omitempty"`
 	// The name of the company the contact is associated with.
@@ -524,7 +524,7 @@ func (o *ContactInput) GetOwnerID() *string {
 	return o.OwnerID
 }
 
-func (o *ContactInput) GetType() *Type {
+func (o *ContactInput) GetType() *ContactType {
 	if o == nil {
 		return nil
 	}
