@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 1c457e5380748926df036f79bf4d8520
+  docChecksum: 6c39ad7f10a42df924ab6c12c8ef2bc9
   docVersion: 10.12.3
-  speakeasyVersion: 1.517.0
-  generationVersion: 2.548.1
-  releaseVersion: 0.8.0
-  configChecksum: 261e2abc46c0b96b90884cc42c615bad
+  speakeasyVersion: 1.517.3
+  generationVersion: 2.548.6
+  releaseVersion: 0.8.1
+  configChecksum: afadc8bad2ab4f7c2a3c7b426ff734d4
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 features:
   go:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
-    constsAndDefaults: 0.1.10
+    constsAndDefaults: 0.1.11
     core: 3.7.2
     deepObjectParams: 0.1.1
     defaultEnabledRetries: 0.2.0
@@ -882,7 +882,6 @@ generatedFiles:
   - docs/models/components/activitytype.md
   - docs/models/components/address.md
   - docs/models/components/addresses.md
-  - docs/models/components/addresstype.md
   - docs/models/components/ageddebtors.md
   - docs/models/components/agedreportfilter.md
   - docs/models/components/allocation.md
@@ -992,6 +991,7 @@ generatedFiles:
   - docs/models/components/contactsfilter.md
   - docs/models/components/contactssort.md
   - docs/models/components/contactssortby.md
+  - docs/models/components/contacttype.md
   - docs/models/components/copyfolderrequest.md
   - docs/models/components/costofgoodssold.md
   - docs/models/components/coverage.md
