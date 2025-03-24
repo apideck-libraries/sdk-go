@@ -131,7 +131,7 @@ func main() {
         Contact: components.ContactInput{
             Name: sdkgo.String("Elon Musk"),
             OwnerID: sdkgo.String("54321"),
-            Type: components.TypePersonal.ToPointer(),
+            Type: components.ContactTypePersonal.ToPointer(),
             CompanyID: sdkgo.String("23456"),
             CompanyName: sdkgo.String("23456"),
             LeadID: sdkgo.String("34567"),
@@ -167,7 +167,7 @@ func main() {
             Addresses: []components.Address{
                 components.Address{
                     ID: sdkgo.String("123"),
-                    Type: components.AddressTypePrimary.ToPointer(),
+                    Type: components.TypePrimary.ToPointer(),
                     String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
                     Name: sdkgo.String("HQ US"),
                     Line1: sdkgo.String("Main street"),
@@ -193,7 +193,7 @@ func main() {
                 },
                 components.Address{
                     ID: sdkgo.String("123"),
-                    Type: components.AddressTypePrimary.ToPointer(),
+                    Type: components.TypePrimary.ToPointer(),
                     String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
                     Name: sdkgo.String("HQ US"),
                     Line1: sdkgo.String("Main street"),
@@ -499,7 +499,7 @@ func main() {
         Contact: components.ContactInput{
             Name: sdkgo.String("Elon Musk"),
             OwnerID: sdkgo.String("54321"),
-            Type: components.TypePersonal.ToPointer(),
+            Type: components.ContactTypePersonal.ToPointer(),
             CompanyID: sdkgo.String("23456"),
             CompanyName: sdkgo.String("23456"),
             LeadID: sdkgo.String("34567"),
@@ -540,7 +540,7 @@ func main() {
             Addresses: []components.Address{
                 components.Address{
                     ID: sdkgo.String("123"),
-                    Type: components.AddressTypePrimary.ToPointer(),
+                    Type: components.TypePrimary.ToPointer(),
                     String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
                     Name: sdkgo.String("HQ US"),
                     Line1: sdkgo.String("Main street"),
@@ -566,7 +566,7 @@ func main() {
                 },
                 components.Address{
                     ID: sdkgo.String("123"),
-                    Type: components.AddressTypePrimary.ToPointer(),
+                    Type: components.TypePrimary.ToPointer(),
                     String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
                     Name: sdkgo.String("HQ US"),
                     Line1: sdkgo.String("Main street"),

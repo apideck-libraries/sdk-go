@@ -6,12 +6,12 @@
 ### SimpleFormFieldOption
 
 ```go
-formFieldOption := components.CreateFormFieldOptionSimpleFormFieldOption(components.SimpleFormFieldOption{/* values here */})
+formFieldOption := components.CreateFormFieldOptionSimple(components.SimpleFormFieldOption{/* values here */})
 ```
 
 ### FormFieldOptionGroup
 
 ```go
-formFieldOption := components.CreateFormFieldOptionFormFieldOptionGroup(components.FormFieldOptionGroup{/* values here */})
+formFieldOption := components.CreateFormFieldOptionGroup(components.FormFieldOptionGroup{/* values here */})
 ```
 

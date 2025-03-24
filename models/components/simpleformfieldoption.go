@@ -3,6 +3,7 @@
 package components
 
 import (
+	"encoding/json"
 	"errors"
 	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
@@ -222,14 +223,38 @@ func (u SimpleFormFieldOptionValue) MarshalJSON() ([]byte, error) {
 	return nil, errors.New("could not marshal union type SimpleFormFieldOptionValue: all fields are null")
 }
 
-type SimpleFormFieldOption struct {
-	Label *string                     `json:"label,omitempty"`
-	Value *SimpleFormFieldOptionValue `json:"value,omitempty"`
+type OptionType string
+
+const (
+	OptionTypeSimple OptionType = "simple"
+)
+
+func (e OptionType) ToPointer() *OptionType {
+	return &e
+}
+func (e *OptionType) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "simple":
+		*e = OptionType(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for OptionType: %v", v)
+	}
 }
 
-func (o *SimpleFormFieldOption) GetLabel() *string {
+type SimpleFormFieldOption struct {
+	Label      string                      `json:"label"`
+	Value      *SimpleFormFieldOptionValue `json:"value,omitempty"`
+	OptionType OptionType                  `json:"option_type"`
+}
+
+func (o *SimpleFormFieldOption) GetLabel() string {
 	if o == nil {
-		return nil
+		return ""
 	}
 	return o.Label
 }
@@ -239,4 +264,11 @@ func (o *SimpleFormFieldOption) GetValue() *SimpleFormFieldOptionValue {
 		return nil
 	}
 	return o.Value
+}
+
+func (o *SimpleFormFieldOption) GetOptionType() OptionType {
+	if o == nil {
+		return OptionType("")
+	}
+	return o.OptionType
 }
