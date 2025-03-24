@@ -231,6 +231,8 @@ func (o *ProbationPeriod) GetEndDate() *types.Date {
 type Employee struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
+	// The third-party API ID of original entity
+	DownstreamID *string `json:"downstream_id,omitempty"`
 	// The first name of the person.
 	FirstName *string `json:"first_name,omitempty"`
 	// The last name of the person.
@@ -363,6 +365,13 @@ func (o *Employee) GetID() *string {
 		return nil
 	}
 	return o.ID
+}
+
+func (o *Employee) GetDownstreamID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DownstreamID
 }
 
 func (o *Employee) GetFirstName() *string {

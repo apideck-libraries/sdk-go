@@ -2,10 +2,6 @@
 
 package components
 
-// Settings - Connection settings. Values will persist to `form_fields` with corresponding id
-type Settings struct {
-}
-
 type ConsumerConnection struct {
 	ID         *string `json:"id,omitempty"`
 	Name       *string `json:"name,omitempty"`
@@ -20,7 +16,7 @@ type ConsumerConnection struct {
 	AuthType *AuthType `json:"auth_type,omitempty"`
 	Enabled  *bool     `json:"enabled,omitempty"`
 	// Connection settings. Values will persist to `form_fields` with corresponding id
-	Settings *Settings `json:"settings,omitempty"`
+	Settings map[string]any `json:"settings,omitempty"`
 	// Attach your own consumer specific metadata
 	Metadata  map[string]any `json:"metadata,omitempty"`
 	CreatedAt *string        `json:"created_at,omitempty"`
@@ -106,7 +102,7 @@ func (o *ConsumerConnection) GetEnabled() *bool {
 	return o.Enabled
 }
 
-func (o *ConsumerConnection) GetSettings() *Settings {
+func (o *ConsumerConnection) GetSettings() map[string]any {
 	if o == nil {
 		return nil
 	}

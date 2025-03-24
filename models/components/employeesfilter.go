@@ -59,6 +59,8 @@ type EmployeesFilter struct {
 	EmployeeNumber *string `queryParam:"name=employee_number"`
 	// ID of the department to filter on
 	DepartmentID *string `queryParam:"name=department_id"`
+	// City to filter on
+	City *string `queryParam:"name=city"`
 }
 
 func (o *EmployeesFilter) GetCompanyID() *string {
@@ -122,4 +124,11 @@ func (o *EmployeesFilter) GetDepartmentID() *string {
 		return nil
 	}
 	return o.DepartmentID
+}
+
+func (o *EmployeesFilter) GetCity() *string {
+	if o == nil {
+		return nil
+	}
+	return o.City
 }

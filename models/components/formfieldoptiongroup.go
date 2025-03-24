@@ -2,10 +2,39 @@
 
 package components
 
+import (
+	"encoding/json"
+	"fmt"
+)
+
+type FormFieldOptionGroupOptionType string
+
+const (
+	FormFieldOptionGroupOptionTypeGroup FormFieldOptionGroupOptionType = "group"
+)
+
+func (e FormFieldOptionGroupOptionType) ToPointer() *FormFieldOptionGroupOptionType {
+	return &e
+}
+func (e *FormFieldOptionGroupOptionType) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "group":
+		*e = FormFieldOptionGroupOptionType(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for FormFieldOptionGroupOptionType: %v", v)
+	}
+}
+
 type FormFieldOptionGroup struct {
-	ID      *string                 `json:"id,omitempty"`
-	Label   *string                 `json:"label,omitempty"`
-	Options []SimpleFormFieldOption `json:"options,omitempty"`
+	ID         *string                        `json:"id,omitempty"`
+	Label      string                         `json:"label"`
+	Options    []SimpleFormFieldOption        `json:"options"`
+	OptionType FormFieldOptionGroupOptionType `json:"option_type"`
 }
 
 func (o *FormFieldOptionGroup) GetID() *string {
@@ -15,16 +44,23 @@ func (o *FormFieldOptionGroup) GetID() *string {
 	return o.ID
 }
 
-func (o *FormFieldOptionGroup) GetLabel() *string {
+func (o *FormFieldOptionGroup) GetLabel() string {
 	if o == nil {
-		return nil
+		return ""
 	}
 	return o.Label
 }
 
 func (o *FormFieldOptionGroup) GetOptions() []SimpleFormFieldOption {
 	if o == nil {
-		return nil
+		return []SimpleFormFieldOption{}
 	}
 	return o.Options
+}
+
+func (o *FormFieldOptionGroup) GetOptionType() FormFieldOptionGroupOptionType {
+	if o == nil {
+		return FormFieldOptionGroupOptionType("")
+	}
+	return o.OptionType
 }

@@ -3,6 +3,7 @@
 package components
 
 import (
+	"encoding/json"
 	"errors"
 	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
@@ -11,8 +12,8 @@ import (
 type FormFieldOptionType string
 
 const (
-	FormFieldOptionTypeSimpleFormFieldOption FormFieldOptionType = "SimpleFormFieldOption"
-	FormFieldOptionTypeFormFieldOptionGroup  FormFieldOptionType = "FormFieldOptionGroup"
+	FormFieldOptionTypeSimple FormFieldOptionType = "simple"
+	FormFieldOptionTypeGroup  FormFieldOptionType = "group"
 )
 
 type FormFieldOption struct {
@@ -22,37 +23,59 @@ type FormFieldOption struct {
 	Type FormFieldOptionType
 }
 
-func CreateFormFieldOptionSimpleFormFieldOption(simpleFormFieldOption SimpleFormFieldOption) FormFieldOption {
-	typ := FormFieldOptionTypeSimpleFormFieldOption
+func CreateFormFieldOptionSimple(simple SimpleFormFieldOption) FormFieldOption {
+	typ := FormFieldOptionTypeSimple
+
+	typStr := OptionType(typ)
+	simple.OptionType = typStr
 
 	return FormFieldOption{
-		SimpleFormFieldOption: &simpleFormFieldOption,
+		SimpleFormFieldOption: &simple,
 		Type:                  typ,
 	}
 }
 
-func CreateFormFieldOptionFormFieldOptionGroup(formFieldOptionGroup FormFieldOptionGroup) FormFieldOption {
-	typ := FormFieldOptionTypeFormFieldOptionGroup
+func CreateFormFieldOptionGroup(group FormFieldOptionGroup) FormFieldOption {
+	typ := FormFieldOptionTypeGroup
+
+	typStr := FormFieldOptionGroupOptionType(typ)
+	group.OptionType = typStr
 
 	return FormFieldOption{
-		FormFieldOptionGroup: &formFieldOptionGroup,
+		FormFieldOptionGroup: &group,
 		Type:                 typ,
 	}
 }
 
 func (u *FormFieldOption) UnmarshalJSON(data []byte) error {
 
-	var simpleFormFieldOption SimpleFormFieldOption = SimpleFormFieldOption{}
-	if err := utils.UnmarshalJSON(data, &simpleFormFieldOption, "", true, true); err == nil {
-		u.SimpleFormFieldOption = &simpleFormFieldOption
-		u.Type = FormFieldOptionTypeSimpleFormFieldOption
-		return nil
+	type discriminator struct {
+		OptionType string `json:"option_type"`
 	}
 
-	var formFieldOptionGroup FormFieldOptionGroup = FormFieldOptionGroup{}
-	if err := utils.UnmarshalJSON(data, &formFieldOptionGroup, "", true, true); err == nil {
-		u.FormFieldOptionGroup = &formFieldOptionGroup
-		u.Type = FormFieldOptionTypeFormFieldOptionGroup
+	dis := new(discriminator)
+	if err := json.Unmarshal(data, &dis); err != nil {
+		return fmt.Errorf("could not unmarshal discriminator: %w", err)
+	}
+
+	switch dis.OptionType {
+	case "simple":
+		simpleFormFieldOption := new(SimpleFormFieldOption)
+		if err := utils.UnmarshalJSON(data, &simpleFormFieldOption, "", true, false); err != nil {
+			return fmt.Errorf("could not unmarshal `%s` into expected (OptionType == simple) type SimpleFormFieldOption within FormFieldOption: %w", string(data), err)
+		}
+
+		u.SimpleFormFieldOption = simpleFormFieldOption
+		u.Type = FormFieldOptionTypeSimple
+		return nil
+	case "group":
+		formFieldOptionGroup := new(FormFieldOptionGroup)
+		if err := utils.UnmarshalJSON(data, &formFieldOptionGroup, "", true, false); err != nil {
+			return fmt.Errorf("could not unmarshal `%s` into expected (OptionType == group) type FormFieldOptionGroup within FormFieldOption: %w", string(data), err)
+		}
+
+		u.FormFieldOptionGroup = formFieldOptionGroup
+		u.Type = FormFieldOptionTypeGroup
 		return nil
 	}
 
