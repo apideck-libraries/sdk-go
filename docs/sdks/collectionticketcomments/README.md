@@ -39,9 +39,9 @@ func main() {
     )
 
     res, err := s.IssueTracking.CollectionTicketComments.List(ctx, operations.IssueTrackingCollectionTicketCommentsAllRequest{
+        ServiceID: sdkgo.String("salesforce"),
         CollectionID: "apideck-io",
         TicketID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
         Sort: &components.CommentsSort{
             By: components.CommentsSortByCreatedAt.ToPointer(),
         },
@@ -233,9 +233,9 @@ func main() {
 
     res, err := s.IssueTracking.CollectionTicketComments.Get(ctx, operations.IssueTrackingCollectionTicketCommentsOneRequest{
         ID: "<id>",
+        ServiceID: sdkgo.String("salesforce"),
         CollectionID: "apideck-io",
         TicketID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
         Fields: sdkgo.String("id,updated_at"),
     })
     if err != nil {

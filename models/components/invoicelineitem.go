@@ -70,9 +70,9 @@ type InvoiceLineItem struct {
 	DiscountPercentage *float64 `json:"discount_percentage,omitempty"`
 	// Discount amount applied to the line item when supported downstream.
 	DiscountAmount *float64 `json:"discount_amount,omitempty"`
-	// Location id
+	// The ID of the location
 	LocationID *string `json:"location_id,omitempty"`
-	// Department id
+	// The ID of the department
 	DepartmentID *string            `json:"department_id,omitempty"`
 	Item         *LinkedInvoiceItem `json:"item,omitempty"`
 	TaxRate      *LinkedTaxRate     `json:"tax_rate,omitempty"`
@@ -303,9 +303,9 @@ type InvoiceLineItemInput struct {
 	DiscountPercentage *float64 `json:"discount_percentage,omitempty"`
 	// Discount amount applied to the line item when supported downstream.
 	DiscountAmount *float64 `json:"discount_amount,omitempty"`
-	// Location id
+	// The ID of the location
 	LocationID *string `json:"location_id,omitempty"`
-	// Department id
+	// The ID of the department
 	DepartmentID *string             `json:"department_id,omitempty"`
 	Item         *LinkedInvoiceItem  `json:"item,omitempty"`
 	TaxRate      *LinkedTaxRateInput `json:"tax_rate,omitempty"`

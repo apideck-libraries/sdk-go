@@ -11,11 +11,13 @@ type ExpenseLineItem struct {
 	AccountID *string `json:"account_id,omitempty"`
 	// The ID of the customer this expense item is linked to.
 	CustomerID *string `json:"customer_id,omitempty"`
-	// The ID of the department this expense item is linked to.
+	// The ID of the department
 	DepartmentID *string `json:"department_id,omitempty"`
-	// The ID of the location this expense item is linked to.
-	LocationID *string        `json:"location_id,omitempty"`
-	TaxRate    *LinkedTaxRate `json:"tax_rate,omitempty"`
+	// The ID of the location
+	LocationID *string `json:"location_id,omitempty"`
+	// The ID of the subsidiary
+	SubsidiaryID *string        `json:"subsidiary_id,omitempty"`
+	TaxRate      *LinkedTaxRate `json:"tax_rate,omitempty"`
 	// The expense line item description
 	Description *string `json:"description,omitempty"`
 	// The total amount of the expense line item.
@@ -64,6 +66,13 @@ func (o *ExpenseLineItem) GetLocationID() *string {
 		return nil
 	}
 	return o.LocationID
+}
+
+func (o *ExpenseLineItem) GetSubsidiaryID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.SubsidiaryID
 }
 
 func (o *ExpenseLineItem) GetTaxRate() *LinkedTaxRate {

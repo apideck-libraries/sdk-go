@@ -185,8 +185,8 @@ func main() {
                     UnitOfMeasure: sdkgo.String("pc."),
                     DiscountPercentage: sdkgo.Float64(0.01),
                     DiscountAmount: sdkgo.Float64(19.99),
-                    LocationID: sdkgo.String("1234"),
-                    DepartmentID: sdkgo.String("1234"),
+                    LocationID: sdkgo.String("12345"),
+                    DepartmentID: sdkgo.String("12345"),
                     Item: &components.LinkedInvoiceItem{
                         ID: sdkgo.String("12344"),
                         Code: sdkgo.String("120-C"),
@@ -245,8 +245,8 @@ func main() {
                     UnitOfMeasure: sdkgo.String("pc."),
                     DiscountPercentage: sdkgo.Float64(0.01),
                     DiscountAmount: sdkgo.Float64(19.99),
-                    LocationID: sdkgo.String("1234"),
-                    DepartmentID: sdkgo.String("1234"),
+                    LocationID: sdkgo.String("12345"),
+                    DepartmentID: sdkgo.String("12345"),
                     Item: &components.LinkedInvoiceItem{
                         ID: sdkgo.String("12344"),
                         Code: sdkgo.String("120-C"),
@@ -370,77 +370,41 @@ func main() {
                     Name: sdkgo.String("New York"),
                 },
             },
+            CustomFields: []components.CustomField{
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueFour(
+                        components.Four{},
+                    )),
+                },
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueArrayOfStr(
+                        []string{
+                            "<value>",
+                            "<value>",
+                            "<value>",
+                        },
+                    )),
+                },
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueBoolean(
+                        true,
+                    )),
+                },
+            },
             RowVersion: sdkgo.String("1-12345"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
                     ExtendPaths: []components.ExtendPaths{
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
-                    },
-                },
-                components.PassThroughBody{
-                    ServiceID: "<id>",
-                    ExtendPaths: []components.ExtendPaths{
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
-                    },
-                },
-                components.PassThroughBody{
-                    ServiceID: "<id>",
-                    ExtendPaths: []components.ExtendPaths{
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
                         components.ExtendPaths{
                             Path: "$.nested.property",
                             Value: map[string]any{
@@ -638,8 +602,8 @@ func main() {
                     UnitOfMeasure: sdkgo.String("pc."),
                     DiscountPercentage: sdkgo.Float64(0.01),
                     DiscountAmount: sdkgo.Float64(19.99),
-                    LocationID: sdkgo.String("1234"),
-                    DepartmentID: sdkgo.String("1234"),
+                    LocationID: sdkgo.String("12345"),
+                    DepartmentID: sdkgo.String("12345"),
                     Item: &components.LinkedInvoiceItem{
                         ID: sdkgo.String("12344"),
                         Code: sdkgo.String("120-C"),
@@ -701,8 +665,8 @@ func main() {
                     UnitOfMeasure: sdkgo.String("pc."),
                     DiscountPercentage: sdkgo.Float64(0.01),
                     DiscountAmount: sdkgo.Float64(19.99),
-                    LocationID: sdkgo.String("1234"),
-                    DepartmentID: sdkgo.String("1234"),
+                    LocationID: sdkgo.String("12345"),
+                    DepartmentID: sdkgo.String("12345"),
                     Item: &components.LinkedInvoiceItem{
                         ID: sdkgo.String("12344"),
                         Code: sdkgo.String("120-C"),
@@ -759,8 +723,8 @@ func main() {
                     UnitOfMeasure: sdkgo.String("pc."),
                     DiscountPercentage: sdkgo.Float64(0.01),
                     DiscountAmount: sdkgo.Float64(19.99),
-                    LocationID: sdkgo.String("1234"),
-                    DepartmentID: sdkgo.String("1234"),
+                    LocationID: sdkgo.String("12345"),
+                    DepartmentID: sdkgo.String("12345"),
                     Item: &components.LinkedInvoiceItem{
                         ID: sdkgo.String("12344"),
                         Code: sdkgo.String("120-C"),
@@ -860,32 +824,40 @@ func main() {
                     Name: sdkgo.String("New York"),
                 },
             },
+            CustomFields: []components.CustomField{
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueNumber(
+                        10,
+                    )),
+                },
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueBoolean(
+                        true,
+                    )),
+                },
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueArrayOfStr(
+                        []string{
+                            "<value>",
+                            "<value>",
+                        },
+                    )),
+                },
+            },
             RowVersion: sdkgo.String("1-12345"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
                     ExtendPaths: []components.ExtendPaths{
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
-                    },
-                },
-                components.PassThroughBody{
-                    ServiceID: "<id>",
-                    ExtendPaths: []components.ExtendPaths{
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
                         components.ExtendPaths{
                             Path: "$.nested.property",
                             Value: map[string]any{
