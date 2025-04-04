@@ -29,10 +29,6 @@ func (o *IssueTrackingCollectionTicketCommentsAllGlobals) GetAppID() *string {
 }
 
 type IssueTrackingCollectionTicketCommentsAllRequest struct {
-	// The collection ID
-	CollectionID string `pathParam:"style=simple,explode=false,name=collection_id"`
-	// ID of the ticket you are acting upon.
-	TicketID string `pathParam:"style=simple,explode=false,name=ticket_id"`
 	// Include raw response. Mostly used for debugging purposes
 	Raw *bool `default:"false" queryParam:"style=form,explode=true,name=raw"`
 	// ID of the consumer which you want to get or push data from
@@ -45,6 +41,10 @@ type IssueTrackingCollectionTicketCommentsAllRequest struct {
 	Cursor *string `queryParam:"style=form,explode=true,name=cursor"`
 	// Number of results to return. Minimum 1, Maximum 200, Default 20
 	Limit *int64 `default:"20" queryParam:"style=form,explode=true,name=limit"`
+	// The collection ID
+	CollectionID string `pathParam:"style=simple,explode=false,name=collection_id"`
+	// ID of the ticket you are acting upon.
+	TicketID string `pathParam:"style=simple,explode=false,name=ticket_id"`
 	// Apply sorting
 	Sort *components.CommentsSort `queryParam:"style=deepObject,explode=true,name=sort"`
 	// Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
@@ -62,20 +62,6 @@ func (i *IssueTrackingCollectionTicketCommentsAllRequest) UnmarshalJSON(data []b
 		return err
 	}
 	return nil
-}
-
-func (o *IssueTrackingCollectionTicketCommentsAllRequest) GetCollectionID() string {
-	if o == nil {
-		return ""
-	}
-	return o.CollectionID
-}
-
-func (o *IssueTrackingCollectionTicketCommentsAllRequest) GetTicketID() string {
-	if o == nil {
-		return ""
-	}
-	return o.TicketID
 }
 
 func (o *IssueTrackingCollectionTicketCommentsAllRequest) GetRaw() *bool {
@@ -118,6 +104,20 @@ func (o *IssueTrackingCollectionTicketCommentsAllRequest) GetLimit() *int64 {
 		return nil
 	}
 	return o.Limit
+}
+
+func (o *IssueTrackingCollectionTicketCommentsAllRequest) GetCollectionID() string {
+	if o == nil {
+		return ""
+	}
+	return o.CollectionID
+}
+
+func (o *IssueTrackingCollectionTicketCommentsAllRequest) GetTicketID() string {
+	if o == nil {
+		return ""
+	}
+	return o.TicketID
 }
 
 func (o *IssueTrackingCollectionTicketCommentsAllRequest) GetSort() *components.CommentsSort {

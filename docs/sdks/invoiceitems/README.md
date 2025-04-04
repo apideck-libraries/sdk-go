@@ -182,6 +182,10 @@ func main() {
                 },
             },
             Active: sdkgo.Bool(true),
+            DepartmentID: sdkgo.String("12345"),
+            LocationID: sdkgo.String("12345"),
+            SubsidiaryID: sdkgo.String("12345"),
+            TaxScheduleID: sdkgo.String("123456"),
             RowVersion: sdkgo.String("1-12345"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
@@ -411,6 +415,10 @@ func main() {
                 },
             },
             Active: sdkgo.Bool(true),
+            DepartmentID: sdkgo.String("12345"),
+            LocationID: sdkgo.String("12345"),
+            SubsidiaryID: sdkgo.String("12345"),
+            TaxScheduleID: sdkgo.String("123456"),
             RowVersion: sdkgo.String("1-12345"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{

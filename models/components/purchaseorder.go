@@ -104,6 +104,7 @@ type PurchaseOrder struct {
 	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// When custom mappings are configured on the resource, the result is included here.
 	CustomMappings *CustomMappings `json:"custom_mappings,omitempty"`
+	CustomFields   []CustomField   `json:"custom_fields,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
 	RowVersion *string `json:"row_version,omitempty"`
 	// The user who last updated the object.
@@ -339,6 +340,13 @@ func (o *PurchaseOrder) GetCustomMappings() *CustomMappings {
 	return o.CustomMappings
 }
 
+func (o *PurchaseOrder) GetCustomFields() []CustomField {
+	if o == nil {
+		return nil
+	}
+	return o.CustomFields
+}
+
 func (o *PurchaseOrder) GetRowVersion() *string {
 	if o == nil {
 		return nil
@@ -431,6 +439,7 @@ type PurchaseOrderInput struct {
 	Memo *string `json:"memo,omitempty"`
 	// A list of linked tracking categories.
 	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	CustomFields       []CustomField             `json:"custom_fields,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
 	RowVersion *string `json:"row_version,omitempty"`
 	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
@@ -635,6 +644,13 @@ func (o *PurchaseOrderInput) GetTrackingCategories() []*LinkedTrackingCategory {
 		return nil
 	}
 	return o.TrackingCategories
+}
+
+func (o *PurchaseOrderInput) GetCustomFields() []CustomField {
+	if o == nil {
+		return nil
+	}
+	return o.CustomFields
 }
 
 func (o *PurchaseOrderInput) GetRowVersion() *string {

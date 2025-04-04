@@ -181,8 +181,8 @@ func main() {
                     UnitOfMeasure: sdkgo.String("pc."),
                     DiscountPercentage: sdkgo.Float64(0.01),
                     DiscountAmount: sdkgo.Float64(19.99),
-                    LocationID: sdkgo.String("1234"),
-                    DepartmentID: sdkgo.String("1234"),
+                    LocationID: sdkgo.String("12345"),
+                    DepartmentID: sdkgo.String("12345"),
                     Item: &components.LinkedInvoiceItem{
                         ID: sdkgo.String("12344"),
                         Code: sdkgo.String("120-C"),
@@ -233,8 +233,8 @@ func main() {
                     UnitOfMeasure: sdkgo.String("pc."),
                     DiscountPercentage: sdkgo.Float64(0.01),
                     DiscountAmount: sdkgo.Float64(19.99),
-                    LocationID: sdkgo.String("1234"),
-                    DepartmentID: sdkgo.String("1234"),
+                    LocationID: sdkgo.String("12345"),
+                    DepartmentID: sdkgo.String("12345"),
                     Item: &components.LinkedInvoiceItem{
                         ID: sdkgo.String("12344"),
                         Code: sdkgo.String("120-C"),
@@ -602,8 +602,8 @@ func main() {
                     UnitOfMeasure: sdkgo.String("pc."),
                     DiscountPercentage: sdkgo.Float64(0.01),
                     DiscountAmount: sdkgo.Float64(19.99),
-                    LocationID: sdkgo.String("1234"),
-                    DepartmentID: sdkgo.String("1234"),
+                    LocationID: sdkgo.String("12345"),
+                    DepartmentID: sdkgo.String("12345"),
                     Item: &components.LinkedInvoiceItem{
                         ID: sdkgo.String("12344"),
                         Code: sdkgo.String("120-C"),
@@ -670,8 +670,8 @@ func main() {
                     UnitOfMeasure: sdkgo.String("pc."),
                     DiscountPercentage: sdkgo.Float64(0.01),
                     DiscountAmount: sdkgo.Float64(19.99),
-                    LocationID: sdkgo.String("1234"),
-                    DepartmentID: sdkgo.String("1234"),
+                    LocationID: sdkgo.String("12345"),
+                    DepartmentID: sdkgo.String("12345"),
                     Item: &components.LinkedInvoiceItem{
                         ID: sdkgo.String("12344"),
                         Code: sdkgo.String("120-C"),

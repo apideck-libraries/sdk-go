@@ -6,6 +6,7 @@
 ### Available Operations
 
 * [List](#list) - List Attachments
+* [Upload](#upload) - Upload attachment
 * [Get](#get) - Get Attachment
 * [Delete](#delete) - Delete Attachment
 * [Download](#download) - Download Attachment
@@ -75,6 +76,78 @@ func main() {
 ### Response
 
 **[*operations.AccountingAttachmentsAllResponse](../../models/operations/accountingattachmentsallresponse.md), error**
+
+### Errors
+
+| Error Type                        | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| apierrors.BadRequestResponse      | 400                               | application/json                  |
+| apierrors.UnauthorizedResponse    | 401                               | application/json                  |
+| apierrors.PaymentRequiredResponse | 402                               | application/json                  |
+| apierrors.NotFoundResponse        | 404                               | application/json                  |
+| apierrors.UnprocessableResponse   | 422                               | application/json                  |
+| apierrors.APIError                | 4XX, 5XX                          | \*/\*                             |
+
+## Upload
+
+Upload attachment
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"os"
+	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/components"
+	"github.com/apideck-libraries/sdk-go/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := sdkgo.New(
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
+        sdkgo.WithConsumerID("test-consumer"),
+        sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+    )
+
+    requestBody, fileErr := os.Open("example.file")
+    if fileErr != nil {
+        panic(fileErr)
+    }
+
+
+    res, err := s.Accounting.Attachments.Upload(ctx, operations.AccountingAttachmentsUploadRequest{
+        ReferenceType: components.AttachmentReferenceTypeInvoice,
+        ReferenceID: "123456",
+        XApideckMetadata: sdkgo.String("{\"name\":\"document.pdf\",\"description\":\"Invoice attachment\"}"),
+        ServiceID: sdkgo.String("salesforce"),
+        RequestBody: requestBody,
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.CreateAttachmentResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                                          | :heavy_check_mark:                                                                                             | The context to use for the request.                                                                            |
+| `request`                                                                                                      | [operations.AccountingAttachmentsUploadRequest](../../models/operations/accountingattachmentsuploadrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+| `opts`                                                                                                         | [][operations.Option](../../models/operations/option.md)                                                       | :heavy_minus_sign:                                                                                             | The options for this request.                                                                                  |
+
+### Response
+
+**[*operations.AccountingAttachmentsUploadResponse](../../models/operations/accountingattachmentsuploadresponse.md), error**
 
 ### Errors
 

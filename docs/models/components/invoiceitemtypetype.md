@@ -5,8 +5,10 @@ Item type
 
 ## Values
 
-| Name                           | Value                          |
-| ------------------------------ | ------------------------------ |
-| `InvoiceItemTypeTypeInventory` | inventory                      |
-| `InvoiceItemTypeTypeService`   | service                        |
-| `InvoiceItemTypeTypeOther`     | other                          |
+| Name                              | Value                             |
+| --------------------------------- | --------------------------------- |
+| `InvoiceItemTypeTypeInventory`    | inventory                         |
+| `InvoiceItemTypeTypeNonInventory` | non_inventory                     |
+| `InvoiceItemTypeTypeService`      | service                           |
+| `InvoiceItemTypeTypeDescription`  | description                       |
+| `InvoiceItemTypeTypeOther`        | other                             |

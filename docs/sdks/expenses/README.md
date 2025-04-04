@@ -148,6 +148,7 @@ func main() {
                     CustomerID: sdkgo.String("12345"),
                     DepartmentID: sdkgo.String("12345"),
                     LocationID: sdkgo.String("12345"),
+                    SubsidiaryID: sdkgo.String("12345"),
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.String("123456"),
                         Rate: sdkgo.Float64(10),
@@ -394,6 +395,7 @@ func main() {
                     CustomerID: sdkgo.String("12345"),
                     DepartmentID: sdkgo.String("12345"),
                     LocationID: sdkgo.String("12345"),
+                    SubsidiaryID: sdkgo.String("12345"),
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.String("123456"),
                         Rate: sdkgo.Float64(10),
@@ -417,6 +419,7 @@ func main() {
                     CustomerID: sdkgo.String("12345"),
                     DepartmentID: sdkgo.String("12345"),
                     LocationID: sdkgo.String("12345"),
+                    SubsidiaryID: sdkgo.String("12345"),
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.String("123456"),
                         Rate: sdkgo.Float64(10),
@@ -444,6 +447,7 @@ func main() {
                     CustomerID: sdkgo.String("12345"),
                     DepartmentID: sdkgo.String("12345"),
                     LocationID: sdkgo.String("12345"),
+                    SubsidiaryID: sdkgo.String("12345"),
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.String("123456"),
                         Rate: sdkgo.Float64(10),

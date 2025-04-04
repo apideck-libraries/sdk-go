@@ -5,7 +5,7 @@ package components
 // LinkedEcommerceCustomer - The customer this entity is linked to.
 type LinkedEcommerceCustomer struct {
 	// The ID of the customer this entity is linked to.
-	ID *string `json:"id"`
+	ID *string `json:"id,omitempty"`
 	// Full name of the customer
 	Name *string `json:"name,omitempty"`
 	// First name of the customer

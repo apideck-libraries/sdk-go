@@ -7,6 +7,7 @@
 
 * [Create](#create) - Start Upload Session
 * [Get](#get) - Get Upload Session
+* [Upload](#upload) - Upload part of File to Upload Session
 * [Delete](#delete) - Abort Upload Session
 * [Finish](#finish) - Finish Upload Session
 
@@ -173,6 +174,72 @@ func main() {
 ### Response
 
 **[*operations.FileStorageUploadSessionsOneResponse](../../models/operations/filestorageuploadsessionsoneresponse.md), error**
+
+### Errors
+
+| Error Type                        | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| apierrors.BadRequestResponse      | 400                               | application/json                  |
+| apierrors.UnauthorizedResponse    | 401                               | application/json                  |
+| apierrors.PaymentRequiredResponse | 402                               | application/json                  |
+| apierrors.NotFoundResponse        | 404                               | application/json                  |
+| apierrors.UnprocessableResponse   | 422                               | application/json                  |
+| apierrors.APIError                | 4XX, 5XX                          | \*/\*                             |
+
+## Upload
+
+Upload part of File to Upload Session (max 100MB). Get `part_size` from [Get Upload Session](#operation/uploadSessionsOne) first. Every File part (except the last one) uploaded to this endpoint should have Content-Length equal to `part_size`. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"os"
+	sdkgo "github.com/apideck-libraries/sdk-go"
+	"bytes"
+	"github.com/apideck-libraries/sdk-go/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := sdkgo.New(
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
+        sdkgo.WithConsumerID("test-consumer"),
+        sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+    )
+
+    res, err := s.FileStorage.UploadSessions.Upload(ctx, operations.FileStorageUploadSessionsUploadRequest{
+        ID: "<id>",
+        ServiceID: sdkgo.String("salesforce"),
+        PartNumber: 0,
+        Digest: sdkgo.String("sha=fpRyg5eVQletdZqEKaFlqwBXJzM="),
+        RequestBody: bytes.NewBuffer([]byte("<binary string>")),
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.UpdateUploadSessionResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                                  | :heavy_check_mark:                                                                                                     | The context to use for the request.                                                                                    |
+| `request`                                                                                                              | [operations.FileStorageUploadSessionsUploadRequest](../../models/operations/filestorageuploadsessionsuploadrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
+| `opts`                                                                                                                 | [][operations.Option](../../models/operations/option.md)                                                               | :heavy_minus_sign:                                                                                                     | The options for this request.                                                                                          |
+
+### Response
+
+**[*operations.FileStorageUploadSessionsUploadResponse](../../models/operations/filestorageuploadsessionsuploadresponse.md), error**
 
 ### Errors
 

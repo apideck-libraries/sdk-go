@@ -189,6 +189,10 @@ func main() {
 ### [Accounting](docs/sdks/accounting/README.md)
 
 
+#### [Accounting.AgedCreditors](docs/sdks/agedcreditors/README.md)
+
+* [Get](docs/sdks/agedcreditors/README.md#get) - Get Aged Creditors
+
 #### [Accounting.AgedDebtors](docs/sdks/ageddebtors/README.md)
 
 * [Get](docs/sdks/ageddebtors/README.md#get) - Get Aged Debtors
@@ -196,6 +200,7 @@ func main() {
 #### [Accounting.Attachments](docs/sdks/attachments/README.md)
 
 * [List](docs/sdks/attachments/README.md#list) - List Attachments
+* [Upload](docs/sdks/attachments/README.md#upload) - Upload attachment
 * [Get](docs/sdks/attachments/README.md#get) - Get Attachment
 * [Delete](docs/sdks/attachments/README.md#delete) - Delete Attachment
 * [Download](docs/sdks/attachments/README.md#download) - Download Attachment
@@ -456,6 +461,10 @@ func main() {
 #### [Crm.Pipelines](docs/sdks/pipelines/README.md)
 
 * [List](docs/sdks/pipelines/README.md#list) - List pipelines
+* [Create](docs/sdks/pipelines/README.md#create) - Create pipeline
+* [Get](docs/sdks/pipelines/README.md#get) - Get pipeline
+* [Update](docs/sdks/pipelines/README.md#update) - Update pipeline
+* [Delete](docs/sdks/pipelines/README.md#delete) - Delete pipeline
 
 #### [Crm.Users](docs/sdks/users/README.md)
 
@@ -536,6 +545,7 @@ func main() {
 
 * [Create](docs/sdks/uploadsessions/README.md#create) - Start Upload Session
 * [Get](docs/sdks/uploadsessions/README.md#get) - Get Upload Session
+* [Upload](docs/sdks/uploadsessions/README.md#upload) - Upload part of File to Upload Session
 * [Delete](docs/sdks/uploadsessions/README.md#delete) - Abort Upload Session
 * [Finish](docs/sdks/uploadsessions/README.md#finish) - Finish Upload Session
 
@@ -1107,63 +1117,22 @@ func main() {
 		sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
 	)
 
-	res, err := s.FileStorage.UploadSessions.Create(ctx, operations.FileStorageUploadSessionsAddRequest{
-		ServiceID: sdkgo.String("salesforce"),
-		CreateUploadSessionRequest: components.CreateUploadSessionRequest{
-			Name:           "Documents",
-			ParentFolderID: "1234",
-			DriveID:        sdkgo.String("1234"),
-			Size:           sdkgo.Int64(1810673),
-			PassThrough: []components.PassThroughBody{
-				components.PassThroughBody{
-					ServiceID: "<id>",
-					ExtendPaths: []components.ExtendPaths{
-						components.ExtendPaths{
-							Path: "$.nested.property",
-							Value: map[string]any{
-								"TaxClassificationRef": map[string]any{
-									"value": "EUC-99990201-V1-00020000",
-								},
-							},
-						},
-						components.ExtendPaths{
-							Path: "$.nested.property",
-							Value: map[string]any{
-								"TaxClassificationRef": map[string]any{
-									"value": "EUC-99990201-V1-00020000",
-								},
-							},
-						},
-					},
-				},
-				components.PassThroughBody{
-					ServiceID: "<id>",
-					ExtendPaths: []components.ExtendPaths{
-						components.ExtendPaths{
-							Path: "$.nested.property",
-							Value: map[string]any{
-								"TaxClassificationRef": map[string]any{
-									"value": "EUC-99990201-V1-00020000",
-								},
-							},
-						},
-						components.ExtendPaths{
-							Path: "$.nested.property",
-							Value: map[string]any{
-								"TaxClassificationRef": map[string]any{
-									"value": "EUC-99990201-V1-00020000",
-								},
-							},
-						},
-					},
-				},
-			},
-		},
+	requestBody, fileErr := os.Open("example.file")
+	if fileErr != nil {
+		panic(fileErr)
+	}
+
+	res, err := s.Accounting.Attachments.Upload(ctx, operations.AccountingAttachmentsUploadRequest{
+		ReferenceType:    components.AttachmentReferenceTypeInvoice,
+		ReferenceID:      "123456",
+		XApideckMetadata: sdkgo.String("{\"name\":\"document.pdf\",\"description\":\"Invoice attachment\"}"),
+		ServiceID:        sdkgo.String("salesforce"),
+		RequestBody:      requestBody,
 	}, operations.WithServerURL("https://upload.apideck.com"))
 	if err != nil {
 		log.Fatal(err)
 	}
-	if res.CreateUploadSessionResponse != nil {
+	if res.CreateAttachmentResponse != nil {
 		// handle response
 	}
 }
