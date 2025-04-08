@@ -127,7 +127,11 @@ func (s *Webhooks) List(ctx context.Context, appID *string, cursor *string, limi
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -515,7 +519,11 @@ func (s *Webhooks) Create(ctx context.Context, createWebhookRequest components.C
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -854,7 +862,11 @@ func (s *Webhooks) Get(ctx context.Context, id string, appID *string, opts ...op
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -1201,7 +1213,11 @@ func (s *Webhooks) Update(ctx context.Context, id string, updateWebhookRequest c
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -1540,7 +1556,11 @@ func (s *Webhooks) Delete(ctx context.Context, id string, appID *string, opts ..
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {

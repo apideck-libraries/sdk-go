@@ -122,7 +122,11 @@ func (s *ApideckDepartments) List(ctx context.Context, request operations.HrisDe
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -517,7 +521,11 @@ func (s *ApideckDepartments) Create(ctx context.Context, request operations.Hris
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -856,7 +864,11 @@ func (s *ApideckDepartments) Get(ctx context.Context, request operations.HrisDep
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -1202,7 +1214,11 @@ func (s *ApideckDepartments) Update(ctx context.Context, request operations.Hris
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -1541,7 +1557,11 @@ func (s *ApideckDepartments) Delete(ctx context.Context, request operations.Hris
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {

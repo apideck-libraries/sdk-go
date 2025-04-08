@@ -122,7 +122,11 @@ func (s *Employees) List(ctx context.Context, request operations.HrisEmployeesAl
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -519,7 +523,11 @@ func (s *Employees) Create(ctx context.Context, request operations.HrisEmployees
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -858,7 +866,11 @@ func (s *Employees) Get(ctx context.Context, request operations.HrisEmployeesOne
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -1204,7 +1216,11 @@ func (s *Employees) Update(ctx context.Context, request operations.HrisEmployees
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -1543,7 +1559,11 @@ func (s *Employees) Delete(ctx context.Context, request operations.HrisEmployees
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {

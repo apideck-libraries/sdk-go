@@ -122,7 +122,11 @@ func (s *Subsidiaries) List(ctx context.Context, request operations.AccountingSu
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -516,7 +520,11 @@ func (s *Subsidiaries) Create(ctx context.Context, request operations.Accounting
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -855,7 +863,11 @@ func (s *Subsidiaries) Get(ctx context.Context, request operations.AccountingSub
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -1201,7 +1213,11 @@ func (s *Subsidiaries) Update(ctx context.Context, request operations.Accounting
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -1540,7 +1556,11 @@ func (s *Subsidiaries) Delete(ctx context.Context, request operations.Accounting
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {

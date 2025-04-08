@@ -129,7 +129,11 @@ func (s *Connections) List(ctx context.Context, consumerID *string, appID *strin
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -471,7 +475,11 @@ func (s *Connections) Get(ctx context.Context, serviceID string, unifiedAPI stri
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -813,7 +821,11 @@ func (s *Connections) Update(ctx context.Context, request operations.VaultConnec
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -1155,7 +1167,11 @@ func (s *Connections) Delete(ctx context.Context, serviceID string, unifiedAPI s
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -1477,7 +1493,11 @@ func (s *Connections) Imports(ctx context.Context, request operations.VaultConne
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {
@@ -1824,7 +1844,11 @@ func (s *Connections) Token(ctx context.Context, request operations.VaultConnect
 		httpRes, err = utils.Retry(ctx, utils.Retries{
 			Config: retryConfig,
 			StatusCodes: []string{
-				"5XX",
+				"408",
+				"500",
+				"502",
+				"503",
+				"504",
 			},
 		}, func() (*http.Response, error) {
 			if req.Body != nil {

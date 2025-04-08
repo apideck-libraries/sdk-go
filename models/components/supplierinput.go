@@ -45,6 +45,242 @@ func (e *SupplierStatus) UnmarshalJSON(data []byte) error {
 	}
 }
 
+type SupplierInput struct {
+	// Display ID
+	DisplayID *string `json:"display_id,omitempty"`
+	// Display name
+	DisplayName *string `json:"display_name,omitempty"`
+	// The name of the company.
+	CompanyName *string `json:"company_name,omitempty"`
+	// The company or subsidiary id the transaction belongs to
+	CompanyID *string `json:"company_id,omitempty"`
+	// The job title of the person.
+	Title *string `json:"title,omitempty"`
+	// The first name of the person.
+	FirstName *string `json:"first_name,omitempty"`
+	// Middle name of the person.
+	MiddleName *string `json:"middle_name,omitempty"`
+	// The last name of the person.
+	LastName *string `json:"last_name,omitempty"`
+	Suffix   *string `json:"suffix,omitempty"`
+	// Is this an individual or business supplier
+	Individual   *bool         `json:"individual,omitempty"`
+	Addresses    []Address     `json:"addresses,omitempty"`
+	PhoneNumbers []PhoneNumber `json:"phone_numbers,omitempty"`
+	Emails       []Email       `json:"emails,omitempty"`
+	Websites     []Website     `json:"websites,omitempty"`
+	BankAccounts []BankAccount `json:"bank_accounts,omitempty"`
+	// Some notes about this supplier
+	Notes     *string             `json:"notes,omitempty"`
+	TaxRate   *LinkedTaxRateInput `json:"tax_rate,omitempty"`
+	TaxNumber *string             `json:"tax_number,omitempty"`
+	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+	Currency *Currency                 `json:"currency,omitempty"`
+	Account  *LinkedLedgerAccountInput `json:"account,omitempty"`
+	// Supplier status
+	Status *SupplierStatus `json:"status,omitempty"`
+	// Payment method used for the transaction, such as cash, credit card, bank transfer, or check
+	PaymentMethod *string `json:"payment_method,omitempty"`
+	// The channel through which the transaction is processed.
+	Channel      *string       `json:"channel,omitempty"`
+	CustomFields []CustomField `json:"custom_fields,omitempty"`
+	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
+	RowVersion *string `json:"row_version,omitempty"`
+	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+	// The subsidiary the supplier belongs to.
+	SubsidiaryID *string `json:"subsidiary_id,omitempty"`
+}
+
+func (o *SupplierInput) GetDisplayID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayID
+}
+
+func (o *SupplierInput) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *SupplierInput) GetCompanyName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CompanyName
+}
+
+func (o *SupplierInput) GetCompanyID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CompanyID
+}
+
+func (o *SupplierInput) GetTitle() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Title
+}
+
+func (o *SupplierInput) GetFirstName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.FirstName
+}
+
+func (o *SupplierInput) GetMiddleName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.MiddleName
+}
+
+func (o *SupplierInput) GetLastName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.LastName
+}
+
+func (o *SupplierInput) GetSuffix() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Suffix
+}
+
+func (o *SupplierInput) GetIndividual() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Individual
+}
+
+func (o *SupplierInput) GetAddresses() []Address {
+	if o == nil {
+		return nil
+	}
+	return o.Addresses
+}
+
+func (o *SupplierInput) GetPhoneNumbers() []PhoneNumber {
+	if o == nil {
+		return nil
+	}
+	return o.PhoneNumbers
+}
+
+func (o *SupplierInput) GetEmails() []Email {
+	if o == nil {
+		return nil
+	}
+	return o.Emails
+}
+
+func (o *SupplierInput) GetWebsites() []Website {
+	if o == nil {
+		return nil
+	}
+	return o.Websites
+}
+
+func (o *SupplierInput) GetBankAccounts() []BankAccount {
+	if o == nil {
+		return nil
+	}
+	return o.BankAccounts
+}
+
+func (o *SupplierInput) GetNotes() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Notes
+}
+
+func (o *SupplierInput) GetTaxRate() *LinkedTaxRateInput {
+	if o == nil {
+		return nil
+	}
+	return o.TaxRate
+}
+
+func (o *SupplierInput) GetTaxNumber() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TaxNumber
+}
+
+func (o *SupplierInput) GetCurrency() *Currency {
+	if o == nil {
+		return nil
+	}
+	return o.Currency
+}
+
+func (o *SupplierInput) GetAccount() *LinkedLedgerAccountInput {
+	if o == nil {
+		return nil
+	}
+	return o.Account
+}
+
+func (o *SupplierInput) GetStatus() *SupplierStatus {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
+func (o *SupplierInput) GetPaymentMethod() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PaymentMethod
+}
+
+func (o *SupplierInput) GetChannel() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Channel
+}
+
+func (o *SupplierInput) GetCustomFields() []CustomField {
+	if o == nil {
+		return nil
+	}
+	return o.CustomFields
+}
+
+func (o *SupplierInput) GetRowVersion() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RowVersion
+}
+
+func (o *SupplierInput) GetPassThrough() []PassThroughBody {
+	if o == nil {
+		return nil
+	}
+	return o.PassThrough
+}
+
+func (o *SupplierInput) GetSubsidiaryID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.SubsidiaryID
+}
+
 type Supplier struct {
 	// A unique identifier for an object.
 	ID string `json:"id"`
@@ -349,242 +585,6 @@ func (o *Supplier) GetPassThrough() []PassThroughBody {
 }
 
 func (o *Supplier) GetSubsidiaryID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.SubsidiaryID
-}
-
-type SupplierInput struct {
-	// Display ID
-	DisplayID *string `json:"display_id,omitempty"`
-	// Display name
-	DisplayName *string `json:"display_name,omitempty"`
-	// The name of the company.
-	CompanyName *string `json:"company_name,omitempty"`
-	// The company or subsidiary id the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
-	// The job title of the person.
-	Title *string `json:"title,omitempty"`
-	// The first name of the person.
-	FirstName *string `json:"first_name,omitempty"`
-	// Middle name of the person.
-	MiddleName *string `json:"middle_name,omitempty"`
-	// The last name of the person.
-	LastName *string `json:"last_name,omitempty"`
-	Suffix   *string `json:"suffix,omitempty"`
-	// Is this an individual or business supplier
-	Individual   *bool         `json:"individual,omitempty"`
-	Addresses    []Address     `json:"addresses,omitempty"`
-	PhoneNumbers []PhoneNumber `json:"phone_numbers,omitempty"`
-	Emails       []Email       `json:"emails,omitempty"`
-	Websites     []Website     `json:"websites,omitempty"`
-	BankAccounts []BankAccount `json:"bank_accounts,omitempty"`
-	// Some notes about this supplier
-	Notes     *string             `json:"notes,omitempty"`
-	TaxRate   *LinkedTaxRateInput `json:"tax_rate,omitempty"`
-	TaxNumber *string             `json:"tax_number,omitempty"`
-	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-	Currency *Currency                 `json:"currency,omitempty"`
-	Account  *LinkedLedgerAccountInput `json:"account,omitempty"`
-	// Supplier status
-	Status *SupplierStatus `json:"status,omitempty"`
-	// Payment method used for the transaction, such as cash, credit card, bank transfer, or check
-	PaymentMethod *string `json:"payment_method,omitempty"`
-	// The channel through which the transaction is processed.
-	Channel      *string       `json:"channel,omitempty"`
-	CustomFields []CustomField `json:"custom_fields,omitempty"`
-	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-	RowVersion *string `json:"row_version,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-	// The subsidiary the supplier belongs to.
-	SubsidiaryID *string `json:"subsidiary_id,omitempty"`
-}
-
-func (o *SupplierInput) GetDisplayID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.DisplayID
-}
-
-func (o *SupplierInput) GetDisplayName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.DisplayName
-}
-
-func (o *SupplierInput) GetCompanyName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.CompanyName
-}
-
-func (o *SupplierInput) GetCompanyID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.CompanyID
-}
-
-func (o *SupplierInput) GetTitle() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Title
-}
-
-func (o *SupplierInput) GetFirstName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.FirstName
-}
-
-func (o *SupplierInput) GetMiddleName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.MiddleName
-}
-
-func (o *SupplierInput) GetLastName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.LastName
-}
-
-func (o *SupplierInput) GetSuffix() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Suffix
-}
-
-func (o *SupplierInput) GetIndividual() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.Individual
-}
-
-func (o *SupplierInput) GetAddresses() []Address {
-	if o == nil {
-		return nil
-	}
-	return o.Addresses
-}
-
-func (o *SupplierInput) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
-		return nil
-	}
-	return o.PhoneNumbers
-}
-
-func (o *SupplierInput) GetEmails() []Email {
-	if o == nil {
-		return nil
-	}
-	return o.Emails
-}
-
-func (o *SupplierInput) GetWebsites() []Website {
-	if o == nil {
-		return nil
-	}
-	return o.Websites
-}
-
-func (o *SupplierInput) GetBankAccounts() []BankAccount {
-	if o == nil {
-		return nil
-	}
-	return o.BankAccounts
-}
-
-func (o *SupplierInput) GetNotes() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Notes
-}
-
-func (o *SupplierInput) GetTaxRate() *LinkedTaxRateInput {
-	if o == nil {
-		return nil
-	}
-	return o.TaxRate
-}
-
-func (o *SupplierInput) GetTaxNumber() *string {
-	if o == nil {
-		return nil
-	}
-	return o.TaxNumber
-}
-
-func (o *SupplierInput) GetCurrency() *Currency {
-	if o == nil {
-		return nil
-	}
-	return o.Currency
-}
-
-func (o *SupplierInput) GetAccount() *LinkedLedgerAccountInput {
-	if o == nil {
-		return nil
-	}
-	return o.Account
-}
-
-func (o *SupplierInput) GetStatus() *SupplierStatus {
-	if o == nil {
-		return nil
-	}
-	return o.Status
-}
-
-func (o *SupplierInput) GetPaymentMethod() *string {
-	if o == nil {
-		return nil
-	}
-	return o.PaymentMethod
-}
-
-func (o *SupplierInput) GetChannel() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Channel
-}
-
-func (o *SupplierInput) GetCustomFields() []CustomField {
-	if o == nil {
-		return nil
-	}
-	return o.CustomFields
-}
-
-func (o *SupplierInput) GetRowVersion() *string {
-	if o == nil {
-		return nil
-	}
-	return o.RowVersion
-}
-
-func (o *SupplierInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
-		return nil
-	}
-	return o.PassThrough
-}
-
-func (o *SupplierInput) GetSubsidiaryID() *string {
 	if o == nil {
 		return nil
 	}

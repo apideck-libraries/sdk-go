@@ -9,62 +9,6 @@ import (
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 )
 
-// ConnectionStatus - Status of the connection.
-type ConnectionStatus string
-
-const (
-	ConnectionStatusLive      ConnectionStatus = "live"
-	ConnectionStatusUpcoming  ConnectionStatus = "upcoming"
-	ConnectionStatusRequested ConnectionStatus = "requested"
-)
-
-func (e ConnectionStatus) ToPointer() *ConnectionStatus {
-	return &e
-}
-func (e *ConnectionStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
-	}
-	switch v {
-	case "live":
-		fallthrough
-	case "upcoming":
-		fallthrough
-	case "requested":
-		*e = ConnectionStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ConnectionStatus: %v", v)
-	}
-}
-
-type Target string
-
-const (
-	TargetCustomFields Target = "custom_fields"
-	TargetResource     Target = "resource"
-)
-
-func (e Target) ToPointer() *Target {
-	return &e
-}
-func (e *Target) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
-	}
-	switch v {
-	case "custom_fields":
-		fallthrough
-	case "resource":
-		*e = Target(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Target: %v", v)
-	}
-}
-
 type Value5Type string
 
 const (
@@ -277,6 +221,155 @@ func (u ConnectionValue) MarshalJSON() ([]byte, error) {
 	}
 
 	return nil, errors.New("could not marshal union type ConnectionValue: all fields are null")
+}
+
+type ConnectionDefaults struct {
+	ID      *string           `json:"id,omitempty"`
+	Options []FormFieldOption `json:"options,omitempty"`
+	Value   *ConnectionValue  `json:"value,omitempty"`
+}
+
+func (o *ConnectionDefaults) GetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *ConnectionDefaults) GetOptions() []FormFieldOption {
+	if o == nil {
+		return nil
+	}
+	return o.Options
+}
+
+func (o *ConnectionDefaults) GetValue() *ConnectionValue {
+	if o == nil {
+		return nil
+	}
+	return o.Value
+}
+
+type ConnectionConfiguration struct {
+	Resource *string              `json:"resource,omitempty"`
+	Defaults []ConnectionDefaults `json:"defaults,omitempty"`
+}
+
+func (o *ConnectionConfiguration) GetResource() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Resource
+}
+
+func (o *ConnectionConfiguration) GetDefaults() []ConnectionDefaults {
+	if o == nil {
+		return nil
+	}
+	return o.Defaults
+}
+
+type ConnectionInput struct {
+	// Whether the connection is enabled or not. You can enable or disable a connection using the Update Connection API.
+	Enabled *bool `json:"enabled,omitempty"`
+	// Connection settings. Values will persist to `form_fields` with corresponding id
+	Settings map[string]any `json:"settings,omitempty"`
+	// Attach your own consumer specific metadata
+	Metadata      map[string]any            `json:"metadata,omitempty"`
+	Configuration []ConnectionConfiguration `json:"configuration,omitempty"`
+	// List of custom mappings configured for this connection
+	CustomMappings []CustomMappingInput `json:"custom_mappings,omitempty"`
+}
+
+func (o *ConnectionInput) GetEnabled() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Enabled
+}
+
+func (o *ConnectionInput) GetSettings() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Settings
+}
+
+func (o *ConnectionInput) GetMetadata() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Metadata
+}
+
+func (o *ConnectionInput) GetConfiguration() []ConnectionConfiguration {
+	if o == nil {
+		return nil
+	}
+	return o.Configuration
+}
+
+func (o *ConnectionInput) GetCustomMappings() []CustomMappingInput {
+	if o == nil {
+		return nil
+	}
+	return o.CustomMappings
+}
+
+// ConnectionStatus - Status of the connection.
+type ConnectionStatus string
+
+const (
+	ConnectionStatusLive      ConnectionStatus = "live"
+	ConnectionStatusUpcoming  ConnectionStatus = "upcoming"
+	ConnectionStatusRequested ConnectionStatus = "requested"
+)
+
+func (e ConnectionStatus) ToPointer() *ConnectionStatus {
+	return &e
+}
+func (e *ConnectionStatus) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "live":
+		fallthrough
+	case "upcoming":
+		fallthrough
+	case "requested":
+		*e = ConnectionStatus(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for ConnectionStatus: %v", v)
+	}
+}
+
+type Target string
+
+const (
+	TargetCustomFields Target = "custom_fields"
+	TargetResource     Target = "resource"
+)
+
+func (e Target) ToPointer() *Target {
+	return &e
+}
+func (e *Target) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "custom_fields":
+		fallthrough
+	case "resource":
+		*e = Target(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for Target: %v", v)
+	}
 }
 
 type Defaults struct {
@@ -603,97 +696,4 @@ func (o *Connection) GetUpdatedAt() *float64 {
 		return nil
 	}
 	return o.UpdatedAt
-}
-
-type ConnectionDefaults struct {
-	ID      *string           `json:"id,omitempty"`
-	Options []FormFieldOption `json:"options,omitempty"`
-	Value   *ConnectionValue  `json:"value,omitempty"`
-}
-
-func (o *ConnectionDefaults) GetID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ID
-}
-
-func (o *ConnectionDefaults) GetOptions() []FormFieldOption {
-	if o == nil {
-		return nil
-	}
-	return o.Options
-}
-
-func (o *ConnectionDefaults) GetValue() *ConnectionValue {
-	if o == nil {
-		return nil
-	}
-	return o.Value
-}
-
-type ConnectionConfiguration struct {
-	Resource *string              `json:"resource,omitempty"`
-	Defaults []ConnectionDefaults `json:"defaults,omitempty"`
-}
-
-func (o *ConnectionConfiguration) GetResource() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Resource
-}
-
-func (o *ConnectionConfiguration) GetDefaults() []ConnectionDefaults {
-	if o == nil {
-		return nil
-	}
-	return o.Defaults
-}
-
-type ConnectionInput struct {
-	// Whether the connection is enabled or not. You can enable or disable a connection using the Update Connection API.
-	Enabled *bool `json:"enabled,omitempty"`
-	// Connection settings. Values will persist to `form_fields` with corresponding id
-	Settings map[string]any `json:"settings,omitempty"`
-	// Attach your own consumer specific metadata
-	Metadata      map[string]any            `json:"metadata,omitempty"`
-	Configuration []ConnectionConfiguration `json:"configuration,omitempty"`
-	// List of custom mappings configured for this connection
-	CustomMappings []CustomMappingInput `json:"custom_mappings,omitempty"`
-}
-
-func (o *ConnectionInput) GetEnabled() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.Enabled
-}
-
-func (o *ConnectionInput) GetSettings() map[string]any {
-	if o == nil {
-		return nil
-	}
-	return o.Settings
-}
-
-func (o *ConnectionInput) GetMetadata() map[string]any {
-	if o == nil {
-		return nil
-	}
-	return o.Metadata
-}
-
-func (o *ConnectionInput) GetConfiguration() []ConnectionConfiguration {
-	if o == nil {
-		return nil
-	}
-	return o.Configuration
-}
-
-func (o *ConnectionInput) GetCustomMappings() []CustomMappingInput {
-	if o == nil {
-		return nil
-	}
-	return o.CustomMappings
 }
