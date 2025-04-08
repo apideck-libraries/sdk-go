@@ -36,6 +36,54 @@ func (e *Scope) UnmarshalJSON(data []byte) error {
 	}
 }
 
+type SharedLinkInput struct {
+	// The URL that can be used to download the file.
+	DownloadURL *string `json:"download_url,omitempty"`
+	// The ID of the file or folder to link.
+	TargetID *string `json:"target_id"`
+	// The scope of the shared link.
+	Scope *Scope `json:"scope,omitempty"`
+	// Optional password for the shared link.
+	Password *string `json:"password,omitempty"`
+	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+}
+
+func (o *SharedLinkInput) GetDownloadURL() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DownloadURL
+}
+
+func (o *SharedLinkInput) GetTargetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TargetID
+}
+
+func (o *SharedLinkInput) GetScope() *Scope {
+	if o == nil {
+		return nil
+	}
+	return o.Scope
+}
+
+func (o *SharedLinkInput) GetPassword() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Password
+}
+
+func (o *SharedLinkInput) GetPassThrough() []PassThroughBody {
+	if o == nil {
+		return nil
+	}
+	return o.PassThrough
+}
+
 type SharedLink struct {
 	// The URL that can be used to view the file.
 	URL *string `json:"url,omitempty"`
@@ -123,54 +171,6 @@ func (o *SharedLink) GetCreatedAt() *time.Time {
 }
 
 func (o *SharedLink) GetPassThrough() []PassThroughBody {
-	if o == nil {
-		return nil
-	}
-	return o.PassThrough
-}
-
-type SharedLinkInput struct {
-	// The URL that can be used to download the file.
-	DownloadURL *string `json:"download_url,omitempty"`
-	// The ID of the file or folder to link.
-	TargetID *string `json:"target_id"`
-	// The scope of the shared link.
-	Scope *Scope `json:"scope,omitempty"`
-	// Optional password for the shared link.
-	Password *string `json:"password,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-}
-
-func (o *SharedLinkInput) GetDownloadURL() *string {
-	if o == nil {
-		return nil
-	}
-	return o.DownloadURL
-}
-
-func (o *SharedLinkInput) GetTargetID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.TargetID
-}
-
-func (o *SharedLinkInput) GetScope() *Scope {
-	if o == nil {
-		return nil
-	}
-	return o.Scope
-}
-
-func (o *SharedLinkInput) GetPassword() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Password
-}
-
-func (o *SharedLinkInput) GetPassThrough() []PassThroughBody {
 	if o == nil {
 		return nil
 	}

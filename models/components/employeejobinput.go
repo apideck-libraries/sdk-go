@@ -39,6 +39,127 @@ func (e *EmployeeJobStatus) UnmarshalJSON(data []byte) error {
 	}
 }
 
+type EmployeeJobInput struct {
+	// The job title of the person.
+	Title *string `json:"title,omitempty"`
+	// The position and responsibilities of the person within the organization.
+	Role *string `json:"role,omitempty"`
+	// The date on which the employee starts working in their current job role.
+	StartDate *types.Date `json:"start_date,omitempty"`
+	// The date on which the employee leaves or is expected to leave their current job role.
+	EndDate *types.Date `json:"end_date,omitempty"`
+	// The rate of pay for the employee in their current job role.
+	CompensationRate *float64 `json:"compensation_rate,omitempty"`
+	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+	Currency *Currency `json:"currency,omitempty"`
+	// Unit of measurement for employee compensation.
+	PaymentUnit *PaymentUnit `json:"payment_unit,omitempty"`
+	// The date on which the employee was hired by the organization
+	HiredAt *types.Date `json:"hired_at,omitempty"`
+	// Indicates whether this the employee's primary job.
+	IsPrimary *bool `json:"is_primary,omitempty"`
+	// Indicates whether this the employee has a manager role.
+	IsManager *bool `json:"is_manager,omitempty"`
+	// Indicates the status of the job.
+	Status   *EmployeeJobStatus `json:"status,omitempty"`
+	Location *Address           `json:"location,omitempty"`
+}
+
+func (e EmployeeJobInput) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(e, "", false)
+}
+
+func (e *EmployeeJobInput) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &e, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *EmployeeJobInput) GetTitle() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Title
+}
+
+func (o *EmployeeJobInput) GetRole() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Role
+}
+
+func (o *EmployeeJobInput) GetStartDate() *types.Date {
+	if o == nil {
+		return nil
+	}
+	return o.StartDate
+}
+
+func (o *EmployeeJobInput) GetEndDate() *types.Date {
+	if o == nil {
+		return nil
+	}
+	return o.EndDate
+}
+
+func (o *EmployeeJobInput) GetCompensationRate() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.CompensationRate
+}
+
+func (o *EmployeeJobInput) GetCurrency() *Currency {
+	if o == nil {
+		return nil
+	}
+	return o.Currency
+}
+
+func (o *EmployeeJobInput) GetPaymentUnit() *PaymentUnit {
+	if o == nil {
+		return nil
+	}
+	return o.PaymentUnit
+}
+
+func (o *EmployeeJobInput) GetHiredAt() *types.Date {
+	if o == nil {
+		return nil
+	}
+	return o.HiredAt
+}
+
+func (o *EmployeeJobInput) GetIsPrimary() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.IsPrimary
+}
+
+func (o *EmployeeJobInput) GetIsManager() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.IsManager
+}
+
+func (o *EmployeeJobInput) GetStatus() *EmployeeJobStatus {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
+func (o *EmployeeJobInput) GetLocation() *Address {
+	if o == nil {
+		return nil
+	}
+	return o.Location
+}
+
 type EmployeeJob struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
@@ -172,127 +293,6 @@ func (o *EmployeeJob) GetStatus() *EmployeeJobStatus {
 }
 
 func (o *EmployeeJob) GetLocation() *Address {
-	if o == nil {
-		return nil
-	}
-	return o.Location
-}
-
-type EmployeeJobInput struct {
-	// The job title of the person.
-	Title *string `json:"title,omitempty"`
-	// The position and responsibilities of the person within the organization.
-	Role *string `json:"role,omitempty"`
-	// The date on which the employee starts working in their current job role.
-	StartDate *types.Date `json:"start_date,omitempty"`
-	// The date on which the employee leaves or is expected to leave their current job role.
-	EndDate *types.Date `json:"end_date,omitempty"`
-	// The rate of pay for the employee in their current job role.
-	CompensationRate *float64 `json:"compensation_rate,omitempty"`
-	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-	Currency *Currency `json:"currency,omitempty"`
-	// Unit of measurement for employee compensation.
-	PaymentUnit *PaymentUnit `json:"payment_unit,omitempty"`
-	// The date on which the employee was hired by the organization
-	HiredAt *types.Date `json:"hired_at,omitempty"`
-	// Indicates whether this the employee's primary job.
-	IsPrimary *bool `json:"is_primary,omitempty"`
-	// Indicates whether this the employee has a manager role.
-	IsManager *bool `json:"is_manager,omitempty"`
-	// Indicates the status of the job.
-	Status   *EmployeeJobStatus `json:"status,omitempty"`
-	Location *Address           `json:"location,omitempty"`
-}
-
-func (e EmployeeJobInput) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(e, "", false)
-}
-
-func (e *EmployeeJobInput) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &e, "", false, false); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (o *EmployeeJobInput) GetTitle() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Title
-}
-
-func (o *EmployeeJobInput) GetRole() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Role
-}
-
-func (o *EmployeeJobInput) GetStartDate() *types.Date {
-	if o == nil {
-		return nil
-	}
-	return o.StartDate
-}
-
-func (o *EmployeeJobInput) GetEndDate() *types.Date {
-	if o == nil {
-		return nil
-	}
-	return o.EndDate
-}
-
-func (o *EmployeeJobInput) GetCompensationRate() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.CompensationRate
-}
-
-func (o *EmployeeJobInput) GetCurrency() *Currency {
-	if o == nil {
-		return nil
-	}
-	return o.Currency
-}
-
-func (o *EmployeeJobInput) GetPaymentUnit() *PaymentUnit {
-	if o == nil {
-		return nil
-	}
-	return o.PaymentUnit
-}
-
-func (o *EmployeeJobInput) GetHiredAt() *types.Date {
-	if o == nil {
-		return nil
-	}
-	return o.HiredAt
-}
-
-func (o *EmployeeJobInput) GetIsPrimary() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.IsPrimary
-}
-
-func (o *EmployeeJobInput) GetIsManager() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.IsManager
-}
-
-func (o *EmployeeJobInput) GetStatus() *EmployeeJobStatus {
-	if o == nil {
-		return nil
-	}
-	return o.Status
-}
-
-func (o *EmployeeJobInput) GetLocation() *Address {
 	if o == nil {
 		return nil
 	}

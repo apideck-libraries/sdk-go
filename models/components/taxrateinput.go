@@ -86,6 +86,160 @@ func (o *Subsidiaries) GetID() *string {
 	return o.ID
 }
 
+type TaxRateInput struct {
+	// ID assigned to identify this tax rate.
+	ID *string `json:"id,omitempty"`
+	// Name assigned to identify this tax rate.
+	Name *string `json:"name,omitempty"`
+	// Tax code assigned to identify this tax rate.
+	Code *string `json:"code,omitempty"`
+	// Description of tax rate
+	Description *string `json:"description,omitempty"`
+	// Effective tax rate
+	EffectiveTaxRate *float64 `json:"effective_tax_rate,omitempty"`
+	// Not compounded sum of the components of a tax rate
+	TotalTaxRate *float64 `json:"total_tax_rate,omitempty"`
+	// Unique identifier for the account for tax collected.
+	TaxPayableAccountID *string `json:"tax_payable_account_id,omitempty"`
+	// Unique identifier for the account for tax remitted.
+	TaxRemittedAccountID *string      `json:"tax_remitted_account_id,omitempty"`
+	Components           []Components `json:"components,omitempty"`
+	// Tax type used to indicate the source of tax collected or paid
+	Type *string `json:"type,omitempty"`
+	// Report Tax type to aggregate tax collected or paid for reporting purposes
+	ReportTaxType *string `json:"report_tax_type,omitempty"`
+	// ID of the original tax rate from which the new tax rate is derived. Helps to understand the relationship between corresponding tax rate entities.
+	OriginalTaxRateID *string `json:"original_tax_rate_id,omitempty"`
+	// Tax rate status
+	Status *TaxRateStatus `json:"status,omitempty"`
+	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
+	RowVersion *string `json:"row_version,omitempty"`
+	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+	// The subsidiaries this belongs to.
+	Subsidiaries []Subsidiaries `json:"subsidiaries,omitempty"`
+	CustomFields []CustomField  `json:"custom_fields,omitempty"`
+}
+
+func (o *TaxRateInput) GetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *TaxRateInput) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *TaxRateInput) GetCode() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Code
+}
+
+func (o *TaxRateInput) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *TaxRateInput) GetEffectiveTaxRate() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.EffectiveTaxRate
+}
+
+func (o *TaxRateInput) GetTotalTaxRate() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.TotalTaxRate
+}
+
+func (o *TaxRateInput) GetTaxPayableAccountID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TaxPayableAccountID
+}
+
+func (o *TaxRateInput) GetTaxRemittedAccountID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TaxRemittedAccountID
+}
+
+func (o *TaxRateInput) GetComponents() []Components {
+	if o == nil {
+		return nil
+	}
+	return o.Components
+}
+
+func (o *TaxRateInput) GetType() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Type
+}
+
+func (o *TaxRateInput) GetReportTaxType() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ReportTaxType
+}
+
+func (o *TaxRateInput) GetOriginalTaxRateID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.OriginalTaxRateID
+}
+
+func (o *TaxRateInput) GetStatus() *TaxRateStatus {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
+func (o *TaxRateInput) GetRowVersion() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RowVersion
+}
+
+func (o *TaxRateInput) GetPassThrough() []PassThroughBody {
+	if o == nil {
+		return nil
+	}
+	return o.PassThrough
+}
+
+func (o *TaxRateInput) GetSubsidiaries() []Subsidiaries {
+	if o == nil {
+		return nil
+	}
+	return o.Subsidiaries
+}
+
+func (o *TaxRateInput) GetCustomFields() []CustomField {
+	if o == nil {
+		return nil
+	}
+	return o.CustomFields
+}
+
 type TaxRate struct {
 	// ID assigned to identify this tax rate.
 	ID *string `json:"id,omitempty"`
@@ -290,160 +444,6 @@ func (o *TaxRate) GetSubsidiaries() []Subsidiaries {
 }
 
 func (o *TaxRate) GetCustomFields() []CustomField {
-	if o == nil {
-		return nil
-	}
-	return o.CustomFields
-}
-
-type TaxRateInput struct {
-	// ID assigned to identify this tax rate.
-	ID *string `json:"id,omitempty"`
-	// Name assigned to identify this tax rate.
-	Name *string `json:"name,omitempty"`
-	// Tax code assigned to identify this tax rate.
-	Code *string `json:"code,omitempty"`
-	// Description of tax rate
-	Description *string `json:"description,omitempty"`
-	// Effective tax rate
-	EffectiveTaxRate *float64 `json:"effective_tax_rate,omitempty"`
-	// Not compounded sum of the components of a tax rate
-	TotalTaxRate *float64 `json:"total_tax_rate,omitempty"`
-	// Unique identifier for the account for tax collected.
-	TaxPayableAccountID *string `json:"tax_payable_account_id,omitempty"`
-	// Unique identifier for the account for tax remitted.
-	TaxRemittedAccountID *string      `json:"tax_remitted_account_id,omitempty"`
-	Components           []Components `json:"components,omitempty"`
-	// Tax type used to indicate the source of tax collected or paid
-	Type *string `json:"type,omitempty"`
-	// Report Tax type to aggregate tax collected or paid for reporting purposes
-	ReportTaxType *string `json:"report_tax_type,omitempty"`
-	// ID of the original tax rate from which the new tax rate is derived. Helps to understand the relationship between corresponding tax rate entities.
-	OriginalTaxRateID *string `json:"original_tax_rate_id,omitempty"`
-	// Tax rate status
-	Status *TaxRateStatus `json:"status,omitempty"`
-	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-	RowVersion *string `json:"row_version,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-	// The subsidiaries this belongs to.
-	Subsidiaries []Subsidiaries `json:"subsidiaries,omitempty"`
-	CustomFields []CustomField  `json:"custom_fields,omitempty"`
-}
-
-func (o *TaxRateInput) GetID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ID
-}
-
-func (o *TaxRateInput) GetName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Name
-}
-
-func (o *TaxRateInput) GetCode() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Code
-}
-
-func (o *TaxRateInput) GetDescription() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Description
-}
-
-func (o *TaxRateInput) GetEffectiveTaxRate() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.EffectiveTaxRate
-}
-
-func (o *TaxRateInput) GetTotalTaxRate() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.TotalTaxRate
-}
-
-func (o *TaxRateInput) GetTaxPayableAccountID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.TaxPayableAccountID
-}
-
-func (o *TaxRateInput) GetTaxRemittedAccountID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.TaxRemittedAccountID
-}
-
-func (o *TaxRateInput) GetComponents() []Components {
-	if o == nil {
-		return nil
-	}
-	return o.Components
-}
-
-func (o *TaxRateInput) GetType() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Type
-}
-
-func (o *TaxRateInput) GetReportTaxType() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ReportTaxType
-}
-
-func (o *TaxRateInput) GetOriginalTaxRateID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.OriginalTaxRateID
-}
-
-func (o *TaxRateInput) GetStatus() *TaxRateStatus {
-	if o == nil {
-		return nil
-	}
-	return o.Status
-}
-
-func (o *TaxRateInput) GetRowVersion() *string {
-	if o == nil {
-		return nil
-	}
-	return o.RowVersion
-}
-
-func (o *TaxRateInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
-		return nil
-	}
-	return o.PassThrough
-}
-
-func (o *TaxRateInput) GetSubsidiaries() []Subsidiaries {
-	if o == nil {
-		return nil
-	}
-	return o.Subsidiaries
-}
-
-func (o *TaxRateInput) GetCustomFields() []CustomField {
 	if o == nil {
 		return nil
 	}

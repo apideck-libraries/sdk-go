@@ -172,26 +172,6 @@ func (e *AccountStatus) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type Categories struct {
-	ID *string `json:"id,omitempty"`
-	// The name of the category.
-	Name *string `json:"name,omitempty"`
-}
-
-func (o *Categories) GetID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ID
-}
-
-func (o *Categories) GetName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Name
-}
-
 type ParentAccount struct {
 	// The ID of the parent account.
 	ID *string `json:"id,omitempty"`
@@ -222,6 +202,283 @@ func (o *ParentAccount) GetDisplayID() *string {
 	return o.DisplayID
 }
 
+type LedgerAccountSubsidiaries struct {
+	// The ID of the subsidiary.
+	ID *string `json:"id,omitempty"`
+}
+
+func (o *LedgerAccountSubsidiaries) GetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+type LedgerAccountInput struct {
+	// The human readable display ID used when displaying the account
+	DisplayID *string `json:"display_id,omitempty"`
+	// The nominal code of the ledger account.
+	//
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+	NominalCode *string `json:"nominal_code,omitempty"`
+	// The code assigned to the account.
+	Code *string `json:"code,omitempty"`
+	// The classification of account.
+	Classification *Classification `json:"classification,omitempty"`
+	// The type of account.
+	Type *LedgerAccountType `json:"type,omitempty"`
+	// The sub type of account.
+	SubType *string `json:"sub_type,omitempty"`
+	// The name of the account.
+	Name *string `json:"name,omitempty"`
+	// The fully qualified name of the account.
+	FullyQualifiedName *string `json:"fully_qualified_name,omitempty"`
+	// The description of the account.
+	Description *string `json:"description,omitempty"`
+	// The opening balance of the account.
+	OpeningBalance *float64 `json:"opening_balance,omitempty"`
+	// The current balance of the account.
+	CurrentBalance *float64 `json:"current_balance,omitempty"`
+	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+	Currency *Currency `json:"currency,omitempty"`
+	// The tax type of the account.
+	TaxType *string             `json:"tax_type,omitempty"`
+	TaxRate *LinkedTaxRateInput `json:"tax_rate,omitempty"`
+	Level   *float64            `json:"level,omitempty"`
+	// Whether the account is active or not.
+	Active *bool `json:"active,omitempty"`
+	// The status of the account.
+	Status *AccountStatus `json:"status,omitempty"`
+	// Whether the account is a header or not.
+	Header        *bool          `json:"header,omitempty"`
+	BankAccount   *BankAccount   `json:"bank_account,omitempty"`
+	ParentAccount *ParentAccount `json:"parent_account,omitempty"`
+	// Whether the account is a sub account or not.
+	SubAccount *bool `json:"sub_account,omitempty"`
+	// Reconciliation Date means the last calendar day of each Reconciliation Period.
+	LastReconciliationDate *types.Date `json:"last_reconciliation_date,omitempty"`
+	// The subsidiaries the account belongs to.
+	Subsidiaries []LedgerAccountSubsidiaries `json:"subsidiaries,omitempty"`
+	CustomFields []CustomField               `json:"custom_fields,omitempty"`
+	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
+	RowVersion *string `json:"row_version,omitempty"`
+	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+}
+
+func (l LedgerAccountInput) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(l, "", false)
+}
+
+func (l *LedgerAccountInput) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &l, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *LedgerAccountInput) GetDisplayID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayID
+}
+
+func (o *LedgerAccountInput) GetNominalCode() *string {
+	if o == nil {
+		return nil
+	}
+	return o.NominalCode
+}
+
+func (o *LedgerAccountInput) GetCode() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Code
+}
+
+func (o *LedgerAccountInput) GetClassification() *Classification {
+	if o == nil {
+		return nil
+	}
+	return o.Classification
+}
+
+func (o *LedgerAccountInput) GetType() *LedgerAccountType {
+	if o == nil {
+		return nil
+	}
+	return o.Type
+}
+
+func (o *LedgerAccountInput) GetSubType() *string {
+	if o == nil {
+		return nil
+	}
+	return o.SubType
+}
+
+func (o *LedgerAccountInput) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *LedgerAccountInput) GetFullyQualifiedName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.FullyQualifiedName
+}
+
+func (o *LedgerAccountInput) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *LedgerAccountInput) GetOpeningBalance() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.OpeningBalance
+}
+
+func (o *LedgerAccountInput) GetCurrentBalance() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.CurrentBalance
+}
+
+func (o *LedgerAccountInput) GetCurrency() *Currency {
+	if o == nil {
+		return nil
+	}
+	return o.Currency
+}
+
+func (o *LedgerAccountInput) GetTaxType() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TaxType
+}
+
+func (o *LedgerAccountInput) GetTaxRate() *LinkedTaxRateInput {
+	if o == nil {
+		return nil
+	}
+	return o.TaxRate
+}
+
+func (o *LedgerAccountInput) GetLevel() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.Level
+}
+
+func (o *LedgerAccountInput) GetActive() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Active
+}
+
+func (o *LedgerAccountInput) GetStatus() *AccountStatus {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
+func (o *LedgerAccountInput) GetHeader() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Header
+}
+
+func (o *LedgerAccountInput) GetBankAccount() *BankAccount {
+	if o == nil {
+		return nil
+	}
+	return o.BankAccount
+}
+
+func (o *LedgerAccountInput) GetParentAccount() *ParentAccount {
+	if o == nil {
+		return nil
+	}
+	return o.ParentAccount
+}
+
+func (o *LedgerAccountInput) GetSubAccount() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.SubAccount
+}
+
+func (o *LedgerAccountInput) GetLastReconciliationDate() *types.Date {
+	if o == nil {
+		return nil
+	}
+	return o.LastReconciliationDate
+}
+
+func (o *LedgerAccountInput) GetSubsidiaries() []LedgerAccountSubsidiaries {
+	if o == nil {
+		return nil
+	}
+	return o.Subsidiaries
+}
+
+func (o *LedgerAccountInput) GetCustomFields() []CustomField {
+	if o == nil {
+		return nil
+	}
+	return o.CustomFields
+}
+
+func (o *LedgerAccountInput) GetRowVersion() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RowVersion
+}
+
+func (o *LedgerAccountInput) GetPassThrough() []PassThroughBody {
+	if o == nil {
+		return nil
+	}
+	return o.PassThrough
+}
+
+type Categories struct {
+	ID *string `json:"id,omitempty"`
+	// The name of the category.
+	Name *string `json:"name,omitempty"`
+}
+
+func (o *Categories) GetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *Categories) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
 type SubAccounts struct {
 	// The ID of the sub account.
 	ID *string `json:"id,omitempty"`
@@ -241,18 +498,6 @@ func (o *SubAccounts) GetAccountSubName() *string {
 		return nil
 	}
 	return o.AccountSubName
-}
-
-type LedgerAccountSubsidiaries struct {
-	// The ID of the subsidiary.
-	ID *string `json:"id,omitempty"`
-}
-
-func (o *LedgerAccountSubsidiaries) GetID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ID
 }
 
 type LedgerAccount struct {
@@ -566,251 +811,6 @@ func (o *LedgerAccount) GetCreatedAt() *time.Time {
 }
 
 func (o *LedgerAccount) GetPassThrough() []PassThroughBody {
-	if o == nil {
-		return nil
-	}
-	return o.PassThrough
-}
-
-type LedgerAccountInput struct {
-	// The human readable display ID used when displaying the account
-	DisplayID *string `json:"display_id,omitempty"`
-	// The nominal code of the ledger account.
-	//
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
-	NominalCode *string `json:"nominal_code,omitempty"`
-	// The code assigned to the account.
-	Code *string `json:"code,omitempty"`
-	// The classification of account.
-	Classification *Classification `json:"classification,omitempty"`
-	// The type of account.
-	Type *LedgerAccountType `json:"type,omitempty"`
-	// The sub type of account.
-	SubType *string `json:"sub_type,omitempty"`
-	// The name of the account.
-	Name *string `json:"name,omitempty"`
-	// The fully qualified name of the account.
-	FullyQualifiedName *string `json:"fully_qualified_name,omitempty"`
-	// The description of the account.
-	Description *string `json:"description,omitempty"`
-	// The opening balance of the account.
-	OpeningBalance *float64 `json:"opening_balance,omitempty"`
-	// The current balance of the account.
-	CurrentBalance *float64 `json:"current_balance,omitempty"`
-	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-	Currency *Currency `json:"currency,omitempty"`
-	// The tax type of the account.
-	TaxType *string             `json:"tax_type,omitempty"`
-	TaxRate *LinkedTaxRateInput `json:"tax_rate,omitempty"`
-	Level   *float64            `json:"level,omitempty"`
-	// Whether the account is active or not.
-	Active *bool `json:"active,omitempty"`
-	// The status of the account.
-	Status *AccountStatus `json:"status,omitempty"`
-	// Whether the account is a header or not.
-	Header        *bool          `json:"header,omitempty"`
-	BankAccount   *BankAccount   `json:"bank_account,omitempty"`
-	ParentAccount *ParentAccount `json:"parent_account,omitempty"`
-	// Whether the account is a sub account or not.
-	SubAccount *bool `json:"sub_account,omitempty"`
-	// Reconciliation Date means the last calendar day of each Reconciliation Period.
-	LastReconciliationDate *types.Date `json:"last_reconciliation_date,omitempty"`
-	// The subsidiaries the account belongs to.
-	Subsidiaries []LedgerAccountSubsidiaries `json:"subsidiaries,omitempty"`
-	CustomFields []CustomField               `json:"custom_fields,omitempty"`
-	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-	RowVersion *string `json:"row_version,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-}
-
-func (l LedgerAccountInput) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(l, "", false)
-}
-
-func (l *LedgerAccountInput) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &l, "", false, false); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (o *LedgerAccountInput) GetDisplayID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.DisplayID
-}
-
-func (o *LedgerAccountInput) GetNominalCode() *string {
-	if o == nil {
-		return nil
-	}
-	return o.NominalCode
-}
-
-func (o *LedgerAccountInput) GetCode() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Code
-}
-
-func (o *LedgerAccountInput) GetClassification() *Classification {
-	if o == nil {
-		return nil
-	}
-	return o.Classification
-}
-
-func (o *LedgerAccountInput) GetType() *LedgerAccountType {
-	if o == nil {
-		return nil
-	}
-	return o.Type
-}
-
-func (o *LedgerAccountInput) GetSubType() *string {
-	if o == nil {
-		return nil
-	}
-	return o.SubType
-}
-
-func (o *LedgerAccountInput) GetName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Name
-}
-
-func (o *LedgerAccountInput) GetFullyQualifiedName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.FullyQualifiedName
-}
-
-func (o *LedgerAccountInput) GetDescription() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Description
-}
-
-func (o *LedgerAccountInput) GetOpeningBalance() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.OpeningBalance
-}
-
-func (o *LedgerAccountInput) GetCurrentBalance() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.CurrentBalance
-}
-
-func (o *LedgerAccountInput) GetCurrency() *Currency {
-	if o == nil {
-		return nil
-	}
-	return o.Currency
-}
-
-func (o *LedgerAccountInput) GetTaxType() *string {
-	if o == nil {
-		return nil
-	}
-	return o.TaxType
-}
-
-func (o *LedgerAccountInput) GetTaxRate() *LinkedTaxRateInput {
-	if o == nil {
-		return nil
-	}
-	return o.TaxRate
-}
-
-func (o *LedgerAccountInput) GetLevel() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.Level
-}
-
-func (o *LedgerAccountInput) GetActive() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.Active
-}
-
-func (o *LedgerAccountInput) GetStatus() *AccountStatus {
-	if o == nil {
-		return nil
-	}
-	return o.Status
-}
-
-func (o *LedgerAccountInput) GetHeader() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.Header
-}
-
-func (o *LedgerAccountInput) GetBankAccount() *BankAccount {
-	if o == nil {
-		return nil
-	}
-	return o.BankAccount
-}
-
-func (o *LedgerAccountInput) GetParentAccount() *ParentAccount {
-	if o == nil {
-		return nil
-	}
-	return o.ParentAccount
-}
-
-func (o *LedgerAccountInput) GetSubAccount() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.SubAccount
-}
-
-func (o *LedgerAccountInput) GetLastReconciliationDate() *types.Date {
-	if o == nil {
-		return nil
-	}
-	return o.LastReconciliationDate
-}
-
-func (o *LedgerAccountInput) GetSubsidiaries() []LedgerAccountSubsidiaries {
-	if o == nil {
-		return nil
-	}
-	return o.Subsidiaries
-}
-
-func (o *LedgerAccountInput) GetCustomFields() []CustomField {
-	if o == nil {
-		return nil
-	}
-	return o.CustomFields
-}
-
-func (o *LedgerAccountInput) GetRowVersion() *string {
-	if o == nil {
-		return nil
-	}
-	return o.RowVersion
-}
-
-func (o *LedgerAccountInput) GetPassThrough() []PassThroughBody {
 	if o == nil {
 		return nil
 	}
