@@ -39,6 +39,90 @@ func (e *ActivityAttendeeStatus) UnmarshalJSON(data []byte) error {
 	}
 }
 
+type ActivityAttendeeInput struct {
+	// Full name of the attendee
+	Name *string `json:"name,omitempty"`
+	// First name of the attendee
+	FirstName *string `json:"first_name,omitempty"`
+	// Middle name of the attendee
+	MiddleName *string `json:"middle_name,omitempty"`
+	// Last name of the attendee
+	LastName *string `json:"last_name,omitempty"`
+	// Prefix of the attendee
+	Prefix *string `json:"prefix,omitempty"`
+	// Suffix of the attendee
+	Suffix *string `json:"suffix,omitempty"`
+	// Email address of the attendee
+	EmailAddress *string `json:"email_address,omitempty"`
+	// Whether the attendee is the organizer of the activity
+	IsOrganizer *bool `json:"is_organizer,omitempty"`
+	// Status of the attendee
+	Status *ActivityAttendeeStatus `json:"status,omitempty"`
+}
+
+func (o *ActivityAttendeeInput) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *ActivityAttendeeInput) GetFirstName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.FirstName
+}
+
+func (o *ActivityAttendeeInput) GetMiddleName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.MiddleName
+}
+
+func (o *ActivityAttendeeInput) GetLastName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.LastName
+}
+
+func (o *ActivityAttendeeInput) GetPrefix() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Prefix
+}
+
+func (o *ActivityAttendeeInput) GetSuffix() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Suffix
+}
+
+func (o *ActivityAttendeeInput) GetEmailAddress() *string {
+	if o == nil {
+		return nil
+	}
+	return o.EmailAddress
+}
+
+func (o *ActivityAttendeeInput) GetIsOrganizer() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.IsOrganizer
+}
+
+func (o *ActivityAttendeeInput) GetStatus() *ActivityAttendeeStatus {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
 type ActivityAttendee struct {
 	// Unique identifier for the attendee
 	ID *string `json:"id,omitempty"`
@@ -177,88 +261,4 @@ func (o *ActivityAttendee) GetCreatedAt() *time.Time {
 		return nil
 	}
 	return o.CreatedAt
-}
-
-type ActivityAttendeeInput struct {
-	// Full name of the attendee
-	Name *string `json:"name,omitempty"`
-	// First name of the attendee
-	FirstName *string `json:"first_name,omitempty"`
-	// Middle name of the attendee
-	MiddleName *string `json:"middle_name,omitempty"`
-	// Last name of the attendee
-	LastName *string `json:"last_name,omitempty"`
-	// Prefix of the attendee
-	Prefix *string `json:"prefix,omitempty"`
-	// Suffix of the attendee
-	Suffix *string `json:"suffix,omitempty"`
-	// Email address of the attendee
-	EmailAddress *string `json:"email_address,omitempty"`
-	// Whether the attendee is the organizer of the activity
-	IsOrganizer *bool `json:"is_organizer,omitempty"`
-	// Status of the attendee
-	Status *ActivityAttendeeStatus `json:"status,omitempty"`
-}
-
-func (o *ActivityAttendeeInput) GetName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Name
-}
-
-func (o *ActivityAttendeeInput) GetFirstName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.FirstName
-}
-
-func (o *ActivityAttendeeInput) GetMiddleName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.MiddleName
-}
-
-func (o *ActivityAttendeeInput) GetLastName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.LastName
-}
-
-func (o *ActivityAttendeeInput) GetPrefix() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Prefix
-}
-
-func (o *ActivityAttendeeInput) GetSuffix() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Suffix
-}
-
-func (o *ActivityAttendeeInput) GetEmailAddress() *string {
-	if o == nil {
-		return nil
-	}
-	return o.EmailAddress
-}
-
-func (o *ActivityAttendeeInput) GetIsOrganizer() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.IsOrganizer
-}
-
-func (o *ActivityAttendeeInput) GetStatus() *ActivityAttendeeStatus {
-	if o == nil {
-		return nil
-	}
-	return o.Status
 }
