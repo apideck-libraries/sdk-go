@@ -36,62 +36,6 @@ func (e *DepartmentStatus) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type AccountingDepartmentInput struct {
-	// A unique identifier for an object.
-	ParentID *string `json:"parent_id,omitempty"`
-	// The name of the department.
-	Name *string `json:"name,omitempty"`
-	// Based on the status some functionality is enabled or disabled.
-	Status       *DepartmentStatus          `json:"status,omitempty"`
-	Subsidiaries []SubsidiaryReferenceInput `json:"subsidiaries,omitempty"`
-	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-	RowVersion *string `json:"row_version,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-}
-
-func (o *AccountingDepartmentInput) GetParentID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ParentID
-}
-
-func (o *AccountingDepartmentInput) GetName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Name
-}
-
-func (o *AccountingDepartmentInput) GetStatus() *DepartmentStatus {
-	if o == nil {
-		return nil
-	}
-	return o.Status
-}
-
-func (o *AccountingDepartmentInput) GetSubsidiaries() []SubsidiaryReferenceInput {
-	if o == nil {
-		return nil
-	}
-	return o.Subsidiaries
-}
-
-func (o *AccountingDepartmentInput) GetRowVersion() *string {
-	if o == nil {
-		return nil
-	}
-	return o.RowVersion
-}
-
-func (o *AccountingDepartmentInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
-		return nil
-	}
-	return o.PassThrough
-}
-
 type AccountingDepartment struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
@@ -207,6 +151,62 @@ func (o *AccountingDepartment) GetCreatedAt() *time.Time {
 }
 
 func (o *AccountingDepartment) GetPassThrough() []PassThroughBody {
+	if o == nil {
+		return nil
+	}
+	return o.PassThrough
+}
+
+type AccountingDepartmentInput struct {
+	// A unique identifier for an object.
+	ParentID *string `json:"parent_id,omitempty"`
+	// The name of the department.
+	Name *string `json:"name,omitempty"`
+	// Based on the status some functionality is enabled or disabled.
+	Status       *DepartmentStatus          `json:"status,omitempty"`
+	Subsidiaries []SubsidiaryReferenceInput `json:"subsidiaries,omitempty"`
+	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
+	RowVersion *string `json:"row_version,omitempty"`
+	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+}
+
+func (o *AccountingDepartmentInput) GetParentID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ParentID
+}
+
+func (o *AccountingDepartmentInput) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *AccountingDepartmentInput) GetStatus() *DepartmentStatus {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
+func (o *AccountingDepartmentInput) GetSubsidiaries() []SubsidiaryReferenceInput {
+	if o == nil {
+		return nil
+	}
+	return o.Subsidiaries
+}
+
+func (o *AccountingDepartmentInput) GetRowVersion() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RowVersion
+}
+
+func (o *AccountingDepartmentInput) GetPassThrough() []PassThroughBody {
 	if o == nil {
 		return nil
 	}

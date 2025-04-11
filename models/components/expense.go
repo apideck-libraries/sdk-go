@@ -66,180 +66,6 @@ func (e *ExpenseType) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type ExpenseInput struct {
-	// Number.
-	Number *string `json:"number,omitempty"`
-	// The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
-	TransactionDate *time.Time `json:"transaction_date"`
-	// The unique identifier for the ledger account that this expense should be credited to.
-	AccountID string `json:"account_id"`
-	// The ID of the customer this entity is linked to. Used for expenses that should be marked as billable to customers.
-	CustomerID *string `json:"customer_id,omitempty"`
-	// The ID of the supplier this entity is linked to.
-	SupplierID *string `json:"supplier_id,omitempty"`
-	// The company or subsidiary id the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
-	// The ID of the department
-	DepartmentID *string `json:"department_id,omitempty"`
-	// The type of payment for the expense.
-	PaymentType *ExpensePaymentType `json:"payment_type,omitempty"`
-	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-	Currency *Currency `json:"currency,omitempty"`
-	// Currency Exchange Rate at the time entity was recorded/generated.
-	CurrencyRate *float64 `json:"currency_rate,omitempty"`
-	// The type of expense.
-	Type *ExpenseType `json:"type,omitempty"`
-	// The memo of the expense.
-	Memo    *string             `json:"memo,omitempty"`
-	TaxRate *LinkedTaxRateInput `json:"tax_rate,omitempty"`
-	// The total amount of the expense line item.
-	TotalAmount *float64 `json:"total_amount,omitempty"`
-	// Expense line items linked to this expense.
-	LineItems    []ExpenseLineItemInput `json:"line_items"`
-	CustomFields []CustomField          `json:"custom_fields,omitempty"`
-	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-	RowVersion *string `json:"row_version,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-}
-
-func (e ExpenseInput) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(e, "", false)
-}
-
-func (e *ExpenseInput) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &e, "", false, false); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (o *ExpenseInput) GetNumber() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Number
-}
-
-func (o *ExpenseInput) GetTransactionDate() *time.Time {
-	if o == nil {
-		return nil
-	}
-	return o.TransactionDate
-}
-
-func (o *ExpenseInput) GetAccountID() string {
-	if o == nil {
-		return ""
-	}
-	return o.AccountID
-}
-
-func (o *ExpenseInput) GetCustomerID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.CustomerID
-}
-
-func (o *ExpenseInput) GetSupplierID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.SupplierID
-}
-
-func (o *ExpenseInput) GetCompanyID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.CompanyID
-}
-
-func (o *ExpenseInput) GetDepartmentID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.DepartmentID
-}
-
-func (o *ExpenseInput) GetPaymentType() *ExpensePaymentType {
-	if o == nil {
-		return nil
-	}
-	return o.PaymentType
-}
-
-func (o *ExpenseInput) GetCurrency() *Currency {
-	if o == nil {
-		return nil
-	}
-	return o.Currency
-}
-
-func (o *ExpenseInput) GetCurrencyRate() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.CurrencyRate
-}
-
-func (o *ExpenseInput) GetType() *ExpenseType {
-	if o == nil {
-		return nil
-	}
-	return o.Type
-}
-
-func (o *ExpenseInput) GetMemo() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Memo
-}
-
-func (o *ExpenseInput) GetTaxRate() *LinkedTaxRateInput {
-	if o == nil {
-		return nil
-	}
-	return o.TaxRate
-}
-
-func (o *ExpenseInput) GetTotalAmount() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.TotalAmount
-}
-
-func (o *ExpenseInput) GetLineItems() []ExpenseLineItemInput {
-	if o == nil {
-		return []ExpenseLineItemInput{}
-	}
-	return o.LineItems
-}
-
-func (o *ExpenseInput) GetCustomFields() []CustomField {
-	if o == nil {
-		return nil
-	}
-	return o.CustomFields
-}
-
-func (o *ExpenseInput) GetRowVersion() *string {
-	if o == nil {
-		return nil
-	}
-	return o.RowVersion
-}
-
-func (o *ExpenseInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
-		return nil
-	}
-	return o.PassThrough
-}
-
 type Expense struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
@@ -444,6 +270,180 @@ func (o *Expense) GetRowVersion() *string {
 }
 
 func (o *Expense) GetPassThrough() []PassThroughBody {
+	if o == nil {
+		return nil
+	}
+	return o.PassThrough
+}
+
+type ExpenseInput struct {
+	// Number.
+	Number *string `json:"number,omitempty"`
+	// The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
+	TransactionDate *time.Time `json:"transaction_date"`
+	// The unique identifier for the ledger account that this expense should be credited to.
+	AccountID string `json:"account_id"`
+	// The ID of the customer this entity is linked to. Used for expenses that should be marked as billable to customers.
+	CustomerID *string `json:"customer_id,omitempty"`
+	// The ID of the supplier this entity is linked to.
+	SupplierID *string `json:"supplier_id,omitempty"`
+	// The company or subsidiary id the transaction belongs to
+	CompanyID *string `json:"company_id,omitempty"`
+	// The ID of the department
+	DepartmentID *string `json:"department_id,omitempty"`
+	// The type of payment for the expense.
+	PaymentType *ExpensePaymentType `json:"payment_type,omitempty"`
+	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+	Currency *Currency `json:"currency,omitempty"`
+	// Currency Exchange Rate at the time entity was recorded/generated.
+	CurrencyRate *float64 `json:"currency_rate,omitempty"`
+	// The type of expense.
+	Type *ExpenseType `json:"type,omitempty"`
+	// The memo of the expense.
+	Memo    *string             `json:"memo,omitempty"`
+	TaxRate *LinkedTaxRateInput `json:"tax_rate,omitempty"`
+	// The total amount of the expense line item.
+	TotalAmount *float64 `json:"total_amount,omitempty"`
+	// Expense line items linked to this expense.
+	LineItems    []ExpenseLineItemInput `json:"line_items"`
+	CustomFields []CustomField          `json:"custom_fields,omitempty"`
+	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
+	RowVersion *string `json:"row_version,omitempty"`
+	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+}
+
+func (e ExpenseInput) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(e, "", false)
+}
+
+func (e *ExpenseInput) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &e, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *ExpenseInput) GetNumber() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Number
+}
+
+func (o *ExpenseInput) GetTransactionDate() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.TransactionDate
+}
+
+func (o *ExpenseInput) GetAccountID() string {
+	if o == nil {
+		return ""
+	}
+	return o.AccountID
+}
+
+func (o *ExpenseInput) GetCustomerID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CustomerID
+}
+
+func (o *ExpenseInput) GetSupplierID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.SupplierID
+}
+
+func (o *ExpenseInput) GetCompanyID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CompanyID
+}
+
+func (o *ExpenseInput) GetDepartmentID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DepartmentID
+}
+
+func (o *ExpenseInput) GetPaymentType() *ExpensePaymentType {
+	if o == nil {
+		return nil
+	}
+	return o.PaymentType
+}
+
+func (o *ExpenseInput) GetCurrency() *Currency {
+	if o == nil {
+		return nil
+	}
+	return o.Currency
+}
+
+func (o *ExpenseInput) GetCurrencyRate() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.CurrencyRate
+}
+
+func (o *ExpenseInput) GetType() *ExpenseType {
+	if o == nil {
+		return nil
+	}
+	return o.Type
+}
+
+func (o *ExpenseInput) GetMemo() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Memo
+}
+
+func (o *ExpenseInput) GetTaxRate() *LinkedTaxRateInput {
+	if o == nil {
+		return nil
+	}
+	return o.TaxRate
+}
+
+func (o *ExpenseInput) GetTotalAmount() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.TotalAmount
+}
+
+func (o *ExpenseInput) GetLineItems() []ExpenseLineItemInput {
+	if o == nil {
+		return []ExpenseLineItemInput{}
+	}
+	return o.LineItems
+}
+
+func (o *ExpenseInput) GetCustomFields() []CustomField {
+	if o == nil {
+		return nil
+	}
+	return o.CustomFields
+}
+
+func (o *ExpenseInput) GetRowVersion() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RowVersion
+}
+
+func (o *ExpenseInput) GetPassThrough() []PassThroughBody {
 	if o == nil {
 		return nil
 	}

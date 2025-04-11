@@ -46,311 +46,6 @@ func (e *InvoiceItemTypeType) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type InvoiceItemSalesDetails struct {
-	UnitPrice *float64 `json:"unit_price,omitempty"`
-	// Description of the unit type the item is sold as, ie: kg, hour.
-	UnitOfMeasure *string `json:"unit_of_measure,omitempty"`
-	// Amounts are including tax
-	TaxInclusive *bool               `json:"tax_inclusive,omitempty"`
-	TaxRate      *LinkedTaxRateInput `json:"tax_rate,omitempty"`
-}
-
-func (o *InvoiceItemSalesDetails) GetUnitPrice() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.UnitPrice
-}
-
-func (o *InvoiceItemSalesDetails) GetUnitOfMeasure() *string {
-	if o == nil {
-		return nil
-	}
-	return o.UnitOfMeasure
-}
-
-func (o *InvoiceItemSalesDetails) GetTaxInclusive() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.TaxInclusive
-}
-
-func (o *InvoiceItemSalesDetails) GetTaxRate() *LinkedTaxRateInput {
-	if o == nil {
-		return nil
-	}
-	return o.TaxRate
-}
-
-type InvoiceItemPurchaseDetails struct {
-	UnitPrice *float64 `json:"unit_price,omitempty"`
-	// Description of the unit type the item is sold as, ie: kg, hour.
-	UnitOfMeasure *string `json:"unit_of_measure,omitempty"`
-	// Amounts are including tax
-	TaxInclusive *bool               `json:"tax_inclusive,omitempty"`
-	TaxRate      *LinkedTaxRateInput `json:"tax_rate,omitempty"`
-}
-
-func (o *InvoiceItemPurchaseDetails) GetUnitPrice() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.UnitPrice
-}
-
-func (o *InvoiceItemPurchaseDetails) GetUnitOfMeasure() *string {
-	if o == nil {
-		return nil
-	}
-	return o.UnitOfMeasure
-}
-
-func (o *InvoiceItemPurchaseDetails) GetTaxInclusive() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.TaxInclusive
-}
-
-func (o *InvoiceItemPurchaseDetails) GetTaxRate() *LinkedTaxRateInput {
-	if o == nil {
-		return nil
-	}
-	return o.TaxRate
-}
-
-type InvoiceItemInput struct {
-	// Item name
-	Name *string `json:"name,omitempty"`
-	// A short description of the item
-	Description *string `json:"description,omitempty"`
-	// User defined item code
-	Code *string `json:"code,omitempty"`
-	// Item will be available on sales transactions
-	Sold *bool `json:"sold,omitempty"`
-	// Item is available for purchase transactions
-	Purchased *bool `json:"purchased,omitempty"`
-	// Item is inventoried
-	Tracked *bool `json:"tracked,omitempty"`
-	// If true, transactions for this item are taxable
-	Taxable *bool `json:"taxable,omitempty"`
-	// The date of opening balance if inventory item is tracked - YYYY-MM-DD.
-	InventoryDate *types.Date `json:"inventory_date,omitempty"`
-	// Item type
-	Type            *InvoiceItemTypeType        `json:"type,omitempty"`
-	SalesDetails    *InvoiceItemSalesDetails    `json:"sales_details,omitempty"`
-	PurchaseDetails *InvoiceItemPurchaseDetails `json:"purchase_details,omitempty"`
-	Quantity        *float64                    `json:"quantity,omitempty"`
-	UnitPrice       *float64                    `json:"unit_price,omitempty"`
-	AssetAccount    *LinkedLedgerAccountInput   `json:"asset_account,omitempty"`
-	IncomeAccount   *LinkedLedgerAccountInput   `json:"income_account,omitempty"`
-	ExpenseAccount  *LinkedLedgerAccountInput   `json:"expense_account,omitempty"`
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
-	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
-	// A list of linked tracking categories.
-	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
-	Active             *bool                     `json:"active,omitempty"`
-	// The ID of the department
-	DepartmentID *string `json:"department_id,omitempty"`
-	// The ID of the location
-	LocationID *string `json:"location_id,omitempty"`
-	// The ID of the subsidiary
-	SubsidiaryID *string `json:"subsidiary_id,omitempty"`
-	// The ID of the tax schedule
-	TaxScheduleID *string `json:"tax_schedule_id,omitempty"`
-	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-	RowVersion *string `json:"row_version,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-}
-
-func (i InvoiceItemInput) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(i, "", false)
-}
-
-func (i *InvoiceItemInput) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &i, "", false, false); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (o *InvoiceItemInput) GetName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Name
-}
-
-func (o *InvoiceItemInput) GetDescription() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Description
-}
-
-func (o *InvoiceItemInput) GetCode() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Code
-}
-
-func (o *InvoiceItemInput) GetSold() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.Sold
-}
-
-func (o *InvoiceItemInput) GetPurchased() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.Purchased
-}
-
-func (o *InvoiceItemInput) GetTracked() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.Tracked
-}
-
-func (o *InvoiceItemInput) GetTaxable() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.Taxable
-}
-
-func (o *InvoiceItemInput) GetInventoryDate() *types.Date {
-	if o == nil {
-		return nil
-	}
-	return o.InventoryDate
-}
-
-func (o *InvoiceItemInput) GetType() *InvoiceItemTypeType {
-	if o == nil {
-		return nil
-	}
-	return o.Type
-}
-
-func (o *InvoiceItemInput) GetSalesDetails() *InvoiceItemSalesDetails {
-	if o == nil {
-		return nil
-	}
-	return o.SalesDetails
-}
-
-func (o *InvoiceItemInput) GetPurchaseDetails() *InvoiceItemPurchaseDetails {
-	if o == nil {
-		return nil
-	}
-	return o.PurchaseDetails
-}
-
-func (o *InvoiceItemInput) GetQuantity() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.Quantity
-}
-
-func (o *InvoiceItemInput) GetUnitPrice() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.UnitPrice
-}
-
-func (o *InvoiceItemInput) GetAssetAccount() *LinkedLedgerAccountInput {
-	if o == nil {
-		return nil
-	}
-	return o.AssetAccount
-}
-
-func (o *InvoiceItemInput) GetIncomeAccount() *LinkedLedgerAccountInput {
-	if o == nil {
-		return nil
-	}
-	return o.IncomeAccount
-}
-
-func (o *InvoiceItemInput) GetExpenseAccount() *LinkedLedgerAccountInput {
-	if o == nil {
-		return nil
-	}
-	return o.ExpenseAccount
-}
-
-func (o *InvoiceItemInput) GetTrackingCategory() *DeprecatedLinkedTrackingCategory {
-	if o == nil {
-		return nil
-	}
-	return o.TrackingCategory
-}
-
-func (o *InvoiceItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
-		return nil
-	}
-	return o.TrackingCategories
-}
-
-func (o *InvoiceItemInput) GetActive() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.Active
-}
-
-func (o *InvoiceItemInput) GetDepartmentID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.DepartmentID
-}
-
-func (o *InvoiceItemInput) GetLocationID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.LocationID
-}
-
-func (o *InvoiceItemInput) GetSubsidiaryID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.SubsidiaryID
-}
-
-func (o *InvoiceItemInput) GetTaxScheduleID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.TaxScheduleID
-}
-
-func (o *InvoiceItemInput) GetRowVersion() *string {
-	if o == nil {
-		return nil
-	}
-	return o.RowVersion
-}
-
-func (o *InvoiceItemInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
-		return nil
-	}
-	return o.PassThrough
-}
-
 type SalesDetails struct {
 	UnitPrice *float64 `json:"unit_price,omitempty"`
 	// Description of the unit type the item is sold as, ie: kg, hour.
@@ -704,6 +399,311 @@ func (o *InvoiceItem) GetCreatedAt() *time.Time {
 }
 
 func (o *InvoiceItem) GetPassThrough() []PassThroughBody {
+	if o == nil {
+		return nil
+	}
+	return o.PassThrough
+}
+
+type InvoiceItemSalesDetails struct {
+	UnitPrice *float64 `json:"unit_price,omitempty"`
+	// Description of the unit type the item is sold as, ie: kg, hour.
+	UnitOfMeasure *string `json:"unit_of_measure,omitempty"`
+	// Amounts are including tax
+	TaxInclusive *bool               `json:"tax_inclusive,omitempty"`
+	TaxRate      *LinkedTaxRateInput `json:"tax_rate,omitempty"`
+}
+
+func (o *InvoiceItemSalesDetails) GetUnitPrice() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.UnitPrice
+}
+
+func (o *InvoiceItemSalesDetails) GetUnitOfMeasure() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UnitOfMeasure
+}
+
+func (o *InvoiceItemSalesDetails) GetTaxInclusive() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.TaxInclusive
+}
+
+func (o *InvoiceItemSalesDetails) GetTaxRate() *LinkedTaxRateInput {
+	if o == nil {
+		return nil
+	}
+	return o.TaxRate
+}
+
+type InvoiceItemPurchaseDetails struct {
+	UnitPrice *float64 `json:"unit_price,omitempty"`
+	// Description of the unit type the item is sold as, ie: kg, hour.
+	UnitOfMeasure *string `json:"unit_of_measure,omitempty"`
+	// Amounts are including tax
+	TaxInclusive *bool               `json:"tax_inclusive,omitempty"`
+	TaxRate      *LinkedTaxRateInput `json:"tax_rate,omitempty"`
+}
+
+func (o *InvoiceItemPurchaseDetails) GetUnitPrice() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.UnitPrice
+}
+
+func (o *InvoiceItemPurchaseDetails) GetUnitOfMeasure() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UnitOfMeasure
+}
+
+func (o *InvoiceItemPurchaseDetails) GetTaxInclusive() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.TaxInclusive
+}
+
+func (o *InvoiceItemPurchaseDetails) GetTaxRate() *LinkedTaxRateInput {
+	if o == nil {
+		return nil
+	}
+	return o.TaxRate
+}
+
+type InvoiceItemInput struct {
+	// Item name
+	Name *string `json:"name,omitempty"`
+	// A short description of the item
+	Description *string `json:"description,omitempty"`
+	// User defined item code
+	Code *string `json:"code,omitempty"`
+	// Item will be available on sales transactions
+	Sold *bool `json:"sold,omitempty"`
+	// Item is available for purchase transactions
+	Purchased *bool `json:"purchased,omitempty"`
+	// Item is inventoried
+	Tracked *bool `json:"tracked,omitempty"`
+	// If true, transactions for this item are taxable
+	Taxable *bool `json:"taxable,omitempty"`
+	// The date of opening balance if inventory item is tracked - YYYY-MM-DD.
+	InventoryDate *types.Date `json:"inventory_date,omitempty"`
+	// Item type
+	Type            *InvoiceItemTypeType        `json:"type,omitempty"`
+	SalesDetails    *InvoiceItemSalesDetails    `json:"sales_details,omitempty"`
+	PurchaseDetails *InvoiceItemPurchaseDetails `json:"purchase_details,omitempty"`
+	Quantity        *float64                    `json:"quantity,omitempty"`
+	UnitPrice       *float64                    `json:"unit_price,omitempty"`
+	AssetAccount    *LinkedLedgerAccountInput   `json:"asset_account,omitempty"`
+	IncomeAccount   *LinkedLedgerAccountInput   `json:"income_account,omitempty"`
+	ExpenseAccount  *LinkedLedgerAccountInput   `json:"expense_account,omitempty"`
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
+	// A list of linked tracking categories.
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	Active             *bool                     `json:"active,omitempty"`
+	// The ID of the department
+	DepartmentID *string `json:"department_id,omitempty"`
+	// The ID of the location
+	LocationID *string `json:"location_id,omitempty"`
+	// The ID of the subsidiary
+	SubsidiaryID *string `json:"subsidiary_id,omitempty"`
+	// The ID of the tax schedule
+	TaxScheduleID *string `json:"tax_schedule_id,omitempty"`
+	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
+	RowVersion *string `json:"row_version,omitempty"`
+	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+}
+
+func (i InvoiceItemInput) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *InvoiceItemInput) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *InvoiceItemInput) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *InvoiceItemInput) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *InvoiceItemInput) GetCode() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Code
+}
+
+func (o *InvoiceItemInput) GetSold() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Sold
+}
+
+func (o *InvoiceItemInput) GetPurchased() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Purchased
+}
+
+func (o *InvoiceItemInput) GetTracked() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Tracked
+}
+
+func (o *InvoiceItemInput) GetTaxable() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Taxable
+}
+
+func (o *InvoiceItemInput) GetInventoryDate() *types.Date {
+	if o == nil {
+		return nil
+	}
+	return o.InventoryDate
+}
+
+func (o *InvoiceItemInput) GetType() *InvoiceItemTypeType {
+	if o == nil {
+		return nil
+	}
+	return o.Type
+}
+
+func (o *InvoiceItemInput) GetSalesDetails() *InvoiceItemSalesDetails {
+	if o == nil {
+		return nil
+	}
+	return o.SalesDetails
+}
+
+func (o *InvoiceItemInput) GetPurchaseDetails() *InvoiceItemPurchaseDetails {
+	if o == nil {
+		return nil
+	}
+	return o.PurchaseDetails
+}
+
+func (o *InvoiceItemInput) GetQuantity() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.Quantity
+}
+
+func (o *InvoiceItemInput) GetUnitPrice() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.UnitPrice
+}
+
+func (o *InvoiceItemInput) GetAssetAccount() *LinkedLedgerAccountInput {
+	if o == nil {
+		return nil
+	}
+	return o.AssetAccount
+}
+
+func (o *InvoiceItemInput) GetIncomeAccount() *LinkedLedgerAccountInput {
+	if o == nil {
+		return nil
+	}
+	return o.IncomeAccount
+}
+
+func (o *InvoiceItemInput) GetExpenseAccount() *LinkedLedgerAccountInput {
+	if o == nil {
+		return nil
+	}
+	return o.ExpenseAccount
+}
+
+func (o *InvoiceItemInput) GetTrackingCategory() *DeprecatedLinkedTrackingCategory {
+	if o == nil {
+		return nil
+	}
+	return o.TrackingCategory
+}
+
+func (o *InvoiceItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
+	if o == nil {
+		return nil
+	}
+	return o.TrackingCategories
+}
+
+func (o *InvoiceItemInput) GetActive() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Active
+}
+
+func (o *InvoiceItemInput) GetDepartmentID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DepartmentID
+}
+
+func (o *InvoiceItemInput) GetLocationID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.LocationID
+}
+
+func (o *InvoiceItemInput) GetSubsidiaryID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.SubsidiaryID
+}
+
+func (o *InvoiceItemInput) GetTaxScheduleID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TaxScheduleID
+}
+
+func (o *InvoiceItemInput) GetRowVersion() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RowVersion
+}
+
+func (o *InvoiceItemInput) GetPassThrough() []PassThroughBody {
 	if o == nil {
 		return nil
 	}

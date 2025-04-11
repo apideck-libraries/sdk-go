@@ -39,175 +39,6 @@ func (e *BillLineItemType) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type BillLineItemInput struct {
-	// Row ID
-	RowID *string `json:"row_id,omitempty"`
-	// User defined item code
-	Code *string `json:"code,omitempty"`
-	// Line number in the invoice
-	LineNumber *int64 `json:"line_number,omitempty"`
-	// User defined description
-	Description *string `json:"description,omitempty"`
-	// Bill Line Item type
-	Type *BillLineItemType `json:"type,omitempty"`
-	// Tax amount
-	TaxAmount *float64 `json:"tax_amount,omitempty"`
-	// Total amount of the line item
-	TotalAmount *float64 `json:"total_amount,omitempty"`
-	Quantity    *float64 `json:"quantity,omitempty"`
-	UnitPrice   *float64 `json:"unit_price,omitempty"`
-	// Description of the unit type the item is sold as, ie: kg, hour.
-	UnitOfMeasure *string `json:"unit_of_measure,omitempty"`
-	// Discount percentage applied to the line item when supported downstream.
-	DiscountPercentage *float64 `json:"discount_percentage,omitempty"`
-	// Discount amount applied to the line item when supported downstream.
-	DiscountAmount *float64 `json:"discount_amount,omitempty"`
-	// The ID of the location
-	LocationID *string `json:"location_id,omitempty"`
-	// The ID of the department
-	DepartmentID  *string                   `json:"department_id,omitempty"`
-	Item          *LinkedInvoiceItem        `json:"item,omitempty"`
-	TaxRate       *LinkedTaxRateInput       `json:"tax_rate,omitempty"`
-	LedgerAccount *LinkedLedgerAccountInput `json:"ledger_account,omitempty"`
-	// A list of linked tracking categories.
-	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
-	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-	RowVersion *string `json:"row_version,omitempty"`
-}
-
-func (o *BillLineItemInput) GetRowID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.RowID
-}
-
-func (o *BillLineItemInput) GetCode() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Code
-}
-
-func (o *BillLineItemInput) GetLineNumber() *int64 {
-	if o == nil {
-		return nil
-	}
-	return o.LineNumber
-}
-
-func (o *BillLineItemInput) GetDescription() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Description
-}
-
-func (o *BillLineItemInput) GetType() *BillLineItemType {
-	if o == nil {
-		return nil
-	}
-	return o.Type
-}
-
-func (o *BillLineItemInput) GetTaxAmount() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.TaxAmount
-}
-
-func (o *BillLineItemInput) GetTotalAmount() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.TotalAmount
-}
-
-func (o *BillLineItemInput) GetQuantity() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.Quantity
-}
-
-func (o *BillLineItemInput) GetUnitPrice() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.UnitPrice
-}
-
-func (o *BillLineItemInput) GetUnitOfMeasure() *string {
-	if o == nil {
-		return nil
-	}
-	return o.UnitOfMeasure
-}
-
-func (o *BillLineItemInput) GetDiscountPercentage() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.DiscountPercentage
-}
-
-func (o *BillLineItemInput) GetDiscountAmount() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.DiscountAmount
-}
-
-func (o *BillLineItemInput) GetLocationID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.LocationID
-}
-
-func (o *BillLineItemInput) GetDepartmentID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.DepartmentID
-}
-
-func (o *BillLineItemInput) GetItem() *LinkedInvoiceItem {
-	if o == nil {
-		return nil
-	}
-	return o.Item
-}
-
-func (o *BillLineItemInput) GetTaxRate() *LinkedTaxRateInput {
-	if o == nil {
-		return nil
-	}
-	return o.TaxRate
-}
-
-func (o *BillLineItemInput) GetLedgerAccount() *LinkedLedgerAccountInput {
-	if o == nil {
-		return nil
-	}
-	return o.LedgerAccount
-}
-
-func (o *BillLineItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
-		return nil
-	}
-	return o.TrackingCategories
-}
-
-func (o *BillLineItemInput) GetRowVersion() *string {
-	if o == nil {
-		return nil
-	}
-	return o.RowVersion
-}
-
 type BillLineItem struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
@@ -431,4 +262,173 @@ func (o *BillLineItem) GetUpdatedAt() *time.Time {
 		return nil
 	}
 	return o.UpdatedAt
+}
+
+type BillLineItemInput struct {
+	// Row ID
+	RowID *string `json:"row_id,omitempty"`
+	// User defined item code
+	Code *string `json:"code,omitempty"`
+	// Line number in the invoice
+	LineNumber *int64 `json:"line_number,omitempty"`
+	// User defined description
+	Description *string `json:"description,omitempty"`
+	// Bill Line Item type
+	Type *BillLineItemType `json:"type,omitempty"`
+	// Tax amount
+	TaxAmount *float64 `json:"tax_amount,omitempty"`
+	// Total amount of the line item
+	TotalAmount *float64 `json:"total_amount,omitempty"`
+	Quantity    *float64 `json:"quantity,omitempty"`
+	UnitPrice   *float64 `json:"unit_price,omitempty"`
+	// Description of the unit type the item is sold as, ie: kg, hour.
+	UnitOfMeasure *string `json:"unit_of_measure,omitempty"`
+	// Discount percentage applied to the line item when supported downstream.
+	DiscountPercentage *float64 `json:"discount_percentage,omitempty"`
+	// Discount amount applied to the line item when supported downstream.
+	DiscountAmount *float64 `json:"discount_amount,omitempty"`
+	// The ID of the location
+	LocationID *string `json:"location_id,omitempty"`
+	// The ID of the department
+	DepartmentID  *string                   `json:"department_id,omitempty"`
+	Item          *LinkedInvoiceItem        `json:"item,omitempty"`
+	TaxRate       *LinkedTaxRateInput       `json:"tax_rate,omitempty"`
+	LedgerAccount *LinkedLedgerAccountInput `json:"ledger_account,omitempty"`
+	// A list of linked tracking categories.
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
+	RowVersion *string `json:"row_version,omitempty"`
+}
+
+func (o *BillLineItemInput) GetRowID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RowID
+}
+
+func (o *BillLineItemInput) GetCode() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Code
+}
+
+func (o *BillLineItemInput) GetLineNumber() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.LineNumber
+}
+
+func (o *BillLineItemInput) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *BillLineItemInput) GetType() *BillLineItemType {
+	if o == nil {
+		return nil
+	}
+	return o.Type
+}
+
+func (o *BillLineItemInput) GetTaxAmount() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.TaxAmount
+}
+
+func (o *BillLineItemInput) GetTotalAmount() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.TotalAmount
+}
+
+func (o *BillLineItemInput) GetQuantity() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.Quantity
+}
+
+func (o *BillLineItemInput) GetUnitPrice() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.UnitPrice
+}
+
+func (o *BillLineItemInput) GetUnitOfMeasure() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UnitOfMeasure
+}
+
+func (o *BillLineItemInput) GetDiscountPercentage() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.DiscountPercentage
+}
+
+func (o *BillLineItemInput) GetDiscountAmount() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.DiscountAmount
+}
+
+func (o *BillLineItemInput) GetLocationID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.LocationID
+}
+
+func (o *BillLineItemInput) GetDepartmentID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DepartmentID
+}
+
+func (o *BillLineItemInput) GetItem() *LinkedInvoiceItem {
+	if o == nil {
+		return nil
+	}
+	return o.Item
+}
+
+func (o *BillLineItemInput) GetTaxRate() *LinkedTaxRateInput {
+	if o == nil {
+		return nil
+	}
+	return o.TaxRate
+}
+
+func (o *BillLineItemInput) GetLedgerAccount() *LinkedLedgerAccountInput {
+	if o == nil {
+		return nil
+	}
+	return o.LedgerAccount
+}
+
+func (o *BillLineItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
+	if o == nil {
+		return nil
+	}
+	return o.TrackingCategories
+}
+
+func (o *BillLineItemInput) GetRowVersion() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RowVersion
 }

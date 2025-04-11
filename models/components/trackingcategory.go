@@ -48,72 +48,6 @@ func (o *TrackingCategorySubsidiaries) GetID() *string {
 	return o.ID
 }
 
-type TrackingCategoryInput struct {
-	// A unique identifier for an object.
-	ParentID *string `json:"parent_id,omitempty"`
-	// The name of the tracking category.
-	Name *string `json:"name,omitempty"`
-	// The code of the tracking category.
-	Code *string `json:"code,omitempty"`
-	// Based on the status some functionality is enabled or disabled.
-	Status *TrackingCategoryStatus `json:"status,omitempty"`
-	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-	RowVersion *string `json:"row_version,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-	// The subsidiaries the account belongs to.
-	Subsidiaries []TrackingCategorySubsidiaries `json:"subsidiaries,omitempty"`
-}
-
-func (o *TrackingCategoryInput) GetParentID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ParentID
-}
-
-func (o *TrackingCategoryInput) GetName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Name
-}
-
-func (o *TrackingCategoryInput) GetCode() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Code
-}
-
-func (o *TrackingCategoryInput) GetStatus() *TrackingCategoryStatus {
-	if o == nil {
-		return nil
-	}
-	return o.Status
-}
-
-func (o *TrackingCategoryInput) GetRowVersion() *string {
-	if o == nil {
-		return nil
-	}
-	return o.RowVersion
-}
-
-func (o *TrackingCategoryInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
-		return nil
-	}
-	return o.PassThrough
-}
-
-func (o *TrackingCategoryInput) GetSubsidiaries() []TrackingCategorySubsidiaries {
-	if o == nil {
-		return nil
-	}
-	return o.Subsidiaries
-}
-
 type TrackingCategory struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
@@ -239,6 +173,72 @@ func (o *TrackingCategory) GetPassThrough() []PassThroughBody {
 }
 
 func (o *TrackingCategory) GetSubsidiaries() []TrackingCategorySubsidiaries {
+	if o == nil {
+		return nil
+	}
+	return o.Subsidiaries
+}
+
+type TrackingCategoryInput struct {
+	// A unique identifier for an object.
+	ParentID *string `json:"parent_id,omitempty"`
+	// The name of the tracking category.
+	Name *string `json:"name,omitempty"`
+	// The code of the tracking category.
+	Code *string `json:"code,omitempty"`
+	// Based on the status some functionality is enabled or disabled.
+	Status *TrackingCategoryStatus `json:"status,omitempty"`
+	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
+	RowVersion *string `json:"row_version,omitempty"`
+	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+	// The subsidiaries the account belongs to.
+	Subsidiaries []TrackingCategorySubsidiaries `json:"subsidiaries,omitempty"`
+}
+
+func (o *TrackingCategoryInput) GetParentID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ParentID
+}
+
+func (o *TrackingCategoryInput) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *TrackingCategoryInput) GetCode() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Code
+}
+
+func (o *TrackingCategoryInput) GetStatus() *TrackingCategoryStatus {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
+func (o *TrackingCategoryInput) GetRowVersion() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RowVersion
+}
+
+func (o *TrackingCategoryInput) GetPassThrough() []PassThroughBody {
+	if o == nil {
+		return nil
+	}
+	return o.PassThrough
+}
+
+func (o *TrackingCategoryInput) GetSubsidiaries() []TrackingCategorySubsidiaries {
 	if o == nil {
 		return nil
 	}
