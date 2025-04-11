@@ -36,79 +36,6 @@ func (e *LocationStatus) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type AccountingLocationInput struct {
-	// A unique identifier for an object.
-	ParentID *string `json:"parent_id,omitempty"`
-	// The name of the company.
-	CompanyName *string `json:"company_name,omitempty"`
-	// The display name of the location.
-	DisplayName *string `json:"display_name,omitempty"`
-	// Based on the status some functionality is enabled or disabled.
-	Status       *LocationStatus            `json:"status,omitempty"`
-	Addresses    []Address                  `json:"addresses,omitempty"`
-	Subsidiaries []SubsidiaryReferenceInput `json:"subsidiaries,omitempty"`
-	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-	RowVersion *string `json:"row_version,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-}
-
-func (o *AccountingLocationInput) GetParentID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ParentID
-}
-
-func (o *AccountingLocationInput) GetCompanyName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.CompanyName
-}
-
-func (o *AccountingLocationInput) GetDisplayName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.DisplayName
-}
-
-func (o *AccountingLocationInput) GetStatus() *LocationStatus {
-	if o == nil {
-		return nil
-	}
-	return o.Status
-}
-
-func (o *AccountingLocationInput) GetAddresses() []Address {
-	if o == nil {
-		return nil
-	}
-	return o.Addresses
-}
-
-func (o *AccountingLocationInput) GetSubsidiaries() []SubsidiaryReferenceInput {
-	if o == nil {
-		return nil
-	}
-	return o.Subsidiaries
-}
-
-func (o *AccountingLocationInput) GetRowVersion() *string {
-	if o == nil {
-		return nil
-	}
-	return o.RowVersion
-}
-
-func (o *AccountingLocationInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
-		return nil
-	}
-	return o.PassThrough
-}
-
 type AccountingLocation struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
@@ -241,6 +168,79 @@ func (o *AccountingLocation) GetCreatedAt() *time.Time {
 }
 
 func (o *AccountingLocation) GetPassThrough() []PassThroughBody {
+	if o == nil {
+		return nil
+	}
+	return o.PassThrough
+}
+
+type AccountingLocationInput struct {
+	// A unique identifier for an object.
+	ParentID *string `json:"parent_id,omitempty"`
+	// The name of the company.
+	CompanyName *string `json:"company_name,omitempty"`
+	// The display name of the location.
+	DisplayName *string `json:"display_name,omitempty"`
+	// Based on the status some functionality is enabled or disabled.
+	Status       *LocationStatus            `json:"status,omitempty"`
+	Addresses    []Address                  `json:"addresses,omitempty"`
+	Subsidiaries []SubsidiaryReferenceInput `json:"subsidiaries,omitempty"`
+	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
+	RowVersion *string `json:"row_version,omitempty"`
+	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+}
+
+func (o *AccountingLocationInput) GetParentID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ParentID
+}
+
+func (o *AccountingLocationInput) GetCompanyName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CompanyName
+}
+
+func (o *AccountingLocationInput) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *AccountingLocationInput) GetStatus() *LocationStatus {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
+func (o *AccountingLocationInput) GetAddresses() []Address {
+	if o == nil {
+		return nil
+	}
+	return o.Addresses
+}
+
+func (o *AccountingLocationInput) GetSubsidiaries() []SubsidiaryReferenceInput {
+	if o == nil {
+		return nil
+	}
+	return o.Subsidiaries
+}
+
+func (o *AccountingLocationInput) GetRowVersion() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RowVersion
+}
+
+func (o *AccountingLocationInput) GetPassThrough() []PassThroughBody {
 	if o == nil {
 		return nil
 	}

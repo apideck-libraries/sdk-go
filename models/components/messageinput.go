@@ -36,6 +36,109 @@ func (e *MessageType) UnmarshalJSON(data []byte) error {
 	}
 }
 
+type MessageInput struct {
+	// The phone number that initiated the message.
+	From string `json:"from"`
+	// The phone number that received the message.
+	To      string  `json:"to"`
+	Subject *string `json:"subject,omitempty"`
+	// The message text.
+	Body string `json:"body"`
+	// Set to sms for SMS messages and mms for MMS messages.
+	Type *MessageType `json:"type,omitempty"`
+	// The scheduled date and time of the message.
+	ScheduledAt *time.Time `json:"scheduled_at,omitempty"`
+	// Define a webhook to receive delivery notifications.
+	WebhookURL *string `json:"webhook_url,omitempty"`
+	// A client reference.
+	Reference *string `json:"reference,omitempty"`
+	// The ID of the Messaging Service used with the message. In case of Plivo this links to the Powerpack ID.
+	MessagingServiceID *string `json:"messaging_service_id,omitempty"`
+	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+}
+
+func (m MessageInput) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(m, "", false)
+}
+
+func (m *MessageInput) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &m, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *MessageInput) GetFrom() string {
+	if o == nil {
+		return ""
+	}
+	return o.From
+}
+
+func (o *MessageInput) GetTo() string {
+	if o == nil {
+		return ""
+	}
+	return o.To
+}
+
+func (o *MessageInput) GetSubject() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Subject
+}
+
+func (o *MessageInput) GetBody() string {
+	if o == nil {
+		return ""
+	}
+	return o.Body
+}
+
+func (o *MessageInput) GetType() *MessageType {
+	if o == nil {
+		return nil
+	}
+	return o.Type
+}
+
+func (o *MessageInput) GetScheduledAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.ScheduledAt
+}
+
+func (o *MessageInput) GetWebhookURL() *string {
+	if o == nil {
+		return nil
+	}
+	return o.WebhookURL
+}
+
+func (o *MessageInput) GetReference() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Reference
+}
+
+func (o *MessageInput) GetMessagingServiceID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.MessagingServiceID
+}
+
+func (o *MessageInput) GetPassThrough() []PassThroughBody {
+	if o == nil {
+		return nil
+	}
+	return o.PassThrough
+}
+
 // Direction - The direction of the message.
 type Direction string
 
@@ -393,109 +496,6 @@ func (o *Message) GetCreatedAt() *time.Time {
 }
 
 func (o *Message) GetPassThrough() []PassThroughBody {
-	if o == nil {
-		return nil
-	}
-	return o.PassThrough
-}
-
-type MessageInput struct {
-	// The phone number that initiated the message.
-	From string `json:"from"`
-	// The phone number that received the message.
-	To      string  `json:"to"`
-	Subject *string `json:"subject,omitempty"`
-	// The message text.
-	Body string `json:"body"`
-	// Set to sms for SMS messages and mms for MMS messages.
-	Type *MessageType `json:"type,omitempty"`
-	// The scheduled date and time of the message.
-	ScheduledAt *time.Time `json:"scheduled_at,omitempty"`
-	// Define a webhook to receive delivery notifications.
-	WebhookURL *string `json:"webhook_url,omitempty"`
-	// A client reference.
-	Reference *string `json:"reference,omitempty"`
-	// The ID of the Messaging Service used with the message. In case of Plivo this links to the Powerpack ID.
-	MessagingServiceID *string `json:"messaging_service_id,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-}
-
-func (m MessageInput) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(m, "", false)
-}
-
-func (m *MessageInput) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &m, "", false, false); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (o *MessageInput) GetFrom() string {
-	if o == nil {
-		return ""
-	}
-	return o.From
-}
-
-func (o *MessageInput) GetTo() string {
-	if o == nil {
-		return ""
-	}
-	return o.To
-}
-
-func (o *MessageInput) GetSubject() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Subject
-}
-
-func (o *MessageInput) GetBody() string {
-	if o == nil {
-		return ""
-	}
-	return o.Body
-}
-
-func (o *MessageInput) GetType() *MessageType {
-	if o == nil {
-		return nil
-	}
-	return o.Type
-}
-
-func (o *MessageInput) GetScheduledAt() *time.Time {
-	if o == nil {
-		return nil
-	}
-	return o.ScheduledAt
-}
-
-func (o *MessageInput) GetWebhookURL() *string {
-	if o == nil {
-		return nil
-	}
-	return o.WebhookURL
-}
-
-func (o *MessageInput) GetReference() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Reference
-}
-
-func (o *MessageInput) GetMessagingServiceID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.MessagingServiceID
-}
-
-func (o *MessageInput) GetPassThrough() []PassThroughBody {
 	if o == nil {
 		return nil
 	}

@@ -64,50 +64,6 @@ func (o *Stage) GetName() *string {
 	return o.Name
 }
 
-type ApplicationInput struct {
-	ApplicantID *string            `json:"applicant_id"`
-	JobID       *string            `json:"job_id"`
-	Status      *ApplicationStatus `json:"status,omitempty"`
-	Stage       *Stage             `json:"stage,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-}
-
-func (o *ApplicationInput) GetApplicantID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ApplicantID
-}
-
-func (o *ApplicationInput) GetJobID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.JobID
-}
-
-func (o *ApplicationInput) GetStatus() *ApplicationStatus {
-	if o == nil {
-		return nil
-	}
-	return o.Status
-}
-
-func (o *ApplicationInput) GetStage() *Stage {
-	if o == nil {
-		return nil
-	}
-	return o.Stage
-}
-
-func (o *ApplicationInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
-		return nil
-	}
-	return o.PassThrough
-}
-
 type Application struct {
 	// A unique identifier for an object.
 	ID          *string            `json:"id,omitempty"`
@@ -211,6 +167,50 @@ func (o *Application) GetCreatedAt() *time.Time {
 }
 
 func (o *Application) GetPassThrough() []PassThroughBody {
+	if o == nil {
+		return nil
+	}
+	return o.PassThrough
+}
+
+type ApplicationInput struct {
+	ApplicantID *string            `json:"applicant_id"`
+	JobID       *string            `json:"job_id"`
+	Status      *ApplicationStatus `json:"status,omitempty"`
+	Stage       *Stage             `json:"stage,omitempty"`
+	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+}
+
+func (o *ApplicationInput) GetApplicantID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ApplicantID
+}
+
+func (o *ApplicationInput) GetJobID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.JobID
+}
+
+func (o *ApplicationInput) GetStatus() *ApplicationStatus {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
+func (o *ApplicationInput) GetStage() *Stage {
+	if o == nil {
+		return nil
+	}
+	return o.Stage
+}
+
+func (o *ApplicationInput) GetPassThrough() []PassThroughBody {
 	if o == nil {
 		return nil
 	}

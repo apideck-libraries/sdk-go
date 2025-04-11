@@ -55,321 +55,6 @@ func (e *BillStatus) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type BillInput struct {
-	// Reference to supplier bill number
-	BillNumber *string `json:"bill_number,omitempty"`
-	// The supplier this entity is linked to.
-	Supplier *LinkedSupplierInput `json:"supplier,omitempty"`
-	// The company or subsidiary id the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
-	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-	Currency *Currency `json:"currency,omitempty"`
-	// Currency Exchange Rate at the time entity was recorded/generated.
-	CurrencyRate *float64 `json:"currency_rate,omitempty"`
-	// Amounts are including tax
-	TaxInclusive *bool `json:"tax_inclusive,omitempty"`
-	// Date bill was issued - YYYY-MM-DD.
-	BillDate *types.Date `json:"bill_date,omitempty"`
-	// The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
-	DueDate *types.Date `json:"due_date,omitempty"`
-	// The paid date is the date on which a payment was sent to the supplier - YYYY-MM-DD.
-	PaidDate *types.Date `json:"paid_date,omitempty"`
-	// A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the invoice to the Purchase Order.
-	PoNumber *string `json:"po_number,omitempty"`
-	// Optional bill reference.
-	Reference *string             `json:"reference,omitempty"`
-	LineItems []BillLineItemInput `json:"line_items,omitempty"`
-	// Terms of payment.
-	Terms *string `json:"terms,omitempty"`
-	// Balance of bill due.
-	Balance *float64 `json:"balance,omitempty"`
-	// Amount of deposit made to this bill.
-	Deposit *float64 `json:"deposit,omitempty"`
-	// Sub-total amount, normally before tax.
-	SubTotal *float64 `json:"sub_total,omitempty"`
-	// Total tax amount applied to this bill.
-	TotalTax *float64 `json:"total_tax,omitempty"`
-	// Total amount of bill, including tax.
-	Total *float64 `json:"total,omitempty"`
-	// Applicable tax id/code override if tax is not supplied on a line item basis.
-	TaxCode *string `json:"tax_code,omitempty"`
-	Notes   *string `json:"notes,omitempty"`
-	// Invoice status
-	Status        *BillStatus               `json:"status,omitempty"`
-	LedgerAccount *LinkedLedgerAccountInput `json:"ledger_account,omitempty"`
-	// Payment method used for the transaction, such as cash, credit card, bank transfer, or check
-	PaymentMethod *string `json:"payment_method,omitempty"`
-	// The channel through which the transaction is processed.
-	Channel *string `json:"channel,omitempty"`
-	// language code according to ISO 639-1. For the United States - EN
-	Language *string `json:"language,omitempty"`
-	// Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row.
-	AccountingByRow *bool        `json:"accounting_by_row,omitempty"`
-	BankAccount     *BankAccount `json:"bank_account,omitempty"`
-	// Discount percentage applied to this transaction.
-	DiscountPercentage *float64 `json:"discount_percentage,omitempty"`
-	// URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.
-	SourceDocumentURL *string `json:"source_document_url,omitempty"`
-	// A list of linked tracking categories.
-	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
-	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-	RowVersion   *string       `json:"row_version,omitempty"`
-	CustomFields []CustomField `json:"custom_fields,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-	// Accounting period
-	AccountingPeriod *string `json:"accounting_period,omitempty"`
-}
-
-func (b BillInput) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(b, "", false)
-}
-
-func (b *BillInput) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &b, "", false, false); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (o *BillInput) GetBillNumber() *string {
-	if o == nil {
-		return nil
-	}
-	return o.BillNumber
-}
-
-func (o *BillInput) GetSupplier() *LinkedSupplierInput {
-	if o == nil {
-		return nil
-	}
-	return o.Supplier
-}
-
-func (o *BillInput) GetCompanyID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.CompanyID
-}
-
-func (o *BillInput) GetCurrency() *Currency {
-	if o == nil {
-		return nil
-	}
-	return o.Currency
-}
-
-func (o *BillInput) GetCurrencyRate() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.CurrencyRate
-}
-
-func (o *BillInput) GetTaxInclusive() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.TaxInclusive
-}
-
-func (o *BillInput) GetBillDate() *types.Date {
-	if o == nil {
-		return nil
-	}
-	return o.BillDate
-}
-
-func (o *BillInput) GetDueDate() *types.Date {
-	if o == nil {
-		return nil
-	}
-	return o.DueDate
-}
-
-func (o *BillInput) GetPaidDate() *types.Date {
-	if o == nil {
-		return nil
-	}
-	return o.PaidDate
-}
-
-func (o *BillInput) GetPoNumber() *string {
-	if o == nil {
-		return nil
-	}
-	return o.PoNumber
-}
-
-func (o *BillInput) GetReference() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Reference
-}
-
-func (o *BillInput) GetLineItems() []BillLineItemInput {
-	if o == nil {
-		return nil
-	}
-	return o.LineItems
-}
-
-func (o *BillInput) GetTerms() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Terms
-}
-
-func (o *BillInput) GetBalance() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.Balance
-}
-
-func (o *BillInput) GetDeposit() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.Deposit
-}
-
-func (o *BillInput) GetSubTotal() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.SubTotal
-}
-
-func (o *BillInput) GetTotalTax() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.TotalTax
-}
-
-func (o *BillInput) GetTotal() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.Total
-}
-
-func (o *BillInput) GetTaxCode() *string {
-	if o == nil {
-		return nil
-	}
-	return o.TaxCode
-}
-
-func (o *BillInput) GetNotes() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Notes
-}
-
-func (o *BillInput) GetStatus() *BillStatus {
-	if o == nil {
-		return nil
-	}
-	return o.Status
-}
-
-func (o *BillInput) GetLedgerAccount() *LinkedLedgerAccountInput {
-	if o == nil {
-		return nil
-	}
-	return o.LedgerAccount
-}
-
-func (o *BillInput) GetPaymentMethod() *string {
-	if o == nil {
-		return nil
-	}
-	return o.PaymentMethod
-}
-
-func (o *BillInput) GetChannel() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Channel
-}
-
-func (o *BillInput) GetLanguage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Language
-}
-
-func (o *BillInput) GetAccountingByRow() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.AccountingByRow
-}
-
-func (o *BillInput) GetBankAccount() *BankAccount {
-	if o == nil {
-		return nil
-	}
-	return o.BankAccount
-}
-
-func (o *BillInput) GetDiscountPercentage() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.DiscountPercentage
-}
-
-func (o *BillInput) GetSourceDocumentURL() *string {
-	if o == nil {
-		return nil
-	}
-	return o.SourceDocumentURL
-}
-
-func (o *BillInput) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
-		return nil
-	}
-	return o.TrackingCategories
-}
-
-func (o *BillInput) GetRowVersion() *string {
-	if o == nil {
-		return nil
-	}
-	return o.RowVersion
-}
-
-func (o *BillInput) GetCustomFields() []CustomField {
-	if o == nil {
-		return nil
-	}
-	return o.CustomFields
-}
-
-func (o *BillInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
-		return nil
-	}
-	return o.PassThrough
-}
-
-func (o *BillInput) GetAccountingPeriod() *string {
-	if o == nil {
-		return nil
-	}
-	return o.AccountingPeriod
-}
-
 type Bill struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
@@ -742,6 +427,321 @@ func (o *Bill) GetPassThrough() []PassThroughBody {
 }
 
 func (o *Bill) GetAccountingPeriod() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AccountingPeriod
+}
+
+type BillInput struct {
+	// Reference to supplier bill number
+	BillNumber *string `json:"bill_number,omitempty"`
+	// The supplier this entity is linked to.
+	Supplier *LinkedSupplierInput `json:"supplier,omitempty"`
+	// The company or subsidiary id the transaction belongs to
+	CompanyID *string `json:"company_id,omitempty"`
+	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+	Currency *Currency `json:"currency,omitempty"`
+	// Currency Exchange Rate at the time entity was recorded/generated.
+	CurrencyRate *float64 `json:"currency_rate,omitempty"`
+	// Amounts are including tax
+	TaxInclusive *bool `json:"tax_inclusive,omitempty"`
+	// Date bill was issued - YYYY-MM-DD.
+	BillDate *types.Date `json:"bill_date,omitempty"`
+	// The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
+	DueDate *types.Date `json:"due_date,omitempty"`
+	// The paid date is the date on which a payment was sent to the supplier - YYYY-MM-DD.
+	PaidDate *types.Date `json:"paid_date,omitempty"`
+	// A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the invoice to the Purchase Order.
+	PoNumber *string `json:"po_number,omitempty"`
+	// Optional bill reference.
+	Reference *string             `json:"reference,omitempty"`
+	LineItems []BillLineItemInput `json:"line_items,omitempty"`
+	// Terms of payment.
+	Terms *string `json:"terms,omitempty"`
+	// Balance of bill due.
+	Balance *float64 `json:"balance,omitempty"`
+	// Amount of deposit made to this bill.
+	Deposit *float64 `json:"deposit,omitempty"`
+	// Sub-total amount, normally before tax.
+	SubTotal *float64 `json:"sub_total,omitempty"`
+	// Total tax amount applied to this bill.
+	TotalTax *float64 `json:"total_tax,omitempty"`
+	// Total amount of bill, including tax.
+	Total *float64 `json:"total,omitempty"`
+	// Applicable tax id/code override if tax is not supplied on a line item basis.
+	TaxCode *string `json:"tax_code,omitempty"`
+	Notes   *string `json:"notes,omitempty"`
+	// Invoice status
+	Status        *BillStatus               `json:"status,omitempty"`
+	LedgerAccount *LinkedLedgerAccountInput `json:"ledger_account,omitempty"`
+	// Payment method used for the transaction, such as cash, credit card, bank transfer, or check
+	PaymentMethod *string `json:"payment_method,omitempty"`
+	// The channel through which the transaction is processed.
+	Channel *string `json:"channel,omitempty"`
+	// language code according to ISO 639-1. For the United States - EN
+	Language *string `json:"language,omitempty"`
+	// Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row.
+	AccountingByRow *bool        `json:"accounting_by_row,omitempty"`
+	BankAccount     *BankAccount `json:"bank_account,omitempty"`
+	// Discount percentage applied to this transaction.
+	DiscountPercentage *float64 `json:"discount_percentage,omitempty"`
+	// URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.
+	SourceDocumentURL *string `json:"source_document_url,omitempty"`
+	// A list of linked tracking categories.
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
+	RowVersion   *string       `json:"row_version,omitempty"`
+	CustomFields []CustomField `json:"custom_fields,omitempty"`
+	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+	// Accounting period
+	AccountingPeriod *string `json:"accounting_period,omitempty"`
+}
+
+func (b BillInput) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(b, "", false)
+}
+
+func (b *BillInput) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &b, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *BillInput) GetBillNumber() *string {
+	if o == nil {
+		return nil
+	}
+	return o.BillNumber
+}
+
+func (o *BillInput) GetSupplier() *LinkedSupplierInput {
+	if o == nil {
+		return nil
+	}
+	return o.Supplier
+}
+
+func (o *BillInput) GetCompanyID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CompanyID
+}
+
+func (o *BillInput) GetCurrency() *Currency {
+	if o == nil {
+		return nil
+	}
+	return o.Currency
+}
+
+func (o *BillInput) GetCurrencyRate() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.CurrencyRate
+}
+
+func (o *BillInput) GetTaxInclusive() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.TaxInclusive
+}
+
+func (o *BillInput) GetBillDate() *types.Date {
+	if o == nil {
+		return nil
+	}
+	return o.BillDate
+}
+
+func (o *BillInput) GetDueDate() *types.Date {
+	if o == nil {
+		return nil
+	}
+	return o.DueDate
+}
+
+func (o *BillInput) GetPaidDate() *types.Date {
+	if o == nil {
+		return nil
+	}
+	return o.PaidDate
+}
+
+func (o *BillInput) GetPoNumber() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PoNumber
+}
+
+func (o *BillInput) GetReference() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Reference
+}
+
+func (o *BillInput) GetLineItems() []BillLineItemInput {
+	if o == nil {
+		return nil
+	}
+	return o.LineItems
+}
+
+func (o *BillInput) GetTerms() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Terms
+}
+
+func (o *BillInput) GetBalance() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.Balance
+}
+
+func (o *BillInput) GetDeposit() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.Deposit
+}
+
+func (o *BillInput) GetSubTotal() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.SubTotal
+}
+
+func (o *BillInput) GetTotalTax() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.TotalTax
+}
+
+func (o *BillInput) GetTotal() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.Total
+}
+
+func (o *BillInput) GetTaxCode() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TaxCode
+}
+
+func (o *BillInput) GetNotes() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Notes
+}
+
+func (o *BillInput) GetStatus() *BillStatus {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
+func (o *BillInput) GetLedgerAccount() *LinkedLedgerAccountInput {
+	if o == nil {
+		return nil
+	}
+	return o.LedgerAccount
+}
+
+func (o *BillInput) GetPaymentMethod() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PaymentMethod
+}
+
+func (o *BillInput) GetChannel() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Channel
+}
+
+func (o *BillInput) GetLanguage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Language
+}
+
+func (o *BillInput) GetAccountingByRow() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.AccountingByRow
+}
+
+func (o *BillInput) GetBankAccount() *BankAccount {
+	if o == nil {
+		return nil
+	}
+	return o.BankAccount
+}
+
+func (o *BillInput) GetDiscountPercentage() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.DiscountPercentage
+}
+
+func (o *BillInput) GetSourceDocumentURL() *string {
+	if o == nil {
+		return nil
+	}
+	return o.SourceDocumentURL
+}
+
+func (o *BillInput) GetTrackingCategories() []*LinkedTrackingCategory {
+	if o == nil {
+		return nil
+	}
+	return o.TrackingCategories
+}
+
+func (o *BillInput) GetRowVersion() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RowVersion
+}
+
+func (o *BillInput) GetCustomFields() []CustomField {
+	if o == nil {
+		return nil
+	}
+	return o.CustomFields
+}
+
+func (o *BillInput) GetPassThrough() []PassThroughBody {
+	if o == nil {
+		return nil
+	}
+	return o.PassThrough
+}
+
+func (o *BillInput) GetAccountingPeriod() *string {
 	if o == nil {
 		return nil
 	}

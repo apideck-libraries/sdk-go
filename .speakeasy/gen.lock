@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 85e08f6b69ccddf3a58bd14a872c4e81
-  docVersion: 10.14.1
-  speakeasyVersion: 1.531.0
-  generationVersion: 2.568.2
-  releaseVersion: 0.9.1
-  configChecksum: 82b6c7e46c4dbe541b85c86cdb160eaa
+  docChecksum: 5f9c8c78f4e97650b9622752c12efc49
+  docVersion: 10.15.2
+  speakeasyVersion: 1.531.3
+  generationVersion: 2.570.3
+  releaseVersion: 0.10.0
+  configChecksum: fa0b60662d296ba08c868f658544fa64
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 features:
@@ -14,7 +14,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.7.3
+    core: 3.7.4
     deepObjectParams: 0.1.1
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.3
@@ -51,19 +51,19 @@ generatedFiles:
   - /models/apierrors/paymentrequiredresponse.go
   - /models/apierrors/unauthorizedresponse.go
   - /models/apierrors/unprocessableresponse.go
-  - /models/components/accountingdepartmentinput.go
+  - /models/components/accountingdepartment.go
   - /models/components/accountingdepartmentsfilter.go
-  - /models/components/accountinglocationinput.go
+  - /models/components/accountinglocation.go
   - /models/components/accountinglocationsfilter.go
   - /models/components/activitiesfilter.go
   - /models/components/activitiessort.go
+  - /models/components/activity.go
   - /models/components/activityattendee.go
-  - /models/components/activityinput.go
   - /models/components/address.go
   - /models/components/agedcreditors.go
   - /models/components/ageddebtors.go
   - /models/components/agedreportfilter.go
-  - /models/components/allocationinput.go
+  - /models/components/allocation.go
   - /models/components/api.go
   - /models/components/apiresource.go
   - /models/components/apiresourcecoverage.go
@@ -71,7 +71,7 @@ generatedFiles:
   - /models/components/apistatus.go
   - /models/components/applicantinput.go
   - /models/components/applicantsfilter.go
-  - /models/components/applicationinput.go
+  - /models/components/application.go
   - /models/components/assignee.go
   - /models/components/assigneeinput.go
   - /models/components/attachment.go
@@ -84,8 +84,8 @@ generatedFiles:
   - /models/components/balancesheetfilter.go
   - /models/components/bankaccount.go
   - /models/components/benefit.go
-  - /models/components/billinput.go
-  - /models/components/billlineiteminput.go
+  - /models/components/bill.go
+  - /models/components/billlineitem.go
   - /models/components/billpaymentinput.go
   - /models/components/billsfilter.go
   - /models/components/billssort.go
@@ -174,7 +174,7 @@ generatedFiles:
   - /models/components/creditnotesfilter.go
   - /models/components/creditnotessort.go
   - /models/components/currency.go
-  - /models/components/customerinput.go
+  - /models/components/customer.go
   - /models/components/customersfilter.go
   - /models/components/customerssort.go
   - /models/components/customfield.go
@@ -256,7 +256,7 @@ generatedFiles:
   - /models/components/employeesonefilter.go
   - /models/components/employeessort.go
   - /models/components/employmentstatus.go
-  - /models/components/expenseinput.go
+  - /models/components/expense.go
   - /models/components/expenselineitem.go
   - /models/components/expenselineiteminput.go
   - /models/components/filesfilter.go
@@ -389,12 +389,12 @@ generatedFiles:
   - /models/components/getwebhookeventlogsresponse.go
   - /models/components/getwebhookresponse.go
   - /models/components/getwebhooksresponse.go
-  - /models/components/hriscompany.go
+  - /models/components/hriscompanyinput.go
   - /models/components/httpmetadata.go
   - /models/components/integrationstate.go
   - /models/components/invoice.go
+  - /models/components/invoiceitem.go
   - /models/components/invoiceitemfilter.go
-  - /models/components/invoiceiteminput.go
   - /models/components/invoiceitemsfilter.go
   - /models/components/invoiceitemssort.go
   - /models/components/invoicelineitem.go
@@ -408,12 +408,12 @@ generatedFiles:
   - /models/components/journalentriessort.go
   - /models/components/journalentry.go
   - /models/components/journalentryinput.go
-  - /models/components/journalentrylineitem.go
+  - /models/components/journalentrylineiteminput.go
   - /models/components/lead.go
   - /models/components/leadinput.go
   - /models/components/leadsfilter.go
   - /models/components/leadssort.go
-  - /models/components/ledgeraccountinput.go
+  - /models/components/ledgeraccount.go
   - /models/components/ledgeraccountsfilter.go
   - /models/components/ledgeraccountssort.go
   - /models/components/linkedconnectorresource.go
@@ -434,7 +434,7 @@ generatedFiles:
   - /models/components/links.go
   - /models/components/log.go
   - /models/components/logsfilter.go
-  - /models/components/message.go
+  - /models/components/messageinput.go
   - /models/components/meta.go
   - /models/components/note.go
   - /models/components/noteinput.go
@@ -496,11 +496,11 @@ generatedFiles:
   - /models/components/taxrateinput.go
   - /models/components/taxratesfilter.go
   - /models/components/team.go
-  - /models/components/ticket.go
+  - /models/components/ticketinput.go
   - /models/components/ticketssort.go
-  - /models/components/timeoffrequest.go
+  - /models/components/timeoffrequestinput.go
   - /models/components/timeoffrequestsfilter.go
-  - /models/components/trackingcategoryinput.go
+  - /models/components/trackingcategory.go
   - /models/components/trackingitem.go
   - /models/components/unexpectederrorresponse.go
   - /models/components/unifiedapiid.go
@@ -1446,6 +1446,7 @@ generatedFiles:
   - docs/models/components/parentaccount.md
   - docs/models/components/passthroughbody.md
   - docs/models/components/payment.md
+  - docs/models/components/paymentallocations.md
   - docs/models/components/paymentfrequency.md
   - docs/models/components/paymentinput.md
   - docs/models/components/paymentsfilter.md
