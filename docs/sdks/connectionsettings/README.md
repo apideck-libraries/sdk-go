@@ -322,9 +322,7 @@ func main() {
                                     components.FormFieldOptionGroup{
                                         ID: sdkgo.String("1234"),
                                         Label: "General Channel",
-                                        Options: []components.SimpleFormFieldOption{
-
-                                        },
+                                        Options: []components.SimpleFormFieldOption{},
                                         OptionType: components.FormFieldOptionGroupOptionTypeGroup,
                                     },
                                 ),

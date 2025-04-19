@@ -36,54 +36,6 @@ func (e *SubsidiaryStatus) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type SubsidiaryInput struct {
-	// A unique identifier for an object.
-	ParentID *string `json:"parent_id,omitempty"`
-	// The name of the company.
-	Name *string `json:"name,omitempty"`
-	// Based on the status some functionality is enabled or disabled.
-	Status *SubsidiaryStatus `json:"status,omitempty"`
-	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-	RowVersion *string `json:"row_version,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-}
-
-func (o *SubsidiaryInput) GetParentID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ParentID
-}
-
-func (o *SubsidiaryInput) GetName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Name
-}
-
-func (o *SubsidiaryInput) GetStatus() *SubsidiaryStatus {
-	if o == nil {
-		return nil
-	}
-	return o.Status
-}
-
-func (o *SubsidiaryInput) GetRowVersion() *string {
-	if o == nil {
-		return nil
-	}
-	return o.RowVersion
-}
-
-func (o *SubsidiaryInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
-		return nil
-	}
-	return o.PassThrough
-}
-
 type Subsidiary struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
@@ -191,6 +143,54 @@ func (o *Subsidiary) GetCreatedAt() *time.Time {
 }
 
 func (o *Subsidiary) GetPassThrough() []PassThroughBody {
+	if o == nil {
+		return nil
+	}
+	return o.PassThrough
+}
+
+type SubsidiaryInput struct {
+	// A unique identifier for an object.
+	ParentID *string `json:"parent_id,omitempty"`
+	// The name of the company.
+	Name *string `json:"name,omitempty"`
+	// Based on the status some functionality is enabled or disabled.
+	Status *SubsidiaryStatus `json:"status,omitempty"`
+	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
+	RowVersion *string `json:"row_version,omitempty"`
+	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+}
+
+func (o *SubsidiaryInput) GetParentID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ParentID
+}
+
+func (o *SubsidiaryInput) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *SubsidiaryInput) GetStatus() *SubsidiaryStatus {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
+func (o *SubsidiaryInput) GetRowVersion() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RowVersion
+}
+
+func (o *SubsidiaryInput) GetPassThrough() []PassThroughBody {
 	if o == nil {
 		return nil
 	}

@@ -84,254 +84,6 @@ func (e *BillPaymentAllocationType) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type BillPaymentAllocations struct {
-	// A unique identifier for an object.
-	ID *string `json:"id,omitempty"`
-	// Type of entity this payment should be attributed to.
-	Type *BillPaymentAllocationType `json:"type,omitempty"`
-	// Amount of payment that should be attributed to this allocation. If null, the total_amount will be used.
-	Amount *float64 `json:"amount,omitempty"`
-	// Unique identifier of the allocation
-	AllocationID *string `json:"allocation_id,omitempty"`
-}
-
-func (o *BillPaymentAllocations) GetID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ID
-}
-
-func (o *BillPaymentAllocations) GetType() *BillPaymentAllocationType {
-	if o == nil {
-		return nil
-	}
-	return o.Type
-}
-
-func (o *BillPaymentAllocations) GetAmount() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.Amount
-}
-
-func (o *BillPaymentAllocations) GetAllocationID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.AllocationID
-}
-
-type BillPaymentInput struct {
-	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-	Currency *Currency `json:"currency,omitempty"`
-	// Currency Exchange Rate at the time entity was recorded/generated.
-	CurrencyRate *float64 `json:"currency_rate,omitempty"`
-	// The total amount of the transaction or record
-	TotalAmount *float64 `json:"total_amount"`
-	// Optional transaction reference message ie: Debit remittance detail.
-	Reference *string `json:"reference,omitempty"`
-	// Payment method used for the transaction, such as cash, credit card, bank transfer, or check
-	PaymentMethod *string `json:"payment_method,omitempty"`
-	// Optional reference message returned by payment method on processing
-	PaymentMethodReference *string `json:"payment_method_reference,omitempty"`
-	// A unique identifier for an object.
-	PaymentMethodID *string                   `json:"payment_method_id,omitempty"`
-	Account         *LinkedLedgerAccountInput `json:"account,omitempty"`
-	// The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
-	TransactionDate *time.Time `json:"transaction_date"`
-	// The supplier this entity is linked to.
-	Supplier *LinkedSupplierInput `json:"supplier,omitempty"`
-	// The company or subsidiary id the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
-	// Indicates if the transaction has been reconciled.
-	Reconciled *bool `json:"reconciled,omitempty"`
-	// Status of payment
-	Status *PaymentStatus `json:"status,omitempty"`
-	// Type of payment
-	Type        *BillPaymentType         `json:"type,omitempty"`
-	Allocations []BillPaymentAllocations `json:"allocations,omitempty"`
-	// Note associated with the transaction
-	Note *string `json:"note,omitempty"`
-	// Number associated with the transaction
-	Number *string `json:"number,omitempty"`
-	// A list of linked tracking categories.
-	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
-	CustomFields       []CustomField             `json:"custom_fields,omitempty"`
-	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-	RowVersion *string `json:"row_version,omitempty"`
-	// Id to be displayed.
-	DisplayID *string `json:"display_id,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-}
-
-func (b BillPaymentInput) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(b, "", false)
-}
-
-func (b *BillPaymentInput) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &b, "", false, false); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (o *BillPaymentInput) GetCurrency() *Currency {
-	if o == nil {
-		return nil
-	}
-	return o.Currency
-}
-
-func (o *BillPaymentInput) GetCurrencyRate() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.CurrencyRate
-}
-
-func (o *BillPaymentInput) GetTotalAmount() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.TotalAmount
-}
-
-func (o *BillPaymentInput) GetReference() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Reference
-}
-
-func (o *BillPaymentInput) GetPaymentMethod() *string {
-	if o == nil {
-		return nil
-	}
-	return o.PaymentMethod
-}
-
-func (o *BillPaymentInput) GetPaymentMethodReference() *string {
-	if o == nil {
-		return nil
-	}
-	return o.PaymentMethodReference
-}
-
-func (o *BillPaymentInput) GetPaymentMethodID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.PaymentMethodID
-}
-
-func (o *BillPaymentInput) GetAccount() *LinkedLedgerAccountInput {
-	if o == nil {
-		return nil
-	}
-	return o.Account
-}
-
-func (o *BillPaymentInput) GetTransactionDate() *time.Time {
-	if o == nil {
-		return nil
-	}
-	return o.TransactionDate
-}
-
-func (o *BillPaymentInput) GetSupplier() *LinkedSupplierInput {
-	if o == nil {
-		return nil
-	}
-	return o.Supplier
-}
-
-func (o *BillPaymentInput) GetCompanyID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.CompanyID
-}
-
-func (o *BillPaymentInput) GetReconciled() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.Reconciled
-}
-
-func (o *BillPaymentInput) GetStatus() *PaymentStatus {
-	if o == nil {
-		return nil
-	}
-	return o.Status
-}
-
-func (o *BillPaymentInput) GetType() *BillPaymentType {
-	if o == nil {
-		return nil
-	}
-	return o.Type
-}
-
-func (o *BillPaymentInput) GetAllocations() []BillPaymentAllocations {
-	if o == nil {
-		return nil
-	}
-	return o.Allocations
-}
-
-func (o *BillPaymentInput) GetNote() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Note
-}
-
-func (o *BillPaymentInput) GetNumber() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Number
-}
-
-func (o *BillPaymentInput) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
-		return nil
-	}
-	return o.TrackingCategories
-}
-
-func (o *BillPaymentInput) GetCustomFields() []CustomField {
-	if o == nil {
-		return nil
-	}
-	return o.CustomFields
-}
-
-func (o *BillPaymentInput) GetRowVersion() *string {
-	if o == nil {
-		return nil
-	}
-	return o.RowVersion
-}
-
-func (o *BillPaymentInput) GetDisplayID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.DisplayID
-}
-
-func (o *BillPaymentInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
-		return nil
-	}
-	return o.PassThrough
-}
-
 type Allocations struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
@@ -645,6 +397,254 @@ func (o *BillPayment) GetUpdatedAt() *time.Time {
 }
 
 func (o *BillPayment) GetPassThrough() []PassThroughBody {
+	if o == nil {
+		return nil
+	}
+	return o.PassThrough
+}
+
+type BillPaymentAllocations struct {
+	// A unique identifier for an object.
+	ID *string `json:"id,omitempty"`
+	// Type of entity this payment should be attributed to.
+	Type *BillPaymentAllocationType `json:"type,omitempty"`
+	// Amount of payment that should be attributed to this allocation. If null, the total_amount will be used.
+	Amount *float64 `json:"amount,omitempty"`
+	// Unique identifier of the allocation
+	AllocationID *string `json:"allocation_id,omitempty"`
+}
+
+func (o *BillPaymentAllocations) GetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *BillPaymentAllocations) GetType() *BillPaymentAllocationType {
+	if o == nil {
+		return nil
+	}
+	return o.Type
+}
+
+func (o *BillPaymentAllocations) GetAmount() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.Amount
+}
+
+func (o *BillPaymentAllocations) GetAllocationID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AllocationID
+}
+
+type BillPaymentInput struct {
+	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+	Currency *Currency `json:"currency,omitempty"`
+	// Currency Exchange Rate at the time entity was recorded/generated.
+	CurrencyRate *float64 `json:"currency_rate,omitempty"`
+	// The total amount of the transaction or record
+	TotalAmount *float64 `json:"total_amount"`
+	// Optional transaction reference message ie: Debit remittance detail.
+	Reference *string `json:"reference,omitempty"`
+	// Payment method used for the transaction, such as cash, credit card, bank transfer, or check
+	PaymentMethod *string `json:"payment_method,omitempty"`
+	// Optional reference message returned by payment method on processing
+	PaymentMethodReference *string `json:"payment_method_reference,omitempty"`
+	// A unique identifier for an object.
+	PaymentMethodID *string                   `json:"payment_method_id,omitempty"`
+	Account         *LinkedLedgerAccountInput `json:"account,omitempty"`
+	// The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
+	TransactionDate *time.Time `json:"transaction_date"`
+	// The supplier this entity is linked to.
+	Supplier *LinkedSupplierInput `json:"supplier,omitempty"`
+	// The company or subsidiary id the transaction belongs to
+	CompanyID *string `json:"company_id,omitempty"`
+	// Indicates if the transaction has been reconciled.
+	Reconciled *bool `json:"reconciled,omitempty"`
+	// Status of payment
+	Status *PaymentStatus `json:"status,omitempty"`
+	// Type of payment
+	Type        *BillPaymentType         `json:"type,omitempty"`
+	Allocations []BillPaymentAllocations `json:"allocations,omitempty"`
+	// Note associated with the transaction
+	Note *string `json:"note,omitempty"`
+	// Number associated with the transaction
+	Number *string `json:"number,omitempty"`
+	// A list of linked tracking categories.
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	CustomFields       []CustomField             `json:"custom_fields,omitempty"`
+	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
+	RowVersion *string `json:"row_version,omitempty"`
+	// Id to be displayed.
+	DisplayID *string `json:"display_id,omitempty"`
+	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+}
+
+func (b BillPaymentInput) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(b, "", false)
+}
+
+func (b *BillPaymentInput) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &b, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *BillPaymentInput) GetCurrency() *Currency {
+	if o == nil {
+		return nil
+	}
+	return o.Currency
+}
+
+func (o *BillPaymentInput) GetCurrencyRate() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.CurrencyRate
+}
+
+func (o *BillPaymentInput) GetTotalAmount() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.TotalAmount
+}
+
+func (o *BillPaymentInput) GetReference() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Reference
+}
+
+func (o *BillPaymentInput) GetPaymentMethod() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PaymentMethod
+}
+
+func (o *BillPaymentInput) GetPaymentMethodReference() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PaymentMethodReference
+}
+
+func (o *BillPaymentInput) GetPaymentMethodID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PaymentMethodID
+}
+
+func (o *BillPaymentInput) GetAccount() *LinkedLedgerAccountInput {
+	if o == nil {
+		return nil
+	}
+	return o.Account
+}
+
+func (o *BillPaymentInput) GetTransactionDate() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.TransactionDate
+}
+
+func (o *BillPaymentInput) GetSupplier() *LinkedSupplierInput {
+	if o == nil {
+		return nil
+	}
+	return o.Supplier
+}
+
+func (o *BillPaymentInput) GetCompanyID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CompanyID
+}
+
+func (o *BillPaymentInput) GetReconciled() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Reconciled
+}
+
+func (o *BillPaymentInput) GetStatus() *PaymentStatus {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
+func (o *BillPaymentInput) GetType() *BillPaymentType {
+	if o == nil {
+		return nil
+	}
+	return o.Type
+}
+
+func (o *BillPaymentInput) GetAllocations() []BillPaymentAllocations {
+	if o == nil {
+		return nil
+	}
+	return o.Allocations
+}
+
+func (o *BillPaymentInput) GetNote() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Note
+}
+
+func (o *BillPaymentInput) GetNumber() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Number
+}
+
+func (o *BillPaymentInput) GetTrackingCategories() []*LinkedTrackingCategory {
+	if o == nil {
+		return nil
+	}
+	return o.TrackingCategories
+}
+
+func (o *BillPaymentInput) GetCustomFields() []CustomField {
+	if o == nil {
+		return nil
+	}
+	return o.CustomFields
+}
+
+func (o *BillPaymentInput) GetRowVersion() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RowVersion
+}
+
+func (o *BillPaymentInput) GetDisplayID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayID
+}
+
+func (o *BillPaymentInput) GetPassThrough() []PassThroughBody {
 	if o == nil {
 		return nil
 	}

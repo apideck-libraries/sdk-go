@@ -34,133 +34,6 @@ func (e *JournalEntryLineItemType) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type JournalEntryLineItemInput struct {
-	// User defined description
-	Description *string `json:"description,omitempty"`
-	// Tax amount
-	TaxAmount *float64 `json:"tax_amount,omitempty"`
-	// Sub-total amount, normally before tax.
-	SubTotal *float64 `json:"sub_total,omitempty"`
-	// Debit entries are considered positive, and credit entries are considered negative.
-	TotalAmount *float64 `json:"total_amount,omitempty"`
-	// Debit entries are considered positive, and credit entries are considered negative.
-	Type    JournalEntryLineItemType `json:"type"`
-	TaxRate *LinkedTaxRateInput      `json:"tax_rate,omitempty"`
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
-	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
-	// A list of linked tracking categories.
-	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
-	LedgerAccount      *LinkedLedgerAccountInput `json:"ledger_account"`
-	// The customer this entity is linked to.
-	Customer *LinkedCustomerInput `json:"customer,omitempty"`
-	// The supplier this entity is linked to.
-	Supplier *LinkedSupplierInput `json:"supplier,omitempty"`
-	// The ID of the department
-	DepartmentID *string `json:"department_id,omitempty"`
-	// The ID of the location
-	LocationID *string `json:"location_id,omitempty"`
-	// Line number of the resource
-	LineNumber *int64 `json:"line_number,omitempty"`
-}
-
-func (o *JournalEntryLineItemInput) GetDescription() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Description
-}
-
-func (o *JournalEntryLineItemInput) GetTaxAmount() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.TaxAmount
-}
-
-func (o *JournalEntryLineItemInput) GetSubTotal() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.SubTotal
-}
-
-func (o *JournalEntryLineItemInput) GetTotalAmount() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.TotalAmount
-}
-
-func (o *JournalEntryLineItemInput) GetType() JournalEntryLineItemType {
-	if o == nil {
-		return JournalEntryLineItemType("")
-	}
-	return o.Type
-}
-
-func (o *JournalEntryLineItemInput) GetTaxRate() *LinkedTaxRateInput {
-	if o == nil {
-		return nil
-	}
-	return o.TaxRate
-}
-
-func (o *JournalEntryLineItemInput) GetTrackingCategory() *DeprecatedLinkedTrackingCategory {
-	if o == nil {
-		return nil
-	}
-	return o.TrackingCategory
-}
-
-func (o *JournalEntryLineItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
-		return nil
-	}
-	return o.TrackingCategories
-}
-
-func (o *JournalEntryLineItemInput) GetLedgerAccount() *LinkedLedgerAccountInput {
-	if o == nil {
-		return nil
-	}
-	return o.LedgerAccount
-}
-
-func (o *JournalEntryLineItemInput) GetCustomer() *LinkedCustomerInput {
-	if o == nil {
-		return nil
-	}
-	return o.Customer
-}
-
-func (o *JournalEntryLineItemInput) GetSupplier() *LinkedSupplierInput {
-	if o == nil {
-		return nil
-	}
-	return o.Supplier
-}
-
-func (o *JournalEntryLineItemInput) GetDepartmentID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.DepartmentID
-}
-
-func (o *JournalEntryLineItemInput) GetLocationID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.LocationID
-}
-
-func (o *JournalEntryLineItemInput) GetLineNumber() *int64 {
-	if o == nil {
-		return nil
-	}
-	return o.LineNumber
-}
-
 type JournalEntryLineItem struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
@@ -291,6 +164,133 @@ func (o *JournalEntryLineItem) GetLocationID() *string {
 }
 
 func (o *JournalEntryLineItem) GetLineNumber() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.LineNumber
+}
+
+type JournalEntryLineItemInput struct {
+	// User defined description
+	Description *string `json:"description,omitempty"`
+	// Tax amount
+	TaxAmount *float64 `json:"tax_amount,omitempty"`
+	// Sub-total amount, normally before tax.
+	SubTotal *float64 `json:"sub_total,omitempty"`
+	// Debit entries are considered positive, and credit entries are considered negative.
+	TotalAmount *float64 `json:"total_amount,omitempty"`
+	// Debit entries are considered positive, and credit entries are considered negative.
+	Type    JournalEntryLineItemType `json:"type"`
+	TaxRate *LinkedTaxRateInput      `json:"tax_rate,omitempty"`
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
+	// A list of linked tracking categories.
+	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
+	LedgerAccount      *LinkedLedgerAccountInput `json:"ledger_account"`
+	// The customer this entity is linked to.
+	Customer *LinkedCustomerInput `json:"customer,omitempty"`
+	// The supplier this entity is linked to.
+	Supplier *LinkedSupplierInput `json:"supplier,omitempty"`
+	// The ID of the department
+	DepartmentID *string `json:"department_id,omitempty"`
+	// The ID of the location
+	LocationID *string `json:"location_id,omitempty"`
+	// Line number of the resource
+	LineNumber *int64 `json:"line_number,omitempty"`
+}
+
+func (o *JournalEntryLineItemInput) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *JournalEntryLineItemInput) GetTaxAmount() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.TaxAmount
+}
+
+func (o *JournalEntryLineItemInput) GetSubTotal() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.SubTotal
+}
+
+func (o *JournalEntryLineItemInput) GetTotalAmount() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.TotalAmount
+}
+
+func (o *JournalEntryLineItemInput) GetType() JournalEntryLineItemType {
+	if o == nil {
+		return JournalEntryLineItemType("")
+	}
+	return o.Type
+}
+
+func (o *JournalEntryLineItemInput) GetTaxRate() *LinkedTaxRateInput {
+	if o == nil {
+		return nil
+	}
+	return o.TaxRate
+}
+
+func (o *JournalEntryLineItemInput) GetTrackingCategory() *DeprecatedLinkedTrackingCategory {
+	if o == nil {
+		return nil
+	}
+	return o.TrackingCategory
+}
+
+func (o *JournalEntryLineItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
+	if o == nil {
+		return nil
+	}
+	return o.TrackingCategories
+}
+
+func (o *JournalEntryLineItemInput) GetLedgerAccount() *LinkedLedgerAccountInput {
+	if o == nil {
+		return nil
+	}
+	return o.LedgerAccount
+}
+
+func (o *JournalEntryLineItemInput) GetCustomer() *LinkedCustomerInput {
+	if o == nil {
+		return nil
+	}
+	return o.Customer
+}
+
+func (o *JournalEntryLineItemInput) GetSupplier() *LinkedSupplierInput {
+	if o == nil {
+		return nil
+	}
+	return o.Supplier
+}
+
+func (o *JournalEntryLineItemInput) GetDepartmentID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DepartmentID
+}
+
+func (o *JournalEntryLineItemInput) GetLocationID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.LocationID
+}
+
+func (o *JournalEntryLineItemInput) GetLineNumber() *int64 {
 	if o == nil {
 		return nil
 	}

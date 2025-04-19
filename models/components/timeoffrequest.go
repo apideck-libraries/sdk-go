@@ -139,143 +139,6 @@ func (o *Notes) GetManager() *string {
 	return o.Manager
 }
 
-type TimeOffRequestInput struct {
-	// ID of the employee
-	EmployeeID *string `json:"employee_id,omitempty"`
-	// ID of the policy
-	PolicyID *string `json:"policy_id,omitempty"`
-	// The status of the time off request.
-	Status *TimeOffRequestStatusStatus `json:"status,omitempty"`
-	// Description of the time off request.
-	Description *string `json:"description,omitempty"`
-	// The start date of the time off request.
-	StartDate *string `json:"start_date,omitempty"`
-	// The end date of the time off request.
-	EndDate *string `json:"end_date,omitempty"`
-	// The date the request was made.
-	RequestDate *string `json:"request_date,omitempty"`
-	// The type of request
-	RequestType *RequestType `json:"request_type,omitempty"`
-	// The date the request was approved
-	ApprovalDate *string `json:"approval_date,omitempty"`
-	// The unit of time off requested. Possible values include: `hours`, `days`, or `other`.
-	Units *Units `json:"units,omitempty"`
-	// The amount of time off requested.
-	Amount *float64 `json:"amount,omitempty"`
-	// The day part of the time off request.
-	DayPart *string `json:"day_part,omitempty"`
-	Notes   *Notes  `json:"notes,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-	// The policy type of the time off request
-	PolicyType *string `json:"policy_type,omitempty"`
-}
-
-func (o *TimeOffRequestInput) GetEmployeeID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.EmployeeID
-}
-
-func (o *TimeOffRequestInput) GetPolicyID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.PolicyID
-}
-
-func (o *TimeOffRequestInput) GetStatus() *TimeOffRequestStatusStatus {
-	if o == nil {
-		return nil
-	}
-	return o.Status
-}
-
-func (o *TimeOffRequestInput) GetDescription() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Description
-}
-
-func (o *TimeOffRequestInput) GetStartDate() *string {
-	if o == nil {
-		return nil
-	}
-	return o.StartDate
-}
-
-func (o *TimeOffRequestInput) GetEndDate() *string {
-	if o == nil {
-		return nil
-	}
-	return o.EndDate
-}
-
-func (o *TimeOffRequestInput) GetRequestDate() *string {
-	if o == nil {
-		return nil
-	}
-	return o.RequestDate
-}
-
-func (o *TimeOffRequestInput) GetRequestType() *RequestType {
-	if o == nil {
-		return nil
-	}
-	return o.RequestType
-}
-
-func (o *TimeOffRequestInput) GetApprovalDate() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ApprovalDate
-}
-
-func (o *TimeOffRequestInput) GetUnits() *Units {
-	if o == nil {
-		return nil
-	}
-	return o.Units
-}
-
-func (o *TimeOffRequestInput) GetAmount() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.Amount
-}
-
-func (o *TimeOffRequestInput) GetDayPart() *string {
-	if o == nil {
-		return nil
-	}
-	return o.DayPart
-}
-
-func (o *TimeOffRequestInput) GetNotes() *Notes {
-	if o == nil {
-		return nil
-	}
-	return o.Notes
-}
-
-func (o *TimeOffRequestInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
-		return nil
-	}
-	return o.PassThrough
-}
-
-func (o *TimeOffRequestInput) GetPolicyType() *string {
-	if o == nil {
-		return nil
-	}
-	return o.PolicyType
-}
-
 type TimeOffRequest struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
@@ -472,6 +335,143 @@ func (o *TimeOffRequest) GetPassThrough() []PassThroughBody {
 }
 
 func (o *TimeOffRequest) GetPolicyType() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PolicyType
+}
+
+type TimeOffRequestInput struct {
+	// ID of the employee
+	EmployeeID *string `json:"employee_id,omitempty"`
+	// ID of the policy
+	PolicyID *string `json:"policy_id,omitempty"`
+	// The status of the time off request.
+	Status *TimeOffRequestStatusStatus `json:"status,omitempty"`
+	// Description of the time off request.
+	Description *string `json:"description,omitempty"`
+	// The start date of the time off request.
+	StartDate *string `json:"start_date,omitempty"`
+	// The end date of the time off request.
+	EndDate *string `json:"end_date,omitempty"`
+	// The date the request was made.
+	RequestDate *string `json:"request_date,omitempty"`
+	// The type of request
+	RequestType *RequestType `json:"request_type,omitempty"`
+	// The date the request was approved
+	ApprovalDate *string `json:"approval_date,omitempty"`
+	// The unit of time off requested. Possible values include: `hours`, `days`, or `other`.
+	Units *Units `json:"units,omitempty"`
+	// The amount of time off requested.
+	Amount *float64 `json:"amount,omitempty"`
+	// The day part of the time off request.
+	DayPart *string `json:"day_part,omitempty"`
+	Notes   *Notes  `json:"notes,omitempty"`
+	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+	// The policy type of the time off request
+	PolicyType *string `json:"policy_type,omitempty"`
+}
+
+func (o *TimeOffRequestInput) GetEmployeeID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.EmployeeID
+}
+
+func (o *TimeOffRequestInput) GetPolicyID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PolicyID
+}
+
+func (o *TimeOffRequestInput) GetStatus() *TimeOffRequestStatusStatus {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
+func (o *TimeOffRequestInput) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *TimeOffRequestInput) GetStartDate() *string {
+	if o == nil {
+		return nil
+	}
+	return o.StartDate
+}
+
+func (o *TimeOffRequestInput) GetEndDate() *string {
+	if o == nil {
+		return nil
+	}
+	return o.EndDate
+}
+
+func (o *TimeOffRequestInput) GetRequestDate() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RequestDate
+}
+
+func (o *TimeOffRequestInput) GetRequestType() *RequestType {
+	if o == nil {
+		return nil
+	}
+	return o.RequestType
+}
+
+func (o *TimeOffRequestInput) GetApprovalDate() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ApprovalDate
+}
+
+func (o *TimeOffRequestInput) GetUnits() *Units {
+	if o == nil {
+		return nil
+	}
+	return o.Units
+}
+
+func (o *TimeOffRequestInput) GetAmount() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.Amount
+}
+
+func (o *TimeOffRequestInput) GetDayPart() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DayPart
+}
+
+func (o *TimeOffRequestInput) GetNotes() *Notes {
+	if o == nil {
+		return nil
+	}
+	return o.Notes
+}
+
+func (o *TimeOffRequestInput) GetPassThrough() []PassThroughBody {
+	if o == nil {
+		return nil
+	}
+	return o.PassThrough
+}
+
+func (o *TimeOffRequestInput) GetPolicyType() *string {
 	if o == nil {
 		return nil
 	}
