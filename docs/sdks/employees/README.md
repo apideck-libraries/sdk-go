@@ -50,6 +50,8 @@ func main() {
             EmploymentStatus: components.EmployeesFilterEmploymentStatusActive.ToPointer(),
             EmployeeNumber: sdkgo.String("123456-AB"),
             DepartmentID: sdkgo.String("1234"),
+            City: sdkgo.String("San Francisco"),
+            Country: sdkgo.String("US"),
         },
         Sort: &components.EmployeesSort{
             By: components.EmployeesSortByCreatedAt.ToPointer(),

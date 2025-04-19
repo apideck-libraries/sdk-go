@@ -46,6 +46,8 @@ type AccountingDepartment struct {
 	// Based on the status some functionality is enabled or disabled.
 	Status       *DepartmentStatus     `json:"status,omitempty"`
 	Subsidiaries []SubsidiaryReference `json:"subsidiaries,omitempty"`
+	// The code of the department.
+	Code *string `json:"code,omitempty"`
 	// When custom mappings are configured on the resource, the result is included here.
 	CustomMappings *CustomMappings `json:"custom_mappings,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -108,6 +110,13 @@ func (o *AccountingDepartment) GetSubsidiaries() []SubsidiaryReference {
 	return o.Subsidiaries
 }
 
+func (o *AccountingDepartment) GetCode() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Code
+}
+
 func (o *AccountingDepartment) GetCustomMappings() *CustomMappings {
 	if o == nil {
 		return nil
@@ -165,6 +174,8 @@ type AccountingDepartmentInput struct {
 	// Based on the status some functionality is enabled or disabled.
 	Status       *DepartmentStatus          `json:"status,omitempty"`
 	Subsidiaries []SubsidiaryReferenceInput `json:"subsidiaries,omitempty"`
+	// The code of the department.
+	Code *string `json:"code,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
 	RowVersion *string `json:"row_version,omitempty"`
 	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
@@ -197,6 +208,13 @@ func (o *AccountingDepartmentInput) GetSubsidiaries() []SubsidiaryReferenceInput
 		return nil
 	}
 	return o.Subsidiaries
+}
+
+func (o *AccountingDepartmentInput) GetCode() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Code
 }
 
 func (o *AccountingDepartmentInput) GetRowVersion() *string {
