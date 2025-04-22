@@ -17,6 +17,7 @@ const (
 	InvoiceLineItemTypeDiscount  InvoiceLineItemType = "discount"
 	InvoiceLineItemTypeInfo      InvoiceLineItemType = "info"
 	InvoiceLineItemTypeSubTotal  InvoiceLineItemType = "sub_total"
+	InvoiceLineItemTypeService   InvoiceLineItemType = "service"
 	InvoiceLineItemTypeOther     InvoiceLineItemType = "other"
 )
 
@@ -36,6 +37,8 @@ func (e *InvoiceLineItemType) UnmarshalJSON(data []byte) error {
 	case "info":
 		fallthrough
 	case "sub_total":
+		fallthrough
+	case "service":
 		fallthrough
 	case "other":
 		*e = InvoiceLineItemType(v)

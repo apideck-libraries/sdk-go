@@ -11,4 +11,5 @@ Item type
 | `InvoiceLineItemTypeDiscount`  | discount                       |
 | `InvoiceLineItemTypeInfo`      | info                           |
 | `InvoiceLineItemTypeSubTotal`  | sub_total                      |
+| `InvoiceLineItemTypeService`   | service                        |
 | `InvoiceLineItemTypeOther`     | other                          |
