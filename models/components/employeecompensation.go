@@ -43,63 +43,6 @@ func (e *FlsaStatus) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type EmployeeCompensationInput struct {
-	// The amount paid per payment unit.
-	Rate *float64 `json:"rate,omitempty"`
-	// Unit of measurement for employee compensation.
-	PaymentUnit *PaymentUnit `json:"payment_unit,omitempty"`
-	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-	Currency *Currency `json:"currency,omitempty"`
-	// The FLSA status for this compensation.
-	FlsaStatus *FlsaStatus `json:"flsa_status,omitempty"`
-	// The date on which a change to an employee's compensation takes effect.
-	EffectiveDate *string `json:"effective_date,omitempty"`
-	// Frequency of employee compensation.
-	PaymentFrequency *PaymentFrequency `json:"payment_frequency,omitempty"`
-}
-
-func (o *EmployeeCompensationInput) GetRate() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.Rate
-}
-
-func (o *EmployeeCompensationInput) GetPaymentUnit() *PaymentUnit {
-	if o == nil {
-		return nil
-	}
-	return o.PaymentUnit
-}
-
-func (o *EmployeeCompensationInput) GetCurrency() *Currency {
-	if o == nil {
-		return nil
-	}
-	return o.Currency
-}
-
-func (o *EmployeeCompensationInput) GetFlsaStatus() *FlsaStatus {
-	if o == nil {
-		return nil
-	}
-	return o.FlsaStatus
-}
-
-func (o *EmployeeCompensationInput) GetEffectiveDate() *string {
-	if o == nil {
-		return nil
-	}
-	return o.EffectiveDate
-}
-
-func (o *EmployeeCompensationInput) GetPaymentFrequency() *PaymentFrequency {
-	if o == nil {
-		return nil
-	}
-	return o.PaymentFrequency
-}
-
 type EmployeeCompensation struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
@@ -169,6 +112,63 @@ func (o *EmployeeCompensation) GetEffectiveDate() *string {
 }
 
 func (o *EmployeeCompensation) GetPaymentFrequency() *PaymentFrequency {
+	if o == nil {
+		return nil
+	}
+	return o.PaymentFrequency
+}
+
+type EmployeeCompensationInput struct {
+	// The amount paid per payment unit.
+	Rate *float64 `json:"rate,omitempty"`
+	// Unit of measurement for employee compensation.
+	PaymentUnit *PaymentUnit `json:"payment_unit,omitempty"`
+	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+	Currency *Currency `json:"currency,omitempty"`
+	// The FLSA status for this compensation.
+	FlsaStatus *FlsaStatus `json:"flsa_status,omitempty"`
+	// The date on which a change to an employee's compensation takes effect.
+	EffectiveDate *string `json:"effective_date,omitempty"`
+	// Frequency of employee compensation.
+	PaymentFrequency *PaymentFrequency `json:"payment_frequency,omitempty"`
+}
+
+func (o *EmployeeCompensationInput) GetRate() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.Rate
+}
+
+func (o *EmployeeCompensationInput) GetPaymentUnit() *PaymentUnit {
+	if o == nil {
+		return nil
+	}
+	return o.PaymentUnit
+}
+
+func (o *EmployeeCompensationInput) GetCurrency() *Currency {
+	if o == nil {
+		return nil
+	}
+	return o.Currency
+}
+
+func (o *EmployeeCompensationInput) GetFlsaStatus() *FlsaStatus {
+	if o == nil {
+		return nil
+	}
+	return o.FlsaStatus
+}
+
+func (o *EmployeeCompensationInput) GetEffectiveDate() *string {
+	if o == nil {
+		return nil
+	}
+	return o.EffectiveDate
+}
+
+func (o *EmployeeCompensationInput) GetPaymentFrequency() *PaymentFrequency {
 	if o == nil {
 		return nil
 	}

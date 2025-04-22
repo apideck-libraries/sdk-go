@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 5f9c8c78f4e97650b9622752c12efc49
-  docVersion: 10.15.2
-  speakeasyVersion: 1.531.3
-  generationVersion: 2.570.3
-  releaseVersion: 0.10.0
-  configChecksum: fa0b60662d296ba08c868f658544fa64
+  docChecksum: b5dc0244aa499b8adfc991da71055e1b
+  docVersion: 10.16.2
+  speakeasyVersion: 1.537.0
+  generationVersion: 2.588.0
+  releaseVersion: 0.11.0
+  configChecksum: 6bb3c3526a10cc6bb7df0dee030c3df9
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 features:
@@ -69,7 +69,7 @@ generatedFiles:
   - /models/components/apiresourcecoverage.go
   - /models/components/apisfilter.go
   - /models/components/apistatus.go
-  - /models/components/applicantinput.go
+  - /models/components/applicant.go
   - /models/components/applicantsfilter.go
   - /models/components/application.go
   - /models/components/assignee.go
@@ -86,7 +86,7 @@ generatedFiles:
   - /models/components/benefit.go
   - /models/components/bill.go
   - /models/components/billlineitem.go
-  - /models/components/billpaymentinput.go
+  - /models/components/billpayment.go
   - /models/components/billsfilter.go
   - /models/components/billssort.go
   - /models/components/collection.go
@@ -102,8 +102,8 @@ generatedFiles:
   - /models/components/company.go
   - /models/components/companyinfo.go
   - /models/components/compensation.go
+  - /models/components/connection.go
   - /models/components/connectionimportdata.go
-  - /models/components/connectioninput.go
   - /models/components/connectionstate.go
   - /models/components/connector.go
   - /models/components/connectordoc.go
@@ -117,7 +117,7 @@ generatedFiles:
   - /models/components/consumerinput.go
   - /models/components/consumermetadata.go
   - /models/components/consumerrequestcountsindaterangeresponse.go
-  - /models/components/contactinput.go
+  - /models/components/contact.go
   - /models/components/contactsfilter.go
   - /models/components/contactssort.go
   - /models/components/copyfolderrequest.go
@@ -247,9 +247,9 @@ generatedFiles:
   - /models/components/ecommerceproduct.go
   - /models/components/ecommercestore.go
   - /models/components/email.go
-  - /models/components/employeecompensationinput.go
-  - /models/components/employeeinput.go
-  - /models/components/employeejobinput.go
+  - /models/components/employee.go
+  - /models/components/employeecompensation.go
+  - /models/components/employeejob.go
   - /models/components/employeepayroll.go
   - /models/components/employeeschedules.go
   - /models/components/employeesfilter.go
@@ -389,7 +389,7 @@ generatedFiles:
   - /models/components/getwebhookeventlogsresponse.go
   - /models/components/getwebhookresponse.go
   - /models/components/getwebhooksresponse.go
-  - /models/components/hriscompanyinput.go
+  - /models/components/hriscompany.go
   - /models/components/httpmetadata.go
   - /models/components/integrationstate.go
   - /models/components/invoice.go
@@ -408,7 +408,7 @@ generatedFiles:
   - /models/components/journalentriessort.go
   - /models/components/journalentry.go
   - /models/components/journalentryinput.go
-  - /models/components/journalentrylineiteminput.go
+  - /models/components/journalentrylineitem.go
   - /models/components/lead.go
   - /models/components/leadinput.go
   - /models/components/leadsfilter.go
@@ -434,7 +434,7 @@ generatedFiles:
   - /models/components/links.go
   - /models/components/log.go
   - /models/components/logsfilter.go
-  - /models/components/messageinput.go
+  - /models/components/message.go
   - /models/components/meta.go
   - /models/components/note.go
   - /models/components/noteinput.go
@@ -479,26 +479,26 @@ generatedFiles:
   - /models/components/schemasupport.go
   - /models/components/security.go
   - /models/components/session.go
-  - /models/components/sharedlinkinput.go
+  - /models/components/sharedlink.go
   - /models/components/sharedlinktarget.go
   - /models/components/simpleformfieldoption.go
   - /models/components/sociallink.go
   - /models/components/sortdirection.go
   - /models/components/status.go
-  - /models/components/subsidiaryinput.go
+  - /models/components/subsidiary.go
   - /models/components/subsidiaryreference.go
   - /models/components/subsidiaryreferenceinput.go
-  - /models/components/supplierinput.go
+  - /models/components/supplier.go
   - /models/components/suppliersfilter.go
   - /models/components/supplierssort.go
   - /models/components/supportedproperty.go
   - /models/components/tax.go
-  - /models/components/taxrateinput.go
+  - /models/components/taxrate.go
   - /models/components/taxratesfilter.go
   - /models/components/team.go
-  - /models/components/ticketinput.go
+  - /models/components/ticket.go
   - /models/components/ticketssort.go
-  - /models/components/timeoffrequestinput.go
+  - /models/components/timeoffrequest.go
   - /models/components/timeoffrequestsfilter.go
   - /models/components/trackingcategory.go
   - /models/components/trackingitem.go
@@ -7661,7 +7661,7 @@ examples:
         query:
           raw: false
           limit: 20
-          filter: {"company_id": "1234", "email": "elon@tesla.com", "first_name": "Elon", "title": "Manager", "last_name": "Musk", "manager_id": "1234", "employment_status": "active", "employee_number": "123456-AB", "department_id": "1234"}
+          filter: {"company_id": "1234", "email": "elon@tesla.com", "first_name": "Elon", "title": "Manager", "last_name": "Musk", "manager_id": "1234", "employment_status": "active", "employee_number": "123456-AB", "department_id": "1234", "city": "San Francisco", "country": "US"}
           sort: {"by": "created_at", "direction": "desc"}
           pass_through: {"search": "San Francisco"}
           fields: "id,updated_at"

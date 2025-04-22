@@ -42,108 +42,6 @@ func (e *Priority) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type TicketInput struct {
-	// The ticket's parent ID
-	ParentID *string `json:"parent_id,omitempty"`
-	// The ticket's type
-	Type *string `json:"type,omitempty"`
-	// Subject of the ticket
-	Subject *string `json:"subject,omitempty"`
-	// The ticket's description. HTML version of description is mapped if supported by the third-party platform
-	Description *string `json:"description,omitempty"`
-	// The current status of the ticket. Possible values include: open, in_progress, closed, or - in cases where there is no clear mapping - the original value passed through.
-	Status *string `json:"status,omitempty"`
-	// Priority of the ticket
-	Priority  *Priority       `json:"priority,omitempty"`
-	Assignees []AssigneeInput `json:"assignees,omitempty"`
-	// Due date of the ticket
-	DueDate *time.Time           `json:"due_date,omitempty"`
-	Tags    []CollectionTagInput `json:"tags,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-}
-
-func (t TicketInput) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(t, "", false)
-}
-
-func (t *TicketInput) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &t, "", false, false); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (o *TicketInput) GetParentID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ParentID
-}
-
-func (o *TicketInput) GetType() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Type
-}
-
-func (o *TicketInput) GetSubject() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Subject
-}
-
-func (o *TicketInput) GetDescription() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Description
-}
-
-func (o *TicketInput) GetStatus() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Status
-}
-
-func (o *TicketInput) GetPriority() *Priority {
-	if o == nil {
-		return nil
-	}
-	return o.Priority
-}
-
-func (o *TicketInput) GetAssignees() []AssigneeInput {
-	if o == nil {
-		return nil
-	}
-	return o.Assignees
-}
-
-func (o *TicketInput) GetDueDate() *time.Time {
-	if o == nil {
-		return nil
-	}
-	return o.DueDate
-}
-
-func (o *TicketInput) GetTags() []CollectionTagInput {
-	if o == nil {
-		return nil
-	}
-	return o.Tags
-}
-
-func (o *TicketInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
-		return nil
-	}
-	return o.PassThrough
-}
-
 type Ticket struct {
 	// A unique identifier for an object.
 	ID string `json:"id"`
@@ -303,6 +201,108 @@ func (o *Ticket) GetCustomMappings() *CustomMappings {
 }
 
 func (o *Ticket) GetPassThrough() []PassThroughBody {
+	if o == nil {
+		return nil
+	}
+	return o.PassThrough
+}
+
+type TicketInput struct {
+	// The ticket's parent ID
+	ParentID *string `json:"parent_id,omitempty"`
+	// The ticket's type
+	Type *string `json:"type,omitempty"`
+	// Subject of the ticket
+	Subject *string `json:"subject,omitempty"`
+	// The ticket's description. HTML version of description is mapped if supported by the third-party platform
+	Description *string `json:"description,omitempty"`
+	// The current status of the ticket. Possible values include: open, in_progress, closed, or - in cases where there is no clear mapping - the original value passed through.
+	Status *string `json:"status,omitempty"`
+	// Priority of the ticket
+	Priority  *Priority       `json:"priority,omitempty"`
+	Assignees []AssigneeInput `json:"assignees,omitempty"`
+	// Due date of the ticket
+	DueDate *time.Time           `json:"due_date,omitempty"`
+	Tags    []CollectionTagInput `json:"tags,omitempty"`
+	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+}
+
+func (t TicketInput) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(t, "", false)
+}
+
+func (t *TicketInput) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &t, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *TicketInput) GetParentID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ParentID
+}
+
+func (o *TicketInput) GetType() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Type
+}
+
+func (o *TicketInput) GetSubject() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Subject
+}
+
+func (o *TicketInput) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *TicketInput) GetStatus() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
+func (o *TicketInput) GetPriority() *Priority {
+	if o == nil {
+		return nil
+	}
+	return o.Priority
+}
+
+func (o *TicketInput) GetAssignees() []AssigneeInput {
+	if o == nil {
+		return nil
+	}
+	return o.Assignees
+}
+
+func (o *TicketInput) GetDueDate() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.DueDate
+}
+
+func (o *TicketInput) GetTags() []CollectionTagInput {
+	if o == nil {
+		return nil
+	}
+	return o.Tags
+}
+
+func (o *TicketInput) GetPassThrough() []PassThroughBody {
 	if o == nil {
 		return nil
 	}

@@ -72,307 +72,6 @@ func (e *ContactGender) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type ContactInput struct {
-	// Full name of the contact.
-	Name *string `json:"name"`
-	// The owner of the contact.
-	OwnerID *string `json:"owner_id,omitempty"`
-	// The type of the contact.
-	Type *ContactType `json:"type,omitempty"`
-	// The company the contact is associated with.
-	CompanyID *string `json:"company_id,omitempty"`
-	// The name of the company the contact is associated with.
-	CompanyName *string `json:"company_name,omitempty"`
-	// The lead the contact is associated with.
-	LeadID *string `json:"lead_id,omitempty"`
-	// The first name of the contact.
-	FirstName *string `json:"first_name,omitempty"`
-	// The middle name of the contact.
-	MiddleName *string `json:"middle_name,omitempty"`
-	// The last name of the contact.
-	LastName *string `json:"last_name,omitempty"`
-	// The prefix of the contact.
-	Prefix *string `json:"prefix,omitempty"`
-	// The suffix of the contact.
-	Suffix *string `json:"suffix,omitempty"`
-	// The job title of the contact.
-	Title *string `json:"title,omitempty"`
-	// The department of the contact.
-	Department *string `json:"department,omitempty"`
-	// language code according to ISO 639-1. For the United States - EN
-	Language *string `json:"language,omitempty"`
-	// The gender of the contact.
-	Gender *ContactGender `json:"gender,omitempty"`
-	// The birthday of the contact.
-	Birthday *string `json:"birthday,omitempty"`
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
-	Image *string `json:"image,omitempty"`
-	// The URL of the photo of a person.
-	PhotoURL *string `json:"photo_url,omitempty"`
-	// The lead source of the contact.
-	LeadSource *string `json:"lead_source,omitempty"`
-	// The fax number of the contact.
-	Fax *string `json:"fax,omitempty"`
-	// The description of the contact.
-	Description *string `json:"description,omitempty"`
-	// The current balance of the contact.
-	CurrentBalance *float64 `json:"current_balance,omitempty"`
-	// The status of the contact.
-	Status *string `json:"status,omitempty"`
-	// The active status of the contact.
-	Active       *bool         `json:"active,omitempty"`
-	Websites     []Website     `json:"websites,omitempty"`
-	Addresses    []Address     `json:"addresses,omitempty"`
-	SocialLinks  []SocialLink  `json:"social_links,omitempty"`
-	PhoneNumbers []PhoneNumber `json:"phone_numbers,omitempty"`
-	Emails       []Email       `json:"emails,omitempty"`
-	EmailDomain  *string       `json:"email_domain,omitempty"`
-	CustomFields []CustomField `json:"custom_fields,omitempty"`
-	Tags         []string      `json:"tags,omitempty"`
-	// The opportunity ids of the contact.
-	OpportunityIds []string `json:"opportunity_ids,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-}
-
-func (o *ContactInput) GetName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Name
-}
-
-func (o *ContactInput) GetOwnerID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.OwnerID
-}
-
-func (o *ContactInput) GetType() *ContactType {
-	if o == nil {
-		return nil
-	}
-	return o.Type
-}
-
-func (o *ContactInput) GetCompanyID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.CompanyID
-}
-
-func (o *ContactInput) GetCompanyName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.CompanyName
-}
-
-func (o *ContactInput) GetLeadID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.LeadID
-}
-
-func (o *ContactInput) GetFirstName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.FirstName
-}
-
-func (o *ContactInput) GetMiddleName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.MiddleName
-}
-
-func (o *ContactInput) GetLastName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.LastName
-}
-
-func (o *ContactInput) GetPrefix() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Prefix
-}
-
-func (o *ContactInput) GetSuffix() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Suffix
-}
-
-func (o *ContactInput) GetTitle() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Title
-}
-
-func (o *ContactInput) GetDepartment() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Department
-}
-
-func (o *ContactInput) GetLanguage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Language
-}
-
-func (o *ContactInput) GetGender() *ContactGender {
-	if o == nil {
-		return nil
-	}
-	return o.Gender
-}
-
-func (o *ContactInput) GetBirthday() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Birthday
-}
-
-func (o *ContactInput) GetImage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Image
-}
-
-func (o *ContactInput) GetPhotoURL() *string {
-	if o == nil {
-		return nil
-	}
-	return o.PhotoURL
-}
-
-func (o *ContactInput) GetLeadSource() *string {
-	if o == nil {
-		return nil
-	}
-	return o.LeadSource
-}
-
-func (o *ContactInput) GetFax() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Fax
-}
-
-func (o *ContactInput) GetDescription() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Description
-}
-
-func (o *ContactInput) GetCurrentBalance() *float64 {
-	if o == nil {
-		return nil
-	}
-	return o.CurrentBalance
-}
-
-func (o *ContactInput) GetStatus() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Status
-}
-
-func (o *ContactInput) GetActive() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.Active
-}
-
-func (o *ContactInput) GetWebsites() []Website {
-	if o == nil {
-		return nil
-	}
-	return o.Websites
-}
-
-func (o *ContactInput) GetAddresses() []Address {
-	if o == nil {
-		return nil
-	}
-	return o.Addresses
-}
-
-func (o *ContactInput) GetSocialLinks() []SocialLink {
-	if o == nil {
-		return nil
-	}
-	return o.SocialLinks
-}
-
-func (o *ContactInput) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
-		return nil
-	}
-	return o.PhoneNumbers
-}
-
-func (o *ContactInput) GetEmails() []Email {
-	if o == nil {
-		return nil
-	}
-	return o.Emails
-}
-
-func (o *ContactInput) GetEmailDomain() *string {
-	if o == nil {
-		return nil
-	}
-	return o.EmailDomain
-}
-
-func (o *ContactInput) GetCustomFields() []CustomField {
-	if o == nil {
-		return nil
-	}
-	return o.CustomFields
-}
-
-func (o *ContactInput) GetTags() []string {
-	if o == nil {
-		return nil
-	}
-	return o.Tags
-}
-
-func (o *ContactInput) GetOpportunityIds() []string {
-	if o == nil {
-		return nil
-	}
-	return o.OpportunityIds
-}
-
-func (o *ContactInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
-		return nil
-	}
-	return o.PassThrough
-}
-
 type Contact struct {
 	// Unique identifier for the contact.
 	ID *string `json:"id,omitempty"`
@@ -742,6 +441,307 @@ func (o *Contact) GetOpportunityIds() []string {
 }
 
 func (o *Contact) GetPassThrough() []PassThroughBody {
+	if o == nil {
+		return nil
+	}
+	return o.PassThrough
+}
+
+type ContactInput struct {
+	// Full name of the contact.
+	Name *string `json:"name"`
+	// The owner of the contact.
+	OwnerID *string `json:"owner_id,omitempty"`
+	// The type of the contact.
+	Type *ContactType `json:"type,omitempty"`
+	// The company the contact is associated with.
+	CompanyID *string `json:"company_id,omitempty"`
+	// The name of the company the contact is associated with.
+	CompanyName *string `json:"company_name,omitempty"`
+	// The lead the contact is associated with.
+	LeadID *string `json:"lead_id,omitempty"`
+	// The first name of the contact.
+	FirstName *string `json:"first_name,omitempty"`
+	// The middle name of the contact.
+	MiddleName *string `json:"middle_name,omitempty"`
+	// The last name of the contact.
+	LastName *string `json:"last_name,omitempty"`
+	// The prefix of the contact.
+	Prefix *string `json:"prefix,omitempty"`
+	// The suffix of the contact.
+	Suffix *string `json:"suffix,omitempty"`
+	// The job title of the contact.
+	Title *string `json:"title,omitempty"`
+	// The department of the contact.
+	Department *string `json:"department,omitempty"`
+	// language code according to ISO 639-1. For the United States - EN
+	Language *string `json:"language,omitempty"`
+	// The gender of the contact.
+	Gender *ContactGender `json:"gender,omitempty"`
+	// The birthday of the contact.
+	Birthday *string `json:"birthday,omitempty"`
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+	Image *string `json:"image,omitempty"`
+	// The URL of the photo of a person.
+	PhotoURL *string `json:"photo_url,omitempty"`
+	// The lead source of the contact.
+	LeadSource *string `json:"lead_source,omitempty"`
+	// The fax number of the contact.
+	Fax *string `json:"fax,omitempty"`
+	// The description of the contact.
+	Description *string `json:"description,omitempty"`
+	// The current balance of the contact.
+	CurrentBalance *float64 `json:"current_balance,omitempty"`
+	// The status of the contact.
+	Status *string `json:"status,omitempty"`
+	// The active status of the contact.
+	Active       *bool         `json:"active,omitempty"`
+	Websites     []Website     `json:"websites,omitempty"`
+	Addresses    []Address     `json:"addresses,omitempty"`
+	SocialLinks  []SocialLink  `json:"social_links,omitempty"`
+	PhoneNumbers []PhoneNumber `json:"phone_numbers,omitempty"`
+	Emails       []Email       `json:"emails,omitempty"`
+	EmailDomain  *string       `json:"email_domain,omitempty"`
+	CustomFields []CustomField `json:"custom_fields,omitempty"`
+	Tags         []string      `json:"tags,omitempty"`
+	// The opportunity ids of the contact.
+	OpportunityIds []string `json:"opportunity_ids,omitempty"`
+	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
+}
+
+func (o *ContactInput) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *ContactInput) GetOwnerID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.OwnerID
+}
+
+func (o *ContactInput) GetType() *ContactType {
+	if o == nil {
+		return nil
+	}
+	return o.Type
+}
+
+func (o *ContactInput) GetCompanyID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CompanyID
+}
+
+func (o *ContactInput) GetCompanyName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CompanyName
+}
+
+func (o *ContactInput) GetLeadID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.LeadID
+}
+
+func (o *ContactInput) GetFirstName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.FirstName
+}
+
+func (o *ContactInput) GetMiddleName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.MiddleName
+}
+
+func (o *ContactInput) GetLastName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.LastName
+}
+
+func (o *ContactInput) GetPrefix() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Prefix
+}
+
+func (o *ContactInput) GetSuffix() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Suffix
+}
+
+func (o *ContactInput) GetTitle() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Title
+}
+
+func (o *ContactInput) GetDepartment() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Department
+}
+
+func (o *ContactInput) GetLanguage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Language
+}
+
+func (o *ContactInput) GetGender() *ContactGender {
+	if o == nil {
+		return nil
+	}
+	return o.Gender
+}
+
+func (o *ContactInput) GetBirthday() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Birthday
+}
+
+func (o *ContactInput) GetImage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Image
+}
+
+func (o *ContactInput) GetPhotoURL() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PhotoURL
+}
+
+func (o *ContactInput) GetLeadSource() *string {
+	if o == nil {
+		return nil
+	}
+	return o.LeadSource
+}
+
+func (o *ContactInput) GetFax() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Fax
+}
+
+func (o *ContactInput) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *ContactInput) GetCurrentBalance() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.CurrentBalance
+}
+
+func (o *ContactInput) GetStatus() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
+func (o *ContactInput) GetActive() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Active
+}
+
+func (o *ContactInput) GetWebsites() []Website {
+	if o == nil {
+		return nil
+	}
+	return o.Websites
+}
+
+func (o *ContactInput) GetAddresses() []Address {
+	if o == nil {
+		return nil
+	}
+	return o.Addresses
+}
+
+func (o *ContactInput) GetSocialLinks() []SocialLink {
+	if o == nil {
+		return nil
+	}
+	return o.SocialLinks
+}
+
+func (o *ContactInput) GetPhoneNumbers() []PhoneNumber {
+	if o == nil {
+		return nil
+	}
+	return o.PhoneNumbers
+}
+
+func (o *ContactInput) GetEmails() []Email {
+	if o == nil {
+		return nil
+	}
+	return o.Emails
+}
+
+func (o *ContactInput) GetEmailDomain() *string {
+	if o == nil {
+		return nil
+	}
+	return o.EmailDomain
+}
+
+func (o *ContactInput) GetCustomFields() []CustomField {
+	if o == nil {
+		return nil
+	}
+	return o.CustomFields
+}
+
+func (o *ContactInput) GetTags() []string {
+	if o == nil {
+		return nil
+	}
+	return o.Tags
+}
+
+func (o *ContactInput) GetOpportunityIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.OpportunityIds
+}
+
+func (o *ContactInput) GetPassThrough() []PassThroughBody {
 	if o == nil {
 		return nil
 	}
