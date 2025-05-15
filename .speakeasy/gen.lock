@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: d8344cbf466dcd4f4f041d1b3cf57f83
-  docVersion: 10.16.4
-  speakeasyVersion: 1.540.0
-  generationVersion: 2.593.3
-  releaseVersion: 0.11.1
-  configChecksum: ae5cb625bb4dcb9d3661e12523bea122
+  docChecksum: 4d64691959d92193868be5842c673917
+  docVersion: 10.16.5
+  speakeasyVersion: 1.545.0
+  generationVersion: 2.599.0
+  releaseVersion: 0.11.2
+  configChecksum: 98872412f9cdc0a3fe78e8a072730734
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 features:
@@ -26,7 +26,7 @@ features:
     globalSecurity: 2.82.11
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
-    globalServerURLs: 2.82.2
+    globalServerURLs: 2.82.3
     globals: 2.82.2
     groups: 2.81.2
     inputOutputModels: 2.83.0
@@ -83,6 +83,8 @@ generatedFiles:
   - /models/components/balancesheet.go
   - /models/components/balancesheetfilter.go
   - /models/components/bankaccount.go
+  - /models/components/bankfeedaccount.go
+  - /models/components/bankfeedstatement.go
   - /models/components/benefit.go
   - /models/components/bill.go
   - /models/components/billlineitem.go
@@ -127,6 +129,8 @@ generatedFiles:
   - /models/components/createapplicantresponse.go
   - /models/components/createapplicationresponse.go
   - /models/components/createattachmentresponse.go
+  - /models/components/createbankfeedaccountresponse.go
+  - /models/components/createbankfeedstatementresponse.go
   - /models/components/createbillpaymentresponse.go
   - /models/components/createbillresponse.go
   - /models/components/createcallbackstate.go
@@ -173,6 +177,7 @@ generatedFiles:
   - /models/components/creditnote.go
   - /models/components/creditnotesfilter.go
   - /models/components/creditnotessort.go
+  - /models/components/creditordebit.go
   - /models/components/currency.go
   - /models/components/customer.go
   - /models/components/customersfilter.go
@@ -189,6 +194,8 @@ generatedFiles:
   - /models/components/deleteapplicantresponse.go
   - /models/components/deleteapplicationresponse.go
   - /models/components/deleteattachmentresponse.go
+  - /models/components/deletebankfeedaccountresponse.go
+  - /models/components/deletebankfeedstatementresponse.go
   - /models/components/deletebillpaymentresponse.go
   - /models/components/deletebillresponse.go
   - /models/components/deletecommentresponse.go
@@ -287,6 +294,10 @@ generatedFiles:
   - /models/components/getattachmentresponse.go
   - /models/components/getattachmentsresponse.go
   - /models/components/getbalancesheetresponse.go
+  - /models/components/getbankfeedaccountresponse.go
+  - /models/components/getbankfeedaccountsresponse.go
+  - /models/components/getbankfeedstatementresponse.go
+  - /models/components/getbankfeedstatementsresponse.go
   - /models/components/getbillpaymentresponse.go
   - /models/components/getbillpaymentsresponse.go
   - /models/components/getbillresponse.go
@@ -511,6 +522,8 @@ generatedFiles:
   - /models/components/updateactivityresponse.go
   - /models/components/updateapplicantresponse.go
   - /models/components/updateapplicationresponse.go
+  - /models/components/updatebankfeedaccountresponse.go
+  - /models/components/updatebankfeedstatementresponse.go
   - /models/components/updatebillpaymentresponse.go
   - /models/components/updatebillresponse.go
   - /models/components/updatecommentresponse.go
@@ -572,6 +585,16 @@ generatedFiles:
   - /models/operations/accountingattachmentsone.go
   - /models/operations/accountingattachmentsupload.go
   - /models/operations/accountingbalancesheetone.go
+  - /models/operations/accountingbankfeedaccountsadd.go
+  - /models/operations/accountingbankfeedaccountsall.go
+  - /models/operations/accountingbankfeedaccountsdelete.go
+  - /models/operations/accountingbankfeedaccountsone.go
+  - /models/operations/accountingbankfeedaccountsupdate.go
+  - /models/operations/accountingbankfeedstatementsadd.go
+  - /models/operations/accountingbankfeedstatementsall.go
+  - /models/operations/accountingbankfeedstatementsdelete.go
+  - /models/operations/accountingbankfeedstatementsone.go
+  - /models/operations/accountingbankfeedstatementsupdate.go
   - /models/operations/accountingbillpaymentsadd.go
   - /models/operations/accountingbillpaymentsall.go
   - /models/operations/accountingbillpaymentsdelete.go
@@ -847,6 +870,8 @@ generatedFiles:
   - ats.go
   - attachments.go
   - balancesheet.go
+  - bankfeedaccounts.go
+  - bankfeedstatements.go
   - billpayments.go
   - bills.go
   - collections.go
@@ -939,6 +964,12 @@ generatedFiles:
   - docs/models/components/balancesheetliabilitiesaccount.md
   - docs/models/components/balancesheetuncategorizeditemsaccount.md
   - docs/models/components/bankaccount.md
+  - docs/models/components/bankaccounttype.md
+  - docs/models/components/bankfeedaccount.md
+  - docs/models/components/bankfeedaccountinput.md
+  - docs/models/components/bankfeedstatement.md
+  - docs/models/components/bankfeedstatementinput.md
+  - docs/models/components/bankfeedstatementtransactiontype.md
   - docs/models/components/benefit.md
   - docs/models/components/bill.md
   - docs/models/components/billinput.md
@@ -1020,6 +1051,8 @@ generatedFiles:
   - docs/models/components/createapplicantresponse.md
   - docs/models/components/createapplicationresponse.md
   - docs/models/components/createattachmentresponse.md
+  - docs/models/components/createbankfeedaccountresponse.md
+  - docs/models/components/createbankfeedstatementresponse.md
   - docs/models/components/createbillpaymentresponse.md
   - docs/models/components/createbillresponse.md
   - docs/models/components/createcallbackstate.md
@@ -1073,6 +1106,7 @@ generatedFiles:
   - docs/models/components/creditnotessortby.md
   - docs/models/components/creditnotestatus.md
   - docs/models/components/creditnotetype.md
+  - docs/models/components/creditordebit.md
   - docs/models/components/currency.md
   - docs/models/components/cursors.md
   - docs/models/components/customer.md
@@ -1097,6 +1131,8 @@ generatedFiles:
   - docs/models/components/deleteapplicantresponse.md
   - docs/models/components/deleteapplicationresponse.md
   - docs/models/components/deleteattachmentresponse.md
+  - docs/models/components/deletebankfeedaccountresponse.md
+  - docs/models/components/deletebankfeedstatementresponse.md
   - docs/models/components/deletebillpaymentresponse.md
   - docs/models/components/deletebillresponse.md
   - docs/models/components/deletecommentresponse.md
@@ -1197,6 +1233,7 @@ generatedFiles:
   - docs/models/components/expenses.md
   - docs/models/components/expensetype.md
   - docs/models/components/extendpaths.md
+  - docs/models/components/feedstatus.md
   - docs/models/components/filesfilter.md
   - docs/models/components/filessearch.md
   - docs/models/components/filessort.md
@@ -1233,6 +1270,10 @@ generatedFiles:
   - docs/models/components/getattachmentresponse.md
   - docs/models/components/getattachmentsresponse.md
   - docs/models/components/getbalancesheetresponse.md
+  - docs/models/components/getbankfeedaccountresponse.md
+  - docs/models/components/getbankfeedaccountsresponse.md
+  - docs/models/components/getbankfeedstatementresponse.md
+  - docs/models/components/getbankfeedstatementsresponse.md
   - docs/models/components/getbillpaymentresponse.md
   - docs/models/components/getbillpaymentsresponse.md
   - docs/models/components/getbillresponse.md
@@ -1511,6 +1552,7 @@ generatedFiles:
   - docs/models/components/sortdirection.md
   - docs/models/components/stage.md
   - docs/models/components/stages.md
+  - docs/models/components/statementstatus.md
   - docs/models/components/status.md
   - docs/models/components/subaccounts.md
   - docs/models/components/subscriptionlevel.md
@@ -1551,6 +1593,7 @@ generatedFiles:
   - docs/models/components/trackingcategorystatus.md
   - docs/models/components/trackingcategorysubsidiaries.md
   - docs/models/components/trackingitem.md
+  - docs/models/components/transactions.md
   - docs/models/components/transactiontype.md
   - docs/models/components/type.md
   - docs/models/components/uncategorizedaccounts.md
@@ -1567,6 +1610,8 @@ generatedFiles:
   - docs/models/components/updateactivityresponse.md
   - docs/models/components/updateapplicantresponse.md
   - docs/models/components/updateapplicationresponse.md
+  - docs/models/components/updatebankfeedaccountresponse.md
+  - docs/models/components/updatebankfeedstatementresponse.md
   - docs/models/components/updatebillpaymentresponse.md
   - docs/models/components/updatebillresponse.md
   - docs/models/components/updatecommentresponse.md
@@ -1656,6 +1701,36 @@ generatedFiles:
   - docs/models/operations/accountingbalancesheetoneglobals.md
   - docs/models/operations/accountingbalancesheetonerequest.md
   - docs/models/operations/accountingbalancesheetoneresponse.md
+  - docs/models/operations/accountingbankfeedaccountsaddglobals.md
+  - docs/models/operations/accountingbankfeedaccountsaddrequest.md
+  - docs/models/operations/accountingbankfeedaccountsaddresponse.md
+  - docs/models/operations/accountingbankfeedaccountsallglobals.md
+  - docs/models/operations/accountingbankfeedaccountsallrequest.md
+  - docs/models/operations/accountingbankfeedaccountsallresponse.md
+  - docs/models/operations/accountingbankfeedaccountsdeleteglobals.md
+  - docs/models/operations/accountingbankfeedaccountsdeleterequest.md
+  - docs/models/operations/accountingbankfeedaccountsdeleteresponse.md
+  - docs/models/operations/accountingbankfeedaccountsoneglobals.md
+  - docs/models/operations/accountingbankfeedaccountsonerequest.md
+  - docs/models/operations/accountingbankfeedaccountsoneresponse.md
+  - docs/models/operations/accountingbankfeedaccountsupdateglobals.md
+  - docs/models/operations/accountingbankfeedaccountsupdaterequest.md
+  - docs/models/operations/accountingbankfeedaccountsupdateresponse.md
+  - docs/models/operations/accountingbankfeedstatementsaddglobals.md
+  - docs/models/operations/accountingbankfeedstatementsaddrequest.md
+  - docs/models/operations/accountingbankfeedstatementsaddresponse.md
+  - docs/models/operations/accountingbankfeedstatementsallglobals.md
+  - docs/models/operations/accountingbankfeedstatementsallrequest.md
+  - docs/models/operations/accountingbankfeedstatementsallresponse.md
+  - docs/models/operations/accountingbankfeedstatementsdeleteglobals.md
+  - docs/models/operations/accountingbankfeedstatementsdeleterequest.md
+  - docs/models/operations/accountingbankfeedstatementsdeleteresponse.md
+  - docs/models/operations/accountingbankfeedstatementsoneglobals.md
+  - docs/models/operations/accountingbankfeedstatementsonerequest.md
+  - docs/models/operations/accountingbankfeedstatementsoneresponse.md
+  - docs/models/operations/accountingbankfeedstatementsupdateglobals.md
+  - docs/models/operations/accountingbankfeedstatementsupdaterequest.md
+  - docs/models/operations/accountingbankfeedstatementsupdateresponse.md
   - docs/models/operations/accountingbillpaymentsaddglobals.md
   - docs/models/operations/accountingbillpaymentsaddrequest.md
   - docs/models/operations/accountingbillpaymentsaddresponse.md
@@ -2450,6 +2525,8 @@ generatedFiles:
   - docs/sdks/ats/README.md
   - docs/sdks/attachments/README.md
   - docs/sdks/balancesheet/README.md
+  - docs/sdks/bankfeedaccounts/README.md
+  - docs/sdks/bankfeedstatements/README.md
   - docs/sdks/billpayments/README.md
   - docs/sdks/bills/README.md
   - docs/sdks/collections/README.md
@@ -9700,5 +9777,273 @@ examples:
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": {"error": "Unprocessable", "message": "Unprocessable request, please verify your request headers and body."}, "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.bankFeedAccountsAll:
+    "":
+      parameters:
+        query:
+          raw: false
+          limit: 20
+          pass_through: {"search": "San Francisco"}
+          fields: "id,updated_at"
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-feed-accounts", "operation": "all", "data": [{"id": "12345", "bank_account_type": "bank", "source_account_id": "src_456", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "currency": "USD", "feed_status": "pending", "country": "US", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": []}, {"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": 10}], "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z", "updated_by": "12345", "created_by": "12345"}, {"id": "12345", "bank_account_type": "bank", "source_account_id": "src_456", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "currency": "USD", "feed_status": "pending", "country": "US", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": {}}], "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z", "updated_by": "12345", "created_by": "12345"}, {"id": "12345", "bank_account_type": "bank", "source_account_id": "src_456", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "currency": "USD", "feed_status": "pending", "country": "US", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}, {"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": []}], "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z", "updated_by": "12345", "created_by": "12345"}], "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}}, "links": {"previous": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D", "current": "https://unify.apideck.com/crm/companies", "next": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": {"statusCode": 401, "error": "Unauthorized", "message": "Missing authentication"}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": {"error": "Unprocessable", "message": "Unprocessable request, please verify your request headers and body."}, "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.bankFeedAccountsAdd:
+    "":
+      parameters:
+        query:
+          raw: false
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      requestBody:
+        application/json: {"bank_account_type": "bank", "source_account_id": "src_456", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "currency": "USD", "feed_status": "pending", "country": "US", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": {}}, {"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": true}]}
+      responses:
+        "201":
+          application/json: {"status_code": 200, "status": "OK", "service": "xero", "resource": "bills", "operation": "add", "data": {"id": "12345"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": {"error": "Unprocessable", "message": "Unprocessable request, please verify your request headers and body."}, "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.bankFeedAccountsOne:
+    "":
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          raw: false
+          fields: "id,updated_at"
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-feed-accounts", "operation": "one", "data": {"id": "12345", "bank_account_type": "bank", "source_account_id": "src_456", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "currency": "USD", "feed_status": "pending", "country": "US", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": {}}, {"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": {}}, {"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": {}}], "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z", "updated_by": "12345", "created_by": "12345"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": {"missing": [{"foobar": "required"}]}, "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.bankFeedAccountsUpdate:
+    "":
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          raw: false
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      requestBody:
+        application/json: {"bank_account_type": "bank", "source_account_id": "src_456", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "currency": "USD", "feed_status": "pending", "country": "US", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": {}}, {"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": true}, {"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": [{}, {}]}]}
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-feed-accounts", "operation": "update", "data": {"id": "12345"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": {"statusCode": 401, "error": "Unauthorized", "message": "Missing authentication"}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": {"error": "Unprocessable", "message": "Unprocessable request, please verify your request headers and body."}, "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.bankFeedAccountsDelete:
+    "":
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          raw: false
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-feed-accounts", "operation": "delete", "data": {"id": "12345"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": {"missing": [{"foobar": "required"}]}, "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": {"statusCode": 401, "error": "Unauthorized", "message": "Missing authentication"}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": {"error": "Unprocessable", "message": "Unprocessable request, please verify your request headers and body."}, "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.bankFeedStatementsAll:
+    "":
+      parameters:
+        query:
+          raw: false
+          limit: 20
+          pass_through: {"search": "San Francisco"}
+          fields: "id,updated_at"
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-feed-statements", "operation": "all", "data": [{"id": "12345", "bank_feed_account_id": "acc_456", "status": "pending", "start_date": "2021-05-01T12:00:00.000Z", "end_date": "2025-01-31T12:00:00.000Z", "start_balance": 10500.25, "start_balance_credit_or_debit": "debit", "end_balance": 9800.5, "end_balance_credit_or_debit": "debit", "transactions": [{"posted_date": "2025-01-15T12:00:00.000Z", "description": "Payment received from ACME Corp", "amount": 250, "credit_or_debit": "debit", "source_transaction_id": "txn_987", "counterparty": "ACME Corp", "reference": "INV-2025-01", "transaction_type": "payment"}, {"posted_date": "2025-01-15T12:00:00.000Z", "description": "Payment received from ACME Corp", "amount": 250, "credit_or_debit": "debit", "source_transaction_id": "txn_987", "counterparty": "ACME Corp", "reference": "INV-2025-01", "transaction_type": "payment"}], "created_at": "2020-09-30T07:43:32.000Z", "created_by": "12345", "updated_at": "2020-09-30T07:43:32.000Z", "updated_by": "12345"}, {"id": "12345", "bank_feed_account_id": "acc_456", "status": "pending", "start_date": "2021-05-01T12:00:00.000Z", "end_date": "2025-01-31T12:00:00.000Z", "start_balance": 10500.25, "start_balance_credit_or_debit": "debit", "end_balance": 9800.5, "end_balance_credit_or_debit": "debit", "transactions": [{"posted_date": "2025-01-15T12:00:00.000Z", "description": "Payment received from ACME Corp", "amount": 250, "credit_or_debit": "debit", "source_transaction_id": "txn_987", "counterparty": "ACME Corp", "reference": "INV-2025-01", "transaction_type": "payment"}, {"posted_date": "2025-01-15T12:00:00.000Z", "description": "Payment received from ACME Corp", "amount": 250, "credit_or_debit": "debit", "source_transaction_id": "txn_987", "counterparty": "ACME Corp", "reference": "INV-2025-01", "transaction_type": "payment"}, {"posted_date": "2025-01-15T12:00:00.000Z", "description": "Payment received from ACME Corp", "amount": 250, "credit_or_debit": "debit", "source_transaction_id": "txn_987", "counterparty": "ACME Corp", "reference": "INV-2025-01", "transaction_type": "payment"}], "created_at": "2020-09-30T07:43:32.000Z", "created_by": "12345", "updated_at": "2020-09-30T07:43:32.000Z", "updated_by": "12345"}, {"id": "12345", "bank_feed_account_id": "acc_456", "status": "pending", "start_date": "2021-05-01T12:00:00.000Z", "end_date": "2025-01-31T12:00:00.000Z", "start_balance": 10500.25, "start_balance_credit_or_debit": "debit", "end_balance": 9800.5, "end_balance_credit_or_debit": "debit", "transactions": [{"posted_date": "2025-01-15T12:00:00.000Z", "description": "Payment received from ACME Corp", "amount": 250, "credit_or_debit": "debit", "source_transaction_id": "txn_987", "counterparty": "ACME Corp", "reference": "INV-2025-01", "transaction_type": "payment"}], "created_at": "2020-09-30T07:43:32.000Z", "created_by": "12345", "updated_at": "2020-09-30T07:43:32.000Z", "updated_by": "12345"}], "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}}, "links": {"previous": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D", "current": "https://unify.apideck.com/crm/companies", "next": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": {"error": "Unprocessable", "message": "Unprocessable request, please verify your request headers and body."}, "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.bankFeedStatementsAdd:
+    "":
+      parameters:
+        query:
+          raw: false
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      requestBody:
+        application/json: {"bank_feed_account_id": "acc_456", "status": "pending", "start_date": "2021-05-01T12:00:00.000Z", "end_date": "2025-01-31T12:00:00.000Z", "start_balance": 10500.25, "start_balance_credit_or_debit": "debit", "end_balance": 9800.5, "end_balance_credit_or_debit": "debit", "transactions": [{"posted_date": "2025-01-15T12:00:00.000Z", "description": "Payment received from ACME Corp", "amount": 250, "credit_or_debit": "debit", "source_transaction_id": "txn_987", "counterparty": "ACME Corp", "reference": "INV-2025-01", "transaction_type": "payment"}, {"posted_date": "2025-01-15T12:00:00.000Z", "description": "Payment received from ACME Corp", "amount": 250, "credit_or_debit": "debit", "source_transaction_id": "txn_987", "counterparty": "ACME Corp", "reference": "INV-2025-01", "transaction_type": "payment"}]}
+      responses:
+        "201":
+          application/json: {"status_code": 200, "status": "OK", "service": "xero", "resource": "bills", "operation": "add", "data": {"id": "12345"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": {"missing": [{"foobar": "required"}]}, "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.bankFeedStatementsOne:
+    "":
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          raw: false
+          fields: "id,updated_at"
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-feed-statements", "operation": "one", "data": {"id": "12345", "bank_feed_account_id": "acc_456", "status": "pending", "start_date": "2021-05-01T12:00:00.000Z", "end_date": "2025-01-31T12:00:00.000Z", "start_balance": 10500.25, "start_balance_credit_or_debit": "debit", "end_balance": 9800.5, "end_balance_credit_or_debit": "debit", "transactions": [{"posted_date": "2025-01-15T12:00:00.000Z", "description": "Payment received from ACME Corp", "amount": 250, "credit_or_debit": "debit", "source_transaction_id": "txn_987", "counterparty": "ACME Corp", "reference": "INV-2025-01", "transaction_type": "payment"}, {"posted_date": "2025-01-15T12:00:00.000Z", "description": "Payment received from ACME Corp", "amount": 250, "credit_or_debit": "debit", "source_transaction_id": "txn_987", "counterparty": "ACME Corp", "reference": "INV-2025-01", "transaction_type": "payment"}, {"posted_date": "2025-01-15T12:00:00.000Z", "description": "Payment received from ACME Corp", "amount": 250, "credit_or_debit": "debit", "source_transaction_id": "txn_987", "counterparty": "ACME Corp", "reference": "INV-2025-01", "transaction_type": "payment"}], "created_at": "2020-09-30T07:43:32.000Z", "created_by": "12345", "updated_at": "2020-09-30T07:43:32.000Z", "updated_by": "12345"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": {"missing": [{"foobar": "required"}]}, "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": {"statusCode": 401, "error": "Unauthorized", "message": "Missing authentication"}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": {"error": "Unprocessable", "message": "Unprocessable request, please verify your request headers and body."}, "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.bankFeedStatementsUpdate:
+    "":
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          raw: false
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      requestBody:
+        application/json: {"bank_feed_account_id": "acc_456", "status": "pending", "start_date": "2021-05-01T12:00:00.000Z", "end_date": "2025-01-31T12:00:00.000Z", "start_balance": 10500.25, "start_balance_credit_or_debit": "debit", "end_balance": 9800.5, "end_balance_credit_or_debit": "debit", "transactions": [{"posted_date": "2025-01-15T12:00:00.000Z", "description": "Payment received from ACME Corp", "amount": 250, "credit_or_debit": "debit", "source_transaction_id": "txn_987", "counterparty": "ACME Corp", "reference": "INV-2025-01", "transaction_type": "payment"}, {"posted_date": "2025-01-15T12:00:00.000Z", "description": "Payment received from ACME Corp", "amount": 250, "credit_or_debit": "debit", "source_transaction_id": "txn_987", "counterparty": "ACME Corp", "reference": "INV-2025-01", "transaction_type": "payment"}, {"posted_date": "2025-01-15T12:00:00.000Z", "description": "Payment received from ACME Corp", "amount": 250, "credit_or_debit": "debit", "source_transaction_id": "txn_987", "counterparty": "ACME Corp", "reference": "INV-2025-01", "transaction_type": "payment"}]}
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-feed-statements", "operation": "update", "data": {"id": "12345"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": {"missing": [{"foobar": "required"}]}, "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": {"error": "Unprocessable", "message": "Unprocessable request, please verify your request headers and body."}, "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.bankFeedStatementsDelete:
+    "":
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          raw: false
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-feed-statements", "operation": "delete", "data": {"id": "12345"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": {"missing": [{"foobar": "required"}]}, "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": {"statusCode": 401, "error": "Unauthorized", "message": "Missing authentication"}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": {"error": "Unprocessable", "message": "Unprocessable request, please verify your request headers and body."}, "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.1
 generatedTests: {}

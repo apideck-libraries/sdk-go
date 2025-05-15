@@ -26,6 +26,8 @@ type Accounting struct {
 	Expenses           *Expenses
 	AgedCreditors      *AgedCreditors
 	AgedDebtors        *AgedDebtors
+	BankFeedAccounts   *BankFeedAccounts
+	BankFeedStatements *BankFeedStatements
 
 	sdkConfiguration sdkConfiguration
 }
@@ -56,5 +58,7 @@ func newAccounting(sdkConfig sdkConfiguration) *Accounting {
 		Expenses:           newExpenses(sdkConfig),
 		AgedCreditors:      newAgedCreditors(sdkConfig),
 		AgedDebtors:        newAgedDebtors(sdkConfig),
+		BankFeedAccounts:   newBankFeedAccounts(sdkConfig),
+		BankFeedStatements: newBankFeedStatements(sdkConfig),
 	}
 }
