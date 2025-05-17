@@ -207,11 +207,64 @@ func main() {
                                 },
                             },
                         },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
                     },
                 },
                 components.PassThroughBody{
                     ServiceID: "<id>",
                     ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                    },
+                },
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
                         components.ExtendPaths{
                             Path: "$.nested.property",
                             Value: map[string]any{
@@ -405,14 +458,6 @@ func main() {
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
                 },
-                &components.LinkedTrackingCategory{
-                    ID: sdkgo.String("123456"),
-                    Name: sdkgo.String("New York"),
-                },
-                &components.LinkedTrackingCategory{
-                    ID: sdkgo.String("123456"),
-                    Name: sdkgo.String("New York"),
-                },
             },
             Active: sdkgo.Bool(true),
             DepartmentID: sdkgo.String("12345"),
@@ -424,43 +469,6 @@ func main() {
                 components.PassThroughBody{
                     ServiceID: "<id>",
                     ExtendPaths: []components.ExtendPaths{
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
-                    },
-                },
-                components.PassThroughBody{
-                    ServiceID: "<id>",
-                    ExtendPaths: []components.ExtendPaths{
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
                         components.ExtendPaths{
                             Path: "$.nested.property",
                             Value: map[string]any{

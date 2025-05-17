@@ -151,14 +151,6 @@ func main() {
                                 },
                             },
                         },
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
                     },
                 },
                 components.PassThroughBody{
@@ -323,17 +315,19 @@ func main() {
                     WinProbability: sdkgo.Int64(50),
                     DisplayOrder: sdkgo.Int64(1),
                 },
-                components.PipelineStages{
-                    Name: sdkgo.String("Contract Sent"),
-                    Value: sdkgo.String("CONTRACT_SENT"),
-                    WinProbability: sdkgo.Int64(50),
-                    DisplayOrder: sdkgo.Int64(1),
-                },
             },
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
                     ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
                         components.ExtendPaths{
                             Path: "$.nested.property",
                             Value: map[string]any{

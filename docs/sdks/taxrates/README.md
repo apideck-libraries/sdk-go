@@ -148,6 +148,12 @@ func main() {
                     Rate: sdkgo.Float64(10),
                     Compound: sdkgo.Bool(true),
                 },
+                components.Components{
+                    ID: sdkgo.String("10"),
+                    Name: sdkgo.String("GST"),
+                    Rate: sdkgo.Float64(10),
+                    Compound: sdkgo.Bool(true),
+                },
             },
             Type: sdkgo.String("NONE"),
             ReportTaxType: sdkgo.String("NONE"),
@@ -174,11 +180,6 @@ func main() {
                                 },
                             },
                         },
-                    },
-                },
-                components.PassThroughBody{
-                    ServiceID: "<id>",
-                    ExtendPaths: []components.ExtendPaths{
                         components.ExtendPaths{
                             Path: "$.nested.property",
                             Value: map[string]any{
@@ -195,12 +196,8 @@ func main() {
                     ID: sdkgo.String("2389328923893298"),
                     Name: sdkgo.String("employee_level"),
                     Description: sdkgo.String("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueArrayOfStr(
-                        []string{
-                            "<value>",
-                            "<value>",
-                            "<value>",
-                        },
+                    Value: sdkgo.Pointer(components.CreateValueNumber(
+                        10,
                     )),
                 },
             },
@@ -348,18 +345,6 @@ func main() {
                     Rate: sdkgo.Float64(10),
                     Compound: sdkgo.Bool(true),
                 },
-                components.Components{
-                    ID: sdkgo.String("10"),
-                    Name: sdkgo.String("GST"),
-                    Rate: sdkgo.Float64(10),
-                    Compound: sdkgo.Bool(true),
-                },
-                components.Components{
-                    ID: sdkgo.String("10"),
-                    Name: sdkgo.String("GST"),
-                    Rate: sdkgo.Float64(10),
-                    Compound: sdkgo.Bool(true),
-                },
             },
             Type: sdkgo.String("NONE"),
             ReportTaxType: sdkgo.String("NONE"),
@@ -407,6 +392,19 @@ func main() {
                                 },
                             },
                         },
+                    },
+                },
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
                         components.ExtendPaths{
                             Path: "$.nested.property",
                             Value: map[string]any{
@@ -423,8 +421,16 @@ func main() {
                     ID: sdkgo.String("2389328923893298"),
                     Name: sdkgo.String("employee_level"),
                     Description: sdkgo.String("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueBoolean(
-                        true,
+                    Value: sdkgo.Pointer(components.CreateValueFour(
+                        components.Four{},
+                    )),
+                },
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueFour(
+                        components.Four{},
                     )),
                 },
                 components.CustomField{
