@@ -143,9 +143,15 @@ func main() {
                 components.AssigneeInput{
                     ID: "12345",
                 },
+                components.AssigneeInput{
+                    ID: "12345",
+                },
             },
             DueDate: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
             Tags: []components.CollectionTagInput{
+                components.CollectionTagInput{
+                    ID: sdkgo.String("12345"),
+                },
                 components.CollectionTagInput{
                     ID: sdkgo.String("12345"),
                 },
@@ -165,11 +171,48 @@ func main() {
                                 },
                             },
                         },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
                     },
                 },
                 components.PassThroughBody{
                     ServiceID: "<id>",
                     ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                    },
+                },
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
                         components.ExtendPaths{
                             Path: "$.nested.property",
                             Value: map[string]any{
@@ -325,15 +368,9 @@ func main() {
                 components.AssigneeInput{
                     ID: "12345",
                 },
-                components.AssigneeInput{
-                    ID: "12345",
-                },
             },
             DueDate: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
             Tags: []components.CollectionTagInput{
-                components.CollectionTagInput{
-                    ID: sdkgo.String("12345"),
-                },
                 components.CollectionTagInput{
                     ID: sdkgo.String("12345"),
                 },
@@ -350,6 +387,19 @@ func main() {
                                 },
                             },
                         },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                    },
+                },
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
                         components.ExtendPaths{
                             Path: "$.nested.property",
                             Value: map[string]any{

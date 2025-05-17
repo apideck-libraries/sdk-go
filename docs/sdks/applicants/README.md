@@ -139,27 +139,22 @@ func main() {
                     Email: sdkgo.String("elon@musk.com"),
                     Type: components.EmailTypePrimary.ToPointer(),
                 },
-                components.Email{
-                    ID: sdkgo.String("123"),
-                    Email: sdkgo.String("elon@musk.com"),
-                    Type: components.EmailTypePrimary.ToPointer(),
-                },
             },
             CustomFields: []components.CustomField{
                 components.CustomField{
                     ID: sdkgo.String("2389328923893298"),
                     Name: sdkgo.String("employee_level"),
                     Description: sdkgo.String("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueBoolean(
-                        true,
+                    Value: sdkgo.Pointer(components.CreateValueFour(
+                        components.Four{},
                     )),
                 },
                 components.CustomField{
                     ID: sdkgo.String("2389328923893298"),
                     Name: sdkgo.String("employee_level"),
                     Description: sdkgo.String("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueStr(
-                        "Uses Salesforce and Marketo",
+                    Value: sdkgo.Pointer(components.CreateValueFour(
+                        components.Four{},
                     )),
                 },
             },
@@ -172,34 +167,16 @@ func main() {
                     Extension: sdkgo.String("105"),
                     Type: components.PhoneNumberTypePrimary.ToPointer(),
                 },
+                components.PhoneNumber{
+                    ID: sdkgo.String("12345"),
+                    CountryCode: sdkgo.String("1"),
+                    AreaCode: sdkgo.String("323"),
+                    Number: "111-111-1111",
+                    Extension: sdkgo.String("105"),
+                    Type: components.PhoneNumberTypePrimary.ToPointer(),
+                },
             },
             Addresses: []components.Address{
-                components.Address{
-                    ID: sdkgo.String("123"),
-                    Type: components.TypePrimary.ToPointer(),
-                    String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
-                    Name: sdkgo.String("HQ US"),
-                    Line1: sdkgo.String("Main street"),
-                    Line2: sdkgo.String("apt #"),
-                    Line3: sdkgo.String("Suite #"),
-                    Line4: sdkgo.String("delivery instructions"),
-                    StreetNumber: sdkgo.String("25"),
-                    City: sdkgo.String("San Francisco"),
-                    State: sdkgo.String("CA"),
-                    PostalCode: sdkgo.String("94104"),
-                    Country: sdkgo.String("US"),
-                    Latitude: sdkgo.String("40.759211"),
-                    Longitude: sdkgo.String("-73.984638"),
-                    County: sdkgo.String("Santa Clara"),
-                    ContactName: sdkgo.String("Elon Musk"),
-                    Salutation: sdkgo.String("Mr"),
-                    PhoneNumber: sdkgo.String("111-111-1111"),
-                    Fax: sdkgo.String("122-111-1111"),
-                    Email: sdkgo.String("elon@musk.com"),
-                    Website: sdkgo.String("https://elonmusk.com"),
-                    Notes: sdkgo.String("Address notes or delivery instructions."),
-                    RowVersion: sdkgo.String("1-12345"),
-                },
                 components.Address{
                     ID: sdkgo.String("123"),
                     Type: components.TypePrimary.ToPointer(),
@@ -276,6 +253,11 @@ func main() {
                     URL: "https://www.twitter.com/apideck",
                     Type: sdkgo.String("twitter"),
                 },
+                components.SocialLinks{
+                    ID: sdkgo.String("12345"),
+                    URL: "https://www.twitter.com/apideck",
+                    Type: sdkgo.String("twitter"),
+                },
             },
             StageID: sdkgo.String("12345"),
             RecruiterID: sdkgo.String("12345"),
@@ -305,6 +287,32 @@ func main() {
             RecordURL: sdkgo.String("https://app.intercom.io/contacts/12345"),
             Deleted: sdkgo.Bool(true),
             PassThrough: []components.PassThroughBody{
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                    },
+                },
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                    },
+                },
                 components.PassThroughBody{
                     ServiceID: "<id>",
                     ExtendPaths: []components.ExtendPaths{
@@ -480,14 +488,6 @@ func main() {
                     ID: sdkgo.String("2389328923893298"),
                     Name: sdkgo.String("employee_level"),
                     Description: sdkgo.String("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueBoolean(
-                        true,
-                    )),
-                },
-                components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueArrayOf6(
                         []components.Six{
                             components.Six{},
@@ -497,6 +497,14 @@ func main() {
                 },
             },
             PhoneNumbers: []components.PhoneNumber{
+                components.PhoneNumber{
+                    ID: sdkgo.String("12345"),
+                    CountryCode: sdkgo.String("1"),
+                    AreaCode: sdkgo.String("323"),
+                    Number: "111-111-1111",
+                    Extension: sdkgo.String("105"),
+                    Type: components.PhoneNumberTypePrimary.ToPointer(),
+                },
                 components.PhoneNumber{
                     ID: sdkgo.String("12345"),
                     CountryCode: sdkgo.String("1"),
@@ -567,32 +575,6 @@ func main() {
                     Notes: sdkgo.String("Address notes or delivery instructions."),
                     RowVersion: sdkgo.String("1-12345"),
                 },
-                components.Address{
-                    ID: sdkgo.String("123"),
-                    Type: components.TypePrimary.ToPointer(),
-                    String: sdkgo.String("25 Spring Street, Blackburn, VIC 3130"),
-                    Name: sdkgo.String("HQ US"),
-                    Line1: sdkgo.String("Main street"),
-                    Line2: sdkgo.String("apt #"),
-                    Line3: sdkgo.String("Suite #"),
-                    Line4: sdkgo.String("delivery instructions"),
-                    StreetNumber: sdkgo.String("25"),
-                    City: sdkgo.String("San Francisco"),
-                    State: sdkgo.String("CA"),
-                    PostalCode: sdkgo.String("94104"),
-                    Country: sdkgo.String("US"),
-                    Latitude: sdkgo.String("40.759211"),
-                    Longitude: sdkgo.String("-73.984638"),
-                    County: sdkgo.String("Santa Clara"),
-                    ContactName: sdkgo.String("Elon Musk"),
-                    Salutation: sdkgo.String("Mr"),
-                    PhoneNumber: sdkgo.String("111-111-1111"),
-                    Fax: sdkgo.String("122-111-1111"),
-                    Email: sdkgo.String("elon@musk.com"),
-                    Website: sdkgo.String("https://elonmusk.com"),
-                    Notes: sdkgo.String("Address notes or delivery instructions."),
-                    RowVersion: sdkgo.String("1-12345"),
-                },
             },
             Websites: []components.Websites{
                 components.Websites{
@@ -600,18 +582,18 @@ func main() {
                     URL: "http://example.com",
                     Type: components.ApplicantTypePrimary.ToPointer(),
                 },
+                components.Websites{
+                    ID: sdkgo.String("12345"),
+                    URL: "http://example.com",
+                    Type: components.ApplicantTypePrimary.ToPointer(),
+                },
+                components.Websites{
+                    ID: sdkgo.String("12345"),
+                    URL: "http://example.com",
+                    Type: components.ApplicantTypePrimary.ToPointer(),
+                },
             },
             SocialLinks: []components.SocialLinks{
-                components.SocialLinks{
-                    ID: sdkgo.String("12345"),
-                    URL: "https://www.twitter.com/apideck",
-                    Type: sdkgo.String("twitter"),
-                },
-                components.SocialLinks{
-                    ID: sdkgo.String("12345"),
-                    URL: "https://www.twitter.com/apideck",
-                    Type: sdkgo.String("twitter"),
-                },
                 components.SocialLinks{
                     ID: sdkgo.String("12345"),
                     URL: "https://www.twitter.com/apideck",
@@ -657,11 +639,72 @@ func main() {
                                 },
                             },
                         },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
                     },
                 },
                 components.PassThroughBody{
                     ServiceID: "<id>",
                     ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                    },
+                },
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
                         components.ExtendPaths{
                             Path: "$.nested.property",
                             Value: map[string]any{

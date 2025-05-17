@@ -156,6 +156,7 @@ func main() {
                     Description: sdkgo.String("Travel US."),
                     TotalAmount: sdkgo.Float64(275),
                     Billable: sdkgo.Bool(true),
+                    LineNumber: sdkgo.Int64(1),
                 },
             },
             CustomFields: []components.CustomField{
@@ -163,16 +164,30 @@ func main() {
                     ID: sdkgo.String("2389328923893298"),
                     Name: sdkgo.String("employee_level"),
                     Description: sdkgo.String("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueStr(
-                        "Uses Salesforce and Marketo",
+                    Value: sdkgo.Pointer(components.CreateValueArrayOf6(
+                        []components.Six{
+                            components.Six{},
+                        },
                     )),
                 },
                 components.CustomField{
                     ID: sdkgo.String("2389328923893298"),
                     Name: sdkgo.String("employee_level"),
                     Description: sdkgo.String("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueStr(
-                        "Uses Salesforce and Marketo",
+                    Value: sdkgo.Pointer(components.CreateValueArrayOf6(
+                        []components.Six{
+                            components.Six{},
+                        },
+                    )),
+                },
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueArrayOf6(
+                        []components.Six{
+                            components.Six{},
+                        },
                     )),
                 },
             },
@@ -218,11 +233,14 @@ func main() {
                                 },
                             },
                         },
-                    },
-                },
-                components.PassThroughBody{
-                    ServiceID: "<id>",
-                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
                         components.ExtendPaths{
                             Path: "$.nested.property",
                             Value: map[string]any{
@@ -403,58 +421,7 @@ func main() {
                     Description: sdkgo.String("Travel US."),
                     TotalAmount: sdkgo.Float64(275),
                     Billable: sdkgo.Bool(true),
-                },
-                components.ExpenseLineItemInput{
-                    TrackingCategories: []*components.LinkedTrackingCategory{
-                        &components.LinkedTrackingCategory{
-                            ID: sdkgo.String("123456"),
-                            Name: sdkgo.String("New York"),
-                        },
-                        &components.LinkedTrackingCategory{
-                            ID: sdkgo.String("123456"),
-                            Name: sdkgo.String("New York"),
-                        },
-                    },
-                    AccountID: sdkgo.String("123456"),
-                    CustomerID: sdkgo.String("12345"),
-                    DepartmentID: sdkgo.String("12345"),
-                    LocationID: sdkgo.String("12345"),
-                    SubsidiaryID: sdkgo.String("12345"),
-                    TaxRate: &components.LinkedTaxRateInput{
-                        ID: sdkgo.String("123456"),
-                        Rate: sdkgo.Float64(10),
-                    },
-                    Description: sdkgo.String("Travel US."),
-                    TotalAmount: sdkgo.Float64(275),
-                    Billable: sdkgo.Bool(true),
-                },
-                components.ExpenseLineItemInput{
-                    TrackingCategories: []*components.LinkedTrackingCategory{
-                        &components.LinkedTrackingCategory{
-                            ID: sdkgo.String("123456"),
-                            Name: sdkgo.String("New York"),
-                        },
-                        &components.LinkedTrackingCategory{
-                            ID: sdkgo.String("123456"),
-                            Name: sdkgo.String("New York"),
-                        },
-                        &components.LinkedTrackingCategory{
-                            ID: sdkgo.String("123456"),
-                            Name: sdkgo.String("New York"),
-                        },
-                    },
-                    AccountID: sdkgo.String("123456"),
-                    CustomerID: sdkgo.String("12345"),
-                    DepartmentID: sdkgo.String("12345"),
-                    LocationID: sdkgo.String("12345"),
-                    SubsidiaryID: sdkgo.String("12345"),
-                    TaxRate: &components.LinkedTaxRateInput{
-                        ID: sdkgo.String("123456"),
-                        Rate: sdkgo.Float64(10),
-                    },
-                    Description: sdkgo.String("Travel US."),
-                    TotalAmount: sdkgo.Float64(275),
-                    Billable: sdkgo.Bool(true),
+                    LineNumber: sdkgo.Int64(1),
                 },
             },
             CustomFields: []components.CustomField{
@@ -462,16 +429,24 @@ func main() {
                     ID: sdkgo.String("2389328923893298"),
                     Name: sdkgo.String("employee_level"),
                     Description: sdkgo.String("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueBoolean(
-                        true,
+                    Value: sdkgo.Pointer(components.CreateValueStr(
+                        "Uses Salesforce and Marketo",
                     )),
                 },
                 components.CustomField{
                     ID: sdkgo.String("2389328923893298"),
                     Name: sdkgo.String("employee_level"),
                     Description: sdkgo.String("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueFour(
-                        components.Four{},
+                    Value: sdkgo.Pointer(components.CreateValueStr(
+                        "Uses Salesforce and Marketo",
+                    )),
+                },
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueStr(
+                        "Uses Salesforce and Marketo",
                     )),
                 },
             },
@@ -496,11 +471,6 @@ func main() {
                                 },
                             },
                         },
-                    },
-                },
-                components.PassThroughBody{
-                    ServiceID: "<id>",
-                    ExtendPaths: []components.ExtendPaths{
                         components.ExtendPaths{
                             Path: "$.nested.property",
                             Value: map[string]any{
@@ -514,6 +484,51 @@ func main() {
                 components.PassThroughBody{
                     ServiceID: "<id>",
                     ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                    },
+                },
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
                         components.ExtendPaths{
                             Path: "$.nested.property",
                             Value: map[string]any{
