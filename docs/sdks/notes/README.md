@@ -124,9 +124,31 @@ func main() {
             ContactID: sdkgo.String("12345"),
             CompanyID: sdkgo.String("12345"),
             OpportunityID: sdkgo.String("12345"),
+            ActivityID: sdkgo.String("12345"),
             LeadID: sdkgo.String("12345"),
             Active: sdkgo.Bool(true),
             PassThrough: []components.PassThroughBody{
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                    },
+                },
                 components.PassThroughBody{
                     ServiceID: "<id>",
                     ExtendPaths: []components.ExtendPaths{
@@ -304,6 +326,7 @@ func main() {
             ContactID: sdkgo.String("12345"),
             CompanyID: sdkgo.String("12345"),
             OpportunityID: sdkgo.String("12345"),
+            ActivityID: sdkgo.String("12345"),
             LeadID: sdkgo.String("12345"),
             Active: sdkgo.Bool(true),
             PassThrough: []components.PassThroughBody{
@@ -352,14 +375,6 @@ func main() {
                 components.PassThroughBody{
                     ServiceID: "<id>",
                     ExtendPaths: []components.ExtendPaths{
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
                         components.ExtendPaths{
                             Path: "$.nested.property",
                             Value: map[string]any{

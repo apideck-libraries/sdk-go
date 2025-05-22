@@ -131,16 +131,24 @@ func main() {
                     ID: sdkgo.String("2389328923893298"),
                     Name: sdkgo.String("employee_level"),
                     Description: sdkgo.String("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueFour(
-                        components.Four{},
+                    Value: sdkgo.Pointer(components.CreateValueStr(
+                        "Uses Salesforce and Marketo",
                     )),
                 },
                 components.CustomField{
                     ID: sdkgo.String("2389328923893298"),
                     Name: sdkgo.String("employee_level"),
                     Description: sdkgo.String("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueBoolean(
-                        true,
+                    Value: sdkgo.Pointer(components.CreateValueStr(
+                        "Uses Salesforce and Marketo",
+                    )),
+                },
+                components.CustomField{
+                    ID: sdkgo.String("2389328923893298"),
+                    Name: sdkgo.String("employee_level"),
+                    Description: sdkgo.String("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueStr(
+                        "Uses Salesforce and Marketo",
                     )),
                 },
             },
@@ -285,27 +293,16 @@ func main() {
                     ID: sdkgo.String("2389328923893298"),
                     Name: sdkgo.String("employee_level"),
                     Description: sdkgo.String("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueFour(
-                        components.Four{},
+                    Value: sdkgo.Pointer(components.CreateValueStr(
+                        "Uses Salesforce and Marketo",
                     )),
                 },
                 components.CustomField{
                     ID: sdkgo.String("2389328923893298"),
                     Name: sdkgo.String("employee_level"),
                     Description: sdkgo.String("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueBoolean(
-                        true,
-                    )),
-                },
-                components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueArrayOf6(
-                        []components.Six{
-                            components.Six{},
-                            components.Six{},
-                        },
+                    Value: sdkgo.Pointer(components.CreateValueStr(
+                        "Uses Salesforce and Marketo",
                     )),
                 },
             },
