@@ -189,120 +189,15 @@ func main() {
                             Options: []components.FormFieldOption{
                                 components.CreateFormFieldOptionGroup(
                                     components.FormFieldOptionGroup{
-                                        ID: sdkgo.String("1234"),
                                         Label: "General Channel",
-                                        Options: []components.SimpleFormFieldOption{
-                                            components.SimpleFormFieldOption{
-                                                Label: "General Channel",
-                                                Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueNumber(
-                                                    12.5,
-                                                )),
-                                                OptionType: components.OptionTypeSimple,
-                                            },
-                                            components.SimpleFormFieldOption{
-                                                Label: "General Channel",
-                                                Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueArrayOf5(
-                                                    []components.Five{
-                                                        components.CreateFiveStr(
-                                                            "team",
-                                                        ),
-                                                        components.CreateFiveStr(
-                                                            "general",
-                                                        ),
-                                                    },
-                                                )),
-                                                OptionType: components.OptionTypeSimple,
-                                            },
-                                        },
+                                        Options: []components.SimpleFormFieldOption{},
                                         OptionType: components.FormFieldOptionGroupOptionTypeGroup,
                                     },
                                 ),
                                 components.CreateFormFieldOptionSimple(
                                     components.SimpleFormFieldOption{
                                         Label: "General Channel",
-                                        Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueArrayOf5(
-                                            []components.Five{
-                                                components.CreateFiveStr(
-                                                    "team",
-                                                ),
-                                                components.CreateFiveStr(
-                                                    "general",
-                                                ),
-                                            },
-                                        )),
                                         OptionType: components.OptionTypeSimple,
-                                    },
-                                ),
-                            },
-                            Value: sdkgo.Pointer(components.CreateConnectionValueNumber(
-                                10.5,
-                            )),
-                        },
-                        components.ConnectionDefaults{
-                            ID: sdkgo.String("ProductInterest"),
-                            Options: []components.FormFieldOption{
-                                components.CreateFormFieldOptionSimple(
-                                    components.SimpleFormFieldOption{
-                                        Label: "General Channel",
-                                        Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueStr(
-                                            "general",
-                                        )),
-                                        OptionType: components.OptionTypeSimple,
-                                    },
-                                ),
-                            },
-                            Value: sdkgo.Pointer(components.CreateConnectionValueBoolean(
-                                true,
-                            )),
-                        },
-                    },
-                },
-                components.ConnectionConfiguration{
-                    Resource: sdkgo.String("leads"),
-                    Defaults: []components.ConnectionDefaults{
-                        components.ConnectionDefaults{
-                            ID: sdkgo.String("ProductInterest"),
-                            Options: []components.FormFieldOption{
-                                components.CreateFormFieldOptionSimple(
-                                    components.SimpleFormFieldOption{
-                                        Label: "General Channel",
-                                        Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueBoolean(
-                                            true,
-                                        )),
-                                        OptionType: components.OptionTypeSimple,
-                                    },
-                                ),
-                            },
-                            Value: sdkgo.Pointer(components.CreateConnectionValueBoolean(
-                                true,
-                            )),
-                        },
-                        components.ConnectionDefaults{
-                            ID: sdkgo.String("ProductInterest"),
-                            Options: []components.FormFieldOption{
-                                components.CreateFormFieldOptionSimple(
-                                    components.SimpleFormFieldOption{
-                                        Label: "General Channel",
-                                        Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueBoolean(
-                                            true,
-                                        )),
-                                        OptionType: components.OptionTypeSimple,
-                                    },
-                                ),
-                                components.CreateFormFieldOptionGroup(
-                                    components.FormFieldOptionGroup{
-                                        ID: sdkgo.String("1234"),
-                                        Label: "General Channel",
-                                        Options: []components.SimpleFormFieldOption{
-                                            components.SimpleFormFieldOption{
-                                                Label: "General Channel",
-                                                Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueNumber(
-                                                    12.5,
-                                                )),
-                                                OptionType: components.OptionTypeSimple,
-                                            },
-                                        },
-                                        OptionType: components.FormFieldOptionGroupOptionTypeGroup,
                                     },
                                 ),
                             },
@@ -313,35 +208,22 @@ func main() {
                         components.ConnectionDefaults{
                             ID: sdkgo.String("ProductInterest"),
                             Options: []components.FormFieldOption{
+                                components.CreateFormFieldOptionGroup(
+                                    components.FormFieldOptionGroup{
+                                        Label: "General Channel",
+                                        Options: []components.SimpleFormFieldOption{},
+                                        OptionType: components.FormFieldOptionGroupOptionTypeGroup,
+                                    },
+                                ),
                                 components.CreateFormFieldOptionSimple(
                                     components.SimpleFormFieldOption{
                                         Label: "General Channel",
-                                        Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueArrayOf5(
-                                            []components.Five{
-                                                components.CreateFiveStr(
-                                                    "team",
-                                                ),
-                                                components.CreateFiveStr(
-                                                    "general",
-                                                ),
-                                            },
-                                        )),
                                         OptionType: components.OptionTypeSimple,
                                     },
                                 ),
                             },
-                            Value: sdkgo.Pointer(components.CreateConnectionValueArrayOfValue5(
-                                []components.Value5{
-                                    components.CreateValue5Number(
-                                        10.5,
-                                    ),
-                                    components.CreateValue5Integer(
-                                        10,
-                                    ),
-                                    components.CreateValue5Str(
-                                        "GC6000 series",
-                                    ),
-                                },
+                            Value: sdkgo.Pointer(components.CreateConnectionValueStr(
+                                "GC5000 series",
                             )),
                         },
                     },
@@ -354,68 +236,50 @@ func main() {
                             Options: []components.FormFieldOption{
                                 components.CreateFormFieldOptionGroup(
                                     components.FormFieldOptionGroup{
-                                        ID: sdkgo.String("1234"),
-                                        Label: "General Channel",
-                                        Options: []components.SimpleFormFieldOption{
-                                            components.SimpleFormFieldOption{
-                                                Label: "General Channel",
-                                                Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueStr(
-                                                    "general",
-                                                )),
-                                                OptionType: components.OptionTypeSimple,
-                                            },
-                                            components.SimpleFormFieldOption{
-                                                Label: "General Channel",
-                                                Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueStr(
-                                                    "general",
-                                                )),
-                                                OptionType: components.OptionTypeSimple,
-                                            },
-                                            components.SimpleFormFieldOption{
-                                                Label: "General Channel",
-                                                Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueInteger(
-                                                    123,
-                                                )),
-                                                OptionType: components.OptionTypeSimple,
-                                            },
-                                        },
-                                        OptionType: components.FormFieldOptionGroupOptionTypeGroup,
-                                    },
-                                ),
-                                components.CreateFormFieldOptionGroup(
-                                    components.FormFieldOptionGroup{
-                                        ID: sdkgo.String("1234"),
                                         Label: "General Channel",
                                         Options: []components.SimpleFormFieldOption{},
                                         OptionType: components.FormFieldOptionGroupOptionTypeGroup,
                                     },
                                 ),
+                                components.CreateFormFieldOptionSimple(
+                                    components.SimpleFormFieldOption{
+                                        Label: "General Channel",
+                                        OptionType: components.OptionTypeSimple,
+                                    },
+                                ),
                             },
-                            Value: sdkgo.Pointer(components.CreateConnectionValueBoolean(
-                                true,
+                            Value: sdkgo.Pointer(components.CreateConnectionValueStr(
+                                "GC5000 series",
                             )),
                         },
                         components.ConnectionDefaults{
                             ID: sdkgo.String("ProductInterest"),
                             Options: []components.FormFieldOption{
+                                components.CreateFormFieldOptionGroup(
+                                    components.FormFieldOptionGroup{
+                                        Label: "General Channel",
+                                        Options: []components.SimpleFormFieldOption{},
+                                        OptionType: components.FormFieldOptionGroupOptionTypeGroup,
+                                    },
+                                ),
                                 components.CreateFormFieldOptionSimple(
                                     components.SimpleFormFieldOption{
                                         Label: "General Channel",
-                                        Value: sdkgo.Pointer(components.CreateSimpleFormFieldOptionValueStr(
-                                            "general",
-                                        )),
                                         OptionType: components.OptionTypeSimple,
                                     },
                                 ),
                             },
-                            Value: sdkgo.Pointer(components.CreateConnectionValueBoolean(
-                                true,
+                            Value: sdkgo.Pointer(components.CreateConnectionValueStr(
+                                "GC5000 series",
                             )),
                         },
                     },
                 },
             },
             CustomMappings: []components.CustomMappingInput{
+                components.CustomMappingInput{
+                    Value: sdkgo.String("$.root.training.first_aid"),
+                },
                 components.CustomMappingInput{
                     Value: sdkgo.String("$.root.training.first_aid"),
                 },
@@ -554,6 +418,7 @@ func main() {
                 RefreshToken: sdkgo.String("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ"),
                 AccessToken: sdkgo.String("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"),
             },
+            Settings: &components.Settings{},
             Metadata: map[string]any{
                 "account": map[string]any{
                     "name": "My Company",

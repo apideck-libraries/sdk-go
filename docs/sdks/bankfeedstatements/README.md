@@ -148,6 +148,16 @@ func main() {
                     Reference: sdkgo.String("INV-2025-01"),
                     TransactionType: components.BankFeedStatementTransactionTypePayment.ToPointer(),
                 },
+                components.Transactions{
+                    PostedDate: types.MustTimeFromString("2025-01-15T12:00:00.000Z"),
+                    Description: sdkgo.String("Payment received from ACME Corp"),
+                    Amount: 250,
+                    CreditOrDebit: components.CreditOrDebitDebit,
+                    SourceTransactionID: "txn_987",
+                    Counterparty: sdkgo.String("ACME Corp"),
+                    Reference: sdkgo.String("INV-2025-01"),
+                    TransactionType: components.BankFeedStatementTransactionTypePayment.ToPointer(),
+                },
             },
         },
     })
@@ -287,16 +297,6 @@ func main() {
             EndBalance: sdkgo.Float64(9800.5),
             EndBalanceCreditOrDebit: components.CreditOrDebitDebit.ToPointer(),
             Transactions: []components.Transactions{
-                components.Transactions{
-                    PostedDate: types.MustTimeFromString("2025-01-15T12:00:00.000Z"),
-                    Description: sdkgo.String("Payment received from ACME Corp"),
-                    Amount: 250,
-                    CreditOrDebit: components.CreditOrDebitDebit,
-                    SourceTransactionID: "txn_987",
-                    Counterparty: sdkgo.String("ACME Corp"),
-                    Reference: sdkgo.String("INV-2025-01"),
-                    TransactionType: components.BankFeedStatementTransactionTypePayment.ToPointer(),
-                },
                 components.Transactions{
                     PostedDate: types.MustTimeFromString("2025-01-15T12:00:00.000Z"),
                     Description: sdkgo.String("Payment received from ACME Corp"),

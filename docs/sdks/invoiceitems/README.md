@@ -171,16 +171,7 @@ func main() {
                 NominalCode: sdkgo.String("N091"),
                 Code: sdkgo.String("453"),
             },
-            TrackingCategories: []*components.LinkedTrackingCategory{
-                &components.LinkedTrackingCategory{
-                    ID: sdkgo.String("123456"),
-                    Name: sdkgo.String("New York"),
-                },
-                &components.LinkedTrackingCategory{
-                    ID: sdkgo.String("123456"),
-                    Name: sdkgo.String("New York"),
-                },
-            },
+            TrackingCategories: nil,
             Active: sdkgo.Bool(true),
             DepartmentID: sdkgo.String("12345"),
             LocationID: sdkgo.String("12345"),
@@ -199,19 +190,6 @@ func main() {
                                 },
                             },
                         },
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
-                    },
-                },
-                components.PassThroughBody{
-                    ServiceID: "<id>",
-                    ExtendPaths: []components.ExtendPaths{
                         components.ExtendPaths{
                             Path: "$.nested.property",
                             Value: map[string]any{
@@ -390,21 +368,13 @@ func main() {
                 NominalCode: sdkgo.String("N091"),
                 Code: sdkgo.String("453"),
             },
-            IncomeAccount: &components.LinkedLedgerAccountInput{
-                ID: sdkgo.String("123456"),
-                NominalCode: sdkgo.String("N091"),
-                Code: sdkgo.String("453"),
-            },
+            IncomeAccount: nil,
             ExpenseAccount: &components.LinkedLedgerAccountInput{
                 ID: sdkgo.String("123456"),
                 NominalCode: sdkgo.String("N091"),
                 Code: sdkgo.String("453"),
             },
             TrackingCategories: []*components.LinkedTrackingCategory{
-                &components.LinkedTrackingCategory{
-                    ID: sdkgo.String("123456"),
-                    Name: sdkgo.String("New York"),
-                },
                 &components.LinkedTrackingCategory{
                     ID: sdkgo.String("123456"),
                     Name: sdkgo.String("New York"),
@@ -432,35 +402,11 @@ func main() {
                                 },
                             },
                         },
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
                     },
                 },
                 components.PassThroughBody{
                     ServiceID: "<id>",
                     ExtendPaths: []components.ExtendPaths{
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
-                        components.ExtendPaths{
-                            Path: "$.nested.property",
-                            Value: map[string]any{
-                                "TaxClassificationRef": map[string]any{
-                                    "value": "EUC-99990201-V1-00020000",
-                                },
-                            },
-                        },
                         components.ExtendPaths{
                             Path: "$.nested.property",
                             Value: map[string]any{
