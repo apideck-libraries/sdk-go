@@ -2,29 +2,42 @@
 
 package sdkgo
 
-type Crm struct {
-	Companies     *Companies
-	Contacts      *Contacts
-	Opportunities *Opportunities
-	Leads         *Leads
-	Pipelines     *Pipelines
-	Notes         *Notes
-	Users         *Users
-	Activities    *Activities
+import (
+	"github.com/apideck-libraries/sdk-go/internal/config"
+	"github.com/apideck-libraries/sdk-go/internal/hooks"
+)
 
-	sdkConfiguration sdkConfiguration
+type Crm struct {
+	Companies           *Companies
+	Contacts            *Contacts
+	Opportunities       *Opportunities
+	Leads               *Leads
+	Pipelines           *Pipelines
+	Notes               *Notes
+	Users               *Users
+	Activities          *Activities
+	CustomObjectSchemas *CustomObjectSchemas
+	CustomObjects       *CustomObjects
+
+	rootSDK          *Apideck
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
-func newCrm(sdkConfig sdkConfiguration) *Crm {
+func newCrm(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *hooks.Hooks) *Crm {
 	return &Crm{
-		sdkConfiguration: sdkConfig,
-		Companies:        newCompanies(sdkConfig),
-		Contacts:         newContacts(sdkConfig),
-		Opportunities:    newOpportunities(sdkConfig),
-		Leads:            newLeads(sdkConfig),
-		Pipelines:        newPipelines(sdkConfig),
-		Notes:            newNotes(sdkConfig),
-		Users:            newUsers(sdkConfig),
-		Activities:       newActivities(sdkConfig),
+		rootSDK:             rootSDK,
+		sdkConfiguration:    sdkConfig,
+		hooks:               hooks,
+		Companies:           newCompanies(rootSDK, sdkConfig, hooks),
+		Contacts:            newContacts(rootSDK, sdkConfig, hooks),
+		Opportunities:       newOpportunities(rootSDK, sdkConfig, hooks),
+		Leads:               newLeads(rootSDK, sdkConfig, hooks),
+		Pipelines:           newPipelines(rootSDK, sdkConfig, hooks),
+		Notes:               newNotes(rootSDK, sdkConfig, hooks),
+		Users:               newUsers(rootSDK, sdkConfig, hooks),
+		Activities:          newActivities(rootSDK, sdkConfig, hooks),
+		CustomObjectSchemas: newCustomObjectSchemas(rootSDK, sdkConfig, hooks),
+		CustomObjects:       newCustomObjects(rootSDK, sdkConfig, hooks),
 	}
 }

@@ -2,19 +2,28 @@
 
 package sdkgo
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/config"
+	"github.com/apideck-libraries/sdk-go/internal/hooks"
+)
+
 type Ats struct {
 	Jobs         *Jobs
 	Applicants   *Applicants
 	Applications *Applications
 
-	sdkConfiguration sdkConfiguration
+	rootSDK          *Apideck
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
-func newAts(sdkConfig sdkConfiguration) *Ats {
+func newAts(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *hooks.Hooks) *Ats {
 	return &Ats{
+		rootSDK:          rootSDK,
 		sdkConfiguration: sdkConfig,
-		Jobs:             newJobs(sdkConfig),
-		Applicants:       newApplicants(sdkConfig),
-		Applications:     newApplications(sdkConfig),
+		hooks:            hooks,
+		Jobs:             newJobs(rootSDK, sdkConfig, hooks),
+		Applicants:       newApplicants(rootSDK, sdkConfig, hooks),
+		Applications:     newApplications(rootSDK, sdkConfig, hooks),
 	}
 }

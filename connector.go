@@ -2,6 +2,11 @@
 
 package sdkgo
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/config"
+	"github.com/apideck-libraries/sdk-go/internal/hooks"
+)
+
 type Connector struct {
 	Connectors          *Connectors
 	ConnectorDocs       *ConnectorDocs
@@ -10,17 +15,21 @@ type Connector struct {
 	APIResources        *APIResources
 	APIResourceCoverage *APIResourceCoverage
 
-	sdkConfiguration sdkConfiguration
+	rootSDK          *Apideck
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
-func newConnector(sdkConfig sdkConfiguration) *Connector {
+func newConnector(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *hooks.Hooks) *Connector {
 	return &Connector{
+		rootSDK:             rootSDK,
 		sdkConfiguration:    sdkConfig,
-		Connectors:          newConnectors(sdkConfig),
-		ConnectorDocs:       newConnectorDocs(sdkConfig),
-		ConnectorResources:  newConnectorResources(sdkConfig),
-		Apis:                newApis(sdkConfig),
-		APIResources:        newAPIResources(sdkConfig),
-		APIResourceCoverage: newAPIResourceCoverage(sdkConfig),
+		hooks:               hooks,
+		Connectors:          newConnectors(rootSDK, sdkConfig, hooks),
+		ConnectorDocs:       newConnectorDocs(rootSDK, sdkConfig, hooks),
+		ConnectorResources:  newConnectorResources(rootSDK, sdkConfig, hooks),
+		Apis:                newApis(rootSDK, sdkConfig, hooks),
+		APIResources:        newAPIResources(rootSDK, sdkConfig, hooks),
+		APIResourceCoverage: newAPIResourceCoverage(rootSDK, sdkConfig, hooks),
 	}
 }

@@ -2,6 +2,11 @@
 
 package sdkgo
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/config"
+	"github.com/apideck-libraries/sdk-go/internal/hooks"
+)
+
 type Vault struct {
 	Consumers                *Consumers
 	ConsumerRequestCounts    *ConsumerRequestCounts
@@ -15,22 +20,26 @@ type Vault struct {
 	Sessions                 *Sessions
 	Logs                     *Logs
 
-	sdkConfiguration sdkConfiguration
+	rootSDK          *Apideck
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
-func newVault(sdkConfig sdkConfiguration) *Vault {
+func newVault(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *hooks.Hooks) *Vault {
 	return &Vault{
+		rootSDK:                  rootSDK,
 		sdkConfiguration:         sdkConfig,
-		Consumers:                newConsumers(sdkConfig),
-		ConsumerRequestCounts:    newConsumerRequestCounts(sdkConfig),
-		Connections:              newConnections(sdkConfig),
-		ValidateConnection:       newValidateConnection(sdkConfig),
-		CreateCallback:           newCreateCallback(sdkConfig),
-		ConnectionSettings:       newConnectionSettings(sdkConfig),
-		CustomFields:             newCustomFields(sdkConfig),
-		ConnectionCustomMappings: newConnectionCustomMappings(sdkConfig),
-		CustomMappings:           newCustomMappings(sdkConfig),
-		Sessions:                 newSessions(sdkConfig),
-		Logs:                     newLogs(sdkConfig),
+		hooks:                    hooks,
+		Consumers:                newConsumers(rootSDK, sdkConfig, hooks),
+		ConsumerRequestCounts:    newConsumerRequestCounts(rootSDK, sdkConfig, hooks),
+		Connections:              newConnections(rootSDK, sdkConfig, hooks),
+		ValidateConnection:       newValidateConnection(rootSDK, sdkConfig, hooks),
+		CreateCallback:           newCreateCallback(rootSDK, sdkConfig, hooks),
+		ConnectionSettings:       newConnectionSettings(rootSDK, sdkConfig, hooks),
+		CustomFields:             newCustomFields(rootSDK, sdkConfig, hooks),
+		ConnectionCustomMappings: newConnectionCustomMappings(rootSDK, sdkConfig, hooks),
+		CustomMappings:           newCustomMappings(rootSDK, sdkConfig, hooks),
+		Sessions:                 newSessions(rootSDK, sdkConfig, hooks),
+		Logs:                     newLogs(rootSDK, sdkConfig, hooks),
 	}
 }

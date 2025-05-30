@@ -2,15 +2,24 @@
 
 package sdkgo
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/config"
+	"github.com/apideck-libraries/sdk-go/internal/hooks"
+)
+
 type Sms struct {
 	Messages *Messages
 
-	sdkConfiguration sdkConfiguration
+	rootSDK          *Apideck
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
-func newSms(sdkConfig sdkConfiguration) *Sms {
+func newSms(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *hooks.Hooks) *Sms {
 	return &Sms{
+		rootSDK:          rootSDK,
 		sdkConfiguration: sdkConfig,
-		Messages:         newMessages(sdkConfig),
+		hooks:            hooks,
+		Messages:         newMessages(rootSDK, sdkConfig, hooks),
 	}
 }

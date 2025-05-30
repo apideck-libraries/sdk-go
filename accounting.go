@@ -2,6 +2,11 @@
 
 package sdkgo
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/config"
+	"github.com/apideck-libraries/sdk-go/internal/hooks"
+)
+
 type Accounting struct {
 	TaxRates           *TaxRates
 	Bills              *Bills
@@ -29,36 +34,40 @@ type Accounting struct {
 	BankFeedAccounts   *BankFeedAccounts
 	BankFeedStatements *BankFeedStatements
 
-	sdkConfiguration sdkConfiguration
+	rootSDK          *Apideck
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
-func newAccounting(sdkConfig sdkConfiguration) *Accounting {
+func newAccounting(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *hooks.Hooks) *Accounting {
 	return &Accounting{
+		rootSDK:            rootSDK,
 		sdkConfiguration:   sdkConfig,
-		TaxRates:           newTaxRates(sdkConfig),
-		Bills:              newBills(sdkConfig),
-		Invoices:           newInvoices(sdkConfig),
-		LedgerAccounts:     newLedgerAccounts(sdkConfig),
-		InvoiceItems:       newInvoiceItems(sdkConfig),
-		CreditNotes:        newCreditNotes(sdkConfig),
-		Customers:          newCustomers(sdkConfig),
-		Suppliers:          newSuppliers(sdkConfig),
-		Payments:           newPayments(sdkConfig),
-		CompanyInfo:        newCompanyInfo(sdkConfig),
-		BalanceSheet:       newBalanceSheet(sdkConfig),
-		ProfitAndLoss:      newProfitAndLoss(sdkConfig),
-		JournalEntries:     newJournalEntries(sdkConfig),
-		PurchaseOrders:     newPurchaseOrders(sdkConfig),
-		Subsidiaries:       newSubsidiaries(sdkConfig),
-		Locations:          newLocations(sdkConfig),
-		Departments:        newDepartments(sdkConfig),
-		Attachments:        newAttachments(sdkConfig),
-		TrackingCategories: newTrackingCategories(sdkConfig),
-		BillPayments:       newBillPayments(sdkConfig),
-		Expenses:           newExpenses(sdkConfig),
-		AgedCreditors:      newAgedCreditors(sdkConfig),
-		AgedDebtors:        newAgedDebtors(sdkConfig),
-		BankFeedAccounts:   newBankFeedAccounts(sdkConfig),
-		BankFeedStatements: newBankFeedStatements(sdkConfig),
+		hooks:              hooks,
+		TaxRates:           newTaxRates(rootSDK, sdkConfig, hooks),
+		Bills:              newBills(rootSDK, sdkConfig, hooks),
+		Invoices:           newInvoices(rootSDK, sdkConfig, hooks),
+		LedgerAccounts:     newLedgerAccounts(rootSDK, sdkConfig, hooks),
+		InvoiceItems:       newInvoiceItems(rootSDK, sdkConfig, hooks),
+		CreditNotes:        newCreditNotes(rootSDK, sdkConfig, hooks),
+		Customers:          newCustomers(rootSDK, sdkConfig, hooks),
+		Suppliers:          newSuppliers(rootSDK, sdkConfig, hooks),
+		Payments:           newPayments(rootSDK, sdkConfig, hooks),
+		CompanyInfo:        newCompanyInfo(rootSDK, sdkConfig, hooks),
+		BalanceSheet:       newBalanceSheet(rootSDK, sdkConfig, hooks),
+		ProfitAndLoss:      newProfitAndLoss(rootSDK, sdkConfig, hooks),
+		JournalEntries:     newJournalEntries(rootSDK, sdkConfig, hooks),
+		PurchaseOrders:     newPurchaseOrders(rootSDK, sdkConfig, hooks),
+		Subsidiaries:       newSubsidiaries(rootSDK, sdkConfig, hooks),
+		Locations:          newLocations(rootSDK, sdkConfig, hooks),
+		Departments:        newDepartments(rootSDK, sdkConfig, hooks),
+		Attachments:        newAttachments(rootSDK, sdkConfig, hooks),
+		TrackingCategories: newTrackingCategories(rootSDK, sdkConfig, hooks),
+		BillPayments:       newBillPayments(rootSDK, sdkConfig, hooks),
+		Expenses:           newExpenses(rootSDK, sdkConfig, hooks),
+		AgedCreditors:      newAgedCreditors(rootSDK, sdkConfig, hooks),
+		AgedDebtors:        newAgedDebtors(rootSDK, sdkConfig, hooks),
+		BankFeedAccounts:   newBankFeedAccounts(rootSDK, sdkConfig, hooks),
+		BankFeedStatements: newBankFeedStatements(rootSDK, sdkConfig, hooks),
 	}
 }

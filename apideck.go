@@ -2,9 +2,12 @@
 
 package sdkgo
 
+// Generated from OpenAPI doc version 10.17.2 and generator version 2.616.1
+
 import (
 	"context"
 	"fmt"
+	"github.com/apideck-libraries/sdk-go/internal/config"
 	"github.com/apideck-libraries/sdk-go/internal/globals"
 	"github.com/apideck-libraries/sdk-go/internal/hooks"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
@@ -19,7 +22,7 @@ var ServerList = []string{
 	"https://unify.apideck.com",
 }
 
-// HTTPClient provides an interface for suplying the SDK with a custom HTTP client
+// HTTPClient provides an interface for supplying the SDK with a custom HTTP client
 type HTTPClient interface {
 	Do(req *http.Request) (*http.Response, error)
 }
@@ -45,34 +48,11 @@ func Float64(f float64) *float64 { return &f }
 // Pointer provides a helper function to return a pointer to a type
 func Pointer[T any](v T) *T { return &v }
 
-type sdkConfiguration struct {
-	Client            HTTPClient
-	Security          func(context.Context) (interface{}, error)
-	ServerURL         string
-	ServerIndex       int
-	Language          string
-	OpenAPIDocVersion string
-	SDKVersion        string
-	GenVersion        string
-	UserAgent         string
-	Globals           globals.Globals
-	RetryConfig       *retry.Config
-	Hooks             *hooks.Hooks
-	Timeout           *time.Duration
-}
-
-func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
-	if c.ServerURL != "" {
-		return c.ServerURL, nil
-	}
-
-	return ServerList[c.ServerIndex], nil
-}
-
 // Apideck - Apideck: The Apideck OpenAPI Spec: SDK Optimized
 //
 // https://developers.apideck.com - Apideck Developer Docs
 type Apideck struct {
+	SDKVersion    string
 	Accounting    *Accounting
 	Ats           *Ats
 	Crm           *Crm
@@ -85,7 +65,8 @@ type Apideck struct {
 	Vault         *Vault
 	Webhook       *Webhook
 
-	sdkConfiguration sdkConfiguration
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
 type SDKOption func(*Apideck)
@@ -169,43 +150,23 @@ func WithTimeout(timeout time.Duration) SDKOption {
 		sdk.sdkConfiguration.Timeout = &timeout
 	}
 }
-func (sdk *Apideck) fillGlobalsFromEnv() {
-	if sdk.sdkConfiguration.Globals.ConsumerID == nil {
-		if val := utils.ValueFromEnvVar("APIDECK_CONSUMER_ID", sdk.sdkConfiguration.Globals.ConsumerID); val != nil {
-			if typedVal, ok := val.(string); ok {
-				sdk.sdkConfiguration.Globals.ConsumerID = &typedVal
-			}
-		}
-	}
-
-	if sdk.sdkConfiguration.Globals.AppID == nil {
-		if val := utils.ValueFromEnvVar("APIDECK_APP_ID", sdk.sdkConfiguration.Globals.AppID); val != nil {
-			if typedVal, ok := val.(string); ok {
-				sdk.sdkConfiguration.Globals.AppID = &typedVal
-			}
-		}
-	}
-
-}
 
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *Apideck {
 	sdk := &Apideck{
-		sdkConfiguration: sdkConfiguration{
-			Language:          "go",
-			OpenAPIDocVersion: "10.16.8",
-			SDKVersion:        "0.11.4",
-			GenVersion:        "2.610.0",
-			UserAgent:         "speakeasy-sdk/go 0.11.4 2.610.0 10.16.8 github.com/apideck-libraries/sdk-go",
-			Globals:           globals.Globals{},
-			Hooks:             hooks.New(),
+		SDKVersion: "0.12.0",
+		sdkConfiguration: config.SDKConfiguration{
+			UserAgent:  "speakeasy-sdk/go 0.12.0 2.616.1 10.17.2 github.com/apideck-libraries/sdk-go",
+			Globals:    globals.Globals{},
+			ServerList: ServerList,
 		},
+		hooks: hooks.New(),
 	}
 	for _, opt := range opts {
 		opt(sdk)
 	}
 
-	sdk.fillGlobalsFromEnv()
+	sdk.sdkConfiguration.FillGlobalsFromEnv()
 
 	if sdk.sdkConfiguration.Security == nil {
 		var envVarSecurity components.Security
@@ -221,32 +182,22 @@ func New(opts ...SDKOption) *Apideck {
 
 	currentServerURL, _ := sdk.sdkConfiguration.GetServerDetails()
 	serverURL := currentServerURL
-	serverURL, sdk.sdkConfiguration.Client = sdk.sdkConfiguration.Hooks.SDKInit(currentServerURL, sdk.sdkConfiguration.Client)
-	if serverURL != currentServerURL {
+	serverURL, sdk.sdkConfiguration.Client = sdk.hooks.SDKInit(currentServerURL, sdk.sdkConfiguration.Client)
+	if currentServerURL != serverURL {
 		sdk.sdkConfiguration.ServerURL = serverURL
 	}
 
-	sdk.Accounting = newAccounting(sdk.sdkConfiguration)
-
-	sdk.Ats = newAts(sdk.sdkConfiguration)
-
-	sdk.Crm = newCrm(sdk.sdkConfiguration)
-
-	sdk.Ecommerce = newEcommerce(sdk.sdkConfiguration)
-
-	sdk.FileStorage = newFileStorage(sdk.sdkConfiguration)
-
-	sdk.Hris = newHris(sdk.sdkConfiguration)
-
-	sdk.Sms = newSms(sdk.sdkConfiguration)
-
-	sdk.IssueTracking = newIssueTracking(sdk.sdkConfiguration)
-
-	sdk.Connector = newConnector(sdk.sdkConfiguration)
-
-	sdk.Vault = newVault(sdk.sdkConfiguration)
-
-	sdk.Webhook = newWebhook(sdk.sdkConfiguration)
+	sdk.Accounting = newAccounting(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Ats = newAts(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Crm = newCrm(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Ecommerce = newEcommerce(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.FileStorage = newFileStorage(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Hris = newHris(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Sms = newSms(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.IssueTracking = newIssueTracking(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Connector = newConnector(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Vault = newVault(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Webhook = newWebhook(sdk, sdk.sdkConfiguration, sdk.hooks)
 
 	return sdk
 }

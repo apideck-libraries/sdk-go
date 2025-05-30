@@ -2,21 +2,30 @@
 
 package sdkgo
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/config"
+	"github.com/apideck-libraries/sdk-go/internal/hooks"
+)
+
 type Ecommerce struct {
 	Orders    *Orders
 	Products  *Products
 	Customers *ApideckCustomers
 	Stores    *Stores
 
-	sdkConfiguration sdkConfiguration
+	rootSDK          *Apideck
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
-func newEcommerce(sdkConfig sdkConfiguration) *Ecommerce {
+func newEcommerce(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *hooks.Hooks) *Ecommerce {
 	return &Ecommerce{
+		rootSDK:          rootSDK,
 		sdkConfiguration: sdkConfig,
-		Orders:           newOrders(sdkConfig),
-		Products:         newProducts(sdkConfig),
-		Customers:        newApideckCustomers(sdkConfig),
-		Stores:           newStores(sdkConfig),
+		hooks:            hooks,
+		Orders:           newOrders(rootSDK, sdkConfig, hooks),
+		Products:         newProducts(rootSDK, sdkConfig, hooks),
+		Customers:        newApideckCustomers(rootSDK, sdkConfig, hooks),
+		Stores:           newStores(rootSDK, sdkConfig, hooks),
 	}
 }

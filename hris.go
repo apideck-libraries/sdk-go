@@ -2,6 +2,11 @@
 
 package sdkgo
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/config"
+	"github.com/apideck-libraries/sdk-go/internal/hooks"
+)
+
 type Hris struct {
 	Employees         *Employees
 	Companies         *ApideckCompanies
@@ -11,18 +16,22 @@ type Hris struct {
 	EmployeeSchedules *EmployeeSchedules
 	TimeOffRequests   *TimeOffRequests
 
-	sdkConfiguration sdkConfiguration
+	rootSDK          *Apideck
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
-func newHris(sdkConfig sdkConfiguration) *Hris {
+func newHris(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *hooks.Hooks) *Hris {
 	return &Hris{
+		rootSDK:           rootSDK,
 		sdkConfiguration:  sdkConfig,
-		Employees:         newEmployees(sdkConfig),
-		Companies:         newApideckCompanies(sdkConfig),
-		Departments:       newApideckDepartments(sdkConfig),
-		Payrolls:          newPayrolls(sdkConfig),
-		EmployeePayrolls:  newEmployeePayrolls(sdkConfig),
-		EmployeeSchedules: newEmployeeSchedules(sdkConfig),
-		TimeOffRequests:   newTimeOffRequests(sdkConfig),
+		hooks:             hooks,
+		Employees:         newEmployees(rootSDK, sdkConfig, hooks),
+		Companies:         newApideckCompanies(rootSDK, sdkConfig, hooks),
+		Departments:       newApideckDepartments(rootSDK, sdkConfig, hooks),
+		Payrolls:          newPayrolls(rootSDK, sdkConfig, hooks),
+		EmployeePayrolls:  newEmployeePayrolls(rootSDK, sdkConfig, hooks),
+		EmployeeSchedules: newEmployeeSchedules(rootSDK, sdkConfig, hooks),
+		TimeOffRequests:   newTimeOffRequests(rootSDK, sdkConfig, hooks),
 	}
 }
