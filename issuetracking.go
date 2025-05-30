@@ -2,6 +2,11 @@
 
 package sdkgo
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/config"
+	"github.com/apideck-libraries/sdk-go/internal/hooks"
+)
+
 type IssueTracking struct {
 	Collections              *Collections
 	CollectionTickets        *CollectionTickets
@@ -9,16 +14,20 @@ type IssueTracking struct {
 	CollectionUsers          *CollectionUsers
 	CollectionTags           *CollectionTags
 
-	sdkConfiguration sdkConfiguration
+	rootSDK          *Apideck
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
-func newIssueTracking(sdkConfig sdkConfiguration) *IssueTracking {
+func newIssueTracking(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *hooks.Hooks) *IssueTracking {
 	return &IssueTracking{
+		rootSDK:                  rootSDK,
 		sdkConfiguration:         sdkConfig,
-		Collections:              newCollections(sdkConfig),
-		CollectionTickets:        newCollectionTickets(sdkConfig),
-		CollectionTicketComments: newCollectionTicketComments(sdkConfig),
-		CollectionUsers:          newCollectionUsers(sdkConfig),
-		CollectionTags:           newCollectionTags(sdkConfig),
+		hooks:                    hooks,
+		Collections:              newCollections(rootSDK, sdkConfig, hooks),
+		CollectionTickets:        newCollectionTickets(rootSDK, sdkConfig, hooks),
+		CollectionTicketComments: newCollectionTicketComments(rootSDK, sdkConfig, hooks),
+		CollectionUsers:          newCollectionUsers(rootSDK, sdkConfig, hooks),
+		CollectionTags:           newCollectionTags(rootSDK, sdkConfig, hooks),
 	}
 }

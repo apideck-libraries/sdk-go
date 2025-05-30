@@ -2,6 +2,11 @@
 
 package sdkgo
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/config"
+	"github.com/apideck-libraries/sdk-go/internal/hooks"
+)
+
 type FileStorage struct {
 	Files          *Files
 	Folders        *Folders
@@ -10,17 +15,21 @@ type FileStorage struct {
 	Drives         *Drives
 	DriveGroups    *DriveGroups
 
-	sdkConfiguration sdkConfiguration
+	rootSDK          *Apideck
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
-func newFileStorage(sdkConfig sdkConfiguration) *FileStorage {
+func newFileStorage(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *hooks.Hooks) *FileStorage {
 	return &FileStorage{
+		rootSDK:          rootSDK,
 		sdkConfiguration: sdkConfig,
-		Files:            newFiles(sdkConfig),
-		Folders:          newFolders(sdkConfig),
-		SharedLinks:      newSharedLinks(sdkConfig),
-		UploadSessions:   newUploadSessions(sdkConfig),
-		Drives:           newDrives(sdkConfig),
-		DriveGroups:      newDriveGroups(sdkConfig),
+		hooks:            hooks,
+		Files:            newFiles(rootSDK, sdkConfig, hooks),
+		Folders:          newFolders(rootSDK, sdkConfig, hooks),
+		SharedLinks:      newSharedLinks(rootSDK, sdkConfig, hooks),
+		UploadSessions:   newUploadSessions(rootSDK, sdkConfig, hooks),
+		Drives:           newDrives(rootSDK, sdkConfig, hooks),
+		DriveGroups:      newDriveGroups(rootSDK, sdkConfig, hooks),
 	}
 }

@@ -1,0 +1,10 @@
+# CrmCustomObjectsUpdateResponse
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                      | [components.HTTPMetadata](../../models/components/httpmetadata.md)                              | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `UpdateCustomObjectResponse`                                                                    | [*components.UpdateCustomObjectResponse](../../models/components/updatecustomobjectresponse.md) | :heavy_minus_sign:                                                                              | Custom object updated                                                                           |
+| `UnexpectedErrorResponse`                                                                       | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)       | :heavy_minus_sign:                                                                              | Unexpected error                                                                                |

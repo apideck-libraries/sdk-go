@@ -1,0 +1,10 @@
+# CrmCustomObjectsDeleteResponse
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                      | [components.HTTPMetadata](../../models/components/httpmetadata.md)                              | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `DeleteCustomObjectResponse`                                                                    | [*components.DeleteCustomObjectResponse](../../models/components/deletecustomobjectresponse.md) | :heavy_minus_sign:                                                                              | Custom object deleted                                                                           |
+| `UnexpectedErrorResponse`                                                                       | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)       | :heavy_minus_sign:                                                                              | Unexpected error                                                                                |

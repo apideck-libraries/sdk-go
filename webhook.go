@@ -2,17 +2,26 @@
 
 package sdkgo
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/config"
+	"github.com/apideck-libraries/sdk-go/internal/hooks"
+)
+
 type Webhook struct {
 	Webhooks  *Webhooks
 	EventLogs *EventLogs
 
-	sdkConfiguration sdkConfiguration
+	rootSDK          *Apideck
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
-func newWebhook(sdkConfig sdkConfiguration) *Webhook {
+func newWebhook(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *hooks.Hooks) *Webhook {
 	return &Webhook{
+		rootSDK:          rootSDK,
 		sdkConfiguration: sdkConfig,
-		Webhooks:         newWebhooks(sdkConfig),
-		EventLogs:        newEventLogs(sdkConfig),
+		hooks:            hooks,
+		Webhooks:         newWebhooks(rootSDK, sdkConfig, hooks),
+		EventLogs:        newEventLogs(rootSDK, sdkConfig, hooks),
 	}
 }
