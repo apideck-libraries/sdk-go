@@ -14,3 +14,4 @@ Journal entry status
 | `JournalEntryStatusVoided`          | voided                              |
 | `JournalEntryStatusRejected`        | rejected                            |
 | `JournalEntryStatusDeleted`         | deleted                             |
+| `JournalEntryStatusOther`           | other                               |
