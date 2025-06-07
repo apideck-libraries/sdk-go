@@ -68,9 +68,9 @@ func main() {
 	ctx := context.Background()
 
 	s := sdkgo.New(
-		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 		sdkgo.WithConsumerID("test-consumer"),
 		sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
@@ -773,9 +773,9 @@ func main() {
 	ctx := context.Background()
 
 	s := sdkgo.New(
-		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 		sdkgo.WithConsumerID("test-consumer"),
 		sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
@@ -839,9 +839,9 @@ func main() {
 	ctx := context.Background()
 
 	s := sdkgo.New(
-		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 		sdkgo.WithConsumerID("test-consumer"),
 		sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
@@ -919,9 +919,9 @@ func main() {
 				},
 				RetryConnectionErrors: false,
 			}),
-		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 		sdkgo.WithConsumerID("test-consumer"),
 		sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
@@ -999,9 +999,9 @@ func main() {
 	ctx := context.Background()
 
 	s := sdkgo.New(
-		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 		sdkgo.WithConsumerID("test-consumer"),
 		sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
@@ -1084,9 +1084,9 @@ func main() {
 
 	s := sdkgo.New(
 		sdkgo.WithServerURL("https://unify.apideck.com"),
-		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 		sdkgo.WithConsumerID("test-consumer"),
 		sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
@@ -1144,9 +1144,9 @@ func main() {
 	ctx := context.Background()
 
 	s := sdkgo.New(
-		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 		sdkgo.WithConsumerID("test-consumer"),
 		sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 	)
 
 	requestBody, fileErr := os.Open("example.file")

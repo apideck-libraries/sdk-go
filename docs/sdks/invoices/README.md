@@ -22,8 +22,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
@@ -34,9 +34,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Accounting.Invoices.List(ctx, operations.AccountingInvoicesAllRequest{
@@ -48,6 +48,7 @@ func main() {
         },
         Sort: &components.InvoicesSort{
             By: components.InvoicesSortByUpdatedAt.ToPointer(),
+            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -109,8 +110,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/operations"
@@ -121,9 +122,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Accounting.Invoices.Create(ctx, operations.AccountingInvoicesAddRequest{
@@ -394,8 +395,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -404,9 +405,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Accounting.Invoices.Get(ctx, operations.AccountingInvoicesOneRequest{
@@ -457,8 +458,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/operations"
@@ -469,9 +470,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Accounting.Invoices.Update(ctx, operations.AccountingInvoicesUpdateRequest{
@@ -561,27 +562,19 @@ func main() {
                             ID: sdkgo.String("2389328923893298"),
                             Name: sdkgo.String("employee_level"),
                             Description: sdkgo.String("Employee Level"),
-                            Value: sdkgo.Pointer(components.CreateValueBoolean(
-                                true,
-                            )),
+                            Value: nil,
                         },
                         components.CustomField{
                             ID: sdkgo.String("2389328923893298"),
                             Name: sdkgo.String("employee_level"),
                             Description: sdkgo.String("Employee Level"),
-                            Value: sdkgo.Pointer(components.CreateValueArrayOf6(
-                                []components.Six{
-                                    components.Six{},
-                                },
-                            )),
+                            Value: nil,
                         },
                         components.CustomField{
                             ID: sdkgo.String("2389328923893298"),
                             Name: sdkgo.String("employee_level"),
                             Description: sdkgo.String("Employee Level"),
-                            Value: sdkgo.Pointer(components.CreateValueStr(
-                                "Uses Salesforce and Marketo",
-                            )),
+                            Value: nil,
                         },
                     },
                     RowVersion: sdkgo.String("1-12345"),
@@ -680,9 +673,7 @@ func main() {
                     ID: sdkgo.String("2389328923893298"),
                     Name: sdkgo.String("employee_level"),
                     Description: sdkgo.String("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueNumber(
-                        10,
-                    )),
+                    Value: nil,
                 },
             },
             RowVersion: sdkgo.String("1-12345"),
@@ -820,8 +811,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -830,9 +821,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Accounting.Invoices.Delete(ctx, operations.AccountingInvoicesDeleteRequest{

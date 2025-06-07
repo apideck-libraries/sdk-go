@@ -22,8 +22,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
@@ -33,9 +33,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.IssueTracking.CollectionTicketComments.List(ctx, operations.IssueTrackingCollectionTicketCommentsAllRequest{
@@ -44,6 +44,7 @@ func main() {
         TicketID: "<id>",
         Sort: &components.CommentsSort{
             By: components.CommentsSortByCreatedAt.ToPointer(),
+            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -105,8 +106,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
@@ -116,9 +117,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.IssueTracking.CollectionTicketComments.Create(ctx, operations.IssueTrackingCollectionTicketCommentsAddRequest{
@@ -232,8 +233,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -242,9 +243,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.IssueTracking.CollectionTicketComments.Get(ctx, operations.IssueTrackingCollectionTicketCommentsOneRequest{
@@ -309,8 +310,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
@@ -320,9 +321,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.IssueTracking.CollectionTicketComments.Update(ctx, operations.IssueTrackingCollectionTicketCommentsUpdateRequest{
@@ -400,8 +401,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -410,9 +411,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.IssueTracking.CollectionTicketComments.Delete(ctx, operations.IssueTrackingCollectionTicketCommentsDeleteRequest{

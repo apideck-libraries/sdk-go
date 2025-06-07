@@ -22,8 +22,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
@@ -33,9 +33,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Hris.TimeOffRequests.List(ctx, operations.HrisTimeOffRequestsAllRequest{
@@ -108,8 +108,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
@@ -119,9 +119,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Hris.TimeOffRequests.Create(ctx, operations.HrisTimeOffRequestsAddRequest{
@@ -204,8 +204,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -214,9 +214,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Hris.TimeOffRequests.Get(ctx, operations.HrisTimeOffRequestsOneRequest{
@@ -268,8 +268,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
@@ -279,9 +279,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Hris.TimeOffRequests.Update(ctx, operations.HrisTimeOffRequestsUpdateRequest{
@@ -382,8 +382,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -392,9 +392,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Hris.TimeOffRequests.Delete(ctx, operations.HrisTimeOffRequestsDeleteRequest{

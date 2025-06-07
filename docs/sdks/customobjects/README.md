@@ -22,8 +22,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -32,9 +32,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Crm.CustomObjects.List(ctx, operations.CrmCustomObjectsAllRequest{
@@ -100,8 +100,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
@@ -111,9 +111,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Crm.CustomObjects.Create(ctx, operations.CrmCustomObjectsAddRequest{
@@ -221,8 +221,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -231,9 +231,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Crm.CustomObjects.Get(ctx, operations.CrmCustomObjectsOneRequest{
@@ -284,8 +284,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
@@ -295,9 +295,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Crm.CustomObjects.Update(ctx, operations.CrmCustomObjectsUpdateRequest{
@@ -384,8 +384,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -394,9 +394,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Crm.CustomObjects.Delete(ctx, operations.CrmCustomObjectsDeleteRequest{

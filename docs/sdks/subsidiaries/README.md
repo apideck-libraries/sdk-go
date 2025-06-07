@@ -22,8 +22,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -32,9 +32,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Accounting.Subsidiaries.List(ctx, operations.AccountingSubsidiariesAllRequest{
@@ -96,8 +96,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
@@ -107,9 +107,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Accounting.Subsidiaries.Create(ctx, operations.AccountingSubsidiariesAddRequest{
@@ -205,8 +205,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -215,9 +215,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Accounting.Subsidiaries.Get(ctx, operations.AccountingSubsidiariesOneRequest{
@@ -268,8 +268,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
@@ -279,9 +279,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Accounting.Subsidiaries.Update(ctx, operations.AccountingSubsidiariesUpdateRequest{
@@ -360,8 +360,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -370,9 +370,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Accounting.Subsidiaries.Delete(ctx, operations.AccountingSubsidiariesDeleteRequest{

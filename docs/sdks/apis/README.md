@@ -19,8 +19,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"log"
 )
@@ -29,12 +29,11 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
-        sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Connector.Apis.List(ctx, nil, nil, nil, &components.ApisFilter{
+    res, err := s.Connector.Apis.List(ctx, nil, sdkgo.Int64(20), &components.ApisFilter{
         Status: components.APIStatusBeta.ToPointer(),
     })
     if err != nil {
@@ -93,8 +92,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"log"
 )
 
@@ -102,12 +101,11 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
-        sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Connector.Apis.Get(ctx, "<id>", nil)
+    res, err := s.Connector.Apis.Get(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
     }
