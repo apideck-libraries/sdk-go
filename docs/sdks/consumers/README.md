@@ -22,8 +22,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"log"
 )
@@ -32,9 +32,8 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
-        sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Vault.Consumers.Create(ctx, components.ConsumerInput{
@@ -45,7 +44,7 @@ func main() {
             Email: sdkgo.String("elon@musk.com"),
             Image: sdkgo.String("https://www.spacex.com/static/images/share.jpg"),
         },
-    }, nil)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -91,8 +90,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"log"
 )
 
@@ -100,12 +99,11 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
-        sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Vault.Consumers.List(ctx, nil, nil, nil)
+    res, err := s.Vault.Consumers.List(ctx, nil, sdkgo.Int64(20))
     if err != nil {
         log.Fatal(err)
     }
@@ -164,8 +162,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"log"
 )
 
@@ -173,12 +171,11 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
-        sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Vault.Consumers.Get(ctx, "test_user_id", nil)
+    res, err := s.Vault.Consumers.Get(ctx, "test_user_id")
     if err != nil {
         log.Fatal(err)
     }
@@ -223,8 +220,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"log"
 )
@@ -233,9 +230,8 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
-        sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Vault.Consumers.Update(ctx, "test_user_id", components.UpdateConsumerRequest{
@@ -245,7 +241,7 @@ func main() {
             Email: sdkgo.String("elon@musk.com"),
             Image: sdkgo.String("https://www.spacex.com/static/images/share.jpg"),
         },
-    }, nil)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -291,8 +287,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"log"
 )
 
@@ -300,12 +296,11 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
-        sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Vault.Consumers.Delete(ctx, "test_user_id", nil)
+    res, err := s.Vault.Consumers.Delete(ctx, "test_user_id")
     if err != nil {
         log.Fatal(err)
     }

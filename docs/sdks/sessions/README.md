@@ -22,8 +22,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"log"
 )
@@ -32,12 +32,12 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Vault.Sessions.Create(ctx, nil, nil, &components.Session{
+    res, err := s.Vault.Sessions.Create(ctx, &components.Session{
         ConsumerMetadata: &components.ConsumerMetadata{
             AccountName: sdkgo.String("SpaceX"),
             UserName: sdkgo.String("Elon Musk"),
@@ -49,6 +49,7 @@ func main() {
             UnifiedApis: []components.UnifiedAPIID{
                 components.UnifiedAPIIDCrm,
             },
+            SessionLength: sdkgo.String("30m"),
         },
         Theme: &components.Theme{
             Favicon: sdkgo.String("https://res.cloudinary.com/apideck/icons/intercom"),

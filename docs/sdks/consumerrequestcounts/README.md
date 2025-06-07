@@ -19,8 +19,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"log"
 )
 
@@ -28,12 +28,11 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
-        sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Vault.ConsumerRequestCounts.List(ctx, "test_user_id", "2021-05-01T12:00:00.000Z", "2021-05-30T12:00:00.000Z", nil)
+    res, err := s.Vault.ConsumerRequestCounts.List(ctx, "test_user_id", "2021-05-01T12:00:00.000Z", "2021-05-30T12:00:00.000Z")
     if err != nil {
         log.Fatal(err)
     }
