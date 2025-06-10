@@ -22,8 +22,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/operations"
@@ -34,9 +34,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Accounting.Customers.List(ctx, operations.AccountingCustomersAllRequest{
@@ -53,6 +53,7 @@ func main() {
         },
         Sort: &components.CustomersSort{
             By: components.CustomersSortByUpdatedAt.ToPointer(),
+            Direction: components.SortDirectionDesc.ToPointer(),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
@@ -114,8 +115,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
@@ -125,9 +126,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Accounting.Customers.Create(ctx, operations.AccountingCustomersAddRequest{
@@ -258,27 +259,19 @@ func main() {
                     ID: sdkgo.String("2389328923893298"),
                     Name: sdkgo.String("employee_level"),
                     Description: sdkgo.String("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueArrayOf6(
-                        []components.Six{
-                            components.Six{},
-                        },
-                    )),
+                    Value: nil,
                 },
                 components.CustomField{
                     ID: sdkgo.String("2389328923893298"),
                     Name: sdkgo.String("employee_level"),
                     Description: sdkgo.String("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueBoolean(
-                        true,
-                    )),
+                    Value: nil,
                 },
                 components.CustomField{
                     ID: sdkgo.String("2389328923893298"),
                     Name: sdkgo.String("employee_level"),
                     Description: sdkgo.String("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueNumber(
-                        10,
-                    )),
+                    Value: nil,
                 },
             },
             RowVersion: sdkgo.String("1-12345"),
@@ -350,8 +343,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -360,9 +353,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Accounting.Customers.Get(ctx, operations.AccountingCustomersOneRequest{
@@ -413,8 +406,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
@@ -424,9 +417,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Accounting.Customers.Update(ctx, operations.AccountingCustomersUpdateRequest{
@@ -661,8 +654,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -671,9 +664,9 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
         sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
     res, err := s.Accounting.Customers.Delete(ctx, operations.AccountingCustomersDeleteRequest{
