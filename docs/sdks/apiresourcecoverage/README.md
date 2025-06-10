@@ -18,8 +18,8 @@ package main
 
 import(
 	"context"
-	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"os"
 	"log"
 )
 
@@ -27,12 +27,11 @@ func main() {
     ctx := context.Background()
 
     s := sdkgo.New(
-        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
-        sdkgo.WithConsumerID("test-consumer"),
         sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Connector.APIResourceCoverage.Get(ctx, "<id>", "<id>", nil)
+    res, err := s.Connector.APIResourceCoverage.Get(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
     }

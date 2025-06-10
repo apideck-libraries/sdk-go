@@ -20,9 +20,10 @@ generation:
     oAuth2ClientCredentialsEnabled: true
     oAuth2PasswordEnabled: true
 go:
-  version: 0.12.1
+  version: 0.13.0
   additionalDependencies: {}
   allowUnknownFieldsInWeakUnions: false
+  baseErrorName: ApideckError
   clientServerStatusCodesAsErrors: true
   defaultErrorName: APIError
   envVarPrefix: APIDECK
