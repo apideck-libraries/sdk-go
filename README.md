@@ -1149,7 +1149,7 @@ func main() {
 		sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
 	)
 
-	requestBody, fileErr := os.Open("example.file")
+	example, fileErr := os.Open("example.file")
 	if fileErr != nil {
 		panic(fileErr)
 	}
@@ -1159,7 +1159,7 @@ func main() {
 		ReferenceID:      "123456",
 		XApideckMetadata: sdkgo.String("{\"name\":\"document.pdf\",\"description\":\"Invoice attachment\"}"),
 		ServiceID:        sdkgo.String("salesforce"),
-		RequestBody:      requestBody,
+		RequestBody:      example,
 	}, operations.WithServerURL("https://upload.apideck.com"))
 	if err != nil {
 		log.Fatal(err)
