@@ -110,8 +110,8 @@ import(
 	"context"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"os"
-	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/types"
+	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -316,8 +316,8 @@ import(
 	"context"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"os"
-	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/types"
+	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
