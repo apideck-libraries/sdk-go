@@ -33,6 +33,7 @@ type Accounting struct {
 	AgedDebtors        *AgedDebtors
 	BankFeedAccounts   *BankFeedAccounts
 	BankFeedStatements *BankFeedStatements
+	Categories         *Categories
 
 	rootSDK          *Apideck
 	sdkConfiguration config.SDKConfiguration
@@ -69,5 +70,6 @@ func newAccounting(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *h
 		AgedDebtors:        newAgedDebtors(rootSDK, sdkConfig, hooks),
 		BankFeedAccounts:   newBankFeedAccounts(rootSDK, sdkConfig, hooks),
 		BankFeedStatements: newBankFeedStatements(rootSDK, sdkConfig, hooks),
+		Categories:         newCategories(rootSDK, sdkConfig, hooks),
 	}
 }
