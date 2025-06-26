@@ -130,7 +130,7 @@ func main() {
         LedgerAccount: components.LedgerAccountInput{
             DisplayID: sdkgo.String("1-12345"),
             Code: sdkgo.String("453"),
-            Classification: components.ClassificationAsset.ToPointer(),
+            Classification: components.LedgerAccountClassificationAsset.ToPointer(),
             Type: components.LedgerAccountTypeBank.ToPointer(),
             SubType: sdkgo.String("CHECKING_ACCOUNT"),
             Name: sdkgo.String("Bank account"),
@@ -351,7 +351,7 @@ func main() {
         LedgerAccount: components.LedgerAccountInput{
             DisplayID: sdkgo.String("1-12345"),
             Code: sdkgo.String("453"),
-            Classification: components.ClassificationAsset.ToPointer(),
+            Classification: components.LedgerAccountClassificationAsset.ToPointer(),
             Type: components.LedgerAccountTypeBank.ToPointer(),
             SubType: sdkgo.String("CHECKING_ACCOUNT"),
             Name: sdkgo.String("Bank account"),
