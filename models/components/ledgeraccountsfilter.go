@@ -3,12 +3,67 @@
 package components
 
 import (
+	"encoding/json"
+	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
 
+// Classification - Filter by account classification.
+type Classification string
+
+const (
+	ClassificationAsset        Classification = "asset"
+	ClassificationEquity       Classification = "equity"
+	ClassificationExpense      Classification = "expense"
+	ClassificationLiability    Classification = "liability"
+	ClassificationRevenue      Classification = "revenue"
+	ClassificationIncome       Classification = "income"
+	ClassificationOtherIncome  Classification = "other_income"
+	ClassificationOtherExpense Classification = "other_expense"
+	ClassificationCostsOfSales Classification = "costs_of_sales"
+	ClassificationOther        Classification = "other"
+)
+
+func (e Classification) ToPointer() *Classification {
+	return &e
+}
+func (e *Classification) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "asset":
+		fallthrough
+	case "equity":
+		fallthrough
+	case "expense":
+		fallthrough
+	case "liability":
+		fallthrough
+	case "revenue":
+		fallthrough
+	case "income":
+		fallthrough
+	case "other_income":
+		fallthrough
+	case "other_expense":
+		fallthrough
+	case "costs_of_sales":
+		fallthrough
+	case "other":
+		*e = Classification(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for Classification: %v", v)
+	}
+}
+
 type LedgerAccountsFilter struct {
 	UpdatedSince *time.Time `queryParam:"name=updated_since"`
+	// Filter by account classification.
+	Classification *Classification `queryParam:"name=classification"`
 }
 
 func (l LedgerAccountsFilter) MarshalJSON() ([]byte, error) {
@@ -27,4 +82,11 @@ func (o *LedgerAccountsFilter) GetUpdatedSince() *time.Time {
 		return nil
 	}
 	return o.UpdatedSince
+}
+
+func (o *LedgerAccountsFilter) GetClassification() *Classification {
+	if o == nil {
+		return nil
+	}
+	return o.Classification
 }
