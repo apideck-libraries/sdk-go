@@ -126,7 +126,7 @@ func main() {
 
     res, err := s.Crm.Companies.Create(ctx, operations.CrmCompaniesAddRequest{
         ServiceID: sdkgo.String("salesforce"),
-        Company: components.CompanyInput{
+        Company1: components.Company1Input{
             Name: sdkgo.String("SpaceX"),
             OwnerID: sdkgo.String("12345"),
             Image: sdkgo.String("https://www.spacex.com/static/images/share.jpg"),
@@ -146,12 +146,12 @@ func main() {
             Acn: sdkgo.String("XXX XXX XXX"),
             FirstName: sdkgo.String("Elon"),
             LastName: sdkgo.String("Musk"),
-            BankAccounts: []components.BankAccount{
-                components.BankAccount{
+            BankAccounts: []components.BankAccount1{
+                components.BankAccount1{
                     BankName: sdkgo.String("Monzo"),
                     AccountNumber: sdkgo.String("123465"),
                     AccountName: sdkgo.String("SPACEX LLC"),
-                    AccountType: components.AccountTypeCreditCard.ToPointer(),
+                    AccountType: components.BankAccount1AccountTypeCreditCard.ToPointer(),
                     Iban: sdkgo.String("CH2989144532982975332"),
                     Bic: sdkgo.String("AUDSCHGGXXX"),
                     RoutingNumber: sdkgo.String("012345678"),
@@ -160,11 +160,11 @@ func main() {
                     BankCode: sdkgo.String("BNH"),
                     Currency: components.CurrencyUsd.ToPointer(),
                 },
-                components.BankAccount{
+                components.BankAccount1{
                     BankName: sdkgo.String("Monzo"),
                     AccountNumber: sdkgo.String("123465"),
                     AccountName: sdkgo.String("SPACEX LLC"),
-                    AccountType: components.AccountTypeCreditCard.ToPointer(),
+                    AccountType: components.BankAccount1AccountTypeCreditCard.ToPointer(),
                     Iban: sdkgo.String("CH2989144532982975332"),
                     Bic: sdkgo.String("AUDSCHGGXXX"),
                     RoutingNumber: sdkgo.String("012345678"),
@@ -173,11 +173,11 @@ func main() {
                     BankCode: sdkgo.String("BNH"),
                     Currency: components.CurrencyUsd.ToPointer(),
                 },
-                components.BankAccount{
+                components.BankAccount1{
                     BankName: sdkgo.String("Monzo"),
                     AccountNumber: sdkgo.String("123465"),
                     AccountName: sdkgo.String("SPACEX LLC"),
-                    AccountType: components.AccountTypeCreditCard.ToPointer(),
+                    AccountType: components.BankAccount1AccountTypeCreditCard.ToPointer(),
                     Iban: sdkgo.String("CH2989144532982975332"),
                     Bic: sdkgo.String("AUDSCHGGXXX"),
                     RoutingNumber: sdkgo.String("012345678"),
@@ -449,7 +449,7 @@ func main() {
     res, err := s.Crm.Companies.Update(ctx, operations.CrmCompaniesUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
-        Company: components.CompanyInput{
+        Company1: components.Company1Input{
             Name: sdkgo.String("SpaceX"),
             OwnerID: sdkgo.String("12345"),
             Image: sdkgo.String("https://www.spacex.com/static/images/share.jpg"),
@@ -469,12 +469,12 @@ func main() {
             Acn: sdkgo.String("XXX XXX XXX"),
             FirstName: sdkgo.String("Elon"),
             LastName: sdkgo.String("Musk"),
-            BankAccounts: []components.BankAccount{
-                components.BankAccount{
+            BankAccounts: []components.BankAccount1{
+                components.BankAccount1{
                     BankName: sdkgo.String("Monzo"),
                     AccountNumber: sdkgo.String("123465"),
                     AccountName: sdkgo.String("SPACEX LLC"),
-                    AccountType: components.AccountTypeCreditCard.ToPointer(),
+                    AccountType: components.BankAccount1AccountTypeCreditCard.ToPointer(),
                     Iban: sdkgo.String("CH2989144532982975332"),
                     Bic: sdkgo.String("AUDSCHGGXXX"),
                     RoutingNumber: sdkgo.String("012345678"),
