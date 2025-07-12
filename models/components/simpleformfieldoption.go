@@ -9,76 +9,76 @@ import (
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 )
 
-type FiveType string
+type Value5Type string
 
 const (
-	FiveTypeStr     FiveType = "str"
-	FiveTypeInteger FiveType = "integer"
-	FiveTypeNumber  FiveType = "number"
+	Value5TypeStr     Value5Type = "str"
+	Value5TypeInteger Value5Type = "integer"
+	Value5TypeNumber  Value5Type = "number"
 )
 
-type Five struct {
+type Value5 struct {
 	Str     *string  `queryParam:"inline"`
 	Integer *int64   `queryParam:"inline"`
 	Number  *float64 `queryParam:"inline"`
 
-	Type FiveType
+	Type Value5Type
 }
 
-func CreateFiveStr(str string) Five {
-	typ := FiveTypeStr
+func CreateValue5Str(str string) Value5 {
+	typ := Value5TypeStr
 
-	return Five{
+	return Value5{
 		Str:  &str,
 		Type: typ,
 	}
 }
 
-func CreateFiveInteger(integer int64) Five {
-	typ := FiveTypeInteger
+func CreateValue5Integer(integer int64) Value5 {
+	typ := Value5TypeInteger
 
-	return Five{
+	return Value5{
 		Integer: &integer,
 		Type:    typ,
 	}
 }
 
-func CreateFiveNumber(number float64) Five {
-	typ := FiveTypeNumber
+func CreateValue5Number(number float64) Value5 {
+	typ := Value5TypeNumber
 
-	return Five{
+	return Value5{
 		Number: &number,
 		Type:   typ,
 	}
 }
 
-func (u *Five) UnmarshalJSON(data []byte) error {
+func (u *Value5) UnmarshalJSON(data []byte) error {
 
 	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
 		u.Str = &str
-		u.Type = FiveTypeStr
+		u.Type = Value5TypeStr
 		return nil
 	}
 
 	var integer int64 = int64(0)
 	if err := utils.UnmarshalJSON(data, &integer, "", true, true); err == nil {
 		u.Integer = &integer
-		u.Type = FiveTypeInteger
+		u.Type = Value5TypeInteger
 		return nil
 	}
 
 	var number float64 = float64(0)
 	if err := utils.UnmarshalJSON(data, &number, "", true, true); err == nil {
 		u.Number = &number
-		u.Type = FiveTypeNumber
+		u.Type = Value5TypeNumber
 		return nil
 	}
 
-	return fmt.Errorf("could not unmarshal `%s` into any supported union types for Five", string(data))
+	return fmt.Errorf("could not unmarshal `%s` into any supported union types for Value5", string(data))
 }
 
-func (u Five) MarshalJSON() ([]byte, error) {
+func (u Value5) MarshalJSON() ([]byte, error) {
 	if u.Str != nil {
 		return utils.MarshalJSON(u.Str, "", true)
 	}
@@ -91,25 +91,25 @@ func (u Five) MarshalJSON() ([]byte, error) {
 		return utils.MarshalJSON(u.Number, "", true)
 	}
 
-	return nil, errors.New("could not marshal union type Five: all fields are null")
+	return nil, errors.New("could not marshal union type Value5: all fields are null")
 }
 
 type SimpleFormFieldOptionValueType string
 
 const (
-	SimpleFormFieldOptionValueTypeStr      SimpleFormFieldOptionValueType = "str"
-	SimpleFormFieldOptionValueTypeInteger  SimpleFormFieldOptionValueType = "integer"
-	SimpleFormFieldOptionValueTypeNumber   SimpleFormFieldOptionValueType = "number"
-	SimpleFormFieldOptionValueTypeBoolean  SimpleFormFieldOptionValueType = "boolean"
-	SimpleFormFieldOptionValueTypeArrayOf5 SimpleFormFieldOptionValueType = "arrayOf5"
+	SimpleFormFieldOptionValueTypeStr           SimpleFormFieldOptionValueType = "str"
+	SimpleFormFieldOptionValueTypeInteger       SimpleFormFieldOptionValueType = "integer"
+	SimpleFormFieldOptionValueTypeNumber        SimpleFormFieldOptionValueType = "number"
+	SimpleFormFieldOptionValueTypeBoolean       SimpleFormFieldOptionValueType = "boolean"
+	SimpleFormFieldOptionValueTypeArrayOfValue5 SimpleFormFieldOptionValueType = "arrayOfValue5"
 )
 
 type SimpleFormFieldOptionValue struct {
-	Str      *string  `queryParam:"inline"`
-	Integer  *int64   `queryParam:"inline"`
-	Number   *float64 `queryParam:"inline"`
-	Boolean  *bool    `queryParam:"inline"`
-	ArrayOf5 []Five   `queryParam:"inline"`
+	Str           *string  `queryParam:"inline"`
+	Integer       *int64   `queryParam:"inline"`
+	Number        *float64 `queryParam:"inline"`
+	Boolean       *bool    `queryParam:"inline"`
+	ArrayOfValue5 []Value5 `queryParam:"inline"`
 
 	Type SimpleFormFieldOptionValueType
 }
@@ -150,12 +150,12 @@ func CreateSimpleFormFieldOptionValueBoolean(boolean bool) SimpleFormFieldOption
 	}
 }
 
-func CreateSimpleFormFieldOptionValueArrayOf5(arrayOf5 []Five) SimpleFormFieldOptionValue {
-	typ := SimpleFormFieldOptionValueTypeArrayOf5
+func CreateSimpleFormFieldOptionValueArrayOfValue5(arrayOfValue5 []Value5) SimpleFormFieldOptionValue {
+	typ := SimpleFormFieldOptionValueTypeArrayOfValue5
 
 	return SimpleFormFieldOptionValue{
-		ArrayOf5: arrayOf5,
-		Type:     typ,
+		ArrayOfValue5: arrayOfValue5,
+		Type:          typ,
 	}
 }
 
@@ -189,10 +189,10 @@ func (u *SimpleFormFieldOptionValue) UnmarshalJSON(data []byte) error {
 		return nil
 	}
 
-	var arrayOf5 []Five = []Five{}
-	if err := utils.UnmarshalJSON(data, &arrayOf5, "", true, true); err == nil {
-		u.ArrayOf5 = arrayOf5
-		u.Type = SimpleFormFieldOptionValueTypeArrayOf5
+	var arrayOfValue5 []Value5 = []Value5{}
+	if err := utils.UnmarshalJSON(data, &arrayOfValue5, "", true, true); err == nil {
+		u.ArrayOfValue5 = arrayOfValue5
+		u.Type = SimpleFormFieldOptionValueTypeArrayOfValue5
 		return nil
 	}
 
@@ -216,8 +216,8 @@ func (u SimpleFormFieldOptionValue) MarshalJSON() ([]byte, error) {
 		return utils.MarshalJSON(u.Boolean, "", true)
 	}
 
-	if u.ArrayOf5 != nil {
-		return utils.MarshalJSON(u.ArrayOf5, "", true)
+	if u.ArrayOfValue5 != nil {
+		return utils.MarshalJSON(u.ArrayOfValue5, "", true)
 	}
 
 	return nil, errors.New("could not marshal union type SimpleFormFieldOptionValue: all fields are null")

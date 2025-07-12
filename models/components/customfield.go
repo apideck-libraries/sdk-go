@@ -8,30 +8,129 @@ import (
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 )
 
-type Six struct {
+type FiveType string
+
+const (
+	FiveTypeStr      FiveType = "str"
+	FiveTypeNumber   FiveType = "number"
+	FiveTypeBoolean  FiveType = "boolean"
+	FiveTypeMapOfAny FiveType = "mapOfAny"
+)
+
+type Five struct {
+	Str      *string        `queryParam:"inline"`
+	Number   *float64       `queryParam:"inline"`
+	Boolean  *bool          `queryParam:"inline"`
+	MapOfAny map[string]any `queryParam:"inline"`
+
+	Type FiveType
 }
 
-type Four struct {
+func CreateFiveStr(str string) Five {
+	typ := FiveTypeStr
+
+	return Five{
+		Str:  &str,
+		Type: typ,
+	}
+}
+
+func CreateFiveNumber(number float64) Five {
+	typ := FiveTypeNumber
+
+	return Five{
+		Number: &number,
+		Type:   typ,
+	}
+}
+
+func CreateFiveBoolean(boolean bool) Five {
+	typ := FiveTypeBoolean
+
+	return Five{
+		Boolean: &boolean,
+		Type:    typ,
+	}
+}
+
+func CreateFiveMapOfAny(mapOfAny map[string]any) Five {
+	typ := FiveTypeMapOfAny
+
+	return Five{
+		MapOfAny: mapOfAny,
+		Type:     typ,
+	}
+}
+
+func (u *Five) UnmarshalJSON(data []byte) error {
+
+	var str string = ""
+	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
+		u.Str = &str
+		u.Type = FiveTypeStr
+		return nil
+	}
+
+	var number float64 = float64(0)
+	if err := utils.UnmarshalJSON(data, &number, "", true, true); err == nil {
+		u.Number = &number
+		u.Type = FiveTypeNumber
+		return nil
+	}
+
+	var boolean bool = false
+	if err := utils.UnmarshalJSON(data, &boolean, "", true, true); err == nil {
+		u.Boolean = &boolean
+		u.Type = FiveTypeBoolean
+		return nil
+	}
+
+	var mapOfAny map[string]any = map[string]any{}
+	if err := utils.UnmarshalJSON(data, &mapOfAny, "", true, true); err == nil {
+		u.MapOfAny = mapOfAny
+		u.Type = FiveTypeMapOfAny
+		return nil
+	}
+
+	return fmt.Errorf("could not unmarshal `%s` into any supported union types for Five", string(data))
+}
+
+func (u Five) MarshalJSON() ([]byte, error) {
+	if u.Str != nil {
+		return utils.MarshalJSON(u.Str, "", true)
+	}
+
+	if u.Number != nil {
+		return utils.MarshalJSON(u.Number, "", true)
+	}
+
+	if u.Boolean != nil {
+		return utils.MarshalJSON(u.Boolean, "", true)
+	}
+
+	if u.MapOfAny != nil {
+		return utils.MarshalJSON(u.MapOfAny, "", true)
+	}
+
+	return nil, errors.New("could not marshal union type Five: all fields are null")
 }
 
 type ValueType string
 
 const (
-	ValueTypeStr        ValueType = "str"
-	ValueTypeNumber     ValueType = "number"
-	ValueTypeBoolean    ValueType = "boolean"
-	ValueTypeFour       ValueType = "4"
-	ValueTypeArrayOfStr ValueType = "arrayOfStr"
-	ValueTypeArrayOf6   ValueType = "arrayOf6"
+	ValueTypeStr      ValueType = "str"
+	ValueTypeNumber   ValueType = "number"
+	ValueTypeBoolean  ValueType = "boolean"
+	ValueTypeMapOfAny ValueType = "mapOfAny"
+	ValueTypeArrayOf5 ValueType = "arrayOf5"
 )
 
 type Value struct {
-	Str        *string  `queryParam:"inline"`
-	Number     *float64 `queryParam:"inline"`
-	Boolean    *bool    `queryParam:"inline"`
-	Four       *Four    `queryParam:"inline"`
-	ArrayOfStr []string `queryParam:"inline"`
-	ArrayOf6   []Six    `queryParam:"inline"`
+	Str      *string        `queryParam:"inline"`
+	Number   *float64       `queryParam:"inline"`
+	Boolean  *bool          `queryParam:"inline"`
+	MapOfAny map[string]any `queryParam:"inline"`
+	ArrayOf5 []*Five        `queryParam:"inline"`
 
 	Type ValueType
 }
@@ -63,41 +162,25 @@ func CreateValueBoolean(boolean bool) Value {
 	}
 }
 
-func CreateValueFour(four Four) Value {
-	typ := ValueTypeFour
+func CreateValueMapOfAny(mapOfAny map[string]any) Value {
+	typ := ValueTypeMapOfAny
 
 	return Value{
-		Four: &four,
-		Type: typ,
+		MapOfAny: mapOfAny,
+		Type:     typ,
 	}
 }
 
-func CreateValueArrayOfStr(arrayOfStr []string) Value {
-	typ := ValueTypeArrayOfStr
+func CreateValueArrayOf5(arrayOf5 []*Five) Value {
+	typ := ValueTypeArrayOf5
 
 	return Value{
-		ArrayOfStr: arrayOfStr,
-		Type:       typ,
-	}
-}
-
-func CreateValueArrayOf6(arrayOf6 []Six) Value {
-	typ := ValueTypeArrayOf6
-
-	return Value{
-		ArrayOf6: arrayOf6,
+		ArrayOf5: arrayOf5,
 		Type:     typ,
 	}
 }
 
 func (u *Value) UnmarshalJSON(data []byte) error {
-
-	var four Four = Four{}
-	if err := utils.UnmarshalJSON(data, &four, "", true, true); err == nil {
-		u.Four = &four
-		u.Type = ValueTypeFour
-		return nil
-	}
 
 	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
@@ -120,17 +203,17 @@ func (u *Value) UnmarshalJSON(data []byte) error {
 		return nil
 	}
 
-	var arrayOfStr []string = []string{}
-	if err := utils.UnmarshalJSON(data, &arrayOfStr, "", true, true); err == nil {
-		u.ArrayOfStr = arrayOfStr
-		u.Type = ValueTypeArrayOfStr
+	var mapOfAny map[string]any = map[string]any{}
+	if err := utils.UnmarshalJSON(data, &mapOfAny, "", true, true); err == nil {
+		u.MapOfAny = mapOfAny
+		u.Type = ValueTypeMapOfAny
 		return nil
 	}
 
-	var arrayOf6 []Six = []Six{}
-	if err := utils.UnmarshalJSON(data, &arrayOf6, "", true, true); err == nil {
-		u.ArrayOf6 = arrayOf6
-		u.Type = ValueTypeArrayOf6
+	var arrayOf5 []*Five = []*Five{}
+	if err := utils.UnmarshalJSON(data, &arrayOf5, "", true, true); err == nil {
+		u.ArrayOf5 = arrayOf5
+		u.Type = ValueTypeArrayOf5
 		return nil
 	}
 
@@ -150,16 +233,12 @@ func (u Value) MarshalJSON() ([]byte, error) {
 		return utils.MarshalJSON(u.Boolean, "", true)
 	}
 
-	if u.Four != nil {
-		return utils.MarshalJSON(u.Four, "", true)
+	if u.MapOfAny != nil {
+		return utils.MarshalJSON(u.MapOfAny, "", true)
 	}
 
-	if u.ArrayOfStr != nil {
-		return utils.MarshalJSON(u.ArrayOfStr, "", true)
-	}
-
-	if u.ArrayOf6 != nil {
-		return utils.MarshalJSON(u.ArrayOf6, "", true)
+	if u.ArrayOf5 != nil {
+		return utils.MarshalJSON(u.ArrayOf5, "", true)
 	}
 
 	return nil, errors.New("could not marshal union type Value: all fields are null")

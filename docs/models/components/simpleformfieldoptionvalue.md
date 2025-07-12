@@ -30,6 +30,6 @@ simpleFormFieldOptionValue := components.CreateSimpleFormFieldOptionValueBoolean
 ### 
 
 ```go
-simpleFormFieldOptionValue := components.CreateSimpleFormFieldOptionValueArrayOf5([]components.Five{/* values here */})
+simpleFormFieldOptionValue := components.CreateSimpleFormFieldOptionValueArrayOfValue5([]components.Value5{/* values here */})
 ```
 
