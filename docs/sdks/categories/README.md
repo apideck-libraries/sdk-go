@@ -21,6 +21,7 @@ import(
 	"context"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"os"
+	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -37,6 +38,9 @@ func main() {
     res, err := s.Accounting.Categories.List(ctx, operations.AccountingCategoriesAllRequest{
         ServiceID: sdkgo.String("salesforce"),
         Fields: sdkgo.String("id,updated_at"),
+        Filter: &components.CategoriesFilter{
+            Type: components.CategoriesFilterTypeExpense.ToPointer(),
+        },
     })
     if err != nil {
         log.Fatal(err)
@@ -95,6 +99,7 @@ import(
 	"context"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"os"
+	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -112,6 +117,9 @@ func main() {
         ID: "<id>",
         ServiceID: sdkgo.String("salesforce"),
         Fields: sdkgo.String("id,updated_at"),
+        Filter: &components.CategoriesFilter{
+            Type: components.CategoriesFilterTypeExpense.ToPointer(),
+        },
     })
     if err != nil {
         log.Fatal(err)
