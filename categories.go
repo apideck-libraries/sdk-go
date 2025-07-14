@@ -257,6 +257,7 @@ func (s *Categories) List(ctx context.Context, request operations.AccountingCate
 				Cursor:     &nCVal,
 				Limit:      request.Limit,
 				Fields:     request.Fields,
+				Filter:     request.Filter,
 			},
 			opts...,
 		)

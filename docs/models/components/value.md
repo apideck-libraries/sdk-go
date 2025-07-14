@@ -21,21 +21,15 @@ value := components.CreateValueNumber(float64{/* values here */})
 value := components.CreateValueBoolean(bool{/* values here */})
 ```
 
-### Four
+### 
 
 ```go
-value := components.CreateValueFour(components.Four{/* values here */})
+value := components.CreateValueMapOfAny(map[string]any{/* values here */})
 ```
 
 ### 
 
 ```go
-value := components.CreateValueArrayOfStr([]string{/* values here */})
-```
-
-### 
-
-```go
-value := components.CreateValueArrayOf6([]components.Six{/* values here */})
+value := components.CreateValueArrayOf5([]*components.Five{/* values here */})
 ```
 
