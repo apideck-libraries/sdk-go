@@ -24,7 +24,7 @@ generation:
     generateNewTests: false
     skipResponseBodyAssertions: false
 go:
-  version: 0.16.2
+  version: 0.16.3
   additionalDependencies: {}
   allowUnknownFieldsInWeakUnions: false
   baseErrorName: ApideckError
