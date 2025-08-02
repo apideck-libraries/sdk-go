@@ -13,6 +13,7 @@ Get API Resource
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="connector.apiResourcesOne" method="get" path="/connector/apis/{id}/resources/{resource_id}" -->
 ```go
 package main
 

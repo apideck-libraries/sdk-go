@@ -17,6 +17,7 @@ List Drives
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.drivesAll" method="get" path="/file-storage/drives" -->
 ```go
 package main
 
@@ -95,6 +96,7 @@ Create Drive
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.drivesAdd" method="post" path="/file-storage/drives" -->
 ```go
 package main
 
@@ -202,6 +204,7 @@ Get Drive
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.drivesOne" method="get" path="/file-storage/drives/{id}" -->
 ```go
 package main
 
@@ -265,6 +268,7 @@ Update Drive
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.drivesUpdate" method="patch" path="/file-storage/drives/{id}" -->
 ```go
 package main
 
@@ -347,6 +351,7 @@ Delete Drive
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.drivesDelete" method="delete" path="/file-storage/drives/{id}" -->
 ```go
 package main
 

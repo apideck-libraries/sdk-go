@@ -17,6 +17,7 @@ List Tracking Categories
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.trackingCategoriesAll" method="get" path="/accounting/tracking-categories" -->
 ```go
 package main
 
@@ -94,6 +95,7 @@ Create Tracking Category
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.trackingCategoriesAdd" method="post" path="/accounting/tracking-categories" -->
 ```go
 package main
 
@@ -223,6 +225,7 @@ Get Tracking Category
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.trackingCategoriesOne" method="get" path="/accounting/tracking-categories/{id}" -->
 ```go
 package main
 
@@ -286,6 +289,7 @@ Update Tracking Category
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.trackingCategoriesUpdate" method="patch" path="/accounting/tracking-categories/{id}" -->
 ```go
 package main
 
@@ -379,6 +383,7 @@ Delete Tracking Category
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.trackingCategoriesDelete" method="delete" path="/accounting/tracking-categories/{id}" -->
 ```go
 package main
 

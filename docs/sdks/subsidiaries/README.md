@@ -17,6 +17,7 @@ List Subsidiaries
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.subsidiariesAll" method="get" path="/accounting/subsidiaries" -->
 ```go
 package main
 
@@ -91,6 +92,7 @@ Create Subsidiary
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.subsidiariesAdd" method="post" path="/accounting/subsidiaries" -->
 ```go
 package main
 
@@ -200,6 +202,7 @@ Get Subsidiary
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.subsidiariesOne" method="get" path="/accounting/subsidiaries/{id}" -->
 ```go
 package main
 
@@ -263,6 +266,7 @@ Update Subsidiary
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.subsidiariesUpdate" method="patch" path="/accounting/subsidiaries/{id}" -->
 ```go
 package main
 
@@ -355,6 +359,7 @@ Delete Subsidiary
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.subsidiariesDelete" method="delete" path="/accounting/subsidiaries/{id}" -->
 ```go
 package main
 

@@ -17,6 +17,7 @@ List opportunities
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.opportunitiesAll" method="get" path="/crm/opportunities" -->
 ```go
 package main
 
@@ -103,6 +104,7 @@ Create opportunity
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.opportunitiesAdd" method="post" path="/crm/opportunities" -->
 ```go
 package main
 
@@ -248,6 +250,7 @@ Get opportunity
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.opportunitiesOne" method="get" path="/crm/opportunities/{id}" -->
 ```go
 package main
 
@@ -311,6 +314,7 @@ Update opportunity
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.opportunitiesUpdate" method="patch" path="/crm/opportunities/{id}" -->
 ```go
 package main
 
@@ -465,6 +469,7 @@ Delete opportunity
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.opportunitiesDelete" method="delete" path="/crm/opportunities/{id}" -->
 ```go
 package main
 

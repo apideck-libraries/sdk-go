@@ -17,6 +17,7 @@ List users
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.usersAll" method="get" path="/crm/users" -->
 ```go
 package main
 
@@ -94,6 +95,7 @@ Create user
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.usersAdd" method="post" path="/crm/users" -->
 ```go
 package main
 
@@ -322,6 +324,7 @@ Get user
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.usersOne" method="get" path="/crm/users/{id}" -->
 ```go
 package main
 
@@ -385,6 +388,7 @@ Update user
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.usersUpdate" method="patch" path="/crm/users/{id}" -->
 ```go
 package main
 
@@ -578,6 +582,7 @@ Delete user
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.usersDelete" method="delete" path="/crm/users/{id}" -->
 ```go
 package main
 

@@ -17,6 +17,7 @@ List Messages
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="sms.messagesAll" method="get" path="/sms/messages" -->
 ```go
 package main
 
@@ -91,6 +92,7 @@ Create Message
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="sms.messagesAdd" method="post" path="/sms/messages" -->
 ```go
 package main
 
@@ -209,6 +211,7 @@ Get Message
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="sms.messagesOne" method="get" path="/sms/messages/{id}" -->
 ```go
 package main
 
@@ -272,6 +275,7 @@ Update Message
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="sms.messagesUpdate" method="patch" path="/sms/messages/{id}" -->
 ```go
 package main
 
@@ -375,6 +379,7 @@ Delete Message
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="sms.messagesDelete" method="delete" path="/sms/messages/{id}" -->
 ```go
 package main
 

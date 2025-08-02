@@ -17,6 +17,7 @@ List Tickets
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="issueTracking.collectionTicketsAll" method="get" path="/issue-tracking/collections/{collection_id}/tickets" -->
 ```go
 package main
 
@@ -105,6 +106,7 @@ Create Ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="issueTracking.collectionTicketsAdd" method="post" path="/issue-tracking/collections/{collection_id}/tickets" -->
 ```go
 package main
 
@@ -265,6 +267,7 @@ Get Ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="issueTracking.collectionTicketsOne" method="get" path="/issue-tracking/collections/{collection_id}/tickets/{ticket_id}" -->
 ```go
 package main
 
@@ -329,6 +332,7 @@ Update Ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="issueTracking.collectionTicketsUpdate" method="patch" path="/issue-tracking/collections/{collection_id}/tickets/{ticket_id}" -->
 ```go
 package main
 
@@ -481,6 +485,7 @@ Delete Ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="issueTracking.collectionTicketsDelete" method="delete" path="/issue-tracking/collections/{collection_id}/tickets/{ticket_id}" -->
 ```go
 package main
 

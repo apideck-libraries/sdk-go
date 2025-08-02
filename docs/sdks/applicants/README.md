@@ -17,6 +17,7 @@ List Applicants
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ats.applicantsAll" method="get" path="/ats/applicants" -->
 ```go
 package main
 
@@ -98,6 +99,7 @@ Create Applicant
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ats.applicantsAdd" method="post" path="/ats/applicants" -->
 ```go
 package main
 
@@ -378,6 +380,7 @@ Get Applicant
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ats.applicantsOne" method="get" path="/ats/applicants/{id}" -->
 ```go
 package main
 
@@ -441,6 +444,7 @@ Update Applicant
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ats.applicantsUpdate" method="patch" path="/ats/applicants/{id}" -->
 ```go
 package main
 
@@ -729,6 +733,7 @@ Delete Applicant
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ats.applicantsDelete" method="delete" path="/ats/applicants/{id}" -->
 ```go
 package main
 

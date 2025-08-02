@@ -13,6 +13,7 @@ List event logs
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="webhook.eventLogsAll" method="get" path="/webhook/logs" -->
 ```go
 package main
 

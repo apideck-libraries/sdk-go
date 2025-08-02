@@ -14,6 +14,7 @@ List Customers
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ecommerce.customersAll" method="get" path="/ecommerce/customers" -->
 ```go
 package main
 
@@ -96,6 +97,7 @@ Get Customer
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ecommerce.customersOne" method="get" path="/ecommerce/customers/{id}" -->
 ```go
 package main
 

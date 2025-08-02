@@ -17,6 +17,7 @@ List Locations
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.locationsAll" method="get" path="/accounting/locations" -->
 ```go
 package main
 
@@ -95,6 +96,7 @@ Create Location
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.locationsAdd" method="post" path="/accounting/locations" -->
 ```go
 package main
 
@@ -215,6 +217,7 @@ Get Location
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.locationsOne" method="get" path="/accounting/locations/{id}" -->
 ```go
 package main
 
@@ -278,6 +281,7 @@ Update Location
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.locationsUpdate" method="patch" path="/accounting/locations/{id}" -->
 ```go
 package main
 
@@ -470,6 +474,7 @@ Delete Location
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.locationsDelete" method="delete" path="/accounting/locations/{id}" -->
 ```go
 package main
 

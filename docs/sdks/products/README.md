@@ -14,6 +14,7 @@ List Products
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ecommerce.productsAll" method="get" path="/ecommerce/products" -->
 ```go
 package main
 
@@ -21,6 +22,7 @@ import(
 	"context"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"os"
+	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -40,6 +42,11 @@ func main() {
             "search": "San Francisco",
         },
         Fields: sdkgo.String("id,updated_at"),
+        Filter: &components.EcommerceProductsFilter{
+            Name: sdkgo.String("Product Name"),
+            UpdatedSince: sdkgo.String("2020-09-30T07:43:32.000Z"),
+            CreatedSince: sdkgo.String("2020-09-30T07:43:32.000Z"),
+        },
     })
     if err != nil {
         log.Fatal(err)
@@ -91,6 +98,7 @@ Get Product
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ecommerce.productsOne" method="get" path="/ecommerce/products/{id}" -->
 ```go
 package main
 
