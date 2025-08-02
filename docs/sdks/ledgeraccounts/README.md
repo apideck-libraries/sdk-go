@@ -17,6 +17,7 @@ List Ledger Accounts
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.ledgerAccountsAll" method="get" path="/accounting/ledger-accounts" -->
 ```go
 package main
 
@@ -103,6 +104,7 @@ Create Ledger Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.ledgerAccountsAdd" method="post" path="/accounting/ledger-accounts" -->
 ```go
 package main
 
@@ -260,6 +262,7 @@ Get Ledger Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.ledgerAccountsOne" method="get" path="/accounting/ledger-accounts/{id}" -->
 ```go
 package main
 
@@ -323,6 +326,7 @@ Update Ledger Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.ledgerAccountsUpdate" method="patch" path="/accounting/ledger-accounts/{id}" -->
 ```go
 package main
 
@@ -471,6 +475,7 @@ Delete Ledger Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.ledgerAccountsDelete" method="delete" path="/accounting/ledger-accounts/{id}" -->
 ```go
 package main
 

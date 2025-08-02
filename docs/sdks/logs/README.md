@@ -14,6 +14,7 @@ This endpoint includes all consumer request logs.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="vault.logsAll" method="get" path="/vault/logs" -->
 ```go
 package main
 

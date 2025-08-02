@@ -17,6 +17,7 @@ List contacts
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.contactsAll" method="get" path="/crm/contacts" -->
 ```go
 package main
 
@@ -106,6 +107,7 @@ Create contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.contactsAdd" method="post" path="/crm/contacts" -->
 ```go
 package main
 
@@ -354,6 +356,7 @@ Get contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.contactsOne" method="get" path="/crm/contacts/{id}" -->
 ```go
 package main
 
@@ -425,6 +428,7 @@ Update contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.contactsUpdate" method="patch" path="/crm/contacts/{id}" -->
 ```go
 package main
 
@@ -732,6 +736,7 @@ Delete contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.contactsDelete" method="delete" path="/crm/contacts/{id}" -->
 ```go
 package main
 

@@ -17,6 +17,7 @@ List Departments
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.departmentsAll" method="get" path="/hris/departments" -->
 ```go
 package main
 
@@ -94,6 +95,7 @@ Create Department
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.departmentsAdd" method="post" path="/hris/departments" -->
 ```go
 package main
 
@@ -202,6 +204,7 @@ Get Department
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.departmentsOne" method="get" path="/hris/departments/{id}" -->
 ```go
 package main
 
@@ -265,6 +268,7 @@ Update Department
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.departmentsUpdate" method="patch" path="/hris/departments/{id}" -->
 ```go
 package main
 
@@ -348,6 +352,7 @@ Delete Department
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.departmentsDelete" method="delete" path="/hris/departments/{id}" -->
 ```go
 package main
 

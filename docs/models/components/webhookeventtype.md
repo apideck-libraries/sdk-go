@@ -122,3 +122,6 @@
 | `WebhookEventTypeEcommerceCustomerCreated`          | ecommerce.customer.created                          |
 | `WebhookEventTypeEcommerceCustomerUpdated`          | ecommerce.customer.updated                          |
 | `WebhookEventTypeEcommerceCustomerDeleted`          | ecommerce.customer.deleted                          |
+| `WebhookEventTypeAccountingQuoteCreated`            | accounting.quote.created                            |
+| `WebhookEventTypeAccountingQuoteUpdated`            | accounting.quote.updated                            |
+| `WebhookEventTypeAccountingQuoteDeleted`            | accounting.quote.deleted                            |

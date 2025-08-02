@@ -13,6 +13,7 @@ Get Profit and Loss
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.profitAndLossOne" method="get" path="/accounting/profit-and-loss" -->
 ```go
 package main
 

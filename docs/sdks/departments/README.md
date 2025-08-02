@@ -17,6 +17,7 @@ List Departments
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.departmentsAll" method="get" path="/accounting/departments" -->
 ```go
 package main
 
@@ -95,6 +96,7 @@ Create Department
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.departmentsAdd" method="post" path="/accounting/departments" -->
 ```go
 package main
 
@@ -190,6 +192,7 @@ Get Department
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.departmentsOne" method="get" path="/accounting/departments/{id}" -->
 ```go
 package main
 
@@ -253,6 +256,7 @@ Update Department
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.departmentsUpdate" method="patch" path="/accounting/departments/{id}" -->
 ```go
 package main
 
@@ -365,6 +369,7 @@ Delete Department
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.departmentsDelete" method="delete" path="/accounting/departments/{id}" -->
 ```go
 package main
 

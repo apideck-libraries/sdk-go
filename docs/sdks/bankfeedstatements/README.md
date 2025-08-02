@@ -17,6 +17,7 @@ List Bank Feed Statements
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.bankFeedStatementsAll" method="get" path="/accounting/bank-feed-statements" -->
 ```go
 package main
 
@@ -94,6 +95,7 @@ Create Bank Feed Statement
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.bankFeedStatementsAdd" method="post" path="/accounting/bank-feed-statements" -->
 ```go
 package main
 
@@ -199,6 +201,7 @@ Get Bank Feed Statement
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.bankFeedStatementsOne" method="get" path="/accounting/bank-feed-statements/{id}" -->
 ```go
 package main
 
@@ -262,6 +265,7 @@ Update Bank Feed Statement
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.bankFeedStatementsUpdate" method="patch" path="/accounting/bank-feed-statements/{id}" -->
 ```go
 package main
 
@@ -358,6 +362,7 @@ Delete Bank Feed Statement
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.bankFeedStatementsDelete" method="delete" path="/accounting/bank-feed-statements/{id}" -->
 ```go
 package main
 

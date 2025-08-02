@@ -13,6 +13,7 @@ Get API Resource Coverage
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="connector.apiResourceCoverageOne" method="get" path="/connector/apis/{id}/resources/{resource_id}/coverage" -->
 ```go
 package main
 

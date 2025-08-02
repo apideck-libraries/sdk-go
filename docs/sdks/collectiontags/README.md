@@ -13,6 +13,7 @@ List Tags
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="issueTracking.collectionTagsAll" method="get" path="/issue-tracking/collections/{collection_id}/tags" -->
 ```go
 package main
 

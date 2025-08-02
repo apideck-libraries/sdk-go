@@ -14,6 +14,7 @@ List Jobs
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ats.jobsAll" method="get" path="/ats/jobs" -->
 ```go
 package main
 
@@ -91,6 +92,7 @@ Get Job
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ats.jobsOne" method="get" path="/ats/jobs/{id}" -->
 ```go
 package main
 

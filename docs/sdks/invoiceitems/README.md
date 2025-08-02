@@ -17,6 +17,7 @@ List Invoice Items
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.invoiceItemsAll" method="get" path="/accounting/invoice-items" -->
 ```go
 package main
 
@@ -103,6 +104,7 @@ Create Invoice Item
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.invoiceItemsAdd" method="post" path="/accounting/invoice-items" -->
 ```go
 package main
 
@@ -242,6 +244,7 @@ Get Invoice Item
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.invoiceItemsOne" method="get" path="/accounting/invoice-items/{id}" -->
 ```go
 package main
 
@@ -309,6 +312,7 @@ Update Invoice Item
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.invoiceItemsUpdate" method="patch" path="/accounting/invoice-items/{id}" -->
 ```go
 package main
 
@@ -459,6 +463,7 @@ Delete Invoice Item
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.invoiceItemsDelete" method="delete" path="/accounting/invoice-items/{id}" -->
 ```go
 package main
 

@@ -17,6 +17,7 @@ List companies
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.companiesAll" method="get" path="/crm/companies" -->
 ```go
 package main
 
@@ -102,6 +103,7 @@ Create company
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.companiesAdd" method="post" path="/crm/companies" -->
 ```go
 package main
 
@@ -361,6 +363,7 @@ Get company
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.companiesOne" method="get" path="/crm/companies/{id}" -->
 ```go
 package main
 
@@ -424,6 +427,7 @@ Update company
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.companiesUpdate" method="patch" path="/crm/companies/{id}" -->
 ```go
 package main
 
@@ -722,6 +726,7 @@ Delete company
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.companiesDelete" method="delete" path="/crm/companies/{id}" -->
 ```go
 package main
 
