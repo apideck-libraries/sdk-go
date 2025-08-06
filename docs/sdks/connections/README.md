@@ -21,6 +21,7 @@ OAuth2 supported integrations will contain authorize and revoke links to handle 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="vault.connectionsAll" method="get" path="/vault/connections" -->
 ```go
 package main
 
@@ -82,6 +83,7 @@ Get a connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="vault.connectionsOne" method="get" path="/vault/connections/{unified_api}/{service_id}" -->
 ```go
 package main
 
@@ -143,6 +145,7 @@ Update a connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="vault.connectionsUpdate" method="patch" path="/vault/connections/{unified_api}/{service_id}" -->
 ```go
 package main
 
@@ -327,6 +330,7 @@ Deletes a connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="vault.connectionsDelete" method="delete" path="/vault/connections/{unified_api}/{service_id}" -->
 ```go
 package main
 
@@ -389,6 +393,7 @@ Import an authorized connection.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="vault.connectionsImport" method="post" path="/vault/connections/{unified_api}/{service_id}/import" -->
 ```go
 package main
 
@@ -474,6 +479,7 @@ Note:
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="vault.connectionsToken" method="post" path="/vault/connections/{unified_api}/{service_id}/token" -->
 ```go
 package main
 

@@ -14,6 +14,7 @@ List Connectors
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="connector.connectorsAll" method="get" path="/connector/connectors" -->
 ```go
 package main
 
@@ -87,6 +88,7 @@ Get Connector
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="connector.connectorsOne" method="get" path="/connector/connectors/{id}" -->
 ```go
 package main
 

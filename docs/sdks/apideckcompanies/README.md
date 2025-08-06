@@ -17,6 +17,7 @@ List Companies
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.companiesAll" method="get" path="/hris/companies" -->
 ```go
 package main
 
@@ -94,6 +95,7 @@ Create Company
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.companiesAdd" method="post" path="/hris/companies" -->
 ```go
 package main
 
@@ -318,6 +320,7 @@ Get Company
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.companiesOne" method="get" path="/hris/companies/{id}" -->
 ```go
 package main
 
@@ -381,6 +384,7 @@ Update Company
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.companiesUpdate" method="patch" path="/hris/companies/{id}" -->
 ```go
 package main
 
@@ -606,6 +610,7 @@ Delete Company
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.companiesDelete" method="delete" path="/hris/companies/{id}" -->
 ```go
 package main
 

@@ -17,6 +17,7 @@ Create a consumer
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="vault.consumersAdd" method="post" path="/vault/consumers" -->
 ```go
 package main
 
@@ -36,7 +37,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Vault.Consumers.Create(ctx, components.ConsumerInput{
+    res, err := s.Vault.Consumers.Create(ctx, components.CreateConsumerRequest{
         ConsumerID: "test_consumer_id",
         Metadata: &components.ConsumerMetadata{
             AccountName: sdkgo.String("SpaceX"),
@@ -56,12 +57,12 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `ctx`                                                                | [context.Context](https://pkg.go.dev/context#Context)                | :heavy_check_mark:                                                   | The context to use for the request.                                  |                                                                      |
-| `consumer`                                                           | [components.ConsumerInput](../../models/components/consumerinput.md) | :heavy_check_mark:                                                   | N/A                                                                  |                                                                      |
-| `appID`                                                              | **string*                                                            | :heavy_minus_sign:                                                   | The ID of your Unify application                                     | dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX                              |
-| `opts`                                                               | [][operations.Option](../../models/operations/option.md)             | :heavy_minus_sign:                                                   | The options for this request.                                        |                                                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          | Example                                                                              |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |                                                                                      |
+| `createConsumerRequest`                                                              | [components.CreateConsumerRequest](../../models/components/createconsumerrequest.md) | :heavy_check_mark:                                                                   | N/A                                                                                  |                                                                                      |
+| `appID`                                                                              | **string*                                                                            | :heavy_minus_sign:                                                                   | The ID of your Unify application                                                     | dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX                                              |
+| `opts`                                                                               | [][operations.Option](../../models/operations/option.md)                             | :heavy_minus_sign:                                                                   | The options for this request.                                                        |                                                                                      |
 
 ### Response
 
@@ -85,6 +86,7 @@ This endpoint includes all application consumers, along with an aggregated count
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="vault.consumersAll" method="get" path="/vault/consumers" -->
 ```go
 package main
 
@@ -157,6 +159,7 @@ Consumer detail including their aggregated counts with the connections they have
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="vault.consumersOne" method="get" path="/vault/consumers/{consumer_id}" -->
 ```go
 package main
 
@@ -215,6 +218,7 @@ Update consumer metadata such as name and email.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="vault.consumersUpdate" method="patch" path="/vault/consumers/{consumer_id}" -->
 ```go
 package main
 
@@ -282,6 +286,7 @@ Delete consumer and all their connections, including credentials.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="vault.consumersDelete" method="delete" path="/vault/consumers/{consumer_id}" -->
 ```go
 package main
 

@@ -14,6 +14,7 @@ List Payroll
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.payrollsAll" method="get" path="/hris/payrolls" -->
 ```go
 package main
 
@@ -84,6 +85,7 @@ Get Payroll
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.payrollsOne" method="get" path="/hris/payrolls/{payroll_id}" -->
 ```go
 package main
 

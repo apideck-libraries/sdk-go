@@ -13,6 +13,7 @@ Get Aged Debtors
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.agedDebtorsOne" method="get" path="/accounting/aged-debtors" -->
 ```go
 package main
 

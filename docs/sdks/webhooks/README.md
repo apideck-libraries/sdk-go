@@ -17,6 +17,7 @@ List all webhook subscriptions
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="webhook.webhooksAll" method="get" path="/webhook/webhooks" -->
 ```go
 package main
 
@@ -88,6 +89,7 @@ Create a webhook subscription to receive events
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="webhook.webhooksAdd" method="post" path="/webhook/webhooks" -->
 ```go
 package main
 
@@ -156,6 +158,7 @@ Get the webhook subscription details
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="webhook.webhooksOne" method="get" path="/webhook/webhooks/{id}" -->
 ```go
 package main
 
@@ -214,6 +217,7 @@ Update a webhook subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="webhook.webhooksUpdate" method="patch" path="/webhook/webhooks/{id}" -->
 ```go
 package main
 
@@ -282,6 +286,7 @@ Delete a webhook subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="webhook.webhooksDelete" method="delete" path="/webhook/webhooks/{id}" -->
 ```go
 package main
 

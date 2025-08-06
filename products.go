@@ -258,6 +258,7 @@ func (s *Products) List(ctx context.Context, request operations.EcommerceProduct
 				Limit:       request.Limit,
 				PassThrough: request.PassThrough,
 				Fields:      request.Fields,
+				Filter:      request.Filter,
 			},
 			opts...,
 		)

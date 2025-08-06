@@ -13,6 +13,7 @@ Get BalanceSheet
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.balanceSheetOne" method="get" path="/accounting/balance-sheet" -->
 ```go
 package main
 

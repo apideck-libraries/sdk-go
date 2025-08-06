@@ -17,6 +17,7 @@ List SharedLinks
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.sharedLinksAll" method="get" path="/file-storage/shared-links" -->
 ```go
 package main
 
@@ -94,6 +95,7 @@ Create Shared Link
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.sharedLinksAdd" method="post" path="/file-storage/shared-links" -->
 ```go
 package main
 
@@ -202,6 +204,7 @@ Get Shared Link
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.sharedLinksOne" method="get" path="/file-storage/shared-links/{id}" -->
 ```go
 package main
 
@@ -265,6 +268,7 @@ Update Shared Link
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.sharedLinksUpdate" method="patch" path="/file-storage/shared-links/{id}" -->
 ```go
 package main
 
@@ -377,6 +381,7 @@ Delete Shared Link
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.sharedLinksDelete" method="delete" path="/file-storage/shared-links/{id}" -->
 ```go
 package main
 

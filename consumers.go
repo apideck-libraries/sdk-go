@@ -35,10 +35,10 @@ func newConsumers(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *ho
 
 // Create consumer
 // Create a consumer
-func (s *Consumers) Create(ctx context.Context, consumer components.ConsumerInput, appID *string, opts ...operations.Option) (*operations.VaultConsumersAddResponse, error) {
+func (s *Consumers) Create(ctx context.Context, createConsumerRequest components.CreateConsumerRequest, appID *string, opts ...operations.Option) (*operations.VaultConsumersAddResponse, error) {
 	request := operations.VaultConsumersAddRequest{
-		AppID:    appID,
-		Consumer: consumer,
+		AppID:                 appID,
+		CreateConsumerRequest: createConsumerRequest,
 	}
 
 	globals := operations.VaultConsumersAddGlobals{
@@ -77,7 +77,7 @@ func (s *Consumers) Create(ctx context.Context, consumer components.ConsumerInpu
 		OAuth2Scopes:     []string{},
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Consumer", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateConsumerRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}

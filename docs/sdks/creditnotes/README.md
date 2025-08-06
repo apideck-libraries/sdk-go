@@ -17,6 +17,7 @@ List Credit Notes
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.creditNotesAll" method="get" path="/accounting/credit-notes" -->
 ```go
 package main
 
@@ -103,6 +104,7 @@ Create Credit Note
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.creditNotesAdd" method="post" path="/accounting/credit-notes" -->
 ```go
 package main
 
@@ -357,6 +359,7 @@ Get Credit Note
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.creditNotesOne" method="get" path="/accounting/credit-notes/{id}" -->
 ```go
 package main
 
@@ -420,6 +423,7 @@ Update Credit Note
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.creditNotesUpdate" method="patch" path="/accounting/credit-notes/{id}" -->
 ```go
 package main
 
@@ -688,6 +692,7 @@ Delete Credit Note
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.creditNotesDelete" method="delete" path="/accounting/credit-notes/{id}" -->
 ```go
 package main
 

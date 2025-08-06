@@ -17,6 +17,7 @@ List Payments
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.paymentsAll" method="get" path="/accounting/payments" -->
 ```go
 package main
 
@@ -104,6 +105,7 @@ Create Payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.paymentsAdd" method="post" path="/accounting/payments" -->
 ```go
 package main
 
@@ -255,6 +257,7 @@ Get Payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.paymentsOne" method="get" path="/accounting/payments/{id}" -->
 ```go
 package main
 
@@ -318,6 +321,7 @@ Update Payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.paymentsUpdate" method="patch" path="/accounting/payments/{id}" -->
 ```go
 package main
 
@@ -469,6 +473,7 @@ Delete Payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.paymentsDelete" method="delete" path="/accounting/payments/{id}" -->
 ```go
 package main
 

@@ -14,6 +14,7 @@ List Categories
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.categoriesAll" method="get" path="/accounting/categories" -->
 ```go
 package main
 
@@ -92,6 +93,7 @@ Get Category
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.categoriesOne" method="get" path="/accounting/categories/{id}" -->
 ```go
 package main
 

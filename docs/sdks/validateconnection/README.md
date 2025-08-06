@@ -19,6 +19,7 @@ Note:
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="vault.validateConnectionState" method="post" path="/vault/connections/{unified_api}/{service_id}/validate" -->
 ```go
 package main
 

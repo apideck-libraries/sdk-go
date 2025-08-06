@@ -17,6 +17,7 @@ List notes
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.notesAll" method="get" path="/crm/notes" -->
 ```go
 package main
 
@@ -94,6 +95,7 @@ Create note
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.notesAdd" method="post" path="/crm/notes" -->
 ```go
 package main
 
@@ -232,6 +234,7 @@ Get note
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.notesOne" method="get" path="/crm/notes/{id}" -->
 ```go
 package main
 
@@ -295,6 +298,7 @@ Update note
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.notesUpdate" method="patch" path="/crm/notes/{id}" -->
 ```go
 package main
 
@@ -434,6 +438,7 @@ Delete note
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.notesDelete" method="delete" path="/crm/notes/{id}" -->
 ```go
 package main
 

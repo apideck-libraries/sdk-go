@@ -17,6 +17,7 @@ List Journal Entries
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.journalEntriesAll" method="get" path="/accounting/journal-entries" -->
 ```go
 package main
 
@@ -103,6 +104,7 @@ Create Journal Entry
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.journalEntriesAdd" method="post" path="/accounting/journal-entries" -->
 ```go
 package main
 
@@ -351,6 +353,7 @@ Get Journal Entry
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.journalEntriesOne" method="get" path="/accounting/journal-entries/{id}" -->
 ```go
 package main
 
@@ -414,6 +417,7 @@ Update Journal Entry
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.journalEntriesUpdate" method="patch" path="/accounting/journal-entries/{id}" -->
 ```go
 package main
 
@@ -627,6 +631,7 @@ Delete Journal Entry
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.journalEntriesDelete" method="delete" path="/accounting/journal-entries/{id}" -->
 ```go
 package main
 

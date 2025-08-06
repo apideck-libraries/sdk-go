@@ -17,6 +17,7 @@ List Time Off Requests
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.timeOffRequestsAll" method="get" path="/hris/time-off-requests" -->
 ```go
 package main
 
@@ -103,6 +104,7 @@ Create Time Off Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.timeOffRequestsAdd" method="post" path="/hris/time-off-requests" -->
 ```go
 package main
 
@@ -199,6 +201,7 @@ Get Time Off Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.timeOffRequestsOne" method="get" path="/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}" -->
 ```go
 package main
 
@@ -263,6 +266,7 @@ Update Time Off Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.timeOffRequestsUpdate" method="patch" path="/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}" -->
 ```go
 package main
 
@@ -377,6 +381,7 @@ Delete Time Off Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.timeOffRequestsDelete" method="delete" path="/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}" -->
 ```go
 package main
 
