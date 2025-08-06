@@ -17,6 +17,7 @@ List Bank Feed Accounts
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.bankFeedAccountsAll" method="get" path="/accounting/bank-feed-accounts" -->
 ```go
 package main
 
@@ -94,6 +95,7 @@ Create Bank Feed Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.bankFeedAccountsAdd" method="post" path="/accounting/bank-feed-accounts" -->
 ```go
 package main
 
@@ -192,6 +194,7 @@ Get Bank Feed Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.bankFeedAccountsOne" method="get" path="/accounting/bank-feed-accounts/{id}" -->
 ```go
 package main
 
@@ -255,6 +258,7 @@ Update Bank Feed Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.bankFeedAccountsUpdate" method="patch" path="/accounting/bank-feed-accounts/{id}" -->
 ```go
 package main
 
@@ -346,6 +350,7 @@ Delete Bank Feed Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.bankFeedAccountsDelete" method="delete" path="/accounting/bank-feed-accounts/{id}" -->
 ```go
 package main
 

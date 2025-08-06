@@ -17,6 +17,7 @@ List Suppliers
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.suppliersAll" method="get" path="/accounting/suppliers" -->
 ```go
 package main
 
@@ -108,6 +109,7 @@ Create Supplier
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.suppliersAdd" method="post" path="/accounting/suppliers" -->
 ```go
 package main
 
@@ -330,6 +332,7 @@ Get Supplier
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.suppliersOne" method="get" path="/accounting/suppliers/{id}" -->
 ```go
 package main
 
@@ -393,6 +396,7 @@ Update Supplier
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.suppliersUpdate" method="patch" path="/accounting/suppliers/{id}" -->
 ```go
 package main
 
@@ -606,6 +610,7 @@ Delete Supplier
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.suppliersDelete" method="delete" path="/accounting/suppliers/{id}" -->
 ```go
 package main
 

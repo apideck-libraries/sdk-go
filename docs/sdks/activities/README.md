@@ -17,6 +17,7 @@ List activities
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.activitiesAll" method="get" path="/crm/activities" -->
 ```go
 package main
 
@@ -103,6 +104,7 @@ Create activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.activitiesAdd" method="post" path="/crm/activities" -->
 ```go
 package main
 
@@ -269,6 +271,7 @@ Get activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.activitiesOne" method="get" path="/crm/activities/{id}" -->
 ```go
 package main
 
@@ -332,6 +335,7 @@ Update activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.activitiesUpdate" method="patch" path="/crm/activities/{id}" -->
 ```go
 package main
 
@@ -581,6 +585,7 @@ Delete activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.activitiesDelete" method="delete" path="/crm/activities/{id}" -->
 ```go
 package main
 

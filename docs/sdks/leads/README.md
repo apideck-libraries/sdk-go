@@ -17,6 +17,7 @@ List leads
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.leadsAll" method="get" path="/crm/leads" -->
 ```go
 package main
 
@@ -105,6 +106,7 @@ Create lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.leadsAdd" method="post" path="/crm/leads" -->
 ```go
 package main
 
@@ -427,6 +429,7 @@ Get lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.leadsOne" method="get" path="/crm/leads/{id}" -->
 ```go
 package main
 
@@ -490,6 +493,7 @@ Update lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.leadsUpdate" method="patch" path="/crm/leads/{id}" -->
 ```go
 package main
 
@@ -771,6 +775,7 @@ Delete lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.leadsDelete" method="delete" path="/crm/leads/{id}" -->
 ```go
 package main
 

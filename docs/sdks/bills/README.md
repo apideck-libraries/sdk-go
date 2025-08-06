@@ -17,6 +17,7 @@ List Bills
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.billsAll" method="get" path="/accounting/bills" -->
 ```go
 package main
 
@@ -103,6 +104,7 @@ Create Bill
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.billsAdd" method="post" path="/accounting/bills" -->
 ```go
 package main
 
@@ -406,6 +408,7 @@ Get Bill
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.billsOne" method="get" path="/accounting/bills/{id}" -->
 ```go
 package main
 
@@ -469,6 +472,7 @@ Update Bill
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.billsUpdate" method="patch" path="/accounting/bills/{id}" -->
 ```go
 package main
 
@@ -738,6 +742,7 @@ Delete Bill
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.billsDelete" method="delete" path="/accounting/bills/{id}" -->
 ```go
 package main
 

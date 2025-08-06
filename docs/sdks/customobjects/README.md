@@ -17,6 +17,7 @@ List custom objects
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.customObjectsAll" method="get" path="/crm/custom-objects/{object_id}" -->
 ```go
 package main
 
@@ -95,6 +96,7 @@ Create custom object
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.customObjectsAdd" method="post" path="/crm/custom-objects/{object_id}" -->
 ```go
 package main
 
@@ -216,6 +218,7 @@ Get custom object
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.customObjectsOne" method="get" path="/crm/custom-objects/{object_id}/{id}" -->
 ```go
 package main
 
@@ -279,6 +282,7 @@ Update custom object
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.customObjectsUpdate" method="patch" path="/crm/custom-objects/{object_id}/{id}" -->
 ```go
 package main
 
@@ -379,6 +383,7 @@ Delete custom object
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="crm.customObjectsDelete" method="delete" path="/crm/custom-objects/{object_id}/{id}" -->
 ```go
 package main
 

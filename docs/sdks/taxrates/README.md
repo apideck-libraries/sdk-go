@@ -18,6 +18,7 @@ List Tax Rates. Note: Not all connectors return the actual rate/percentage value
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.taxRatesAll" method="get" path="/accounting/tax-rates" -->
 ```go
 package main
 
@@ -103,6 +104,7 @@ Create Tax Rate
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.taxRatesAdd" method="post" path="/accounting/tax-rates" -->
 ```go
 package main
 
@@ -240,6 +242,7 @@ Get Tax Rate. Note: Not all connectors return the actual rate/percentage value. 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.taxRatesOne" method="get" path="/accounting/tax-rates/{id}" -->
 ```go
 package main
 
@@ -303,6 +306,7 @@ Update Tax Rate
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.taxRatesUpdate" method="patch" path="/accounting/tax-rates/{id}" -->
 ```go
 package main
 
@@ -479,6 +483,7 @@ Delete Tax Rate
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.taxRatesDelete" method="delete" path="/accounting/tax-rates/{id}" -->
 ```go
 package main
 

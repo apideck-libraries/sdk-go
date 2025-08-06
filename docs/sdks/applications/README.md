@@ -17,6 +17,7 @@ List Applications
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ats.applicationsAll" method="get" path="/ats/applications" -->
 ```go
 package main
 
@@ -93,6 +94,7 @@ Create Application
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ats.applicationsAdd" method="post" path="/ats/applications" -->
 ```go
 package main
 
@@ -187,6 +189,7 @@ Get Application
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ats.applicationsOne" method="get" path="/ats/applications/{id}" -->
 ```go
 package main
 
@@ -249,6 +252,7 @@ Update Application
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ats.applicationsUpdate" method="patch" path="/ats/applications/{id}" -->
 ```go
 package main
 
@@ -410,6 +414,7 @@ Delete Application
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ats.applicationsDelete" method="delete" path="/ats/applications/{id}" -->
 ```go
 package main
 

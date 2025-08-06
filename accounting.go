@@ -34,6 +34,7 @@ type Accounting struct {
 	BankFeedAccounts   *BankFeedAccounts
 	BankFeedStatements *BankFeedStatements
 	Categories         *Categories
+	Quotes             *Quotes
 
 	rootSDK          *Apideck
 	sdkConfiguration config.SDKConfiguration
@@ -71,5 +72,6 @@ func newAccounting(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *h
 		BankFeedAccounts:   newBankFeedAccounts(rootSDK, sdkConfig, hooks),
 		BankFeedStatements: newBankFeedStatements(rootSDK, sdkConfig, hooks),
 		Categories:         newCategories(rootSDK, sdkConfig, hooks),
+		Quotes:             newQuotes(rootSDK, sdkConfig, hooks),
 	}
 }

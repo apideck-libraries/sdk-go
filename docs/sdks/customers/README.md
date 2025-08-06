@@ -17,6 +17,7 @@ List Customers
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.customersAll" method="get" path="/accounting/customers" -->
 ```go
 package main
 
@@ -110,6 +111,7 @@ Create Customer
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.customersAdd" method="post" path="/accounting/customers" -->
 ```go
 package main
 
@@ -338,6 +340,7 @@ Get Customer
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.customersOne" method="get" path="/accounting/customers/{id}" -->
 ```go
 package main
 
@@ -401,6 +404,7 @@ Update Customer
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.customersUpdate" method="patch" path="/accounting/customers/{id}" -->
 ```go
 package main
 
@@ -649,6 +653,7 @@ Delete Customer
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.customersDelete" method="delete" path="/accounting/customers/{id}" -->
 ```go
 package main
 

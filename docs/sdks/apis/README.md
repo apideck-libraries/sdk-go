@@ -14,6 +14,7 @@ List APIs
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="connector.apisAll" method="get" path="/connector/apis" -->
 ```go
 package main
 
@@ -87,6 +88,7 @@ Get API
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="connector.apisOne" method="get" path="/connector/apis/{id}" -->
 ```go
 package main
 

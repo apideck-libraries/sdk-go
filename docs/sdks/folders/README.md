@@ -17,6 +17,7 @@ Create Folder
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.foldersAdd" method="post" path="/file-storage/folders" -->
 ```go
 package main
 
@@ -101,6 +102,7 @@ Get Folder
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.foldersOne" method="get" path="/file-storage/folders/{id}" -->
 ```go
 package main
 
@@ -164,6 +166,7 @@ Rename or move Folder
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.foldersUpdate" method="patch" path="/file-storage/folders/{id}" -->
 ```go
 package main
 
@@ -255,6 +258,7 @@ Delete Folder
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.foldersDelete" method="delete" path="/file-storage/folders/{id}" -->
 ```go
 package main
 
@@ -317,6 +321,7 @@ Copy Folder
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.foldersCopy" method="post" path="/file-storage/folders/{id}/copy" -->
 ```go
 package main
 

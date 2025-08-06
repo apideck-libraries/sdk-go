@@ -9,5 +9,6 @@ Status of the connector. Connectors with status live or beta are callable.
 | ---------------------------- | ---------------------------- |
 | `ConnectorStatusLive`        | live                         |
 | `ConnectorStatusBeta`        | beta                         |
+| `ConnectorStatusEarlyAccess` | early-access                 |
 | `ConnectorStatusDevelopment` | development                  |
 | `ConnectorStatusConsidering` | considering                  |

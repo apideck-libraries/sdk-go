@@ -17,6 +17,7 @@ List DriveGroups
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.driveGroupsAll" method="get" path="/file-storage/drive-groups" -->
 ```go
 package main
 
@@ -98,6 +99,7 @@ Create DriveGroup
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.driveGroupsAdd" method="post" path="/file-storage/drive-groups" -->
 ```go
 package main
 
@@ -209,6 +211,7 @@ Get DriveGroup
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.driveGroupsOne" method="get" path="/file-storage/drive-groups/{id}" -->
 ```go
 package main
 
@@ -272,6 +275,7 @@ Update DriveGroup
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.driveGroupsUpdate" method="patch" path="/file-storage/drive-groups/{id}" -->
 ```go
 package main
 
@@ -405,6 +409,7 @@ Delete DriveGroup
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.driveGroupsDelete" method="delete" path="/file-storage/drive-groups/{id}" -->
 ```go
 package main
 

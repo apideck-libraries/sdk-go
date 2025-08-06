@@ -17,6 +17,7 @@ List Attachments
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.attachmentsAll" method="get" path="/accounting/attachments/{reference_type}/{reference_id}" -->
 ```go
 package main
 
@@ -94,6 +95,7 @@ Upload attachment
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.attachmentsUpload" method="post" path="/accounting/attachments/{reference_type}/{reference_id}" -->
 ```go
 package main
 
@@ -165,6 +167,7 @@ Get Attachment
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.attachmentsOne" method="get" path="/accounting/attachments/{reference_type}/{reference_id}/{id}" -->
 ```go
 package main
 
@@ -231,6 +234,7 @@ Delete Attachment
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.attachmentsDelete" method="delete" path="/accounting/attachments/{reference_type}/{reference_id}/{id}" -->
 ```go
 package main
 
@@ -296,6 +300,7 @@ Download Attachment
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.attachmentsDownload" method="get" path="/accounting/attachments/{reference_type}/{reference_id}/{id}/download" -->
 ```go
 package main
 

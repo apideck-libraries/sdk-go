@@ -17,6 +17,7 @@ List Expenses
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.expensesAll" method="get" path="/accounting/expenses" -->
 ```go
 package main
 
@@ -90,6 +91,7 @@ Create Expense
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.expensesAdd" method="post" path="/accounting/expenses" -->
 ```go
 package main
 
@@ -290,6 +292,7 @@ Get Expense
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.expensesOne" method="get" path="/accounting/expenses/{id}" -->
 ```go
 package main
 
@@ -352,6 +355,7 @@ Update Expense
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.expensesUpdate" method="patch" path="/accounting/expenses/{id}" -->
 ```go
 package main
 
@@ -518,6 +522,7 @@ Delete Expense
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.expensesDelete" method="delete" path="/accounting/expenses/{id}" -->
 ```go
 package main
 

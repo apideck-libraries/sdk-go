@@ -17,6 +17,7 @@ List Purchase Orders
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.purchaseOrdersAll" method="get" path="/accounting/purchase-orders" -->
 ```go
 package main
 
@@ -103,6 +104,7 @@ Create Purchase Order
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.purchaseOrdersAdd" method="post" path="/accounting/purchase-orders" -->
 ```go
 package main
 
@@ -492,6 +494,7 @@ Get Purchase Order
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.purchaseOrdersOne" method="get" path="/accounting/purchase-orders/{id}" -->
 ```go
 package main
 
@@ -554,6 +557,7 @@ Update Purchase Order
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.purchaseOrdersUpdate" method="patch" path="/accounting/purchase-orders/{id}" -->
 ```go
 package main
 
@@ -892,6 +896,7 @@ Delete Purchase Order
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.purchaseOrdersDelete" method="delete" path="/accounting/purchase-orders/{id}" -->
 ```go
 package main
 

@@ -13,6 +13,7 @@ Get company info
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="accounting.companyInfoOne" method="get" path="/accounting/company-info" -->
 ```go
 package main
 

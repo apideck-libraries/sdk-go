@@ -17,6 +17,7 @@ List Comments
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="issueTracking.collectionTicketCommentsAll" method="get" path="/issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments" -->
 ```go
 package main
 
@@ -101,6 +102,7 @@ Create Comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="issueTracking.collectionTicketCommentsAdd" method="post" path="/issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments" -->
 ```go
 package main
 
@@ -228,6 +230,7 @@ Get Comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="issueTracking.collectionTicketCommentsOne" method="get" path="/issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments/{id}" -->
 ```go
 package main
 
@@ -305,6 +308,7 @@ Update Comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="issueTracking.collectionTicketCommentsUpdate" method="patch" path="/issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments/{id}" -->
 ```go
 package main
 
@@ -396,6 +400,7 @@ Delete Comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="issueTracking.collectionTicketCommentsDelete" method="delete" path="/issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments/{id}" -->
 ```go
 package main
 

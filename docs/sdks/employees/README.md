@@ -17,6 +17,7 @@ Apideck operates as a stateless Unified API, which means that the list endpoint 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.employeesAll" method="get" path="/hris/employees" -->
 ```go
 package main
 
@@ -112,6 +113,7 @@ Create Employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.employeesAdd" method="post" path="/hris/employees" -->
 ```go
 package main
 
@@ -593,6 +595,7 @@ Get Employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.employeesOne" method="get" path="/hris/employees/{id}" -->
 ```go
 package main
 
@@ -663,6 +666,7 @@ Update Employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.employeesUpdate" method="patch" path="/hris/employees/{id}" -->
 ```go
 package main
 
@@ -994,6 +998,7 @@ Delete Employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="hris.employeesDelete" method="delete" path="/hris/employees/{id}" -->
 ```go
 package main
 

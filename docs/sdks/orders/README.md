@@ -14,6 +14,7 @@ List Orders
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ecommerce.ordersAll" method="get" path="/ecommerce/orders" -->
 ```go
 package main
 
@@ -102,6 +103,7 @@ Get Order
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ecommerce.ordersOne" method="get" path="/ecommerce/orders/{id}" -->
 ```go
 package main
 

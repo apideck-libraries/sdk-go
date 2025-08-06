@@ -13,6 +13,7 @@ Get Store
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ecommerce.storesOne" method="get" path="/ecommerce/store" -->
 ```go
 package main
 

@@ -19,6 +19,7 @@ List Files
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.filesAll" method="get" path="/file-storage/files" -->
 ```go
 package main
 
@@ -106,6 +107,7 @@ Search Files
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.filesSearch" method="post" path="/file-storage/files/search" -->
 ```go
 package main
 
@@ -180,6 +182,7 @@ Get File
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.filesOne" method="get" path="/file-storage/files/{id}" -->
 ```go
 package main
 
@@ -243,6 +246,7 @@ Rename or move File
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.filesUpdate" method="patch" path="/file-storage/files/{id}" -->
 ```go
 package main
 
@@ -326,6 +330,7 @@ Delete File
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.filesDelete" method="delete" path="/file-storage/files/{id}" -->
 ```go
 package main
 
@@ -388,6 +393,7 @@ Download File
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.filesDownload" method="get" path="/file-storage/files/{id}/download" -->
 ```go
 package main
 
@@ -451,6 +457,7 @@ Export File
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="fileStorage.filesExport" method="get" path="/file-storage/files/{id}/export" -->
 ```go
 package main
 
