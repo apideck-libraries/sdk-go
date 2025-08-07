@@ -17,6 +17,7 @@ const (
 	TypeOffice    Type = "office"
 	TypeShipping  Type = "shipping"
 	TypeBilling   Type = "billing"
+	TypeWork      Type = "work"
 	TypeOther     Type = "other"
 )
 
@@ -40,6 +41,8 @@ func (e *Type) UnmarshalJSON(data []byte) error {
 	case "shipping":
 		fallthrough
 	case "billing":
+		fallthrough
+	case "work":
 		fallthrough
 	case "other":
 		*e = Type(v)

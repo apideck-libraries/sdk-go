@@ -13,4 +13,5 @@ The type of address.
 | `TypeOffice`    | office          |
 | `TypeShipping`  | shipping        |
 | `TypeBilling`   | billing         |
+| `TypeWork`      | work            |
 | `TypeOther`     | other           |

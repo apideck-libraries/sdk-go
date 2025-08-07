@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: ffad85289ecb22153e96c5201275a350
+  docChecksum: 11feecf9984adeb160158d1266da5ee2
   docVersion: 10.20.2
-  speakeasyVersion: 1.598.0
-  generationVersion: 2.674.1
-  releaseVersion: 0.17.0
-  configChecksum: af10b50bef070d23e174c227d7562b72
+  speakeasyVersion: 1.598.3
+  generationVersion: 2.674.3
+  releaseVersion: 0.17.1
+  configChecksum: 107c33a3f8196412af7a715db1d0acf4
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 features:
