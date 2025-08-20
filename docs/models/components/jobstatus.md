@@ -11,5 +11,6 @@ The status of the job.
 | `JobStatusInternal`  | internal             |
 | `JobStatusPublished` | published            |
 | `JobStatusCompleted` | completed            |
+| `JobStatusPlaced`    | placed               |
 | `JobStatusOnHold`    | on-hold              |
 | `JobStatusPrivate`   | private              |
