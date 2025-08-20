@@ -104,6 +104,7 @@
 | `WebhookEventTypeFileStorageFileCreated`            | file-storage.file.created                           |
 | `WebhookEventTypeFileStorageFileUpdated`            | file-storage.file.updated                           |
 | `WebhookEventTypeFileStorageFileDeleted`            | file-storage.file.deleted                           |
+| `WebhookEventTypeFileStorageDriveUpdated`           | file-storage.drive.updated                          |
 | `WebhookEventTypeIssueTrackingTicketCreated`        | issue-tracking.ticket.created                       |
 | `WebhookEventTypeIssueTrackingTicketUpdated`        | issue-tracking.ticket.updated                       |
 | `WebhookEventTypeIssueTrackingTicketDeleted`        | issue-tracking.ticket.deleted                       |
