@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: adbe8651971e100ed9d43a08042577ad
-  docVersion: 10.20.8
+  docChecksum: c2033f5fd8c53756c6569f4d0088bb52
+  docVersion: 10.20.9
   speakeasyVersion: 1.606.0
   generationVersion: 2.686.7
-  releaseVersion: 0.17.3
-  configChecksum: f58be793c28dcbe2f1e1612705301b02
+  releaseVersion: 0.17.4
+  configChecksum: b9181030dbdbf273f4d60bfb9378523b
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 features:
@@ -17991,4 +17991,3 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## SDK Changes Detected:\n* `Apideck.Accounting.Subsidiaries.List()`:  `response.Data.[].Currencies` **Added**\n* `Apideck.Accounting.Subsidiaries.Create()`: \n  *  `request.Request.Subsidiary.Currencies` **Added**\n* `Apideck.Accounting.Subsidiaries.Get()`:  `response.Data.Currencies` **Added**\n* `Apideck.Accounting.Subsidiaries.Update()`: \n  *  `request.Request.Subsidiary.Currencies` **Added**\n"
