@@ -145,9 +145,11 @@ type InvoiceItem struct {
 	PurchaseDetails *PurchaseDetails     `json:"purchase_details,omitempty"`
 	Quantity        *float64             `json:"quantity,omitempty"`
 	UnitPrice       *float64             `json:"unit_price,omitempty"`
-	AssetAccount    *LinkedLedgerAccount `json:"asset_account,omitempty"`
-	IncomeAccount   *LinkedLedgerAccount `json:"income_account,omitempty"`
-	ExpenseAccount  *LinkedLedgerAccount `json:"expense_account,omitempty"`
+	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+	Currency       *Currency            `json:"currency,omitempty"`
+	AssetAccount   *LinkedLedgerAccount `json:"asset_account,omitempty"`
+	IncomeAccount  *LinkedLedgerAccount `json:"income_account,omitempty"`
+	ExpenseAccount *LinkedLedgerAccount `json:"expense_account,omitempty"`
 	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
 	// A list of linked tracking categories.
@@ -284,6 +286,13 @@ func (o *InvoiceItem) GetUnitPrice() *float64 {
 		return nil
 	}
 	return o.UnitPrice
+}
+
+func (o *InvoiceItem) GetCurrency() *Currency {
+	if o == nil {
+		return nil
+	}
+	return o.Currency
 }
 
 func (o *InvoiceItem) GetAssetAccount() *LinkedLedgerAccount {
@@ -502,9 +511,11 @@ type InvoiceItemInput struct {
 	PurchaseDetails *InvoiceItemPurchaseDetails `json:"purchase_details,omitempty"`
 	Quantity        *float64                    `json:"quantity,omitempty"`
 	UnitPrice       *float64                    `json:"unit_price,omitempty"`
-	AssetAccount    *LinkedLedgerAccountInput   `json:"asset_account,omitempty"`
-	IncomeAccount   *LinkedLedgerAccountInput   `json:"income_account,omitempty"`
-	ExpenseAccount  *LinkedLedgerAccountInput   `json:"expense_account,omitempty"`
+	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+	Currency       *Currency                 `json:"currency,omitempty"`
+	AssetAccount   *LinkedLedgerAccountInput `json:"asset_account,omitempty"`
+	IncomeAccount  *LinkedLedgerAccountInput `json:"income_account,omitempty"`
+	ExpenseAccount *LinkedLedgerAccountInput `json:"expense_account,omitempty"`
 	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
 	// A list of linked tracking categories.
@@ -624,6 +635,13 @@ func (o *InvoiceItemInput) GetUnitPrice() *float64 {
 		return nil
 	}
 	return o.UnitPrice
+}
+
+func (o *InvoiceItemInput) GetCurrency() *Currency {
+	if o == nil {
+		return nil
+	}
+	return o.Currency
 }
 
 func (o *InvoiceItemInput) GetAssetAccount() *LinkedLedgerAccountInput {
