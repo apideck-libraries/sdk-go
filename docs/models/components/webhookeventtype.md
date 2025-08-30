@@ -19,8 +19,8 @@
 | `WebhookEventTypeCrmLeadUpdated`                    | crm.lead.updated                                    |
 | `WebhookEventTypeCrmLeadDeleted`                    | crm.lead.deleted                                    |
 | `WebhookEventTypeCrmNoteCreated`                    | crm.note.created                                    |
-| `WebhookEventTypeCrmNotesUpdated`                   | crm.notes.updated                                   |
-| `WebhookEventTypeCrmNotesDeleted`                   | crm.notes.deleted                                   |
+| `WebhookEventTypeCrmNoteUpdated`                    | crm.note.updated                                    |
+| `WebhookEventTypeCrmNoteDeleted`                    | crm.note.deleted                                    |
 | `WebhookEventTypeCrmOpportunityCreated`             | crm.opportunity.created                             |
 | `WebhookEventTypeCrmOpportunityUpdated`             | crm.opportunity.updated                             |
 | `WebhookEventTypeCrmOpportunityDeleted`             | crm.opportunity.deleted                             |

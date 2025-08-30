@@ -256,6 +256,7 @@ func (s *Expenses) List(ctx context.Context, request operations.AccountingExpens
 				ServiceID:  request.ServiceID,
 				Cursor:     &nCVal,
 				Limit:      request.Limit,
+				Filter:     request.Filter,
 			},
 			opts...,
 		)

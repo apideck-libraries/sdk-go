@@ -111,21 +111,21 @@ func CreateConnectionValue5Number(number float64) ConnectionValue5 {
 func (u *ConnectionValue5) UnmarshalJSON(data []byte) error {
 
 	var str string = ""
-	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
 		u.Str = &str
 		u.Type = ConnectionValue5TypeStr
 		return nil
 	}
 
 	var integer int64 = int64(0)
-	if err := utils.UnmarshalJSON(data, &integer, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &integer, "", true, nil); err == nil {
 		u.Integer = &integer
 		u.Type = ConnectionValue5TypeInteger
 		return nil
 	}
 
 	var number float64 = float64(0)
-	if err := utils.UnmarshalJSON(data, &number, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &number, "", true, nil); err == nil {
 		u.Number = &number
 		u.Type = ConnectionValue5TypeNumber
 		return nil
@@ -218,35 +218,35 @@ func CreateConnectionValueArrayOfConnectionValue5(arrayOfConnectionValue5 []Conn
 func (u *ConnectionValue) UnmarshalJSON(data []byte) error {
 
 	var str string = ""
-	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
 		u.Str = &str
 		u.Type = ConnectionValueTypeStr
 		return nil
 	}
 
 	var integer int64 = int64(0)
-	if err := utils.UnmarshalJSON(data, &integer, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &integer, "", true, nil); err == nil {
 		u.Integer = &integer
 		u.Type = ConnectionValueTypeInteger
 		return nil
 	}
 
 	var number float64 = float64(0)
-	if err := utils.UnmarshalJSON(data, &number, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &number, "", true, nil); err == nil {
 		u.Number = &number
 		u.Type = ConnectionValueTypeNumber
 		return nil
 	}
 
 	var boolean bool = false
-	if err := utils.UnmarshalJSON(data, &boolean, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &boolean, "", true, nil); err == nil {
 		u.Boolean = &boolean
 		u.Type = ConnectionValueTypeBoolean
 		return nil
 	}
 
 	var arrayOfConnectionValue5 []ConnectionValue5 = []ConnectionValue5{}
-	if err := utils.UnmarshalJSON(data, &arrayOfConnectionValue5, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &arrayOfConnectionValue5, "", true, nil); err == nil {
 		u.ArrayOfConnectionValue5 = arrayOfConnectionValue5
 		u.Type = ConnectionValueTypeArrayOfConnectionValue5
 		return nil
