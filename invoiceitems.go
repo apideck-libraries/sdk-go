@@ -17,6 +17,7 @@ import (
 	"net/http"
 	"net/url"
 	"strconv"
+	"strings"
 )
 
 type InvoiceItems struct {
@@ -245,6 +246,9 @@ func (s *InvoiceItems) List(ctx context.Context, request operations.AccountingIn
 				return nil, nil
 			}
 			nCVal = val.(string)
+			if strings.TrimSpace(nCVal) == "" {
+				return nil, nil
+			}
 		}
 
 		return s.List(

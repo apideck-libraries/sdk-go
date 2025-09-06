@@ -24,7 +24,7 @@ generation:
     generateNewTests: false
     skipResponseBodyAssertions: false
 go:
-  version: 0.17.6
+  version: 0.17.7
   additionalDependencies: {}
   allowUnknownFieldsInWeakUnions: false
   baseErrorName: ApideckError
@@ -46,5 +46,6 @@ go:
   modulePath: ""
   outputModelSuffix: output
   packageName: github.com/apideck-libraries/sdk-go
+  respectRequiredFields: false
   responseFormat: envelope-http
   sdkPackageName: ""

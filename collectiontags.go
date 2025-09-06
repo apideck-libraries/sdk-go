@@ -16,6 +16,7 @@ import (
 	"github.com/spyzhov/ajson"
 	"net/http"
 	"strconv"
+	"strings"
 )
 
 type CollectionTags struct {
@@ -244,6 +245,9 @@ func (s *CollectionTags) List(ctx context.Context, request operations.IssueTrack
 				return nil, nil
 			}
 			nCVal = val.(string)
+			if strings.TrimSpace(nCVal) == "" {
+				return nil, nil
+			}
 		}
 
 		return s.List(

@@ -690,6 +690,14 @@ func main() {
 ### [Vault](docs/sdks/vault/README.md)
 
 
+#### [Vault.ConnectionConsent](docs/sdks/connectionconsent/README.md)
+
+* [Update](docs/sdks/connectionconsent/README.md#update) - Update consent state
+
+#### [Vault.ConnectionConsents](docs/sdks/connectionconsents/README.md)
+
+* [List](docs/sdks/connectionconsents/README.md#list) - Get consent records
+
 #### [Vault.ConnectionCustomMappings](docs/sdks/connectioncustommappings/README.md)
 
 * [List](docs/sdks/connectioncustommappings/README.md#list) - List connection custom mappings

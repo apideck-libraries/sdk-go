@@ -18,8 +18,8 @@ const (
 
 // NotFoundResponseDetail - Contains parameter or domain specific information related to the error and why it occurred.
 type NotFoundResponseDetail struct {
-	Str      *string        `queryParam:"inline"`
-	MapOfAny map[string]any `queryParam:"inline"`
+	Str      *string        `queryParam:"inline" name:"detail"`
+	MapOfAny map[string]any `queryParam:"inline" name:"detail"`
 
 	Type NotFoundResponseDetailType
 }
@@ -47,14 +47,14 @@ func CreateNotFoundResponseDetailMapOfAny(mapOfAny map[string]any) NotFoundRespo
 func (u *NotFoundResponseDetail) UnmarshalJSON(data []byte) error {
 
 	var str string = ""
-	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
 		u.Str = &str
 		u.Type = NotFoundResponseDetailTypeStr
 		return nil
 	}
 
 	var mapOfAny map[string]any = map[string]any{}
-	if err := utils.UnmarshalJSON(data, &mapOfAny, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &mapOfAny, "", true, nil); err == nil {
 		u.MapOfAny = mapOfAny
 		u.Type = NotFoundResponseDetailTypeMapOfAny
 		return nil

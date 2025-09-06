@@ -17,6 +17,7 @@ import (
 	"net/http"
 	"net/url"
 	"strconv"
+	"strings"
 )
 
 type Expenses struct {
@@ -245,6 +246,9 @@ func (s *Expenses) List(ctx context.Context, request operations.AccountingExpens
 				return nil, nil
 			}
 			nCVal = val.(string)
+			if strings.TrimSpace(nCVal) == "" {
+				return nil, nil
+			}
 		}
 
 		return s.List(
@@ -256,6 +260,7 @@ func (s *Expenses) List(ctx context.Context, request operations.AccountingExpens
 				ServiceID:  request.ServiceID,
 				Cursor:     &nCVal,
 				Limit:      request.Limit,
+				Filter:     request.Filter,
 			},
 			opts...,
 		)

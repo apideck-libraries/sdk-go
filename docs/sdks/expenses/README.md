@@ -25,6 +25,8 @@ import(
 	"context"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"os"
+	"github.com/apideck-libraries/sdk-go/types"
+	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -40,6 +42,10 @@ func main() {
 
     res, err := s.Accounting.Expenses.List(ctx, operations.AccountingExpensesAllRequest{
         ServiceID: sdkgo.String("salesforce"),
+        Filter: &components.ExpensesFilter{
+            UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
+            Status: components.ExpensesFilterStatusDraft.ToPointer(),
+        },
     })
     if err != nil {
         log.Fatal(err)

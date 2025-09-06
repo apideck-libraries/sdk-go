@@ -17,6 +17,7 @@ import (
 	"net/http"
 	"net/url"
 	"strconv"
+	"strings"
 )
 
 type BankFeedAccounts struct {
@@ -245,6 +246,9 @@ func (s *BankFeedAccounts) List(ctx context.Context, request operations.Accounti
 				return nil, nil
 			}
 			nCVal = val.(string)
+			if strings.TrimSpace(nCVal) == "" {
+				return nil, nil
+			}
 		}
 
 		return s.List(
