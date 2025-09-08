@@ -16,6 +16,7 @@ import (
 	"github.com/spyzhov/ajson"
 	"net/http"
 	"strconv"
+	"strings"
 )
 
 type CollectionTickets struct {
@@ -244,6 +245,9 @@ func (s *CollectionTickets) List(ctx context.Context, request operations.IssueTr
 				return nil, nil
 			}
 			nCVal = val.(string)
+			if strings.TrimSpace(nCVal) == "" {
+				return nil, nil
+			}
 		}
 
 		return s.List(

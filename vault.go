@@ -12,6 +12,8 @@ type Vault struct {
 	ConsumerRequestCounts    *ConsumerRequestCounts
 	Connections              *Connections
 	ValidateConnection       *ValidateConnection
+	ConnectionConsents       *ConnectionConsents
+	ConnectionConsent        *ConnectionConsent
 	CreateCallback           *CreateCallback
 	ConnectionSettings       *ConnectionSettings
 	CustomFields             *CustomFields
@@ -34,6 +36,8 @@ func newVault(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *hooks.
 		ConsumerRequestCounts:    newConsumerRequestCounts(rootSDK, sdkConfig, hooks),
 		Connections:              newConnections(rootSDK, sdkConfig, hooks),
 		ValidateConnection:       newValidateConnection(rootSDK, sdkConfig, hooks),
+		ConnectionConsents:       newConnectionConsents(rootSDK, sdkConfig, hooks),
+		ConnectionConsent:        newConnectionConsent(rootSDK, sdkConfig, hooks),
 		CreateCallback:           newCreateCallback(rootSDK, sdkConfig, hooks),
 		ConnectionSettings:       newConnectionSettings(rootSDK, sdkConfig, hooks),
 		CustomFields:             newCustomFields(rootSDK, sdkConfig, hooks),

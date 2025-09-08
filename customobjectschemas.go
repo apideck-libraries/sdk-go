@@ -17,6 +17,7 @@ import (
 	"net/http"
 	"net/url"
 	"strconv"
+	"strings"
 )
 
 type CustomObjectSchemas struct {
@@ -245,6 +246,9 @@ func (s *CustomObjectSchemas) List(ctx context.Context, request operations.CrmCu
 				return nil, nil
 			}
 			nCVal = val.(string)
+			if strings.TrimSpace(nCVal) == "" {
+				return nil, nil
+			}
 		}
 
 		return s.List(

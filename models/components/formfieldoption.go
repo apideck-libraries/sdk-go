@@ -17,8 +17,8 @@ const (
 )
 
 type FormFieldOption struct {
-	SimpleFormFieldOption *SimpleFormFieldOption `queryParam:"inline"`
-	FormFieldOptionGroup  *FormFieldOptionGroup  `queryParam:"inline"`
+	SimpleFormFieldOption *SimpleFormFieldOption `queryParam:"inline" name:"FormFieldOption"`
+	FormFieldOptionGroup  *FormFieldOptionGroup  `queryParam:"inline" name:"FormFieldOption"`
 
 	Type FormFieldOptionType
 }
@@ -61,7 +61,7 @@ func (u *FormFieldOption) UnmarshalJSON(data []byte) error {
 	switch dis.OptionType {
 	case "simple":
 		simpleFormFieldOption := new(SimpleFormFieldOption)
-		if err := utils.UnmarshalJSON(data, &simpleFormFieldOption, "", true, false); err != nil {
+		if err := utils.UnmarshalJSON(data, &simpleFormFieldOption, "", true, nil); err != nil {
 			return fmt.Errorf("could not unmarshal `%s` into expected (OptionType == simple) type SimpleFormFieldOption within FormFieldOption: %w", string(data), err)
 		}
 
@@ -70,7 +70,7 @@ func (u *FormFieldOption) UnmarshalJSON(data []byte) error {
 		return nil
 	case "group":
 		formFieldOptionGroup := new(FormFieldOptionGroup)
-		if err := utils.UnmarshalJSON(data, &formFieldOptionGroup, "", true, false); err != nil {
+		if err := utils.UnmarshalJSON(data, &formFieldOptionGroup, "", true, nil); err != nil {
 			return fmt.Errorf("could not unmarshal `%s` into expected (OptionType == group) type FormFieldOptionGroup within FormFieldOption: %w", string(data), err)
 		}
 

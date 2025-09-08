@@ -74,9 +74,9 @@ const (
 )
 
 type ConnectionValue5 struct {
-	Str     *string  `queryParam:"inline"`
-	Integer *int64   `queryParam:"inline"`
-	Number  *float64 `queryParam:"inline"`
+	Str     *string  `queryParam:"inline" name:"five"`
+	Integer *int64   `queryParam:"inline" name:"five"`
+	Number  *float64 `queryParam:"inline" name:"five"`
 
 	Type ConnectionValue5Type
 }
@@ -111,21 +111,21 @@ func CreateConnectionValue5Number(number float64) ConnectionValue5 {
 func (u *ConnectionValue5) UnmarshalJSON(data []byte) error {
 
 	var str string = ""
-	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
 		u.Str = &str
 		u.Type = ConnectionValue5TypeStr
 		return nil
 	}
 
 	var integer int64 = int64(0)
-	if err := utils.UnmarshalJSON(data, &integer, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &integer, "", true, nil); err == nil {
 		u.Integer = &integer
 		u.Type = ConnectionValue5TypeInteger
 		return nil
 	}
 
 	var number float64 = float64(0)
-	if err := utils.UnmarshalJSON(data, &number, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &number, "", true, nil); err == nil {
 		u.Number = &number
 		u.Type = ConnectionValue5TypeNumber
 		return nil
@@ -161,11 +161,11 @@ const (
 )
 
 type ConnectionValue struct {
-	Str                     *string            `queryParam:"inline"`
-	Integer                 *int64             `queryParam:"inline"`
-	Number                  *float64           `queryParam:"inline"`
-	Boolean                 *bool              `queryParam:"inline"`
-	ArrayOfConnectionValue5 []ConnectionValue5 `queryParam:"inline"`
+	Str                     *string            `queryParam:"inline" name:"value"`
+	Integer                 *int64             `queryParam:"inline" name:"value"`
+	Number                  *float64           `queryParam:"inline" name:"value"`
+	Boolean                 *bool              `queryParam:"inline" name:"value"`
+	ArrayOfConnectionValue5 []ConnectionValue5 `queryParam:"inline" name:"value"`
 
 	Type ConnectionValueType
 }
@@ -218,35 +218,35 @@ func CreateConnectionValueArrayOfConnectionValue5(arrayOfConnectionValue5 []Conn
 func (u *ConnectionValue) UnmarshalJSON(data []byte) error {
 
 	var str string = ""
-	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
 		u.Str = &str
 		u.Type = ConnectionValueTypeStr
 		return nil
 	}
 
 	var integer int64 = int64(0)
-	if err := utils.UnmarshalJSON(data, &integer, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &integer, "", true, nil); err == nil {
 		u.Integer = &integer
 		u.Type = ConnectionValueTypeInteger
 		return nil
 	}
 
 	var number float64 = float64(0)
-	if err := utils.UnmarshalJSON(data, &number, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &number, "", true, nil); err == nil {
 		u.Number = &number
 		u.Type = ConnectionValueTypeNumber
 		return nil
 	}
 
 	var boolean bool = false
-	if err := utils.UnmarshalJSON(data, &boolean, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &boolean, "", true, nil); err == nil {
 		u.Boolean = &boolean
 		u.Type = ConnectionValueTypeBoolean
 		return nil
 	}
 
 	var arrayOfConnectionValue5 []ConnectionValue5 = []ConnectionValue5{}
-	if err := utils.UnmarshalJSON(data, &arrayOfConnectionValue5, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &arrayOfConnectionValue5, "", true, nil); err == nil {
 		u.ArrayOfConnectionValue5 = arrayOfConnectionValue5
 		u.Type = ConnectionValueTypeArrayOfConnectionValue5
 		return nil
@@ -385,7 +385,13 @@ type Connection struct {
 	CreatedAt *float64 `json:"created_at,omitempty"`
 	// List of custom mappings configured for this connection
 	CustomMappings []CustomMapping `json:"custom_mappings,omitempty"`
-	UpdatedAt      *float64        `json:"updated_at,omitempty"`
+	// The current consent state of the connection
+	ConsentState *ConsentState `json:"consent_state,omitempty"`
+	// Immutable array of consent records for compliance and audit purposes
+	Consents              []ConsentRecord `json:"consents,omitempty"`
+	LatestConsent         *ConsentRecord  `json:"latest_consent,omitempty"`
+	ApplicationDataScopes *DataScopes     `json:"application_data_scopes,omitempty"`
+	UpdatedAt             *float64        `json:"updated_at,omitempty"`
 }
 
 func (o *Connection) GetID() *string {
@@ -598,6 +604,34 @@ func (o *Connection) GetCustomMappings() []CustomMapping {
 	return o.CustomMappings
 }
 
+func (o *Connection) GetConsentState() *ConsentState {
+	if o == nil {
+		return nil
+	}
+	return o.ConsentState
+}
+
+func (o *Connection) GetConsents() []ConsentRecord {
+	if o == nil {
+		return nil
+	}
+	return o.Consents
+}
+
+func (o *Connection) GetLatestConsent() *ConsentRecord {
+	if o == nil {
+		return nil
+	}
+	return o.LatestConsent
+}
+
+func (o *Connection) GetApplicationDataScopes() *DataScopes {
+	if o == nil {
+		return nil
+	}
+	return o.ApplicationDataScopes
+}
+
 func (o *Connection) GetUpdatedAt() *float64 {
 	if o == nil {
 		return nil
@@ -661,6 +695,10 @@ type ConnectionInput struct {
 	Configuration []ConnectionConfiguration `json:"configuration,omitempty"`
 	// List of custom mappings configured for this connection
 	CustomMappings []CustomMappingInput `json:"custom_mappings,omitempty"`
+	// The current consent state of the connection
+	ConsentState          *ConsentState       `json:"consent_state,omitempty"`
+	LatestConsent         *ConsentRecordInput `json:"latest_consent,omitempty"`
+	ApplicationDataScopes *DataScopesInput    `json:"application_data_scopes,omitempty"`
 }
 
 func (o *ConnectionInput) GetEnabled() *bool {
@@ -696,4 +734,25 @@ func (o *ConnectionInput) GetCustomMappings() []CustomMappingInput {
 		return nil
 	}
 	return o.CustomMappings
+}
+
+func (o *ConnectionInput) GetConsentState() *ConsentState {
+	if o == nil {
+		return nil
+	}
+	return o.ConsentState
+}
+
+func (o *ConnectionInput) GetLatestConsent() *ConsentRecordInput {
+	if o == nil {
+		return nil
+	}
+	return o.LatestConsent
+}
+
+func (o *ConnectionInput) GetApplicationDataScopes() *DataScopesInput {
+	if o == nil {
+		return nil
+	}
+	return o.ApplicationDataScopes
 }

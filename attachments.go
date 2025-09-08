@@ -16,6 +16,7 @@ import (
 	"github.com/spyzhov/ajson"
 	"net/http"
 	"strconv"
+	"strings"
 )
 
 type Attachments struct {
@@ -244,6 +245,9 @@ func (s *Attachments) List(ctx context.Context, request operations.AccountingAtt
 				return nil, nil
 			}
 			nCVal = val.(string)
+			if strings.TrimSpace(nCVal) == "" {
+				return nil, nil
+			}
 		}
 
 		return s.List(
