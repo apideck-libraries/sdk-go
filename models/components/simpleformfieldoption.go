@@ -18,9 +18,9 @@ const (
 )
 
 type Value5 struct {
-	Str     *string  `queryParam:"inline"`
-	Integer *int64   `queryParam:"inline"`
-	Number  *float64 `queryParam:"inline"`
+	Str     *string  `queryParam:"inline" name:"five"`
+	Integer *int64   `queryParam:"inline" name:"five"`
+	Number  *float64 `queryParam:"inline" name:"five"`
 
 	Type Value5Type
 }
@@ -55,21 +55,21 @@ func CreateValue5Number(number float64) Value5 {
 func (u *Value5) UnmarshalJSON(data []byte) error {
 
 	var str string = ""
-	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
 		u.Str = &str
 		u.Type = Value5TypeStr
 		return nil
 	}
 
 	var integer int64 = int64(0)
-	if err := utils.UnmarshalJSON(data, &integer, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &integer, "", true, nil); err == nil {
 		u.Integer = &integer
 		u.Type = Value5TypeInteger
 		return nil
 	}
 
 	var number float64 = float64(0)
-	if err := utils.UnmarshalJSON(data, &number, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &number, "", true, nil); err == nil {
 		u.Number = &number
 		u.Type = Value5TypeNumber
 		return nil
@@ -105,11 +105,11 @@ const (
 )
 
 type SimpleFormFieldOptionValue struct {
-	Str           *string  `queryParam:"inline"`
-	Integer       *int64   `queryParam:"inline"`
-	Number        *float64 `queryParam:"inline"`
-	Boolean       *bool    `queryParam:"inline"`
-	ArrayOfValue5 []Value5 `queryParam:"inline"`
+	Str           *string  `queryParam:"inline" name:"value"`
+	Integer       *int64   `queryParam:"inline" name:"value"`
+	Number        *float64 `queryParam:"inline" name:"value"`
+	Boolean       *bool    `queryParam:"inline" name:"value"`
+	ArrayOfValue5 []Value5 `queryParam:"inline" name:"value"`
 
 	Type SimpleFormFieldOptionValueType
 }
@@ -162,35 +162,35 @@ func CreateSimpleFormFieldOptionValueArrayOfValue5(arrayOfValue5 []Value5) Simpl
 func (u *SimpleFormFieldOptionValue) UnmarshalJSON(data []byte) error {
 
 	var str string = ""
-	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
 		u.Str = &str
 		u.Type = SimpleFormFieldOptionValueTypeStr
 		return nil
 	}
 
 	var integer int64 = int64(0)
-	if err := utils.UnmarshalJSON(data, &integer, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &integer, "", true, nil); err == nil {
 		u.Integer = &integer
 		u.Type = SimpleFormFieldOptionValueTypeInteger
 		return nil
 	}
 
 	var number float64 = float64(0)
-	if err := utils.UnmarshalJSON(data, &number, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &number, "", true, nil); err == nil {
 		u.Number = &number
 		u.Type = SimpleFormFieldOptionValueTypeNumber
 		return nil
 	}
 
 	var boolean bool = false
-	if err := utils.UnmarshalJSON(data, &boolean, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &boolean, "", true, nil); err == nil {
 		u.Boolean = &boolean
 		u.Type = SimpleFormFieldOptionValueTypeBoolean
 		return nil
 	}
 
 	var arrayOfValue5 []Value5 = []Value5{}
-	if err := utils.UnmarshalJSON(data, &arrayOfValue5, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &arrayOfValue5, "", true, nil); err == nil {
 		u.ArrayOfValue5 = arrayOfValue5
 		u.Type = SimpleFormFieldOptionValueTypeArrayOfValue5
 		return nil
@@ -250,6 +250,17 @@ type SimpleFormFieldOption struct {
 	Label      string                      `json:"label"`
 	Value      *SimpleFormFieldOptionValue `json:"value,omitempty"`
 	OptionType OptionType                  `json:"option_type"`
+}
+
+func (s SimpleFormFieldOption) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *SimpleFormFieldOption) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, []string{"label", "option_type"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *SimpleFormFieldOption) GetLabel() string {

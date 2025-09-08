@@ -18,3 +18,4 @@
 | `FormFieldTypeDate`           | date                          |
 | `FormFieldTypeTime`           | time                          |
 | `FormFieldTypeNumber`         | number                        |
+| `FormFieldTypePassword`       | password                      |

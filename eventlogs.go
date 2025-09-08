@@ -17,6 +17,7 @@ import (
 	"net/http"
 	"net/url"
 	"strconv"
+	"strings"
 )
 
 type EventLogs struct {
@@ -251,6 +252,9 @@ func (s *EventLogs) List(ctx context.Context, appID *string, cursor *string, lim
 				return nil, nil
 			}
 			nCVal = val.(string)
+			if strings.TrimSpace(nCVal) == "" {
+				return nil, nil
+			}
 		}
 
 		return s.List(
