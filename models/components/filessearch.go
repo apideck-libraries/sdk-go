@@ -11,23 +11,23 @@ type FilesSearch struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *FilesSearch) GetQuery() string {
-	if o == nil {
+func (f *FilesSearch) GetQuery() string {
+	if f == nil {
 		return ""
 	}
-	return o.Query
+	return f.Query
 }
 
-func (o *FilesSearch) GetDriveID() *string {
-	if o == nil {
+func (f *FilesSearch) GetDriveID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.DriveID
+	return f.DriveID
 }
 
-func (o *FilesSearch) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (f *FilesSearch) GetPassThrough() []PassThroughBody {
+	if f == nil {
 		return nil
 	}
-	return o.PassThrough
+	return f.PassThrough
 }

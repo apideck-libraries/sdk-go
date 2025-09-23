@@ -36,18 +36,18 @@ func main() {
     )
 
     res, err := s.Accounting.AgedCreditors.Get(ctx, operations.AccountingAgedCreditorsOneRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Filter: &components.AgedReportFilter{
-            CustomerID: sdkgo.String("123abc"),
-            SupplierID: sdkgo.String("123abc"),
-            ReportAsOfDate: sdkgo.String("2024-01-01"),
-            PeriodCount: sdkgo.Int64(3),
-            PeriodLength: sdkgo.Int64(30),
+            CustomerID: sdkgo.Pointer("123abc"),
+            SupplierID: sdkgo.Pointer("123abc"),
+            ReportAsOfDate: sdkgo.Pointer("2024-01-01"),
+            PeriodCount: sdkgo.Pointer[int64](3),
+            PeriodLength: sdkgo.Pointer[int64](30),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)

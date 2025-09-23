@@ -21,39 +21,39 @@ type BalanceSheetAssetsAccount struct {
 	Items any `json:"items,omitempty"`
 }
 
-func (o *BalanceSheetAssetsAccount) GetAccountID() *string {
-	if o == nil {
+func (b *BalanceSheetAssetsAccount) GetAccountID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.AccountID
+	return b.AccountID
 }
 
-func (o *BalanceSheetAssetsAccount) GetCode() *string {
-	if o == nil {
+func (b *BalanceSheetAssetsAccount) GetCode() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Code
+	return b.Code
 }
 
-func (o *BalanceSheetAssetsAccount) GetName() *string {
-	if o == nil {
+func (b *BalanceSheetAssetsAccount) GetName() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Name
+	return b.Name
 }
 
-func (o *BalanceSheetAssetsAccount) GetValue() *float64 {
-	if o == nil {
+func (b *BalanceSheetAssetsAccount) GetValue() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.Value
+	return b.Value
 }
 
-func (o *BalanceSheetAssetsAccount) GetItems() any {
-	if o == nil {
+func (b *BalanceSheetAssetsAccount) GetItems() any {
+	if b == nil {
 		return nil
 	}
-	return o.Items
+	return b.Items
 }
 
 // BalanceSheetLiabilitiesAccount - A balance sheet liabilities account represents the financial position of a company at a specific point in time.
@@ -70,39 +70,39 @@ type BalanceSheetLiabilitiesAccount struct {
 	Items any `json:"items,omitempty"`
 }
 
-func (o *BalanceSheetLiabilitiesAccount) GetAccountID() *string {
-	if o == nil {
+func (b *BalanceSheetLiabilitiesAccount) GetAccountID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.AccountID
+	return b.AccountID
 }
 
-func (o *BalanceSheetLiabilitiesAccount) GetCode() *string {
-	if o == nil {
+func (b *BalanceSheetLiabilitiesAccount) GetCode() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Code
+	return b.Code
 }
 
-func (o *BalanceSheetLiabilitiesAccount) GetName() *string {
-	if o == nil {
+func (b *BalanceSheetLiabilitiesAccount) GetName() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Name
+	return b.Name
 }
 
-func (o *BalanceSheetLiabilitiesAccount) GetValue() *float64 {
-	if o == nil {
+func (b *BalanceSheetLiabilitiesAccount) GetValue() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.Value
+	return b.Value
 }
 
-func (o *BalanceSheetLiabilitiesAccount) GetItems() any {
-	if o == nil {
+func (b *BalanceSheetLiabilitiesAccount) GetItems() any {
+	if b == nil {
 		return nil
 	}
-	return o.Items
+	return b.Items
 }
 
 // BalanceSheetEquityAccount - A balance sheet equity account represents the financial position of a company at a specific point in time.
@@ -119,39 +119,39 @@ type BalanceSheetEquityAccount struct {
 	Items any `json:"items,omitempty"`
 }
 
-func (o *BalanceSheetEquityAccount) GetAccountID() *string {
-	if o == nil {
+func (b *BalanceSheetEquityAccount) GetAccountID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.AccountID
+	return b.AccountID
 }
 
-func (o *BalanceSheetEquityAccount) GetCode() *string {
-	if o == nil {
+func (b *BalanceSheetEquityAccount) GetCode() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Code
+	return b.Code
 }
 
-func (o *BalanceSheetEquityAccount) GetName() *string {
-	if o == nil {
+func (b *BalanceSheetEquityAccount) GetName() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Name
+	return b.Name
 }
 
-func (o *BalanceSheetEquityAccount) GetValue() *float64 {
-	if o == nil {
+func (b *BalanceSheetEquityAccount) GetValue() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.Value
+	return b.Value
 }
 
-func (o *BalanceSheetEquityAccount) GetItems() any {
-	if o == nil {
+func (b *BalanceSheetEquityAccount) GetItems() any {
+	if b == nil {
 		return nil
 	}
-	return o.Items
+	return b.Items
 }
 
 // BalanceSheetUncategorizedItemsAccount - A balance sheet uncategorized items account represents the financial position of a company at a specific point in time.
@@ -168,39 +168,39 @@ type BalanceSheetUncategorizedItemsAccount struct {
 	Items any `json:"items,omitempty"`
 }
 
-func (o *BalanceSheetUncategorizedItemsAccount) GetAccountID() *string {
-	if o == nil {
+func (b *BalanceSheetUncategorizedItemsAccount) GetAccountID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.AccountID
+	return b.AccountID
 }
 
-func (o *BalanceSheetUncategorizedItemsAccount) GetCode() *string {
-	if o == nil {
+func (b *BalanceSheetUncategorizedItemsAccount) GetCode() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Code
+	return b.Code
 }
 
-func (o *BalanceSheetUncategorizedItemsAccount) GetName() *string {
-	if o == nil {
+func (b *BalanceSheetUncategorizedItemsAccount) GetName() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Name
+	return b.Name
 }
 
-func (o *BalanceSheetUncategorizedItemsAccount) GetValue() *float64 {
-	if o == nil {
+func (b *BalanceSheetUncategorizedItemsAccount) GetValue() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.Value
+	return b.Value
 }
 
-func (o *BalanceSheetUncategorizedItemsAccount) GetItems() any {
-	if o == nil {
+func (b *BalanceSheetUncategorizedItemsAccount) GetItems() any {
+	if b == nil {
 		return nil
 	}
-	return o.Items
+	return b.Items
 }
 
 type Reports struct {
@@ -247,118 +247,118 @@ func (r *Reports) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Reports) GetID() *string {
-	if o == nil {
+func (r *Reports) GetID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.ID
+	return r.ID
 }
 
-func (o *Reports) GetReportName() *string {
-	if o == nil {
+func (r *Reports) GetReportName() *string {
+	if r == nil {
 		return nil
 	}
-	return o.ReportName
+	return r.ReportName
 }
 
-func (o *Reports) GetStartDate() *string {
-	if o == nil {
+func (r *Reports) GetStartDate() *string {
+	if r == nil {
 		return nil
 	}
-	return o.StartDate
+	return r.StartDate
 }
 
-func (o *Reports) GetEndDate() string {
-	if o == nil {
+func (r *Reports) GetEndDate() string {
+	if r == nil {
 		return ""
 	}
-	return o.EndDate
+	return r.EndDate
 }
 
-func (o *Reports) GetCurrency() *Currency {
-	if o == nil {
+func (r *Reports) GetCurrency() *Currency {
+	if r == nil {
 		return nil
 	}
-	return o.Currency
+	return r.Currency
 }
 
-func (o *Reports) GetAssets() BalanceSheetAssetsAccount {
-	if o == nil {
+func (r *Reports) GetAssets() BalanceSheetAssetsAccount {
+	if r == nil {
 		return BalanceSheetAssetsAccount{}
 	}
-	return o.Assets
+	return r.Assets
 }
 
-func (o *Reports) GetLiabilities() BalanceSheetLiabilitiesAccount {
-	if o == nil {
+func (r *Reports) GetLiabilities() BalanceSheetLiabilitiesAccount {
+	if r == nil {
 		return BalanceSheetLiabilitiesAccount{}
 	}
-	return o.Liabilities
+	return r.Liabilities
 }
 
-func (o *Reports) GetEquity() BalanceSheetEquityAccount {
-	if o == nil {
+func (r *Reports) GetEquity() BalanceSheetEquityAccount {
+	if r == nil {
 		return BalanceSheetEquityAccount{}
 	}
-	return o.Equity
+	return r.Equity
 }
 
-func (o *Reports) GetNetAssets() *float64 {
-	if o == nil {
+func (r *Reports) GetNetAssets() *float64 {
+	if r == nil {
 		return nil
 	}
-	return o.NetAssets
+	return r.NetAssets
 }
 
-func (o *Reports) GetCustomMappings() map[string]any {
-	if o == nil {
+func (r *Reports) GetCustomMappings() map[string]any {
+	if r == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return r.CustomMappings
 }
 
-func (o *Reports) GetUpdatedBy() *string {
-	if o == nil {
+func (r *Reports) GetUpdatedBy() *string {
+	if r == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return r.UpdatedBy
 }
 
-func (o *Reports) GetCreatedBy() *string {
-	if o == nil {
+func (r *Reports) GetCreatedBy() *string {
+	if r == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return r.CreatedBy
 }
 
-func (o *Reports) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (r *Reports) GetUpdatedAt() *time.Time {
+	if r == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return r.UpdatedAt
 }
 
-func (o *Reports) GetCreatedAt() *time.Time {
-	if o == nil {
+func (r *Reports) GetCreatedAt() *time.Time {
+	if r == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return r.CreatedAt
 }
 
-func (o *Reports) GetUncategorizedItems() *BalanceSheetUncategorizedItemsAccount {
-	if o == nil {
+func (r *Reports) GetUncategorizedItems() *BalanceSheetUncategorizedItemsAccount {
+	if r == nil {
 		return nil
 	}
-	return o.UncategorizedItems
+	return r.UncategorizedItems
 }
 
 type BalanceSheet struct {
 	Reports []Reports `json:"reports"`
 }
 
-func (o *BalanceSheet) GetReports() []Reports {
-	if o == nil {
+func (b *BalanceSheet) GetReports() []Reports {
+	if b == nil {
 		return []Reports{}
 	}
-	return o.Reports
+	return b.Reports
 }

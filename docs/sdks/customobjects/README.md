@@ -39,11 +39,11 @@ func main() {
     )
 
     res, err := s.Crm.CustomObjects.List(ctx, operations.CrmCustomObjectsAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
         ObjectID: "<id>",
     })
     if err != nil {
@@ -119,22 +119,22 @@ func main() {
     )
 
     res, err := s.Crm.CustomObjects.Create(ctx, operations.CrmCustomObjectsAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         ObjectID: "<id>",
         CustomObject: components.CustomObjectInput{
-            Name: sdkgo.String("project"),
+            Name: sdkgo.Pointer("project"),
             Fields: []components.CustomObjectFields{
                 components.CustomObjectFields{
-                    Name: sdkgo.String("name"),
-                    Value: sdkgo.String("string"),
+                    Name: sdkgo.Pointer("name"),
+                    Value: sdkgo.Pointer("string"),
                 },
                 components.CustomObjectFields{
-                    Name: sdkgo.String("name"),
-                    Value: sdkgo.String("string"),
+                    Name: sdkgo.Pointer("name"),
+                    Value: sdkgo.Pointer("string"),
                 },
                 components.CustomObjectFields{
-                    Name: sdkgo.String("name"),
-                    Value: sdkgo.String("string"),
+                    Name: sdkgo.Pointer("name"),
+                    Value: sdkgo.Pointer("string"),
                 },
             },
             PassThrough: []components.PassThroughBody{
@@ -241,7 +241,7 @@ func main() {
 
     res, err := s.Crm.CustomObjects.Get(ctx, operations.CrmCustomObjectsOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         ObjectID: "<id>",
     })
     if err != nil {
@@ -307,17 +307,17 @@ func main() {
     res, err := s.Crm.CustomObjects.Update(ctx, operations.CrmCustomObjectsUpdateRequest{
         ID: "<id>",
         ObjectID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         CustomObject: components.CustomObjectInput{
-            Name: sdkgo.String("project"),
+            Name: sdkgo.Pointer("project"),
             Fields: []components.CustomObjectFields{
                 components.CustomObjectFields{
-                    Name: sdkgo.String("name"),
-                    Value: sdkgo.String("string"),
+                    Name: sdkgo.Pointer("name"),
+                    Value: sdkgo.Pointer("string"),
                 },
                 components.CustomObjectFields{
-                    Name: sdkgo.String("name"),
-                    Value: sdkgo.String("string"),
+                    Name: sdkgo.Pointer("name"),
+                    Value: sdkgo.Pointer("string"),
                 },
             },
             PassThrough: []components.PassThroughBody{
@@ -406,7 +406,7 @@ func main() {
 
     res, err := s.Crm.CustomObjects.Delete(ctx, operations.CrmCustomObjectsDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         ObjectID: "<id>",
     })
     if err != nil {

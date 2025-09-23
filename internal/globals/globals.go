@@ -9,16 +9,16 @@ type Globals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *Globals) GetConsumerID() *string {
-	if o == nil {
+func (g *Globals) GetConsumerID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return g.ConsumerID
 }
 
-func (o *Globals) GetAppID() *string {
-	if o == nil {
+func (g *Globals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }

@@ -14,18 +14,18 @@ type FileStorageFilesSearchGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *FileStorageFilesSearchGlobals) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageFilesSearchGlobals) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageFilesSearchGlobals) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageFilesSearchGlobals) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
 type FileStorageFilesSearchRequest struct {
@@ -61,74 +61,74 @@ func (f *FileStorageFilesSearchRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FileStorageFilesSearchRequest) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageFilesSearchRequest) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageFilesSearchRequest) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageFilesSearchRequest) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
-func (o *FileStorageFilesSearchRequest) GetServiceID() *string {
-	if o == nil {
+func (f *FileStorageFilesSearchRequest) GetServiceID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ServiceID
+	return f.ServiceID
 }
 
-func (o *FileStorageFilesSearchRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (f *FileStorageFilesSearchRequest) GetPassThrough() map[string]any {
+	if f == nil {
 		return nil
 	}
-	return o.PassThrough
+	return f.PassThrough
 }
 
-func (o *FileStorageFilesSearchRequest) GetFields() *string {
-	if o == nil {
+func (f *FileStorageFilesSearchRequest) GetFields() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Fields
+	return f.Fields
 }
 
-func (o *FileStorageFilesSearchRequest) GetCursor() *string {
-	if o == nil {
+func (f *FileStorageFilesSearchRequest) GetCursor() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Cursor
+	return f.Cursor
 }
 
-func (o *FileStorageFilesSearchRequest) GetLimit() *int64 {
-	if o == nil {
+func (f *FileStorageFilesSearchRequest) GetLimit() *int64 {
+	if f == nil {
 		return nil
 	}
-	return o.Limit
+	return f.Limit
 }
 
-func (o *FileStorageFilesSearchRequest) GetRaw() *bool {
-	if o == nil {
+func (f *FileStorageFilesSearchRequest) GetRaw() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Raw
+	return f.Raw
 }
 
-func (o *FileStorageFilesSearchRequest) GetFilter() *components.FilesFilter {
-	if o == nil {
+func (f *FileStorageFilesSearchRequest) GetFilter() *components.FilesFilter {
+	if f == nil {
 		return nil
 	}
-	return o.Filter
+	return f.Filter
 }
 
-func (o *FileStorageFilesSearchRequest) GetFilesSearch() components.FilesSearch {
-	if o == nil {
+func (f *FileStorageFilesSearchRequest) GetFilesSearch() components.FilesSearch {
+	if f == nil {
 		return components.FilesSearch{}
 	}
-	return o.FilesSearch
+	return f.FilesSearch
 }
 
 type FileStorageFilesSearchResponse struct {
@@ -139,23 +139,23 @@ type FileStorageFilesSearchResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *FileStorageFilesSearchResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (f *FileStorageFilesSearchResponse) GetHTTPMeta() components.HTTPMetadata {
+	if f == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return f.HTTPMeta
 }
 
-func (o *FileStorageFilesSearchResponse) GetGetFilesResponse() *components.GetFilesResponse {
-	if o == nil {
+func (f *FileStorageFilesSearchResponse) GetGetFilesResponse() *components.GetFilesResponse {
+	if f == nil {
 		return nil
 	}
-	return o.GetFilesResponse
+	return f.GetFilesResponse
 }
 
-func (o *FileStorageFilesSearchResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (f *FileStorageFilesSearchResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return f.UnexpectedErrorResponse
 }

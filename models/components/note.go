@@ -37,114 +37,114 @@ type Note struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *Note) GetID() *string {
-	if o == nil {
+func (n *Note) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *Note) GetTitle() *string {
-	if o == nil {
+func (n *Note) GetTitle() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Title
+	return n.Title
 }
 
-func (o *Note) GetContent() *string {
-	if o == nil {
+func (n *Note) GetContent() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Content
+	return n.Content
 }
 
-func (o *Note) GetOwnerID() *string {
-	if o == nil {
+func (n *Note) GetOwnerID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.OwnerID
+	return n.OwnerID
 }
 
-func (o *Note) GetContactID() *string {
-	if o == nil {
+func (n *Note) GetContactID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ContactID
+	return n.ContactID
 }
 
-func (o *Note) GetCompanyID() *string {
-	if o == nil {
+func (n *Note) GetCompanyID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.CompanyID
+	return n.CompanyID
 }
 
-func (o *Note) GetOpportunityID() *string {
-	if o == nil {
+func (n *Note) GetOpportunityID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.OpportunityID
+	return n.OpportunityID
 }
 
-func (o *Note) GetActivityID() *string {
-	if o == nil {
+func (n *Note) GetActivityID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ActivityID
+	return n.ActivityID
 }
 
-func (o *Note) GetLeadID() *string {
-	if o == nil {
+func (n *Note) GetLeadID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.LeadID
+	return n.LeadID
 }
 
-func (o *Note) GetActive() *bool {
-	if o == nil {
+func (n *Note) GetActive() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Active
+	return n.Active
 }
 
-func (o *Note) GetCustomMappings() map[string]any {
-	if o == nil {
+func (n *Note) GetCustomMappings() map[string]any {
+	if n == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return n.CustomMappings
 }
 
-func (o *Note) GetUpdatedBy() *string {
-	if o == nil {
+func (n *Note) GetUpdatedBy() *string {
+	if n == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return n.UpdatedBy
 }
 
-func (o *Note) GetCreatedBy() *string {
-	if o == nil {
+func (n *Note) GetCreatedBy() *string {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return n.CreatedBy
 }
 
-func (o *Note) GetUpdatedAt() *string {
-	if o == nil {
+func (n *Note) GetUpdatedAt() *string {
+	if n == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return n.UpdatedAt
 }
 
-func (o *Note) GetCreatedAt() *string {
-	if o == nil {
+func (n *Note) GetCreatedAt() *string {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return n.CreatedAt
 }
 
-func (o *Note) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (n *Note) GetPassThrough() []PassThroughBody {
+	if n == nil {
 		return nil
 	}
-	return o.PassThrough
+	return n.PassThrough
 }

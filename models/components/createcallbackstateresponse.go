@@ -7,11 +7,11 @@ type CreateCallbackStateResponseData struct {
 	State *string `json:"state,omitempty"`
 }
 
-func (o *CreateCallbackStateResponseData) GetState() *string {
-	if o == nil {
+func (c *CreateCallbackStateResponseData) GetState() *string {
+	if c == nil {
 		return nil
 	}
-	return o.State
+	return c.State
 }
 
 // CreateCallbackStateResponse - Callback state created
@@ -25,30 +25,30 @@ type CreateCallbackStateResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *CreateCallbackStateResponse) GetStatusCode() int64 {
-	if o == nil {
+func (c *CreateCallbackStateResponse) GetStatusCode() int64 {
+	if c == nil {
 		return 0
 	}
-	return o.StatusCode
+	return c.StatusCode
 }
 
-func (o *CreateCallbackStateResponse) GetStatus() string {
-	if o == nil {
+func (c *CreateCallbackStateResponse) GetStatus() string {
+	if c == nil {
 		return ""
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CreateCallbackStateResponse) GetData() CreateCallbackStateResponseData {
-	if o == nil {
+func (c *CreateCallbackStateResponse) GetData() CreateCallbackStateResponseData {
+	if c == nil {
 		return CreateCallbackStateResponseData{}
 	}
-	return o.Data
+	return c.Data
 }
 
-func (o *CreateCallbackStateResponse) GetRaw() map[string]any {
-	if o == nil {
+func (c *CreateCallbackStateResponse) GetRaw() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }

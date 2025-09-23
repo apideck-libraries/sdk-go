@@ -106,7 +106,7 @@ func main() {
         UnifiedAPI: "crm",
         Resource: "leads",
         Connection: components.ConnectionInput{
-            Enabled: sdkgo.Bool(true),
+            Enabled: sdkgo.Pointer(true),
             Settings: map[string]any{
                 "instance_url": "https://eu28.salesforce.com",
                 "api_key": "12345xxxxxx",
@@ -120,10 +120,10 @@ func main() {
             },
             Configuration: []components.ConnectionConfiguration{
                 components.ConnectionConfiguration{
-                    Resource: sdkgo.String("leads"),
+                    Resource: sdkgo.Pointer("leads"),
                     Defaults: []components.ConnectionDefaults{
                         components.ConnectionDefaults{
-                            ID: sdkgo.String("ProductInterest"),
+                            ID: sdkgo.Pointer("ProductInterest"),
                             Options: []components.FormFieldOption{
                                 components.CreateFormFieldOptionSimple(
                                     components.SimpleFormFieldOption{
@@ -137,7 +137,7 @@ func main() {
                             )),
                         },
                         components.ConnectionDefaults{
-                            ID: sdkgo.String("ProductInterest"),
+                            ID: sdkgo.Pointer("ProductInterest"),
                             Options: []components.FormFieldOption{
                                 components.CreateFormFieldOptionSimple(
                                     components.SimpleFormFieldOption{
@@ -151,7 +151,7 @@ func main() {
                             )),
                         },
                         components.ConnectionDefaults{
-                            ID: sdkgo.String("ProductInterest"),
+                            ID: sdkgo.Pointer("ProductInterest"),
                             Options: []components.FormFieldOption{
                                 components.CreateFormFieldOptionSimple(
                                     components.SimpleFormFieldOption{
@@ -167,10 +167,10 @@ func main() {
                     },
                 },
                 components.ConnectionConfiguration{
-                    Resource: sdkgo.String("leads"),
+                    Resource: sdkgo.Pointer("leads"),
                     Defaults: []components.ConnectionDefaults{
                         components.ConnectionDefaults{
-                            ID: sdkgo.String("ProductInterest"),
+                            ID: sdkgo.Pointer("ProductInterest"),
                             Options: []components.FormFieldOption{
                                 components.CreateFormFieldOptionSimple(
                                     components.SimpleFormFieldOption{
@@ -184,7 +184,7 @@ func main() {
                             )),
                         },
                         components.ConnectionDefaults{
-                            ID: sdkgo.String("ProductInterest"),
+                            ID: sdkgo.Pointer("ProductInterest"),
                             Options: []components.FormFieldOption{
                                 components.CreateFormFieldOptionSimple(
                                     components.SimpleFormFieldOption{
@@ -198,7 +198,7 @@ func main() {
                             )),
                         },
                         components.ConnectionDefaults{
-                            ID: sdkgo.String("ProductInterest"),
+                            ID: sdkgo.Pointer("ProductInterest"),
                             Options: []components.FormFieldOption{
                                 components.CreateFormFieldOptionSimple(
                                     components.SimpleFormFieldOption{
@@ -216,10 +216,10 @@ func main() {
             },
             CustomMappings: []components.CustomMappingInput{
                 components.CustomMappingInput{
-                    Value: sdkgo.String("$.root.training.first_aid"),
+                    Value: sdkgo.Pointer("$.root.training.first_aid"),
                 },
                 components.CustomMappingInput{
-                    Value: sdkgo.String("$.root.training.first_aid"),
+                    Value: sdkgo.Pointer("$.root.training.first_aid"),
                 },
             },
         },

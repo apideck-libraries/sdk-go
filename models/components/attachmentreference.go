@@ -8,16 +8,16 @@ type AttachmentReference struct {
 	ID *string `json:"id,omitempty"`
 }
 
-func (o *AttachmentReference) GetType() *AttachmentReferenceType {
-	if o == nil {
+func (a *AttachmentReference) GetType() *AttachmentReferenceType {
+	if a == nil {
 		return nil
 	}
-	return o.Type
+	return a.Type
 }
 
-func (o *AttachmentReference) GetID() *string {
-	if o == nil {
+func (a *AttachmentReference) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }

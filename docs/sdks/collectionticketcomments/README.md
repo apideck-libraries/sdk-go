@@ -40,7 +40,7 @@ func main() {
     )
 
     res, err := s.IssueTracking.CollectionTicketComments.List(ctx, operations.IssueTrackingCollectionTicketCommentsAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         CollectionID: "apideck-io",
         TicketID: "<id>",
         Sort: &components.CommentsSort{
@@ -50,7 +50,7 @@ func main() {
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -125,11 +125,11 @@ func main() {
     )
 
     res, err := s.IssueTracking.CollectionTicketComments.Create(ctx, operations.IssueTrackingCollectionTicketCommentsAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         CollectionID: "apideck-io",
         TicketID: "<id>",
         CollectionTicketComment: components.CollectionTicketCommentInput{
-            Body: sdkgo.String("What internet provider do you use?"),
+            Body: sdkgo.Pointer("What internet provider do you use?"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -253,10 +253,10 @@ func main() {
 
     res, err := s.IssueTracking.CollectionTicketComments.Get(ctx, operations.IssueTrackingCollectionTicketCommentsOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         CollectionID: "apideck-io",
         TicketID: "<id>",
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -332,11 +332,11 @@ func main() {
 
     res, err := s.IssueTracking.CollectionTicketComments.Update(ctx, operations.IssueTrackingCollectionTicketCommentsUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         CollectionID: "apideck-io",
         TicketID: "<id>",
         CollectionTicketComment: components.CollectionTicketCommentInput{
-            Body: sdkgo.String("What internet provider do you use?"),
+            Body: sdkgo.Pointer("What internet provider do you use?"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -423,7 +423,7 @@ func main() {
 
     res, err := s.IssueTracking.CollectionTicketComments.Delete(ctx, operations.IssueTrackingCollectionTicketCommentsDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         CollectionID: "apideck-io",
         TicketID: "<id>",
     })

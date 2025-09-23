@@ -12,23 +12,23 @@ type Links struct {
 	Next *string `json:"next,omitempty"`
 }
 
-func (o *Links) GetPrevious() *string {
-	if o == nil {
+func (l *Links) GetPrevious() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Previous
+	return l.Previous
 }
 
-func (o *Links) GetCurrent() *string {
-	if o == nil {
+func (l *Links) GetCurrent() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Current
+	return l.Current
 }
 
-func (o *Links) GetNext() *string {
-	if o == nil {
+func (l *Links) GetNext() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Next
+	return l.Next
 }

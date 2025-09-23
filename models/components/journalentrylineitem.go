@@ -65,109 +65,109 @@ type JournalEntryLineItem struct {
 	LineNumber *int64 `json:"line_number,omitempty"`
 }
 
-func (o *JournalEntryLineItem) GetID() *string {
-	if o == nil {
+func (j *JournalEntryLineItem) GetID() *string {
+	if j == nil {
 		return nil
 	}
-	return o.ID
+	return j.ID
 }
 
-func (o *JournalEntryLineItem) GetDescription() *string {
-	if o == nil {
+func (j *JournalEntryLineItem) GetDescription() *string {
+	if j == nil {
 		return nil
 	}
-	return o.Description
+	return j.Description
 }
 
-func (o *JournalEntryLineItem) GetTaxAmount() *float64 {
-	if o == nil {
+func (j *JournalEntryLineItem) GetTaxAmount() *float64 {
+	if j == nil {
 		return nil
 	}
-	return o.TaxAmount
+	return j.TaxAmount
 }
 
-func (o *JournalEntryLineItem) GetSubTotal() *float64 {
-	if o == nil {
+func (j *JournalEntryLineItem) GetSubTotal() *float64 {
+	if j == nil {
 		return nil
 	}
-	return o.SubTotal
+	return j.SubTotal
 }
 
-func (o *JournalEntryLineItem) GetTotalAmount() *float64 {
-	if o == nil {
+func (j *JournalEntryLineItem) GetTotalAmount() *float64 {
+	if j == nil {
 		return nil
 	}
-	return o.TotalAmount
+	return j.TotalAmount
 }
 
-func (o *JournalEntryLineItem) GetType() JournalEntryLineItemType {
-	if o == nil {
+func (j *JournalEntryLineItem) GetType() JournalEntryLineItemType {
+	if j == nil {
 		return JournalEntryLineItemType("")
 	}
-	return o.Type
+	return j.Type
 }
 
-func (o *JournalEntryLineItem) GetTaxRate() *LinkedTaxRate {
-	if o == nil {
+func (j *JournalEntryLineItem) GetTaxRate() *LinkedTaxRate {
+	if j == nil {
 		return nil
 	}
-	return o.TaxRate
+	return j.TaxRate
 }
 
-func (o *JournalEntryLineItem) GetTrackingCategory() *DeprecatedLinkedTrackingCategory {
-	if o == nil {
+func (j *JournalEntryLineItem) GetTrackingCategory() *DeprecatedLinkedTrackingCategory {
+	if j == nil {
 		return nil
 	}
-	return o.TrackingCategory
+	return j.TrackingCategory
 }
 
-func (o *JournalEntryLineItem) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (j *JournalEntryLineItem) GetTrackingCategories() []*LinkedTrackingCategory {
+	if j == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return j.TrackingCategories
 }
 
-func (o *JournalEntryLineItem) GetLedgerAccount() *LinkedLedgerAccount {
-	if o == nil {
+func (j *JournalEntryLineItem) GetLedgerAccount() *LinkedLedgerAccount {
+	if j == nil {
 		return nil
 	}
-	return o.LedgerAccount
+	return j.LedgerAccount
 }
 
-func (o *JournalEntryLineItem) GetCustomer() *LinkedCustomer {
-	if o == nil {
+func (j *JournalEntryLineItem) GetCustomer() *LinkedCustomer {
+	if j == nil {
 		return nil
 	}
-	return o.Customer
+	return j.Customer
 }
 
-func (o *JournalEntryLineItem) GetSupplier() *LinkedSupplier {
-	if o == nil {
+func (j *JournalEntryLineItem) GetSupplier() *LinkedSupplier {
+	if j == nil {
 		return nil
 	}
-	return o.Supplier
+	return j.Supplier
 }
 
-func (o *JournalEntryLineItem) GetDepartmentID() *string {
-	if o == nil {
+func (j *JournalEntryLineItem) GetDepartmentID() *string {
+	if j == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return j.DepartmentID
 }
 
-func (o *JournalEntryLineItem) GetLocationID() *string {
-	if o == nil {
+func (j *JournalEntryLineItem) GetLocationID() *string {
+	if j == nil {
 		return nil
 	}
-	return o.LocationID
+	return j.LocationID
 }
 
-func (o *JournalEntryLineItem) GetLineNumber() *int64 {
-	if o == nil {
+func (j *JournalEntryLineItem) GetLineNumber() *int64 {
+	if j == nil {
 		return nil
 	}
-	return o.LineNumber
+	return j.LineNumber
 }
 
 type JournalEntryLineItemInput struct {
@@ -199,100 +199,100 @@ type JournalEntryLineItemInput struct {
 	LineNumber *int64 `json:"line_number,omitempty"`
 }
 
-func (o *JournalEntryLineItemInput) GetDescription() *string {
-	if o == nil {
+func (j *JournalEntryLineItemInput) GetDescription() *string {
+	if j == nil {
 		return nil
 	}
-	return o.Description
+	return j.Description
 }
 
-func (o *JournalEntryLineItemInput) GetTaxAmount() *float64 {
-	if o == nil {
+func (j *JournalEntryLineItemInput) GetTaxAmount() *float64 {
+	if j == nil {
 		return nil
 	}
-	return o.TaxAmount
+	return j.TaxAmount
 }
 
-func (o *JournalEntryLineItemInput) GetSubTotal() *float64 {
-	if o == nil {
+func (j *JournalEntryLineItemInput) GetSubTotal() *float64 {
+	if j == nil {
 		return nil
 	}
-	return o.SubTotal
+	return j.SubTotal
 }
 
-func (o *JournalEntryLineItemInput) GetTotalAmount() *float64 {
-	if o == nil {
+func (j *JournalEntryLineItemInput) GetTotalAmount() *float64 {
+	if j == nil {
 		return nil
 	}
-	return o.TotalAmount
+	return j.TotalAmount
 }
 
-func (o *JournalEntryLineItemInput) GetType() JournalEntryLineItemType {
-	if o == nil {
+func (j *JournalEntryLineItemInput) GetType() JournalEntryLineItemType {
+	if j == nil {
 		return JournalEntryLineItemType("")
 	}
-	return o.Type
+	return j.Type
 }
 
-func (o *JournalEntryLineItemInput) GetTaxRate() *LinkedTaxRateInput {
-	if o == nil {
+func (j *JournalEntryLineItemInput) GetTaxRate() *LinkedTaxRateInput {
+	if j == nil {
 		return nil
 	}
-	return o.TaxRate
+	return j.TaxRate
 }
 
-func (o *JournalEntryLineItemInput) GetTrackingCategory() *DeprecatedLinkedTrackingCategory {
-	if o == nil {
+func (j *JournalEntryLineItemInput) GetTrackingCategory() *DeprecatedLinkedTrackingCategory {
+	if j == nil {
 		return nil
 	}
-	return o.TrackingCategory
+	return j.TrackingCategory
 }
 
-func (o *JournalEntryLineItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (j *JournalEntryLineItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
+	if j == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return j.TrackingCategories
 }
 
-func (o *JournalEntryLineItemInput) GetLedgerAccount() *LinkedLedgerAccountInput {
-	if o == nil {
+func (j *JournalEntryLineItemInput) GetLedgerAccount() *LinkedLedgerAccountInput {
+	if j == nil {
 		return nil
 	}
-	return o.LedgerAccount
+	return j.LedgerAccount
 }
 
-func (o *JournalEntryLineItemInput) GetCustomer() *LinkedCustomerInput {
-	if o == nil {
+func (j *JournalEntryLineItemInput) GetCustomer() *LinkedCustomerInput {
+	if j == nil {
 		return nil
 	}
-	return o.Customer
+	return j.Customer
 }
 
-func (o *JournalEntryLineItemInput) GetSupplier() *LinkedSupplierInput {
-	if o == nil {
+func (j *JournalEntryLineItemInput) GetSupplier() *LinkedSupplierInput {
+	if j == nil {
 		return nil
 	}
-	return o.Supplier
+	return j.Supplier
 }
 
-func (o *JournalEntryLineItemInput) GetDepartmentID() *string {
-	if o == nil {
+func (j *JournalEntryLineItemInput) GetDepartmentID() *string {
+	if j == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return j.DepartmentID
 }
 
-func (o *JournalEntryLineItemInput) GetLocationID() *string {
-	if o == nil {
+func (j *JournalEntryLineItemInput) GetLocationID() *string {
+	if j == nil {
 		return nil
 	}
-	return o.LocationID
+	return j.LocationID
 }
 
-func (o *JournalEntryLineItemInput) GetLineNumber() *int64 {
-	if o == nil {
+func (j *JournalEntryLineItemInput) GetLineNumber() *int64 {
+	if j == nil {
 		return nil
 	}
-	return o.LineNumber
+	return j.LineNumber
 }

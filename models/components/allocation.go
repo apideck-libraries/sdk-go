@@ -67,39 +67,39 @@ type Allocation struct {
 	AllocationID *string `json:"allocation_id,omitempty"`
 }
 
-func (o *Allocation) GetID() *string {
-	if o == nil {
+func (a *Allocation) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *Allocation) GetType() *AllocationType {
-	if o == nil {
+func (a *Allocation) GetType() *AllocationType {
+	if a == nil {
 		return nil
 	}
-	return o.Type
+	return a.Type
 }
 
-func (o *Allocation) GetCode() *string {
-	if o == nil {
+func (a *Allocation) GetCode() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Code
+	return a.Code
 }
 
-func (o *Allocation) GetAmount() *float64 {
-	if o == nil {
+func (a *Allocation) GetAmount() *float64 {
+	if a == nil {
 		return nil
 	}
-	return o.Amount
+	return a.Amount
 }
 
-func (o *Allocation) GetAllocationID() *string {
-	if o == nil {
+func (a *Allocation) GetAllocationID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AllocationID
+	return a.AllocationID
 }
 
 type AllocationInput struct {
@@ -113,30 +113,30 @@ type AllocationInput struct {
 	AllocationID *string `json:"allocation_id,omitempty"`
 }
 
-func (o *AllocationInput) GetID() *string {
-	if o == nil {
+func (a *AllocationInput) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AllocationInput) GetType() *AllocationType {
-	if o == nil {
+func (a *AllocationInput) GetType() *AllocationType {
+	if a == nil {
 		return nil
 	}
-	return o.Type
+	return a.Type
 }
 
-func (o *AllocationInput) GetAmount() *float64 {
-	if o == nil {
+func (a *AllocationInput) GetAmount() *float64 {
+	if a == nil {
 		return nil
 	}
-	return o.Amount
+	return a.Amount
 }
 
-func (o *AllocationInput) GetAllocationID() *string {
-	if o == nil {
+func (a *AllocationInput) GetAllocationID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AllocationID
+	return a.AllocationID
 }

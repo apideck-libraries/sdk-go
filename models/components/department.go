@@ -41,79 +41,79 @@ func (d *Department) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Department) GetID() *string {
-	if o == nil {
+func (d *Department) GetID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.ID
+	return d.ID
 }
 
-func (o *Department) GetParentID() *string {
-	if o == nil {
+func (d *Department) GetParentID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.ParentID
+	return d.ParentID
 }
 
-func (o *Department) GetName() *string {
-	if o == nil {
+func (d *Department) GetName() *string {
+	if d == nil {
 		return nil
 	}
-	return o.Name
+	return d.Name
 }
 
-func (o *Department) GetCode() *string {
-	if o == nil {
+func (d *Department) GetCode() *string {
+	if d == nil {
 		return nil
 	}
-	return o.Code
+	return d.Code
 }
 
-func (o *Department) GetDescription() *string {
-	if o == nil {
+func (d *Department) GetDescription() *string {
+	if d == nil {
 		return nil
 	}
-	return o.Description
+	return d.Description
 }
 
-func (o *Department) GetCustomMappings() map[string]any {
-	if o == nil {
+func (d *Department) GetCustomMappings() map[string]any {
+	if d == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return d.CustomMappings
 }
 
-func (o *Department) GetUpdatedBy() *string {
-	if o == nil {
+func (d *Department) GetUpdatedBy() *string {
+	if d == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return d.UpdatedBy
 }
 
-func (o *Department) GetCreatedBy() *string {
-	if o == nil {
+func (d *Department) GetCreatedBy() *string {
+	if d == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return d.CreatedBy
 }
 
-func (o *Department) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (d *Department) GetUpdatedAt() *time.Time {
+	if d == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return d.UpdatedAt
 }
 
-func (o *Department) GetCreatedAt() *time.Time {
-	if o == nil {
+func (d *Department) GetCreatedAt() *time.Time {
+	if d == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return d.CreatedAt
 }
 
-func (o *Department) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (d *Department) GetPassThrough() []PassThroughBody {
+	if d == nil {
 		return nil
 	}
-	return o.PassThrough
+	return d.PassThrough
 }

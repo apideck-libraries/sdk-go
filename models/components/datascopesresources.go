@@ -51,18 +51,18 @@ func (d *DataScopesResources1) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *DataScopesResources1) GetRead() *bool {
-	if o == nil {
+func (d *DataScopesResources1) GetRead() *bool {
+	if d == nil {
 		return nil
 	}
-	return o.Read
+	return d.Read
 }
 
-func (o *DataScopesResources1) GetWrite() *bool {
-	if o == nil {
+func (d *DataScopesResources1) GetWrite() *bool {
+	if d == nil {
 		return nil
 	}
-	return o.Write
+	return d.Write
 }
 
 type DataScopesResourcesType string

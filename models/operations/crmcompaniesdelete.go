@@ -14,18 +14,18 @@ type CrmCompaniesDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmCompaniesDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmCompaniesDeleteGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmCompaniesDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmCompaniesDeleteGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmCompaniesDeleteRequest struct {
@@ -52,39 +52,39 @@ func (c *CrmCompaniesDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmCompaniesDeleteRequest) GetID() string {
-	if o == nil {
+func (c *CrmCompaniesDeleteRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CrmCompaniesDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmCompaniesDeleteRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmCompaniesDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmCompaniesDeleteRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmCompaniesDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmCompaniesDeleteRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmCompaniesDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmCompaniesDeleteRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
 type CrmCompaniesDeleteResponse struct {
@@ -95,23 +95,23 @@ type CrmCompaniesDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmCompaniesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmCompaniesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmCompaniesDeleteResponse) GetDeleteCompanyResponse() *components.DeleteCompanyResponse {
-	if o == nil {
+func (c *CrmCompaniesDeleteResponse) GetDeleteCompanyResponse() *components.DeleteCompanyResponse {
+	if c == nil {
 		return nil
 	}
-	return o.DeleteCompanyResponse
+	return c.DeleteCompanyResponse
 }
 
-func (o *CrmCompaniesDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmCompaniesDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

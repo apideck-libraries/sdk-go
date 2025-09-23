@@ -19,51 +19,51 @@ type GetProfitAndLossResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetProfitAndLossResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetProfitAndLossResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetProfitAndLossResponse) GetStatus() string {
-	if o == nil {
+func (g *GetProfitAndLossResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetProfitAndLossResponse) GetService() string {
-	if o == nil {
+func (g *GetProfitAndLossResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetProfitAndLossResponse) GetResource() string {
-	if o == nil {
+func (g *GetProfitAndLossResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetProfitAndLossResponse) GetOperation() string {
-	if o == nil {
+func (g *GetProfitAndLossResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetProfitAndLossResponse) GetData() ProfitAndLoss {
-	if o == nil {
+func (g *GetProfitAndLossResponse) GetData() ProfitAndLoss {
+	if g == nil {
 		return ProfitAndLoss{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetProfitAndLossResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetProfitAndLossResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

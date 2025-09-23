@@ -11,23 +11,23 @@ type LinkedSupplierInput struct {
 	Address     *Address `json:"address,omitempty"`
 }
 
-func (o *LinkedSupplierInput) GetID() *string {
-	if o == nil {
+func (l *LinkedSupplierInput) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinkedSupplierInput) GetDisplayName() *string {
-	if o == nil {
+func (l *LinkedSupplierInput) GetDisplayName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.DisplayName
+	return l.DisplayName
 }
 
-func (o *LinkedSupplierInput) GetAddress() *Address {
-	if o == nil {
+func (l *LinkedSupplierInput) GetAddress() *Address {
+	if l == nil {
 		return nil
 	}
-	return o.Address
+	return l.Address
 }

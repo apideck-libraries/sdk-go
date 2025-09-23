@@ -14,18 +14,18 @@ type AccountingCustomersAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingCustomersAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingCustomersAddGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingCustomersAddGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingCustomersAddGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingCustomersAddRequest struct {
@@ -51,39 +51,39 @@ func (a *AccountingCustomersAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingCustomersAddRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingCustomersAddRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingCustomersAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingCustomersAddRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingCustomersAddRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingCustomersAddRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingCustomersAddRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingCustomersAddRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingCustomersAddRequest) GetCustomer() components.CustomerInput {
-	if o == nil {
+func (a *AccountingCustomersAddRequest) GetCustomer() components.CustomerInput {
+	if a == nil {
 		return components.CustomerInput{}
 	}
-	return o.Customer
+	return a.Customer
 }
 
 type AccountingCustomersAddResponse struct {
@@ -94,23 +94,23 @@ type AccountingCustomersAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingCustomersAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingCustomersAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingCustomersAddResponse) GetCreateCustomerResponse() *components.CreateCustomerResponse {
-	if o == nil {
+func (a *AccountingCustomersAddResponse) GetCreateCustomerResponse() *components.CreateCustomerResponse {
+	if a == nil {
 		return nil
 	}
-	return o.CreateCustomerResponse
+	return a.CreateCustomerResponse
 }
 
-func (o *AccountingCustomersAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingCustomersAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

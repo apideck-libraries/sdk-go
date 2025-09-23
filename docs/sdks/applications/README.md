@@ -39,7 +39,7 @@ func main() {
     )
 
     res, err := s.Ats.Applications.List(ctx, operations.AtsApplicationsAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
@@ -117,14 +117,14 @@ func main() {
     )
 
     res, err := s.Ats.Applications.Create(ctx, operations.AtsApplicationsAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Application: components.ApplicationInput{
-            ApplicantID: sdkgo.String("12345"),
-            JobID: sdkgo.String("12345"),
+            ApplicantID: sdkgo.Pointer("12345"),
+            JobID: sdkgo.Pointer("12345"),
             Status: components.ApplicationStatusOpen.ToPointer(),
             Stage: &components.Stage{
-                ID: sdkgo.String("12345"),
-                Name: sdkgo.String("12345"),
+                ID: sdkgo.Pointer("12345"),
+                Name: sdkgo.Pointer("12345"),
             },
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
@@ -212,7 +212,7 @@ func main() {
 
     res, err := s.Ats.Applications.Get(ctx, operations.AtsApplicationsOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)
@@ -276,14 +276,14 @@ func main() {
 
     res, err := s.Ats.Applications.Update(ctx, operations.AtsApplicationsUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Application: components.ApplicationInput{
-            ApplicantID: sdkgo.String("12345"),
-            JobID: sdkgo.String("12345"),
+            ApplicantID: sdkgo.Pointer("12345"),
+            JobID: sdkgo.Pointer("12345"),
             Status: components.ApplicationStatusOpen.ToPointer(),
             Stage: &components.Stage{
-                ID: sdkgo.String("12345"),
-                Name: sdkgo.String("12345"),
+                ID: sdkgo.Pointer("12345"),
+                Name: sdkgo.Pointer("12345"),
             },
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
@@ -437,7 +437,7 @@ func main() {
 
     res, err := s.Ats.Applications.Delete(ctx, operations.AtsApplicationsDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

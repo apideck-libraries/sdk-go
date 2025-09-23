@@ -14,18 +14,18 @@ type HrisDepartmentsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *HrisDepartmentsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisDepartmentsAllGlobals) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisDepartmentsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (h *HrisDepartmentsAllGlobals) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
 type HrisDepartmentsAllRequest struct {
@@ -58,60 +58,60 @@ func (h *HrisDepartmentsAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *HrisDepartmentsAllRequest) GetRaw() *bool {
-	if o == nil {
+func (h *HrisDepartmentsAllRequest) GetRaw() *bool {
+	if h == nil {
 		return nil
 	}
-	return o.Raw
+	return h.Raw
 }
 
-func (o *HrisDepartmentsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisDepartmentsAllRequest) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisDepartmentsAllRequest) GetAppID() *string {
-	if o == nil {
+func (h *HrisDepartmentsAllRequest) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
-func (o *HrisDepartmentsAllRequest) GetServiceID() *string {
-	if o == nil {
+func (h *HrisDepartmentsAllRequest) GetServiceID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ServiceID
+	return h.ServiceID
 }
 
-func (o *HrisDepartmentsAllRequest) GetCursor() *string {
-	if o == nil {
+func (h *HrisDepartmentsAllRequest) GetCursor() *string {
+	if h == nil {
 		return nil
 	}
-	return o.Cursor
+	return h.Cursor
 }
 
-func (o *HrisDepartmentsAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (h *HrisDepartmentsAllRequest) GetLimit() *int64 {
+	if h == nil {
 		return nil
 	}
-	return o.Limit
+	return h.Limit
 }
 
-func (o *HrisDepartmentsAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (h *HrisDepartmentsAllRequest) GetPassThrough() map[string]any {
+	if h == nil {
 		return nil
 	}
-	return o.PassThrough
+	return h.PassThrough
 }
 
-func (o *HrisDepartmentsAllRequest) GetFields() *string {
-	if o == nil {
+func (h *HrisDepartmentsAllRequest) GetFields() *string {
+	if h == nil {
 		return nil
 	}
-	return o.Fields
+	return h.Fields
 }
 
 type HrisDepartmentsAllResponse struct {
@@ -124,23 +124,23 @@ type HrisDepartmentsAllResponse struct {
 	Next func() (*HrisDepartmentsAllResponse, error)
 }
 
-func (o *HrisDepartmentsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (h *HrisDepartmentsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if h == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return h.HTTPMeta
 }
 
-func (o *HrisDepartmentsAllResponse) GetGetDepartmentsResponse() *components.GetDepartmentsResponse {
-	if o == nil {
+func (h *HrisDepartmentsAllResponse) GetGetDepartmentsResponse() *components.GetDepartmentsResponse {
+	if h == nil {
 		return nil
 	}
-	return o.GetDepartmentsResponse
+	return h.GetDepartmentsResponse
 }
 
-func (o *HrisDepartmentsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (h *HrisDepartmentsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if h == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return h.UnexpectedErrorResponse
 }

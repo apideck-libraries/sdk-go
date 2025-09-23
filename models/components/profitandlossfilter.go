@@ -13,30 +13,30 @@ type ProfitAndLossFilter struct {
 	LocationID *string `queryParam:"name=location_id"`
 }
 
-func (o *ProfitAndLossFilter) GetCustomerID() *string {
-	if o == nil {
+func (p *ProfitAndLossFilter) GetCustomerID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.CustomerID
+	return p.CustomerID
 }
 
-func (o *ProfitAndLossFilter) GetStartDate() *string {
-	if o == nil {
+func (p *ProfitAndLossFilter) GetStartDate() *string {
+	if p == nil {
 		return nil
 	}
-	return o.StartDate
+	return p.StartDate
 }
 
-func (o *ProfitAndLossFilter) GetEndDate() *string {
-	if o == nil {
+func (p *ProfitAndLossFilter) GetEndDate() *string {
+	if p == nil {
 		return nil
 	}
-	return o.EndDate
+	return p.EndDate
 }
 
-func (o *ProfitAndLossFilter) GetLocationID() *string {
-	if o == nil {
+func (p *ProfitAndLossFilter) GetLocationID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.LocationID
+	return p.LocationID
 }

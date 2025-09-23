@@ -12,16 +12,16 @@ type DeprecatedLinkedTrackingCategory struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *DeprecatedLinkedTrackingCategory) GetID() *string {
-	if o == nil {
+func (d *DeprecatedLinkedTrackingCategory) GetID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.ID
+	return d.ID
 }
 
-func (o *DeprecatedLinkedTrackingCategory) GetName() *string {
-	if o == nil {
+func (d *DeprecatedLinkedTrackingCategory) GetName() *string {
+	if d == nil {
 		return nil
 	}
-	return o.Name
+	return d.Name
 }

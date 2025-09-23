@@ -14,18 +14,18 @@ type HrisTimeOffRequestsAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *HrisTimeOffRequestsAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisTimeOffRequestsAddGlobals) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisTimeOffRequestsAddGlobals) GetAppID() *string {
-	if o == nil {
+func (h *HrisTimeOffRequestsAddGlobals) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
 type HrisTimeOffRequestsAddRequest struct {
@@ -51,39 +51,39 @@ func (h *HrisTimeOffRequestsAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *HrisTimeOffRequestsAddRequest) GetRaw() *bool {
-	if o == nil {
+func (h *HrisTimeOffRequestsAddRequest) GetRaw() *bool {
+	if h == nil {
 		return nil
 	}
-	return o.Raw
+	return h.Raw
 }
 
-func (o *HrisTimeOffRequestsAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisTimeOffRequestsAddRequest) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisTimeOffRequestsAddRequest) GetAppID() *string {
-	if o == nil {
+func (h *HrisTimeOffRequestsAddRequest) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
-func (o *HrisTimeOffRequestsAddRequest) GetServiceID() *string {
-	if o == nil {
+func (h *HrisTimeOffRequestsAddRequest) GetServiceID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ServiceID
+	return h.ServiceID
 }
 
-func (o *HrisTimeOffRequestsAddRequest) GetTimeOffRequest() components.TimeOffRequestInput {
-	if o == nil {
+func (h *HrisTimeOffRequestsAddRequest) GetTimeOffRequest() components.TimeOffRequestInput {
+	if h == nil {
 		return components.TimeOffRequestInput{}
 	}
-	return o.TimeOffRequest
+	return h.TimeOffRequest
 }
 
 type HrisTimeOffRequestsAddResponse struct {
@@ -94,23 +94,23 @@ type HrisTimeOffRequestsAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *HrisTimeOffRequestsAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (h *HrisTimeOffRequestsAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if h == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return h.HTTPMeta
 }
 
-func (o *HrisTimeOffRequestsAddResponse) GetCreateTimeOffRequestResponse() *components.CreateTimeOffRequestResponse {
-	if o == nil {
+func (h *HrisTimeOffRequestsAddResponse) GetCreateTimeOffRequestResponse() *components.CreateTimeOffRequestResponse {
+	if h == nil {
 		return nil
 	}
-	return o.CreateTimeOffRequestResponse
+	return h.CreateTimeOffRequestResponse
 }
 
-func (o *HrisTimeOffRequestsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (h *HrisTimeOffRequestsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if h == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return h.UnexpectedErrorResponse
 }

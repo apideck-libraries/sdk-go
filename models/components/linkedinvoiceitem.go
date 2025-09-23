@@ -11,23 +11,23 @@ type LinkedInvoiceItem struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *LinkedInvoiceItem) GetID() *string {
-	if o == nil {
+func (l *LinkedInvoiceItem) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinkedInvoiceItem) GetCode() *string {
-	if o == nil {
+func (l *LinkedInvoiceItem) GetCode() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Code
+	return l.Code
 }
 
-func (o *LinkedInvoiceItem) GetName() *string {
-	if o == nil {
+func (l *LinkedInvoiceItem) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }

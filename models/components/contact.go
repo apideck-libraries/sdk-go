@@ -160,291 +160,291 @@ func (c *Contact) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Contact) GetID() *string {
-	if o == nil {
+func (c *Contact) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *Contact) GetName() *string {
-	if o == nil {
+func (c *Contact) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *Contact) GetOwnerID() *string {
-	if o == nil {
+func (c *Contact) GetOwnerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.OwnerID
+	return c.OwnerID
 }
 
-func (o *Contact) GetType() *ContactType {
-	if o == nil {
+func (c *Contact) GetType() *ContactType {
+	if c == nil {
 		return nil
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *Contact) GetCompanyID() *string {
-	if o == nil {
+func (c *Contact) GetCompanyID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CompanyID
+	return c.CompanyID
 }
 
-func (o *Contact) GetCompanyName() *string {
-	if o == nil {
+func (c *Contact) GetCompanyName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CompanyName
+	return c.CompanyName
 }
 
-func (o *Contact) GetLeadID() *string {
-	if o == nil {
+func (c *Contact) GetLeadID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.LeadID
+	return c.LeadID
 }
 
-func (o *Contact) GetFirstName() *string {
-	if o == nil {
+func (c *Contact) GetFirstName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.FirstName
+	return c.FirstName
 }
 
-func (o *Contact) GetMiddleName() *string {
-	if o == nil {
+func (c *Contact) GetMiddleName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.MiddleName
+	return c.MiddleName
 }
 
-func (o *Contact) GetLastName() *string {
-	if o == nil {
+func (c *Contact) GetLastName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.LastName
+	return c.LastName
 }
 
-func (o *Contact) GetPrefix() *string {
-	if o == nil {
+func (c *Contact) GetPrefix() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Prefix
+	return c.Prefix
 }
 
-func (o *Contact) GetSuffix() *string {
-	if o == nil {
+func (c *Contact) GetSuffix() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Suffix
+	return c.Suffix
 }
 
-func (o *Contact) GetTitle() *string {
-	if o == nil {
+func (c *Contact) GetTitle() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Title
+	return c.Title
 }
 
-func (o *Contact) GetDepartment() *string {
-	if o == nil {
+func (c *Contact) GetDepartment() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Department
+	return c.Department
 }
 
-func (o *Contact) GetLanguage() *string {
-	if o == nil {
+func (c *Contact) GetLanguage() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Language
+	return c.Language
 }
 
-func (o *Contact) GetGender() *ContactGender {
-	if o == nil {
+func (c *Contact) GetGender() *ContactGender {
+	if c == nil {
 		return nil
 	}
-	return o.Gender
+	return c.Gender
 }
 
-func (o *Contact) GetBirthday() *string {
-	if o == nil {
+func (c *Contact) GetBirthday() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Birthday
+	return c.Birthday
 }
 
-func (o *Contact) GetImage() *string {
-	if o == nil {
+func (c *Contact) GetImage() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Image
+	return c.Image
 }
 
-func (o *Contact) GetPhotoURL() *string {
-	if o == nil {
+func (c *Contact) GetPhotoURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.PhotoURL
+	return c.PhotoURL
 }
 
-func (o *Contact) GetLeadSource() *string {
-	if o == nil {
+func (c *Contact) GetLeadSource() *string {
+	if c == nil {
 		return nil
 	}
-	return o.LeadSource
+	return c.LeadSource
 }
 
-func (o *Contact) GetFax() *string {
-	if o == nil {
+func (c *Contact) GetFax() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Fax
+	return c.Fax
 }
 
-func (o *Contact) GetDescription() *string {
-	if o == nil {
+func (c *Contact) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *Contact) GetCurrentBalance() *float64 {
-	if o == nil {
+func (c *Contact) GetCurrentBalance() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.CurrentBalance
+	return c.CurrentBalance
 }
 
-func (o *Contact) GetStatus() *string {
-	if o == nil {
+func (c *Contact) GetStatus() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *Contact) GetActive() *bool {
-	if o == nil {
+func (c *Contact) GetActive() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Active
+	return c.Active
 }
 
-func (o *Contact) GetWebsites() []Website {
-	if o == nil {
+func (c *Contact) GetWebsites() []Website {
+	if c == nil {
 		return nil
 	}
-	return o.Websites
+	return c.Websites
 }
 
-func (o *Contact) GetAddresses() []Address {
-	if o == nil {
+func (c *Contact) GetAddresses() []Address {
+	if c == nil {
 		return nil
 	}
-	return o.Addresses
+	return c.Addresses
 }
 
-func (o *Contact) GetSocialLinks() []SocialLink {
-	if o == nil {
+func (c *Contact) GetSocialLinks() []SocialLink {
+	if c == nil {
 		return nil
 	}
-	return o.SocialLinks
+	return c.SocialLinks
 }
 
-func (o *Contact) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
+func (c *Contact) GetPhoneNumbers() []PhoneNumber {
+	if c == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return c.PhoneNumbers
 }
 
-func (o *Contact) GetEmails() []Email {
-	if o == nil {
+func (c *Contact) GetEmails() []Email {
+	if c == nil {
 		return nil
 	}
-	return o.Emails
+	return c.Emails
 }
 
-func (o *Contact) GetEmailDomain() *string {
-	if o == nil {
+func (c *Contact) GetEmailDomain() *string {
+	if c == nil {
 		return nil
 	}
-	return o.EmailDomain
+	return c.EmailDomain
 }
 
-func (o *Contact) GetCustomFields() []CustomField {
-	if o == nil {
+func (c *Contact) GetCustomFields() []CustomField {
+	if c == nil {
 		return nil
 	}
-	return o.CustomFields
+	return c.CustomFields
 }
 
-func (o *Contact) GetTags() []string {
-	if o == nil {
+func (c *Contact) GetTags() []string {
+	if c == nil {
 		return nil
 	}
-	return o.Tags
+	return c.Tags
 }
 
-func (o *Contact) GetFirstCallAt() *time.Time {
-	if o == nil {
+func (c *Contact) GetFirstCallAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.FirstCallAt
+	return c.FirstCallAt
 }
 
-func (o *Contact) GetFirstEmailAt() *time.Time {
-	if o == nil {
+func (c *Contact) GetFirstEmailAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.FirstEmailAt
+	return c.FirstEmailAt
 }
 
-func (o *Contact) GetLastActivityAt() *time.Time {
-	if o == nil {
+func (c *Contact) GetLastActivityAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.LastActivityAt
+	return c.LastActivityAt
 }
 
-func (o *Contact) GetCustomMappings() map[string]any {
-	if o == nil {
+func (c *Contact) GetCustomMappings() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return c.CustomMappings
 }
 
-func (o *Contact) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (c *Contact) GetUpdatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return c.UpdatedAt
 }
 
-func (o *Contact) GetCreatedAt() *time.Time {
-	if o == nil {
+func (c *Contact) GetCreatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }
 
-func (o *Contact) GetOpportunityIds() []string {
-	if o == nil {
+func (c *Contact) GetOpportunityIds() []string {
+	if c == nil {
 		return nil
 	}
-	return o.OpportunityIds
+	return c.OpportunityIds
 }
 
-func (o *Contact) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (c *Contact) GetPassThrough() []PassThroughBody {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }
 
 type ContactInput struct {
@@ -510,240 +510,240 @@ type ContactInput struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *ContactInput) GetName() *string {
-	if o == nil {
+func (c *ContactInput) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *ContactInput) GetOwnerID() *string {
-	if o == nil {
+func (c *ContactInput) GetOwnerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.OwnerID
+	return c.OwnerID
 }
 
-func (o *ContactInput) GetType() *ContactType {
-	if o == nil {
+func (c *ContactInput) GetType() *ContactType {
+	if c == nil {
 		return nil
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *ContactInput) GetCompanyID() *string {
-	if o == nil {
+func (c *ContactInput) GetCompanyID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CompanyID
+	return c.CompanyID
 }
 
-func (o *ContactInput) GetCompanyName() *string {
-	if o == nil {
+func (c *ContactInput) GetCompanyName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CompanyName
+	return c.CompanyName
 }
 
-func (o *ContactInput) GetLeadID() *string {
-	if o == nil {
+func (c *ContactInput) GetLeadID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.LeadID
+	return c.LeadID
 }
 
-func (o *ContactInput) GetFirstName() *string {
-	if o == nil {
+func (c *ContactInput) GetFirstName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.FirstName
+	return c.FirstName
 }
 
-func (o *ContactInput) GetMiddleName() *string {
-	if o == nil {
+func (c *ContactInput) GetMiddleName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.MiddleName
+	return c.MiddleName
 }
 
-func (o *ContactInput) GetLastName() *string {
-	if o == nil {
+func (c *ContactInput) GetLastName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.LastName
+	return c.LastName
 }
 
-func (o *ContactInput) GetPrefix() *string {
-	if o == nil {
+func (c *ContactInput) GetPrefix() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Prefix
+	return c.Prefix
 }
 
-func (o *ContactInput) GetSuffix() *string {
-	if o == nil {
+func (c *ContactInput) GetSuffix() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Suffix
+	return c.Suffix
 }
 
-func (o *ContactInput) GetTitle() *string {
-	if o == nil {
+func (c *ContactInput) GetTitle() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Title
+	return c.Title
 }
 
-func (o *ContactInput) GetDepartment() *string {
-	if o == nil {
+func (c *ContactInput) GetDepartment() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Department
+	return c.Department
 }
 
-func (o *ContactInput) GetLanguage() *string {
-	if o == nil {
+func (c *ContactInput) GetLanguage() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Language
+	return c.Language
 }
 
-func (o *ContactInput) GetGender() *ContactGender {
-	if o == nil {
+func (c *ContactInput) GetGender() *ContactGender {
+	if c == nil {
 		return nil
 	}
-	return o.Gender
+	return c.Gender
 }
 
-func (o *ContactInput) GetBirthday() *string {
-	if o == nil {
+func (c *ContactInput) GetBirthday() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Birthday
+	return c.Birthday
 }
 
-func (o *ContactInput) GetImage() *string {
-	if o == nil {
+func (c *ContactInput) GetImage() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Image
+	return c.Image
 }
 
-func (o *ContactInput) GetPhotoURL() *string {
-	if o == nil {
+func (c *ContactInput) GetPhotoURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.PhotoURL
+	return c.PhotoURL
 }
 
-func (o *ContactInput) GetLeadSource() *string {
-	if o == nil {
+func (c *ContactInput) GetLeadSource() *string {
+	if c == nil {
 		return nil
 	}
-	return o.LeadSource
+	return c.LeadSource
 }
 
-func (o *ContactInput) GetFax() *string {
-	if o == nil {
+func (c *ContactInput) GetFax() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Fax
+	return c.Fax
 }
 
-func (o *ContactInput) GetDescription() *string {
-	if o == nil {
+func (c *ContactInput) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *ContactInput) GetCurrentBalance() *float64 {
-	if o == nil {
+func (c *ContactInput) GetCurrentBalance() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.CurrentBalance
+	return c.CurrentBalance
 }
 
-func (o *ContactInput) GetStatus() *string {
-	if o == nil {
+func (c *ContactInput) GetStatus() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *ContactInput) GetActive() *bool {
-	if o == nil {
+func (c *ContactInput) GetActive() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Active
+	return c.Active
 }
 
-func (o *ContactInput) GetWebsites() []Website {
-	if o == nil {
+func (c *ContactInput) GetWebsites() []Website {
+	if c == nil {
 		return nil
 	}
-	return o.Websites
+	return c.Websites
 }
 
-func (o *ContactInput) GetAddresses() []Address {
-	if o == nil {
+func (c *ContactInput) GetAddresses() []Address {
+	if c == nil {
 		return nil
 	}
-	return o.Addresses
+	return c.Addresses
 }
 
-func (o *ContactInput) GetSocialLinks() []SocialLink {
-	if o == nil {
+func (c *ContactInput) GetSocialLinks() []SocialLink {
+	if c == nil {
 		return nil
 	}
-	return o.SocialLinks
+	return c.SocialLinks
 }
 
-func (o *ContactInput) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
+func (c *ContactInput) GetPhoneNumbers() []PhoneNumber {
+	if c == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return c.PhoneNumbers
 }
 
-func (o *ContactInput) GetEmails() []Email {
-	if o == nil {
+func (c *ContactInput) GetEmails() []Email {
+	if c == nil {
 		return nil
 	}
-	return o.Emails
+	return c.Emails
 }
 
-func (o *ContactInput) GetEmailDomain() *string {
-	if o == nil {
+func (c *ContactInput) GetEmailDomain() *string {
+	if c == nil {
 		return nil
 	}
-	return o.EmailDomain
+	return c.EmailDomain
 }
 
-func (o *ContactInput) GetCustomFields() []CustomField {
-	if o == nil {
+func (c *ContactInput) GetCustomFields() []CustomField {
+	if c == nil {
 		return nil
 	}
-	return o.CustomFields
+	return c.CustomFields
 }
 
-func (o *ContactInput) GetTags() []string {
-	if o == nil {
+func (c *ContactInput) GetTags() []string {
+	if c == nil {
 		return nil
 	}
-	return o.Tags
+	return c.Tags
 }
 
-func (o *ContactInput) GetOpportunityIds() []string {
-	if o == nil {
+func (c *ContactInput) GetOpportunityIds() []string {
+	if c == nil {
 		return nil
 	}
-	return o.OpportunityIds
+	return c.OpportunityIds
 }
 
-func (o *ContactInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (c *ContactInput) GetPassThrough() []PassThroughBody {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }

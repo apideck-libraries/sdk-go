@@ -47,177 +47,177 @@ type LeadInput struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *LeadInput) GetName() string {
-	if o == nil {
+func (l *LeadInput) GetName() string {
+	if l == nil {
 		return ""
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *LeadInput) GetCompanyName() *string {
-	if o == nil {
+func (l *LeadInput) GetCompanyName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.CompanyName
+	return l.CompanyName
 }
 
-func (o *LeadInput) GetOwnerID() *string {
-	if o == nil {
+func (l *LeadInput) GetOwnerID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.OwnerID
+	return l.OwnerID
 }
 
-func (o *LeadInput) GetOwnerName() *string {
-	if o == nil {
+func (l *LeadInput) GetOwnerName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.OwnerName
+	return l.OwnerName
 }
 
-func (o *LeadInput) GetCompanyID() *string {
-	if o == nil {
+func (l *LeadInput) GetCompanyID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.CompanyID
+	return l.CompanyID
 }
 
-func (o *LeadInput) GetLeadID() *string {
-	if o == nil {
+func (l *LeadInput) GetLeadID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.LeadID
+	return l.LeadID
 }
 
-func (o *LeadInput) GetLeadSource() *string {
-	if o == nil {
+func (l *LeadInput) GetLeadSource() *string {
+	if l == nil {
 		return nil
 	}
-	return o.LeadSource
+	return l.LeadSource
 }
 
-func (o *LeadInput) GetFirstName() *string {
-	if o == nil {
+func (l *LeadInput) GetFirstName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.FirstName
+	return l.FirstName
 }
 
-func (o *LeadInput) GetLastName() *string {
-	if o == nil {
+func (l *LeadInput) GetLastName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.LastName
+	return l.LastName
 }
 
-func (o *LeadInput) GetDescription() *string {
-	if o == nil {
+func (l *LeadInput) GetDescription() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Description
+	return l.Description
 }
 
-func (o *LeadInput) GetPrefix() *string {
-	if o == nil {
+func (l *LeadInput) GetPrefix() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Prefix
+	return l.Prefix
 }
 
-func (o *LeadInput) GetTitle() *string {
-	if o == nil {
+func (l *LeadInput) GetTitle() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Title
+	return l.Title
 }
 
-func (o *LeadInput) GetLanguage() *string {
-	if o == nil {
+func (l *LeadInput) GetLanguage() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Language
+	return l.Language
 }
 
-func (o *LeadInput) GetStatus() *string {
-	if o == nil {
+func (l *LeadInput) GetStatus() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Status
+	return l.Status
 }
 
-func (o *LeadInput) GetMonetaryAmount() *float64 {
-	if o == nil {
+func (l *LeadInput) GetMonetaryAmount() *float64 {
+	if l == nil {
 		return nil
 	}
-	return o.MonetaryAmount
+	return l.MonetaryAmount
 }
 
-func (o *LeadInput) GetCurrency() *Currency {
-	if o == nil {
+func (l *LeadInput) GetCurrency() *Currency {
+	if l == nil {
 		return nil
 	}
-	return o.Currency
+	return l.Currency
 }
 
-func (o *LeadInput) GetFax() *string {
-	if o == nil {
+func (l *LeadInput) GetFax() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Fax
+	return l.Fax
 }
 
-func (o *LeadInput) GetWebsites() []Website {
-	if o == nil {
+func (l *LeadInput) GetWebsites() []Website {
+	if l == nil {
 		return nil
 	}
-	return o.Websites
+	return l.Websites
 }
 
-func (o *LeadInput) GetAddresses() []Address {
-	if o == nil {
+func (l *LeadInput) GetAddresses() []Address {
+	if l == nil {
 		return nil
 	}
-	return o.Addresses
+	return l.Addresses
 }
 
-func (o *LeadInput) GetSocialLinks() []SocialLink {
-	if o == nil {
+func (l *LeadInput) GetSocialLinks() []SocialLink {
+	if l == nil {
 		return nil
 	}
-	return o.SocialLinks
+	return l.SocialLinks
 }
 
-func (o *LeadInput) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
+func (l *LeadInput) GetPhoneNumbers() []PhoneNumber {
+	if l == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return l.PhoneNumbers
 }
 
-func (o *LeadInput) GetEmails() []Email {
-	if o == nil {
+func (l *LeadInput) GetEmails() []Email {
+	if l == nil {
 		return nil
 	}
-	return o.Emails
+	return l.Emails
 }
 
-func (o *LeadInput) GetCustomFields() []CustomField {
-	if o == nil {
+func (l *LeadInput) GetCustomFields() []CustomField {
+	if l == nil {
 		return nil
 	}
-	return o.CustomFields
+	return l.CustomFields
 }
 
-func (o *LeadInput) GetTags() []string {
-	if o == nil {
+func (l *LeadInput) GetTags() []string {
+	if l == nil {
 		return nil
 	}
-	return o.Tags
+	return l.Tags
 }
 
-func (o *LeadInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (l *LeadInput) GetPassThrough() []PassThroughBody {
+	if l == nil {
 		return nil
 	}
-	return o.PassThrough
+	return l.PassThrough
 }

@@ -28,86 +28,86 @@ type ExpenseLineItemInput struct {
 	Rebilling *Rebilling `json:"rebilling,omitempty"`
 }
 
-func (o *ExpenseLineItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (e *ExpenseLineItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
+	if e == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return e.TrackingCategories
 }
 
-func (o *ExpenseLineItemInput) GetAccountID() *string {
-	if o == nil {
+func (e *ExpenseLineItemInput) GetAccountID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.AccountID
+	return e.AccountID
 }
 
-func (o *ExpenseLineItemInput) GetCustomerID() *string {
-	if o == nil {
+func (e *ExpenseLineItemInput) GetCustomerID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CustomerID
+	return e.CustomerID
 }
 
-func (o *ExpenseLineItemInput) GetDepartmentID() *string {
-	if o == nil {
+func (e *ExpenseLineItemInput) GetDepartmentID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return e.DepartmentID
 }
 
-func (o *ExpenseLineItemInput) GetLocationID() *string {
-	if o == nil {
+func (e *ExpenseLineItemInput) GetLocationID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.LocationID
+	return e.LocationID
 }
 
-func (o *ExpenseLineItemInput) GetSubsidiaryID() *string {
-	if o == nil {
+func (e *ExpenseLineItemInput) GetSubsidiaryID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.SubsidiaryID
+	return e.SubsidiaryID
 }
 
-func (o *ExpenseLineItemInput) GetTaxRate() *LinkedTaxRateInput {
-	if o == nil {
+func (e *ExpenseLineItemInput) GetTaxRate() *LinkedTaxRateInput {
+	if e == nil {
 		return nil
 	}
-	return o.TaxRate
+	return e.TaxRate
 }
 
-func (o *ExpenseLineItemInput) GetDescription() *string {
-	if o == nil {
+func (e *ExpenseLineItemInput) GetDescription() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Description
+	return e.Description
 }
 
-func (o *ExpenseLineItemInput) GetTotalAmount() *float64 {
-	if o == nil {
+func (e *ExpenseLineItemInput) GetTotalAmount() *float64 {
+	if e == nil {
 		return nil
 	}
-	return o.TotalAmount
+	return e.TotalAmount
 }
 
-func (o *ExpenseLineItemInput) GetBillable() *bool {
-	if o == nil {
+func (e *ExpenseLineItemInput) GetBillable() *bool {
+	if e == nil {
 		return nil
 	}
-	return o.Billable
+	return e.Billable
 }
 
-func (o *ExpenseLineItemInput) GetLineNumber() *int64 {
-	if o == nil {
+func (e *ExpenseLineItemInput) GetLineNumber() *int64 {
+	if e == nil {
 		return nil
 	}
-	return o.LineNumber
+	return e.LineNumber
 }
 
-func (o *ExpenseLineItemInput) GetRebilling() *Rebilling {
-	if o == nil {
+func (e *ExpenseLineItemInput) GetRebilling() *Rebilling {
+	if e == nil {
 		return nil
 	}
-	return o.Rebilling
+	return e.Rebilling
 }

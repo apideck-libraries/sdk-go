@@ -14,18 +14,18 @@ type FileStorageFilesExportGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *FileStorageFilesExportGlobals) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageFilesExportGlobals) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageFilesExportGlobals) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageFilesExportGlobals) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
 type FileStorageFilesExportRequest struct {
@@ -43,46 +43,46 @@ type FileStorageFilesExportRequest struct {
 	Format string `queryParam:"style=form,explode=true,name=format"`
 }
 
-func (o *FileStorageFilesExportRequest) GetID() string {
-	if o == nil {
+func (f *FileStorageFilesExportRequest) GetID() string {
+	if f == nil {
 		return ""
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *FileStorageFilesExportRequest) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageFilesExportRequest) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageFilesExportRequest) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageFilesExportRequest) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
-func (o *FileStorageFilesExportRequest) GetServiceID() *string {
-	if o == nil {
+func (f *FileStorageFilesExportRequest) GetServiceID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ServiceID
+	return f.ServiceID
 }
 
-func (o *FileStorageFilesExportRequest) GetFields() *string {
-	if o == nil {
+func (f *FileStorageFilesExportRequest) GetFields() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Fields
+	return f.Fields
 }
 
-func (o *FileStorageFilesExportRequest) GetFormat() string {
-	if o == nil {
+func (f *FileStorageFilesExportRequest) GetFormat() string {
+	if f == nil {
 		return ""
 	}
-	return o.Format
+	return f.Format
 }
 
 type FileStorageFilesExportResponse struct {
@@ -94,23 +94,23 @@ type FileStorageFilesExportResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *FileStorageFilesExportResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (f *FileStorageFilesExportResponse) GetHTTPMeta() components.HTTPMetadata {
+	if f == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return f.HTTPMeta
 }
 
-func (o *FileStorageFilesExportResponse) GetGetFileDownloadResponse() io.ReadCloser {
-	if o == nil {
+func (f *FileStorageFilesExportResponse) GetGetFileDownloadResponse() io.ReadCloser {
+	if f == nil {
 		return nil
 	}
-	return o.GetFileDownloadResponse
+	return f.GetFileDownloadResponse
 }
 
-func (o *FileStorageFilesExportResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (f *FileStorageFilesExportResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return f.UnexpectedErrorResponse
 }

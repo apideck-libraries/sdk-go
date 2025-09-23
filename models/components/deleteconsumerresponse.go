@@ -7,11 +7,11 @@ type DeleteConsumerResponseData struct {
 	ConsumerID *string `json:"consumer_id,omitempty"`
 }
 
-func (o *DeleteConsumerResponseData) GetConsumerID() *string {
-	if o == nil {
+func (d *DeleteConsumerResponseData) GetConsumerID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return d.ConsumerID
 }
 
 // DeleteConsumerResponse - Consumer deleted
@@ -25,30 +25,30 @@ type DeleteConsumerResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *DeleteConsumerResponse) GetStatusCode() int64 {
-	if o == nil {
+func (d *DeleteConsumerResponse) GetStatusCode() int64 {
+	if d == nil {
 		return 0
 	}
-	return o.StatusCode
+	return d.StatusCode
 }
 
-func (o *DeleteConsumerResponse) GetStatus() string {
-	if o == nil {
+func (d *DeleteConsumerResponse) GetStatus() string {
+	if d == nil {
 		return ""
 	}
-	return o.Status
+	return d.Status
 }
 
-func (o *DeleteConsumerResponse) GetData() DeleteConsumerResponseData {
-	if o == nil {
+func (d *DeleteConsumerResponse) GetData() DeleteConsumerResponseData {
+	if d == nil {
 		return DeleteConsumerResponseData{}
 	}
-	return o.Data
+	return d.Data
 }
 
-func (o *DeleteConsumerResponse) GetRaw() map[string]any {
-	if o == nil {
+func (d *DeleteConsumerResponse) GetRaw() map[string]any {
+	if d == nil {
 		return nil
 	}
-	return o.Raw
+	return d.Raw
 }

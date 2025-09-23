@@ -36,16 +36,16 @@ func main() {
     )
 
     res, err := s.Accounting.ProfitAndLoss.Get(ctx, operations.AccountingProfitAndLossOneRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Filter: &components.ProfitAndLossFilter{
-            CustomerID: sdkgo.String("123abc"),
-            StartDate: sdkgo.String("2021-01-01"),
-            EndDate: sdkgo.String("2021-12-31"),
+            CustomerID: sdkgo.Pointer("123abc"),
+            StartDate: sdkgo.Pointer("2021-01-01"),
+            EndDate: sdkgo.Pointer("2021-12-31"),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)

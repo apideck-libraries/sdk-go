@@ -22,9 +22,9 @@ func (b *BillsFilter) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *BillsFilter) GetUpdatedSince() *time.Time {
-	if o == nil {
+func (b *BillsFilter) GetUpdatedSince() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.UpdatedSince
+	return b.UpdatedSince
 }

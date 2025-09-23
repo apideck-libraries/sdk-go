@@ -27,23 +27,23 @@ func (i *IssuesFilter) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *IssuesFilter) GetStatus() []string {
-	if o == nil {
+func (i *IssuesFilter) GetStatus() []string {
+	if i == nil {
 		return nil
 	}
-	return o.Status
+	return i.Status
 }
 
-func (o *IssuesFilter) GetSince() *time.Time {
-	if o == nil {
+func (i *IssuesFilter) GetSince() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.Since
+	return i.Since
 }
 
-func (o *IssuesFilter) GetAssigneeID() *string {
-	if o == nil {
+func (i *IssuesFilter) GetAssigneeID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.AssigneeID
+	return i.AssigneeID
 }

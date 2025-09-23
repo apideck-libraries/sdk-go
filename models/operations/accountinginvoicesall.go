@@ -14,18 +14,18 @@ type AccountingInvoicesAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingInvoicesAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingInvoicesAllGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingInvoicesAllGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingInvoicesAllGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingInvoicesAllRequest struct {
@@ -62,74 +62,74 @@ func (a *AccountingInvoicesAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingInvoicesAllRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingInvoicesAllRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingInvoicesAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingInvoicesAllRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingInvoicesAllRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingInvoicesAllRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingInvoicesAllRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingInvoicesAllRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingInvoicesAllRequest) GetCursor() *string {
-	if o == nil {
+func (a *AccountingInvoicesAllRequest) GetCursor() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Cursor
+	return a.Cursor
 }
 
-func (o *AccountingInvoicesAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (a *AccountingInvoicesAllRequest) GetLimit() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.Limit
+	return a.Limit
 }
 
-func (o *AccountingInvoicesAllRequest) GetFilter() *components.InvoicesFilter {
-	if o == nil {
+func (a *AccountingInvoicesAllRequest) GetFilter() *components.InvoicesFilter {
+	if a == nil {
 		return nil
 	}
-	return o.Filter
+	return a.Filter
 }
 
-func (o *AccountingInvoicesAllRequest) GetSort() *components.InvoicesSort {
-	if o == nil {
+func (a *AccountingInvoicesAllRequest) GetSort() *components.InvoicesSort {
+	if a == nil {
 		return nil
 	}
-	return o.Sort
+	return a.Sort
 }
 
-func (o *AccountingInvoicesAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (a *AccountingInvoicesAllRequest) GetPassThrough() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
-func (o *AccountingInvoicesAllRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingInvoicesAllRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingInvoicesAllResponse struct {
@@ -142,23 +142,23 @@ type AccountingInvoicesAllResponse struct {
 	Next func() (*AccountingInvoicesAllResponse, error)
 }
 
-func (o *AccountingInvoicesAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingInvoicesAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingInvoicesAllResponse) GetGetInvoicesResponse() *components.GetInvoicesResponse {
-	if o == nil {
+func (a *AccountingInvoicesAllResponse) GetGetInvoicesResponse() *components.GetInvoicesResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetInvoicesResponse
+	return a.GetInvoicesResponse
 }
 
-func (o *AccountingInvoicesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingInvoicesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

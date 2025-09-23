@@ -11,11 +11,11 @@ type VaultConsumersDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultConsumersDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultConsumersDeleteGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultConsumersDeleteRequest struct {
@@ -25,18 +25,18 @@ type VaultConsumersDeleteRequest struct {
 	ConsumerID string `pathParam:"style=simple,explode=false,name=consumer_id"`
 }
 
-func (o *VaultConsumersDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultConsumersDeleteRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultConsumersDeleteRequest) GetConsumerID() string {
-	if o == nil {
+func (v *VaultConsumersDeleteRequest) GetConsumerID() string {
+	if v == nil {
 		return ""
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
 type VaultConsumersDeleteResponse struct {
@@ -47,23 +47,23 @@ type VaultConsumersDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultConsumersDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultConsumersDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultConsumersDeleteResponse) GetDeleteConsumerResponse() *components.DeleteConsumerResponse {
-	if o == nil {
+func (v *VaultConsumersDeleteResponse) GetDeleteConsumerResponse() *components.DeleteConsumerResponse {
+	if v == nil {
 		return nil
 	}
-	return o.DeleteConsumerResponse
+	return v.DeleteConsumerResponse
 }
 
-func (o *VaultConsumersDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultConsumersDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

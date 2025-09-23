@@ -19,51 +19,51 @@ type GetLedgerAccountResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetLedgerAccountResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetLedgerAccountResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetLedgerAccountResponse) GetStatus() string {
-	if o == nil {
+func (g *GetLedgerAccountResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetLedgerAccountResponse) GetService() string {
-	if o == nil {
+func (g *GetLedgerAccountResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetLedgerAccountResponse) GetResource() string {
-	if o == nil {
+func (g *GetLedgerAccountResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetLedgerAccountResponse) GetOperation() string {
-	if o == nil {
+func (g *GetLedgerAccountResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetLedgerAccountResponse) GetData() LedgerAccount {
-	if o == nil {
+func (g *GetLedgerAccountResponse) GetData() LedgerAccount {
+	if g == nil {
 		return LedgerAccount{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetLedgerAccountResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetLedgerAccountResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

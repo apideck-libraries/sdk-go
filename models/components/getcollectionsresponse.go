@@ -23,65 +23,65 @@ type GetCollectionsResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetCollectionsResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetCollectionsResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetCollectionsResponse) GetStatus() string {
-	if o == nil {
+func (g *GetCollectionsResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetCollectionsResponse) GetService() string {
-	if o == nil {
+func (g *GetCollectionsResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetCollectionsResponse) GetResource() string {
-	if o == nil {
+func (g *GetCollectionsResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetCollectionsResponse) GetOperation() string {
-	if o == nil {
+func (g *GetCollectionsResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetCollectionsResponse) GetData() []Collection {
-	if o == nil {
+func (g *GetCollectionsResponse) GetData() []Collection {
+	if g == nil {
 		return []Collection{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetCollectionsResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetCollectionsResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetCollectionsResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetCollectionsResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }
 
-func (o *GetCollectionsResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetCollectionsResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

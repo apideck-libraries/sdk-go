@@ -20,51 +20,51 @@ type UpdateAccountingLocationResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *UpdateAccountingLocationResponse) GetStatusCode() int64 {
-	if o == nil {
+func (u *UpdateAccountingLocationResponse) GetStatusCode() int64 {
+	if u == nil {
 		return 0
 	}
-	return o.StatusCode
+	return u.StatusCode
 }
 
-func (o *UpdateAccountingLocationResponse) GetStatus() string {
-	if o == nil {
+func (u *UpdateAccountingLocationResponse) GetStatus() string {
+	if u == nil {
 		return ""
 	}
-	return o.Status
+	return u.Status
 }
 
-func (o *UpdateAccountingLocationResponse) GetService() string {
-	if o == nil {
+func (u *UpdateAccountingLocationResponse) GetService() string {
+	if u == nil {
 		return ""
 	}
-	return o.Service
+	return u.Service
 }
 
-func (o *UpdateAccountingLocationResponse) GetResource() string {
-	if o == nil {
+func (u *UpdateAccountingLocationResponse) GetResource() string {
+	if u == nil {
 		return ""
 	}
-	return o.Resource
+	return u.Resource
 }
 
-func (o *UpdateAccountingLocationResponse) GetOperation() string {
-	if o == nil {
+func (u *UpdateAccountingLocationResponse) GetOperation() string {
+	if u == nil {
 		return ""
 	}
-	return o.Operation
+	return u.Operation
 }
 
-func (o *UpdateAccountingLocationResponse) GetData() UnifiedID {
-	if o == nil {
+func (u *UpdateAccountingLocationResponse) GetData() UnifiedID {
+	if u == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return u.Data
 }
 
-func (o *UpdateAccountingLocationResponse) GetRaw() map[string]any {
-	if o == nil {
+func (u *UpdateAccountingLocationResponse) GetRaw() map[string]any {
+	if u == nil {
 		return nil
 	}
-	return o.Raw
+	return u.Raw
 }

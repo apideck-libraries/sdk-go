@@ -14,18 +14,18 @@ type CrmCompaniesUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmCompaniesUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmCompaniesUpdateGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmCompaniesUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmCompaniesUpdateGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmCompaniesUpdateRequest struct {
@@ -53,46 +53,46 @@ func (c *CrmCompaniesUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmCompaniesUpdateRequest) GetID() string {
-	if o == nil {
+func (c *CrmCompaniesUpdateRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CrmCompaniesUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmCompaniesUpdateRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmCompaniesUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmCompaniesUpdateRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmCompaniesUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmCompaniesUpdateRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmCompaniesUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmCompaniesUpdateRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmCompaniesUpdateRequest) GetCompany1() components.Company1Input {
-	if o == nil {
+func (c *CrmCompaniesUpdateRequest) GetCompany1() components.Company1Input {
+	if c == nil {
 		return components.Company1Input{}
 	}
-	return o.Company1
+	return c.Company1
 }
 
 type CrmCompaniesUpdateResponse struct {
@@ -103,23 +103,23 @@ type CrmCompaniesUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmCompaniesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmCompaniesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmCompaniesUpdateResponse) GetUpdateCompanyResponse() *components.UpdateCompanyResponse {
-	if o == nil {
+func (c *CrmCompaniesUpdateResponse) GetUpdateCompanyResponse() *components.UpdateCompanyResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UpdateCompanyResponse
+	return c.UpdateCompanyResponse
 }
 
-func (o *CrmCompaniesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmCompaniesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

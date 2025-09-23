@@ -14,18 +14,18 @@ type AtsApplicantsDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AtsApplicantsDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AtsApplicantsDeleteGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AtsApplicantsDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AtsApplicantsDeleteGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AtsApplicantsDeleteRequest struct {
@@ -52,39 +52,39 @@ func (a *AtsApplicantsDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AtsApplicantsDeleteRequest) GetID() string {
-	if o == nil {
+func (a *AtsApplicantsDeleteRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AtsApplicantsDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AtsApplicantsDeleteRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AtsApplicantsDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (a *AtsApplicantsDeleteRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AtsApplicantsDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AtsApplicantsDeleteRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AtsApplicantsDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AtsApplicantsDeleteRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
 type AtsApplicantsDeleteResponse struct {
@@ -95,23 +95,23 @@ type AtsApplicantsDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AtsApplicantsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AtsApplicantsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AtsApplicantsDeleteResponse) GetDeleteApplicantResponse() *components.DeleteApplicantResponse {
-	if o == nil {
+func (a *AtsApplicantsDeleteResponse) GetDeleteApplicantResponse() *components.DeleteApplicantResponse {
+	if a == nil {
 		return nil
 	}
-	return o.DeleteApplicantResponse
+	return a.DeleteApplicantResponse
 }
 
-func (o *AtsApplicantsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AtsApplicantsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

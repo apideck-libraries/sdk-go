@@ -113,165 +113,165 @@ func (j *JournalEntry) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *JournalEntry) GetID() *string {
-	if o == nil {
+func (j *JournalEntry) GetID() *string {
+	if j == nil {
 		return nil
 	}
-	return o.ID
+	return j.ID
 }
 
-func (o *JournalEntry) GetTitle() *string {
-	if o == nil {
+func (j *JournalEntry) GetTitle() *string {
+	if j == nil {
 		return nil
 	}
-	return o.Title
+	return j.Title
 }
 
-func (o *JournalEntry) GetCurrencyRate() *float64 {
-	if o == nil {
+func (j *JournalEntry) GetCurrencyRate() *float64 {
+	if j == nil {
 		return nil
 	}
-	return o.CurrencyRate
+	return j.CurrencyRate
 }
 
-func (o *JournalEntry) GetCurrency() *Currency {
-	if o == nil {
+func (j *JournalEntry) GetCurrency() *Currency {
+	if j == nil {
 		return nil
 	}
-	return o.Currency
+	return j.Currency
 }
 
-func (o *JournalEntry) GetCompanyID() *string {
-	if o == nil {
+func (j *JournalEntry) GetCompanyID() *string {
+	if j == nil {
 		return nil
 	}
-	return o.CompanyID
+	return j.CompanyID
 }
 
-func (o *JournalEntry) GetLineItems() []JournalEntryLineItem {
-	if o == nil {
+func (j *JournalEntry) GetLineItems() []JournalEntryLineItem {
+	if j == nil {
 		return nil
 	}
-	return o.LineItems
+	return j.LineItems
 }
 
-func (o *JournalEntry) GetStatus() *JournalEntryStatus {
-	if o == nil {
+func (j *JournalEntry) GetStatus() *JournalEntryStatus {
+	if j == nil {
 		return nil
 	}
-	return o.Status
+	return j.Status
 }
 
-func (o *JournalEntry) GetMemo() *string {
-	if o == nil {
+func (j *JournalEntry) GetMemo() *string {
+	if j == nil {
 		return nil
 	}
-	return o.Memo
+	return j.Memo
 }
 
-func (o *JournalEntry) GetPostedAt() *time.Time {
-	if o == nil {
+func (j *JournalEntry) GetPostedAt() *time.Time {
+	if j == nil {
 		return nil
 	}
-	return o.PostedAt
+	return j.PostedAt
 }
 
-func (o *JournalEntry) GetJournalSymbol() *string {
-	if o == nil {
+func (j *JournalEntry) GetJournalSymbol() *string {
+	if j == nil {
 		return nil
 	}
-	return o.JournalSymbol
+	return j.JournalSymbol
 }
 
-func (o *JournalEntry) GetTaxType() *string {
-	if o == nil {
+func (j *JournalEntry) GetTaxType() *string {
+	if j == nil {
 		return nil
 	}
-	return o.TaxType
+	return j.TaxType
 }
 
-func (o *JournalEntry) GetTaxCode() *string {
-	if o == nil {
+func (j *JournalEntry) GetTaxCode() *string {
+	if j == nil {
 		return nil
 	}
-	return o.TaxCode
+	return j.TaxCode
 }
 
-func (o *JournalEntry) GetNumber() *string {
-	if o == nil {
+func (j *JournalEntry) GetNumber() *string {
+	if j == nil {
 		return nil
 	}
-	return o.Number
+	return j.Number
 }
 
-func (o *JournalEntry) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (j *JournalEntry) GetTrackingCategories() []*LinkedTrackingCategory {
+	if j == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return j.TrackingCategories
 }
 
-func (o *JournalEntry) GetAccountingPeriod() *string {
-	if o == nil {
+func (j *JournalEntry) GetAccountingPeriod() *string {
+	if j == nil {
 		return nil
 	}
-	return o.AccountingPeriod
+	return j.AccountingPeriod
 }
 
-func (o *JournalEntry) GetCustomMappings() map[string]any {
-	if o == nil {
+func (j *JournalEntry) GetCustomMappings() map[string]any {
+	if j == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return j.CustomMappings
 }
 
-func (o *JournalEntry) GetUpdatedBy() *string {
-	if o == nil {
+func (j *JournalEntry) GetUpdatedBy() *string {
+	if j == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return j.UpdatedBy
 }
 
-func (o *JournalEntry) GetCreatedBy() *string {
-	if o == nil {
+func (j *JournalEntry) GetCreatedBy() *string {
+	if j == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return j.CreatedBy
 }
 
-func (o *JournalEntry) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (j *JournalEntry) GetUpdatedAt() *time.Time {
+	if j == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return j.UpdatedAt
 }
 
-func (o *JournalEntry) GetCreatedAt() *time.Time {
-	if o == nil {
+func (j *JournalEntry) GetCreatedAt() *time.Time {
+	if j == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return j.CreatedAt
 }
 
-func (o *JournalEntry) GetRowVersion() *string {
-	if o == nil {
+func (j *JournalEntry) GetRowVersion() *string {
+	if j == nil {
 		return nil
 	}
-	return o.RowVersion
+	return j.RowVersion
 }
 
-func (o *JournalEntry) GetCustomFields() []CustomField {
-	if o == nil {
+func (j *JournalEntry) GetCustomFields() []CustomField {
+	if j == nil {
 		return nil
 	}
-	return o.CustomFields
+	return j.CustomFields
 }
 
-func (o *JournalEntry) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (j *JournalEntry) GetPassThrough() []PassThroughBody {
+	if j == nil {
 		return nil
 	}
-	return o.PassThrough
+	return j.PassThrough
 }
 
 type JournalEntryInput struct {
@@ -321,121 +321,121 @@ func (j *JournalEntryInput) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *JournalEntryInput) GetTitle() *string {
-	if o == nil {
+func (j *JournalEntryInput) GetTitle() *string {
+	if j == nil {
 		return nil
 	}
-	return o.Title
+	return j.Title
 }
 
-func (o *JournalEntryInput) GetCurrencyRate() *float64 {
-	if o == nil {
+func (j *JournalEntryInput) GetCurrencyRate() *float64 {
+	if j == nil {
 		return nil
 	}
-	return o.CurrencyRate
+	return j.CurrencyRate
 }
 
-func (o *JournalEntryInput) GetCurrency() *Currency {
-	if o == nil {
+func (j *JournalEntryInput) GetCurrency() *Currency {
+	if j == nil {
 		return nil
 	}
-	return o.Currency
+	return j.Currency
 }
 
-func (o *JournalEntryInput) GetCompanyID() *string {
-	if o == nil {
+func (j *JournalEntryInput) GetCompanyID() *string {
+	if j == nil {
 		return nil
 	}
-	return o.CompanyID
+	return j.CompanyID
 }
 
-func (o *JournalEntryInput) GetLineItems() []JournalEntryLineItemInput {
-	if o == nil {
+func (j *JournalEntryInput) GetLineItems() []JournalEntryLineItemInput {
+	if j == nil {
 		return nil
 	}
-	return o.LineItems
+	return j.LineItems
 }
 
-func (o *JournalEntryInput) GetStatus() *JournalEntryStatus {
-	if o == nil {
+func (j *JournalEntryInput) GetStatus() *JournalEntryStatus {
+	if j == nil {
 		return nil
 	}
-	return o.Status
+	return j.Status
 }
 
-func (o *JournalEntryInput) GetMemo() *string {
-	if o == nil {
+func (j *JournalEntryInput) GetMemo() *string {
+	if j == nil {
 		return nil
 	}
-	return o.Memo
+	return j.Memo
 }
 
-func (o *JournalEntryInput) GetPostedAt() *time.Time {
-	if o == nil {
+func (j *JournalEntryInput) GetPostedAt() *time.Time {
+	if j == nil {
 		return nil
 	}
-	return o.PostedAt
+	return j.PostedAt
 }
 
-func (o *JournalEntryInput) GetJournalSymbol() *string {
-	if o == nil {
+func (j *JournalEntryInput) GetJournalSymbol() *string {
+	if j == nil {
 		return nil
 	}
-	return o.JournalSymbol
+	return j.JournalSymbol
 }
 
-func (o *JournalEntryInput) GetTaxType() *string {
-	if o == nil {
+func (j *JournalEntryInput) GetTaxType() *string {
+	if j == nil {
 		return nil
 	}
-	return o.TaxType
+	return j.TaxType
 }
 
-func (o *JournalEntryInput) GetTaxCode() *string {
-	if o == nil {
+func (j *JournalEntryInput) GetTaxCode() *string {
+	if j == nil {
 		return nil
 	}
-	return o.TaxCode
+	return j.TaxCode
 }
 
-func (o *JournalEntryInput) GetNumber() *string {
-	if o == nil {
+func (j *JournalEntryInput) GetNumber() *string {
+	if j == nil {
 		return nil
 	}
-	return o.Number
+	return j.Number
 }
 
-func (o *JournalEntryInput) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (j *JournalEntryInput) GetTrackingCategories() []*LinkedTrackingCategory {
+	if j == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return j.TrackingCategories
 }
 
-func (o *JournalEntryInput) GetAccountingPeriod() *string {
-	if o == nil {
+func (j *JournalEntryInput) GetAccountingPeriod() *string {
+	if j == nil {
 		return nil
 	}
-	return o.AccountingPeriod
+	return j.AccountingPeriod
 }
 
-func (o *JournalEntryInput) GetRowVersion() *string {
-	if o == nil {
+func (j *JournalEntryInput) GetRowVersion() *string {
+	if j == nil {
 		return nil
 	}
-	return o.RowVersion
+	return j.RowVersion
 }
 
-func (o *JournalEntryInput) GetCustomFields() []CustomField {
-	if o == nil {
+func (j *JournalEntryInput) GetCustomFields() []CustomField {
+	if j == nil {
 		return nil
 	}
-	return o.CustomFields
+	return j.CustomFields
 }
 
-func (o *JournalEntryInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (j *JournalEntryInput) GetPassThrough() []PassThroughBody {
+	if j == nil {
 		return nil
 	}
-	return o.PassThrough
+	return j.PassThrough
 }

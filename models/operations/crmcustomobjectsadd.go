@@ -14,18 +14,18 @@ type CrmCustomObjectsAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmCustomObjectsAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmCustomObjectsAddGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmCustomObjectsAddGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmCustomObjectsAddGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmCustomObjectsAddRequest struct {
@@ -53,46 +53,46 @@ func (c *CrmCustomObjectsAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmCustomObjectsAddRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmCustomObjectsAddRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmCustomObjectsAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmCustomObjectsAddRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmCustomObjectsAddRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmCustomObjectsAddRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmCustomObjectsAddRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmCustomObjectsAddRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmCustomObjectsAddRequest) GetObjectID() string {
-	if o == nil {
+func (c *CrmCustomObjectsAddRequest) GetObjectID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ObjectID
+	return c.ObjectID
 }
 
-func (o *CrmCustomObjectsAddRequest) GetCustomObject() components.CustomObjectInput {
-	if o == nil {
+func (c *CrmCustomObjectsAddRequest) GetCustomObject() components.CustomObjectInput {
+	if c == nil {
 		return components.CustomObjectInput{}
 	}
-	return o.CustomObject
+	return c.CustomObject
 }
 
 type CrmCustomObjectsAddResponse struct {
@@ -103,23 +103,23 @@ type CrmCustomObjectsAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmCustomObjectsAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmCustomObjectsAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmCustomObjectsAddResponse) GetCreateCustomObjectResponse() *components.CreateCustomObjectResponse {
-	if o == nil {
+func (c *CrmCustomObjectsAddResponse) GetCreateCustomObjectResponse() *components.CreateCustomObjectResponse {
+	if c == nil {
 		return nil
 	}
-	return o.CreateCustomObjectResponse
+	return c.CreateCustomObjectResponse
 }
 
-func (o *CrmCustomObjectsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmCustomObjectsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

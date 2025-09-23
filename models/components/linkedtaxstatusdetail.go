@@ -9,16 +9,16 @@ type LinkedTaxStatusDetail struct {
 	TransactionTaxStatus *string `json:"transaction_tax_status,omitempty"`
 }
 
-func (o *LinkedTaxStatusDetail) GetCountry() *string {
-	if o == nil {
+func (l *LinkedTaxStatusDetail) GetCountry() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Country
+	return l.Country
 }
 
-func (o *LinkedTaxStatusDetail) GetTransactionTaxStatus() *string {
-	if o == nil {
+func (l *LinkedTaxStatusDetail) GetTransactionTaxStatus() *string {
+	if l == nil {
 		return nil
 	}
-	return o.TransactionTaxStatus
+	return l.TransactionTaxStatus
 }

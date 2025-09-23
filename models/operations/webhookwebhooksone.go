@@ -11,11 +11,11 @@ type WebhookWebhooksOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *WebhookWebhooksOneGlobals) GetAppID() *string {
-	if o == nil {
+func (w *WebhookWebhooksOneGlobals) GetAppID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.AppID
+	return w.AppID
 }
 
 type WebhookWebhooksOneRequest struct {
@@ -25,18 +25,18 @@ type WebhookWebhooksOneRequest struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *WebhookWebhooksOneRequest) GetID() string {
-	if o == nil {
+func (w *WebhookWebhooksOneRequest) GetID() string {
+	if w == nil {
 		return ""
 	}
-	return o.ID
+	return w.ID
 }
 
-func (o *WebhookWebhooksOneRequest) GetAppID() *string {
-	if o == nil {
+func (w *WebhookWebhooksOneRequest) GetAppID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.AppID
+	return w.AppID
 }
 
 type WebhookWebhooksOneResponse struct {
@@ -47,23 +47,23 @@ type WebhookWebhooksOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *WebhookWebhooksOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (w *WebhookWebhooksOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if w == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return w.HTTPMeta
 }
 
-func (o *WebhookWebhooksOneResponse) GetGetWebhookResponse() *components.GetWebhookResponse {
-	if o == nil {
+func (w *WebhookWebhooksOneResponse) GetGetWebhookResponse() *components.GetWebhookResponse {
+	if w == nil {
 		return nil
 	}
-	return o.GetWebhookResponse
+	return w.GetWebhookResponse
 }
 
-func (o *WebhookWebhooksOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (w *WebhookWebhooksOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if w == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return w.UnexpectedErrorResponse
 }

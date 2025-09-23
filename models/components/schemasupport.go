@@ -8,9 +8,9 @@ type SchemaSupport struct {
 	Supported *bool `json:"supported,omitempty"`
 }
 
-func (o *SchemaSupport) GetSupported() *bool {
-	if o == nil {
+func (s *SchemaSupport) GetSupported() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.Supported
+	return s.Supported
 }

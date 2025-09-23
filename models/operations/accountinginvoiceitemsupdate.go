@@ -14,18 +14,18 @@ type AccountingInvoiceItemsUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingInvoiceItemsUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingInvoiceItemsUpdateGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingInvoiceItemsUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingInvoiceItemsUpdateGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingInvoiceItemsUpdateRequest struct {
@@ -53,46 +53,46 @@ func (a *AccountingInvoiceItemsUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingInvoiceItemsUpdateRequest) GetID() string {
-	if o == nil {
+func (a *AccountingInvoiceItemsUpdateRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingInvoiceItemsUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingInvoiceItemsUpdateRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingInvoiceItemsUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingInvoiceItemsUpdateRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingInvoiceItemsUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingInvoiceItemsUpdateRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingInvoiceItemsUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingInvoiceItemsUpdateRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingInvoiceItemsUpdateRequest) GetInvoiceItem() components.InvoiceItemInput {
-	if o == nil {
+func (a *AccountingInvoiceItemsUpdateRequest) GetInvoiceItem() components.InvoiceItemInput {
+	if a == nil {
 		return components.InvoiceItemInput{}
 	}
-	return o.InvoiceItem
+	return a.InvoiceItem
 }
 
 type AccountingInvoiceItemsUpdateResponse struct {
@@ -103,23 +103,23 @@ type AccountingInvoiceItemsUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingInvoiceItemsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingInvoiceItemsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingInvoiceItemsUpdateResponse) GetUpdateInvoiceItemsResponse() *components.UpdateInvoiceItemsResponse {
-	if o == nil {
+func (a *AccountingInvoiceItemsUpdateResponse) GetUpdateInvoiceItemsResponse() *components.UpdateInvoiceItemsResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UpdateInvoiceItemsResponse
+	return a.UpdateInvoiceItemsResponse
 }
 
-func (o *AccountingInvoiceItemsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingInvoiceItemsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

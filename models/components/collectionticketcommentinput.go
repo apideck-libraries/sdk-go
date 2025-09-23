@@ -9,16 +9,16 @@ type CollectionTicketCommentInput struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *CollectionTicketCommentInput) GetBody() *string {
-	if o == nil {
+func (c *CollectionTicketCommentInput) GetBody() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Body
+	return c.Body
 }
 
-func (o *CollectionTicketCommentInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (c *CollectionTicketCommentInput) GetPassThrough() []PassThroughBody {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }

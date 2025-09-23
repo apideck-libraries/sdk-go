@@ -25,114 +25,114 @@ type ConsumerConnection struct {
 	State *ConnectionState `json:"state,omitempty"`
 }
 
-func (o *ConsumerConnection) GetID() *string {
-	if o == nil {
+func (c *ConsumerConnection) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ConsumerConnection) GetName() *string {
-	if o == nil {
+func (c *ConsumerConnection) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *ConsumerConnection) GetIcon() *string {
-	if o == nil {
+func (c *ConsumerConnection) GetIcon() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Icon
+	return c.Icon
 }
 
-func (o *ConsumerConnection) GetLogo() *string {
-	if o == nil {
+func (c *ConsumerConnection) GetLogo() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Logo
+	return c.Logo
 }
 
-func (o *ConsumerConnection) GetWebsite() *string {
-	if o == nil {
+func (c *ConsumerConnection) GetWebsite() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Website
+	return c.Website
 }
 
-func (o *ConsumerConnection) GetTagLine() *string {
-	if o == nil {
+func (c *ConsumerConnection) GetTagLine() *string {
+	if c == nil {
 		return nil
 	}
-	return o.TagLine
+	return c.TagLine
 }
 
-func (o *ConsumerConnection) GetServiceID() *string {
-	if o == nil {
+func (c *ConsumerConnection) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *ConsumerConnection) GetUnifiedAPI() *string {
-	if o == nil {
+func (c *ConsumerConnection) GetUnifiedAPI() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UnifiedAPI
+	return c.UnifiedAPI
 }
 
-func (o *ConsumerConnection) GetConsumerID() *string {
-	if o == nil {
+func (c *ConsumerConnection) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *ConsumerConnection) GetAuthType() *AuthType {
-	if o == nil {
+func (c *ConsumerConnection) GetAuthType() *AuthType {
+	if c == nil {
 		return nil
 	}
-	return o.AuthType
+	return c.AuthType
 }
 
-func (o *ConsumerConnection) GetEnabled() *bool {
-	if o == nil {
+func (c *ConsumerConnection) GetEnabled() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Enabled
+	return c.Enabled
 }
 
-func (o *ConsumerConnection) GetSettings() map[string]any {
-	if o == nil {
+func (c *ConsumerConnection) GetSettings() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Settings
+	return c.Settings
 }
 
-func (o *ConsumerConnection) GetMetadata() map[string]any {
-	if o == nil {
+func (c *ConsumerConnection) GetMetadata() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Metadata
+	return c.Metadata
 }
 
-func (o *ConsumerConnection) GetCreatedAt() *string {
-	if o == nil {
+func (c *ConsumerConnection) GetCreatedAt() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }
 
-func (o *ConsumerConnection) GetUpdatedAt() *string {
-	if o == nil {
+func (c *ConsumerConnection) GetUpdatedAt() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return c.UpdatedAt
 }
 
-func (o *ConsumerConnection) GetState() *ConnectionState {
-	if o == nil {
+func (c *ConsumerConnection) GetState() *ConnectionState {
+	if c == nil {
 		return nil
 	}
-	return o.State
+	return c.State
 }

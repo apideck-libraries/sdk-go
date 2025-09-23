@@ -14,18 +14,18 @@ type CrmNotesUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmNotesUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmNotesUpdateGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmNotesUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmNotesUpdateGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmNotesUpdateRequest struct {
@@ -53,46 +53,46 @@ func (c *CrmNotesUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmNotesUpdateRequest) GetID() string {
-	if o == nil {
+func (c *CrmNotesUpdateRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CrmNotesUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmNotesUpdateRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmNotesUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmNotesUpdateRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmNotesUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmNotesUpdateRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmNotesUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmNotesUpdateRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmNotesUpdateRequest) GetNote() components.NoteInput {
-	if o == nil {
+func (c *CrmNotesUpdateRequest) GetNote() components.NoteInput {
+	if c == nil {
 		return components.NoteInput{}
 	}
-	return o.Note
+	return c.Note
 }
 
 type CrmNotesUpdateResponse struct {
@@ -103,23 +103,23 @@ type CrmNotesUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmNotesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmNotesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmNotesUpdateResponse) GetUpdateNoteResponse() *components.UpdateNoteResponse {
-	if o == nil {
+func (c *CrmNotesUpdateResponse) GetUpdateNoteResponse() *components.UpdateNoteResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UpdateNoteResponse
+	return c.UpdateNoteResponse
 }
 
-func (o *CrmNotesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmNotesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

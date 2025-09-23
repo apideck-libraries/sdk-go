@@ -14,18 +14,18 @@ type IssueTrackingCollectionTicketsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *IssueTrackingCollectionTicketsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketsAllGlobals) GetConsumerID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return i.ConsumerID
 }
 
-func (o *IssueTrackingCollectionTicketsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketsAllGlobals) GetAppID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.AppID
+	return i.AppID
 }
 
 type IssueTrackingCollectionTicketsAllRequest struct {
@@ -64,81 +64,81 @@ func (i *IssueTrackingCollectionTicketsAllRequest) UnmarshalJSON(data []byte) er
 	return nil
 }
 
-func (o *IssueTrackingCollectionTicketsAllRequest) GetRaw() *bool {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketsAllRequest) GetRaw() *bool {
+	if i == nil {
 		return nil
 	}
-	return o.Raw
+	return i.Raw
 }
 
-func (o *IssueTrackingCollectionTicketsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketsAllRequest) GetConsumerID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return i.ConsumerID
 }
 
-func (o *IssueTrackingCollectionTicketsAllRequest) GetAppID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketsAllRequest) GetAppID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.AppID
+	return i.AppID
 }
 
-func (o *IssueTrackingCollectionTicketsAllRequest) GetServiceID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketsAllRequest) GetServiceID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ServiceID
+	return i.ServiceID
 }
 
-func (o *IssueTrackingCollectionTicketsAllRequest) GetCursor() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketsAllRequest) GetCursor() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Cursor
+	return i.Cursor
 }
 
-func (o *IssueTrackingCollectionTicketsAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketsAllRequest) GetLimit() *int64 {
+	if i == nil {
 		return nil
 	}
-	return o.Limit
+	return i.Limit
 }
 
-func (o *IssueTrackingCollectionTicketsAllRequest) GetCollectionID() string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketsAllRequest) GetCollectionID() string {
+	if i == nil {
 		return ""
 	}
-	return o.CollectionID
+	return i.CollectionID
 }
 
-func (o *IssueTrackingCollectionTicketsAllRequest) GetSort() *components.TicketsSort {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketsAllRequest) GetSort() *components.TicketsSort {
+	if i == nil {
 		return nil
 	}
-	return o.Sort
+	return i.Sort
 }
 
-func (o *IssueTrackingCollectionTicketsAllRequest) GetFilter() *components.IssuesFilter {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketsAllRequest) GetFilter() *components.IssuesFilter {
+	if i == nil {
 		return nil
 	}
-	return o.Filter
+	return i.Filter
 }
 
-func (o *IssueTrackingCollectionTicketsAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketsAllRequest) GetPassThrough() map[string]any {
+	if i == nil {
 		return nil
 	}
-	return o.PassThrough
+	return i.PassThrough
 }
 
-func (o *IssueTrackingCollectionTicketsAllRequest) GetFields() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketsAllRequest) GetFields() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Fields
+	return i.Fields
 }
 
 type IssueTrackingCollectionTicketsAllResponse struct {
@@ -151,23 +151,23 @@ type IssueTrackingCollectionTicketsAllResponse struct {
 	Next func() (*IssueTrackingCollectionTicketsAllResponse, error)
 }
 
-func (o *IssueTrackingCollectionTicketsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if i == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return i.HTTPMeta
 }
 
-func (o *IssueTrackingCollectionTicketsAllResponse) GetGetTicketsResponse() *components.GetTicketsResponse {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketsAllResponse) GetGetTicketsResponse() *components.GetTicketsResponse {
+	if i == nil {
 		return nil
 	}
-	return o.GetTicketsResponse
+	return i.GetTicketsResponse
 }
 
-func (o *IssueTrackingCollectionTicketsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if i == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return i.UnexpectedErrorResponse
 }

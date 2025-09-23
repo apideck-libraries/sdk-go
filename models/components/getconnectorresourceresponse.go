@@ -17,44 +17,44 @@ type GetConnectorResourceResponse struct {
 	Links *Links `json:"links,omitempty"`
 }
 
-func (o *GetConnectorResourceResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetConnectorResourceResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetConnectorResourceResponse) GetStatus() string {
-	if o == nil {
+func (g *GetConnectorResourceResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetConnectorResourceResponse) GetData() ConnectorResource {
-	if o == nil {
+func (g *GetConnectorResourceResponse) GetData() ConnectorResource {
+	if g == nil {
 		return ConnectorResource{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetConnectorResourceResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetConnectorResourceResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }
 
-func (o *GetConnectorResourceResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetConnectorResourceResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetConnectorResourceResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetConnectorResourceResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }

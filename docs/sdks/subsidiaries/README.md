@@ -39,8 +39,8 @@ func main() {
     )
 
     res, err := s.Accounting.Subsidiaries.List(ctx, operations.AccountingSubsidiariesAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -115,12 +115,12 @@ func main() {
     )
 
     res, err := s.Accounting.Subsidiaries.Create(ctx, operations.AccountingSubsidiariesAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Subsidiary: components.SubsidiaryInput{
-            ParentID: sdkgo.String("12345"),
-            Name: sdkgo.String("SpaceX"),
+            ParentID: sdkgo.Pointer("12345"),
+            Name: sdkgo.Pointer("SpaceX"),
             Status: components.SubsidiaryStatusActive.ToPointer(),
-            RowVersion: sdkgo.String("1-12345"),
+            RowVersion: sdkgo.Pointer("1-12345"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -225,8 +225,8 @@ func main() {
 
     res, err := s.Accounting.Subsidiaries.Get(ctx, operations.AccountingSubsidiariesOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -290,12 +290,12 @@ func main() {
 
     res, err := s.Accounting.Subsidiaries.Update(ctx, operations.AccountingSubsidiariesUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Subsidiary: components.SubsidiaryInput{
-            ParentID: sdkgo.String("12345"),
-            Name: sdkgo.String("SpaceX"),
+            ParentID: sdkgo.Pointer("12345"),
+            Name: sdkgo.Pointer("SpaceX"),
             Status: components.SubsidiaryStatusActive.ToPointer(),
-            RowVersion: sdkgo.String("1-12345"),
+            RowVersion: sdkgo.Pointer("1-12345"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -382,7 +382,7 @@ func main() {
 
     res, err := s.Accounting.Subsidiaries.Delete(ctx, operations.AccountingSubsidiariesDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

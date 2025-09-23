@@ -32,44 +32,44 @@ func (u *UploadSession) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *UploadSession) GetID() *string {
-	if o == nil {
+func (u *UploadSession) GetID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UploadSession) GetSuccess() *bool {
-	if o == nil {
+func (u *UploadSession) GetSuccess() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Success
+	return u.Success
 }
 
-func (o *UploadSession) GetPartSize() *float64 {
-	if o == nil {
+func (u *UploadSession) GetPartSize() *float64 {
+	if u == nil {
 		return nil
 	}
-	return o.PartSize
+	return u.PartSize
 }
 
-func (o *UploadSession) GetParallelUploadSupported() *bool {
-	if o == nil {
+func (u *UploadSession) GetParallelUploadSupported() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.ParallelUploadSupported
+	return u.ParallelUploadSupported
 }
 
-func (o *UploadSession) GetUploadedByteRange() *string {
-	if o == nil {
+func (u *UploadSession) GetUploadedByteRange() *string {
+	if u == nil {
 		return nil
 	}
-	return o.UploadedByteRange
+	return u.UploadedByteRange
 }
 
-func (o *UploadSession) GetExpiresAt() *time.Time {
-	if o == nil {
+func (u *UploadSession) GetExpiresAt() *time.Time {
+	if u == nil {
 		return nil
 	}
-	return o.ExpiresAt
+	return u.ExpiresAt
 }

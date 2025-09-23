@@ -21,58 +21,58 @@ type GetQuotesResponse struct {
 	Links *Links `json:"links,omitempty"`
 }
 
-func (o *GetQuotesResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetQuotesResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetQuotesResponse) GetStatus() string {
-	if o == nil {
+func (g *GetQuotesResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetQuotesResponse) GetService() string {
-	if o == nil {
+func (g *GetQuotesResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetQuotesResponse) GetResource() string {
-	if o == nil {
+func (g *GetQuotesResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetQuotesResponse) GetOperation() string {
-	if o == nil {
+func (g *GetQuotesResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetQuotesResponse) GetData() []Quote {
-	if o == nil {
+func (g *GetQuotesResponse) GetData() []Quote {
+	if g == nil {
 		return []Quote{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetQuotesResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetQuotesResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetQuotesResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetQuotesResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }

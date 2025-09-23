@@ -11,23 +11,23 @@ type DataScopes struct {
 	Resources *DataScopesResources `json:"resources,omitempty"`
 }
 
-func (o *DataScopes) GetEnabled() *bool {
-	if o == nil {
+func (d *DataScopes) GetEnabled() *bool {
+	if d == nil {
 		return nil
 	}
-	return o.Enabled
+	return d.Enabled
 }
 
-func (o *DataScopes) GetUpdatedAt() *string {
-	if o == nil {
+func (d *DataScopes) GetUpdatedAt() *string {
+	if d == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return d.UpdatedAt
 }
 
-func (o *DataScopes) GetResources() *DataScopesResources {
-	if o == nil {
+func (d *DataScopes) GetResources() *DataScopesResources {
+	if d == nil {
 		return nil
 	}
-	return o.Resources
+	return d.Resources
 }

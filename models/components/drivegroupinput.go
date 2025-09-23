@@ -13,30 +13,30 @@ type DriveGroupInput struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *DriveGroupInput) GetName() string {
-	if o == nil {
+func (d *DriveGroupInput) GetName() string {
+	if d == nil {
 		return ""
 	}
-	return o.Name
+	return d.Name
 }
 
-func (o *DriveGroupInput) GetDisplayName() *string {
-	if o == nil {
+func (d *DriveGroupInput) GetDisplayName() *string {
+	if d == nil {
 		return nil
 	}
-	return o.DisplayName
+	return d.DisplayName
 }
 
-func (o *DriveGroupInput) GetDescription() *string {
-	if o == nil {
+func (d *DriveGroupInput) GetDescription() *string {
+	if d == nil {
 		return nil
 	}
-	return o.Description
+	return d.Description
 }
 
-func (o *DriveGroupInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (d *DriveGroupInput) GetPassThrough() []PassThroughBody {
+	if d == nil {
 		return nil
 	}
-	return o.PassThrough
+	return d.PassThrough
 }

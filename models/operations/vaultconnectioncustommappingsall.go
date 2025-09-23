@@ -13,18 +13,18 @@ type VaultConnectionCustomMappingsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultConnectionCustomMappingsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionCustomMappingsAllGlobals) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionCustomMappingsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionCustomMappingsAllGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultConnectionCustomMappingsAllRequest struct {
@@ -42,46 +42,46 @@ type VaultConnectionCustomMappingsAllRequest struct {
 	ResourceID *string `queryParam:"style=form,explode=true,name=resource_id"`
 }
 
-func (o *VaultConnectionCustomMappingsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionCustomMappingsAllRequest) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionCustomMappingsAllRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionCustomMappingsAllRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultConnectionCustomMappingsAllRequest) GetUnifiedAPI() string {
-	if o == nil {
+func (v *VaultConnectionCustomMappingsAllRequest) GetUnifiedAPI() string {
+	if v == nil {
 		return ""
 	}
-	return o.UnifiedAPI
+	return v.UnifiedAPI
 }
 
-func (o *VaultConnectionCustomMappingsAllRequest) GetServiceID() string {
-	if o == nil {
+func (v *VaultConnectionCustomMappingsAllRequest) GetServiceID() string {
+	if v == nil {
 		return ""
 	}
-	return o.ServiceID
+	return v.ServiceID
 }
 
-func (o *VaultConnectionCustomMappingsAllRequest) GetResource() string {
-	if o == nil {
+func (v *VaultConnectionCustomMappingsAllRequest) GetResource() string {
+	if v == nil {
 		return ""
 	}
-	return o.Resource
+	return v.Resource
 }
 
-func (o *VaultConnectionCustomMappingsAllRequest) GetResourceID() *string {
-	if o == nil {
+func (v *VaultConnectionCustomMappingsAllRequest) GetResourceID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ResourceID
+	return v.ResourceID
 }
 
 type VaultConnectionCustomMappingsAllResponse struct {
@@ -92,23 +92,23 @@ type VaultConnectionCustomMappingsAllResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultConnectionCustomMappingsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultConnectionCustomMappingsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultConnectionCustomMappingsAllResponse) GetGetCustomMappingsResponse() *components.GetCustomMappingsResponse {
-	if o == nil {
+func (v *VaultConnectionCustomMappingsAllResponse) GetGetCustomMappingsResponse() *components.GetCustomMappingsResponse {
+	if v == nil {
 		return nil
 	}
-	return o.GetCustomMappingsResponse
+	return v.GetCustomMappingsResponse
 }
 
-func (o *VaultConnectionCustomMappingsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultConnectionCustomMappingsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

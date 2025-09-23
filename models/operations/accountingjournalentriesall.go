@@ -14,18 +14,18 @@ type AccountingJournalEntriesAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingJournalEntriesAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesAllGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingJournalEntriesAllGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesAllGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingJournalEntriesAllRequest struct {
@@ -62,74 +62,74 @@ func (a *AccountingJournalEntriesAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingJournalEntriesAllRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingJournalEntriesAllRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingJournalEntriesAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesAllRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingJournalEntriesAllRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesAllRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingJournalEntriesAllRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesAllRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingJournalEntriesAllRequest) GetCursor() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesAllRequest) GetCursor() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Cursor
+	return a.Cursor
 }
 
-func (o *AccountingJournalEntriesAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (a *AccountingJournalEntriesAllRequest) GetLimit() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.Limit
+	return a.Limit
 }
 
-func (o *AccountingJournalEntriesAllRequest) GetFilter() *components.JournalEntriesFilter {
-	if o == nil {
+func (a *AccountingJournalEntriesAllRequest) GetFilter() *components.JournalEntriesFilter {
+	if a == nil {
 		return nil
 	}
-	return o.Filter
+	return a.Filter
 }
 
-func (o *AccountingJournalEntriesAllRequest) GetSort() *components.JournalEntriesSort {
-	if o == nil {
+func (a *AccountingJournalEntriesAllRequest) GetSort() *components.JournalEntriesSort {
+	if a == nil {
 		return nil
 	}
-	return o.Sort
+	return a.Sort
 }
 
-func (o *AccountingJournalEntriesAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (a *AccountingJournalEntriesAllRequest) GetPassThrough() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
-func (o *AccountingJournalEntriesAllRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesAllRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingJournalEntriesAllResponse struct {
@@ -142,23 +142,23 @@ type AccountingJournalEntriesAllResponse struct {
 	Next func() (*AccountingJournalEntriesAllResponse, error)
 }
 
-func (o *AccountingJournalEntriesAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingJournalEntriesAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingJournalEntriesAllResponse) GetGetJournalEntriesResponse() *components.GetJournalEntriesResponse {
-	if o == nil {
+func (a *AccountingJournalEntriesAllResponse) GetGetJournalEntriesResponse() *components.GetJournalEntriesResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetJournalEntriesResponse
+	return a.GetJournalEntriesResponse
 }
 
-func (o *AccountingJournalEntriesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingJournalEntriesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

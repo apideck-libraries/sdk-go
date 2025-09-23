@@ -13,18 +13,18 @@ type VaultConnectionsTokenGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultConnectionsTokenGlobals) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionsTokenGlobals) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionsTokenGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionsTokenGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultConnectionsTokenRequestBody struct {
@@ -42,39 +42,39 @@ type VaultConnectionsTokenRequest struct {
 	RequestBody *VaultConnectionsTokenRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *VaultConnectionsTokenRequest) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionsTokenRequest) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionsTokenRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionsTokenRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultConnectionsTokenRequest) GetServiceID() string {
-	if o == nil {
+func (v *VaultConnectionsTokenRequest) GetServiceID() string {
+	if v == nil {
 		return ""
 	}
-	return o.ServiceID
+	return v.ServiceID
 }
 
-func (o *VaultConnectionsTokenRequest) GetUnifiedAPI() string {
-	if o == nil {
+func (v *VaultConnectionsTokenRequest) GetUnifiedAPI() string {
+	if v == nil {
 		return ""
 	}
-	return o.UnifiedAPI
+	return v.UnifiedAPI
 }
 
-func (o *VaultConnectionsTokenRequest) GetRequestBody() *VaultConnectionsTokenRequestBody {
-	if o == nil {
+func (v *VaultConnectionsTokenRequest) GetRequestBody() *VaultConnectionsTokenRequestBody {
+	if v == nil {
 		return nil
 	}
-	return o.RequestBody
+	return v.RequestBody
 }
 
 type VaultConnectionsTokenResponse struct {
@@ -85,23 +85,23 @@ type VaultConnectionsTokenResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultConnectionsTokenResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultConnectionsTokenResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultConnectionsTokenResponse) GetGetConnectionResponse() *components.GetConnectionResponse {
-	if o == nil {
+func (v *VaultConnectionsTokenResponse) GetGetConnectionResponse() *components.GetConnectionResponse {
+	if v == nil {
 		return nil
 	}
-	return o.GetConnectionResponse
+	return v.GetConnectionResponse
 }
 
-func (o *VaultConnectionsTokenResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultConnectionsTokenResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

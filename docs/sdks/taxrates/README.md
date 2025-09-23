@@ -41,18 +41,18 @@ func main() {
     )
 
     res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Filter: &components.TaxRatesFilter{
-            Assets: sdkgo.Bool(true),
-            Equity: sdkgo.Bool(true),
-            Expenses: sdkgo.Bool(true),
-            Liabilities: sdkgo.Bool(true),
-            Revenue: sdkgo.Bool(true),
+            Assets: sdkgo.Pointer(true),
+            Equity: sdkgo.Pointer(true),
+            Expenses: sdkgo.Pointer(true),
+            Liabilities: sdkgo.Pointer(true),
+            Revenue: sdkgo.Pointer(true),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -127,29 +127,29 @@ func main() {
     )
 
     res, err := s.Accounting.TaxRates.Create(ctx, operations.AccountingTaxRatesAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         TaxRate: components.TaxRateInput{
-            ID: sdkgo.String("1234"),
-            Name: sdkgo.String("GST on Purchases"),
-            Code: sdkgo.String("ABN"),
-            Description: sdkgo.String("Reduced rate GST Purchases"),
-            EffectiveTaxRate: sdkgo.Float64(10),
-            TotalTaxRate: sdkgo.Float64(10),
-            TaxPayableAccountID: sdkgo.String("123456"),
-            TaxRemittedAccountID: sdkgo.String("123456"),
+            ID: sdkgo.Pointer("1234"),
+            Name: sdkgo.Pointer("GST on Purchases"),
+            Code: sdkgo.Pointer("ABN"),
+            Description: sdkgo.Pointer("Reduced rate GST Purchases"),
+            EffectiveTaxRate: sdkgo.Pointer[float64](10),
+            TotalTaxRate: sdkgo.Pointer[float64](10),
+            TaxPayableAccountID: sdkgo.Pointer("123456"),
+            TaxRemittedAccountID: sdkgo.Pointer("123456"),
             Components: []components.Components{
                 components.Components{
-                    ID: sdkgo.String("10"),
-                    Name: sdkgo.String("GST"),
-                    Rate: sdkgo.Float64(10),
-                    Compound: sdkgo.Bool(true),
+                    ID: sdkgo.Pointer("10"),
+                    Name: sdkgo.Pointer("GST"),
+                    Rate: sdkgo.Pointer[float64](10),
+                    Compound: sdkgo.Pointer(true),
                 },
             },
-            Type: sdkgo.String("NONE"),
-            ReportTaxType: sdkgo.String("NONE"),
-            OriginalTaxRateID: sdkgo.String("12345"),
+            Type: sdkgo.Pointer("NONE"),
+            ReportTaxType: sdkgo.Pointer("NONE"),
+            OriginalTaxRateID: sdkgo.Pointer("12345"),
             Status: components.TaxRateStatusActive.ToPointer(),
-            RowVersion: sdkgo.String("1-12345"),
+            RowVersion: sdkgo.Pointer("1-12345"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -193,9 +193,9 @@ func main() {
             },
             CustomFields: []components.CustomField{
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
@@ -265,8 +265,8 @@ func main() {
 
     res, err := s.Accounting.TaxRates.Get(ctx, operations.AccountingTaxRatesOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -330,41 +330,41 @@ func main() {
 
     res, err := s.Accounting.TaxRates.Update(ctx, operations.AccountingTaxRatesUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         TaxRate: components.TaxRateInput{
-            ID: sdkgo.String("1234"),
-            Name: sdkgo.String("GST on Purchases"),
-            Code: sdkgo.String("ABN"),
-            Description: sdkgo.String("Reduced rate GST Purchases"),
-            EffectiveTaxRate: sdkgo.Float64(10),
-            TotalTaxRate: sdkgo.Float64(10),
-            TaxPayableAccountID: sdkgo.String("123456"),
-            TaxRemittedAccountID: sdkgo.String("123456"),
+            ID: sdkgo.Pointer("1234"),
+            Name: sdkgo.Pointer("GST on Purchases"),
+            Code: sdkgo.Pointer("ABN"),
+            Description: sdkgo.Pointer("Reduced rate GST Purchases"),
+            EffectiveTaxRate: sdkgo.Pointer[float64](10),
+            TotalTaxRate: sdkgo.Pointer[float64](10),
+            TaxPayableAccountID: sdkgo.Pointer("123456"),
+            TaxRemittedAccountID: sdkgo.Pointer("123456"),
             Components: []components.Components{
                 components.Components{
-                    ID: sdkgo.String("10"),
-                    Name: sdkgo.String("GST"),
-                    Rate: sdkgo.Float64(10),
-                    Compound: sdkgo.Bool(true),
+                    ID: sdkgo.Pointer("10"),
+                    Name: sdkgo.Pointer("GST"),
+                    Rate: sdkgo.Pointer[float64](10),
+                    Compound: sdkgo.Pointer(true),
                 },
                 components.Components{
-                    ID: sdkgo.String("10"),
-                    Name: sdkgo.String("GST"),
-                    Rate: sdkgo.Float64(10),
-                    Compound: sdkgo.Bool(true),
+                    ID: sdkgo.Pointer("10"),
+                    Name: sdkgo.Pointer("GST"),
+                    Rate: sdkgo.Pointer[float64](10),
+                    Compound: sdkgo.Pointer(true),
                 },
                 components.Components{
-                    ID: sdkgo.String("10"),
-                    Name: sdkgo.String("GST"),
-                    Rate: sdkgo.Float64(10),
-                    Compound: sdkgo.Bool(true),
+                    ID: sdkgo.Pointer("10"),
+                    Name: sdkgo.Pointer("GST"),
+                    Rate: sdkgo.Pointer[float64](10),
+                    Compound: sdkgo.Pointer(true),
                 },
             },
-            Type: sdkgo.String("NONE"),
-            ReportTaxType: sdkgo.String("NONE"),
-            OriginalTaxRateID: sdkgo.String("12345"),
+            Type: sdkgo.Pointer("NONE"),
+            ReportTaxType: sdkgo.Pointer("NONE"),
+            OriginalTaxRateID: sdkgo.Pointer("12345"),
             Status: components.TaxRateStatusActive.ToPointer(),
-            RowVersion: sdkgo.String("1-12345"),
+            RowVersion: sdkgo.Pointer("1-12345"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -427,17 +427,17 @@ func main() {
             },
             CustomFields: []components.CustomField{
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
                 },
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
@@ -506,7 +506,7 @@ func main() {
 
     res, err := s.Accounting.TaxRates.Delete(ctx, operations.AccountingTaxRatesDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

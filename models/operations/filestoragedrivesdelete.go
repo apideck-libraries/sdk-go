@@ -14,18 +14,18 @@ type FileStorageDrivesDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *FileStorageDrivesDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageDrivesDeleteGlobals) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageDrivesDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageDrivesDeleteGlobals) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
 type FileStorageDrivesDeleteRequest struct {
@@ -52,39 +52,39 @@ func (f *FileStorageDrivesDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FileStorageDrivesDeleteRequest) GetID() string {
-	if o == nil {
+func (f *FileStorageDrivesDeleteRequest) GetID() string {
+	if f == nil {
 		return ""
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *FileStorageDrivesDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageDrivesDeleteRequest) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageDrivesDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageDrivesDeleteRequest) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
-func (o *FileStorageDrivesDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (f *FileStorageDrivesDeleteRequest) GetServiceID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ServiceID
+	return f.ServiceID
 }
 
-func (o *FileStorageDrivesDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (f *FileStorageDrivesDeleteRequest) GetRaw() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Raw
+	return f.Raw
 }
 
 type FileStorageDrivesDeleteResponse struct {
@@ -95,23 +95,23 @@ type FileStorageDrivesDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *FileStorageDrivesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (f *FileStorageDrivesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if f == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return f.HTTPMeta
 }
 
-func (o *FileStorageDrivesDeleteResponse) GetDeleteDriveResponse() *components.DeleteDriveResponse {
-	if o == nil {
+func (f *FileStorageDrivesDeleteResponse) GetDeleteDriveResponse() *components.DeleteDriveResponse {
+	if f == nil {
 		return nil
 	}
-	return o.DeleteDriveResponse
+	return f.DeleteDriveResponse
 }
 
-func (o *FileStorageDrivesDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (f *FileStorageDrivesDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return f.UnexpectedErrorResponse
 }

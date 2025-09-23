@@ -7,9 +7,9 @@ type AssigneeInput struct {
 	ID string `json:"id"`
 }
 
-func (o *AssigneeInput) GetID() string {
-	if o == nil {
+func (a *AssigneeInput) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }

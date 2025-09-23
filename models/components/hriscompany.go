@@ -83,137 +83,137 @@ func (h *HrisCompany) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *HrisCompany) GetID() *string {
-	if o == nil {
+func (h *HrisCompany) GetID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ID
+	return h.ID
 }
 
-func (o *HrisCompany) GetLegalName() *string {
-	if o == nil {
+func (h *HrisCompany) GetLegalName() *string {
+	if h == nil {
 		return nil
 	}
-	return o.LegalName
+	return h.LegalName
 }
 
-func (o *HrisCompany) GetDisplayName() *string {
-	if o == nil {
+func (h *HrisCompany) GetDisplayName() *string {
+	if h == nil {
 		return nil
 	}
-	return o.DisplayName
+	return h.DisplayName
 }
 
-func (o *HrisCompany) GetSubdomain() *string {
-	if o == nil {
+func (h *HrisCompany) GetSubdomain() *string {
+	if h == nil {
 		return nil
 	}
-	return o.Subdomain
+	return h.Subdomain
 }
 
-func (o *HrisCompany) GetStatus() *HrisCompanyStatus {
-	if o == nil {
+func (h *HrisCompany) GetStatus() *HrisCompanyStatus {
+	if h == nil {
 		return nil
 	}
-	return o.Status
+	return h.Status
 }
 
-func (o *HrisCompany) GetCompanyNumber() *string {
-	if o == nil {
+func (h *HrisCompany) GetCompanyNumber() *string {
+	if h == nil {
 		return nil
 	}
-	return o.CompanyNumber
+	return h.CompanyNumber
 }
 
-func (o *HrisCompany) GetCurrency() *Currency {
-	if o == nil {
+func (h *HrisCompany) GetCurrency() *Currency {
+	if h == nil {
 		return nil
 	}
-	return o.Currency
+	return h.Currency
 }
 
-func (o *HrisCompany) GetAddresses() []Address {
-	if o == nil {
+func (h *HrisCompany) GetAddresses() []Address {
+	if h == nil {
 		return nil
 	}
-	return o.Addresses
+	return h.Addresses
 }
 
-func (o *HrisCompany) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
+func (h *HrisCompany) GetPhoneNumbers() []PhoneNumber {
+	if h == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return h.PhoneNumbers
 }
 
-func (o *HrisCompany) GetEmails() []Email {
-	if o == nil {
+func (h *HrisCompany) GetEmails() []Email {
+	if h == nil {
 		return nil
 	}
-	return o.Emails
+	return h.Emails
 }
 
-func (o *HrisCompany) GetWebsites() []Website {
-	if o == nil {
+func (h *HrisCompany) GetWebsites() []Website {
+	if h == nil {
 		return nil
 	}
-	return o.Websites
+	return h.Websites
 }
 
-func (o *HrisCompany) GetDebtorID() *string {
-	if o == nil {
+func (h *HrisCompany) GetDebtorID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.DebtorID
+	return h.DebtorID
 }
 
-func (o *HrisCompany) GetCustomMappings() map[string]any {
-	if o == nil {
+func (h *HrisCompany) GetCustomMappings() map[string]any {
+	if h == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return h.CustomMappings
 }
 
-func (o *HrisCompany) GetDeleted() *bool {
-	if o == nil {
+func (h *HrisCompany) GetDeleted() *bool {
+	if h == nil {
 		return nil
 	}
-	return o.Deleted
+	return h.Deleted
 }
 
-func (o *HrisCompany) GetUpdatedBy() *string {
-	if o == nil {
+func (h *HrisCompany) GetUpdatedBy() *string {
+	if h == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return h.UpdatedBy
 }
 
-func (o *HrisCompany) GetCreatedBy() *string {
-	if o == nil {
+func (h *HrisCompany) GetCreatedBy() *string {
+	if h == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return h.CreatedBy
 }
 
-func (o *HrisCompany) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (h *HrisCompany) GetUpdatedAt() *time.Time {
+	if h == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return h.UpdatedAt
 }
 
-func (o *HrisCompany) GetCreatedAt() *time.Time {
-	if o == nil {
+func (h *HrisCompany) GetCreatedAt() *time.Time {
+	if h == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return h.CreatedAt
 }
 
-func (o *HrisCompany) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (h *HrisCompany) GetPassThrough() []PassThroughBody {
+	if h == nil {
 		return nil
 	}
-	return o.PassThrough
+	return h.PassThrough
 }
 
 type HrisCompanyInput struct {
@@ -234,86 +234,86 @@ type HrisCompanyInput struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *HrisCompanyInput) GetLegalName() *string {
-	if o == nil {
+func (h *HrisCompanyInput) GetLegalName() *string {
+	if h == nil {
 		return nil
 	}
-	return o.LegalName
+	return h.LegalName
 }
 
-func (o *HrisCompanyInput) GetDisplayName() *string {
-	if o == nil {
+func (h *HrisCompanyInput) GetDisplayName() *string {
+	if h == nil {
 		return nil
 	}
-	return o.DisplayName
+	return h.DisplayName
 }
 
-func (o *HrisCompanyInput) GetSubdomain() *string {
-	if o == nil {
+func (h *HrisCompanyInput) GetSubdomain() *string {
+	if h == nil {
 		return nil
 	}
-	return o.Subdomain
+	return h.Subdomain
 }
 
-func (o *HrisCompanyInput) GetStatus() *HrisCompanyStatus {
-	if o == nil {
+func (h *HrisCompanyInput) GetStatus() *HrisCompanyStatus {
+	if h == nil {
 		return nil
 	}
-	return o.Status
+	return h.Status
 }
 
-func (o *HrisCompanyInput) GetCompanyNumber() *string {
-	if o == nil {
+func (h *HrisCompanyInput) GetCompanyNumber() *string {
+	if h == nil {
 		return nil
 	}
-	return o.CompanyNumber
+	return h.CompanyNumber
 }
 
-func (o *HrisCompanyInput) GetCurrency() *Currency {
-	if o == nil {
+func (h *HrisCompanyInput) GetCurrency() *Currency {
+	if h == nil {
 		return nil
 	}
-	return o.Currency
+	return h.Currency
 }
 
-func (o *HrisCompanyInput) GetAddresses() []Address {
-	if o == nil {
+func (h *HrisCompanyInput) GetAddresses() []Address {
+	if h == nil {
 		return nil
 	}
-	return o.Addresses
+	return h.Addresses
 }
 
-func (o *HrisCompanyInput) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
+func (h *HrisCompanyInput) GetPhoneNumbers() []PhoneNumber {
+	if h == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return h.PhoneNumbers
 }
 
-func (o *HrisCompanyInput) GetEmails() []Email {
-	if o == nil {
+func (h *HrisCompanyInput) GetEmails() []Email {
+	if h == nil {
 		return nil
 	}
-	return o.Emails
+	return h.Emails
 }
 
-func (o *HrisCompanyInput) GetWebsites() []Website {
-	if o == nil {
+func (h *HrisCompanyInput) GetWebsites() []Website {
+	if h == nil {
 		return nil
 	}
-	return o.Websites
+	return h.Websites
 }
 
-func (o *HrisCompanyInput) GetDebtorID() *string {
-	if o == nil {
+func (h *HrisCompanyInput) GetDebtorID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.DebtorID
+	return h.DebtorID
 }
 
-func (o *HrisCompanyInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (h *HrisCompanyInput) GetPassThrough() []PassThroughBody {
+	if h == nil {
 		return nil
 	}
-	return o.PassThrough
+	return h.PassThrough
 }

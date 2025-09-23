@@ -14,18 +14,18 @@ type CrmActivitiesAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmActivitiesAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmActivitiesAddGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmActivitiesAddGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmActivitiesAddGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmActivitiesAddRequest struct {
@@ -51,39 +51,39 @@ func (c *CrmActivitiesAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmActivitiesAddRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmActivitiesAddRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmActivitiesAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmActivitiesAddRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmActivitiesAddRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmActivitiesAddRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmActivitiesAddRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmActivitiesAddRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmActivitiesAddRequest) GetActivity() components.ActivityInput {
-	if o == nil {
+func (c *CrmActivitiesAddRequest) GetActivity() components.ActivityInput {
+	if c == nil {
 		return components.ActivityInput{}
 	}
-	return o.Activity
+	return c.Activity
 }
 
 type CrmActivitiesAddResponse struct {
@@ -94,23 +94,23 @@ type CrmActivitiesAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmActivitiesAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmActivitiesAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmActivitiesAddResponse) GetCreateActivityResponse() *components.CreateActivityResponse {
-	if o == nil {
+func (c *CrmActivitiesAddResponse) GetCreateActivityResponse() *components.CreateActivityResponse {
+	if c == nil {
 		return nil
 	}
-	return o.CreateActivityResponse
+	return c.CreateActivityResponse
 }
 
-func (o *CrmActivitiesAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmActivitiesAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

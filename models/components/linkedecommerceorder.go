@@ -12,23 +12,23 @@ type LinkedEcommerceOrder struct {
 	Status *EcommerceOrderStatus `json:"status,omitempty"`
 }
 
-func (o *LinkedEcommerceOrder) GetID() *string {
-	if o == nil {
+func (l *LinkedEcommerceOrder) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinkedEcommerceOrder) GetTotal() *string {
-	if o == nil {
+func (l *LinkedEcommerceOrder) GetTotal() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Total
+	return l.Total
 }
 
-func (o *LinkedEcommerceOrder) GetStatus() *EcommerceOrderStatus {
-	if o == nil {
+func (l *LinkedEcommerceOrder) GetStatus() *EcommerceOrderStatus {
+	if l == nil {
 		return nil
 	}
-	return o.Status
+	return l.Status
 }

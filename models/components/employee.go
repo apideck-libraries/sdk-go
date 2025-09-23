@@ -125,18 +125,18 @@ type EmploymentRole struct {
 	SubType *EmploymentSubType `json:"sub_type,omitempty"`
 }
 
-func (o *EmploymentRole) GetType() *EmploymentType {
-	if o == nil {
+func (e *EmploymentRole) GetType() *EmploymentType {
+	if e == nil {
 		return nil
 	}
-	return o.Type
+	return e.Type
 }
 
-func (o *EmploymentRole) GetSubType() *EmploymentSubType {
-	if o == nil {
+func (e *EmploymentRole) GetSubType() *EmploymentSubType {
+	if e == nil {
 		return nil
 	}
-	return o.SubType
+	return e.SubType
 }
 
 type Manager struct {
@@ -154,46 +154,46 @@ type Manager struct {
 	EmploymentStatus *EmploymentStatus `json:"employment_status,omitempty"`
 }
 
-func (o *Manager) GetID() *string {
-	if o == nil {
+func (m *Manager) GetID() *string {
+	if m == nil {
 		return nil
 	}
-	return o.ID
+	return m.ID
 }
 
-func (o *Manager) GetName() *string {
-	if o == nil {
+func (m *Manager) GetName() *string {
+	if m == nil {
 		return nil
 	}
-	return o.Name
+	return m.Name
 }
 
-func (o *Manager) GetFirstName() *string {
-	if o == nil {
+func (m *Manager) GetFirstName() *string {
+	if m == nil {
 		return nil
 	}
-	return o.FirstName
+	return m.FirstName
 }
 
-func (o *Manager) GetLastName() *string {
-	if o == nil {
+func (m *Manager) GetLastName() *string {
+	if m == nil {
 		return nil
 	}
-	return o.LastName
+	return m.LastName
 }
 
-func (o *Manager) GetEmail() *string {
-	if o == nil {
+func (m *Manager) GetEmail() *string {
+	if m == nil {
 		return nil
 	}
-	return o.Email
+	return m.Email
 }
 
-func (o *Manager) GetEmploymentStatus() *EmploymentStatus {
-	if o == nil {
+func (m *Manager) GetEmploymentStatus() *EmploymentStatus {
+	if m == nil {
 		return nil
 	}
-	return o.EmploymentStatus
+	return m.EmploymentStatus
 }
 
 type ProbationPeriod struct {
@@ -214,18 +214,18 @@ func (p *ProbationPeriod) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ProbationPeriod) GetStartDate() *types.Date {
-	if o == nil {
+func (p *ProbationPeriod) GetStartDate() *types.Date {
+	if p == nil {
 		return nil
 	}
-	return o.StartDate
+	return p.StartDate
 }
 
-func (o *ProbationPeriod) GetEndDate() *types.Date {
-	if o == nil {
+func (p *ProbationPeriod) GetEndDate() *types.Date {
+	if p == nil {
 		return nil
 	}
-	return o.EndDate
+	return p.EndDate
 }
 
 type Employee struct {
@@ -360,473 +360,473 @@ func (e *Employee) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Employee) GetID() *string {
-	if o == nil {
+func (e *Employee) GetID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *Employee) GetDownstreamID() *string {
-	if o == nil {
+func (e *Employee) GetDownstreamID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.DownstreamID
+	return e.DownstreamID
 }
 
-func (o *Employee) GetFirstName() *string {
-	if o == nil {
+func (e *Employee) GetFirstName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.FirstName
+	return e.FirstName
 }
 
-func (o *Employee) GetLastName() *string {
-	if o == nil {
+func (e *Employee) GetLastName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.LastName
+	return e.LastName
 }
 
-func (o *Employee) GetMiddleName() *string {
-	if o == nil {
+func (e *Employee) GetMiddleName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.MiddleName
+	return e.MiddleName
 }
 
-func (o *Employee) GetDisplayName() *string {
-	if o == nil {
+func (e *Employee) GetDisplayName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.DisplayName
+	return e.DisplayName
 }
 
-func (o *Employee) GetPreferredName() *string {
-	if o == nil {
+func (e *Employee) GetPreferredName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.PreferredName
+	return e.PreferredName
 }
 
-func (o *Employee) GetInitials() *string {
-	if o == nil {
+func (e *Employee) GetInitials() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Initials
+	return e.Initials
 }
 
-func (o *Employee) GetSalutation() *string {
-	if o == nil {
+func (e *Employee) GetSalutation() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Salutation
+	return e.Salutation
 }
 
-func (o *Employee) GetTitle() *string {
-	if o == nil {
+func (e *Employee) GetTitle() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Title
+	return e.Title
 }
 
-func (o *Employee) GetMaritalStatus() *string {
-	if o == nil {
+func (e *Employee) GetMaritalStatus() *string {
+	if e == nil {
 		return nil
 	}
-	return o.MaritalStatus
+	return e.MaritalStatus
 }
 
-func (o *Employee) GetPartner() *Person {
-	if o == nil {
+func (e *Employee) GetPartner() *Person {
+	if e == nil {
 		return nil
 	}
-	return o.Partner
+	return e.Partner
 }
 
-func (o *Employee) GetDivision() *string {
-	if o == nil {
+func (e *Employee) GetDivision() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Division
+	return e.Division
 }
 
-func (o *Employee) GetDivisionID() *string {
-	if o == nil {
+func (e *Employee) GetDivisionID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.DivisionID
+	return e.DivisionID
 }
 
-func (o *Employee) GetDepartment() *string {
-	if o == nil {
+func (e *Employee) GetDepartment() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Department
+	return e.Department
 }
 
-func (o *Employee) GetDepartmentID() *string {
-	if o == nil {
+func (e *Employee) GetDepartmentID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return e.DepartmentID
 }
 
-func (o *Employee) GetDepartmentName() *string {
-	if o == nil {
+func (e *Employee) GetDepartmentName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.DepartmentName
+	return e.DepartmentName
 }
 
-func (o *Employee) GetTeam() *Team {
-	if o == nil {
+func (e *Employee) GetTeam() *Team {
+	if e == nil {
 		return nil
 	}
-	return o.Team
+	return e.Team
 }
 
-func (o *Employee) GetCompanyID() *string {
-	if o == nil {
+func (e *Employee) GetCompanyID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CompanyID
+	return e.CompanyID
 }
 
-func (o *Employee) GetCompanyName() *string {
-	if o == nil {
+func (e *Employee) GetCompanyName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CompanyName
+	return e.CompanyName
 }
 
-func (o *Employee) GetEmploymentStartDate() *string {
-	if o == nil {
+func (e *Employee) GetEmploymentStartDate() *string {
+	if e == nil {
 		return nil
 	}
-	return o.EmploymentStartDate
+	return e.EmploymentStartDate
 }
 
-func (o *Employee) GetEmploymentEndDate() *string {
-	if o == nil {
+func (e *Employee) GetEmploymentEndDate() *string {
+	if e == nil {
 		return nil
 	}
-	return o.EmploymentEndDate
+	return e.EmploymentEndDate
 }
 
-func (o *Employee) GetLeavingReason() *LeavingReason {
-	if o == nil {
+func (e *Employee) GetLeavingReason() *LeavingReason {
+	if e == nil {
 		return nil
 	}
-	return o.LeavingReason
+	return e.LeavingReason
 }
 
-func (o *Employee) GetEmployeeNumber() *string {
-	if o == nil {
+func (e *Employee) GetEmployeeNumber() *string {
+	if e == nil {
 		return nil
 	}
-	return o.EmployeeNumber
+	return e.EmployeeNumber
 }
 
-func (o *Employee) GetEmploymentStatus() *EmploymentStatus {
-	if o == nil {
+func (e *Employee) GetEmploymentStatus() *EmploymentStatus {
+	if e == nil {
 		return nil
 	}
-	return o.EmploymentStatus
+	return e.EmploymentStatus
 }
 
-func (o *Employee) GetEmploymentRole() *EmploymentRole {
-	if o == nil {
+func (e *Employee) GetEmploymentRole() *EmploymentRole {
+	if e == nil {
 		return nil
 	}
-	return o.EmploymentRole
+	return e.EmploymentRole
 }
 
-func (o *Employee) GetEthnicity() *string {
-	if o == nil {
+func (e *Employee) GetEthnicity() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Ethnicity
+	return e.Ethnicity
 }
 
-func (o *Employee) GetManager() *Manager {
-	if o == nil {
+func (e *Employee) GetManager() *Manager {
+	if e == nil {
 		return nil
 	}
-	return o.Manager
+	return e.Manager
 }
 
-func (o *Employee) GetDirectReports() []string {
-	if o == nil {
+func (e *Employee) GetDirectReports() []string {
+	if e == nil {
 		return nil
 	}
-	return o.DirectReports
+	return e.DirectReports
 }
 
-func (o *Employee) GetSocialSecurityNumber() *string {
-	if o == nil {
+func (e *Employee) GetSocialSecurityNumber() *string {
+	if e == nil {
 		return nil
 	}
-	return o.SocialSecurityNumber
+	return e.SocialSecurityNumber
 }
 
-func (o *Employee) GetBirthday() *types.Date {
-	if o == nil {
+func (e *Employee) GetBirthday() *types.Date {
+	if e == nil {
 		return nil
 	}
-	return o.Birthday
+	return e.Birthday
 }
 
-func (o *Employee) GetDeceasedOn() *types.Date {
-	if o == nil {
+func (e *Employee) GetDeceasedOn() *types.Date {
+	if e == nil {
 		return nil
 	}
-	return o.DeceasedOn
+	return e.DeceasedOn
 }
 
-func (o *Employee) GetCountryOfBirth() *string {
-	if o == nil {
+func (e *Employee) GetCountryOfBirth() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CountryOfBirth
+	return e.CountryOfBirth
 }
 
-func (o *Employee) GetDescription() *string {
-	if o == nil {
+func (e *Employee) GetDescription() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Description
+	return e.Description
 }
 
-func (o *Employee) GetGender() *Gender {
-	if o == nil {
+func (e *Employee) GetGender() *Gender {
+	if e == nil {
 		return nil
 	}
-	return o.Gender
+	return e.Gender
 }
 
-func (o *Employee) GetPronouns() *string {
-	if o == nil {
+func (e *Employee) GetPronouns() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Pronouns
+	return e.Pronouns
 }
 
-func (o *Employee) GetPreferredLanguage() *string {
-	if o == nil {
+func (e *Employee) GetPreferredLanguage() *string {
+	if e == nil {
 		return nil
 	}
-	return o.PreferredLanguage
+	return e.PreferredLanguage
 }
 
-func (o *Employee) GetLanguages() []*string {
-	if o == nil {
+func (e *Employee) GetLanguages() []*string {
+	if e == nil {
 		return nil
 	}
-	return o.Languages
+	return e.Languages
 }
 
-func (o *Employee) GetNationalities() []*string {
-	if o == nil {
+func (e *Employee) GetNationalities() []*string {
+	if e == nil {
 		return nil
 	}
-	return o.Nationalities
+	return e.Nationalities
 }
 
-func (o *Employee) GetPhotoURL() *string {
-	if o == nil {
+func (e *Employee) GetPhotoURL() *string {
+	if e == nil {
 		return nil
 	}
-	return o.PhotoURL
+	return e.PhotoURL
 }
 
-func (o *Employee) GetTimezone() *string {
-	if o == nil {
+func (e *Employee) GetTimezone() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Timezone
+	return e.Timezone
 }
 
-func (o *Employee) GetSource() *string {
-	if o == nil {
+func (e *Employee) GetSource() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Source
+	return e.Source
 }
 
-func (o *Employee) GetSourceID() *string {
-	if o == nil {
+func (e *Employee) GetSourceID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.SourceID
+	return e.SourceID
 }
 
-func (o *Employee) GetRecordURL() *string {
-	if o == nil {
+func (e *Employee) GetRecordURL() *string {
+	if e == nil {
 		return nil
 	}
-	return o.RecordURL
+	return e.RecordURL
 }
 
-func (o *Employee) GetJobs() []EmployeeJob {
-	if o == nil {
+func (e *Employee) GetJobs() []EmployeeJob {
+	if e == nil {
 		return nil
 	}
-	return o.Jobs
+	return e.Jobs
 }
 
-func (o *Employee) GetCompensations() []EmployeeCompensation {
-	if o == nil {
+func (e *Employee) GetCompensations() []EmployeeCompensation {
+	if e == nil {
 		return nil
 	}
-	return o.Compensations
+	return e.Compensations
 }
 
-func (o *Employee) GetWorksRemote() *bool {
-	if o == nil {
+func (e *Employee) GetWorksRemote() *bool {
+	if e == nil {
 		return nil
 	}
-	return o.WorksRemote
+	return e.WorksRemote
 }
 
-func (o *Employee) GetAddresses() []Address {
-	if o == nil {
+func (e *Employee) GetAddresses() []Address {
+	if e == nil {
 		return nil
 	}
-	return o.Addresses
+	return e.Addresses
 }
 
-func (o *Employee) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
+func (e *Employee) GetPhoneNumbers() []PhoneNumber {
+	if e == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return e.PhoneNumbers
 }
 
-func (o *Employee) GetEmails() []Email {
-	if o == nil {
+func (e *Employee) GetEmails() []Email {
+	if e == nil {
 		return nil
 	}
-	return o.Emails
+	return e.Emails
 }
 
-func (o *Employee) GetCustomFields() []CustomField {
-	if o == nil {
+func (e *Employee) GetCustomFields() []CustomField {
+	if e == nil {
 		return nil
 	}
-	return o.CustomFields
+	return e.CustomFields
 }
 
-func (o *Employee) GetSocialLinks() []SocialLink {
-	if o == nil {
+func (e *Employee) GetSocialLinks() []SocialLink {
+	if e == nil {
 		return nil
 	}
-	return o.SocialLinks
+	return e.SocialLinks
 }
 
-func (o *Employee) GetBankAccounts() []BankAccount {
-	if o == nil {
+func (e *Employee) GetBankAccounts() []BankAccount {
+	if e == nil {
 		return nil
 	}
-	return o.BankAccounts
+	return e.BankAccounts
 }
 
-func (o *Employee) GetTaxCode() *string {
-	if o == nil {
+func (e *Employee) GetTaxCode() *string {
+	if e == nil {
 		return nil
 	}
-	return o.TaxCode
+	return e.TaxCode
 }
 
-func (o *Employee) GetTaxID() *string {
-	if o == nil {
+func (e *Employee) GetTaxID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.TaxID
+	return e.TaxID
 }
 
-func (o *Employee) GetDietaryPreference() *string {
-	if o == nil {
+func (e *Employee) GetDietaryPreference() *string {
+	if e == nil {
 		return nil
 	}
-	return o.DietaryPreference
+	return e.DietaryPreference
 }
 
-func (o *Employee) GetFoodAllergies() []string {
-	if o == nil {
+func (e *Employee) GetFoodAllergies() []string {
+	if e == nil {
 		return nil
 	}
-	return o.FoodAllergies
+	return e.FoodAllergies
 }
 
-func (o *Employee) GetProbationPeriod() *ProbationPeriod {
-	if o == nil {
+func (e *Employee) GetProbationPeriod() *ProbationPeriod {
+	if e == nil {
 		return nil
 	}
-	return o.ProbationPeriod
+	return e.ProbationPeriod
 }
 
-func (o *Employee) GetTags() []string {
-	if o == nil {
+func (e *Employee) GetTags() []string {
+	if e == nil {
 		return nil
 	}
-	return o.Tags
+	return e.Tags
 }
 
-func (o *Employee) GetCustomMappings() map[string]any {
-	if o == nil {
+func (e *Employee) GetCustomMappings() map[string]any {
+	if e == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return e.CustomMappings
 }
 
-func (o *Employee) GetRowVersion() *string {
-	if o == nil {
+func (e *Employee) GetRowVersion() *string {
+	if e == nil {
 		return nil
 	}
-	return o.RowVersion
+	return e.RowVersion
 }
 
-func (o *Employee) GetDeleted() *bool {
-	if o == nil {
+func (e *Employee) GetDeleted() *bool {
+	if e == nil {
 		return nil
 	}
-	return o.Deleted
+	return e.Deleted
 }
 
-func (o *Employee) GetUpdatedBy() *string {
-	if o == nil {
+func (e *Employee) GetUpdatedBy() *string {
+	if e == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return e.UpdatedBy
 }
 
-func (o *Employee) GetCreatedBy() *string {
-	if o == nil {
+func (e *Employee) GetCreatedBy() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return e.CreatedBy
 }
 
-func (o *Employee) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (e *Employee) GetUpdatedAt() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return e.UpdatedAt
 }
 
-func (o *Employee) GetCreatedAt() *time.Time {
-	if o == nil {
+func (e *Employee) GetCreatedAt() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return e.CreatedAt
 }
 
-func (o *Employee) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (e *Employee) GetPassThrough() []PassThroughBody {
+	if e == nil {
 		return nil
 	}
-	return o.PassThrough
+	return e.PassThrough
 }
 
 type EmployeeInput struct {
@@ -949,429 +949,429 @@ func (e *EmployeeInput) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *EmployeeInput) GetID() *string {
-	if o == nil {
+func (e *EmployeeInput) GetID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *EmployeeInput) GetFirstName() *string {
-	if o == nil {
+func (e *EmployeeInput) GetFirstName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.FirstName
+	return e.FirstName
 }
 
-func (o *EmployeeInput) GetLastName() *string {
-	if o == nil {
+func (e *EmployeeInput) GetLastName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.LastName
+	return e.LastName
 }
 
-func (o *EmployeeInput) GetMiddleName() *string {
-	if o == nil {
+func (e *EmployeeInput) GetMiddleName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.MiddleName
+	return e.MiddleName
 }
 
-func (o *EmployeeInput) GetDisplayName() *string {
-	if o == nil {
+func (e *EmployeeInput) GetDisplayName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.DisplayName
+	return e.DisplayName
 }
 
-func (o *EmployeeInput) GetPreferredName() *string {
-	if o == nil {
+func (e *EmployeeInput) GetPreferredName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.PreferredName
+	return e.PreferredName
 }
 
-func (o *EmployeeInput) GetInitials() *string {
-	if o == nil {
+func (e *EmployeeInput) GetInitials() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Initials
+	return e.Initials
 }
 
-func (o *EmployeeInput) GetSalutation() *string {
-	if o == nil {
+func (e *EmployeeInput) GetSalutation() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Salutation
+	return e.Salutation
 }
 
-func (o *EmployeeInput) GetTitle() *string {
-	if o == nil {
+func (e *EmployeeInput) GetTitle() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Title
+	return e.Title
 }
 
-func (o *EmployeeInput) GetMaritalStatus() *string {
-	if o == nil {
+func (e *EmployeeInput) GetMaritalStatus() *string {
+	if e == nil {
 		return nil
 	}
-	return o.MaritalStatus
+	return e.MaritalStatus
 }
 
-func (o *EmployeeInput) GetPartner() *PersonInput {
-	if o == nil {
+func (e *EmployeeInput) GetPartner() *PersonInput {
+	if e == nil {
 		return nil
 	}
-	return o.Partner
+	return e.Partner
 }
 
-func (o *EmployeeInput) GetDivision() *string {
-	if o == nil {
+func (e *EmployeeInput) GetDivision() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Division
+	return e.Division
 }
 
-func (o *EmployeeInput) GetDivisionID() *string {
-	if o == nil {
+func (e *EmployeeInput) GetDivisionID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.DivisionID
+	return e.DivisionID
 }
 
-func (o *EmployeeInput) GetDepartment() *string {
-	if o == nil {
+func (e *EmployeeInput) GetDepartment() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Department
+	return e.Department
 }
 
-func (o *EmployeeInput) GetDepartmentID() *string {
-	if o == nil {
+func (e *EmployeeInput) GetDepartmentID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return e.DepartmentID
 }
 
-func (o *EmployeeInput) GetDepartmentName() *string {
-	if o == nil {
+func (e *EmployeeInput) GetDepartmentName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.DepartmentName
+	return e.DepartmentName
 }
 
-func (o *EmployeeInput) GetTeam() *Team {
-	if o == nil {
+func (e *EmployeeInput) GetTeam() *Team {
+	if e == nil {
 		return nil
 	}
-	return o.Team
+	return e.Team
 }
 
-func (o *EmployeeInput) GetCompanyID() *string {
-	if o == nil {
+func (e *EmployeeInput) GetCompanyID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CompanyID
+	return e.CompanyID
 }
 
-func (o *EmployeeInput) GetCompanyName() *string {
-	if o == nil {
+func (e *EmployeeInput) GetCompanyName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CompanyName
+	return e.CompanyName
 }
 
-func (o *EmployeeInput) GetEmploymentStartDate() *string {
-	if o == nil {
+func (e *EmployeeInput) GetEmploymentStartDate() *string {
+	if e == nil {
 		return nil
 	}
-	return o.EmploymentStartDate
+	return e.EmploymentStartDate
 }
 
-func (o *EmployeeInput) GetEmploymentEndDate() *string {
-	if o == nil {
+func (e *EmployeeInput) GetEmploymentEndDate() *string {
+	if e == nil {
 		return nil
 	}
-	return o.EmploymentEndDate
+	return e.EmploymentEndDate
 }
 
-func (o *EmployeeInput) GetLeavingReason() *LeavingReason {
-	if o == nil {
+func (e *EmployeeInput) GetLeavingReason() *LeavingReason {
+	if e == nil {
 		return nil
 	}
-	return o.LeavingReason
+	return e.LeavingReason
 }
 
-func (o *EmployeeInput) GetEmployeeNumber() *string {
-	if o == nil {
+func (e *EmployeeInput) GetEmployeeNumber() *string {
+	if e == nil {
 		return nil
 	}
-	return o.EmployeeNumber
+	return e.EmployeeNumber
 }
 
-func (o *EmployeeInput) GetEmploymentStatus() *EmploymentStatus {
-	if o == nil {
+func (e *EmployeeInput) GetEmploymentStatus() *EmploymentStatus {
+	if e == nil {
 		return nil
 	}
-	return o.EmploymentStatus
+	return e.EmploymentStatus
 }
 
-func (o *EmployeeInput) GetEmploymentRole() *EmploymentRole {
-	if o == nil {
+func (e *EmployeeInput) GetEmploymentRole() *EmploymentRole {
+	if e == nil {
 		return nil
 	}
-	return o.EmploymentRole
+	return e.EmploymentRole
 }
 
-func (o *EmployeeInput) GetEthnicity() *string {
-	if o == nil {
+func (e *EmployeeInput) GetEthnicity() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Ethnicity
+	return e.Ethnicity
 }
 
-func (o *EmployeeInput) GetManager() *Manager {
-	if o == nil {
+func (e *EmployeeInput) GetManager() *Manager {
+	if e == nil {
 		return nil
 	}
-	return o.Manager
+	return e.Manager
 }
 
-func (o *EmployeeInput) GetDirectReports() []string {
-	if o == nil {
+func (e *EmployeeInput) GetDirectReports() []string {
+	if e == nil {
 		return nil
 	}
-	return o.DirectReports
+	return e.DirectReports
 }
 
-func (o *EmployeeInput) GetSocialSecurityNumber() *string {
-	if o == nil {
+func (e *EmployeeInput) GetSocialSecurityNumber() *string {
+	if e == nil {
 		return nil
 	}
-	return o.SocialSecurityNumber
+	return e.SocialSecurityNumber
 }
 
-func (o *EmployeeInput) GetBirthday() *types.Date {
-	if o == nil {
+func (e *EmployeeInput) GetBirthday() *types.Date {
+	if e == nil {
 		return nil
 	}
-	return o.Birthday
+	return e.Birthday
 }
 
-func (o *EmployeeInput) GetDeceasedOn() *types.Date {
-	if o == nil {
+func (e *EmployeeInput) GetDeceasedOn() *types.Date {
+	if e == nil {
 		return nil
 	}
-	return o.DeceasedOn
+	return e.DeceasedOn
 }
 
-func (o *EmployeeInput) GetCountryOfBirth() *string {
-	if o == nil {
+func (e *EmployeeInput) GetCountryOfBirth() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CountryOfBirth
+	return e.CountryOfBirth
 }
 
-func (o *EmployeeInput) GetDescription() *string {
-	if o == nil {
+func (e *EmployeeInput) GetDescription() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Description
+	return e.Description
 }
 
-func (o *EmployeeInput) GetGender() *Gender {
-	if o == nil {
+func (e *EmployeeInput) GetGender() *Gender {
+	if e == nil {
 		return nil
 	}
-	return o.Gender
+	return e.Gender
 }
 
-func (o *EmployeeInput) GetPronouns() *string {
-	if o == nil {
+func (e *EmployeeInput) GetPronouns() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Pronouns
+	return e.Pronouns
 }
 
-func (o *EmployeeInput) GetPreferredLanguage() *string {
-	if o == nil {
+func (e *EmployeeInput) GetPreferredLanguage() *string {
+	if e == nil {
 		return nil
 	}
-	return o.PreferredLanguage
+	return e.PreferredLanguage
 }
 
-func (o *EmployeeInput) GetLanguages() []*string {
-	if o == nil {
+func (e *EmployeeInput) GetLanguages() []*string {
+	if e == nil {
 		return nil
 	}
-	return o.Languages
+	return e.Languages
 }
 
-func (o *EmployeeInput) GetNationalities() []*string {
-	if o == nil {
+func (e *EmployeeInput) GetNationalities() []*string {
+	if e == nil {
 		return nil
 	}
-	return o.Nationalities
+	return e.Nationalities
 }
 
-func (o *EmployeeInput) GetPhotoURL() *string {
-	if o == nil {
+func (e *EmployeeInput) GetPhotoURL() *string {
+	if e == nil {
 		return nil
 	}
-	return o.PhotoURL
+	return e.PhotoURL
 }
 
-func (o *EmployeeInput) GetTimezone() *string {
-	if o == nil {
+func (e *EmployeeInput) GetTimezone() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Timezone
+	return e.Timezone
 }
 
-func (o *EmployeeInput) GetSource() *string {
-	if o == nil {
+func (e *EmployeeInput) GetSource() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Source
+	return e.Source
 }
 
-func (o *EmployeeInput) GetSourceID() *string {
-	if o == nil {
+func (e *EmployeeInput) GetSourceID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.SourceID
+	return e.SourceID
 }
 
-func (o *EmployeeInput) GetRecordURL() *string {
-	if o == nil {
+func (e *EmployeeInput) GetRecordURL() *string {
+	if e == nil {
 		return nil
 	}
-	return o.RecordURL
+	return e.RecordURL
 }
 
-func (o *EmployeeInput) GetJobs() []EmployeeJobInput {
-	if o == nil {
+func (e *EmployeeInput) GetJobs() []EmployeeJobInput {
+	if e == nil {
 		return nil
 	}
-	return o.Jobs
+	return e.Jobs
 }
 
-func (o *EmployeeInput) GetCompensations() []EmployeeCompensationInput {
-	if o == nil {
+func (e *EmployeeInput) GetCompensations() []EmployeeCompensationInput {
+	if e == nil {
 		return nil
 	}
-	return o.Compensations
+	return e.Compensations
 }
 
-func (o *EmployeeInput) GetWorksRemote() *bool {
-	if o == nil {
+func (e *EmployeeInput) GetWorksRemote() *bool {
+	if e == nil {
 		return nil
 	}
-	return o.WorksRemote
+	return e.WorksRemote
 }
 
-func (o *EmployeeInput) GetAddresses() []Address {
-	if o == nil {
+func (e *EmployeeInput) GetAddresses() []Address {
+	if e == nil {
 		return nil
 	}
-	return o.Addresses
+	return e.Addresses
 }
 
-func (o *EmployeeInput) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
+func (e *EmployeeInput) GetPhoneNumbers() []PhoneNumber {
+	if e == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return e.PhoneNumbers
 }
 
-func (o *EmployeeInput) GetEmails() []Email {
-	if o == nil {
+func (e *EmployeeInput) GetEmails() []Email {
+	if e == nil {
 		return nil
 	}
-	return o.Emails
+	return e.Emails
 }
 
-func (o *EmployeeInput) GetCustomFields() []CustomField {
-	if o == nil {
+func (e *EmployeeInput) GetCustomFields() []CustomField {
+	if e == nil {
 		return nil
 	}
-	return o.CustomFields
+	return e.CustomFields
 }
 
-func (o *EmployeeInput) GetSocialLinks() []SocialLink {
-	if o == nil {
+func (e *EmployeeInput) GetSocialLinks() []SocialLink {
+	if e == nil {
 		return nil
 	}
-	return o.SocialLinks
+	return e.SocialLinks
 }
 
-func (o *EmployeeInput) GetBankAccounts() []BankAccount {
-	if o == nil {
+func (e *EmployeeInput) GetBankAccounts() []BankAccount {
+	if e == nil {
 		return nil
 	}
-	return o.BankAccounts
+	return e.BankAccounts
 }
 
-func (o *EmployeeInput) GetTaxCode() *string {
-	if o == nil {
+func (e *EmployeeInput) GetTaxCode() *string {
+	if e == nil {
 		return nil
 	}
-	return o.TaxCode
+	return e.TaxCode
 }
 
-func (o *EmployeeInput) GetTaxID() *string {
-	if o == nil {
+func (e *EmployeeInput) GetTaxID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.TaxID
+	return e.TaxID
 }
 
-func (o *EmployeeInput) GetDietaryPreference() *string {
-	if o == nil {
+func (e *EmployeeInput) GetDietaryPreference() *string {
+	if e == nil {
 		return nil
 	}
-	return o.DietaryPreference
+	return e.DietaryPreference
 }
 
-func (o *EmployeeInput) GetFoodAllergies() []string {
-	if o == nil {
+func (e *EmployeeInput) GetFoodAllergies() []string {
+	if e == nil {
 		return nil
 	}
-	return o.FoodAllergies
+	return e.FoodAllergies
 }
 
-func (o *EmployeeInput) GetProbationPeriod() *ProbationPeriod {
-	if o == nil {
+func (e *EmployeeInput) GetProbationPeriod() *ProbationPeriod {
+	if e == nil {
 		return nil
 	}
-	return o.ProbationPeriod
+	return e.ProbationPeriod
 }
 
-func (o *EmployeeInput) GetTags() []string {
-	if o == nil {
+func (e *EmployeeInput) GetTags() []string {
+	if e == nil {
 		return nil
 	}
-	return o.Tags
+	return e.Tags
 }
 
-func (o *EmployeeInput) GetRowVersion() *string {
-	if o == nil {
+func (e *EmployeeInput) GetRowVersion() *string {
+	if e == nil {
 		return nil
 	}
-	return o.RowVersion
+	return e.RowVersion
 }
 
-func (o *EmployeeInput) GetDeleted() *bool {
-	if o == nil {
+func (e *EmployeeInput) GetDeleted() *bool {
+	if e == nil {
 		return nil
 	}
-	return o.Deleted
+	return e.Deleted
 }
 
-func (o *EmployeeInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (e *EmployeeInput) GetPassThrough() []PassThroughBody {
+	if e == nil {
 		return nil
 	}
-	return o.PassThrough
+	return e.PassThrough
 }

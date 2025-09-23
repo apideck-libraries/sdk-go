@@ -14,18 +14,18 @@ type AccountingCreditNotesAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingCreditNotesAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesAddGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingCreditNotesAddGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesAddGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingCreditNotesAddRequest struct {
@@ -51,39 +51,39 @@ func (a *AccountingCreditNotesAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingCreditNotesAddRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingCreditNotesAddRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingCreditNotesAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesAddRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingCreditNotesAddRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesAddRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingCreditNotesAddRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesAddRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingCreditNotesAddRequest) GetCreditNote() components.CreditNoteInput {
-	if o == nil {
+func (a *AccountingCreditNotesAddRequest) GetCreditNote() components.CreditNoteInput {
+	if a == nil {
 		return components.CreditNoteInput{}
 	}
-	return o.CreditNote
+	return a.CreditNote
 }
 
 type AccountingCreditNotesAddResponse struct {
@@ -94,23 +94,23 @@ type AccountingCreditNotesAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingCreditNotesAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingCreditNotesAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingCreditNotesAddResponse) GetCreateCreditNoteResponse() *components.CreateCreditNoteResponse {
-	if o == nil {
+func (a *AccountingCreditNotesAddResponse) GetCreateCreditNoteResponse() *components.CreateCreditNoteResponse {
+	if a == nil {
 		return nil
 	}
-	return o.CreateCreditNoteResponse
+	return a.CreateCreditNoteResponse
 }
 
-func (o *AccountingCreditNotesAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingCreditNotesAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

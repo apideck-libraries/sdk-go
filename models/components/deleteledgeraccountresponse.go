@@ -20,51 +20,51 @@ type DeleteLedgerAccountResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *DeleteLedgerAccountResponse) GetStatusCode() int64 {
-	if o == nil {
+func (d *DeleteLedgerAccountResponse) GetStatusCode() int64 {
+	if d == nil {
 		return 0
 	}
-	return o.StatusCode
+	return d.StatusCode
 }
 
-func (o *DeleteLedgerAccountResponse) GetStatus() string {
-	if o == nil {
+func (d *DeleteLedgerAccountResponse) GetStatus() string {
+	if d == nil {
 		return ""
 	}
-	return o.Status
+	return d.Status
 }
 
-func (o *DeleteLedgerAccountResponse) GetService() string {
-	if o == nil {
+func (d *DeleteLedgerAccountResponse) GetService() string {
+	if d == nil {
 		return ""
 	}
-	return o.Service
+	return d.Service
 }
 
-func (o *DeleteLedgerAccountResponse) GetResource() string {
-	if o == nil {
+func (d *DeleteLedgerAccountResponse) GetResource() string {
+	if d == nil {
 		return ""
 	}
-	return o.Resource
+	return d.Resource
 }
 
-func (o *DeleteLedgerAccountResponse) GetOperation() string {
-	if o == nil {
+func (d *DeleteLedgerAccountResponse) GetOperation() string {
+	if d == nil {
 		return ""
 	}
-	return o.Operation
+	return d.Operation
 }
 
-func (o *DeleteLedgerAccountResponse) GetData() UnifiedID {
-	if o == nil {
+func (d *DeleteLedgerAccountResponse) GetData() UnifiedID {
+	if d == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return d.Data
 }
 
-func (o *DeleteLedgerAccountResponse) GetRaw() map[string]any {
-	if o == nil {
+func (d *DeleteLedgerAccountResponse) GetRaw() map[string]any {
+	if d == nil {
 		return nil
 	}
-	return o.Raw
+	return d.Raw
 }

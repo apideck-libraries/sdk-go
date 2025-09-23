@@ -13,18 +13,18 @@ type VaultCreateCallbackStateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultCreateCallbackStateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultCreateCallbackStateGlobals) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultCreateCallbackStateGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultCreateCallbackStateGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultCreateCallbackStateRequest struct {
@@ -40,39 +40,39 @@ type VaultCreateCallbackStateRequest struct {
 	CreateCallbackState components.CreateCallbackState `request:"mediaType=application/json"`
 }
 
-func (o *VaultCreateCallbackStateRequest) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultCreateCallbackStateRequest) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultCreateCallbackStateRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultCreateCallbackStateRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultCreateCallbackStateRequest) GetServiceID() string {
-	if o == nil {
+func (v *VaultCreateCallbackStateRequest) GetServiceID() string {
+	if v == nil {
 		return ""
 	}
-	return o.ServiceID
+	return v.ServiceID
 }
 
-func (o *VaultCreateCallbackStateRequest) GetUnifiedAPI() string {
-	if o == nil {
+func (v *VaultCreateCallbackStateRequest) GetUnifiedAPI() string {
+	if v == nil {
 		return ""
 	}
-	return o.UnifiedAPI
+	return v.UnifiedAPI
 }
 
-func (o *VaultCreateCallbackStateRequest) GetCreateCallbackState() components.CreateCallbackState {
-	if o == nil {
+func (v *VaultCreateCallbackStateRequest) GetCreateCallbackState() components.CreateCallbackState {
+	if v == nil {
 		return components.CreateCallbackState{}
 	}
-	return o.CreateCallbackState
+	return v.CreateCallbackState
 }
 
 type VaultCreateCallbackStateResponse struct {
@@ -83,23 +83,23 @@ type VaultCreateCallbackStateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultCreateCallbackStateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultCreateCallbackStateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultCreateCallbackStateResponse) GetCreateCallbackStateResponse() *components.CreateCallbackStateResponse {
-	if o == nil {
+func (v *VaultCreateCallbackStateResponse) GetCreateCallbackStateResponse() *components.CreateCallbackStateResponse {
+	if v == nil {
 		return nil
 	}
-	return o.CreateCallbackStateResponse
+	return v.CreateCallbackStateResponse
 }
 
-func (o *VaultCreateCallbackStateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultCreateCallbackStateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

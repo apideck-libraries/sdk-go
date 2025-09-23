@@ -14,18 +14,18 @@ type AccountingTaxRatesAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingTaxRatesAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingTaxRatesAllGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingTaxRatesAllGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingTaxRatesAllGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingTaxRatesAllRequest struct {
@@ -60,67 +60,67 @@ func (a *AccountingTaxRatesAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingTaxRatesAllRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingTaxRatesAllRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingTaxRatesAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingTaxRatesAllRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingTaxRatesAllRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingTaxRatesAllRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingTaxRatesAllRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingTaxRatesAllRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingTaxRatesAllRequest) GetCursor() *string {
-	if o == nil {
+func (a *AccountingTaxRatesAllRequest) GetCursor() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Cursor
+	return a.Cursor
 }
 
-func (o *AccountingTaxRatesAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (a *AccountingTaxRatesAllRequest) GetLimit() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.Limit
+	return a.Limit
 }
 
-func (o *AccountingTaxRatesAllRequest) GetFilter() *components.TaxRatesFilter {
-	if o == nil {
+func (a *AccountingTaxRatesAllRequest) GetFilter() *components.TaxRatesFilter {
+	if a == nil {
 		return nil
 	}
-	return o.Filter
+	return a.Filter
 }
 
-func (o *AccountingTaxRatesAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (a *AccountingTaxRatesAllRequest) GetPassThrough() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
-func (o *AccountingTaxRatesAllRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingTaxRatesAllRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingTaxRatesAllResponse struct {
@@ -133,23 +133,23 @@ type AccountingTaxRatesAllResponse struct {
 	Next func() (*AccountingTaxRatesAllResponse, error)
 }
 
-func (o *AccountingTaxRatesAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingTaxRatesAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingTaxRatesAllResponse) GetGetTaxRatesResponse() *components.GetTaxRatesResponse {
-	if o == nil {
+func (a *AccountingTaxRatesAllResponse) GetGetTaxRatesResponse() *components.GetTaxRatesResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetTaxRatesResponse
+	return a.GetTaxRatesResponse
 }
 
-func (o *AccountingTaxRatesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingTaxRatesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

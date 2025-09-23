@@ -14,18 +14,18 @@ type AccountingCategoriesOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingCategoriesOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingCategoriesOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingCategoriesOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingCategoriesOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingCategoriesOneRequest struct {
@@ -56,53 +56,53 @@ func (a *AccountingCategoriesOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingCategoriesOneRequest) GetID() string {
-	if o == nil {
+func (a *AccountingCategoriesOneRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingCategoriesOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingCategoriesOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingCategoriesOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingCategoriesOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingCategoriesOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingCategoriesOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingCategoriesOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingCategoriesOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingCategoriesOneRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingCategoriesOneRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
-func (o *AccountingCategoriesOneRequest) GetFilter() *components.CategoriesFilter {
-	if o == nil {
+func (a *AccountingCategoriesOneRequest) GetFilter() *components.CategoriesFilter {
+	if a == nil {
 		return nil
 	}
-	return o.Filter
+	return a.Filter
 }
 
 type AccountingCategoriesOneResponse struct {
@@ -113,23 +113,23 @@ type AccountingCategoriesOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingCategoriesOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingCategoriesOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingCategoriesOneResponse) GetGetCategoryResponse() *components.GetCategoryResponse {
-	if o == nil {
+func (a *AccountingCategoriesOneResponse) GetGetCategoryResponse() *components.GetCategoryResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetCategoryResponse
+	return a.GetCategoryResponse
 }
 
-func (o *AccountingCategoriesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingCategoriesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

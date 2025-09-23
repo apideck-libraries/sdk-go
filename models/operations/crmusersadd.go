@@ -14,18 +14,18 @@ type CrmUsersAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmUsersAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmUsersAddGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmUsersAddGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmUsersAddGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmUsersAddRequest struct {
@@ -51,39 +51,39 @@ func (c *CrmUsersAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmUsersAddRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmUsersAddRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmUsersAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmUsersAddRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmUsersAddRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmUsersAddRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmUsersAddRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmUsersAddRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmUsersAddRequest) GetUser() components.UserInput {
-	if o == nil {
+func (c *CrmUsersAddRequest) GetUser() components.UserInput {
+	if c == nil {
 		return components.UserInput{}
 	}
-	return o.User
+	return c.User
 }
 
 type CrmUsersAddResponse struct {
@@ -94,23 +94,23 @@ type CrmUsersAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmUsersAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmUsersAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmUsersAddResponse) GetCreateUserResponse() *components.CreateUserResponse {
-	if o == nil {
+func (c *CrmUsersAddResponse) GetCreateUserResponse() *components.CreateUserResponse {
+	if c == nil {
 		return nil
 	}
-	return o.CreateUserResponse
+	return c.CreateUserResponse
 }
 
-func (o *CrmUsersAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmUsersAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

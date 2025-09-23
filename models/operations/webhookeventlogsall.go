@@ -12,11 +12,11 @@ type WebhookEventLogsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *WebhookEventLogsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (w *WebhookEventLogsAllGlobals) GetAppID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.AppID
+	return w.AppID
 }
 
 type WebhookEventLogsAllRequest struct {
@@ -41,32 +41,32 @@ func (w *WebhookEventLogsAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *WebhookEventLogsAllRequest) GetAppID() *string {
-	if o == nil {
+func (w *WebhookEventLogsAllRequest) GetAppID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.AppID
+	return w.AppID
 }
 
-func (o *WebhookEventLogsAllRequest) GetCursor() *string {
-	if o == nil {
+func (w *WebhookEventLogsAllRequest) GetCursor() *string {
+	if w == nil {
 		return nil
 	}
-	return o.Cursor
+	return w.Cursor
 }
 
-func (o *WebhookEventLogsAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (w *WebhookEventLogsAllRequest) GetLimit() *int64 {
+	if w == nil {
 		return nil
 	}
-	return o.Limit
+	return w.Limit
 }
 
-func (o *WebhookEventLogsAllRequest) GetFilter() *components.WebhookEventLogsFilter {
-	if o == nil {
+func (w *WebhookEventLogsAllRequest) GetFilter() *components.WebhookEventLogsFilter {
+	if w == nil {
 		return nil
 	}
-	return o.Filter
+	return w.Filter
 }
 
 type WebhookEventLogsAllResponse struct {
@@ -79,23 +79,23 @@ type WebhookEventLogsAllResponse struct {
 	Next func() (*WebhookEventLogsAllResponse, error)
 }
 
-func (o *WebhookEventLogsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (w *WebhookEventLogsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if w == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return w.HTTPMeta
 }
 
-func (o *WebhookEventLogsAllResponse) GetGetWebhookEventLogsResponse() *components.GetWebhookEventLogsResponse {
-	if o == nil {
+func (w *WebhookEventLogsAllResponse) GetGetWebhookEventLogsResponse() *components.GetWebhookEventLogsResponse {
+	if w == nil {
 		return nil
 	}
-	return o.GetWebhookEventLogsResponse
+	return w.GetWebhookEventLogsResponse
 }
 
-func (o *WebhookEventLogsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (w *WebhookEventLogsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if w == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return w.UnexpectedErrorResponse
 }

@@ -36,11 +36,11 @@ func main() {
 
     res, err := s.Hris.EmployeeSchedules.List(ctx, operations.HrisEmployeeSchedulesAllRequest{
         EmployeeID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)

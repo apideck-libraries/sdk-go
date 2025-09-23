@@ -14,18 +14,18 @@ type HrisEmployeesAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *HrisEmployeesAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisEmployeesAddGlobals) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisEmployeesAddGlobals) GetAppID() *string {
-	if o == nil {
+func (h *HrisEmployeesAddGlobals) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
 type HrisEmployeesAddRequest struct {
@@ -51,39 +51,39 @@ func (h *HrisEmployeesAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *HrisEmployeesAddRequest) GetRaw() *bool {
-	if o == nil {
+func (h *HrisEmployeesAddRequest) GetRaw() *bool {
+	if h == nil {
 		return nil
 	}
-	return o.Raw
+	return h.Raw
 }
 
-func (o *HrisEmployeesAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisEmployeesAddRequest) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisEmployeesAddRequest) GetAppID() *string {
-	if o == nil {
+func (h *HrisEmployeesAddRequest) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
-func (o *HrisEmployeesAddRequest) GetServiceID() *string {
-	if o == nil {
+func (h *HrisEmployeesAddRequest) GetServiceID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ServiceID
+	return h.ServiceID
 }
 
-func (o *HrisEmployeesAddRequest) GetEmployee() components.EmployeeInput {
-	if o == nil {
+func (h *HrisEmployeesAddRequest) GetEmployee() components.EmployeeInput {
+	if h == nil {
 		return components.EmployeeInput{}
 	}
-	return o.Employee
+	return h.Employee
 }
 
 type HrisEmployeesAddResponse struct {
@@ -94,23 +94,23 @@ type HrisEmployeesAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *HrisEmployeesAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (h *HrisEmployeesAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if h == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return h.HTTPMeta
 }
 
-func (o *HrisEmployeesAddResponse) GetCreateEmployeeResponse() *components.CreateEmployeeResponse {
-	if o == nil {
+func (h *HrisEmployeesAddResponse) GetCreateEmployeeResponse() *components.CreateEmployeeResponse {
+	if h == nil {
 		return nil
 	}
-	return o.CreateEmployeeResponse
+	return h.CreateEmployeeResponse
 }
 
-func (o *HrisEmployeesAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (h *HrisEmployeesAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if h == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return h.UnexpectedErrorResponse
 }

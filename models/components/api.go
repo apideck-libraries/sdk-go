@@ -45,32 +45,32 @@ type Resources struct {
 	ExcludedFromCoverage *bool `json:"excluded_from_coverage,omitempty"`
 }
 
-func (o *Resources) GetID() *string {
-	if o == nil {
+func (r *Resources) GetID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.ID
+	return r.ID
 }
 
-func (o *Resources) GetName() *string {
-	if o == nil {
+func (r *Resources) GetName() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Name
+	return r.Name
 }
 
-func (o *Resources) GetStatus() *ResourceStatus {
-	if o == nil {
+func (r *Resources) GetStatus() *ResourceStatus {
+	if r == nil {
 		return nil
 	}
-	return o.Status
+	return r.Status
 }
 
-func (o *Resources) GetExcludedFromCoverage() *bool {
-	if o == nil {
+func (r *Resources) GetExcludedFromCoverage() *bool {
+	if r == nil {
 		return nil
 	}
-	return o.ExcludedFromCoverage
+	return r.ExcludedFromCoverage
 }
 
 type API struct {
@@ -98,79 +98,79 @@ type API struct {
 	Events []string `json:"events,omitempty"`
 }
 
-func (o *API) GetID() *string {
-	if o == nil {
+func (a *API) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *API) GetType() *APIType {
-	if o == nil {
+func (a *API) GetType() *APIType {
+	if a == nil {
 		return nil
 	}
-	return o.Type
+	return a.Type
 }
 
-func (o *API) GetName() *string {
-	if o == nil {
+func (a *API) GetName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Name
+	return a.Name
 }
 
-func (o *API) GetDescription() *string {
-	if o == nil {
+func (a *API) GetDescription() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Description
+	return a.Description
 }
 
-func (o *API) GetStatus() *APIStatus {
-	if o == nil {
+func (a *API) GetStatus() *APIStatus {
+	if a == nil {
 		return nil
 	}
-	return o.Status
+	return a.Status
 }
 
-func (o *API) GetSpecURL() *string {
-	if o == nil {
+func (a *API) GetSpecURL() *string {
+	if a == nil {
 		return nil
 	}
-	return o.SpecURL
+	return a.SpecURL
 }
 
-func (o *API) GetAPIReferenceURL() *string {
-	if o == nil {
+func (a *API) GetAPIReferenceURL() *string {
+	if a == nil {
 		return nil
 	}
-	return o.APIReferenceURL
+	return a.APIReferenceURL
 }
 
-func (o *API) GetPostmanCollectionID() *string {
-	if o == nil {
+func (a *API) GetPostmanCollectionID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.PostmanCollectionID
+	return a.PostmanCollectionID
 }
 
-func (o *API) GetCategories() []string {
-	if o == nil {
+func (a *API) GetCategories() []string {
+	if a == nil {
 		return nil
 	}
-	return o.Categories
+	return a.Categories
 }
 
-func (o *API) GetResources() []Resources {
-	if o == nil {
+func (a *API) GetResources() []Resources {
+	if a == nil {
 		return nil
 	}
-	return o.Resources
+	return a.Resources
 }
 
-func (o *API) GetEvents() []string {
-	if o == nil {
+func (a *API) GetEvents() []string {
+	if a == nil {
 		return nil
 	}
-	return o.Events
+	return a.Events
 }

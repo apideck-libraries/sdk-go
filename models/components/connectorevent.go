@@ -47,37 +47,37 @@ type ConnectorEvent struct {
 	EntityType *string `json:"entity_type,omitempty"`
 }
 
-func (o *ConnectorEvent) GetEventType() *string {
-	if o == nil {
+func (c *ConnectorEvent) GetEventType() *string {
+	if c == nil {
 		return nil
 	}
-	return o.EventType
+	return c.EventType
 }
 
-func (o *ConnectorEvent) GetEventSource() *EventSource {
-	if o == nil {
+func (c *ConnectorEvent) GetEventSource() *EventSource {
+	if c == nil {
 		return nil
 	}
-	return o.EventSource
+	return c.EventSource
 }
 
-func (o *ConnectorEvent) GetDownstreamEventType() *string {
-	if o == nil {
+func (c *ConnectorEvent) GetDownstreamEventType() *string {
+	if c == nil {
 		return nil
 	}
-	return o.DownstreamEventType
+	return c.DownstreamEventType
 }
 
-func (o *ConnectorEvent) GetResources() []string {
-	if o == nil {
+func (c *ConnectorEvent) GetResources() []string {
+	if c == nil {
 		return nil
 	}
-	return o.Resources
+	return c.Resources
 }
 
-func (o *ConnectorEvent) GetEntityType() *string {
-	if o == nil {
+func (c *ConnectorEvent) GetEntityType() *string {
+	if c == nil {
 		return nil
 	}
-	return o.EntityType
+	return c.EntityType
 }

@@ -40,12 +40,12 @@ func main() {
     )
 
     res, err := s.FileStorage.UploadSessions.Create(ctx, operations.FileStorageUploadSessionsAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         CreateUploadSessionRequest: components.CreateUploadSessionRequest{
             Name: "Documents",
             ParentFolderID: "1234",
-            DriveID: sdkgo.String("1234"),
-            Size: sdkgo.Int64(1810673),
+            DriveID: sdkgo.Pointer("1234"),
+            Size: sdkgo.Pointer[int64](1810673),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -198,8 +198,8 @@ func main() {
 
     res, err := s.FileStorage.UploadSessions.Get(ctx, operations.FileStorageUploadSessionsOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -263,9 +263,9 @@ func main() {
 
     res, err := s.FileStorage.UploadSessions.Upload(ctx, operations.FileStorageUploadSessionsUploadRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         PartNumber: 0,
-        Digest: sdkgo.String("sha=fpRyg5eVQletdZqEKaFlqwBXJzM="),
+        Digest: sdkgo.Pointer("sha=fpRyg5eVQletdZqEKaFlqwBXJzM="),
         RequestBody: bytes.NewBuffer([]byte("<binary string>")),
     })
     if err != nil {
@@ -329,7 +329,7 @@ func main() {
 
     res, err := s.FileStorage.UploadSessions.Delete(ctx, operations.FileStorageUploadSessionsDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)
@@ -392,8 +392,8 @@ func main() {
 
     res, err := s.FileStorage.UploadSessions.Finish(ctx, operations.FileStorageUploadSessionsFinishRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Digest: sdkgo.String("sha=fpRyg5eVQletdZqEKaFlqwBXJzM="),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Digest: sdkgo.Pointer("sha=fpRyg5eVQletdZqEKaFlqwBXJzM="),
     })
     if err != nil {
         log.Fatal(err)

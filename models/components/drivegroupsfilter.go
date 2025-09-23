@@ -7,9 +7,9 @@ type DriveGroupsFilter struct {
 	ParentGroupID *string `queryParam:"name=parent_group_id"`
 }
 
-func (o *DriveGroupsFilter) GetParentGroupID() *string {
-	if o == nil {
+func (d *DriveGroupsFilter) GetParentGroupID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.ParentGroupID
+	return d.ParentGroupID
 }

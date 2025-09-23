@@ -36,11 +36,11 @@ func main() {
     )
 
     res, err := s.Ats.Jobs.List(ctx, operations.AtsJobsAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -115,8 +115,8 @@ func main() {
 
     res, err := s.Ats.Jobs.Get(ctx, operations.AtsJobsOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)

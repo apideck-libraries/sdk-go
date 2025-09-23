@@ -35,51 +35,51 @@ func (c *CollectionTicketComment) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CollectionTicketComment) GetID() *string {
-	if o == nil {
+func (c *CollectionTicketComment) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CollectionTicketComment) GetBody() *string {
-	if o == nil {
+func (c *CollectionTicketComment) GetBody() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Body
+	return c.Body
 }
 
-func (o *CollectionTicketComment) GetCustomMappings() map[string]any {
-	if o == nil {
+func (c *CollectionTicketComment) GetCustomMappings() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return c.CustomMappings
 }
 
-func (o *CollectionTicketComment) GetCreatedBy() *string {
-	if o == nil {
+func (c *CollectionTicketComment) GetCreatedBy() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return c.CreatedBy
 }
 
-func (o *CollectionTicketComment) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (c *CollectionTicketComment) GetUpdatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return c.UpdatedAt
 }
 
-func (o *CollectionTicketComment) GetCreatedAt() *time.Time {
-	if o == nil {
+func (c *CollectionTicketComment) GetCreatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }
 
-func (o *CollectionTicketComment) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (c *CollectionTicketComment) GetPassThrough() []PassThroughBody {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }

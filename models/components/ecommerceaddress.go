@@ -20,51 +20,51 @@ type EcommerceAddress struct {
 	Country *string `json:"country,omitempty"`
 }
 
-func (o *EcommerceAddress) GetLine1() *string {
-	if o == nil {
+func (e *EcommerceAddress) GetLine1() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Line1
+	return e.Line1
 }
 
-func (o *EcommerceAddress) GetLine2() *string {
-	if o == nil {
+func (e *EcommerceAddress) GetLine2() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Line2
+	return e.Line2
 }
 
-func (o *EcommerceAddress) GetCompanyName() *string {
-	if o == nil {
+func (e *EcommerceAddress) GetCompanyName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CompanyName
+	return e.CompanyName
 }
 
-func (o *EcommerceAddress) GetCity() *string {
-	if o == nil {
+func (e *EcommerceAddress) GetCity() *string {
+	if e == nil {
 		return nil
 	}
-	return o.City
+	return e.City
 }
 
-func (o *EcommerceAddress) GetState() *string {
-	if o == nil {
+func (e *EcommerceAddress) GetState() *string {
+	if e == nil {
 		return nil
 	}
-	return o.State
+	return e.State
 }
 
-func (o *EcommerceAddress) GetPostalCode() *string {
-	if o == nil {
+func (e *EcommerceAddress) GetPostalCode() *string {
+	if e == nil {
 		return nil
 	}
-	return o.PostalCode
+	return e.PostalCode
 }
 
-func (o *EcommerceAddress) GetCountry() *string {
-	if o == nil {
+func (e *EcommerceAddress) GetCountry() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Country
+	return e.Country
 }

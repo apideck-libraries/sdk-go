@@ -13,18 +13,18 @@ type VaultCustomFieldsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultCustomFieldsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultCustomFieldsAllGlobals) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultCustomFieldsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultCustomFieldsAllGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultCustomFieldsAllRequest struct {
@@ -42,46 +42,46 @@ type VaultCustomFieldsAllRequest struct {
 	ResourceID *string `queryParam:"style=form,explode=true,name=resource_id"`
 }
 
-func (o *VaultCustomFieldsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultCustomFieldsAllRequest) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultCustomFieldsAllRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultCustomFieldsAllRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultCustomFieldsAllRequest) GetUnifiedAPI() string {
-	if o == nil {
+func (v *VaultCustomFieldsAllRequest) GetUnifiedAPI() string {
+	if v == nil {
 		return ""
 	}
-	return o.UnifiedAPI
+	return v.UnifiedAPI
 }
 
-func (o *VaultCustomFieldsAllRequest) GetServiceID() string {
-	if o == nil {
+func (v *VaultCustomFieldsAllRequest) GetServiceID() string {
+	if v == nil {
 		return ""
 	}
-	return o.ServiceID
+	return v.ServiceID
 }
 
-func (o *VaultCustomFieldsAllRequest) GetResource() string {
-	if o == nil {
+func (v *VaultCustomFieldsAllRequest) GetResource() string {
+	if v == nil {
 		return ""
 	}
-	return o.Resource
+	return v.Resource
 }
 
-func (o *VaultCustomFieldsAllRequest) GetResourceID() *string {
-	if o == nil {
+func (v *VaultCustomFieldsAllRequest) GetResourceID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ResourceID
+	return v.ResourceID
 }
 
 type VaultCustomFieldsAllResponse struct {
@@ -92,23 +92,23 @@ type VaultCustomFieldsAllResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultCustomFieldsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultCustomFieldsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultCustomFieldsAllResponse) GetGetCustomFieldsResponse() *components.GetCustomFieldsResponse {
-	if o == nil {
+func (v *VaultCustomFieldsAllResponse) GetGetCustomFieldsResponse() *components.GetCustomFieldsResponse {
+	if v == nil {
 		return nil
 	}
-	return o.GetCustomFieldsResponse
+	return v.GetCustomFieldsResponse
 }
 
-func (o *VaultCustomFieldsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultCustomFieldsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

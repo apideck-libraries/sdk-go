@@ -14,18 +14,18 @@ type AccountingLocationsUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingLocationsUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingLocationsUpdateGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingLocationsUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingLocationsUpdateGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingLocationsUpdateRequest struct {
@@ -53,46 +53,46 @@ func (a *AccountingLocationsUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingLocationsUpdateRequest) GetID() string {
-	if o == nil {
+func (a *AccountingLocationsUpdateRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingLocationsUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingLocationsUpdateRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingLocationsUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingLocationsUpdateRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingLocationsUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingLocationsUpdateRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingLocationsUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingLocationsUpdateRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingLocationsUpdateRequest) GetAccountingLocation() components.AccountingLocationInput {
-	if o == nil {
+func (a *AccountingLocationsUpdateRequest) GetAccountingLocation() components.AccountingLocationInput {
+	if a == nil {
 		return components.AccountingLocationInput{}
 	}
-	return o.AccountingLocation
+	return a.AccountingLocation
 }
 
 type AccountingLocationsUpdateResponse struct {
@@ -103,23 +103,23 @@ type AccountingLocationsUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingLocationsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingLocationsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingLocationsUpdateResponse) GetUpdateAccountingLocationResponse() *components.UpdateAccountingLocationResponse {
-	if o == nil {
+func (a *AccountingLocationsUpdateResponse) GetUpdateAccountingLocationResponse() *components.UpdateAccountingLocationResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UpdateAccountingLocationResponse
+	return a.UpdateAccountingLocationResponse
 }
 
-func (o *AccountingLocationsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingLocationsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

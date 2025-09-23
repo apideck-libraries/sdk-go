@@ -14,18 +14,18 @@ type FileStorageDrivesOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *FileStorageDrivesOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageDrivesOneGlobals) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageDrivesOneGlobals) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageDrivesOneGlobals) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
 type FileStorageDrivesOneRequest struct {
@@ -54,46 +54,46 @@ func (f *FileStorageDrivesOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FileStorageDrivesOneRequest) GetID() string {
-	if o == nil {
+func (f *FileStorageDrivesOneRequest) GetID() string {
+	if f == nil {
 		return ""
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *FileStorageDrivesOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageDrivesOneRequest) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageDrivesOneRequest) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageDrivesOneRequest) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
-func (o *FileStorageDrivesOneRequest) GetServiceID() *string {
-	if o == nil {
+func (f *FileStorageDrivesOneRequest) GetServiceID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ServiceID
+	return f.ServiceID
 }
 
-func (o *FileStorageDrivesOneRequest) GetRaw() *bool {
-	if o == nil {
+func (f *FileStorageDrivesOneRequest) GetRaw() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Raw
+	return f.Raw
 }
 
-func (o *FileStorageDrivesOneRequest) GetFields() *string {
-	if o == nil {
+func (f *FileStorageDrivesOneRequest) GetFields() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Fields
+	return f.Fields
 }
 
 type FileStorageDrivesOneResponse struct {
@@ -104,23 +104,23 @@ type FileStorageDrivesOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *FileStorageDrivesOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (f *FileStorageDrivesOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if f == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return f.HTTPMeta
 }
 
-func (o *FileStorageDrivesOneResponse) GetGetDriveResponse() *components.GetDriveResponse {
-	if o == nil {
+func (f *FileStorageDrivesOneResponse) GetGetDriveResponse() *components.GetDriveResponse {
+	if f == nil {
 		return nil
 	}
-	return o.GetDriveResponse
+	return f.GetDriveResponse
 }
 
-func (o *FileStorageDrivesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (f *FileStorageDrivesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return f.UnexpectedErrorResponse
 }

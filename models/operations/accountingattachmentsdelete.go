@@ -14,18 +14,18 @@ type AccountingAttachmentsDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingAttachmentsDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsDeleteGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingAttachmentsDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsDeleteGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingAttachmentsDeleteRequest struct {
@@ -56,53 +56,53 @@ func (a *AccountingAttachmentsDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingAttachmentsDeleteRequest) GetReferenceType() components.AttachmentReferenceType {
-	if o == nil {
+func (a *AccountingAttachmentsDeleteRequest) GetReferenceType() components.AttachmentReferenceType {
+	if a == nil {
 		return components.AttachmentReferenceType("")
 	}
-	return o.ReferenceType
+	return a.ReferenceType
 }
 
-func (o *AccountingAttachmentsDeleteRequest) GetReferenceID() string {
-	if o == nil {
+func (a *AccountingAttachmentsDeleteRequest) GetReferenceID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ReferenceID
+	return a.ReferenceID
 }
 
-func (o *AccountingAttachmentsDeleteRequest) GetID() string {
-	if o == nil {
+func (a *AccountingAttachmentsDeleteRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingAttachmentsDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsDeleteRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingAttachmentsDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsDeleteRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingAttachmentsDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsDeleteRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingAttachmentsDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingAttachmentsDeleteRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
 type AccountingAttachmentsDeleteResponse struct {
@@ -113,23 +113,23 @@ type AccountingAttachmentsDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingAttachmentsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingAttachmentsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingAttachmentsDeleteResponse) GetDeleteAttachmentResponse() *components.DeleteAttachmentResponse {
-	if o == nil {
+func (a *AccountingAttachmentsDeleteResponse) GetDeleteAttachmentResponse() *components.DeleteAttachmentResponse {
+	if a == nil {
 		return nil
 	}
-	return o.DeleteAttachmentResponse
+	return a.DeleteAttachmentResponse
 }
 
-func (o *AccountingAttachmentsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingAttachmentsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

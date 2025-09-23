@@ -42,9 +42,9 @@ type InvoiceItemFilter struct {
 	Type *InvoiceItemFilterInvoiceItemType `queryParam:"name=type"`
 }
 
-func (o *InvoiceItemFilter) GetType() *InvoiceItemFilterInvoiceItemType {
-	if o == nil {
+func (i *InvoiceItemFilter) GetType() *InvoiceItemFilterInvoiceItemType {
+	if i == nil {
 		return nil
 	}
-	return o.Type
+	return i.Type
 }

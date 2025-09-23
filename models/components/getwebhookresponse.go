@@ -13,30 +13,30 @@ type GetWebhookResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetWebhookResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetWebhookResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetWebhookResponse) GetStatus() string {
-	if o == nil {
+func (g *GetWebhookResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetWebhookResponse) GetData() Webhook {
-	if o == nil {
+func (g *GetWebhookResponse) GetData() Webhook {
+	if g == nil {
 		return Webhook{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetWebhookResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetWebhookResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

@@ -16,30 +16,30 @@ type LinkedCustomerInput struct {
 	Email *string `json:"email,omitempty"`
 }
 
-func (o *LinkedCustomerInput) GetID() *string {
-	if o == nil {
+func (l *LinkedCustomerInput) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinkedCustomerInput) GetDisplayName() *string {
-	if o == nil {
+func (l *LinkedCustomerInput) GetDisplayName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.DisplayName
+	return l.DisplayName
 }
 
-func (o *LinkedCustomerInput) GetName() *string {
-	if o == nil {
+func (l *LinkedCustomerInput) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *LinkedCustomerInput) GetEmail() *string {
-	if o == nil {
+func (l *LinkedCustomerInput) GetEmail() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Email
+	return l.Email
 }

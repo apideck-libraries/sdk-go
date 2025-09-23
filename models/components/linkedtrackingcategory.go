@@ -13,30 +13,30 @@ type LinkedTrackingCategory struct {
 	ParentName *string `json:"parent_name,omitempty"`
 }
 
-func (o *LinkedTrackingCategory) GetID() *string {
-	if o == nil {
+func (l *LinkedTrackingCategory) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinkedTrackingCategory) GetName() *string {
-	if o == nil {
+func (l *LinkedTrackingCategory) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *LinkedTrackingCategory) GetParentID() *string {
-	if o == nil {
+func (l *LinkedTrackingCategory) GetParentID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ParentID
+	return l.ParentID
 }
 
-func (o *LinkedTrackingCategory) GetParentName() *string {
-	if o == nil {
+func (l *LinkedTrackingCategory) GetParentName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ParentName
+	return l.ParentName
 }

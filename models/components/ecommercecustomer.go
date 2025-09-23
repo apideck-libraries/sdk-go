@@ -83,60 +83,60 @@ type Addresses struct {
 	Country *string `json:"country,omitempty"`
 }
 
-func (o *Addresses) GetType() *EcommerceCustomerType {
-	if o == nil {
+func (a *Addresses) GetType() *EcommerceCustomerType {
+	if a == nil {
 		return nil
 	}
-	return o.Type
+	return a.Type
 }
 
-func (o *Addresses) GetID() *string {
-	if o == nil {
+func (a *Addresses) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *Addresses) GetLine1() *string {
-	if o == nil {
+func (a *Addresses) GetLine1() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Line1
+	return a.Line1
 }
 
-func (o *Addresses) GetLine2() *string {
-	if o == nil {
+func (a *Addresses) GetLine2() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Line2
+	return a.Line2
 }
 
-func (o *Addresses) GetCity() *string {
-	if o == nil {
+func (a *Addresses) GetCity() *string {
+	if a == nil {
 		return nil
 	}
-	return o.City
+	return a.City
 }
 
-func (o *Addresses) GetState() *string {
-	if o == nil {
+func (a *Addresses) GetState() *string {
+	if a == nil {
 		return nil
 	}
-	return o.State
+	return a.State
 }
 
-func (o *Addresses) GetPostalCode() *string {
-	if o == nil {
+func (a *Addresses) GetPostalCode() *string {
+	if a == nil {
 		return nil
 	}
-	return o.PostalCode
+	return a.PostalCode
 }
 
-func (o *Addresses) GetCountry() *string {
-	if o == nil {
+func (a *Addresses) GetCountry() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Country
+	return a.Country
 }
 
 type EcommerceCustomer struct {
@@ -180,100 +180,100 @@ func (e *EcommerceCustomer) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *EcommerceCustomer) GetID() string {
-	if o == nil {
+func (e *EcommerceCustomer) GetID() string {
+	if e == nil {
 		return ""
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *EcommerceCustomer) GetName() *string {
-	if o == nil {
+func (e *EcommerceCustomer) GetName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Name
+	return e.Name
 }
 
-func (o *EcommerceCustomer) GetFirstName() *string {
-	if o == nil {
+func (e *EcommerceCustomer) GetFirstName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.FirstName
+	return e.FirstName
 }
 
-func (o *EcommerceCustomer) GetLastName() *string {
-	if o == nil {
+func (e *EcommerceCustomer) GetLastName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.LastName
+	return e.LastName
 }
 
-func (o *EcommerceCustomer) GetCompanyName() *string {
-	if o == nil {
+func (e *EcommerceCustomer) GetCompanyName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CompanyName
+	return e.CompanyName
 }
 
-func (o *EcommerceCustomer) GetStatus() *CustomerStatus {
-	if o == nil {
+func (e *EcommerceCustomer) GetStatus() *CustomerStatus {
+	if e == nil {
 		return nil
 	}
-	return o.Status
+	return e.Status
 }
 
-func (o *EcommerceCustomer) GetCurrency() *Currency {
-	if o == nil {
+func (e *EcommerceCustomer) GetCurrency() *Currency {
+	if e == nil {
 		return nil
 	}
-	return o.Currency
+	return e.Currency
 }
 
-func (o *EcommerceCustomer) GetEmails() []Email {
-	if o == nil {
+func (e *EcommerceCustomer) GetEmails() []Email {
+	if e == nil {
 		return nil
 	}
-	return o.Emails
+	return e.Emails
 }
 
-func (o *EcommerceCustomer) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
+func (e *EcommerceCustomer) GetPhoneNumbers() []PhoneNumber {
+	if e == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return e.PhoneNumbers
 }
 
-func (o *EcommerceCustomer) GetAddresses() []Addresses {
-	if o == nil {
+func (e *EcommerceCustomer) GetAddresses() []Addresses {
+	if e == nil {
 		return nil
 	}
-	return o.Addresses
+	return e.Addresses
 }
 
-func (o *EcommerceCustomer) GetOrders() []LinkedEcommerceOrder {
-	if o == nil {
+func (e *EcommerceCustomer) GetOrders() []LinkedEcommerceOrder {
+	if e == nil {
 		return nil
 	}
-	return o.Orders
+	return e.Orders
 }
 
-func (o *EcommerceCustomer) GetCustomMappings() map[string]any {
-	if o == nil {
+func (e *EcommerceCustomer) GetCustomMappings() map[string]any {
+	if e == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return e.CustomMappings
 }
 
-func (o *EcommerceCustomer) GetCreatedAt() *time.Time {
-	if o == nil {
+func (e *EcommerceCustomer) GetCreatedAt() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return e.CreatedAt
 }
 
-func (o *EcommerceCustomer) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (e *EcommerceCustomer) GetUpdatedAt() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return e.UpdatedAt
 }

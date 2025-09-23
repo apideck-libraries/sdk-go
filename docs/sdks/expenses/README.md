@@ -41,7 +41,7 @@ func main() {
     )
 
     res, err := s.Accounting.Expenses.List(ctx, operations.AccountingExpensesAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Filter: &components.ExpensesFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
             Status: components.ExpensesFilterStatusDraft.ToPointer(),
@@ -121,83 +121,83 @@ func main() {
     )
 
     res, err := s.Accounting.Expenses.Create(ctx, operations.AccountingExpensesAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Expense: components.ExpenseInput{
-            Number: sdkgo.String("OIT00546"),
+            Number: sdkgo.Pointer("OIT00546"),
             TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
             AccountID: "123456",
-            CustomerID: sdkgo.String("12345"),
-            SupplierID: sdkgo.String("12345"),
-            CompanyID: sdkgo.String("12345"),
-            DepartmentID: sdkgo.String("12345"),
+            CustomerID: sdkgo.Pointer("12345"),
+            SupplierID: sdkgo.Pointer("12345"),
+            CompanyID: sdkgo.Pointer("12345"),
+            DepartmentID: sdkgo.Pointer("12345"),
             PaymentType: components.ExpensePaymentTypeCash.ToPointer(),
             Currency: components.CurrencyUsd.ToPointer(),
-            CurrencyRate: sdkgo.Float64(0.69),
+            CurrencyRate: sdkgo.Pointer[float64](0.69),
             Type: components.ExpenseTypeExpense.ToPointer(),
-            Memo: sdkgo.String("For travel expenses incurred on 2024-05-15"),
+            Memo: sdkgo.Pointer("For travel expenses incurred on 2024-05-15"),
             TaxRate: &components.LinkedTaxRateInput{
-                ID: sdkgo.String("123456"),
-                Rate: sdkgo.Float64(10),
+                ID: sdkgo.Pointer("123456"),
+                Rate: sdkgo.Pointer[float64](10),
             },
-            TotalAmount: sdkgo.Float64(275),
+            TotalAmount: sdkgo.Pointer[float64](275),
             LineItems: []components.ExpenseLineItemInput{
                 components.ExpenseLineItemInput{
                     TrackingCategories: []*components.LinkedTrackingCategory{
                         &components.LinkedTrackingCategory{
-                            ID: sdkgo.String("123456"),
-                            Name: sdkgo.String("New York"),
+                            ID: sdkgo.Pointer("123456"),
+                            Name: sdkgo.Pointer("New York"),
                         },
                         &components.LinkedTrackingCategory{
-                            ID: sdkgo.String("123456"),
-                            Name: sdkgo.String("New York"),
+                            ID: sdkgo.Pointer("123456"),
+                            Name: sdkgo.Pointer("New York"),
                         },
                         &components.LinkedTrackingCategory{
-                            ID: sdkgo.String("123456"),
-                            Name: sdkgo.String("New York"),
+                            ID: sdkgo.Pointer("123456"),
+                            Name: sdkgo.Pointer("New York"),
                         },
                     },
-                    AccountID: sdkgo.String("123456"),
-                    CustomerID: sdkgo.String("12345"),
-                    DepartmentID: sdkgo.String("12345"),
-                    LocationID: sdkgo.String("12345"),
-                    SubsidiaryID: sdkgo.String("12345"),
+                    AccountID: sdkgo.Pointer("123456"),
+                    CustomerID: sdkgo.Pointer("12345"),
+                    DepartmentID: sdkgo.Pointer("12345"),
+                    LocationID: sdkgo.Pointer("12345"),
+                    SubsidiaryID: sdkgo.Pointer("12345"),
                     TaxRate: &components.LinkedTaxRateInput{
-                        ID: sdkgo.String("123456"),
-                        Rate: sdkgo.Float64(10),
+                        ID: sdkgo.Pointer("123456"),
+                        Rate: sdkgo.Pointer[float64](10),
                     },
-                    Description: sdkgo.String("Travel US."),
-                    TotalAmount: sdkgo.Float64(275),
-                    Billable: sdkgo.Bool(true),
-                    LineNumber: sdkgo.Int64(1),
+                    Description: sdkgo.Pointer("Travel US."),
+                    TotalAmount: sdkgo.Pointer[float64](275),
+                    Billable: sdkgo.Pointer(true),
+                    LineNumber: sdkgo.Pointer[int64](1),
                 },
             },
             CustomFields: []components.CustomField{
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
                 },
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
                 },
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
                 },
             },
-            RowVersion: sdkgo.String("1-12345"),
+            RowVersion: sdkgo.Pointer("1-12345"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -321,7 +321,7 @@ func main() {
 
     res, err := s.Accounting.Expenses.Get(ctx, operations.AccountingExpensesOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)
@@ -386,67 +386,67 @@ func main() {
 
     res, err := s.Accounting.Expenses.Update(ctx, operations.AccountingExpensesUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Expense: components.ExpenseInput{
-            Number: sdkgo.String("OIT00546"),
+            Number: sdkgo.Pointer("OIT00546"),
             TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
             AccountID: "123456",
-            CustomerID: sdkgo.String("12345"),
-            SupplierID: sdkgo.String("12345"),
-            CompanyID: sdkgo.String("12345"),
-            DepartmentID: sdkgo.String("12345"),
+            CustomerID: sdkgo.Pointer("12345"),
+            SupplierID: sdkgo.Pointer("12345"),
+            CompanyID: sdkgo.Pointer("12345"),
+            DepartmentID: sdkgo.Pointer("12345"),
             PaymentType: components.ExpensePaymentTypeCash.ToPointer(),
             Currency: components.CurrencyUsd.ToPointer(),
-            CurrencyRate: sdkgo.Float64(0.69),
+            CurrencyRate: sdkgo.Pointer[float64](0.69),
             Type: components.ExpenseTypeExpense.ToPointer(),
-            Memo: sdkgo.String("For travel expenses incurred on 2024-05-15"),
+            Memo: sdkgo.Pointer("For travel expenses incurred on 2024-05-15"),
             TaxRate: &components.LinkedTaxRateInput{
-                ID: sdkgo.String("123456"),
-                Rate: sdkgo.Float64(10),
+                ID: sdkgo.Pointer("123456"),
+                Rate: sdkgo.Pointer[float64](10),
             },
-            TotalAmount: sdkgo.Float64(275),
+            TotalAmount: sdkgo.Pointer[float64](275),
             LineItems: []components.ExpenseLineItemInput{
                 components.ExpenseLineItemInput{
                     TrackingCategories: []*components.LinkedTrackingCategory{
                         &components.LinkedTrackingCategory{
-                            ID: sdkgo.String("123456"),
-                            Name: sdkgo.String("New York"),
+                            ID: sdkgo.Pointer("123456"),
+                            Name: sdkgo.Pointer("New York"),
                         },
                         &components.LinkedTrackingCategory{
-                            ID: sdkgo.String("123456"),
-                            Name: sdkgo.String("New York"),
+                            ID: sdkgo.Pointer("123456"),
+                            Name: sdkgo.Pointer("New York"),
                         },
                         &components.LinkedTrackingCategory{
-                            ID: sdkgo.String("123456"),
-                            Name: sdkgo.String("New York"),
+                            ID: sdkgo.Pointer("123456"),
+                            Name: sdkgo.Pointer("New York"),
                         },
                     },
-                    AccountID: sdkgo.String("123456"),
-                    CustomerID: sdkgo.String("12345"),
-                    DepartmentID: sdkgo.String("12345"),
-                    LocationID: sdkgo.String("12345"),
-                    SubsidiaryID: sdkgo.String("12345"),
+                    AccountID: sdkgo.Pointer("123456"),
+                    CustomerID: sdkgo.Pointer("12345"),
+                    DepartmentID: sdkgo.Pointer("12345"),
+                    LocationID: sdkgo.Pointer("12345"),
+                    SubsidiaryID: sdkgo.Pointer("12345"),
                     TaxRate: &components.LinkedTaxRateInput{
-                        ID: sdkgo.String("123456"),
-                        Rate: sdkgo.Float64(10),
+                        ID: sdkgo.Pointer("123456"),
+                        Rate: sdkgo.Pointer[float64](10),
                     },
-                    Description: sdkgo.String("Travel US."),
-                    TotalAmount: sdkgo.Float64(275),
-                    Billable: sdkgo.Bool(true),
-                    LineNumber: sdkgo.Int64(1),
+                    Description: sdkgo.Pointer("Travel US."),
+                    TotalAmount: sdkgo.Pointer[float64](275),
+                    Billable: sdkgo.Pointer(true),
+                    LineNumber: sdkgo.Pointer[int64](1),
                 },
             },
             CustomFields: []components.CustomField{
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
                 },
             },
-            RowVersion: sdkgo.String("1-12345"),
+            RowVersion: sdkgo.Pointer("1-12345"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -551,7 +551,7 @@ func main() {
 
     res, err := s.Accounting.Expenses.Delete(ctx, operations.AccountingExpensesDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

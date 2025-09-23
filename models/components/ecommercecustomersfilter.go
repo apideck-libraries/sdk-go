@@ -9,16 +9,16 @@ type EcommerceCustomersFilter struct {
 	PhoneNumber *string `queryParam:"name=phone_number"`
 }
 
-func (o *EcommerceCustomersFilter) GetEmail() *string {
-	if o == nil {
+func (e *EcommerceCustomersFilter) GetEmail() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Email
+	return e.Email
 }
 
-func (o *EcommerceCustomersFilter) GetPhoneNumber() *string {
-	if o == nil {
+func (e *EcommerceCustomersFilter) GetPhoneNumber() *string {
+	if e == nil {
 		return nil
 	}
-	return o.PhoneNumber
+	return e.PhoneNumber
 }

@@ -14,18 +14,18 @@ type AccountingLedgerAccountsOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingLedgerAccountsOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingLedgerAccountsOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingLedgerAccountsOneRequest struct {
@@ -54,46 +54,46 @@ func (a *AccountingLedgerAccountsOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingLedgerAccountsOneRequest) GetID() string {
-	if o == nil {
+func (a *AccountingLedgerAccountsOneRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingLedgerAccountsOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingLedgerAccountsOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingLedgerAccountsOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingLedgerAccountsOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingLedgerAccountsOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingLedgerAccountsOneRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsOneRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingLedgerAccountsOneResponse struct {
@@ -104,23 +104,23 @@ type AccountingLedgerAccountsOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingLedgerAccountsOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingLedgerAccountsOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingLedgerAccountsOneResponse) GetGetLedgerAccountResponse() *components.GetLedgerAccountResponse {
-	if o == nil {
+func (a *AccountingLedgerAccountsOneResponse) GetGetLedgerAccountResponse() *components.GetLedgerAccountResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetLedgerAccountResponse
+	return a.GetLedgerAccountResponse
 }
 
-func (o *AccountingLedgerAccountsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingLedgerAccountsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

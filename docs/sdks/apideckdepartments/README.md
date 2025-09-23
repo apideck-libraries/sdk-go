@@ -39,11 +39,11 @@ func main() {
     )
 
     res, err := s.Hris.Departments.List(ctx, operations.HrisDepartmentsAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -118,11 +118,11 @@ func main() {
     )
 
     res, err := s.Hris.Departments.Create(ctx, operations.HrisDepartmentsAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Department: components.DepartmentInput{
-            Name: sdkgo.String("R&D"),
-            Code: sdkgo.String("2"),
-            Description: sdkgo.String("R&D"),
+            Name: sdkgo.Pointer("R&D"),
+            Code: sdkgo.Pointer("2"),
+            Description: sdkgo.Pointer("R&D"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -227,8 +227,8 @@ func main() {
 
     res, err := s.Hris.Departments.Get(ctx, operations.HrisDepartmentsOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -292,11 +292,11 @@ func main() {
 
     res, err := s.Hris.Departments.Update(ctx, operations.HrisDepartmentsUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Department: components.DepartmentInput{
-            Name: sdkgo.String("R&D"),
-            Code: sdkgo.String("2"),
-            Description: sdkgo.String("R&D"),
+            Name: sdkgo.Pointer("R&D"),
+            Code: sdkgo.Pointer("2"),
+            Description: sdkgo.Pointer("R&D"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -375,7 +375,7 @@ func main() {
 
     res, err := s.Hris.Departments.Delete(ctx, operations.HrisDepartmentsDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

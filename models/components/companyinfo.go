@@ -184,170 +184,170 @@ func (c *CompanyInfo) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CompanyInfo) GetID() *string {
-	if o == nil {
+func (c *CompanyInfo) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CompanyInfo) GetCompanyName() *string {
-	if o == nil {
+func (c *CompanyInfo) GetCompanyName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CompanyName
+	return c.CompanyName
 }
 
-func (o *CompanyInfo) GetStatus() *CompanyStatus {
-	if o == nil {
+func (c *CompanyInfo) GetStatus() *CompanyStatus {
+	if c == nil {
 		return nil
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CompanyInfo) GetLegalName() *string {
-	if o == nil {
+func (c *CompanyInfo) GetLegalName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.LegalName
+	return c.LegalName
 }
 
-func (o *CompanyInfo) GetCountry() *string {
-	if o == nil {
+func (c *CompanyInfo) GetCountry() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Country
+	return c.Country
 }
 
-func (o *CompanyInfo) GetSalesTaxNumber() *string {
-	if o == nil {
+func (c *CompanyInfo) GetSalesTaxNumber() *string {
+	if c == nil {
 		return nil
 	}
-	return o.SalesTaxNumber
+	return c.SalesTaxNumber
 }
 
-func (o *CompanyInfo) GetAutomatedSalesTax() *bool {
-	if o == nil {
+func (c *CompanyInfo) GetAutomatedSalesTax() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.AutomatedSalesTax
+	return c.AutomatedSalesTax
 }
 
-func (o *CompanyInfo) GetSalesTaxEnabled() *bool {
-	if o == nil {
+func (c *CompanyInfo) GetSalesTaxEnabled() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.SalesTaxEnabled
+	return c.SalesTaxEnabled
 }
 
-func (o *CompanyInfo) GetDefaultSalesTax() *TaxRate {
-	if o == nil {
+func (c *CompanyInfo) GetDefaultSalesTax() *TaxRate {
+	if c == nil {
 		return nil
 	}
-	return o.DefaultSalesTax
+	return c.DefaultSalesTax
 }
 
-func (o *CompanyInfo) GetCurrency() *Currency {
-	if o == nil {
+func (c *CompanyInfo) GetCurrency() *Currency {
+	if c == nil {
 		return nil
 	}
-	return o.Currency
+	return c.Currency
 }
 
-func (o *CompanyInfo) GetLanguage() *string {
-	if o == nil {
+func (c *CompanyInfo) GetLanguage() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Language
+	return c.Language
 }
 
-func (o *CompanyInfo) GetFiscalYearStartMonth() *TheStartMonthOfFiscalYear {
-	if o == nil {
+func (c *CompanyInfo) GetFiscalYearStartMonth() *TheStartMonthOfFiscalYear {
+	if c == nil {
 		return nil
 	}
-	return o.FiscalYearStartMonth
+	return c.FiscalYearStartMonth
 }
 
-func (o *CompanyInfo) GetCompanyStartDate() *types.Date {
-	if o == nil {
+func (c *CompanyInfo) GetCompanyStartDate() *types.Date {
+	if c == nil {
 		return nil
 	}
-	return o.CompanyStartDate
+	return c.CompanyStartDate
 }
 
-func (o *CompanyInfo) GetAddresses() []Address {
-	if o == nil {
+func (c *CompanyInfo) GetAddresses() []Address {
+	if c == nil {
 		return nil
 	}
-	return o.Addresses
+	return c.Addresses
 }
 
-func (o *CompanyInfo) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
+func (c *CompanyInfo) GetPhoneNumbers() []PhoneNumber {
+	if c == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return c.PhoneNumbers
 }
 
-func (o *CompanyInfo) GetEmails() []Email {
-	if o == nil {
+func (c *CompanyInfo) GetEmails() []Email {
+	if c == nil {
 		return nil
 	}
-	return o.Emails
+	return c.Emails
 }
 
-func (o *CompanyInfo) GetCustomMappings() map[string]any {
-	if o == nil {
+func (c *CompanyInfo) GetCustomMappings() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return c.CustomMappings
 }
 
-func (o *CompanyInfo) GetTrackingCategoriesEnabled() *bool {
-	if o == nil {
+func (c *CompanyInfo) GetTrackingCategoriesEnabled() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.TrackingCategoriesEnabled
+	return c.TrackingCategoriesEnabled
 }
 
-func (o *CompanyInfo) GetTrackingCategoriesMode() *TrackingCategoriesMode {
-	if o == nil {
+func (c *CompanyInfo) GetTrackingCategoriesMode() *TrackingCategoriesMode {
+	if c == nil {
 		return nil
 	}
-	return o.TrackingCategoriesMode
+	return c.TrackingCategoriesMode
 }
 
-func (o *CompanyInfo) GetRowVersion() *string {
-	if o == nil {
+func (c *CompanyInfo) GetRowVersion() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RowVersion
+	return c.RowVersion
 }
 
-func (o *CompanyInfo) GetUpdatedBy() *string {
-	if o == nil {
+func (c *CompanyInfo) GetUpdatedBy() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return c.UpdatedBy
 }
 
-func (o *CompanyInfo) GetCreatedBy() *string {
-	if o == nil {
+func (c *CompanyInfo) GetCreatedBy() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return c.CreatedBy
 }
 
-func (o *CompanyInfo) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (c *CompanyInfo) GetUpdatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return c.UpdatedAt
 }
 
-func (o *CompanyInfo) GetCreatedAt() *time.Time {
-	if o == nil {
+func (c *CompanyInfo) GetCreatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }

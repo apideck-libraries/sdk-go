@@ -13,18 +13,18 @@ type VaultConnectionsImportGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultConnectionsImportGlobals) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionsImportGlobals) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionsImportGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionsImportGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultConnectionsImportRequest struct {
@@ -40,39 +40,39 @@ type VaultConnectionsImportRequest struct {
 	ConnectionImportData components.ConnectionImportData `request:"mediaType=application/json"`
 }
 
-func (o *VaultConnectionsImportRequest) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionsImportRequest) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionsImportRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionsImportRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultConnectionsImportRequest) GetServiceID() string {
-	if o == nil {
+func (v *VaultConnectionsImportRequest) GetServiceID() string {
+	if v == nil {
 		return ""
 	}
-	return o.ServiceID
+	return v.ServiceID
 }
 
-func (o *VaultConnectionsImportRequest) GetUnifiedAPI() string {
-	if o == nil {
+func (v *VaultConnectionsImportRequest) GetUnifiedAPI() string {
+	if v == nil {
 		return ""
 	}
-	return o.UnifiedAPI
+	return v.UnifiedAPI
 }
 
-func (o *VaultConnectionsImportRequest) GetConnectionImportData() components.ConnectionImportData {
-	if o == nil {
+func (v *VaultConnectionsImportRequest) GetConnectionImportData() components.ConnectionImportData {
+	if v == nil {
 		return components.ConnectionImportData{}
 	}
-	return o.ConnectionImportData
+	return v.ConnectionImportData
 }
 
 type VaultConnectionsImportResponse struct {
@@ -83,23 +83,23 @@ type VaultConnectionsImportResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultConnectionsImportResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultConnectionsImportResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultConnectionsImportResponse) GetCreateConnectionResponse() *components.CreateConnectionResponse {
-	if o == nil {
+func (v *VaultConnectionsImportResponse) GetCreateConnectionResponse() *components.CreateConnectionResponse {
+	if v == nil {
 		return nil
 	}
-	return o.CreateConnectionResponse
+	return v.CreateConnectionResponse
 }
 
-func (o *VaultConnectionsImportResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultConnectionsImportResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

@@ -14,18 +14,18 @@ type HrisEmployeePayrollsOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *HrisEmployeePayrollsOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisEmployeePayrollsOneGlobals) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisEmployeePayrollsOneGlobals) GetAppID() *string {
-	if o == nil {
+func (h *HrisEmployeePayrollsOneGlobals) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
 type HrisEmployeePayrollsOneRequest struct {
@@ -56,53 +56,53 @@ func (h *HrisEmployeePayrollsOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *HrisEmployeePayrollsOneRequest) GetPayrollID() string {
-	if o == nil {
+func (h *HrisEmployeePayrollsOneRequest) GetPayrollID() string {
+	if h == nil {
 		return ""
 	}
-	return o.PayrollID
+	return h.PayrollID
 }
 
-func (o *HrisEmployeePayrollsOneRequest) GetEmployeeID() string {
-	if o == nil {
+func (h *HrisEmployeePayrollsOneRequest) GetEmployeeID() string {
+	if h == nil {
 		return ""
 	}
-	return o.EmployeeID
+	return h.EmployeeID
 }
 
-func (o *HrisEmployeePayrollsOneRequest) GetRaw() *bool {
-	if o == nil {
+func (h *HrisEmployeePayrollsOneRequest) GetRaw() *bool {
+	if h == nil {
 		return nil
 	}
-	return o.Raw
+	return h.Raw
 }
 
-func (o *HrisEmployeePayrollsOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisEmployeePayrollsOneRequest) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisEmployeePayrollsOneRequest) GetAppID() *string {
-	if o == nil {
+func (h *HrisEmployeePayrollsOneRequest) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
-func (o *HrisEmployeePayrollsOneRequest) GetServiceID() *string {
-	if o == nil {
+func (h *HrisEmployeePayrollsOneRequest) GetServiceID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ServiceID
+	return h.ServiceID
 }
 
-func (o *HrisEmployeePayrollsOneRequest) GetFields() *string {
-	if o == nil {
+func (h *HrisEmployeePayrollsOneRequest) GetFields() *string {
+	if h == nil {
 		return nil
 	}
-	return o.Fields
+	return h.Fields
 }
 
 type HrisEmployeePayrollsOneResponse struct {
@@ -113,23 +113,23 @@ type HrisEmployeePayrollsOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *HrisEmployeePayrollsOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (h *HrisEmployeePayrollsOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if h == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return h.HTTPMeta
 }
 
-func (o *HrisEmployeePayrollsOneResponse) GetGetEmployeePayrollResponse() *components.GetEmployeePayrollResponse {
-	if o == nil {
+func (h *HrisEmployeePayrollsOneResponse) GetGetEmployeePayrollResponse() *components.GetEmployeePayrollResponse {
+	if h == nil {
 		return nil
 	}
-	return o.GetEmployeePayrollResponse
+	return h.GetEmployeePayrollResponse
 }
 
-func (o *HrisEmployeePayrollsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (h *HrisEmployeePayrollsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if h == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return h.UnexpectedErrorResponse
 }

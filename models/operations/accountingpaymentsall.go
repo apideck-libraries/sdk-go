@@ -14,18 +14,18 @@ type AccountingPaymentsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingPaymentsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingPaymentsAllGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingPaymentsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingPaymentsAllGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingPaymentsAllRequest struct {
@@ -62,74 +62,74 @@ func (a *AccountingPaymentsAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingPaymentsAllRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingPaymentsAllRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingPaymentsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingPaymentsAllRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingPaymentsAllRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingPaymentsAllRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingPaymentsAllRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingPaymentsAllRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingPaymentsAllRequest) GetCursor() *string {
-	if o == nil {
+func (a *AccountingPaymentsAllRequest) GetCursor() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Cursor
+	return a.Cursor
 }
 
-func (o *AccountingPaymentsAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (a *AccountingPaymentsAllRequest) GetLimit() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.Limit
+	return a.Limit
 }
 
-func (o *AccountingPaymentsAllRequest) GetFilter() *components.PaymentsFilter {
-	if o == nil {
+func (a *AccountingPaymentsAllRequest) GetFilter() *components.PaymentsFilter {
+	if a == nil {
 		return nil
 	}
-	return o.Filter
+	return a.Filter
 }
 
-func (o *AccountingPaymentsAllRequest) GetSort() *components.PaymentsSort {
-	if o == nil {
+func (a *AccountingPaymentsAllRequest) GetSort() *components.PaymentsSort {
+	if a == nil {
 		return nil
 	}
-	return o.Sort
+	return a.Sort
 }
 
-func (o *AccountingPaymentsAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (a *AccountingPaymentsAllRequest) GetPassThrough() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
-func (o *AccountingPaymentsAllRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingPaymentsAllRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingPaymentsAllResponse struct {
@@ -142,23 +142,23 @@ type AccountingPaymentsAllResponse struct {
 	Next func() (*AccountingPaymentsAllResponse, error)
 }
 
-func (o *AccountingPaymentsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingPaymentsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingPaymentsAllResponse) GetGetPaymentsResponse() *components.GetPaymentsResponse {
-	if o == nil {
+func (a *AccountingPaymentsAllResponse) GetGetPaymentsResponse() *components.GetPaymentsResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetPaymentsResponse
+	return a.GetPaymentsResponse
 }
 
-func (o *AccountingPaymentsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingPaymentsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

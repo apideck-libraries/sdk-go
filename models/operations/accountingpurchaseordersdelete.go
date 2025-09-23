@@ -14,18 +14,18 @@ type AccountingPurchaseOrdersDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingPurchaseOrdersDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingPurchaseOrdersDeleteGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingPurchaseOrdersDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingPurchaseOrdersDeleteGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingPurchaseOrdersDeleteRequest struct {
@@ -52,39 +52,39 @@ func (a *AccountingPurchaseOrdersDeleteRequest) UnmarshalJSON(data []byte) error
 	return nil
 }
 
-func (o *AccountingPurchaseOrdersDeleteRequest) GetID() string {
-	if o == nil {
+func (a *AccountingPurchaseOrdersDeleteRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingPurchaseOrdersDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingPurchaseOrdersDeleteRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingPurchaseOrdersDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingPurchaseOrdersDeleteRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingPurchaseOrdersDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingPurchaseOrdersDeleteRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingPurchaseOrdersDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingPurchaseOrdersDeleteRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
 type AccountingPurchaseOrdersDeleteResponse struct {
@@ -95,23 +95,23 @@ type AccountingPurchaseOrdersDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingPurchaseOrdersDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingPurchaseOrdersDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingPurchaseOrdersDeleteResponse) GetDeletePurchaseOrderResponse() *components.DeletePurchaseOrderResponse {
-	if o == nil {
+func (a *AccountingPurchaseOrdersDeleteResponse) GetDeletePurchaseOrderResponse() *components.DeletePurchaseOrderResponse {
+	if a == nil {
 		return nil
 	}
-	return o.DeletePurchaseOrderResponse
+	return a.DeletePurchaseOrderResponse
 }
 
-func (o *AccountingPurchaseOrdersDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingPurchaseOrdersDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

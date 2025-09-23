@@ -25,23 +25,23 @@ func (i *InvoicesFilter) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *InvoicesFilter) GetUpdatedSince() *time.Time {
-	if o == nil {
+func (i *InvoicesFilter) GetUpdatedSince() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.UpdatedSince
+	return i.UpdatedSince
 }
 
-func (o *InvoicesFilter) GetCreatedSince() *time.Time {
-	if o == nil {
+func (i *InvoicesFilter) GetCreatedSince() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.CreatedSince
+	return i.CreatedSince
 }
 
-func (o *InvoicesFilter) GetNumber() *string {
-	if o == nil {
+func (i *InvoicesFilter) GetNumber() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Number
+	return i.Number
 }

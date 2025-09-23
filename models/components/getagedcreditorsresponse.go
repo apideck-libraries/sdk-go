@@ -19,51 +19,51 @@ type GetAgedCreditorsResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetAgedCreditorsResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetAgedCreditorsResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetAgedCreditorsResponse) GetStatus() string {
-	if o == nil {
+func (g *GetAgedCreditorsResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetAgedCreditorsResponse) GetService() string {
-	if o == nil {
+func (g *GetAgedCreditorsResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetAgedCreditorsResponse) GetResource() string {
-	if o == nil {
+func (g *GetAgedCreditorsResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetAgedCreditorsResponse) GetOperation() string {
-	if o == nil {
+func (g *GetAgedCreditorsResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetAgedCreditorsResponse) GetData() AgedCreditors {
-	if o == nil {
+func (g *GetAgedCreditorsResponse) GetData() AgedCreditors {
+	if g == nil {
 		return AgedCreditors{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetAgedCreditorsResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetAgedCreditorsResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

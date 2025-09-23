@@ -28,30 +28,30 @@ func (b *BalanceByPeriod) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *BalanceByPeriod) GetStartDate() *types.Date {
-	if o == nil {
+func (b *BalanceByPeriod) GetStartDate() *types.Date {
+	if b == nil {
 		return nil
 	}
-	return o.StartDate
+	return b.StartDate
 }
 
-func (o *BalanceByPeriod) GetEndDate() *types.Date {
-	if o == nil {
+func (b *BalanceByPeriod) GetEndDate() *types.Date {
+	if b == nil {
 		return nil
 	}
-	return o.EndDate
+	return b.EndDate
 }
 
-func (o *BalanceByPeriod) GetTotalAmount() *float64 {
-	if o == nil {
+func (b *BalanceByPeriod) GetTotalAmount() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.TotalAmount
+	return b.TotalAmount
 }
 
-func (o *BalanceByPeriod) GetBalancesByTransaction() []BalanceByTransaction {
-	if o == nil {
+func (b *BalanceByPeriod) GetBalancesByTransaction() []BalanceByTransaction {
+	if b == nil {
 		return nil
 	}
-	return o.BalancesByTransaction
+	return b.BalancesByTransaction
 }

@@ -123,270 +123,270 @@ func (b *BillLineItem) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *BillLineItem) GetID() *string {
-	if o == nil {
+func (b *BillLineItem) GetID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.ID
+	return b.ID
 }
 
-func (o *BillLineItem) GetRowID() *string {
-	if o == nil {
+func (b *BillLineItem) GetRowID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.RowID
+	return b.RowID
 }
 
-func (o *BillLineItem) GetCode() *string {
-	if o == nil {
+func (b *BillLineItem) GetCode() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Code
+	return b.Code
 }
 
-func (o *BillLineItem) GetLineNumber() *int64 {
-	if o == nil {
+func (b *BillLineItem) GetLineNumber() *int64 {
+	if b == nil {
 		return nil
 	}
-	return o.LineNumber
+	return b.LineNumber
 }
 
-func (o *BillLineItem) GetDescription() *string {
-	if o == nil {
+func (b *BillLineItem) GetDescription() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Description
+	return b.Description
 }
 
-func (o *BillLineItem) GetType() *BillLineItemType {
-	if o == nil {
+func (b *BillLineItem) GetType() *BillLineItemType {
+	if b == nil {
 		return nil
 	}
-	return o.Type
+	return b.Type
 }
 
-func (o *BillLineItem) GetTaxAmount() *float64 {
-	if o == nil {
+func (b *BillLineItem) GetTaxAmount() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.TaxAmount
+	return b.TaxAmount
 }
 
-func (o *BillLineItem) GetTotalAmount() *float64 {
-	if o == nil {
+func (b *BillLineItem) GetTotalAmount() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.TotalAmount
+	return b.TotalAmount
 }
 
-func (o *BillLineItem) GetQuantity() *float64 {
-	if o == nil {
+func (b *BillLineItem) GetQuantity() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.Quantity
+	return b.Quantity
 }
 
-func (o *BillLineItem) GetUnitPrice() *float64 {
-	if o == nil {
+func (b *BillLineItem) GetUnitPrice() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.UnitPrice
+	return b.UnitPrice
 }
 
-func (o *BillLineItem) GetUnitOfMeasure() *string {
-	if o == nil {
+func (b *BillLineItem) GetUnitOfMeasure() *string {
+	if b == nil {
 		return nil
 	}
-	return o.UnitOfMeasure
+	return b.UnitOfMeasure
 }
 
-func (o *BillLineItem) GetDiscountPercentage() *float64 {
-	if o == nil {
+func (b *BillLineItem) GetDiscountPercentage() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.DiscountPercentage
+	return b.DiscountPercentage
 }
 
-func (o *BillLineItem) GetDiscountAmount() *float64 {
-	if o == nil {
+func (b *BillLineItem) GetDiscountAmount() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.DiscountAmount
+	return b.DiscountAmount
 }
 
-func (o *BillLineItem) GetLocationID() *string {
-	if o == nil {
+func (b *BillLineItem) GetLocationID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.LocationID
+	return b.LocationID
 }
 
-func (o *BillLineItem) GetDepartmentID() *string {
-	if o == nil {
+func (b *BillLineItem) GetDepartmentID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return b.DepartmentID
 }
 
-func (o *BillLineItem) GetSubsidiaryID() *string {
-	if o == nil {
+func (b *BillLineItem) GetSubsidiaryID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.SubsidiaryID
+	return b.SubsidiaryID
 }
 
-func (o *BillLineItem) GetCategoryID() *string {
-	if o == nil {
+func (b *BillLineItem) GetCategoryID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.CategoryID
+	return b.CategoryID
 }
 
-func (o *BillLineItem) GetShippingID() *string {
-	if o == nil {
+func (b *BillLineItem) GetShippingID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.ShippingID
+	return b.ShippingID
 }
 
-func (o *BillLineItem) GetMemo() *string {
-	if o == nil {
+func (b *BillLineItem) GetMemo() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Memo
+	return b.Memo
 }
 
-func (o *BillLineItem) GetPrepaid() *bool {
-	if o == nil {
+func (b *BillLineItem) GetPrepaid() *bool {
+	if b == nil {
 		return nil
 	}
-	return o.Prepaid
+	return b.Prepaid
 }
 
-func (o *BillLineItem) GetTaxApplicableOn() *string {
-	if o == nil {
+func (b *BillLineItem) GetTaxApplicableOn() *string {
+	if b == nil {
 		return nil
 	}
-	return o.TaxApplicableOn
+	return b.TaxApplicableOn
 }
 
-func (o *BillLineItem) GetTaxRecoverability() *string {
-	if o == nil {
+func (b *BillLineItem) GetTaxRecoverability() *string {
+	if b == nil {
 		return nil
 	}
-	return o.TaxRecoverability
+	return b.TaxRecoverability
 }
 
-func (o *BillLineItem) GetTaxMethod() *string {
-	if o == nil {
+func (b *BillLineItem) GetTaxMethod() *string {
+	if b == nil {
 		return nil
 	}
-	return o.TaxMethod
+	return b.TaxMethod
 }
 
-func (o *BillLineItem) GetRetentionAmount() *float64 {
-	if o == nil {
+func (b *BillLineItem) GetRetentionAmount() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.RetentionAmount
+	return b.RetentionAmount
 }
 
-func (o *BillLineItem) GetPaymentAmount() *float64 {
-	if o == nil {
+func (b *BillLineItem) GetPaymentAmount() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.PaymentAmount
+	return b.PaymentAmount
 }
 
-func (o *BillLineItem) GetItem() *LinkedInvoiceItem {
-	if o == nil {
+func (b *BillLineItem) GetItem() *LinkedInvoiceItem {
+	if b == nil {
 		return nil
 	}
-	return o.Item
+	return b.Item
 }
 
-func (o *BillLineItem) GetTaxRate() *LinkedTaxRate {
-	if o == nil {
+func (b *BillLineItem) GetTaxRate() *LinkedTaxRate {
+	if b == nil {
 		return nil
 	}
-	return o.TaxRate
+	return b.TaxRate
 }
 
-func (o *BillLineItem) GetLedgerAccount() *LinkedLedgerAccount {
-	if o == nil {
+func (b *BillLineItem) GetLedgerAccount() *LinkedLedgerAccount {
+	if b == nil {
 		return nil
 	}
-	return o.LedgerAccount
+	return b.LedgerAccount
 }
 
-func (o *BillLineItem) GetPurchaseOrder() *LinkedPurchaseOrder {
-	if o == nil {
+func (b *BillLineItem) GetPurchaseOrder() *LinkedPurchaseOrder {
+	if b == nil {
 		return nil
 	}
-	return o.PurchaseOrder
+	return b.PurchaseOrder
 }
 
-func (o *BillLineItem) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (b *BillLineItem) GetTrackingCategories() []*LinkedTrackingCategory {
+	if b == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return b.TrackingCategories
 }
 
-func (o *BillLineItem) GetCustomer() *LinkedCustomer {
-	if o == nil {
+func (b *BillLineItem) GetCustomer() *LinkedCustomer {
+	if b == nil {
 		return nil
 	}
-	return o.Customer
+	return b.Customer
 }
 
-func (o *BillLineItem) GetRebilling() *Rebilling {
-	if o == nil {
+func (b *BillLineItem) GetRebilling() *Rebilling {
+	if b == nil {
 		return nil
 	}
-	return o.Rebilling
+	return b.Rebilling
 }
 
-func (o *BillLineItem) GetRowVersion() *string {
-	if o == nil {
+func (b *BillLineItem) GetRowVersion() *string {
+	if b == nil {
 		return nil
 	}
-	return o.RowVersion
+	return b.RowVersion
 }
 
-func (o *BillLineItem) GetUpdatedBy() *string {
-	if o == nil {
+func (b *BillLineItem) GetUpdatedBy() *string {
+	if b == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return b.UpdatedBy
 }
 
-func (o *BillLineItem) GetCreatedBy() *string {
-	if o == nil {
+func (b *BillLineItem) GetCreatedBy() *string {
+	if b == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return b.CreatedBy
 }
 
-func (o *BillLineItem) GetCreatedAt() *time.Time {
-	if o == nil {
+func (b *BillLineItem) GetCreatedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return b.CreatedAt
 }
 
-func (o *BillLineItem) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (b *BillLineItem) GetUpdatedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return b.UpdatedAt
 }
 
-func (o *BillLineItem) GetWorktags() []*LinkedWorktag {
-	if o == nil {
+func (b *BillLineItem) GetWorktags() []*LinkedWorktag {
+	if b == nil {
 		return nil
 	}
-	return o.Worktags
+	return b.Worktags
 }
 
 type BillLineItemInput struct {
@@ -452,233 +452,233 @@ type BillLineItemInput struct {
 	Worktags []*LinkedWorktag `json:"worktags,omitempty"`
 }
 
-func (o *BillLineItemInput) GetRowID() *string {
-	if o == nil {
+func (b *BillLineItemInput) GetRowID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.RowID
+	return b.RowID
 }
 
-func (o *BillLineItemInput) GetCode() *string {
-	if o == nil {
+func (b *BillLineItemInput) GetCode() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Code
+	return b.Code
 }
 
-func (o *BillLineItemInput) GetLineNumber() *int64 {
-	if o == nil {
+func (b *BillLineItemInput) GetLineNumber() *int64 {
+	if b == nil {
 		return nil
 	}
-	return o.LineNumber
+	return b.LineNumber
 }
 
-func (o *BillLineItemInput) GetDescription() *string {
-	if o == nil {
+func (b *BillLineItemInput) GetDescription() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Description
+	return b.Description
 }
 
-func (o *BillLineItemInput) GetType() *BillLineItemType {
-	if o == nil {
+func (b *BillLineItemInput) GetType() *BillLineItemType {
+	if b == nil {
 		return nil
 	}
-	return o.Type
+	return b.Type
 }
 
-func (o *BillLineItemInput) GetTaxAmount() *float64 {
-	if o == nil {
+func (b *BillLineItemInput) GetTaxAmount() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.TaxAmount
+	return b.TaxAmount
 }
 
-func (o *BillLineItemInput) GetTotalAmount() *float64 {
-	if o == nil {
+func (b *BillLineItemInput) GetTotalAmount() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.TotalAmount
+	return b.TotalAmount
 }
 
-func (o *BillLineItemInput) GetQuantity() *float64 {
-	if o == nil {
+func (b *BillLineItemInput) GetQuantity() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.Quantity
+	return b.Quantity
 }
 
-func (o *BillLineItemInput) GetUnitPrice() *float64 {
-	if o == nil {
+func (b *BillLineItemInput) GetUnitPrice() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.UnitPrice
+	return b.UnitPrice
 }
 
-func (o *BillLineItemInput) GetUnitOfMeasure() *string {
-	if o == nil {
+func (b *BillLineItemInput) GetUnitOfMeasure() *string {
+	if b == nil {
 		return nil
 	}
-	return o.UnitOfMeasure
+	return b.UnitOfMeasure
 }
 
-func (o *BillLineItemInput) GetDiscountPercentage() *float64 {
-	if o == nil {
+func (b *BillLineItemInput) GetDiscountPercentage() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.DiscountPercentage
+	return b.DiscountPercentage
 }
 
-func (o *BillLineItemInput) GetDiscountAmount() *float64 {
-	if o == nil {
+func (b *BillLineItemInput) GetDiscountAmount() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.DiscountAmount
+	return b.DiscountAmount
 }
 
-func (o *BillLineItemInput) GetLocationID() *string {
-	if o == nil {
+func (b *BillLineItemInput) GetLocationID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.LocationID
+	return b.LocationID
 }
 
-func (o *BillLineItemInput) GetDepartmentID() *string {
-	if o == nil {
+func (b *BillLineItemInput) GetDepartmentID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return b.DepartmentID
 }
 
-func (o *BillLineItemInput) GetSubsidiaryID() *string {
-	if o == nil {
+func (b *BillLineItemInput) GetSubsidiaryID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.SubsidiaryID
+	return b.SubsidiaryID
 }
 
-func (o *BillLineItemInput) GetCategoryID() *string {
-	if o == nil {
+func (b *BillLineItemInput) GetCategoryID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.CategoryID
+	return b.CategoryID
 }
 
-func (o *BillLineItemInput) GetShippingID() *string {
-	if o == nil {
+func (b *BillLineItemInput) GetShippingID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.ShippingID
+	return b.ShippingID
 }
 
-func (o *BillLineItemInput) GetMemo() *string {
-	if o == nil {
+func (b *BillLineItemInput) GetMemo() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Memo
+	return b.Memo
 }
 
-func (o *BillLineItemInput) GetPrepaid() *bool {
-	if o == nil {
+func (b *BillLineItemInput) GetPrepaid() *bool {
+	if b == nil {
 		return nil
 	}
-	return o.Prepaid
+	return b.Prepaid
 }
 
-func (o *BillLineItemInput) GetTaxApplicableOn() *string {
-	if o == nil {
+func (b *BillLineItemInput) GetTaxApplicableOn() *string {
+	if b == nil {
 		return nil
 	}
-	return o.TaxApplicableOn
+	return b.TaxApplicableOn
 }
 
-func (o *BillLineItemInput) GetTaxRecoverability() *string {
-	if o == nil {
+func (b *BillLineItemInput) GetTaxRecoverability() *string {
+	if b == nil {
 		return nil
 	}
-	return o.TaxRecoverability
+	return b.TaxRecoverability
 }
 
-func (o *BillLineItemInput) GetTaxMethod() *string {
-	if o == nil {
+func (b *BillLineItemInput) GetTaxMethod() *string {
+	if b == nil {
 		return nil
 	}
-	return o.TaxMethod
+	return b.TaxMethod
 }
 
-func (o *BillLineItemInput) GetRetentionAmount() *float64 {
-	if o == nil {
+func (b *BillLineItemInput) GetRetentionAmount() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.RetentionAmount
+	return b.RetentionAmount
 }
 
-func (o *BillLineItemInput) GetPaymentAmount() *float64 {
-	if o == nil {
+func (b *BillLineItemInput) GetPaymentAmount() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.PaymentAmount
+	return b.PaymentAmount
 }
 
-func (o *BillLineItemInput) GetItem() *LinkedInvoiceItem {
-	if o == nil {
+func (b *BillLineItemInput) GetItem() *LinkedInvoiceItem {
+	if b == nil {
 		return nil
 	}
-	return o.Item
+	return b.Item
 }
 
-func (o *BillLineItemInput) GetTaxRate() *LinkedTaxRateInput {
-	if o == nil {
+func (b *BillLineItemInput) GetTaxRate() *LinkedTaxRateInput {
+	if b == nil {
 		return nil
 	}
-	return o.TaxRate
+	return b.TaxRate
 }
 
-func (o *BillLineItemInput) GetLedgerAccount() *LinkedLedgerAccountInput {
-	if o == nil {
+func (b *BillLineItemInput) GetLedgerAccount() *LinkedLedgerAccountInput {
+	if b == nil {
 		return nil
 	}
-	return o.LedgerAccount
+	return b.LedgerAccount
 }
 
-func (o *BillLineItemInput) GetPurchaseOrder() *LinkedPurchaseOrder {
-	if o == nil {
+func (b *BillLineItemInput) GetPurchaseOrder() *LinkedPurchaseOrder {
+	if b == nil {
 		return nil
 	}
-	return o.PurchaseOrder
+	return b.PurchaseOrder
 }
 
-func (o *BillLineItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (b *BillLineItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
+	if b == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return b.TrackingCategories
 }
 
-func (o *BillLineItemInput) GetCustomer() *LinkedCustomerInput {
-	if o == nil {
+func (b *BillLineItemInput) GetCustomer() *LinkedCustomerInput {
+	if b == nil {
 		return nil
 	}
-	return o.Customer
+	return b.Customer
 }
 
-func (o *BillLineItemInput) GetRebilling() *Rebilling {
-	if o == nil {
+func (b *BillLineItemInput) GetRebilling() *Rebilling {
+	if b == nil {
 		return nil
 	}
-	return o.Rebilling
+	return b.Rebilling
 }
 
-func (o *BillLineItemInput) GetRowVersion() *string {
-	if o == nil {
+func (b *BillLineItemInput) GetRowVersion() *string {
+	if b == nil {
 		return nil
 	}
-	return o.RowVersion
+	return b.RowVersion
 }
 
-func (o *BillLineItemInput) GetWorktags() []*LinkedWorktag {
-	if o == nil {
+func (b *BillLineItemInput) GetWorktags() []*LinkedWorktag {
+	if b == nil {
 		return nil
 	}
-	return o.Worktags
+	return b.Worktags
 }

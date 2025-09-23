@@ -14,18 +14,18 @@ type CrmContactsOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmContactsOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmContactsOneGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmContactsOneGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmContactsOneGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmContactsOneRequest struct {
@@ -56,53 +56,53 @@ func (c *CrmContactsOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmContactsOneRequest) GetID() string {
-	if o == nil {
+func (c *CrmContactsOneRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CrmContactsOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmContactsOneRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmContactsOneRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmContactsOneRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmContactsOneRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmContactsOneRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmContactsOneRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmContactsOneRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmContactsOneRequest) GetFields() *string {
-	if o == nil {
+func (c *CrmContactsOneRequest) GetFields() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Fields
+	return c.Fields
 }
 
-func (o *CrmContactsOneRequest) GetFilter() *components.ContactsFilter {
-	if o == nil {
+func (c *CrmContactsOneRequest) GetFilter() *components.ContactsFilter {
+	if c == nil {
 		return nil
 	}
-	return o.Filter
+	return c.Filter
 }
 
 type CrmContactsOneResponse struct {
@@ -113,23 +113,23 @@ type CrmContactsOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmContactsOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmContactsOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmContactsOneResponse) GetGetContactResponse() *components.GetContactResponse {
-	if o == nil {
+func (c *CrmContactsOneResponse) GetGetContactResponse() *components.GetContactResponse {
+	if c == nil {
 		return nil
 	}
-	return o.GetContactResponse
+	return c.GetContactResponse
 }
 
-func (o *CrmContactsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmContactsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

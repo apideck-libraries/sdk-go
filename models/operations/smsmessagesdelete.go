@@ -14,18 +14,18 @@ type SmsMessagesDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *SmsMessagesDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (s *SmsMessagesDeleteGlobals) GetConsumerID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return s.ConsumerID
 }
 
-func (o *SmsMessagesDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (s *SmsMessagesDeleteGlobals) GetAppID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.AppID
+	return s.AppID
 }
 
 type SmsMessagesDeleteRequest struct {
@@ -52,39 +52,39 @@ func (s *SmsMessagesDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *SmsMessagesDeleteRequest) GetID() string {
-	if o == nil {
+func (s *SmsMessagesDeleteRequest) GetID() string {
+	if s == nil {
 		return ""
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SmsMessagesDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (s *SmsMessagesDeleteRequest) GetConsumerID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return s.ConsumerID
 }
 
-func (o *SmsMessagesDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (s *SmsMessagesDeleteRequest) GetAppID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.AppID
+	return s.AppID
 }
 
-func (o *SmsMessagesDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (s *SmsMessagesDeleteRequest) GetServiceID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ServiceID
+	return s.ServiceID
 }
 
-func (o *SmsMessagesDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (s *SmsMessagesDeleteRequest) GetRaw() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.Raw
+	return s.Raw
 }
 
 type SmsMessagesDeleteResponse struct {
@@ -95,23 +95,23 @@ type SmsMessagesDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *SmsMessagesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (s *SmsMessagesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if s == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return s.HTTPMeta
 }
 
-func (o *SmsMessagesDeleteResponse) GetDeleteMessageResponse() *components.DeleteMessageResponse {
-	if o == nil {
+func (s *SmsMessagesDeleteResponse) GetDeleteMessageResponse() *components.DeleteMessageResponse {
+	if s == nil {
 		return nil
 	}
-	return o.DeleteMessageResponse
+	return s.DeleteMessageResponse
 }
 
-func (o *SmsMessagesDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (s *SmsMessagesDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if s == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return s.UnexpectedErrorResponse
 }

@@ -11,11 +11,11 @@ type VaultConsumersAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultConsumersAddGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultConsumersAddGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultConsumersAddRequest struct {
@@ -24,18 +24,18 @@ type VaultConsumersAddRequest struct {
 	CreateConsumerRequest components.CreateConsumerRequest `request:"mediaType=application/json"`
 }
 
-func (o *VaultConsumersAddRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultConsumersAddRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultConsumersAddRequest) GetCreateConsumerRequest() components.CreateConsumerRequest {
-	if o == nil {
+func (v *VaultConsumersAddRequest) GetCreateConsumerRequest() components.CreateConsumerRequest {
+	if v == nil {
 		return components.CreateConsumerRequest{}
 	}
-	return o.CreateConsumerRequest
+	return v.CreateConsumerRequest
 }
 
 type VaultConsumersAddResponse struct {
@@ -46,23 +46,23 @@ type VaultConsumersAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultConsumersAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultConsumersAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultConsumersAddResponse) GetCreateConsumerResponse() *components.CreateConsumerResponse {
-	if o == nil {
+func (v *VaultConsumersAddResponse) GetCreateConsumerResponse() *components.CreateConsumerResponse {
+	if v == nil {
 		return nil
 	}
-	return o.CreateConsumerResponse
+	return v.CreateConsumerResponse
 }
 
-func (o *VaultConsumersAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultConsumersAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

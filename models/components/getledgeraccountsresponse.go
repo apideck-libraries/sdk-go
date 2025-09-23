@@ -23,65 +23,65 @@ type GetLedgerAccountsResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetLedgerAccountsResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetLedgerAccountsResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetLedgerAccountsResponse) GetStatus() string {
-	if o == nil {
+func (g *GetLedgerAccountsResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetLedgerAccountsResponse) GetService() string {
-	if o == nil {
+func (g *GetLedgerAccountsResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetLedgerAccountsResponse) GetResource() string {
-	if o == nil {
+func (g *GetLedgerAccountsResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetLedgerAccountsResponse) GetOperation() string {
-	if o == nil {
+func (g *GetLedgerAccountsResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetLedgerAccountsResponse) GetData() []LedgerAccount {
-	if o == nil {
+func (g *GetLedgerAccountsResponse) GetData() []LedgerAccount {
+	if g == nil {
 		return []LedgerAccount{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetLedgerAccountsResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetLedgerAccountsResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetLedgerAccountsResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetLedgerAccountsResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }
 
-func (o *GetLedgerAccountsResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetLedgerAccountsResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

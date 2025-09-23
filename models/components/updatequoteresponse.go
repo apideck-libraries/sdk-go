@@ -18,44 +18,44 @@ type UpdateQuoteResponse struct {
 	Data UnifiedID `json:"data"`
 }
 
-func (o *UpdateQuoteResponse) GetStatusCode() int64 {
-	if o == nil {
+func (u *UpdateQuoteResponse) GetStatusCode() int64 {
+	if u == nil {
 		return 0
 	}
-	return o.StatusCode
+	return u.StatusCode
 }
 
-func (o *UpdateQuoteResponse) GetStatus() string {
-	if o == nil {
+func (u *UpdateQuoteResponse) GetStatus() string {
+	if u == nil {
 		return ""
 	}
-	return o.Status
+	return u.Status
 }
 
-func (o *UpdateQuoteResponse) GetService() string {
-	if o == nil {
+func (u *UpdateQuoteResponse) GetService() string {
+	if u == nil {
 		return ""
 	}
-	return o.Service
+	return u.Service
 }
 
-func (o *UpdateQuoteResponse) GetResource() string {
-	if o == nil {
+func (u *UpdateQuoteResponse) GetResource() string {
+	if u == nil {
 		return ""
 	}
-	return o.Resource
+	return u.Resource
 }
 
-func (o *UpdateQuoteResponse) GetOperation() string {
-	if o == nil {
+func (u *UpdateQuoteResponse) GetOperation() string {
+	if u == nil {
 		return ""
 	}
-	return o.Operation
+	return u.Operation
 }
 
-func (o *UpdateQuoteResponse) GetData() UnifiedID {
-	if o == nil {
+func (u *UpdateQuoteResponse) GetData() UnifiedID {
+	if u == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return u.Data
 }

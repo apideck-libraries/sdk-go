@@ -37,12 +37,12 @@ func main() {
     )
 
     res, err := s.Ecommerce.Orders.List(ctx, operations.EcommerceOrdersAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Filter: &components.EcommerceOrdersFilter{
-            Email: sdkgo.String("elon@musk.com"),
-            CustomerID: sdkgo.String("123"),
-            UpdatedSince: sdkgo.String("2020-09-30T07:43:32.000Z"),
-            CreatedSince: sdkgo.String("2020-09-30T07:43:32.000Z"),
+            Email: sdkgo.Pointer("elon@musk.com"),
+            CustomerID: sdkgo.Pointer("123"),
+            UpdatedSince: sdkgo.Pointer("2020-09-30T07:43:32.000Z"),
+            CreatedSince: sdkgo.Pointer("2020-09-30T07:43:32.000Z"),
         },
         Sort: &components.OrdersSort{
             By: components.OrdersSortByCreatedAt.ToPointer(),
@@ -51,7 +51,7 @@ func main() {
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -126,8 +126,8 @@ func main() {
 
     res, err := s.Ecommerce.Orders.Get(ctx, operations.EcommerceOrdersOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)

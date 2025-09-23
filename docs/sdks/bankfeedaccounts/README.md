@@ -39,11 +39,11 @@ func main() {
     )
 
     res, err := s.Accounting.BankFeedAccounts.List(ctx, operations.AccountingBankFeedAccountsAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -118,37 +118,37 @@ func main() {
     )
 
     res, err := s.Accounting.BankFeedAccounts.Create(ctx, operations.AccountingBankFeedAccountsAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         BankFeedAccount: components.BankFeedAccountInput{
             BankAccountType: components.BankAccountTypeBank.ToPointer(),
-            SourceAccountID: sdkgo.String("src_456"),
-            TargetAccountID: sdkgo.String("tgt_789"),
-            TargetAccountName: sdkgo.String("Main Company Checking"),
-            TargetAccountNumber: sdkgo.String("NL91ABNA0417164300"),
+            SourceAccountID: sdkgo.Pointer("src_456"),
+            TargetAccountID: sdkgo.Pointer("tgt_789"),
+            TargetAccountName: sdkgo.Pointer("Main Company Checking"),
+            TargetAccountNumber: sdkgo.Pointer("NL91ABNA0417164300"),
             Currency: components.CurrencyUsd.ToPointer(),
             FeedStatus: components.FeedStatusPending.ToPointer(),
-            Country: sdkgo.String("US"),
+            Country: sdkgo.Pointer("US"),
             CustomFields: []components.CustomField{
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
                 },
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
                 },
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
@@ -217,8 +217,8 @@ func main() {
 
     res, err := s.Accounting.BankFeedAccounts.Get(ctx, operations.AccountingBankFeedAccountsOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -282,29 +282,29 @@ func main() {
 
     res, err := s.Accounting.BankFeedAccounts.Update(ctx, operations.AccountingBankFeedAccountsUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         BankFeedAccount: components.BankFeedAccountInput{
             BankAccountType: components.BankAccountTypeBank.ToPointer(),
-            SourceAccountID: sdkgo.String("src_456"),
-            TargetAccountID: sdkgo.String("tgt_789"),
-            TargetAccountName: sdkgo.String("Main Company Checking"),
-            TargetAccountNumber: sdkgo.String("NL91ABNA0417164300"),
+            SourceAccountID: sdkgo.Pointer("src_456"),
+            TargetAccountID: sdkgo.Pointer("tgt_789"),
+            TargetAccountName: sdkgo.Pointer("Main Company Checking"),
+            TargetAccountNumber: sdkgo.Pointer("NL91ABNA0417164300"),
             Currency: components.CurrencyUsd.ToPointer(),
             FeedStatus: components.FeedStatusPending.ToPointer(),
-            Country: sdkgo.String("US"),
+            Country: sdkgo.Pointer("US"),
             CustomFields: []components.CustomField{
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
                 },
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
@@ -373,7 +373,7 @@ func main() {
 
     res, err := s.Accounting.BankFeedAccounts.Delete(ctx, operations.AccountingBankFeedAccountsDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

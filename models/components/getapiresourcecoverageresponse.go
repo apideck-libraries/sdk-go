@@ -17,44 +17,44 @@ type GetAPIResourceCoverageResponse struct {
 	Links *Links `json:"links,omitempty"`
 }
 
-func (o *GetAPIResourceCoverageResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetAPIResourceCoverageResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetAPIResourceCoverageResponse) GetStatus() string {
-	if o == nil {
+func (g *GetAPIResourceCoverageResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetAPIResourceCoverageResponse) GetData() APIResourceCoverage {
-	if o == nil {
+func (g *GetAPIResourceCoverageResponse) GetData() APIResourceCoverage {
+	if g == nil {
 		return APIResourceCoverage{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetAPIResourceCoverageResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetAPIResourceCoverageResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }
 
-func (o *GetAPIResourceCoverageResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetAPIResourceCoverageResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetAPIResourceCoverageResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetAPIResourceCoverageResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }

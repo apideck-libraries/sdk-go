@@ -13,18 +13,18 @@ type VaultConnectionsDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultConnectionsDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionsDeleteGlobals) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionsDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionsDeleteGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultConnectionsDeleteRequest struct {
@@ -38,32 +38,32 @@ type VaultConnectionsDeleteRequest struct {
 	UnifiedAPI string `pathParam:"style=simple,explode=false,name=unified_api"`
 }
 
-func (o *VaultConnectionsDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionsDeleteRequest) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionsDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionsDeleteRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultConnectionsDeleteRequest) GetServiceID() string {
-	if o == nil {
+func (v *VaultConnectionsDeleteRequest) GetServiceID() string {
+	if v == nil {
 		return ""
 	}
-	return o.ServiceID
+	return v.ServiceID
 }
 
-func (o *VaultConnectionsDeleteRequest) GetUnifiedAPI() string {
-	if o == nil {
+func (v *VaultConnectionsDeleteRequest) GetUnifiedAPI() string {
+	if v == nil {
 		return ""
 	}
-	return o.UnifiedAPI
+	return v.UnifiedAPI
 }
 
 type VaultConnectionsDeleteResponse struct {
@@ -72,16 +72,16 @@ type VaultConnectionsDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultConnectionsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultConnectionsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultConnectionsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultConnectionsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

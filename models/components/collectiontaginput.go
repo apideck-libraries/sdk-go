@@ -7,9 +7,9 @@ type CollectionTagInput struct {
 	ID *string `json:"id"`
 }
 
-func (o *CollectionTagInput) GetID() *string {
-	if o == nil {
+func (c *CollectionTagInput) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }

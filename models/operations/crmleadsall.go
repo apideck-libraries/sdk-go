@@ -14,18 +14,18 @@ type CrmLeadsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmLeadsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmLeadsAllGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmLeadsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmLeadsAllGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmLeadsAllRequest struct {
@@ -62,74 +62,74 @@ func (c *CrmLeadsAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmLeadsAllRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmLeadsAllRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmLeadsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmLeadsAllRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmLeadsAllRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmLeadsAllRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmLeadsAllRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmLeadsAllRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmLeadsAllRequest) GetCursor() *string {
-	if o == nil {
+func (c *CrmLeadsAllRequest) GetCursor() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Cursor
+	return c.Cursor
 }
 
-func (o *CrmLeadsAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (c *CrmLeadsAllRequest) GetLimit() *int64 {
+	if c == nil {
 		return nil
 	}
-	return o.Limit
+	return c.Limit
 }
 
-func (o *CrmLeadsAllRequest) GetFilter() *components.LeadsFilter {
-	if o == nil {
+func (c *CrmLeadsAllRequest) GetFilter() *components.LeadsFilter {
+	if c == nil {
 		return nil
 	}
-	return o.Filter
+	return c.Filter
 }
 
-func (o *CrmLeadsAllRequest) GetSort() *components.LeadsSort {
-	if o == nil {
+func (c *CrmLeadsAllRequest) GetSort() *components.LeadsSort {
+	if c == nil {
 		return nil
 	}
-	return o.Sort
+	return c.Sort
 }
 
-func (o *CrmLeadsAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (c *CrmLeadsAllRequest) GetPassThrough() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }
 
-func (o *CrmLeadsAllRequest) GetFields() *string {
-	if o == nil {
+func (c *CrmLeadsAllRequest) GetFields() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Fields
+	return c.Fields
 }
 
 type CrmLeadsAllResponse struct {
@@ -142,23 +142,23 @@ type CrmLeadsAllResponse struct {
 	Next func() (*CrmLeadsAllResponse, error)
 }
 
-func (o *CrmLeadsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmLeadsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmLeadsAllResponse) GetGetLeadsResponse() *components.GetLeadsResponse {
-	if o == nil {
+func (c *CrmLeadsAllResponse) GetGetLeadsResponse() *components.GetLeadsResponse {
+	if c == nil {
 		return nil
 	}
-	return o.GetLeadsResponse
+	return c.GetLeadsResponse
 }
 
-func (o *CrmLeadsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmLeadsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

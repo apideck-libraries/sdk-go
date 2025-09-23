@@ -88,44 +88,44 @@ type UnexpectedErrorResponse struct {
 	Ref *string `json:"ref,omitempty"`
 }
 
-func (o *UnexpectedErrorResponse) GetStatusCode() *float64 {
-	if o == nil {
+func (u *UnexpectedErrorResponse) GetStatusCode() *float64 {
+	if u == nil {
 		return nil
 	}
-	return o.StatusCode
+	return u.StatusCode
 }
 
-func (o *UnexpectedErrorResponse) GetError() *string {
-	if o == nil {
+func (u *UnexpectedErrorResponse) GetError() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Error
+	return u.Error
 }
 
-func (o *UnexpectedErrorResponse) GetTypeName() *string {
-	if o == nil {
+func (u *UnexpectedErrorResponse) GetTypeName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.TypeName
+	return u.TypeName
 }
 
-func (o *UnexpectedErrorResponse) GetMessage() *string {
-	if o == nil {
+func (u *UnexpectedErrorResponse) GetMessage() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Message
+	return u.Message
 }
 
-func (o *UnexpectedErrorResponse) GetDetail() *Detail {
-	if o == nil {
+func (u *UnexpectedErrorResponse) GetDetail() *Detail {
+	if u == nil {
 		return nil
 	}
-	return o.Detail
+	return u.Detail
 }
 
-func (o *UnexpectedErrorResponse) GetRef() *string {
-	if o == nil {
+func (u *UnexpectedErrorResponse) GetRef() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Ref
+	return u.Ref
 }

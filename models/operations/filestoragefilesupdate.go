@@ -14,18 +14,18 @@ type FileStorageFilesUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *FileStorageFilesUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageFilesUpdateGlobals) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageFilesUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageFilesUpdateGlobals) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
 type FileStorageFilesUpdateRequest struct {
@@ -53,46 +53,46 @@ func (f *FileStorageFilesUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FileStorageFilesUpdateRequest) GetID() string {
-	if o == nil {
+func (f *FileStorageFilesUpdateRequest) GetID() string {
+	if f == nil {
 		return ""
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *FileStorageFilesUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageFilesUpdateRequest) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageFilesUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageFilesUpdateRequest) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
-func (o *FileStorageFilesUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (f *FileStorageFilesUpdateRequest) GetServiceID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ServiceID
+	return f.ServiceID
 }
 
-func (o *FileStorageFilesUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (f *FileStorageFilesUpdateRequest) GetRaw() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Raw
+	return f.Raw
 }
 
-func (o *FileStorageFilesUpdateRequest) GetUpdateFileRequest() components.UpdateFileRequest {
-	if o == nil {
+func (f *FileStorageFilesUpdateRequest) GetUpdateFileRequest() components.UpdateFileRequest {
+	if f == nil {
 		return components.UpdateFileRequest{}
 	}
-	return o.UpdateFileRequest
+	return f.UpdateFileRequest
 }
 
 type FileStorageFilesUpdateResponse struct {
@@ -103,23 +103,23 @@ type FileStorageFilesUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *FileStorageFilesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (f *FileStorageFilesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if f == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return f.HTTPMeta
 }
 
-func (o *FileStorageFilesUpdateResponse) GetUpdateFileResponse() *components.UpdateFileResponse {
-	if o == nil {
+func (f *FileStorageFilesUpdateResponse) GetUpdateFileResponse() *components.UpdateFileResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UpdateFileResponse
+	return f.UpdateFileResponse
 }
 
-func (o *FileStorageFilesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (f *FileStorageFilesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return f.UnexpectedErrorResponse
 }

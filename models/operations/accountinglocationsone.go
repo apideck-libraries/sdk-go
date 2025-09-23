@@ -14,18 +14,18 @@ type AccountingLocationsOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingLocationsOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingLocationsOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingLocationsOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingLocationsOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingLocationsOneRequest struct {
@@ -54,46 +54,46 @@ func (a *AccountingLocationsOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingLocationsOneRequest) GetID() string {
-	if o == nil {
+func (a *AccountingLocationsOneRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingLocationsOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingLocationsOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingLocationsOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingLocationsOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingLocationsOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingLocationsOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingLocationsOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingLocationsOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingLocationsOneRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingLocationsOneRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingLocationsOneResponse struct {
@@ -104,23 +104,23 @@ type AccountingLocationsOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingLocationsOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingLocationsOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingLocationsOneResponse) GetGetAccountingLocationResponse() *components.GetAccountingLocationResponse {
-	if o == nil {
+func (a *AccountingLocationsOneResponse) GetGetAccountingLocationResponse() *components.GetAccountingLocationResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetAccountingLocationResponse
+	return a.GetAccountingLocationResponse
 }
 
-func (o *AccountingLocationsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingLocationsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

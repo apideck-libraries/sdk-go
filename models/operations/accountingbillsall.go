@@ -14,18 +14,18 @@ type AccountingBillsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingBillsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingBillsAllGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingBillsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingBillsAllGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingBillsAllRequest struct {
@@ -62,74 +62,74 @@ func (a *AccountingBillsAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingBillsAllRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingBillsAllRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingBillsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingBillsAllRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingBillsAllRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingBillsAllRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingBillsAllRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingBillsAllRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingBillsAllRequest) GetCursor() *string {
-	if o == nil {
+func (a *AccountingBillsAllRequest) GetCursor() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Cursor
+	return a.Cursor
 }
 
-func (o *AccountingBillsAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (a *AccountingBillsAllRequest) GetLimit() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.Limit
+	return a.Limit
 }
 
-func (o *AccountingBillsAllRequest) GetFilter() *components.BillsFilter {
-	if o == nil {
+func (a *AccountingBillsAllRequest) GetFilter() *components.BillsFilter {
+	if a == nil {
 		return nil
 	}
-	return o.Filter
+	return a.Filter
 }
 
-func (o *AccountingBillsAllRequest) GetSort() *components.BillsSort {
-	if o == nil {
+func (a *AccountingBillsAllRequest) GetSort() *components.BillsSort {
+	if a == nil {
 		return nil
 	}
-	return o.Sort
+	return a.Sort
 }
 
-func (o *AccountingBillsAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (a *AccountingBillsAllRequest) GetPassThrough() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
-func (o *AccountingBillsAllRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingBillsAllRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingBillsAllResponse struct {
@@ -142,23 +142,23 @@ type AccountingBillsAllResponse struct {
 	Next func() (*AccountingBillsAllResponse, error)
 }
 
-func (o *AccountingBillsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingBillsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingBillsAllResponse) GetGetBillsResponse() *components.GetBillsResponse {
-	if o == nil {
+func (a *AccountingBillsAllResponse) GetGetBillsResponse() *components.GetBillsResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetBillsResponse
+	return a.GetBillsResponse
 }
 
-func (o *AccountingBillsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingBillsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

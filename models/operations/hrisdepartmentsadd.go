@@ -14,18 +14,18 @@ type HrisDepartmentsAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *HrisDepartmentsAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisDepartmentsAddGlobals) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisDepartmentsAddGlobals) GetAppID() *string {
-	if o == nil {
+func (h *HrisDepartmentsAddGlobals) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
 type HrisDepartmentsAddRequest struct {
@@ -51,39 +51,39 @@ func (h *HrisDepartmentsAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *HrisDepartmentsAddRequest) GetRaw() *bool {
-	if o == nil {
+func (h *HrisDepartmentsAddRequest) GetRaw() *bool {
+	if h == nil {
 		return nil
 	}
-	return o.Raw
+	return h.Raw
 }
 
-func (o *HrisDepartmentsAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisDepartmentsAddRequest) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisDepartmentsAddRequest) GetAppID() *string {
-	if o == nil {
+func (h *HrisDepartmentsAddRequest) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
-func (o *HrisDepartmentsAddRequest) GetServiceID() *string {
-	if o == nil {
+func (h *HrisDepartmentsAddRequest) GetServiceID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ServiceID
+	return h.ServiceID
 }
 
-func (o *HrisDepartmentsAddRequest) GetDepartment() components.DepartmentInput {
-	if o == nil {
+func (h *HrisDepartmentsAddRequest) GetDepartment() components.DepartmentInput {
+	if h == nil {
 		return components.DepartmentInput{}
 	}
-	return o.Department
+	return h.Department
 }
 
 type HrisDepartmentsAddResponse struct {
@@ -94,23 +94,23 @@ type HrisDepartmentsAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *HrisDepartmentsAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (h *HrisDepartmentsAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if h == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return h.HTTPMeta
 }
 
-func (o *HrisDepartmentsAddResponse) GetCreateDepartmentResponse() *components.CreateDepartmentResponse {
-	if o == nil {
+func (h *HrisDepartmentsAddResponse) GetCreateDepartmentResponse() *components.CreateDepartmentResponse {
+	if h == nil {
 		return nil
 	}
-	return o.CreateDepartmentResponse
+	return h.CreateDepartmentResponse
 }
 
-func (o *HrisDepartmentsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (h *HrisDepartmentsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if h == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return h.UnexpectedErrorResponse
 }

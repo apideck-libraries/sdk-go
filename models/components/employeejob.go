@@ -80,102 +80,102 @@ func (e *EmployeeJob) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *EmployeeJob) GetID() *string {
-	if o == nil {
+func (e *EmployeeJob) GetID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *EmployeeJob) GetEmployeeID() *string {
-	if o == nil {
+func (e *EmployeeJob) GetEmployeeID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.EmployeeID
+	return e.EmployeeID
 }
 
-func (o *EmployeeJob) GetTitle() *string {
-	if o == nil {
+func (e *EmployeeJob) GetTitle() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Title
+	return e.Title
 }
 
-func (o *EmployeeJob) GetRole() *string {
-	if o == nil {
+func (e *EmployeeJob) GetRole() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Role
+	return e.Role
 }
 
-func (o *EmployeeJob) GetStartDate() *types.Date {
-	if o == nil {
+func (e *EmployeeJob) GetStartDate() *types.Date {
+	if e == nil {
 		return nil
 	}
-	return o.StartDate
+	return e.StartDate
 }
 
-func (o *EmployeeJob) GetEndDate() *types.Date {
-	if o == nil {
+func (e *EmployeeJob) GetEndDate() *types.Date {
+	if e == nil {
 		return nil
 	}
-	return o.EndDate
+	return e.EndDate
 }
 
-func (o *EmployeeJob) GetCompensationRate() *float64 {
-	if o == nil {
+func (e *EmployeeJob) GetCompensationRate() *float64 {
+	if e == nil {
 		return nil
 	}
-	return o.CompensationRate
+	return e.CompensationRate
 }
 
-func (o *EmployeeJob) GetCurrency() *Currency {
-	if o == nil {
+func (e *EmployeeJob) GetCurrency() *Currency {
+	if e == nil {
 		return nil
 	}
-	return o.Currency
+	return e.Currency
 }
 
-func (o *EmployeeJob) GetPaymentUnit() *PaymentUnit {
-	if o == nil {
+func (e *EmployeeJob) GetPaymentUnit() *PaymentUnit {
+	if e == nil {
 		return nil
 	}
-	return o.PaymentUnit
+	return e.PaymentUnit
 }
 
-func (o *EmployeeJob) GetHiredAt() *types.Date {
-	if o == nil {
+func (e *EmployeeJob) GetHiredAt() *types.Date {
+	if e == nil {
 		return nil
 	}
-	return o.HiredAt
+	return e.HiredAt
 }
 
-func (o *EmployeeJob) GetIsPrimary() *bool {
-	if o == nil {
+func (e *EmployeeJob) GetIsPrimary() *bool {
+	if e == nil {
 		return nil
 	}
-	return o.IsPrimary
+	return e.IsPrimary
 }
 
-func (o *EmployeeJob) GetIsManager() *bool {
-	if o == nil {
+func (e *EmployeeJob) GetIsManager() *bool {
+	if e == nil {
 		return nil
 	}
-	return o.IsManager
+	return e.IsManager
 }
 
-func (o *EmployeeJob) GetStatus() *EmployeeJobStatus {
-	if o == nil {
+func (e *EmployeeJob) GetStatus() *EmployeeJobStatus {
+	if e == nil {
 		return nil
 	}
-	return o.Status
+	return e.Status
 }
 
-func (o *EmployeeJob) GetLocation() *Address {
-	if o == nil {
+func (e *EmployeeJob) GetLocation() *Address {
+	if e == nil {
 		return nil
 	}
-	return o.Location
+	return e.Location
 }
 
 type EmployeeJobInput struct {
@@ -215,86 +215,86 @@ func (e *EmployeeJobInput) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *EmployeeJobInput) GetTitle() *string {
-	if o == nil {
+func (e *EmployeeJobInput) GetTitle() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Title
+	return e.Title
 }
 
-func (o *EmployeeJobInput) GetRole() *string {
-	if o == nil {
+func (e *EmployeeJobInput) GetRole() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Role
+	return e.Role
 }
 
-func (o *EmployeeJobInput) GetStartDate() *types.Date {
-	if o == nil {
+func (e *EmployeeJobInput) GetStartDate() *types.Date {
+	if e == nil {
 		return nil
 	}
-	return o.StartDate
+	return e.StartDate
 }
 
-func (o *EmployeeJobInput) GetEndDate() *types.Date {
-	if o == nil {
+func (e *EmployeeJobInput) GetEndDate() *types.Date {
+	if e == nil {
 		return nil
 	}
-	return o.EndDate
+	return e.EndDate
 }
 
-func (o *EmployeeJobInput) GetCompensationRate() *float64 {
-	if o == nil {
+func (e *EmployeeJobInput) GetCompensationRate() *float64 {
+	if e == nil {
 		return nil
 	}
-	return o.CompensationRate
+	return e.CompensationRate
 }
 
-func (o *EmployeeJobInput) GetCurrency() *Currency {
-	if o == nil {
+func (e *EmployeeJobInput) GetCurrency() *Currency {
+	if e == nil {
 		return nil
 	}
-	return o.Currency
+	return e.Currency
 }
 
-func (o *EmployeeJobInput) GetPaymentUnit() *PaymentUnit {
-	if o == nil {
+func (e *EmployeeJobInput) GetPaymentUnit() *PaymentUnit {
+	if e == nil {
 		return nil
 	}
-	return o.PaymentUnit
+	return e.PaymentUnit
 }
 
-func (o *EmployeeJobInput) GetHiredAt() *types.Date {
-	if o == nil {
+func (e *EmployeeJobInput) GetHiredAt() *types.Date {
+	if e == nil {
 		return nil
 	}
-	return o.HiredAt
+	return e.HiredAt
 }
 
-func (o *EmployeeJobInput) GetIsPrimary() *bool {
-	if o == nil {
+func (e *EmployeeJobInput) GetIsPrimary() *bool {
+	if e == nil {
 		return nil
 	}
-	return o.IsPrimary
+	return e.IsPrimary
 }
 
-func (o *EmployeeJobInput) GetIsManager() *bool {
-	if o == nil {
+func (e *EmployeeJobInput) GetIsManager() *bool {
+	if e == nil {
 		return nil
 	}
-	return o.IsManager
+	return e.IsManager
 }
 
-func (o *EmployeeJobInput) GetStatus() *EmployeeJobStatus {
-	if o == nil {
+func (e *EmployeeJobInput) GetStatus() *EmployeeJobStatus {
+	if e == nil {
 		return nil
 	}
-	return o.Status
+	return e.Status
 }
 
-func (o *EmployeeJobInput) GetLocation() *Address {
-	if o == nil {
+func (e *EmployeeJobInput) GetLocation() *Address {
+	if e == nil {
 		return nil
 	}
-	return o.Location
+	return e.Location
 }

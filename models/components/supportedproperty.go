@@ -9,16 +9,16 @@ type SupportedProperty struct {
 	ChildProperties []SupportedProperty `json:"child_properties,omitempty"`
 }
 
-func (o *SupportedProperty) GetUnifiedProperty() *string {
-	if o == nil {
+func (s *SupportedProperty) GetUnifiedProperty() *string {
+	if s == nil {
 		return nil
 	}
-	return o.UnifiedProperty
+	return s.UnifiedProperty
 }
 
-func (o *SupportedProperty) GetChildProperties() []SupportedProperty {
-	if o == nil {
+func (s *SupportedProperty) GetChildProperties() []SupportedProperty {
+	if s == nil {
 		return nil
 	}
-	return o.ChildProperties
+	return s.ChildProperties
 }

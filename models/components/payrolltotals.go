@@ -24,65 +24,65 @@ type PayrollTotals struct {
 	EmployeeBenefitDeductions *float64 `json:"employee_benefit_deductions,omitempty"`
 }
 
-func (o *PayrollTotals) GetCompanyDebit() *float64 {
-	if o == nil {
+func (p *PayrollTotals) GetCompanyDebit() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.CompanyDebit
+	return p.CompanyDebit
 }
 
-func (o *PayrollTotals) GetTaxDebit() *float64 {
-	if o == nil {
+func (p *PayrollTotals) GetTaxDebit() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.TaxDebit
+	return p.TaxDebit
 }
 
-func (o *PayrollTotals) GetCheckAmount() *float64 {
-	if o == nil {
+func (p *PayrollTotals) GetCheckAmount() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.CheckAmount
+	return p.CheckAmount
 }
 
-func (o *PayrollTotals) GetNetPay() *float64 {
-	if o == nil {
+func (p *PayrollTotals) GetNetPay() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.NetPay
+	return p.NetPay
 }
 
-func (o *PayrollTotals) GetGrossPay() *float64 {
-	if o == nil {
+func (p *PayrollTotals) GetGrossPay() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.GrossPay
+	return p.GrossPay
 }
 
-func (o *PayrollTotals) GetEmployerTaxes() *float64 {
-	if o == nil {
+func (p *PayrollTotals) GetEmployerTaxes() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.EmployerTaxes
+	return p.EmployerTaxes
 }
 
-func (o *PayrollTotals) GetEmployeeTaxes() *float64 {
-	if o == nil {
+func (p *PayrollTotals) GetEmployeeTaxes() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.EmployeeTaxes
+	return p.EmployeeTaxes
 }
 
-func (o *PayrollTotals) GetEmployerBenefitContributions() *float64 {
-	if o == nil {
+func (p *PayrollTotals) GetEmployerBenefitContributions() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.EmployerBenefitContributions
+	return p.EmployerBenefitContributions
 }
 
-func (o *PayrollTotals) GetEmployeeBenefitDeductions() *float64 {
-	if o == nil {
+func (p *PayrollTotals) GetEmployeeBenefitDeductions() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.EmployeeBenefitDeductions
+	return p.EmployeeBenefitDeductions
 }

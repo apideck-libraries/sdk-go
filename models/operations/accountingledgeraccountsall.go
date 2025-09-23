@@ -14,18 +14,18 @@ type AccountingLedgerAccountsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingLedgerAccountsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsAllGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingLedgerAccountsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsAllGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingLedgerAccountsAllRequest struct {
@@ -62,74 +62,74 @@ func (a *AccountingLedgerAccountsAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingLedgerAccountsAllRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingLedgerAccountsAllRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingLedgerAccountsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsAllRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingLedgerAccountsAllRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsAllRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingLedgerAccountsAllRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsAllRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingLedgerAccountsAllRequest) GetCursor() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsAllRequest) GetCursor() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Cursor
+	return a.Cursor
 }
 
-func (o *AccountingLedgerAccountsAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (a *AccountingLedgerAccountsAllRequest) GetLimit() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.Limit
+	return a.Limit
 }
 
-func (o *AccountingLedgerAccountsAllRequest) GetFilter() *components.LedgerAccountsFilter {
-	if o == nil {
+func (a *AccountingLedgerAccountsAllRequest) GetFilter() *components.LedgerAccountsFilter {
+	if a == nil {
 		return nil
 	}
-	return o.Filter
+	return a.Filter
 }
 
-func (o *AccountingLedgerAccountsAllRequest) GetSort() *components.LedgerAccountsSort {
-	if o == nil {
+func (a *AccountingLedgerAccountsAllRequest) GetSort() *components.LedgerAccountsSort {
+	if a == nil {
 		return nil
 	}
-	return o.Sort
+	return a.Sort
 }
 
-func (o *AccountingLedgerAccountsAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (a *AccountingLedgerAccountsAllRequest) GetPassThrough() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
-func (o *AccountingLedgerAccountsAllRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsAllRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingLedgerAccountsAllResponse struct {
@@ -142,23 +142,23 @@ type AccountingLedgerAccountsAllResponse struct {
 	Next func() (*AccountingLedgerAccountsAllResponse, error)
 }
 
-func (o *AccountingLedgerAccountsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingLedgerAccountsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingLedgerAccountsAllResponse) GetGetLedgerAccountsResponse() *components.GetLedgerAccountsResponse {
-	if o == nil {
+func (a *AccountingLedgerAccountsAllResponse) GetGetLedgerAccountsResponse() *components.GetLedgerAccountsResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetLedgerAccountsResponse
+	return a.GetLedgerAccountsResponse
 }
 
-func (o *AccountingLedgerAccountsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingLedgerAccountsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

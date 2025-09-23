@@ -11,46 +11,46 @@ type ConsumerRequestCountsInDateRangeResponseData struct {
 	RequestCounts          *RequestCountAllocation `json:"request_counts,omitempty"`
 }
 
-func (o *ConsumerRequestCountsInDateRangeResponseData) GetApplicationID() *string {
-	if o == nil {
+func (c *ConsumerRequestCountsInDateRangeResponseData) GetApplicationID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ApplicationID
+	return c.ApplicationID
 }
 
-func (o *ConsumerRequestCountsInDateRangeResponseData) GetConsumerID() *string {
-	if o == nil {
+func (c *ConsumerRequestCountsInDateRangeResponseData) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *ConsumerRequestCountsInDateRangeResponseData) GetStartDatetime() *string {
-	if o == nil {
+func (c *ConsumerRequestCountsInDateRangeResponseData) GetStartDatetime() *string {
+	if c == nil {
 		return nil
 	}
-	return o.StartDatetime
+	return c.StartDatetime
 }
 
-func (o *ConsumerRequestCountsInDateRangeResponseData) GetEndDatetime() *string {
-	if o == nil {
+func (c *ConsumerRequestCountsInDateRangeResponseData) GetEndDatetime() *string {
+	if c == nil {
 		return nil
 	}
-	return o.EndDatetime
+	return c.EndDatetime
 }
 
-func (o *ConsumerRequestCountsInDateRangeResponseData) GetAggregatedRequestCount() *float64 {
-	if o == nil {
+func (c *ConsumerRequestCountsInDateRangeResponseData) GetAggregatedRequestCount() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.AggregatedRequestCount
+	return c.AggregatedRequestCount
 }
 
-func (o *ConsumerRequestCountsInDateRangeResponseData) GetRequestCounts() *RequestCountAllocation {
-	if o == nil {
+func (c *ConsumerRequestCountsInDateRangeResponseData) GetRequestCounts() *RequestCountAllocation {
+	if c == nil {
 		return nil
 	}
-	return o.RequestCounts
+	return c.RequestCounts
 }
 
 // ConsumerRequestCountsInDateRangeResponse - Consumers Request Counts within Date Range
@@ -64,30 +64,30 @@ type ConsumerRequestCountsInDateRangeResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *ConsumerRequestCountsInDateRangeResponse) GetStatusCode() int64 {
-	if o == nil {
+func (c *ConsumerRequestCountsInDateRangeResponse) GetStatusCode() int64 {
+	if c == nil {
 		return 0
 	}
-	return o.StatusCode
+	return c.StatusCode
 }
 
-func (o *ConsumerRequestCountsInDateRangeResponse) GetStatus() string {
-	if o == nil {
+func (c *ConsumerRequestCountsInDateRangeResponse) GetStatus() string {
+	if c == nil {
 		return ""
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *ConsumerRequestCountsInDateRangeResponse) GetData() ConsumerRequestCountsInDateRangeResponseData {
-	if o == nil {
+func (c *ConsumerRequestCountsInDateRangeResponse) GetData() ConsumerRequestCountsInDateRangeResponseData {
+	if c == nil {
 		return ConsumerRequestCountsInDateRangeResponseData{}
 	}
-	return o.Data
+	return c.Data
 }
 
-func (o *ConsumerRequestCountsInDateRangeResponse) GetRaw() map[string]any {
-	if o == nil {
+func (c *ConsumerRequestCountsInDateRangeResponse) GetRaw() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }

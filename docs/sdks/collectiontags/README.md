@@ -36,11 +36,11 @@ func main() {
 
     res, err := s.IssueTracking.CollectionTags.List(ctx, operations.IssueTrackingCollectionTagsAllRequest{
         CollectionID: "apideck-io",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)

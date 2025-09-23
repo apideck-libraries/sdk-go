@@ -7,9 +7,9 @@ type ProfitAndLossIndicator struct {
 	Total *float64 `json:"total,omitempty"`
 }
 
-func (o *ProfitAndLossIndicator) GetTotal() *float64 {
-	if o == nil {
+func (p *ProfitAndLossIndicator) GetTotal() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.Total
+	return p.Total
 }

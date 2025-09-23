@@ -35,51 +35,51 @@ func (e *EcommerceStore) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *EcommerceStore) GetID() string {
-	if o == nil {
+func (e *EcommerceStore) GetID() string {
+	if e == nil {
 		return ""
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *EcommerceStore) GetName() *string {
-	if o == nil {
+func (e *EcommerceStore) GetName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Name
+	return e.Name
 }
 
-func (o *EcommerceStore) GetStoreURL() *string {
-	if o == nil {
+func (e *EcommerceStore) GetStoreURL() *string {
+	if e == nil {
 		return nil
 	}
-	return o.StoreURL
+	return e.StoreURL
 }
 
-func (o *EcommerceStore) GetAdminURL() *string {
-	if o == nil {
+func (e *EcommerceStore) GetAdminURL() *string {
+	if e == nil {
 		return nil
 	}
-	return o.AdminURL
+	return e.AdminURL
 }
 
-func (o *EcommerceStore) GetCustomMappings() map[string]any {
-	if o == nil {
+func (e *EcommerceStore) GetCustomMappings() map[string]any {
+	if e == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return e.CustomMappings
 }
 
-func (o *EcommerceStore) GetCreatedAt() *time.Time {
-	if o == nil {
+func (e *EcommerceStore) GetCreatedAt() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return e.CreatedAt
 }
 
-func (o *EcommerceStore) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (e *EcommerceStore) GetUpdatedAt() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return e.UpdatedAt
 }

@@ -23,65 +23,65 @@ type GetEcommerceOrdersResponse struct {
 	Links *Links `json:"links,omitempty"`
 }
 
-func (o *GetEcommerceOrdersResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetEcommerceOrdersResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetEcommerceOrdersResponse) GetStatus() string {
-	if o == nil {
+func (g *GetEcommerceOrdersResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetEcommerceOrdersResponse) GetService() string {
-	if o == nil {
+func (g *GetEcommerceOrdersResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetEcommerceOrdersResponse) GetResource() string {
-	if o == nil {
+func (g *GetEcommerceOrdersResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetEcommerceOrdersResponse) GetOperation() string {
-	if o == nil {
+func (g *GetEcommerceOrdersResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetEcommerceOrdersResponse) GetData() []EcommerceOrder {
-	if o == nil {
+func (g *GetEcommerceOrdersResponse) GetData() []EcommerceOrder {
+	if g == nil {
 		return []EcommerceOrder{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetEcommerceOrdersResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetEcommerceOrdersResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }
 
-func (o *GetEcommerceOrdersResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetEcommerceOrdersResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetEcommerceOrdersResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetEcommerceOrdersResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }

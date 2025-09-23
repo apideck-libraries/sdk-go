@@ -11,23 +11,23 @@ type CopyFolderRequest struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *CopyFolderRequest) GetName() *string {
-	if o == nil {
+func (c *CopyFolderRequest) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CopyFolderRequest) GetParentFolderID() string {
-	if o == nil {
+func (c *CopyFolderRequest) GetParentFolderID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ParentFolderID
+	return c.ParentFolderID
 }
 
-func (o *CopyFolderRequest) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (c *CopyFolderRequest) GetPassThrough() []PassThroughBody {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }

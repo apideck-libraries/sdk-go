@@ -14,18 +14,18 @@ type EcommerceProductsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *EcommerceProductsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (e *EcommerceProductsAllGlobals) GetConsumerID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return e.ConsumerID
 }
 
-func (o *EcommerceProductsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (e *EcommerceProductsAllGlobals) GetAppID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.AppID
+	return e.AppID
 }
 
 type EcommerceProductsAllRequest struct {
@@ -60,67 +60,67 @@ func (e *EcommerceProductsAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *EcommerceProductsAllRequest) GetRaw() *bool {
-	if o == nil {
+func (e *EcommerceProductsAllRequest) GetRaw() *bool {
+	if e == nil {
 		return nil
 	}
-	return o.Raw
+	return e.Raw
 }
 
-func (o *EcommerceProductsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (e *EcommerceProductsAllRequest) GetConsumerID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return e.ConsumerID
 }
 
-func (o *EcommerceProductsAllRequest) GetAppID() *string {
-	if o == nil {
+func (e *EcommerceProductsAllRequest) GetAppID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.AppID
+	return e.AppID
 }
 
-func (o *EcommerceProductsAllRequest) GetServiceID() *string {
-	if o == nil {
+func (e *EcommerceProductsAllRequest) GetServiceID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ServiceID
+	return e.ServiceID
 }
 
-func (o *EcommerceProductsAllRequest) GetCursor() *string {
-	if o == nil {
+func (e *EcommerceProductsAllRequest) GetCursor() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Cursor
+	return e.Cursor
 }
 
-func (o *EcommerceProductsAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (e *EcommerceProductsAllRequest) GetLimit() *int64 {
+	if e == nil {
 		return nil
 	}
-	return o.Limit
+	return e.Limit
 }
 
-func (o *EcommerceProductsAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (e *EcommerceProductsAllRequest) GetPassThrough() map[string]any {
+	if e == nil {
 		return nil
 	}
-	return o.PassThrough
+	return e.PassThrough
 }
 
-func (o *EcommerceProductsAllRequest) GetFields() *string {
-	if o == nil {
+func (e *EcommerceProductsAllRequest) GetFields() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Fields
+	return e.Fields
 }
 
-func (o *EcommerceProductsAllRequest) GetFilter() *components.EcommerceProductsFilter {
-	if o == nil {
+func (e *EcommerceProductsAllRequest) GetFilter() *components.EcommerceProductsFilter {
+	if e == nil {
 		return nil
 	}
-	return o.Filter
+	return e.Filter
 }
 
 type EcommerceProductsAllResponse struct {
@@ -133,23 +133,23 @@ type EcommerceProductsAllResponse struct {
 	Next func() (*EcommerceProductsAllResponse, error)
 }
 
-func (o *EcommerceProductsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (e *EcommerceProductsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if e == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return e.HTTPMeta
 }
 
-func (o *EcommerceProductsAllResponse) GetGetProductsResponse() *components.GetProductsResponse {
-	if o == nil {
+func (e *EcommerceProductsAllResponse) GetGetProductsResponse() *components.GetProductsResponse {
+	if e == nil {
 		return nil
 	}
-	return o.GetProductsResponse
+	return e.GetProductsResponse
 }
 
-func (o *EcommerceProductsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (e *EcommerceProductsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if e == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return e.UnexpectedErrorResponse
 }

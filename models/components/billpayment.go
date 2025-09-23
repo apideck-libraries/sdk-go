@@ -96,39 +96,39 @@ type Allocations struct {
 	AllocationID *string `json:"allocation_id,omitempty"`
 }
 
-func (o *Allocations) GetID() *string {
-	if o == nil {
+func (a *Allocations) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *Allocations) GetType() *BillPaymentAllocationType {
-	if o == nil {
+func (a *Allocations) GetType() *BillPaymentAllocationType {
+	if a == nil {
 		return nil
 	}
-	return o.Type
+	return a.Type
 }
 
-func (o *Allocations) GetCode() *string {
-	if o == nil {
+func (a *Allocations) GetCode() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Code
+	return a.Code
 }
 
-func (o *Allocations) GetAmount() *float64 {
-	if o == nil {
+func (a *Allocations) GetAmount() *float64 {
+	if a == nil {
 		return nil
 	}
-	return o.Amount
+	return a.Amount
 }
 
-func (o *Allocations) GetAllocationID() *string {
-	if o == nil {
+func (a *Allocations) GetAllocationID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AllocationID
+	return a.AllocationID
 }
 
 type BillPayment struct {
@@ -200,207 +200,207 @@ func (b *BillPayment) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *BillPayment) GetID() string {
-	if o == nil {
+func (b *BillPayment) GetID() string {
+	if b == nil {
 		return ""
 	}
-	return o.ID
+	return b.ID
 }
 
-func (o *BillPayment) GetDownstreamID() *string {
-	if o == nil {
+func (b *BillPayment) GetDownstreamID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.DownstreamID
+	return b.DownstreamID
 }
 
-func (o *BillPayment) GetCurrency() *Currency {
-	if o == nil {
+func (b *BillPayment) GetCurrency() *Currency {
+	if b == nil {
 		return nil
 	}
-	return o.Currency
+	return b.Currency
 }
 
-func (o *BillPayment) GetCurrencyRate() *float64 {
-	if o == nil {
+func (b *BillPayment) GetCurrencyRate() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.CurrencyRate
+	return b.CurrencyRate
 }
 
-func (o *BillPayment) GetTotalAmount() *float64 {
-	if o == nil {
+func (b *BillPayment) GetTotalAmount() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.TotalAmount
+	return b.TotalAmount
 }
 
-func (o *BillPayment) GetReference() *string {
-	if o == nil {
+func (b *BillPayment) GetReference() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Reference
+	return b.Reference
 }
 
-func (o *BillPayment) GetPaymentMethod() *string {
-	if o == nil {
+func (b *BillPayment) GetPaymentMethod() *string {
+	if b == nil {
 		return nil
 	}
-	return o.PaymentMethod
+	return b.PaymentMethod
 }
 
-func (o *BillPayment) GetPaymentMethodReference() *string {
-	if o == nil {
+func (b *BillPayment) GetPaymentMethodReference() *string {
+	if b == nil {
 		return nil
 	}
-	return o.PaymentMethodReference
+	return b.PaymentMethodReference
 }
 
-func (o *BillPayment) GetPaymentMethodID() *string {
-	if o == nil {
+func (b *BillPayment) GetPaymentMethodID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.PaymentMethodID
+	return b.PaymentMethodID
 }
 
-func (o *BillPayment) GetAccount() *LinkedLedgerAccount {
-	if o == nil {
+func (b *BillPayment) GetAccount() *LinkedLedgerAccount {
+	if b == nil {
 		return nil
 	}
-	return o.Account
+	return b.Account
 }
 
-func (o *BillPayment) GetTransactionDate() *time.Time {
-	if o == nil {
+func (b *BillPayment) GetTransactionDate() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.TransactionDate
+	return b.TransactionDate
 }
 
-func (o *BillPayment) GetSupplier() *LinkedSupplier {
-	if o == nil {
+func (b *BillPayment) GetSupplier() *LinkedSupplier {
+	if b == nil {
 		return nil
 	}
-	return o.Supplier
+	return b.Supplier
 }
 
-func (o *BillPayment) GetCompanyID() *string {
-	if o == nil {
+func (b *BillPayment) GetCompanyID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.CompanyID
+	return b.CompanyID
 }
 
-func (o *BillPayment) GetReconciled() *bool {
-	if o == nil {
+func (b *BillPayment) GetReconciled() *bool {
+	if b == nil {
 		return nil
 	}
-	return o.Reconciled
+	return b.Reconciled
 }
 
-func (o *BillPayment) GetStatus() *PaymentStatus {
-	if o == nil {
+func (b *BillPayment) GetStatus() *PaymentStatus {
+	if b == nil {
 		return nil
 	}
-	return o.Status
+	return b.Status
 }
 
-func (o *BillPayment) GetType() *BillPaymentType {
-	if o == nil {
+func (b *BillPayment) GetType() *BillPaymentType {
+	if b == nil {
 		return nil
 	}
-	return o.Type
+	return b.Type
 }
 
-func (o *BillPayment) GetAllocations() []Allocations {
-	if o == nil {
+func (b *BillPayment) GetAllocations() []Allocations {
+	if b == nil {
 		return nil
 	}
-	return o.Allocations
+	return b.Allocations
 }
 
-func (o *BillPayment) GetNote() *string {
-	if o == nil {
+func (b *BillPayment) GetNote() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Note
+	return b.Note
 }
 
-func (o *BillPayment) GetNumber() *string {
-	if o == nil {
+func (b *BillPayment) GetNumber() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Number
+	return b.Number
 }
 
-func (o *BillPayment) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (b *BillPayment) GetTrackingCategories() []*LinkedTrackingCategory {
+	if b == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return b.TrackingCategories
 }
 
-func (o *BillPayment) GetCustomFields() []CustomField {
-	if o == nil {
+func (b *BillPayment) GetCustomFields() []CustomField {
+	if b == nil {
 		return nil
 	}
-	return o.CustomFields
+	return b.CustomFields
 }
 
-func (o *BillPayment) GetRowVersion() *string {
-	if o == nil {
+func (b *BillPayment) GetRowVersion() *string {
+	if b == nil {
 		return nil
 	}
-	return o.RowVersion
+	return b.RowVersion
 }
 
-func (o *BillPayment) GetDisplayID() *string {
-	if o == nil {
+func (b *BillPayment) GetDisplayID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.DisplayID
+	return b.DisplayID
 }
 
-func (o *BillPayment) GetCustomMappings() map[string]any {
-	if o == nil {
+func (b *BillPayment) GetCustomMappings() map[string]any {
+	if b == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return b.CustomMappings
 }
 
-func (o *BillPayment) GetUpdatedBy() *string {
-	if o == nil {
+func (b *BillPayment) GetUpdatedBy() *string {
+	if b == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return b.UpdatedBy
 }
 
-func (o *BillPayment) GetCreatedBy() *string {
-	if o == nil {
+func (b *BillPayment) GetCreatedBy() *string {
+	if b == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return b.CreatedBy
 }
 
-func (o *BillPayment) GetCreatedAt() *time.Time {
-	if o == nil {
+func (b *BillPayment) GetCreatedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return b.CreatedAt
 }
 
-func (o *BillPayment) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (b *BillPayment) GetUpdatedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return b.UpdatedAt
 }
 
-func (o *BillPayment) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (b *BillPayment) GetPassThrough() []PassThroughBody {
+	if b == nil {
 		return nil
 	}
-	return o.PassThrough
+	return b.PassThrough
 }
 
 type BillPaymentAllocations struct {
@@ -414,32 +414,32 @@ type BillPaymentAllocations struct {
 	AllocationID *string `json:"allocation_id,omitempty"`
 }
 
-func (o *BillPaymentAllocations) GetID() *string {
-	if o == nil {
+func (b *BillPaymentAllocations) GetID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.ID
+	return b.ID
 }
 
-func (o *BillPaymentAllocations) GetType() *BillPaymentAllocationType {
-	if o == nil {
+func (b *BillPaymentAllocations) GetType() *BillPaymentAllocationType {
+	if b == nil {
 		return nil
 	}
-	return o.Type
+	return b.Type
 }
 
-func (o *BillPaymentAllocations) GetAmount() *float64 {
-	if o == nil {
+func (b *BillPaymentAllocations) GetAmount() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.Amount
+	return b.Amount
 }
 
-func (o *BillPaymentAllocations) GetAllocationID() *string {
-	if o == nil {
+func (b *BillPaymentAllocations) GetAllocationID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.AllocationID
+	return b.AllocationID
 }
 
 type BillPaymentInput struct {
@@ -497,156 +497,156 @@ func (b *BillPaymentInput) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *BillPaymentInput) GetCurrency() *Currency {
-	if o == nil {
+func (b *BillPaymentInput) GetCurrency() *Currency {
+	if b == nil {
 		return nil
 	}
-	return o.Currency
+	return b.Currency
 }
 
-func (o *BillPaymentInput) GetCurrencyRate() *float64 {
-	if o == nil {
+func (b *BillPaymentInput) GetCurrencyRate() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.CurrencyRate
+	return b.CurrencyRate
 }
 
-func (o *BillPaymentInput) GetTotalAmount() *float64 {
-	if o == nil {
+func (b *BillPaymentInput) GetTotalAmount() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.TotalAmount
+	return b.TotalAmount
 }
 
-func (o *BillPaymentInput) GetReference() *string {
-	if o == nil {
+func (b *BillPaymentInput) GetReference() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Reference
+	return b.Reference
 }
 
-func (o *BillPaymentInput) GetPaymentMethod() *string {
-	if o == nil {
+func (b *BillPaymentInput) GetPaymentMethod() *string {
+	if b == nil {
 		return nil
 	}
-	return o.PaymentMethod
+	return b.PaymentMethod
 }
 
-func (o *BillPaymentInput) GetPaymentMethodReference() *string {
-	if o == nil {
+func (b *BillPaymentInput) GetPaymentMethodReference() *string {
+	if b == nil {
 		return nil
 	}
-	return o.PaymentMethodReference
+	return b.PaymentMethodReference
 }
 
-func (o *BillPaymentInput) GetPaymentMethodID() *string {
-	if o == nil {
+func (b *BillPaymentInput) GetPaymentMethodID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.PaymentMethodID
+	return b.PaymentMethodID
 }
 
-func (o *BillPaymentInput) GetAccount() *LinkedLedgerAccountInput {
-	if o == nil {
+func (b *BillPaymentInput) GetAccount() *LinkedLedgerAccountInput {
+	if b == nil {
 		return nil
 	}
-	return o.Account
+	return b.Account
 }
 
-func (o *BillPaymentInput) GetTransactionDate() *time.Time {
-	if o == nil {
+func (b *BillPaymentInput) GetTransactionDate() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.TransactionDate
+	return b.TransactionDate
 }
 
-func (o *BillPaymentInput) GetSupplier() *LinkedSupplierInput {
-	if o == nil {
+func (b *BillPaymentInput) GetSupplier() *LinkedSupplierInput {
+	if b == nil {
 		return nil
 	}
-	return o.Supplier
+	return b.Supplier
 }
 
-func (o *BillPaymentInput) GetCompanyID() *string {
-	if o == nil {
+func (b *BillPaymentInput) GetCompanyID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.CompanyID
+	return b.CompanyID
 }
 
-func (o *BillPaymentInput) GetReconciled() *bool {
-	if o == nil {
+func (b *BillPaymentInput) GetReconciled() *bool {
+	if b == nil {
 		return nil
 	}
-	return o.Reconciled
+	return b.Reconciled
 }
 
-func (o *BillPaymentInput) GetStatus() *PaymentStatus {
-	if o == nil {
+func (b *BillPaymentInput) GetStatus() *PaymentStatus {
+	if b == nil {
 		return nil
 	}
-	return o.Status
+	return b.Status
 }
 
-func (o *BillPaymentInput) GetType() *BillPaymentType {
-	if o == nil {
+func (b *BillPaymentInput) GetType() *BillPaymentType {
+	if b == nil {
 		return nil
 	}
-	return o.Type
+	return b.Type
 }
 
-func (o *BillPaymentInput) GetAllocations() []BillPaymentAllocations {
-	if o == nil {
+func (b *BillPaymentInput) GetAllocations() []BillPaymentAllocations {
+	if b == nil {
 		return nil
 	}
-	return o.Allocations
+	return b.Allocations
 }
 
-func (o *BillPaymentInput) GetNote() *string {
-	if o == nil {
+func (b *BillPaymentInput) GetNote() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Note
+	return b.Note
 }
 
-func (o *BillPaymentInput) GetNumber() *string {
-	if o == nil {
+func (b *BillPaymentInput) GetNumber() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Number
+	return b.Number
 }
 
-func (o *BillPaymentInput) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (b *BillPaymentInput) GetTrackingCategories() []*LinkedTrackingCategory {
+	if b == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return b.TrackingCategories
 }
 
-func (o *BillPaymentInput) GetCustomFields() []CustomField {
-	if o == nil {
+func (b *BillPaymentInput) GetCustomFields() []CustomField {
+	if b == nil {
 		return nil
 	}
-	return o.CustomFields
+	return b.CustomFields
 }
 
-func (o *BillPaymentInput) GetRowVersion() *string {
-	if o == nil {
+func (b *BillPaymentInput) GetRowVersion() *string {
+	if b == nil {
 		return nil
 	}
-	return o.RowVersion
+	return b.RowVersion
 }
 
-func (o *BillPaymentInput) GetDisplayID() *string {
-	if o == nil {
+func (b *BillPaymentInput) GetDisplayID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.DisplayID
+	return b.DisplayID
 }
 
-func (o *BillPaymentInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (b *BillPaymentInput) GetPassThrough() []PassThroughBody {
+	if b == nil {
 		return nil
 	}
-	return o.PassThrough
+	return b.PassThrough
 }

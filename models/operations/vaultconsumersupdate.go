@@ -11,11 +11,11 @@ type VaultConsumersUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultConsumersUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultConsumersUpdateGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultConsumersUpdateRequest struct {
@@ -26,25 +26,25 @@ type VaultConsumersUpdateRequest struct {
 	UpdateConsumerRequest components.UpdateConsumerRequest `request:"mediaType=application/json"`
 }
 
-func (o *VaultConsumersUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultConsumersUpdateRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultConsumersUpdateRequest) GetConsumerID() string {
-	if o == nil {
+func (v *VaultConsumersUpdateRequest) GetConsumerID() string {
+	if v == nil {
 		return ""
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConsumersUpdateRequest) GetUpdateConsumerRequest() components.UpdateConsumerRequest {
-	if o == nil {
+func (v *VaultConsumersUpdateRequest) GetUpdateConsumerRequest() components.UpdateConsumerRequest {
+	if v == nil {
 		return components.UpdateConsumerRequest{}
 	}
-	return o.UpdateConsumerRequest
+	return v.UpdateConsumerRequest
 }
 
 type VaultConsumersUpdateResponse struct {
@@ -55,23 +55,23 @@ type VaultConsumersUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultConsumersUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultConsumersUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultConsumersUpdateResponse) GetUpdateConsumerResponse() *components.UpdateConsumerResponse {
-	if o == nil {
+func (v *VaultConsumersUpdateResponse) GetUpdateConsumerResponse() *components.UpdateConsumerResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UpdateConsumerResponse
+	return v.UpdateConsumerResponse
 }
 
-func (o *VaultConsumersUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultConsumersUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

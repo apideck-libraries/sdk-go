@@ -11,23 +11,23 @@ type Tax struct {
 	Amount *float64 `json:"amount,omitempty"`
 }
 
-func (o *Tax) GetName() *string {
-	if o == nil {
+func (t *Tax) GetName() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Name
+	return t.Name
 }
 
-func (o *Tax) GetEmployer() *bool {
-	if o == nil {
+func (t *Tax) GetEmployer() *bool {
+	if t == nil {
 		return nil
 	}
-	return o.Employer
+	return t.Employer
 }
 
-func (o *Tax) GetAmount() *float64 {
-	if o == nil {
+func (t *Tax) GetAmount() *float64 {
+	if t == nil {
 		return nil
 	}
-	return o.Amount
+	return t.Amount
 }

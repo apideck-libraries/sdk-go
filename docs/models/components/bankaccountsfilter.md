@@ -1,0 +1,9 @@
+# BankAccountsFilter
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 | Example                                                                                     |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `Name`                                                                                      | **string*                                                                                   | :heavy_minus_sign:                                                                          | Filter by bank account name                                                                 | Main Operating                                                                              |
+| `Status`                                                                                    | [*components.BankAccountsFilterStatus](../../models/components/bankaccountsfilterstatus.md) | :heavy_minus_sign:                                                                          | Filter by account status                                                                    | active                                                                                      |

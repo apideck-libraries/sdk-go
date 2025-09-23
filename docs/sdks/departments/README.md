@@ -40,10 +40,10 @@ func main() {
     )
 
     res, err := s.Accounting.Departments.List(ctx, operations.AccountingDepartmentsAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
         Filter: &components.AccountingDepartmentsFilter{
-            Subsidiary: sdkgo.String("1"),
+            Subsidiary: sdkgo.Pointer("1"),
         },
     })
     if err != nil {
@@ -119,24 +119,24 @@ func main() {
     )
 
     res, err := s.Accounting.Departments.Create(ctx, operations.AccountingDepartmentsAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         AccountingDepartment: components.AccountingDepartmentInput{
-            ParentID: sdkgo.String("12345"),
-            Name: sdkgo.String("Sales"),
+            ParentID: sdkgo.Pointer("12345"),
+            Name: sdkgo.Pointer("Sales"),
             Status: components.DepartmentStatusActive.ToPointer(),
             Subsidiaries: []components.SubsidiaryReferenceInput{
                 components.SubsidiaryReferenceInput{
-                    Name: sdkgo.String("SpaceX"),
+                    Name: sdkgo.Pointer("SpaceX"),
                 },
                 components.SubsidiaryReferenceInput{
-                    Name: sdkgo.String("SpaceX"),
+                    Name: sdkgo.Pointer("SpaceX"),
                 },
                 components.SubsidiaryReferenceInput{
-                    Name: sdkgo.String("SpaceX"),
+                    Name: sdkgo.Pointer("SpaceX"),
                 },
             },
-            Code: sdkgo.String("123"),
-            RowVersion: sdkgo.String("1-12345"),
+            Code: sdkgo.Pointer("123"),
+            RowVersion: sdkgo.Pointer("1-12345"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -215,8 +215,8 @@ func main() {
 
     res, err := s.Accounting.Departments.Get(ctx, operations.AccountingDepartmentsOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -280,24 +280,24 @@ func main() {
 
     res, err := s.Accounting.Departments.Update(ctx, operations.AccountingDepartmentsUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         AccountingDepartment: components.AccountingDepartmentInput{
-            ParentID: sdkgo.String("12345"),
-            Name: sdkgo.String("Sales"),
+            ParentID: sdkgo.Pointer("12345"),
+            Name: sdkgo.Pointer("Sales"),
             Status: components.DepartmentStatusActive.ToPointer(),
             Subsidiaries: []components.SubsidiaryReferenceInput{
                 components.SubsidiaryReferenceInput{
-                    Name: sdkgo.String("SpaceX"),
+                    Name: sdkgo.Pointer("SpaceX"),
                 },
                 components.SubsidiaryReferenceInput{
-                    Name: sdkgo.String("SpaceX"),
+                    Name: sdkgo.Pointer("SpaceX"),
                 },
                 components.SubsidiaryReferenceInput{
-                    Name: sdkgo.String("SpaceX"),
+                    Name: sdkgo.Pointer("SpaceX"),
                 },
             },
-            Code: sdkgo.String("123"),
-            RowVersion: sdkgo.String("1-12345"),
+            Code: sdkgo.Pointer("123"),
+            RowVersion: sdkgo.Pointer("1-12345"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -392,7 +392,7 @@ func main() {
 
     res, err := s.Accounting.Departments.Delete(ctx, operations.AccountingDepartmentsDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

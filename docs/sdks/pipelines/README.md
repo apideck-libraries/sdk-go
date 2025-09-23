@@ -39,11 +39,11 @@ func main() {
     )
 
     res, err := s.Crm.Pipelines.List(ctx, operations.CrmPipelinesAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -118,27 +118,27 @@ func main() {
     )
 
     res, err := s.Crm.Pipelines.Create(ctx, operations.CrmPipelinesAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Pipeline: components.PipelineInput{
-            ID: sdkgo.String("default"),
+            ID: sdkgo.Pointer("default"),
             Name: "Sales Pipeline",
             Currency: components.CurrencyUsd.ToPointer(),
-            Archived: sdkgo.Bool(false),
-            Active: sdkgo.Bool(false),
-            DisplayOrder: sdkgo.Int64(1),
-            WinProbabilityEnabled: sdkgo.Bool(true),
+            Archived: sdkgo.Pointer(false),
+            Active: sdkgo.Pointer(false),
+            DisplayOrder: sdkgo.Pointer[int64](1),
+            WinProbabilityEnabled: sdkgo.Pointer(true),
             Stages: []components.PipelineStages{
                 components.PipelineStages{
-                    Name: sdkgo.String("Contract Sent"),
-                    Value: sdkgo.String("CONTRACT_SENT"),
-                    WinProbability: sdkgo.Int64(50),
-                    DisplayOrder: sdkgo.Int64(1),
+                    Name: sdkgo.Pointer("Contract Sent"),
+                    Value: sdkgo.Pointer("CONTRACT_SENT"),
+                    WinProbability: sdkgo.Pointer[int64](50),
+                    DisplayOrder: sdkgo.Pointer[int64](1),
                 },
                 components.PipelineStages{
-                    Name: sdkgo.String("Contract Sent"),
-                    Value: sdkgo.String("CONTRACT_SENT"),
-                    WinProbability: sdkgo.Int64(50),
-                    DisplayOrder: sdkgo.Int64(1),
+                    Name: sdkgo.Pointer("Contract Sent"),
+                    Value: sdkgo.Pointer("CONTRACT_SENT"),
+                    WinProbability: sdkgo.Pointer[int64](50),
+                    DisplayOrder: sdkgo.Pointer[int64](1),
                 },
             },
             PassThrough: []components.PassThroughBody{
@@ -232,8 +232,8 @@ func main() {
 
     res, err := s.Crm.Pipelines.Get(ctx, operations.CrmPipelinesOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -297,27 +297,27 @@ func main() {
 
     res, err := s.Crm.Pipelines.Update(ctx, operations.CrmPipelinesUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Pipeline: components.PipelineInput{
-            ID: sdkgo.String("default"),
+            ID: sdkgo.Pointer("default"),
             Name: "Sales Pipeline",
             Currency: components.CurrencyUsd.ToPointer(),
-            Archived: sdkgo.Bool(false),
-            Active: sdkgo.Bool(false),
-            DisplayOrder: sdkgo.Int64(1),
-            WinProbabilityEnabled: sdkgo.Bool(true),
+            Archived: sdkgo.Pointer(false),
+            Active: sdkgo.Pointer(false),
+            DisplayOrder: sdkgo.Pointer[int64](1),
+            WinProbabilityEnabled: sdkgo.Pointer(true),
             Stages: []components.PipelineStages{
                 components.PipelineStages{
-                    Name: sdkgo.String("Contract Sent"),
-                    Value: sdkgo.String("CONTRACT_SENT"),
-                    WinProbability: sdkgo.Int64(50),
-                    DisplayOrder: sdkgo.Int64(1),
+                    Name: sdkgo.Pointer("Contract Sent"),
+                    Value: sdkgo.Pointer("CONTRACT_SENT"),
+                    WinProbability: sdkgo.Pointer[int64](50),
+                    DisplayOrder: sdkgo.Pointer[int64](1),
                 },
                 components.PipelineStages{
-                    Name: sdkgo.String("Contract Sent"),
-                    Value: sdkgo.String("CONTRACT_SENT"),
-                    WinProbability: sdkgo.Int64(50),
-                    DisplayOrder: sdkgo.Int64(1),
+                    Name: sdkgo.Pointer("Contract Sent"),
+                    Value: sdkgo.Pointer("CONTRACT_SENT"),
+                    WinProbability: sdkgo.Pointer[int64](50),
+                    DisplayOrder: sdkgo.Pointer[int64](1),
                 },
             },
             PassThrough: []components.PassThroughBody{
@@ -443,7 +443,7 @@ func main() {
 
     res, err := s.Crm.Pipelines.Delete(ctx, operations.CrmPipelinesDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

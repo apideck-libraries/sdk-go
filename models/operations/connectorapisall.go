@@ -12,11 +12,11 @@ type ConnectorApisAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *ConnectorApisAllGlobals) GetAppID() *string {
-	if o == nil {
+func (c *ConnectorApisAllGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type ConnectorApisAllRequest struct {
@@ -41,32 +41,32 @@ func (c *ConnectorApisAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ConnectorApisAllRequest) GetAppID() *string {
-	if o == nil {
+func (c *ConnectorApisAllRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *ConnectorApisAllRequest) GetCursor() *string {
-	if o == nil {
+func (c *ConnectorApisAllRequest) GetCursor() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Cursor
+	return c.Cursor
 }
 
-func (o *ConnectorApisAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (c *ConnectorApisAllRequest) GetLimit() *int64 {
+	if c == nil {
 		return nil
 	}
-	return o.Limit
+	return c.Limit
 }
 
-func (o *ConnectorApisAllRequest) GetFilter() *components.ApisFilter {
-	if o == nil {
+func (c *ConnectorApisAllRequest) GetFilter() *components.ApisFilter {
+	if c == nil {
 		return nil
 	}
-	return o.Filter
+	return c.Filter
 }
 
 type ConnectorApisAllResponse struct {
@@ -79,23 +79,23 @@ type ConnectorApisAllResponse struct {
 	Next func() (*ConnectorApisAllResponse, error)
 }
 
-func (o *ConnectorApisAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *ConnectorApisAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *ConnectorApisAllResponse) GetGetApisResponse() *components.GetApisResponse {
-	if o == nil {
+func (c *ConnectorApisAllResponse) GetGetApisResponse() *components.GetApisResponse {
+	if c == nil {
 		return nil
 	}
-	return o.GetApisResponse
+	return c.GetApisResponse
 }
 
-func (o *ConnectorApisAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *ConnectorApisAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

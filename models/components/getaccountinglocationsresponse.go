@@ -23,65 +23,65 @@ type GetAccountingLocationsResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetAccountingLocationsResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetAccountingLocationsResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetAccountingLocationsResponse) GetStatus() string {
-	if o == nil {
+func (g *GetAccountingLocationsResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetAccountingLocationsResponse) GetService() string {
-	if o == nil {
+func (g *GetAccountingLocationsResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetAccountingLocationsResponse) GetResource() string {
-	if o == nil {
+func (g *GetAccountingLocationsResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetAccountingLocationsResponse) GetOperation() string {
-	if o == nil {
+func (g *GetAccountingLocationsResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetAccountingLocationsResponse) GetData() []AccountingLocation {
-	if o == nil {
+func (g *GetAccountingLocationsResponse) GetData() []AccountingLocation {
+	if g == nil {
 		return []AccountingLocation{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetAccountingLocationsResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetAccountingLocationsResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetAccountingLocationsResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetAccountingLocationsResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }
 
-func (o *GetAccountingLocationsResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetAccountingLocationsResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

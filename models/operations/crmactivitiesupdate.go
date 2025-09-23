@@ -14,18 +14,18 @@ type CrmActivitiesUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmActivitiesUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmActivitiesUpdateGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmActivitiesUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmActivitiesUpdateGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmActivitiesUpdateRequest struct {
@@ -53,46 +53,46 @@ func (c *CrmActivitiesUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmActivitiesUpdateRequest) GetID() string {
-	if o == nil {
+func (c *CrmActivitiesUpdateRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CrmActivitiesUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmActivitiesUpdateRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmActivitiesUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmActivitiesUpdateRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmActivitiesUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmActivitiesUpdateRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmActivitiesUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmActivitiesUpdateRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmActivitiesUpdateRequest) GetActivity() components.ActivityInput {
-	if o == nil {
+func (c *CrmActivitiesUpdateRequest) GetActivity() components.ActivityInput {
+	if c == nil {
 		return components.ActivityInput{}
 	}
-	return o.Activity
+	return c.Activity
 }
 
 type CrmActivitiesUpdateResponse struct {
@@ -103,23 +103,23 @@ type CrmActivitiesUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmActivitiesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmActivitiesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmActivitiesUpdateResponse) GetUpdateActivityResponse() *components.UpdateActivityResponse {
-	if o == nil {
+func (c *CrmActivitiesUpdateResponse) GetUpdateActivityResponse() *components.UpdateActivityResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UpdateActivityResponse
+	return c.UpdateActivityResponse
 }
 
-func (o *CrmActivitiesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmActivitiesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

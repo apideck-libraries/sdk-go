@@ -14,18 +14,18 @@ type AccountingBankFeedAccountsOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingBankFeedAccountsOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingBankFeedAccountsOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingBankFeedAccountsOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingBankFeedAccountsOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingBankFeedAccountsOneRequest struct {
@@ -54,46 +54,46 @@ func (a *AccountingBankFeedAccountsOneRequest) UnmarshalJSON(data []byte) error 
 	return nil
 }
 
-func (o *AccountingBankFeedAccountsOneRequest) GetID() string {
-	if o == nil {
+func (a *AccountingBankFeedAccountsOneRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingBankFeedAccountsOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingBankFeedAccountsOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingBankFeedAccountsOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingBankFeedAccountsOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingBankFeedAccountsOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingBankFeedAccountsOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingBankFeedAccountsOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingBankFeedAccountsOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingBankFeedAccountsOneRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingBankFeedAccountsOneRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingBankFeedAccountsOneResponse struct {
@@ -104,23 +104,23 @@ type AccountingBankFeedAccountsOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingBankFeedAccountsOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingBankFeedAccountsOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingBankFeedAccountsOneResponse) GetGetBankFeedAccountResponse() *components.GetBankFeedAccountResponse {
-	if o == nil {
+func (a *AccountingBankFeedAccountsOneResponse) GetGetBankFeedAccountResponse() *components.GetBankFeedAccountResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetBankFeedAccountResponse
+	return a.GetBankFeedAccountResponse
 }
 
-func (o *AccountingBankFeedAccountsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingBankFeedAccountsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

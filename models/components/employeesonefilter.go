@@ -7,9 +7,9 @@ type EmployeesOneFilter struct {
 	CompanyID *string `queryParam:"name=company_id"`
 }
 
-func (o *EmployeesOneFilter) GetCompanyID() *string {
-	if o == nil {
+func (e *EmployeesOneFilter) GetCompanyID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CompanyID
+	return e.CompanyID
 }

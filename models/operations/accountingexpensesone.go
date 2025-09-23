@@ -14,18 +14,18 @@ type AccountingExpensesOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingExpensesOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingExpensesOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingExpensesOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingExpensesOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingExpensesOneRequest struct {
@@ -52,39 +52,39 @@ func (a *AccountingExpensesOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingExpensesOneRequest) GetID() string {
-	if o == nil {
+func (a *AccountingExpensesOneRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingExpensesOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingExpensesOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingExpensesOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingExpensesOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingExpensesOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingExpensesOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingExpensesOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingExpensesOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
 type AccountingExpensesOneResponse struct {
@@ -95,23 +95,23 @@ type AccountingExpensesOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingExpensesOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingExpensesOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingExpensesOneResponse) GetGetExpenseResponse() *components.GetExpenseResponse {
-	if o == nil {
+func (a *AccountingExpensesOneResponse) GetGetExpenseResponse() *components.GetExpenseResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetExpenseResponse
+	return a.GetExpenseResponse
 }
 
-func (o *AccountingExpensesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingExpensesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

@@ -20,51 +20,51 @@ type UpdateApplicationResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *UpdateApplicationResponse) GetStatusCode() int64 {
-	if o == nil {
+func (u *UpdateApplicationResponse) GetStatusCode() int64 {
+	if u == nil {
 		return 0
 	}
-	return o.StatusCode
+	return u.StatusCode
 }
 
-func (o *UpdateApplicationResponse) GetStatus() string {
-	if o == nil {
+func (u *UpdateApplicationResponse) GetStatus() string {
+	if u == nil {
 		return ""
 	}
-	return o.Status
+	return u.Status
 }
 
-func (o *UpdateApplicationResponse) GetService() string {
-	if o == nil {
+func (u *UpdateApplicationResponse) GetService() string {
+	if u == nil {
 		return ""
 	}
-	return o.Service
+	return u.Service
 }
 
-func (o *UpdateApplicationResponse) GetResource() string {
-	if o == nil {
+func (u *UpdateApplicationResponse) GetResource() string {
+	if u == nil {
 		return ""
 	}
-	return o.Resource
+	return u.Resource
 }
 
-func (o *UpdateApplicationResponse) GetOperation() string {
-	if o == nil {
+func (u *UpdateApplicationResponse) GetOperation() string {
+	if u == nil {
 		return ""
 	}
-	return o.Operation
+	return u.Operation
 }
 
-func (o *UpdateApplicationResponse) GetData() UnifiedID {
-	if o == nil {
+func (u *UpdateApplicationResponse) GetData() UnifiedID {
+	if u == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return u.Data
 }
 
-func (o *UpdateApplicationResponse) GetRaw() map[string]any {
-	if o == nil {
+func (u *UpdateApplicationResponse) GetRaw() map[string]any {
+	if u == nil {
 		return nil
 	}
-	return o.Raw
+	return u.Raw
 }

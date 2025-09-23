@@ -7,9 +7,9 @@ type UpdateConsumerRequest struct {
 	Metadata *ConsumerMetadata `json:"metadata,omitempty"`
 }
 
-func (o *UpdateConsumerRequest) GetMetadata() *ConsumerMetadata {
-	if o == nil {
+func (u *UpdateConsumerRequest) GetMetadata() *ConsumerMetadata {
+	if u == nil {
 		return nil
 	}
-	return o.Metadata
+	return u.Metadata
 }

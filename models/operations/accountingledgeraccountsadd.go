@@ -14,18 +14,18 @@ type AccountingLedgerAccountsAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingLedgerAccountsAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsAddGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingLedgerAccountsAddGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsAddGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingLedgerAccountsAddRequest struct {
@@ -51,39 +51,39 @@ func (a *AccountingLedgerAccountsAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingLedgerAccountsAddRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingLedgerAccountsAddRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingLedgerAccountsAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsAddRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingLedgerAccountsAddRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsAddRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingLedgerAccountsAddRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsAddRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingLedgerAccountsAddRequest) GetLedgerAccount() components.LedgerAccountInput {
-	if o == nil {
+func (a *AccountingLedgerAccountsAddRequest) GetLedgerAccount() components.LedgerAccountInput {
+	if a == nil {
 		return components.LedgerAccountInput{}
 	}
-	return o.LedgerAccount
+	return a.LedgerAccount
 }
 
 type AccountingLedgerAccountsAddResponse struct {
@@ -94,23 +94,23 @@ type AccountingLedgerAccountsAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingLedgerAccountsAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingLedgerAccountsAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingLedgerAccountsAddResponse) GetCreateLedgerAccountResponse() *components.CreateLedgerAccountResponse {
-	if o == nil {
+func (a *AccountingLedgerAccountsAddResponse) GetCreateLedgerAccountResponse() *components.CreateLedgerAccountResponse {
+	if a == nil {
 		return nil
 	}
-	return o.CreateLedgerAccountResponse
+	return a.CreateLedgerAccountResponse
 }
 
-func (o *AccountingLedgerAccountsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingLedgerAccountsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

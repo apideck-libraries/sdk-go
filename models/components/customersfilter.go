@@ -71,58 +71,58 @@ func (c *CustomersFilter) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CustomersFilter) GetCompanyName() *string {
-	if o == nil {
+func (c *CustomersFilter) GetCompanyName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CompanyName
+	return c.CompanyName
 }
 
-func (o *CustomersFilter) GetDisplayName() *string {
-	if o == nil {
+func (c *CustomersFilter) GetDisplayName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.DisplayName
+	return c.DisplayName
 }
 
-func (o *CustomersFilter) GetFirstName() *string {
-	if o == nil {
+func (c *CustomersFilter) GetFirstName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.FirstName
+	return c.FirstName
 }
 
-func (o *CustomersFilter) GetLastName() *string {
-	if o == nil {
+func (c *CustomersFilter) GetLastName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.LastName
+	return c.LastName
 }
 
-func (o *CustomersFilter) GetEmail() *string {
-	if o == nil {
+func (c *CustomersFilter) GetEmail() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Email
+	return c.Email
 }
 
-func (o *CustomersFilter) GetStatus() *CustomersFilterStatus {
-	if o == nil {
+func (c *CustomersFilter) GetStatus() *CustomersFilterStatus {
+	if c == nil {
 		return nil
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CustomersFilter) GetUpdatedSince() *time.Time {
-	if o == nil {
+func (c *CustomersFilter) GetUpdatedSince() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedSince
+	return c.UpdatedSince
 }
 
-func (o *CustomersFilter) GetSupplierID() *string {
-	if o == nil {
+func (c *CustomersFilter) GetSupplierID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.SupplierID
+	return c.SupplierID
 }

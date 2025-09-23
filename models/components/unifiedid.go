@@ -8,9 +8,9 @@ type UnifiedID struct {
 	ID string `json:"id"`
 }
 
-func (o *UnifiedID) GetID() string {
-	if o == nil {
+func (u *UnifiedID) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }

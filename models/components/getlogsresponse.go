@@ -17,44 +17,44 @@ type GetLogsResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetLogsResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetLogsResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetLogsResponse) GetStatus() string {
-	if o == nil {
+func (g *GetLogsResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetLogsResponse) GetData() []Log {
-	if o == nil {
+func (g *GetLogsResponse) GetData() []Log {
+	if g == nil {
 		return []Log{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetLogsResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetLogsResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetLogsResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetLogsResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }
 
-func (o *GetLogsResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetLogsResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

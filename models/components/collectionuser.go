@@ -39,65 +39,65 @@ func (c *CollectionUser) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CollectionUser) GetID() *string {
-	if o == nil {
+func (c *CollectionUser) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CollectionUser) GetName() *string {
-	if o == nil {
+func (c *CollectionUser) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CollectionUser) GetFirstName() *string {
-	if o == nil {
+func (c *CollectionUser) GetFirstName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.FirstName
+	return c.FirstName
 }
 
-func (o *CollectionUser) GetLastName() *string {
-	if o == nil {
+func (c *CollectionUser) GetLastName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.LastName
+	return c.LastName
 }
 
-func (o *CollectionUser) GetEmail() *string {
-	if o == nil {
+func (c *CollectionUser) GetEmail() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Email
+	return c.Email
 }
 
-func (o *CollectionUser) GetPhotoURL() *string {
-	if o == nil {
+func (c *CollectionUser) GetPhotoURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.PhotoURL
+	return c.PhotoURL
 }
 
-func (o *CollectionUser) GetCustomMappings() map[string]any {
-	if o == nil {
+func (c *CollectionUser) GetCustomMappings() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return c.CustomMappings
 }
 
-func (o *CollectionUser) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (c *CollectionUser) GetUpdatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return c.UpdatedAt
 }
 
-func (o *CollectionUser) GetCreatedAt() *time.Time {
-	if o == nil {
+func (c *CollectionUser) GetCreatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }

@@ -40,10 +40,10 @@ func main() {
     res, err := s.Vault.Consumers.Create(ctx, components.CreateConsumerRequest{
         ConsumerID: "test_consumer_id",
         Metadata: &components.ConsumerMetadata{
-            AccountName: sdkgo.String("SpaceX"),
-            UserName: sdkgo.String("Elon Musk"),
-            Email: sdkgo.String("elon@musk.com"),
-            Image: sdkgo.String("https://www.spacex.com/static/images/share.jpg"),
+            AccountName: sdkgo.Pointer("SpaceX"),
+            UserName: sdkgo.Pointer("Elon Musk"),
+            Email: sdkgo.Pointer("elon@musk.com"),
+            Image: sdkgo.Pointer("https://www.spacex.com/static/images/share.jpg"),
         },
     })
     if err != nil {
@@ -105,7 +105,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Vault.Consumers.List(ctx, nil, sdkgo.Int64(20))
+    res, err := s.Vault.Consumers.List(ctx, nil, sdkgo.Pointer[int64](20))
     if err != nil {
         log.Fatal(err)
     }
@@ -240,10 +240,10 @@ func main() {
 
     res, err := s.Vault.Consumers.Update(ctx, "test_user_id", components.UpdateConsumerRequest{
         Metadata: &components.ConsumerMetadata{
-            AccountName: sdkgo.String("SpaceX"),
-            UserName: sdkgo.String("Elon Musk"),
-            Email: sdkgo.String("elon@musk.com"),
-            Image: sdkgo.String("https://www.spacex.com/static/images/share.jpg"),
+            AccountName: sdkgo.Pointer("SpaceX"),
+            UserName: sdkgo.Pointer("Elon Musk"),
+            Email: sdkgo.Pointer("elon@musk.com"),
+            Image: sdkgo.Pointer("https://www.spacex.com/static/images/share.jpg"),
         },
     })
     if err != nil {

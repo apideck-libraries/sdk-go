@@ -13,18 +13,18 @@ type VaultSessionsCreateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultSessionsCreateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultSessionsCreateGlobals) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultSessionsCreateGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultSessionsCreateGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultSessionsCreateRequest struct {
@@ -36,25 +36,25 @@ type VaultSessionsCreateRequest struct {
 	Session *components.Session `request:"mediaType=application/json"`
 }
 
-func (o *VaultSessionsCreateRequest) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultSessionsCreateRequest) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultSessionsCreateRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultSessionsCreateRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultSessionsCreateRequest) GetSession() *components.Session {
-	if o == nil {
+func (v *VaultSessionsCreateRequest) GetSession() *components.Session {
+	if v == nil {
 		return nil
 	}
-	return o.Session
+	return v.Session
 }
 
 type VaultSessionsCreateResponse struct {
@@ -65,23 +65,23 @@ type VaultSessionsCreateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultSessionsCreateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultSessionsCreateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultSessionsCreateResponse) GetCreateSessionResponse() *components.CreateSessionResponse {
-	if o == nil {
+func (v *VaultSessionsCreateResponse) GetCreateSessionResponse() *components.CreateSessionResponse {
+	if v == nil {
 		return nil
 	}
-	return o.CreateSessionResponse
+	return v.CreateSessionResponse
 }
 
-func (o *VaultSessionsCreateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultSessionsCreateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

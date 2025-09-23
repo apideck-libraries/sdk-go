@@ -180,326 +180,326 @@ func (p *PurchaseOrder) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *PurchaseOrder) GetID() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *PurchaseOrder) GetDownstreamID() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetDownstreamID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.DownstreamID
+	return p.DownstreamID
 }
 
-func (o *PurchaseOrder) GetPoNumber() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetPoNumber() *string {
+	if p == nil {
 		return nil
 	}
-	return o.PoNumber
+	return p.PoNumber
 }
 
-func (o *PurchaseOrder) GetReference() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetReference() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Reference
+	return p.Reference
 }
 
-func (o *PurchaseOrder) GetSupplier() *LinkedSupplier {
-	if o == nil {
+func (p *PurchaseOrder) GetSupplier() *LinkedSupplier {
+	if p == nil {
 		return nil
 	}
-	return o.Supplier
+	return p.Supplier
 }
 
-func (o *PurchaseOrder) GetSubsidiaryID() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetSubsidiaryID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.SubsidiaryID
+	return p.SubsidiaryID
 }
 
-func (o *PurchaseOrder) GetCompanyID() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetCompanyID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.CompanyID
+	return p.CompanyID
 }
 
-func (o *PurchaseOrder) GetDepartmentID() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetDepartmentID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return p.DepartmentID
 }
 
-func (o *PurchaseOrder) GetStatus() *PurchaseOrderStatus {
-	if o == nil {
+func (p *PurchaseOrder) GetStatus() *PurchaseOrderStatus {
+	if p == nil {
 		return nil
 	}
-	return o.Status
+	return p.Status
 }
 
-func (o *PurchaseOrder) GetIssuedDate() *types.Date {
-	if o == nil {
+func (p *PurchaseOrder) GetIssuedDate() *types.Date {
+	if p == nil {
 		return nil
 	}
-	return o.IssuedDate
+	return p.IssuedDate
 }
 
-func (o *PurchaseOrder) GetDeliveryDate() *types.Date {
-	if o == nil {
+func (p *PurchaseOrder) GetDeliveryDate() *types.Date {
+	if p == nil {
 		return nil
 	}
-	return o.DeliveryDate
+	return p.DeliveryDate
 }
 
-func (o *PurchaseOrder) GetExpectedArrivalDate() *types.Date {
-	if o == nil {
+func (p *PurchaseOrder) GetExpectedArrivalDate() *types.Date {
+	if p == nil {
 		return nil
 	}
-	return o.ExpectedArrivalDate
+	return p.ExpectedArrivalDate
 }
 
-func (o *PurchaseOrder) GetCurrency() *Currency {
-	if o == nil {
+func (p *PurchaseOrder) GetCurrency() *Currency {
+	if p == nil {
 		return nil
 	}
-	return o.Currency
+	return p.Currency
 }
 
-func (o *PurchaseOrder) GetCurrencyRate() *float64 {
-	if o == nil {
+func (p *PurchaseOrder) GetCurrencyRate() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.CurrencyRate
+	return p.CurrencyRate
 }
 
-func (o *PurchaseOrder) GetSubTotal() *float64 {
-	if o == nil {
+func (p *PurchaseOrder) GetSubTotal() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.SubTotal
+	return p.SubTotal
 }
 
-func (o *PurchaseOrder) GetTotalTax() *float64 {
-	if o == nil {
+func (p *PurchaseOrder) GetTotalTax() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.TotalTax
+	return p.TotalTax
 }
 
-func (o *PurchaseOrder) GetTotal() *float64 {
-	if o == nil {
+func (p *PurchaseOrder) GetTotal() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.Total
+	return p.Total
 }
 
-func (o *PurchaseOrder) GetTaxInclusive() *bool {
-	if o == nil {
+func (p *PurchaseOrder) GetTaxInclusive() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.TaxInclusive
+	return p.TaxInclusive
 }
 
-func (o *PurchaseOrder) GetLineItems() []InvoiceLineItem {
-	if o == nil {
+func (p *PurchaseOrder) GetLineItems() []InvoiceLineItem {
+	if p == nil {
 		return nil
 	}
-	return o.LineItems
+	return p.LineItems
 }
 
-func (o *PurchaseOrder) GetBillingAddress() *Address {
-	if o == nil {
+func (p *PurchaseOrder) GetBillingAddress() *Address {
+	if p == nil {
 		return nil
 	}
-	return o.BillingAddress
+	return p.BillingAddress
 }
 
-func (o *PurchaseOrder) GetShippingAddress() *Address {
-	if o == nil {
+func (p *PurchaseOrder) GetShippingAddress() *Address {
+	if p == nil {
 		return nil
 	}
-	return o.ShippingAddress
+	return p.ShippingAddress
 }
 
-func (o *PurchaseOrder) GetLedgerAccount() *LinkedLedgerAccount {
-	if o == nil {
+func (p *PurchaseOrder) GetLedgerAccount() *LinkedLedgerAccount {
+	if p == nil {
 		return nil
 	}
-	return o.LedgerAccount
+	return p.LedgerAccount
 }
 
-func (o *PurchaseOrder) GetTemplateID() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetTemplateID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.TemplateID
+	return p.TemplateID
 }
 
-func (o *PurchaseOrder) GetDiscountPercentage() *float64 {
-	if o == nil {
+func (p *PurchaseOrder) GetDiscountPercentage() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.DiscountPercentage
+	return p.DiscountPercentage
 }
 
-func (o *PurchaseOrder) GetBankAccount() *BankAccount {
-	if o == nil {
+func (p *PurchaseOrder) GetBankAccount() *BankAccount {
+	if p == nil {
 		return nil
 	}
-	return o.BankAccount
+	return p.BankAccount
 }
 
-func (o *PurchaseOrder) GetAccountingByRow() *bool {
-	if o == nil {
+func (p *PurchaseOrder) GetAccountingByRow() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.AccountingByRow
+	return p.AccountingByRow
 }
 
-func (o *PurchaseOrder) GetDueDate() *types.Date {
-	if o == nil {
+func (p *PurchaseOrder) GetDueDate() *types.Date {
+	if p == nil {
 		return nil
 	}
-	return o.DueDate
+	return p.DueDate
 }
 
-func (o *PurchaseOrder) GetPaymentMethod() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetPaymentMethod() *string {
+	if p == nil {
 		return nil
 	}
-	return o.PaymentMethod
+	return p.PaymentMethod
 }
 
-func (o *PurchaseOrder) GetTerms() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetTerms() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Terms
+	return p.Terms
 }
 
-func (o *PurchaseOrder) GetAmortizationType() *PurchaseOrderAmortizationType {
-	if o == nil {
+func (p *PurchaseOrder) GetAmortizationType() *PurchaseOrderAmortizationType {
+	if p == nil {
 		return nil
 	}
-	return o.AmortizationType
+	return p.AmortizationType
 }
 
-func (o *PurchaseOrder) GetTaxCode() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetTaxCode() *string {
+	if p == nil {
 		return nil
 	}
-	return o.TaxCode
+	return p.TaxCode
 }
 
-func (o *PurchaseOrder) GetTaxMethod() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetTaxMethod() *string {
+	if p == nil {
 		return nil
 	}
-	return o.TaxMethod
+	return p.TaxMethod
 }
 
-func (o *PurchaseOrder) GetIssuedMethod() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetIssuedMethod() *string {
+	if p == nil {
 		return nil
 	}
-	return o.IssuedMethod
+	return p.IssuedMethod
 }
 
-func (o *PurchaseOrder) GetIssuedEmail() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetIssuedEmail() *string {
+	if p == nil {
 		return nil
 	}
-	return o.IssuedEmail
+	return p.IssuedEmail
 }
 
-func (o *PurchaseOrder) GetChannel() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetChannel() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Channel
+	return p.Channel
 }
 
-func (o *PurchaseOrder) GetMemo() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetMemo() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Memo
+	return p.Memo
 }
 
-func (o *PurchaseOrder) GetNotes() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetNotes() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Notes
+	return p.Notes
 }
 
-func (o *PurchaseOrder) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (p *PurchaseOrder) GetTrackingCategories() []*LinkedTrackingCategory {
+	if p == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return p.TrackingCategories
 }
 
-func (o *PurchaseOrder) GetCustomMappings() map[string]any {
-	if o == nil {
+func (p *PurchaseOrder) GetCustomMappings() map[string]any {
+	if p == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return p.CustomMappings
 }
 
-func (o *PurchaseOrder) GetCustomFields() []CustomField {
-	if o == nil {
+func (p *PurchaseOrder) GetCustomFields() []CustomField {
+	if p == nil {
 		return nil
 	}
-	return o.CustomFields
+	return p.CustomFields
 }
 
-func (o *PurchaseOrder) GetRowVersion() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetRowVersion() *string {
+	if p == nil {
 		return nil
 	}
-	return o.RowVersion
+	return p.RowVersion
 }
 
-func (o *PurchaseOrder) GetUpdatedBy() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetUpdatedBy() *string {
+	if p == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return p.UpdatedBy
 }
 
-func (o *PurchaseOrder) GetCreatedBy() *string {
-	if o == nil {
+func (p *PurchaseOrder) GetCreatedBy() *string {
+	if p == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return p.CreatedBy
 }
 
-func (o *PurchaseOrder) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (p *PurchaseOrder) GetUpdatedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return p.UpdatedAt
 }
 
-func (o *PurchaseOrder) GetCreatedAt() *time.Time {
-	if o == nil {
+func (p *PurchaseOrder) GetCreatedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return p.CreatedAt
 }
 
-func (o *PurchaseOrder) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (p *PurchaseOrder) GetPassThrough() []PassThroughBody {
+	if p == nil {
 		return nil
 	}
-	return o.PassThrough
+	return p.PassThrough
 }
 
 type PurchaseOrderInput struct {
@@ -587,275 +587,275 @@ func (p *PurchaseOrderInput) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *PurchaseOrderInput) GetPoNumber() *string {
-	if o == nil {
+func (p *PurchaseOrderInput) GetPoNumber() *string {
+	if p == nil {
 		return nil
 	}
-	return o.PoNumber
+	return p.PoNumber
 }
 
-func (o *PurchaseOrderInput) GetReference() *string {
-	if o == nil {
+func (p *PurchaseOrderInput) GetReference() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Reference
+	return p.Reference
 }
 
-func (o *PurchaseOrderInput) GetSupplier() *LinkedSupplierInput {
-	if o == nil {
+func (p *PurchaseOrderInput) GetSupplier() *LinkedSupplierInput {
+	if p == nil {
 		return nil
 	}
-	return o.Supplier
+	return p.Supplier
 }
 
-func (o *PurchaseOrderInput) GetSubsidiaryID() *string {
-	if o == nil {
+func (p *PurchaseOrderInput) GetSubsidiaryID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.SubsidiaryID
+	return p.SubsidiaryID
 }
 
-func (o *PurchaseOrderInput) GetCompanyID() *string {
-	if o == nil {
+func (p *PurchaseOrderInput) GetCompanyID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.CompanyID
+	return p.CompanyID
 }
 
-func (o *PurchaseOrderInput) GetDepartmentID() *string {
-	if o == nil {
+func (p *PurchaseOrderInput) GetDepartmentID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return p.DepartmentID
 }
 
-func (o *PurchaseOrderInput) GetStatus() *PurchaseOrderStatus {
-	if o == nil {
+func (p *PurchaseOrderInput) GetStatus() *PurchaseOrderStatus {
+	if p == nil {
 		return nil
 	}
-	return o.Status
+	return p.Status
 }
 
-func (o *PurchaseOrderInput) GetIssuedDate() *types.Date {
-	if o == nil {
+func (p *PurchaseOrderInput) GetIssuedDate() *types.Date {
+	if p == nil {
 		return nil
 	}
-	return o.IssuedDate
+	return p.IssuedDate
 }
 
-func (o *PurchaseOrderInput) GetDeliveryDate() *types.Date {
-	if o == nil {
+func (p *PurchaseOrderInput) GetDeliveryDate() *types.Date {
+	if p == nil {
 		return nil
 	}
-	return o.DeliveryDate
+	return p.DeliveryDate
 }
 
-func (o *PurchaseOrderInput) GetExpectedArrivalDate() *types.Date {
-	if o == nil {
+func (p *PurchaseOrderInput) GetExpectedArrivalDate() *types.Date {
+	if p == nil {
 		return nil
 	}
-	return o.ExpectedArrivalDate
+	return p.ExpectedArrivalDate
 }
 
-func (o *PurchaseOrderInput) GetCurrency() *Currency {
-	if o == nil {
+func (p *PurchaseOrderInput) GetCurrency() *Currency {
+	if p == nil {
 		return nil
 	}
-	return o.Currency
+	return p.Currency
 }
 
-func (o *PurchaseOrderInput) GetCurrencyRate() *float64 {
-	if o == nil {
+func (p *PurchaseOrderInput) GetCurrencyRate() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.CurrencyRate
+	return p.CurrencyRate
 }
 
-func (o *PurchaseOrderInput) GetSubTotal() *float64 {
-	if o == nil {
+func (p *PurchaseOrderInput) GetSubTotal() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.SubTotal
+	return p.SubTotal
 }
 
-func (o *PurchaseOrderInput) GetTotalTax() *float64 {
-	if o == nil {
+func (p *PurchaseOrderInput) GetTotalTax() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.TotalTax
+	return p.TotalTax
 }
 
-func (o *PurchaseOrderInput) GetTotal() *float64 {
-	if o == nil {
+func (p *PurchaseOrderInput) GetTotal() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.Total
+	return p.Total
 }
 
-func (o *PurchaseOrderInput) GetTaxInclusive() *bool {
-	if o == nil {
+func (p *PurchaseOrderInput) GetTaxInclusive() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.TaxInclusive
+	return p.TaxInclusive
 }
 
-func (o *PurchaseOrderInput) GetLineItems() []InvoiceLineItemInput {
-	if o == nil {
+func (p *PurchaseOrderInput) GetLineItems() []InvoiceLineItemInput {
+	if p == nil {
 		return nil
 	}
-	return o.LineItems
+	return p.LineItems
 }
 
-func (o *PurchaseOrderInput) GetBillingAddress() *Address {
-	if o == nil {
+func (p *PurchaseOrderInput) GetBillingAddress() *Address {
+	if p == nil {
 		return nil
 	}
-	return o.BillingAddress
+	return p.BillingAddress
 }
 
-func (o *PurchaseOrderInput) GetShippingAddress() *Address {
-	if o == nil {
+func (p *PurchaseOrderInput) GetShippingAddress() *Address {
+	if p == nil {
 		return nil
 	}
-	return o.ShippingAddress
+	return p.ShippingAddress
 }
 
-func (o *PurchaseOrderInput) GetLedgerAccount() *LinkedLedgerAccountInput {
-	if o == nil {
+func (p *PurchaseOrderInput) GetLedgerAccount() *LinkedLedgerAccountInput {
+	if p == nil {
 		return nil
 	}
-	return o.LedgerAccount
+	return p.LedgerAccount
 }
 
-func (o *PurchaseOrderInput) GetTemplateID() *string {
-	if o == nil {
+func (p *PurchaseOrderInput) GetTemplateID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.TemplateID
+	return p.TemplateID
 }
 
-func (o *PurchaseOrderInput) GetDiscountPercentage() *float64 {
-	if o == nil {
+func (p *PurchaseOrderInput) GetDiscountPercentage() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.DiscountPercentage
+	return p.DiscountPercentage
 }
 
-func (o *PurchaseOrderInput) GetBankAccount() *BankAccount {
-	if o == nil {
+func (p *PurchaseOrderInput) GetBankAccount() *BankAccount {
+	if p == nil {
 		return nil
 	}
-	return o.BankAccount
+	return p.BankAccount
 }
 
-func (o *PurchaseOrderInput) GetAccountingByRow() *bool {
-	if o == nil {
+func (p *PurchaseOrderInput) GetAccountingByRow() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.AccountingByRow
+	return p.AccountingByRow
 }
 
-func (o *PurchaseOrderInput) GetDueDate() *types.Date {
-	if o == nil {
+func (p *PurchaseOrderInput) GetDueDate() *types.Date {
+	if p == nil {
 		return nil
 	}
-	return o.DueDate
+	return p.DueDate
 }
 
-func (o *PurchaseOrderInput) GetPaymentMethod() *string {
-	if o == nil {
+func (p *PurchaseOrderInput) GetPaymentMethod() *string {
+	if p == nil {
 		return nil
 	}
-	return o.PaymentMethod
+	return p.PaymentMethod
 }
 
-func (o *PurchaseOrderInput) GetTerms() *string {
-	if o == nil {
+func (p *PurchaseOrderInput) GetTerms() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Terms
+	return p.Terms
 }
 
-func (o *PurchaseOrderInput) GetAmortizationType() *PurchaseOrderAmortizationType {
-	if o == nil {
+func (p *PurchaseOrderInput) GetAmortizationType() *PurchaseOrderAmortizationType {
+	if p == nil {
 		return nil
 	}
-	return o.AmortizationType
+	return p.AmortizationType
 }
 
-func (o *PurchaseOrderInput) GetTaxCode() *string {
-	if o == nil {
+func (p *PurchaseOrderInput) GetTaxCode() *string {
+	if p == nil {
 		return nil
 	}
-	return o.TaxCode
+	return p.TaxCode
 }
 
-func (o *PurchaseOrderInput) GetTaxMethod() *string {
-	if o == nil {
+func (p *PurchaseOrderInput) GetTaxMethod() *string {
+	if p == nil {
 		return nil
 	}
-	return o.TaxMethod
+	return p.TaxMethod
 }
 
-func (o *PurchaseOrderInput) GetIssuedMethod() *string {
-	if o == nil {
+func (p *PurchaseOrderInput) GetIssuedMethod() *string {
+	if p == nil {
 		return nil
 	}
-	return o.IssuedMethod
+	return p.IssuedMethod
 }
 
-func (o *PurchaseOrderInput) GetIssuedEmail() *string {
-	if o == nil {
+func (p *PurchaseOrderInput) GetIssuedEmail() *string {
+	if p == nil {
 		return nil
 	}
-	return o.IssuedEmail
+	return p.IssuedEmail
 }
 
-func (o *PurchaseOrderInput) GetChannel() *string {
-	if o == nil {
+func (p *PurchaseOrderInput) GetChannel() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Channel
+	return p.Channel
 }
 
-func (o *PurchaseOrderInput) GetMemo() *string {
-	if o == nil {
+func (p *PurchaseOrderInput) GetMemo() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Memo
+	return p.Memo
 }
 
-func (o *PurchaseOrderInput) GetNotes() *string {
-	if o == nil {
+func (p *PurchaseOrderInput) GetNotes() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Notes
+	return p.Notes
 }
 
-func (o *PurchaseOrderInput) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (p *PurchaseOrderInput) GetTrackingCategories() []*LinkedTrackingCategory {
+	if p == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return p.TrackingCategories
 }
 
-func (o *PurchaseOrderInput) GetCustomFields() []CustomField {
-	if o == nil {
+func (p *PurchaseOrderInput) GetCustomFields() []CustomField {
+	if p == nil {
 		return nil
 	}
-	return o.CustomFields
+	return p.CustomFields
 }
 
-func (o *PurchaseOrderInput) GetRowVersion() *string {
-	if o == nil {
+func (p *PurchaseOrderInput) GetRowVersion() *string {
+	if p == nil {
 		return nil
 	}
-	return o.RowVersion
+	return p.RowVersion
 }
 
-func (o *PurchaseOrderInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (p *PurchaseOrderInput) GetPassThrough() []PassThroughBody {
+	if p == nil {
 		return nil
 	}
-	return o.PassThrough
+	return p.PassThrough
 }

@@ -18,44 +18,44 @@ type DeleteQuoteResponse struct {
 	Data UnifiedID `json:"data"`
 }
 
-func (o *DeleteQuoteResponse) GetStatusCode() int64 {
-	if o == nil {
+func (d *DeleteQuoteResponse) GetStatusCode() int64 {
+	if d == nil {
 		return 0
 	}
-	return o.StatusCode
+	return d.StatusCode
 }
 
-func (o *DeleteQuoteResponse) GetStatus() string {
-	if o == nil {
+func (d *DeleteQuoteResponse) GetStatus() string {
+	if d == nil {
 		return ""
 	}
-	return o.Status
+	return d.Status
 }
 
-func (o *DeleteQuoteResponse) GetService() string {
-	if o == nil {
+func (d *DeleteQuoteResponse) GetService() string {
+	if d == nil {
 		return ""
 	}
-	return o.Service
+	return d.Service
 }
 
-func (o *DeleteQuoteResponse) GetResource() string {
-	if o == nil {
+func (d *DeleteQuoteResponse) GetResource() string {
+	if d == nil {
 		return ""
 	}
-	return o.Resource
+	return d.Resource
 }
 
-func (o *DeleteQuoteResponse) GetOperation() string {
-	if o == nil {
+func (d *DeleteQuoteResponse) GetOperation() string {
+	if d == nil {
 		return ""
 	}
-	return o.Operation
+	return d.Operation
 }
 
-func (o *DeleteQuoteResponse) GetData() UnifiedID {
-	if o == nil {
+func (d *DeleteQuoteResponse) GetData() UnifiedID {
+	if d == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return d.Data
 }

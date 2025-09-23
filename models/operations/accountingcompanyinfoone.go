@@ -14,18 +14,18 @@ type AccountingCompanyInfoOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingCompanyInfoOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingCompanyInfoOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingCompanyInfoOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingCompanyInfoOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingCompanyInfoOneRequest struct {
@@ -52,39 +52,39 @@ func (a *AccountingCompanyInfoOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingCompanyInfoOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingCompanyInfoOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingCompanyInfoOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingCompanyInfoOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingCompanyInfoOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingCompanyInfoOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingCompanyInfoOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingCompanyInfoOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingCompanyInfoOneRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingCompanyInfoOneRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingCompanyInfoOneResponse struct {
@@ -95,23 +95,23 @@ type AccountingCompanyInfoOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingCompanyInfoOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingCompanyInfoOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingCompanyInfoOneResponse) GetGetCompanyInfoResponse() *components.GetCompanyInfoResponse {
-	if o == nil {
+func (a *AccountingCompanyInfoOneResponse) GetGetCompanyInfoResponse() *components.GetCompanyInfoResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetCompanyInfoResponse
+	return a.GetCompanyInfoResponse
 }
 
-func (o *AccountingCompanyInfoOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingCompanyInfoOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

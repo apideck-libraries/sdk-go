@@ -14,18 +14,18 @@ type AccountingLedgerAccountsUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingLedgerAccountsUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsUpdateGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingLedgerAccountsUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsUpdateGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingLedgerAccountsUpdateRequest struct {
@@ -53,46 +53,46 @@ func (a *AccountingLedgerAccountsUpdateRequest) UnmarshalJSON(data []byte) error
 	return nil
 }
 
-func (o *AccountingLedgerAccountsUpdateRequest) GetID() string {
-	if o == nil {
+func (a *AccountingLedgerAccountsUpdateRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingLedgerAccountsUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsUpdateRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingLedgerAccountsUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsUpdateRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingLedgerAccountsUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsUpdateRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingLedgerAccountsUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingLedgerAccountsUpdateRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingLedgerAccountsUpdateRequest) GetLedgerAccount() components.LedgerAccountInput {
-	if o == nil {
+func (a *AccountingLedgerAccountsUpdateRequest) GetLedgerAccount() components.LedgerAccountInput {
+	if a == nil {
 		return components.LedgerAccountInput{}
 	}
-	return o.LedgerAccount
+	return a.LedgerAccount
 }
 
 type AccountingLedgerAccountsUpdateResponse struct {
@@ -103,23 +103,23 @@ type AccountingLedgerAccountsUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingLedgerAccountsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingLedgerAccountsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingLedgerAccountsUpdateResponse) GetUpdateLedgerAccountResponse() *components.UpdateLedgerAccountResponse {
-	if o == nil {
+func (a *AccountingLedgerAccountsUpdateResponse) GetUpdateLedgerAccountResponse() *components.UpdateLedgerAccountResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UpdateLedgerAccountResponse
+	return a.UpdateLedgerAccountResponse
 }
 
-func (o *AccountingLedgerAccountsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingLedgerAccountsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

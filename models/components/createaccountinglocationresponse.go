@@ -20,51 +20,51 @@ type CreateAccountingLocationResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *CreateAccountingLocationResponse) GetStatusCode() int64 {
-	if o == nil {
+func (c *CreateAccountingLocationResponse) GetStatusCode() int64 {
+	if c == nil {
 		return 0
 	}
-	return o.StatusCode
+	return c.StatusCode
 }
 
-func (o *CreateAccountingLocationResponse) GetStatus() string {
-	if o == nil {
+func (c *CreateAccountingLocationResponse) GetStatus() string {
+	if c == nil {
 		return ""
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CreateAccountingLocationResponse) GetService() string {
-	if o == nil {
+func (c *CreateAccountingLocationResponse) GetService() string {
+	if c == nil {
 		return ""
 	}
-	return o.Service
+	return c.Service
 }
 
-func (o *CreateAccountingLocationResponse) GetResource() string {
-	if o == nil {
+func (c *CreateAccountingLocationResponse) GetResource() string {
+	if c == nil {
 		return ""
 	}
-	return o.Resource
+	return c.Resource
 }
 
-func (o *CreateAccountingLocationResponse) GetOperation() string {
-	if o == nil {
+func (c *CreateAccountingLocationResponse) GetOperation() string {
+	if c == nil {
 		return ""
 	}
-	return o.Operation
+	return c.Operation
 }
 
-func (o *CreateAccountingLocationResponse) GetData() UnifiedID {
-	if o == nil {
+func (c *CreateAccountingLocationResponse) GetData() UnifiedID {
+	if c == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return c.Data
 }
 
-func (o *CreateAccountingLocationResponse) GetRaw() map[string]any {
-	if o == nil {
+func (c *CreateAccountingLocationResponse) GetRaw() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }

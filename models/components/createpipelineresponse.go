@@ -20,51 +20,51 @@ type CreatePipelineResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *CreatePipelineResponse) GetStatusCode() int64 {
-	if o == nil {
+func (c *CreatePipelineResponse) GetStatusCode() int64 {
+	if c == nil {
 		return 0
 	}
-	return o.StatusCode
+	return c.StatusCode
 }
 
-func (o *CreatePipelineResponse) GetStatus() string {
-	if o == nil {
+func (c *CreatePipelineResponse) GetStatus() string {
+	if c == nil {
 		return ""
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CreatePipelineResponse) GetService() string {
-	if o == nil {
+func (c *CreatePipelineResponse) GetService() string {
+	if c == nil {
 		return ""
 	}
-	return o.Service
+	return c.Service
 }
 
-func (o *CreatePipelineResponse) GetResource() string {
-	if o == nil {
+func (c *CreatePipelineResponse) GetResource() string {
+	if c == nil {
 		return ""
 	}
-	return o.Resource
+	return c.Resource
 }
 
-func (o *CreatePipelineResponse) GetOperation() string {
-	if o == nil {
+func (c *CreatePipelineResponse) GetOperation() string {
+	if c == nil {
 		return ""
 	}
-	return o.Operation
+	return c.Operation
 }
 
-func (o *CreatePipelineResponse) GetData() UnifiedID {
-	if o == nil {
+func (c *CreatePipelineResponse) GetData() UnifiedID {
+	if c == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return c.Data
 }
 
-func (o *CreatePipelineResponse) GetRaw() map[string]any {
-	if o == nil {
+func (c *CreatePipelineResponse) GetRaw() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }

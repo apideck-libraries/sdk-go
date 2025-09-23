@@ -14,18 +14,18 @@ type FileStorageDriveGroupsUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *FileStorageDriveGroupsUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageDriveGroupsUpdateGlobals) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageDriveGroupsUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageDriveGroupsUpdateGlobals) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
 type FileStorageDriveGroupsUpdateRequest struct {
@@ -53,46 +53,46 @@ func (f *FileStorageDriveGroupsUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FileStorageDriveGroupsUpdateRequest) GetID() string {
-	if o == nil {
+func (f *FileStorageDriveGroupsUpdateRequest) GetID() string {
+	if f == nil {
 		return ""
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *FileStorageDriveGroupsUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageDriveGroupsUpdateRequest) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageDriveGroupsUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageDriveGroupsUpdateRequest) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
-func (o *FileStorageDriveGroupsUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (f *FileStorageDriveGroupsUpdateRequest) GetServiceID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ServiceID
+	return f.ServiceID
 }
 
-func (o *FileStorageDriveGroupsUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (f *FileStorageDriveGroupsUpdateRequest) GetRaw() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Raw
+	return f.Raw
 }
 
-func (o *FileStorageDriveGroupsUpdateRequest) GetDriveGroup() components.DriveGroupInput {
-	if o == nil {
+func (f *FileStorageDriveGroupsUpdateRequest) GetDriveGroup() components.DriveGroupInput {
+	if f == nil {
 		return components.DriveGroupInput{}
 	}
-	return o.DriveGroup
+	return f.DriveGroup
 }
 
 type FileStorageDriveGroupsUpdateResponse struct {
@@ -103,23 +103,23 @@ type FileStorageDriveGroupsUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *FileStorageDriveGroupsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (f *FileStorageDriveGroupsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if f == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return f.HTTPMeta
 }
 
-func (o *FileStorageDriveGroupsUpdateResponse) GetUpdateDriveGroupResponse() *components.UpdateDriveGroupResponse {
-	if o == nil {
+func (f *FileStorageDriveGroupsUpdateResponse) GetUpdateDriveGroupResponse() *components.UpdateDriveGroupResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UpdateDriveGroupResponse
+	return f.UpdateDriveGroupResponse
 }
 
-func (o *FileStorageDriveGroupsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (f *FileStorageDriveGroupsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return f.UnexpectedErrorResponse
 }

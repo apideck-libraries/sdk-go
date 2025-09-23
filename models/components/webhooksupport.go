@@ -134,36 +134,36 @@ type RequestRate struct {
 	Unit Unit `json:"unit"`
 }
 
-func (o *RequestRate) GetRate() int64 {
-	if o == nil {
+func (r *RequestRate) GetRate() int64 {
+	if r == nil {
 		return 0
 	}
-	return o.Rate
+	return r.Rate
 }
 
-func (o *RequestRate) GetSize() int64 {
-	if o == nil {
+func (r *RequestRate) GetSize() int64 {
+	if r == nil {
 		return 0
 	}
-	return o.Size
+	return r.Size
 }
 
-func (o *RequestRate) GetUnit() Unit {
-	if o == nil {
+func (r *RequestRate) GetUnit() Unit {
+	if r == nil {
 		return Unit("")
 	}
-	return o.Unit
+	return r.Unit
 }
 
 type WebhookSupportResources struct {
 	Events []string `json:"events,omitempty"`
 }
 
-func (o *WebhookSupportResources) GetEvents() []string {
-	if o == nil {
+func (w *WebhookSupportResources) GetEvents() []string {
+	if w == nil {
 		return nil
 	}
-	return o.Events
+	return w.Events
 }
 
 // VirtualWebhooks - Virtual webhook config for the connector.
@@ -174,18 +174,18 @@ type VirtualWebhooks struct {
 	Resources map[string]WebhookSupportResources `json:"resources,omitempty"`
 }
 
-func (o *VirtualWebhooks) GetRequestRate() RequestRate {
-	if o == nil {
+func (v *VirtualWebhooks) GetRequestRate() RequestRate {
+	if v == nil {
 		return RequestRate{}
 	}
-	return o.RequestRate
+	return v.RequestRate
 }
 
-func (o *VirtualWebhooks) GetResources() map[string]WebhookSupportResources {
-	if o == nil {
+func (v *VirtualWebhooks) GetResources() map[string]WebhookSupportResources {
+	if v == nil {
 		return nil
 	}
-	return o.Resources
+	return v.Resources
 }
 
 // WebhookSupport - How webhooks are supported for the connector. Sometimes the connector natively supports webhooks, other times Apideck virtualizes them based on polling.
@@ -200,30 +200,30 @@ type WebhookSupport struct {
 	VirtualWebhooks *VirtualWebhooks `json:"virtual_webhooks,omitempty"`
 }
 
-func (o *WebhookSupport) GetMode() *Mode {
-	if o == nil {
+func (w *WebhookSupport) GetMode() *Mode {
+	if w == nil {
 		return nil
 	}
-	return o.Mode
+	return w.Mode
 }
 
-func (o *WebhookSupport) GetSubscriptionLevel() *SubscriptionLevel {
-	if o == nil {
+func (w *WebhookSupport) GetSubscriptionLevel() *SubscriptionLevel {
+	if w == nil {
 		return nil
 	}
-	return o.SubscriptionLevel
+	return w.SubscriptionLevel
 }
 
-func (o *WebhookSupport) GetManagedVia() *ManagedVia {
-	if o == nil {
+func (w *WebhookSupport) GetManagedVia() *ManagedVia {
+	if w == nil {
 		return nil
 	}
-	return o.ManagedVia
+	return w.ManagedVia
 }
 
-func (o *WebhookSupport) GetVirtualWebhooks() *VirtualWebhooks {
-	if o == nil {
+func (w *WebhookSupport) GetVirtualWebhooks() *VirtualWebhooks {
+	if w == nil {
 		return nil
 	}
-	return o.VirtualWebhooks
+	return w.VirtualWebhooks
 }

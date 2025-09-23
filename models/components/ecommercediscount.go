@@ -12,23 +12,23 @@ type EcommerceDiscount struct {
 	Percentage *string `json:"percentage,omitempty"`
 }
 
-func (o *EcommerceDiscount) GetCode() *string {
-	if o == nil {
+func (e *EcommerceDiscount) GetCode() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Code
+	return e.Code
 }
 
-func (o *EcommerceDiscount) GetAmount() *string {
-	if o == nil {
+func (e *EcommerceDiscount) GetAmount() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Amount
+	return e.Amount
 }
 
-func (o *EcommerceDiscount) GetPercentage() *string {
-	if o == nil {
+func (e *EcommerceDiscount) GetPercentage() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Percentage
+	return e.Percentage
 }

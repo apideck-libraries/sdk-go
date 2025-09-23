@@ -20,51 +20,51 @@ type UpdateCustomObjectSchemaResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *UpdateCustomObjectSchemaResponse) GetStatusCode() int64 {
-	if o == nil {
+func (u *UpdateCustomObjectSchemaResponse) GetStatusCode() int64 {
+	if u == nil {
 		return 0
 	}
-	return o.StatusCode
+	return u.StatusCode
 }
 
-func (o *UpdateCustomObjectSchemaResponse) GetStatus() string {
-	if o == nil {
+func (u *UpdateCustomObjectSchemaResponse) GetStatus() string {
+	if u == nil {
 		return ""
 	}
-	return o.Status
+	return u.Status
 }
 
-func (o *UpdateCustomObjectSchemaResponse) GetService() string {
-	if o == nil {
+func (u *UpdateCustomObjectSchemaResponse) GetService() string {
+	if u == nil {
 		return ""
 	}
-	return o.Service
+	return u.Service
 }
 
-func (o *UpdateCustomObjectSchemaResponse) GetResource() string {
-	if o == nil {
+func (u *UpdateCustomObjectSchemaResponse) GetResource() string {
+	if u == nil {
 		return ""
 	}
-	return o.Resource
+	return u.Resource
 }
 
-func (o *UpdateCustomObjectSchemaResponse) GetOperation() string {
-	if o == nil {
+func (u *UpdateCustomObjectSchemaResponse) GetOperation() string {
+	if u == nil {
 		return ""
 	}
-	return o.Operation
+	return u.Operation
 }
 
-func (o *UpdateCustomObjectSchemaResponse) GetData() UnifiedID {
-	if o == nil {
+func (u *UpdateCustomObjectSchemaResponse) GetData() UnifiedID {
+	if u == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return u.Data
 }
 
-func (o *UpdateCustomObjectSchemaResponse) GetRaw() map[string]any {
-	if o == nil {
+func (u *UpdateCustomObjectSchemaResponse) GetRaw() map[string]any {
+	if u == nil {
 		return nil
 	}
-	return o.Raw
+	return u.Raw
 }

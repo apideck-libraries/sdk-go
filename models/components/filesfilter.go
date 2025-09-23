@@ -11,23 +11,23 @@ type FilesFilter struct {
 	Shared *bool `queryParam:"name=shared"`
 }
 
-func (o *FilesFilter) GetDriveID() *string {
-	if o == nil {
+func (f *FilesFilter) GetDriveID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.DriveID
+	return f.DriveID
 }
 
-func (o *FilesFilter) GetFolderID() *string {
-	if o == nil {
+func (f *FilesFilter) GetFolderID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.FolderID
+	return f.FolderID
 }
 
-func (o *FilesFilter) GetShared() *bool {
-	if o == nil {
+func (f *FilesFilter) GetShared() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Shared
+	return f.Shared
 }

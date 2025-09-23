@@ -23,65 +23,65 @@ type GetHrisCompaniesResponse struct {
 	Links *Links `json:"links,omitempty"`
 }
 
-func (o *GetHrisCompaniesResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetHrisCompaniesResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetHrisCompaniesResponse) GetStatus() string {
-	if o == nil {
+func (g *GetHrisCompaniesResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetHrisCompaniesResponse) GetService() string {
-	if o == nil {
+func (g *GetHrisCompaniesResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetHrisCompaniesResponse) GetResource() string {
-	if o == nil {
+func (g *GetHrisCompaniesResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetHrisCompaniesResponse) GetOperation() string {
-	if o == nil {
+func (g *GetHrisCompaniesResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetHrisCompaniesResponse) GetData() []HrisCompany {
-	if o == nil {
+func (g *GetHrisCompaniesResponse) GetData() []HrisCompany {
+	if g == nil {
 		return []HrisCompany{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetHrisCompaniesResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetHrisCompaniesResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }
 
-func (o *GetHrisCompaniesResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetHrisCompaniesResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetHrisCompaniesResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetHrisCompaniesResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }

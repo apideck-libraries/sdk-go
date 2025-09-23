@@ -14,18 +14,18 @@ type AccountingInvoicesOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingInvoicesOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingInvoicesOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingInvoicesOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingInvoicesOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingInvoicesOneRequest struct {
@@ -54,46 +54,46 @@ func (a *AccountingInvoicesOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingInvoicesOneRequest) GetID() string {
-	if o == nil {
+func (a *AccountingInvoicesOneRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingInvoicesOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingInvoicesOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingInvoicesOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingInvoicesOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingInvoicesOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingInvoicesOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingInvoicesOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingInvoicesOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingInvoicesOneRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingInvoicesOneRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingInvoicesOneResponse struct {
@@ -104,23 +104,23 @@ type AccountingInvoicesOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingInvoicesOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingInvoicesOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingInvoicesOneResponse) GetGetInvoiceResponse() *components.GetInvoiceResponse {
-	if o == nil {
+func (a *AccountingInvoicesOneResponse) GetGetInvoiceResponse() *components.GetInvoiceResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetInvoiceResponse
+	return a.GetInvoiceResponse
 }
 
-func (o *AccountingInvoicesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingInvoicesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

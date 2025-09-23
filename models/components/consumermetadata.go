@@ -14,30 +14,30 @@ type ConsumerMetadata struct {
 	Image *string `json:"image,omitempty"`
 }
 
-func (o *ConsumerMetadata) GetAccountName() *string {
-	if o == nil {
+func (c *ConsumerMetadata) GetAccountName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AccountName
+	return c.AccountName
 }
 
-func (o *ConsumerMetadata) GetUserName() *string {
-	if o == nil {
+func (c *ConsumerMetadata) GetUserName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UserName
+	return c.UserName
 }
 
-func (o *ConsumerMetadata) GetEmail() *string {
-	if o == nil {
+func (c *ConsumerMetadata) GetEmail() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Email
+	return c.Email
 }
 
-func (o *ConsumerMetadata) GetImage() *string {
-	if o == nil {
+func (c *ConsumerMetadata) GetImage() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Image
+	return c.Image
 }

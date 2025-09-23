@@ -14,18 +14,18 @@ type FileStorageFilesDownloadGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *FileStorageFilesDownloadGlobals) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageFilesDownloadGlobals) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageFilesDownloadGlobals) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageFilesDownloadGlobals) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
 type FileStorageFilesDownloadRequest struct {
@@ -41,39 +41,39 @@ type FileStorageFilesDownloadRequest struct {
 	Fields *string `queryParam:"style=form,explode=true,name=fields"`
 }
 
-func (o *FileStorageFilesDownloadRequest) GetID() string {
-	if o == nil {
+func (f *FileStorageFilesDownloadRequest) GetID() string {
+	if f == nil {
 		return ""
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *FileStorageFilesDownloadRequest) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageFilesDownloadRequest) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageFilesDownloadRequest) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageFilesDownloadRequest) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
-func (o *FileStorageFilesDownloadRequest) GetServiceID() *string {
-	if o == nil {
+func (f *FileStorageFilesDownloadRequest) GetServiceID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ServiceID
+	return f.ServiceID
 }
 
-func (o *FileStorageFilesDownloadRequest) GetFields() *string {
-	if o == nil {
+func (f *FileStorageFilesDownloadRequest) GetFields() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Fields
+	return f.Fields
 }
 
 type FileStorageFilesDownloadResponse struct {
@@ -85,23 +85,23 @@ type FileStorageFilesDownloadResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *FileStorageFilesDownloadResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (f *FileStorageFilesDownloadResponse) GetHTTPMeta() components.HTTPMetadata {
+	if f == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return f.HTTPMeta
 }
 
-func (o *FileStorageFilesDownloadResponse) GetGetFileDownloadResponse() io.ReadCloser {
-	if o == nil {
+func (f *FileStorageFilesDownloadResponse) GetGetFileDownloadResponse() io.ReadCloser {
+	if f == nil {
 		return nil
 	}
-	return o.GetFileDownloadResponse
+	return f.GetFileDownloadResponse
 }
 
-func (o *FileStorageFilesDownloadResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (f *FileStorageFilesDownloadResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return f.UnexpectedErrorResponse
 }

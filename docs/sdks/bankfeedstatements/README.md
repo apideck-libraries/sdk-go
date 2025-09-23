@@ -39,11 +39,11 @@ func main() {
     )
 
     res, err := s.Accounting.BankFeedStatements.List(ctx, operations.AccountingBankFeedStatementsAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -119,45 +119,45 @@ func main() {
     )
 
     res, err := s.Accounting.BankFeedStatements.Create(ctx, operations.AccountingBankFeedStatementsAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         BankFeedStatement: components.BankFeedStatementInput{
-            BankFeedAccountID: sdkgo.String("acc_456"),
+            BankFeedAccountID: sdkgo.Pointer("acc_456"),
             Status: components.StatementStatusPending.ToPointer(),
             StartDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
             EndDate: types.MustNewTimeFromString("2025-01-31T12:00:00.000Z"),
-            StartBalance: sdkgo.Float64(10500.25),
+            StartBalance: sdkgo.Pointer[float64](10500.25),
             StartBalanceCreditOrDebit: components.CreditOrDebitDebit.ToPointer(),
-            EndBalance: sdkgo.Float64(9800.5),
+            EndBalance: sdkgo.Pointer[float64](9800.5),
             EndBalanceCreditOrDebit: components.CreditOrDebitDebit.ToPointer(),
             Transactions: []components.Transactions{
                 components.Transactions{
                     PostedDate: types.MustTimeFromString("2025-01-15T12:00:00.000Z"),
-                    Description: sdkgo.String("Payment received from ACME Corp"),
+                    Description: sdkgo.Pointer("Payment received from ACME Corp"),
                     Amount: 250,
                     CreditOrDebit: components.CreditOrDebitDebit,
                     SourceTransactionID: "txn_987",
-                    Counterparty: sdkgo.String("ACME Corp"),
-                    Reference: sdkgo.String("INV-2025-01"),
+                    Counterparty: sdkgo.Pointer("ACME Corp"),
+                    Reference: sdkgo.Pointer("INV-2025-01"),
                     TransactionType: components.BankFeedStatementTransactionTypePayment.ToPointer(),
                 },
                 components.Transactions{
                     PostedDate: types.MustTimeFromString("2025-01-15T12:00:00.000Z"),
-                    Description: sdkgo.String("Payment received from ACME Corp"),
+                    Description: sdkgo.Pointer("Payment received from ACME Corp"),
                     Amount: 250,
                     CreditOrDebit: components.CreditOrDebitDebit,
                     SourceTransactionID: "txn_987",
-                    Counterparty: sdkgo.String("ACME Corp"),
-                    Reference: sdkgo.String("INV-2025-01"),
+                    Counterparty: sdkgo.Pointer("ACME Corp"),
+                    Reference: sdkgo.Pointer("INV-2025-01"),
                     TransactionType: components.BankFeedStatementTransactionTypePayment.ToPointer(),
                 },
                 components.Transactions{
                     PostedDate: types.MustTimeFromString("2025-01-15T12:00:00.000Z"),
-                    Description: sdkgo.String("Payment received from ACME Corp"),
+                    Description: sdkgo.Pointer("Payment received from ACME Corp"),
                     Amount: 250,
                     CreditOrDebit: components.CreditOrDebitDebit,
                     SourceTransactionID: "txn_987",
-                    Counterparty: sdkgo.String("ACME Corp"),
-                    Reference: sdkgo.String("INV-2025-01"),
+                    Counterparty: sdkgo.Pointer("ACME Corp"),
+                    Reference: sdkgo.Pointer("INV-2025-01"),
                     TransactionType: components.BankFeedStatementTransactionTypePayment.ToPointer(),
                 },
             },
@@ -224,8 +224,8 @@ func main() {
 
     res, err := s.Accounting.BankFeedStatements.Get(ctx, operations.AccountingBankFeedStatementsOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -290,35 +290,35 @@ func main() {
 
     res, err := s.Accounting.BankFeedStatements.Update(ctx, operations.AccountingBankFeedStatementsUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         BankFeedStatement: components.BankFeedStatementInput{
-            BankFeedAccountID: sdkgo.String("acc_456"),
+            BankFeedAccountID: sdkgo.Pointer("acc_456"),
             Status: components.StatementStatusPending.ToPointer(),
             StartDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
             EndDate: types.MustNewTimeFromString("2025-01-31T12:00:00.000Z"),
-            StartBalance: sdkgo.Float64(10500.25),
+            StartBalance: sdkgo.Pointer[float64](10500.25),
             StartBalanceCreditOrDebit: components.CreditOrDebitDebit.ToPointer(),
-            EndBalance: sdkgo.Float64(9800.5),
+            EndBalance: sdkgo.Pointer[float64](9800.5),
             EndBalanceCreditOrDebit: components.CreditOrDebitDebit.ToPointer(),
             Transactions: []components.Transactions{
                 components.Transactions{
                     PostedDate: types.MustTimeFromString("2025-01-15T12:00:00.000Z"),
-                    Description: sdkgo.String("Payment received from ACME Corp"),
+                    Description: sdkgo.Pointer("Payment received from ACME Corp"),
                     Amount: 250,
                     CreditOrDebit: components.CreditOrDebitDebit,
                     SourceTransactionID: "txn_987",
-                    Counterparty: sdkgo.String("ACME Corp"),
-                    Reference: sdkgo.String("INV-2025-01"),
+                    Counterparty: sdkgo.Pointer("ACME Corp"),
+                    Reference: sdkgo.Pointer("INV-2025-01"),
                     TransactionType: components.BankFeedStatementTransactionTypePayment.ToPointer(),
                 },
                 components.Transactions{
                     PostedDate: types.MustTimeFromString("2025-01-15T12:00:00.000Z"),
-                    Description: sdkgo.String("Payment received from ACME Corp"),
+                    Description: sdkgo.Pointer("Payment received from ACME Corp"),
                     Amount: 250,
                     CreditOrDebit: components.CreditOrDebitDebit,
                     SourceTransactionID: "txn_987",
-                    Counterparty: sdkgo.String("ACME Corp"),
-                    Reference: sdkgo.String("INV-2025-01"),
+                    Counterparty: sdkgo.Pointer("ACME Corp"),
+                    Reference: sdkgo.Pointer("INV-2025-01"),
                     TransactionType: components.BankFeedStatementTransactionTypePayment.ToPointer(),
                 },
             },
@@ -385,7 +385,7 @@ func main() {
 
     res, err := s.Accounting.BankFeedStatements.Delete(ctx, operations.AccountingBankFeedStatementsDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

@@ -14,18 +14,18 @@ type CrmPipelinesAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmPipelinesAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmPipelinesAddGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmPipelinesAddGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmPipelinesAddGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmPipelinesAddRequest struct {
@@ -51,39 +51,39 @@ func (c *CrmPipelinesAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmPipelinesAddRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmPipelinesAddRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmPipelinesAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmPipelinesAddRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmPipelinesAddRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmPipelinesAddRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmPipelinesAddRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmPipelinesAddRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmPipelinesAddRequest) GetPipeline() components.PipelineInput {
-	if o == nil {
+func (c *CrmPipelinesAddRequest) GetPipeline() components.PipelineInput {
+	if c == nil {
 		return components.PipelineInput{}
 	}
-	return o.Pipeline
+	return c.Pipeline
 }
 
 type CrmPipelinesAddResponse struct {
@@ -94,23 +94,23 @@ type CrmPipelinesAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmPipelinesAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmPipelinesAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmPipelinesAddResponse) GetCreatePipelineResponse() *components.CreatePipelineResponse {
-	if o == nil {
+func (c *CrmPipelinesAddResponse) GetCreatePipelineResponse() *components.CreatePipelineResponse {
+	if c == nil {
 		return nil
 	}
-	return o.CreatePipelineResponse
+	return c.CreatePipelineResponse
 }
 
-func (o *CrmPipelinesAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmPipelinesAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

@@ -9,16 +9,16 @@ type DataScopesInput struct {
 	Resources *DataScopesResources `json:"resources,omitempty"`
 }
 
-func (o *DataScopesInput) GetEnabled() *bool {
-	if o == nil {
+func (d *DataScopesInput) GetEnabled() *bool {
+	if d == nil {
 		return nil
 	}
-	return o.Enabled
+	return d.Enabled
 }
 
-func (o *DataScopesInput) GetResources() *DataScopesResources {
-	if o == nil {
+func (d *DataScopesInput) GetResources() *DataScopesResources {
+	if d == nil {
 		return nil
 	}
-	return o.Resources
+	return d.Resources
 }

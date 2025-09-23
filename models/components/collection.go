@@ -37,58 +37,58 @@ func (c *Collection) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Collection) GetID() string {
-	if o == nil {
+func (c *Collection) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *Collection) GetParentID() *string {
-	if o == nil {
+func (c *Collection) GetParentID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ParentID
+	return c.ParentID
 }
 
-func (o *Collection) GetType() *string {
-	if o == nil {
+func (c *Collection) GetType() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *Collection) GetName() *string {
-	if o == nil {
+func (c *Collection) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *Collection) GetDescription() *string {
-	if o == nil {
+func (c *Collection) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *Collection) GetCustomMappings() map[string]any {
-	if o == nil {
+func (c *Collection) GetCustomMappings() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return c.CustomMappings
 }
 
-func (o *Collection) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (c *Collection) GetUpdatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return c.UpdatedAt
 }
 
-func (o *Collection) GetCreatedAt() *time.Time {
-	if o == nil {
+func (c *Collection) GetCreatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }

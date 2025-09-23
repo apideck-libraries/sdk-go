@@ -42,11 +42,11 @@ func main() {
     )
 
     res, err := s.FileStorage.Files.List(ctx, operations.FileStorageFilesAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Filter: &components.FilesFilter{
-            DriveID: sdkgo.String("1234"),
-            FolderID: sdkgo.String("root"),
-            Shared: sdkgo.Bool(true),
+            DriveID: sdkgo.Pointer("1234"),
+            FolderID: sdkgo.Pointer("root"),
+            Shared: sdkgo.Pointer(true),
         },
         Sort: &components.FilesSort{
             By: components.FilesSortByUpdatedAt.ToPointer(),
@@ -55,7 +55,7 @@ func main() {
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -130,15 +130,15 @@ func main() {
     )
 
     res, err := s.FileStorage.Files.Search(ctx, operations.FileStorageFilesSearchRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
         Filter: &components.FilesFilter{
-            DriveID: sdkgo.String("1234"),
-            FolderID: sdkgo.String("root"),
-            Shared: sdkgo.Bool(true),
+            DriveID: sdkgo.Pointer("1234"),
+            FolderID: sdkgo.Pointer("root"),
+            Shared: sdkgo.Pointer(true),
         },
         FilesSearch: components.FilesSearch{
             Query: "logo jpg",
@@ -205,8 +205,8 @@ func main() {
 
     res, err := s.FileStorage.Files.Get(ctx, operations.FileStorageFilesOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -270,11 +270,11 @@ func main() {
 
     res, err := s.FileStorage.Files.Update(ctx, operations.FileStorageFilesUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         UpdateFileRequest: components.UpdateFileRequest{
-            Name: sdkgo.String("New Name.pdf"),
-            Description: sdkgo.String("Renamed PDF Document"),
-            ParentFolderID: sdkgo.String("1234"),
+            Name: sdkgo.Pointer("New Name.pdf"),
+            Description: sdkgo.Pointer("Renamed PDF Document"),
+            ParentFolderID: sdkgo.Pointer("1234"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -353,7 +353,7 @@ func main() {
 
     res, err := s.FileStorage.Files.Delete(ctx, operations.FileStorageFilesDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)
@@ -416,8 +416,8 @@ func main() {
 
     res, err := s.FileStorage.Files.Download(ctx, operations.FileStorageFilesDownloadRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -480,8 +480,8 @@ func main() {
 
     res, err := s.FileStorage.Files.Export(ctx, operations.FileStorageFilesExportRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
         Format: "pdf",
     })
     if err != nil {

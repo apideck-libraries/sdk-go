@@ -14,18 +14,18 @@ type CrmUsersDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmUsersDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmUsersDeleteGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmUsersDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmUsersDeleteGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmUsersDeleteRequest struct {
@@ -52,39 +52,39 @@ func (c *CrmUsersDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmUsersDeleteRequest) GetID() string {
-	if o == nil {
+func (c *CrmUsersDeleteRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CrmUsersDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmUsersDeleteRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmUsersDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmUsersDeleteRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmUsersDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmUsersDeleteRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmUsersDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmUsersDeleteRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
 type CrmUsersDeleteResponse struct {
@@ -95,23 +95,23 @@ type CrmUsersDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmUsersDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmUsersDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmUsersDeleteResponse) GetDeleteUserResponse() *components.DeleteUserResponse {
-	if o == nil {
+func (c *CrmUsersDeleteResponse) GetDeleteUserResponse() *components.DeleteUserResponse {
+	if c == nil {
 		return nil
 	}
-	return o.DeleteUserResponse
+	return c.DeleteUserResponse
 }
 
-func (o *CrmUsersDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmUsersDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

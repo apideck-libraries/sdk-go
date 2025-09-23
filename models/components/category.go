@@ -102,79 +102,79 @@ func (c *Category) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Category) GetID() *string {
-	if o == nil {
+func (c *Category) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *Category) GetName() *string {
-	if o == nil {
+func (c *Category) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *Category) GetType() *CategoryType {
-	if o == nil {
+func (c *Category) GetType() *CategoryType {
+	if c == nil {
 		return nil
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *Category) GetStatus() *CategoryStatus {
-	if o == nil {
+func (c *Category) GetStatus() *CategoryStatus {
+	if c == nil {
 		return nil
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *Category) GetCustomMappings() map[string]any {
-	if o == nil {
+func (c *Category) GetCustomMappings() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return c.CustomMappings
 }
 
-func (o *Category) GetRowVersion() *string {
-	if o == nil {
+func (c *Category) GetRowVersion() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RowVersion
+	return c.RowVersion
 }
 
-func (o *Category) GetUpdatedBy() *string {
-	if o == nil {
+func (c *Category) GetUpdatedBy() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return c.UpdatedBy
 }
 
-func (o *Category) GetCreatedBy() *string {
-	if o == nil {
+func (c *Category) GetCreatedBy() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return c.CreatedBy
 }
 
-func (o *Category) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (c *Category) GetUpdatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return c.UpdatedAt
 }
 
-func (o *Category) GetCreatedAt() *time.Time {
-	if o == nil {
+func (c *Category) GetCreatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }
 
-func (o *Category) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (c *Category) GetPassThrough() []PassThroughBody {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }

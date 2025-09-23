@@ -29,32 +29,32 @@ func (c *Credentials) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Credentials) GetRefreshToken() *string {
-	if o == nil {
+func (c *Credentials) GetRefreshToken() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RefreshToken
+	return c.RefreshToken
 }
 
-func (o *Credentials) GetAccessToken() *string {
-	if o == nil {
+func (c *Credentials) GetAccessToken() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AccessToken
+	return c.AccessToken
 }
 
-func (o *Credentials) GetIssuedAt() *time.Time {
-	if o == nil {
+func (c *Credentials) GetIssuedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.IssuedAt
+	return c.IssuedAt
 }
 
-func (o *Credentials) GetExpiresIn() *int64 {
-	if o == nil {
+func (c *Credentials) GetExpiresIn() *int64 {
+	if c == nil {
 		return nil
 	}
-	return o.ExpiresIn
+	return c.ExpiresIn
 }
 
 type ConnectionImportData struct {
@@ -65,23 +65,23 @@ type ConnectionImportData struct {
 	Metadata map[string]any `json:"metadata,omitempty"`
 }
 
-func (o *ConnectionImportData) GetCredentials() *Credentials {
-	if o == nil {
+func (c *ConnectionImportData) GetCredentials() *Credentials {
+	if c == nil {
 		return nil
 	}
-	return o.Credentials
+	return c.Credentials
 }
 
-func (o *ConnectionImportData) GetSettings() map[string]any {
-	if o == nil {
+func (c *ConnectionImportData) GetSettings() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Settings
+	return c.Settings
 }
 
-func (o *ConnectionImportData) GetMetadata() map[string]any {
-	if o == nil {
+func (c *ConnectionImportData) GetMetadata() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Metadata
+	return c.Metadata
 }

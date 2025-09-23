@@ -37,7 +37,7 @@ func main() {
     )
 
     res, err := s.IssueTracking.Collections.List(ctx, operations.IssueTrackingCollectionsAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Sort: &components.CollectionsSort{
             By: components.CollectionsSortByName.ToPointer(),
             Direction: components.SortDirectionDesc.ToPointer(),
@@ -45,7 +45,7 @@ func main() {
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -120,8 +120,8 @@ func main() {
 
     res, err := s.IssueTracking.Collections.Get(ctx, operations.IssueTrackingCollectionsOneRequest{
         CollectionID: "apideck-io",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)

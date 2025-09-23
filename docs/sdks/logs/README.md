@@ -38,9 +38,9 @@ func main() {
 
     res, err := s.Vault.Logs.List(ctx, operations.VaultLogsAllRequest{
         Filter: &components.LogsFilter{
-            ConnectorID: sdkgo.String("crm+salesforce"),
-            StatusCode: sdkgo.Float64(201),
-            ExcludeUnifiedApis: sdkgo.String("vault,proxy"),
+            ConnectorID: sdkgo.Pointer("crm+salesforce"),
+            StatusCode: sdkgo.Pointer[float64](201),
+            ExcludeUnifiedApis: sdkgo.Pointer("vault,proxy"),
         },
     })
     if err != nil {

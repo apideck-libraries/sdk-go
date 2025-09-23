@@ -9,16 +9,16 @@ type LinkedWorktag struct {
 	Value *string `json:"value,omitempty"`
 }
 
-func (o *LinkedWorktag) GetID() *string {
-	if o == nil {
+func (l *LinkedWorktag) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinkedWorktag) GetValue() *string {
-	if o == nil {
+func (l *LinkedWorktag) GetValue() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Value
+	return l.Value
 }

@@ -20,51 +20,51 @@ type DeleteDriveResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *DeleteDriveResponse) GetStatusCode() int64 {
-	if o == nil {
+func (d *DeleteDriveResponse) GetStatusCode() int64 {
+	if d == nil {
 		return 0
 	}
-	return o.StatusCode
+	return d.StatusCode
 }
 
-func (o *DeleteDriveResponse) GetStatus() string {
-	if o == nil {
+func (d *DeleteDriveResponse) GetStatus() string {
+	if d == nil {
 		return ""
 	}
-	return o.Status
+	return d.Status
 }
 
-func (o *DeleteDriveResponse) GetService() string {
-	if o == nil {
+func (d *DeleteDriveResponse) GetService() string {
+	if d == nil {
 		return ""
 	}
-	return o.Service
+	return d.Service
 }
 
-func (o *DeleteDriveResponse) GetResource() string {
-	if o == nil {
+func (d *DeleteDriveResponse) GetResource() string {
+	if d == nil {
 		return ""
 	}
-	return o.Resource
+	return d.Resource
 }
 
-func (o *DeleteDriveResponse) GetOperation() string {
-	if o == nil {
+func (d *DeleteDriveResponse) GetOperation() string {
+	if d == nil {
 		return ""
 	}
-	return o.Operation
+	return d.Operation
 }
 
-func (o *DeleteDriveResponse) GetData() UnifiedID {
-	if o == nil {
+func (d *DeleteDriveResponse) GetData() UnifiedID {
+	if d == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return d.Data
 }
 
-func (o *DeleteDriveResponse) GetRaw() map[string]any {
-	if o == nil {
+func (d *DeleteDriveResponse) GetRaw() map[string]any {
+	if d == nil {
 		return nil
 	}
-	return o.Raw
+	return d.Raw
 }

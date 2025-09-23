@@ -14,18 +14,18 @@ type CrmNotesOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmNotesOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmNotesOneGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmNotesOneGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmNotesOneGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmNotesOneRequest struct {
@@ -54,46 +54,46 @@ func (c *CrmNotesOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmNotesOneRequest) GetID() string {
-	if o == nil {
+func (c *CrmNotesOneRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CrmNotesOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmNotesOneRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmNotesOneRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmNotesOneRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmNotesOneRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmNotesOneRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmNotesOneRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmNotesOneRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmNotesOneRequest) GetFields() *string {
-	if o == nil {
+func (c *CrmNotesOneRequest) GetFields() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Fields
+	return c.Fields
 }
 
 type CrmNotesOneResponse struct {
@@ -104,23 +104,23 @@ type CrmNotesOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmNotesOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmNotesOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmNotesOneResponse) GetGetNoteResponse() *components.GetNoteResponse {
-	if o == nil {
+func (c *CrmNotesOneResponse) GetGetNoteResponse() *components.GetNoteResponse {
+	if c == nil {
 		return nil
 	}
-	return o.GetNoteResponse
+	return c.GetNoteResponse
 }
 
-func (o *CrmNotesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmNotesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

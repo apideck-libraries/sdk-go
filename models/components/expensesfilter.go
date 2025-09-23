@@ -69,16 +69,16 @@ func (e *ExpensesFilter) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ExpensesFilter) GetUpdatedSince() *time.Time {
-	if o == nil {
+func (e *ExpensesFilter) GetUpdatedSince() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.UpdatedSince
+	return e.UpdatedSince
 }
 
-func (o *ExpensesFilter) GetStatus() *ExpensesFilterStatus {
-	if o == nil {
+func (e *ExpensesFilter) GetStatus() *ExpensesFilterStatus {
+	if e == nil {
 		return nil
 	}
-	return o.Status
+	return e.Status
 }

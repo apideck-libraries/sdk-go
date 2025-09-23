@@ -23,16 +23,16 @@ func (p *PurchaseOrdersFilter) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *PurchaseOrdersFilter) GetUpdatedSince() *time.Time {
-	if o == nil {
+func (p *PurchaseOrdersFilter) GetUpdatedSince() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.UpdatedSince
+	return p.UpdatedSince
 }
 
-func (o *PurchaseOrdersFilter) GetSupplierID() *string {
-	if o == nil {
+func (p *PurchaseOrdersFilter) GetSupplierID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.SupplierID
+	return p.SupplierID
 }

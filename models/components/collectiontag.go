@@ -11,23 +11,23 @@ type CollectionTag struct {
 	CustomMappings map[string]any `json:"custom_mappings,omitempty"`
 }
 
-func (o *CollectionTag) GetID() *string {
-	if o == nil {
+func (c *CollectionTag) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CollectionTag) GetName() *string {
-	if o == nil {
+func (c *CollectionTag) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CollectionTag) GetCustomMappings() map[string]any {
-	if o == nil {
+func (c *CollectionTag) GetCustomMappings() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return c.CustomMappings
 }

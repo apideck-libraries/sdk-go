@@ -185,368 +185,368 @@ type Activity struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *Activity) GetID() *string {
-	if o == nil {
+func (a *Activity) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *Activity) GetDownstreamID() *string {
-	if o == nil {
+func (a *Activity) GetDownstreamID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.DownstreamID
+	return a.DownstreamID
 }
 
-func (o *Activity) GetActivityDatetime() *string {
-	if o == nil {
+func (a *Activity) GetActivityDatetime() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ActivityDatetime
+	return a.ActivityDatetime
 }
 
-func (o *Activity) GetDurationSeconds() *int64 {
-	if o == nil {
+func (a *Activity) GetDurationSeconds() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.DurationSeconds
+	return a.DurationSeconds
 }
 
-func (o *Activity) GetUserID() *string {
-	if o == nil {
+func (a *Activity) GetUserID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.UserID
+	return a.UserID
 }
 
-func (o *Activity) GetAccountID() *string {
-	if o == nil {
+func (a *Activity) GetAccountID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AccountID
+	return a.AccountID
 }
 
-func (o *Activity) GetContactID() *string {
-	if o == nil {
+func (a *Activity) GetContactID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ContactID
+	return a.ContactID
 }
 
-func (o *Activity) GetCompanyID() *string {
-	if o == nil {
+func (a *Activity) GetCompanyID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CompanyID
+	return a.CompanyID
 }
 
-func (o *Activity) GetOpportunityID() *string {
-	if o == nil {
+func (a *Activity) GetOpportunityID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.OpportunityID
+	return a.OpportunityID
 }
 
-func (o *Activity) GetLeadID() *string {
-	if o == nil {
+func (a *Activity) GetLeadID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.LeadID
+	return a.LeadID
 }
 
-func (o *Activity) GetOwnerID() *string {
-	if o == nil {
+func (a *Activity) GetOwnerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.OwnerID
+	return a.OwnerID
 }
 
-func (o *Activity) GetCampaignID() *string {
-	if o == nil {
+func (a *Activity) GetCampaignID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CampaignID
+	return a.CampaignID
 }
 
-func (o *Activity) GetCaseID() *string {
-	if o == nil {
+func (a *Activity) GetCaseID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CaseID
+	return a.CaseID
 }
 
-func (o *Activity) GetAssetID() *string {
-	if o == nil {
+func (a *Activity) GetAssetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AssetID
+	return a.AssetID
 }
 
-func (o *Activity) GetContractID() *string {
-	if o == nil {
+func (a *Activity) GetContractID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ContractID
+	return a.ContractID
 }
 
-func (o *Activity) GetProductID() *string {
-	if o == nil {
+func (a *Activity) GetProductID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ProductID
+	return a.ProductID
 }
 
-func (o *Activity) GetSolutionID() *string {
-	if o == nil {
+func (a *Activity) GetSolutionID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.SolutionID
+	return a.SolutionID
 }
 
-func (o *Activity) GetCustomObjectID() *string {
-	if o == nil {
+func (a *Activity) GetCustomObjectID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CustomObjectID
+	return a.CustomObjectID
 }
 
-func (o *Activity) GetType() *ActivityType {
-	if o == nil {
+func (a *Activity) GetType() *ActivityType {
+	if a == nil {
 		return nil
 	}
-	return o.Type
+	return a.Type
 }
 
-func (o *Activity) GetTitle() *string {
-	if o == nil {
+func (a *Activity) GetTitle() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Title
+	return a.Title
 }
 
-func (o *Activity) GetDescription() *string {
-	if o == nil {
+func (a *Activity) GetDescription() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Description
+	return a.Description
 }
 
-func (o *Activity) GetNote() *string {
-	if o == nil {
+func (a *Activity) GetNote() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Note
+	return a.Note
 }
 
-func (o *Activity) GetLocation() *string {
-	if o == nil {
+func (a *Activity) GetLocation() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Location
+	return a.Location
 }
 
-func (o *Activity) GetLocationAddress() *Address {
-	if o == nil {
+func (a *Activity) GetLocationAddress() *Address {
+	if a == nil {
 		return nil
 	}
-	return o.LocationAddress
+	return a.LocationAddress
 }
 
-func (o *Activity) GetAllDayEvent() *bool {
-	if o == nil {
+func (a *Activity) GetAllDayEvent() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.AllDayEvent
+	return a.AllDayEvent
 }
 
-func (o *Activity) GetPrivate() *bool {
-	if o == nil {
+func (a *Activity) GetPrivate() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Private
+	return a.Private
 }
 
-func (o *Activity) GetGroupEvent() *bool {
-	if o == nil {
+func (a *Activity) GetGroupEvent() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.GroupEvent
+	return a.GroupEvent
 }
 
-func (o *Activity) GetEventSubType() *string {
-	if o == nil {
+func (a *Activity) GetEventSubType() *string {
+	if a == nil {
 		return nil
 	}
-	return o.EventSubType
+	return a.EventSubType
 }
 
-func (o *Activity) GetGroupEventType() *string {
-	if o == nil {
+func (a *Activity) GetGroupEventType() *string {
+	if a == nil {
 		return nil
 	}
-	return o.GroupEventType
+	return a.GroupEventType
 }
 
-func (o *Activity) GetChild() *bool {
-	if o == nil {
+func (a *Activity) GetChild() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Child
+	return a.Child
 }
 
-func (o *Activity) GetArchived() *bool {
-	if o == nil {
+func (a *Activity) GetArchived() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Archived
+	return a.Archived
 }
 
-func (o *Activity) GetDeleted() *bool {
-	if o == nil {
+func (a *Activity) GetDeleted() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Deleted
+	return a.Deleted
 }
 
-func (o *Activity) GetShowAs() *ShowAs {
-	if o == nil {
+func (a *Activity) GetShowAs() *ShowAs {
+	if a == nil {
 		return nil
 	}
-	return o.ShowAs
+	return a.ShowAs
 }
 
-func (o *Activity) GetDone() *bool {
-	if o == nil {
+func (a *Activity) GetDone() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Done
+	return a.Done
 }
 
-func (o *Activity) GetStartDatetime() *string {
-	if o == nil {
+func (a *Activity) GetStartDatetime() *string {
+	if a == nil {
 		return nil
 	}
-	return o.StartDatetime
+	return a.StartDatetime
 }
 
-func (o *Activity) GetEndDatetime() *string {
-	if o == nil {
+func (a *Activity) GetEndDatetime() *string {
+	if a == nil {
 		return nil
 	}
-	return o.EndDatetime
+	return a.EndDatetime
 }
 
-func (o *Activity) GetDurationMinutes() *int64 {
-	if o == nil {
+func (a *Activity) GetDurationMinutes() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.DurationMinutes
+	return a.DurationMinutes
 }
 
-func (o *Activity) GetActivityDate() *string {
-	if o == nil {
+func (a *Activity) GetActivityDate() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ActivityDate
+	return a.ActivityDate
 }
 
-func (o *Activity) GetEndDate() *string {
-	if o == nil {
+func (a *Activity) GetEndDate() *string {
+	if a == nil {
 		return nil
 	}
-	return o.EndDate
+	return a.EndDate
 }
 
-func (o *Activity) GetRecurrent() *bool {
-	if o == nil {
+func (a *Activity) GetRecurrent() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Recurrent
+	return a.Recurrent
 }
 
-func (o *Activity) GetReminderDatetime() *string {
-	if o == nil {
+func (a *Activity) GetReminderDatetime() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ReminderDatetime
+	return a.ReminderDatetime
 }
 
-func (o *Activity) GetReminderSet() *bool {
-	if o == nil {
+func (a *Activity) GetReminderSet() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.ReminderSet
+	return a.ReminderSet
 }
 
-func (o *Activity) GetVideoConferenceURL() *string {
-	if o == nil {
+func (a *Activity) GetVideoConferenceURL() *string {
+	if a == nil {
 		return nil
 	}
-	return o.VideoConferenceURL
+	return a.VideoConferenceURL
 }
 
-func (o *Activity) GetVideoConferenceID() *string {
-	if o == nil {
+func (a *Activity) GetVideoConferenceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.VideoConferenceID
+	return a.VideoConferenceID
 }
 
-func (o *Activity) GetCustomFields() []CustomField {
-	if o == nil {
+func (a *Activity) GetCustomFields() []CustomField {
+	if a == nil {
 		return nil
 	}
-	return o.CustomFields
+	return a.CustomFields
 }
 
-func (o *Activity) GetAttendees() []ActivityAttendee {
-	if o == nil {
+func (a *Activity) GetAttendees() []ActivityAttendee {
+	if a == nil {
 		return nil
 	}
-	return o.Attendees
+	return a.Attendees
 }
 
-func (o *Activity) GetCustomMappings() map[string]any {
-	if o == nil {
+func (a *Activity) GetCustomMappings() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return a.CustomMappings
 }
 
-func (o *Activity) GetUpdatedBy() *string {
-	if o == nil {
+func (a *Activity) GetUpdatedBy() *string {
+	if a == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return a.UpdatedBy
 }
 
-func (o *Activity) GetCreatedBy() *string {
-	if o == nil {
+func (a *Activity) GetCreatedBy() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return a.CreatedBy
 }
 
-func (o *Activity) GetUpdatedAt() *string {
-	if o == nil {
+func (a *Activity) GetUpdatedAt() *string {
+	if a == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return a.UpdatedAt
 }
 
-func (o *Activity) GetCreatedAt() *string {
-	if o == nil {
+func (a *Activity) GetCreatedAt() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return a.CreatedAt
 }
 
-func (o *Activity) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (a *Activity) GetPassThrough() []PassThroughBody {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
 type ActivityInput struct {
@@ -637,310 +637,310 @@ type ActivityInput struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *ActivityInput) GetActivityDatetime() *string {
-	if o == nil {
+func (a *ActivityInput) GetActivityDatetime() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ActivityDatetime
+	return a.ActivityDatetime
 }
 
-func (o *ActivityInput) GetDurationSeconds() *int64 {
-	if o == nil {
+func (a *ActivityInput) GetDurationSeconds() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.DurationSeconds
+	return a.DurationSeconds
 }
 
-func (o *ActivityInput) GetUserID() *string {
-	if o == nil {
+func (a *ActivityInput) GetUserID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.UserID
+	return a.UserID
 }
 
-func (o *ActivityInput) GetAccountID() *string {
-	if o == nil {
+func (a *ActivityInput) GetAccountID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AccountID
+	return a.AccountID
 }
 
-func (o *ActivityInput) GetContactID() *string {
-	if o == nil {
+func (a *ActivityInput) GetContactID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ContactID
+	return a.ContactID
 }
 
-func (o *ActivityInput) GetCompanyID() *string {
-	if o == nil {
+func (a *ActivityInput) GetCompanyID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CompanyID
+	return a.CompanyID
 }
 
-func (o *ActivityInput) GetOpportunityID() *string {
-	if o == nil {
+func (a *ActivityInput) GetOpportunityID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.OpportunityID
+	return a.OpportunityID
 }
 
-func (o *ActivityInput) GetLeadID() *string {
-	if o == nil {
+func (a *ActivityInput) GetLeadID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.LeadID
+	return a.LeadID
 }
 
-func (o *ActivityInput) GetOwnerID() *string {
-	if o == nil {
+func (a *ActivityInput) GetOwnerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.OwnerID
+	return a.OwnerID
 }
 
-func (o *ActivityInput) GetCampaignID() *string {
-	if o == nil {
+func (a *ActivityInput) GetCampaignID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CampaignID
+	return a.CampaignID
 }
 
-func (o *ActivityInput) GetCaseID() *string {
-	if o == nil {
+func (a *ActivityInput) GetCaseID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CaseID
+	return a.CaseID
 }
 
-func (o *ActivityInput) GetAssetID() *string {
-	if o == nil {
+func (a *ActivityInput) GetAssetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AssetID
+	return a.AssetID
 }
 
-func (o *ActivityInput) GetContractID() *string {
-	if o == nil {
+func (a *ActivityInput) GetContractID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ContractID
+	return a.ContractID
 }
 
-func (o *ActivityInput) GetProductID() *string {
-	if o == nil {
+func (a *ActivityInput) GetProductID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ProductID
+	return a.ProductID
 }
 
-func (o *ActivityInput) GetSolutionID() *string {
-	if o == nil {
+func (a *ActivityInput) GetSolutionID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.SolutionID
+	return a.SolutionID
 }
 
-func (o *ActivityInput) GetCustomObjectID() *string {
-	if o == nil {
+func (a *ActivityInput) GetCustomObjectID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CustomObjectID
+	return a.CustomObjectID
 }
 
-func (o *ActivityInput) GetType() *ActivityType {
-	if o == nil {
+func (a *ActivityInput) GetType() *ActivityType {
+	if a == nil {
 		return nil
 	}
-	return o.Type
+	return a.Type
 }
 
-func (o *ActivityInput) GetTitle() *string {
-	if o == nil {
+func (a *ActivityInput) GetTitle() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Title
+	return a.Title
 }
 
-func (o *ActivityInput) GetDescription() *string {
-	if o == nil {
+func (a *ActivityInput) GetDescription() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Description
+	return a.Description
 }
 
-func (o *ActivityInput) GetNote() *string {
-	if o == nil {
+func (a *ActivityInput) GetNote() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Note
+	return a.Note
 }
 
-func (o *ActivityInput) GetLocation() *string {
-	if o == nil {
+func (a *ActivityInput) GetLocation() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Location
+	return a.Location
 }
 
-func (o *ActivityInput) GetLocationAddress() *Address {
-	if o == nil {
+func (a *ActivityInput) GetLocationAddress() *Address {
+	if a == nil {
 		return nil
 	}
-	return o.LocationAddress
+	return a.LocationAddress
 }
 
-func (o *ActivityInput) GetAllDayEvent() *bool {
-	if o == nil {
+func (a *ActivityInput) GetAllDayEvent() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.AllDayEvent
+	return a.AllDayEvent
 }
 
-func (o *ActivityInput) GetPrivate() *bool {
-	if o == nil {
+func (a *ActivityInput) GetPrivate() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Private
+	return a.Private
 }
 
-func (o *ActivityInput) GetGroupEvent() *bool {
-	if o == nil {
+func (a *ActivityInput) GetGroupEvent() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.GroupEvent
+	return a.GroupEvent
 }
 
-func (o *ActivityInput) GetEventSubType() *string {
-	if o == nil {
+func (a *ActivityInput) GetEventSubType() *string {
+	if a == nil {
 		return nil
 	}
-	return o.EventSubType
+	return a.EventSubType
 }
 
-func (o *ActivityInput) GetGroupEventType() *string {
-	if o == nil {
+func (a *ActivityInput) GetGroupEventType() *string {
+	if a == nil {
 		return nil
 	}
-	return o.GroupEventType
+	return a.GroupEventType
 }
 
-func (o *ActivityInput) GetChild() *bool {
-	if o == nil {
+func (a *ActivityInput) GetChild() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Child
+	return a.Child
 }
 
-func (o *ActivityInput) GetArchived() *bool {
-	if o == nil {
+func (a *ActivityInput) GetArchived() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Archived
+	return a.Archived
 }
 
-func (o *ActivityInput) GetDeleted() *bool {
-	if o == nil {
+func (a *ActivityInput) GetDeleted() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Deleted
+	return a.Deleted
 }
 
-func (o *ActivityInput) GetShowAs() *ShowAs {
-	if o == nil {
+func (a *ActivityInput) GetShowAs() *ShowAs {
+	if a == nil {
 		return nil
 	}
-	return o.ShowAs
+	return a.ShowAs
 }
 
-func (o *ActivityInput) GetDone() *bool {
-	if o == nil {
+func (a *ActivityInput) GetDone() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Done
+	return a.Done
 }
 
-func (o *ActivityInput) GetStartDatetime() *string {
-	if o == nil {
+func (a *ActivityInput) GetStartDatetime() *string {
+	if a == nil {
 		return nil
 	}
-	return o.StartDatetime
+	return a.StartDatetime
 }
 
-func (o *ActivityInput) GetEndDatetime() *string {
-	if o == nil {
+func (a *ActivityInput) GetEndDatetime() *string {
+	if a == nil {
 		return nil
 	}
-	return o.EndDatetime
+	return a.EndDatetime
 }
 
-func (o *ActivityInput) GetActivityDate() *string {
-	if o == nil {
+func (a *ActivityInput) GetActivityDate() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ActivityDate
+	return a.ActivityDate
 }
 
-func (o *ActivityInput) GetEndDate() *string {
-	if o == nil {
+func (a *ActivityInput) GetEndDate() *string {
+	if a == nil {
 		return nil
 	}
-	return o.EndDate
+	return a.EndDate
 }
 
-func (o *ActivityInput) GetRecurrent() *bool {
-	if o == nil {
+func (a *ActivityInput) GetRecurrent() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Recurrent
+	return a.Recurrent
 }
 
-func (o *ActivityInput) GetReminderDatetime() *string {
-	if o == nil {
+func (a *ActivityInput) GetReminderDatetime() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ReminderDatetime
+	return a.ReminderDatetime
 }
 
-func (o *ActivityInput) GetReminderSet() *bool {
-	if o == nil {
+func (a *ActivityInput) GetReminderSet() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.ReminderSet
+	return a.ReminderSet
 }
 
-func (o *ActivityInput) GetVideoConferenceURL() *string {
-	if o == nil {
+func (a *ActivityInput) GetVideoConferenceURL() *string {
+	if a == nil {
 		return nil
 	}
-	return o.VideoConferenceURL
+	return a.VideoConferenceURL
 }
 
-func (o *ActivityInput) GetVideoConferenceID() *string {
-	if o == nil {
+func (a *ActivityInput) GetVideoConferenceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.VideoConferenceID
+	return a.VideoConferenceID
 }
 
-func (o *ActivityInput) GetCustomFields() []CustomField {
-	if o == nil {
+func (a *ActivityInput) GetCustomFields() []CustomField {
+	if a == nil {
 		return nil
 	}
-	return o.CustomFields
+	return a.CustomFields
 }
 
-func (o *ActivityInput) GetAttendees() []ActivityAttendeeInput {
-	if o == nil {
+func (a *ActivityInput) GetAttendees() []ActivityAttendeeInput {
+	if a == nil {
 		return nil
 	}
-	return o.Attendees
+	return a.Attendees
 }
 
-func (o *ActivityInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (a *ActivityInput) GetPassThrough() []PassThroughBody {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }

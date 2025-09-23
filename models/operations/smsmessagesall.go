@@ -14,18 +14,18 @@ type SmsMessagesAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *SmsMessagesAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (s *SmsMessagesAllGlobals) GetConsumerID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return s.ConsumerID
 }
 
-func (o *SmsMessagesAllGlobals) GetAppID() *string {
-	if o == nil {
+func (s *SmsMessagesAllGlobals) GetAppID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.AppID
+	return s.AppID
 }
 
 type SmsMessagesAllRequest struct {
@@ -56,53 +56,53 @@ func (s *SmsMessagesAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *SmsMessagesAllRequest) GetRaw() *bool {
-	if o == nil {
+func (s *SmsMessagesAllRequest) GetRaw() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.Raw
+	return s.Raw
 }
 
-func (o *SmsMessagesAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (s *SmsMessagesAllRequest) GetConsumerID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return s.ConsumerID
 }
 
-func (o *SmsMessagesAllRequest) GetAppID() *string {
-	if o == nil {
+func (s *SmsMessagesAllRequest) GetAppID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.AppID
+	return s.AppID
 }
 
-func (o *SmsMessagesAllRequest) GetServiceID() *string {
-	if o == nil {
+func (s *SmsMessagesAllRequest) GetServiceID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ServiceID
+	return s.ServiceID
 }
 
-func (o *SmsMessagesAllRequest) GetCursor() *string {
-	if o == nil {
+func (s *SmsMessagesAllRequest) GetCursor() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Cursor
+	return s.Cursor
 }
 
-func (o *SmsMessagesAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (s *SmsMessagesAllRequest) GetLimit() *int64 {
+	if s == nil {
 		return nil
 	}
-	return o.Limit
+	return s.Limit
 }
 
-func (o *SmsMessagesAllRequest) GetFields() *string {
-	if o == nil {
+func (s *SmsMessagesAllRequest) GetFields() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Fields
+	return s.Fields
 }
 
 type SmsMessagesAllResponse struct {
@@ -115,23 +115,23 @@ type SmsMessagesAllResponse struct {
 	Next func() (*SmsMessagesAllResponse, error)
 }
 
-func (o *SmsMessagesAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (s *SmsMessagesAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if s == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return s.HTTPMeta
 }
 
-func (o *SmsMessagesAllResponse) GetGetMessagesResponse() *components.GetMessagesResponse {
-	if o == nil {
+func (s *SmsMessagesAllResponse) GetGetMessagesResponse() *components.GetMessagesResponse {
+	if s == nil {
 		return nil
 	}
-	return o.GetMessagesResponse
+	return s.GetMessagesResponse
 }
 
-func (o *SmsMessagesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (s *SmsMessagesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if s == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return s.UnexpectedErrorResponse
 }

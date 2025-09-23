@@ -14,18 +14,18 @@ type CrmCustomObjectsDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmCustomObjectsDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmCustomObjectsDeleteGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmCustomObjectsDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmCustomObjectsDeleteGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmCustomObjectsDeleteRequest struct {
@@ -54,46 +54,46 @@ func (c *CrmCustomObjectsDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmCustomObjectsDeleteRequest) GetID() string {
-	if o == nil {
+func (c *CrmCustomObjectsDeleteRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CrmCustomObjectsDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmCustomObjectsDeleteRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmCustomObjectsDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmCustomObjectsDeleteRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmCustomObjectsDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmCustomObjectsDeleteRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmCustomObjectsDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmCustomObjectsDeleteRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmCustomObjectsDeleteRequest) GetObjectID() string {
-	if o == nil {
+func (c *CrmCustomObjectsDeleteRequest) GetObjectID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ObjectID
+	return c.ObjectID
 }
 
 type CrmCustomObjectsDeleteResponse struct {
@@ -104,23 +104,23 @@ type CrmCustomObjectsDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmCustomObjectsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmCustomObjectsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmCustomObjectsDeleteResponse) GetDeleteCustomObjectResponse() *components.DeleteCustomObjectResponse {
-	if o == nil {
+func (c *CrmCustomObjectsDeleteResponse) GetDeleteCustomObjectResponse() *components.DeleteCustomObjectResponse {
+	if c == nil {
 		return nil
 	}
-	return o.DeleteCustomObjectResponse
+	return c.DeleteCustomObjectResponse
 }
 
-func (o *CrmCustomObjectsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmCustomObjectsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

@@ -23,65 +23,65 @@ type GetNotesResponse struct {
 	Links *Links `json:"links,omitempty"`
 }
 
-func (o *GetNotesResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetNotesResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetNotesResponse) GetStatus() string {
-	if o == nil {
+func (g *GetNotesResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetNotesResponse) GetService() string {
-	if o == nil {
+func (g *GetNotesResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetNotesResponse) GetResource() string {
-	if o == nil {
+func (g *GetNotesResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetNotesResponse) GetOperation() string {
-	if o == nil {
+func (g *GetNotesResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetNotesResponse) GetData() []Note {
-	if o == nil {
+func (g *GetNotesResponse) GetData() []Note {
+	if g == nil {
 		return []Note{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetNotesResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetNotesResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }
 
-func (o *GetNotesResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetNotesResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetNotesResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetNotesResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }

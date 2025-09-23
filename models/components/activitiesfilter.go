@@ -30,37 +30,37 @@ func (a *ActivitiesFilter) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ActivitiesFilter) GetCompanyID() *string {
-	if o == nil {
+func (a *ActivitiesFilter) GetCompanyID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CompanyID
+	return a.CompanyID
 }
 
-func (o *ActivitiesFilter) GetOwnerID() *string {
-	if o == nil {
+func (a *ActivitiesFilter) GetOwnerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.OwnerID
+	return a.OwnerID
 }
 
-func (o *ActivitiesFilter) GetContactID() *string {
-	if o == nil {
+func (a *ActivitiesFilter) GetContactID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ContactID
+	return a.ContactID
 }
 
-func (o *ActivitiesFilter) GetUpdatedSince() *time.Time {
-	if o == nil {
+func (a *ActivitiesFilter) GetUpdatedSince() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.UpdatedSince
+	return a.UpdatedSince
 }
 
-func (o *ActivitiesFilter) GetType() *string {
-	if o == nil {
+func (a *ActivitiesFilter) GetType() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Type
+	return a.Type
 }

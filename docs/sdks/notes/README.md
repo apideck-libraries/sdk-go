@@ -39,11 +39,11 @@ func main() {
     )
 
     res, err := s.Crm.Notes.List(ctx, operations.CrmNotesAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -118,17 +118,17 @@ func main() {
     )
 
     res, err := s.Crm.Notes.Create(ctx, operations.CrmNotesAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Note: components.NoteInput{
-            Title: sdkgo.String("Meeting Notes"),
-            Content: sdkgo.String("Office hours are 9AM-6PM"),
-            OwnerID: sdkgo.String("12345"),
-            ContactID: sdkgo.String("12345"),
-            CompanyID: sdkgo.String("12345"),
-            OpportunityID: sdkgo.String("12345"),
-            ActivityID: sdkgo.String("12345"),
-            LeadID: sdkgo.String("12345"),
-            Active: sdkgo.Bool(true),
+            Title: sdkgo.Pointer("Meeting Notes"),
+            Content: sdkgo.Pointer("Office hours are 9AM-6PM"),
+            OwnerID: sdkgo.Pointer("12345"),
+            ContactID: sdkgo.Pointer("12345"),
+            CompanyID: sdkgo.Pointer("12345"),
+            OpportunityID: sdkgo.Pointer("12345"),
+            ActivityID: sdkgo.Pointer("12345"),
+            LeadID: sdkgo.Pointer("12345"),
+            Active: sdkgo.Pointer(true),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -257,8 +257,8 @@ func main() {
 
     res, err := s.Crm.Notes.Get(ctx, operations.CrmNotesOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -322,17 +322,17 @@ func main() {
 
     res, err := s.Crm.Notes.Update(ctx, operations.CrmNotesUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Note: components.NoteInput{
-            Title: sdkgo.String("Meeting Notes"),
-            Content: sdkgo.String("Office hours are 9AM-6PM"),
-            OwnerID: sdkgo.String("12345"),
-            ContactID: sdkgo.String("12345"),
-            CompanyID: sdkgo.String("12345"),
-            OpportunityID: sdkgo.String("12345"),
-            ActivityID: sdkgo.String("12345"),
-            LeadID: sdkgo.String("12345"),
-            Active: sdkgo.Bool(true),
+            Title: sdkgo.Pointer("Meeting Notes"),
+            Content: sdkgo.Pointer("Office hours are 9AM-6PM"),
+            OwnerID: sdkgo.Pointer("12345"),
+            ContactID: sdkgo.Pointer("12345"),
+            CompanyID: sdkgo.Pointer("12345"),
+            OpportunityID: sdkgo.Pointer("12345"),
+            ActivityID: sdkgo.Pointer("12345"),
+            LeadID: sdkgo.Pointer("12345"),
+            Active: sdkgo.Pointer(true),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -461,7 +461,7 @@ func main() {
 
     res, err := s.Crm.Notes.Delete(ctx, operations.CrmNotesDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

@@ -14,18 +14,18 @@ type AtsApplicationsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AtsApplicationsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AtsApplicationsAllGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AtsApplicationsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AtsApplicationsAllGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AtsApplicationsAllRequest struct {
@@ -56,53 +56,53 @@ func (a *AtsApplicationsAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AtsApplicationsAllRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AtsApplicationsAllRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AtsApplicationsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AtsApplicationsAllRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AtsApplicationsAllRequest) GetAppID() *string {
-	if o == nil {
+func (a *AtsApplicationsAllRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AtsApplicationsAllRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AtsApplicationsAllRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AtsApplicationsAllRequest) GetCursor() *string {
-	if o == nil {
+func (a *AtsApplicationsAllRequest) GetCursor() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Cursor
+	return a.Cursor
 }
 
-func (o *AtsApplicationsAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (a *AtsApplicationsAllRequest) GetPassThrough() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
-func (o *AtsApplicationsAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (a *AtsApplicationsAllRequest) GetLimit() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.Limit
+	return a.Limit
 }
 
 type AtsApplicationsAllResponse struct {
@@ -115,23 +115,23 @@ type AtsApplicationsAllResponse struct {
 	Next func() (*AtsApplicationsAllResponse, error)
 }
 
-func (o *AtsApplicationsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AtsApplicationsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AtsApplicationsAllResponse) GetGetApplicationsResponse() *components.GetApplicationsResponse {
-	if o == nil {
+func (a *AtsApplicationsAllResponse) GetGetApplicationsResponse() *components.GetApplicationsResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetApplicationsResponse
+	return a.GetApplicationsResponse
 }
 
-func (o *AtsApplicationsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AtsApplicationsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

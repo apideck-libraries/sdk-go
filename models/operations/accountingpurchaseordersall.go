@@ -14,18 +14,18 @@ type AccountingPurchaseOrdersAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingPurchaseOrdersAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingPurchaseOrdersAllGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingPurchaseOrdersAllGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingPurchaseOrdersAllGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingPurchaseOrdersAllRequest struct {
@@ -60,67 +60,67 @@ func (a *AccountingPurchaseOrdersAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingPurchaseOrdersAllRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingPurchaseOrdersAllRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingPurchaseOrdersAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingPurchaseOrdersAllRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingPurchaseOrdersAllRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingPurchaseOrdersAllRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingPurchaseOrdersAllRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingPurchaseOrdersAllRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingPurchaseOrdersAllRequest) GetCursor() *string {
-	if o == nil {
+func (a *AccountingPurchaseOrdersAllRequest) GetCursor() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Cursor
+	return a.Cursor
 }
 
-func (o *AccountingPurchaseOrdersAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (a *AccountingPurchaseOrdersAllRequest) GetPassThrough() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
-func (o *AccountingPurchaseOrdersAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (a *AccountingPurchaseOrdersAllRequest) GetLimit() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.Limit
+	return a.Limit
 }
 
-func (o *AccountingPurchaseOrdersAllRequest) GetFilter() *components.PurchaseOrdersFilter {
-	if o == nil {
+func (a *AccountingPurchaseOrdersAllRequest) GetFilter() *components.PurchaseOrdersFilter {
+	if a == nil {
 		return nil
 	}
-	return o.Filter
+	return a.Filter
 }
 
-func (o *AccountingPurchaseOrdersAllRequest) GetSort() *components.PurchaseOrdersSort {
-	if o == nil {
+func (a *AccountingPurchaseOrdersAllRequest) GetSort() *components.PurchaseOrdersSort {
+	if a == nil {
 		return nil
 	}
-	return o.Sort
+	return a.Sort
 }
 
 type AccountingPurchaseOrdersAllResponse struct {
@@ -133,23 +133,23 @@ type AccountingPurchaseOrdersAllResponse struct {
 	Next func() (*AccountingPurchaseOrdersAllResponse, error)
 }
 
-func (o *AccountingPurchaseOrdersAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingPurchaseOrdersAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingPurchaseOrdersAllResponse) GetGetPurchaseOrdersResponse() *components.GetPurchaseOrdersResponse {
-	if o == nil {
+func (a *AccountingPurchaseOrdersAllResponse) GetGetPurchaseOrdersResponse() *components.GetPurchaseOrdersResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetPurchaseOrdersResponse
+	return a.GetPurchaseOrdersResponse
 }
 
-func (o *AccountingPurchaseOrdersAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingPurchaseOrdersAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

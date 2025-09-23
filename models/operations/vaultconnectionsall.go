@@ -13,18 +13,18 @@ type VaultConnectionsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultConnectionsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionsAllGlobals) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionsAllGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultConnectionsAllRequest struct {
@@ -38,32 +38,32 @@ type VaultConnectionsAllRequest struct {
 	Configured *bool `queryParam:"style=form,explode=true,name=configured"`
 }
 
-func (o *VaultConnectionsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionsAllRequest) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionsAllRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionsAllRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultConnectionsAllRequest) GetAPI() *string {
-	if o == nil {
+func (v *VaultConnectionsAllRequest) GetAPI() *string {
+	if v == nil {
 		return nil
 	}
-	return o.API
+	return v.API
 }
 
-func (o *VaultConnectionsAllRequest) GetConfigured() *bool {
-	if o == nil {
+func (v *VaultConnectionsAllRequest) GetConfigured() *bool {
+	if v == nil {
 		return nil
 	}
-	return o.Configured
+	return v.Configured
 }
 
 type VaultConnectionsAllResponse struct {
@@ -74,23 +74,23 @@ type VaultConnectionsAllResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultConnectionsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultConnectionsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultConnectionsAllResponse) GetGetConnectionsResponse() *components.GetConnectionsResponse {
-	if o == nil {
+func (v *VaultConnectionsAllResponse) GetGetConnectionsResponse() *components.GetConnectionsResponse {
+	if v == nil {
 		return nil
 	}
-	return o.GetConnectionsResponse
+	return v.GetConnectionsResponse
 }
 
-func (o *VaultConnectionsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultConnectionsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

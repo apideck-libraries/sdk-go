@@ -7,9 +7,9 @@ type CreateCallbackState struct {
 	RedirectURI *string `json:"redirect_uri,omitempty"`
 }
 
-func (o *CreateCallbackState) GetRedirectURI() *string {
-	if o == nil {
+func (c *CreateCallbackState) GetRedirectURI() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RedirectURI
+	return c.RedirectURI
 }

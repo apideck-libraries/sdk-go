@@ -14,18 +14,18 @@ type AccountingDepartmentsDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingDepartmentsDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingDepartmentsDeleteGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingDepartmentsDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingDepartmentsDeleteGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingDepartmentsDeleteRequest struct {
@@ -52,39 +52,39 @@ func (a *AccountingDepartmentsDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingDepartmentsDeleteRequest) GetID() string {
-	if o == nil {
+func (a *AccountingDepartmentsDeleteRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingDepartmentsDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingDepartmentsDeleteRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingDepartmentsDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingDepartmentsDeleteRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingDepartmentsDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingDepartmentsDeleteRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingDepartmentsDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingDepartmentsDeleteRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
 type AccountingDepartmentsDeleteResponse struct {
@@ -95,23 +95,23 @@ type AccountingDepartmentsDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingDepartmentsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingDepartmentsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingDepartmentsDeleteResponse) GetDeleteAccountingDepartmentResponse() *components.DeleteAccountingDepartmentResponse {
-	if o == nil {
+func (a *AccountingDepartmentsDeleteResponse) GetDeleteAccountingDepartmentResponse() *components.DeleteAccountingDepartmentResponse {
+	if a == nil {
 		return nil
 	}
-	return o.DeleteAccountingDepartmentResponse
+	return a.DeleteAccountingDepartmentResponse
 }
 
-func (o *AccountingDepartmentsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingDepartmentsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

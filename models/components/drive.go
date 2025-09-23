@@ -39,65 +39,65 @@ func (d *Drive) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Drive) GetID() string {
-	if o == nil {
+func (d *Drive) GetID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ID
+	return d.ID
 }
 
-func (o *Drive) GetName() string {
-	if o == nil {
+func (d *Drive) GetName() string {
+	if d == nil {
 		return ""
 	}
-	return o.Name
+	return d.Name
 }
 
-func (o *Drive) GetDescription() *string {
-	if o == nil {
+func (d *Drive) GetDescription() *string {
+	if d == nil {
 		return nil
 	}
-	return o.Description
+	return d.Description
 }
 
-func (o *Drive) GetCustomMappings() map[string]any {
-	if o == nil {
+func (d *Drive) GetCustomMappings() map[string]any {
+	if d == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return d.CustomMappings
 }
 
-func (o *Drive) GetUpdatedBy() *string {
-	if o == nil {
+func (d *Drive) GetUpdatedBy() *string {
+	if d == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return d.UpdatedBy
 }
 
-func (o *Drive) GetCreatedBy() *string {
-	if o == nil {
+func (d *Drive) GetCreatedBy() *string {
+	if d == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return d.CreatedBy
 }
 
-func (o *Drive) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (d *Drive) GetUpdatedAt() *time.Time {
+	if d == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return d.UpdatedAt
 }
 
-func (o *Drive) GetCreatedAt() *time.Time {
-	if o == nil {
+func (d *Drive) GetCreatedAt() *time.Time {
+	if d == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return d.CreatedAt
 }
 
-func (o *Drive) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (d *Drive) GetPassThrough() []PassThroughBody {
+	if d == nil {
 		return nil
 	}
-	return o.PassThrough
+	return d.PassThrough
 }

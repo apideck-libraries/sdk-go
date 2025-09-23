@@ -9,16 +9,16 @@ type Deduction struct {
 	Amount *float64 `json:"amount,omitempty"`
 }
 
-func (o *Deduction) GetName() *string {
-	if o == nil {
+func (d *Deduction) GetName() *string {
+	if d == nil {
 		return nil
 	}
-	return o.Name
+	return d.Name
 }
 
-func (o *Deduction) GetAmount() *float64 {
-	if o == nil {
+func (d *Deduction) GetAmount() *float64 {
+	if d == nil {
 		return nil
 	}
-	return o.Amount
+	return d.Amount
 }

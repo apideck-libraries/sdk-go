@@ -7,18 +7,18 @@ type CustomObjectFields struct {
 	Value *string `json:"value,omitempty"`
 }
 
-func (o *CustomObjectFields) GetName() *string {
-	if o == nil {
+func (c *CustomObjectFields) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CustomObjectFields) GetValue() *string {
-	if o == nil {
+func (c *CustomObjectFields) GetValue() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Value
+	return c.Value
 }
 
 type CustomObject struct {
@@ -41,67 +41,67 @@ type CustomObject struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *CustomObject) GetID() *string {
-	if o == nil {
+func (c *CustomObject) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CustomObject) GetOwnerID() *string {
-	if o == nil {
+func (c *CustomObject) GetOwnerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.OwnerID
+	return c.OwnerID
 }
 
-func (o *CustomObject) GetName() *string {
-	if o == nil {
+func (c *CustomObject) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CustomObject) GetFields() []CustomObjectFields {
-	if o == nil {
+func (c *CustomObject) GetFields() []CustomObjectFields {
+	if c == nil {
 		return nil
 	}
-	return o.Fields
+	return c.Fields
 }
 
-func (o *CustomObject) GetUpdatedBy() *string {
-	if o == nil {
+func (c *CustomObject) GetUpdatedBy() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return c.UpdatedBy
 }
 
-func (o *CustomObject) GetCreatedBy() *string {
-	if o == nil {
+func (c *CustomObject) GetCreatedBy() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return c.CreatedBy
 }
 
-func (o *CustomObject) GetUpdatedAt() *string {
-	if o == nil {
+func (c *CustomObject) GetUpdatedAt() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return c.UpdatedAt
 }
 
-func (o *CustomObject) GetCreatedAt() *string {
-	if o == nil {
+func (c *CustomObject) GetCreatedAt() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }
 
-func (o *CustomObject) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (c *CustomObject) GetPassThrough() []PassThroughBody {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }
 
 type CustomObjectInput struct {
@@ -112,23 +112,23 @@ type CustomObjectInput struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *CustomObjectInput) GetName() *string {
-	if o == nil {
+func (c *CustomObjectInput) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CustomObjectInput) GetFields() []CustomObjectFields {
-	if o == nil {
+func (c *CustomObjectInput) GetFields() []CustomObjectFields {
+	if c == nil {
 		return nil
 	}
-	return o.Fields
+	return c.Fields
 }
 
-func (o *CustomObjectInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (c *CustomObjectInput) GetPassThrough() []PassThroughBody {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }

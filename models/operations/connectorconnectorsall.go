@@ -12,11 +12,11 @@ type ConnectorConnectorsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *ConnectorConnectorsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (c *ConnectorConnectorsAllGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type ConnectorConnectorsAllRequest struct {
@@ -41,32 +41,32 @@ func (c *ConnectorConnectorsAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ConnectorConnectorsAllRequest) GetAppID() *string {
-	if o == nil {
+func (c *ConnectorConnectorsAllRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *ConnectorConnectorsAllRequest) GetCursor() *string {
-	if o == nil {
+func (c *ConnectorConnectorsAllRequest) GetCursor() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Cursor
+	return c.Cursor
 }
 
-func (o *ConnectorConnectorsAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (c *ConnectorConnectorsAllRequest) GetLimit() *int64 {
+	if c == nil {
 		return nil
 	}
-	return o.Limit
+	return c.Limit
 }
 
-func (o *ConnectorConnectorsAllRequest) GetFilter() *components.ConnectorsFilter {
-	if o == nil {
+func (c *ConnectorConnectorsAllRequest) GetFilter() *components.ConnectorsFilter {
+	if c == nil {
 		return nil
 	}
-	return o.Filter
+	return c.Filter
 }
 
 type ConnectorConnectorsAllResponse struct {
@@ -79,23 +79,23 @@ type ConnectorConnectorsAllResponse struct {
 	Next func() (*ConnectorConnectorsAllResponse, error)
 }
 
-func (o *ConnectorConnectorsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *ConnectorConnectorsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *ConnectorConnectorsAllResponse) GetGetConnectorsResponse() *components.GetConnectorsResponse {
-	if o == nil {
+func (c *ConnectorConnectorsAllResponse) GetGetConnectorsResponse() *components.GetConnectorsResponse {
+	if c == nil {
 		return nil
 	}
-	return o.GetConnectorsResponse
+	return c.GetConnectorsResponse
 }
 
-func (o *ConnectorConnectorsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *ConnectorConnectorsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

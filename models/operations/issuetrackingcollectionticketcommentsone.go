@@ -14,18 +14,18 @@ type IssueTrackingCollectionTicketCommentsOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *IssueTrackingCollectionTicketCommentsOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsOneGlobals) GetConsumerID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return i.ConsumerID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsOneGlobals) GetAppID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsOneGlobals) GetAppID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.AppID
+	return i.AppID
 }
 
 type IssueTrackingCollectionTicketCommentsOneRequest struct {
@@ -62,74 +62,74 @@ func (i *IssueTrackingCollectionTicketCommentsOneRequest) UnmarshalJSON(data []b
 	return nil
 }
 
-func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetID() string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsOneRequest) GetID() string {
+	if i == nil {
 		return ""
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetRaw() *bool {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsOneRequest) GetRaw() *bool {
+	if i == nil {
 		return nil
 	}
-	return o.Raw
+	return i.Raw
 }
 
-func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsOneRequest) GetConsumerID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return i.ConsumerID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetAppID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsOneRequest) GetAppID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.AppID
+	return i.AppID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetServiceID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsOneRequest) GetServiceID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ServiceID
+	return i.ServiceID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetCursor() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsOneRequest) GetCursor() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Cursor
+	return i.Cursor
 }
 
-func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetLimit() *int64 {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsOneRequest) GetLimit() *int64 {
+	if i == nil {
 		return nil
 	}
-	return o.Limit
+	return i.Limit
 }
 
-func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetCollectionID() string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsOneRequest) GetCollectionID() string {
+	if i == nil {
 		return ""
 	}
-	return o.CollectionID
+	return i.CollectionID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetTicketID() string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsOneRequest) GetTicketID() string {
+	if i == nil {
 		return ""
 	}
-	return o.TicketID
+	return i.TicketID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsOneRequest) GetFields() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsOneRequest) GetFields() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Fields
+	return i.Fields
 }
 
 type IssueTrackingCollectionTicketCommentsOneResponse struct {
@@ -142,23 +142,23 @@ type IssueTrackingCollectionTicketCommentsOneResponse struct {
 	Next func() (*IssueTrackingCollectionTicketCommentsOneResponse, error)
 }
 
-func (o *IssueTrackingCollectionTicketCommentsOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if i == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return i.HTTPMeta
 }
 
-func (o *IssueTrackingCollectionTicketCommentsOneResponse) GetGetCommentResponse() *components.GetCommentResponse {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsOneResponse) GetGetCommentResponse() *components.GetCommentResponse {
+	if i == nil {
 		return nil
 	}
-	return o.GetCommentResponse
+	return i.GetCommentResponse
 }
 
-func (o *IssueTrackingCollectionTicketCommentsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if i == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return i.UnexpectedErrorResponse
 }

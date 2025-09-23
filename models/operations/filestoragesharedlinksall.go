@@ -14,18 +14,18 @@ type FileStorageSharedLinksAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *FileStorageSharedLinksAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageSharedLinksAllGlobals) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageSharedLinksAllGlobals) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageSharedLinksAllGlobals) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
 type FileStorageSharedLinksAllRequest struct {
@@ -58,60 +58,60 @@ func (f *FileStorageSharedLinksAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FileStorageSharedLinksAllRequest) GetRaw() *bool {
-	if o == nil {
+func (f *FileStorageSharedLinksAllRequest) GetRaw() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Raw
+	return f.Raw
 }
 
-func (o *FileStorageSharedLinksAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageSharedLinksAllRequest) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageSharedLinksAllRequest) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageSharedLinksAllRequest) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
-func (o *FileStorageSharedLinksAllRequest) GetServiceID() *string {
-	if o == nil {
+func (f *FileStorageSharedLinksAllRequest) GetServiceID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ServiceID
+	return f.ServiceID
 }
 
-func (o *FileStorageSharedLinksAllRequest) GetCursor() *string {
-	if o == nil {
+func (f *FileStorageSharedLinksAllRequest) GetCursor() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Cursor
+	return f.Cursor
 }
 
-func (o *FileStorageSharedLinksAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (f *FileStorageSharedLinksAllRequest) GetLimit() *int64 {
+	if f == nil {
 		return nil
 	}
-	return o.Limit
+	return f.Limit
 }
 
-func (o *FileStorageSharedLinksAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (f *FileStorageSharedLinksAllRequest) GetPassThrough() map[string]any {
+	if f == nil {
 		return nil
 	}
-	return o.PassThrough
+	return f.PassThrough
 }
 
-func (o *FileStorageSharedLinksAllRequest) GetFields() *string {
-	if o == nil {
+func (f *FileStorageSharedLinksAllRequest) GetFields() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Fields
+	return f.Fields
 }
 
 type FileStorageSharedLinksAllResponse struct {
@@ -124,23 +124,23 @@ type FileStorageSharedLinksAllResponse struct {
 	Next func() (*FileStorageSharedLinksAllResponse, error)
 }
 
-func (o *FileStorageSharedLinksAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (f *FileStorageSharedLinksAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if f == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return f.HTTPMeta
 }
 
-func (o *FileStorageSharedLinksAllResponse) GetGetSharedLinksResponse() *components.GetSharedLinksResponse {
-	if o == nil {
+func (f *FileStorageSharedLinksAllResponse) GetGetSharedLinksResponse() *components.GetSharedLinksResponse {
+	if f == nil {
 		return nil
 	}
-	return o.GetSharedLinksResponse
+	return f.GetSharedLinksResponse
 }
 
-func (o *FileStorageSharedLinksAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (f *FileStorageSharedLinksAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return f.UnexpectedErrorResponse
 }

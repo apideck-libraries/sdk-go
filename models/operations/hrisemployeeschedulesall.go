@@ -14,18 +14,18 @@ type HrisEmployeeSchedulesAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *HrisEmployeeSchedulesAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisEmployeeSchedulesAllGlobals) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisEmployeeSchedulesAllGlobals) GetAppID() *string {
-	if o == nil {
+func (h *HrisEmployeeSchedulesAllGlobals) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
 type HrisEmployeeSchedulesAllRequest struct {
@@ -56,53 +56,53 @@ func (h *HrisEmployeeSchedulesAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *HrisEmployeeSchedulesAllRequest) GetEmployeeID() string {
-	if o == nil {
+func (h *HrisEmployeeSchedulesAllRequest) GetEmployeeID() string {
+	if h == nil {
 		return ""
 	}
-	return o.EmployeeID
+	return h.EmployeeID
 }
 
-func (o *HrisEmployeeSchedulesAllRequest) GetRaw() *bool {
-	if o == nil {
+func (h *HrisEmployeeSchedulesAllRequest) GetRaw() *bool {
+	if h == nil {
 		return nil
 	}
-	return o.Raw
+	return h.Raw
 }
 
-func (o *HrisEmployeeSchedulesAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisEmployeeSchedulesAllRequest) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisEmployeeSchedulesAllRequest) GetAppID() *string {
-	if o == nil {
+func (h *HrisEmployeeSchedulesAllRequest) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
-func (o *HrisEmployeeSchedulesAllRequest) GetServiceID() *string {
-	if o == nil {
+func (h *HrisEmployeeSchedulesAllRequest) GetServiceID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ServiceID
+	return h.ServiceID
 }
 
-func (o *HrisEmployeeSchedulesAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (h *HrisEmployeeSchedulesAllRequest) GetPassThrough() map[string]any {
+	if h == nil {
 		return nil
 	}
-	return o.PassThrough
+	return h.PassThrough
 }
 
-func (o *HrisEmployeeSchedulesAllRequest) GetFields() *string {
-	if o == nil {
+func (h *HrisEmployeeSchedulesAllRequest) GetFields() *string {
+	if h == nil {
 		return nil
 	}
-	return o.Fields
+	return h.Fields
 }
 
 type HrisEmployeeSchedulesAllResponse struct {
@@ -113,23 +113,23 @@ type HrisEmployeeSchedulesAllResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *HrisEmployeeSchedulesAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (h *HrisEmployeeSchedulesAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if h == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return h.HTTPMeta
 }
 
-func (o *HrisEmployeeSchedulesAllResponse) GetGetEmployeeSchedulesResponse() *components.GetEmployeeSchedulesResponse {
-	if o == nil {
+func (h *HrisEmployeeSchedulesAllResponse) GetGetEmployeeSchedulesResponse() *components.GetEmployeeSchedulesResponse {
+	if h == nil {
 		return nil
 	}
-	return o.GetEmployeeSchedulesResponse
+	return h.GetEmployeeSchedulesResponse
 }
 
-func (o *HrisEmployeeSchedulesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (h *HrisEmployeeSchedulesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if h == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return h.UnexpectedErrorResponse
 }

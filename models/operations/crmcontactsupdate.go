@@ -14,18 +14,18 @@ type CrmContactsUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmContactsUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmContactsUpdateGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmContactsUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmContactsUpdateGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmContactsUpdateRequest struct {
@@ -53,46 +53,46 @@ func (c *CrmContactsUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmContactsUpdateRequest) GetID() string {
-	if o == nil {
+func (c *CrmContactsUpdateRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CrmContactsUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmContactsUpdateRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmContactsUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmContactsUpdateRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmContactsUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmContactsUpdateRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmContactsUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmContactsUpdateRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmContactsUpdateRequest) GetContact() components.ContactInput {
-	if o == nil {
+func (c *CrmContactsUpdateRequest) GetContact() components.ContactInput {
+	if c == nil {
 		return components.ContactInput{}
 	}
-	return o.Contact
+	return c.Contact
 }
 
 type CrmContactsUpdateResponse struct {
@@ -103,23 +103,23 @@ type CrmContactsUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmContactsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmContactsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmContactsUpdateResponse) GetUpdateContactResponse() *components.UpdateContactResponse {
-	if o == nil {
+func (c *CrmContactsUpdateResponse) GetUpdateContactResponse() *components.UpdateContactResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UpdateContactResponse
+	return c.UpdateContactResponse
 }
 
-func (o *CrmContactsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmContactsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

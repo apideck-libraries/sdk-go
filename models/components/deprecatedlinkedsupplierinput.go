@@ -11,16 +11,16 @@ type DeprecatedLinkedSupplierInput struct {
 	Address     *Address `json:"address,omitempty"`
 }
 
-func (o *DeprecatedLinkedSupplierInput) GetDisplayName() *string {
-	if o == nil {
+func (d *DeprecatedLinkedSupplierInput) GetDisplayName() *string {
+	if d == nil {
 		return nil
 	}
-	return o.DisplayName
+	return d.DisplayName
 }
 
-func (o *DeprecatedLinkedSupplierInput) GetAddress() *Address {
-	if o == nil {
+func (d *DeprecatedLinkedSupplierInput) GetAddress() *Address {
+	if d == nil {
 		return nil
 	}
-	return o.Address
+	return d.Address
 }

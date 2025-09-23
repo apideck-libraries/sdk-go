@@ -37,18 +37,18 @@ type Service struct {
 	Name string `json:"name"`
 }
 
-func (o *Service) GetID() string {
-	if o == nil {
+func (s *Service) GetID() string {
+	if s == nil {
 		return ""
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *Service) GetName() string {
-	if o == nil {
+func (s *Service) GetName() string {
+	if s == nil {
 		return ""
 	}
-	return o.Name
+	return s.Name
 }
 
 // UnifiedAPI - Which Unified Api request was made to.
@@ -153,149 +153,149 @@ type Log struct {
 	UnifiedAPI UnifiedAPI `json:"unified_api"`
 }
 
-func (o *Log) GetAPIStyle() string {
-	if o == nil {
+func (l *Log) GetAPIStyle() string {
+	if l == nil {
 		return ""
 	}
-	return o.APIStyle
+	return l.APIStyle
 }
 
-func (o *Log) GetBaseURL() string {
-	if o == nil {
+func (l *Log) GetBaseURL() string {
+	if l == nil {
 		return ""
 	}
-	return o.BaseURL
+	return l.BaseURL
 }
 
-func (o *Log) GetChildRequest() bool {
-	if o == nil {
+func (l *Log) GetChildRequest() bool {
+	if l == nil {
 		return false
 	}
-	return o.ChildRequest
+	return l.ChildRequest
 }
 
-func (o *Log) GetConsumerID() string {
-	if o == nil {
+func (l *Log) GetConsumerID() string {
+	if l == nil {
 		return ""
 	}
-	return o.ConsumerID
+	return l.ConsumerID
 }
 
-func (o *Log) GetDuration() float64 {
-	if o == nil {
+func (l *Log) GetDuration() float64 {
+	if l == nil {
 		return 0.0
 	}
-	return o.Duration
+	return l.Duration
 }
 
-func (o *Log) GetErrorMessage() *string {
-	if o == nil {
+func (l *Log) GetErrorMessage() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ErrorMessage
+	return l.ErrorMessage
 }
 
-func (o *Log) GetExecution() int64 {
-	if o == nil {
+func (l *Log) GetExecution() int64 {
+	if l == nil {
 		return 0
 	}
-	return o.Execution
+	return l.Execution
 }
 
-func (o *Log) GetHasChildren() bool {
-	if o == nil {
+func (l *Log) GetHasChildren() bool {
+	if l == nil {
 		return false
 	}
-	return o.HasChildren
+	return l.HasChildren
 }
 
-func (o *Log) GetHTTPMethod() string {
-	if o == nil {
+func (l *Log) GetHTTPMethod() string {
+	if l == nil {
 		return ""
 	}
-	return o.HTTPMethod
+	return l.HTTPMethod
 }
 
-func (o *Log) GetID() string {
-	if o == nil {
+func (l *Log) GetID() string {
+	if l == nil {
 		return ""
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *Log) GetLatency() float64 {
-	if o == nil {
+func (l *Log) GetLatency() float64 {
+	if l == nil {
 		return 0.0
 	}
-	return o.Latency
+	return l.Latency
 }
 
-func (o *Log) GetOperation() Operation {
-	if o == nil {
+func (l *Log) GetOperation() Operation {
+	if l == nil {
 		return Operation{}
 	}
-	return o.Operation
+	return l.Operation
 }
 
-func (o *Log) GetParentID() *string {
-	if o == nil {
+func (l *Log) GetParentID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ParentID
+	return l.ParentID
 }
 
-func (o *Log) GetPath() string {
-	if o == nil {
+func (l *Log) GetPath() string {
+	if l == nil {
 		return ""
 	}
-	return o.Path
+	return l.Path
 }
 
-func (o *Log) GetSandbox() bool {
-	if o == nil {
+func (l *Log) GetSandbox() bool {
+	if l == nil {
 		return false
 	}
-	return o.Sandbox
+	return l.Sandbox
 }
 
-func (o *Log) GetService() Service {
-	if o == nil {
+func (l *Log) GetService() Service {
+	if l == nil {
 		return Service{}
 	}
-	return o.Service
+	return l.Service
 }
 
-func (o *Log) GetSourceIP() *string {
-	if o == nil {
+func (l *Log) GetSourceIP() *string {
+	if l == nil {
 		return nil
 	}
-	return o.SourceIP
+	return l.SourceIP
 }
 
-func (o *Log) GetStatusCode() int64 {
-	if o == nil {
+func (l *Log) GetStatusCode() int64 {
+	if l == nil {
 		return 0
 	}
-	return o.StatusCode
+	return l.StatusCode
 }
 
-func (o *Log) GetSuccess() bool {
-	if o == nil {
+func (l *Log) GetSuccess() bool {
+	if l == nil {
 		return false
 	}
-	return o.Success
+	return l.Success
 }
 
-func (o *Log) GetTimestamp() string {
-	if o == nil {
+func (l *Log) GetTimestamp() string {
+	if l == nil {
 		return ""
 	}
-	return o.Timestamp
+	return l.Timestamp
 }
 
-func (o *Log) GetUnifiedAPI() UnifiedAPI {
-	if o == nil {
+func (l *Log) GetUnifiedAPI() UnifiedAPI {
+	if l == nil {
 		return UnifiedAPI("")
 	}
-	return o.UnifiedAPI
+	return l.UnifiedAPI
 }

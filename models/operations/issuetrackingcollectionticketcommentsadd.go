@@ -14,18 +14,18 @@ type IssueTrackingCollectionTicketCommentsAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *IssueTrackingCollectionTicketCommentsAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsAddGlobals) GetConsumerID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return i.ConsumerID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsAddGlobals) GetAppID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsAddGlobals) GetAppID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.AppID
+	return i.AppID
 }
 
 type IssueTrackingCollectionTicketCommentsAddRequest struct {
@@ -55,53 +55,53 @@ func (i *IssueTrackingCollectionTicketCommentsAddRequest) UnmarshalJSON(data []b
 	return nil
 }
 
-func (o *IssueTrackingCollectionTicketCommentsAddRequest) GetRaw() *bool {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsAddRequest) GetRaw() *bool {
+	if i == nil {
 		return nil
 	}
-	return o.Raw
+	return i.Raw
 }
 
-func (o *IssueTrackingCollectionTicketCommentsAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsAddRequest) GetConsumerID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return i.ConsumerID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsAddRequest) GetAppID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsAddRequest) GetAppID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.AppID
+	return i.AppID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsAddRequest) GetServiceID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsAddRequest) GetServiceID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ServiceID
+	return i.ServiceID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsAddRequest) GetCollectionID() string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsAddRequest) GetCollectionID() string {
+	if i == nil {
 		return ""
 	}
-	return o.CollectionID
+	return i.CollectionID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsAddRequest) GetTicketID() string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsAddRequest) GetTicketID() string {
+	if i == nil {
 		return ""
 	}
-	return o.TicketID
+	return i.TicketID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsAddRequest) GetCollectionTicketComment() components.CollectionTicketCommentInput {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsAddRequest) GetCollectionTicketComment() components.CollectionTicketCommentInput {
+	if i == nil {
 		return components.CollectionTicketCommentInput{}
 	}
-	return o.CollectionTicketComment
+	return i.CollectionTicketComment
 }
 
 type IssueTrackingCollectionTicketCommentsAddResponse struct {
@@ -112,23 +112,23 @@ type IssueTrackingCollectionTicketCommentsAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *IssueTrackingCollectionTicketCommentsAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if i == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return i.HTTPMeta
 }
 
-func (o *IssueTrackingCollectionTicketCommentsAddResponse) GetCreateCommentResponse() *components.CreateCommentResponse {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsAddResponse) GetCreateCommentResponse() *components.CreateCommentResponse {
+	if i == nil {
 		return nil
 	}
-	return o.CreateCommentResponse
+	return i.CreateCommentResponse
 }
 
-func (o *IssueTrackingCollectionTicketCommentsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if i == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return i.UnexpectedErrorResponse
 }

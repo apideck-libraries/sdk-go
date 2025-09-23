@@ -14,18 +14,18 @@ type FileStorageUploadSessionsDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *FileStorageUploadSessionsDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageUploadSessionsDeleteGlobals) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageUploadSessionsDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageUploadSessionsDeleteGlobals) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
 type FileStorageUploadSessionsDeleteRequest struct {
@@ -52,39 +52,39 @@ func (f *FileStorageUploadSessionsDeleteRequest) UnmarshalJSON(data []byte) erro
 	return nil
 }
 
-func (o *FileStorageUploadSessionsDeleteRequest) GetID() string {
-	if o == nil {
+func (f *FileStorageUploadSessionsDeleteRequest) GetID() string {
+	if f == nil {
 		return ""
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *FileStorageUploadSessionsDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageUploadSessionsDeleteRequest) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageUploadSessionsDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageUploadSessionsDeleteRequest) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
-func (o *FileStorageUploadSessionsDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (f *FileStorageUploadSessionsDeleteRequest) GetServiceID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ServiceID
+	return f.ServiceID
 }
 
-func (o *FileStorageUploadSessionsDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (f *FileStorageUploadSessionsDeleteRequest) GetRaw() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Raw
+	return f.Raw
 }
 
 type FileStorageUploadSessionsDeleteResponse struct {
@@ -95,23 +95,23 @@ type FileStorageUploadSessionsDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *FileStorageUploadSessionsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (f *FileStorageUploadSessionsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if f == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return f.HTTPMeta
 }
 
-func (o *FileStorageUploadSessionsDeleteResponse) GetDeleteUploadSessionResponse() *components.DeleteUploadSessionResponse {
-	if o == nil {
+func (f *FileStorageUploadSessionsDeleteResponse) GetDeleteUploadSessionResponse() *components.DeleteUploadSessionResponse {
+	if f == nil {
 		return nil
 	}
-	return o.DeleteUploadSessionResponse
+	return f.DeleteUploadSessionResponse
 }
 
-func (o *FileStorageUploadSessionsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (f *FileStorageUploadSessionsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return f.UnexpectedErrorResponse
 }

@@ -46,93 +46,93 @@ func (f *Folder) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Folder) GetID() *string {
-	if o == nil {
+func (f *Folder) GetID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *Folder) GetName() string {
-	if o == nil {
+func (f *Folder) GetName() string {
+	if f == nil {
 		return ""
 	}
-	return o.Name
+	return f.Name
 }
 
-func (o *Folder) GetDescription() *string {
-	if o == nil {
+func (f *Folder) GetDescription() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Description
+	return f.Description
 }
 
-func (o *Folder) GetPath() *string {
-	if o == nil {
+func (f *Folder) GetPath() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Path
+	return f.Path
 }
 
-func (o *Folder) GetSize() *int64 {
-	if o == nil {
+func (f *Folder) GetSize() *int64 {
+	if f == nil {
 		return nil
 	}
-	return o.Size
+	return f.Size
 }
 
-func (o *Folder) GetOwner() *Owner {
-	if o == nil {
+func (f *Folder) GetOwner() *Owner {
+	if f == nil {
 		return nil
 	}
-	return o.Owner
+	return f.Owner
 }
 
-func (o *Folder) GetParentFolders() []LinkedFolder {
-	if o == nil {
+func (f *Folder) GetParentFolders() []LinkedFolder {
+	if f == nil {
 		return []LinkedFolder{}
 	}
-	return o.ParentFolders
+	return f.ParentFolders
 }
 
-func (o *Folder) GetParentFoldersComplete() *bool {
-	if o == nil {
+func (f *Folder) GetParentFoldersComplete() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.ParentFoldersComplete
+	return f.ParentFoldersComplete
 }
 
-func (o *Folder) GetCustomMappings() map[string]any {
-	if o == nil {
+func (f *Folder) GetCustomMappings() map[string]any {
+	if f == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return f.CustomMappings
 }
 
-func (o *Folder) GetUpdatedBy() *string {
-	if o == nil {
+func (f *Folder) GetUpdatedBy() *string {
+	if f == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return f.UpdatedBy
 }
 
-func (o *Folder) GetCreatedBy() *string {
-	if o == nil {
+func (f *Folder) GetCreatedBy() *string {
+	if f == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return f.CreatedBy
 }
 
-func (o *Folder) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (f *Folder) GetUpdatedAt() *time.Time {
+	if f == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return f.UpdatedAt
 }
 
-func (o *Folder) GetCreatedAt() *time.Time {
-	if o == nil {
+func (f *Folder) GetCreatedAt() *time.Time {
+	if f == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return f.CreatedAt
 }

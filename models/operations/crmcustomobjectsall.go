@@ -14,18 +14,18 @@ type CrmCustomObjectsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmCustomObjectsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmCustomObjectsAllGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmCustomObjectsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmCustomObjectsAllGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmCustomObjectsAllRequest struct {
@@ -60,67 +60,67 @@ func (c *CrmCustomObjectsAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmCustomObjectsAllRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmCustomObjectsAllRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmCustomObjectsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmCustomObjectsAllRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmCustomObjectsAllRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmCustomObjectsAllRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmCustomObjectsAllRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmCustomObjectsAllRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmCustomObjectsAllRequest) GetCursor() *string {
-	if o == nil {
+func (c *CrmCustomObjectsAllRequest) GetCursor() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Cursor
+	return c.Cursor
 }
 
-func (o *CrmCustomObjectsAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (c *CrmCustomObjectsAllRequest) GetLimit() *int64 {
+	if c == nil {
 		return nil
 	}
-	return o.Limit
+	return c.Limit
 }
 
-func (o *CrmCustomObjectsAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (c *CrmCustomObjectsAllRequest) GetPassThrough() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }
 
-func (o *CrmCustomObjectsAllRequest) GetFields() *string {
-	if o == nil {
+func (c *CrmCustomObjectsAllRequest) GetFields() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Fields
+	return c.Fields
 }
 
-func (o *CrmCustomObjectsAllRequest) GetObjectID() string {
-	if o == nil {
+func (c *CrmCustomObjectsAllRequest) GetObjectID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ObjectID
+	return c.ObjectID
 }
 
 type CrmCustomObjectsAllResponse struct {
@@ -133,23 +133,23 @@ type CrmCustomObjectsAllResponse struct {
 	Next func() (*CrmCustomObjectsAllResponse, error)
 }
 
-func (o *CrmCustomObjectsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmCustomObjectsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmCustomObjectsAllResponse) GetGetCustomObjectsResponse() *components.GetCustomObjectsResponse {
-	if o == nil {
+func (c *CrmCustomObjectsAllResponse) GetGetCustomObjectsResponse() *components.GetCustomObjectsResponse {
+	if c == nil {
 		return nil
 	}
-	return o.GetCustomObjectsResponse
+	return c.GetCustomObjectsResponse
 }
 
-func (o *CrmCustomObjectsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmCustomObjectsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

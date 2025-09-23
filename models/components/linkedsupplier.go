@@ -15,37 +15,37 @@ type LinkedSupplier struct {
 	Address     *Address `json:"address,omitempty"`
 }
 
-func (o *LinkedSupplier) GetID() *string {
-	if o == nil {
+func (l *LinkedSupplier) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinkedSupplier) GetDisplayID() *string {
-	if o == nil {
+func (l *LinkedSupplier) GetDisplayID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.DisplayID
+	return l.DisplayID
 }
 
-func (o *LinkedSupplier) GetDisplayName() *string {
-	if o == nil {
+func (l *LinkedSupplier) GetDisplayName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.DisplayName
+	return l.DisplayName
 }
 
-func (o *LinkedSupplier) GetCompanyName() *string {
-	if o == nil {
+func (l *LinkedSupplier) GetCompanyName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.CompanyName
+	return l.CompanyName
 }
 
-func (o *LinkedSupplier) GetAddress() *Address {
-	if o == nil {
+func (l *LinkedSupplier) GetAddress() *Address {
+	if l == nil {
 		return nil
 	}
-	return o.Address
+	return l.Address
 }

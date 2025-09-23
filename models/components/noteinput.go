@@ -25,72 +25,72 @@ type NoteInput struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *NoteInput) GetTitle() *string {
-	if o == nil {
+func (n *NoteInput) GetTitle() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Title
+	return n.Title
 }
 
-func (o *NoteInput) GetContent() *string {
-	if o == nil {
+func (n *NoteInput) GetContent() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Content
+	return n.Content
 }
 
-func (o *NoteInput) GetOwnerID() *string {
-	if o == nil {
+func (n *NoteInput) GetOwnerID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.OwnerID
+	return n.OwnerID
 }
 
-func (o *NoteInput) GetContactID() *string {
-	if o == nil {
+func (n *NoteInput) GetContactID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ContactID
+	return n.ContactID
 }
 
-func (o *NoteInput) GetCompanyID() *string {
-	if o == nil {
+func (n *NoteInput) GetCompanyID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.CompanyID
+	return n.CompanyID
 }
 
-func (o *NoteInput) GetOpportunityID() *string {
-	if o == nil {
+func (n *NoteInput) GetOpportunityID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.OpportunityID
+	return n.OpportunityID
 }
 
-func (o *NoteInput) GetActivityID() *string {
-	if o == nil {
+func (n *NoteInput) GetActivityID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ActivityID
+	return n.ActivityID
 }
 
-func (o *NoteInput) GetLeadID() *string {
-	if o == nil {
+func (n *NoteInput) GetLeadID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.LeadID
+	return n.LeadID
 }
 
-func (o *NoteInput) GetActive() *bool {
-	if o == nil {
+func (n *NoteInput) GetActive() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Active
+	return n.Active
 }
 
-func (o *NoteInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (n *NoteInput) GetPassThrough() []PassThroughBody {
+	if n == nil {
 		return nil
 	}
-	return o.PassThrough
+	return n.PassThrough
 }

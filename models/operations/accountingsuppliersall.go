@@ -14,18 +14,18 @@ type AccountingSuppliersAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingSuppliersAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingSuppliersAllGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingSuppliersAllGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingSuppliersAllGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingSuppliersAllRequest struct {
@@ -62,74 +62,74 @@ func (a *AccountingSuppliersAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingSuppliersAllRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingSuppliersAllRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingSuppliersAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingSuppliersAllRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingSuppliersAllRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingSuppliersAllRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingSuppliersAllRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingSuppliersAllRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingSuppliersAllRequest) GetCursor() *string {
-	if o == nil {
+func (a *AccountingSuppliersAllRequest) GetCursor() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Cursor
+	return a.Cursor
 }
 
-func (o *AccountingSuppliersAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (a *AccountingSuppliersAllRequest) GetLimit() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.Limit
+	return a.Limit
 }
 
-func (o *AccountingSuppliersAllRequest) GetFilter() *components.SuppliersFilter {
-	if o == nil {
+func (a *AccountingSuppliersAllRequest) GetFilter() *components.SuppliersFilter {
+	if a == nil {
 		return nil
 	}
-	return o.Filter
+	return a.Filter
 }
 
-func (o *AccountingSuppliersAllRequest) GetSort() *components.SuppliersSort {
-	if o == nil {
+func (a *AccountingSuppliersAllRequest) GetSort() *components.SuppliersSort {
+	if a == nil {
 		return nil
 	}
-	return o.Sort
+	return a.Sort
 }
 
-func (o *AccountingSuppliersAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (a *AccountingSuppliersAllRequest) GetPassThrough() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
-func (o *AccountingSuppliersAllRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingSuppliersAllRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingSuppliersAllResponse struct {
@@ -142,23 +142,23 @@ type AccountingSuppliersAllResponse struct {
 	Next func() (*AccountingSuppliersAllResponse, error)
 }
 
-func (o *AccountingSuppliersAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingSuppliersAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingSuppliersAllResponse) GetGetSuppliersResponse() *components.GetSuppliersResponse {
-	if o == nil {
+func (a *AccountingSuppliersAllResponse) GetGetSuppliersResponse() *components.GetSuppliersResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetSuppliersResponse
+	return a.GetSuppliersResponse
 }
 
-func (o *AccountingSuppliersAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingSuppliersAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

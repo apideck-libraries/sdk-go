@@ -13,30 +13,30 @@ type UpdateWebhookRequest struct {
 	Events []WebhookEventType `json:"events,omitempty"`
 }
 
-func (o *UpdateWebhookRequest) GetDescription() *string {
-	if o == nil {
+func (u *UpdateWebhookRequest) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateWebhookRequest) GetStatus() *Status {
-	if o == nil {
+func (u *UpdateWebhookRequest) GetStatus() *Status {
+	if u == nil {
 		return nil
 	}
-	return o.Status
+	return u.Status
 }
 
-func (o *UpdateWebhookRequest) GetDeliveryURL() *string {
-	if o == nil {
+func (u *UpdateWebhookRequest) GetDeliveryURL() *string {
+	if u == nil {
 		return nil
 	}
-	return o.DeliveryURL
+	return u.DeliveryURL
 }
 
-func (o *UpdateWebhookRequest) GetEvents() []WebhookEventType {
-	if o == nil {
+func (u *UpdateWebhookRequest) GetEvents() []WebhookEventType {
+	if u == nil {
 		return nil
 	}
-	return o.Events
+	return u.Events
 }

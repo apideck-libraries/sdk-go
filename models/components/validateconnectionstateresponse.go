@@ -9,18 +9,18 @@ type ValidateConnectionStateResponseData struct {
 	State *ConnectionState `json:"state,omitempty"`
 }
 
-func (o *ValidateConnectionStateResponseData) GetID() *string {
-	if o == nil {
+func (v *ValidateConnectionStateResponseData) GetID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ID
+	return v.ID
 }
 
-func (o *ValidateConnectionStateResponseData) GetState() *ConnectionState {
-	if o == nil {
+func (v *ValidateConnectionStateResponseData) GetState() *ConnectionState {
+	if v == nil {
 		return nil
 	}
-	return o.State
+	return v.State
 }
 
 // ValidateConnectionStateResponse - Connection access token refreshed
@@ -34,30 +34,30 @@ type ValidateConnectionStateResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *ValidateConnectionStateResponse) GetStatusCode() int64 {
-	if o == nil {
+func (v *ValidateConnectionStateResponse) GetStatusCode() int64 {
+	if v == nil {
 		return 0
 	}
-	return o.StatusCode
+	return v.StatusCode
 }
 
-func (o *ValidateConnectionStateResponse) GetStatus() string {
-	if o == nil {
+func (v *ValidateConnectionStateResponse) GetStatus() string {
+	if v == nil {
 		return ""
 	}
-	return o.Status
+	return v.Status
 }
 
-func (o *ValidateConnectionStateResponse) GetData() ValidateConnectionStateResponseData {
-	if o == nil {
+func (v *ValidateConnectionStateResponse) GetData() ValidateConnectionStateResponseData {
+	if v == nil {
 		return ValidateConnectionStateResponseData{}
 	}
-	return o.Data
+	return v.Data
 }
 
-func (o *ValidateConnectionStateResponse) GetRaw() map[string]any {
-	if o == nil {
+func (v *ValidateConnectionStateResponse) GetRaw() map[string]any {
+	if v == nil {
 		return nil
 	}
-	return o.Raw
+	return v.Raw
 }

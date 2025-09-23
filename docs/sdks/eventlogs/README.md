@@ -33,11 +33,11 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Webhook.EventLogs.List(ctx, nil, sdkgo.Int64(20), &components.WebhookEventLogsFilter{
-        ExcludeApis: sdkgo.String("vault,proxy"),
-        ConsumerID: sdkgo.String("test_user_id"),
-        EntityType: sdkgo.String("Connection"),
-        EventType: sdkgo.String("vault.connection.callable"),
+    res, err := s.Webhook.EventLogs.List(ctx, nil, sdkgo.Pointer[int64](20), &components.WebhookEventLogsFilter{
+        ExcludeApis: sdkgo.Pointer("vault,proxy"),
+        ConsumerID: sdkgo.Pointer("test_user_id"),
+        EntityType: sdkgo.Pointer("Connection"),
+        EventType: sdkgo.Pointer("vault.connection.callable"),
     })
     if err != nil {
         log.Fatal(err)

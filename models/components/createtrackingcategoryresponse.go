@@ -20,51 +20,51 @@ type CreateTrackingCategoryResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *CreateTrackingCategoryResponse) GetStatusCode() int64 {
-	if o == nil {
+func (c *CreateTrackingCategoryResponse) GetStatusCode() int64 {
+	if c == nil {
 		return 0
 	}
-	return o.StatusCode
+	return c.StatusCode
 }
 
-func (o *CreateTrackingCategoryResponse) GetStatus() string {
-	if o == nil {
+func (c *CreateTrackingCategoryResponse) GetStatus() string {
+	if c == nil {
 		return ""
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CreateTrackingCategoryResponse) GetService() string {
-	if o == nil {
+func (c *CreateTrackingCategoryResponse) GetService() string {
+	if c == nil {
 		return ""
 	}
-	return o.Service
+	return c.Service
 }
 
-func (o *CreateTrackingCategoryResponse) GetResource() string {
-	if o == nil {
+func (c *CreateTrackingCategoryResponse) GetResource() string {
+	if c == nil {
 		return ""
 	}
-	return o.Resource
+	return c.Resource
 }
 
-func (o *CreateTrackingCategoryResponse) GetOperation() string {
-	if o == nil {
+func (c *CreateTrackingCategoryResponse) GetOperation() string {
+	if c == nil {
 		return ""
 	}
-	return o.Operation
+	return c.Operation
 }
 
-func (o *CreateTrackingCategoryResponse) GetData() UnifiedID {
-	if o == nil {
+func (c *CreateTrackingCategoryResponse) GetData() UnifiedID {
+	if c == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return c.Data
 }
 
-func (o *CreateTrackingCategoryResponse) GetRaw() map[string]any {
-	if o == nil {
+func (c *CreateTrackingCategoryResponse) GetRaw() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }

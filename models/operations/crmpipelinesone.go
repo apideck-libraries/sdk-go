@@ -14,18 +14,18 @@ type CrmPipelinesOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmPipelinesOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmPipelinesOneGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmPipelinesOneGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmPipelinesOneGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmPipelinesOneRequest struct {
@@ -54,46 +54,46 @@ func (c *CrmPipelinesOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmPipelinesOneRequest) GetID() string {
-	if o == nil {
+func (c *CrmPipelinesOneRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CrmPipelinesOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmPipelinesOneRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmPipelinesOneRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmPipelinesOneRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmPipelinesOneRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmPipelinesOneRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmPipelinesOneRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmPipelinesOneRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmPipelinesOneRequest) GetFields() *string {
-	if o == nil {
+func (c *CrmPipelinesOneRequest) GetFields() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Fields
+	return c.Fields
 }
 
 type CrmPipelinesOneResponse struct {
@@ -104,23 +104,23 @@ type CrmPipelinesOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmPipelinesOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmPipelinesOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmPipelinesOneResponse) GetGetPipelineResponse() *components.GetPipelineResponse {
-	if o == nil {
+func (c *CrmPipelinesOneResponse) GetGetPipelineResponse() *components.GetPipelineResponse {
+	if c == nil {
 		return nil
 	}
-	return o.GetPipelineResponse
+	return c.GetPipelineResponse
 }
 
-func (o *CrmPipelinesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmPipelinesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

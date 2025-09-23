@@ -11,11 +11,11 @@ type ConnectorAPIResourceCoverageOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *ConnectorAPIResourceCoverageOneGlobals) GetAppID() *string {
-	if o == nil {
+func (c *ConnectorAPIResourceCoverageOneGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type ConnectorAPIResourceCoverageOneRequest struct {
@@ -27,25 +27,25 @@ type ConnectorAPIResourceCoverageOneRequest struct {
 	ResourceID string `pathParam:"style=simple,explode=false,name=resource_id"`
 }
 
-func (o *ConnectorAPIResourceCoverageOneRequest) GetAppID() *string {
-	if o == nil {
+func (c *ConnectorAPIResourceCoverageOneRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *ConnectorAPIResourceCoverageOneRequest) GetID() string {
-	if o == nil {
+func (c *ConnectorAPIResourceCoverageOneRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ConnectorAPIResourceCoverageOneRequest) GetResourceID() string {
-	if o == nil {
+func (c *ConnectorAPIResourceCoverageOneRequest) GetResourceID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ResourceID
+	return c.ResourceID
 }
 
 type ConnectorAPIResourceCoverageOneResponse struct {
@@ -56,23 +56,23 @@ type ConnectorAPIResourceCoverageOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *ConnectorAPIResourceCoverageOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *ConnectorAPIResourceCoverageOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *ConnectorAPIResourceCoverageOneResponse) GetGetAPIResourceCoverageResponse() *components.GetAPIResourceCoverageResponse {
-	if o == nil {
+func (c *ConnectorAPIResourceCoverageOneResponse) GetGetAPIResourceCoverageResponse() *components.GetAPIResourceCoverageResponse {
+	if c == nil {
 		return nil
 	}
-	return o.GetAPIResourceCoverageResponse
+	return c.GetAPIResourceCoverageResponse
 }
 
-func (o *ConnectorAPIResourceCoverageOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *ConnectorAPIResourceCoverageOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

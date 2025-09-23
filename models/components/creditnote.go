@@ -150,249 +150,249 @@ func (c *CreditNote) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CreditNote) GetID() string {
-	if o == nil {
+func (c *CreditNote) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CreditNote) GetNumber() *string {
-	if o == nil {
+func (c *CreditNote) GetNumber() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Number
+	return c.Number
 }
 
-func (o *CreditNote) GetCustomer() *LinkedCustomer {
-	if o == nil {
+func (c *CreditNote) GetCustomer() *LinkedCustomer {
+	if c == nil {
 		return nil
 	}
-	return o.Customer
+	return c.Customer
 }
 
-func (o *CreditNote) GetCompanyID() *string {
-	if o == nil {
+func (c *CreditNote) GetCompanyID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CompanyID
+	return c.CompanyID
 }
 
-func (o *CreditNote) GetDepartmentID() *string {
-	if o == nil {
+func (c *CreditNote) GetDepartmentID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return c.DepartmentID
 }
 
-func (o *CreditNote) GetCurrency() *Currency {
-	if o == nil {
+func (c *CreditNote) GetCurrency() *Currency {
+	if c == nil {
 		return nil
 	}
-	return o.Currency
+	return c.Currency
 }
 
-func (o *CreditNote) GetCurrencyRate() *float64 {
-	if o == nil {
+func (c *CreditNote) GetCurrencyRate() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.CurrencyRate
+	return c.CurrencyRate
 }
 
-func (o *CreditNote) GetTaxInclusive() *bool {
-	if o == nil {
+func (c *CreditNote) GetTaxInclusive() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.TaxInclusive
+	return c.TaxInclusive
 }
 
-func (o *CreditNote) GetSubTotal() *float64 {
-	if o == nil {
+func (c *CreditNote) GetSubTotal() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.SubTotal
+	return c.SubTotal
 }
 
-func (o *CreditNote) GetTotalAmount() float64 {
-	if o == nil {
+func (c *CreditNote) GetTotalAmount() float64 {
+	if c == nil {
 		return 0.0
 	}
-	return o.TotalAmount
+	return c.TotalAmount
 }
 
-func (o *CreditNote) GetTotalTax() *float64 {
-	if o == nil {
+func (c *CreditNote) GetTotalTax() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.TotalTax
+	return c.TotalTax
 }
 
-func (o *CreditNote) GetTaxCode() *string {
-	if o == nil {
+func (c *CreditNote) GetTaxCode() *string {
+	if c == nil {
 		return nil
 	}
-	return o.TaxCode
+	return c.TaxCode
 }
 
-func (o *CreditNote) GetBalance() *float64 {
-	if o == nil {
+func (c *CreditNote) GetBalance() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.Balance
+	return c.Balance
 }
 
-func (o *CreditNote) GetRemainingCredit() *float64 {
-	if o == nil {
+func (c *CreditNote) GetRemainingCredit() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.RemainingCredit
+	return c.RemainingCredit
 }
 
-func (o *CreditNote) GetStatus() *CreditNoteStatus {
-	if o == nil {
+func (c *CreditNote) GetStatus() *CreditNoteStatus {
+	if c == nil {
 		return nil
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CreditNote) GetReference() *string {
-	if o == nil {
+func (c *CreditNote) GetReference() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Reference
+	return c.Reference
 }
 
-func (o *CreditNote) GetDateIssued() *time.Time {
-	if o == nil {
+func (c *CreditNote) GetDateIssued() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.DateIssued
+	return c.DateIssued
 }
 
-func (o *CreditNote) GetDatePaid() *time.Time {
-	if o == nil {
+func (c *CreditNote) GetDatePaid() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.DatePaid
+	return c.DatePaid
 }
 
-func (o *CreditNote) GetType() *CreditNoteType {
-	if o == nil {
+func (c *CreditNote) GetType() *CreditNoteType {
+	if c == nil {
 		return nil
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *CreditNote) GetAccount() *LinkedLedgerAccount {
-	if o == nil {
+func (c *CreditNote) GetAccount() *LinkedLedgerAccount {
+	if c == nil {
 		return nil
 	}
-	return o.Account
+	return c.Account
 }
 
-func (o *CreditNote) GetLineItems() []InvoiceLineItem {
-	if o == nil {
+func (c *CreditNote) GetLineItems() []InvoiceLineItem {
+	if c == nil {
 		return nil
 	}
-	return o.LineItems
+	return c.LineItems
 }
 
-func (o *CreditNote) GetAllocations() []Allocation {
-	if o == nil {
+func (c *CreditNote) GetAllocations() []Allocation {
+	if c == nil {
 		return nil
 	}
-	return o.Allocations
+	return c.Allocations
 }
 
-func (o *CreditNote) GetNote() *string {
-	if o == nil {
+func (c *CreditNote) GetNote() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Note
+	return c.Note
 }
 
-func (o *CreditNote) GetTerms() *string {
-	if o == nil {
+func (c *CreditNote) GetTerms() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Terms
+	return c.Terms
 }
 
-func (o *CreditNote) GetBillingAddress() *Address {
-	if o == nil {
+func (c *CreditNote) GetBillingAddress() *Address {
+	if c == nil {
 		return nil
 	}
-	return o.BillingAddress
+	return c.BillingAddress
 }
 
-func (o *CreditNote) GetShippingAddress() *Address {
-	if o == nil {
+func (c *CreditNote) GetShippingAddress() *Address {
+	if c == nil {
 		return nil
 	}
-	return o.ShippingAddress
+	return c.ShippingAddress
 }
 
-func (o *CreditNote) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (c *CreditNote) GetTrackingCategories() []*LinkedTrackingCategory {
+	if c == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return c.TrackingCategories
 }
 
-func (o *CreditNote) GetCustomMappings() map[string]any {
-	if o == nil {
+func (c *CreditNote) GetCustomMappings() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return c.CustomMappings
 }
 
-func (o *CreditNote) GetCustomFields() []CustomField {
-	if o == nil {
+func (c *CreditNote) GetCustomFields() []CustomField {
+	if c == nil {
 		return nil
 	}
-	return o.CustomFields
+	return c.CustomFields
 }
 
-func (o *CreditNote) GetRowVersion() *string {
-	if o == nil {
+func (c *CreditNote) GetRowVersion() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RowVersion
+	return c.RowVersion
 }
 
-func (o *CreditNote) GetUpdatedBy() *string {
-	if o == nil {
+func (c *CreditNote) GetUpdatedBy() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return c.UpdatedBy
 }
 
-func (o *CreditNote) GetCreatedBy() *string {
-	if o == nil {
+func (c *CreditNote) GetCreatedBy() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return c.CreatedBy
 }
 
-func (o *CreditNote) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (c *CreditNote) GetUpdatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return c.UpdatedAt
 }
 
-func (o *CreditNote) GetCreatedAt() *time.Time {
-	if o == nil {
+func (c *CreditNote) GetCreatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }
 
-func (o *CreditNote) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (c *CreditNote) GetPassThrough() []PassThroughBody {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }
 
 type CreditNoteInput struct {
@@ -461,205 +461,205 @@ func (c *CreditNoteInput) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CreditNoteInput) GetNumber() *string {
-	if o == nil {
+func (c *CreditNoteInput) GetNumber() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Number
+	return c.Number
 }
 
-func (o *CreditNoteInput) GetCustomer() *LinkedCustomerInput {
-	if o == nil {
+func (c *CreditNoteInput) GetCustomer() *LinkedCustomerInput {
+	if c == nil {
 		return nil
 	}
-	return o.Customer
+	return c.Customer
 }
 
-func (o *CreditNoteInput) GetCompanyID() *string {
-	if o == nil {
+func (c *CreditNoteInput) GetCompanyID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CompanyID
+	return c.CompanyID
 }
 
-func (o *CreditNoteInput) GetDepartmentID() *string {
-	if o == nil {
+func (c *CreditNoteInput) GetDepartmentID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return c.DepartmentID
 }
 
-func (o *CreditNoteInput) GetCurrency() *Currency {
-	if o == nil {
+func (c *CreditNoteInput) GetCurrency() *Currency {
+	if c == nil {
 		return nil
 	}
-	return o.Currency
+	return c.Currency
 }
 
-func (o *CreditNoteInput) GetCurrencyRate() *float64 {
-	if o == nil {
+func (c *CreditNoteInput) GetCurrencyRate() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.CurrencyRate
+	return c.CurrencyRate
 }
 
-func (o *CreditNoteInput) GetTaxInclusive() *bool {
-	if o == nil {
+func (c *CreditNoteInput) GetTaxInclusive() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.TaxInclusive
+	return c.TaxInclusive
 }
 
-func (o *CreditNoteInput) GetSubTotal() *float64 {
-	if o == nil {
+func (c *CreditNoteInput) GetSubTotal() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.SubTotal
+	return c.SubTotal
 }
 
-func (o *CreditNoteInput) GetTotalAmount() float64 {
-	if o == nil {
+func (c *CreditNoteInput) GetTotalAmount() float64 {
+	if c == nil {
 		return 0.0
 	}
-	return o.TotalAmount
+	return c.TotalAmount
 }
 
-func (o *CreditNoteInput) GetTotalTax() *float64 {
-	if o == nil {
+func (c *CreditNoteInput) GetTotalTax() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.TotalTax
+	return c.TotalTax
 }
 
-func (o *CreditNoteInput) GetTaxCode() *string {
-	if o == nil {
+func (c *CreditNoteInput) GetTaxCode() *string {
+	if c == nil {
 		return nil
 	}
-	return o.TaxCode
+	return c.TaxCode
 }
 
-func (o *CreditNoteInput) GetBalance() *float64 {
-	if o == nil {
+func (c *CreditNoteInput) GetBalance() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.Balance
+	return c.Balance
 }
 
-func (o *CreditNoteInput) GetRemainingCredit() *float64 {
-	if o == nil {
+func (c *CreditNoteInput) GetRemainingCredit() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.RemainingCredit
+	return c.RemainingCredit
 }
 
-func (o *CreditNoteInput) GetStatus() *CreditNoteStatus {
-	if o == nil {
+func (c *CreditNoteInput) GetStatus() *CreditNoteStatus {
+	if c == nil {
 		return nil
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CreditNoteInput) GetReference() *string {
-	if o == nil {
+func (c *CreditNoteInput) GetReference() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Reference
+	return c.Reference
 }
 
-func (o *CreditNoteInput) GetDateIssued() *time.Time {
-	if o == nil {
+func (c *CreditNoteInput) GetDateIssued() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.DateIssued
+	return c.DateIssued
 }
 
-func (o *CreditNoteInput) GetDatePaid() *time.Time {
-	if o == nil {
+func (c *CreditNoteInput) GetDatePaid() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.DatePaid
+	return c.DatePaid
 }
 
-func (o *CreditNoteInput) GetType() *CreditNoteType {
-	if o == nil {
+func (c *CreditNoteInput) GetType() *CreditNoteType {
+	if c == nil {
 		return nil
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *CreditNoteInput) GetAccount() *LinkedLedgerAccountInput {
-	if o == nil {
+func (c *CreditNoteInput) GetAccount() *LinkedLedgerAccountInput {
+	if c == nil {
 		return nil
 	}
-	return o.Account
+	return c.Account
 }
 
-func (o *CreditNoteInput) GetLineItems() []InvoiceLineItemInput {
-	if o == nil {
+func (c *CreditNoteInput) GetLineItems() []InvoiceLineItemInput {
+	if c == nil {
 		return nil
 	}
-	return o.LineItems
+	return c.LineItems
 }
 
-func (o *CreditNoteInput) GetAllocations() []AllocationInput {
-	if o == nil {
+func (c *CreditNoteInput) GetAllocations() []AllocationInput {
+	if c == nil {
 		return nil
 	}
-	return o.Allocations
+	return c.Allocations
 }
 
-func (o *CreditNoteInput) GetNote() *string {
-	if o == nil {
+func (c *CreditNoteInput) GetNote() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Note
+	return c.Note
 }
 
-func (o *CreditNoteInput) GetTerms() *string {
-	if o == nil {
+func (c *CreditNoteInput) GetTerms() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Terms
+	return c.Terms
 }
 
-func (o *CreditNoteInput) GetBillingAddress() *Address {
-	if o == nil {
+func (c *CreditNoteInput) GetBillingAddress() *Address {
+	if c == nil {
 		return nil
 	}
-	return o.BillingAddress
+	return c.BillingAddress
 }
 
-func (o *CreditNoteInput) GetShippingAddress() *Address {
-	if o == nil {
+func (c *CreditNoteInput) GetShippingAddress() *Address {
+	if c == nil {
 		return nil
 	}
-	return o.ShippingAddress
+	return c.ShippingAddress
 }
 
-func (o *CreditNoteInput) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (c *CreditNoteInput) GetTrackingCategories() []*LinkedTrackingCategory {
+	if c == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return c.TrackingCategories
 }
 
-func (o *CreditNoteInput) GetCustomFields() []CustomField {
-	if o == nil {
+func (c *CreditNoteInput) GetCustomFields() []CustomField {
+	if c == nil {
 		return nil
 	}
-	return o.CustomFields
+	return c.CustomFields
 }
 
-func (o *CreditNoteInput) GetRowVersion() *string {
-	if o == nil {
+func (c *CreditNoteInput) GetRowVersion() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RowVersion
+	return c.RowVersion
 }
 
-func (o *CreditNoteInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (c *CreditNoteInput) GetPassThrough() []PassThroughBody {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }

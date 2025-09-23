@@ -14,18 +14,18 @@ type EcommerceOrdersAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *EcommerceOrdersAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (e *EcommerceOrdersAllGlobals) GetConsumerID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return e.ConsumerID
 }
 
-func (o *EcommerceOrdersAllGlobals) GetAppID() *string {
-	if o == nil {
+func (e *EcommerceOrdersAllGlobals) GetAppID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.AppID
+	return e.AppID
 }
 
 type EcommerceOrdersAllRequest struct {
@@ -62,74 +62,74 @@ func (e *EcommerceOrdersAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *EcommerceOrdersAllRequest) GetRaw() *bool {
-	if o == nil {
+func (e *EcommerceOrdersAllRequest) GetRaw() *bool {
+	if e == nil {
 		return nil
 	}
-	return o.Raw
+	return e.Raw
 }
 
-func (o *EcommerceOrdersAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (e *EcommerceOrdersAllRequest) GetConsumerID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return e.ConsumerID
 }
 
-func (o *EcommerceOrdersAllRequest) GetAppID() *string {
-	if o == nil {
+func (e *EcommerceOrdersAllRequest) GetAppID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.AppID
+	return e.AppID
 }
 
-func (o *EcommerceOrdersAllRequest) GetServiceID() *string {
-	if o == nil {
+func (e *EcommerceOrdersAllRequest) GetServiceID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ServiceID
+	return e.ServiceID
 }
 
-func (o *EcommerceOrdersAllRequest) GetCursor() *string {
-	if o == nil {
+func (e *EcommerceOrdersAllRequest) GetCursor() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Cursor
+	return e.Cursor
 }
 
-func (o *EcommerceOrdersAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (e *EcommerceOrdersAllRequest) GetLimit() *int64 {
+	if e == nil {
 		return nil
 	}
-	return o.Limit
+	return e.Limit
 }
 
-func (o *EcommerceOrdersAllRequest) GetFilter() *components.EcommerceOrdersFilter {
-	if o == nil {
+func (e *EcommerceOrdersAllRequest) GetFilter() *components.EcommerceOrdersFilter {
+	if e == nil {
 		return nil
 	}
-	return o.Filter
+	return e.Filter
 }
 
-func (o *EcommerceOrdersAllRequest) GetSort() *components.OrdersSort {
-	if o == nil {
+func (e *EcommerceOrdersAllRequest) GetSort() *components.OrdersSort {
+	if e == nil {
 		return nil
 	}
-	return o.Sort
+	return e.Sort
 }
 
-func (o *EcommerceOrdersAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (e *EcommerceOrdersAllRequest) GetPassThrough() map[string]any {
+	if e == nil {
 		return nil
 	}
-	return o.PassThrough
+	return e.PassThrough
 }
 
-func (o *EcommerceOrdersAllRequest) GetFields() *string {
-	if o == nil {
+func (e *EcommerceOrdersAllRequest) GetFields() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Fields
+	return e.Fields
 }
 
 type EcommerceOrdersAllResponse struct {
@@ -142,23 +142,23 @@ type EcommerceOrdersAllResponse struct {
 	Next func() (*EcommerceOrdersAllResponse, error)
 }
 
-func (o *EcommerceOrdersAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (e *EcommerceOrdersAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if e == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return e.HTTPMeta
 }
 
-func (o *EcommerceOrdersAllResponse) GetGetEcommerceOrdersResponse() *components.GetEcommerceOrdersResponse {
-	if o == nil {
+func (e *EcommerceOrdersAllResponse) GetGetEcommerceOrdersResponse() *components.GetEcommerceOrdersResponse {
+	if e == nil {
 		return nil
 	}
-	return o.GetEcommerceOrdersResponse
+	return e.GetEcommerceOrdersResponse
 }
 
-func (o *EcommerceOrdersAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (e *EcommerceOrdersAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if e == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return e.UnexpectedErrorResponse
 }

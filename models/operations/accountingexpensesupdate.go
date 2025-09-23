@@ -14,18 +14,18 @@ type AccountingExpensesUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingExpensesUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingExpensesUpdateGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingExpensesUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingExpensesUpdateGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingExpensesUpdateRequest struct {
@@ -53,46 +53,46 @@ func (a *AccountingExpensesUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingExpensesUpdateRequest) GetID() string {
-	if o == nil {
+func (a *AccountingExpensesUpdateRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingExpensesUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingExpensesUpdateRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingExpensesUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingExpensesUpdateRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingExpensesUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingExpensesUpdateRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingExpensesUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingExpensesUpdateRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingExpensesUpdateRequest) GetExpense() components.ExpenseInput {
-	if o == nil {
+func (a *AccountingExpensesUpdateRequest) GetExpense() components.ExpenseInput {
+	if a == nil {
 		return components.ExpenseInput{}
 	}
-	return o.Expense
+	return a.Expense
 }
 
 type AccountingExpensesUpdateResponse struct {
@@ -103,23 +103,23 @@ type AccountingExpensesUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingExpensesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingExpensesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingExpensesUpdateResponse) GetUpdateExpenseResponse() *components.UpdateExpenseResponse {
-	if o == nil {
+func (a *AccountingExpensesUpdateResponse) GetUpdateExpenseResponse() *components.UpdateExpenseResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UpdateExpenseResponse
+	return a.UpdateExpenseResponse
 }
 
-func (o *AccountingExpensesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingExpensesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

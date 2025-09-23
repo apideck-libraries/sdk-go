@@ -14,18 +14,18 @@ type FileStorageFoldersAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *FileStorageFoldersAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageFoldersAddGlobals) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageFoldersAddGlobals) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageFoldersAddGlobals) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
 type FileStorageFoldersAddRequest struct {
@@ -53,46 +53,46 @@ func (f *FileStorageFoldersAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FileStorageFoldersAddRequest) GetRaw() *bool {
-	if o == nil {
+func (f *FileStorageFoldersAddRequest) GetRaw() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Raw
+	return f.Raw
 }
 
-func (o *FileStorageFoldersAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageFoldersAddRequest) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageFoldersAddRequest) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageFoldersAddRequest) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
-func (o *FileStorageFoldersAddRequest) GetServiceID() *string {
-	if o == nil {
+func (f *FileStorageFoldersAddRequest) GetServiceID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ServiceID
+	return f.ServiceID
 }
 
-func (o *FileStorageFoldersAddRequest) GetFields() *string {
-	if o == nil {
+func (f *FileStorageFoldersAddRequest) GetFields() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Fields
+	return f.Fields
 }
 
-func (o *FileStorageFoldersAddRequest) GetCreateFolderRequest() components.CreateFolderRequest {
-	if o == nil {
+func (f *FileStorageFoldersAddRequest) GetCreateFolderRequest() components.CreateFolderRequest {
+	if f == nil {
 		return components.CreateFolderRequest{}
 	}
-	return o.CreateFolderRequest
+	return f.CreateFolderRequest
 }
 
 type FileStorageFoldersAddResponse struct {
@@ -103,23 +103,23 @@ type FileStorageFoldersAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *FileStorageFoldersAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (f *FileStorageFoldersAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if f == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return f.HTTPMeta
 }
 
-func (o *FileStorageFoldersAddResponse) GetCreateFolderResponse() *components.CreateFolderResponse {
-	if o == nil {
+func (f *FileStorageFoldersAddResponse) GetCreateFolderResponse() *components.CreateFolderResponse {
+	if f == nil {
 		return nil
 	}
-	return o.CreateFolderResponse
+	return f.CreateFolderResponse
 }
 
-func (o *FileStorageFoldersAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (f *FileStorageFoldersAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return f.UnexpectedErrorResponse
 }

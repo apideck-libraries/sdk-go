@@ -15,37 +15,37 @@ type AgedReportFilter struct {
 	PeriodLength *int64 `queryParam:"name=period_length"`
 }
 
-func (o *AgedReportFilter) GetCustomerID() *string {
-	if o == nil {
+func (a *AgedReportFilter) GetCustomerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CustomerID
+	return a.CustomerID
 }
 
-func (o *AgedReportFilter) GetSupplierID() *string {
-	if o == nil {
+func (a *AgedReportFilter) GetSupplierID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.SupplierID
+	return a.SupplierID
 }
 
-func (o *AgedReportFilter) GetReportAsOfDate() *string {
-	if o == nil {
+func (a *AgedReportFilter) GetReportAsOfDate() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ReportAsOfDate
+	return a.ReportAsOfDate
 }
 
-func (o *AgedReportFilter) GetPeriodCount() *int64 {
-	if o == nil {
+func (a *AgedReportFilter) GetPeriodCount() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.PeriodCount
+	return a.PeriodCount
 }
 
-func (o *AgedReportFilter) GetPeriodLength() *int64 {
-	if o == nil {
+func (a *AgedReportFilter) GetPeriodLength() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.PeriodLength
+	return a.PeriodLength
 }

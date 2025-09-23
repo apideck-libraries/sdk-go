@@ -17,44 +17,44 @@ type GetAPIResourceResponse struct {
 	Links *Links `json:"links,omitempty"`
 }
 
-func (o *GetAPIResourceResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetAPIResourceResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetAPIResourceResponse) GetStatus() string {
-	if o == nil {
+func (g *GetAPIResourceResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetAPIResourceResponse) GetData() APIResource {
-	if o == nil {
+func (g *GetAPIResourceResponse) GetData() APIResource {
+	if g == nil {
 		return APIResource{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetAPIResourceResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetAPIResourceResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }
 
-func (o *GetAPIResourceResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetAPIResourceResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetAPIResourceResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetAPIResourceResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }

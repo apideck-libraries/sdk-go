@@ -18,72 +18,72 @@ type Consumer struct {
 	RequestCountUpdated    *string                 `json:"request_count_updated,omitempty"`
 }
 
-func (o *Consumer) GetConsumerID() string {
-	if o == nil {
+func (c *Consumer) GetConsumerID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *Consumer) GetApplicationID() *string {
-	if o == nil {
+func (c *Consumer) GetApplicationID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ApplicationID
+	return c.ApplicationID
 }
 
-func (o *Consumer) GetMetadata() *ConsumerMetadata {
-	if o == nil {
+func (c *Consumer) GetMetadata() *ConsumerMetadata {
+	if c == nil {
 		return nil
 	}
-	return o.Metadata
+	return c.Metadata
 }
 
-func (o *Consumer) GetConnections() []ConsumerConnection {
-	if o == nil {
+func (c *Consumer) GetConnections() []ConsumerConnection {
+	if c == nil {
 		return nil
 	}
-	return o.Connections
+	return c.Connections
 }
 
-func (o *Consumer) GetServices() []string {
-	if o == nil {
+func (c *Consumer) GetServices() []string {
+	if c == nil {
 		return nil
 	}
-	return o.Services
+	return c.Services
 }
 
-func (o *Consumer) GetAggregatedRequestCount() *float64 {
-	if o == nil {
+func (c *Consumer) GetAggregatedRequestCount() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.AggregatedRequestCount
+	return c.AggregatedRequestCount
 }
 
-func (o *Consumer) GetRequestCounts() *RequestCountAllocation {
-	if o == nil {
+func (c *Consumer) GetRequestCounts() *RequestCountAllocation {
+	if c == nil {
 		return nil
 	}
-	return o.RequestCounts
+	return c.RequestCounts
 }
 
-func (o *Consumer) GetCreated() *string {
-	if o == nil {
+func (c *Consumer) GetCreated() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Created
+	return c.Created
 }
 
-func (o *Consumer) GetModified() *string {
-	if o == nil {
+func (c *Consumer) GetModified() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Modified
+	return c.Modified
 }
 
-func (o *Consumer) GetRequestCountUpdated() *string {
-	if o == nil {
+func (c *Consumer) GetRequestCountUpdated() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RequestCountUpdated
+	return c.RequestCountUpdated
 }

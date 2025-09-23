@@ -19,51 +19,51 @@ type GetAttachmentResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetAttachmentResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetAttachmentResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetAttachmentResponse) GetStatus() string {
-	if o == nil {
+func (g *GetAttachmentResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetAttachmentResponse) GetService() string {
-	if o == nil {
+func (g *GetAttachmentResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetAttachmentResponse) GetResource() string {
-	if o == nil {
+func (g *GetAttachmentResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetAttachmentResponse) GetOperation() string {
-	if o == nil {
+func (g *GetAttachmentResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetAttachmentResponse) GetData() Attachment {
-	if o == nil {
+func (g *GetAttachmentResponse) GetData() Attachment {
+	if g == nil {
 		return Attachment{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetAttachmentResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetAttachmentResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

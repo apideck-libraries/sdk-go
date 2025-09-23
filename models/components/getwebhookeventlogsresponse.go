@@ -17,44 +17,44 @@ type GetWebhookEventLogsResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetWebhookEventLogsResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetWebhookEventLogsResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetWebhookEventLogsResponse) GetStatus() string {
-	if o == nil {
+func (g *GetWebhookEventLogsResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetWebhookEventLogsResponse) GetData() []WebhookEventLog {
-	if o == nil {
+func (g *GetWebhookEventLogsResponse) GetData() []WebhookEventLog {
+	if g == nil {
 		return []WebhookEventLog{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetWebhookEventLogsResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetWebhookEventLogsResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetWebhookEventLogsResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetWebhookEventLogsResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }
 
-func (o *GetWebhookEventLogsResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetWebhookEventLogsResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

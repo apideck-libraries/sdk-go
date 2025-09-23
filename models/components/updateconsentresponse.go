@@ -13,30 +13,30 @@ type UpdateConsentResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *UpdateConsentResponse) GetStatusCode() int64 {
-	if o == nil {
+func (u *UpdateConsentResponse) GetStatusCode() int64 {
+	if u == nil {
 		return 0
 	}
-	return o.StatusCode
+	return u.StatusCode
 }
 
-func (o *UpdateConsentResponse) GetStatus() string {
-	if o == nil {
+func (u *UpdateConsentResponse) GetStatus() string {
+	if u == nil {
 		return ""
 	}
-	return o.Status
+	return u.Status
 }
 
-func (o *UpdateConsentResponse) GetData() ConsentRecord {
-	if o == nil {
+func (u *UpdateConsentResponse) GetData() ConsentRecord {
+	if u == nil {
 		return ConsentRecord{}
 	}
-	return o.Data
+	return u.Data
 }
 
-func (o *UpdateConsentResponse) GetRaw() map[string]any {
-	if o == nil {
+func (u *UpdateConsentResponse) GetRaw() map[string]any {
+	if u == nil {
 		return nil
 	}
-	return o.Raw
+	return u.Raw
 }

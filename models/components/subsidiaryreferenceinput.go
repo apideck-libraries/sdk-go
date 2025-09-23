@@ -7,9 +7,9 @@ type SubsidiaryReferenceInput struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *SubsidiaryReferenceInput) GetName() *string {
-	if o == nil {
+func (s *SubsidiaryReferenceInput) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }

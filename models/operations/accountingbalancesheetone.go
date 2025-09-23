@@ -14,18 +14,18 @@ type AccountingBalanceSheetOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingBalanceSheetOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingBalanceSheetOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingBalanceSheetOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingBalanceSheetOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingBalanceSheetOneRequest struct {
@@ -54,46 +54,46 @@ func (a *AccountingBalanceSheetOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingBalanceSheetOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingBalanceSheetOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingBalanceSheetOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingBalanceSheetOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingBalanceSheetOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingBalanceSheetOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingBalanceSheetOneRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (a *AccountingBalanceSheetOneRequest) GetPassThrough() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
-func (o *AccountingBalanceSheetOneRequest) GetFilter() *components.BalanceSheetFilter {
-	if o == nil {
+func (a *AccountingBalanceSheetOneRequest) GetFilter() *components.BalanceSheetFilter {
+	if a == nil {
 		return nil
 	}
-	return o.Filter
+	return a.Filter
 }
 
-func (o *AccountingBalanceSheetOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingBalanceSheetOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
 type AccountingBalanceSheetOneResponse struct {
@@ -104,23 +104,23 @@ type AccountingBalanceSheetOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingBalanceSheetOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingBalanceSheetOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingBalanceSheetOneResponse) GetGetBalanceSheetResponse() *components.GetBalanceSheetResponse {
-	if o == nil {
+func (a *AccountingBalanceSheetOneResponse) GetGetBalanceSheetResponse() *components.GetBalanceSheetResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetBalanceSheetResponse
+	return a.GetBalanceSheetResponse
 }
 
-func (o *AccountingBalanceSheetOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingBalanceSheetOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

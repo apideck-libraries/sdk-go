@@ -23,65 +23,65 @@ type CustomMapping struct {
 	Example *string `json:"example,omitempty"`
 }
 
-func (o *CustomMapping) GetID() *string {
-	if o == nil {
+func (c *CustomMapping) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CustomMapping) GetLabel() *string {
-	if o == nil {
+func (c *CustomMapping) GetLabel() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Label
+	return c.Label
 }
 
-func (o *CustomMapping) GetDescription() *string {
-	if o == nil {
+func (c *CustomMapping) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CustomMapping) GetValue() *string {
-	if o == nil {
+func (c *CustomMapping) GetValue() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Value
+	return c.Value
 }
 
-func (o *CustomMapping) GetKey() *string {
-	if o == nil {
+func (c *CustomMapping) GetKey() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Key
+	return c.Key
 }
 
-func (o *CustomMapping) GetRequired() *bool {
-	if o == nil {
+func (c *CustomMapping) GetRequired() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Required
+	return c.Required
 }
 
-func (o *CustomMapping) GetCustomField() *bool {
-	if o == nil {
+func (c *CustomMapping) GetCustomField() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.CustomField
+	return c.CustomField
 }
 
-func (o *CustomMapping) GetConsumerID() *string {
-	if o == nil {
+func (c *CustomMapping) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CustomMapping) GetExample() *string {
-	if o == nil {
+func (c *CustomMapping) GetExample() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Example
+	return c.Example
 }

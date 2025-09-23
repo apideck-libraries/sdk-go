@@ -9,18 +9,18 @@ type LinkedResources struct {
 	UnifiedProperty *string `json:"unified_property,omitempty"`
 }
 
-func (o *LinkedResources) GetID() *string {
-	if o == nil {
+func (l *LinkedResources) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinkedResources) GetUnifiedProperty() *string {
-	if o == nil {
+func (l *LinkedResources) GetUnifiedProperty() *string {
+	if l == nil {
 		return nil
 	}
-	return o.UnifiedProperty
+	return l.UnifiedProperty
 }
 
 // JSON Schema of the resource in our Unified API
@@ -40,37 +40,37 @@ type APIResource struct {
 	Schema *Schema `json:"schema,omitempty"`
 }
 
-func (o *APIResource) GetID() *string {
-	if o == nil {
+func (a *APIResource) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *APIResource) GetName() *string {
-	if o == nil {
+func (a *APIResource) GetName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Name
+	return a.Name
 }
 
-func (o *APIResource) GetStatus() *ResourceStatus {
-	if o == nil {
+func (a *APIResource) GetStatus() *ResourceStatus {
+	if a == nil {
 		return nil
 	}
-	return o.Status
+	return a.Status
 }
 
-func (o *APIResource) GetLinkedResources() []LinkedResources {
-	if o == nil {
+func (a *APIResource) GetLinkedResources() []LinkedResources {
+	if a == nil {
 		return nil
 	}
-	return o.LinkedResources
+	return a.LinkedResources
 }
 
-func (o *APIResource) GetSchema() *Schema {
-	if o == nil {
+func (a *APIResource) GetSchema() *Schema {
+	if a == nil {
 		return nil
 	}
-	return o.Schema
+	return a.Schema
 }

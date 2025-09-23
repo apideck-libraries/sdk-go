@@ -14,18 +14,18 @@ type FileStorageSharedLinksDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *FileStorageSharedLinksDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageSharedLinksDeleteGlobals) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageSharedLinksDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageSharedLinksDeleteGlobals) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
 type FileStorageSharedLinksDeleteRequest struct {
@@ -52,39 +52,39 @@ func (f *FileStorageSharedLinksDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FileStorageSharedLinksDeleteRequest) GetID() string {
-	if o == nil {
+func (f *FileStorageSharedLinksDeleteRequest) GetID() string {
+	if f == nil {
 		return ""
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *FileStorageSharedLinksDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageSharedLinksDeleteRequest) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageSharedLinksDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageSharedLinksDeleteRequest) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
-func (o *FileStorageSharedLinksDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (f *FileStorageSharedLinksDeleteRequest) GetServiceID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ServiceID
+	return f.ServiceID
 }
 
-func (o *FileStorageSharedLinksDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (f *FileStorageSharedLinksDeleteRequest) GetRaw() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Raw
+	return f.Raw
 }
 
 type FileStorageSharedLinksDeleteResponse struct {
@@ -95,23 +95,23 @@ type FileStorageSharedLinksDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *FileStorageSharedLinksDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (f *FileStorageSharedLinksDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if f == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return f.HTTPMeta
 }
 
-func (o *FileStorageSharedLinksDeleteResponse) GetDeleteSharedLinkResponse() *components.DeleteSharedLinkResponse {
-	if o == nil {
+func (f *FileStorageSharedLinksDeleteResponse) GetDeleteSharedLinkResponse() *components.DeleteSharedLinkResponse {
+	if f == nil {
 		return nil
 	}
-	return o.DeleteSharedLinkResponse
+	return f.DeleteSharedLinkResponse
 }
 
-func (o *FileStorageSharedLinksDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (f *FileStorageSharedLinksDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return f.UnexpectedErrorResponse
 }

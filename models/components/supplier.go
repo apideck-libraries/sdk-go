@@ -129,291 +129,291 @@ func (s *Supplier) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Supplier) GetID() string {
-	if o == nil {
+func (s *Supplier) GetID() string {
+	if s == nil {
 		return ""
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *Supplier) GetDownstreamID() *string {
-	if o == nil {
+func (s *Supplier) GetDownstreamID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.DownstreamID
+	return s.DownstreamID
 }
 
-func (o *Supplier) GetDisplayID() *string {
-	if o == nil {
+func (s *Supplier) GetDisplayID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.DisplayID
+	return s.DisplayID
 }
 
-func (o *Supplier) GetDisplayName() *string {
-	if o == nil {
+func (s *Supplier) GetDisplayName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.DisplayName
+	return s.DisplayName
 }
 
-func (o *Supplier) GetCompanyName() *string {
-	if o == nil {
+func (s *Supplier) GetCompanyName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.CompanyName
+	return s.CompanyName
 }
 
-func (o *Supplier) GetCompanyID() *string {
-	if o == nil {
+func (s *Supplier) GetCompanyID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.CompanyID
+	return s.CompanyID
 }
 
-func (o *Supplier) GetSupplierCategory() *string {
-	if o == nil {
+func (s *Supplier) GetSupplierCategory() *string {
+	if s == nil {
 		return nil
 	}
-	return o.SupplierCategory
+	return s.SupplierCategory
 }
 
-func (o *Supplier) GetTitle() *string {
-	if o == nil {
+func (s *Supplier) GetTitle() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Title
+	return s.Title
 }
 
-func (o *Supplier) GetFirstName() *string {
-	if o == nil {
+func (s *Supplier) GetFirstName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.FirstName
+	return s.FirstName
 }
 
-func (o *Supplier) GetMiddleName() *string {
-	if o == nil {
+func (s *Supplier) GetMiddleName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.MiddleName
+	return s.MiddleName
 }
 
-func (o *Supplier) GetLastName() *string {
-	if o == nil {
+func (s *Supplier) GetLastName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.LastName
+	return s.LastName
 }
 
-func (o *Supplier) GetSuffix() *string {
-	if o == nil {
+func (s *Supplier) GetSuffix() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Suffix
+	return s.Suffix
 }
 
-func (o *Supplier) GetIndividual() *bool {
-	if o == nil {
+func (s *Supplier) GetIndividual() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.Individual
+	return s.Individual
 }
 
-func (o *Supplier) GetAddresses() []Address {
-	if o == nil {
+func (s *Supplier) GetAddresses() []Address {
+	if s == nil {
 		return nil
 	}
-	return o.Addresses
+	return s.Addresses
 }
 
-func (o *Supplier) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
+func (s *Supplier) GetPhoneNumbers() []PhoneNumber {
+	if s == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return s.PhoneNumbers
 }
 
-func (o *Supplier) GetEmails() []Email {
-	if o == nil {
+func (s *Supplier) GetEmails() []Email {
+	if s == nil {
 		return nil
 	}
-	return o.Emails
+	return s.Emails
 }
 
-func (o *Supplier) GetWebsites() []Website {
-	if o == nil {
+func (s *Supplier) GetWebsites() []Website {
+	if s == nil {
 		return nil
 	}
-	return o.Websites
+	return s.Websites
 }
 
-func (o *Supplier) GetBankAccounts() []BankAccount {
-	if o == nil {
+func (s *Supplier) GetBankAccounts() []BankAccount {
+	if s == nil {
 		return nil
 	}
-	return o.BankAccounts
+	return s.BankAccounts
 }
 
-func (o *Supplier) GetNotes() *string {
-	if o == nil {
+func (s *Supplier) GetNotes() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Notes
+	return s.Notes
 }
 
-func (o *Supplier) GetTaxRate() *LinkedTaxRate {
-	if o == nil {
+func (s *Supplier) GetTaxRate() *LinkedTaxRate {
+	if s == nil {
 		return nil
 	}
-	return o.TaxRate
+	return s.TaxRate
 }
 
-func (o *Supplier) GetTaxNumber() *string {
-	if o == nil {
+func (s *Supplier) GetTaxNumber() *string {
+	if s == nil {
 		return nil
 	}
-	return o.TaxNumber
+	return s.TaxNumber
 }
 
-func (o *Supplier) GetCurrency() *Currency {
-	if o == nil {
+func (s *Supplier) GetCurrency() *Currency {
+	if s == nil {
 		return nil
 	}
-	return o.Currency
+	return s.Currency
 }
 
-func (o *Supplier) GetAccount() *LinkedLedgerAccount {
-	if o == nil {
+func (s *Supplier) GetAccount() *LinkedLedgerAccount {
+	if s == nil {
 		return nil
 	}
-	return o.Account
+	return s.Account
 }
 
-func (o *Supplier) GetStatus() *SupplierStatus {
-	if o == nil {
+func (s *Supplier) GetStatus() *SupplierStatus {
+	if s == nil {
 		return nil
 	}
-	return o.Status
+	return s.Status
 }
 
-func (o *Supplier) GetPaymentMethod() *string {
-	if o == nil {
+func (s *Supplier) GetPaymentMethod() *string {
+	if s == nil {
 		return nil
 	}
-	return o.PaymentMethod
+	return s.PaymentMethod
 }
 
-func (o *Supplier) GetTerms() *string {
-	if o == nil {
+func (s *Supplier) GetTerms() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Terms
+	return s.Terms
 }
 
-func (o *Supplier) GetChannel() *string {
-	if o == nil {
+func (s *Supplier) GetChannel() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Channel
+	return s.Channel
 }
 
-func (o *Supplier) GetIssuedMethod() *string {
-	if o == nil {
+func (s *Supplier) GetIssuedMethod() *string {
+	if s == nil {
 		return nil
 	}
-	return o.IssuedMethod
+	return s.IssuedMethod
 }
 
-func (o *Supplier) GetIssuedEmail() *string {
-	if o == nil {
+func (s *Supplier) GetIssuedEmail() *string {
+	if s == nil {
 		return nil
 	}
-	return o.IssuedEmail
+	return s.IssuedEmail
 }
 
-func (o *Supplier) GetCustomMappings() map[string]any {
-	if o == nil {
+func (s *Supplier) GetCustomMappings() map[string]any {
+	if s == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return s.CustomMappings
 }
 
-func (o *Supplier) GetCustomFields() []CustomField {
-	if o == nil {
+func (s *Supplier) GetCustomFields() []CustomField {
+	if s == nil {
 		return nil
 	}
-	return o.CustomFields
+	return s.CustomFields
 }
 
-func (o *Supplier) GetTaxDetails() []*LinkedTaxDetail {
-	if o == nil {
+func (s *Supplier) GetTaxDetails() []*LinkedTaxDetail {
+	if s == nil {
 		return nil
 	}
-	return o.TaxDetails
+	return s.TaxDetails
 }
 
-func (o *Supplier) GetTaxStatusDetails() []*LinkedTaxStatusDetail {
-	if o == nil {
+func (s *Supplier) GetTaxStatusDetails() []*LinkedTaxStatusDetail {
+	if s == nil {
 		return nil
 	}
-	return o.TaxStatusDetails
+	return s.TaxStatusDetails
 }
 
-func (o *Supplier) GetUpdatedBy() *string {
-	if o == nil {
+func (s *Supplier) GetUpdatedBy() *string {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return s.UpdatedBy
 }
 
-func (o *Supplier) GetCreatedBy() *string {
-	if o == nil {
+func (s *Supplier) GetCreatedBy() *string {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return s.CreatedBy
 }
 
-func (o *Supplier) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *Supplier) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }
 
-func (o *Supplier) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *Supplier) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *Supplier) GetRowVersion() *string {
-	if o == nil {
+func (s *Supplier) GetRowVersion() *string {
+	if s == nil {
 		return nil
 	}
-	return o.RowVersion
+	return s.RowVersion
 }
 
-func (o *Supplier) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (s *Supplier) GetPassThrough() []PassThroughBody {
+	if s == nil {
 		return nil
 	}
-	return o.PassThrough
+	return s.PassThrough
 }
 
-func (o *Supplier) GetSubsidiaryID() *string {
-	if o == nil {
+func (s *Supplier) GetSubsidiaryID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.SubsidiaryID
+	return s.SubsidiaryID
 }
 
-func (o *Supplier) GetIntegrationSystemID() *string {
-	if o == nil {
+func (s *Supplier) GetIntegrationSystemID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.IntegrationSystemID
+	return s.IntegrationSystemID
 }
 
 type SupplierInput struct {
@@ -475,240 +475,240 @@ type SupplierInput struct {
 	IntegrationSystemID *string `json:"integration_system_id,omitempty"`
 }
 
-func (o *SupplierInput) GetDisplayID() *string {
-	if o == nil {
+func (s *SupplierInput) GetDisplayID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.DisplayID
+	return s.DisplayID
 }
 
-func (o *SupplierInput) GetDisplayName() *string {
-	if o == nil {
+func (s *SupplierInput) GetDisplayName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.DisplayName
+	return s.DisplayName
 }
 
-func (o *SupplierInput) GetCompanyName() *string {
-	if o == nil {
+func (s *SupplierInput) GetCompanyName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.CompanyName
+	return s.CompanyName
 }
 
-func (o *SupplierInput) GetCompanyID() *string {
-	if o == nil {
+func (s *SupplierInput) GetCompanyID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.CompanyID
+	return s.CompanyID
 }
 
-func (o *SupplierInput) GetSupplierCategory() *string {
-	if o == nil {
+func (s *SupplierInput) GetSupplierCategory() *string {
+	if s == nil {
 		return nil
 	}
-	return o.SupplierCategory
+	return s.SupplierCategory
 }
 
-func (o *SupplierInput) GetTitle() *string {
-	if o == nil {
+func (s *SupplierInput) GetTitle() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Title
+	return s.Title
 }
 
-func (o *SupplierInput) GetFirstName() *string {
-	if o == nil {
+func (s *SupplierInput) GetFirstName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.FirstName
+	return s.FirstName
 }
 
-func (o *SupplierInput) GetMiddleName() *string {
-	if o == nil {
+func (s *SupplierInput) GetMiddleName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.MiddleName
+	return s.MiddleName
 }
 
-func (o *SupplierInput) GetLastName() *string {
-	if o == nil {
+func (s *SupplierInput) GetLastName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.LastName
+	return s.LastName
 }
 
-func (o *SupplierInput) GetSuffix() *string {
-	if o == nil {
+func (s *SupplierInput) GetSuffix() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Suffix
+	return s.Suffix
 }
 
-func (o *SupplierInput) GetIndividual() *bool {
-	if o == nil {
+func (s *SupplierInput) GetIndividual() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.Individual
+	return s.Individual
 }
 
-func (o *SupplierInput) GetAddresses() []Address {
-	if o == nil {
+func (s *SupplierInput) GetAddresses() []Address {
+	if s == nil {
 		return nil
 	}
-	return o.Addresses
+	return s.Addresses
 }
 
-func (o *SupplierInput) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
+func (s *SupplierInput) GetPhoneNumbers() []PhoneNumber {
+	if s == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return s.PhoneNumbers
 }
 
-func (o *SupplierInput) GetEmails() []Email {
-	if o == nil {
+func (s *SupplierInput) GetEmails() []Email {
+	if s == nil {
 		return nil
 	}
-	return o.Emails
+	return s.Emails
 }
 
-func (o *SupplierInput) GetWebsites() []Website {
-	if o == nil {
+func (s *SupplierInput) GetWebsites() []Website {
+	if s == nil {
 		return nil
 	}
-	return o.Websites
+	return s.Websites
 }
 
-func (o *SupplierInput) GetBankAccounts() []BankAccount {
-	if o == nil {
+func (s *SupplierInput) GetBankAccounts() []BankAccount {
+	if s == nil {
 		return nil
 	}
-	return o.BankAccounts
+	return s.BankAccounts
 }
 
-func (o *SupplierInput) GetNotes() *string {
-	if o == nil {
+func (s *SupplierInput) GetNotes() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Notes
+	return s.Notes
 }
 
-func (o *SupplierInput) GetTaxRate() *LinkedTaxRateInput {
-	if o == nil {
+func (s *SupplierInput) GetTaxRate() *LinkedTaxRateInput {
+	if s == nil {
 		return nil
 	}
-	return o.TaxRate
+	return s.TaxRate
 }
 
-func (o *SupplierInput) GetTaxNumber() *string {
-	if o == nil {
+func (s *SupplierInput) GetTaxNumber() *string {
+	if s == nil {
 		return nil
 	}
-	return o.TaxNumber
+	return s.TaxNumber
 }
 
-func (o *SupplierInput) GetCurrency() *Currency {
-	if o == nil {
+func (s *SupplierInput) GetCurrency() *Currency {
+	if s == nil {
 		return nil
 	}
-	return o.Currency
+	return s.Currency
 }
 
-func (o *SupplierInput) GetAccount() *LinkedLedgerAccountInput {
-	if o == nil {
+func (s *SupplierInput) GetAccount() *LinkedLedgerAccountInput {
+	if s == nil {
 		return nil
 	}
-	return o.Account
+	return s.Account
 }
 
-func (o *SupplierInput) GetStatus() *SupplierStatus {
-	if o == nil {
+func (s *SupplierInput) GetStatus() *SupplierStatus {
+	if s == nil {
 		return nil
 	}
-	return o.Status
+	return s.Status
 }
 
-func (o *SupplierInput) GetPaymentMethod() *string {
-	if o == nil {
+func (s *SupplierInput) GetPaymentMethod() *string {
+	if s == nil {
 		return nil
 	}
-	return o.PaymentMethod
+	return s.PaymentMethod
 }
 
-func (o *SupplierInput) GetTerms() *string {
-	if o == nil {
+func (s *SupplierInput) GetTerms() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Terms
+	return s.Terms
 }
 
-func (o *SupplierInput) GetChannel() *string {
-	if o == nil {
+func (s *SupplierInput) GetChannel() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Channel
+	return s.Channel
 }
 
-func (o *SupplierInput) GetIssuedMethod() *string {
-	if o == nil {
+func (s *SupplierInput) GetIssuedMethod() *string {
+	if s == nil {
 		return nil
 	}
-	return o.IssuedMethod
+	return s.IssuedMethod
 }
 
-func (o *SupplierInput) GetIssuedEmail() *string {
-	if o == nil {
+func (s *SupplierInput) GetIssuedEmail() *string {
+	if s == nil {
 		return nil
 	}
-	return o.IssuedEmail
+	return s.IssuedEmail
 }
 
-func (o *SupplierInput) GetCustomFields() []CustomField {
-	if o == nil {
+func (s *SupplierInput) GetCustomFields() []CustomField {
+	if s == nil {
 		return nil
 	}
-	return o.CustomFields
+	return s.CustomFields
 }
 
-func (o *SupplierInput) GetTaxDetails() []*LinkedTaxDetail {
-	if o == nil {
+func (s *SupplierInput) GetTaxDetails() []*LinkedTaxDetail {
+	if s == nil {
 		return nil
 	}
-	return o.TaxDetails
+	return s.TaxDetails
 }
 
-func (o *SupplierInput) GetTaxStatusDetails() []*LinkedTaxStatusDetail {
-	if o == nil {
+func (s *SupplierInput) GetTaxStatusDetails() []*LinkedTaxStatusDetail {
+	if s == nil {
 		return nil
 	}
-	return o.TaxStatusDetails
+	return s.TaxStatusDetails
 }
 
-func (o *SupplierInput) GetRowVersion() *string {
-	if o == nil {
+func (s *SupplierInput) GetRowVersion() *string {
+	if s == nil {
 		return nil
 	}
-	return o.RowVersion
+	return s.RowVersion
 }
 
-func (o *SupplierInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (s *SupplierInput) GetPassThrough() []PassThroughBody {
+	if s == nil {
 		return nil
 	}
-	return o.PassThrough
+	return s.PassThrough
 }
 
-func (o *SupplierInput) GetSubsidiaryID() *string {
-	if o == nil {
+func (s *SupplierInput) GetSubsidiaryID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.SubsidiaryID
+	return s.SubsidiaryID
 }
 
-func (o *SupplierInput) GetIntegrationSystemID() *string {
-	if o == nil {
+func (s *SupplierInput) GetIntegrationSystemID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.IntegrationSystemID
+	return s.IntegrationSystemID
 }

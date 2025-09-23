@@ -14,18 +14,18 @@ type CrmContactsDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmContactsDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmContactsDeleteGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmContactsDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmContactsDeleteGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmContactsDeleteRequest struct {
@@ -52,39 +52,39 @@ func (c *CrmContactsDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmContactsDeleteRequest) GetID() string {
-	if o == nil {
+func (c *CrmContactsDeleteRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CrmContactsDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmContactsDeleteRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmContactsDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmContactsDeleteRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmContactsDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmContactsDeleteRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmContactsDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmContactsDeleteRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
 type CrmContactsDeleteResponse struct {
@@ -95,23 +95,23 @@ type CrmContactsDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmContactsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmContactsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmContactsDeleteResponse) GetDeleteContactResponse() *components.DeleteContactResponse {
-	if o == nil {
+func (c *CrmContactsDeleteResponse) GetDeleteContactResponse() *components.DeleteContactResponse {
+	if c == nil {
 		return nil
 	}
-	return o.DeleteContactResponse
+	return c.DeleteContactResponse
 }
 
-func (o *CrmContactsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmContactsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

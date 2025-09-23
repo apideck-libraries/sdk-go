@@ -19,51 +19,51 @@ type GetSharedLinkResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetSharedLinkResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetSharedLinkResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetSharedLinkResponse) GetStatus() string {
-	if o == nil {
+func (g *GetSharedLinkResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetSharedLinkResponse) GetService() string {
-	if o == nil {
+func (g *GetSharedLinkResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetSharedLinkResponse) GetResource() string {
-	if o == nil {
+func (g *GetSharedLinkResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetSharedLinkResponse) GetOperation() string {
-	if o == nil {
+func (g *GetSharedLinkResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetSharedLinkResponse) GetData() SharedLink {
-	if o == nil {
+func (g *GetSharedLinkResponse) GetData() SharedLink {
+	if g == nil {
 		return SharedLink{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetSharedLinkResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetSharedLinkResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

@@ -11,11 +11,11 @@ type VaultConsumersOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultConsumersOneGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultConsumersOneGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultConsumersOneRequest struct {
@@ -25,18 +25,18 @@ type VaultConsumersOneRequest struct {
 	ConsumerID string `pathParam:"style=simple,explode=false,name=consumer_id"`
 }
 
-func (o *VaultConsumersOneRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultConsumersOneRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultConsumersOneRequest) GetConsumerID() string {
-	if o == nil {
+func (v *VaultConsumersOneRequest) GetConsumerID() string {
+	if v == nil {
 		return ""
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
 type VaultConsumersOneResponse struct {
@@ -47,23 +47,23 @@ type VaultConsumersOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultConsumersOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultConsumersOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultConsumersOneResponse) GetGetConsumerResponse() *components.GetConsumerResponse {
-	if o == nil {
+func (v *VaultConsumersOneResponse) GetGetConsumerResponse() *components.GetConsumerResponse {
+	if v == nil {
 		return nil
 	}
-	return o.GetConsumerResponse
+	return v.GetConsumerResponse
 }
 
-func (o *VaultConsumersOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultConsumersOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

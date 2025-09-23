@@ -106,109 +106,109 @@ func (b *BankFeedAccount) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *BankFeedAccount) GetID() string {
-	if o == nil {
+func (b *BankFeedAccount) GetID() string {
+	if b == nil {
 		return ""
 	}
-	return o.ID
+	return b.ID
 }
 
-func (o *BankFeedAccount) GetBankAccountType() *BankAccountType {
-	if o == nil {
+func (b *BankFeedAccount) GetBankAccountType() *BankAccountType {
+	if b == nil {
 		return nil
 	}
-	return o.BankAccountType
+	return b.BankAccountType
 }
 
-func (o *BankFeedAccount) GetSourceAccountID() *string {
-	if o == nil {
+func (b *BankFeedAccount) GetSourceAccountID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.SourceAccountID
+	return b.SourceAccountID
 }
 
-func (o *BankFeedAccount) GetTargetAccountID() *string {
-	if o == nil {
+func (b *BankFeedAccount) GetTargetAccountID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.TargetAccountID
+	return b.TargetAccountID
 }
 
-func (o *BankFeedAccount) GetTargetAccountName() *string {
-	if o == nil {
+func (b *BankFeedAccount) GetTargetAccountName() *string {
+	if b == nil {
 		return nil
 	}
-	return o.TargetAccountName
+	return b.TargetAccountName
 }
 
-func (o *BankFeedAccount) GetTargetAccountNumber() *string {
-	if o == nil {
+func (b *BankFeedAccount) GetTargetAccountNumber() *string {
+	if b == nil {
 		return nil
 	}
-	return o.TargetAccountNumber
+	return b.TargetAccountNumber
 }
 
-func (o *BankFeedAccount) GetCurrency() *Currency {
-	if o == nil {
+func (b *BankFeedAccount) GetCurrency() *Currency {
+	if b == nil {
 		return nil
 	}
-	return o.Currency
+	return b.Currency
 }
 
-func (o *BankFeedAccount) GetFeedStatus() *FeedStatus {
-	if o == nil {
+func (b *BankFeedAccount) GetFeedStatus() *FeedStatus {
+	if b == nil {
 		return nil
 	}
-	return o.FeedStatus
+	return b.FeedStatus
 }
 
-func (o *BankFeedAccount) GetCountry() *string {
-	if o == nil {
+func (b *BankFeedAccount) GetCountry() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Country
+	return b.Country
 }
 
-func (o *BankFeedAccount) GetCustomFields() []CustomField {
-	if o == nil {
+func (b *BankFeedAccount) GetCustomFields() []CustomField {
+	if b == nil {
 		return nil
 	}
-	return o.CustomFields
+	return b.CustomFields
 }
 
-func (o *BankFeedAccount) GetCustomMappings() map[string]any {
-	if o == nil {
+func (b *BankFeedAccount) GetCustomMappings() map[string]any {
+	if b == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return b.CustomMappings
 }
 
-func (o *BankFeedAccount) GetCreatedAt() *time.Time {
-	if o == nil {
+func (b *BankFeedAccount) GetCreatedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return b.CreatedAt
 }
 
-func (o *BankFeedAccount) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (b *BankFeedAccount) GetUpdatedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return b.UpdatedAt
 }
 
-func (o *BankFeedAccount) GetUpdatedBy() *string {
-	if o == nil {
+func (b *BankFeedAccount) GetUpdatedBy() *string {
+	if b == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return b.UpdatedBy
 }
 
-func (o *BankFeedAccount) GetCreatedBy() *string {
-	if o == nil {
+func (b *BankFeedAccount) GetCreatedBy() *string {
+	if b == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return b.CreatedBy
 }
 
 type BankFeedAccountInput struct {
@@ -231,65 +231,65 @@ type BankFeedAccountInput struct {
 	CustomFields []CustomField `json:"custom_fields,omitempty"`
 }
 
-func (o *BankFeedAccountInput) GetBankAccountType() *BankAccountType {
-	if o == nil {
+func (b *BankFeedAccountInput) GetBankAccountType() *BankAccountType {
+	if b == nil {
 		return nil
 	}
-	return o.BankAccountType
+	return b.BankAccountType
 }
 
-func (o *BankFeedAccountInput) GetSourceAccountID() *string {
-	if o == nil {
+func (b *BankFeedAccountInput) GetSourceAccountID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.SourceAccountID
+	return b.SourceAccountID
 }
 
-func (o *BankFeedAccountInput) GetTargetAccountID() *string {
-	if o == nil {
+func (b *BankFeedAccountInput) GetTargetAccountID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.TargetAccountID
+	return b.TargetAccountID
 }
 
-func (o *BankFeedAccountInput) GetTargetAccountName() *string {
-	if o == nil {
+func (b *BankFeedAccountInput) GetTargetAccountName() *string {
+	if b == nil {
 		return nil
 	}
-	return o.TargetAccountName
+	return b.TargetAccountName
 }
 
-func (o *BankFeedAccountInput) GetTargetAccountNumber() *string {
-	if o == nil {
+func (b *BankFeedAccountInput) GetTargetAccountNumber() *string {
+	if b == nil {
 		return nil
 	}
-	return o.TargetAccountNumber
+	return b.TargetAccountNumber
 }
 
-func (o *BankFeedAccountInput) GetCurrency() *Currency {
-	if o == nil {
+func (b *BankFeedAccountInput) GetCurrency() *Currency {
+	if b == nil {
 		return nil
 	}
-	return o.Currency
+	return b.Currency
 }
 
-func (o *BankFeedAccountInput) GetFeedStatus() *FeedStatus {
-	if o == nil {
+func (b *BankFeedAccountInput) GetFeedStatus() *FeedStatus {
+	if b == nil {
 		return nil
 	}
-	return o.FeedStatus
+	return b.FeedStatus
 }
 
-func (o *BankFeedAccountInput) GetCountry() *string {
-	if o == nil {
+func (b *BankFeedAccountInput) GetCountry() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Country
+	return b.Country
 }
 
-func (o *BankFeedAccountInput) GetCustomFields() []CustomField {
-	if o == nil {
+func (b *BankFeedAccountInput) GetCustomFields() []CustomField {
+	if b == nil {
 		return nil
 	}
-	return o.CustomFields
+	return b.CustomFields
 }

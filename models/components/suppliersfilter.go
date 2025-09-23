@@ -32,44 +32,44 @@ func (s *SuppliersFilter) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *SuppliersFilter) GetCompanyName() *string {
-	if o == nil {
+func (s *SuppliersFilter) GetCompanyName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.CompanyName
+	return s.CompanyName
 }
 
-func (o *SuppliersFilter) GetDisplayName() *string {
-	if o == nil {
+func (s *SuppliersFilter) GetDisplayName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.DisplayName
+	return s.DisplayName
 }
 
-func (o *SuppliersFilter) GetFirstName() *string {
-	if o == nil {
+func (s *SuppliersFilter) GetFirstName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.FirstName
+	return s.FirstName
 }
 
-func (o *SuppliersFilter) GetLastName() *string {
-	if o == nil {
+func (s *SuppliersFilter) GetLastName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.LastName
+	return s.LastName
 }
 
-func (o *SuppliersFilter) GetEmail() *string {
-	if o == nil {
+func (s *SuppliersFilter) GetEmail() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Email
+	return s.Email
 }
 
-func (o *SuppliersFilter) GetUpdatedSince() *time.Time {
-	if o == nil {
+func (s *SuppliersFilter) GetUpdatedSince() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedSince
+	return s.UpdatedSince
 }

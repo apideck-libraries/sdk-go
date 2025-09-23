@@ -14,18 +14,18 @@ type IssueTrackingCollectionsOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *IssueTrackingCollectionsOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionsOneGlobals) GetConsumerID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return i.ConsumerID
 }
 
-func (o *IssueTrackingCollectionsOneGlobals) GetAppID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionsOneGlobals) GetAppID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.AppID
+	return i.AppID
 }
 
 type IssueTrackingCollectionsOneRequest struct {
@@ -54,46 +54,46 @@ func (i *IssueTrackingCollectionsOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *IssueTrackingCollectionsOneRequest) GetCollectionID() string {
-	if o == nil {
+func (i *IssueTrackingCollectionsOneRequest) GetCollectionID() string {
+	if i == nil {
 		return ""
 	}
-	return o.CollectionID
+	return i.CollectionID
 }
 
-func (o *IssueTrackingCollectionsOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionsOneRequest) GetConsumerID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return i.ConsumerID
 }
 
-func (o *IssueTrackingCollectionsOneRequest) GetAppID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionsOneRequest) GetAppID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.AppID
+	return i.AppID
 }
 
-func (o *IssueTrackingCollectionsOneRequest) GetServiceID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionsOneRequest) GetServiceID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ServiceID
+	return i.ServiceID
 }
 
-func (o *IssueTrackingCollectionsOneRequest) GetRaw() *bool {
-	if o == nil {
+func (i *IssueTrackingCollectionsOneRequest) GetRaw() *bool {
+	if i == nil {
 		return nil
 	}
-	return o.Raw
+	return i.Raw
 }
 
-func (o *IssueTrackingCollectionsOneRequest) GetFields() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionsOneRequest) GetFields() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Fields
+	return i.Fields
 }
 
 type IssueTrackingCollectionsOneResponse struct {
@@ -104,23 +104,23 @@ type IssueTrackingCollectionsOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *IssueTrackingCollectionsOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (i *IssueTrackingCollectionsOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if i == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return i.HTTPMeta
 }
 
-func (o *IssueTrackingCollectionsOneResponse) GetGetCollectionResponse() *components.GetCollectionResponse {
-	if o == nil {
+func (i *IssueTrackingCollectionsOneResponse) GetGetCollectionResponse() *components.GetCollectionResponse {
+	if i == nil {
 		return nil
 	}
-	return o.GetCollectionResponse
+	return i.GetCollectionResponse
 }
 
-func (o *IssueTrackingCollectionsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (i *IssueTrackingCollectionsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if i == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return i.UnexpectedErrorResponse
 }

@@ -14,18 +14,18 @@ type FileStorageFilesAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *FileStorageFilesAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageFilesAllGlobals) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageFilesAllGlobals) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageFilesAllGlobals) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
 type FileStorageFilesAllRequest struct {
@@ -62,74 +62,74 @@ func (f *FileStorageFilesAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FileStorageFilesAllRequest) GetRaw() *bool {
-	if o == nil {
+func (f *FileStorageFilesAllRequest) GetRaw() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Raw
+	return f.Raw
 }
 
-func (o *FileStorageFilesAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageFilesAllRequest) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageFilesAllRequest) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageFilesAllRequest) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
-func (o *FileStorageFilesAllRequest) GetServiceID() *string {
-	if o == nil {
+func (f *FileStorageFilesAllRequest) GetServiceID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ServiceID
+	return f.ServiceID
 }
 
-func (o *FileStorageFilesAllRequest) GetCursor() *string {
-	if o == nil {
+func (f *FileStorageFilesAllRequest) GetCursor() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Cursor
+	return f.Cursor
 }
 
-func (o *FileStorageFilesAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (f *FileStorageFilesAllRequest) GetLimit() *int64 {
+	if f == nil {
 		return nil
 	}
-	return o.Limit
+	return f.Limit
 }
 
-func (o *FileStorageFilesAllRequest) GetFilter() *components.FilesFilter {
-	if o == nil {
+func (f *FileStorageFilesAllRequest) GetFilter() *components.FilesFilter {
+	if f == nil {
 		return nil
 	}
-	return o.Filter
+	return f.Filter
 }
 
-func (o *FileStorageFilesAllRequest) GetSort() *components.FilesSort {
-	if o == nil {
+func (f *FileStorageFilesAllRequest) GetSort() *components.FilesSort {
+	if f == nil {
 		return nil
 	}
-	return o.Sort
+	return f.Sort
 }
 
-func (o *FileStorageFilesAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (f *FileStorageFilesAllRequest) GetPassThrough() map[string]any {
+	if f == nil {
 		return nil
 	}
-	return o.PassThrough
+	return f.PassThrough
 }
 
-func (o *FileStorageFilesAllRequest) GetFields() *string {
-	if o == nil {
+func (f *FileStorageFilesAllRequest) GetFields() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Fields
+	return f.Fields
 }
 
 type FileStorageFilesAllResponse struct {
@@ -142,23 +142,23 @@ type FileStorageFilesAllResponse struct {
 	Next func() (*FileStorageFilesAllResponse, error)
 }
 
-func (o *FileStorageFilesAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (f *FileStorageFilesAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if f == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return f.HTTPMeta
 }
 
-func (o *FileStorageFilesAllResponse) GetGetFilesResponse() *components.GetFilesResponse {
-	if o == nil {
+func (f *FileStorageFilesAllResponse) GetGetFilesResponse() *components.GetFilesResponse {
+	if f == nil {
 		return nil
 	}
-	return o.GetFilesResponse
+	return f.GetFilesResponse
 }
 
-func (o *FileStorageFilesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (f *FileStorageFilesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return f.UnexpectedErrorResponse
 }

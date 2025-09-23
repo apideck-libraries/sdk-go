@@ -23,65 +23,65 @@ type GetTrackingCategoriesResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetTrackingCategoriesResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetTrackingCategoriesResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetTrackingCategoriesResponse) GetStatus() string {
-	if o == nil {
+func (g *GetTrackingCategoriesResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetTrackingCategoriesResponse) GetService() string {
-	if o == nil {
+func (g *GetTrackingCategoriesResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetTrackingCategoriesResponse) GetResource() string {
-	if o == nil {
+func (g *GetTrackingCategoriesResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetTrackingCategoriesResponse) GetOperation() string {
-	if o == nil {
+func (g *GetTrackingCategoriesResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetTrackingCategoriesResponse) GetData() []TrackingCategory {
-	if o == nil {
+func (g *GetTrackingCategoriesResponse) GetData() []TrackingCategory {
+	if g == nil {
 		return []TrackingCategory{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetTrackingCategoriesResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetTrackingCategoriesResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetTrackingCategoriesResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetTrackingCategoriesResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }
 
-func (o *GetTrackingCategoriesResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetTrackingCategoriesResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

@@ -98,18 +98,18 @@ type Branch struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *Branch) GetID() *string {
-	if o == nil {
+func (b *Branch) GetID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.ID
+	return b.ID
 }
 
-func (o *Branch) GetName() *string {
-	if o == nil {
+func (b *Branch) GetName() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Name
+	return b.Name
 }
 
 type Blocks struct {
@@ -117,18 +117,18 @@ type Blocks struct {
 	Content *string `json:"content,omitempty"`
 }
 
-func (o *Blocks) GetTitle() *string {
-	if o == nil {
+func (b *Blocks) GetTitle() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Title
+	return b.Title
 }
 
-func (o *Blocks) GetContent() *string {
-	if o == nil {
+func (b *Blocks) GetContent() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Content
+	return b.Content
 }
 
 type Salary struct {
@@ -141,32 +141,32 @@ type Salary struct {
 	Interval *string   `json:"interval,omitempty"`
 }
 
-func (o *Salary) GetMin() *int64 {
-	if o == nil {
+func (s *Salary) GetMin() *int64 {
+	if s == nil {
 		return nil
 	}
-	return o.Min
+	return s.Min
 }
 
-func (o *Salary) GetMax() *int64 {
-	if o == nil {
+func (s *Salary) GetMax() *int64 {
+	if s == nil {
 		return nil
 	}
-	return o.Max
+	return s.Max
 }
 
-func (o *Salary) GetCurrency() *Currency {
-	if o == nil {
+func (s *Salary) GetCurrency() *Currency {
+	if s == nil {
 		return nil
 	}
-	return o.Currency
+	return s.Currency
 }
 
-func (o *Salary) GetInterval() *string {
-	if o == nil {
+func (s *Salary) GetInterval() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Interval
+	return s.Interval
 }
 
 type JobType string
@@ -200,18 +200,18 @@ type JobLinks struct {
 	URL  *string  `json:"url,omitempty"`
 }
 
-func (o *JobLinks) GetType() *JobType {
-	if o == nil {
+func (j *JobLinks) GetType() *JobType {
+	if j == nil {
 		return nil
 	}
-	return o.Type
+	return j.Type
 }
 
-func (o *JobLinks) GetURL() *string {
-	if o == nil {
+func (j *JobLinks) GetURL() *string {
+	if j == nil {
 		return nil
 	}
-	return o.URL
+	return j.URL
 }
 
 type Job struct {
@@ -300,296 +300,296 @@ func (j *Job) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Job) GetID() *string {
-	if o == nil {
+func (j *Job) GetID() *string {
+	if j == nil {
 		return nil
 	}
-	return o.ID
+	return j.ID
 }
 
-func (o *Job) GetSlug() *string {
-	if o == nil {
+func (j *Job) GetSlug() *string {
+	if j == nil {
 		return nil
 	}
-	return o.Slug
+	return j.Slug
 }
 
-func (o *Job) GetTitle() *string {
-	if o == nil {
+func (j *Job) GetTitle() *string {
+	if j == nil {
 		return nil
 	}
-	return o.Title
+	return j.Title
 }
 
-func (o *Job) GetSequence() *int64 {
-	if o == nil {
+func (j *Job) GetSequence() *int64 {
+	if j == nil {
 		return nil
 	}
-	return o.Sequence
+	return j.Sequence
 }
 
-func (o *Job) GetVisibility() *Visibility {
-	if o == nil {
+func (j *Job) GetVisibility() *Visibility {
+	if j == nil {
 		return nil
 	}
-	return o.Visibility
+	return j.Visibility
 }
 
-func (o *Job) GetStatus() *JobStatus {
-	if o == nil {
+func (j *Job) GetStatus() *JobStatus {
+	if j == nil {
 		return nil
 	}
-	return o.Status
+	return j.Status
 }
 
-func (o *Job) GetCode() *string {
-	if o == nil {
+func (j *Job) GetCode() *string {
+	if j == nil {
 		return nil
 	}
-	return o.Code
+	return j.Code
 }
 
-func (o *Job) GetLanguage() *string {
-	if o == nil {
+func (j *Job) GetLanguage() *string {
+	if j == nil {
 		return nil
 	}
-	return o.Language
+	return j.Language
 }
 
-func (o *Job) GetEmploymentTerms() *EmploymentTerms {
-	if o == nil {
+func (j *Job) GetEmploymentTerms() *EmploymentTerms {
+	if j == nil {
 		return nil
 	}
-	return o.EmploymentTerms
+	return j.EmploymentTerms
 }
 
-func (o *Job) GetExperience() *string {
-	if o == nil {
+func (j *Job) GetExperience() *string {
+	if j == nil {
 		return nil
 	}
-	return o.Experience
+	return j.Experience
 }
 
-func (o *Job) GetLocation() *string {
-	if o == nil {
+func (j *Job) GetLocation() *string {
+	if j == nil {
 		return nil
 	}
-	return o.Location
+	return j.Location
 }
 
-func (o *Job) GetRemote() *bool {
-	if o == nil {
+func (j *Job) GetRemote() *bool {
+	if j == nil {
 		return nil
 	}
-	return o.Remote
+	return j.Remote
 }
 
-func (o *Job) GetRequisitionID() *string {
-	if o == nil {
+func (j *Job) GetRequisitionID() *string {
+	if j == nil {
 		return nil
 	}
-	return o.RequisitionID
+	return j.RequisitionID
 }
 
-func (o *Job) GetDepartment() *Department {
-	if o == nil {
+func (j *Job) GetDepartment() *Department {
+	if j == nil {
 		return nil
 	}
-	return o.Department
+	return j.Department
 }
 
-func (o *Job) GetBranch() *Branch {
-	if o == nil {
+func (j *Job) GetBranch() *Branch {
+	if j == nil {
 		return nil
 	}
-	return o.Branch
+	return j.Branch
 }
 
-func (o *Job) GetRecruiters() []string {
-	if o == nil {
+func (j *Job) GetRecruiters() []string {
+	if j == nil {
 		return nil
 	}
-	return o.Recruiters
+	return j.Recruiters
 }
 
-func (o *Job) GetHiringManagers() []string {
-	if o == nil {
+func (j *Job) GetHiringManagers() []string {
+	if j == nil {
 		return nil
 	}
-	return o.HiringManagers
+	return j.HiringManagers
 }
 
-func (o *Job) GetFollowers() []string {
-	if o == nil {
+func (j *Job) GetFollowers() []string {
+	if j == nil {
 		return nil
 	}
-	return o.Followers
+	return j.Followers
 }
 
-func (o *Job) GetDescription() *string {
-	if o == nil {
+func (j *Job) GetDescription() *string {
+	if j == nil {
 		return nil
 	}
-	return o.Description
+	return j.Description
 }
 
-func (o *Job) GetDescriptionHTML() *string {
-	if o == nil {
+func (j *Job) GetDescriptionHTML() *string {
+	if j == nil {
 		return nil
 	}
-	return o.DescriptionHTML
+	return j.DescriptionHTML
 }
 
-func (o *Job) GetBlocks() []Blocks {
-	if o == nil {
+func (j *Job) GetBlocks() []Blocks {
+	if j == nil {
 		return nil
 	}
-	return o.Blocks
+	return j.Blocks
 }
 
-func (o *Job) GetClosing() *string {
-	if o == nil {
+func (j *Job) GetClosing() *string {
+	if j == nil {
 		return nil
 	}
-	return o.Closing
+	return j.Closing
 }
 
-func (o *Job) GetClosingHTML() *string {
-	if o == nil {
+func (j *Job) GetClosingHTML() *string {
+	if j == nil {
 		return nil
 	}
-	return o.ClosingHTML
+	return j.ClosingHTML
 }
 
-func (o *Job) GetClosingDate() *types.Date {
-	if o == nil {
+func (j *Job) GetClosingDate() *types.Date {
+	if j == nil {
 		return nil
 	}
-	return o.ClosingDate
+	return j.ClosingDate
 }
 
-func (o *Job) GetSalary() *Salary {
-	if o == nil {
+func (j *Job) GetSalary() *Salary {
+	if j == nil {
 		return nil
 	}
-	return o.Salary
+	return j.Salary
 }
 
-func (o *Job) GetURL() *string {
-	if o == nil {
+func (j *Job) GetURL() *string {
+	if j == nil {
 		return nil
 	}
-	return o.URL
+	return j.URL
 }
 
-func (o *Job) GetJobPortalURL() *string {
-	if o == nil {
+func (j *Job) GetJobPortalURL() *string {
+	if j == nil {
 		return nil
 	}
-	return o.JobPortalURL
+	return j.JobPortalURL
 }
 
-func (o *Job) GetRecordURL() *string {
-	if o == nil {
+func (j *Job) GetRecordURL() *string {
+	if j == nil {
 		return nil
 	}
-	return o.RecordURL
+	return j.RecordURL
 }
 
-func (o *Job) GetLinks() []JobLinks {
-	if o == nil {
+func (j *Job) GetLinks() []JobLinks {
+	if j == nil {
 		return nil
 	}
-	return o.Links
+	return j.Links
 }
 
-func (o *Job) GetConfidential() *bool {
-	if o == nil {
+func (j *Job) GetConfidential() *bool {
+	if j == nil {
 		return nil
 	}
-	return o.Confidential
+	return j.Confidential
 }
 
-func (o *Job) GetAvailableToEmployees() *bool {
-	if o == nil {
+func (j *Job) GetAvailableToEmployees() *bool {
+	if j == nil {
 		return nil
 	}
-	return o.AvailableToEmployees
+	return j.AvailableToEmployees
 }
 
-func (o *Job) GetTags() []string {
-	if o == nil {
+func (j *Job) GetTags() []string {
+	if j == nil {
 		return nil
 	}
-	return o.Tags
+	return j.Tags
 }
 
-func (o *Job) GetAddresses() []Address {
-	if o == nil {
+func (j *Job) GetAddresses() []Address {
+	if j == nil {
 		return nil
 	}
-	return o.Addresses
+	return j.Addresses
 }
 
-func (o *Job) GetCustomFields() []CustomField {
-	if o == nil {
+func (j *Job) GetCustomFields() []CustomField {
+	if j == nil {
 		return nil
 	}
-	return o.CustomFields
+	return j.CustomFields
 }
 
-func (o *Job) GetDeleted() *bool {
-	if o == nil {
+func (j *Job) GetDeleted() *bool {
+	if j == nil {
 		return nil
 	}
-	return o.Deleted
+	return j.Deleted
 }
 
-func (o *Job) GetOwnerID() *string {
-	if o == nil {
+func (j *Job) GetOwnerID() *string {
+	if j == nil {
 		return nil
 	}
-	return o.OwnerID
+	return j.OwnerID
 }
 
-func (o *Job) GetPublishedAt() *time.Time {
-	if o == nil {
+func (j *Job) GetPublishedAt() *time.Time {
+	if j == nil {
 		return nil
 	}
-	return o.PublishedAt
+	return j.PublishedAt
 }
 
-func (o *Job) GetCustomMappings() map[string]any {
-	if o == nil {
+func (j *Job) GetCustomMappings() map[string]any {
+	if j == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return j.CustomMappings
 }
 
-func (o *Job) GetUpdatedBy() *string {
-	if o == nil {
+func (j *Job) GetUpdatedBy() *string {
+	if j == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return j.UpdatedBy
 }
 
-func (o *Job) GetCreatedBy() *string {
-	if o == nil {
+func (j *Job) GetCreatedBy() *string {
+	if j == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return j.CreatedBy
 }
 
-func (o *Job) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (j *Job) GetUpdatedAt() *time.Time {
+	if j == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return j.UpdatedAt
 }
 
-func (o *Job) GetCreatedAt() *time.Time {
-	if o == nil {
+func (j *Job) GetCreatedAt() *time.Time {
+	if j == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return j.CreatedAt
 }

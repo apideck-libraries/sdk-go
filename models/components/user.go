@@ -46,149 +46,149 @@ type User struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *User) GetID() *string {
-	if o == nil {
+func (u *User) GetID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *User) GetParentID() *string {
-	if o == nil {
+func (u *User) GetParentID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ParentID
+	return u.ParentID
 }
 
-func (o *User) GetUsername() *string {
-	if o == nil {
+func (u *User) GetUsername() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Username
+	return u.Username
 }
 
-func (o *User) GetFirstName() *string {
-	if o == nil {
+func (u *User) GetFirstName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.FirstName
+	return u.FirstName
 }
 
-func (o *User) GetLastName() *string {
-	if o == nil {
+func (u *User) GetLastName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.LastName
+	return u.LastName
 }
 
-func (o *User) GetTitle() *string {
-	if o == nil {
+func (u *User) GetTitle() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Title
+	return u.Title
 }
 
-func (o *User) GetDivision() *string {
-	if o == nil {
+func (u *User) GetDivision() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Division
+	return u.Division
 }
 
-func (o *User) GetDepartment() *string {
-	if o == nil {
+func (u *User) GetDepartment() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Department
+	return u.Department
 }
 
-func (o *User) GetCompanyName() *string {
-	if o == nil {
+func (u *User) GetCompanyName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.CompanyName
+	return u.CompanyName
 }
 
-func (o *User) GetEmployeeNumber() *string {
-	if o == nil {
+func (u *User) GetEmployeeNumber() *string {
+	if u == nil {
 		return nil
 	}
-	return o.EmployeeNumber
+	return u.EmployeeNumber
 }
 
-func (o *User) GetDescription() *string {
-	if o == nil {
+func (u *User) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *User) GetImage() *string {
-	if o == nil {
+func (u *User) GetImage() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Image
+	return u.Image
 }
 
-func (o *User) GetLanguage() *string {
-	if o == nil {
+func (u *User) GetLanguage() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Language
+	return u.Language
 }
 
-func (o *User) GetStatus() *string {
-	if o == nil {
+func (u *User) GetStatus() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Status
+	return u.Status
 }
 
-func (o *User) GetAddresses() []Address {
-	if o == nil {
+func (u *User) GetAddresses() []Address {
+	if u == nil {
 		return nil
 	}
-	return o.Addresses
+	return u.Addresses
 }
 
-func (o *User) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
+func (u *User) GetPhoneNumbers() []PhoneNumber {
+	if u == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return u.PhoneNumbers
 }
 
-func (o *User) GetEmails() []Email {
-	if o == nil {
+func (u *User) GetEmails() []Email {
+	if u == nil {
 		return []Email{}
 	}
-	return o.Emails
+	return u.Emails
 }
 
-func (o *User) GetCustomMappings() map[string]any {
-	if o == nil {
+func (u *User) GetCustomMappings() map[string]any {
+	if u == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return u.CustomMappings
 }
 
-func (o *User) GetUpdatedAt() *string {
-	if o == nil {
+func (u *User) GetUpdatedAt() *string {
+	if u == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return u.UpdatedAt
 }
 
-func (o *User) GetCreatedAt() *string {
-	if o == nil {
+func (u *User) GetCreatedAt() *string {
+	if u == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return u.CreatedAt
 }
 
-func (o *User) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (u *User) GetPassThrough() []PassThroughBody {
+	if u == nil {
 		return nil
 	}
-	return o.PassThrough
+	return u.PassThrough
 }

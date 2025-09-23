@@ -14,18 +14,18 @@ type AccountingSubsidiariesAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingSubsidiariesAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingSubsidiariesAllGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingSubsidiariesAllGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingSubsidiariesAllGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingSubsidiariesAllRequest struct {
@@ -56,53 +56,53 @@ func (a *AccountingSubsidiariesAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingSubsidiariesAllRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingSubsidiariesAllRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingSubsidiariesAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingSubsidiariesAllRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingSubsidiariesAllRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingSubsidiariesAllRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingSubsidiariesAllRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingSubsidiariesAllRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingSubsidiariesAllRequest) GetCursor() *string {
-	if o == nil {
+func (a *AccountingSubsidiariesAllRequest) GetCursor() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Cursor
+	return a.Cursor
 }
 
-func (o *AccountingSubsidiariesAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (a *AccountingSubsidiariesAllRequest) GetLimit() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.Limit
+	return a.Limit
 }
 
-func (o *AccountingSubsidiariesAllRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingSubsidiariesAllRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingSubsidiariesAllResponse struct {
@@ -115,23 +115,23 @@ type AccountingSubsidiariesAllResponse struct {
 	Next func() (*AccountingSubsidiariesAllResponse, error)
 }
 
-func (o *AccountingSubsidiariesAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingSubsidiariesAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingSubsidiariesAllResponse) GetGetSubsidiariesResponse() *components.GetSubsidiariesResponse {
-	if o == nil {
+func (a *AccountingSubsidiariesAllResponse) GetGetSubsidiariesResponse() *components.GetSubsidiariesResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetSubsidiariesResponse
+	return a.GetSubsidiariesResponse
 }
 
-func (o *AccountingSubsidiariesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingSubsidiariesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

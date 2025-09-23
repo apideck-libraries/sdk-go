@@ -15,37 +15,37 @@ type LeadsFilter struct {
 	PhoneNumber *string `queryParam:"name=phone_number"`
 }
 
-func (o *LeadsFilter) GetName() *string {
-	if o == nil {
+func (l *LeadsFilter) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *LeadsFilter) GetFirstName() *string {
-	if o == nil {
+func (l *LeadsFilter) GetFirstName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.FirstName
+	return l.FirstName
 }
 
-func (o *LeadsFilter) GetLastName() *string {
-	if o == nil {
+func (l *LeadsFilter) GetLastName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.LastName
+	return l.LastName
 }
 
-func (o *LeadsFilter) GetEmail() *string {
-	if o == nil {
+func (l *LeadsFilter) GetEmail() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Email
+	return l.Email
 }
 
-func (o *LeadsFilter) GetPhoneNumber() *string {
-	if o == nil {
+func (l *LeadsFilter) GetPhoneNumber() *string {
+	if l == nil {
 		return nil
 	}
-	return o.PhoneNumber
+	return l.PhoneNumber
 }

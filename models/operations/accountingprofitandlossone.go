@@ -14,18 +14,18 @@ type AccountingProfitAndLossOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingProfitAndLossOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingProfitAndLossOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingProfitAndLossOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingProfitAndLossOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingProfitAndLossOneRequest struct {
@@ -56,53 +56,53 @@ func (a *AccountingProfitAndLossOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingProfitAndLossOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingProfitAndLossOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingProfitAndLossOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingProfitAndLossOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingProfitAndLossOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingProfitAndLossOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingProfitAndLossOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingProfitAndLossOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingProfitAndLossOneRequest) GetFilter() *components.ProfitAndLossFilter {
-	if o == nil {
+func (a *AccountingProfitAndLossOneRequest) GetFilter() *components.ProfitAndLossFilter {
+	if a == nil {
 		return nil
 	}
-	return o.Filter
+	return a.Filter
 }
 
-func (o *AccountingProfitAndLossOneRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (a *AccountingProfitAndLossOneRequest) GetPassThrough() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
-func (o *AccountingProfitAndLossOneRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingProfitAndLossOneRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingProfitAndLossOneResponse struct {
@@ -113,23 +113,23 @@ type AccountingProfitAndLossOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingProfitAndLossOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingProfitAndLossOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingProfitAndLossOneResponse) GetGetProfitAndLossResponse() *components.GetProfitAndLossResponse {
-	if o == nil {
+func (a *AccountingProfitAndLossOneResponse) GetGetProfitAndLossResponse() *components.GetProfitAndLossResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetProfitAndLossResponse
+	return a.GetProfitAndLossResponse
 }
 
-func (o *AccountingProfitAndLossOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingProfitAndLossOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

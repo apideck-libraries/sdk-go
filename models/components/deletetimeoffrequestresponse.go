@@ -20,51 +20,51 @@ type DeleteTimeOffRequestResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *DeleteTimeOffRequestResponse) GetStatusCode() int64 {
-	if o == nil {
+func (d *DeleteTimeOffRequestResponse) GetStatusCode() int64 {
+	if d == nil {
 		return 0
 	}
-	return o.StatusCode
+	return d.StatusCode
 }
 
-func (o *DeleteTimeOffRequestResponse) GetStatus() string {
-	if o == nil {
+func (d *DeleteTimeOffRequestResponse) GetStatus() string {
+	if d == nil {
 		return ""
 	}
-	return o.Status
+	return d.Status
 }
 
-func (o *DeleteTimeOffRequestResponse) GetService() string {
-	if o == nil {
+func (d *DeleteTimeOffRequestResponse) GetService() string {
+	if d == nil {
 		return ""
 	}
-	return o.Service
+	return d.Service
 }
 
-func (o *DeleteTimeOffRequestResponse) GetResource() string {
-	if o == nil {
+func (d *DeleteTimeOffRequestResponse) GetResource() string {
+	if d == nil {
 		return ""
 	}
-	return o.Resource
+	return d.Resource
 }
 
-func (o *DeleteTimeOffRequestResponse) GetOperation() string {
-	if o == nil {
+func (d *DeleteTimeOffRequestResponse) GetOperation() string {
+	if d == nil {
 		return ""
 	}
-	return o.Operation
+	return d.Operation
 }
 
-func (o *DeleteTimeOffRequestResponse) GetData() UnifiedID {
-	if o == nil {
+func (d *DeleteTimeOffRequestResponse) GetData() UnifiedID {
+	if d == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return d.Data
 }
 
-func (o *DeleteTimeOffRequestResponse) GetRaw() map[string]any {
-	if o == nil {
+func (d *DeleteTimeOffRequestResponse) GetRaw() map[string]any {
+	if d == nil {
 		return nil
 	}
-	return o.Raw
+	return d.Raw
 }

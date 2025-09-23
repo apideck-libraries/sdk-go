@@ -13,18 +13,18 @@ type VaultConnectionsUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultConnectionsUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionsUpdateGlobals) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionsUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionsUpdateGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultConnectionsUpdateRequest struct {
@@ -40,39 +40,39 @@ type VaultConnectionsUpdateRequest struct {
 	Connection components.ConnectionInput `request:"mediaType=application/json"`
 }
 
-func (o *VaultConnectionsUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionsUpdateRequest) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionsUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionsUpdateRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultConnectionsUpdateRequest) GetServiceID() string {
-	if o == nil {
+func (v *VaultConnectionsUpdateRequest) GetServiceID() string {
+	if v == nil {
 		return ""
 	}
-	return o.ServiceID
+	return v.ServiceID
 }
 
-func (o *VaultConnectionsUpdateRequest) GetUnifiedAPI() string {
-	if o == nil {
+func (v *VaultConnectionsUpdateRequest) GetUnifiedAPI() string {
+	if v == nil {
 		return ""
 	}
-	return o.UnifiedAPI
+	return v.UnifiedAPI
 }
 
-func (o *VaultConnectionsUpdateRequest) GetConnection() components.ConnectionInput {
-	if o == nil {
+func (v *VaultConnectionsUpdateRequest) GetConnection() components.ConnectionInput {
+	if v == nil {
 		return components.ConnectionInput{}
 	}
-	return o.Connection
+	return v.Connection
 }
 
 type VaultConnectionsUpdateResponse struct {
@@ -83,23 +83,23 @@ type VaultConnectionsUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultConnectionsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultConnectionsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultConnectionsUpdateResponse) GetUpdateConnectionResponse() *components.UpdateConnectionResponse {
-	if o == nil {
+func (v *VaultConnectionsUpdateResponse) GetUpdateConnectionResponse() *components.UpdateConnectionResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UpdateConnectionResponse
+	return v.UpdateConnectionResponse
 }
 
-func (o *VaultConnectionsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultConnectionsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

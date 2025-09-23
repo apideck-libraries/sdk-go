@@ -14,18 +14,18 @@ type CrmNotesAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmNotesAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmNotesAllGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmNotesAllGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmNotesAllGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmNotesAllRequest struct {
@@ -58,60 +58,60 @@ func (c *CrmNotesAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmNotesAllRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmNotesAllRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmNotesAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmNotesAllRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmNotesAllRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmNotesAllRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmNotesAllRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmNotesAllRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmNotesAllRequest) GetCursor() *string {
-	if o == nil {
+func (c *CrmNotesAllRequest) GetCursor() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Cursor
+	return c.Cursor
 }
 
-func (o *CrmNotesAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (c *CrmNotesAllRequest) GetLimit() *int64 {
+	if c == nil {
 		return nil
 	}
-	return o.Limit
+	return c.Limit
 }
 
-func (o *CrmNotesAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (c *CrmNotesAllRequest) GetPassThrough() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }
 
-func (o *CrmNotesAllRequest) GetFields() *string {
-	if o == nil {
+func (c *CrmNotesAllRequest) GetFields() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Fields
+	return c.Fields
 }
 
 type CrmNotesAllResponse struct {
@@ -124,23 +124,23 @@ type CrmNotesAllResponse struct {
 	Next func() (*CrmNotesAllResponse, error)
 }
 
-func (o *CrmNotesAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmNotesAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmNotesAllResponse) GetGetNotesResponse() *components.GetNotesResponse {
-	if o == nil {
+func (c *CrmNotesAllResponse) GetGetNotesResponse() *components.GetNotesResponse {
+	if c == nil {
 		return nil
 	}
-	return o.GetNotesResponse
+	return c.GetNotesResponse
 }
 
-func (o *CrmNotesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmNotesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

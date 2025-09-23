@@ -286,32 +286,32 @@ type Defaults struct {
 	Value   *ConnectionValue  `json:"value,omitempty"`
 }
 
-func (o *Defaults) GetTarget() *Target {
-	if o == nil {
+func (d *Defaults) GetTarget() *Target {
+	if d == nil {
 		return nil
 	}
-	return o.Target
+	return d.Target
 }
 
-func (o *Defaults) GetID() *string {
-	if o == nil {
+func (d *Defaults) GetID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.ID
+	return d.ID
 }
 
-func (o *Defaults) GetOptions() []FormFieldOption {
-	if o == nil {
+func (d *Defaults) GetOptions() []FormFieldOption {
+	if d == nil {
 		return nil
 	}
-	return o.Options
+	return d.Options
 }
 
-func (o *Defaults) GetValue() *ConnectionValue {
-	if o == nil {
+func (d *Defaults) GetValue() *ConnectionValue {
+	if d == nil {
 		return nil
 	}
-	return o.Value
+	return d.Value
 }
 
 type Configuration struct {
@@ -319,18 +319,18 @@ type Configuration struct {
 	Defaults []Defaults `json:"defaults,omitempty"`
 }
 
-func (o *Configuration) GetResource() *string {
-	if o == nil {
+func (c *Configuration) GetResource() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Resource
+	return c.Resource
 }
 
-func (o *Configuration) GetDefaults() []Defaults {
-	if o == nil {
+func (c *Configuration) GetDefaults() []Defaults {
+	if c == nil {
 		return nil
 	}
-	return o.Defaults
+	return c.Defaults
 }
 
 type Connection struct {
@@ -394,249 +394,249 @@ type Connection struct {
 	UpdatedAt             *float64        `json:"updated_at,omitempty"`
 }
 
-func (o *Connection) GetID() *string {
-	if o == nil {
+func (c *Connection) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *Connection) GetServiceID() *string {
-	if o == nil {
+func (c *Connection) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *Connection) GetName() *string {
-	if o == nil {
+func (c *Connection) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *Connection) GetTagLine() *string {
-	if o == nil {
+func (c *Connection) GetTagLine() *string {
+	if c == nil {
 		return nil
 	}
-	return o.TagLine
+	return c.TagLine
 }
 
-func (o *Connection) GetUnifiedAPI() *string {
-	if o == nil {
+func (c *Connection) GetUnifiedAPI() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UnifiedAPI
+	return c.UnifiedAPI
 }
 
-func (o *Connection) GetState() *ConnectionState {
-	if o == nil {
+func (c *Connection) GetState() *ConnectionState {
+	if c == nil {
 		return nil
 	}
-	return o.State
+	return c.State
 }
 
-func (o *Connection) GetIntegrationState() *IntegrationState {
-	if o == nil {
+func (c *Connection) GetIntegrationState() *IntegrationState {
+	if c == nil {
 		return nil
 	}
-	return o.IntegrationState
+	return c.IntegrationState
 }
 
-func (o *Connection) GetAuthType() *AuthType {
-	if o == nil {
+func (c *Connection) GetAuthType() *AuthType {
+	if c == nil {
 		return nil
 	}
-	return o.AuthType
+	return c.AuthType
 }
 
-func (o *Connection) GetOauthGrantType() *OAuthGrantType {
-	if o == nil {
+func (c *Connection) GetOauthGrantType() *OAuthGrantType {
+	if c == nil {
 		return nil
 	}
-	return o.OauthGrantType
+	return c.OauthGrantType
 }
 
-func (o *Connection) GetStatus() *ConnectionStatus {
-	if o == nil {
+func (c *Connection) GetStatus() *ConnectionStatus {
+	if c == nil {
 		return nil
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *Connection) GetEnabled() *bool {
-	if o == nil {
+func (c *Connection) GetEnabled() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Enabled
+	return c.Enabled
 }
 
-func (o *Connection) GetWebsite() *string {
-	if o == nil {
+func (c *Connection) GetWebsite() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Website
+	return c.Website
 }
 
-func (o *Connection) GetIcon() *string {
-	if o == nil {
+func (c *Connection) GetIcon() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Icon
+	return c.Icon
 }
 
-func (o *Connection) GetLogo() *string {
-	if o == nil {
+func (c *Connection) GetLogo() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Logo
+	return c.Logo
 }
 
-func (o *Connection) GetAuthorizeURL() *string {
-	if o == nil {
+func (c *Connection) GetAuthorizeURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AuthorizeURL
+	return c.AuthorizeURL
 }
 
-func (o *Connection) GetRevokeURL() *string {
-	if o == nil {
+func (c *Connection) GetRevokeURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RevokeURL
+	return c.RevokeURL
 }
 
-func (o *Connection) GetSettings() map[string]any {
-	if o == nil {
+func (c *Connection) GetSettings() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Settings
+	return c.Settings
 }
 
-func (o *Connection) GetMetadata() map[string]any {
-	if o == nil {
+func (c *Connection) GetMetadata() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Metadata
+	return c.Metadata
 }
 
-func (o *Connection) GetFormFields() []FormField {
-	if o == nil {
+func (c *Connection) GetFormFields() []FormField {
+	if c == nil {
 		return nil
 	}
-	return o.FormFields
+	return c.FormFields
 }
 
-func (o *Connection) GetConfiguration() []Configuration {
-	if o == nil {
+func (c *Connection) GetConfiguration() []Configuration {
+	if c == nil {
 		return nil
 	}
-	return o.Configuration
+	return c.Configuration
 }
 
-func (o *Connection) GetConfigurableResources() []string {
-	if o == nil {
+func (c *Connection) GetConfigurableResources() []string {
+	if c == nil {
 		return nil
 	}
-	return o.ConfigurableResources
+	return c.ConfigurableResources
 }
 
-func (o *Connection) GetResourceSchemaSupport() []string {
-	if o == nil {
+func (c *Connection) GetResourceSchemaSupport() []string {
+	if c == nil {
 		return nil
 	}
-	return o.ResourceSchemaSupport
+	return c.ResourceSchemaSupport
 }
 
-func (o *Connection) GetResourceSettingsSupport() []string {
-	if o == nil {
+func (c *Connection) GetResourceSettingsSupport() []string {
+	if c == nil {
 		return nil
 	}
-	return o.ResourceSettingsSupport
+	return c.ResourceSettingsSupport
 }
 
-func (o *Connection) GetValidationSupport() *bool {
-	if o == nil {
+func (c *Connection) GetValidationSupport() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.ValidationSupport
+	return c.ValidationSupport
 }
 
-func (o *Connection) GetSchemaSupport() *bool {
-	if o == nil {
+func (c *Connection) GetSchemaSupport() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.SchemaSupport
+	return c.SchemaSupport
 }
 
-func (o *Connection) GetSettingsRequiredForAuthorization() []string {
-	if o == nil {
+func (c *Connection) GetSettingsRequiredForAuthorization() []string {
+	if c == nil {
 		return nil
 	}
-	return o.SettingsRequiredForAuthorization
+	return c.SettingsRequiredForAuthorization
 }
 
-func (o *Connection) GetSubscriptions() []WebhookSubscription {
-	if o == nil {
+func (c *Connection) GetSubscriptions() []WebhookSubscription {
+	if c == nil {
 		return nil
 	}
-	return o.Subscriptions
+	return c.Subscriptions
 }
 
-func (o *Connection) GetHasGuide() *bool {
-	if o == nil {
+func (c *Connection) GetHasGuide() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.HasGuide
+	return c.HasGuide
 }
 
-func (o *Connection) GetCreatedAt() *float64 {
-	if o == nil {
+func (c *Connection) GetCreatedAt() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }
 
-func (o *Connection) GetCustomMappings() []CustomMapping {
-	if o == nil {
+func (c *Connection) GetCustomMappings() []CustomMapping {
+	if c == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return c.CustomMappings
 }
 
-func (o *Connection) GetConsentState() *ConsentState {
-	if o == nil {
+func (c *Connection) GetConsentState() *ConsentState {
+	if c == nil {
 		return nil
 	}
-	return o.ConsentState
+	return c.ConsentState
 }
 
-func (o *Connection) GetConsents() []ConsentRecord {
-	if o == nil {
+func (c *Connection) GetConsents() []ConsentRecord {
+	if c == nil {
 		return nil
 	}
-	return o.Consents
+	return c.Consents
 }
 
-func (o *Connection) GetLatestConsent() *ConsentRecord {
-	if o == nil {
+func (c *Connection) GetLatestConsent() *ConsentRecord {
+	if c == nil {
 		return nil
 	}
-	return o.LatestConsent
+	return c.LatestConsent
 }
 
-func (o *Connection) GetApplicationDataScopes() *DataScopes {
-	if o == nil {
+func (c *Connection) GetApplicationDataScopes() *DataScopes {
+	if c == nil {
 		return nil
 	}
-	return o.ApplicationDataScopes
+	return c.ApplicationDataScopes
 }
 
-func (o *Connection) GetUpdatedAt() *float64 {
-	if o == nil {
+func (c *Connection) GetUpdatedAt() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return c.UpdatedAt
 }
 
 type ConnectionDefaults struct {
@@ -645,25 +645,25 @@ type ConnectionDefaults struct {
 	Value   *ConnectionValue  `json:"value,omitempty"`
 }
 
-func (o *ConnectionDefaults) GetID() *string {
-	if o == nil {
+func (c *ConnectionDefaults) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ConnectionDefaults) GetOptions() []FormFieldOption {
-	if o == nil {
+func (c *ConnectionDefaults) GetOptions() []FormFieldOption {
+	if c == nil {
 		return nil
 	}
-	return o.Options
+	return c.Options
 }
 
-func (o *ConnectionDefaults) GetValue() *ConnectionValue {
-	if o == nil {
+func (c *ConnectionDefaults) GetValue() *ConnectionValue {
+	if c == nil {
 		return nil
 	}
-	return o.Value
+	return c.Value
 }
 
 type ConnectionConfiguration struct {
@@ -671,18 +671,18 @@ type ConnectionConfiguration struct {
 	Defaults []ConnectionDefaults `json:"defaults,omitempty"`
 }
 
-func (o *ConnectionConfiguration) GetResource() *string {
-	if o == nil {
+func (c *ConnectionConfiguration) GetResource() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Resource
+	return c.Resource
 }
 
-func (o *ConnectionConfiguration) GetDefaults() []ConnectionDefaults {
-	if o == nil {
+func (c *ConnectionConfiguration) GetDefaults() []ConnectionDefaults {
+	if c == nil {
 		return nil
 	}
-	return o.Defaults
+	return c.Defaults
 }
 
 type ConnectionInput struct {
@@ -701,58 +701,58 @@ type ConnectionInput struct {
 	ApplicationDataScopes *DataScopesInput    `json:"application_data_scopes,omitempty"`
 }
 
-func (o *ConnectionInput) GetEnabled() *bool {
-	if o == nil {
+func (c *ConnectionInput) GetEnabled() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Enabled
+	return c.Enabled
 }
 
-func (o *ConnectionInput) GetSettings() map[string]any {
-	if o == nil {
+func (c *ConnectionInput) GetSettings() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Settings
+	return c.Settings
 }
 
-func (o *ConnectionInput) GetMetadata() map[string]any {
-	if o == nil {
+func (c *ConnectionInput) GetMetadata() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Metadata
+	return c.Metadata
 }
 
-func (o *ConnectionInput) GetConfiguration() []ConnectionConfiguration {
-	if o == nil {
+func (c *ConnectionInput) GetConfiguration() []ConnectionConfiguration {
+	if c == nil {
 		return nil
 	}
-	return o.Configuration
+	return c.Configuration
 }
 
-func (o *ConnectionInput) GetCustomMappings() []CustomMappingInput {
-	if o == nil {
+func (c *ConnectionInput) GetCustomMappings() []CustomMappingInput {
+	if c == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return c.CustomMappings
 }
 
-func (o *ConnectionInput) GetConsentState() *ConsentState {
-	if o == nil {
+func (c *ConnectionInput) GetConsentState() *ConsentState {
+	if c == nil {
 		return nil
 	}
-	return o.ConsentState
+	return c.ConsentState
 }
 
-func (o *ConnectionInput) GetLatestConsent() *ConsentRecordInput {
-	if o == nil {
+func (c *ConnectionInput) GetLatestConsent() *ConsentRecordInput {
+	if c == nil {
 		return nil
 	}
-	return o.LatestConsent
+	return c.LatestConsent
 }
 
-func (o *ConnectionInput) GetApplicationDataScopes() *DataScopesInput {
-	if o == nil {
+func (c *ConnectionInput) GetApplicationDataScopes() *DataScopesInput {
+	if c == nil {
 		return nil
 	}
-	return o.ApplicationDataScopes
+	return c.ApplicationDataScopes
 }

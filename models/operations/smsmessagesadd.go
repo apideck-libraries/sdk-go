@@ -14,18 +14,18 @@ type SmsMessagesAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *SmsMessagesAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (s *SmsMessagesAddGlobals) GetConsumerID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return s.ConsumerID
 }
 
-func (o *SmsMessagesAddGlobals) GetAppID() *string {
-	if o == nil {
+func (s *SmsMessagesAddGlobals) GetAppID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.AppID
+	return s.AppID
 }
 
 type SmsMessagesAddRequest struct {
@@ -51,39 +51,39 @@ func (s *SmsMessagesAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *SmsMessagesAddRequest) GetRaw() *bool {
-	if o == nil {
+func (s *SmsMessagesAddRequest) GetRaw() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.Raw
+	return s.Raw
 }
 
-func (o *SmsMessagesAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (s *SmsMessagesAddRequest) GetConsumerID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return s.ConsumerID
 }
 
-func (o *SmsMessagesAddRequest) GetAppID() *string {
-	if o == nil {
+func (s *SmsMessagesAddRequest) GetAppID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.AppID
+	return s.AppID
 }
 
-func (o *SmsMessagesAddRequest) GetServiceID() *string {
-	if o == nil {
+func (s *SmsMessagesAddRequest) GetServiceID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ServiceID
+	return s.ServiceID
 }
 
-func (o *SmsMessagesAddRequest) GetMessage() components.MessageInput {
-	if o == nil {
+func (s *SmsMessagesAddRequest) GetMessage() components.MessageInput {
+	if s == nil {
 		return components.MessageInput{}
 	}
-	return o.Message
+	return s.Message
 }
 
 type SmsMessagesAddResponse struct {
@@ -94,23 +94,23 @@ type SmsMessagesAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *SmsMessagesAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (s *SmsMessagesAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if s == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return s.HTTPMeta
 }
 
-func (o *SmsMessagesAddResponse) GetCreateMessageResponse() *components.CreateMessageResponse {
-	if o == nil {
+func (s *SmsMessagesAddResponse) GetCreateMessageResponse() *components.CreateMessageResponse {
+	if s == nil {
 		return nil
 	}
-	return o.CreateMessageResponse
+	return s.CreateMessageResponse
 }
 
-func (o *SmsMessagesAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (s *SmsMessagesAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if s == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return s.UnexpectedErrorResponse
 }

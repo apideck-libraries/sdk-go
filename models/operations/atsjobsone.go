@@ -14,18 +14,18 @@ type AtsJobsOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AtsJobsOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AtsJobsOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AtsJobsOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AtsJobsOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AtsJobsOneRequest struct {
@@ -54,46 +54,46 @@ func (a *AtsJobsOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AtsJobsOneRequest) GetID() string {
-	if o == nil {
+func (a *AtsJobsOneRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AtsJobsOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AtsJobsOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AtsJobsOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AtsJobsOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AtsJobsOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AtsJobsOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AtsJobsOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AtsJobsOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AtsJobsOneRequest) GetFields() *string {
-	if o == nil {
+func (a *AtsJobsOneRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AtsJobsOneResponse struct {
@@ -104,23 +104,23 @@ type AtsJobsOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AtsJobsOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AtsJobsOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AtsJobsOneResponse) GetGetJobResponse() *components.GetJobResponse {
-	if o == nil {
+func (a *AtsJobsOneResponse) GetGetJobResponse() *components.GetJobResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetJobResponse
+	return a.GetJobResponse
 }
 
-func (o *AtsJobsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AtsJobsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

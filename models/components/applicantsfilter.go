@@ -7,9 +7,9 @@ type ApplicantsFilter struct {
 	JobID *string `queryParam:"name=job_id"`
 }
 
-func (o *ApplicantsFilter) GetJobID() *string {
-	if o == nil {
+func (a *ApplicantsFilter) GetJobID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.JobID
+	return a.JobID
 }

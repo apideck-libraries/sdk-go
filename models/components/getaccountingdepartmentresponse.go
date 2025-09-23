@@ -19,51 +19,51 @@ type GetAccountingDepartmentResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetAccountingDepartmentResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetAccountingDepartmentResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetAccountingDepartmentResponse) GetStatus() string {
-	if o == nil {
+func (g *GetAccountingDepartmentResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetAccountingDepartmentResponse) GetService() string {
-	if o == nil {
+func (g *GetAccountingDepartmentResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetAccountingDepartmentResponse) GetResource() string {
-	if o == nil {
+func (g *GetAccountingDepartmentResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetAccountingDepartmentResponse) GetOperation() string {
-	if o == nil {
+func (g *GetAccountingDepartmentResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetAccountingDepartmentResponse) GetData() AccountingDepartment {
-	if o == nil {
+func (g *GetAccountingDepartmentResponse) GetData() AccountingDepartment {
+	if g == nil {
 		return AccountingDepartment{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetAccountingDepartmentResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetAccountingDepartmentResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

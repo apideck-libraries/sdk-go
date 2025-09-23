@@ -71,37 +71,37 @@ type ConnectorDoc struct {
 	URL *string `json:"url,omitempty"`
 }
 
-func (o *ConnectorDoc) GetID() *string {
-	if o == nil {
+func (c *ConnectorDoc) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ConnectorDoc) GetName() *string {
-	if o == nil {
+func (c *ConnectorDoc) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *ConnectorDoc) GetAudience() *Audience {
-	if o == nil {
+func (c *ConnectorDoc) GetAudience() *Audience {
+	if c == nil {
 		return nil
 	}
-	return o.Audience
+	return c.Audience
 }
 
-func (o *ConnectorDoc) GetFormat() *Format {
-	if o == nil {
+func (c *ConnectorDoc) GetFormat() *Format {
+	if c == nil {
 		return nil
 	}
-	return o.Format
+	return c.Format
 }
 
-func (o *ConnectorDoc) GetURL() *string {
-	if o == nil {
+func (c *ConnectorDoc) GetURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.URL
+	return c.URL
 }

@@ -13,18 +13,18 @@ type CompanyRowType struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *CompanyRowType) GetID() *string {
-	if o == nil {
+func (c *CompanyRowType) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CompanyRowType) GetName() *string {
-	if o == nil {
+func (c *CompanyRowType) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
 type Company1 struct {
@@ -116,298 +116,298 @@ func (c *Company1) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Company1) GetID() *string {
-	if o == nil {
+func (c *Company1) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *Company1) GetName() *string {
-	if o == nil {
+func (c *Company1) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *Company1) GetInteractionCount() *int64 {
-	if o == nil {
+func (c *Company1) GetInteractionCount() *int64 {
+	if c == nil {
 		return nil
 	}
-	return o.InteractionCount
+	return c.InteractionCount
 }
 
-func (o *Company1) GetOwnerID() *string {
-	if o == nil {
+func (c *Company1) GetOwnerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.OwnerID
+	return c.OwnerID
 }
 
-func (o *Company1) GetImage() *string {
-	if o == nil {
+func (c *Company1) GetImage() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Image
+	return c.Image
 }
 
-func (o *Company1) GetDescription() *string {
-	if o == nil {
+func (c *Company1) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *Company1) GetVatNumber() *string {
-	if o == nil {
+func (c *Company1) GetVatNumber() *string {
+	if c == nil {
 		return nil
 	}
-	return o.VatNumber
+	return c.VatNumber
 }
 
-func (o *Company1) GetCurrency() *Currency {
-	if o == nil {
+func (c *Company1) GetCurrency() *Currency {
+	if c == nil {
 		return nil
 	}
-	return o.Currency
+	return c.Currency
 }
 
-func (o *Company1) GetStatus() *string {
-	if o == nil {
+func (c *Company1) GetStatus() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *Company1) GetFax() *string {
-	if o == nil {
+func (c *Company1) GetFax() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Fax
+	return c.Fax
 }
 
-func (o *Company1) GetAnnualRevenue() *string {
-	if o == nil {
+func (c *Company1) GetAnnualRevenue() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AnnualRevenue
+	return c.AnnualRevenue
 }
 
-func (o *Company1) GetNumberOfEmployees() *string {
-	if o == nil {
+func (c *Company1) GetNumberOfEmployees() *string {
+	if c == nil {
 		return nil
 	}
-	return o.NumberOfEmployees
+	return c.NumberOfEmployees
 }
 
-func (o *Company1) GetIndustry() *string {
-	if o == nil {
+func (c *Company1) GetIndustry() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Industry
+	return c.Industry
 }
 
-func (o *Company1) GetOwnership() *string {
-	if o == nil {
+func (c *Company1) GetOwnership() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Ownership
+	return c.Ownership
 }
 
-func (o *Company1) GetSalesTaxNumber() *string {
-	if o == nil {
+func (c *Company1) GetSalesTaxNumber() *string {
+	if c == nil {
 		return nil
 	}
-	return o.SalesTaxNumber
+	return c.SalesTaxNumber
 }
 
-func (o *Company1) GetPayeeNumber() *string {
-	if o == nil {
+func (c *Company1) GetPayeeNumber() *string {
+	if c == nil {
 		return nil
 	}
-	return o.PayeeNumber
+	return c.PayeeNumber
 }
 
-func (o *Company1) GetAbnOrTfn() *string {
-	if o == nil {
+func (c *Company1) GetAbnOrTfn() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AbnOrTfn
+	return c.AbnOrTfn
 }
 
-func (o *Company1) GetAbnBranch() *string {
-	if o == nil {
+func (c *Company1) GetAbnBranch() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AbnBranch
+	return c.AbnBranch
 }
 
-func (o *Company1) GetAcn() *string {
-	if o == nil {
+func (c *Company1) GetAcn() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Acn
+	return c.Acn
 }
 
-func (o *Company1) GetFirstName() *string {
-	if o == nil {
+func (c *Company1) GetFirstName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.FirstName
+	return c.FirstName
 }
 
-func (o *Company1) GetLastName() *string {
-	if o == nil {
+func (c *Company1) GetLastName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.LastName
+	return c.LastName
 }
 
-func (o *Company1) GetParentID() *string {
-	if o == nil {
+func (c *Company1) GetParentID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ParentID
+	return c.ParentID
 }
 
-func (o *Company1) GetBankAccounts() []BankAccount1 {
-	if o == nil {
+func (c *Company1) GetBankAccounts() []BankAccount1 {
+	if c == nil {
 		return nil
 	}
-	return o.BankAccounts
+	return c.BankAccounts
 }
 
-func (o *Company1) GetWebsites() []Website {
-	if o == nil {
+func (c *Company1) GetWebsites() []Website {
+	if c == nil {
 		return nil
 	}
-	return o.Websites
+	return c.Websites
 }
 
-func (o *Company1) GetAddresses() []Address {
-	if o == nil {
+func (c *Company1) GetAddresses() []Address {
+	if c == nil {
 		return nil
 	}
-	return o.Addresses
+	return c.Addresses
 }
 
-func (o *Company1) GetSocialLinks() []SocialLink {
-	if o == nil {
+func (c *Company1) GetSocialLinks() []SocialLink {
+	if c == nil {
 		return nil
 	}
-	return o.SocialLinks
+	return c.SocialLinks
 }
 
-func (o *Company1) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
+func (c *Company1) GetPhoneNumbers() []PhoneNumber {
+	if c == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return c.PhoneNumbers
 }
 
-func (o *Company1) GetEmails() []Email {
-	if o == nil {
+func (c *Company1) GetEmails() []Email {
+	if c == nil {
 		return nil
 	}
-	return o.Emails
+	return c.Emails
 }
 
-func (o *Company1) GetRowType() *CompanyRowType {
-	if o == nil {
+func (c *Company1) GetRowType() *CompanyRowType {
+	if c == nil {
 		return nil
 	}
-	return o.RowType
+	return c.RowType
 }
 
-func (o *Company1) GetCustomFields() []CustomField {
-	if o == nil {
+func (c *Company1) GetCustomFields() []CustomField {
+	if c == nil {
 		return nil
 	}
-	return o.CustomFields
+	return c.CustomFields
 }
 
-func (o *Company1) GetTags() []string {
-	if o == nil {
+func (c *Company1) GetTags() []string {
+	if c == nil {
 		return nil
 	}
-	return o.Tags
+	return c.Tags
 }
 
-func (o *Company1) GetReadOnly() *bool {
-	if o == nil {
+func (c *Company1) GetReadOnly() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.ReadOnly
+	return c.ReadOnly
 }
 
-func (o *Company1) GetLastActivityAt() *time.Time {
-	if o == nil {
+func (c *Company1) GetLastActivityAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.LastActivityAt
+	return c.LastActivityAt
 }
 
-func (o *Company1) GetDeleted() *bool {
-	if o == nil {
+func (c *Company1) GetDeleted() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Deleted
+	return c.Deleted
 }
 
-func (o *Company1) GetSalutation() *string {
-	if o == nil {
+func (c *Company1) GetSalutation() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Salutation
+	return c.Salutation
 }
 
-func (o *Company1) GetBirthday() *types.Date {
-	if o == nil {
+func (c *Company1) GetBirthday() *types.Date {
+	if c == nil {
 		return nil
 	}
-	return o.Birthday
+	return c.Birthday
 }
 
-func (o *Company1) GetCustomMappings() map[string]any {
-	if o == nil {
+func (c *Company1) GetCustomMappings() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return c.CustomMappings
 }
 
-func (o *Company1) GetUpdatedBy() *string {
-	if o == nil {
+func (c *Company1) GetUpdatedBy() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return c.UpdatedBy
 }
 
-func (o *Company1) GetCreatedBy() *string {
-	if o == nil {
+func (c *Company1) GetCreatedBy() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return c.CreatedBy
 }
 
-func (o *Company1) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (c *Company1) GetUpdatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return c.UpdatedAt
 }
 
-func (o *Company1) GetCreatedAt() *time.Time {
-	if o == nil {
+func (c *Company1) GetCreatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }
 
-func (o *Company1) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (c *Company1) GetPassThrough() []PassThroughBody {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }
 
 type Company1Input struct {
@@ -479,226 +479,226 @@ func (c *Company1Input) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Company1Input) GetName() *string {
-	if o == nil {
+func (c *Company1Input) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *Company1Input) GetOwnerID() *string {
-	if o == nil {
+func (c *Company1Input) GetOwnerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.OwnerID
+	return c.OwnerID
 }
 
-func (o *Company1Input) GetImage() *string {
-	if o == nil {
+func (c *Company1Input) GetImage() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Image
+	return c.Image
 }
 
-func (o *Company1Input) GetDescription() *string {
-	if o == nil {
+func (c *Company1Input) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *Company1Input) GetVatNumber() *string {
-	if o == nil {
+func (c *Company1Input) GetVatNumber() *string {
+	if c == nil {
 		return nil
 	}
-	return o.VatNumber
+	return c.VatNumber
 }
 
-func (o *Company1Input) GetCurrency() *Currency {
-	if o == nil {
+func (c *Company1Input) GetCurrency() *Currency {
+	if c == nil {
 		return nil
 	}
-	return o.Currency
+	return c.Currency
 }
 
-func (o *Company1Input) GetStatus() *string {
-	if o == nil {
+func (c *Company1Input) GetStatus() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *Company1Input) GetFax() *string {
-	if o == nil {
+func (c *Company1Input) GetFax() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Fax
+	return c.Fax
 }
 
-func (o *Company1Input) GetAnnualRevenue() *string {
-	if o == nil {
+func (c *Company1Input) GetAnnualRevenue() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AnnualRevenue
+	return c.AnnualRevenue
 }
 
-func (o *Company1Input) GetNumberOfEmployees() *string {
-	if o == nil {
+func (c *Company1Input) GetNumberOfEmployees() *string {
+	if c == nil {
 		return nil
 	}
-	return o.NumberOfEmployees
+	return c.NumberOfEmployees
 }
 
-func (o *Company1Input) GetIndustry() *string {
-	if o == nil {
+func (c *Company1Input) GetIndustry() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Industry
+	return c.Industry
 }
 
-func (o *Company1Input) GetOwnership() *string {
-	if o == nil {
+func (c *Company1Input) GetOwnership() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Ownership
+	return c.Ownership
 }
 
-func (o *Company1Input) GetSalesTaxNumber() *string {
-	if o == nil {
+func (c *Company1Input) GetSalesTaxNumber() *string {
+	if c == nil {
 		return nil
 	}
-	return o.SalesTaxNumber
+	return c.SalesTaxNumber
 }
 
-func (o *Company1Input) GetPayeeNumber() *string {
-	if o == nil {
+func (c *Company1Input) GetPayeeNumber() *string {
+	if c == nil {
 		return nil
 	}
-	return o.PayeeNumber
+	return c.PayeeNumber
 }
 
-func (o *Company1Input) GetAbnOrTfn() *string {
-	if o == nil {
+func (c *Company1Input) GetAbnOrTfn() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AbnOrTfn
+	return c.AbnOrTfn
 }
 
-func (o *Company1Input) GetAbnBranch() *string {
-	if o == nil {
+func (c *Company1Input) GetAbnBranch() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AbnBranch
+	return c.AbnBranch
 }
 
-func (o *Company1Input) GetAcn() *string {
-	if o == nil {
+func (c *Company1Input) GetAcn() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Acn
+	return c.Acn
 }
 
-func (o *Company1Input) GetFirstName() *string {
-	if o == nil {
+func (c *Company1Input) GetFirstName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.FirstName
+	return c.FirstName
 }
 
-func (o *Company1Input) GetLastName() *string {
-	if o == nil {
+func (c *Company1Input) GetLastName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.LastName
+	return c.LastName
 }
 
-func (o *Company1Input) GetBankAccounts() []BankAccount1 {
-	if o == nil {
+func (c *Company1Input) GetBankAccounts() []BankAccount1 {
+	if c == nil {
 		return nil
 	}
-	return o.BankAccounts
+	return c.BankAccounts
 }
 
-func (o *Company1Input) GetWebsites() []Website {
-	if o == nil {
+func (c *Company1Input) GetWebsites() []Website {
+	if c == nil {
 		return nil
 	}
-	return o.Websites
+	return c.Websites
 }
 
-func (o *Company1Input) GetAddresses() []Address {
-	if o == nil {
+func (c *Company1Input) GetAddresses() []Address {
+	if c == nil {
 		return nil
 	}
-	return o.Addresses
+	return c.Addresses
 }
 
-func (o *Company1Input) GetSocialLinks() []SocialLink {
-	if o == nil {
+func (c *Company1Input) GetSocialLinks() []SocialLink {
+	if c == nil {
 		return nil
 	}
-	return o.SocialLinks
+	return c.SocialLinks
 }
 
-func (o *Company1Input) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
+func (c *Company1Input) GetPhoneNumbers() []PhoneNumber {
+	if c == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return c.PhoneNumbers
 }
 
-func (o *Company1Input) GetEmails() []Email {
-	if o == nil {
+func (c *Company1Input) GetEmails() []Email {
+	if c == nil {
 		return nil
 	}
-	return o.Emails
+	return c.Emails
 }
 
-func (o *Company1Input) GetRowType() *CompanyRowType {
-	if o == nil {
+func (c *Company1Input) GetRowType() *CompanyRowType {
+	if c == nil {
 		return nil
 	}
-	return o.RowType
+	return c.RowType
 }
 
-func (o *Company1Input) GetCustomFields() []CustomField {
-	if o == nil {
+func (c *Company1Input) GetCustomFields() []CustomField {
+	if c == nil {
 		return nil
 	}
-	return o.CustomFields
+	return c.CustomFields
 }
 
-func (o *Company1Input) GetTags() []string {
-	if o == nil {
+func (c *Company1Input) GetTags() []string {
+	if c == nil {
 		return nil
 	}
-	return o.Tags
+	return c.Tags
 }
 
-func (o *Company1Input) GetReadOnly() *bool {
-	if o == nil {
+func (c *Company1Input) GetReadOnly() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.ReadOnly
+	return c.ReadOnly
 }
 
-func (o *Company1Input) GetSalutation() *string {
-	if o == nil {
+func (c *Company1Input) GetSalutation() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Salutation
+	return c.Salutation
 }
 
-func (o *Company1Input) GetBirthday() *types.Date {
-	if o == nil {
+func (c *Company1Input) GetBirthday() *types.Date {
+	if c == nil {
 		return nil
 	}
-	return o.Birthday
+	return c.Birthday
 }
 
-func (o *Company1Input) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (c *Company1Input) GetPassThrough() []PassThroughBody {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }

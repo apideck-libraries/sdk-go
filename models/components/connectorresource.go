@@ -32,100 +32,100 @@ type ConnectorResource struct {
 	SupportedListFields []SupportedProperty `json:"supported_list_fields,omitempty"`
 }
 
-func (o *ConnectorResource) GetID() *string {
-	if o == nil {
+func (c *ConnectorResource) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ConnectorResource) GetName() *string {
-	if o == nil {
+func (c *ConnectorResource) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *ConnectorResource) GetDownstreamID() *string {
-	if o == nil {
+func (c *ConnectorResource) GetDownstreamID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.DownstreamID
+	return c.DownstreamID
 }
 
-func (o *ConnectorResource) GetDownstreamName() *string {
-	if o == nil {
+func (c *ConnectorResource) GetDownstreamName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.DownstreamName
+	return c.DownstreamName
 }
 
-func (o *ConnectorResource) GetStatus() *ResourceStatus {
-	if o == nil {
+func (c *ConnectorResource) GetStatus() *ResourceStatus {
+	if c == nil {
 		return nil
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *ConnectorResource) GetPaginationSupported() *bool {
-	if o == nil {
+func (c *ConnectorResource) GetPaginationSupported() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.PaginationSupported
+	return c.PaginationSupported
 }
 
-func (o *ConnectorResource) GetPagination() *PaginationCoverage {
-	if o == nil {
+func (c *ConnectorResource) GetPagination() *PaginationCoverage {
+	if c == nil {
 		return nil
 	}
-	return o.Pagination
+	return c.Pagination
 }
 
-func (o *ConnectorResource) GetCustomFieldsSupported() *bool {
-	if o == nil {
+func (c *ConnectorResource) GetCustomFieldsSupported() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.CustomFieldsSupported
+	return c.CustomFieldsSupported
 }
 
-func (o *ConnectorResource) GetSupportedOperations() []string {
-	if o == nil {
+func (c *ConnectorResource) GetSupportedOperations() []string {
+	if c == nil {
 		return nil
 	}
-	return o.SupportedOperations
+	return c.SupportedOperations
 }
 
-func (o *ConnectorResource) GetDownstreamUnsupportedOperations() []string {
-	if o == nil {
+func (c *ConnectorResource) GetDownstreamUnsupportedOperations() []string {
+	if c == nil {
 		return nil
 	}
-	return o.DownstreamUnsupportedOperations
+	return c.DownstreamUnsupportedOperations
 }
 
-func (o *ConnectorResource) GetSupportedFilters() []string {
-	if o == nil {
+func (c *ConnectorResource) GetSupportedFilters() []string {
+	if c == nil {
 		return nil
 	}
-	return o.SupportedFilters
+	return c.SupportedFilters
 }
 
-func (o *ConnectorResource) GetSupportedSortBy() []string {
-	if o == nil {
+func (c *ConnectorResource) GetSupportedSortBy() []string {
+	if c == nil {
 		return nil
 	}
-	return o.SupportedSortBy
+	return c.SupportedSortBy
 }
 
-func (o *ConnectorResource) GetSupportedFields() []SupportedProperty {
-	if o == nil {
+func (c *ConnectorResource) GetSupportedFields() []SupportedProperty {
+	if c == nil {
 		return nil
 	}
-	return o.SupportedFields
+	return c.SupportedFields
 }
 
-func (o *ConnectorResource) GetSupportedListFields() []SupportedProperty {
-	if o == nil {
+func (c *ConnectorResource) GetSupportedListFields() []SupportedProperty {
+	if c == nil {
 		return nil
 	}
-	return o.SupportedListFields
+	return c.SupportedListFields
 }

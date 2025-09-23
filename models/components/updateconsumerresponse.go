@@ -13,30 +13,30 @@ type UpdateConsumerResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *UpdateConsumerResponse) GetStatusCode() int64 {
-	if o == nil {
+func (u *UpdateConsumerResponse) GetStatusCode() int64 {
+	if u == nil {
 		return 0
 	}
-	return o.StatusCode
+	return u.StatusCode
 }
 
-func (o *UpdateConsumerResponse) GetStatus() string {
-	if o == nil {
+func (u *UpdateConsumerResponse) GetStatus() string {
+	if u == nil {
 		return ""
 	}
-	return o.Status
+	return u.Status
 }
 
-func (o *UpdateConsumerResponse) GetData() Consumer {
-	if o == nil {
+func (u *UpdateConsumerResponse) GetData() Consumer {
+	if u == nil {
 		return Consumer{}
 	}
-	return o.Data
+	return u.Data
 }
 
-func (o *UpdateConsumerResponse) GetRaw() map[string]any {
-	if o == nil {
+func (u *UpdateConsumerResponse) GetRaw() map[string]any {
+	if u == nil {
 		return nil
 	}
-	return o.Raw
+	return u.Raw
 }

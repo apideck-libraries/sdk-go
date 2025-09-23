@@ -14,18 +14,18 @@ type AccountingQuotesUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingQuotesUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingQuotesUpdateGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingQuotesUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingQuotesUpdateGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingQuotesUpdateRequest struct {
@@ -53,46 +53,46 @@ func (a *AccountingQuotesUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingQuotesUpdateRequest) GetID() string {
-	if o == nil {
+func (a *AccountingQuotesUpdateRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingQuotesUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingQuotesUpdateRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingQuotesUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingQuotesUpdateRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingQuotesUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingQuotesUpdateRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingQuotesUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingQuotesUpdateRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingQuotesUpdateRequest) GetQuote() components.QuoteInput {
-	if o == nil {
+func (a *AccountingQuotesUpdateRequest) GetQuote() components.QuoteInput {
+	if a == nil {
 		return components.QuoteInput{}
 	}
-	return o.Quote
+	return a.Quote
 }
 
 type AccountingQuotesUpdateResponse struct {
@@ -103,23 +103,23 @@ type AccountingQuotesUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingQuotesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingQuotesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingQuotesUpdateResponse) GetUpdateQuoteResponse() *components.UpdateQuoteResponse {
-	if o == nil {
+func (a *AccountingQuotesUpdateResponse) GetUpdateQuoteResponse() *components.UpdateQuoteResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UpdateQuoteResponse
+	return a.UpdateQuoteResponse
 }
 
-func (o *AccountingQuotesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingQuotesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

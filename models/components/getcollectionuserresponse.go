@@ -19,51 +19,51 @@ type GetCollectionUserResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetCollectionUserResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetCollectionUserResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetCollectionUserResponse) GetStatus() string {
-	if o == nil {
+func (g *GetCollectionUserResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetCollectionUserResponse) GetService() string {
-	if o == nil {
+func (g *GetCollectionUserResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetCollectionUserResponse) GetResource() string {
-	if o == nil {
+func (g *GetCollectionUserResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetCollectionUserResponse) GetOperation() string {
-	if o == nil {
+func (g *GetCollectionUserResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetCollectionUserResponse) GetData() CollectionUser {
-	if o == nil {
+func (g *GetCollectionUserResponse) GetData() CollectionUser {
+	if g == nil {
 		return CollectionUser{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetCollectionUserResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetCollectionUserResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

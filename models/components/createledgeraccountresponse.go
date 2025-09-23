@@ -20,51 +20,51 @@ type CreateLedgerAccountResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *CreateLedgerAccountResponse) GetStatusCode() int64 {
-	if o == nil {
+func (c *CreateLedgerAccountResponse) GetStatusCode() int64 {
+	if c == nil {
 		return 0
 	}
-	return o.StatusCode
+	return c.StatusCode
 }
 
-func (o *CreateLedgerAccountResponse) GetStatus() string {
-	if o == nil {
+func (c *CreateLedgerAccountResponse) GetStatus() string {
+	if c == nil {
 		return ""
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CreateLedgerAccountResponse) GetService() string {
-	if o == nil {
+func (c *CreateLedgerAccountResponse) GetService() string {
+	if c == nil {
 		return ""
 	}
-	return o.Service
+	return c.Service
 }
 
-func (o *CreateLedgerAccountResponse) GetResource() string {
-	if o == nil {
+func (c *CreateLedgerAccountResponse) GetResource() string {
+	if c == nil {
 		return ""
 	}
-	return o.Resource
+	return c.Resource
 }
 
-func (o *CreateLedgerAccountResponse) GetOperation() string {
-	if o == nil {
+func (c *CreateLedgerAccountResponse) GetOperation() string {
+	if c == nil {
 		return ""
 	}
-	return o.Operation
+	return c.Operation
 }
 
-func (o *CreateLedgerAccountResponse) GetData() UnifiedID {
-	if o == nil {
+func (c *CreateLedgerAccountResponse) GetData() UnifiedID {
+	if c == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return c.Data
 }
 
-func (o *CreateLedgerAccountResponse) GetRaw() map[string]any {
-	if o == nil {
+func (c *CreateLedgerAccountResponse) GetRaw() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }

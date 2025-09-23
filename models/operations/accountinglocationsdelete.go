@@ -14,18 +14,18 @@ type AccountingLocationsDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingLocationsDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingLocationsDeleteGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingLocationsDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingLocationsDeleteGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingLocationsDeleteRequest struct {
@@ -52,39 +52,39 @@ func (a *AccountingLocationsDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingLocationsDeleteRequest) GetID() string {
-	if o == nil {
+func (a *AccountingLocationsDeleteRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingLocationsDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingLocationsDeleteRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingLocationsDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingLocationsDeleteRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingLocationsDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingLocationsDeleteRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingLocationsDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingLocationsDeleteRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
 type AccountingLocationsDeleteResponse struct {
@@ -95,23 +95,23 @@ type AccountingLocationsDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingLocationsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingLocationsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingLocationsDeleteResponse) GetDeleteAccountingLocationResponse() *components.DeleteAccountingLocationResponse {
-	if o == nil {
+func (a *AccountingLocationsDeleteResponse) GetDeleteAccountingLocationResponse() *components.DeleteAccountingLocationResponse {
+	if a == nil {
 		return nil
 	}
-	return o.DeleteAccountingLocationResponse
+	return a.DeleteAccountingLocationResponse
 }
 
-func (o *AccountingLocationsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingLocationsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

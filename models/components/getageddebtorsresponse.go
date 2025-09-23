@@ -19,51 +19,51 @@ type GetAgedDebtorsResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetAgedDebtorsResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetAgedDebtorsResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetAgedDebtorsResponse) GetStatus() string {
-	if o == nil {
+func (g *GetAgedDebtorsResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetAgedDebtorsResponse) GetService() string {
-	if o == nil {
+func (g *GetAgedDebtorsResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetAgedDebtorsResponse) GetResource() string {
-	if o == nil {
+func (g *GetAgedDebtorsResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetAgedDebtorsResponse) GetOperation() string {
-	if o == nil {
+func (g *GetAgedDebtorsResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetAgedDebtorsResponse) GetData() AgedDebtors {
-	if o == nil {
+func (g *GetAgedDebtorsResponse) GetData() AgedDebtors {
+	if g == nil {
 		return AgedDebtors{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetAgedDebtorsResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetAgedDebtorsResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

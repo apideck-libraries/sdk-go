@@ -14,18 +14,18 @@ type AccountingJournalEntriesUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingJournalEntriesUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesUpdateGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingJournalEntriesUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesUpdateGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingJournalEntriesUpdateRequest struct {
@@ -53,46 +53,46 @@ func (a *AccountingJournalEntriesUpdateRequest) UnmarshalJSON(data []byte) error
 	return nil
 }
 
-func (o *AccountingJournalEntriesUpdateRequest) GetID() string {
-	if o == nil {
+func (a *AccountingJournalEntriesUpdateRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingJournalEntriesUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesUpdateRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingJournalEntriesUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesUpdateRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingJournalEntriesUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesUpdateRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingJournalEntriesUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingJournalEntriesUpdateRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingJournalEntriesUpdateRequest) GetJournalEntry() components.JournalEntryInput {
-	if o == nil {
+func (a *AccountingJournalEntriesUpdateRequest) GetJournalEntry() components.JournalEntryInput {
+	if a == nil {
 		return components.JournalEntryInput{}
 	}
-	return o.JournalEntry
+	return a.JournalEntry
 }
 
 type AccountingJournalEntriesUpdateResponse struct {
@@ -103,23 +103,23 @@ type AccountingJournalEntriesUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingJournalEntriesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingJournalEntriesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingJournalEntriesUpdateResponse) GetUpdateJournalEntryResponse() *components.UpdateJournalEntryResponse {
-	if o == nil {
+func (a *AccountingJournalEntriesUpdateResponse) GetUpdateJournalEntryResponse() *components.UpdateJournalEntryResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UpdateJournalEntryResponse
+	return a.UpdateJournalEntryResponse
 }
 
-func (o *AccountingJournalEntriesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingJournalEntriesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

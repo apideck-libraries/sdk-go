@@ -40,9 +40,9 @@ func main() {
     )
 
     res, err := s.Accounting.InvoiceItems.List(ctx, operations.AccountingInvoiceItemsAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Filter: &components.InvoiceItemsFilter{
-            Name: sdkgo.String("Widgets Large"),
+            Name: sdkgo.Pointer("Widgets Large"),
             Type: components.InvoiceItemTypeService.ToPointer(),
         },
         Sort: &components.InvoiceItemsSort{
@@ -52,7 +52,7 @@ func main() {
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -128,59 +128,59 @@ func main() {
     )
 
     res, err := s.Accounting.InvoiceItems.Create(ctx, operations.AccountingInvoiceItemsAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         InvoiceItem: components.InvoiceItemInput{
-            Name: sdkgo.String("Model Y"),
-            Description: sdkgo.String("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
-            Code: sdkgo.String("120-C"),
-            Sold: sdkgo.Bool(true),
-            Purchased: sdkgo.Bool(true),
-            Tracked: sdkgo.Bool(true),
-            Taxable: sdkgo.Bool(true),
+            Name: sdkgo.Pointer("Model Y"),
+            Description: sdkgo.Pointer("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
+            Code: sdkgo.Pointer("120-C"),
+            Sold: sdkgo.Pointer(true),
+            Purchased: sdkgo.Pointer(true),
+            Tracked: sdkgo.Pointer(true),
+            Taxable: sdkgo.Pointer(true),
             InventoryDate: types.MustNewDateFromString("2020-10-30"),
             Type: components.InvoiceItemTypeTypeInventory.ToPointer(),
             SalesDetails: &components.InvoiceItemSalesDetails{
-                UnitPrice: sdkgo.Float64(27500.5),
-                UnitOfMeasure: sdkgo.String("pc."),
-                TaxInclusive: sdkgo.Bool(true),
+                UnitPrice: sdkgo.Pointer[float64](27500.5),
+                UnitOfMeasure: sdkgo.Pointer("pc."),
+                TaxInclusive: sdkgo.Pointer(true),
                 TaxRate: &components.LinkedTaxRateInput{
-                    ID: sdkgo.String("123456"),
-                    Rate: sdkgo.Float64(10),
+                    ID: sdkgo.Pointer("123456"),
+                    Rate: sdkgo.Pointer[float64](10),
                 },
             },
             PurchaseDetails: &components.InvoiceItemPurchaseDetails{
-                UnitPrice: sdkgo.Float64(27500.5),
-                UnitOfMeasure: sdkgo.String("pc."),
-                TaxInclusive: sdkgo.Bool(true),
+                UnitPrice: sdkgo.Pointer[float64](27500.5),
+                UnitOfMeasure: sdkgo.Pointer("pc."),
+                TaxInclusive: sdkgo.Pointer(true),
                 TaxRate: &components.LinkedTaxRateInput{
-                    ID: sdkgo.String("123456"),
-                    Rate: sdkgo.Float64(10),
+                    ID: sdkgo.Pointer("123456"),
+                    Rate: sdkgo.Pointer[float64](10),
                 },
             },
-            Quantity: sdkgo.Float64(1),
-            UnitPrice: sdkgo.Float64(27500.5),
+            Quantity: sdkgo.Pointer[float64](1),
+            UnitPrice: sdkgo.Pointer[float64](27500.5),
             AssetAccount: &components.LinkedLedgerAccountInput{
-                ID: sdkgo.String("123456"),
-                NominalCode: sdkgo.String("N091"),
-                Code: sdkgo.String("453"),
+                ID: sdkgo.Pointer("123456"),
+                NominalCode: sdkgo.Pointer("N091"),
+                Code: sdkgo.Pointer("453"),
             },
             IncomeAccount: &components.LinkedLedgerAccountInput{
-                ID: sdkgo.String("123456"),
-                NominalCode: sdkgo.String("N091"),
-                Code: sdkgo.String("453"),
+                ID: sdkgo.Pointer("123456"),
+                NominalCode: sdkgo.Pointer("N091"),
+                Code: sdkgo.Pointer("453"),
             },
             ExpenseAccount: &components.LinkedLedgerAccountInput{
-                ID: sdkgo.String("123456"),
-                NominalCode: sdkgo.String("N091"),
-                Code: sdkgo.String("453"),
+                ID: sdkgo.Pointer("123456"),
+                NominalCode: sdkgo.Pointer("N091"),
+                Code: sdkgo.Pointer("453"),
             },
             TrackingCategories: nil,
-            Active: sdkgo.Bool(true),
-            DepartmentID: sdkgo.String("12345"),
-            LocationID: sdkgo.String("12345"),
-            SubsidiaryID: sdkgo.String("12345"),
-            TaxScheduleID: sdkgo.String("123456"),
-            RowVersion: sdkgo.String("1-12345"),
+            Active: sdkgo.Pointer(true),
+            DepartmentID: sdkgo.Pointer("12345"),
+            LocationID: sdkgo.Pointer("12345"),
+            SubsidiaryID: sdkgo.Pointer("12345"),
+            TaxScheduleID: sdkgo.Pointer("123456"),
+            RowVersion: sdkgo.Pointer("1-12345"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -268,8 +268,8 @@ func main() {
 
     res, err := s.Accounting.InvoiceItems.Get(ctx, operations.AccountingInvoiceItemsOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
         Filter: &components.InvoiceItemFilter{
             Type: components.InvoiceItemFilterInvoiceItemTypeService.ToPointer(),
         },
@@ -337,64 +337,64 @@ func main() {
 
     res, err := s.Accounting.InvoiceItems.Update(ctx, operations.AccountingInvoiceItemsUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         InvoiceItem: components.InvoiceItemInput{
-            Name: sdkgo.String("Model Y"),
-            Description: sdkgo.String("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
-            Code: sdkgo.String("120-C"),
-            Sold: sdkgo.Bool(true),
-            Purchased: sdkgo.Bool(true),
-            Tracked: sdkgo.Bool(true),
-            Taxable: sdkgo.Bool(true),
+            Name: sdkgo.Pointer("Model Y"),
+            Description: sdkgo.Pointer("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
+            Code: sdkgo.Pointer("120-C"),
+            Sold: sdkgo.Pointer(true),
+            Purchased: sdkgo.Pointer(true),
+            Tracked: sdkgo.Pointer(true),
+            Taxable: sdkgo.Pointer(true),
             InventoryDate: types.MustNewDateFromString("2020-10-30"),
             Type: components.InvoiceItemTypeTypeInventory.ToPointer(),
             SalesDetails: &components.InvoiceItemSalesDetails{
-                UnitPrice: sdkgo.Float64(27500.5),
-                UnitOfMeasure: sdkgo.String("pc."),
-                TaxInclusive: sdkgo.Bool(true),
+                UnitPrice: sdkgo.Pointer[float64](27500.5),
+                UnitOfMeasure: sdkgo.Pointer("pc."),
+                TaxInclusive: sdkgo.Pointer(true),
                 TaxRate: &components.LinkedTaxRateInput{
-                    ID: sdkgo.String("123456"),
-                    Rate: sdkgo.Float64(10),
+                    ID: sdkgo.Pointer("123456"),
+                    Rate: sdkgo.Pointer[float64](10),
                 },
             },
             PurchaseDetails: &components.InvoiceItemPurchaseDetails{
-                UnitPrice: sdkgo.Float64(27500.5),
-                UnitOfMeasure: sdkgo.String("pc."),
-                TaxInclusive: sdkgo.Bool(true),
+                UnitPrice: sdkgo.Pointer[float64](27500.5),
+                UnitOfMeasure: sdkgo.Pointer("pc."),
+                TaxInclusive: sdkgo.Pointer(true),
                 TaxRate: &components.LinkedTaxRateInput{
-                    ID: sdkgo.String("123456"),
-                    Rate: sdkgo.Float64(10),
+                    ID: sdkgo.Pointer("123456"),
+                    Rate: sdkgo.Pointer[float64](10),
                 },
             },
-            Quantity: sdkgo.Float64(1),
-            UnitPrice: sdkgo.Float64(27500.5),
+            Quantity: sdkgo.Pointer[float64](1),
+            UnitPrice: sdkgo.Pointer[float64](27500.5),
             AssetAccount: &components.LinkedLedgerAccountInput{
-                ID: sdkgo.String("123456"),
-                NominalCode: sdkgo.String("N091"),
-                Code: sdkgo.String("453"),
+                ID: sdkgo.Pointer("123456"),
+                NominalCode: sdkgo.Pointer("N091"),
+                Code: sdkgo.Pointer("453"),
             },
             IncomeAccount: nil,
             ExpenseAccount: &components.LinkedLedgerAccountInput{
-                ID: sdkgo.String("123456"),
-                NominalCode: sdkgo.String("N091"),
-                Code: sdkgo.String("453"),
+                ID: sdkgo.Pointer("123456"),
+                NominalCode: sdkgo.Pointer("N091"),
+                Code: sdkgo.Pointer("453"),
             },
             TrackingCategories: []*components.LinkedTrackingCategory{
                 &components.LinkedTrackingCategory{
-                    ID: sdkgo.String("123456"),
-                    Name: sdkgo.String("New York"),
+                    ID: sdkgo.Pointer("123456"),
+                    Name: sdkgo.Pointer("New York"),
                 },
                 &components.LinkedTrackingCategory{
-                    ID: sdkgo.String("123456"),
-                    Name: sdkgo.String("New York"),
+                    ID: sdkgo.Pointer("123456"),
+                    Name: sdkgo.Pointer("New York"),
                 },
             },
-            Active: sdkgo.Bool(true),
-            DepartmentID: sdkgo.String("12345"),
-            LocationID: sdkgo.String("12345"),
-            SubsidiaryID: sdkgo.String("12345"),
-            TaxScheduleID: sdkgo.String("123456"),
-            RowVersion: sdkgo.String("1-12345"),
+            Active: sdkgo.Pointer(true),
+            DepartmentID: sdkgo.Pointer("12345"),
+            LocationID: sdkgo.Pointer("12345"),
+            SubsidiaryID: sdkgo.Pointer("12345"),
+            TaxScheduleID: sdkgo.Pointer("123456"),
+            RowVersion: sdkgo.Pointer("1-12345"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -486,7 +486,7 @@ func main() {
 
     res, err := s.Accounting.InvoiceItems.Delete(ctx, operations.AccountingInvoiceItemsDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

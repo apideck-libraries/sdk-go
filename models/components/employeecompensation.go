@@ -62,60 +62,60 @@ type EmployeeCompensation struct {
 	PaymentFrequency *PaymentFrequency `json:"payment_frequency,omitempty"`
 }
 
-func (o *EmployeeCompensation) GetID() *string {
-	if o == nil {
+func (e *EmployeeCompensation) GetID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *EmployeeCompensation) GetJobID() *string {
-	if o == nil {
+func (e *EmployeeCompensation) GetJobID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.JobID
+	return e.JobID
 }
 
-func (o *EmployeeCompensation) GetRate() *float64 {
-	if o == nil {
+func (e *EmployeeCompensation) GetRate() *float64 {
+	if e == nil {
 		return nil
 	}
-	return o.Rate
+	return e.Rate
 }
 
-func (o *EmployeeCompensation) GetPaymentUnit() *PaymentUnit {
-	if o == nil {
+func (e *EmployeeCompensation) GetPaymentUnit() *PaymentUnit {
+	if e == nil {
 		return nil
 	}
-	return o.PaymentUnit
+	return e.PaymentUnit
 }
 
-func (o *EmployeeCompensation) GetCurrency() *Currency {
-	if o == nil {
+func (e *EmployeeCompensation) GetCurrency() *Currency {
+	if e == nil {
 		return nil
 	}
-	return o.Currency
+	return e.Currency
 }
 
-func (o *EmployeeCompensation) GetFlsaStatus() *FlsaStatus {
-	if o == nil {
+func (e *EmployeeCompensation) GetFlsaStatus() *FlsaStatus {
+	if e == nil {
 		return nil
 	}
-	return o.FlsaStatus
+	return e.FlsaStatus
 }
 
-func (o *EmployeeCompensation) GetEffectiveDate() *string {
-	if o == nil {
+func (e *EmployeeCompensation) GetEffectiveDate() *string {
+	if e == nil {
 		return nil
 	}
-	return o.EffectiveDate
+	return e.EffectiveDate
 }
 
-func (o *EmployeeCompensation) GetPaymentFrequency() *PaymentFrequency {
-	if o == nil {
+func (e *EmployeeCompensation) GetPaymentFrequency() *PaymentFrequency {
+	if e == nil {
 		return nil
 	}
-	return o.PaymentFrequency
+	return e.PaymentFrequency
 }
 
 type EmployeeCompensationInput struct {
@@ -133,44 +133,44 @@ type EmployeeCompensationInput struct {
 	PaymentFrequency *PaymentFrequency `json:"payment_frequency,omitempty"`
 }
 
-func (o *EmployeeCompensationInput) GetRate() *float64 {
-	if o == nil {
+func (e *EmployeeCompensationInput) GetRate() *float64 {
+	if e == nil {
 		return nil
 	}
-	return o.Rate
+	return e.Rate
 }
 
-func (o *EmployeeCompensationInput) GetPaymentUnit() *PaymentUnit {
-	if o == nil {
+func (e *EmployeeCompensationInput) GetPaymentUnit() *PaymentUnit {
+	if e == nil {
 		return nil
 	}
-	return o.PaymentUnit
+	return e.PaymentUnit
 }
 
-func (o *EmployeeCompensationInput) GetCurrency() *Currency {
-	if o == nil {
+func (e *EmployeeCompensationInput) GetCurrency() *Currency {
+	if e == nil {
 		return nil
 	}
-	return o.Currency
+	return e.Currency
 }
 
-func (o *EmployeeCompensationInput) GetFlsaStatus() *FlsaStatus {
-	if o == nil {
+func (e *EmployeeCompensationInput) GetFlsaStatus() *FlsaStatus {
+	if e == nil {
 		return nil
 	}
-	return o.FlsaStatus
+	return e.FlsaStatus
 }
 
-func (o *EmployeeCompensationInput) GetEffectiveDate() *string {
-	if o == nil {
+func (e *EmployeeCompensationInput) GetEffectiveDate() *string {
+	if e == nil {
 		return nil
 	}
-	return o.EffectiveDate
+	return e.EffectiveDate
 }
 
-func (o *EmployeeCompensationInput) GetPaymentFrequency() *PaymentFrequency {
-	if o == nil {
+func (e *EmployeeCompensationInput) GetPaymentFrequency() *PaymentFrequency {
+	if e == nil {
 		return nil
 	}
-	return o.PaymentFrequency
+	return e.PaymentFrequency
 }

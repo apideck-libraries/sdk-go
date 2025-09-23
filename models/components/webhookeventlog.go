@@ -10,18 +10,18 @@ type WebhookEventLogService struct {
 	Name string `json:"name"`
 }
 
-func (o *WebhookEventLogService) GetID() string {
-	if o == nil {
+func (w *WebhookEventLogService) GetID() string {
+	if w == nil {
 		return ""
 	}
-	return o.ID
+	return w.ID
 }
 
-func (o *WebhookEventLogService) GetName() string {
-	if o == nil {
+func (w *WebhookEventLogService) GetName() string {
+	if w == nil {
 		return ""
 	}
-	return o.Name
+	return w.Name
 }
 
 type Attempts struct {
@@ -35,32 +35,32 @@ type Attempts struct {
 	Success *bool `json:"success,omitempty"`
 }
 
-func (o *Attempts) GetTimestamp() *string {
-	if o == nil {
+func (a *Attempts) GetTimestamp() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Timestamp
+	return a.Timestamp
 }
 
-func (o *Attempts) GetExecutionAttempt() *float64 {
-	if o == nil {
+func (a *Attempts) GetExecutionAttempt() *float64 {
+	if a == nil {
 		return nil
 	}
-	return o.ExecutionAttempt
+	return a.ExecutionAttempt
 }
 
-func (o *Attempts) GetStatusCode() *int64 {
-	if o == nil {
+func (a *Attempts) GetStatusCode() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.StatusCode
+	return a.StatusCode
 }
 
-func (o *Attempts) GetSuccess() *bool {
-	if o == nil {
+func (a *Attempts) GetSuccess() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Success
+	return a.Success
 }
 
 type WebhookEventLog struct {
@@ -99,121 +99,121 @@ type WebhookEventLog struct {
 	Attempts []Attempts `json:"attempts,omitempty"`
 }
 
-func (o *WebhookEventLog) GetID() *string {
-	if o == nil {
+func (w *WebhookEventLog) GetID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.ID
+	return w.ID
 }
 
-func (o *WebhookEventLog) GetStatusCode() *int64 {
-	if o == nil {
+func (w *WebhookEventLog) GetStatusCode() *int64 {
+	if w == nil {
 		return nil
 	}
-	return o.StatusCode
+	return w.StatusCode
 }
 
-func (o *WebhookEventLog) GetSuccess() *bool {
-	if o == nil {
+func (w *WebhookEventLog) GetSuccess() *bool {
+	if w == nil {
 		return nil
 	}
-	return o.Success
+	return w.Success
 }
 
-func (o *WebhookEventLog) GetApplicationID() *string {
-	if o == nil {
+func (w *WebhookEventLog) GetApplicationID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.ApplicationID
+	return w.ApplicationID
 }
 
-func (o *WebhookEventLog) GetConsumerID() *string {
-	if o == nil {
+func (w *WebhookEventLog) GetConsumerID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return w.ConsumerID
 }
 
-func (o *WebhookEventLog) GetUnifiedAPI() *UnifiedAPIID {
-	if o == nil {
+func (w *WebhookEventLog) GetUnifiedAPI() *UnifiedAPIID {
+	if w == nil {
 		return nil
 	}
-	return o.UnifiedAPI
+	return w.UnifiedAPI
 }
 
-func (o *WebhookEventLog) GetService() *WebhookEventLogService {
-	if o == nil {
+func (w *WebhookEventLog) GetService() *WebhookEventLogService {
+	if w == nil {
 		return nil
 	}
-	return o.Service
+	return w.Service
 }
 
-func (o *WebhookEventLog) GetEndpoint() *string {
-	if o == nil {
+func (w *WebhookEventLog) GetEndpoint() *string {
+	if w == nil {
 		return nil
 	}
-	return o.Endpoint
+	return w.Endpoint
 }
 
-func (o *WebhookEventLog) GetEventType() *string {
-	if o == nil {
+func (w *WebhookEventLog) GetEventType() *string {
+	if w == nil {
 		return nil
 	}
-	return o.EventType
+	return w.EventType
 }
 
-func (o *WebhookEventLog) GetExecutionAttempt() *float64 {
-	if o == nil {
+func (w *WebhookEventLog) GetExecutionAttempt() *float64 {
+	if w == nil {
 		return nil
 	}
-	return o.ExecutionAttempt
+	return w.ExecutionAttempt
 }
 
-func (o *WebhookEventLog) GetHTTPMethod() *string {
-	if o == nil {
+func (w *WebhookEventLog) GetHTTPMethod() *string {
+	if w == nil {
 		return nil
 	}
-	return o.HTTPMethod
+	return w.HTTPMethod
 }
 
-func (o *WebhookEventLog) GetTimestamp() *string {
-	if o == nil {
+func (w *WebhookEventLog) GetTimestamp() *string {
+	if w == nil {
 		return nil
 	}
-	return o.Timestamp
+	return w.Timestamp
 }
 
-func (o *WebhookEventLog) GetEntityType() *string {
-	if o == nil {
+func (w *WebhookEventLog) GetEntityType() *string {
+	if w == nil {
 		return nil
 	}
-	return o.EntityType
+	return w.EntityType
 }
 
-func (o *WebhookEventLog) GetRequestBody() *string {
-	if o == nil {
+func (w *WebhookEventLog) GetRequestBody() *string {
+	if w == nil {
 		return nil
 	}
-	return o.RequestBody
+	return w.RequestBody
 }
 
-func (o *WebhookEventLog) GetResponseBody() *string {
-	if o == nil {
+func (w *WebhookEventLog) GetResponseBody() *string {
+	if w == nil {
 		return nil
 	}
-	return o.ResponseBody
+	return w.ResponseBody
 }
 
-func (o *WebhookEventLog) GetRetryScheduled() *bool {
-	if o == nil {
+func (w *WebhookEventLog) GetRetryScheduled() *bool {
+	if w == nil {
 		return nil
 	}
-	return o.RetryScheduled
+	return w.RetryScheduled
 }
 
-func (o *WebhookEventLog) GetAttempts() []Attempts {
-	if o == nil {
+func (w *WebhookEventLog) GetAttempts() []Attempts {
+	if w == nil {
 		return nil
 	}
-	return o.Attempts
+	return w.Attempts
 }

@@ -74,18 +74,18 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		ServiceID: sdkgo.String("salesforce"),
+		ServiceID: sdkgo.Pointer("salesforce"),
 		Filter: &components.TaxRatesFilter{
-			Assets:      sdkgo.Bool(true),
-			Equity:      sdkgo.Bool(true),
-			Expenses:    sdkgo.Bool(true),
-			Liabilities: sdkgo.Bool(true),
-			Revenue:     sdkgo.Bool(true),
+			Assets:      sdkgo.Pointer(true),
+			Equity:      sdkgo.Pointer(true),
+			Expenses:    sdkgo.Pointer(true),
+			Liabilities: sdkgo.Pointer(true),
+			Revenue:     sdkgo.Pointer(true),
 		},
 		PassThrough: map[string]any{
 			"search": "San Francisco",
 		},
-		Fields: sdkgo.String("id,updated_at"),
+		Fields: sdkgo.Pointer("id,updated_at"),
 	})
 	if err != nil {
 		log.Fatal(err)
@@ -144,18 +144,18 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		ServiceID: sdkgo.String("salesforce"),
+		ServiceID: sdkgo.Pointer("salesforce"),
 		Filter: &components.TaxRatesFilter{
-			Assets:      sdkgo.Bool(true),
-			Equity:      sdkgo.Bool(true),
-			Expenses:    sdkgo.Bool(true),
-			Liabilities: sdkgo.Bool(true),
-			Revenue:     sdkgo.Bool(true),
+			Assets:      sdkgo.Pointer(true),
+			Equity:      sdkgo.Pointer(true),
+			Expenses:    sdkgo.Pointer(true),
+			Liabilities: sdkgo.Pointer(true),
+			Revenue:     sdkgo.Pointer(true),
 		},
 		PassThrough: map[string]any{
 			"search": "San Francisco",
 		},
-		Fields: sdkgo.String("id,updated_at"),
+		Fields: sdkgo.Pointer("id,updated_at"),
 	})
 	if err != nil {
 		log.Fatal(err)
@@ -208,6 +208,14 @@ func main() {
 #### [Accounting.BalanceSheet](docs/sdks/balancesheet/README.md)
 
 * [Get](docs/sdks/balancesheet/README.md#get) - Get BalanceSheet
+
+#### [Accounting.BankAccounts](docs/sdks/bankaccounts/README.md)
+
+* [List](docs/sdks/bankaccounts/README.md#list) - List Bank Accounts
+* [Create](docs/sdks/bankaccounts/README.md#create) - Create Bank Account
+* [Get](docs/sdks/bankaccounts/README.md#get) - Get Bank Account
+* [Update](docs/sdks/bankaccounts/README.md#update) - Update Bank Account
+* [Delete](docs/sdks/bankaccounts/README.md#delete) - Delete Bank Account
 
 #### [Accounting.BankFeedAccounts](docs/sdks/bankfeedaccounts/README.md)
 
@@ -800,18 +808,18 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		ServiceID: sdkgo.String("salesforce"),
+		ServiceID: sdkgo.Pointer("salesforce"),
 		Filter: &components.TaxRatesFilter{
-			Assets:      sdkgo.Bool(true),
-			Equity:      sdkgo.Bool(true),
-			Expenses:    sdkgo.Bool(true),
-			Liabilities: sdkgo.Bool(true),
-			Revenue:     sdkgo.Bool(true),
+			Assets:      sdkgo.Pointer(true),
+			Equity:      sdkgo.Pointer(true),
+			Expenses:    sdkgo.Pointer(true),
+			Liabilities: sdkgo.Pointer(true),
+			Revenue:     sdkgo.Pointer(true),
 		},
 		PassThrough: map[string]any{
 			"search": "San Francisco",
 		},
-		Fields: sdkgo.String("id,updated_at"),
+		Fields: sdkgo.Pointer("id,updated_at"),
 	})
 	if err != nil {
 		log.Fatal(err)
@@ -866,18 +874,18 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		ServiceID: sdkgo.String("salesforce"),
+		ServiceID: sdkgo.Pointer("salesforce"),
 		Filter: &components.TaxRatesFilter{
-			Assets:      sdkgo.Bool(true),
-			Equity:      sdkgo.Bool(true),
-			Expenses:    sdkgo.Bool(true),
-			Liabilities: sdkgo.Bool(true),
-			Revenue:     sdkgo.Bool(true),
+			Assets:      sdkgo.Pointer(true),
+			Equity:      sdkgo.Pointer(true),
+			Expenses:    sdkgo.Pointer(true),
+			Liabilities: sdkgo.Pointer(true),
+			Revenue:     sdkgo.Pointer(true),
 		},
 		PassThrough: map[string]any{
 			"search": "San Francisco",
 		},
-		Fields: sdkgo.String("id,updated_at"),
+		Fields: sdkgo.Pointer("id,updated_at"),
 	}, operations.WithRetries(
 		retry.Config{
 			Strategy: "backoff",
@@ -946,18 +954,18 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		ServiceID: sdkgo.String("salesforce"),
+		ServiceID: sdkgo.Pointer("salesforce"),
 		Filter: &components.TaxRatesFilter{
-			Assets:      sdkgo.Bool(true),
-			Equity:      sdkgo.Bool(true),
-			Expenses:    sdkgo.Bool(true),
-			Liabilities: sdkgo.Bool(true),
-			Revenue:     sdkgo.Bool(true),
+			Assets:      sdkgo.Pointer(true),
+			Equity:      sdkgo.Pointer(true),
+			Expenses:    sdkgo.Pointer(true),
+			Liabilities: sdkgo.Pointer(true),
+			Revenue:     sdkgo.Pointer(true),
 		},
 		PassThrough: map[string]any{
 			"search": "San Francisco",
 		},
-		Fields: sdkgo.String("id,updated_at"),
+		Fields: sdkgo.Pointer("id,updated_at"),
 	})
 	if err != nil {
 		log.Fatal(err)
@@ -1026,18 +1034,18 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		ServiceID: sdkgo.String("salesforce"),
+		ServiceID: sdkgo.Pointer("salesforce"),
 		Filter: &components.TaxRatesFilter{
-			Assets:      sdkgo.Bool(true),
-			Equity:      sdkgo.Bool(true),
-			Expenses:    sdkgo.Bool(true),
-			Liabilities: sdkgo.Bool(true),
-			Revenue:     sdkgo.Bool(true),
+			Assets:      sdkgo.Pointer(true),
+			Equity:      sdkgo.Pointer(true),
+			Expenses:    sdkgo.Pointer(true),
+			Liabilities: sdkgo.Pointer(true),
+			Revenue:     sdkgo.Pointer(true),
 		},
 		PassThrough: map[string]any{
 			"search": "San Francisco",
 		},
-		Fields: sdkgo.String("id,updated_at"),
+		Fields: sdkgo.Pointer("id,updated_at"),
 	})
 	if err != nil {
 
@@ -1111,18 +1119,18 @@ func main() {
 	)
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
-		ServiceID: sdkgo.String("salesforce"),
+		ServiceID: sdkgo.Pointer("salesforce"),
 		Filter: &components.TaxRatesFilter{
-			Assets:      sdkgo.Bool(true),
-			Equity:      sdkgo.Bool(true),
-			Expenses:    sdkgo.Bool(true),
-			Liabilities: sdkgo.Bool(true),
-			Revenue:     sdkgo.Bool(true),
+			Assets:      sdkgo.Pointer(true),
+			Equity:      sdkgo.Pointer(true),
+			Expenses:    sdkgo.Pointer(true),
+			Liabilities: sdkgo.Pointer(true),
+			Revenue:     sdkgo.Pointer(true),
 		},
 		PassThrough: map[string]any{
 			"search": "San Francisco",
 		},
-		Fields: sdkgo.String("id,updated_at"),
+		Fields: sdkgo.Pointer("id,updated_at"),
 	})
 	if err != nil {
 		log.Fatal(err)
@@ -1178,8 +1186,8 @@ func main() {
 	res, err := s.Accounting.Attachments.Upload(ctx, operations.AccountingAttachmentsUploadRequest{
 		ReferenceType:    components.AttachmentReferenceTypeInvoice,
 		ReferenceID:      "123456",
-		XApideckMetadata: sdkgo.String("{\"name\":\"document.pdf\",\"description\":\"Invoice attachment\"}"),
-		ServiceID:        sdkgo.String("salesforce"),
+		XApideckMetadata: sdkgo.Pointer("{\"name\":\"document.pdf\",\"description\":\"Invoice attachment\"}"),
+		ServiceID:        sdkgo.Pointer("salesforce"),
 		RequestBody:      example,
 	}, operations.WithServerURL("https://upload.apideck.com"))
 	if err != nil {

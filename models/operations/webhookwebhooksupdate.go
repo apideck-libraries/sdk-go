@@ -11,11 +11,11 @@ type WebhookWebhooksUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *WebhookWebhooksUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (w *WebhookWebhooksUpdateGlobals) GetAppID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.AppID
+	return w.AppID
 }
 
 type WebhookWebhooksUpdateRequest struct {
@@ -26,25 +26,25 @@ type WebhookWebhooksUpdateRequest struct {
 	UpdateWebhookRequest components.UpdateWebhookRequest `request:"mediaType=application/json"`
 }
 
-func (o *WebhookWebhooksUpdateRequest) GetID() string {
-	if o == nil {
+func (w *WebhookWebhooksUpdateRequest) GetID() string {
+	if w == nil {
 		return ""
 	}
-	return o.ID
+	return w.ID
 }
 
-func (o *WebhookWebhooksUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (w *WebhookWebhooksUpdateRequest) GetAppID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.AppID
+	return w.AppID
 }
 
-func (o *WebhookWebhooksUpdateRequest) GetUpdateWebhookRequest() components.UpdateWebhookRequest {
-	if o == nil {
+func (w *WebhookWebhooksUpdateRequest) GetUpdateWebhookRequest() components.UpdateWebhookRequest {
+	if w == nil {
 		return components.UpdateWebhookRequest{}
 	}
-	return o.UpdateWebhookRequest
+	return w.UpdateWebhookRequest
 }
 
 type WebhookWebhooksUpdateResponse struct {
@@ -55,23 +55,23 @@ type WebhookWebhooksUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *WebhookWebhooksUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (w *WebhookWebhooksUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if w == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return w.HTTPMeta
 }
 
-func (o *WebhookWebhooksUpdateResponse) GetUpdateWebhookResponse() *components.UpdateWebhookResponse {
-	if o == nil {
+func (w *WebhookWebhooksUpdateResponse) GetUpdateWebhookResponse() *components.UpdateWebhookResponse {
+	if w == nil {
 		return nil
 	}
-	return o.UpdateWebhookResponse
+	return w.UpdateWebhookResponse
 }
 
-func (o *WebhookWebhooksUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (w *WebhookWebhooksUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if w == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return w.UnexpectedErrorResponse
 }

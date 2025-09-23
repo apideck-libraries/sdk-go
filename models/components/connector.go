@@ -138,18 +138,18 @@ type ConnectorOauthScopes struct {
 	Label *string `json:"label,omitempty"`
 }
 
-func (o *ConnectorOauthScopes) GetID() *string {
-	if o == nil {
+func (c *ConnectorOauthScopes) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ConnectorOauthScopes) GetLabel() *string {
-	if o == nil {
+func (c *ConnectorOauthScopes) GetLabel() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Label
+	return c.Label
 }
 
 type UnifiedApis struct {
@@ -168,53 +168,53 @@ type UnifiedApis struct {
 	SupportedEvents []ConnectorEvent `json:"supported_events,omitempty"`
 }
 
-func (o *UnifiedApis) GetID() *UnifiedAPIID {
-	if o == nil {
+func (u *UnifiedApis) GetID() *UnifiedAPIID {
+	if u == nil {
 		return nil
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UnifiedApis) GetName() *string {
-	if o == nil {
+func (u *UnifiedApis) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UnifiedApis) GetAuthOnly() *bool {
-	if o == nil {
+func (u *UnifiedApis) GetAuthOnly() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.AuthOnly
+	return u.AuthOnly
 }
 
-func (o *UnifiedApis) GetOauthScopes() []ConnectorOauthScopes {
-	if o == nil {
+func (u *UnifiedApis) GetOauthScopes() []ConnectorOauthScopes {
+	if u == nil {
 		return nil
 	}
-	return o.OauthScopes
+	return u.OauthScopes
 }
 
-func (o *UnifiedApis) GetSupportedResources() []LinkedConnectorResource {
-	if o == nil {
+func (u *UnifiedApis) GetSupportedResources() []LinkedConnectorResource {
+	if u == nil {
 		return nil
 	}
-	return o.SupportedResources
+	return u.SupportedResources
 }
 
-func (o *UnifiedApis) GetDownstreamUnsupportedResources() []string {
-	if o == nil {
+func (u *UnifiedApis) GetDownstreamUnsupportedResources() []string {
+	if u == nil {
 		return nil
 	}
-	return o.DownstreamUnsupportedResources
+	return u.DownstreamUnsupportedResources
 }
 
-func (o *UnifiedApis) GetSupportedEvents() []ConnectorEvent {
-	if o == nil {
+func (u *UnifiedApis) GetSupportedEvents() []ConnectorEvent {
+	if u == nil {
 		return nil
 	}
-	return o.SupportedEvents
+	return u.SupportedEvents
 }
 
 type TLSSupport struct {
@@ -223,18 +223,18 @@ type TLSSupport struct {
 	Description *string `json:"description,omitempty"`
 }
 
-func (o *TLSSupport) GetType() *string {
-	if o == nil {
+func (t *TLSSupport) GetType() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Type
+	return t.Type
 }
 
-func (o *TLSSupport) GetDescription() *string {
-	if o == nil {
+func (t *TLSSupport) GetDescription() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Description
+	return t.Description
 }
 
 type Connector struct {
@@ -293,198 +293,198 @@ type Connector struct {
 	TLSSupport    *TLSSupport    `json:"tls_support,omitempty"`
 }
 
-func (o *Connector) GetID() *string {
-	if o == nil {
+func (c *Connector) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *Connector) GetName() *string {
-	if o == nil {
+func (c *Connector) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *Connector) GetStatus() *ConnectorStatus {
-	if o == nil {
+func (c *Connector) GetStatus() *ConnectorStatus {
+	if c == nil {
 		return nil
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *Connector) GetDescription() *string {
-	if o == nil {
+func (c *Connector) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *Connector) GetIconURL() *string {
-	if o == nil {
+func (c *Connector) GetIconURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.IconURL
+	return c.IconURL
 }
 
-func (o *Connector) GetLogoURL() *string {
-	if o == nil {
+func (c *Connector) GetLogoURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.LogoURL
+	return c.LogoURL
 }
 
-func (o *Connector) GetWebsiteURL() *string {
-	if o == nil {
+func (c *Connector) GetWebsiteURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.WebsiteURL
+	return c.WebsiteURL
 }
 
-func (o *Connector) GetSignupURL() *string {
-	if o == nil {
+func (c *Connector) GetSignupURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.SignupURL
+	return c.SignupURL
 }
 
-func (o *Connector) GetPartnerSignupURL() *string {
-	if o == nil {
+func (c *Connector) GetPartnerSignupURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.PartnerSignupURL
+	return c.PartnerSignupURL
 }
 
-func (o *Connector) GetFreeTrialAvailable() *bool {
-	if o == nil {
+func (c *Connector) GetFreeTrialAvailable() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.FreeTrialAvailable
+	return c.FreeTrialAvailable
 }
 
-func (o *Connector) GetAuthType() *ConnectorAuthType {
-	if o == nil {
+func (c *Connector) GetAuthType() *ConnectorAuthType {
+	if c == nil {
 		return nil
 	}
-	return o.AuthType
+	return c.AuthType
 }
 
-func (o *Connector) GetAuthOnly() *bool {
-	if o == nil {
+func (c *Connector) GetAuthOnly() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.AuthOnly
+	return c.AuthOnly
 }
 
-func (o *Connector) GetBlindMapped() *bool {
-	if o == nil {
+func (c *Connector) GetBlindMapped() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.BlindMapped
+	return c.BlindMapped
 }
 
-func (o *Connector) GetOauthGrantType() *ConnectorOauthGrantType {
-	if o == nil {
+func (c *Connector) GetOauthGrantType() *ConnectorOauthGrantType {
+	if c == nil {
 		return nil
 	}
-	return o.OauthGrantType
+	return c.OauthGrantType
 }
 
-func (o *Connector) GetOauthCredentialsSource() *OauthCredentialsSource {
-	if o == nil {
+func (c *Connector) GetOauthCredentialsSource() *OauthCredentialsSource {
+	if c == nil {
 		return nil
 	}
-	return o.OauthCredentialsSource
+	return c.OauthCredentialsSource
 }
 
-func (o *Connector) GetOauthScopes() []OauthScopes {
-	if o == nil {
+func (c *Connector) GetOauthScopes() []OauthScopes {
+	if c == nil {
 		return nil
 	}
-	return o.OauthScopes
+	return c.OauthScopes
 }
 
-func (o *Connector) GetCustomScopes() *bool {
-	if o == nil {
+func (c *Connector) GetCustomScopes() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.CustomScopes
+	return c.CustomScopes
 }
 
-func (o *Connector) GetHasSandboxCredentials() *bool {
-	if o == nil {
+func (c *Connector) GetHasSandboxCredentials() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.HasSandboxCredentials
+	return c.HasSandboxCredentials
 }
 
-func (o *Connector) GetSettings() []ConnectorSetting {
-	if o == nil {
+func (c *Connector) GetSettings() []ConnectorSetting {
+	if c == nil {
 		return nil
 	}
-	return o.Settings
+	return c.Settings
 }
 
-func (o *Connector) GetServiceID() *string {
-	if o == nil {
+func (c *Connector) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *Connector) GetUnifiedApis() []UnifiedApis {
-	if o == nil {
+func (c *Connector) GetUnifiedApis() []UnifiedApis {
+	if c == nil {
 		return nil
 	}
-	return o.UnifiedApis
+	return c.UnifiedApis
 }
 
-func (o *Connector) GetSupportedResources() []LinkedConnectorResource {
-	if o == nil {
+func (c *Connector) GetSupportedResources() []LinkedConnectorResource {
+	if c == nil {
 		return nil
 	}
-	return o.SupportedResources
+	return c.SupportedResources
 }
 
-func (o *Connector) GetConfigurableResources() []string {
-	if o == nil {
+func (c *Connector) GetConfigurableResources() []string {
+	if c == nil {
 		return nil
 	}
-	return o.ConfigurableResources
+	return c.ConfigurableResources
 }
 
-func (o *Connector) GetSupportedEvents() []ConnectorEvent {
-	if o == nil {
+func (c *Connector) GetSupportedEvents() []ConnectorEvent {
+	if c == nil {
 		return nil
 	}
-	return o.SupportedEvents
+	return c.SupportedEvents
 }
 
-func (o *Connector) GetWebhookSupport() *WebhookSupport {
-	if o == nil {
+func (c *Connector) GetWebhookSupport() *WebhookSupport {
+	if c == nil {
 		return nil
 	}
-	return o.WebhookSupport
+	return c.WebhookSupport
 }
 
-func (o *Connector) GetSchemaSupport() *SchemaSupport {
-	if o == nil {
+func (c *Connector) GetSchemaSupport() *SchemaSupport {
+	if c == nil {
 		return nil
 	}
-	return o.SchemaSupport
+	return c.SchemaSupport
 }
 
-func (o *Connector) GetDocs() []ConnectorDoc {
-	if o == nil {
+func (c *Connector) GetDocs() []ConnectorDoc {
+	if c == nil {
 		return nil
 	}
-	return o.Docs
+	return c.Docs
 }
 
-func (o *Connector) GetTLSSupport() *TLSSupport {
-	if o == nil {
+func (c *Connector) GetTLSSupport() *TLSSupport {
+	if c == nil {
 		return nil
 	}
-	return o.TLSSupport
+	return c.TLSSupport
 }

@@ -23,65 +23,65 @@ type GetFilesResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetFilesResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetFilesResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetFilesResponse) GetStatus() string {
-	if o == nil {
+func (g *GetFilesResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetFilesResponse) GetService() string {
-	if o == nil {
+func (g *GetFilesResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetFilesResponse) GetResource() string {
-	if o == nil {
+func (g *GetFilesResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetFilesResponse) GetOperation() string {
-	if o == nil {
+func (g *GetFilesResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetFilesResponse) GetData() []UnifiedFile {
-	if o == nil {
+func (g *GetFilesResponse) GetData() []UnifiedFile {
+	if g == nil {
 		return []UnifiedFile{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetFilesResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetFilesResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetFilesResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetFilesResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }
 
-func (o *GetFilesResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetFilesResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

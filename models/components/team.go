@@ -10,16 +10,16 @@ type Team struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *Team) GetID() *string {
-	if o == nil {
+func (t *Team) GetID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ID
+	return t.ID
 }
 
-func (o *Team) GetName() *string {
-	if o == nil {
+func (t *Team) GetName() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Name
+	return t.Name
 }

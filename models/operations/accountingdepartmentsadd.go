@@ -14,18 +14,18 @@ type AccountingDepartmentsAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingDepartmentsAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingDepartmentsAddGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingDepartmentsAddGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingDepartmentsAddGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingDepartmentsAddRequest struct {
@@ -51,39 +51,39 @@ func (a *AccountingDepartmentsAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingDepartmentsAddRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingDepartmentsAddRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingDepartmentsAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingDepartmentsAddRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingDepartmentsAddRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingDepartmentsAddRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingDepartmentsAddRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingDepartmentsAddRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingDepartmentsAddRequest) GetAccountingDepartment() components.AccountingDepartmentInput {
-	if o == nil {
+func (a *AccountingDepartmentsAddRequest) GetAccountingDepartment() components.AccountingDepartmentInput {
+	if a == nil {
 		return components.AccountingDepartmentInput{}
 	}
-	return o.AccountingDepartment
+	return a.AccountingDepartment
 }
 
 type AccountingDepartmentsAddResponse struct {
@@ -94,23 +94,23 @@ type AccountingDepartmentsAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingDepartmentsAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingDepartmentsAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingDepartmentsAddResponse) GetCreateAccountingDepartmentResponse() *components.CreateAccountingDepartmentResponse {
-	if o == nil {
+func (a *AccountingDepartmentsAddResponse) GetCreateAccountingDepartmentResponse() *components.CreateAccountingDepartmentResponse {
+	if a == nil {
 		return nil
 	}
-	return o.CreateAccountingDepartmentResponse
+	return a.CreateAccountingDepartmentResponse
 }
 
-func (o *AccountingDepartmentsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingDepartmentsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

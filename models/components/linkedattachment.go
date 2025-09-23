@@ -17,44 +17,44 @@ type LinkedAttachment struct {
 	Notes *string `json:"notes,omitempty"`
 }
 
-func (o *LinkedAttachment) GetName() *string {
-	if o == nil {
+func (l *LinkedAttachment) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *LinkedAttachment) GetMimeType() *string {
-	if o == nil {
+func (l *LinkedAttachment) GetMimeType() *string {
+	if l == nil {
 		return nil
 	}
-	return o.MimeType
+	return l.MimeType
 }
 
-func (o *LinkedAttachment) GetIsCompressed() *bool {
-	if o == nil {
+func (l *LinkedAttachment) GetIsCompressed() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.IsCompressed
+	return l.IsCompressed
 }
 
-func (o *LinkedAttachment) GetEncoding() *string {
-	if o == nil {
+func (l *LinkedAttachment) GetEncoding() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Encoding
+	return l.Encoding
 }
 
-func (o *LinkedAttachment) GetContent() *string {
-	if o == nil {
+func (l *LinkedAttachment) GetContent() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Content
+	return l.Content
 }
 
-func (o *LinkedAttachment) GetNotes() *string {
-	if o == nil {
+func (l *LinkedAttachment) GetNotes() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Notes
+	return l.Notes
 }

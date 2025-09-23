@@ -13,18 +13,18 @@ type VaultCustomMappingsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultCustomMappingsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultCustomMappingsAllGlobals) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultCustomMappingsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultCustomMappingsAllGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultCustomMappingsAllRequest struct {
@@ -38,32 +38,32 @@ type VaultCustomMappingsAllRequest struct {
 	ServiceID string `pathParam:"style=simple,explode=false,name=service_id"`
 }
 
-func (o *VaultCustomMappingsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultCustomMappingsAllRequest) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultCustomMappingsAllRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultCustomMappingsAllRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultCustomMappingsAllRequest) GetUnifiedAPI() string {
-	if o == nil {
+func (v *VaultCustomMappingsAllRequest) GetUnifiedAPI() string {
+	if v == nil {
 		return ""
 	}
-	return o.UnifiedAPI
+	return v.UnifiedAPI
 }
 
-func (o *VaultCustomMappingsAllRequest) GetServiceID() string {
-	if o == nil {
+func (v *VaultCustomMappingsAllRequest) GetServiceID() string {
+	if v == nil {
 		return ""
 	}
-	return o.ServiceID
+	return v.ServiceID
 }
 
 type VaultCustomMappingsAllResponse struct {
@@ -74,23 +74,23 @@ type VaultCustomMappingsAllResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultCustomMappingsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultCustomMappingsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultCustomMappingsAllResponse) GetGetCustomMappingsResponse() *components.GetCustomMappingsResponse {
-	if o == nil {
+func (v *VaultCustomMappingsAllResponse) GetGetCustomMappingsResponse() *components.GetCustomMappingsResponse {
+	if v == nil {
 		return nil
 	}
-	return o.GetCustomMappingsResponse
+	return v.GetCustomMappingsResponse
 }
 
-func (o *VaultCustomMappingsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultCustomMappingsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

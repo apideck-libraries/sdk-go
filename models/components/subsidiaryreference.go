@@ -9,16 +9,16 @@ type SubsidiaryReference struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *SubsidiaryReference) GetID() *string {
-	if o == nil {
+func (s *SubsidiaryReference) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SubsidiaryReference) GetName() *string {
-	if o == nil {
+func (s *SubsidiaryReference) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }

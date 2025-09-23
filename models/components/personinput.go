@@ -35,51 +35,51 @@ func (p *PersonInput) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *PersonInput) GetFirstName() *string {
-	if o == nil {
+func (p *PersonInput) GetFirstName() *string {
+	if p == nil {
 		return nil
 	}
-	return o.FirstName
+	return p.FirstName
 }
 
-func (o *PersonInput) GetLastName() *string {
-	if o == nil {
+func (p *PersonInput) GetLastName() *string {
+	if p == nil {
 		return nil
 	}
-	return o.LastName
+	return p.LastName
 }
 
-func (o *PersonInput) GetMiddleName() *string {
-	if o == nil {
+func (p *PersonInput) GetMiddleName() *string {
+	if p == nil {
 		return nil
 	}
-	return o.MiddleName
+	return p.MiddleName
 }
 
-func (o *PersonInput) GetGender() *Gender {
-	if o == nil {
+func (p *PersonInput) GetGender() *Gender {
+	if p == nil {
 		return nil
 	}
-	return o.Gender
+	return p.Gender
 }
 
-func (o *PersonInput) GetInitials() *string {
-	if o == nil {
+func (p *PersonInput) GetInitials() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Initials
+	return p.Initials
 }
 
-func (o *PersonInput) GetBirthday() *types.Date {
-	if o == nil {
+func (p *PersonInput) GetBirthday() *types.Date {
+	if p == nil {
 		return nil
 	}
-	return o.Birthday
+	return p.Birthday
 }
 
-func (o *PersonInput) GetDeceasedOn() *types.Date {
-	if o == nil {
+func (p *PersonInput) GetDeceasedOn() *types.Date {
+	if p == nil {
 		return nil
 	}
-	return o.DeceasedOn
+	return p.DeceasedOn
 }
