@@ -11,11 +11,11 @@ type ConnectorAPIResourcesOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *ConnectorAPIResourcesOneGlobals) GetAppID() *string {
-	if o == nil {
+func (c *ConnectorAPIResourcesOneGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type ConnectorAPIResourcesOneRequest struct {
@@ -27,25 +27,25 @@ type ConnectorAPIResourcesOneRequest struct {
 	ResourceID string `pathParam:"style=simple,explode=false,name=resource_id"`
 }
 
-func (o *ConnectorAPIResourcesOneRequest) GetAppID() *string {
-	if o == nil {
+func (c *ConnectorAPIResourcesOneRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *ConnectorAPIResourcesOneRequest) GetID() string {
-	if o == nil {
+func (c *ConnectorAPIResourcesOneRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ConnectorAPIResourcesOneRequest) GetResourceID() string {
-	if o == nil {
+func (c *ConnectorAPIResourcesOneRequest) GetResourceID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ResourceID
+	return c.ResourceID
 }
 
 type ConnectorAPIResourcesOneResponse struct {
@@ -56,23 +56,23 @@ type ConnectorAPIResourcesOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *ConnectorAPIResourcesOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *ConnectorAPIResourcesOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *ConnectorAPIResourcesOneResponse) GetGetAPIResourceResponse() *components.GetAPIResourceResponse {
-	if o == nil {
+func (c *ConnectorAPIResourcesOneResponse) GetGetAPIResourceResponse() *components.GetAPIResourceResponse {
+	if c == nil {
 		return nil
 	}
-	return o.GetAPIResourceResponse
+	return c.GetAPIResourceResponse
 }
 
-func (o *ConnectorAPIResourcesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *ConnectorAPIResourcesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

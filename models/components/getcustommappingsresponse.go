@@ -13,30 +13,30 @@ type GetCustomMappingsResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetCustomMappingsResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetCustomMappingsResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetCustomMappingsResponse) GetStatus() string {
-	if o == nil {
+func (g *GetCustomMappingsResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetCustomMappingsResponse) GetData() []CustomMapping {
-	if o == nil {
+func (g *GetCustomMappingsResponse) GetData() []CustomMapping {
+	if g == nil {
 		return []CustomMapping{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetCustomMappingsResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetCustomMappingsResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

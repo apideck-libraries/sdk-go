@@ -7,9 +7,9 @@ type AccountingDepartmentsFilter struct {
 	Subsidiary *string `queryParam:"name=subsidiary"`
 }
 
-func (o *AccountingDepartmentsFilter) GetSubsidiary() *string {
-	if o == nil {
+func (a *AccountingDepartmentsFilter) GetSubsidiary() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Subsidiary
+	return a.Subsidiary
 }

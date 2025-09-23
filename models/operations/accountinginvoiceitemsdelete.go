@@ -14,18 +14,18 @@ type AccountingInvoiceItemsDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingInvoiceItemsDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingInvoiceItemsDeleteGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingInvoiceItemsDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingInvoiceItemsDeleteGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingInvoiceItemsDeleteRequest struct {
@@ -52,39 +52,39 @@ func (a *AccountingInvoiceItemsDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingInvoiceItemsDeleteRequest) GetID() string {
-	if o == nil {
+func (a *AccountingInvoiceItemsDeleteRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingInvoiceItemsDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingInvoiceItemsDeleteRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingInvoiceItemsDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingInvoiceItemsDeleteRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingInvoiceItemsDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingInvoiceItemsDeleteRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingInvoiceItemsDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingInvoiceItemsDeleteRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
 type AccountingInvoiceItemsDeleteResponse struct {
@@ -95,23 +95,23 @@ type AccountingInvoiceItemsDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingInvoiceItemsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingInvoiceItemsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingInvoiceItemsDeleteResponse) GetDeleteTaxRateResponse() *components.DeleteTaxRateResponse {
-	if o == nil {
+func (a *AccountingInvoiceItemsDeleteResponse) GetDeleteTaxRateResponse() *components.DeleteTaxRateResponse {
+	if a == nil {
 		return nil
 	}
-	return o.DeleteTaxRateResponse
+	return a.DeleteTaxRateResponse
 }
 
-func (o *AccountingInvoiceItemsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingInvoiceItemsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

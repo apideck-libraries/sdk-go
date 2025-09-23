@@ -14,18 +14,18 @@ type AccountingDepartmentsOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingDepartmentsOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingDepartmentsOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingDepartmentsOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingDepartmentsOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingDepartmentsOneRequest struct {
@@ -54,46 +54,46 @@ func (a *AccountingDepartmentsOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingDepartmentsOneRequest) GetID() string {
-	if o == nil {
+func (a *AccountingDepartmentsOneRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingDepartmentsOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingDepartmentsOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingDepartmentsOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingDepartmentsOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingDepartmentsOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingDepartmentsOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingDepartmentsOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingDepartmentsOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingDepartmentsOneRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingDepartmentsOneRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingDepartmentsOneResponse struct {
@@ -104,23 +104,23 @@ type AccountingDepartmentsOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingDepartmentsOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingDepartmentsOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingDepartmentsOneResponse) GetGetAccountingDepartmentResponse() *components.GetAccountingDepartmentResponse {
-	if o == nil {
+func (a *AccountingDepartmentsOneResponse) GetGetAccountingDepartmentResponse() *components.GetAccountingDepartmentResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetAccountingDepartmentResponse
+	return a.GetAccountingDepartmentResponse
 }
 
-func (o *AccountingDepartmentsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingDepartmentsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

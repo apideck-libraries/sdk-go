@@ -14,18 +14,18 @@ type HrisTimeOffRequestsUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *HrisTimeOffRequestsUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisTimeOffRequestsUpdateGlobals) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisTimeOffRequestsUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (h *HrisTimeOffRequestsUpdateGlobals) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
 type HrisTimeOffRequestsUpdateRequest struct {
@@ -55,53 +55,53 @@ func (h *HrisTimeOffRequestsUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *HrisTimeOffRequestsUpdateRequest) GetID() string {
-	if o == nil {
+func (h *HrisTimeOffRequestsUpdateRequest) GetID() string {
+	if h == nil {
 		return ""
 	}
-	return o.ID
+	return h.ID
 }
 
-func (o *HrisTimeOffRequestsUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisTimeOffRequestsUpdateRequest) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisTimeOffRequestsUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (h *HrisTimeOffRequestsUpdateRequest) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
-func (o *HrisTimeOffRequestsUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (h *HrisTimeOffRequestsUpdateRequest) GetServiceID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ServiceID
+	return h.ServiceID
 }
 
-func (o *HrisTimeOffRequestsUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (h *HrisTimeOffRequestsUpdateRequest) GetRaw() *bool {
+	if h == nil {
 		return nil
 	}
-	return o.Raw
+	return h.Raw
 }
 
-func (o *HrisTimeOffRequestsUpdateRequest) GetEmployeeID() string {
-	if o == nil {
+func (h *HrisTimeOffRequestsUpdateRequest) GetEmployeeID() string {
+	if h == nil {
 		return ""
 	}
-	return o.EmployeeID
+	return h.EmployeeID
 }
 
-func (o *HrisTimeOffRequestsUpdateRequest) GetTimeOffRequest() components.TimeOffRequestInput {
-	if o == nil {
+func (h *HrisTimeOffRequestsUpdateRequest) GetTimeOffRequest() components.TimeOffRequestInput {
+	if h == nil {
 		return components.TimeOffRequestInput{}
 	}
-	return o.TimeOffRequest
+	return h.TimeOffRequest
 }
 
 type HrisTimeOffRequestsUpdateResponse struct {
@@ -112,23 +112,23 @@ type HrisTimeOffRequestsUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *HrisTimeOffRequestsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (h *HrisTimeOffRequestsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if h == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return h.HTTPMeta
 }
 
-func (o *HrisTimeOffRequestsUpdateResponse) GetUpdateTimeOffRequestResponse() *components.UpdateTimeOffRequestResponse {
-	if o == nil {
+func (h *HrisTimeOffRequestsUpdateResponse) GetUpdateTimeOffRequestResponse() *components.UpdateTimeOffRequestResponse {
+	if h == nil {
 		return nil
 	}
-	return o.UpdateTimeOffRequestResponse
+	return h.UpdateTimeOffRequestResponse
 }
 
-func (o *HrisTimeOffRequestsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (h *HrisTimeOffRequestsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if h == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return h.UnexpectedErrorResponse
 }

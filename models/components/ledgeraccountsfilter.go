@@ -77,16 +77,16 @@ func (l *LedgerAccountsFilter) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *LedgerAccountsFilter) GetUpdatedSince() *time.Time {
-	if o == nil {
+func (l *LedgerAccountsFilter) GetUpdatedSince() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.UpdatedSince
+	return l.UpdatedSince
 }
 
-func (o *LedgerAccountsFilter) GetClassification() *Classification {
-	if o == nil {
+func (l *LedgerAccountsFilter) GetClassification() *Classification {
+	if l == nil {
 		return nil
 	}
-	return o.Classification
+	return l.Classification
 }

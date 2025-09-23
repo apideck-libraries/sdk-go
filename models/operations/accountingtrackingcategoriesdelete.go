@@ -14,18 +14,18 @@ type AccountingTrackingCategoriesDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingTrackingCategoriesDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingTrackingCategoriesDeleteGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingTrackingCategoriesDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingTrackingCategoriesDeleteGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingTrackingCategoriesDeleteRequest struct {
@@ -52,39 +52,39 @@ func (a *AccountingTrackingCategoriesDeleteRequest) UnmarshalJSON(data []byte) e
 	return nil
 }
 
-func (o *AccountingTrackingCategoriesDeleteRequest) GetID() string {
-	if o == nil {
+func (a *AccountingTrackingCategoriesDeleteRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingTrackingCategoriesDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingTrackingCategoriesDeleteRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingTrackingCategoriesDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingTrackingCategoriesDeleteRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingTrackingCategoriesDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingTrackingCategoriesDeleteRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingTrackingCategoriesDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingTrackingCategoriesDeleteRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
 type AccountingTrackingCategoriesDeleteResponse struct {
@@ -95,23 +95,23 @@ type AccountingTrackingCategoriesDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingTrackingCategoriesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingTrackingCategoriesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingTrackingCategoriesDeleteResponse) GetDeleteTrackingCategoryResponse() *components.DeleteTrackingCategoryResponse {
-	if o == nil {
+func (a *AccountingTrackingCategoriesDeleteResponse) GetDeleteTrackingCategoryResponse() *components.DeleteTrackingCategoryResponse {
+	if a == nil {
 		return nil
 	}
-	return o.DeleteTrackingCategoryResponse
+	return a.DeleteTrackingCategoryResponse
 }
 
-func (o *AccountingTrackingCategoriesDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingTrackingCategoriesDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

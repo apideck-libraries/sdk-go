@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: a66063e3c32337bb9f66b137be728988
-  docVersion: 10.20.13
-  speakeasyVersion: 1.611.1
-  generationVersion: 2.694.1
-  releaseVersion: 0.17.7
-  configChecksum: 19cd67122215e7f426e32d96aae6fa4f
+  docChecksum: 14b5eaa4ac48d4336800b2e5e5f40937
+  docVersion: 10.20.16
+  speakeasyVersion: 1.622.1
+  generationVersion: 2.709.0
+  releaseVersion: 0.18.0
+  configChecksum: da2542e8082825809ba7e5866efe5f0e
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 features:
@@ -14,7 +14,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.9.6
+    core: 3.11.0
     deepObjectParams: 0.1.1
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.3
@@ -23,7 +23,7 @@ features:
     envVarSecurityUsage: 0.3.2
     errors: 2.83.0
     flattening: 2.81.1
-    globalSecurity: 2.82.11
+    globalSecurity: 2.82.12
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.3
@@ -33,7 +33,7 @@ features:
     intellisenseMarkdownSupport: 0.1.0
     methodServerURLs: 2.82.1
     nameOverrides: 2.81.2
-    nullables: 0.1.1
+    nullables: 0.2.0
     pagination: 2.82.4
     responseFormat: 0.1.2
     retries: 2.84.2
@@ -51,6 +51,7 @@ generatedFiles:
   - /models/apierrors/paymentrequiredresponse.go
   - /models/apierrors/unauthorizedresponse.go
   - /models/apierrors/unprocessableresponse.go
+  - /models/components/accountingbankaccount.go
   - /models/components/accountingdepartment.go
   - /models/components/accountingdepartmentsfilter.go
   - /models/components/accountinglocation.go
@@ -84,6 +85,8 @@ generatedFiles:
   - /models/components/balancesheetfilter.go
   - /models/components/bankaccount.go
   - /models/components/bankaccount1.go
+  - /models/components/bankaccountsfilter.go
+  - /models/components/bankaccountssort.go
   - /models/components/bankfeedaccount.go
   - /models/components/bankfeedstatement.go
   - /models/components/benefit.go
@@ -134,6 +137,7 @@ generatedFiles:
   - /models/components/createapplicantresponse.go
   - /models/components/createapplicationresponse.go
   - /models/components/createattachmentresponse.go
+  - /models/components/createbankaccountresponse.go
   - /models/components/createbankfeedaccountresponse.go
   - /models/components/createbankfeedstatementresponse.go
   - /models/components/createbillpaymentresponse.go
@@ -207,6 +211,7 @@ generatedFiles:
   - /models/components/deleteapplicantresponse.go
   - /models/components/deleteapplicationresponse.go
   - /models/components/deleteattachmentresponse.go
+  - /models/components/deletebankaccountresponse.go
   - /models/components/deletebankfeedaccountresponse.go
   - /models/components/deletebankfeedstatementresponse.go
   - /models/components/deletebillpaymentresponse.go
@@ -313,6 +318,8 @@ generatedFiles:
   - /models/components/getattachmentresponse.go
   - /models/components/getattachmentsresponse.go
   - /models/components/getbalancesheetresponse.go
+  - /models/components/getbankaccountresponse.go
+  - /models/components/getbankaccountsresponse.go
   - /models/components/getbankfeedaccountresponse.go
   - /models/components/getbankfeedaccountsresponse.go
   - /models/components/getbankfeedstatementresponse.go
@@ -557,6 +564,7 @@ generatedFiles:
   - /models/components/updateactivityresponse.go
   - /models/components/updateapplicantresponse.go
   - /models/components/updateapplicationresponse.go
+  - /models/components/updatebankaccountresponse.go
   - /models/components/updatebankfeedaccountresponse.go
   - /models/components/updatebankfeedstatementresponse.go
   - /models/components/updatebillpaymentresponse.go
@@ -625,6 +633,11 @@ generatedFiles:
   - /models/operations/accountingattachmentsone.go
   - /models/operations/accountingattachmentsupload.go
   - /models/operations/accountingbalancesheetone.go
+  - /models/operations/accountingbankaccountsadd.go
+  - /models/operations/accountingbankaccountsall.go
+  - /models/operations/accountingbankaccountsdelete.go
+  - /models/operations/accountingbankaccountsone.go
+  - /models/operations/accountingbankaccountsupdate.go
   - /models/operations/accountingbankfeedaccountsadd.go
   - /models/operations/accountingbankfeedaccountsall.go
   - /models/operations/accountingbankfeedaccountsdelete.go
@@ -929,6 +942,7 @@ generatedFiles:
   - ats.go
   - attachments.go
   - balancesheet.go
+  - bankaccounts.go
   - bankfeedaccounts.go
   - bankfeedstatements.go
   - billpayments.go
@@ -971,6 +985,10 @@ generatedFiles:
   - docs/models/apierrors/unauthorizedresponsedetail.md
   - docs/models/apierrors/unprocessableresponse.md
   - docs/models/apierrors/unprocessableresponsedetail.md
+  - docs/models/components/accountingbankaccount.md
+  - docs/models/components/accountingbankaccountaccounttype.md
+  - docs/models/components/accountingbankaccountinput.md
+  - docs/models/components/accountingbankaccountstatus.md
   - docs/models/components/accountingdepartment.md
   - docs/models/components/accountingdepartmentinput.md
   - docs/models/components/accountingdepartmentsfilter.md
@@ -1032,6 +1050,9 @@ generatedFiles:
   - docs/models/components/bankaccount.md
   - docs/models/components/bankaccount1.md
   - docs/models/components/bankaccount1accounttype.md
+  - docs/models/components/bankaccountsfilter.md
+  - docs/models/components/bankaccountsfilterstatus.md
+  - docs/models/components/bankaccountssort.md
   - docs/models/components/bankaccounttype.md
   - docs/models/components/bankfeedaccount.md
   - docs/models/components/bankfeedaccountinput.md
@@ -1127,6 +1148,7 @@ generatedFiles:
   - docs/models/components/createapplicantresponse.md
   - docs/models/components/createapplicationresponse.md
   - docs/models/components/createattachmentresponse.md
+  - docs/models/components/createbankaccountresponse.md
   - docs/models/components/createbankfeedaccountresponse.md
   - docs/models/components/createbankfeedstatementresponse.md
   - docs/models/components/createbillpaymentresponse.md
@@ -1222,6 +1244,7 @@ generatedFiles:
   - docs/models/components/deleteapplicantresponse.md
   - docs/models/components/deleteapplicationresponse.md
   - docs/models/components/deleteattachmentresponse.md
+  - docs/models/components/deletebankaccountresponse.md
   - docs/models/components/deletebankfeedaccountresponse.md
   - docs/models/components/deletebankfeedstatementresponse.md
   - docs/models/components/deletebillpaymentresponse.md
@@ -1369,6 +1392,8 @@ generatedFiles:
   - docs/models/components/getattachmentresponse.md
   - docs/models/components/getattachmentsresponse.md
   - docs/models/components/getbalancesheetresponse.md
+  - docs/models/components/getbankaccountresponse.md
+  - docs/models/components/getbankaccountsresponse.md
   - docs/models/components/getbankfeedaccountresponse.md
   - docs/models/components/getbankfeedaccountsresponse.md
   - docs/models/components/getbankfeedstatementresponse.md
@@ -1673,6 +1698,7 @@ generatedFiles:
   - docs/models/components/simpleformfieldoptionvalue.md
   - docs/models/components/sociallink.md
   - docs/models/components/sociallinks.md
+  - docs/models/components/sortby.md
   - docs/models/components/sortdirection.md
   - docs/models/components/stage.md
   - docs/models/components/stages.md
@@ -1736,6 +1762,7 @@ generatedFiles:
   - docs/models/components/updateactivityresponse.md
   - docs/models/components/updateapplicantresponse.md
   - docs/models/components/updateapplicationresponse.md
+  - docs/models/components/updatebankaccountresponse.md
   - docs/models/components/updatebankfeedaccountresponse.md
   - docs/models/components/updatebankfeedstatementresponse.md
   - docs/models/components/updatebillpaymentresponse.md
@@ -1833,6 +1860,21 @@ generatedFiles:
   - docs/models/operations/accountingbalancesheetoneglobals.md
   - docs/models/operations/accountingbalancesheetonerequest.md
   - docs/models/operations/accountingbalancesheetoneresponse.md
+  - docs/models/operations/accountingbankaccountsaddglobals.md
+  - docs/models/operations/accountingbankaccountsaddrequest.md
+  - docs/models/operations/accountingbankaccountsaddresponse.md
+  - docs/models/operations/accountingbankaccountsallglobals.md
+  - docs/models/operations/accountingbankaccountsallrequest.md
+  - docs/models/operations/accountingbankaccountsallresponse.md
+  - docs/models/operations/accountingbankaccountsdeleteglobals.md
+  - docs/models/operations/accountingbankaccountsdeleterequest.md
+  - docs/models/operations/accountingbankaccountsdeleteresponse.md
+  - docs/models/operations/accountingbankaccountsoneglobals.md
+  - docs/models/operations/accountingbankaccountsonerequest.md
+  - docs/models/operations/accountingbankaccountsoneresponse.md
+  - docs/models/operations/accountingbankaccountsupdateglobals.md
+  - docs/models/operations/accountingbankaccountsupdaterequest.md
+  - docs/models/operations/accountingbankaccountsupdateresponse.md
   - docs/models/operations/accountingbankfeedaccountsaddglobals.md
   - docs/models/operations/accountingbankfeedaccountsaddrequest.md
   - docs/models/operations/accountingbankfeedaccountsaddresponse.md
@@ -2714,6 +2756,7 @@ generatedFiles:
   - docs/sdks/ats/README.md
   - docs/sdks/attachments/README.md
   - docs/sdks/balancesheet/README.md
+  - docs/sdks/bankaccounts/README.md
   - docs/sdks/bankfeedaccounts/README.md
   - docs/sdks/bankfeedstatements/README.md
   - docs/sdks/billpayments/README.md
@@ -2836,6 +2879,8 @@ generatedFiles:
   - models/operations/options.go
   - notes.go
   - opportunities.go
+  - optionalnullable/optionalnullable.go
+  - optionalnullable/optionalnullable_test.go
   - orders.go
   - payments.go
   - payrolls.go
@@ -17031,7 +17076,7 @@ examples:
     speakeasy-default-vault-logs-all:
       parameters:
         query:
-          filter: {"connector_id": "crm+salesforce", "status_code": 201, "exclude_unified_apis": "vault,proxy"}
+          filter: {"connector_id": "crm+salesforce", "status_code": 201, "status_codes": [200, 201, 204], "exclude_unified_apis": "vault,proxy"}
           limit: 20
         header:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
@@ -18085,6 +18130,142 @@ examples:
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.bankAccountsAll:
+    speakeasy-default-accounting-bank-accounts-all:
+      parameters:
+        query:
+          raw: false
+          limit: 20
+          filter: {"name": "Main Operating", "status": "active"}
+          sort: {"by": "updated_at", "direction": "asc"}
+          pass_through: {"search": "San Francisco"}
+          fields: "id,updated_at"
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-accounts", "operation": "all", "data": [{"id": "12345", "display_id": "BA-001", "name": "Main Operating Account", "account_number": "1234567890", "account_type": "checking", "bank_name": "Chase Bank", "currency": "USD", "balance": 25000, "available_balance": 24500, "overdraft_limit": 5000, "routing_number": "021000021", "iban": "GB33BUKB20201555555555", "bic": "CHASUS33", "bsb_number": "062-001", "branch_identifier": "001", "bank_code": "BNH", "country": "US", "status": "active", "description": "Primary operating account for daily transactions", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z", "created_by": "12345", "updated_by": "12345"}], "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}}, "links": {"previous": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D", "current": "https://unify.apideck.com/crm/companies", "next": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.bankAccountsAdd:
+    speakeasy-default-accounting-bank-accounts-add:
+      parameters:
+        query:
+          raw: false
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      requestBody:
+        application/json: {"display_id": "BA-001", "name": "Main Operating Account", "account_number": "1234567890", "account_type": "checking", "bank_name": "Chase Bank", "currency": "USD", "balance": 25000, "available_balance": 24500, "overdraft_limit": 5000, "routing_number": "021000021", "iban": "GB33BUKB20201555555555", "bic": "CHASUS33", "bsb_number": "062-001", "branch_identifier": "001", "bank_code": "BNH", "country": "US", "status": "active", "description": "Primary operating account for daily transactions", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}]}
+      responses:
+        "201":
+          application/json: {"status_code": 201, "status": "Created", "service": "quickbooks", "resource": "bank-accounts", "operation": "add", "data": {"id": "12345"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.bankAccountsOne:
+    speakeasy-default-accounting-bank-accounts-one:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          raw: false
+          fields: "id,updated_at"
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-accounts", "operation": "one", "data": {"id": "12345", "display_id": "BA-001", "name": "Main Operating Account", "account_number": "1234567890", "account_type": "checking", "bank_name": "Chase Bank", "currency": "USD", "balance": 25000, "available_balance": 24500, "overdraft_limit": 5000, "routing_number": "021000021", "iban": "GB33BUKB20201555555555", "bic": "CHASUS33", "bsb_number": "062-001", "branch_identifier": "001", "bank_code": "BNH", "country": "US", "status": "active", "description": "Primary operating account for daily transactions", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z", "created_by": "12345", "updated_by": "12345"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.bankAccountsUpdate:
+    speakeasy-default-accounting-bank-accounts-update:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          raw: false
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      requestBody:
+        application/json: {"display_id": "BA-001", "name": "Main Operating Account", "account_number": "1234567890", "account_type": "checking", "bank_name": "Chase Bank", "currency": "USD", "balance": 25000, "available_balance": 24500, "overdraft_limit": 5000, "routing_number": "021000021", "iban": "GB33BUKB20201555555555", "bic": "CHASUS33", "bsb_number": "062-001", "branch_identifier": "001", "bank_code": "BNH", "country": "US", "status": "active", "description": "Primary operating account for daily transactions", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}]}
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-accounts", "operation": "update", "data": {"id": "12345"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.bankAccountsDelete:
+    speakeasy-default-accounting-bank-accounts-delete:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          raw: false
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-accounts", "operation": "delete", "data": {"id": "12345"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes Detected:\n* `Apideck.Vault.ConnectionConsents.List()`: **Added**\n* `Apideck.Vault.ConnectionConsent.Update()`: **Added**\n* `Apideck.Accounting.CompanyInfo.Get()`:  `response.Data.TrackingCategoriesMode` **Added**\n* `Apideck.Accounting.JournalEntries.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.TrackingCategories.List()`:  `response.Data.[].ParentName` **Added**\n* `Apideck.Accounting.TrackingCategories.Create()`: \n  *  `request.Request.TrackingCategory.ParentName` **Added**\n* `Apideck.Accounting.TrackingCategories.Get()`:  `response.Data.ParentName` **Added**\n* `Apideck.Accounting.TrackingCategories.Update()`: \n  *  `request.Request.TrackingCategory.ParentName` **Added**\n* `Apideck.Accounting.Expenses.List()`: \n  *  `request.Request.Filter` **Added**\n  *  `response.Data.[].Status` **Added**\n* `Apideck.Accounting.Expenses.Create()`: \n  *  `request.Request.Expense.Status` **Added**\n* `Apideck.Accounting.Expenses.Get()`:  `response.Data.Status` **Added**\n* `Apideck.Accounting.Expenses.Update()`: \n  *  `request.Request.Expense.Status` **Added**\n* `Apideck.Vault.Connections.List()`:  `response.Data.[]` **Changed**\n* `Apideck.Vault.Connections.Get()`:  `response.Data` **Changed**\n* `Apideck.Vault.Connections.Update()`: \n  *  `request.Request.Connection` **Changed**\n  *  `response.Data` **Changed**\n* `Apideck.Vault.Connections.Imports()`:  `response.Data` **Changed**\n* `Apideck.Vault.Connections.Token()`:  `response.Data` **Changed**\n* `Apideck.Vault.ConnectionSettings.List()`:  `response.Data` **Changed**\n* `Apideck.Vault.ConnectionSettings.Update()`: \n  *  `request.Request.Connection` **Changed**\n  *  `response.Data` **Changed**\n"
+releaseNotes: "## Go SDK Changes Detected:\n* `Apideck.Accounting.BankAccounts.List()`: **Added**\n* `Apideck.Accounting.BankAccounts.Create()`: **Added**\n* `Apideck.Accounting.BankAccounts.Get()`: **Added**\n* `Apideck.Accounting.BankAccounts.Update()`: **Added**\n* `Apideck.Accounting.BankAccounts.Delete()`: **Added**\n* `Apideck.Vault.Logs.List()`: \n  *  `request.Request.Filter` **Changed**\n"

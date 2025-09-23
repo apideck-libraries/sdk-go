@@ -41,11 +41,11 @@ type TrackingCategorySubsidiaries struct {
 	ID *string `json:"id,omitempty"`
 }
 
-func (o *TrackingCategorySubsidiaries) GetID() *string {
-	if o == nil {
+func (t *TrackingCategorySubsidiaries) GetID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ID
+	return t.ID
 }
 
 type TrackingCategory struct {
@@ -90,102 +90,102 @@ func (t *TrackingCategory) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *TrackingCategory) GetID() *string {
-	if o == nil {
+func (t *TrackingCategory) GetID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ID
+	return t.ID
 }
 
-func (o *TrackingCategory) GetParentID() *string {
-	if o == nil {
+func (t *TrackingCategory) GetParentID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ParentID
+	return t.ParentID
 }
 
-func (o *TrackingCategory) GetParentName() *string {
-	if o == nil {
+func (t *TrackingCategory) GetParentName() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ParentName
+	return t.ParentName
 }
 
-func (o *TrackingCategory) GetName() *string {
-	if o == nil {
+func (t *TrackingCategory) GetName() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Name
+	return t.Name
 }
 
-func (o *TrackingCategory) GetCode() *string {
-	if o == nil {
+func (t *TrackingCategory) GetCode() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Code
+	return t.Code
 }
 
-func (o *TrackingCategory) GetStatus() *TrackingCategoryStatus {
-	if o == nil {
+func (t *TrackingCategory) GetStatus() *TrackingCategoryStatus {
+	if t == nil {
 		return nil
 	}
-	return o.Status
+	return t.Status
 }
 
-func (o *TrackingCategory) GetCustomMappings() map[string]any {
-	if o == nil {
+func (t *TrackingCategory) GetCustomMappings() map[string]any {
+	if t == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return t.CustomMappings
 }
 
-func (o *TrackingCategory) GetRowVersion() *string {
-	if o == nil {
+func (t *TrackingCategory) GetRowVersion() *string {
+	if t == nil {
 		return nil
 	}
-	return o.RowVersion
+	return t.RowVersion
 }
 
-func (o *TrackingCategory) GetUpdatedBy() *string {
-	if o == nil {
+func (t *TrackingCategory) GetUpdatedBy() *string {
+	if t == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return t.UpdatedBy
 }
 
-func (o *TrackingCategory) GetCreatedBy() *string {
-	if o == nil {
+func (t *TrackingCategory) GetCreatedBy() *string {
+	if t == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return t.CreatedBy
 }
 
-func (o *TrackingCategory) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (t *TrackingCategory) GetUpdatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return t.UpdatedAt
 }
 
-func (o *TrackingCategory) GetCreatedAt() *time.Time {
-	if o == nil {
+func (t *TrackingCategory) GetCreatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return t.CreatedAt
 }
 
-func (o *TrackingCategory) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (t *TrackingCategory) GetPassThrough() []PassThroughBody {
+	if t == nil {
 		return nil
 	}
-	return o.PassThrough
+	return t.PassThrough
 }
 
-func (o *TrackingCategory) GetSubsidiaries() []TrackingCategorySubsidiaries {
-	if o == nil {
+func (t *TrackingCategory) GetSubsidiaries() []TrackingCategorySubsidiaries {
+	if t == nil {
 		return nil
 	}
-	return o.Subsidiaries
+	return t.Subsidiaries
 }
 
 type TrackingCategoryInput struct {
@@ -207,58 +207,58 @@ type TrackingCategoryInput struct {
 	Subsidiaries []TrackingCategorySubsidiaries `json:"subsidiaries,omitempty"`
 }
 
-func (o *TrackingCategoryInput) GetParentID() *string {
-	if o == nil {
+func (t *TrackingCategoryInput) GetParentID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ParentID
+	return t.ParentID
 }
 
-func (o *TrackingCategoryInput) GetParentName() *string {
-	if o == nil {
+func (t *TrackingCategoryInput) GetParentName() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ParentName
+	return t.ParentName
 }
 
-func (o *TrackingCategoryInput) GetName() *string {
-	if o == nil {
+func (t *TrackingCategoryInput) GetName() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Name
+	return t.Name
 }
 
-func (o *TrackingCategoryInput) GetCode() *string {
-	if o == nil {
+func (t *TrackingCategoryInput) GetCode() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Code
+	return t.Code
 }
 
-func (o *TrackingCategoryInput) GetStatus() *TrackingCategoryStatus {
-	if o == nil {
+func (t *TrackingCategoryInput) GetStatus() *TrackingCategoryStatus {
+	if t == nil {
 		return nil
 	}
-	return o.Status
+	return t.Status
 }
 
-func (o *TrackingCategoryInput) GetRowVersion() *string {
-	if o == nil {
+func (t *TrackingCategoryInput) GetRowVersion() *string {
+	if t == nil {
 		return nil
 	}
-	return o.RowVersion
+	return t.RowVersion
 }
 
-func (o *TrackingCategoryInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (t *TrackingCategoryInput) GetPassThrough() []PassThroughBody {
+	if t == nil {
 		return nil
 	}
-	return o.PassThrough
+	return t.PassThrough
 }
 
-func (o *TrackingCategoryInput) GetSubsidiaries() []TrackingCategorySubsidiaries {
-	if o == nil {
+func (t *TrackingCategoryInput) GetSubsidiaries() []TrackingCategorySubsidiaries {
+	if t == nil {
 		return nil
 	}
-	return o.Subsidiaries
+	return t.Subsidiaries
 }

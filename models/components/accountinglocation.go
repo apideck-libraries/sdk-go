@@ -76,102 +76,102 @@ func (a *AccountingLocation) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingLocation) GetID() *string {
-	if o == nil {
+func (a *AccountingLocation) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingLocation) GetParentID() *string {
-	if o == nil {
+func (a *AccountingLocation) GetParentID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ParentID
+	return a.ParentID
 }
 
-func (o *AccountingLocation) GetCompanyName() *string {
-	if o == nil {
+func (a *AccountingLocation) GetCompanyName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CompanyName
+	return a.CompanyName
 }
 
-func (o *AccountingLocation) GetDisplayName() *string {
-	if o == nil {
+func (a *AccountingLocation) GetDisplayName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.DisplayName
+	return a.DisplayName
 }
 
-func (o *AccountingLocation) GetStatus() *LocationStatus {
-	if o == nil {
+func (a *AccountingLocation) GetStatus() *LocationStatus {
+	if a == nil {
 		return nil
 	}
-	return o.Status
+	return a.Status
 }
 
-func (o *AccountingLocation) GetAddresses() []Address {
-	if o == nil {
+func (a *AccountingLocation) GetAddresses() []Address {
+	if a == nil {
 		return nil
 	}
-	return o.Addresses
+	return a.Addresses
 }
 
-func (o *AccountingLocation) GetSubsidiaries() []SubsidiaryReference {
-	if o == nil {
+func (a *AccountingLocation) GetSubsidiaries() []SubsidiaryReference {
+	if a == nil {
 		return nil
 	}
-	return o.Subsidiaries
+	return a.Subsidiaries
 }
 
-func (o *AccountingLocation) GetCustomMappings() map[string]any {
-	if o == nil {
+func (a *AccountingLocation) GetCustomMappings() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return a.CustomMappings
 }
 
-func (o *AccountingLocation) GetRowVersion() *string {
-	if o == nil {
+func (a *AccountingLocation) GetRowVersion() *string {
+	if a == nil {
 		return nil
 	}
-	return o.RowVersion
+	return a.RowVersion
 }
 
-func (o *AccountingLocation) GetUpdatedBy() *string {
-	if o == nil {
+func (a *AccountingLocation) GetUpdatedBy() *string {
+	if a == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return a.UpdatedBy
 }
 
-func (o *AccountingLocation) GetCreatedBy() *string {
-	if o == nil {
+func (a *AccountingLocation) GetCreatedBy() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return a.CreatedBy
 }
 
-func (o *AccountingLocation) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (a *AccountingLocation) GetUpdatedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return a.UpdatedAt
 }
 
-func (o *AccountingLocation) GetCreatedAt() *time.Time {
-	if o == nil {
+func (a *AccountingLocation) GetCreatedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return a.CreatedAt
 }
 
-func (o *AccountingLocation) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (a *AccountingLocation) GetPassThrough() []PassThroughBody {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
 type AccountingLocationInput struct {
@@ -191,58 +191,58 @@ type AccountingLocationInput struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *AccountingLocationInput) GetParentID() *string {
-	if o == nil {
+func (a *AccountingLocationInput) GetParentID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ParentID
+	return a.ParentID
 }
 
-func (o *AccountingLocationInput) GetCompanyName() *string {
-	if o == nil {
+func (a *AccountingLocationInput) GetCompanyName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CompanyName
+	return a.CompanyName
 }
 
-func (o *AccountingLocationInput) GetDisplayName() *string {
-	if o == nil {
+func (a *AccountingLocationInput) GetDisplayName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.DisplayName
+	return a.DisplayName
 }
 
-func (o *AccountingLocationInput) GetStatus() *LocationStatus {
-	if o == nil {
+func (a *AccountingLocationInput) GetStatus() *LocationStatus {
+	if a == nil {
 		return nil
 	}
-	return o.Status
+	return a.Status
 }
 
-func (o *AccountingLocationInput) GetAddresses() []Address {
-	if o == nil {
+func (a *AccountingLocationInput) GetAddresses() []Address {
+	if a == nil {
 		return nil
 	}
-	return o.Addresses
+	return a.Addresses
 }
 
-func (o *AccountingLocationInput) GetSubsidiaries() []SubsidiaryReferenceInput {
-	if o == nil {
+func (a *AccountingLocationInput) GetSubsidiaries() []SubsidiaryReferenceInput {
+	if a == nil {
 		return nil
 	}
-	return o.Subsidiaries
+	return a.Subsidiaries
 }
 
-func (o *AccountingLocationInput) GetRowVersion() *string {
-	if o == nil {
+func (a *AccountingLocationInput) GetRowVersion() *string {
+	if a == nil {
 		return nil
 	}
-	return o.RowVersion
+	return a.RowVersion
 }
 
-func (o *AccountingLocationInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (a *AccountingLocationInput) GetPassThrough() []PassThroughBody {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }

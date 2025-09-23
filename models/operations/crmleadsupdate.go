@@ -14,18 +14,18 @@ type CrmLeadsUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmLeadsUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmLeadsUpdateGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmLeadsUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmLeadsUpdateGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmLeadsUpdateRequest struct {
@@ -53,46 +53,46 @@ func (c *CrmLeadsUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmLeadsUpdateRequest) GetID() string {
-	if o == nil {
+func (c *CrmLeadsUpdateRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CrmLeadsUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmLeadsUpdateRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmLeadsUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmLeadsUpdateRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmLeadsUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmLeadsUpdateRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmLeadsUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmLeadsUpdateRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmLeadsUpdateRequest) GetLead() components.LeadInput {
-	if o == nil {
+func (c *CrmLeadsUpdateRequest) GetLead() components.LeadInput {
+	if c == nil {
 		return components.LeadInput{}
 	}
-	return o.Lead
+	return c.Lead
 }
 
 type CrmLeadsUpdateResponse struct {
@@ -103,23 +103,23 @@ type CrmLeadsUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmLeadsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmLeadsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmLeadsUpdateResponse) GetUpdateLeadResponse() *components.UpdateLeadResponse {
-	if o == nil {
+func (c *CrmLeadsUpdateResponse) GetUpdateLeadResponse() *components.UpdateLeadResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UpdateLeadResponse
+	return c.UpdateLeadResponse
 }
 
-func (o *CrmLeadsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmLeadsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

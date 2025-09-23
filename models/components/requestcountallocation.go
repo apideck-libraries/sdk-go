@@ -8,23 +8,23 @@ type RequestCountAllocation struct {
 	Vault *float64 `json:"vault,omitempty"`
 }
 
-func (o *RequestCountAllocation) GetUnify() *float64 {
-	if o == nil {
+func (r *RequestCountAllocation) GetUnify() *float64 {
+	if r == nil {
 		return nil
 	}
-	return o.Unify
+	return r.Unify
 }
 
-func (o *RequestCountAllocation) GetProxy() *float64 {
-	if o == nil {
+func (r *RequestCountAllocation) GetProxy() *float64 {
+	if r == nil {
 		return nil
 	}
-	return o.Proxy
+	return r.Proxy
 }
 
-func (o *RequestCountAllocation) GetVault() *float64 {
-	if o == nil {
+func (r *RequestCountAllocation) GetVault() *float64 {
+	if r == nil {
 		return nil
 	}
-	return o.Vault
+	return r.Vault
 }

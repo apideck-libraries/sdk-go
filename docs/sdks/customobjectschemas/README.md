@@ -39,7 +39,7 @@ func main() {
     )
 
     res, err := s.Crm.CustomObjectSchemas.List(ctx, operations.CrmCustomObjectSchemasAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
@@ -117,28 +117,28 @@ func main() {
     )
 
     res, err := s.Crm.CustomObjectSchemas.Create(ctx, operations.CrmCustomObjectSchemasAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         CustomObjectSchema: components.CustomObjectSchemaInput{
-            Name: sdkgo.String("project"),
-            Description: sdkgo.String("This schema defines a project custom object"),
+            Name: sdkgo.Pointer("project"),
+            Description: sdkgo.Pointer("This schema defines a project custom object"),
             Fields: []components.Fields{
                 components.Fields{
-                    ID: sdkgo.String("field_123"),
-                    Name: sdkgo.String("project_name"),
-                    Description: sdkgo.String("Name of the project"),
+                    ID: sdkgo.Pointer("field_123"),
+                    Name: sdkgo.Pointer("project_name"),
+                    Description: sdkgo.Pointer("Name of the project"),
                     Type: components.CustomObjectSchemaTypeString.ToPointer(),
-                    Required: sdkgo.Bool(true),
+                    Required: sdkgo.Pointer(true),
                     Options: []components.CustomObjectSchemaOptions{
                         components.CustomObjectSchemaOptions{
-                            Value: sdkgo.String("option1"),
-                            Label: sdkgo.String("Option 1"),
+                            Value: sdkgo.Pointer("option1"),
+                            Label: sdkgo.Pointer("Option 1"),
                         },
                     },
-                    DefaultValue: sdkgo.String("New Project"),
+                    DefaultValue: sdkgo.Pointer("New Project"),
                 },
             },
-            Visible: sdkgo.Bool(true),
-            Active: sdkgo.Bool(true),
+            Visible: sdkgo.Pointer(true),
+            Active: sdkgo.Pointer(true),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -230,7 +230,7 @@ func main() {
 
     res, err := s.Crm.CustomObjectSchemas.Get(ctx, operations.CrmCustomObjectSchemasOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)
@@ -294,68 +294,68 @@ func main() {
 
     res, err := s.Crm.CustomObjectSchemas.Update(ctx, operations.CrmCustomObjectSchemasUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         CustomObjectSchema: components.CustomObjectSchemaInput{
-            Name: sdkgo.String("project"),
-            Description: sdkgo.String("This schema defines a project custom object"),
+            Name: sdkgo.Pointer("project"),
+            Description: sdkgo.Pointer("This schema defines a project custom object"),
             Fields: []components.Fields{
                 components.Fields{
-                    ID: sdkgo.String("field_123"),
-                    Name: sdkgo.String("project_name"),
-                    Description: sdkgo.String("Name of the project"),
+                    ID: sdkgo.Pointer("field_123"),
+                    Name: sdkgo.Pointer("project_name"),
+                    Description: sdkgo.Pointer("Name of the project"),
                     Type: components.CustomObjectSchemaTypeString.ToPointer(),
-                    Required: sdkgo.Bool(true),
+                    Required: sdkgo.Pointer(true),
                     Options: []components.CustomObjectSchemaOptions{
                         components.CustomObjectSchemaOptions{
-                            Value: sdkgo.String("option1"),
-                            Label: sdkgo.String("Option 1"),
+                            Value: sdkgo.Pointer("option1"),
+                            Label: sdkgo.Pointer("Option 1"),
                         },
                         components.CustomObjectSchemaOptions{
-                            Value: sdkgo.String("option1"),
-                            Label: sdkgo.String("Option 1"),
+                            Value: sdkgo.Pointer("option1"),
+                            Label: sdkgo.Pointer("Option 1"),
                         },
                     },
-                    DefaultValue: sdkgo.String("New Project"),
+                    DefaultValue: sdkgo.Pointer("New Project"),
                 },
                 components.Fields{
-                    ID: sdkgo.String("field_123"),
-                    Name: sdkgo.String("project_name"),
-                    Description: sdkgo.String("Name of the project"),
+                    ID: sdkgo.Pointer("field_123"),
+                    Name: sdkgo.Pointer("project_name"),
+                    Description: sdkgo.Pointer("Name of the project"),
                     Type: components.CustomObjectSchemaTypeString.ToPointer(),
-                    Required: sdkgo.Bool(true),
+                    Required: sdkgo.Pointer(true),
                     Options: []components.CustomObjectSchemaOptions{
                         components.CustomObjectSchemaOptions{
-                            Value: sdkgo.String("option1"),
-                            Label: sdkgo.String("Option 1"),
+                            Value: sdkgo.Pointer("option1"),
+                            Label: sdkgo.Pointer("Option 1"),
                         },
                         components.CustomObjectSchemaOptions{
-                            Value: sdkgo.String("option1"),
-                            Label: sdkgo.String("Option 1"),
+                            Value: sdkgo.Pointer("option1"),
+                            Label: sdkgo.Pointer("Option 1"),
                         },
                     },
-                    DefaultValue: sdkgo.String("New Project"),
+                    DefaultValue: sdkgo.Pointer("New Project"),
                 },
                 components.Fields{
-                    ID: sdkgo.String("field_123"),
-                    Name: sdkgo.String("project_name"),
-                    Description: sdkgo.String("Name of the project"),
+                    ID: sdkgo.Pointer("field_123"),
+                    Name: sdkgo.Pointer("project_name"),
+                    Description: sdkgo.Pointer("Name of the project"),
                     Type: components.CustomObjectSchemaTypeString.ToPointer(),
-                    Required: sdkgo.Bool(true),
+                    Required: sdkgo.Pointer(true),
                     Options: []components.CustomObjectSchemaOptions{
                         components.CustomObjectSchemaOptions{
-                            Value: sdkgo.String("option1"),
-                            Label: sdkgo.String("Option 1"),
+                            Value: sdkgo.Pointer("option1"),
+                            Label: sdkgo.Pointer("Option 1"),
                         },
                         components.CustomObjectSchemaOptions{
-                            Value: sdkgo.String("option1"),
-                            Label: sdkgo.String("Option 1"),
+                            Value: sdkgo.Pointer("option1"),
+                            Label: sdkgo.Pointer("Option 1"),
                         },
                     },
-                    DefaultValue: sdkgo.String("New Project"),
+                    DefaultValue: sdkgo.Pointer("New Project"),
                 },
             },
-            Visible: sdkgo.Bool(true),
-            Active: sdkgo.Bool(true),
+            Visible: sdkgo.Pointer(true),
+            Active: sdkgo.Pointer(true),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -508,7 +508,7 @@ func main() {
 
     res, err := s.Crm.CustomObjectSchemas.Delete(ctx, operations.CrmCustomObjectSchemasDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

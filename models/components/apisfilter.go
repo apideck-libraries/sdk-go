@@ -7,9 +7,9 @@ type ApisFilter struct {
 	Status *APIStatus `queryParam:"name=status"`
 }
 
-func (o *ApisFilter) GetStatus() *APIStatus {
-	if o == nil {
+func (a *ApisFilter) GetStatus() *APIStatus {
+	if a == nil {
 		return nil
 	}
-	return o.Status
+	return a.Status
 }

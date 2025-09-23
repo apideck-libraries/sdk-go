@@ -20,51 +20,51 @@ type CreateAccountingDepartmentResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *CreateAccountingDepartmentResponse) GetStatusCode() int64 {
-	if o == nil {
+func (c *CreateAccountingDepartmentResponse) GetStatusCode() int64 {
+	if c == nil {
 		return 0
 	}
-	return o.StatusCode
+	return c.StatusCode
 }
 
-func (o *CreateAccountingDepartmentResponse) GetStatus() string {
-	if o == nil {
+func (c *CreateAccountingDepartmentResponse) GetStatus() string {
+	if c == nil {
 		return ""
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CreateAccountingDepartmentResponse) GetService() string {
-	if o == nil {
+func (c *CreateAccountingDepartmentResponse) GetService() string {
+	if c == nil {
 		return ""
 	}
-	return o.Service
+	return c.Service
 }
 
-func (o *CreateAccountingDepartmentResponse) GetResource() string {
-	if o == nil {
+func (c *CreateAccountingDepartmentResponse) GetResource() string {
+	if c == nil {
 		return ""
 	}
-	return o.Resource
+	return c.Resource
 }
 
-func (o *CreateAccountingDepartmentResponse) GetOperation() string {
-	if o == nil {
+func (c *CreateAccountingDepartmentResponse) GetOperation() string {
+	if c == nil {
 		return ""
 	}
-	return o.Operation
+	return c.Operation
 }
 
-func (o *CreateAccountingDepartmentResponse) GetData() UnifiedID {
-	if o == nil {
+func (c *CreateAccountingDepartmentResponse) GetData() UnifiedID {
+	if c == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return c.Data
 }
 
-func (o *CreateAccountingDepartmentResponse) GetRaw() map[string]any {
-	if o == nil {
+func (c *CreateAccountingDepartmentResponse) GetRaw() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }

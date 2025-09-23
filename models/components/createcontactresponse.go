@@ -20,51 +20,51 @@ type CreateContactResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *CreateContactResponse) GetStatusCode() int64 {
-	if o == nil {
+func (c *CreateContactResponse) GetStatusCode() int64 {
+	if c == nil {
 		return 0
 	}
-	return o.StatusCode
+	return c.StatusCode
 }
 
-func (o *CreateContactResponse) GetStatus() string {
-	if o == nil {
+func (c *CreateContactResponse) GetStatus() string {
+	if c == nil {
 		return ""
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CreateContactResponse) GetService() string {
-	if o == nil {
+func (c *CreateContactResponse) GetService() string {
+	if c == nil {
 		return ""
 	}
-	return o.Service
+	return c.Service
 }
 
-func (o *CreateContactResponse) GetResource() string {
-	if o == nil {
+func (c *CreateContactResponse) GetResource() string {
+	if c == nil {
 		return ""
 	}
-	return o.Resource
+	return c.Resource
 }
 
-func (o *CreateContactResponse) GetOperation() string {
-	if o == nil {
+func (c *CreateContactResponse) GetOperation() string {
+	if c == nil {
 		return ""
 	}
-	return o.Operation
+	return c.Operation
 }
 
-func (o *CreateContactResponse) GetData() UnifiedID {
-	if o == nil {
+func (c *CreateContactResponse) GetData() UnifiedID {
+	if c == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return c.Data
 }
 
-func (o *CreateContactResponse) GetRaw() map[string]any {
-	if o == nil {
+func (c *CreateContactResponse) GetRaw() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }

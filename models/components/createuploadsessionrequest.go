@@ -15,37 +15,37 @@ type CreateUploadSessionRequest struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *CreateUploadSessionRequest) GetName() string {
-	if o == nil {
+func (c *CreateUploadSessionRequest) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateUploadSessionRequest) GetParentFolderID() string {
-	if o == nil {
+func (c *CreateUploadSessionRequest) GetParentFolderID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ParentFolderID
+	return c.ParentFolderID
 }
 
-func (o *CreateUploadSessionRequest) GetDriveID() *string {
-	if o == nil {
+func (c *CreateUploadSessionRequest) GetDriveID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.DriveID
+	return c.DriveID
 }
 
-func (o *CreateUploadSessionRequest) GetSize() *int64 {
-	if o == nil {
+func (c *CreateUploadSessionRequest) GetSize() *int64 {
+	if c == nil {
 		return nil
 	}
-	return o.Size
+	return c.Size
 }
 
-func (o *CreateUploadSessionRequest) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (c *CreateUploadSessionRequest) GetPassThrough() []PassThroughBody {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }

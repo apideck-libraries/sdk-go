@@ -23,65 +23,65 @@ type GetCreditNotesResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetCreditNotesResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetCreditNotesResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetCreditNotesResponse) GetStatus() string {
-	if o == nil {
+func (g *GetCreditNotesResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetCreditNotesResponse) GetService() string {
-	if o == nil {
+func (g *GetCreditNotesResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetCreditNotesResponse) GetResource() string {
-	if o == nil {
+func (g *GetCreditNotesResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetCreditNotesResponse) GetOperation() string {
-	if o == nil {
+func (g *GetCreditNotesResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetCreditNotesResponse) GetData() []CreditNote {
-	if o == nil {
+func (g *GetCreditNotesResponse) GetData() []CreditNote {
+	if g == nil {
 		return []CreditNote{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetCreditNotesResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetCreditNotesResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetCreditNotesResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetCreditNotesResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }
 
-func (o *GetCreditNotesResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetCreditNotesResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

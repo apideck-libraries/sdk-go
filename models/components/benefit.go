@@ -11,23 +11,23 @@ type Benefit struct {
 	EmployerContribution *float64 `json:"employer_contribution,omitempty"`
 }
 
-func (o *Benefit) GetName() *string {
-	if o == nil {
+func (b *Benefit) GetName() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Name
+	return b.Name
 }
 
-func (o *Benefit) GetEmployeeDeduction() *float64 {
-	if o == nil {
+func (b *Benefit) GetEmployeeDeduction() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.EmployeeDeduction
+	return b.EmployeeDeduction
 }
 
-func (o *Benefit) GetEmployerContribution() *float64 {
-	if o == nil {
+func (b *Benefit) GetEmployerContribution() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.EmployerContribution
+	return b.EmployerContribution
 }

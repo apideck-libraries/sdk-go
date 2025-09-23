@@ -8,16 +8,16 @@ type Assignee struct {
 	Username *string `json:"username,omitempty"`
 }
 
-func (o *Assignee) GetID() string {
-	if o == nil {
+func (a *Assignee) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *Assignee) GetUsername() *string {
-	if o == nil {
+func (a *Assignee) GetUsername() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Username
+	return a.Username
 }

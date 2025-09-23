@@ -40,13 +40,13 @@ func main() {
     )
 
     res, err := s.FileStorage.Folders.Create(ctx, operations.FileStorageFoldersAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
         CreateFolderRequest: components.CreateFolderRequest{
             Name: "Documents",
-            Description: sdkgo.String("My Personal Documents"),
+            Description: sdkgo.Pointer("My Personal Documents"),
             ParentFolderID: "1234",
-            DriveID: sdkgo.String("1234"),
+            DriveID: sdkgo.Pointer("1234"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -125,8 +125,8 @@ func main() {
 
     res, err := s.FileStorage.Folders.Get(ctx, operations.FileStorageFoldersOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -190,11 +190,11 @@ func main() {
 
     res, err := s.FileStorage.Folders.Update(ctx, operations.FileStorageFoldersUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         UpdateFolderRequest: components.UpdateFolderRequest{
-            Name: sdkgo.String("Documents"),
-            Description: sdkgo.String("My Personal Documents"),
-            ParentFolderID: sdkgo.String("1234"),
+            Name: sdkgo.Pointer("Documents"),
+            Description: sdkgo.Pointer("My Personal Documents"),
+            ParentFolderID: sdkgo.Pointer("1234"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -281,7 +281,7 @@ func main() {
 
     res, err := s.FileStorage.Folders.Delete(ctx, operations.FileStorageFoldersDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)
@@ -345,10 +345,10 @@ func main() {
 
     res, err := s.FileStorage.Folders.Copy(ctx, operations.FileStorageFoldersCopyRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
         CopyFolderRequest: components.CopyFolderRequest{
-            Name: sdkgo.String("Documents"),
+            Name: sdkgo.Pointer("Documents"),
             ParentFolderID: "1234",
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{

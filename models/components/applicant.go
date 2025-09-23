@@ -91,25 +91,25 @@ type Websites struct {
 	Type *ApplicantType `json:"type,omitempty"`
 }
 
-func (o *Websites) GetID() *string {
-	if o == nil {
+func (w *Websites) GetID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.ID
+	return w.ID
 }
 
-func (o *Websites) GetURL() string {
-	if o == nil {
+func (w *Websites) GetURL() string {
+	if w == nil {
 		return ""
 	}
-	return o.URL
+	return w.URL
 }
 
-func (o *Websites) GetType() *ApplicantType {
-	if o == nil {
+func (w *Websites) GetType() *ApplicantType {
+	if w == nil {
 		return nil
 	}
-	return o.Type
+	return w.Type
 }
 
 type SocialLinks struct {
@@ -121,25 +121,25 @@ type SocialLinks struct {
 	Type *string `json:"type,omitempty"`
 }
 
-func (o *SocialLinks) GetID() *string {
-	if o == nil {
+func (s *SocialLinks) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SocialLinks) GetURL() string {
-	if o == nil {
+func (s *SocialLinks) GetURL() string {
+	if s == nil {
 		return ""
 	}
-	return o.URL
+	return s.URL
 }
 
-func (o *SocialLinks) GetType() *string {
-	if o == nil {
+func (s *SocialLinks) GetType() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Type
+	return s.Type
 }
 
 type Applicant struct {
@@ -230,347 +230,347 @@ func (a *Applicant) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Applicant) GetID() *string {
-	if o == nil {
+func (a *Applicant) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *Applicant) GetName() *string {
-	if o == nil {
+func (a *Applicant) GetName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Name
+	return a.Name
 }
 
-func (o *Applicant) GetSalutation() *string {
-	if o == nil {
+func (a *Applicant) GetSalutation() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Salutation
+	return a.Salutation
 }
 
-func (o *Applicant) GetFirstName() *string {
-	if o == nil {
+func (a *Applicant) GetFirstName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.FirstName
+	return a.FirstName
 }
 
-func (o *Applicant) GetLastName() *string {
-	if o == nil {
+func (a *Applicant) GetLastName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.LastName
+	return a.LastName
 }
 
-func (o *Applicant) GetMiddleName() *string {
-	if o == nil {
+func (a *Applicant) GetMiddleName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.MiddleName
+	return a.MiddleName
 }
 
-func (o *Applicant) GetInitials() *string {
-	if o == nil {
+func (a *Applicant) GetInitials() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Initials
+	return a.Initials
 }
 
-func (o *Applicant) GetBirthday() *types.Date {
-	if o == nil {
+func (a *Applicant) GetBirthday() *types.Date {
+	if a == nil {
 		return nil
 	}
-	return o.Birthday
+	return a.Birthday
 }
 
-func (o *Applicant) GetGender() *ApplicantGender {
-	if o == nil {
+func (a *Applicant) GetGender() *ApplicantGender {
+	if a == nil {
 		return nil
 	}
-	return o.Gender
+	return a.Gender
 }
 
-func (o *Applicant) GetSocialSecurityNumber() *string {
-	if o == nil {
+func (a *Applicant) GetSocialSecurityNumber() *string {
+	if a == nil {
 		return nil
 	}
-	return o.SocialSecurityNumber
+	return a.SocialSecurityNumber
 }
 
-func (o *Applicant) GetType() *string {
-	if o == nil {
+func (a *Applicant) GetType() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Type
+	return a.Type
 }
 
-func (o *Applicant) GetCoverLetter() *string {
-	if o == nil {
+func (a *Applicant) GetCoverLetter() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CoverLetter
+	return a.CoverLetter
 }
 
-func (o *Applicant) GetJobURL() *string {
-	if o == nil {
+func (a *Applicant) GetJobURL() *string {
+	if a == nil {
 		return nil
 	}
-	return o.JobURL
+	return a.JobURL
 }
 
-func (o *Applicant) GetPhotoURL() *string {
-	if o == nil {
+func (a *Applicant) GetPhotoURL() *string {
+	if a == nil {
 		return nil
 	}
-	return o.PhotoURL
+	return a.PhotoURL
 }
 
-func (o *Applicant) GetHeadline() *string {
-	if o == nil {
+func (a *Applicant) GetHeadline() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Headline
+	return a.Headline
 }
 
-func (o *Applicant) GetTitle() *string {
-	if o == nil {
+func (a *Applicant) GetTitle() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Title
+	return a.Title
 }
 
-func (o *Applicant) GetEmails() []Email {
-	if o == nil {
+func (a *Applicant) GetEmails() []Email {
+	if a == nil {
 		return nil
 	}
-	return o.Emails
+	return a.Emails
 }
 
-func (o *Applicant) GetCustomFields() []CustomField {
-	if o == nil {
+func (a *Applicant) GetCustomFields() []CustomField {
+	if a == nil {
 		return nil
 	}
-	return o.CustomFields
+	return a.CustomFields
 }
 
-func (o *Applicant) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
+func (a *Applicant) GetPhoneNumbers() []PhoneNumber {
+	if a == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return a.PhoneNumbers
 }
 
-func (o *Applicant) GetAddresses() []Address {
-	if o == nil {
+func (a *Applicant) GetAddresses() []Address {
+	if a == nil {
 		return nil
 	}
-	return o.Addresses
+	return a.Addresses
 }
 
-func (o *Applicant) GetWebsites() []Websites {
-	if o == nil {
+func (a *Applicant) GetWebsites() []Websites {
+	if a == nil {
 		return nil
 	}
-	return o.Websites
+	return a.Websites
 }
 
-func (o *Applicant) GetSocialLinks() []SocialLinks {
-	if o == nil {
+func (a *Applicant) GetSocialLinks() []SocialLinks {
+	if a == nil {
 		return nil
 	}
-	return o.SocialLinks
+	return a.SocialLinks
 }
 
-func (o *Applicant) GetStageID() *string {
-	if o == nil {
+func (a *Applicant) GetStageID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.StageID
+	return a.StageID
 }
 
-func (o *Applicant) GetRecruiterID() *string {
-	if o == nil {
+func (a *Applicant) GetRecruiterID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.RecruiterID
+	return a.RecruiterID
 }
 
-func (o *Applicant) GetCoordinatorID() *string {
-	if o == nil {
+func (a *Applicant) GetCoordinatorID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CoordinatorID
+	return a.CoordinatorID
 }
 
-func (o *Applicant) GetApplicationIds() []string {
-	if o == nil {
+func (a *Applicant) GetApplicationIds() []string {
+	if a == nil {
 		return nil
 	}
-	return o.ApplicationIds
+	return a.ApplicationIds
 }
 
-func (o *Applicant) GetApplications() []string {
-	if o == nil {
+func (a *Applicant) GetApplications() []string {
+	if a == nil {
 		return nil
 	}
-	return o.Applications
+	return a.Applications
 }
 
-func (o *Applicant) GetFollowers() []string {
-	if o == nil {
+func (a *Applicant) GetFollowers() []string {
+	if a == nil {
 		return nil
 	}
-	return o.Followers
+	return a.Followers
 }
 
-func (o *Applicant) GetSources() []string {
-	if o == nil {
+func (a *Applicant) GetSources() []string {
+	if a == nil {
 		return nil
 	}
-	return o.Sources
+	return a.Sources
 }
 
-func (o *Applicant) GetSourceID() *string {
-	if o == nil {
+func (a *Applicant) GetSourceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.SourceID
+	return a.SourceID
 }
 
-func (o *Applicant) GetConfidential() *bool {
-	if o == nil {
+func (a *Applicant) GetConfidential() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Confidential
+	return a.Confidential
 }
 
-func (o *Applicant) GetAnonymized() *bool {
-	if o == nil {
+func (a *Applicant) GetAnonymized() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Anonymized
+	return a.Anonymized
 }
 
-func (o *Applicant) GetTags() []string {
-	if o == nil {
+func (a *Applicant) GetTags() []string {
+	if a == nil {
 		return nil
 	}
-	return o.Tags
+	return a.Tags
 }
 
-func (o *Applicant) GetArchived() *bool {
-	if o == nil {
+func (a *Applicant) GetArchived() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Archived
+	return a.Archived
 }
 
-func (o *Applicant) GetLastInteractionAt() *time.Time {
-	if o == nil {
+func (a *Applicant) GetLastInteractionAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.LastInteractionAt
+	return a.LastInteractionAt
 }
 
-func (o *Applicant) GetOwnerID() *string {
-	if o == nil {
+func (a *Applicant) GetOwnerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.OwnerID
+	return a.OwnerID
 }
 
-func (o *Applicant) GetSourcedBy() *string {
-	if o == nil {
+func (a *Applicant) GetSourcedBy() *string {
+	if a == nil {
 		return nil
 	}
-	return o.SourcedBy
+	return a.SourcedBy
 }
 
-func (o *Applicant) GetCvURL() *string {
-	if o == nil {
+func (a *Applicant) GetCvURL() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CvURL
+	return a.CvURL
 }
 
-func (o *Applicant) GetRecordURL() *string {
-	if o == nil {
+func (a *Applicant) GetRecordURL() *string {
+	if a == nil {
 		return nil
 	}
-	return o.RecordURL
+	return a.RecordURL
 }
 
-func (o *Applicant) GetRejectedAt() *time.Time {
-	if o == nil {
+func (a *Applicant) GetRejectedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.RejectedAt
+	return a.RejectedAt
 }
 
-func (o *Applicant) GetCustomMappings() map[string]any {
-	if o == nil {
+func (a *Applicant) GetCustomMappings() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return a.CustomMappings
 }
 
-func (o *Applicant) GetDeleted() *bool {
-	if o == nil {
+func (a *Applicant) GetDeleted() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Deleted
+	return a.Deleted
 }
 
-func (o *Applicant) GetDeletedBy() *string {
-	if o == nil {
+func (a *Applicant) GetDeletedBy() *string {
+	if a == nil {
 		return nil
 	}
-	return o.DeletedBy
+	return a.DeletedBy
 }
 
-func (o *Applicant) GetDeletedAt() *time.Time {
-	if o == nil {
+func (a *Applicant) GetDeletedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.DeletedAt
+	return a.DeletedAt
 }
 
-func (o *Applicant) GetUpdatedBy() *string {
-	if o == nil {
+func (a *Applicant) GetUpdatedBy() *string {
+	if a == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return a.UpdatedBy
 }
 
-func (o *Applicant) GetCreatedBy() *string {
-	if o == nil {
+func (a *Applicant) GetCreatedBy() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return a.CreatedBy
 }
 
-func (o *Applicant) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (a *Applicant) GetUpdatedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return a.UpdatedAt
 }
 
-func (o *Applicant) GetCreatedAt() *time.Time {
-	if o == nil {
+func (a *Applicant) GetCreatedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return a.CreatedAt
 }
 
-func (o *Applicant) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (a *Applicant) GetPassThrough() []PassThroughBody {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
 type ApplicantInput struct {
@@ -639,247 +639,247 @@ func (a *ApplicantInput) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ApplicantInput) GetName() *string {
-	if o == nil {
+func (a *ApplicantInput) GetName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Name
+	return a.Name
 }
 
-func (o *ApplicantInput) GetSalutation() *string {
-	if o == nil {
+func (a *ApplicantInput) GetSalutation() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Salutation
+	return a.Salutation
 }
 
-func (o *ApplicantInput) GetFirstName() *string {
-	if o == nil {
+func (a *ApplicantInput) GetFirstName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.FirstName
+	return a.FirstName
 }
 
-func (o *ApplicantInput) GetLastName() *string {
-	if o == nil {
+func (a *ApplicantInput) GetLastName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.LastName
+	return a.LastName
 }
 
-func (o *ApplicantInput) GetMiddleName() *string {
-	if o == nil {
+func (a *ApplicantInput) GetMiddleName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.MiddleName
+	return a.MiddleName
 }
 
-func (o *ApplicantInput) GetInitials() *string {
-	if o == nil {
+func (a *ApplicantInput) GetInitials() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Initials
+	return a.Initials
 }
 
-func (o *ApplicantInput) GetBirthday() *types.Date {
-	if o == nil {
+func (a *ApplicantInput) GetBirthday() *types.Date {
+	if a == nil {
 		return nil
 	}
-	return o.Birthday
+	return a.Birthday
 }
 
-func (o *ApplicantInput) GetGender() *ApplicantGender {
-	if o == nil {
+func (a *ApplicantInput) GetGender() *ApplicantGender {
+	if a == nil {
 		return nil
 	}
-	return o.Gender
+	return a.Gender
 }
 
-func (o *ApplicantInput) GetSocialSecurityNumber() *string {
-	if o == nil {
+func (a *ApplicantInput) GetSocialSecurityNumber() *string {
+	if a == nil {
 		return nil
 	}
-	return o.SocialSecurityNumber
+	return a.SocialSecurityNumber
 }
 
-func (o *ApplicantInput) GetType() *string {
-	if o == nil {
+func (a *ApplicantInput) GetType() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Type
+	return a.Type
 }
 
-func (o *ApplicantInput) GetCoverLetter() *string {
-	if o == nil {
+func (a *ApplicantInput) GetCoverLetter() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CoverLetter
+	return a.CoverLetter
 }
 
-func (o *ApplicantInput) GetPhotoURL() *string {
-	if o == nil {
+func (a *ApplicantInput) GetPhotoURL() *string {
+	if a == nil {
 		return nil
 	}
-	return o.PhotoURL
+	return a.PhotoURL
 }
 
-func (o *ApplicantInput) GetHeadline() *string {
-	if o == nil {
+func (a *ApplicantInput) GetHeadline() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Headline
+	return a.Headline
 }
 
-func (o *ApplicantInput) GetTitle() *string {
-	if o == nil {
+func (a *ApplicantInput) GetTitle() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Title
+	return a.Title
 }
 
-func (o *ApplicantInput) GetEmails() []Email {
-	if o == nil {
+func (a *ApplicantInput) GetEmails() []Email {
+	if a == nil {
 		return nil
 	}
-	return o.Emails
+	return a.Emails
 }
 
-func (o *ApplicantInput) GetCustomFields() []CustomField {
-	if o == nil {
+func (a *ApplicantInput) GetCustomFields() []CustomField {
+	if a == nil {
 		return nil
 	}
-	return o.CustomFields
+	return a.CustomFields
 }
 
-func (o *ApplicantInput) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
+func (a *ApplicantInput) GetPhoneNumbers() []PhoneNumber {
+	if a == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return a.PhoneNumbers
 }
 
-func (o *ApplicantInput) GetAddresses() []Address {
-	if o == nil {
+func (a *ApplicantInput) GetAddresses() []Address {
+	if a == nil {
 		return nil
 	}
-	return o.Addresses
+	return a.Addresses
 }
 
-func (o *ApplicantInput) GetWebsites() []Websites {
-	if o == nil {
+func (a *ApplicantInput) GetWebsites() []Websites {
+	if a == nil {
 		return nil
 	}
-	return o.Websites
+	return a.Websites
 }
 
-func (o *ApplicantInput) GetSocialLinks() []SocialLinks {
-	if o == nil {
+func (a *ApplicantInput) GetSocialLinks() []SocialLinks {
+	if a == nil {
 		return nil
 	}
-	return o.SocialLinks
+	return a.SocialLinks
 }
 
-func (o *ApplicantInput) GetStageID() *string {
-	if o == nil {
+func (a *ApplicantInput) GetStageID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.StageID
+	return a.StageID
 }
 
-func (o *ApplicantInput) GetRecruiterID() *string {
-	if o == nil {
+func (a *ApplicantInput) GetRecruiterID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.RecruiterID
+	return a.RecruiterID
 }
 
-func (o *ApplicantInput) GetCoordinatorID() *string {
-	if o == nil {
+func (a *ApplicantInput) GetCoordinatorID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CoordinatorID
+	return a.CoordinatorID
 }
 
-func (o *ApplicantInput) GetApplicationIds() []string {
-	if o == nil {
+func (a *ApplicantInput) GetApplicationIds() []string {
+	if a == nil {
 		return nil
 	}
-	return o.ApplicationIds
+	return a.ApplicationIds
 }
 
-func (o *ApplicantInput) GetApplications() []string {
-	if o == nil {
+func (a *ApplicantInput) GetApplications() []string {
+	if a == nil {
 		return nil
 	}
-	return o.Applications
+	return a.Applications
 }
 
-func (o *ApplicantInput) GetFollowers() []string {
-	if o == nil {
+func (a *ApplicantInput) GetFollowers() []string {
+	if a == nil {
 		return nil
 	}
-	return o.Followers
+	return a.Followers
 }
 
-func (o *ApplicantInput) GetSources() []string {
-	if o == nil {
+func (a *ApplicantInput) GetSources() []string {
+	if a == nil {
 		return nil
 	}
-	return o.Sources
+	return a.Sources
 }
 
-func (o *ApplicantInput) GetConfidential() *bool {
-	if o == nil {
+func (a *ApplicantInput) GetConfidential() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Confidential
+	return a.Confidential
 }
 
-func (o *ApplicantInput) GetAnonymized() *bool {
-	if o == nil {
+func (a *ApplicantInput) GetAnonymized() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Anonymized
+	return a.Anonymized
 }
 
-func (o *ApplicantInput) GetTags() []string {
-	if o == nil {
+func (a *ApplicantInput) GetTags() []string {
+	if a == nil {
 		return nil
 	}
-	return o.Tags
+	return a.Tags
 }
 
-func (o *ApplicantInput) GetArchived() *bool {
-	if o == nil {
+func (a *ApplicantInput) GetArchived() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Archived
+	return a.Archived
 }
 
-func (o *ApplicantInput) GetOwnerID() *string {
-	if o == nil {
+func (a *ApplicantInput) GetOwnerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.OwnerID
+	return a.OwnerID
 }
 
-func (o *ApplicantInput) GetRecordURL() *string {
-	if o == nil {
+func (a *ApplicantInput) GetRecordURL() *string {
+	if a == nil {
 		return nil
 	}
-	return o.RecordURL
+	return a.RecordURL
 }
 
-func (o *ApplicantInput) GetDeleted() *bool {
-	if o == nil {
+func (a *ApplicantInput) GetDeleted() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Deleted
+	return a.Deleted
 }
 
-func (o *ApplicantInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (a *ApplicantInput) GetPassThrough() []PassThroughBody {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }

@@ -19,51 +19,51 @@ type GetPaymentResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetPaymentResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetPaymentResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetPaymentResponse) GetStatus() string {
-	if o == nil {
+func (g *GetPaymentResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetPaymentResponse) GetService() string {
-	if o == nil {
+func (g *GetPaymentResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetPaymentResponse) GetResource() string {
-	if o == nil {
+func (g *GetPaymentResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetPaymentResponse) GetOperation() string {
-	if o == nil {
+func (g *GetPaymentResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetPaymentResponse) GetData() Payment {
-	if o == nil {
+func (g *GetPaymentResponse) GetData() Payment {
+	if g == nil {
 		return Payment{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetPaymentResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetPaymentResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

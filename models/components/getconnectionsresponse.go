@@ -13,30 +13,30 @@ type GetConnectionsResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetConnectionsResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetConnectionsResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetConnectionsResponse) GetStatus() string {
-	if o == nil {
+func (g *GetConnectionsResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetConnectionsResponse) GetData() []Connection {
-	if o == nil {
+func (g *GetConnectionsResponse) GetData() []Connection {
+	if g == nil {
 		return []Connection{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetConnectionsResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetConnectionsResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

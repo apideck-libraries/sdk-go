@@ -79,44 +79,44 @@ type PhoneNumber struct {
 	Type *PhoneNumberType `json:"type,omitempty"`
 }
 
-func (o *PhoneNumber) GetID() *string {
-	if o == nil {
+func (p *PhoneNumber) GetID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *PhoneNumber) GetCountryCode() *string {
-	if o == nil {
+func (p *PhoneNumber) GetCountryCode() *string {
+	if p == nil {
 		return nil
 	}
-	return o.CountryCode
+	return p.CountryCode
 }
 
-func (o *PhoneNumber) GetAreaCode() *string {
-	if o == nil {
+func (p *PhoneNumber) GetAreaCode() *string {
+	if p == nil {
 		return nil
 	}
-	return o.AreaCode
+	return p.AreaCode
 }
 
-func (o *PhoneNumber) GetNumber() string {
-	if o == nil {
+func (p *PhoneNumber) GetNumber() string {
+	if p == nil {
 		return ""
 	}
-	return o.Number
+	return p.Number
 }
 
-func (o *PhoneNumber) GetExtension() *string {
-	if o == nil {
+func (p *PhoneNumber) GetExtension() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Extension
+	return p.Extension
 }
 
-func (o *PhoneNumber) GetType() *PhoneNumberType {
-	if o == nil {
+func (p *PhoneNumber) GetType() *PhoneNumberType {
+	if p == nil {
 		return nil
 	}
-	return o.Type
+	return p.Type
 }

@@ -19,51 +19,51 @@ type GetCustomObjectSchemaResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetCustomObjectSchemaResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetCustomObjectSchemaResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetCustomObjectSchemaResponse) GetStatus() string {
-	if o == nil {
+func (g *GetCustomObjectSchemaResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetCustomObjectSchemaResponse) GetService() string {
-	if o == nil {
+func (g *GetCustomObjectSchemaResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetCustomObjectSchemaResponse) GetResource() string {
-	if o == nil {
+func (g *GetCustomObjectSchemaResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetCustomObjectSchemaResponse) GetOperation() string {
-	if o == nil {
+func (g *GetCustomObjectSchemaResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetCustomObjectSchemaResponse) GetData() CustomObjectSchema {
-	if o == nil {
+func (g *GetCustomObjectSchemaResponse) GetData() CustomObjectSchema {
+	if g == nil {
 		return CustomObjectSchema{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetCustomObjectSchemaResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetCustomObjectSchemaResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

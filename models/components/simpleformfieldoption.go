@@ -263,23 +263,23 @@ func (s *SimpleFormFieldOption) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *SimpleFormFieldOption) GetLabel() string {
-	if o == nil {
+func (s *SimpleFormFieldOption) GetLabel() string {
+	if s == nil {
 		return ""
 	}
-	return o.Label
+	return s.Label
 }
 
-func (o *SimpleFormFieldOption) GetValue() *SimpleFormFieldOptionValue {
-	if o == nil {
+func (s *SimpleFormFieldOption) GetValue() *SimpleFormFieldOptionValue {
+	if s == nil {
 		return nil
 	}
-	return o.Value
+	return s.Value
 }
 
-func (o *SimpleFormFieldOption) GetOptionType() OptionType {
-	if o == nil {
+func (s *SimpleFormFieldOption) GetOptionType() OptionType {
+	if s == nil {
 		return OptionType("")
 	}
-	return o.OptionType
+	return s.OptionType
 }

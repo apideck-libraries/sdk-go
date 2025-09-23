@@ -23,65 +23,65 @@ type GetJournalEntriesResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetJournalEntriesResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetJournalEntriesResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetJournalEntriesResponse) GetStatus() string {
-	if o == nil {
+func (g *GetJournalEntriesResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetJournalEntriesResponse) GetService() string {
-	if o == nil {
+func (g *GetJournalEntriesResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetJournalEntriesResponse) GetResource() string {
-	if o == nil {
+func (g *GetJournalEntriesResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetJournalEntriesResponse) GetOperation() string {
-	if o == nil {
+func (g *GetJournalEntriesResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetJournalEntriesResponse) GetData() []JournalEntry {
-	if o == nil {
+func (g *GetJournalEntriesResponse) GetData() []JournalEntry {
+	if g == nil {
 		return []JournalEntry{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetJournalEntriesResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetJournalEntriesResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetJournalEntriesResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetJournalEntriesResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }
 
-func (o *GetJournalEntriesResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetJournalEntriesResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

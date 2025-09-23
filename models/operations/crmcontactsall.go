@@ -14,18 +14,18 @@ type CrmContactsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmContactsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmContactsAllGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmContactsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmContactsAllGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmContactsAllRequest struct {
@@ -62,74 +62,74 @@ func (c *CrmContactsAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmContactsAllRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmContactsAllRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmContactsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmContactsAllRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmContactsAllRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmContactsAllRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmContactsAllRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmContactsAllRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmContactsAllRequest) GetCursor() *string {
-	if o == nil {
+func (c *CrmContactsAllRequest) GetCursor() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Cursor
+	return c.Cursor
 }
 
-func (o *CrmContactsAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (c *CrmContactsAllRequest) GetLimit() *int64 {
+	if c == nil {
 		return nil
 	}
-	return o.Limit
+	return c.Limit
 }
 
-func (o *CrmContactsAllRequest) GetFilter() *components.ContactsFilter {
-	if o == nil {
+func (c *CrmContactsAllRequest) GetFilter() *components.ContactsFilter {
+	if c == nil {
 		return nil
 	}
-	return o.Filter
+	return c.Filter
 }
 
-func (o *CrmContactsAllRequest) GetSort() *components.ContactsSort {
-	if o == nil {
+func (c *CrmContactsAllRequest) GetSort() *components.ContactsSort {
+	if c == nil {
 		return nil
 	}
-	return o.Sort
+	return c.Sort
 }
 
-func (o *CrmContactsAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (c *CrmContactsAllRequest) GetPassThrough() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }
 
-func (o *CrmContactsAllRequest) GetFields() *string {
-	if o == nil {
+func (c *CrmContactsAllRequest) GetFields() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Fields
+	return c.Fields
 }
 
 type CrmContactsAllResponse struct {
@@ -142,23 +142,23 @@ type CrmContactsAllResponse struct {
 	Next func() (*CrmContactsAllResponse, error)
 }
 
-func (o *CrmContactsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmContactsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmContactsAllResponse) GetGetContactsResponse() *components.GetContactsResponse {
-	if o == nil {
+func (c *CrmContactsAllResponse) GetGetContactsResponse() *components.GetContactsResponse {
+	if c == nil {
 		return nil
 	}
-	return o.GetContactsResponse
+	return c.GetContactsResponse
 }
 
-func (o *CrmContactsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmContactsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

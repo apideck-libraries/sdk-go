@@ -137,25 +137,25 @@ type Price struct {
 	Currency *Currency `json:"currency,omitempty"`
 }
 
-func (o *Price) GetPerUnit() *string {
-	if o == nil {
+func (p *Price) GetPerUnit() *string {
+	if p == nil {
 		return nil
 	}
-	return o.PerUnit
+	return p.PerUnit
 }
 
-func (o *Price) GetTotalAmount() *string {
-	if o == nil {
+func (p *Price) GetTotalAmount() *string {
+	if p == nil {
 		return nil
 	}
-	return o.TotalAmount
+	return p.TotalAmount
 }
 
-func (o *Price) GetCurrency() *Currency {
-	if o == nil {
+func (p *Price) GetCurrency() *Currency {
+	if p == nil {
 		return nil
 	}
-	return o.Currency
+	return p.Currency
 }
 
 // Error - The error returned if your message status is failed or undelivered.
@@ -165,18 +165,18 @@ type Error struct {
 	Message *string `json:"message,omitempty"`
 }
 
-func (o *Error) GetCode() *string {
-	if o == nil {
+func (e *Error) GetCode() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Code
+	return e.Code
 }
 
-func (o *Error) GetMessage() *string {
-	if o == nil {
+func (e *Error) GetMessage() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Message
+	return e.Message
 }
 
 type Message struct {
@@ -238,165 +238,165 @@ func (m *Message) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Message) GetID() *string {
-	if o == nil {
+func (m *Message) GetID() *string {
+	if m == nil {
 		return nil
 	}
-	return o.ID
+	return m.ID
 }
 
-func (o *Message) GetFrom() string {
-	if o == nil {
+func (m *Message) GetFrom() string {
+	if m == nil {
 		return ""
 	}
-	return o.From
+	return m.From
 }
 
-func (o *Message) GetTo() string {
-	if o == nil {
+func (m *Message) GetTo() string {
+	if m == nil {
 		return ""
 	}
-	return o.To
+	return m.To
 }
 
-func (o *Message) GetSubject() *string {
-	if o == nil {
+func (m *Message) GetSubject() *string {
+	if m == nil {
 		return nil
 	}
-	return o.Subject
+	return m.Subject
 }
 
-func (o *Message) GetBody() string {
-	if o == nil {
+func (m *Message) GetBody() string {
+	if m == nil {
 		return ""
 	}
-	return o.Body
+	return m.Body
 }
 
-func (o *Message) GetType() *MessageType {
-	if o == nil {
+func (m *Message) GetType() *MessageType {
+	if m == nil {
 		return nil
 	}
-	return o.Type
+	return m.Type
 }
 
-func (o *Message) GetNumberOfUnits() *int64 {
-	if o == nil {
+func (m *Message) GetNumberOfUnits() *int64 {
+	if m == nil {
 		return nil
 	}
-	return o.NumberOfUnits
+	return m.NumberOfUnits
 }
 
-func (o *Message) GetNumberOfMediaFiles() *int64 {
-	if o == nil {
+func (m *Message) GetNumberOfMediaFiles() *int64 {
+	if m == nil {
 		return nil
 	}
-	return o.NumberOfMediaFiles
+	return m.NumberOfMediaFiles
 }
 
-func (o *Message) GetDirection() *Direction {
-	if o == nil {
+func (m *Message) GetDirection() *Direction {
+	if m == nil {
 		return nil
 	}
-	return o.Direction
+	return m.Direction
 }
 
-func (o *Message) GetStatus() *MessageStatus {
-	if o == nil {
+func (m *Message) GetStatus() *MessageStatus {
+	if m == nil {
 		return nil
 	}
-	return o.Status
+	return m.Status
 }
 
-func (o *Message) GetScheduledAt() *time.Time {
-	if o == nil {
+func (m *Message) GetScheduledAt() *time.Time {
+	if m == nil {
 		return nil
 	}
-	return o.ScheduledAt
+	return m.ScheduledAt
 }
 
-func (o *Message) GetSentAt() *time.Time {
-	if o == nil {
+func (m *Message) GetSentAt() *time.Time {
+	if m == nil {
 		return nil
 	}
-	return o.SentAt
+	return m.SentAt
 }
 
-func (o *Message) GetWebhookURL() *string {
-	if o == nil {
+func (m *Message) GetWebhookURL() *string {
+	if m == nil {
 		return nil
 	}
-	return o.WebhookURL
+	return m.WebhookURL
 }
 
-func (o *Message) GetReference() *string {
-	if o == nil {
+func (m *Message) GetReference() *string {
+	if m == nil {
 		return nil
 	}
-	return o.Reference
+	return m.Reference
 }
 
-func (o *Message) GetPrice() *Price {
-	if o == nil {
+func (m *Message) GetPrice() *Price {
+	if m == nil {
 		return nil
 	}
-	return o.Price
+	return m.Price
 }
 
-func (o *Message) GetError() *Error {
-	if o == nil {
+func (m *Message) GetError() *Error {
+	if m == nil {
 		return nil
 	}
-	return o.Error
+	return m.Error
 }
 
-func (o *Message) GetMessagingServiceID() *string {
-	if o == nil {
+func (m *Message) GetMessagingServiceID() *string {
+	if m == nil {
 		return nil
 	}
-	return o.MessagingServiceID
+	return m.MessagingServiceID
 }
 
-func (o *Message) GetCustomMappings() map[string]any {
-	if o == nil {
+func (m *Message) GetCustomMappings() map[string]any {
+	if m == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return m.CustomMappings
 }
 
-func (o *Message) GetUpdatedBy() *string {
-	if o == nil {
+func (m *Message) GetUpdatedBy() *string {
+	if m == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return m.UpdatedBy
 }
 
-func (o *Message) GetCreatedBy() *string {
-	if o == nil {
+func (m *Message) GetCreatedBy() *string {
+	if m == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return m.CreatedBy
 }
 
-func (o *Message) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (m *Message) GetUpdatedAt() *time.Time {
+	if m == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return m.UpdatedAt
 }
 
-func (o *Message) GetCreatedAt() *time.Time {
-	if o == nil {
+func (m *Message) GetCreatedAt() *time.Time {
+	if m == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return m.CreatedAt
 }
 
-func (o *Message) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (m *Message) GetPassThrough() []PassThroughBody {
+	if m == nil {
 		return nil
 	}
-	return o.PassThrough
+	return m.PassThrough
 }
 
 type MessageInput struct {
@@ -432,72 +432,72 @@ func (m *MessageInput) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *MessageInput) GetFrom() string {
-	if o == nil {
+func (m *MessageInput) GetFrom() string {
+	if m == nil {
 		return ""
 	}
-	return o.From
+	return m.From
 }
 
-func (o *MessageInput) GetTo() string {
-	if o == nil {
+func (m *MessageInput) GetTo() string {
+	if m == nil {
 		return ""
 	}
-	return o.To
+	return m.To
 }
 
-func (o *MessageInput) GetSubject() *string {
-	if o == nil {
+func (m *MessageInput) GetSubject() *string {
+	if m == nil {
 		return nil
 	}
-	return o.Subject
+	return m.Subject
 }
 
-func (o *MessageInput) GetBody() string {
-	if o == nil {
+func (m *MessageInput) GetBody() string {
+	if m == nil {
 		return ""
 	}
-	return o.Body
+	return m.Body
 }
 
-func (o *MessageInput) GetType() *MessageType {
-	if o == nil {
+func (m *MessageInput) GetType() *MessageType {
+	if m == nil {
 		return nil
 	}
-	return o.Type
+	return m.Type
 }
 
-func (o *MessageInput) GetScheduledAt() *time.Time {
-	if o == nil {
+func (m *MessageInput) GetScheduledAt() *time.Time {
+	if m == nil {
 		return nil
 	}
-	return o.ScheduledAt
+	return m.ScheduledAt
 }
 
-func (o *MessageInput) GetWebhookURL() *string {
-	if o == nil {
+func (m *MessageInput) GetWebhookURL() *string {
+	if m == nil {
 		return nil
 	}
-	return o.WebhookURL
+	return m.WebhookURL
 }
 
-func (o *MessageInput) GetReference() *string {
-	if o == nil {
+func (m *MessageInput) GetReference() *string {
+	if m == nil {
 		return nil
 	}
-	return o.Reference
+	return m.Reference
 }
 
-func (o *MessageInput) GetMessagingServiceID() *string {
-	if o == nil {
+func (m *MessageInput) GetMessagingServiceID() *string {
+	if m == nil {
 		return nil
 	}
-	return o.MessagingServiceID
+	return m.MessagingServiceID
 }
 
-func (o *MessageInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (m *MessageInput) GetPassThrough() []PassThroughBody {
+	if m == nil {
 		return nil
 	}
-	return o.PassThrough
+	return m.PassThrough
 }

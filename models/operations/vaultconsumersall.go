@@ -12,11 +12,11 @@ type VaultConsumersAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultConsumersAllGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultConsumersAllGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultConsumersAllRequest struct {
@@ -39,25 +39,25 @@ func (v *VaultConsumersAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *VaultConsumersAllRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultConsumersAllRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultConsumersAllRequest) GetCursor() *string {
-	if o == nil {
+func (v *VaultConsumersAllRequest) GetCursor() *string {
+	if v == nil {
 		return nil
 	}
-	return o.Cursor
+	return v.Cursor
 }
 
-func (o *VaultConsumersAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (v *VaultConsumersAllRequest) GetLimit() *int64 {
+	if v == nil {
 		return nil
 	}
-	return o.Limit
+	return v.Limit
 }
 
 type VaultConsumersAllResponse struct {
@@ -70,23 +70,23 @@ type VaultConsumersAllResponse struct {
 	Next func() (*VaultConsumersAllResponse, error)
 }
 
-func (o *VaultConsumersAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultConsumersAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultConsumersAllResponse) GetGetConsumersResponse() *components.GetConsumersResponse {
-	if o == nil {
+func (v *VaultConsumersAllResponse) GetGetConsumersResponse() *components.GetConsumersResponse {
+	if v == nil {
 		return nil
 	}
-	return o.GetConsumersResponse
+	return v.GetConsumersResponse
 }
 
-func (o *VaultConsumersAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultConsumersAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

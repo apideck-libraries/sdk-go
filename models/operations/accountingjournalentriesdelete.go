@@ -14,18 +14,18 @@ type AccountingJournalEntriesDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingJournalEntriesDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesDeleteGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingJournalEntriesDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesDeleteGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingJournalEntriesDeleteRequest struct {
@@ -52,39 +52,39 @@ func (a *AccountingJournalEntriesDeleteRequest) UnmarshalJSON(data []byte) error
 	return nil
 }
 
-func (o *AccountingJournalEntriesDeleteRequest) GetID() string {
-	if o == nil {
+func (a *AccountingJournalEntriesDeleteRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingJournalEntriesDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesDeleteRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingJournalEntriesDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesDeleteRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingJournalEntriesDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesDeleteRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingJournalEntriesDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingJournalEntriesDeleteRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
 type AccountingJournalEntriesDeleteResponse struct {
@@ -95,23 +95,23 @@ type AccountingJournalEntriesDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingJournalEntriesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingJournalEntriesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingJournalEntriesDeleteResponse) GetDeleteJournalEntryResponse() *components.DeleteJournalEntryResponse {
-	if o == nil {
+func (a *AccountingJournalEntriesDeleteResponse) GetDeleteJournalEntryResponse() *components.DeleteJournalEntryResponse {
+	if a == nil {
 		return nil
 	}
-	return o.DeleteJournalEntryResponse
+	return a.DeleteJournalEntryResponse
 }
 
-func (o *AccountingJournalEntriesDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingJournalEntriesDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

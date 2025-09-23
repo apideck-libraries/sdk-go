@@ -14,18 +14,18 @@ type AccountingLedgerAccountsDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingLedgerAccountsDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsDeleteGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingLedgerAccountsDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsDeleteGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingLedgerAccountsDeleteRequest struct {
@@ -52,39 +52,39 @@ func (a *AccountingLedgerAccountsDeleteRequest) UnmarshalJSON(data []byte) error
 	return nil
 }
 
-func (o *AccountingLedgerAccountsDeleteRequest) GetID() string {
-	if o == nil {
+func (a *AccountingLedgerAccountsDeleteRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingLedgerAccountsDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsDeleteRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingLedgerAccountsDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsDeleteRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingLedgerAccountsDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingLedgerAccountsDeleteRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingLedgerAccountsDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingLedgerAccountsDeleteRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
 type AccountingLedgerAccountsDeleteResponse struct {
@@ -95,23 +95,23 @@ type AccountingLedgerAccountsDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingLedgerAccountsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingLedgerAccountsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingLedgerAccountsDeleteResponse) GetDeleteLedgerAccountResponse() *components.DeleteLedgerAccountResponse {
-	if o == nil {
+func (a *AccountingLedgerAccountsDeleteResponse) GetDeleteLedgerAccountResponse() *components.DeleteLedgerAccountResponse {
+	if a == nil {
 		return nil
 	}
-	return o.DeleteLedgerAccountResponse
+	return a.DeleteLedgerAccountResponse
 }
 
-func (o *AccountingLedgerAccountsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingLedgerAccountsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

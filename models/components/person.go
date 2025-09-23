@@ -39,65 +39,65 @@ func (p *Person) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Person) GetID() *string {
-	if o == nil {
+func (p *Person) GetID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *Person) GetFirstName() *string {
-	if o == nil {
+func (p *Person) GetFirstName() *string {
+	if p == nil {
 		return nil
 	}
-	return o.FirstName
+	return p.FirstName
 }
 
-func (o *Person) GetLastName() *string {
-	if o == nil {
+func (p *Person) GetLastName() *string {
+	if p == nil {
 		return nil
 	}
-	return o.LastName
+	return p.LastName
 }
 
-func (o *Person) GetMiddleName() *string {
-	if o == nil {
+func (p *Person) GetMiddleName() *string {
+	if p == nil {
 		return nil
 	}
-	return o.MiddleName
+	return p.MiddleName
 }
 
-func (o *Person) GetGender() *Gender {
-	if o == nil {
+func (p *Person) GetGender() *Gender {
+	if p == nil {
 		return nil
 	}
-	return o.Gender
+	return p.Gender
 }
 
-func (o *Person) GetInitials() *string {
-	if o == nil {
+func (p *Person) GetInitials() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Initials
+	return p.Initials
 }
 
-func (o *Person) GetBirthday() *types.Date {
-	if o == nil {
+func (p *Person) GetBirthday() *types.Date {
+	if p == nil {
 		return nil
 	}
-	return o.Birthday
+	return p.Birthday
 }
 
-func (o *Person) GetDeceasedOn() *types.Date {
-	if o == nil {
+func (p *Person) GetDeceasedOn() *types.Date {
+	if p == nil {
 		return nil
 	}
-	return o.DeceasedOn
+	return p.DeceasedOn
 }
 
-func (o *Person) GetCustomMappings() map[string]any {
-	if o == nil {
+func (p *Person) GetCustomMappings() map[string]any {
+	if p == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return p.CustomMappings
 }

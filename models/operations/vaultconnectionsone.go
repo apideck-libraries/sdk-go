@@ -13,18 +13,18 @@ type VaultConnectionsOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultConnectionsOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionsOneGlobals) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionsOneGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionsOneGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultConnectionsOneRequest struct {
@@ -38,32 +38,32 @@ type VaultConnectionsOneRequest struct {
 	UnifiedAPI string `pathParam:"style=simple,explode=false,name=unified_api"`
 }
 
-func (o *VaultConnectionsOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionsOneRequest) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionsOneRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionsOneRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultConnectionsOneRequest) GetServiceID() string {
-	if o == nil {
+func (v *VaultConnectionsOneRequest) GetServiceID() string {
+	if v == nil {
 		return ""
 	}
-	return o.ServiceID
+	return v.ServiceID
 }
 
-func (o *VaultConnectionsOneRequest) GetUnifiedAPI() string {
-	if o == nil {
+func (v *VaultConnectionsOneRequest) GetUnifiedAPI() string {
+	if v == nil {
 		return ""
 	}
-	return o.UnifiedAPI
+	return v.UnifiedAPI
 }
 
 type VaultConnectionsOneResponse struct {
@@ -74,23 +74,23 @@ type VaultConnectionsOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultConnectionsOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultConnectionsOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultConnectionsOneResponse) GetGetConnectionResponse() *components.GetConnectionResponse {
-	if o == nil {
+func (v *VaultConnectionsOneResponse) GetGetConnectionResponse() *components.GetConnectionResponse {
+	if v == nil {
 		return nil
 	}
-	return o.GetConnectionResponse
+	return v.GetConnectionResponse
 }
 
-func (o *VaultConnectionsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultConnectionsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

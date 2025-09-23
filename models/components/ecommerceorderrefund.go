@@ -32,37 +32,37 @@ func (e *EcommerceOrderRefund) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *EcommerceOrderRefund) GetID() *string {
-	if o == nil {
+func (e *EcommerceOrderRefund) GetID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *EcommerceOrderRefund) GetAmount() *string {
-	if o == nil {
+func (e *EcommerceOrderRefund) GetAmount() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Amount
+	return e.Amount
 }
 
-func (o *EcommerceOrderRefund) GetCurrency() *Currency {
-	if o == nil {
+func (e *EcommerceOrderRefund) GetCurrency() *Currency {
+	if e == nil {
 		return nil
 	}
-	return o.Currency
+	return e.Currency
 }
 
-func (o *EcommerceOrderRefund) GetReason() *string {
-	if o == nil {
+func (e *EcommerceOrderRefund) GetReason() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Reason
+	return e.Reason
 }
 
-func (o *EcommerceOrderRefund) GetCreatedAt() *time.Time {
-	if o == nil {
+func (e *EcommerceOrderRefund) GetCreatedAt() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return e.CreatedAt
 }

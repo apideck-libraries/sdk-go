@@ -14,18 +14,18 @@ type HrisCompaniesOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *HrisCompaniesOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisCompaniesOneGlobals) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisCompaniesOneGlobals) GetAppID() *string {
-	if o == nil {
+func (h *HrisCompaniesOneGlobals) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
 type HrisCompaniesOneRequest struct {
@@ -54,46 +54,46 @@ func (h *HrisCompaniesOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *HrisCompaniesOneRequest) GetID() string {
-	if o == nil {
+func (h *HrisCompaniesOneRequest) GetID() string {
+	if h == nil {
 		return ""
 	}
-	return o.ID
+	return h.ID
 }
 
-func (o *HrisCompaniesOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisCompaniesOneRequest) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisCompaniesOneRequest) GetAppID() *string {
-	if o == nil {
+func (h *HrisCompaniesOneRequest) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
-func (o *HrisCompaniesOneRequest) GetServiceID() *string {
-	if o == nil {
+func (h *HrisCompaniesOneRequest) GetServiceID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ServiceID
+	return h.ServiceID
 }
 
-func (o *HrisCompaniesOneRequest) GetRaw() *bool {
-	if o == nil {
+func (h *HrisCompaniesOneRequest) GetRaw() *bool {
+	if h == nil {
 		return nil
 	}
-	return o.Raw
+	return h.Raw
 }
 
-func (o *HrisCompaniesOneRequest) GetFields() *string {
-	if o == nil {
+func (h *HrisCompaniesOneRequest) GetFields() *string {
+	if h == nil {
 		return nil
 	}
-	return o.Fields
+	return h.Fields
 }
 
 type HrisCompaniesOneResponse struct {
@@ -104,23 +104,23 @@ type HrisCompaniesOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *HrisCompaniesOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (h *HrisCompaniesOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if h == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return h.HTTPMeta
 }
 
-func (o *HrisCompaniesOneResponse) GetGetHrisCompanyResponse() *components.GetHrisCompanyResponse {
-	if o == nil {
+func (h *HrisCompaniesOneResponse) GetGetHrisCompanyResponse() *components.GetHrisCompanyResponse {
+	if h == nil {
 		return nil
 	}
-	return o.GetHrisCompanyResponse
+	return h.GetHrisCompanyResponse
 }
 
-func (o *HrisCompaniesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (h *HrisCompaniesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if h == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return h.UnexpectedErrorResponse
 }

@@ -13,30 +13,30 @@ type ConsentRecord struct {
 	Resources DataScopesResources `json:"resources"`
 }
 
-func (o *ConsentRecord) GetID() string {
-	if o == nil {
+func (c *ConsentRecord) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ConsentRecord) GetCreatedAt() string {
-	if o == nil {
+func (c *ConsentRecord) GetCreatedAt() string {
+	if c == nil {
 		return ""
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }
 
-func (o *ConsentRecord) GetGranted() bool {
-	if o == nil {
+func (c *ConsentRecord) GetGranted() bool {
+	if c == nil {
 		return false
 	}
-	return o.Granted
+	return c.Granted
 }
 
-func (o *ConsentRecord) GetResources() DataScopesResources {
-	if o == nil {
+func (c *ConsentRecord) GetResources() DataScopesResources {
+	if c == nil {
 		return DataScopesResources{}
 	}
-	return o.Resources
+	return c.Resources
 }

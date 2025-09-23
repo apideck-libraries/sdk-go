@@ -23,65 +23,65 @@ type GetSubsidiariesResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetSubsidiariesResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetSubsidiariesResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetSubsidiariesResponse) GetStatus() string {
-	if o == nil {
+func (g *GetSubsidiariesResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetSubsidiariesResponse) GetService() string {
-	if o == nil {
+func (g *GetSubsidiariesResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetSubsidiariesResponse) GetResource() string {
-	if o == nil {
+func (g *GetSubsidiariesResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetSubsidiariesResponse) GetOperation() string {
-	if o == nil {
+func (g *GetSubsidiariesResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetSubsidiariesResponse) GetData() []Subsidiary {
-	if o == nil {
+func (g *GetSubsidiariesResponse) GetData() []Subsidiary {
+	if g == nil {
 		return []Subsidiary{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetSubsidiariesResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetSubsidiariesResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetSubsidiariesResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetSubsidiariesResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }
 
-func (o *GetSubsidiariesResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetSubsidiariesResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

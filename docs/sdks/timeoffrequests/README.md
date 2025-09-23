@@ -40,19 +40,19 @@ func main() {
     )
 
     res, err := s.Hris.TimeOffRequests.List(ctx, operations.HrisTimeOffRequestsAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Filter: &components.TimeOffRequestsFilter{
-            StartDate: sdkgo.String("2022-04-08"),
-            EndDate: sdkgo.String("2022-04-21"),
-            UpdatedSince: sdkgo.String("2020-09-30T07:43:32.000Z"),
-            EmployeeID: sdkgo.String("1234"),
+            StartDate: sdkgo.Pointer("2022-04-08"),
+            EndDate: sdkgo.Pointer("2022-04-21"),
+            UpdatedSince: sdkgo.Pointer("2020-09-30T07:43:32.000Z"),
+            EmployeeID: sdkgo.Pointer("1234"),
             TimeOffRequestStatus: components.TimeOffRequestStatusApproved.ToPointer(),
-            CompanyID: sdkgo.String("1234"),
+            CompanyID: sdkgo.Pointer("1234"),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -127,23 +127,23 @@ func main() {
     )
 
     res, err := s.Hris.TimeOffRequests.Create(ctx, operations.HrisTimeOffRequestsAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         TimeOffRequest: components.TimeOffRequestInput{
-            EmployeeID: sdkgo.String("12345"),
-            PolicyID: sdkgo.String("12345"),
+            EmployeeID: sdkgo.Pointer("12345"),
+            PolicyID: sdkgo.Pointer("12345"),
             Status: components.TimeOffRequestStatusStatusApproved.ToPointer(),
-            Description: sdkgo.String("Enjoying some sun."),
-            StartDate: sdkgo.String("2022-04-01"),
-            EndDate: sdkgo.String("2022-04-01"),
-            RequestDate: sdkgo.String("2022-03-21"),
+            Description: sdkgo.Pointer("Enjoying some sun."),
+            StartDate: sdkgo.Pointer("2022-04-01"),
+            EndDate: sdkgo.Pointer("2022-04-01"),
+            RequestDate: sdkgo.Pointer("2022-03-21"),
             RequestType: components.RequestTypeVacation.ToPointer(),
-            ApprovalDate: sdkgo.String("2022-03-21"),
+            ApprovalDate: sdkgo.Pointer("2022-03-21"),
             Units: components.UnitsHours.ToPointer(),
-            Amount: sdkgo.Float64(3.5),
-            DayPart: sdkgo.String("morning"),
+            Amount: sdkgo.Pointer[float64](3.5),
+            DayPart: sdkgo.Pointer("morning"),
             Notes: &components.Notes{
-                Employee: sdkgo.String("Relaxing on the beach for a few hours."),
-                Manager: sdkgo.String("Enjoy!"),
+                Employee: sdkgo.Pointer("Relaxing on the beach for a few hours."),
+                Manager: sdkgo.Pointer("Enjoy!"),
             },
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
@@ -160,7 +160,7 @@ func main() {
                     },
                 },
             },
-            PolicyType: sdkgo.String("sick"),
+            PolicyType: sdkgo.Pointer("sick"),
         },
     })
     if err != nil {
@@ -224,8 +224,8 @@ func main() {
 
     res, err := s.Hris.TimeOffRequests.Get(ctx, operations.HrisTimeOffRequestsOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
         EmployeeID: "<id>",
     })
     if err != nil {
@@ -290,24 +290,24 @@ func main() {
 
     res, err := s.Hris.TimeOffRequests.Update(ctx, operations.HrisTimeOffRequestsUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         EmployeeID: "<id>",
         TimeOffRequest: components.TimeOffRequestInput{
-            EmployeeID: sdkgo.String("12345"),
-            PolicyID: sdkgo.String("12345"),
+            EmployeeID: sdkgo.Pointer("12345"),
+            PolicyID: sdkgo.Pointer("12345"),
             Status: components.TimeOffRequestStatusStatusApproved.ToPointer(),
-            Description: sdkgo.String("Enjoying some sun."),
-            StartDate: sdkgo.String("2022-04-01"),
-            EndDate: sdkgo.String("2022-04-01"),
-            RequestDate: sdkgo.String("2022-03-21"),
+            Description: sdkgo.Pointer("Enjoying some sun."),
+            StartDate: sdkgo.Pointer("2022-04-01"),
+            EndDate: sdkgo.Pointer("2022-04-01"),
+            RequestDate: sdkgo.Pointer("2022-03-21"),
             RequestType: components.RequestTypeVacation.ToPointer(),
-            ApprovalDate: sdkgo.String("2022-03-21"),
+            ApprovalDate: sdkgo.Pointer("2022-03-21"),
             Units: components.UnitsHours.ToPointer(),
-            Amount: sdkgo.Float64(3.5),
-            DayPart: sdkgo.String("morning"),
+            Amount: sdkgo.Pointer[float64](3.5),
+            DayPart: sdkgo.Pointer("morning"),
             Notes: &components.Notes{
-                Employee: sdkgo.String("Relaxing on the beach for a few hours."),
-                Manager: sdkgo.String("Enjoy!"),
+                Employee: sdkgo.Pointer("Relaxing on the beach for a few hours."),
+                Manager: sdkgo.Pointer("Enjoy!"),
             },
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
@@ -340,7 +340,7 @@ func main() {
                     },
                 },
             },
-            PolicyType: sdkgo.String("sick"),
+            PolicyType: sdkgo.Pointer("sick"),
         },
     })
     if err != nil {
@@ -404,7 +404,7 @@ func main() {
 
     res, err := s.Hris.TimeOffRequests.Delete(ctx, operations.HrisTimeOffRequestsDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         EmployeeID: "<id>",
     })
     if err != nil {

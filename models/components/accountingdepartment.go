@@ -75,95 +75,95 @@ func (a *AccountingDepartment) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingDepartment) GetID() *string {
-	if o == nil {
+func (a *AccountingDepartment) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingDepartment) GetParentID() *string {
-	if o == nil {
+func (a *AccountingDepartment) GetParentID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ParentID
+	return a.ParentID
 }
 
-func (o *AccountingDepartment) GetName() *string {
-	if o == nil {
+func (a *AccountingDepartment) GetName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Name
+	return a.Name
 }
 
-func (o *AccountingDepartment) GetStatus() *DepartmentStatus {
-	if o == nil {
+func (a *AccountingDepartment) GetStatus() *DepartmentStatus {
+	if a == nil {
 		return nil
 	}
-	return o.Status
+	return a.Status
 }
 
-func (o *AccountingDepartment) GetSubsidiaries() []SubsidiaryReference {
-	if o == nil {
+func (a *AccountingDepartment) GetSubsidiaries() []SubsidiaryReference {
+	if a == nil {
 		return nil
 	}
-	return o.Subsidiaries
+	return a.Subsidiaries
 }
 
-func (o *AccountingDepartment) GetCode() *string {
-	if o == nil {
+func (a *AccountingDepartment) GetCode() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Code
+	return a.Code
 }
 
-func (o *AccountingDepartment) GetCustomMappings() map[string]any {
-	if o == nil {
+func (a *AccountingDepartment) GetCustomMappings() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return a.CustomMappings
 }
 
-func (o *AccountingDepartment) GetRowVersion() *string {
-	if o == nil {
+func (a *AccountingDepartment) GetRowVersion() *string {
+	if a == nil {
 		return nil
 	}
-	return o.RowVersion
+	return a.RowVersion
 }
 
-func (o *AccountingDepartment) GetUpdatedBy() *string {
-	if o == nil {
+func (a *AccountingDepartment) GetUpdatedBy() *string {
+	if a == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return a.UpdatedBy
 }
 
-func (o *AccountingDepartment) GetCreatedBy() *string {
-	if o == nil {
+func (a *AccountingDepartment) GetCreatedBy() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return a.CreatedBy
 }
 
-func (o *AccountingDepartment) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (a *AccountingDepartment) GetUpdatedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return a.UpdatedAt
 }
 
-func (o *AccountingDepartment) GetCreatedAt() *time.Time {
-	if o == nil {
+func (a *AccountingDepartment) GetCreatedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return a.CreatedAt
 }
 
-func (o *AccountingDepartment) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (a *AccountingDepartment) GetPassThrough() []PassThroughBody {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
 type AccountingDepartmentInput struct {
@@ -182,51 +182,51 @@ type AccountingDepartmentInput struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *AccountingDepartmentInput) GetParentID() *string {
-	if o == nil {
+func (a *AccountingDepartmentInput) GetParentID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ParentID
+	return a.ParentID
 }
 
-func (o *AccountingDepartmentInput) GetName() *string {
-	if o == nil {
+func (a *AccountingDepartmentInput) GetName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Name
+	return a.Name
 }
 
-func (o *AccountingDepartmentInput) GetStatus() *DepartmentStatus {
-	if o == nil {
+func (a *AccountingDepartmentInput) GetStatus() *DepartmentStatus {
+	if a == nil {
 		return nil
 	}
-	return o.Status
+	return a.Status
 }
 
-func (o *AccountingDepartmentInput) GetSubsidiaries() []SubsidiaryReferenceInput {
-	if o == nil {
+func (a *AccountingDepartmentInput) GetSubsidiaries() []SubsidiaryReferenceInput {
+	if a == nil {
 		return nil
 	}
-	return o.Subsidiaries
+	return a.Subsidiaries
 }
 
-func (o *AccountingDepartmentInput) GetCode() *string {
-	if o == nil {
+func (a *AccountingDepartmentInput) GetCode() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Code
+	return a.Code
 }
 
-func (o *AccountingDepartmentInput) GetRowVersion() *string {
-	if o == nil {
+func (a *AccountingDepartmentInput) GetRowVersion() *string {
+	if a == nil {
 		return nil
 	}
-	return o.RowVersion
+	return a.RowVersion
 }
 
-func (o *AccountingDepartmentInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (a *AccountingDepartmentInput) GetPassThrough() []PassThroughBody {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }

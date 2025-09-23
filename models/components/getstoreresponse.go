@@ -19,51 +19,51 @@ type GetStoreResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetStoreResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetStoreResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetStoreResponse) GetStatus() string {
-	if o == nil {
+func (g *GetStoreResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetStoreResponse) GetService() string {
-	if o == nil {
+func (g *GetStoreResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetStoreResponse) GetResource() string {
-	if o == nil {
+func (g *GetStoreResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetStoreResponse) GetOperation() string {
-	if o == nil {
+func (g *GetStoreResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetStoreResponse) GetData() EcommerceStore {
-	if o == nil {
+func (g *GetStoreResponse) GetData() EcommerceStore {
+	if g == nil {
 		return EcommerceStore{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetStoreResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetStoreResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

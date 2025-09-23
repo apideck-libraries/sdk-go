@@ -20,51 +20,51 @@ type CreateUploadSessionResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *CreateUploadSessionResponse) GetStatusCode() int64 {
-	if o == nil {
+func (c *CreateUploadSessionResponse) GetStatusCode() int64 {
+	if c == nil {
 		return 0
 	}
-	return o.StatusCode
+	return c.StatusCode
 }
 
-func (o *CreateUploadSessionResponse) GetStatus() string {
-	if o == nil {
+func (c *CreateUploadSessionResponse) GetStatus() string {
+	if c == nil {
 		return ""
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CreateUploadSessionResponse) GetService() string {
-	if o == nil {
+func (c *CreateUploadSessionResponse) GetService() string {
+	if c == nil {
 		return ""
 	}
-	return o.Service
+	return c.Service
 }
 
-func (o *CreateUploadSessionResponse) GetResource() string {
-	if o == nil {
+func (c *CreateUploadSessionResponse) GetResource() string {
+	if c == nil {
 		return ""
 	}
-	return o.Resource
+	return c.Resource
 }
 
-func (o *CreateUploadSessionResponse) GetOperation() string {
-	if o == nil {
+func (c *CreateUploadSessionResponse) GetOperation() string {
+	if c == nil {
 		return ""
 	}
-	return o.Operation
+	return c.Operation
 }
 
-func (o *CreateUploadSessionResponse) GetData() UnifiedID {
-	if o == nil {
+func (c *CreateUploadSessionResponse) GetData() UnifiedID {
+	if c == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return c.Data
 }
 
-func (o *CreateUploadSessionResponse) GetRaw() map[string]any {
-	if o == nil {
+func (c *CreateUploadSessionResponse) GetRaw() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }

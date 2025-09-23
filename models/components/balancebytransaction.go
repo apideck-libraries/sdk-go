@@ -73,51 +73,51 @@ func (b *BalanceByTransaction) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *BalanceByTransaction) GetTransactionID() *string {
-	if o == nil {
+func (b *BalanceByTransaction) GetTransactionID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.TransactionID
+	return b.TransactionID
 }
 
-func (o *BalanceByTransaction) GetTransactionDate() *types.Date {
-	if o == nil {
+func (b *BalanceByTransaction) GetTransactionDate() *types.Date {
+	if b == nil {
 		return nil
 	}
-	return o.TransactionDate
+	return b.TransactionDate
 }
 
-func (o *BalanceByTransaction) GetTransactionType() *TransactionType {
-	if o == nil {
+func (b *BalanceByTransaction) GetTransactionType() *TransactionType {
+	if b == nil {
 		return nil
 	}
-	return o.TransactionType
+	return b.TransactionType
 }
 
-func (o *BalanceByTransaction) GetDueDate() *types.Date {
-	if o == nil {
+func (b *BalanceByTransaction) GetDueDate() *types.Date {
+	if b == nil {
 		return nil
 	}
-	return o.DueDate
+	return b.DueDate
 }
 
-func (o *BalanceByTransaction) GetOriginalAmount() *float64 {
-	if o == nil {
+func (b *BalanceByTransaction) GetOriginalAmount() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.OriginalAmount
+	return b.OriginalAmount
 }
 
-func (o *BalanceByTransaction) GetOutstandingBalance() *float64 {
-	if o == nil {
+func (b *BalanceByTransaction) GetOutstandingBalance() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.OutstandingBalance
+	return b.OutstandingBalance
 }
 
-func (o *BalanceByTransaction) GetTransactionNumber() *string {
-	if o == nil {
+func (b *BalanceByTransaction) GetTransactionNumber() *string {
+	if b == nil {
 		return nil
 	}
-	return o.TransactionNumber
+	return b.TransactionNumber
 }

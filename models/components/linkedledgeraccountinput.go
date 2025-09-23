@@ -11,23 +11,23 @@ type LinkedLedgerAccountInput struct {
 	Code *string `json:"code,omitempty"`
 }
 
-func (o *LinkedLedgerAccountInput) GetID() *string {
-	if o == nil {
+func (l *LinkedLedgerAccountInput) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinkedLedgerAccountInput) GetNominalCode() *string {
-	if o == nil {
+func (l *LinkedLedgerAccountInput) GetNominalCode() *string {
+	if l == nil {
 		return nil
 	}
-	return o.NominalCode
+	return l.NominalCode
 }
 
-func (o *LinkedLedgerAccountInput) GetCode() *string {
-	if o == nil {
+func (l *LinkedLedgerAccountInput) GetCode() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Code
+	return l.Code
 }

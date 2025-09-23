@@ -7,9 +7,9 @@ type CompaniesFilter struct {
 	Name *string `queryParam:"name=name"`
 }
 
-func (o *CompaniesFilter) GetName() *string {
-	if o == nil {
+func (c *CompaniesFilter) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }

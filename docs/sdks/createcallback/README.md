@@ -40,7 +40,7 @@ func main() {
         ServiceID: "pipedrive",
         UnifiedAPI: "crm",
         CreateCallbackState: components.CreateCallbackState{
-            RedirectURI: sdkgo.String("https://example.com/callback"),
+            RedirectURI: sdkgo.Pointer("https://example.com/callback"),
         },
     })
     if err != nil {

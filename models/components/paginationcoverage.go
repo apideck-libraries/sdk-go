@@ -43,23 +43,23 @@ type PaginationCoverage struct {
 	LimitSupport *bool `json:"limit_support,omitempty"`
 }
 
-func (o *PaginationCoverage) GetMode() *PaginationCoverageMode {
-	if o == nil {
+func (p *PaginationCoverage) GetMode() *PaginationCoverageMode {
+	if p == nil {
 		return nil
 	}
-	return o.Mode
+	return p.Mode
 }
 
-func (o *PaginationCoverage) GetPagingSupport() *bool {
-	if o == nil {
+func (p *PaginationCoverage) GetPagingSupport() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.PagingSupport
+	return p.PagingSupport
 }
 
-func (o *PaginationCoverage) GetLimitSupport() *bool {
-	if o == nil {
+func (p *PaginationCoverage) GetLimitSupport() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.LimitSupport
+	return p.LimitSupport
 }

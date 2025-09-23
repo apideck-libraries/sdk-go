@@ -14,18 +14,18 @@ type CrmOpportunitiesAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmOpportunitiesAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmOpportunitiesAddGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmOpportunitiesAddGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmOpportunitiesAddGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmOpportunitiesAddRequest struct {
@@ -51,39 +51,39 @@ func (c *CrmOpportunitiesAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmOpportunitiesAddRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmOpportunitiesAddRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmOpportunitiesAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmOpportunitiesAddRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmOpportunitiesAddRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmOpportunitiesAddRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmOpportunitiesAddRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmOpportunitiesAddRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmOpportunitiesAddRequest) GetOpportunity() components.OpportunityInput {
-	if o == nil {
+func (c *CrmOpportunitiesAddRequest) GetOpportunity() components.OpportunityInput {
+	if c == nil {
 		return components.OpportunityInput{}
 	}
-	return o.Opportunity
+	return c.Opportunity
 }
 
 type CrmOpportunitiesAddResponse struct {
@@ -94,23 +94,23 @@ type CrmOpportunitiesAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmOpportunitiesAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmOpportunitiesAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmOpportunitiesAddResponse) GetCreateOpportunityResponse() *components.CreateOpportunityResponse {
-	if o == nil {
+func (c *CrmOpportunitiesAddResponse) GetCreateOpportunityResponse() *components.CreateOpportunityResponse {
+	if c == nil {
 		return nil
 	}
-	return o.CreateOpportunityResponse
+	return c.CreateOpportunityResponse
 }
 
-func (o *CrmOpportunitiesAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmOpportunitiesAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

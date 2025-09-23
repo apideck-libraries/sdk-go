@@ -7,9 +7,9 @@ type CustomMappingInput struct {
 	Value *string `json:"value,omitempty"`
 }
 
-func (o *CustomMappingInput) GetValue() *string {
-	if o == nil {
+func (c *CustomMappingInput) GetValue() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Value
+	return c.Value
 }

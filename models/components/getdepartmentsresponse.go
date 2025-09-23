@@ -23,65 +23,65 @@ type GetDepartmentsResponse struct {
 	Links *Links `json:"links,omitempty"`
 }
 
-func (o *GetDepartmentsResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetDepartmentsResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetDepartmentsResponse) GetStatus() string {
-	if o == nil {
+func (g *GetDepartmentsResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetDepartmentsResponse) GetService() string {
-	if o == nil {
+func (g *GetDepartmentsResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetDepartmentsResponse) GetResource() string {
-	if o == nil {
+func (g *GetDepartmentsResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetDepartmentsResponse) GetOperation() string {
-	if o == nil {
+func (g *GetDepartmentsResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetDepartmentsResponse) GetData() []Department {
-	if o == nil {
+func (g *GetDepartmentsResponse) GetData() []Department {
+	if g == nil {
 		return []Department{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetDepartmentsResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetDepartmentsResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }
 
-func (o *GetDepartmentsResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetDepartmentsResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetDepartmentsResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetDepartmentsResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }

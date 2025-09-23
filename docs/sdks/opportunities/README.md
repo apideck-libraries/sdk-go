@@ -40,10 +40,10 @@ func main() {
     )
 
     res, err := s.Crm.Opportunities.List(ctx, operations.CrmOpportunitiesAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Filter: &components.OpportunitiesFilter{
-            Status: sdkgo.String("Completed"),
-            MonetaryAmount: sdkgo.Float64(75000),
+            Status: sdkgo.Pointer("Completed"),
+            MonetaryAmount: sdkgo.Pointer[float64](75000),
         },
         Sort: &components.OpportunitiesSort{
             By: components.OpportunitiesSortByCreatedAt.ToPointer(),
@@ -52,7 +52,7 @@ func main() {
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -128,59 +128,59 @@ func main() {
     )
 
     res, err := s.Crm.Opportunities.Create(ctx, operations.CrmOpportunitiesAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Opportunity: components.OpportunityInput{
             Title: "New Rocket",
-            PrimaryContactID: sdkgo.String("12345"),
-            Description: sdkgo.String("Opportunities are created for People and Companies that are interested in buying your products or services. Create Opportunities for People and Companies to move them through one of your Pipelines."),
-            Type: sdkgo.String("Existing Customer - Upgrade"),
-            MonetaryAmount: sdkgo.Float64(75000),
+            PrimaryContactID: sdkgo.Pointer("12345"),
+            Description: sdkgo.Pointer("Opportunities are created for People and Companies that are interested in buying your products or services. Create Opportunities for People and Companies to move them through one of your Pipelines."),
+            Type: sdkgo.Pointer("Existing Customer - Upgrade"),
+            MonetaryAmount: sdkgo.Pointer[float64](75000),
             Currency: components.CurrencyUsd.ToPointer(),
-            WinProbability: sdkgo.Float64(40),
+            WinProbability: sdkgo.Pointer[float64](40),
             CloseDate: types.MustNewDateFromString("2020-10-30"),
-            LossReasonID: sdkgo.String("12345"),
-            LossReason: sdkgo.String("No budget"),
-            WonReasonID: sdkgo.String("12345"),
-            WonReason: sdkgo.String("Best pitch"),
-            PipelineID: sdkgo.String("12345"),
-            PipelineStageID: sdkgo.String("12345"),
-            SourceID: sdkgo.String("12345"),
-            LeadID: sdkgo.String("12345"),
-            LeadSource: sdkgo.String("Website"),
-            ContactID: sdkgo.String("12345"),
+            LossReasonID: sdkgo.Pointer("12345"),
+            LossReason: sdkgo.Pointer("No budget"),
+            WonReasonID: sdkgo.Pointer("12345"),
+            WonReason: sdkgo.Pointer("Best pitch"),
+            PipelineID: sdkgo.Pointer("12345"),
+            PipelineStageID: sdkgo.Pointer("12345"),
+            SourceID: sdkgo.Pointer("12345"),
+            LeadID: sdkgo.Pointer("12345"),
+            LeadSource: sdkgo.Pointer("Website"),
+            ContactID: sdkgo.Pointer("12345"),
             ContactIds: []string{
                 "12345",
             },
-            CompanyID: sdkgo.String("12345"),
-            CompanyName: sdkgo.String("Copper"),
-            OwnerID: sdkgo.String("12345"),
-            Priority: sdkgo.String("None"),
-            Status: sdkgo.String("Open"),
-            StatusID: sdkgo.String("12345"),
+            CompanyID: sdkgo.Pointer("12345"),
+            CompanyName: sdkgo.Pointer("Copper"),
+            OwnerID: sdkgo.Pointer("12345"),
+            Priority: sdkgo.Pointer("None"),
+            Status: sdkgo.Pointer("Open"),
+            StatusID: sdkgo.Pointer("12345"),
             Tags: []string{
                 "New",
             },
             CustomFields: []components.CustomField{
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
                 },
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
                 },
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
@@ -273,8 +273,8 @@ func main() {
 
     res, err := s.Crm.Opportunities.Get(ctx, operations.CrmOpportunitiesOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -339,59 +339,59 @@ func main() {
 
     res, err := s.Crm.Opportunities.Update(ctx, operations.CrmOpportunitiesUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Opportunity: components.OpportunityInput{
             Title: "New Rocket",
-            PrimaryContactID: sdkgo.String("12345"),
-            Description: sdkgo.String("Opportunities are created for People and Companies that are interested in buying your products or services. Create Opportunities for People and Companies to move them through one of your Pipelines."),
-            Type: sdkgo.String("Existing Customer - Upgrade"),
-            MonetaryAmount: sdkgo.Float64(75000),
+            PrimaryContactID: sdkgo.Pointer("12345"),
+            Description: sdkgo.Pointer("Opportunities are created for People and Companies that are interested in buying your products or services. Create Opportunities for People and Companies to move them through one of your Pipelines."),
+            Type: sdkgo.Pointer("Existing Customer - Upgrade"),
+            MonetaryAmount: sdkgo.Pointer[float64](75000),
             Currency: components.CurrencyUsd.ToPointer(),
-            WinProbability: sdkgo.Float64(40),
+            WinProbability: sdkgo.Pointer[float64](40),
             CloseDate: types.MustNewDateFromString("2020-10-30"),
-            LossReasonID: sdkgo.String("12345"),
-            LossReason: sdkgo.String("No budget"),
-            WonReasonID: sdkgo.String("12345"),
-            WonReason: sdkgo.String("Best pitch"),
-            PipelineID: sdkgo.String("12345"),
-            PipelineStageID: sdkgo.String("12345"),
-            SourceID: sdkgo.String("12345"),
-            LeadID: sdkgo.String("12345"),
-            LeadSource: sdkgo.String("Website"),
-            ContactID: sdkgo.String("12345"),
+            LossReasonID: sdkgo.Pointer("12345"),
+            LossReason: sdkgo.Pointer("No budget"),
+            WonReasonID: sdkgo.Pointer("12345"),
+            WonReason: sdkgo.Pointer("Best pitch"),
+            PipelineID: sdkgo.Pointer("12345"),
+            PipelineStageID: sdkgo.Pointer("12345"),
+            SourceID: sdkgo.Pointer("12345"),
+            LeadID: sdkgo.Pointer("12345"),
+            LeadSource: sdkgo.Pointer("Website"),
+            ContactID: sdkgo.Pointer("12345"),
             ContactIds: []string{
                 "12345",
             },
-            CompanyID: sdkgo.String("12345"),
-            CompanyName: sdkgo.String("Copper"),
-            OwnerID: sdkgo.String("12345"),
-            Priority: sdkgo.String("None"),
-            Status: sdkgo.String("Open"),
-            StatusID: sdkgo.String("12345"),
+            CompanyID: sdkgo.Pointer("12345"),
+            CompanyName: sdkgo.Pointer("Copper"),
+            OwnerID: sdkgo.Pointer("12345"),
+            Priority: sdkgo.Pointer("None"),
+            Status: sdkgo.Pointer("Open"),
+            StatusID: sdkgo.Pointer("12345"),
             Tags: []string{
                 "New",
             },
             CustomFields: []components.CustomField{
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
                 },
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
                 },
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
@@ -492,7 +492,7 @@ func main() {
 
     res, err := s.Crm.Opportunities.Delete(ctx, operations.CrmOpportunitiesDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

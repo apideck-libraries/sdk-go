@@ -14,18 +14,18 @@ type AccountingSuppliersOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingSuppliersOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingSuppliersOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingSuppliersOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingSuppliersOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingSuppliersOneRequest struct {
@@ -54,46 +54,46 @@ func (a *AccountingSuppliersOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingSuppliersOneRequest) GetID() string {
-	if o == nil {
+func (a *AccountingSuppliersOneRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingSuppliersOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingSuppliersOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingSuppliersOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingSuppliersOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingSuppliersOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingSuppliersOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingSuppliersOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingSuppliersOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingSuppliersOneRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingSuppliersOneRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingSuppliersOneResponse struct {
@@ -104,23 +104,23 @@ type AccountingSuppliersOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingSuppliersOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingSuppliersOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingSuppliersOneResponse) GetGetSupplierResponse() *components.GetSupplierResponse {
-	if o == nil {
+func (a *AccountingSuppliersOneResponse) GetGetSupplierResponse() *components.GetSupplierResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetSupplierResponse
+	return a.GetSupplierResponse
 }
 
-func (o *AccountingSuppliersOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingSuppliersOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

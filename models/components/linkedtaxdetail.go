@@ -13,30 +13,30 @@ type LinkedTaxDetail struct {
 	IsPrimaryTax *bool `json:"is_primary_tax,omitempty"`
 }
 
-func (o *LinkedTaxDetail) GetType() *string {
-	if o == nil {
+func (l *LinkedTaxDetail) GetType() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Type
+	return l.Type
 }
 
-func (o *LinkedTaxDetail) GetNumber() *string {
-	if o == nil {
+func (l *LinkedTaxDetail) GetNumber() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Number
+	return l.Number
 }
 
-func (o *LinkedTaxDetail) GetIsTransactionTax() *bool {
-	if o == nil {
+func (l *LinkedTaxDetail) GetIsTransactionTax() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.IsTransactionTax
+	return l.IsTransactionTax
 }
 
-func (o *LinkedTaxDetail) GetIsPrimaryTax() *bool {
-	if o == nil {
+func (l *LinkedTaxDetail) GetIsPrimaryTax() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.IsPrimaryTax
+	return l.IsPrimaryTax
 }

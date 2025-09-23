@@ -20,51 +20,51 @@ type UpdateLedgerAccountResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *UpdateLedgerAccountResponse) GetStatusCode() int64 {
-	if o == nil {
+func (u *UpdateLedgerAccountResponse) GetStatusCode() int64 {
+	if u == nil {
 		return 0
 	}
-	return o.StatusCode
+	return u.StatusCode
 }
 
-func (o *UpdateLedgerAccountResponse) GetStatus() string {
-	if o == nil {
+func (u *UpdateLedgerAccountResponse) GetStatus() string {
+	if u == nil {
 		return ""
 	}
-	return o.Status
+	return u.Status
 }
 
-func (o *UpdateLedgerAccountResponse) GetService() string {
-	if o == nil {
+func (u *UpdateLedgerAccountResponse) GetService() string {
+	if u == nil {
 		return ""
 	}
-	return o.Service
+	return u.Service
 }
 
-func (o *UpdateLedgerAccountResponse) GetResource() string {
-	if o == nil {
+func (u *UpdateLedgerAccountResponse) GetResource() string {
+	if u == nil {
 		return ""
 	}
-	return o.Resource
+	return u.Resource
 }
 
-func (o *UpdateLedgerAccountResponse) GetOperation() string {
-	if o == nil {
+func (u *UpdateLedgerAccountResponse) GetOperation() string {
+	if u == nil {
 		return ""
 	}
-	return o.Operation
+	return u.Operation
 }
 
-func (o *UpdateLedgerAccountResponse) GetData() UnifiedID {
-	if o == nil {
+func (u *UpdateLedgerAccountResponse) GetData() UnifiedID {
+	if u == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return u.Data
 }
 
-func (o *UpdateLedgerAccountResponse) GetRaw() map[string]any {
-	if o == nil {
+func (u *UpdateLedgerAccountResponse) GetRaw() map[string]any {
+	if u == nil {
 		return nil
 	}
-	return o.Raw
+	return u.Raw
 }

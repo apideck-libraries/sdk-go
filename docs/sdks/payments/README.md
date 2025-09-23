@@ -41,10 +41,10 @@ func main() {
     )
 
     res, err := s.Accounting.Payments.List(ctx, operations.AccountingPaymentsAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Filter: &components.PaymentsFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
-            InvoiceID: sdkgo.String("123"),
+            InvoiceID: sdkgo.Pointer("123"),
         },
         Sort: &components.PaymentsSort{
             By: components.PaymentsSortByUpdatedAt.ToPointer(),
@@ -53,7 +53,7 @@ func main() {
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -129,71 +129,71 @@ func main() {
     )
 
     res, err := s.Accounting.Payments.Create(ctx, operations.AccountingPaymentsAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Payment: components.PaymentInput{
             Currency: components.CurrencyUsd.ToPointer(),
-            CurrencyRate: sdkgo.Float64(0.69),
-            TotalAmount: sdkgo.Float64(49.99),
-            Reference: sdkgo.String("123456"),
-            PaymentMethod: sdkgo.String("cash"),
-            PaymentMethodReference: sdkgo.String("123456"),
-            PaymentMethodID: sdkgo.String("12345"),
+            CurrencyRate: sdkgo.Pointer[float64](0.69),
+            TotalAmount: sdkgo.Pointer[float64](49.99),
+            Reference: sdkgo.Pointer("123456"),
+            PaymentMethod: sdkgo.Pointer("cash"),
+            PaymentMethodReference: sdkgo.Pointer("123456"),
+            PaymentMethodID: sdkgo.Pointer("12345"),
             Account: &components.LinkedLedgerAccountInput{
-                ID: sdkgo.String("123456"),
-                NominalCode: sdkgo.String("N091"),
-                Code: sdkgo.String("453"),
+                ID: sdkgo.Pointer("123456"),
+                NominalCode: sdkgo.Pointer("N091"),
+                Code: sdkgo.Pointer("453"),
             },
             TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
             Customer: &components.LinkedCustomerInput{
-                ID: sdkgo.String("12345"),
-                DisplayName: sdkgo.String("Windsurf Shop"),
-                Email: sdkgo.String("boring@boring.com"),
+                ID: sdkgo.Pointer("12345"),
+                DisplayName: sdkgo.Pointer("Windsurf Shop"),
+                Email: sdkgo.Pointer("boring@boring.com"),
             },
-            CompanyID: sdkgo.String("12345"),
-            Reconciled: sdkgo.Bool(true),
+            CompanyID: sdkgo.Pointer("12345"),
+            Reconciled: sdkgo.Pointer(true),
             Status: components.PaymentStatusAuthorised.ToPointer(),
             Type: components.PaymentTypeAccountsReceivable.ToPointer(),
             Allocations: []components.AllocationInput{
                 components.AllocationInput{
-                    ID: sdkgo.String("123456"),
-                    Amount: sdkgo.Float64(49.99),
-                    AllocationID: sdkgo.String("123456"),
+                    ID: sdkgo.Pointer("123456"),
+                    Amount: sdkgo.Pointer[float64](49.99),
+                    AllocationID: sdkgo.Pointer("123456"),
                 },
                 components.AllocationInput{
-                    ID: sdkgo.String("123456"),
-                    Amount: sdkgo.Float64(49.99),
-                    AllocationID: sdkgo.String("123456"),
+                    ID: sdkgo.Pointer("123456"),
+                    Amount: sdkgo.Pointer[float64](49.99),
+                    AllocationID: sdkgo.Pointer("123456"),
                 },
                 components.AllocationInput{
-                    ID: sdkgo.String("123456"),
-                    Amount: sdkgo.Float64(49.99),
-                    AllocationID: sdkgo.String("123456"),
+                    ID: sdkgo.Pointer("123456"),
+                    Amount: sdkgo.Pointer[float64](49.99),
+                    AllocationID: sdkgo.Pointer("123456"),
                 },
             },
-            Note: sdkgo.String("Some notes about this transaction"),
-            Number: sdkgo.String("123456"),
+            Note: sdkgo.Pointer("Some notes about this transaction"),
+            Number: sdkgo.Pointer("123456"),
             TrackingCategories: []*components.LinkedTrackingCategory{
                 &components.LinkedTrackingCategory{
-                    ID: sdkgo.String("123456"),
-                    Name: sdkgo.String("New York"),
+                    ID: sdkgo.Pointer("123456"),
+                    Name: sdkgo.Pointer("New York"),
                 },
                 &components.LinkedTrackingCategory{
-                    ID: sdkgo.String("123456"),
-                    Name: sdkgo.String("New York"),
+                    ID: sdkgo.Pointer("123456"),
+                    Name: sdkgo.Pointer("New York"),
                 },
             },
             CustomFields: []components.CustomField{
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
                 },
             },
-            RowVersion: sdkgo.String("1-12345"),
-            DisplayID: sdkgo.String("123456"),
+            RowVersion: sdkgo.Pointer("1-12345"),
+            DisplayID: sdkgo.Pointer("123456"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -280,8 +280,8 @@ func main() {
 
     res, err := s.Accounting.Payments.Get(ctx, operations.AccountingPaymentsOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -346,78 +346,78 @@ func main() {
 
     res, err := s.Accounting.Payments.Update(ctx, operations.AccountingPaymentsUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Payment: components.PaymentInput{
             Currency: components.CurrencyUsd.ToPointer(),
-            CurrencyRate: sdkgo.Float64(0.69),
-            TotalAmount: sdkgo.Float64(49.99),
-            Reference: sdkgo.String("123456"),
-            PaymentMethod: sdkgo.String("cash"),
-            PaymentMethodReference: sdkgo.String("123456"),
-            PaymentMethodID: sdkgo.String("12345"),
+            CurrencyRate: sdkgo.Pointer[float64](0.69),
+            TotalAmount: sdkgo.Pointer[float64](49.99),
+            Reference: sdkgo.Pointer("123456"),
+            PaymentMethod: sdkgo.Pointer("cash"),
+            PaymentMethodReference: sdkgo.Pointer("123456"),
+            PaymentMethodID: sdkgo.Pointer("12345"),
             Account: &components.LinkedLedgerAccountInput{
-                ID: sdkgo.String("123456"),
-                NominalCode: sdkgo.String("N091"),
-                Code: sdkgo.String("453"),
+                ID: sdkgo.Pointer("123456"),
+                NominalCode: sdkgo.Pointer("N091"),
+                Code: sdkgo.Pointer("453"),
             },
             TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
             Customer: &components.LinkedCustomerInput{
-                ID: sdkgo.String("12345"),
-                DisplayName: sdkgo.String("Windsurf Shop"),
-                Email: sdkgo.String("boring@boring.com"),
+                ID: sdkgo.Pointer("12345"),
+                DisplayName: sdkgo.Pointer("Windsurf Shop"),
+                Email: sdkgo.Pointer("boring@boring.com"),
             },
-            CompanyID: sdkgo.String("12345"),
-            Reconciled: sdkgo.Bool(true),
+            CompanyID: sdkgo.Pointer("12345"),
+            Reconciled: sdkgo.Pointer(true),
             Status: components.PaymentStatusAuthorised.ToPointer(),
             Type: components.PaymentTypeAccountsReceivable.ToPointer(),
             Allocations: []components.AllocationInput{
                 components.AllocationInput{
-                    ID: sdkgo.String("123456"),
-                    Amount: sdkgo.Float64(49.99),
-                    AllocationID: sdkgo.String("123456"),
+                    ID: sdkgo.Pointer("123456"),
+                    Amount: sdkgo.Pointer[float64](49.99),
+                    AllocationID: sdkgo.Pointer("123456"),
                 },
                 components.AllocationInput{
-                    ID: sdkgo.String("123456"),
-                    Amount: sdkgo.Float64(49.99),
-                    AllocationID: sdkgo.String("123456"),
+                    ID: sdkgo.Pointer("123456"),
+                    Amount: sdkgo.Pointer[float64](49.99),
+                    AllocationID: sdkgo.Pointer("123456"),
                 },
             },
-            Note: sdkgo.String("Some notes about this transaction"),
-            Number: sdkgo.String("123456"),
+            Note: sdkgo.Pointer("Some notes about this transaction"),
+            Number: sdkgo.Pointer("123456"),
             TrackingCategories: []*components.LinkedTrackingCategory{
                 &components.LinkedTrackingCategory{
-                    ID: sdkgo.String("123456"),
-                    Name: sdkgo.String("New York"),
+                    ID: sdkgo.Pointer("123456"),
+                    Name: sdkgo.Pointer("New York"),
                 },
                 &components.LinkedTrackingCategory{
-                    ID: sdkgo.String("123456"),
-                    Name: sdkgo.String("New York"),
+                    ID: sdkgo.Pointer("123456"),
+                    Name: sdkgo.Pointer("New York"),
                 },
                 &components.LinkedTrackingCategory{
-                    ID: sdkgo.String("123456"),
-                    Name: sdkgo.String("New York"),
+                    ID: sdkgo.Pointer("123456"),
+                    Name: sdkgo.Pointer("New York"),
                 },
             },
             CustomFields: []components.CustomField{
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
                 },
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
                 },
             },
-            RowVersion: sdkgo.String("1-12345"),
-            DisplayID: sdkgo.String("123456"),
+            RowVersion: sdkgo.Pointer("1-12345"),
+            DisplayID: sdkgo.Pointer("123456"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -496,7 +496,7 @@ func main() {
 
     res, err := s.Accounting.Payments.Delete(ctx, operations.AccountingPaymentsDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

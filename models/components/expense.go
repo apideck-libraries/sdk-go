@@ -159,193 +159,193 @@ func (e *Expense) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Expense) GetID() *string {
-	if o == nil {
+func (e *Expense) GetID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *Expense) GetNumber() *string {
-	if o == nil {
+func (e *Expense) GetNumber() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Number
+	return e.Number
 }
 
-func (o *Expense) GetTransactionDate() *time.Time {
-	if o == nil {
+func (e *Expense) GetTransactionDate() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.TransactionDate
+	return e.TransactionDate
 }
 
-func (o *Expense) GetAccountID() string {
-	if o == nil {
+func (e *Expense) GetAccountID() string {
+	if e == nil {
 		return ""
 	}
-	return o.AccountID
+	return e.AccountID
 }
 
-func (o *Expense) GetCustomerID() *string {
-	if o == nil {
+func (e *Expense) GetCustomerID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CustomerID
+	return e.CustomerID
 }
 
-func (o *Expense) GetSupplierID() *string {
-	if o == nil {
+func (e *Expense) GetSupplierID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.SupplierID
+	return e.SupplierID
 }
 
-func (o *Expense) GetCompanyID() *string {
-	if o == nil {
+func (e *Expense) GetCompanyID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CompanyID
+	return e.CompanyID
 }
 
-func (o *Expense) GetDepartmentID() *string {
-	if o == nil {
+func (e *Expense) GetDepartmentID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return e.DepartmentID
 }
 
-func (o *Expense) GetPaymentType() *ExpensePaymentType {
-	if o == nil {
+func (e *Expense) GetPaymentType() *ExpensePaymentType {
+	if e == nil {
 		return nil
 	}
-	return o.PaymentType
+	return e.PaymentType
 }
 
-func (o *Expense) GetCurrency() *Currency {
-	if o == nil {
+func (e *Expense) GetCurrency() *Currency {
+	if e == nil {
 		return nil
 	}
-	return o.Currency
+	return e.Currency
 }
 
-func (o *Expense) GetCurrencyRate() *float64 {
-	if o == nil {
+func (e *Expense) GetCurrencyRate() *float64 {
+	if e == nil {
 		return nil
 	}
-	return o.CurrencyRate
+	return e.CurrencyRate
 }
 
-func (o *Expense) GetType() *ExpenseType {
-	if o == nil {
+func (e *Expense) GetType() *ExpenseType {
+	if e == nil {
 		return nil
 	}
-	return o.Type
+	return e.Type
 }
 
-func (o *Expense) GetMemo() *string {
-	if o == nil {
+func (e *Expense) GetMemo() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Memo
+	return e.Memo
 }
 
-func (o *Expense) GetTaxRate() *LinkedTaxRate {
-	if o == nil {
+func (e *Expense) GetTaxRate() *LinkedTaxRate {
+	if e == nil {
 		return nil
 	}
-	return o.TaxRate
+	return e.TaxRate
 }
 
-func (o *Expense) GetTotalAmount() *float64 {
-	if o == nil {
+func (e *Expense) GetTotalAmount() *float64 {
+	if e == nil {
 		return nil
 	}
-	return o.TotalAmount
+	return e.TotalAmount
 }
 
-func (o *Expense) GetLineItems() []ExpenseLineItem {
-	if o == nil {
+func (e *Expense) GetLineItems() []ExpenseLineItem {
+	if e == nil {
 		return []ExpenseLineItem{}
 	}
-	return o.LineItems
+	return e.LineItems
 }
 
-func (o *Expense) GetReference() *string {
-	if o == nil {
+func (e *Expense) GetReference() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Reference
+	return e.Reference
 }
 
-func (o *Expense) GetSourceDocumentURL() *string {
-	if o == nil {
+func (e *Expense) GetSourceDocumentURL() *string {
+	if e == nil {
 		return nil
 	}
-	return o.SourceDocumentURL
+	return e.SourceDocumentURL
 }
 
-func (o *Expense) GetCustomFields() []CustomField {
-	if o == nil {
+func (e *Expense) GetCustomFields() []CustomField {
+	if e == nil {
 		return nil
 	}
-	return o.CustomFields
+	return e.CustomFields
 }
 
-func (o *Expense) GetCustomMappings() map[string]any {
-	if o == nil {
+func (e *Expense) GetCustomMappings() map[string]any {
+	if e == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return e.CustomMappings
 }
 
-func (o *Expense) GetStatus() *ExpenseStatus {
-	if o == nil {
+func (e *Expense) GetStatus() *ExpenseStatus {
+	if e == nil {
 		return nil
 	}
-	return o.Status
+	return e.Status
 }
 
-func (o *Expense) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (e *Expense) GetUpdatedAt() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return e.UpdatedAt
 }
 
-func (o *Expense) GetCreatedAt() *time.Time {
-	if o == nil {
+func (e *Expense) GetCreatedAt() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return e.CreatedAt
 }
 
-func (o *Expense) GetRowVersion() *string {
-	if o == nil {
+func (e *Expense) GetRowVersion() *string {
+	if e == nil {
 		return nil
 	}
-	return o.RowVersion
+	return e.RowVersion
 }
 
-func (o *Expense) GetUpdatedBy() *string {
-	if o == nil {
+func (e *Expense) GetUpdatedBy() *string {
+	if e == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return e.UpdatedBy
 }
 
-func (o *Expense) GetCreatedBy() *string {
-	if o == nil {
+func (e *Expense) GetCreatedBy() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return e.CreatedBy
 }
 
-func (o *Expense) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (e *Expense) GetPassThrough() []PassThroughBody {
+	if e == nil {
 		return nil
 	}
-	return o.PassThrough
+	return e.PassThrough
 }
 
 type ExpenseInput struct {
@@ -402,149 +402,149 @@ func (e *ExpenseInput) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ExpenseInput) GetNumber() *string {
-	if o == nil {
+func (e *ExpenseInput) GetNumber() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Number
+	return e.Number
 }
 
-func (o *ExpenseInput) GetTransactionDate() *time.Time {
-	if o == nil {
+func (e *ExpenseInput) GetTransactionDate() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.TransactionDate
+	return e.TransactionDate
 }
 
-func (o *ExpenseInput) GetAccountID() string {
-	if o == nil {
+func (e *ExpenseInput) GetAccountID() string {
+	if e == nil {
 		return ""
 	}
-	return o.AccountID
+	return e.AccountID
 }
 
-func (o *ExpenseInput) GetCustomerID() *string {
-	if o == nil {
+func (e *ExpenseInput) GetCustomerID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CustomerID
+	return e.CustomerID
 }
 
-func (o *ExpenseInput) GetSupplierID() *string {
-	if o == nil {
+func (e *ExpenseInput) GetSupplierID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.SupplierID
+	return e.SupplierID
 }
 
-func (o *ExpenseInput) GetCompanyID() *string {
-	if o == nil {
+func (e *ExpenseInput) GetCompanyID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CompanyID
+	return e.CompanyID
 }
 
-func (o *ExpenseInput) GetDepartmentID() *string {
-	if o == nil {
+func (e *ExpenseInput) GetDepartmentID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return e.DepartmentID
 }
 
-func (o *ExpenseInput) GetPaymentType() *ExpensePaymentType {
-	if o == nil {
+func (e *ExpenseInput) GetPaymentType() *ExpensePaymentType {
+	if e == nil {
 		return nil
 	}
-	return o.PaymentType
+	return e.PaymentType
 }
 
-func (o *ExpenseInput) GetCurrency() *Currency {
-	if o == nil {
+func (e *ExpenseInput) GetCurrency() *Currency {
+	if e == nil {
 		return nil
 	}
-	return o.Currency
+	return e.Currency
 }
 
-func (o *ExpenseInput) GetCurrencyRate() *float64 {
-	if o == nil {
+func (e *ExpenseInput) GetCurrencyRate() *float64 {
+	if e == nil {
 		return nil
 	}
-	return o.CurrencyRate
+	return e.CurrencyRate
 }
 
-func (o *ExpenseInput) GetType() *ExpenseType {
-	if o == nil {
+func (e *ExpenseInput) GetType() *ExpenseType {
+	if e == nil {
 		return nil
 	}
-	return o.Type
+	return e.Type
 }
 
-func (o *ExpenseInput) GetMemo() *string {
-	if o == nil {
+func (e *ExpenseInput) GetMemo() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Memo
+	return e.Memo
 }
 
-func (o *ExpenseInput) GetTaxRate() *LinkedTaxRateInput {
-	if o == nil {
+func (e *ExpenseInput) GetTaxRate() *LinkedTaxRateInput {
+	if e == nil {
 		return nil
 	}
-	return o.TaxRate
+	return e.TaxRate
 }
 
-func (o *ExpenseInput) GetTotalAmount() *float64 {
-	if o == nil {
+func (e *ExpenseInput) GetTotalAmount() *float64 {
+	if e == nil {
 		return nil
 	}
-	return o.TotalAmount
+	return e.TotalAmount
 }
 
-func (o *ExpenseInput) GetLineItems() []ExpenseLineItemInput {
-	if o == nil {
+func (e *ExpenseInput) GetLineItems() []ExpenseLineItemInput {
+	if e == nil {
 		return []ExpenseLineItemInput{}
 	}
-	return o.LineItems
+	return e.LineItems
 }
 
-func (o *ExpenseInput) GetReference() *string {
-	if o == nil {
+func (e *ExpenseInput) GetReference() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Reference
+	return e.Reference
 }
 
-func (o *ExpenseInput) GetSourceDocumentURL() *string {
-	if o == nil {
+func (e *ExpenseInput) GetSourceDocumentURL() *string {
+	if e == nil {
 		return nil
 	}
-	return o.SourceDocumentURL
+	return e.SourceDocumentURL
 }
 
-func (o *ExpenseInput) GetCustomFields() []CustomField {
-	if o == nil {
+func (e *ExpenseInput) GetCustomFields() []CustomField {
+	if e == nil {
 		return nil
 	}
-	return o.CustomFields
+	return e.CustomFields
 }
 
-func (o *ExpenseInput) GetStatus() *ExpenseStatus {
-	if o == nil {
+func (e *ExpenseInput) GetStatus() *ExpenseStatus {
+	if e == nil {
 		return nil
 	}
-	return o.Status
+	return e.Status
 }
 
-func (o *ExpenseInput) GetRowVersion() *string {
-	if o == nil {
+func (e *ExpenseInput) GetRowVersion() *string {
+	if e == nil {
 		return nil
 	}
-	return o.RowVersion
+	return e.RowVersion
 }
 
-func (o *ExpenseInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (e *ExpenseInput) GetPassThrough() []PassThroughBody {
+	if e == nil {
 		return nil
 	}
-	return o.PassThrough
+	return e.PassThrough
 }

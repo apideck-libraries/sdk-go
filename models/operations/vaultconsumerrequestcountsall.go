@@ -11,11 +11,11 @@ type VaultConsumerRequestCountsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultConsumerRequestCountsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultConsumerRequestCountsAllGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultConsumerRequestCountsAllRequest struct {
@@ -29,32 +29,32 @@ type VaultConsumerRequestCountsAllRequest struct {
 	EndDatetime string `queryParam:"style=form,explode=true,name=end_datetime"`
 }
 
-func (o *VaultConsumerRequestCountsAllRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultConsumerRequestCountsAllRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultConsumerRequestCountsAllRequest) GetConsumerID() string {
-	if o == nil {
+func (v *VaultConsumerRequestCountsAllRequest) GetConsumerID() string {
+	if v == nil {
 		return ""
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConsumerRequestCountsAllRequest) GetStartDatetime() string {
-	if o == nil {
+func (v *VaultConsumerRequestCountsAllRequest) GetStartDatetime() string {
+	if v == nil {
 		return ""
 	}
-	return o.StartDatetime
+	return v.StartDatetime
 }
 
-func (o *VaultConsumerRequestCountsAllRequest) GetEndDatetime() string {
-	if o == nil {
+func (v *VaultConsumerRequestCountsAllRequest) GetEndDatetime() string {
+	if v == nil {
 		return ""
 	}
-	return o.EndDatetime
+	return v.EndDatetime
 }
 
 type VaultConsumerRequestCountsAllResponse struct {
@@ -65,23 +65,23 @@ type VaultConsumerRequestCountsAllResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultConsumerRequestCountsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultConsumerRequestCountsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultConsumerRequestCountsAllResponse) GetConsumerRequestCountsInDateRangeResponse() *components.ConsumerRequestCountsInDateRangeResponse {
-	if o == nil {
+func (v *VaultConsumerRequestCountsAllResponse) GetConsumerRequestCountsInDateRangeResponse() *components.ConsumerRequestCountsInDateRangeResponse {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerRequestCountsInDateRangeResponse
+	return v.ConsumerRequestCountsInDateRangeResponse
 }
 
-func (o *VaultConsumerRequestCountsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultConsumerRequestCountsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

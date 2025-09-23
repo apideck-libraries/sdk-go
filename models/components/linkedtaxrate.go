@@ -13,30 +13,30 @@ type LinkedTaxRate struct {
 	Rate *float64 `json:"rate,omitempty"`
 }
 
-func (o *LinkedTaxRate) GetID() *string {
-	if o == nil {
+func (l *LinkedTaxRate) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinkedTaxRate) GetCode() *string {
-	if o == nil {
+func (l *LinkedTaxRate) GetCode() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Code
+	return l.Code
 }
 
-func (o *LinkedTaxRate) GetName() *string {
-	if o == nil {
+func (l *LinkedTaxRate) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *LinkedTaxRate) GetRate() *float64 {
-	if o == nil {
+func (l *LinkedTaxRate) GetRate() *float64 {
+	if l == nil {
 		return nil
 	}
-	return o.Rate
+	return l.Rate
 }

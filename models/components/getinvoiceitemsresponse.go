@@ -23,65 +23,65 @@ type GetInvoiceItemsResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetInvoiceItemsResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetInvoiceItemsResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetInvoiceItemsResponse) GetStatus() string {
-	if o == nil {
+func (g *GetInvoiceItemsResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetInvoiceItemsResponse) GetService() string {
-	if o == nil {
+func (g *GetInvoiceItemsResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetInvoiceItemsResponse) GetResource() string {
-	if o == nil {
+func (g *GetInvoiceItemsResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetInvoiceItemsResponse) GetOperation() string {
-	if o == nil {
+func (g *GetInvoiceItemsResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetInvoiceItemsResponse) GetData() []InvoiceItem {
-	if o == nil {
+func (g *GetInvoiceItemsResponse) GetData() []InvoiceItem {
+	if g == nil {
 		return []InvoiceItem{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetInvoiceItemsResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetInvoiceItemsResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetInvoiceItemsResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetInvoiceItemsResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }
 
-func (o *GetInvoiceItemsResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetInvoiceItemsResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

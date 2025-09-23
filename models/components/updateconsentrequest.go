@@ -134,16 +134,16 @@ type UpdateConsentRequest struct {
 	Granted bool `json:"granted"`
 }
 
-func (o *UpdateConsentRequest) GetResources() UpdateConsentRequestResources {
-	if o == nil {
+func (u *UpdateConsentRequest) GetResources() UpdateConsentRequestResources {
+	if u == nil {
 		return UpdateConsentRequestResources{}
 	}
-	return o.Resources
+	return u.Resources
 }
 
-func (o *UpdateConsentRequest) GetGranted() bool {
-	if o == nil {
+func (u *UpdateConsentRequest) GetGranted() bool {
+	if u == nil {
 		return false
 	}
-	return o.Granted
+	return u.Granted
 }

@@ -14,18 +14,18 @@ type FileStorageDrivesUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *FileStorageDrivesUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageDrivesUpdateGlobals) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageDrivesUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageDrivesUpdateGlobals) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
 type FileStorageDrivesUpdateRequest struct {
@@ -53,46 +53,46 @@ func (f *FileStorageDrivesUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FileStorageDrivesUpdateRequest) GetID() string {
-	if o == nil {
+func (f *FileStorageDrivesUpdateRequest) GetID() string {
+	if f == nil {
 		return ""
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *FileStorageDrivesUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageDrivesUpdateRequest) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageDrivesUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageDrivesUpdateRequest) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
-func (o *FileStorageDrivesUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (f *FileStorageDrivesUpdateRequest) GetServiceID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ServiceID
+	return f.ServiceID
 }
 
-func (o *FileStorageDrivesUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (f *FileStorageDrivesUpdateRequest) GetRaw() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Raw
+	return f.Raw
 }
 
-func (o *FileStorageDrivesUpdateRequest) GetDrive() components.DriveInput {
-	if o == nil {
+func (f *FileStorageDrivesUpdateRequest) GetDrive() components.DriveInput {
+	if f == nil {
 		return components.DriveInput{}
 	}
-	return o.Drive
+	return f.Drive
 }
 
 type FileStorageDrivesUpdateResponse struct {
@@ -103,23 +103,23 @@ type FileStorageDrivesUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *FileStorageDrivesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (f *FileStorageDrivesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if f == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return f.HTTPMeta
 }
 
-func (o *FileStorageDrivesUpdateResponse) GetUpdateDriveResponse() *components.UpdateDriveResponse {
-	if o == nil {
+func (f *FileStorageDrivesUpdateResponse) GetUpdateDriveResponse() *components.UpdateDriveResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UpdateDriveResponse
+	return f.UpdateDriveResponse
 }
 
-func (o *FileStorageDrivesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (f *FileStorageDrivesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return f.UnexpectedErrorResponse
 }

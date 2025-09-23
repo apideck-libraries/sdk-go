@@ -20,51 +20,51 @@ type DeleteActivityResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *DeleteActivityResponse) GetStatusCode() int64 {
-	if o == nil {
+func (d *DeleteActivityResponse) GetStatusCode() int64 {
+	if d == nil {
 		return 0
 	}
-	return o.StatusCode
+	return d.StatusCode
 }
 
-func (o *DeleteActivityResponse) GetStatus() string {
-	if o == nil {
+func (d *DeleteActivityResponse) GetStatus() string {
+	if d == nil {
 		return ""
 	}
-	return o.Status
+	return d.Status
 }
 
-func (o *DeleteActivityResponse) GetService() string {
-	if o == nil {
+func (d *DeleteActivityResponse) GetService() string {
+	if d == nil {
 		return ""
 	}
-	return o.Service
+	return d.Service
 }
 
-func (o *DeleteActivityResponse) GetResource() string {
-	if o == nil {
+func (d *DeleteActivityResponse) GetResource() string {
+	if d == nil {
 		return ""
 	}
-	return o.Resource
+	return d.Resource
 }
 
-func (o *DeleteActivityResponse) GetOperation() string {
-	if o == nil {
+func (d *DeleteActivityResponse) GetOperation() string {
+	if d == nil {
 		return ""
 	}
-	return o.Operation
+	return d.Operation
 }
 
-func (o *DeleteActivityResponse) GetData() UnifiedID {
-	if o == nil {
+func (d *DeleteActivityResponse) GetData() UnifiedID {
+	if d == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return d.Data
 }
 
-func (o *DeleteActivityResponse) GetRaw() map[string]any {
-	if o == nil {
+func (d *DeleteActivityResponse) GetRaw() map[string]any {
+	if d == nil {
 		return nil
 	}
-	return o.Raw
+	return d.Raw
 }

@@ -9,16 +9,16 @@ type CreateConsumerRequest struct {
 	Metadata *ConsumerMetadata `json:"metadata,omitempty"`
 }
 
-func (o *CreateConsumerRequest) GetConsumerID() string {
-	if o == nil {
+func (c *CreateConsumerRequest) GetConsumerID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CreateConsumerRequest) GetMetadata() *ConsumerMetadata {
-	if o == nil {
+func (c *CreateConsumerRequest) GetMetadata() *ConsumerMetadata {
+	if c == nil {
 		return nil
 	}
-	return o.Metadata
+	return c.Metadata
 }

@@ -17,37 +17,37 @@ type DeprecatedLinkedSupplier struct {
 	Address     *Address `json:"address,omitempty"`
 }
 
-func (o *DeprecatedLinkedSupplier) GetID() *string {
-	if o == nil {
+func (d *DeprecatedLinkedSupplier) GetID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.ID
+	return d.ID
 }
 
-func (o *DeprecatedLinkedSupplier) GetDisplayID() *string {
-	if o == nil {
+func (d *DeprecatedLinkedSupplier) GetDisplayID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.DisplayID
+	return d.DisplayID
 }
 
-func (o *DeprecatedLinkedSupplier) GetDisplayName() *string {
-	if o == nil {
+func (d *DeprecatedLinkedSupplier) GetDisplayName() *string {
+	if d == nil {
 		return nil
 	}
-	return o.DisplayName
+	return d.DisplayName
 }
 
-func (o *DeprecatedLinkedSupplier) GetCompanyName() *string {
-	if o == nil {
+func (d *DeprecatedLinkedSupplier) GetCompanyName() *string {
+	if d == nil {
 		return nil
 	}
-	return o.CompanyName
+	return d.CompanyName
 }
 
-func (o *DeprecatedLinkedSupplier) GetAddress() *Address {
-	if o == nil {
+func (d *DeprecatedLinkedSupplier) GetAddress() *Address {
+	if d == nil {
 		return nil
 	}
-	return o.Address
+	return d.Address
 }

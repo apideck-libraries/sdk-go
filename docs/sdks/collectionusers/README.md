@@ -37,11 +37,11 @@ func main() {
 
     res, err := s.IssueTracking.CollectionUsers.List(ctx, operations.IssueTrackingCollectionUsersAllRequest{
         CollectionID: "apideck-io",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -117,8 +117,8 @@ func main() {
     res, err := s.IssueTracking.CollectionUsers.Get(ctx, operations.IssueTrackingCollectionUsersOneRequest{
         CollectionID: "apideck-io",
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)

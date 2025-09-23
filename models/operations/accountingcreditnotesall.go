@@ -14,18 +14,18 @@ type AccountingCreditNotesAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingCreditNotesAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesAllGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingCreditNotesAllGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesAllGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingCreditNotesAllRequest struct {
@@ -62,74 +62,74 @@ func (a *AccountingCreditNotesAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingCreditNotesAllRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingCreditNotesAllRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingCreditNotesAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesAllRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingCreditNotesAllRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesAllRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingCreditNotesAllRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesAllRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingCreditNotesAllRequest) GetCursor() *string {
-	if o == nil {
+func (a *AccountingCreditNotesAllRequest) GetCursor() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Cursor
+	return a.Cursor
 }
 
-func (o *AccountingCreditNotesAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (a *AccountingCreditNotesAllRequest) GetLimit() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.Limit
+	return a.Limit
 }
 
-func (o *AccountingCreditNotesAllRequest) GetFilter() *components.CreditNotesFilter {
-	if o == nil {
+func (a *AccountingCreditNotesAllRequest) GetFilter() *components.CreditNotesFilter {
+	if a == nil {
 		return nil
 	}
-	return o.Filter
+	return a.Filter
 }
 
-func (o *AccountingCreditNotesAllRequest) GetSort() *components.CreditNotesSort {
-	if o == nil {
+func (a *AccountingCreditNotesAllRequest) GetSort() *components.CreditNotesSort {
+	if a == nil {
 		return nil
 	}
-	return o.Sort
+	return a.Sort
 }
 
-func (o *AccountingCreditNotesAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (a *AccountingCreditNotesAllRequest) GetPassThrough() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
-func (o *AccountingCreditNotesAllRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingCreditNotesAllRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingCreditNotesAllResponse struct {
@@ -142,23 +142,23 @@ type AccountingCreditNotesAllResponse struct {
 	Next func() (*AccountingCreditNotesAllResponse, error)
 }
 
-func (o *AccountingCreditNotesAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingCreditNotesAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingCreditNotesAllResponse) GetGetCreditNotesResponse() *components.GetCreditNotesResponse {
-	if o == nil {
+func (a *AccountingCreditNotesAllResponse) GetGetCreditNotesResponse() *components.GetCreditNotesResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetCreditNotesResponse
+	return a.GetCreditNotesResponse
 }
 
-func (o *AccountingCreditNotesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingCreditNotesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

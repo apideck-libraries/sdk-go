@@ -14,18 +14,18 @@ type AccountingAttachmentsOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingAttachmentsOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingAttachmentsOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingAttachmentsOneRequest struct {
@@ -58,60 +58,60 @@ func (a *AccountingAttachmentsOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingAttachmentsOneRequest) GetReferenceType() components.AttachmentReferenceType {
-	if o == nil {
+func (a *AccountingAttachmentsOneRequest) GetReferenceType() components.AttachmentReferenceType {
+	if a == nil {
 		return components.AttachmentReferenceType("")
 	}
-	return o.ReferenceType
+	return a.ReferenceType
 }
 
-func (o *AccountingAttachmentsOneRequest) GetReferenceID() string {
-	if o == nil {
+func (a *AccountingAttachmentsOneRequest) GetReferenceID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ReferenceID
+	return a.ReferenceID
 }
 
-func (o *AccountingAttachmentsOneRequest) GetID() string {
-	if o == nil {
+func (a *AccountingAttachmentsOneRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingAttachmentsOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingAttachmentsOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingAttachmentsOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingAttachmentsOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingAttachmentsOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingAttachmentsOneRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingAttachmentsOneRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingAttachmentsOneResponse struct {
@@ -122,23 +122,23 @@ type AccountingAttachmentsOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingAttachmentsOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingAttachmentsOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingAttachmentsOneResponse) GetGetAttachmentResponse() *components.GetAttachmentResponse {
-	if o == nil {
+func (a *AccountingAttachmentsOneResponse) GetGetAttachmentResponse() *components.GetAttachmentResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetAttachmentResponse
+	return a.GetAttachmentResponse
 }
 
-func (o *AccountingAttachmentsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingAttachmentsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

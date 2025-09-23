@@ -9,16 +9,16 @@ type PayrollsFilter struct {
 	EndDate *string `queryParam:"name=end_date"`
 }
 
-func (o *PayrollsFilter) GetStartDate() *string {
-	if o == nil {
+func (p *PayrollsFilter) GetStartDate() *string {
+	if p == nil {
 		return nil
 	}
-	return o.StartDate
+	return p.StartDate
 }
 
-func (o *PayrollsFilter) GetEndDate() *string {
-	if o == nil {
+func (p *PayrollsFilter) GetEndDate() *string {
+	if p == nil {
 		return nil
 	}
-	return o.EndDate
+	return p.EndDate
 }

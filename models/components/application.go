@@ -50,18 +50,18 @@ type Stage struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *Stage) GetID() *string {
-	if o == nil {
+func (s *Stage) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *Stage) GetName() *string {
-	if o == nil {
+func (s *Stage) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
 type Application struct {
@@ -96,81 +96,81 @@ func (a *Application) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Application) GetID() *string {
-	if o == nil {
+func (a *Application) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *Application) GetApplicantID() *string {
-	if o == nil {
+func (a *Application) GetApplicantID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ApplicantID
+	return a.ApplicantID
 }
 
-func (o *Application) GetJobID() *string {
-	if o == nil {
+func (a *Application) GetJobID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.JobID
+	return a.JobID
 }
 
-func (o *Application) GetStatus() *ApplicationStatus {
-	if o == nil {
+func (a *Application) GetStatus() *ApplicationStatus {
+	if a == nil {
 		return nil
 	}
-	return o.Status
+	return a.Status
 }
 
-func (o *Application) GetStage() *Stage {
-	if o == nil {
+func (a *Application) GetStage() *Stage {
+	if a == nil {
 		return nil
 	}
-	return o.Stage
+	return a.Stage
 }
 
-func (o *Application) GetCustomMappings() map[string]any {
-	if o == nil {
+func (a *Application) GetCustomMappings() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return a.CustomMappings
 }
 
-func (o *Application) GetUpdatedBy() *string {
-	if o == nil {
+func (a *Application) GetUpdatedBy() *string {
+	if a == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return a.UpdatedBy
 }
 
-func (o *Application) GetCreatedBy() *string {
-	if o == nil {
+func (a *Application) GetCreatedBy() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return a.CreatedBy
 }
 
-func (o *Application) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (a *Application) GetUpdatedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return a.UpdatedAt
 }
 
-func (o *Application) GetCreatedAt() *time.Time {
-	if o == nil {
+func (a *Application) GetCreatedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return a.CreatedAt
 }
 
-func (o *Application) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (a *Application) GetPassThrough() []PassThroughBody {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
 type ApplicationInput struct {
@@ -182,37 +182,37 @@ type ApplicationInput struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *ApplicationInput) GetApplicantID() *string {
-	if o == nil {
+func (a *ApplicationInput) GetApplicantID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ApplicantID
+	return a.ApplicantID
 }
 
-func (o *ApplicationInput) GetJobID() *string {
-	if o == nil {
+func (a *ApplicationInput) GetJobID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.JobID
+	return a.JobID
 }
 
-func (o *ApplicationInput) GetStatus() *ApplicationStatus {
-	if o == nil {
+func (a *ApplicationInput) GetStatus() *ApplicationStatus {
+	if a == nil {
 		return nil
 	}
-	return o.Status
+	return a.Status
 }
 
-func (o *ApplicationInput) GetStage() *Stage {
-	if o == nil {
+func (a *ApplicationInput) GetStage() *Stage {
+	if a == nil {
 		return nil
 	}
-	return o.Stage
+	return a.Stage
 }
 
-func (o *ApplicationInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (a *ApplicationInput) GetPassThrough() []PassThroughBody {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }

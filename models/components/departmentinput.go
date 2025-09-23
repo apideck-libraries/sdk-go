@@ -11,30 +11,30 @@ type DepartmentInput struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *DepartmentInput) GetName() *string {
-	if o == nil {
+func (d *DepartmentInput) GetName() *string {
+	if d == nil {
 		return nil
 	}
-	return o.Name
+	return d.Name
 }
 
-func (o *DepartmentInput) GetCode() *string {
-	if o == nil {
+func (d *DepartmentInput) GetCode() *string {
+	if d == nil {
 		return nil
 	}
-	return o.Code
+	return d.Code
 }
 
-func (o *DepartmentInput) GetDescription() *string {
-	if o == nil {
+func (d *DepartmentInput) GetDescription() *string {
+	if d == nil {
 		return nil
 	}
-	return o.Description
+	return d.Description
 }
 
-func (o *DepartmentInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (d *DepartmentInput) GetPassThrough() []PassThroughBody {
+	if d == nil {
 		return nil
 	}
-	return o.PassThrough
+	return d.PassThrough
 }

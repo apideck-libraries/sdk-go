@@ -13,18 +13,18 @@ type VaultConnectionSettingsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultConnectionSettingsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionSettingsAllGlobals) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionSettingsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionSettingsAllGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultConnectionSettingsAllRequest struct {
@@ -40,39 +40,39 @@ type VaultConnectionSettingsAllRequest struct {
 	Resource string `pathParam:"style=simple,explode=false,name=resource"`
 }
 
-func (o *VaultConnectionSettingsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionSettingsAllRequest) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionSettingsAllRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionSettingsAllRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultConnectionSettingsAllRequest) GetUnifiedAPI() string {
-	if o == nil {
+func (v *VaultConnectionSettingsAllRequest) GetUnifiedAPI() string {
+	if v == nil {
 		return ""
 	}
-	return o.UnifiedAPI
+	return v.UnifiedAPI
 }
 
-func (o *VaultConnectionSettingsAllRequest) GetServiceID() string {
-	if o == nil {
+func (v *VaultConnectionSettingsAllRequest) GetServiceID() string {
+	if v == nil {
 		return ""
 	}
-	return o.ServiceID
+	return v.ServiceID
 }
 
-func (o *VaultConnectionSettingsAllRequest) GetResource() string {
-	if o == nil {
+func (v *VaultConnectionSettingsAllRequest) GetResource() string {
+	if v == nil {
 		return ""
 	}
-	return o.Resource
+	return v.Resource
 }
 
 type VaultConnectionSettingsAllResponse struct {
@@ -83,23 +83,23 @@ type VaultConnectionSettingsAllResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultConnectionSettingsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultConnectionSettingsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultConnectionSettingsAllResponse) GetGetConnectionResponse() *components.GetConnectionResponse {
-	if o == nil {
+func (v *VaultConnectionSettingsAllResponse) GetGetConnectionResponse() *components.GetConnectionResponse {
+	if v == nil {
 		return nil
 	}
-	return o.GetConnectionResponse
+	return v.GetConnectionResponse
 }
 
-func (o *VaultConnectionSettingsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultConnectionSettingsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

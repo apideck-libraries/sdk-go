@@ -14,18 +14,18 @@ type AccountingTrackingCategoriesOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingTrackingCategoriesOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingTrackingCategoriesOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingTrackingCategoriesOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingTrackingCategoriesOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingTrackingCategoriesOneRequest struct {
@@ -54,46 +54,46 @@ func (a *AccountingTrackingCategoriesOneRequest) UnmarshalJSON(data []byte) erro
 	return nil
 }
 
-func (o *AccountingTrackingCategoriesOneRequest) GetID() string {
-	if o == nil {
+func (a *AccountingTrackingCategoriesOneRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingTrackingCategoriesOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingTrackingCategoriesOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingTrackingCategoriesOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingTrackingCategoriesOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingTrackingCategoriesOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingTrackingCategoriesOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingTrackingCategoriesOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingTrackingCategoriesOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingTrackingCategoriesOneRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingTrackingCategoriesOneRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingTrackingCategoriesOneResponse struct {
@@ -104,23 +104,23 @@ type AccountingTrackingCategoriesOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingTrackingCategoriesOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingTrackingCategoriesOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingTrackingCategoriesOneResponse) GetGetTrackingCategoryResponse() *components.GetTrackingCategoryResponse {
-	if o == nil {
+func (a *AccountingTrackingCategoriesOneResponse) GetGetTrackingCategoryResponse() *components.GetTrackingCategoryResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetTrackingCategoryResponse
+	return a.GetTrackingCategoryResponse
 }
 
-func (o *AccountingTrackingCategoriesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingTrackingCategoriesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

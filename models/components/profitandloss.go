@@ -17,46 +17,46 @@ type Income struct {
 	Records any      `json:"records"`
 }
 
-func (o *Income) GetID() *string {
-	if o == nil {
+func (i *Income) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *Income) GetCode() *string {
-	if o == nil {
+func (i *Income) GetCode() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Code
+	return i.Code
 }
 
-func (o *Income) GetTitle() *string {
-	if o == nil {
+func (i *Income) GetTitle() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Title
+	return i.Title
 }
 
-func (o *Income) GetType() *ProfitAndLossType {
-	if o == nil {
+func (i *Income) GetType() *ProfitAndLossType {
+	if i == nil {
 		return nil
 	}
-	return o.Type
+	return i.Type
 }
 
-func (o *Income) GetTotal() *float64 {
-	if o == nil {
+func (i *Income) GetTotal() *float64 {
+	if i == nil {
 		return nil
 	}
-	return o.Total
+	return i.Total
 }
 
-func (o *Income) GetRecords() any {
-	if o == nil {
+func (i *Income) GetRecords() any {
+	if i == nil {
 		return nil
 	}
-	return o.Records
+	return i.Records
 }
 
 // CostOfGoodsSold - The cost of goods sold accounts
@@ -74,46 +74,46 @@ type CostOfGoodsSold struct {
 	Records any      `json:"records"`
 }
 
-func (o *CostOfGoodsSold) GetID() *string {
-	if o == nil {
+func (c *CostOfGoodsSold) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CostOfGoodsSold) GetCode() *string {
-	if o == nil {
+func (c *CostOfGoodsSold) GetCode() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Code
+	return c.Code
 }
 
-func (o *CostOfGoodsSold) GetTitle() *string {
-	if o == nil {
+func (c *CostOfGoodsSold) GetTitle() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Title
+	return c.Title
 }
 
-func (o *CostOfGoodsSold) GetType() *ProfitAndLossType {
-	if o == nil {
+func (c *CostOfGoodsSold) GetType() *ProfitAndLossType {
+	if c == nil {
 		return nil
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *CostOfGoodsSold) GetTotal() *float64 {
-	if o == nil {
+func (c *CostOfGoodsSold) GetTotal() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.Total
+	return c.Total
 }
 
-func (o *CostOfGoodsSold) GetRecords() any {
-	if o == nil {
+func (c *CostOfGoodsSold) GetRecords() any {
+	if c == nil {
 		return nil
 	}
-	return o.Records
+	return c.Records
 }
 
 // Expenses - The operating expenses accounts
@@ -131,46 +131,46 @@ type Expenses struct {
 	Records any      `json:"records"`
 }
 
-func (o *Expenses) GetID() *string {
-	if o == nil {
+func (e *Expenses) GetID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *Expenses) GetCode() *string {
-	if o == nil {
+func (e *Expenses) GetCode() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Code
+	return e.Code
 }
 
-func (o *Expenses) GetTitle() *string {
-	if o == nil {
+func (e *Expenses) GetTitle() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Title
+	return e.Title
 }
 
-func (o *Expenses) GetType() *ProfitAndLossType {
-	if o == nil {
+func (e *Expenses) GetType() *ProfitAndLossType {
+	if e == nil {
 		return nil
 	}
-	return o.Type
+	return e.Type
 }
 
-func (o *Expenses) GetTotal() *float64 {
-	if o == nil {
+func (e *Expenses) GetTotal() *float64 {
+	if e == nil {
 		return nil
 	}
-	return o.Total
+	return e.Total
 }
 
-func (o *Expenses) GetRecords() any {
-	if o == nil {
+func (e *Expenses) GetRecords() any {
+	if e == nil {
 		return nil
 	}
-	return o.Records
+	return e.Records
 }
 
 // OtherIncome - The other income accounts
@@ -302,46 +302,46 @@ type UncategorizedAccounts struct {
 	Records any      `json:"records"`
 }
 
-func (o *UncategorizedAccounts) GetID() *string {
-	if o == nil {
+func (u *UncategorizedAccounts) GetID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UncategorizedAccounts) GetCode() *string {
-	if o == nil {
+func (u *UncategorizedAccounts) GetCode() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Code
+	return u.Code
 }
 
-func (o *UncategorizedAccounts) GetTitle() *string {
-	if o == nil {
+func (u *UncategorizedAccounts) GetTitle() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Title
+	return u.Title
 }
 
-func (o *UncategorizedAccounts) GetType() *ProfitAndLossType {
-	if o == nil {
+func (u *UncategorizedAccounts) GetType() *ProfitAndLossType {
+	if u == nil {
 		return nil
 	}
-	return o.Type
+	return u.Type
 }
 
-func (o *UncategorizedAccounts) GetTotal() *float64 {
-	if o == nil {
+func (u *UncategorizedAccounts) GetTotal() *float64 {
+	if u == nil {
 		return nil
 	}
-	return o.Total
+	return u.Total
 }
 
-func (o *UncategorizedAccounts) GetRecords() any {
-	if o == nil {
+func (u *UncategorizedAccounts) GetRecords() any {
+	if u == nil {
 		return nil
 	}
-	return o.Records
+	return u.Records
 }
 
 type ProfitAndLoss struct {
@@ -376,114 +376,114 @@ type ProfitAndLoss struct {
 	Customer *string `json:"customer,omitempty"`
 }
 
-func (o *ProfitAndLoss) GetID() *string {
-	if o == nil {
+func (p *ProfitAndLoss) GetID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *ProfitAndLoss) GetReportName() string {
-	if o == nil {
+func (p *ProfitAndLoss) GetReportName() string {
+	if p == nil {
 		return ""
 	}
-	return o.ReportName
+	return p.ReportName
 }
 
-func (o *ProfitAndLoss) GetStartDate() *string {
-	if o == nil {
+func (p *ProfitAndLoss) GetStartDate() *string {
+	if p == nil {
 		return nil
 	}
-	return o.StartDate
+	return p.StartDate
 }
 
-func (o *ProfitAndLoss) GetEndDate() *string {
-	if o == nil {
+func (p *ProfitAndLoss) GetEndDate() *string {
+	if p == nil {
 		return nil
 	}
-	return o.EndDate
+	return p.EndDate
 }
 
-func (o *ProfitAndLoss) GetCurrency() *Currency {
-	if o == nil {
+func (p *ProfitAndLoss) GetCurrency() *Currency {
+	if p == nil {
 		return nil
 	}
-	return o.Currency
+	return p.Currency
 }
 
-func (o *ProfitAndLoss) GetIncome() Income {
-	if o == nil {
+func (p *ProfitAndLoss) GetIncome() Income {
+	if p == nil {
 		return Income{}
 	}
-	return o.Income
+	return p.Income
 }
 
-func (o *ProfitAndLoss) GetCostOfGoodsSold() *CostOfGoodsSold {
-	if o == nil {
+func (p *ProfitAndLoss) GetCostOfGoodsSold() *CostOfGoodsSold {
+	if p == nil {
 		return nil
 	}
-	return o.CostOfGoodsSold
+	return p.CostOfGoodsSold
 }
 
-func (o *ProfitAndLoss) GetExpenses() Expenses {
-	if o == nil {
+func (p *ProfitAndLoss) GetExpenses() Expenses {
+	if p == nil {
 		return Expenses{}
 	}
-	return o.Expenses
+	return p.Expenses
 }
 
-func (o *ProfitAndLoss) GetOtherIncome() *OtherIncome {
-	if o == nil {
+func (p *ProfitAndLoss) GetOtherIncome() *OtherIncome {
+	if p == nil {
 		return nil
 	}
-	return o.OtherIncome
+	return p.OtherIncome
 }
 
-func (o *ProfitAndLoss) GetOtherExpenses() *OtherExpenses {
-	if o == nil {
+func (p *ProfitAndLoss) GetOtherExpenses() *OtherExpenses {
+	if p == nil {
 		return nil
 	}
-	return o.OtherExpenses
+	return p.OtherExpenses
 }
 
-func (o *ProfitAndLoss) GetUncategorizedAccounts() *UncategorizedAccounts {
-	if o == nil {
+func (p *ProfitAndLoss) GetUncategorizedAccounts() *UncategorizedAccounts {
+	if p == nil {
 		return nil
 	}
-	return o.UncategorizedAccounts
+	return p.UncategorizedAccounts
 }
 
-func (o *ProfitAndLoss) GetGrossProfit() *ProfitAndLossIndicator {
-	if o == nil {
+func (p *ProfitAndLoss) GetGrossProfit() *ProfitAndLossIndicator {
+	if p == nil {
 		return nil
 	}
-	return o.GrossProfit
+	return p.GrossProfit
 }
 
-func (o *ProfitAndLoss) GetNetOperatingIncome() *ProfitAndLossIndicator {
-	if o == nil {
+func (p *ProfitAndLoss) GetNetOperatingIncome() *ProfitAndLossIndicator {
+	if p == nil {
 		return nil
 	}
-	return o.NetOperatingIncome
+	return p.NetOperatingIncome
 }
 
-func (o *ProfitAndLoss) GetNetIncome() *ProfitAndLossIndicator {
-	if o == nil {
+func (p *ProfitAndLoss) GetNetIncome() *ProfitAndLossIndicator {
+	if p == nil {
 		return nil
 	}
-	return o.NetIncome
+	return p.NetIncome
 }
 
-func (o *ProfitAndLoss) GetCustomMappings() map[string]any {
-	if o == nil {
+func (p *ProfitAndLoss) GetCustomMappings() map[string]any {
+	if p == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return p.CustomMappings
 }
 
-func (o *ProfitAndLoss) GetCustomer() *string {
-	if o == nil {
+func (p *ProfitAndLoss) GetCustomer() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Customer
+	return p.Customer
 }

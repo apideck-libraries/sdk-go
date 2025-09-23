@@ -52,37 +52,37 @@ type BalanceSheetFilter struct {
 	LocationID *string `queryParam:"name=location_id"`
 }
 
-func (o *BalanceSheetFilter) GetStartDate() *string {
-	if o == nil {
+func (b *BalanceSheetFilter) GetStartDate() *string {
+	if b == nil {
 		return nil
 	}
-	return o.StartDate
+	return b.StartDate
 }
 
-func (o *BalanceSheetFilter) GetEndDate() *string {
-	if o == nil {
+func (b *BalanceSheetFilter) GetEndDate() *string {
+	if b == nil {
 		return nil
 	}
-	return o.EndDate
+	return b.EndDate
 }
 
-func (o *BalanceSheetFilter) GetPeriodCount() *int64 {
-	if o == nil {
+func (b *BalanceSheetFilter) GetPeriodCount() *int64 {
+	if b == nil {
 		return nil
 	}
-	return o.PeriodCount
+	return b.PeriodCount
 }
 
-func (o *BalanceSheetFilter) GetPeriodType() *PeriodType {
-	if o == nil {
+func (b *BalanceSheetFilter) GetPeriodType() *PeriodType {
+	if b == nil {
 		return nil
 	}
-	return o.PeriodType
+	return b.PeriodType
 }
 
-func (o *BalanceSheetFilter) GetLocationID() *string {
-	if o == nil {
+func (b *BalanceSheetFilter) GetLocationID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.LocationID
+	return b.LocationID
 }

@@ -14,18 +14,18 @@ type AccountingAgedDebtorsOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingAgedDebtorsOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingAgedDebtorsOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingAgedDebtorsOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingAgedDebtorsOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingAgedDebtorsOneRequest struct {
@@ -56,53 +56,53 @@ func (a *AccountingAgedDebtorsOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingAgedDebtorsOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingAgedDebtorsOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingAgedDebtorsOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingAgedDebtorsOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingAgedDebtorsOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingAgedDebtorsOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingAgedDebtorsOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingAgedDebtorsOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingAgedDebtorsOneRequest) GetFilter() *components.AgedReportFilter {
-	if o == nil {
+func (a *AccountingAgedDebtorsOneRequest) GetFilter() *components.AgedReportFilter {
+	if a == nil {
 		return nil
 	}
-	return o.Filter
+	return a.Filter
 }
 
-func (o *AccountingAgedDebtorsOneRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (a *AccountingAgedDebtorsOneRequest) GetPassThrough() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
-func (o *AccountingAgedDebtorsOneRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingAgedDebtorsOneRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingAgedDebtorsOneResponse struct {
@@ -113,23 +113,23 @@ type AccountingAgedDebtorsOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingAgedDebtorsOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingAgedDebtorsOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingAgedDebtorsOneResponse) GetGetAgedDebtorsResponse() *components.GetAgedDebtorsResponse {
-	if o == nil {
+func (a *AccountingAgedDebtorsOneResponse) GetGetAgedDebtorsResponse() *components.GetAgedDebtorsResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetAgedDebtorsResponse
+	return a.GetAgedDebtorsResponse
 }
 
-func (o *AccountingAgedDebtorsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingAgedDebtorsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

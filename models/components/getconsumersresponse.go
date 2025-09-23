@@ -15,67 +15,67 @@ type Data struct {
 	Services               []string                `json:"services,omitempty"`
 }
 
-func (o *Data) GetConsumerID() *string {
-	if o == nil {
+func (d *Data) GetConsumerID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return d.ConsumerID
 }
 
-func (o *Data) GetApplicationID() *string {
-	if o == nil {
+func (d *Data) GetApplicationID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.ApplicationID
+	return d.ApplicationID
 }
 
-func (o *Data) GetMetadata() *ConsumerMetadata {
-	if o == nil {
+func (d *Data) GetMetadata() *ConsumerMetadata {
+	if d == nil {
 		return nil
 	}
-	return o.Metadata
+	return d.Metadata
 }
 
-func (o *Data) GetAggregatedRequestCount() *float64 {
-	if o == nil {
+func (d *Data) GetAggregatedRequestCount() *float64 {
+	if d == nil {
 		return nil
 	}
-	return o.AggregatedRequestCount
+	return d.AggregatedRequestCount
 }
 
-func (o *Data) GetRequestCounts() *RequestCountAllocation {
-	if o == nil {
+func (d *Data) GetRequestCounts() *RequestCountAllocation {
+	if d == nil {
 		return nil
 	}
-	return o.RequestCounts
+	return d.RequestCounts
 }
 
-func (o *Data) GetCreated() *string {
-	if o == nil {
+func (d *Data) GetCreated() *string {
+	if d == nil {
 		return nil
 	}
-	return o.Created
+	return d.Created
 }
 
-func (o *Data) GetModified() *string {
-	if o == nil {
+func (d *Data) GetModified() *string {
+	if d == nil {
 		return nil
 	}
-	return o.Modified
+	return d.Modified
 }
 
-func (o *Data) GetRequestCountUpdated() *string {
-	if o == nil {
+func (d *Data) GetRequestCountUpdated() *string {
+	if d == nil {
 		return nil
 	}
-	return o.RequestCountUpdated
+	return d.RequestCountUpdated
 }
 
-func (o *Data) GetServices() []string {
-	if o == nil {
+func (d *Data) GetServices() []string {
+	if d == nil {
 		return nil
 	}
-	return o.Services
+	return d.Services
 }
 
 // GetConsumersResponse - Consumers
@@ -93,44 +93,44 @@ type GetConsumersResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetConsumersResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetConsumersResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetConsumersResponse) GetStatus() string {
-	if o == nil {
+func (g *GetConsumersResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetConsumersResponse) GetData() []Data {
-	if o == nil {
+func (g *GetConsumersResponse) GetData() []Data {
+	if g == nil {
 		return []Data{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetConsumersResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetConsumersResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetConsumersResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetConsumersResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }
 
-func (o *GetConsumersResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetConsumersResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

@@ -14,18 +14,18 @@ type IssueTrackingCollectionTicketCommentsDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *IssueTrackingCollectionTicketCommentsDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsDeleteGlobals) GetConsumerID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return i.ConsumerID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsDeleteGlobals) GetAppID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.AppID
+	return i.AppID
 }
 
 type IssueTrackingCollectionTicketCommentsDeleteRequest struct {
@@ -56,53 +56,53 @@ func (i *IssueTrackingCollectionTicketCommentsDeleteRequest) UnmarshalJSON(data 
 	return nil
 }
 
-func (o *IssueTrackingCollectionTicketCommentsDeleteRequest) GetID() string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsDeleteRequest) GetID() string {
+	if i == nil {
 		return ""
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsDeleteRequest) GetConsumerID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return i.ConsumerID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsDeleteRequest) GetAppID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.AppID
+	return i.AppID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsDeleteRequest) GetServiceID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ServiceID
+	return i.ServiceID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsDeleteRequest) GetRaw() *bool {
+	if i == nil {
 		return nil
 	}
-	return o.Raw
+	return i.Raw
 }
 
-func (o *IssueTrackingCollectionTicketCommentsDeleteRequest) GetCollectionID() string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsDeleteRequest) GetCollectionID() string {
+	if i == nil {
 		return ""
 	}
-	return o.CollectionID
+	return i.CollectionID
 }
 
-func (o *IssueTrackingCollectionTicketCommentsDeleteRequest) GetTicketID() string {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsDeleteRequest) GetTicketID() string {
+	if i == nil {
 		return ""
 	}
-	return o.TicketID
+	return i.TicketID
 }
 
 type IssueTrackingCollectionTicketCommentsDeleteResponse struct {
@@ -113,23 +113,23 @@ type IssueTrackingCollectionTicketCommentsDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *IssueTrackingCollectionTicketCommentsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if i == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return i.HTTPMeta
 }
 
-func (o *IssueTrackingCollectionTicketCommentsDeleteResponse) GetDeleteCommentResponse() *components.DeleteCommentResponse {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsDeleteResponse) GetDeleteCommentResponse() *components.DeleteCommentResponse {
+	if i == nil {
 		return nil
 	}
-	return o.DeleteCommentResponse
+	return i.DeleteCommentResponse
 }
 
-func (o *IssueTrackingCollectionTicketCommentsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (i *IssueTrackingCollectionTicketCommentsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if i == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return i.UnexpectedErrorResponse
 }

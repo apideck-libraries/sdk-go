@@ -14,18 +14,18 @@ type AccountingBillPaymentsDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingBillPaymentsDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingBillPaymentsDeleteGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingBillPaymentsDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingBillPaymentsDeleteGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingBillPaymentsDeleteRequest struct {
@@ -52,39 +52,39 @@ func (a *AccountingBillPaymentsDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingBillPaymentsDeleteRequest) GetID() string {
-	if o == nil {
+func (a *AccountingBillPaymentsDeleteRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingBillPaymentsDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingBillPaymentsDeleteRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingBillPaymentsDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingBillPaymentsDeleteRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingBillPaymentsDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingBillPaymentsDeleteRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingBillPaymentsDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingBillPaymentsDeleteRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
 type AccountingBillPaymentsDeleteResponse struct {
@@ -95,23 +95,23 @@ type AccountingBillPaymentsDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingBillPaymentsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingBillPaymentsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingBillPaymentsDeleteResponse) GetDeleteBillPaymentResponse() *components.DeleteBillPaymentResponse {
-	if o == nil {
+func (a *AccountingBillPaymentsDeleteResponse) GetDeleteBillPaymentResponse() *components.DeleteBillPaymentResponse {
+	if a == nil {
 		return nil
 	}
-	return o.DeleteBillPaymentResponse
+	return a.DeleteBillPaymentResponse
 }
 
-func (o *AccountingBillPaymentsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingBillPaymentsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

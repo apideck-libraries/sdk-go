@@ -14,18 +14,18 @@ type AccountingPurchaseOrdersOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingPurchaseOrdersOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingPurchaseOrdersOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingPurchaseOrdersOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingPurchaseOrdersOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingPurchaseOrdersOneRequest struct {
@@ -52,39 +52,39 @@ func (a *AccountingPurchaseOrdersOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingPurchaseOrdersOneRequest) GetID() string {
-	if o == nil {
+func (a *AccountingPurchaseOrdersOneRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingPurchaseOrdersOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingPurchaseOrdersOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingPurchaseOrdersOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingPurchaseOrdersOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingPurchaseOrdersOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingPurchaseOrdersOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingPurchaseOrdersOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingPurchaseOrdersOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
 type AccountingPurchaseOrdersOneResponse struct {
@@ -95,23 +95,23 @@ type AccountingPurchaseOrdersOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingPurchaseOrdersOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingPurchaseOrdersOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingPurchaseOrdersOneResponse) GetGetPurchaseOrderResponse() *components.GetPurchaseOrderResponse {
-	if o == nil {
+func (a *AccountingPurchaseOrdersOneResponse) GetGetPurchaseOrderResponse() *components.GetPurchaseOrderResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetPurchaseOrderResponse
+	return a.GetPurchaseOrderResponse
 }
 
-func (o *AccountingPurchaseOrdersOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingPurchaseOrdersOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

@@ -41,7 +41,7 @@ func main() {
     )
 
     res, err := s.Accounting.LedgerAccounts.List(ctx, operations.AccountingLedgerAccountsAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Filter: &components.LedgerAccountsFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
         },
@@ -52,7 +52,7 @@ func main() {
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -128,59 +128,59 @@ func main() {
     )
 
     res, err := s.Accounting.LedgerAccounts.Create(ctx, operations.AccountingLedgerAccountsAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         LedgerAccount: components.LedgerAccountInput{
-            DisplayID: sdkgo.String("1-12345"),
-            Code: sdkgo.String("453"),
+            DisplayID: sdkgo.Pointer("1-12345"),
+            Code: sdkgo.Pointer("453"),
             Classification: components.LedgerAccountClassificationAsset.ToPointer(),
             Type: components.LedgerAccountTypeBank.ToPointer(),
-            SubType: sdkgo.String("CHECKING_ACCOUNT"),
-            Name: sdkgo.String("Bank account"),
-            FullyQualifiedName: sdkgo.String("Asset.Bank.Checking_Account"),
-            Description: sdkgo.String("Main checking account"),
-            OpeningBalance: sdkgo.Float64(75000),
-            CurrentBalance: sdkgo.Float64(20000),
+            SubType: sdkgo.Pointer("CHECKING_ACCOUNT"),
+            Name: sdkgo.Pointer("Bank account"),
+            FullyQualifiedName: sdkgo.Pointer("Asset.Bank.Checking_Account"),
+            Description: sdkgo.Pointer("Main checking account"),
+            OpeningBalance: sdkgo.Pointer[float64](75000),
+            CurrentBalance: sdkgo.Pointer[float64](20000),
             Currency: components.CurrencyUsd.ToPointer(),
-            TaxType: sdkgo.String("NONE"),
+            TaxType: sdkgo.Pointer("NONE"),
             TaxRate: &components.LinkedTaxRateInput{
-                ID: sdkgo.String("123456"),
-                Rate: sdkgo.Float64(10),
+                ID: sdkgo.Pointer("123456"),
+                Rate: sdkgo.Pointer[float64](10),
             },
-            Level: sdkgo.Float64(1),
-            Active: sdkgo.Bool(true),
+            Level: sdkgo.Pointer[float64](1),
+            Active: sdkgo.Pointer(true),
             Status: components.AccountStatusActive.ToPointer(),
-            Header: sdkgo.Bool(true),
+            Header: sdkgo.Pointer(true),
             BankAccount: &components.BankAccount{
-                BankName: sdkgo.String("Monzo"),
-                AccountNumber: sdkgo.String("123465"),
-                AccountName: sdkgo.String("SPACEX LLC"),
+                BankName: sdkgo.Pointer("Monzo"),
+                AccountNumber: sdkgo.Pointer("123465"),
+                AccountName: sdkgo.Pointer("SPACEX LLC"),
                 AccountType: components.AccountTypeCreditCard.ToPointer(),
-                Iban: sdkgo.String("CH2989144532982975332"),
-                Bic: sdkgo.String("AUDSCHGGXXX"),
-                RoutingNumber: sdkgo.String("012345678"),
-                BsbNumber: sdkgo.String("062-001"),
-                BranchIdentifier: sdkgo.String("001"),
-                BankCode: sdkgo.String("BNH"),
+                Iban: sdkgo.Pointer("CH2989144532982975332"),
+                Bic: sdkgo.Pointer("AUDSCHGGXXX"),
+                RoutingNumber: sdkgo.Pointer("012345678"),
+                BsbNumber: sdkgo.Pointer("062-001"),
+                BranchIdentifier: sdkgo.Pointer("001"),
+                BankCode: sdkgo.Pointer("BNH"),
                 Currency: components.CurrencyUsd.ToPointer(),
             },
             ParentAccount: &components.ParentAccount{
-                ID: sdkgo.String("12345"),
-                Name: sdkgo.String("Bank Accounts"),
-                DisplayID: sdkgo.String("1-1100"),
+                ID: sdkgo.Pointer("12345"),
+                Name: sdkgo.Pointer("Bank Accounts"),
+                DisplayID: sdkgo.Pointer("1-1100"),
             },
-            SubAccount: sdkgo.Bool(false),
+            SubAccount: sdkgo.Pointer(false),
             LastReconciliationDate: types.MustNewDateFromString("2020-09-30"),
             CustomFields: []components.CustomField{
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
                 },
             },
-            RowVersion: sdkgo.String("1-12345"),
+            RowVersion: sdkgo.Pointer("1-12345"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -285,8 +285,8 @@ func main() {
 
     res, err := s.Accounting.LedgerAccounts.Get(ctx, operations.AccountingLedgerAccountsOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -351,67 +351,67 @@ func main() {
 
     res, err := s.Accounting.LedgerAccounts.Update(ctx, operations.AccountingLedgerAccountsUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         LedgerAccount: components.LedgerAccountInput{
-            DisplayID: sdkgo.String("1-12345"),
-            Code: sdkgo.String("453"),
+            DisplayID: sdkgo.Pointer("1-12345"),
+            Code: sdkgo.Pointer("453"),
             Classification: components.LedgerAccountClassificationAsset.ToPointer(),
             Type: components.LedgerAccountTypeBank.ToPointer(),
-            SubType: sdkgo.String("CHECKING_ACCOUNT"),
-            Name: sdkgo.String("Bank account"),
-            FullyQualifiedName: sdkgo.String("Asset.Bank.Checking_Account"),
-            Description: sdkgo.String("Main checking account"),
-            OpeningBalance: sdkgo.Float64(75000),
-            CurrentBalance: sdkgo.Float64(20000),
+            SubType: sdkgo.Pointer("CHECKING_ACCOUNT"),
+            Name: sdkgo.Pointer("Bank account"),
+            FullyQualifiedName: sdkgo.Pointer("Asset.Bank.Checking_Account"),
+            Description: sdkgo.Pointer("Main checking account"),
+            OpeningBalance: sdkgo.Pointer[float64](75000),
+            CurrentBalance: sdkgo.Pointer[float64](20000),
             Currency: components.CurrencyUsd.ToPointer(),
-            TaxType: sdkgo.String("NONE"),
+            TaxType: sdkgo.Pointer("NONE"),
             TaxRate: &components.LinkedTaxRateInput{
-                ID: sdkgo.String("123456"),
-                Rate: sdkgo.Float64(10),
+                ID: sdkgo.Pointer("123456"),
+                Rate: sdkgo.Pointer[float64](10),
             },
-            Level: sdkgo.Float64(1),
-            Active: sdkgo.Bool(true),
+            Level: sdkgo.Pointer[float64](1),
+            Active: sdkgo.Pointer(true),
             Status: components.AccountStatusActive.ToPointer(),
-            Header: sdkgo.Bool(true),
+            Header: sdkgo.Pointer(true),
             BankAccount: &components.BankAccount{
-                BankName: sdkgo.String("Monzo"),
-                AccountNumber: sdkgo.String("123465"),
-                AccountName: sdkgo.String("SPACEX LLC"),
+                BankName: sdkgo.Pointer("Monzo"),
+                AccountNumber: sdkgo.Pointer("123465"),
+                AccountName: sdkgo.Pointer("SPACEX LLC"),
                 AccountType: components.AccountTypeCreditCard.ToPointer(),
-                Iban: sdkgo.String("CH2989144532982975332"),
-                Bic: sdkgo.String("AUDSCHGGXXX"),
-                RoutingNumber: sdkgo.String("012345678"),
-                BsbNumber: sdkgo.String("062-001"),
-                BranchIdentifier: sdkgo.String("001"),
-                BankCode: sdkgo.String("BNH"),
+                Iban: sdkgo.Pointer("CH2989144532982975332"),
+                Bic: sdkgo.Pointer("AUDSCHGGXXX"),
+                RoutingNumber: sdkgo.Pointer("012345678"),
+                BsbNumber: sdkgo.Pointer("062-001"),
+                BranchIdentifier: sdkgo.Pointer("001"),
+                BankCode: sdkgo.Pointer("BNH"),
                 Currency: components.CurrencyUsd.ToPointer(),
             },
             ParentAccount: &components.ParentAccount{
-                ID: sdkgo.String("12345"),
-                Name: sdkgo.String("Bank Accounts"),
-                DisplayID: sdkgo.String("1-1100"),
+                ID: sdkgo.Pointer("12345"),
+                Name: sdkgo.Pointer("Bank Accounts"),
+                DisplayID: sdkgo.Pointer("1-1100"),
             },
-            SubAccount: sdkgo.Bool(false),
+            SubAccount: sdkgo.Pointer(false),
             LastReconciliationDate: types.MustNewDateFromString("2020-09-30"),
             CustomFields: []components.CustomField{
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
                 },
                 components.CustomField{
-                    ID: sdkgo.String("2389328923893298"),
-                    Name: sdkgo.String("employee_level"),
-                    Description: sdkgo.String("Employee Level"),
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
                     Value: sdkgo.Pointer(components.CreateValueStr(
                         "Uses Salesforce and Marketo",
                     )),
                 },
             },
-            RowVersion: sdkgo.String("1-12345"),
+            RowVersion: sdkgo.Pointer("1-12345"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -498,7 +498,7 @@ func main() {
 
     res, err := s.Accounting.LedgerAccounts.Delete(ctx, operations.AccountingLedgerAccountsDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

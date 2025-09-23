@@ -19,51 +19,51 @@ type GetCreditNoteResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetCreditNoteResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetCreditNoteResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetCreditNoteResponse) GetStatus() string {
-	if o == nil {
+func (g *GetCreditNoteResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetCreditNoteResponse) GetService() string {
-	if o == nil {
+func (g *GetCreditNoteResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetCreditNoteResponse) GetResource() string {
-	if o == nil {
+func (g *GetCreditNoteResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetCreditNoteResponse) GetOperation() string {
-	if o == nil {
+func (g *GetCreditNoteResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetCreditNoteResponse) GetData() CreditNote {
-	if o == nil {
+func (g *GetCreditNoteResponse) GetData() CreditNote {
+	if g == nil {
 		return CreditNote{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetCreditNoteResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetCreditNoteResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

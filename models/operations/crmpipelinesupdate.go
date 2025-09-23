@@ -14,18 +14,18 @@ type CrmPipelinesUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmPipelinesUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmPipelinesUpdateGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmPipelinesUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmPipelinesUpdateGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmPipelinesUpdateRequest struct {
@@ -53,46 +53,46 @@ func (c *CrmPipelinesUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmPipelinesUpdateRequest) GetID() string {
-	if o == nil {
+func (c *CrmPipelinesUpdateRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CrmPipelinesUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmPipelinesUpdateRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmPipelinesUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmPipelinesUpdateRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmPipelinesUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmPipelinesUpdateRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmPipelinesUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmPipelinesUpdateRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmPipelinesUpdateRequest) GetPipeline() components.PipelineInput {
-	if o == nil {
+func (c *CrmPipelinesUpdateRequest) GetPipeline() components.PipelineInput {
+	if c == nil {
 		return components.PipelineInput{}
 	}
-	return o.Pipeline
+	return c.Pipeline
 }
 
 type CrmPipelinesUpdateResponse struct {
@@ -103,23 +103,23 @@ type CrmPipelinesUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmPipelinesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmPipelinesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmPipelinesUpdateResponse) GetUpdatePipelineResponse() *components.UpdatePipelineResponse {
-	if o == nil {
+func (c *CrmPipelinesUpdateResponse) GetUpdatePipelineResponse() *components.UpdatePipelineResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatePipelineResponse
+	return c.UpdatePipelineResponse
 }
 
-func (o *CrmPipelinesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmPipelinesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

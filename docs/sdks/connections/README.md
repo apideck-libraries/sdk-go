@@ -41,7 +41,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Vault.Connections.List(ctx, sdkgo.String("crm"), sdkgo.Bool(true))
+    res, err := s.Vault.Connections.List(ctx, sdkgo.Pointer("crm"), sdkgo.Pointer(true))
     if err != nil {
         log.Fatal(err)
     }
@@ -171,7 +171,7 @@ func main() {
         ServiceID: "pipedrive",
         UnifiedAPI: "crm",
         Connection: components.ConnectionInput{
-            Enabled: sdkgo.Bool(true),
+            Enabled: sdkgo.Pointer(true),
             Settings: map[string]any{
                 "instance_url": "https://eu28.salesforce.com",
                 "api_key": "12345xxxxxx",
@@ -185,10 +185,10 @@ func main() {
             },
             Configuration: []components.ConnectionConfiguration{
                 components.ConnectionConfiguration{
-                    Resource: sdkgo.String("leads"),
+                    Resource: sdkgo.Pointer("leads"),
                     Defaults: []components.ConnectionDefaults{
                         components.ConnectionDefaults{
-                            ID: sdkgo.String("ProductInterest"),
+                            ID: sdkgo.Pointer("ProductInterest"),
                             Options: []components.FormFieldOption{
                                 components.CreateFormFieldOptionGroup(
                                     components.FormFieldOptionGroup{
@@ -209,7 +209,7 @@ func main() {
                             )),
                         },
                         components.ConnectionDefaults{
-                            ID: sdkgo.String("ProductInterest"),
+                            ID: sdkgo.Pointer("ProductInterest"),
                             Options: []components.FormFieldOption{
                                 components.CreateFormFieldOptionGroup(
                                     components.FormFieldOptionGroup{
@@ -232,10 +232,10 @@ func main() {
                     },
                 },
                 components.ConnectionConfiguration{
-                    Resource: sdkgo.String("leads"),
+                    Resource: sdkgo.Pointer("leads"),
                     Defaults: []components.ConnectionDefaults{
                         components.ConnectionDefaults{
-                            ID: sdkgo.String("ProductInterest"),
+                            ID: sdkgo.Pointer("ProductInterest"),
                             Options: []components.FormFieldOption{
                                 components.CreateFormFieldOptionGroup(
                                     components.FormFieldOptionGroup{
@@ -256,7 +256,7 @@ func main() {
                             )),
                         },
                         components.ConnectionDefaults{
-                            ID: sdkgo.String("ProductInterest"),
+                            ID: sdkgo.Pointer("ProductInterest"),
                             Options: []components.FormFieldOption{
                                 components.CreateFormFieldOptionGroup(
                                     components.FormFieldOptionGroup{
@@ -281,13 +281,13 @@ func main() {
             },
             CustomMappings: []components.CustomMappingInput{
                 components.CustomMappingInput{
-                    Value: sdkgo.String("$.root.training.first_aid"),
+                    Value: sdkgo.Pointer("$.root.training.first_aid"),
                 },
                 components.CustomMappingInput{
-                    Value: sdkgo.String("$.root.training.first_aid"),
+                    Value: sdkgo.Pointer("$.root.training.first_aid"),
                 },
                 components.CustomMappingInput{
-                    Value: sdkgo.String("$.root.training.first_aid"),
+                    Value: sdkgo.Pointer("$.root.training.first_aid"),
                 },
             },
         },
@@ -420,8 +420,8 @@ func main() {
         UnifiedAPI: "crm",
         ConnectionImportData: components.ConnectionImportData{
             Credentials: &components.Credentials{
-                RefreshToken: sdkgo.String("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ"),
-                AccessToken: sdkgo.String("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"),
+                RefreshToken: sdkgo.Pointer("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ"),
+                AccessToken: sdkgo.Pointer("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"),
             },
             Settings: map[string]any{
                 "instance_url": "https://eu28.salesforce.com",

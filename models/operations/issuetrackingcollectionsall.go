@@ -14,18 +14,18 @@ type IssueTrackingCollectionsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *IssueTrackingCollectionsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionsAllGlobals) GetConsumerID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return i.ConsumerID
 }
 
-func (o *IssueTrackingCollectionsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionsAllGlobals) GetAppID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.AppID
+	return i.AppID
 }
 
 type IssueTrackingCollectionsAllRequest struct {
@@ -60,67 +60,67 @@ func (i *IssueTrackingCollectionsAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *IssueTrackingCollectionsAllRequest) GetRaw() *bool {
-	if o == nil {
+func (i *IssueTrackingCollectionsAllRequest) GetRaw() *bool {
+	if i == nil {
 		return nil
 	}
-	return o.Raw
+	return i.Raw
 }
 
-func (o *IssueTrackingCollectionsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionsAllRequest) GetConsumerID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return i.ConsumerID
 }
 
-func (o *IssueTrackingCollectionsAllRequest) GetAppID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionsAllRequest) GetAppID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.AppID
+	return i.AppID
 }
 
-func (o *IssueTrackingCollectionsAllRequest) GetServiceID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionsAllRequest) GetServiceID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ServiceID
+	return i.ServiceID
 }
 
-func (o *IssueTrackingCollectionsAllRequest) GetCursor() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionsAllRequest) GetCursor() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Cursor
+	return i.Cursor
 }
 
-func (o *IssueTrackingCollectionsAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (i *IssueTrackingCollectionsAllRequest) GetLimit() *int64 {
+	if i == nil {
 		return nil
 	}
-	return o.Limit
+	return i.Limit
 }
 
-func (o *IssueTrackingCollectionsAllRequest) GetSort() *components.CollectionsSort {
-	if o == nil {
+func (i *IssueTrackingCollectionsAllRequest) GetSort() *components.CollectionsSort {
+	if i == nil {
 		return nil
 	}
-	return o.Sort
+	return i.Sort
 }
 
-func (o *IssueTrackingCollectionsAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (i *IssueTrackingCollectionsAllRequest) GetPassThrough() map[string]any {
+	if i == nil {
 		return nil
 	}
-	return o.PassThrough
+	return i.PassThrough
 }
 
-func (o *IssueTrackingCollectionsAllRequest) GetFields() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionsAllRequest) GetFields() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Fields
+	return i.Fields
 }
 
 type IssueTrackingCollectionsAllResponse struct {
@@ -133,23 +133,23 @@ type IssueTrackingCollectionsAllResponse struct {
 	Next func() (*IssueTrackingCollectionsAllResponse, error)
 }
 
-func (o *IssueTrackingCollectionsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (i *IssueTrackingCollectionsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if i == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return i.HTTPMeta
 }
 
-func (o *IssueTrackingCollectionsAllResponse) GetGetCollectionsResponse() *components.GetCollectionsResponse {
-	if o == nil {
+func (i *IssueTrackingCollectionsAllResponse) GetGetCollectionsResponse() *components.GetCollectionsResponse {
+	if i == nil {
 		return nil
 	}
-	return o.GetCollectionsResponse
+	return i.GetCollectionsResponse
 }
 
-func (o *IssueTrackingCollectionsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (i *IssueTrackingCollectionsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if i == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return i.UnexpectedErrorResponse
 }

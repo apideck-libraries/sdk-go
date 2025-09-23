@@ -19,51 +19,51 @@ type GetTaxRateResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetTaxRateResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetTaxRateResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetTaxRateResponse) GetStatus() string {
-	if o == nil {
+func (g *GetTaxRateResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetTaxRateResponse) GetService() string {
-	if o == nil {
+func (g *GetTaxRateResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetTaxRateResponse) GetResource() string {
-	if o == nil {
+func (g *GetTaxRateResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetTaxRateResponse) GetOperation() string {
-	if o == nil {
+func (g *GetTaxRateResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetTaxRateResponse) GetData() TaxRate {
-	if o == nil {
+func (g *GetTaxRateResponse) GetData() TaxRate {
+	if g == nil {
 		return TaxRate{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetTaxRateResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetTaxRateResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

@@ -46,93 +46,93 @@ func (a *Attachment) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Attachment) GetID() *string {
-	if o == nil {
+func (a *Attachment) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *Attachment) GetDisplayID() *string {
-	if o == nil {
+func (a *Attachment) GetDisplayID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.DisplayID
+	return a.DisplayID
 }
 
-func (o *Attachment) GetName() *string {
-	if o == nil {
+func (a *Attachment) GetName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Name
+	return a.Name
 }
 
-func (o *Attachment) GetMimeType() *string {
-	if o == nil {
+func (a *Attachment) GetMimeType() *string {
+	if a == nil {
 		return nil
 	}
-	return o.MimeType
+	return a.MimeType
 }
 
-func (o *Attachment) GetSize() *int64 {
-	if o == nil {
+func (a *Attachment) GetSize() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.Size
+	return a.Size
 }
 
-func (o *Attachment) GetReference() *AttachmentReference {
-	if o == nil {
+func (a *Attachment) GetReference() *AttachmentReference {
+	if a == nil {
 		return nil
 	}
-	return o.Reference
+	return a.Reference
 }
 
-func (o *Attachment) GetDescription() *string {
-	if o == nil {
+func (a *Attachment) GetDescription() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Description
+	return a.Description
 }
 
-func (o *Attachment) GetParentFolderID() *string {
-	if o == nil {
+func (a *Attachment) GetParentFolderID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ParentFolderID
+	return a.ParentFolderID
 }
 
-func (o *Attachment) GetUpdatedBy() *string {
-	if o == nil {
+func (a *Attachment) GetUpdatedBy() *string {
+	if a == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return a.UpdatedBy
 }
 
-func (o *Attachment) GetCreatedBy() *string {
-	if o == nil {
+func (a *Attachment) GetCreatedBy() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return a.CreatedBy
 }
 
-func (o *Attachment) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (a *Attachment) GetUpdatedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return a.UpdatedAt
 }
 
-func (o *Attachment) GetCreatedAt() *time.Time {
-	if o == nil {
+func (a *Attachment) GetCreatedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return a.CreatedAt
 }
 
-func (o *Attachment) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (a *Attachment) GetPassThrough() []PassThroughBody {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }

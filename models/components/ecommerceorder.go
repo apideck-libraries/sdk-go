@@ -153,177 +153,177 @@ func (e *EcommerceOrder) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *EcommerceOrder) GetID() string {
-	if o == nil {
+func (e *EcommerceOrder) GetID() string {
+	if e == nil {
 		return ""
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *EcommerceOrder) GetOrderNumber() *string {
-	if o == nil {
+func (e *EcommerceOrder) GetOrderNumber() *string {
+	if e == nil {
 		return nil
 	}
-	return o.OrderNumber
+	return e.OrderNumber
 }
 
-func (o *EcommerceOrder) GetCurrency() *Currency {
-	if o == nil {
+func (e *EcommerceOrder) GetCurrency() *Currency {
+	if e == nil {
 		return nil
 	}
-	return o.Currency
+	return e.Currency
 }
 
-func (o *EcommerceOrder) GetDiscounts() []EcommerceDiscount {
-	if o == nil {
+func (e *EcommerceOrder) GetDiscounts() []EcommerceDiscount {
+	if e == nil {
 		return nil
 	}
-	return o.Discounts
+	return e.Discounts
 }
 
-func (o *EcommerceOrder) GetSubTotal() *string {
-	if o == nil {
+func (e *EcommerceOrder) GetSubTotal() *string {
+	if e == nil {
 		return nil
 	}
-	return o.SubTotal
+	return e.SubTotal
 }
 
-func (o *EcommerceOrder) GetShippingCost() *string {
-	if o == nil {
+func (e *EcommerceOrder) GetShippingCost() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ShippingCost
+	return e.ShippingCost
 }
 
-func (o *EcommerceOrder) GetCouponDiscount() *string {
-	if o == nil {
+func (e *EcommerceOrder) GetCouponDiscount() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CouponDiscount
+	return e.CouponDiscount
 }
 
-func (o *EcommerceOrder) GetTotalDiscount() *string {
-	if o == nil {
+func (e *EcommerceOrder) GetTotalDiscount() *string {
+	if e == nil {
 		return nil
 	}
-	return o.TotalDiscount
+	return e.TotalDiscount
 }
 
-func (o *EcommerceOrder) GetTotalTax() *string {
-	if o == nil {
+func (e *EcommerceOrder) GetTotalTax() *string {
+	if e == nil {
 		return nil
 	}
-	return o.TotalTax
+	return e.TotalTax
 }
 
-func (o *EcommerceOrder) GetTotalAmount() *string {
-	if o == nil {
+func (e *EcommerceOrder) GetTotalAmount() *string {
+	if e == nil {
 		return nil
 	}
-	return o.TotalAmount
+	return e.TotalAmount
 }
 
-func (o *EcommerceOrder) GetRefundedAmount() *string {
-	if o == nil {
+func (e *EcommerceOrder) GetRefundedAmount() *string {
+	if e == nil {
 		return nil
 	}
-	return o.RefundedAmount
+	return e.RefundedAmount
 }
 
-func (o *EcommerceOrder) GetStatus() *EcommerceOrderStatus {
-	if o == nil {
+func (e *EcommerceOrder) GetStatus() *EcommerceOrderStatus {
+	if e == nil {
 		return nil
 	}
-	return o.Status
+	return e.Status
 }
 
-func (o *EcommerceOrder) GetPaymentStatus() *EcommerceOrderPaymentStatus {
-	if o == nil {
+func (e *EcommerceOrder) GetPaymentStatus() *EcommerceOrderPaymentStatus {
+	if e == nil {
 		return nil
 	}
-	return o.PaymentStatus
+	return e.PaymentStatus
 }
 
-func (o *EcommerceOrder) GetFulfillmentStatus() *FulfillmentStatus {
-	if o == nil {
+func (e *EcommerceOrder) GetFulfillmentStatus() *FulfillmentStatus {
+	if e == nil {
 		return nil
 	}
-	return o.FulfillmentStatus
+	return e.FulfillmentStatus
 }
 
-func (o *EcommerceOrder) GetPaymentMethod() *string {
-	if o == nil {
+func (e *EcommerceOrder) GetPaymentMethod() *string {
+	if e == nil {
 		return nil
 	}
-	return o.PaymentMethod
+	return e.PaymentMethod
 }
 
-func (o *EcommerceOrder) GetCustomer() *LinkedEcommerceCustomer {
-	if o == nil {
+func (e *EcommerceOrder) GetCustomer() *LinkedEcommerceCustomer {
+	if e == nil {
 		return nil
 	}
-	return o.Customer
+	return e.Customer
 }
 
-func (o *EcommerceOrder) GetBillingAddress() *EcommerceAddress {
-	if o == nil {
+func (e *EcommerceOrder) GetBillingAddress() *EcommerceAddress {
+	if e == nil {
 		return nil
 	}
-	return o.BillingAddress
+	return e.BillingAddress
 }
 
-func (o *EcommerceOrder) GetShippingAddress() *EcommerceAddress {
-	if o == nil {
+func (e *EcommerceOrder) GetShippingAddress() *EcommerceAddress {
+	if e == nil {
 		return nil
 	}
-	return o.ShippingAddress
+	return e.ShippingAddress
 }
 
-func (o *EcommerceOrder) GetTracking() []TrackingItem {
-	if o == nil {
+func (e *EcommerceOrder) GetTracking() []TrackingItem {
+	if e == nil {
 		return nil
 	}
-	return o.Tracking
+	return e.Tracking
 }
 
-func (o *EcommerceOrder) GetLineItems() []EcommerceOrderLineItem {
-	if o == nil {
+func (e *EcommerceOrder) GetLineItems() []EcommerceOrderLineItem {
+	if e == nil {
 		return nil
 	}
-	return o.LineItems
+	return e.LineItems
 }
 
-func (o *EcommerceOrder) GetNote() *string {
-	if o == nil {
+func (e *EcommerceOrder) GetNote() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Note
+	return e.Note
 }
 
-func (o *EcommerceOrder) GetRefunds() []EcommerceOrderRefund {
-	if o == nil {
+func (e *EcommerceOrder) GetRefunds() []EcommerceOrderRefund {
+	if e == nil {
 		return nil
 	}
-	return o.Refunds
+	return e.Refunds
 }
 
-func (o *EcommerceOrder) GetCustomMappings() map[string]any {
-	if o == nil {
+func (e *EcommerceOrder) GetCustomMappings() map[string]any {
+	if e == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return e.CustomMappings
 }
 
-func (o *EcommerceOrder) GetCreatedAt() *time.Time {
-	if o == nil {
+func (e *EcommerceOrder) GetCreatedAt() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return e.CreatedAt
 }
 
-func (o *EcommerceOrder) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (e *EcommerceOrder) GetUpdatedAt() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return e.UpdatedAt
 }

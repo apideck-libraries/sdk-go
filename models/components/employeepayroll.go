@@ -25,72 +25,72 @@ type EmployeePayroll struct {
 	Compensations []Compensation `json:"compensations,omitempty"`
 }
 
-func (o *EmployeePayroll) GetID() *string {
-	if o == nil {
+func (e *EmployeePayroll) GetID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *EmployeePayroll) GetEmployeeID() *string {
-	if o == nil {
+func (e *EmployeePayroll) GetEmployeeID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.EmployeeID
+	return e.EmployeeID
 }
 
-func (o *EmployeePayroll) GetCompanyID() *string {
-	if o == nil {
+func (e *EmployeePayroll) GetCompanyID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CompanyID
+	return e.CompanyID
 }
 
-func (o *EmployeePayroll) GetProcessed() *bool {
-	if o == nil {
+func (e *EmployeePayroll) GetProcessed() *bool {
+	if e == nil {
 		return nil
 	}
-	return o.Processed
+	return e.Processed
 }
 
-func (o *EmployeePayroll) GetProcessedDate() *string {
-	if o == nil {
+func (e *EmployeePayroll) GetProcessedDate() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ProcessedDate
+	return e.ProcessedDate
 }
 
-func (o *EmployeePayroll) GetCheckDate() *string {
-	if o == nil {
+func (e *EmployeePayroll) GetCheckDate() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CheckDate
+	return e.CheckDate
 }
 
-func (o *EmployeePayroll) GetStartDate() *string {
-	if o == nil {
+func (e *EmployeePayroll) GetStartDate() *string {
+	if e == nil {
 		return nil
 	}
-	return o.StartDate
+	return e.StartDate
 }
 
-func (o *EmployeePayroll) GetEndDate() *string {
-	if o == nil {
+func (e *EmployeePayroll) GetEndDate() *string {
+	if e == nil {
 		return nil
 	}
-	return o.EndDate
+	return e.EndDate
 }
 
-func (o *EmployeePayroll) GetTotals() *PayrollTotals {
-	if o == nil {
+func (e *EmployeePayroll) GetTotals() *PayrollTotals {
+	if e == nil {
 		return nil
 	}
-	return o.Totals
+	return e.Totals
 }
 
-func (o *EmployeePayroll) GetCompensations() []Compensation {
-	if o == nil {
+func (e *EmployeePayroll) GetCompensations() []Compensation {
+	if e == nil {
 		return nil
 	}
-	return o.Compensations
+	return e.Compensations
 }

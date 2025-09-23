@@ -39,7 +39,7 @@ func main() {
         UnifiedAPI: "crm",
         ServiceID: "pipedrive",
         Resource: "leads",
-        ResourceID: sdkgo.String("1234"),
+        ResourceID: sdkgo.Pointer("1234"),
     })
     if err != nil {
         log.Fatal(err)

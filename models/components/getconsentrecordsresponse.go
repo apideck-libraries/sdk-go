@@ -13,30 +13,30 @@ type GetConsentRecordsResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetConsentRecordsResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetConsentRecordsResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetConsentRecordsResponse) GetStatus() string {
-	if o == nil {
+func (g *GetConsentRecordsResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetConsentRecordsResponse) GetData() []ConsentRecord {
-	if o == nil {
+func (g *GetConsentRecordsResponse) GetData() []ConsentRecord {
+	if g == nil {
 		return []ConsentRecord{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetConsentRecordsResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetConsentRecordsResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

@@ -30,30 +30,30 @@ func (t *TrackingItem) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *TrackingItem) GetProvider() *string {
-	if o == nil {
+func (t *TrackingItem) GetProvider() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Provider
+	return t.Provider
 }
 
-func (o *TrackingItem) GetNumber() *string {
-	if o == nil {
+func (t *TrackingItem) GetNumber() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Number
+	return t.Number
 }
 
-func (o *TrackingItem) GetURL() *string {
-	if o == nil {
+func (t *TrackingItem) GetURL() *string {
+	if t == nil {
 		return nil
 	}
-	return o.URL
+	return t.URL
 }
 
-func (o *TrackingItem) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (t *TrackingItem) GetUpdatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return t.UpdatedAt
 }

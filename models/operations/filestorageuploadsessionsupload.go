@@ -18,18 +18,18 @@ type FileStorageUploadSessionsUploadGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *FileStorageUploadSessionsUploadGlobals) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageUploadSessionsUploadGlobals) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageUploadSessionsUploadGlobals) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageUploadSessionsUploadGlobals) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
 type FileStorageUploadSessionsUploadRequest struct {
@@ -62,60 +62,60 @@ func (f *FileStorageUploadSessionsUploadRequest) UnmarshalJSON(data []byte) erro
 	return nil
 }
 
-func (o *FileStorageUploadSessionsUploadRequest) GetID() string {
-	if o == nil {
+func (f *FileStorageUploadSessionsUploadRequest) GetID() string {
+	if f == nil {
 		return ""
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *FileStorageUploadSessionsUploadRequest) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageUploadSessionsUploadRequest) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageUploadSessionsUploadRequest) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageUploadSessionsUploadRequest) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
-func (o *FileStorageUploadSessionsUploadRequest) GetServiceID() *string {
-	if o == nil {
+func (f *FileStorageUploadSessionsUploadRequest) GetServiceID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ServiceID
+	return f.ServiceID
 }
 
-func (o *FileStorageUploadSessionsUploadRequest) GetPartNumber() float64 {
-	if o == nil {
+func (f *FileStorageUploadSessionsUploadRequest) GetPartNumber() float64 {
+	if f == nil {
 		return 0.0
 	}
-	return o.PartNumber
+	return f.PartNumber
 }
 
-func (o *FileStorageUploadSessionsUploadRequest) GetDigest() *string {
-	if o == nil {
+func (f *FileStorageUploadSessionsUploadRequest) GetDigest() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Digest
+	return f.Digest
 }
 
-func (o *FileStorageUploadSessionsUploadRequest) GetRaw() *bool {
-	if o == nil {
+func (f *FileStorageUploadSessionsUploadRequest) GetRaw() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Raw
+	return f.Raw
 }
 
-func (o *FileStorageUploadSessionsUploadRequest) GetRequestBody() any {
-	if o == nil {
+func (f *FileStorageUploadSessionsUploadRequest) GetRequestBody() any {
+	if f == nil {
 		return nil
 	}
-	return o.RequestBody
+	return f.RequestBody
 }
 
 type FileStorageUploadSessionsUploadResponse struct {
@@ -126,23 +126,23 @@ type FileStorageUploadSessionsUploadResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *FileStorageUploadSessionsUploadResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (f *FileStorageUploadSessionsUploadResponse) GetHTTPMeta() components.HTTPMetadata {
+	if f == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return f.HTTPMeta
 }
 
-func (o *FileStorageUploadSessionsUploadResponse) GetUpdateUploadSessionResponse() *components.UpdateUploadSessionResponse {
-	if o == nil {
+func (f *FileStorageUploadSessionsUploadResponse) GetUpdateUploadSessionResponse() *components.UpdateUploadSessionResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UpdateUploadSessionResponse
+	return f.UpdateUploadSessionResponse
 }
 
-func (o *FileStorageUploadSessionsUploadResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (f *FileStorageUploadSessionsUploadResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return f.UnexpectedErrorResponse
 }

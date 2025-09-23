@@ -108,60 +108,60 @@ func (t *Transactions) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Transactions) GetPostedDate() time.Time {
-	if o == nil {
+func (t *Transactions) GetPostedDate() time.Time {
+	if t == nil {
 		return time.Time{}
 	}
-	return o.PostedDate
+	return t.PostedDate
 }
 
-func (o *Transactions) GetDescription() *string {
-	if o == nil {
+func (t *Transactions) GetDescription() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Description
+	return t.Description
 }
 
-func (o *Transactions) GetAmount() float64 {
-	if o == nil {
+func (t *Transactions) GetAmount() float64 {
+	if t == nil {
 		return 0.0
 	}
-	return o.Amount
+	return t.Amount
 }
 
-func (o *Transactions) GetCreditOrDebit() CreditOrDebit {
-	if o == nil {
+func (t *Transactions) GetCreditOrDebit() CreditOrDebit {
+	if t == nil {
 		return CreditOrDebit("")
 	}
-	return o.CreditOrDebit
+	return t.CreditOrDebit
 }
 
-func (o *Transactions) GetSourceTransactionID() string {
-	if o == nil {
+func (t *Transactions) GetSourceTransactionID() string {
+	if t == nil {
 		return ""
 	}
-	return o.SourceTransactionID
+	return t.SourceTransactionID
 }
 
-func (o *Transactions) GetCounterparty() *string {
-	if o == nil {
+func (t *Transactions) GetCounterparty() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Counterparty
+	return t.Counterparty
 }
 
-func (o *Transactions) GetReference() *string {
-	if o == nil {
+func (t *Transactions) GetReference() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Reference
+	return t.Reference
 }
 
-func (o *Transactions) GetTransactionType() *BankFeedStatementTransactionType {
-	if o == nil {
+func (t *Transactions) GetTransactionType() *BankFeedStatementTransactionType {
+	if t == nil {
 		return nil
 	}
-	return o.TransactionType
+	return t.TransactionType
 }
 
 type BankFeedStatement struct {
@@ -206,102 +206,102 @@ func (b *BankFeedStatement) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *BankFeedStatement) GetID() string {
-	if o == nil {
+func (b *BankFeedStatement) GetID() string {
+	if b == nil {
 		return ""
 	}
-	return o.ID
+	return b.ID
 }
 
-func (o *BankFeedStatement) GetBankFeedAccountID() *string {
-	if o == nil {
+func (b *BankFeedStatement) GetBankFeedAccountID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.BankFeedAccountID
+	return b.BankFeedAccountID
 }
 
-func (o *BankFeedStatement) GetStatus() *StatementStatus {
-	if o == nil {
+func (b *BankFeedStatement) GetStatus() *StatementStatus {
+	if b == nil {
 		return nil
 	}
-	return o.Status
+	return b.Status
 }
 
-func (o *BankFeedStatement) GetStartDate() *time.Time {
-	if o == nil {
+func (b *BankFeedStatement) GetStartDate() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.StartDate
+	return b.StartDate
 }
 
-func (o *BankFeedStatement) GetEndDate() *time.Time {
-	if o == nil {
+func (b *BankFeedStatement) GetEndDate() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.EndDate
+	return b.EndDate
 }
 
-func (o *BankFeedStatement) GetStartBalance() *float64 {
-	if o == nil {
+func (b *BankFeedStatement) GetStartBalance() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.StartBalance
+	return b.StartBalance
 }
 
-func (o *BankFeedStatement) GetStartBalanceCreditOrDebit() *CreditOrDebit {
-	if o == nil {
+func (b *BankFeedStatement) GetStartBalanceCreditOrDebit() *CreditOrDebit {
+	if b == nil {
 		return nil
 	}
-	return o.StartBalanceCreditOrDebit
+	return b.StartBalanceCreditOrDebit
 }
 
-func (o *BankFeedStatement) GetEndBalance() *float64 {
-	if o == nil {
+func (b *BankFeedStatement) GetEndBalance() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.EndBalance
+	return b.EndBalance
 }
 
-func (o *BankFeedStatement) GetEndBalanceCreditOrDebit() *CreditOrDebit {
-	if o == nil {
+func (b *BankFeedStatement) GetEndBalanceCreditOrDebit() *CreditOrDebit {
+	if b == nil {
 		return nil
 	}
-	return o.EndBalanceCreditOrDebit
+	return b.EndBalanceCreditOrDebit
 }
 
-func (o *BankFeedStatement) GetTransactions() []Transactions {
-	if o == nil {
+func (b *BankFeedStatement) GetTransactions() []Transactions {
+	if b == nil {
 		return nil
 	}
-	return o.Transactions
+	return b.Transactions
 }
 
-func (o *BankFeedStatement) GetCreatedAt() *time.Time {
-	if o == nil {
+func (b *BankFeedStatement) GetCreatedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return b.CreatedAt
 }
 
-func (o *BankFeedStatement) GetCreatedBy() *string {
-	if o == nil {
+func (b *BankFeedStatement) GetCreatedBy() *string {
+	if b == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return b.CreatedBy
 }
 
-func (o *BankFeedStatement) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (b *BankFeedStatement) GetUpdatedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return b.UpdatedAt
 }
 
-func (o *BankFeedStatement) GetUpdatedBy() *string {
-	if o == nil {
+func (b *BankFeedStatement) GetUpdatedBy() *string {
+	if b == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return b.UpdatedBy
 }
 
 type BankFeedStatementInput struct {
@@ -336,65 +336,65 @@ func (b *BankFeedStatementInput) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *BankFeedStatementInput) GetBankFeedAccountID() *string {
-	if o == nil {
+func (b *BankFeedStatementInput) GetBankFeedAccountID() *string {
+	if b == nil {
 		return nil
 	}
-	return o.BankFeedAccountID
+	return b.BankFeedAccountID
 }
 
-func (o *BankFeedStatementInput) GetStatus() *StatementStatus {
-	if o == nil {
+func (b *BankFeedStatementInput) GetStatus() *StatementStatus {
+	if b == nil {
 		return nil
 	}
-	return o.Status
+	return b.Status
 }
 
-func (o *BankFeedStatementInput) GetStartDate() *time.Time {
-	if o == nil {
+func (b *BankFeedStatementInput) GetStartDate() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.StartDate
+	return b.StartDate
 }
 
-func (o *BankFeedStatementInput) GetEndDate() *time.Time {
-	if o == nil {
+func (b *BankFeedStatementInput) GetEndDate() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.EndDate
+	return b.EndDate
 }
 
-func (o *BankFeedStatementInput) GetStartBalance() *float64 {
-	if o == nil {
+func (b *BankFeedStatementInput) GetStartBalance() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.StartBalance
+	return b.StartBalance
 }
 
-func (o *BankFeedStatementInput) GetStartBalanceCreditOrDebit() *CreditOrDebit {
-	if o == nil {
+func (b *BankFeedStatementInput) GetStartBalanceCreditOrDebit() *CreditOrDebit {
+	if b == nil {
 		return nil
 	}
-	return o.StartBalanceCreditOrDebit
+	return b.StartBalanceCreditOrDebit
 }
 
-func (o *BankFeedStatementInput) GetEndBalance() *float64 {
-	if o == nil {
+func (b *BankFeedStatementInput) GetEndBalance() *float64 {
+	if b == nil {
 		return nil
 	}
-	return o.EndBalance
+	return b.EndBalance
 }
 
-func (o *BankFeedStatementInput) GetEndBalanceCreditOrDebit() *CreditOrDebit {
-	if o == nil {
+func (b *BankFeedStatementInput) GetEndBalanceCreditOrDebit() *CreditOrDebit {
+	if b == nil {
 		return nil
 	}
-	return o.EndBalanceCreditOrDebit
+	return b.EndBalanceCreditOrDebit
 }
 
-func (o *BankFeedStatementInput) GetTransactions() []Transactions {
-	if o == nil {
+func (b *BankFeedStatementInput) GetTransactions() []Transactions {
+	if b == nil {
 		return nil
 	}
-	return o.Transactions
+	return b.Transactions
 }

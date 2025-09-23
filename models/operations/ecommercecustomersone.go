@@ -14,18 +14,18 @@ type EcommerceCustomersOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *EcommerceCustomersOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (e *EcommerceCustomersOneGlobals) GetConsumerID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return e.ConsumerID
 }
 
-func (o *EcommerceCustomersOneGlobals) GetAppID() *string {
-	if o == nil {
+func (e *EcommerceCustomersOneGlobals) GetAppID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.AppID
+	return e.AppID
 }
 
 type EcommerceCustomersOneRequest struct {
@@ -54,46 +54,46 @@ func (e *EcommerceCustomersOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *EcommerceCustomersOneRequest) GetID() string {
-	if o == nil {
+func (e *EcommerceCustomersOneRequest) GetID() string {
+	if e == nil {
 		return ""
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *EcommerceCustomersOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (e *EcommerceCustomersOneRequest) GetConsumerID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return e.ConsumerID
 }
 
-func (o *EcommerceCustomersOneRequest) GetAppID() *string {
-	if o == nil {
+func (e *EcommerceCustomersOneRequest) GetAppID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.AppID
+	return e.AppID
 }
 
-func (o *EcommerceCustomersOneRequest) GetServiceID() *string {
-	if o == nil {
+func (e *EcommerceCustomersOneRequest) GetServiceID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ServiceID
+	return e.ServiceID
 }
 
-func (o *EcommerceCustomersOneRequest) GetRaw() *bool {
-	if o == nil {
+func (e *EcommerceCustomersOneRequest) GetRaw() *bool {
+	if e == nil {
 		return nil
 	}
-	return o.Raw
+	return e.Raw
 }
 
-func (o *EcommerceCustomersOneRequest) GetFields() *string {
-	if o == nil {
+func (e *EcommerceCustomersOneRequest) GetFields() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Fields
+	return e.Fields
 }
 
 type EcommerceCustomersOneResponse struct {
@@ -104,23 +104,23 @@ type EcommerceCustomersOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *EcommerceCustomersOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (e *EcommerceCustomersOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if e == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return e.HTTPMeta
 }
 
-func (o *EcommerceCustomersOneResponse) GetGetEcommerceCustomerResponse() *components.GetEcommerceCustomerResponse {
-	if o == nil {
+func (e *EcommerceCustomersOneResponse) GetGetEcommerceCustomerResponse() *components.GetEcommerceCustomerResponse {
+	if e == nil {
 		return nil
 	}
-	return o.GetEcommerceCustomerResponse
+	return e.GetEcommerceCustomerResponse
 }
 
-func (o *EcommerceCustomersOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (e *EcommerceCustomersOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if e == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return e.UnexpectedErrorResponse
 }

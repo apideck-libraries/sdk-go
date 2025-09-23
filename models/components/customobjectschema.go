@@ -68,18 +68,18 @@ type CustomObjectSchemaOptions struct {
 	Label *string `json:"label,omitempty"`
 }
 
-func (o *CustomObjectSchemaOptions) GetValue() *string {
-	if o == nil {
+func (c *CustomObjectSchemaOptions) GetValue() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Value
+	return c.Value
 }
 
-func (o *CustomObjectSchemaOptions) GetLabel() *string {
-	if o == nil {
+func (c *CustomObjectSchemaOptions) GetLabel() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Label
+	return c.Label
 }
 
 type Fields struct {
@@ -94,53 +94,53 @@ type Fields struct {
 	DefaultValue *string `json:"default_value,omitempty"`
 }
 
-func (o *Fields) GetID() *string {
-	if o == nil {
+func (f *Fields) GetID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *Fields) GetName() *string {
-	if o == nil {
+func (f *Fields) GetName() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Name
+	return f.Name
 }
 
-func (o *Fields) GetDescription() *string {
-	if o == nil {
+func (f *Fields) GetDescription() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Description
+	return f.Description
 }
 
-func (o *Fields) GetType() *CustomObjectSchemaType {
-	if o == nil {
+func (f *Fields) GetType() *CustomObjectSchemaType {
+	if f == nil {
 		return nil
 	}
-	return o.Type
+	return f.Type
 }
 
-func (o *Fields) GetRequired() *bool {
-	if o == nil {
+func (f *Fields) GetRequired() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Required
+	return f.Required
 }
 
-func (o *Fields) GetOptions() []CustomObjectSchemaOptions {
-	if o == nil {
+func (f *Fields) GetOptions() []CustomObjectSchemaOptions {
+	if f == nil {
 		return nil
 	}
-	return o.Options
+	return f.Options
 }
 
-func (o *Fields) GetDefaultValue() *string {
-	if o == nil {
+func (f *Fields) GetDefaultValue() *string {
+	if f == nil {
 		return nil
 	}
-	return o.DefaultValue
+	return f.DefaultValue
 }
 
 type CustomObjectSchema struct {
@@ -168,81 +168,81 @@ type CustomObjectSchema struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *CustomObjectSchema) GetID() *string {
-	if o == nil {
+func (c *CustomObjectSchema) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CustomObjectSchema) GetName() *string {
-	if o == nil {
+func (c *CustomObjectSchema) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CustomObjectSchema) GetDescription() *string {
-	if o == nil {
+func (c *CustomObjectSchema) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CustomObjectSchema) GetFields() []Fields {
-	if o == nil {
+func (c *CustomObjectSchema) GetFields() []Fields {
+	if c == nil {
 		return nil
 	}
-	return o.Fields
+	return c.Fields
 }
 
-func (o *CustomObjectSchema) GetVisible() *bool {
-	if o == nil {
+func (c *CustomObjectSchema) GetVisible() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Visible
+	return c.Visible
 }
 
-func (o *CustomObjectSchema) GetActive() *bool {
-	if o == nil {
+func (c *CustomObjectSchema) GetActive() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Active
+	return c.Active
 }
 
-func (o *CustomObjectSchema) GetCreatedBy() *string {
-	if o == nil {
+func (c *CustomObjectSchema) GetCreatedBy() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return c.CreatedBy
 }
 
-func (o *CustomObjectSchema) GetUpdatedBy() *string {
-	if o == nil {
+func (c *CustomObjectSchema) GetUpdatedBy() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return c.UpdatedBy
 }
 
-func (o *CustomObjectSchema) GetUpdatedAt() *string {
-	if o == nil {
+func (c *CustomObjectSchema) GetUpdatedAt() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return c.UpdatedAt
 }
 
-func (o *CustomObjectSchema) GetCreatedAt() *string {
-	if o == nil {
+func (c *CustomObjectSchema) GetCreatedAt() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }
 
-func (o *CustomObjectSchema) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (c *CustomObjectSchema) GetPassThrough() []PassThroughBody {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }
 
 type CustomObjectSchemaInput struct {
@@ -260,44 +260,44 @@ type CustomObjectSchemaInput struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *CustomObjectSchemaInput) GetName() *string {
-	if o == nil {
+func (c *CustomObjectSchemaInput) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CustomObjectSchemaInput) GetDescription() *string {
-	if o == nil {
+func (c *CustomObjectSchemaInput) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CustomObjectSchemaInput) GetFields() []Fields {
-	if o == nil {
+func (c *CustomObjectSchemaInput) GetFields() []Fields {
+	if c == nil {
 		return nil
 	}
-	return o.Fields
+	return c.Fields
 }
 
-func (o *CustomObjectSchemaInput) GetVisible() *bool {
-	if o == nil {
+func (c *CustomObjectSchemaInput) GetVisible() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Visible
+	return c.Visible
 }
 
-func (o *CustomObjectSchemaInput) GetActive() *bool {
-	if o == nil {
+func (c *CustomObjectSchemaInput) GetActive() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Active
+	return c.Active
 }
 
-func (o *CustomObjectSchemaInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (c *CustomObjectSchemaInput) GetPassThrough() []PassThroughBody {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }

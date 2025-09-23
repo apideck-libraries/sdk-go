@@ -139,263 +139,263 @@ func (q *Quote) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Quote) GetID() *string {
-	if o == nil {
+func (q *Quote) GetID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.ID
+	return q.ID
 }
 
-func (o *Quote) GetDownstreamID() *string {
-	if o == nil {
+func (q *Quote) GetDownstreamID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.DownstreamID
+	return q.DownstreamID
 }
 
-func (o *Quote) GetNumber() *string {
-	if o == nil {
+func (q *Quote) GetNumber() *string {
+	if q == nil {
 		return nil
 	}
-	return o.Number
+	return q.Number
 }
 
-func (o *Quote) GetCustomer() *LinkedCustomer {
-	if o == nil {
+func (q *Quote) GetCustomer() *LinkedCustomer {
+	if q == nil {
 		return nil
 	}
-	return o.Customer
+	return q.Customer
 }
 
-func (o *Quote) GetInvoiceID() *string {
-	if o == nil {
+func (q *Quote) GetInvoiceID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.InvoiceID
+	return q.InvoiceID
 }
 
-func (o *Quote) GetSalesOrderID() *string {
-	if o == nil {
+func (q *Quote) GetSalesOrderID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.SalesOrderID
+	return q.SalesOrderID
 }
 
-func (o *Quote) GetCompanyID() *string {
-	if o == nil {
+func (q *Quote) GetCompanyID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.CompanyID
+	return q.CompanyID
 }
 
-func (o *Quote) GetDepartmentID() *string {
-	if o == nil {
+func (q *Quote) GetDepartmentID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return q.DepartmentID
 }
 
-func (o *Quote) GetProjectID() *string {
-	if o == nil {
+func (q *Quote) GetProjectID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.ProjectID
+	return q.ProjectID
 }
 
-func (o *Quote) GetQuoteDate() *types.Date {
-	if o == nil {
+func (q *Quote) GetQuoteDate() *types.Date {
+	if q == nil {
 		return nil
 	}
-	return o.QuoteDate
+	return q.QuoteDate
 }
 
-func (o *Quote) GetExpiryDate() *types.Date {
-	if o == nil {
+func (q *Quote) GetExpiryDate() *types.Date {
+	if q == nil {
 		return nil
 	}
-	return o.ExpiryDate
+	return q.ExpiryDate
 }
 
-func (o *Quote) GetTerms() *string {
-	if o == nil {
+func (q *Quote) GetTerms() *string {
+	if q == nil {
 		return nil
 	}
-	return o.Terms
+	return q.Terms
 }
 
-func (o *Quote) GetReference() *string {
-	if o == nil {
+func (q *Quote) GetReference() *string {
+	if q == nil {
 		return nil
 	}
-	return o.Reference
+	return q.Reference
 }
 
-func (o *Quote) GetStatus() *QuoteStatus {
-	if o == nil {
+func (q *Quote) GetStatus() *QuoteStatus {
+	if q == nil {
 		return nil
 	}
-	return o.Status
+	return q.Status
 }
 
-func (o *Quote) GetCurrency() *Currency {
-	if o == nil {
+func (q *Quote) GetCurrency() *Currency {
+	if q == nil {
 		return nil
 	}
-	return o.Currency
+	return q.Currency
 }
 
-func (o *Quote) GetCurrencyRate() *float64 {
-	if o == nil {
+func (q *Quote) GetCurrencyRate() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.CurrencyRate
+	return q.CurrencyRate
 }
 
-func (o *Quote) GetTaxInclusive() *bool {
-	if o == nil {
+func (q *Quote) GetTaxInclusive() *bool {
+	if q == nil {
 		return nil
 	}
-	return o.TaxInclusive
+	return q.TaxInclusive
 }
 
-func (o *Quote) GetSubTotal() *float64 {
-	if o == nil {
+func (q *Quote) GetSubTotal() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.SubTotal
+	return q.SubTotal
 }
 
-func (o *Quote) GetTotalTax() *float64 {
-	if o == nil {
+func (q *Quote) GetTotalTax() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.TotalTax
+	return q.TotalTax
 }
 
-func (o *Quote) GetTaxCode() *string {
-	if o == nil {
+func (q *Quote) GetTaxCode() *string {
+	if q == nil {
 		return nil
 	}
-	return o.TaxCode
+	return q.TaxCode
 }
 
-func (o *Quote) GetDiscountPercentage() *float64 {
-	if o == nil {
+func (q *Quote) GetDiscountPercentage() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.DiscountPercentage
+	return q.DiscountPercentage
 }
 
-func (o *Quote) GetDiscountAmount() *float64 {
-	if o == nil {
+func (q *Quote) GetDiscountAmount() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.DiscountAmount
+	return q.DiscountAmount
 }
 
-func (o *Quote) GetTotal() *float64 {
-	if o == nil {
+func (q *Quote) GetTotal() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.Total
+	return q.Total
 }
 
-func (o *Quote) GetCustomerMemo() *string {
-	if o == nil {
+func (q *Quote) GetCustomerMemo() *string {
+	if q == nil {
 		return nil
 	}
-	return o.CustomerMemo
+	return q.CustomerMemo
 }
 
-func (o *Quote) GetLineItems() []QuoteLineItem {
-	if o == nil {
+func (q *Quote) GetLineItems() []QuoteLineItem {
+	if q == nil {
 		return nil
 	}
-	return o.LineItems
+	return q.LineItems
 }
 
-func (o *Quote) GetBillingAddress() *Address {
-	if o == nil {
+func (q *Quote) GetBillingAddress() *Address {
+	if q == nil {
 		return nil
 	}
-	return o.BillingAddress
+	return q.BillingAddress
 }
 
-func (o *Quote) GetShippingAddress() *Address {
-	if o == nil {
+func (q *Quote) GetShippingAddress() *Address {
+	if q == nil {
 		return nil
 	}
-	return o.ShippingAddress
+	return q.ShippingAddress
 }
 
-func (o *Quote) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (q *Quote) GetTrackingCategories() []*LinkedTrackingCategory {
+	if q == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return q.TrackingCategories
 }
 
-func (o *Quote) GetTemplateID() *string {
-	if o == nil {
+func (q *Quote) GetTemplateID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.TemplateID
+	return q.TemplateID
 }
 
-func (o *Quote) GetSourceDocumentURL() *string {
-	if o == nil {
+func (q *Quote) GetSourceDocumentURL() *string {
+	if q == nil {
 		return nil
 	}
-	return o.SourceDocumentURL
+	return q.SourceDocumentURL
 }
 
-func (o *Quote) GetCustomFields() []CustomField {
-	if o == nil {
+func (q *Quote) GetCustomFields() []CustomField {
+	if q == nil {
 		return nil
 	}
-	return o.CustomFields
+	return q.CustomFields
 }
 
-func (o *Quote) GetRowVersion() *string {
-	if o == nil {
+func (q *Quote) GetRowVersion() *string {
+	if q == nil {
 		return nil
 	}
-	return o.RowVersion
+	return q.RowVersion
 }
 
-func (o *Quote) GetUpdatedBy() *string {
-	if o == nil {
+func (q *Quote) GetUpdatedBy() *string {
+	if q == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return q.UpdatedBy
 }
 
-func (o *Quote) GetCreatedBy() *string {
-	if o == nil {
+func (q *Quote) GetCreatedBy() *string {
+	if q == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return q.CreatedBy
 }
 
-func (o *Quote) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (q *Quote) GetUpdatedAt() *time.Time {
+	if q == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return q.UpdatedAt
 }
 
-func (o *Quote) GetCreatedAt() *time.Time {
-	if o == nil {
+func (q *Quote) GetCreatedAt() *time.Time {
+	if q == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return q.CreatedAt
 }
 
-func (o *Quote) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (q *Quote) GetPassThrough() []PassThroughBody {
+	if q == nil {
 		return nil
 	}
-	return o.PassThrough
+	return q.PassThrough
 }
 
 type QuoteInput struct {
@@ -468,212 +468,212 @@ func (q *QuoteInput) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *QuoteInput) GetNumber() *string {
-	if o == nil {
+func (q *QuoteInput) GetNumber() *string {
+	if q == nil {
 		return nil
 	}
-	return o.Number
+	return q.Number
 }
 
-func (o *QuoteInput) GetCustomer() *LinkedCustomerInput {
-	if o == nil {
+func (q *QuoteInput) GetCustomer() *LinkedCustomerInput {
+	if q == nil {
 		return nil
 	}
-	return o.Customer
+	return q.Customer
 }
 
-func (o *QuoteInput) GetSalesOrderID() *string {
-	if o == nil {
+func (q *QuoteInput) GetSalesOrderID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.SalesOrderID
+	return q.SalesOrderID
 }
 
-func (o *QuoteInput) GetCompanyID() *string {
-	if o == nil {
+func (q *QuoteInput) GetCompanyID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.CompanyID
+	return q.CompanyID
 }
 
-func (o *QuoteInput) GetDepartmentID() *string {
-	if o == nil {
+func (q *QuoteInput) GetDepartmentID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return q.DepartmentID
 }
 
-func (o *QuoteInput) GetProjectID() *string {
-	if o == nil {
+func (q *QuoteInput) GetProjectID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.ProjectID
+	return q.ProjectID
 }
 
-func (o *QuoteInput) GetQuoteDate() *types.Date {
-	if o == nil {
+func (q *QuoteInput) GetQuoteDate() *types.Date {
+	if q == nil {
 		return nil
 	}
-	return o.QuoteDate
+	return q.QuoteDate
 }
 
-func (o *QuoteInput) GetExpiryDate() *types.Date {
-	if o == nil {
+func (q *QuoteInput) GetExpiryDate() *types.Date {
+	if q == nil {
 		return nil
 	}
-	return o.ExpiryDate
+	return q.ExpiryDate
 }
 
-func (o *QuoteInput) GetTerms() *string {
-	if o == nil {
+func (q *QuoteInput) GetTerms() *string {
+	if q == nil {
 		return nil
 	}
-	return o.Terms
+	return q.Terms
 }
 
-func (o *QuoteInput) GetReference() *string {
-	if o == nil {
+func (q *QuoteInput) GetReference() *string {
+	if q == nil {
 		return nil
 	}
-	return o.Reference
+	return q.Reference
 }
 
-func (o *QuoteInput) GetStatus() *QuoteStatus {
-	if o == nil {
+func (q *QuoteInput) GetStatus() *QuoteStatus {
+	if q == nil {
 		return nil
 	}
-	return o.Status
+	return q.Status
 }
 
-func (o *QuoteInput) GetCurrency() *Currency {
-	if o == nil {
+func (q *QuoteInput) GetCurrency() *Currency {
+	if q == nil {
 		return nil
 	}
-	return o.Currency
+	return q.Currency
 }
 
-func (o *QuoteInput) GetCurrencyRate() *float64 {
-	if o == nil {
+func (q *QuoteInput) GetCurrencyRate() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.CurrencyRate
+	return q.CurrencyRate
 }
 
-func (o *QuoteInput) GetTaxInclusive() *bool {
-	if o == nil {
+func (q *QuoteInput) GetTaxInclusive() *bool {
+	if q == nil {
 		return nil
 	}
-	return o.TaxInclusive
+	return q.TaxInclusive
 }
 
-func (o *QuoteInput) GetSubTotal() *float64 {
-	if o == nil {
+func (q *QuoteInput) GetSubTotal() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.SubTotal
+	return q.SubTotal
 }
 
-func (o *QuoteInput) GetTotalTax() *float64 {
-	if o == nil {
+func (q *QuoteInput) GetTotalTax() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.TotalTax
+	return q.TotalTax
 }
 
-func (o *QuoteInput) GetTaxCode() *string {
-	if o == nil {
+func (q *QuoteInput) GetTaxCode() *string {
+	if q == nil {
 		return nil
 	}
-	return o.TaxCode
+	return q.TaxCode
 }
 
-func (o *QuoteInput) GetDiscountPercentage() *float64 {
-	if o == nil {
+func (q *QuoteInput) GetDiscountPercentage() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.DiscountPercentage
+	return q.DiscountPercentage
 }
 
-func (o *QuoteInput) GetDiscountAmount() *float64 {
-	if o == nil {
+func (q *QuoteInput) GetDiscountAmount() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.DiscountAmount
+	return q.DiscountAmount
 }
 
-func (o *QuoteInput) GetTotal() *float64 {
-	if o == nil {
+func (q *QuoteInput) GetTotal() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.Total
+	return q.Total
 }
 
-func (o *QuoteInput) GetCustomerMemo() *string {
-	if o == nil {
+func (q *QuoteInput) GetCustomerMemo() *string {
+	if q == nil {
 		return nil
 	}
-	return o.CustomerMemo
+	return q.CustomerMemo
 }
 
-func (o *QuoteInput) GetLineItems() []QuoteLineItemInput {
-	if o == nil {
+func (q *QuoteInput) GetLineItems() []QuoteLineItemInput {
+	if q == nil {
 		return nil
 	}
-	return o.LineItems
+	return q.LineItems
 }
 
-func (o *QuoteInput) GetBillingAddress() *Address {
-	if o == nil {
+func (q *QuoteInput) GetBillingAddress() *Address {
+	if q == nil {
 		return nil
 	}
-	return o.BillingAddress
+	return q.BillingAddress
 }
 
-func (o *QuoteInput) GetShippingAddress() *Address {
-	if o == nil {
+func (q *QuoteInput) GetShippingAddress() *Address {
+	if q == nil {
 		return nil
 	}
-	return o.ShippingAddress
+	return q.ShippingAddress
 }
 
-func (o *QuoteInput) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (q *QuoteInput) GetTrackingCategories() []*LinkedTrackingCategory {
+	if q == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return q.TrackingCategories
 }
 
-func (o *QuoteInput) GetTemplateID() *string {
-	if o == nil {
+func (q *QuoteInput) GetTemplateID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.TemplateID
+	return q.TemplateID
 }
 
-func (o *QuoteInput) GetSourceDocumentURL() *string {
-	if o == nil {
+func (q *QuoteInput) GetSourceDocumentURL() *string {
+	if q == nil {
 		return nil
 	}
-	return o.SourceDocumentURL
+	return q.SourceDocumentURL
 }
 
-func (o *QuoteInput) GetCustomFields() []CustomField {
-	if o == nil {
+func (q *QuoteInput) GetCustomFields() []CustomField {
+	if q == nil {
 		return nil
 	}
-	return o.CustomFields
+	return q.CustomFields
 }
 
-func (o *QuoteInput) GetRowVersion() *string {
-	if o == nil {
+func (q *QuoteInput) GetRowVersion() *string {
+	if q == nil {
 		return nil
 	}
-	return o.RowVersion
+	return q.RowVersion
 }
 
-func (o *QuoteInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (q *QuoteInput) GetPassThrough() []PassThroughBody {
+	if q == nil {
 		return nil
 	}
-	return o.PassThrough
+	return q.PassThrough
 }

@@ -19,51 +19,51 @@ type GetJobResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetJobResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetJobResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetJobResponse) GetStatus() string {
-	if o == nil {
+func (g *GetJobResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetJobResponse) GetService() string {
-	if o == nil {
+func (g *GetJobResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetJobResponse) GetResource() string {
-	if o == nil {
+func (g *GetJobResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetJobResponse) GetOperation() string {
-	if o == nil {
+func (g *GetJobResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetJobResponse) GetData() Job {
-	if o == nil {
+func (g *GetJobResponse) GetData() Job {
+	if g == nil {
 		return Job{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetJobResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetJobResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

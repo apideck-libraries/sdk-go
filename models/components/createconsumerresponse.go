@@ -13,30 +13,30 @@ type CreateConsumerResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *CreateConsumerResponse) GetStatusCode() int64 {
-	if o == nil {
+func (c *CreateConsumerResponse) GetStatusCode() int64 {
+	if c == nil {
 		return 0
 	}
-	return o.StatusCode
+	return c.StatusCode
 }
 
-func (o *CreateConsumerResponse) GetStatus() string {
-	if o == nil {
+func (c *CreateConsumerResponse) GetStatus() string {
+	if c == nil {
 		return ""
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CreateConsumerResponse) GetData() Consumer {
-	if o == nil {
+func (c *CreateConsumerResponse) GetData() Consumer {
+	if c == nil {
 		return Consumer{}
 	}
-	return o.Data
+	return c.Data
 }
 
-func (o *CreateConsumerResponse) GetRaw() map[string]any {
-	if o == nil {
+func (c *CreateConsumerResponse) GetRaw() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }

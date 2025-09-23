@@ -14,18 +14,18 @@ type HrisPayrollsOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *HrisPayrollsOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisPayrollsOneGlobals) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisPayrollsOneGlobals) GetAppID() *string {
-	if o == nil {
+func (h *HrisPayrollsOneGlobals) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
 type HrisPayrollsOneRequest struct {
@@ -54,46 +54,46 @@ func (h *HrisPayrollsOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *HrisPayrollsOneRequest) GetPayrollID() string {
-	if o == nil {
+func (h *HrisPayrollsOneRequest) GetPayrollID() string {
+	if h == nil {
 		return ""
 	}
-	return o.PayrollID
+	return h.PayrollID
 }
 
-func (o *HrisPayrollsOneRequest) GetRaw() *bool {
-	if o == nil {
+func (h *HrisPayrollsOneRequest) GetRaw() *bool {
+	if h == nil {
 		return nil
 	}
-	return o.Raw
+	return h.Raw
 }
 
-func (o *HrisPayrollsOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisPayrollsOneRequest) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisPayrollsOneRequest) GetAppID() *string {
-	if o == nil {
+func (h *HrisPayrollsOneRequest) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
-func (o *HrisPayrollsOneRequest) GetServiceID() *string {
-	if o == nil {
+func (h *HrisPayrollsOneRequest) GetServiceID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ServiceID
+	return h.ServiceID
 }
 
-func (o *HrisPayrollsOneRequest) GetFields() *string {
-	if o == nil {
+func (h *HrisPayrollsOneRequest) GetFields() *string {
+	if h == nil {
 		return nil
 	}
-	return o.Fields
+	return h.Fields
 }
 
 type HrisPayrollsOneResponse struct {
@@ -104,23 +104,23 @@ type HrisPayrollsOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *HrisPayrollsOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (h *HrisPayrollsOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if h == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return h.HTTPMeta
 }
 
-func (o *HrisPayrollsOneResponse) GetGetPayrollResponse() *components.GetPayrollResponse {
-	if o == nil {
+func (h *HrisPayrollsOneResponse) GetGetPayrollResponse() *components.GetPayrollResponse {
+	if h == nil {
 		return nil
 	}
-	return o.GetPayrollResponse
+	return h.GetPayrollResponse
 }
 
-func (o *HrisPayrollsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (h *HrisPayrollsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if h == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return h.UnexpectedErrorResponse
 }

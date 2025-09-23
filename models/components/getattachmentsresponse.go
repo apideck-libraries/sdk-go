@@ -23,65 +23,65 @@ type GetAttachmentsResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetAttachmentsResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetAttachmentsResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetAttachmentsResponse) GetStatus() string {
-	if o == nil {
+func (g *GetAttachmentsResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetAttachmentsResponse) GetService() string {
-	if o == nil {
+func (g *GetAttachmentsResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetAttachmentsResponse) GetResource() string {
-	if o == nil {
+func (g *GetAttachmentsResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetAttachmentsResponse) GetOperation() string {
-	if o == nil {
+func (g *GetAttachmentsResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetAttachmentsResponse) GetData() []Attachment {
-	if o == nil {
+func (g *GetAttachmentsResponse) GetData() []Attachment {
+	if g == nil {
 		return []Attachment{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetAttachmentsResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetAttachmentsResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetAttachmentsResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetAttachmentsResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }
 
-func (o *GetAttachmentsResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetAttachmentsResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

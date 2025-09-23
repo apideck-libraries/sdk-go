@@ -72,72 +72,72 @@ func (w *Webhook) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Webhook) GetID() *string {
-	if o == nil {
+func (w *Webhook) GetID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.ID
+	return w.ID
 }
 
-func (o *Webhook) GetDescription() *string {
-	if o == nil {
+func (w *Webhook) GetDescription() *string {
+	if w == nil {
 		return nil
 	}
-	return o.Description
+	return w.Description
 }
 
-func (o *Webhook) GetUnifiedAPI() UnifiedAPIID {
-	if o == nil {
+func (w *Webhook) GetUnifiedAPI() UnifiedAPIID {
+	if w == nil {
 		return UnifiedAPIID("")
 	}
-	return o.UnifiedAPI
+	return w.UnifiedAPI
 }
 
-func (o *Webhook) GetStatus() Status {
-	if o == nil {
+func (w *Webhook) GetStatus() Status {
+	if w == nil {
 		return Status("")
 	}
-	return o.Status
+	return w.Status
 }
 
-func (o *Webhook) GetDisabledReason() *DisabledReason {
-	if o == nil {
+func (w *Webhook) GetDisabledReason() *DisabledReason {
+	if w == nil {
 		return nil
 	}
-	return o.DisabledReason
+	return w.DisabledReason
 }
 
-func (o *Webhook) GetDeliveryURL() string {
-	if o == nil {
+func (w *Webhook) GetDeliveryURL() string {
+	if w == nil {
 		return ""
 	}
-	return o.DeliveryURL
+	return w.DeliveryURL
 }
 
-func (o *Webhook) GetExecuteBaseURL() string {
-	if o == nil {
+func (w *Webhook) GetExecuteBaseURL() string {
+	if w == nil {
 		return ""
 	}
-	return o.ExecuteBaseURL
+	return w.ExecuteBaseURL
 }
 
-func (o *Webhook) GetEvents() []WebhookEventType {
-	if o == nil {
+func (w *Webhook) GetEvents() []WebhookEventType {
+	if w == nil {
 		return []WebhookEventType{}
 	}
-	return o.Events
+	return w.Events
 }
 
-func (o *Webhook) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (w *Webhook) GetUpdatedAt() *time.Time {
+	if w == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return w.UpdatedAt
 }
 
-func (o *Webhook) GetCreatedAt() *time.Time {
-	if o == nil {
+func (w *Webhook) GetCreatedAt() *time.Time {
+	if w == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return w.CreatedAt
 }

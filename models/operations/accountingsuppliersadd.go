@@ -14,18 +14,18 @@ type AccountingSuppliersAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingSuppliersAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingSuppliersAddGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingSuppliersAddGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingSuppliersAddGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingSuppliersAddRequest struct {
@@ -51,39 +51,39 @@ func (a *AccountingSuppliersAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingSuppliersAddRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingSuppliersAddRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingSuppliersAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingSuppliersAddRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingSuppliersAddRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingSuppliersAddRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingSuppliersAddRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingSuppliersAddRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingSuppliersAddRequest) GetSupplier() components.SupplierInput {
-	if o == nil {
+func (a *AccountingSuppliersAddRequest) GetSupplier() components.SupplierInput {
+	if a == nil {
 		return components.SupplierInput{}
 	}
-	return o.Supplier
+	return a.Supplier
 }
 
 type AccountingSuppliersAddResponse struct {
@@ -94,23 +94,23 @@ type AccountingSuppliersAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingSuppliersAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingSuppliersAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingSuppliersAddResponse) GetCreateSupplierResponse() *components.CreateSupplierResponse {
-	if o == nil {
+func (a *AccountingSuppliersAddResponse) GetCreateSupplierResponse() *components.CreateSupplierResponse {
+	if a == nil {
 		return nil
 	}
-	return o.CreateSupplierResponse
+	return a.CreateSupplierResponse
 }
 
-func (o *AccountingSuppliersAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingSuppliersAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

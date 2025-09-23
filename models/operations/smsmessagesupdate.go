@@ -14,18 +14,18 @@ type SmsMessagesUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *SmsMessagesUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (s *SmsMessagesUpdateGlobals) GetConsumerID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return s.ConsumerID
 }
 
-func (o *SmsMessagesUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (s *SmsMessagesUpdateGlobals) GetAppID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.AppID
+	return s.AppID
 }
 
 type SmsMessagesUpdateRequest struct {
@@ -53,46 +53,46 @@ func (s *SmsMessagesUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *SmsMessagesUpdateRequest) GetID() string {
-	if o == nil {
+func (s *SmsMessagesUpdateRequest) GetID() string {
+	if s == nil {
 		return ""
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SmsMessagesUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (s *SmsMessagesUpdateRequest) GetConsumerID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return s.ConsumerID
 }
 
-func (o *SmsMessagesUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (s *SmsMessagesUpdateRequest) GetAppID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.AppID
+	return s.AppID
 }
 
-func (o *SmsMessagesUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (s *SmsMessagesUpdateRequest) GetServiceID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ServiceID
+	return s.ServiceID
 }
 
-func (o *SmsMessagesUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (s *SmsMessagesUpdateRequest) GetRaw() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.Raw
+	return s.Raw
 }
 
-func (o *SmsMessagesUpdateRequest) GetMessage() components.MessageInput {
-	if o == nil {
+func (s *SmsMessagesUpdateRequest) GetMessage() components.MessageInput {
+	if s == nil {
 		return components.MessageInput{}
 	}
-	return o.Message
+	return s.Message
 }
 
 type SmsMessagesUpdateResponse struct {
@@ -103,23 +103,23 @@ type SmsMessagesUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *SmsMessagesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (s *SmsMessagesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if s == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return s.HTTPMeta
 }
 
-func (o *SmsMessagesUpdateResponse) GetUpdateMessageResponse() *components.UpdateMessageResponse {
-	if o == nil {
+func (s *SmsMessagesUpdateResponse) GetUpdateMessageResponse() *components.UpdateMessageResponse {
+	if s == nil {
 		return nil
 	}
-	return o.UpdateMessageResponse
+	return s.UpdateMessageResponse
 }
 
-func (o *SmsMessagesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (s *SmsMessagesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if s == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return s.UnexpectedErrorResponse
 }

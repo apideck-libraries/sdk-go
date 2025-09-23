@@ -15,37 +15,37 @@ type CreateWebhookRequest struct {
 	Events []WebhookEventType `json:"events"`
 }
 
-func (o *CreateWebhookRequest) GetDescription() *string {
-	if o == nil {
+func (c *CreateWebhookRequest) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateWebhookRequest) GetUnifiedAPI() UnifiedAPIID {
-	if o == nil {
+func (c *CreateWebhookRequest) GetUnifiedAPI() UnifiedAPIID {
+	if c == nil {
 		return UnifiedAPIID("")
 	}
-	return o.UnifiedAPI
+	return c.UnifiedAPI
 }
 
-func (o *CreateWebhookRequest) GetStatus() Status {
-	if o == nil {
+func (c *CreateWebhookRequest) GetStatus() Status {
+	if c == nil {
 		return Status("")
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CreateWebhookRequest) GetDeliveryURL() string {
-	if o == nil {
+func (c *CreateWebhookRequest) GetDeliveryURL() string {
+	if c == nil {
 		return ""
 	}
-	return o.DeliveryURL
+	return c.DeliveryURL
 }
 
-func (o *CreateWebhookRequest) GetEvents() []WebhookEventType {
-	if o == nil {
+func (c *CreateWebhookRequest) GetEvents() []WebhookEventType {
+	if c == nil {
 		return []WebhookEventType{}
 	}
-	return o.Events
+	return c.Events
 }

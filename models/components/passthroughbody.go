@@ -9,18 +9,18 @@ type ExtendPaths struct {
 	Value any `json:"value"`
 }
 
-func (o *ExtendPaths) GetPath() string {
-	if o == nil {
+func (e *ExtendPaths) GetPath() string {
+	if e == nil {
 		return ""
 	}
-	return o.Path
+	return e.Path
 }
 
-func (o *ExtendPaths) GetValue() any {
-	if o == nil {
+func (e *ExtendPaths) GetValue() any {
+	if e == nil {
 		return nil
 	}
-	return o.Value
+	return e.Value
 }
 
 type PassThroughBody struct {
@@ -34,30 +34,30 @@ type PassThroughBody struct {
 	ExtendPaths []ExtendPaths `json:"extend_paths,omitempty"`
 }
 
-func (o *PassThroughBody) GetServiceID() string {
-	if o == nil {
+func (p *PassThroughBody) GetServiceID() string {
+	if p == nil {
 		return ""
 	}
-	return o.ServiceID
+	return p.ServiceID
 }
 
-func (o *PassThroughBody) GetOperationID() *string {
-	if o == nil {
+func (p *PassThroughBody) GetOperationID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.OperationID
+	return p.OperationID
 }
 
-func (o *PassThroughBody) GetExtendObject() map[string]any {
-	if o == nil {
+func (p *PassThroughBody) GetExtendObject() map[string]any {
+	if p == nil {
 		return nil
 	}
-	return o.ExtendObject
+	return p.ExtendObject
 }
 
-func (o *PassThroughBody) GetExtendPaths() []ExtendPaths {
-	if o == nil {
+func (p *PassThroughBody) GetExtendPaths() []ExtendPaths {
+	if p == nil {
 		return nil
 	}
-	return o.ExtendPaths
+	return p.ExtendPaths
 }

@@ -11,23 +11,23 @@ type SocialLink struct {
 	Type *string `json:"type,omitempty"`
 }
 
-func (o *SocialLink) GetID() *string {
-	if o == nil {
+func (s *SocialLink) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SocialLink) GetURL() string {
-	if o == nil {
+func (s *SocialLink) GetURL() string {
+	if s == nil {
 		return ""
 	}
-	return o.URL
+	return s.URL
 }
 
-func (o *SocialLink) GetType() *string {
-	if o == nil {
+func (s *SocialLink) GetType() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Type
+	return s.Type
 }

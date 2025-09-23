@@ -11,23 +11,23 @@ type LinkedPurchaseOrder struct {
 	LineNumber *string `json:"line_number,omitempty"`
 }
 
-func (o *LinkedPurchaseOrder) GetID() *string {
-	if o == nil {
+func (l *LinkedPurchaseOrder) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinkedPurchaseOrder) GetLineID() *string {
-	if o == nil {
+func (l *LinkedPurchaseOrder) GetLineID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.LineID
+	return l.LineID
 }
 
-func (o *LinkedPurchaseOrder) GetLineNumber() *string {
-	if o == nil {
+func (l *LinkedPurchaseOrder) GetLineNumber() *string {
+	if l == nil {
 		return nil
 	}
-	return o.LineNumber
+	return l.LineNumber
 }

@@ -52,23 +52,23 @@ type Website struct {
 	Type *WebsiteType `json:"type,omitempty"`
 }
 
-func (o *Website) GetID() *string {
-	if o == nil {
+func (w *Website) GetID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.ID
+	return w.ID
 }
 
-func (o *Website) GetURL() string {
-	if o == nil {
+func (w *Website) GetURL() string {
+	if w == nil {
 		return ""
 	}
-	return o.URL
+	return w.URL
 }
 
-func (o *Website) GetType() *WebsiteType {
-	if o == nil {
+func (w *Website) GetType() *WebsiteType {
+	if w == nil {
 		return nil
 	}
-	return o.Type
+	return w.Type
 }

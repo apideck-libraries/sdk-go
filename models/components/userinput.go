@@ -40,128 +40,128 @@ type UserInput struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *UserInput) GetParentID() *string {
-	if o == nil {
+func (u *UserInput) GetParentID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ParentID
+	return u.ParentID
 }
 
-func (o *UserInput) GetUsername() *string {
-	if o == nil {
+func (u *UserInput) GetUsername() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Username
+	return u.Username
 }
 
-func (o *UserInput) GetFirstName() *string {
-	if o == nil {
+func (u *UserInput) GetFirstName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.FirstName
+	return u.FirstName
 }
 
-func (o *UserInput) GetLastName() *string {
-	if o == nil {
+func (u *UserInput) GetLastName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.LastName
+	return u.LastName
 }
 
-func (o *UserInput) GetTitle() *string {
-	if o == nil {
+func (u *UserInput) GetTitle() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Title
+	return u.Title
 }
 
-func (o *UserInput) GetDivision() *string {
-	if o == nil {
+func (u *UserInput) GetDivision() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Division
+	return u.Division
 }
 
-func (o *UserInput) GetDepartment() *string {
-	if o == nil {
+func (u *UserInput) GetDepartment() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Department
+	return u.Department
 }
 
-func (o *UserInput) GetCompanyName() *string {
-	if o == nil {
+func (u *UserInput) GetCompanyName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.CompanyName
+	return u.CompanyName
 }
 
-func (o *UserInput) GetEmployeeNumber() *string {
-	if o == nil {
+func (u *UserInput) GetEmployeeNumber() *string {
+	if u == nil {
 		return nil
 	}
-	return o.EmployeeNumber
+	return u.EmployeeNumber
 }
 
-func (o *UserInput) GetDescription() *string {
-	if o == nil {
+func (u *UserInput) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UserInput) GetImage() *string {
-	if o == nil {
+func (u *UserInput) GetImage() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Image
+	return u.Image
 }
 
-func (o *UserInput) GetLanguage() *string {
-	if o == nil {
+func (u *UserInput) GetLanguage() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Language
+	return u.Language
 }
 
-func (o *UserInput) GetStatus() *string {
-	if o == nil {
+func (u *UserInput) GetStatus() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Status
+	return u.Status
 }
 
-func (o *UserInput) GetPassword() *string {
-	if o == nil {
+func (u *UserInput) GetPassword() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Password
+	return u.Password
 }
 
-func (o *UserInput) GetAddresses() []Address {
-	if o == nil {
+func (u *UserInput) GetAddresses() []Address {
+	if u == nil {
 		return nil
 	}
-	return o.Addresses
+	return u.Addresses
 }
 
-func (o *UserInput) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
+func (u *UserInput) GetPhoneNumbers() []PhoneNumber {
+	if u == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return u.PhoneNumbers
 }
 
-func (o *UserInput) GetEmails() []Email {
-	if o == nil {
+func (u *UserInput) GetEmails() []Email {
+	if u == nil {
 		return []Email{}
 	}
-	return o.Emails
+	return u.Emails
 }
 
-func (o *UserInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (u *UserInput) GetPassThrough() []PassThroughBody {
+	if u == nil {
 		return nil
 	}
-	return o.PassThrough
+	return u.PassThrough
 }

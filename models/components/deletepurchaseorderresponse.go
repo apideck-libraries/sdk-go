@@ -20,51 +20,51 @@ type DeletePurchaseOrderResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *DeletePurchaseOrderResponse) GetStatusCode() int64 {
-	if o == nil {
+func (d *DeletePurchaseOrderResponse) GetStatusCode() int64 {
+	if d == nil {
 		return 0
 	}
-	return o.StatusCode
+	return d.StatusCode
 }
 
-func (o *DeletePurchaseOrderResponse) GetStatus() string {
-	if o == nil {
+func (d *DeletePurchaseOrderResponse) GetStatus() string {
+	if d == nil {
 		return ""
 	}
-	return o.Status
+	return d.Status
 }
 
-func (o *DeletePurchaseOrderResponse) GetService() string {
-	if o == nil {
+func (d *DeletePurchaseOrderResponse) GetService() string {
+	if d == nil {
 		return ""
 	}
-	return o.Service
+	return d.Service
 }
 
-func (o *DeletePurchaseOrderResponse) GetResource() string {
-	if o == nil {
+func (d *DeletePurchaseOrderResponse) GetResource() string {
+	if d == nil {
 		return ""
 	}
-	return o.Resource
+	return d.Resource
 }
 
-func (o *DeletePurchaseOrderResponse) GetOperation() string {
-	if o == nil {
+func (d *DeletePurchaseOrderResponse) GetOperation() string {
+	if d == nil {
 		return ""
 	}
-	return o.Operation
+	return d.Operation
 }
 
-func (o *DeletePurchaseOrderResponse) GetData() UnifiedID {
-	if o == nil {
+func (d *DeletePurchaseOrderResponse) GetData() UnifiedID {
+	if d == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return d.Data
 }
 
-func (o *DeletePurchaseOrderResponse) GetRaw() map[string]any {
-	if o == nil {
+func (d *DeletePurchaseOrderResponse) GetRaw() map[string]any {
+	if d == nil {
 		return nil
 	}
-	return o.Raw
+	return d.Raw
 }

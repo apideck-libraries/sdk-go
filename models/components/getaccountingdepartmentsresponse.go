@@ -23,65 +23,65 @@ type GetAccountingDepartmentsResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetAccountingDepartmentsResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetAccountingDepartmentsResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetAccountingDepartmentsResponse) GetStatus() string {
-	if o == nil {
+func (g *GetAccountingDepartmentsResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetAccountingDepartmentsResponse) GetService() string {
-	if o == nil {
+func (g *GetAccountingDepartmentsResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetAccountingDepartmentsResponse) GetResource() string {
-	if o == nil {
+func (g *GetAccountingDepartmentsResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetAccountingDepartmentsResponse) GetOperation() string {
-	if o == nil {
+func (g *GetAccountingDepartmentsResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetAccountingDepartmentsResponse) GetData() []AccountingDepartment {
-	if o == nil {
+func (g *GetAccountingDepartmentsResponse) GetData() []AccountingDepartment {
+	if g == nil {
 		return []AccountingDepartment{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetAccountingDepartmentsResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetAccountingDepartmentsResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetAccountingDepartmentsResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetAccountingDepartmentsResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }
 
-func (o *GetAccountingDepartmentsResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetAccountingDepartmentsResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

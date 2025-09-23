@@ -66,67 +66,67 @@ func (s *SharedLink) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *SharedLink) GetURL() *string {
-	if o == nil {
+func (s *SharedLink) GetURL() *string {
+	if s == nil {
 		return nil
 	}
-	return o.URL
+	return s.URL
 }
 
-func (o *SharedLink) GetDownloadURL() *string {
-	if o == nil {
+func (s *SharedLink) GetDownloadURL() *string {
+	if s == nil {
 		return nil
 	}
-	return o.DownloadURL
+	return s.DownloadURL
 }
 
-func (o *SharedLink) GetTarget() *SharedLinkTarget {
-	if o == nil {
+func (s *SharedLink) GetTarget() *SharedLinkTarget {
+	if s == nil {
 		return nil
 	}
-	return o.Target
+	return s.Target
 }
 
-func (o *SharedLink) GetScope() *Scope {
-	if o == nil {
+func (s *SharedLink) GetScope() *Scope {
+	if s == nil {
 		return nil
 	}
-	return o.Scope
+	return s.Scope
 }
 
-func (o *SharedLink) GetPasswordProtected() *bool {
-	if o == nil {
+func (s *SharedLink) GetPasswordProtected() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.PasswordProtected
+	return s.PasswordProtected
 }
 
-func (o *SharedLink) GetExpiresAt() *time.Time {
-	if o == nil {
+func (s *SharedLink) GetExpiresAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.ExpiresAt
+	return s.ExpiresAt
 }
 
-func (o *SharedLink) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *SharedLink) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }
 
-func (o *SharedLink) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *SharedLink) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *SharedLink) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (s *SharedLink) GetPassThrough() []PassThroughBody {
+	if s == nil {
 		return nil
 	}
-	return o.PassThrough
+	return s.PassThrough
 }
 
 type SharedLinkInput struct {
@@ -142,37 +142,37 @@ type SharedLinkInput struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *SharedLinkInput) GetDownloadURL() *string {
-	if o == nil {
+func (s *SharedLinkInput) GetDownloadURL() *string {
+	if s == nil {
 		return nil
 	}
-	return o.DownloadURL
+	return s.DownloadURL
 }
 
-func (o *SharedLinkInput) GetTargetID() *string {
-	if o == nil {
+func (s *SharedLinkInput) GetTargetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.TargetID
+	return s.TargetID
 }
 
-func (o *SharedLinkInput) GetScope() *Scope {
-	if o == nil {
+func (s *SharedLinkInput) GetScope() *Scope {
+	if s == nil {
 		return nil
 	}
-	return o.Scope
+	return s.Scope
 }
 
-func (o *SharedLinkInput) GetPassword() *string {
-	if o == nil {
+func (s *SharedLinkInput) GetPassword() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Password
+	return s.Password
 }
 
-func (o *SharedLinkInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (s *SharedLinkInput) GetPassThrough() []PassThroughBody {
+	if s == nil {
 		return nil
 	}
-	return o.PassThrough
+	return s.PassThrough
 }

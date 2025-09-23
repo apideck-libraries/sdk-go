@@ -64,86 +64,86 @@ type BankAccount struct {
 	Country *string `json:"country,omitempty"`
 }
 
-func (o *BankAccount) GetBankName() *string {
-	if o == nil {
+func (b *BankAccount) GetBankName() *string {
+	if b == nil {
 		return nil
 	}
-	return o.BankName
+	return b.BankName
 }
 
-func (o *BankAccount) GetAccountNumber() *string {
-	if o == nil {
+func (b *BankAccount) GetAccountNumber() *string {
+	if b == nil {
 		return nil
 	}
-	return o.AccountNumber
+	return b.AccountNumber
 }
 
-func (o *BankAccount) GetAccountName() *string {
-	if o == nil {
+func (b *BankAccount) GetAccountName() *string {
+	if b == nil {
 		return nil
 	}
-	return o.AccountName
+	return b.AccountName
 }
 
-func (o *BankAccount) GetAccountType() *AccountType {
-	if o == nil {
+func (b *BankAccount) GetAccountType() *AccountType {
+	if b == nil {
 		return nil
 	}
-	return o.AccountType
+	return b.AccountType
 }
 
-func (o *BankAccount) GetIban() *string {
-	if o == nil {
+func (b *BankAccount) GetIban() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Iban
+	return b.Iban
 }
 
-func (o *BankAccount) GetBic() *string {
-	if o == nil {
+func (b *BankAccount) GetBic() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Bic
+	return b.Bic
 }
 
-func (o *BankAccount) GetRoutingNumber() *string {
-	if o == nil {
+func (b *BankAccount) GetRoutingNumber() *string {
+	if b == nil {
 		return nil
 	}
-	return o.RoutingNumber
+	return b.RoutingNumber
 }
 
-func (o *BankAccount) GetBsbNumber() *string {
-	if o == nil {
+func (b *BankAccount) GetBsbNumber() *string {
+	if b == nil {
 		return nil
 	}
-	return o.BsbNumber
+	return b.BsbNumber
 }
 
-func (o *BankAccount) GetBranchIdentifier() *string {
-	if o == nil {
+func (b *BankAccount) GetBranchIdentifier() *string {
+	if b == nil {
 		return nil
 	}
-	return o.BranchIdentifier
+	return b.BranchIdentifier
 }
 
-func (o *BankAccount) GetBankCode() *string {
-	if o == nil {
+func (b *BankAccount) GetBankCode() *string {
+	if b == nil {
 		return nil
 	}
-	return o.BankCode
+	return b.BankCode
 }
 
-func (o *BankAccount) GetCurrency() *Currency {
-	if o == nil {
+func (b *BankAccount) GetCurrency() *Currency {
+	if b == nil {
 		return nil
 	}
-	return o.Currency
+	return b.Currency
 }
 
-func (o *BankAccount) GetCountry() *string {
-	if o == nil {
+func (b *BankAccount) GetCountry() *string {
+	if b == nil {
 		return nil
 	}
-	return o.Country
+	return b.Country
 }

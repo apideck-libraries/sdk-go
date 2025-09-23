@@ -17,44 +17,44 @@ type Compensation struct {
 	Benefits []Benefit `json:"benefits,omitempty"`
 }
 
-func (o *Compensation) GetEmployeeID() *string {
-	if o == nil {
+func (c *Compensation) GetEmployeeID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.EmployeeID
+	return c.EmployeeID
 }
 
-func (o *Compensation) GetNetPay() *float64 {
-	if o == nil {
+func (c *Compensation) GetNetPay() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.NetPay
+	return c.NetPay
 }
 
-func (o *Compensation) GetGrossPay() *float64 {
-	if o == nil {
+func (c *Compensation) GetGrossPay() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.GrossPay
+	return c.GrossPay
 }
 
-func (o *Compensation) GetTaxes() []Tax {
-	if o == nil {
+func (c *Compensation) GetTaxes() []Tax {
+	if c == nil {
 		return nil
 	}
-	return o.Taxes
+	return c.Taxes
 }
 
-func (o *Compensation) GetDeductions() []Deduction {
-	if o == nil {
+func (c *Compensation) GetDeductions() []Deduction {
+	if c == nil {
 		return nil
 	}
-	return o.Deductions
+	return c.Deductions
 }
 
-func (o *Compensation) GetBenefits() []Benefit {
-	if o == nil {
+func (c *Compensation) GetBenefits() []Benefit {
+	if c == nil {
 		return nil
 	}
-	return o.Benefits
+	return c.Benefits
 }

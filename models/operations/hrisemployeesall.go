@@ -14,18 +14,18 @@ type HrisEmployeesAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *HrisEmployeesAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisEmployeesAllGlobals) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisEmployeesAllGlobals) GetAppID() *string {
-	if o == nil {
+func (h *HrisEmployeesAllGlobals) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
 type HrisEmployeesAllRequest struct {
@@ -62,74 +62,74 @@ func (h *HrisEmployeesAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *HrisEmployeesAllRequest) GetRaw() *bool {
-	if o == nil {
+func (h *HrisEmployeesAllRequest) GetRaw() *bool {
+	if h == nil {
 		return nil
 	}
-	return o.Raw
+	return h.Raw
 }
 
-func (o *HrisEmployeesAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisEmployeesAllRequest) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisEmployeesAllRequest) GetAppID() *string {
-	if o == nil {
+func (h *HrisEmployeesAllRequest) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
-func (o *HrisEmployeesAllRequest) GetServiceID() *string {
-	if o == nil {
+func (h *HrisEmployeesAllRequest) GetServiceID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ServiceID
+	return h.ServiceID
 }
 
-func (o *HrisEmployeesAllRequest) GetCursor() *string {
-	if o == nil {
+func (h *HrisEmployeesAllRequest) GetCursor() *string {
+	if h == nil {
 		return nil
 	}
-	return o.Cursor
+	return h.Cursor
 }
 
-func (o *HrisEmployeesAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (h *HrisEmployeesAllRequest) GetLimit() *int64 {
+	if h == nil {
 		return nil
 	}
-	return o.Limit
+	return h.Limit
 }
 
-func (o *HrisEmployeesAllRequest) GetFilter() *components.EmployeesFilter {
-	if o == nil {
+func (h *HrisEmployeesAllRequest) GetFilter() *components.EmployeesFilter {
+	if h == nil {
 		return nil
 	}
-	return o.Filter
+	return h.Filter
 }
 
-func (o *HrisEmployeesAllRequest) GetSort() *components.EmployeesSort {
-	if o == nil {
+func (h *HrisEmployeesAllRequest) GetSort() *components.EmployeesSort {
+	if h == nil {
 		return nil
 	}
-	return o.Sort
+	return h.Sort
 }
 
-func (o *HrisEmployeesAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (h *HrisEmployeesAllRequest) GetPassThrough() map[string]any {
+	if h == nil {
 		return nil
 	}
-	return o.PassThrough
+	return h.PassThrough
 }
 
-func (o *HrisEmployeesAllRequest) GetFields() *string {
-	if o == nil {
+func (h *HrisEmployeesAllRequest) GetFields() *string {
+	if h == nil {
 		return nil
 	}
-	return o.Fields
+	return h.Fields
 }
 
 type HrisEmployeesAllResponse struct {
@@ -142,23 +142,23 @@ type HrisEmployeesAllResponse struct {
 	Next func() (*HrisEmployeesAllResponse, error)
 }
 
-func (o *HrisEmployeesAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (h *HrisEmployeesAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if h == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return h.HTTPMeta
 }
 
-func (o *HrisEmployeesAllResponse) GetGetEmployeesResponse() *components.GetEmployeesResponse {
-	if o == nil {
+func (h *HrisEmployeesAllResponse) GetGetEmployeesResponse() *components.GetEmployeesResponse {
+	if h == nil {
 		return nil
 	}
-	return o.GetEmployeesResponse
+	return h.GetEmployeesResponse
 }
 
-func (o *HrisEmployeesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (h *HrisEmployeesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if h == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return h.UnexpectedErrorResponse
 }

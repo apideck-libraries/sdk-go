@@ -14,18 +14,18 @@ type CrmCustomObjectSchemasDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmCustomObjectSchemasDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmCustomObjectSchemasDeleteGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmCustomObjectSchemasDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmCustomObjectSchemasDeleteGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmCustomObjectSchemasDeleteRequest struct {
@@ -52,39 +52,39 @@ func (c *CrmCustomObjectSchemasDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmCustomObjectSchemasDeleteRequest) GetID() string {
-	if o == nil {
+func (c *CrmCustomObjectSchemasDeleteRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CrmCustomObjectSchemasDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmCustomObjectSchemasDeleteRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmCustomObjectSchemasDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmCustomObjectSchemasDeleteRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmCustomObjectSchemasDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmCustomObjectSchemasDeleteRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmCustomObjectSchemasDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmCustomObjectSchemasDeleteRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
 type CrmCustomObjectSchemasDeleteResponse struct {
@@ -95,23 +95,23 @@ type CrmCustomObjectSchemasDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmCustomObjectSchemasDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmCustomObjectSchemasDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmCustomObjectSchemasDeleteResponse) GetDeleteCustomObjectSchemaResponse() *components.DeleteCustomObjectSchemaResponse {
-	if o == nil {
+func (c *CrmCustomObjectSchemasDeleteResponse) GetDeleteCustomObjectSchemaResponse() *components.DeleteCustomObjectSchemaResponse {
+	if c == nil {
 		return nil
 	}
-	return o.DeleteCustomObjectSchemaResponse
+	return c.DeleteCustomObjectSchemaResponse
 }
 
-func (o *CrmCustomObjectSchemasDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmCustomObjectSchemasDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

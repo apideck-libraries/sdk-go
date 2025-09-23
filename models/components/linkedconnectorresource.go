@@ -15,37 +15,37 @@ type LinkedConnectorResource struct {
 	DownstreamName *string `json:"downstream_name,omitempty"`
 }
 
-func (o *LinkedConnectorResource) GetID() *string {
-	if o == nil {
+func (l *LinkedConnectorResource) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinkedConnectorResource) GetName() *string {
-	if o == nil {
+func (l *LinkedConnectorResource) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *LinkedConnectorResource) GetStatus() *ResourceStatus {
-	if o == nil {
+func (l *LinkedConnectorResource) GetStatus() *ResourceStatus {
+	if l == nil {
 		return nil
 	}
-	return o.Status
+	return l.Status
 }
 
-func (o *LinkedConnectorResource) GetDownstreamID() *string {
-	if o == nil {
+func (l *LinkedConnectorResource) GetDownstreamID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.DownstreamID
+	return l.DownstreamID
 }
 
-func (o *LinkedConnectorResource) GetDownstreamName() *string {
-	if o == nil {
+func (l *LinkedConnectorResource) GetDownstreamName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.DownstreamName
+	return l.DownstreamName
 }

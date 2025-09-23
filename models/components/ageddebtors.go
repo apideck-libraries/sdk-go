@@ -31,37 +31,37 @@ func (a *AgedDebtors) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AgedDebtors) GetReportGeneratedAt() *time.Time {
-	if o == nil {
+func (a *AgedDebtors) GetReportGeneratedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.ReportGeneratedAt
+	return a.ReportGeneratedAt
 }
 
-func (o *AgedDebtors) GetReportAsOfDate() *types.Date {
-	if o == nil {
+func (a *AgedDebtors) GetReportAsOfDate() *types.Date {
+	if a == nil {
 		return nil
 	}
-	return o.ReportAsOfDate
+	return a.ReportAsOfDate
 }
 
-func (o *AgedDebtors) GetPeriodCount() *int64 {
-	if o == nil {
+func (a *AgedDebtors) GetPeriodCount() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.PeriodCount
+	return a.PeriodCount
 }
 
-func (o *AgedDebtors) GetPeriodLength() *int64 {
-	if o == nil {
+func (a *AgedDebtors) GetPeriodLength() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.PeriodLength
+	return a.PeriodLength
 }
 
-func (o *AgedDebtors) GetOutstandingBalances() []OutstandingBalanceByCustomer {
-	if o == nil {
+func (a *AgedDebtors) GetOutstandingBalances() []OutstandingBalanceByCustomer {
+	if a == nil {
 		return nil
 	}
-	return o.OutstandingBalances
+	return a.OutstandingBalances
 }

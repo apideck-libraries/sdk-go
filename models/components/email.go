@@ -55,23 +55,23 @@ type Email struct {
 	Type *EmailType `json:"type,omitempty"`
 }
 
-func (o *Email) GetID() *string {
-	if o == nil {
+func (e *Email) GetID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *Email) GetEmail() *string {
-	if o == nil {
+func (e *Email) GetEmail() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Email
+	return e.Email
 }
 
-func (o *Email) GetType() *EmailType {
-	if o == nil {
+func (e *Email) GetType() *EmailType {
+	if e == nil {
 		return nil
 	}
-	return o.Type
+	return e.Type
 }

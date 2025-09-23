@@ -68,121 +68,121 @@ type EcommerceOrderLineItem struct {
 	Discounts   []EcommerceDiscount `json:"discounts,omitempty"`
 }
 
-func (o *EcommerceOrderLineItem) GetID() *string {
-	if o == nil {
+func (e *EcommerceOrderLineItem) GetID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *EcommerceOrderLineItem) GetProductID() *string {
-	if o == nil {
+func (e *EcommerceOrderLineItem) GetProductID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ProductID
+	return e.ProductID
 }
 
-func (o *EcommerceOrderLineItem) GetVariantID() *string {
-	if o == nil {
+func (e *EcommerceOrderLineItem) GetVariantID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.VariantID
+	return e.VariantID
 }
 
-func (o *EcommerceOrderLineItem) GetSku() *string {
-	if o == nil {
+func (e *EcommerceOrderLineItem) GetSku() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Sku
+	return e.Sku
 }
 
-func (o *EcommerceOrderLineItem) GetName() *string {
-	if o == nil {
+func (e *EcommerceOrderLineItem) GetName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Name
+	return e.Name
 }
 
-func (o *EcommerceOrderLineItem) GetDescription() *string {
-	if o == nil {
+func (e *EcommerceOrderLineItem) GetDescription() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Description
+	return e.Description
 }
 
-func (o *EcommerceOrderLineItem) GetOptions() []OptionsObj {
-	if o == nil {
+func (e *EcommerceOrderLineItem) GetOptions() []OptionsObj {
+	if e == nil {
 		return nil
 	}
-	return o.Options
+	return e.Options
 }
 
-func (o *EcommerceOrderLineItem) GetQuantity() *string {
-	if o == nil {
+func (e *EcommerceOrderLineItem) GetQuantity() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Quantity
+	return e.Quantity
 }
 
-func (o *EcommerceOrderLineItem) GetUnitPrice() *string {
-	if o == nil {
+func (e *EcommerceOrderLineItem) GetUnitPrice() *string {
+	if e == nil {
 		return nil
 	}
-	return o.UnitPrice
+	return e.UnitPrice
 }
 
-func (o *EcommerceOrderLineItem) GetTaxRate() *string {
-	if o == nil {
+func (e *EcommerceOrderLineItem) GetTaxRate() *string {
+	if e == nil {
 		return nil
 	}
-	return o.TaxRate
+	return e.TaxRate
 }
 
-func (o *EcommerceOrderLineItem) GetTaxAmount() *string {
-	if o == nil {
+func (e *EcommerceOrderLineItem) GetTaxAmount() *string {
+	if e == nil {
 		return nil
 	}
-	return o.TaxAmount
+	return e.TaxAmount
 }
 
-func (o *EcommerceOrderLineItem) GetIsRefunded() *bool {
-	if o == nil {
+func (e *EcommerceOrderLineItem) GetIsRefunded() *bool {
+	if e == nil {
 		return nil
 	}
-	return o.IsRefunded
+	return e.IsRefunded
 }
 
-func (o *EcommerceOrderLineItem) GetRefundedAmount() *string {
-	if o == nil {
+func (e *EcommerceOrderLineItem) GetRefundedAmount() *string {
+	if e == nil {
 		return nil
 	}
-	return o.RefundedAmount
+	return e.RefundedAmount
 }
 
-func (o *EcommerceOrderLineItem) GetRefundedQuantity() *string {
-	if o == nil {
+func (e *EcommerceOrderLineItem) GetRefundedQuantity() *string {
+	if e == nil {
 		return nil
 	}
-	return o.RefundedQuantity
+	return e.RefundedQuantity
 }
 
-func (o *EcommerceOrderLineItem) GetSubTotal() *string {
-	if o == nil {
+func (e *EcommerceOrderLineItem) GetSubTotal() *string {
+	if e == nil {
 		return nil
 	}
-	return o.SubTotal
+	return e.SubTotal
 }
 
-func (o *EcommerceOrderLineItem) GetTotalAmount() *string {
-	if o == nil {
+func (e *EcommerceOrderLineItem) GetTotalAmount() *string {
+	if e == nil {
 		return nil
 	}
-	return o.TotalAmount
+	return e.TotalAmount
 }
 
-func (o *EcommerceOrderLineItem) GetDiscounts() []EcommerceDiscount {
-	if o == nil {
+func (e *EcommerceOrderLineItem) GetDiscounts() []EcommerceDiscount {
+	if e == nil {
 		return nil
 	}
-	return o.Discounts
+	return e.Discounts
 }

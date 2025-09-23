@@ -74,88 +74,88 @@ func (s *Subsidiary) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Subsidiary) GetID() *string {
-	if o == nil {
+func (s *Subsidiary) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *Subsidiary) GetParentID() *string {
-	if o == nil {
+func (s *Subsidiary) GetParentID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ParentID
+	return s.ParentID
 }
 
-func (o *Subsidiary) GetName() *string {
-	if o == nil {
+func (s *Subsidiary) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *Subsidiary) GetStatus() *SubsidiaryStatus {
-	if o == nil {
+func (s *Subsidiary) GetStatus() *SubsidiaryStatus {
+	if s == nil {
 		return nil
 	}
-	return o.Status
+	return s.Status
 }
 
-func (o *Subsidiary) GetCurrencies() []*Currency {
-	if o == nil {
+func (s *Subsidiary) GetCurrencies() []*Currency {
+	if s == nil {
 		return nil
 	}
-	return o.Currencies
+	return s.Currencies
 }
 
-func (o *Subsidiary) GetCustomMappings() map[string]any {
-	if o == nil {
+func (s *Subsidiary) GetCustomMappings() map[string]any {
+	if s == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return s.CustomMappings
 }
 
-func (o *Subsidiary) GetRowVersion() *string {
-	if o == nil {
+func (s *Subsidiary) GetRowVersion() *string {
+	if s == nil {
 		return nil
 	}
-	return o.RowVersion
+	return s.RowVersion
 }
 
-func (o *Subsidiary) GetUpdatedBy() *string {
-	if o == nil {
+func (s *Subsidiary) GetUpdatedBy() *string {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return s.UpdatedBy
 }
 
-func (o *Subsidiary) GetCreatedBy() *string {
-	if o == nil {
+func (s *Subsidiary) GetCreatedBy() *string {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return s.CreatedBy
 }
 
-func (o *Subsidiary) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *Subsidiary) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }
 
-func (o *Subsidiary) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *Subsidiary) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *Subsidiary) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (s *Subsidiary) GetPassThrough() []PassThroughBody {
+	if s == nil {
 		return nil
 	}
-	return o.PassThrough
+	return s.PassThrough
 }
 
 type SubsidiaryInput struct {
@@ -173,44 +173,44 @@ type SubsidiaryInput struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *SubsidiaryInput) GetParentID() *string {
-	if o == nil {
+func (s *SubsidiaryInput) GetParentID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ParentID
+	return s.ParentID
 }
 
-func (o *SubsidiaryInput) GetName() *string {
-	if o == nil {
+func (s *SubsidiaryInput) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *SubsidiaryInput) GetStatus() *SubsidiaryStatus {
-	if o == nil {
+func (s *SubsidiaryInput) GetStatus() *SubsidiaryStatus {
+	if s == nil {
 		return nil
 	}
-	return o.Status
+	return s.Status
 }
 
-func (o *SubsidiaryInput) GetCurrencies() []*Currency {
-	if o == nil {
+func (s *SubsidiaryInput) GetCurrencies() []*Currency {
+	if s == nil {
 		return nil
 	}
-	return o.Currencies
+	return s.Currencies
 }
 
-func (o *SubsidiaryInput) GetRowVersion() *string {
-	if o == nil {
+func (s *SubsidiaryInput) GetRowVersion() *string {
+	if s == nil {
 		return nil
 	}
-	return o.RowVersion
+	return s.RowVersion
 }
 
-func (o *SubsidiaryInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (s *SubsidiaryInput) GetPassThrough() []PassThroughBody {
+	if s == nil {
 		return nil
 	}
-	return o.PassThrough
+	return s.PassThrough
 }

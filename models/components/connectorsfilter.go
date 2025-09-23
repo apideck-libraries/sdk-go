@@ -9,16 +9,16 @@ type ConnectorsFilter struct {
 	Status *ConnectorStatus `queryParam:"name=status"`
 }
 
-func (o *ConnectorsFilter) GetUnifiedAPI() *UnifiedAPIID {
-	if o == nil {
+func (c *ConnectorsFilter) GetUnifiedAPI() *UnifiedAPIID {
+	if c == nil {
 		return nil
 	}
-	return o.UnifiedAPI
+	return c.UnifiedAPI
 }
 
-func (o *ConnectorsFilter) GetStatus() *ConnectorStatus {
-	if o == nil {
+func (c *ConnectorsFilter) GetStatus() *ConnectorStatus {
+	if c == nil {
 		return nil
 	}
-	return o.Status
+	return c.Status
 }

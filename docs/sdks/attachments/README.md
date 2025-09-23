@@ -42,8 +42,8 @@ func main() {
     res, err := s.Accounting.Attachments.List(ctx, operations.AccountingAttachmentsAllRequest{
         ReferenceType: components.AttachmentReferenceTypeInvoice,
         ReferenceID: "123456",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -125,8 +125,8 @@ func main() {
     res, err := s.Accounting.Attachments.Upload(ctx, operations.AccountingAttachmentsUploadRequest{
         ReferenceType: components.AttachmentReferenceTypeInvoice,
         ReferenceID: "123456",
-        XApideckMetadata: sdkgo.String("{\"name\":\"document.pdf\",\"description\":\"Invoice attachment\"}"),
-        ServiceID: sdkgo.String("salesforce"),
+        XApideckMetadata: sdkgo.Pointer("{\"name\":\"document.pdf\",\"description\":\"Invoice attachment\"}"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         RequestBody: example,
     })
     if err != nil {
@@ -193,8 +193,8 @@ func main() {
         ReferenceType: components.AttachmentReferenceTypeInvoice,
         ReferenceID: "123456",
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -260,7 +260,7 @@ func main() {
         ReferenceType: components.AttachmentReferenceTypeInvoice,
         ReferenceID: "123456",
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)
@@ -326,8 +326,8 @@ func main() {
         ReferenceType: components.AttachmentReferenceTypeInvoice,
         ReferenceID: "123456",
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)

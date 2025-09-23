@@ -49,30 +49,30 @@ type Rebilling struct {
 	LinkedTransactionLineID *string `json:"linked_transaction_line_id,omitempty"`
 }
 
-func (o *Rebilling) GetRebillable() *bool {
-	if o == nil {
+func (r *Rebilling) GetRebillable() *bool {
+	if r == nil {
 		return nil
 	}
-	return o.Rebillable
+	return r.Rebillable
 }
 
-func (o *Rebilling) GetRebillStatus() *RebillStatus {
-	if o == nil {
+func (r *Rebilling) GetRebillStatus() *RebillStatus {
+	if r == nil {
 		return nil
 	}
-	return o.RebillStatus
+	return r.RebillStatus
 }
 
-func (o *Rebilling) GetLinkedTransactionID() *string {
-	if o == nil {
+func (r *Rebilling) GetLinkedTransactionID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.LinkedTransactionID
+	return r.LinkedTransactionID
 }
 
-func (o *Rebilling) GetLinkedTransactionLineID() *string {
-	if o == nil {
+func (r *Rebilling) GetLinkedTransactionLineID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.LinkedTransactionLineID
+	return r.LinkedTransactionLineID
 }

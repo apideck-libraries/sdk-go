@@ -42,9 +42,9 @@ type CategoriesFilter struct {
 	Type *CategoriesFilterType `queryParam:"name=type"`
 }
 
-func (o *CategoriesFilter) GetType() *CategoriesFilterType {
-	if o == nil {
+func (c *CategoriesFilter) GetType() *CategoriesFilterType {
+	if c == nil {
 		return nil
 	}
-	return o.Type
+	return c.Type
 }

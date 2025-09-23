@@ -13,11 +13,11 @@ type Permissions struct {
 	Download *bool `json:"download,omitempty"`
 }
 
-func (o *Permissions) GetDownload() *bool {
-	if o == nil {
+func (p *Permissions) GetDownload() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.Download
+	return p.Download
 }
 
 type UnifiedFile struct {
@@ -73,142 +73,142 @@ func (u *UnifiedFile) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *UnifiedFile) GetID() string {
-	if o == nil {
+func (u *UnifiedFile) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UnifiedFile) GetDownstreamID() *string {
-	if o == nil {
+func (u *UnifiedFile) GetDownstreamID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.DownstreamID
+	return u.DownstreamID
 }
 
-func (o *UnifiedFile) GetName() *string {
-	if o == nil {
+func (u *UnifiedFile) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UnifiedFile) GetDescription() *string {
-	if o == nil {
+func (u *UnifiedFile) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UnifiedFile) GetType() *FileType {
-	if o == nil {
+func (u *UnifiedFile) GetType() *FileType {
+	if u == nil {
 		return nil
 	}
-	return o.Type
+	return u.Type
 }
 
-func (o *UnifiedFile) GetPath() *string {
-	if o == nil {
+func (u *UnifiedFile) GetPath() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Path
+	return u.Path
 }
 
-func (o *UnifiedFile) GetMimeType() *string {
-	if o == nil {
+func (u *UnifiedFile) GetMimeType() *string {
+	if u == nil {
 		return nil
 	}
-	return o.MimeType
+	return u.MimeType
 }
 
-func (o *UnifiedFile) GetDownloadable() *bool {
-	if o == nil {
+func (u *UnifiedFile) GetDownloadable() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Downloadable
+	return u.Downloadable
 }
 
-func (o *UnifiedFile) GetSize() *int64 {
-	if o == nil {
+func (u *UnifiedFile) GetSize() *int64 {
+	if u == nil {
 		return nil
 	}
-	return o.Size
+	return u.Size
 }
 
-func (o *UnifiedFile) GetOwner() *Owner {
-	if o == nil {
+func (u *UnifiedFile) GetOwner() *Owner {
+	if u == nil {
 		return nil
 	}
-	return o.Owner
+	return u.Owner
 }
 
-func (o *UnifiedFile) GetParentFolders() []LinkedFolder {
-	if o == nil {
+func (u *UnifiedFile) GetParentFolders() []LinkedFolder {
+	if u == nil {
 		return nil
 	}
-	return o.ParentFolders
+	return u.ParentFolders
 }
 
-func (o *UnifiedFile) GetParentFoldersComplete() *bool {
-	if o == nil {
+func (u *UnifiedFile) GetParentFoldersComplete() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.ParentFoldersComplete
+	return u.ParentFoldersComplete
 }
 
-func (o *UnifiedFile) GetPermissions() *Permissions {
-	if o == nil {
+func (u *UnifiedFile) GetPermissions() *Permissions {
+	if u == nil {
 		return nil
 	}
-	return o.Permissions
+	return u.Permissions
 }
 
-func (o *UnifiedFile) GetExportable() *bool {
-	if o == nil {
+func (u *UnifiedFile) GetExportable() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Exportable
+	return u.Exportable
 }
 
-func (o *UnifiedFile) GetExportFormats() []string {
-	if o == nil {
+func (u *UnifiedFile) GetExportFormats() []string {
+	if u == nil {
 		return nil
 	}
-	return o.ExportFormats
+	return u.ExportFormats
 }
 
-func (o *UnifiedFile) GetCustomMappings() map[string]any {
-	if o == nil {
+func (u *UnifiedFile) GetCustomMappings() map[string]any {
+	if u == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return u.CustomMappings
 }
 
-func (o *UnifiedFile) GetUpdatedBy() *string {
-	if o == nil {
+func (u *UnifiedFile) GetUpdatedBy() *string {
+	if u == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return u.UpdatedBy
 }
 
-func (o *UnifiedFile) GetCreatedBy() *string {
-	if o == nil {
+func (u *UnifiedFile) GetCreatedBy() *string {
+	if u == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return u.CreatedBy
 }
 
-func (o *UnifiedFile) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (u *UnifiedFile) GetUpdatedAt() *time.Time {
+	if u == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return u.UpdatedAt
 }
 
-func (o *UnifiedFile) GetCreatedAt() *time.Time {
-	if o == nil {
+func (u *UnifiedFile) GetCreatedAt() *time.Time {
+	if u == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return u.CreatedAt
 }

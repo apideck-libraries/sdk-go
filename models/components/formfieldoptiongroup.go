@@ -49,30 +49,30 @@ func (f *FormFieldOptionGroup) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FormFieldOptionGroup) GetID() *string {
-	if o == nil {
+func (f *FormFieldOptionGroup) GetID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *FormFieldOptionGroup) GetLabel() string {
-	if o == nil {
+func (f *FormFieldOptionGroup) GetLabel() string {
+	if f == nil {
 		return ""
 	}
-	return o.Label
+	return f.Label
 }
 
-func (o *FormFieldOptionGroup) GetOptions() []SimpleFormFieldOption {
-	if o == nil {
+func (f *FormFieldOptionGroup) GetOptions() []SimpleFormFieldOption {
+	if f == nil {
 		return []SimpleFormFieldOption{}
 	}
-	return o.Options
+	return f.Options
 }
 
-func (o *FormFieldOptionGroup) GetOptionType() FormFieldOptionGroupOptionType {
-	if o == nil {
+func (f *FormFieldOptionGroup) GetOptionType() FormFieldOptionGroupOptionType {
+	if f == nil {
 		return FormFieldOptionGroupOptionType("")
 	}
-	return o.OptionType
+	return f.OptionType
 }

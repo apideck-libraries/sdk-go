@@ -9,16 +9,16 @@ type InvoiceResponse struct {
 	DownstreamID *string `json:"downstream_id,omitempty"`
 }
 
-func (o *InvoiceResponse) GetID() *string {
-	if o == nil {
+func (i *InvoiceResponse) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *InvoiceResponse) GetDownstreamID() *string {
-	if o == nil {
+func (i *InvoiceResponse) GetDownstreamID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.DownstreamID
+	return i.DownstreamID
 }

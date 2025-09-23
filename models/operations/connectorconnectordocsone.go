@@ -11,11 +11,11 @@ type ConnectorConnectorDocsOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *ConnectorConnectorDocsOneGlobals) GetAppID() *string {
-	if o == nil {
+func (c *ConnectorConnectorDocsOneGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type ConnectorConnectorDocsOneRequest struct {
@@ -27,25 +27,25 @@ type ConnectorConnectorDocsOneRequest struct {
 	DocID string `pathParam:"style=simple,explode=false,name=doc_id"`
 }
 
-func (o *ConnectorConnectorDocsOneRequest) GetAppID() *string {
-	if o == nil {
+func (c *ConnectorConnectorDocsOneRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *ConnectorConnectorDocsOneRequest) GetID() string {
-	if o == nil {
+func (c *ConnectorConnectorDocsOneRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ConnectorConnectorDocsOneRequest) GetDocID() string {
-	if o == nil {
+func (c *ConnectorConnectorDocsOneRequest) GetDocID() string {
+	if c == nil {
 		return ""
 	}
-	return o.DocID
+	return c.DocID
 }
 
 type ConnectorConnectorDocsOneResponse struct {
@@ -56,23 +56,23 @@ type ConnectorConnectorDocsOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *ConnectorConnectorDocsOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *ConnectorConnectorDocsOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *ConnectorConnectorDocsOneResponse) GetGetConnectorDocResponse() *string {
-	if o == nil {
+func (c *ConnectorConnectorDocsOneResponse) GetGetConnectorDocResponse() *string {
+	if c == nil {
 		return nil
 	}
-	return o.GetConnectorDocResponse
+	return c.GetConnectorDocResponse
 }
 
-func (o *ConnectorConnectorDocsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *ConnectorConnectorDocsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

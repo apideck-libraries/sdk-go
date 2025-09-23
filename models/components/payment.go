@@ -88,226 +88,226 @@ func (p *Payment) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Payment) GetID() string {
-	if o == nil {
+func (p *Payment) GetID() string {
+	if p == nil {
 		return ""
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *Payment) GetDownstreamID() *string {
-	if o == nil {
+func (p *Payment) GetDownstreamID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.DownstreamID
+	return p.DownstreamID
 }
 
-func (o *Payment) GetCurrency() *Currency {
-	if o == nil {
+func (p *Payment) GetCurrency() *Currency {
+	if p == nil {
 		return nil
 	}
-	return o.Currency
+	return p.Currency
 }
 
-func (o *Payment) GetCurrencyRate() *float64 {
-	if o == nil {
+func (p *Payment) GetCurrencyRate() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.CurrencyRate
+	return p.CurrencyRate
 }
 
-func (o *Payment) GetTotalAmount() *float64 {
-	if o == nil {
+func (p *Payment) GetTotalAmount() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.TotalAmount
+	return p.TotalAmount
 }
 
-func (o *Payment) GetReference() *string {
-	if o == nil {
+func (p *Payment) GetReference() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Reference
+	return p.Reference
 }
 
-func (o *Payment) GetPaymentMethod() *string {
-	if o == nil {
+func (p *Payment) GetPaymentMethod() *string {
+	if p == nil {
 		return nil
 	}
-	return o.PaymentMethod
+	return p.PaymentMethod
 }
 
-func (o *Payment) GetPaymentMethodReference() *string {
-	if o == nil {
+func (p *Payment) GetPaymentMethodReference() *string {
+	if p == nil {
 		return nil
 	}
-	return o.PaymentMethodReference
+	return p.PaymentMethodReference
 }
 
-func (o *Payment) GetPaymentMethodID() *string {
-	if o == nil {
+func (p *Payment) GetPaymentMethodID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.PaymentMethodID
+	return p.PaymentMethodID
 }
 
-func (o *Payment) GetAccountsReceivableAccountType() *string {
-	if o == nil {
+func (p *Payment) GetAccountsReceivableAccountType() *string {
+	if p == nil {
 		return nil
 	}
-	return o.AccountsReceivableAccountType
+	return p.AccountsReceivableAccountType
 }
 
-func (o *Payment) GetAccountsReceivableAccountID() *string {
-	if o == nil {
+func (p *Payment) GetAccountsReceivableAccountID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.AccountsReceivableAccountID
+	return p.AccountsReceivableAccountID
 }
 
-func (o *Payment) GetAccount() *LinkedLedgerAccount {
-	if o == nil {
+func (p *Payment) GetAccount() *LinkedLedgerAccount {
+	if p == nil {
 		return nil
 	}
-	return o.Account
+	return p.Account
 }
 
-func (o *Payment) GetTransactionDate() *time.Time {
-	if o == nil {
+func (p *Payment) GetTransactionDate() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.TransactionDate
+	return p.TransactionDate
 }
 
-func (o *Payment) GetCustomer() *LinkedCustomer {
-	if o == nil {
+func (p *Payment) GetCustomer() *LinkedCustomer {
+	if p == nil {
 		return nil
 	}
-	return o.Customer
+	return p.Customer
 }
 
-func (o *Payment) GetSupplier() *DeprecatedLinkedSupplier {
-	if o == nil {
+func (p *Payment) GetSupplier() *DeprecatedLinkedSupplier {
+	if p == nil {
 		return nil
 	}
-	return o.Supplier
+	return p.Supplier
 }
 
-func (o *Payment) GetCompanyID() *string {
-	if o == nil {
+func (p *Payment) GetCompanyID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.CompanyID
+	return p.CompanyID
 }
 
-func (o *Payment) GetReconciled() *bool {
-	if o == nil {
+func (p *Payment) GetReconciled() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.Reconciled
+	return p.Reconciled
 }
 
-func (o *Payment) GetStatus() *PaymentStatus {
-	if o == nil {
+func (p *Payment) GetStatus() *PaymentStatus {
+	if p == nil {
 		return nil
 	}
-	return o.Status
+	return p.Status
 }
 
-func (o *Payment) GetType() *PaymentType {
-	if o == nil {
+func (p *Payment) GetType() *PaymentType {
+	if p == nil {
 		return nil
 	}
-	return o.Type
+	return p.Type
 }
 
-func (o *Payment) GetAllocations() []Allocation {
-	if o == nil {
+func (p *Payment) GetAllocations() []Allocation {
+	if p == nil {
 		return nil
 	}
-	return o.Allocations
+	return p.Allocations
 }
 
-func (o *Payment) GetNote() *string {
-	if o == nil {
+func (p *Payment) GetNote() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Note
+	return p.Note
 }
 
-func (o *Payment) GetNumber() *string {
-	if o == nil {
+func (p *Payment) GetNumber() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Number
+	return p.Number
 }
 
-func (o *Payment) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (p *Payment) GetTrackingCategories() []*LinkedTrackingCategory {
+	if p == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return p.TrackingCategories
 }
 
-func (o *Payment) GetCustomFields() []CustomField {
-	if o == nil {
+func (p *Payment) GetCustomFields() []CustomField {
+	if p == nil {
 		return nil
 	}
-	return o.CustomFields
+	return p.CustomFields
 }
 
-func (o *Payment) GetRowVersion() *string {
-	if o == nil {
+func (p *Payment) GetRowVersion() *string {
+	if p == nil {
 		return nil
 	}
-	return o.RowVersion
+	return p.RowVersion
 }
 
-func (o *Payment) GetDisplayID() *string {
-	if o == nil {
+func (p *Payment) GetDisplayID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.DisplayID
+	return p.DisplayID
 }
 
-func (o *Payment) GetCustomMappings() map[string]any {
-	if o == nil {
+func (p *Payment) GetCustomMappings() map[string]any {
+	if p == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return p.CustomMappings
 }
 
-func (o *Payment) GetUpdatedBy() *string {
-	if o == nil {
+func (p *Payment) GetUpdatedBy() *string {
+	if p == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return p.UpdatedBy
 }
 
-func (o *Payment) GetCreatedBy() *string {
-	if o == nil {
+func (p *Payment) GetCreatedBy() *string {
+	if p == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return p.CreatedBy
 }
 
-func (o *Payment) GetCreatedAt() *time.Time {
-	if o == nil {
+func (p *Payment) GetCreatedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return p.CreatedAt
 }
 
-func (o *Payment) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (p *Payment) GetUpdatedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return p.UpdatedAt
 }
 
-func (o *Payment) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (p *Payment) GetPassThrough() []PassThroughBody {
+	if p == nil {
 		return nil
 	}
-	return o.PassThrough
+	return p.PassThrough
 }

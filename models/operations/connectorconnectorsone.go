@@ -11,11 +11,11 @@ type ConnectorConnectorsOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *ConnectorConnectorsOneGlobals) GetAppID() *string {
-	if o == nil {
+func (c *ConnectorConnectorsOneGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type ConnectorConnectorsOneRequest struct {
@@ -25,18 +25,18 @@ type ConnectorConnectorsOneRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *ConnectorConnectorsOneRequest) GetAppID() *string {
-	if o == nil {
+func (c *ConnectorConnectorsOneRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *ConnectorConnectorsOneRequest) GetID() string {
-	if o == nil {
+func (c *ConnectorConnectorsOneRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
 type ConnectorConnectorsOneResponse struct {
@@ -47,23 +47,23 @@ type ConnectorConnectorsOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *ConnectorConnectorsOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *ConnectorConnectorsOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *ConnectorConnectorsOneResponse) GetGetConnectorResponse() *components.GetConnectorResponse {
-	if o == nil {
+func (c *ConnectorConnectorsOneResponse) GetGetConnectorResponse() *components.GetConnectorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.GetConnectorResponse
+	return c.GetConnectorResponse
 }
 
-func (o *ConnectorConnectorsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *ConnectorConnectorsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

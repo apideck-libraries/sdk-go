@@ -19,51 +19,51 @@ type GetBalanceSheetResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetBalanceSheetResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetBalanceSheetResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetBalanceSheetResponse) GetStatus() string {
-	if o == nil {
+func (g *GetBalanceSheetResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetBalanceSheetResponse) GetService() string {
-	if o == nil {
+func (g *GetBalanceSheetResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetBalanceSheetResponse) GetResource() string {
-	if o == nil {
+func (g *GetBalanceSheetResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetBalanceSheetResponse) GetOperation() string {
-	if o == nil {
+func (g *GetBalanceSheetResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetBalanceSheetResponse) GetData() BalanceSheet {
-	if o == nil {
+func (g *GetBalanceSheetResponse) GetData() BalanceSheet {
+	if g == nil {
 		return BalanceSheet{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetBalanceSheetResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetBalanceSheetResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

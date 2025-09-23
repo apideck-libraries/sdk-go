@@ -14,18 +14,18 @@ type FileStorageDrivesAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *FileStorageDrivesAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageDrivesAddGlobals) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageDrivesAddGlobals) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageDrivesAddGlobals) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
 type FileStorageDrivesAddRequest struct {
@@ -51,39 +51,39 @@ func (f *FileStorageDrivesAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FileStorageDrivesAddRequest) GetRaw() *bool {
-	if o == nil {
+func (f *FileStorageDrivesAddRequest) GetRaw() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Raw
+	return f.Raw
 }
 
-func (o *FileStorageDrivesAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageDrivesAddRequest) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageDrivesAddRequest) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageDrivesAddRequest) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
-func (o *FileStorageDrivesAddRequest) GetServiceID() *string {
-	if o == nil {
+func (f *FileStorageDrivesAddRequest) GetServiceID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ServiceID
+	return f.ServiceID
 }
 
-func (o *FileStorageDrivesAddRequest) GetDrive() components.DriveInput {
-	if o == nil {
+func (f *FileStorageDrivesAddRequest) GetDrive() components.DriveInput {
+	if f == nil {
 		return components.DriveInput{}
 	}
-	return o.Drive
+	return f.Drive
 }
 
 type FileStorageDrivesAddResponse struct {
@@ -94,23 +94,23 @@ type FileStorageDrivesAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *FileStorageDrivesAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (f *FileStorageDrivesAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if f == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return f.HTTPMeta
 }
 
-func (o *FileStorageDrivesAddResponse) GetCreateDriveResponse() *components.CreateDriveResponse {
-	if o == nil {
+func (f *FileStorageDrivesAddResponse) GetCreateDriveResponse() *components.CreateDriveResponse {
+	if f == nil {
 		return nil
 	}
-	return o.CreateDriveResponse
+	return f.CreateDriveResponse
 }
 
-func (o *FileStorageDrivesAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (f *FileStorageDrivesAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return f.UnexpectedErrorResponse
 }

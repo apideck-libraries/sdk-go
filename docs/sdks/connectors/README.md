@@ -34,7 +34,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Connector.Connectors.List(ctx, nil, sdkgo.Int64(20), &components.ConnectorsFilter{
+    res, err := s.Connector.Connectors.List(ctx, nil, sdkgo.Pointer[int64](20), &components.ConnectorsFilter{
         UnifiedAPI: components.UnifiedAPIIDFileStorage.ToPointer(),
     })
     if err != nil {

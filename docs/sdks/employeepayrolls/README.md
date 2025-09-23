@@ -38,15 +38,15 @@ func main() {
 
     res, err := s.Hris.EmployeePayrolls.List(ctx, operations.HrisEmployeePayrollsAllRequest{
         EmployeeID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Filter: &components.PayrollsFilter{
-            StartDate: sdkgo.String("2022-04-08"),
-            EndDate: sdkgo.String("2022-04-21"),
+            StartDate: sdkgo.Pointer("2022-04-08"),
+            EndDate: sdkgo.Pointer("2022-04-21"),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -110,8 +110,8 @@ func main() {
     res, err := s.Hris.EmployeePayrolls.Get(ctx, operations.HrisEmployeePayrollsOneRequest{
         PayrollID: "<id>",
         EmployeeID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)

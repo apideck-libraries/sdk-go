@@ -9,16 +9,16 @@ type ConsentRecordInput struct {
 	Resources DataScopesResources `json:"resources"`
 }
 
-func (o *ConsentRecordInput) GetGranted() bool {
-	if o == nil {
+func (c *ConsentRecordInput) GetGranted() bool {
+	if c == nil {
 		return false
 	}
-	return o.Granted
+	return c.Granted
 }
 
-func (o *ConsentRecordInput) GetResources() DataScopesResources {
-	if o == nil {
+func (c *ConsentRecordInput) GetResources() DataScopesResources {
+	if c == nil {
 		return DataScopesResources{}
 	}
-	return o.Resources
+	return c.Resources
 }

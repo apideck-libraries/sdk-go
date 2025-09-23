@@ -14,18 +14,18 @@ type FileStorageSharedLinksUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *FileStorageSharedLinksUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageSharedLinksUpdateGlobals) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageSharedLinksUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageSharedLinksUpdateGlobals) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
 type FileStorageSharedLinksUpdateRequest struct {
@@ -53,46 +53,46 @@ func (f *FileStorageSharedLinksUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FileStorageSharedLinksUpdateRequest) GetID() string {
-	if o == nil {
+func (f *FileStorageSharedLinksUpdateRequest) GetID() string {
+	if f == nil {
 		return ""
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *FileStorageSharedLinksUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageSharedLinksUpdateRequest) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageSharedLinksUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageSharedLinksUpdateRequest) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
-func (o *FileStorageSharedLinksUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (f *FileStorageSharedLinksUpdateRequest) GetServiceID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ServiceID
+	return f.ServiceID
 }
 
-func (o *FileStorageSharedLinksUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (f *FileStorageSharedLinksUpdateRequest) GetRaw() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Raw
+	return f.Raw
 }
 
-func (o *FileStorageSharedLinksUpdateRequest) GetSharedLink() components.SharedLinkInput {
-	if o == nil {
+func (f *FileStorageSharedLinksUpdateRequest) GetSharedLink() components.SharedLinkInput {
+	if f == nil {
 		return components.SharedLinkInput{}
 	}
-	return o.SharedLink
+	return f.SharedLink
 }
 
 type FileStorageSharedLinksUpdateResponse struct {
@@ -103,23 +103,23 @@ type FileStorageSharedLinksUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *FileStorageSharedLinksUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (f *FileStorageSharedLinksUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if f == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return f.HTTPMeta
 }
 
-func (o *FileStorageSharedLinksUpdateResponse) GetUpdateSharedLinkResponse() *components.UpdateSharedLinkResponse {
-	if o == nil {
+func (f *FileStorageSharedLinksUpdateResponse) GetUpdateSharedLinkResponse() *components.UpdateSharedLinkResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UpdateSharedLinkResponse
+	return f.UpdateSharedLinkResponse
 }
 
-func (o *FileStorageSharedLinksUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (f *FileStorageSharedLinksUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return f.UnexpectedErrorResponse
 }

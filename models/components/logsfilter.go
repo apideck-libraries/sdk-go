@@ -3,28 +3,38 @@
 package components
 
 type LogsFilter struct {
-	ConnectorID        *string  `queryParam:"name=connector_id"`
-	StatusCode         *float64 `queryParam:"name=status_code"`
-	ExcludeUnifiedApis *string  `queryParam:"name=exclude_unified_apis"`
+	ConnectorID *string `queryParam:"name=connector_id"`
+	// Filter by a single HTTP status code. For backward compatibility - use status_codes for multiple values.
+	StatusCode *float64 `queryParam:"name=status_code"`
+	// Filter by multiple HTTP status codes. Values must be between 100-599. Maximum 50 status codes allowed.
+	StatusCodes        []float64 `queryParam:"name=status_codes"`
+	ExcludeUnifiedApis *string   `queryParam:"name=exclude_unified_apis"`
 }
 
-func (o *LogsFilter) GetConnectorID() *string {
-	if o == nil {
+func (l *LogsFilter) GetConnectorID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ConnectorID
+	return l.ConnectorID
 }
 
-func (o *LogsFilter) GetStatusCode() *float64 {
-	if o == nil {
+func (l *LogsFilter) GetStatusCode() *float64 {
+	if l == nil {
 		return nil
 	}
-	return o.StatusCode
+	return l.StatusCode
 }
 
-func (o *LogsFilter) GetExcludeUnifiedApis() *string {
-	if o == nil {
+func (l *LogsFilter) GetStatusCodes() []float64 {
+	if l == nil {
 		return nil
 	}
-	return o.ExcludeUnifiedApis
+	return l.StatusCodes
+}
+
+func (l *LogsFilter) GetExcludeUnifiedApis() *string {
+	if l == nil {
+		return nil
+	}
+	return l.ExcludeUnifiedApis
 }

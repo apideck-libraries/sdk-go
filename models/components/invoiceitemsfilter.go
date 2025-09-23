@@ -44,16 +44,16 @@ type InvoiceItemsFilter struct {
 	Type *InvoiceItemType `queryParam:"name=type"`
 }
 
-func (o *InvoiceItemsFilter) GetName() *string {
-	if o == nil {
+func (i *InvoiceItemsFilter) GetName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Name
+	return i.Name
 }
 
-func (o *InvoiceItemsFilter) GetType() *InvoiceItemType {
-	if o == nil {
+func (i *InvoiceItemsFilter) GetType() *InvoiceItemType {
+	if i == nil {
 		return nil
 	}
-	return o.Type
+	return i.Type
 }

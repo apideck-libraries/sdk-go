@@ -6,11 +6,11 @@ type WebhookEventLogsFilterService struct {
 	ID *string `queryParam:"name=id"`
 }
 
-func (o *WebhookEventLogsFilterService) GetID() *string {
-	if o == nil {
+func (w *WebhookEventLogsFilterService) GetID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.ID
+	return w.ID
 }
 
 type WebhookEventLogsFilter struct {
@@ -21,37 +21,37 @@ type WebhookEventLogsFilter struct {
 	EventType   *string                        `queryParam:"name=event_type"`
 }
 
-func (o *WebhookEventLogsFilter) GetExcludeApis() *string {
-	if o == nil {
+func (w *WebhookEventLogsFilter) GetExcludeApis() *string {
+	if w == nil {
 		return nil
 	}
-	return o.ExcludeApis
+	return w.ExcludeApis
 }
 
-func (o *WebhookEventLogsFilter) GetService() *WebhookEventLogsFilterService {
-	if o == nil {
+func (w *WebhookEventLogsFilter) GetService() *WebhookEventLogsFilterService {
+	if w == nil {
 		return nil
 	}
-	return o.Service
+	return w.Service
 }
 
-func (o *WebhookEventLogsFilter) GetConsumerID() *string {
-	if o == nil {
+func (w *WebhookEventLogsFilter) GetConsumerID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return w.ConsumerID
 }
 
-func (o *WebhookEventLogsFilter) GetEntityType() *string {
-	if o == nil {
+func (w *WebhookEventLogsFilter) GetEntityType() *string {
+	if w == nil {
 		return nil
 	}
-	return o.EntityType
+	return w.EntityType
 }
 
-func (o *WebhookEventLogsFilter) GetEventType() *string {
-	if o == nil {
+func (w *WebhookEventLogsFilter) GetEventType() *string {
+	if w == nil {
 		return nil
 	}
-	return o.EventType
+	return w.EventType
 }

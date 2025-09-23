@@ -88,123 +88,123 @@ func (t *Ticket) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Ticket) GetID() string {
-	if o == nil {
+func (t *Ticket) GetID() string {
+	if t == nil {
 		return ""
 	}
-	return o.ID
+	return t.ID
 }
 
-func (o *Ticket) GetParentID() *string {
-	if o == nil {
+func (t *Ticket) GetParentID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ParentID
+	return t.ParentID
 }
 
-func (o *Ticket) GetCollectionID() *string {
-	if o == nil {
+func (t *Ticket) GetCollectionID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.CollectionID
+	return t.CollectionID
 }
 
-func (o *Ticket) GetType() *string {
-	if o == nil {
+func (t *Ticket) GetType() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Type
+	return t.Type
 }
 
-func (o *Ticket) GetSubject() *string {
-	if o == nil {
+func (t *Ticket) GetSubject() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Subject
+	return t.Subject
 }
 
-func (o *Ticket) GetDescription() *string {
-	if o == nil {
+func (t *Ticket) GetDescription() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Description
+	return t.Description
 }
 
-func (o *Ticket) GetStatus() *string {
-	if o == nil {
+func (t *Ticket) GetStatus() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Status
+	return t.Status
 }
 
-func (o *Ticket) GetPriority() *Priority {
-	if o == nil {
+func (t *Ticket) GetPriority() *Priority {
+	if t == nil {
 		return nil
 	}
-	return o.Priority
+	return t.Priority
 }
 
-func (o *Ticket) GetAssignees() []Assignee {
-	if o == nil {
+func (t *Ticket) GetAssignees() []Assignee {
+	if t == nil {
 		return nil
 	}
-	return o.Assignees
+	return t.Assignees
 }
 
-func (o *Ticket) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (t *Ticket) GetUpdatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return t.UpdatedAt
 }
 
-func (o *Ticket) GetCreatedAt() *time.Time {
-	if o == nil {
+func (t *Ticket) GetCreatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return t.CreatedAt
 }
 
-func (o *Ticket) GetCreatedBy() *string {
-	if o == nil {
+func (t *Ticket) GetCreatedBy() *string {
+	if t == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return t.CreatedBy
 }
 
-func (o *Ticket) GetDueDate() *time.Time {
-	if o == nil {
+func (t *Ticket) GetDueDate() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.DueDate
+	return t.DueDate
 }
 
-func (o *Ticket) GetCompletedAt() *time.Time {
-	if o == nil {
+func (t *Ticket) GetCompletedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.CompletedAt
+	return t.CompletedAt
 }
 
-func (o *Ticket) GetTags() []CollectionTag {
-	if o == nil {
+func (t *Ticket) GetTags() []CollectionTag {
+	if t == nil {
 		return nil
 	}
-	return o.Tags
+	return t.Tags
 }
 
-func (o *Ticket) GetCustomMappings() map[string]any {
-	if o == nil {
+func (t *Ticket) GetCustomMappings() map[string]any {
+	if t == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return t.CustomMappings
 }
 
-func (o *Ticket) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (t *Ticket) GetPassThrough() []PassThroughBody {
+	if t == nil {
 		return nil
 	}
-	return o.PassThrough
+	return t.PassThrough
 }
 
 type TicketInput struct {
@@ -239,72 +239,72 @@ func (t *TicketInput) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *TicketInput) GetParentID() *string {
-	if o == nil {
+func (t *TicketInput) GetParentID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ParentID
+	return t.ParentID
 }
 
-func (o *TicketInput) GetType() *string {
-	if o == nil {
+func (t *TicketInput) GetType() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Type
+	return t.Type
 }
 
-func (o *TicketInput) GetSubject() *string {
-	if o == nil {
+func (t *TicketInput) GetSubject() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Subject
+	return t.Subject
 }
 
-func (o *TicketInput) GetDescription() *string {
-	if o == nil {
+func (t *TicketInput) GetDescription() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Description
+	return t.Description
 }
 
-func (o *TicketInput) GetStatus() *string {
-	if o == nil {
+func (t *TicketInput) GetStatus() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Status
+	return t.Status
 }
 
-func (o *TicketInput) GetPriority() *Priority {
-	if o == nil {
+func (t *TicketInput) GetPriority() *Priority {
+	if t == nil {
 		return nil
 	}
-	return o.Priority
+	return t.Priority
 }
 
-func (o *TicketInput) GetAssignees() []AssigneeInput {
-	if o == nil {
+func (t *TicketInput) GetAssignees() []AssigneeInput {
+	if t == nil {
 		return nil
 	}
-	return o.Assignees
+	return t.Assignees
 }
 
-func (o *TicketInput) GetDueDate() *time.Time {
-	if o == nil {
+func (t *TicketInput) GetDueDate() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.DueDate
+	return t.DueDate
 }
 
-func (o *TicketInput) GetTags() []CollectionTagInput {
-	if o == nil {
+func (t *TicketInput) GetTags() []CollectionTagInput {
+	if t == nil {
 		return nil
 	}
-	return o.Tags
+	return t.Tags
 }
 
-func (o *TicketInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (t *TicketInput) GetPassThrough() []PassThroughBody {
+	if t == nil {
 		return nil
 	}
-	return o.PassThrough
+	return t.PassThrough
 }

@@ -14,18 +14,18 @@ type CrmOpportunitiesDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmOpportunitiesDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmOpportunitiesDeleteGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmOpportunitiesDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmOpportunitiesDeleteGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmOpportunitiesDeleteRequest struct {
@@ -52,39 +52,39 @@ func (c *CrmOpportunitiesDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmOpportunitiesDeleteRequest) GetID() string {
-	if o == nil {
+func (c *CrmOpportunitiesDeleteRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CrmOpportunitiesDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmOpportunitiesDeleteRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmOpportunitiesDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmOpportunitiesDeleteRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmOpportunitiesDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmOpportunitiesDeleteRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmOpportunitiesDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmOpportunitiesDeleteRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
 type CrmOpportunitiesDeleteResponse struct {
@@ -95,23 +95,23 @@ type CrmOpportunitiesDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmOpportunitiesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmOpportunitiesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmOpportunitiesDeleteResponse) GetDeleteOpportunityResponse() *components.DeleteOpportunityResponse {
-	if o == nil {
+func (c *CrmOpportunitiesDeleteResponse) GetDeleteOpportunityResponse() *components.DeleteOpportunityResponse {
+	if c == nil {
 		return nil
 	}
-	return o.DeleteOpportunityResponse
+	return c.DeleteOpportunityResponse
 }
 
-func (o *CrmOpportunitiesDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmOpportunitiesDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

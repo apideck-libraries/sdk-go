@@ -19,51 +19,51 @@ type GetFolderResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetFolderResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetFolderResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetFolderResponse) GetStatus() string {
-	if o == nil {
+func (g *GetFolderResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetFolderResponse) GetService() string {
-	if o == nil {
+func (g *GetFolderResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetFolderResponse) GetResource() string {
-	if o == nil {
+func (g *GetFolderResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetFolderResponse) GetOperation() string {
-	if o == nil {
+func (g *GetFolderResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetFolderResponse) GetData() Folder {
-	if o == nil {
+func (g *GetFolderResponse) GetData() Folder {
+	if g == nil {
 		return Folder{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetFolderResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetFolderResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

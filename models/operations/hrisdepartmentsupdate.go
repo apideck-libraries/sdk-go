@@ -14,18 +14,18 @@ type HrisDepartmentsUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *HrisDepartmentsUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisDepartmentsUpdateGlobals) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisDepartmentsUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (h *HrisDepartmentsUpdateGlobals) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
 type HrisDepartmentsUpdateRequest struct {
@@ -53,46 +53,46 @@ func (h *HrisDepartmentsUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *HrisDepartmentsUpdateRequest) GetID() string {
-	if o == nil {
+func (h *HrisDepartmentsUpdateRequest) GetID() string {
+	if h == nil {
 		return ""
 	}
-	return o.ID
+	return h.ID
 }
 
-func (o *HrisDepartmentsUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisDepartmentsUpdateRequest) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisDepartmentsUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (h *HrisDepartmentsUpdateRequest) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
-func (o *HrisDepartmentsUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (h *HrisDepartmentsUpdateRequest) GetServiceID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ServiceID
+	return h.ServiceID
 }
 
-func (o *HrisDepartmentsUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (h *HrisDepartmentsUpdateRequest) GetRaw() *bool {
+	if h == nil {
 		return nil
 	}
-	return o.Raw
+	return h.Raw
 }
 
-func (o *HrisDepartmentsUpdateRequest) GetDepartment() components.DepartmentInput {
-	if o == nil {
+func (h *HrisDepartmentsUpdateRequest) GetDepartment() components.DepartmentInput {
+	if h == nil {
 		return components.DepartmentInput{}
 	}
-	return o.Department
+	return h.Department
 }
 
 type HrisDepartmentsUpdateResponse struct {
@@ -103,23 +103,23 @@ type HrisDepartmentsUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *HrisDepartmentsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (h *HrisDepartmentsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if h == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return h.HTTPMeta
 }
 
-func (o *HrisDepartmentsUpdateResponse) GetUpdateDepartmentResponse() *components.UpdateDepartmentResponse {
-	if o == nil {
+func (h *HrisDepartmentsUpdateResponse) GetUpdateDepartmentResponse() *components.UpdateDepartmentResponse {
+	if h == nil {
 		return nil
 	}
-	return o.UpdateDepartmentResponse
+	return h.UpdateDepartmentResponse
 }
 
-func (o *HrisDepartmentsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (h *HrisDepartmentsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if h == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return h.UnexpectedErrorResponse
 }

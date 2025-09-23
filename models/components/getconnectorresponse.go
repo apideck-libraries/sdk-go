@@ -17,44 +17,44 @@ type GetConnectorResponse struct {
 	Links *Links `json:"links,omitempty"`
 }
 
-func (o *GetConnectorResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetConnectorResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetConnectorResponse) GetStatus() string {
-	if o == nil {
+func (g *GetConnectorResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetConnectorResponse) GetData() Connector {
-	if o == nil {
+func (g *GetConnectorResponse) GetData() Connector {
+	if g == nil {
 		return Connector{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetConnectorResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetConnectorResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }
 
-func (o *GetConnectorResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetConnectorResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetConnectorResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetConnectorResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }

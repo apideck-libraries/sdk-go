@@ -14,18 +14,18 @@ type AccountingPaymentsAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingPaymentsAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingPaymentsAddGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingPaymentsAddGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingPaymentsAddGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingPaymentsAddRequest struct {
@@ -51,39 +51,39 @@ func (a *AccountingPaymentsAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingPaymentsAddRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingPaymentsAddRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingPaymentsAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingPaymentsAddRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingPaymentsAddRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingPaymentsAddRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingPaymentsAddRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingPaymentsAddRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingPaymentsAddRequest) GetPayment() components.PaymentInput {
-	if o == nil {
+func (a *AccountingPaymentsAddRequest) GetPayment() components.PaymentInput {
+	if a == nil {
 		return components.PaymentInput{}
 	}
-	return o.Payment
+	return a.Payment
 }
 
 type AccountingPaymentsAddResponse struct {
@@ -94,23 +94,23 @@ type AccountingPaymentsAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingPaymentsAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingPaymentsAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingPaymentsAddResponse) GetCreatePaymentResponse() *components.CreatePaymentResponse {
-	if o == nil {
+func (a *AccountingPaymentsAddResponse) GetCreatePaymentResponse() *components.CreatePaymentResponse {
+	if a == nil {
 		return nil
 	}
-	return o.CreatePaymentResponse
+	return a.CreatePaymentResponse
 }
 
-func (o *AccountingPaymentsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingPaymentsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

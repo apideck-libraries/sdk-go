@@ -14,18 +14,18 @@ type AccountingSubsidiariesUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingSubsidiariesUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingSubsidiariesUpdateGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingSubsidiariesUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingSubsidiariesUpdateGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingSubsidiariesUpdateRequest struct {
@@ -53,46 +53,46 @@ func (a *AccountingSubsidiariesUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingSubsidiariesUpdateRequest) GetID() string {
-	if o == nil {
+func (a *AccountingSubsidiariesUpdateRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingSubsidiariesUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingSubsidiariesUpdateRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingSubsidiariesUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingSubsidiariesUpdateRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingSubsidiariesUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingSubsidiariesUpdateRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingSubsidiariesUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingSubsidiariesUpdateRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingSubsidiariesUpdateRequest) GetSubsidiary() components.SubsidiaryInput {
-	if o == nil {
+func (a *AccountingSubsidiariesUpdateRequest) GetSubsidiary() components.SubsidiaryInput {
+	if a == nil {
 		return components.SubsidiaryInput{}
 	}
-	return o.Subsidiary
+	return a.Subsidiary
 }
 
 type AccountingSubsidiariesUpdateResponse struct {
@@ -103,23 +103,23 @@ type AccountingSubsidiariesUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingSubsidiariesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingSubsidiariesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingSubsidiariesUpdateResponse) GetUpdateSubsidiaryResponse() *components.UpdateSubsidiaryResponse {
-	if o == nil {
+func (a *AccountingSubsidiariesUpdateResponse) GetUpdateSubsidiaryResponse() *components.UpdateSubsidiaryResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UpdateSubsidiaryResponse
+	return a.UpdateSubsidiaryResponse
 }
 
-func (o *AccountingSubsidiariesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingSubsidiariesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

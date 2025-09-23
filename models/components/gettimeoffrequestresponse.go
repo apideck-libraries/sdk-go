@@ -19,51 +19,51 @@ type GetTimeOffRequestResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetTimeOffRequestResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetTimeOffRequestResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetTimeOffRequestResponse) GetStatus() string {
-	if o == nil {
+func (g *GetTimeOffRequestResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetTimeOffRequestResponse) GetService() string {
-	if o == nil {
+func (g *GetTimeOffRequestResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetTimeOffRequestResponse) GetResource() string {
-	if o == nil {
+func (g *GetTimeOffRequestResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetTimeOffRequestResponse) GetOperation() string {
-	if o == nil {
+func (g *GetTimeOffRequestResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetTimeOffRequestResponse) GetData() TimeOffRequest {
-	if o == nil {
+func (g *GetTimeOffRequestResponse) GetData() TimeOffRequest {
+	if g == nil {
 		return TimeOffRequest{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetTimeOffRequestResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetTimeOffRequestResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

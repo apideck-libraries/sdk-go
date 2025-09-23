@@ -40,11 +40,11 @@ func main() {
     )
 
     res, err := s.FileStorage.Drives.List(ctx, operations.FileStorageDrivesAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Filter: &components.DrivesFilter{
-            GroupID: sdkgo.String("1234"),
+            GroupID: sdkgo.Pointer("1234"),
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -119,10 +119,10 @@ func main() {
     )
 
     res, err := s.FileStorage.Drives.Create(ctx, operations.FileStorageDrivesAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Drive: components.DriveInput{
             Name: "Project Resources",
-            Description: sdkgo.String("A description"),
+            Description: sdkgo.Pointer("A description"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -227,8 +227,8 @@ func main() {
 
     res, err := s.FileStorage.Drives.Get(ctx, operations.FileStorageDrivesOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -292,10 +292,10 @@ func main() {
 
     res, err := s.FileStorage.Drives.Update(ctx, operations.FileStorageDrivesUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Drive: components.DriveInput{
             Name: "Project Resources",
-            Description: sdkgo.String("A description"),
+            Description: sdkgo.Pointer("A description"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -374,7 +374,7 @@ func main() {
 
     res, err := s.FileStorage.Drives.Delete(ctx, operations.FileStorageDrivesDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

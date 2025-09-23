@@ -103,170 +103,170 @@ type Address struct {
 	RowVersion *string `json:"row_version,omitempty"`
 }
 
-func (o *Address) GetID() *string {
-	if o == nil {
+func (a *Address) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *Address) GetType() *Type {
-	if o == nil {
+func (a *Address) GetType() *Type {
+	if a == nil {
 		return nil
 	}
-	return o.Type
+	return a.Type
 }
 
-func (o *Address) GetString() *string {
-	if o == nil {
+func (a *Address) GetString() *string {
+	if a == nil {
 		return nil
 	}
-	return o.String
+	return a.String
 }
 
-func (o *Address) GetName() *string {
-	if o == nil {
+func (a *Address) GetName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Name
+	return a.Name
 }
 
-func (o *Address) GetLine1() *string {
-	if o == nil {
+func (a *Address) GetLine1() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Line1
+	return a.Line1
 }
 
-func (o *Address) GetLine2() *string {
-	if o == nil {
+func (a *Address) GetLine2() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Line2
+	return a.Line2
 }
 
-func (o *Address) GetLine3() *string {
-	if o == nil {
+func (a *Address) GetLine3() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Line3
+	return a.Line3
 }
 
-func (o *Address) GetLine4() *string {
-	if o == nil {
+func (a *Address) GetLine4() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Line4
+	return a.Line4
 }
 
-func (o *Address) GetStreetNumber() *string {
-	if o == nil {
+func (a *Address) GetStreetNumber() *string {
+	if a == nil {
 		return nil
 	}
-	return o.StreetNumber
+	return a.StreetNumber
 }
 
-func (o *Address) GetCity() *string {
-	if o == nil {
+func (a *Address) GetCity() *string {
+	if a == nil {
 		return nil
 	}
-	return o.City
+	return a.City
 }
 
-func (o *Address) GetState() *string {
-	if o == nil {
+func (a *Address) GetState() *string {
+	if a == nil {
 		return nil
 	}
-	return o.State
+	return a.State
 }
 
-func (o *Address) GetPostalCode() *string {
-	if o == nil {
+func (a *Address) GetPostalCode() *string {
+	if a == nil {
 		return nil
 	}
-	return o.PostalCode
+	return a.PostalCode
 }
 
-func (o *Address) GetCountry() *string {
-	if o == nil {
+func (a *Address) GetCountry() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Country
+	return a.Country
 }
 
-func (o *Address) GetLatitude() *string {
-	if o == nil {
+func (a *Address) GetLatitude() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Latitude
+	return a.Latitude
 }
 
-func (o *Address) GetLongitude() *string {
-	if o == nil {
+func (a *Address) GetLongitude() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Longitude
+	return a.Longitude
 }
 
-func (o *Address) GetCounty() *string {
-	if o == nil {
+func (a *Address) GetCounty() *string {
+	if a == nil {
 		return nil
 	}
-	return o.County
+	return a.County
 }
 
-func (o *Address) GetContactName() *string {
-	if o == nil {
+func (a *Address) GetContactName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ContactName
+	return a.ContactName
 }
 
-func (o *Address) GetSalutation() *string {
-	if o == nil {
+func (a *Address) GetSalutation() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Salutation
+	return a.Salutation
 }
 
-func (o *Address) GetPhoneNumber() *string {
-	if o == nil {
+func (a *Address) GetPhoneNumber() *string {
+	if a == nil {
 		return nil
 	}
-	return o.PhoneNumber
+	return a.PhoneNumber
 }
 
-func (o *Address) GetFax() *string {
-	if o == nil {
+func (a *Address) GetFax() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fax
+	return a.Fax
 }
 
-func (o *Address) GetEmail() *string {
-	if o == nil {
+func (a *Address) GetEmail() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Email
+	return a.Email
 }
 
-func (o *Address) GetWebsite() *string {
-	if o == nil {
+func (a *Address) GetWebsite() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Website
+	return a.Website
 }
 
-func (o *Address) GetNotes() *string {
-	if o == nil {
+func (a *Address) GetNotes() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Notes
+	return a.Notes
 }
 
-func (o *Address) GetRowVersion() *string {
-	if o == nil {
+func (a *Address) GetRowVersion() *string {
+	if a == nil {
 		return nil
 	}
-	return o.RowVersion
+	return a.RowVersion
 }

@@ -16,32 +16,32 @@ type Components struct {
 	Compound *bool    `json:"compound,omitempty"`
 }
 
-func (o *Components) GetID() *string {
-	if o == nil {
+func (c *Components) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *Components) GetName() *string {
-	if o == nil {
+func (c *Components) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *Components) GetRate() *float64 {
-	if o == nil {
+func (c *Components) GetRate() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.Rate
+	return c.Rate
 }
 
-func (o *Components) GetCompound() *bool {
-	if o == nil {
+func (c *Components) GetCompound() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Compound
+	return c.Compound
 }
 
 // TaxRateStatus - Tax rate status
@@ -79,11 +79,11 @@ type Subsidiaries struct {
 	ID *string `json:"id,omitempty"`
 }
 
-func (o *Subsidiaries) GetID() *string {
-	if o == nil {
+func (s *Subsidiaries) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
 type TaxRate struct {
@@ -142,158 +142,158 @@ func (t *TaxRate) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *TaxRate) GetID() *string {
-	if o == nil {
+func (t *TaxRate) GetID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ID
+	return t.ID
 }
 
-func (o *TaxRate) GetName() *string {
-	if o == nil {
+func (t *TaxRate) GetName() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Name
+	return t.Name
 }
 
-func (o *TaxRate) GetCode() *string {
-	if o == nil {
+func (t *TaxRate) GetCode() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Code
+	return t.Code
 }
 
-func (o *TaxRate) GetDescription() *string {
-	if o == nil {
+func (t *TaxRate) GetDescription() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Description
+	return t.Description
 }
 
-func (o *TaxRate) GetEffectiveTaxRate() *float64 {
-	if o == nil {
+func (t *TaxRate) GetEffectiveTaxRate() *float64 {
+	if t == nil {
 		return nil
 	}
-	return o.EffectiveTaxRate
+	return t.EffectiveTaxRate
 }
 
-func (o *TaxRate) GetTotalTaxRate() *float64 {
-	if o == nil {
+func (t *TaxRate) GetTotalTaxRate() *float64 {
+	if t == nil {
 		return nil
 	}
-	return o.TotalTaxRate
+	return t.TotalTaxRate
 }
 
-func (o *TaxRate) GetTaxPayableAccountID() *string {
-	if o == nil {
+func (t *TaxRate) GetTaxPayableAccountID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.TaxPayableAccountID
+	return t.TaxPayableAccountID
 }
 
-func (o *TaxRate) GetTaxRemittedAccountID() *string {
-	if o == nil {
+func (t *TaxRate) GetTaxRemittedAccountID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.TaxRemittedAccountID
+	return t.TaxRemittedAccountID
 }
 
-func (o *TaxRate) GetComponents() []Components {
-	if o == nil {
+func (t *TaxRate) GetComponents() []Components {
+	if t == nil {
 		return nil
 	}
-	return o.Components
+	return t.Components
 }
 
-func (o *TaxRate) GetType() *string {
-	if o == nil {
+func (t *TaxRate) GetType() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Type
+	return t.Type
 }
 
-func (o *TaxRate) GetReportTaxType() *string {
-	if o == nil {
+func (t *TaxRate) GetReportTaxType() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ReportTaxType
+	return t.ReportTaxType
 }
 
-func (o *TaxRate) GetOriginalTaxRateID() *string {
-	if o == nil {
+func (t *TaxRate) GetOriginalTaxRateID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.OriginalTaxRateID
+	return t.OriginalTaxRateID
 }
 
-func (o *TaxRate) GetStatus() *TaxRateStatus {
-	if o == nil {
+func (t *TaxRate) GetStatus() *TaxRateStatus {
+	if t == nil {
 		return nil
 	}
-	return o.Status
+	return t.Status
 }
 
-func (o *TaxRate) GetCustomMappings() map[string]any {
-	if o == nil {
+func (t *TaxRate) GetCustomMappings() map[string]any {
+	if t == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return t.CustomMappings
 }
 
-func (o *TaxRate) GetRowVersion() *string {
-	if o == nil {
+func (t *TaxRate) GetRowVersion() *string {
+	if t == nil {
 		return nil
 	}
-	return o.RowVersion
+	return t.RowVersion
 }
 
-func (o *TaxRate) GetUpdatedBy() *string {
-	if o == nil {
+func (t *TaxRate) GetUpdatedBy() *string {
+	if t == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return t.UpdatedBy
 }
 
-func (o *TaxRate) GetCreatedBy() *string {
-	if o == nil {
+func (t *TaxRate) GetCreatedBy() *string {
+	if t == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return t.CreatedBy
 }
 
-func (o *TaxRate) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (t *TaxRate) GetUpdatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return t.UpdatedAt
 }
 
-func (o *TaxRate) GetCreatedAt() *time.Time {
-	if o == nil {
+func (t *TaxRate) GetCreatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return t.CreatedAt
 }
 
-func (o *TaxRate) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (t *TaxRate) GetPassThrough() []PassThroughBody {
+	if t == nil {
 		return nil
 	}
-	return o.PassThrough
+	return t.PassThrough
 }
 
-func (o *TaxRate) GetSubsidiaries() []Subsidiaries {
-	if o == nil {
+func (t *TaxRate) GetSubsidiaries() []Subsidiaries {
+	if t == nil {
 		return nil
 	}
-	return o.Subsidiaries
+	return t.Subsidiaries
 }
 
-func (o *TaxRate) GetCustomFields() []CustomField {
-	if o == nil {
+func (t *TaxRate) GetCustomFields() []CustomField {
+	if t == nil {
 		return nil
 	}
-	return o.CustomFields
+	return t.CustomFields
 }
 
 type TaxRateInput struct {
@@ -331,121 +331,121 @@ type TaxRateInput struct {
 	CustomFields []CustomField  `json:"custom_fields,omitempty"`
 }
 
-func (o *TaxRateInput) GetID() *string {
-	if o == nil {
+func (t *TaxRateInput) GetID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ID
+	return t.ID
 }
 
-func (o *TaxRateInput) GetName() *string {
-	if o == nil {
+func (t *TaxRateInput) GetName() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Name
+	return t.Name
 }
 
-func (o *TaxRateInput) GetCode() *string {
-	if o == nil {
+func (t *TaxRateInput) GetCode() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Code
+	return t.Code
 }
 
-func (o *TaxRateInput) GetDescription() *string {
-	if o == nil {
+func (t *TaxRateInput) GetDescription() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Description
+	return t.Description
 }
 
-func (o *TaxRateInput) GetEffectiveTaxRate() *float64 {
-	if o == nil {
+func (t *TaxRateInput) GetEffectiveTaxRate() *float64 {
+	if t == nil {
 		return nil
 	}
-	return o.EffectiveTaxRate
+	return t.EffectiveTaxRate
 }
 
-func (o *TaxRateInput) GetTotalTaxRate() *float64 {
-	if o == nil {
+func (t *TaxRateInput) GetTotalTaxRate() *float64 {
+	if t == nil {
 		return nil
 	}
-	return o.TotalTaxRate
+	return t.TotalTaxRate
 }
 
-func (o *TaxRateInput) GetTaxPayableAccountID() *string {
-	if o == nil {
+func (t *TaxRateInput) GetTaxPayableAccountID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.TaxPayableAccountID
+	return t.TaxPayableAccountID
 }
 
-func (o *TaxRateInput) GetTaxRemittedAccountID() *string {
-	if o == nil {
+func (t *TaxRateInput) GetTaxRemittedAccountID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.TaxRemittedAccountID
+	return t.TaxRemittedAccountID
 }
 
-func (o *TaxRateInput) GetComponents() []Components {
-	if o == nil {
+func (t *TaxRateInput) GetComponents() []Components {
+	if t == nil {
 		return nil
 	}
-	return o.Components
+	return t.Components
 }
 
-func (o *TaxRateInput) GetType() *string {
-	if o == nil {
+func (t *TaxRateInput) GetType() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Type
+	return t.Type
 }
 
-func (o *TaxRateInput) GetReportTaxType() *string {
-	if o == nil {
+func (t *TaxRateInput) GetReportTaxType() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ReportTaxType
+	return t.ReportTaxType
 }
 
-func (o *TaxRateInput) GetOriginalTaxRateID() *string {
-	if o == nil {
+func (t *TaxRateInput) GetOriginalTaxRateID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.OriginalTaxRateID
+	return t.OriginalTaxRateID
 }
 
-func (o *TaxRateInput) GetStatus() *TaxRateStatus {
-	if o == nil {
+func (t *TaxRateInput) GetStatus() *TaxRateStatus {
+	if t == nil {
 		return nil
 	}
-	return o.Status
+	return t.Status
 }
 
-func (o *TaxRateInput) GetRowVersion() *string {
-	if o == nil {
+func (t *TaxRateInput) GetRowVersion() *string {
+	if t == nil {
 		return nil
 	}
-	return o.RowVersion
+	return t.RowVersion
 }
 
-func (o *TaxRateInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (t *TaxRateInput) GetPassThrough() []PassThroughBody {
+	if t == nil {
 		return nil
 	}
-	return o.PassThrough
+	return t.PassThrough
 }
 
-func (o *TaxRateInput) GetSubsidiaries() []Subsidiaries {
-	if o == nil {
+func (t *TaxRateInput) GetSubsidiaries() []Subsidiaries {
+	if t == nil {
 		return nil
 	}
-	return o.Subsidiaries
+	return t.Subsidiaries
 }
 
-func (o *TaxRateInput) GetCustomFields() []CustomField {
-	if o == nil {
+func (t *TaxRateInput) GetCustomFields() []CustomField {
+	if t == nil {
 		return nil
 	}
-	return o.CustomFields
+	return t.CustomFields
 }

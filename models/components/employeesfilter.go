@@ -65,79 +65,79 @@ type EmployeesFilter struct {
 	Country *string `queryParam:"name=country"`
 }
 
-func (o *EmployeesFilter) GetCompanyID() *string {
-	if o == nil {
+func (e *EmployeesFilter) GetCompanyID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CompanyID
+	return e.CompanyID
 }
 
-func (o *EmployeesFilter) GetEmail() *string {
-	if o == nil {
+func (e *EmployeesFilter) GetEmail() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Email
+	return e.Email
 }
 
-func (o *EmployeesFilter) GetFirstName() *string {
-	if o == nil {
+func (e *EmployeesFilter) GetFirstName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.FirstName
+	return e.FirstName
 }
 
-func (o *EmployeesFilter) GetTitle() *string {
-	if o == nil {
+func (e *EmployeesFilter) GetTitle() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Title
+	return e.Title
 }
 
-func (o *EmployeesFilter) GetLastName() *string {
-	if o == nil {
+func (e *EmployeesFilter) GetLastName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.LastName
+	return e.LastName
 }
 
-func (o *EmployeesFilter) GetManagerID() *string {
-	if o == nil {
+func (e *EmployeesFilter) GetManagerID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ManagerID
+	return e.ManagerID
 }
 
-func (o *EmployeesFilter) GetEmploymentStatus() *EmployeesFilterEmploymentStatus {
-	if o == nil {
+func (e *EmployeesFilter) GetEmploymentStatus() *EmployeesFilterEmploymentStatus {
+	if e == nil {
 		return nil
 	}
-	return o.EmploymentStatus
+	return e.EmploymentStatus
 }
 
-func (o *EmployeesFilter) GetEmployeeNumber() *string {
-	if o == nil {
+func (e *EmployeesFilter) GetEmployeeNumber() *string {
+	if e == nil {
 		return nil
 	}
-	return o.EmployeeNumber
+	return e.EmployeeNumber
 }
 
-func (o *EmployeesFilter) GetDepartmentID() *string {
-	if o == nil {
+func (e *EmployeesFilter) GetDepartmentID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return e.DepartmentID
 }
 
-func (o *EmployeesFilter) GetCity() *string {
-	if o == nil {
+func (e *EmployeesFilter) GetCity() *string {
+	if e == nil {
 		return nil
 	}
-	return o.City
+	return e.City
 }
 
-func (o *EmployeesFilter) GetCountry() *string {
-	if o == nil {
+func (e *EmployeesFilter) GetCountry() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Country
+	return e.Country
 }

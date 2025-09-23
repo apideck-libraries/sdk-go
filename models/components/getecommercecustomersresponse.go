@@ -23,65 +23,65 @@ type GetEcommerceCustomersResponse struct {
 	Links *Links `json:"links,omitempty"`
 }
 
-func (o *GetEcommerceCustomersResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetEcommerceCustomersResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetEcommerceCustomersResponse) GetStatus() string {
-	if o == nil {
+func (g *GetEcommerceCustomersResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetEcommerceCustomersResponse) GetService() string {
-	if o == nil {
+func (g *GetEcommerceCustomersResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetEcommerceCustomersResponse) GetResource() string {
-	if o == nil {
+func (g *GetEcommerceCustomersResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetEcommerceCustomersResponse) GetOperation() string {
-	if o == nil {
+func (g *GetEcommerceCustomersResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetEcommerceCustomersResponse) GetData() []EcommerceCustomer {
-	if o == nil {
+func (g *GetEcommerceCustomersResponse) GetData() []EcommerceCustomer {
+	if g == nil {
 		return []EcommerceCustomer{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetEcommerceCustomersResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetEcommerceCustomersResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }
 
-func (o *GetEcommerceCustomersResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetEcommerceCustomersResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetEcommerceCustomersResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetEcommerceCustomersResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }

@@ -19,51 +19,51 @@ type GetTrackingCategoryResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetTrackingCategoryResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetTrackingCategoryResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetTrackingCategoryResponse) GetStatus() string {
-	if o == nil {
+func (g *GetTrackingCategoryResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetTrackingCategoryResponse) GetService() string {
-	if o == nil {
+func (g *GetTrackingCategoryResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetTrackingCategoryResponse) GetResource() string {
-	if o == nil {
+func (g *GetTrackingCategoryResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetTrackingCategoryResponse) GetOperation() string {
-	if o == nil {
+func (g *GetTrackingCategoryResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetTrackingCategoryResponse) GetData() TrackingCategory {
-	if o == nil {
+func (g *GetTrackingCategoryResponse) GetData() TrackingCategory {
+	if g == nil {
 		return TrackingCategory{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetTrackingCategoryResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetTrackingCategoryResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

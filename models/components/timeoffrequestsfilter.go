@@ -61,44 +61,44 @@ type TimeOffRequestsFilter struct {
 	CompanyID *string `queryParam:"name=company_id"`
 }
 
-func (o *TimeOffRequestsFilter) GetStartDate() *string {
-	if o == nil {
+func (t *TimeOffRequestsFilter) GetStartDate() *string {
+	if t == nil {
 		return nil
 	}
-	return o.StartDate
+	return t.StartDate
 }
 
-func (o *TimeOffRequestsFilter) GetEndDate() *string {
-	if o == nil {
+func (t *TimeOffRequestsFilter) GetEndDate() *string {
+	if t == nil {
 		return nil
 	}
-	return o.EndDate
+	return t.EndDate
 }
 
-func (o *TimeOffRequestsFilter) GetUpdatedSince() *string {
-	if o == nil {
+func (t *TimeOffRequestsFilter) GetUpdatedSince() *string {
+	if t == nil {
 		return nil
 	}
-	return o.UpdatedSince
+	return t.UpdatedSince
 }
 
-func (o *TimeOffRequestsFilter) GetEmployeeID() *string {
-	if o == nil {
+func (t *TimeOffRequestsFilter) GetEmployeeID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.EmployeeID
+	return t.EmployeeID
 }
 
-func (o *TimeOffRequestsFilter) GetTimeOffRequestStatus() *TimeOffRequestStatus {
-	if o == nil {
+func (t *TimeOffRequestsFilter) GetTimeOffRequestStatus() *TimeOffRequestStatus {
+	if t == nil {
 		return nil
 	}
-	return o.TimeOffRequestStatus
+	return t.TimeOffRequestStatus
 }
 
-func (o *TimeOffRequestsFilter) GetCompanyID() *string {
-	if o == nil {
+func (t *TimeOffRequestsFilter) GetCompanyID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.CompanyID
+	return t.CompanyID
 }

@@ -71,53 +71,53 @@ type EvenWeeks struct {
 	HoursSunday    *float64 `json:"hours_sunday,omitempty"`
 }
 
-func (o *EvenWeeks) GetHoursMonday() *float64 {
-	if o == nil {
+func (e *EvenWeeks) GetHoursMonday() *float64 {
+	if e == nil {
 		return nil
 	}
-	return o.HoursMonday
+	return e.HoursMonday
 }
 
-func (o *EvenWeeks) GetHoursTuesday() *float64 {
-	if o == nil {
+func (e *EvenWeeks) GetHoursTuesday() *float64 {
+	if e == nil {
 		return nil
 	}
-	return o.HoursTuesday
+	return e.HoursTuesday
 }
 
-func (o *EvenWeeks) GetHoursWednesday() *float64 {
-	if o == nil {
+func (e *EvenWeeks) GetHoursWednesday() *float64 {
+	if e == nil {
 		return nil
 	}
-	return o.HoursWednesday
+	return e.HoursWednesday
 }
 
-func (o *EvenWeeks) GetHoursThursday() *float64 {
-	if o == nil {
+func (e *EvenWeeks) GetHoursThursday() *float64 {
+	if e == nil {
 		return nil
 	}
-	return o.HoursThursday
+	return e.HoursThursday
 }
 
-func (o *EvenWeeks) GetHoursFriday() *float64 {
-	if o == nil {
+func (e *EvenWeeks) GetHoursFriday() *float64 {
+	if e == nil {
 		return nil
 	}
-	return o.HoursFriday
+	return e.HoursFriday
 }
 
-func (o *EvenWeeks) GetHoursSaturday() *float64 {
-	if o == nil {
+func (e *EvenWeeks) GetHoursSaturday() *float64 {
+	if e == nil {
 		return nil
 	}
-	return o.HoursSaturday
+	return e.HoursSaturday
 }
 
-func (o *EvenWeeks) GetHoursSunday() *float64 {
-	if o == nil {
+func (e *EvenWeeks) GetHoursSunday() *float64 {
+	if e == nil {
 		return nil
 	}
-	return o.HoursSunday
+	return e.HoursSunday
 }
 
 type WorkPattern struct {
@@ -125,18 +125,18 @@ type WorkPattern struct {
 	EvenWeeks *EvenWeeks `json:"even_weeks,omitempty"`
 }
 
-func (o *WorkPattern) GetOddWeeks() *OddWeeks {
-	if o == nil {
+func (w *WorkPattern) GetOddWeeks() *OddWeeks {
+	if w == nil {
 		return nil
 	}
-	return o.OddWeeks
+	return w.OddWeeks
 }
 
-func (o *WorkPattern) GetEvenWeeks() *EvenWeeks {
-	if o == nil {
+func (w *WorkPattern) GetEvenWeeks() *EvenWeeks {
+	if w == nil {
 		return nil
 	}
-	return o.EvenWeeks
+	return w.EvenWeeks
 }
 
 type Schedule struct {
@@ -149,30 +149,30 @@ type Schedule struct {
 	WorkPattern WorkPattern `json:"work_pattern"`
 }
 
-func (o *Schedule) GetID() string {
-	if o == nil {
+func (s *Schedule) GetID() string {
+	if s == nil {
 		return ""
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *Schedule) GetStartDate() string {
-	if o == nil {
+func (s *Schedule) GetStartDate() string {
+	if s == nil {
 		return ""
 	}
-	return o.StartDate
+	return s.StartDate
 }
 
-func (o *Schedule) GetEndDate() string {
-	if o == nil {
+func (s *Schedule) GetEndDate() string {
+	if s == nil {
 		return ""
 	}
-	return o.EndDate
+	return s.EndDate
 }
 
-func (o *Schedule) GetWorkPattern() WorkPattern {
-	if o == nil {
+func (s *Schedule) GetWorkPattern() WorkPattern {
+	if s == nil {
 		return WorkPattern{}
 	}
-	return o.WorkPattern
+	return s.WorkPattern
 }

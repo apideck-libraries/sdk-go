@@ -11,11 +11,11 @@ type ConnectorApisOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *ConnectorApisOneGlobals) GetAppID() *string {
-	if o == nil {
+func (c *ConnectorApisOneGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type ConnectorApisOneRequest struct {
@@ -25,18 +25,18 @@ type ConnectorApisOneRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *ConnectorApisOneRequest) GetAppID() *string {
-	if o == nil {
+func (c *ConnectorApisOneRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *ConnectorApisOneRequest) GetID() string {
-	if o == nil {
+func (c *ConnectorApisOneRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
 type ConnectorApisOneResponse struct {
@@ -47,23 +47,23 @@ type ConnectorApisOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *ConnectorApisOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *ConnectorApisOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *ConnectorApisOneResponse) GetGetAPIResponse() *components.GetAPIResponse {
-	if o == nil {
+func (c *ConnectorApisOneResponse) GetGetAPIResponse() *components.GetAPIResponse {
+	if c == nil {
 		return nil
 	}
-	return o.GetAPIResponse
+	return c.GetAPIResponse
 }
 
-func (o *ConnectorApisOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *ConnectorApisOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

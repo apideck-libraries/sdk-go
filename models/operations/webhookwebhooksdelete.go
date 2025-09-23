@@ -11,11 +11,11 @@ type WebhookWebhooksDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *WebhookWebhooksDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (w *WebhookWebhooksDeleteGlobals) GetAppID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.AppID
+	return w.AppID
 }
 
 type WebhookWebhooksDeleteRequest struct {
@@ -25,18 +25,18 @@ type WebhookWebhooksDeleteRequest struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *WebhookWebhooksDeleteRequest) GetID() string {
-	if o == nil {
+func (w *WebhookWebhooksDeleteRequest) GetID() string {
+	if w == nil {
 		return ""
 	}
-	return o.ID
+	return w.ID
 }
 
-func (o *WebhookWebhooksDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (w *WebhookWebhooksDeleteRequest) GetAppID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.AppID
+	return w.AppID
 }
 
 type WebhookWebhooksDeleteResponse struct {
@@ -47,23 +47,23 @@ type WebhookWebhooksDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *WebhookWebhooksDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (w *WebhookWebhooksDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if w == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return w.HTTPMeta
 }
 
-func (o *WebhookWebhooksDeleteResponse) GetDeleteWebhookResponse() *components.DeleteWebhookResponse {
-	if o == nil {
+func (w *WebhookWebhooksDeleteResponse) GetDeleteWebhookResponse() *components.DeleteWebhookResponse {
+	if w == nil {
 		return nil
 	}
-	return o.DeleteWebhookResponse
+	return w.DeleteWebhookResponse
 }
 
-func (o *WebhookWebhooksDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (w *WebhookWebhooksDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if w == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return w.UnexpectedErrorResponse
 }

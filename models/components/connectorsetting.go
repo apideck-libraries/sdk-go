@@ -75,23 +75,23 @@ type ConnectorSetting struct {
 	Type  *ConnectorSettingType `json:"type,omitempty"`
 }
 
-func (o *ConnectorSetting) GetID() *string {
-	if o == nil {
+func (c *ConnectorSetting) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ConnectorSetting) GetLabel() *string {
-	if o == nil {
+func (c *ConnectorSetting) GetLabel() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Label
+	return c.Label
 }
 
-func (o *ConnectorSetting) GetType() *ConnectorSettingType {
-	if o == nil {
+func (c *ConnectorSetting) GetType() *ConnectorSettingType {
+	if c == nil {
 		return nil
 	}
-	return o.Type
+	return c.Type
 }

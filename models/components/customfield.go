@@ -254,30 +254,30 @@ type CustomField struct {
 	Value       *Value  `json:"value,omitempty"`
 }
 
-func (o *CustomField) GetID() *string {
-	if o == nil {
+func (c *CustomField) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CustomField) GetName() *string {
-	if o == nil {
+func (c *CustomField) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CustomField) GetDescription() *string {
-	if o == nil {
+func (c *CustomField) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CustomField) GetValue() *Value {
-	if o == nil {
+func (c *CustomField) GetValue() *Value {
+	if c == nil {
 		return nil
 	}
-	return o.Value
+	return c.Value
 }

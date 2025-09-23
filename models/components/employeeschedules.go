@@ -7,16 +7,16 @@ type EmployeeSchedules struct {
 	Schedules []Schedule `json:"schedules,omitempty"`
 }
 
-func (o *EmployeeSchedules) GetEmployee() *Employee {
-	if o == nil {
+func (e *EmployeeSchedules) GetEmployee() *Employee {
+	if e == nil {
 		return nil
 	}
-	return o.Employee
+	return e.Employee
 }
 
-func (o *EmployeeSchedules) GetSchedules() []Schedule {
-	if o == nil {
+func (e *EmployeeSchedules) GetSchedules() []Schedule {
+	if e == nil {
 		return nil
 	}
-	return o.Schedules
+	return e.Schedules
 }

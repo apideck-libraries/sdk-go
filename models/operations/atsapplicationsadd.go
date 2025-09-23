@@ -14,18 +14,18 @@ type AtsApplicationsAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AtsApplicationsAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AtsApplicationsAddGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AtsApplicationsAddGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AtsApplicationsAddGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AtsApplicationsAddRequest struct {
@@ -51,39 +51,39 @@ func (a *AtsApplicationsAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AtsApplicationsAddRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AtsApplicationsAddRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AtsApplicationsAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AtsApplicationsAddRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AtsApplicationsAddRequest) GetAppID() *string {
-	if o == nil {
+func (a *AtsApplicationsAddRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AtsApplicationsAddRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AtsApplicationsAddRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AtsApplicationsAddRequest) GetApplication() components.ApplicationInput {
-	if o == nil {
+func (a *AtsApplicationsAddRequest) GetApplication() components.ApplicationInput {
+	if a == nil {
 		return components.ApplicationInput{}
 	}
-	return o.Application
+	return a.Application
 }
 
 type AtsApplicationsAddResponse struct {
@@ -94,23 +94,23 @@ type AtsApplicationsAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AtsApplicationsAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AtsApplicationsAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AtsApplicationsAddResponse) GetCreateApplicationResponse() *components.CreateApplicationResponse {
-	if o == nil {
+func (a *AtsApplicationsAddResponse) GetCreateApplicationResponse() *components.CreateApplicationResponse {
+	if a == nil {
 		return nil
 	}
-	return o.CreateApplicationResponse
+	return a.CreateApplicationResponse
 }
 
-func (o *AtsApplicationsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AtsApplicationsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

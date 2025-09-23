@@ -18,18 +18,18 @@ type AccountingAttachmentsUploadGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingAttachmentsUploadGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsUploadGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingAttachmentsUploadGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsUploadGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingAttachmentsUploadRequest struct {
@@ -62,60 +62,60 @@ func (a *AccountingAttachmentsUploadRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingAttachmentsUploadRequest) GetReferenceType() components.AttachmentReferenceType {
-	if o == nil {
+func (a *AccountingAttachmentsUploadRequest) GetReferenceType() components.AttachmentReferenceType {
+	if a == nil {
 		return components.AttachmentReferenceType("")
 	}
-	return o.ReferenceType
+	return a.ReferenceType
 }
 
-func (o *AccountingAttachmentsUploadRequest) GetReferenceID() string {
-	if o == nil {
+func (a *AccountingAttachmentsUploadRequest) GetReferenceID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ReferenceID
+	return a.ReferenceID
 }
 
-func (o *AccountingAttachmentsUploadRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingAttachmentsUploadRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingAttachmentsUploadRequest) GetXApideckMetadata() *string {
-	if o == nil {
+func (a *AccountingAttachmentsUploadRequest) GetXApideckMetadata() *string {
+	if a == nil {
 		return nil
 	}
-	return o.XApideckMetadata
+	return a.XApideckMetadata
 }
 
-func (o *AccountingAttachmentsUploadRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsUploadRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingAttachmentsUploadRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsUploadRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingAttachmentsUploadRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsUploadRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingAttachmentsUploadRequest) GetRequestBody() any {
-	if o == nil {
+func (a *AccountingAttachmentsUploadRequest) GetRequestBody() any {
+	if a == nil {
 		return nil
 	}
-	return o.RequestBody
+	return a.RequestBody
 }
 
 type AccountingAttachmentsUploadResponse struct {
@@ -126,23 +126,23 @@ type AccountingAttachmentsUploadResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingAttachmentsUploadResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingAttachmentsUploadResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingAttachmentsUploadResponse) GetCreateAttachmentResponse() *components.CreateAttachmentResponse {
-	if o == nil {
+func (a *AccountingAttachmentsUploadResponse) GetCreateAttachmentResponse() *components.CreateAttachmentResponse {
+	if a == nil {
 		return nil
 	}
-	return o.CreateAttachmentResponse
+	return a.CreateAttachmentResponse
 }
 
-func (o *AccountingAttachmentsUploadResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingAttachmentsUploadResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

@@ -14,18 +14,18 @@ type AccountingCreditNotesDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingCreditNotesDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesDeleteGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingCreditNotesDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesDeleteGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingCreditNotesDeleteRequest struct {
@@ -52,39 +52,39 @@ func (a *AccountingCreditNotesDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingCreditNotesDeleteRequest) GetID() string {
-	if o == nil {
+func (a *AccountingCreditNotesDeleteRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingCreditNotesDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesDeleteRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingCreditNotesDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesDeleteRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingCreditNotesDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesDeleteRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingCreditNotesDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingCreditNotesDeleteRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
 type AccountingCreditNotesDeleteResponse struct {
@@ -95,23 +95,23 @@ type AccountingCreditNotesDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingCreditNotesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingCreditNotesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingCreditNotesDeleteResponse) GetDeleteCreditNoteResponse() *components.DeleteCreditNoteResponse {
-	if o == nil {
+func (a *AccountingCreditNotesDeleteResponse) GetDeleteCreditNoteResponse() *components.DeleteCreditNoteResponse {
+	if a == nil {
 		return nil
 	}
-	return o.DeleteCreditNoteResponse
+	return a.DeleteCreditNoteResponse
 }
 
-func (o *AccountingCreditNotesDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingCreditNotesDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

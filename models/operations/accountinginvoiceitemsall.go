@@ -14,18 +14,18 @@ type AccountingInvoiceItemsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingInvoiceItemsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingInvoiceItemsAllGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingInvoiceItemsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingInvoiceItemsAllGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingInvoiceItemsAllRequest struct {
@@ -62,74 +62,74 @@ func (a *AccountingInvoiceItemsAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingInvoiceItemsAllRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingInvoiceItemsAllRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingInvoiceItemsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingInvoiceItemsAllRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingInvoiceItemsAllRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingInvoiceItemsAllRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingInvoiceItemsAllRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingInvoiceItemsAllRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingInvoiceItemsAllRequest) GetCursor() *string {
-	if o == nil {
+func (a *AccountingInvoiceItemsAllRequest) GetCursor() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Cursor
+	return a.Cursor
 }
 
-func (o *AccountingInvoiceItemsAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (a *AccountingInvoiceItemsAllRequest) GetLimit() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.Limit
+	return a.Limit
 }
 
-func (o *AccountingInvoiceItemsAllRequest) GetFilter() *components.InvoiceItemsFilter {
-	if o == nil {
+func (a *AccountingInvoiceItemsAllRequest) GetFilter() *components.InvoiceItemsFilter {
+	if a == nil {
 		return nil
 	}
-	return o.Filter
+	return a.Filter
 }
 
-func (o *AccountingInvoiceItemsAllRequest) GetSort() *components.InvoiceItemsSort {
-	if o == nil {
+func (a *AccountingInvoiceItemsAllRequest) GetSort() *components.InvoiceItemsSort {
+	if a == nil {
 		return nil
 	}
-	return o.Sort
+	return a.Sort
 }
 
-func (o *AccountingInvoiceItemsAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (a *AccountingInvoiceItemsAllRequest) GetPassThrough() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
-func (o *AccountingInvoiceItemsAllRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingInvoiceItemsAllRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingInvoiceItemsAllResponse struct {
@@ -142,23 +142,23 @@ type AccountingInvoiceItemsAllResponse struct {
 	Next func() (*AccountingInvoiceItemsAllResponse, error)
 }
 
-func (o *AccountingInvoiceItemsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingInvoiceItemsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingInvoiceItemsAllResponse) GetGetInvoiceItemsResponse() *components.GetInvoiceItemsResponse {
-	if o == nil {
+func (a *AccountingInvoiceItemsAllResponse) GetGetInvoiceItemsResponse() *components.GetInvoiceItemsResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetInvoiceItemsResponse
+	return a.GetInvoiceItemsResponse
 }
 
-func (o *AccountingInvoiceItemsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingInvoiceItemsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

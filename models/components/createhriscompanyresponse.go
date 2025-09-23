@@ -20,51 +20,51 @@ type CreateHrisCompanyResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *CreateHrisCompanyResponse) GetStatusCode() int64 {
-	if o == nil {
+func (c *CreateHrisCompanyResponse) GetStatusCode() int64 {
+	if c == nil {
 		return 0
 	}
-	return o.StatusCode
+	return c.StatusCode
 }
 
-func (o *CreateHrisCompanyResponse) GetStatus() string {
-	if o == nil {
+func (c *CreateHrisCompanyResponse) GetStatus() string {
+	if c == nil {
 		return ""
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CreateHrisCompanyResponse) GetService() string {
-	if o == nil {
+func (c *CreateHrisCompanyResponse) GetService() string {
+	if c == nil {
 		return ""
 	}
-	return o.Service
+	return c.Service
 }
 
-func (o *CreateHrisCompanyResponse) GetResource() string {
-	if o == nil {
+func (c *CreateHrisCompanyResponse) GetResource() string {
+	if c == nil {
 		return ""
 	}
-	return o.Resource
+	return c.Resource
 }
 
-func (o *CreateHrisCompanyResponse) GetOperation() string {
-	if o == nil {
+func (c *CreateHrisCompanyResponse) GetOperation() string {
+	if c == nil {
 		return ""
 	}
-	return o.Operation
+	return c.Operation
 }
 
-func (o *CreateHrisCompanyResponse) GetData() UnifiedID {
-	if o == nil {
+func (c *CreateHrisCompanyResponse) GetData() UnifiedID {
+	if c == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return c.Data
 }
 
-func (o *CreateHrisCompanyResponse) GetRaw() map[string]any {
-	if o == nil {
+func (c *CreateHrisCompanyResponse) GetRaw() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }

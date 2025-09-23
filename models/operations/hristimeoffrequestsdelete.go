@@ -14,18 +14,18 @@ type HrisTimeOffRequestsDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *HrisTimeOffRequestsDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisTimeOffRequestsDeleteGlobals) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisTimeOffRequestsDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (h *HrisTimeOffRequestsDeleteGlobals) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
 type HrisTimeOffRequestsDeleteRequest struct {
@@ -54,46 +54,46 @@ func (h *HrisTimeOffRequestsDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *HrisTimeOffRequestsDeleteRequest) GetID() string {
-	if o == nil {
+func (h *HrisTimeOffRequestsDeleteRequest) GetID() string {
+	if h == nil {
 		return ""
 	}
-	return o.ID
+	return h.ID
 }
 
-func (o *HrisTimeOffRequestsDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisTimeOffRequestsDeleteRequest) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisTimeOffRequestsDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (h *HrisTimeOffRequestsDeleteRequest) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
-func (o *HrisTimeOffRequestsDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (h *HrisTimeOffRequestsDeleteRequest) GetServiceID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ServiceID
+	return h.ServiceID
 }
 
-func (o *HrisTimeOffRequestsDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (h *HrisTimeOffRequestsDeleteRequest) GetRaw() *bool {
+	if h == nil {
 		return nil
 	}
-	return o.Raw
+	return h.Raw
 }
 
-func (o *HrisTimeOffRequestsDeleteRequest) GetEmployeeID() string {
-	if o == nil {
+func (h *HrisTimeOffRequestsDeleteRequest) GetEmployeeID() string {
+	if h == nil {
 		return ""
 	}
-	return o.EmployeeID
+	return h.EmployeeID
 }
 
 type HrisTimeOffRequestsDeleteResponse struct {
@@ -104,23 +104,23 @@ type HrisTimeOffRequestsDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *HrisTimeOffRequestsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (h *HrisTimeOffRequestsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if h == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return h.HTTPMeta
 }
 
-func (o *HrisTimeOffRequestsDeleteResponse) GetDeleteTimeOffRequestResponse() *components.DeleteTimeOffRequestResponse {
-	if o == nil {
+func (h *HrisTimeOffRequestsDeleteResponse) GetDeleteTimeOffRequestResponse() *components.DeleteTimeOffRequestResponse {
+	if h == nil {
 		return nil
 	}
-	return o.DeleteTimeOffRequestResponse
+	return h.DeleteTimeOffRequestResponse
 }
 
-func (o *HrisTimeOffRequestsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (h *HrisTimeOffRequestsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if h == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return h.UnexpectedErrorResponse
 }

@@ -14,18 +14,18 @@ type AccountingJournalEntriesOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingJournalEntriesOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingJournalEntriesOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingJournalEntriesOneRequest struct {
@@ -54,46 +54,46 @@ func (a *AccountingJournalEntriesOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingJournalEntriesOneRequest) GetID() string {
-	if o == nil {
+func (a *AccountingJournalEntriesOneRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingJournalEntriesOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingJournalEntriesOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingJournalEntriesOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingJournalEntriesOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingJournalEntriesOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingJournalEntriesOneRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingJournalEntriesOneRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingJournalEntriesOneResponse struct {
@@ -104,23 +104,23 @@ type AccountingJournalEntriesOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingJournalEntriesOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingJournalEntriesOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingJournalEntriesOneResponse) GetGetJournalEntryResponse() *components.GetJournalEntryResponse {
-	if o == nil {
+func (a *AccountingJournalEntriesOneResponse) GetGetJournalEntryResponse() *components.GetJournalEntryResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetJournalEntryResponse
+	return a.GetJournalEntryResponse
 }
 
-func (o *AccountingJournalEntriesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingJournalEntriesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

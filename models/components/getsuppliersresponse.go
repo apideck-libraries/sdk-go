@@ -23,65 +23,65 @@ type GetSuppliersResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetSuppliersResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetSuppliersResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetSuppliersResponse) GetStatus() string {
-	if o == nil {
+func (g *GetSuppliersResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetSuppliersResponse) GetService() string {
-	if o == nil {
+func (g *GetSuppliersResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetSuppliersResponse) GetResource() string {
-	if o == nil {
+func (g *GetSuppliersResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetSuppliersResponse) GetOperation() string {
-	if o == nil {
+func (g *GetSuppliersResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetSuppliersResponse) GetData() []Supplier {
-	if o == nil {
+func (g *GetSuppliersResponse) GetData() []Supplier {
+	if g == nil {
 		return []Supplier{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetSuppliersResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetSuppliersResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetSuppliersResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetSuppliersResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }
 
-func (o *GetSuppliersResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetSuppliersResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

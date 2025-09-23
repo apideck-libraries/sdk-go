@@ -9,16 +9,16 @@ type LinkedFolder struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *LinkedFolder) GetID() string {
-	if o == nil {
+func (l *LinkedFolder) GetID() string {
+	if l == nil {
 		return ""
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinkedFolder) GetName() *string {
-	if o == nil {
+func (l *LinkedFolder) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }

@@ -14,18 +14,18 @@ type CrmPipelinesAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmPipelinesAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmPipelinesAllGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmPipelinesAllGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmPipelinesAllGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmPipelinesAllRequest struct {
@@ -58,60 +58,60 @@ func (c *CrmPipelinesAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmPipelinesAllRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmPipelinesAllRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmPipelinesAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmPipelinesAllRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmPipelinesAllRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmPipelinesAllRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmPipelinesAllRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmPipelinesAllRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmPipelinesAllRequest) GetCursor() *string {
-	if o == nil {
+func (c *CrmPipelinesAllRequest) GetCursor() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Cursor
+	return c.Cursor
 }
 
-func (o *CrmPipelinesAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (c *CrmPipelinesAllRequest) GetLimit() *int64 {
+	if c == nil {
 		return nil
 	}
-	return o.Limit
+	return c.Limit
 }
 
-func (o *CrmPipelinesAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (c *CrmPipelinesAllRequest) GetPassThrough() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }
 
-func (o *CrmPipelinesAllRequest) GetFields() *string {
-	if o == nil {
+func (c *CrmPipelinesAllRequest) GetFields() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Fields
+	return c.Fields
 }
 
 type CrmPipelinesAllResponse struct {
@@ -124,23 +124,23 @@ type CrmPipelinesAllResponse struct {
 	Next func() (*CrmPipelinesAllResponse, error)
 }
 
-func (o *CrmPipelinesAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmPipelinesAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmPipelinesAllResponse) GetGetPipelinesResponse() *components.GetPipelinesResponse {
-	if o == nil {
+func (c *CrmPipelinesAllResponse) GetGetPipelinesResponse() *components.GetPipelinesResponse {
+	if c == nil {
 		return nil
 	}
-	return o.GetPipelinesResponse
+	return c.GetPipelinesResponse
 }
 
-func (o *CrmPipelinesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmPipelinesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

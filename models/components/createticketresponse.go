@@ -20,51 +20,51 @@ type CreateTicketResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *CreateTicketResponse) GetStatusCode() int64 {
-	if o == nil {
+func (c *CreateTicketResponse) GetStatusCode() int64 {
+	if c == nil {
 		return 0
 	}
-	return o.StatusCode
+	return c.StatusCode
 }
 
-func (o *CreateTicketResponse) GetStatus() string {
-	if o == nil {
+func (c *CreateTicketResponse) GetStatus() string {
+	if c == nil {
 		return ""
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CreateTicketResponse) GetService() string {
-	if o == nil {
+func (c *CreateTicketResponse) GetService() string {
+	if c == nil {
 		return ""
 	}
-	return o.Service
+	return c.Service
 }
 
-func (o *CreateTicketResponse) GetResource() string {
-	if o == nil {
+func (c *CreateTicketResponse) GetResource() string {
+	if c == nil {
 		return ""
 	}
-	return o.Resource
+	return c.Resource
 }
 
-func (o *CreateTicketResponse) GetOperation() string {
-	if o == nil {
+func (c *CreateTicketResponse) GetOperation() string {
+	if c == nil {
 		return ""
 	}
-	return o.Operation
+	return c.Operation
 }
 
-func (o *CreateTicketResponse) GetData() UnifiedID {
-	if o == nil {
+func (c *CreateTicketResponse) GetData() UnifiedID {
+	if c == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return c.Data
 }
 
-func (o *CreateTicketResponse) GetRaw() map[string]any {
-	if o == nil {
+func (c *CreateTicketResponse) GetRaw() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }

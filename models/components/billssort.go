@@ -53,16 +53,16 @@ func (b *BillsSort) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *BillsSort) GetBy() *By {
-	if o == nil {
+func (b *BillsSort) GetBy() *By {
+	if b == nil {
 		return nil
 	}
-	return o.By
+	return b.By
 }
 
-func (o *BillsSort) GetDirection() *SortDirection {
-	if o == nil {
+func (b *BillsSort) GetDirection() *SortDirection {
+	if b == nil {
 		return nil
 	}
-	return o.Direction
+	return b.Direction
 }

@@ -26,6 +26,7 @@ type Accounting struct {
 	Locations          *Locations
 	Departments        *Departments
 	Attachments        *Attachments
+	BankAccounts       *BankAccounts
 	TrackingCategories *TrackingCategories
 	BillPayments       *BillPayments
 	Expenses           *Expenses
@@ -64,6 +65,7 @@ func newAccounting(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *h
 		Locations:          newLocations(rootSDK, sdkConfig, hooks),
 		Departments:        newDepartments(rootSDK, sdkConfig, hooks),
 		Attachments:        newAttachments(rootSDK, sdkConfig, hooks),
+		BankAccounts:       newBankAccounts(rootSDK, sdkConfig, hooks),
 		TrackingCategories: newTrackingCategories(rootSDK, sdkConfig, hooks),
 		BillPayments:       newBillPayments(rootSDK, sdkConfig, hooks),
 		Expenses:           newExpenses(rootSDK, sdkConfig, hooks),

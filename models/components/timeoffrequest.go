@@ -125,18 +125,18 @@ type Notes struct {
 	Manager  *string `json:"manager,omitempty"`
 }
 
-func (o *Notes) GetEmployee() *string {
-	if o == nil {
+func (n *Notes) GetEmployee() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Employee
+	return n.Employee
 }
 
-func (o *Notes) GetManager() *string {
-	if o == nil {
+func (n *Notes) GetManager() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Manager
+	return n.Manager
 }
 
 type TimeOffRequest struct {
@@ -194,151 +194,151 @@ func (t *TimeOffRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *TimeOffRequest) GetID() *string {
-	if o == nil {
+func (t *TimeOffRequest) GetID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ID
+	return t.ID
 }
 
-func (o *TimeOffRequest) GetEmployeeID() *string {
-	if o == nil {
+func (t *TimeOffRequest) GetEmployeeID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.EmployeeID
+	return t.EmployeeID
 }
 
-func (o *TimeOffRequest) GetPolicyID() *string {
-	if o == nil {
+func (t *TimeOffRequest) GetPolicyID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.PolicyID
+	return t.PolicyID
 }
 
-func (o *TimeOffRequest) GetStatus() *TimeOffRequestStatusStatus {
-	if o == nil {
+func (t *TimeOffRequest) GetStatus() *TimeOffRequestStatusStatus {
+	if t == nil {
 		return nil
 	}
-	return o.Status
+	return t.Status
 }
 
-func (o *TimeOffRequest) GetDescription() *string {
-	if o == nil {
+func (t *TimeOffRequest) GetDescription() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Description
+	return t.Description
 }
 
-func (o *TimeOffRequest) GetStartDate() *string {
-	if o == nil {
+func (t *TimeOffRequest) GetStartDate() *string {
+	if t == nil {
 		return nil
 	}
-	return o.StartDate
+	return t.StartDate
 }
 
-func (o *TimeOffRequest) GetEndDate() *string {
-	if o == nil {
+func (t *TimeOffRequest) GetEndDate() *string {
+	if t == nil {
 		return nil
 	}
-	return o.EndDate
+	return t.EndDate
 }
 
-func (o *TimeOffRequest) GetRequestDate() *string {
-	if o == nil {
+func (t *TimeOffRequest) GetRequestDate() *string {
+	if t == nil {
 		return nil
 	}
-	return o.RequestDate
+	return t.RequestDate
 }
 
-func (o *TimeOffRequest) GetRequestType() *RequestType {
-	if o == nil {
+func (t *TimeOffRequest) GetRequestType() *RequestType {
+	if t == nil {
 		return nil
 	}
-	return o.RequestType
+	return t.RequestType
 }
 
-func (o *TimeOffRequest) GetApprovalDate() *string {
-	if o == nil {
+func (t *TimeOffRequest) GetApprovalDate() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ApprovalDate
+	return t.ApprovalDate
 }
 
-func (o *TimeOffRequest) GetUnits() *Units {
-	if o == nil {
+func (t *TimeOffRequest) GetUnits() *Units {
+	if t == nil {
 		return nil
 	}
-	return o.Units
+	return t.Units
 }
 
-func (o *TimeOffRequest) GetAmount() *float64 {
-	if o == nil {
+func (t *TimeOffRequest) GetAmount() *float64 {
+	if t == nil {
 		return nil
 	}
-	return o.Amount
+	return t.Amount
 }
 
-func (o *TimeOffRequest) GetDayPart() *string {
-	if o == nil {
+func (t *TimeOffRequest) GetDayPart() *string {
+	if t == nil {
 		return nil
 	}
-	return o.DayPart
+	return t.DayPart
 }
 
-func (o *TimeOffRequest) GetNotes() *Notes {
-	if o == nil {
+func (t *TimeOffRequest) GetNotes() *Notes {
+	if t == nil {
 		return nil
 	}
-	return o.Notes
+	return t.Notes
 }
 
-func (o *TimeOffRequest) GetCustomMappings() map[string]any {
-	if o == nil {
+func (t *TimeOffRequest) GetCustomMappings() map[string]any {
+	if t == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return t.CustomMappings
 }
 
-func (o *TimeOffRequest) GetUpdatedBy() *string {
-	if o == nil {
+func (t *TimeOffRequest) GetUpdatedBy() *string {
+	if t == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return t.UpdatedBy
 }
 
-func (o *TimeOffRequest) GetCreatedBy() *string {
-	if o == nil {
+func (t *TimeOffRequest) GetCreatedBy() *string {
+	if t == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return t.CreatedBy
 }
 
-func (o *TimeOffRequest) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (t *TimeOffRequest) GetUpdatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return t.UpdatedAt
 }
 
-func (o *TimeOffRequest) GetCreatedAt() *time.Time {
-	if o == nil {
+func (t *TimeOffRequest) GetCreatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return t.CreatedAt
 }
 
-func (o *TimeOffRequest) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (t *TimeOffRequest) GetPassThrough() []PassThroughBody {
+	if t == nil {
 		return nil
 	}
-	return o.PassThrough
+	return t.PassThrough
 }
 
-func (o *TimeOffRequest) GetPolicyType() *string {
-	if o == nil {
+func (t *TimeOffRequest) GetPolicyType() *string {
+	if t == nil {
 		return nil
 	}
-	return o.PolicyType
+	return t.PolicyType
 }
 
 type TimeOffRequestInput struct {
@@ -373,107 +373,107 @@ type TimeOffRequestInput struct {
 	PolicyType *string `json:"policy_type,omitempty"`
 }
 
-func (o *TimeOffRequestInput) GetEmployeeID() *string {
-	if o == nil {
+func (t *TimeOffRequestInput) GetEmployeeID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.EmployeeID
+	return t.EmployeeID
 }
 
-func (o *TimeOffRequestInput) GetPolicyID() *string {
-	if o == nil {
+func (t *TimeOffRequestInput) GetPolicyID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.PolicyID
+	return t.PolicyID
 }
 
-func (o *TimeOffRequestInput) GetStatus() *TimeOffRequestStatusStatus {
-	if o == nil {
+func (t *TimeOffRequestInput) GetStatus() *TimeOffRequestStatusStatus {
+	if t == nil {
 		return nil
 	}
-	return o.Status
+	return t.Status
 }
 
-func (o *TimeOffRequestInput) GetDescription() *string {
-	if o == nil {
+func (t *TimeOffRequestInput) GetDescription() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Description
+	return t.Description
 }
 
-func (o *TimeOffRequestInput) GetStartDate() *string {
-	if o == nil {
+func (t *TimeOffRequestInput) GetStartDate() *string {
+	if t == nil {
 		return nil
 	}
-	return o.StartDate
+	return t.StartDate
 }
 
-func (o *TimeOffRequestInput) GetEndDate() *string {
-	if o == nil {
+func (t *TimeOffRequestInput) GetEndDate() *string {
+	if t == nil {
 		return nil
 	}
-	return o.EndDate
+	return t.EndDate
 }
 
-func (o *TimeOffRequestInput) GetRequestDate() *string {
-	if o == nil {
+func (t *TimeOffRequestInput) GetRequestDate() *string {
+	if t == nil {
 		return nil
 	}
-	return o.RequestDate
+	return t.RequestDate
 }
 
-func (o *TimeOffRequestInput) GetRequestType() *RequestType {
-	if o == nil {
+func (t *TimeOffRequestInput) GetRequestType() *RequestType {
+	if t == nil {
 		return nil
 	}
-	return o.RequestType
+	return t.RequestType
 }
 
-func (o *TimeOffRequestInput) GetApprovalDate() *string {
-	if o == nil {
+func (t *TimeOffRequestInput) GetApprovalDate() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ApprovalDate
+	return t.ApprovalDate
 }
 
-func (o *TimeOffRequestInput) GetUnits() *Units {
-	if o == nil {
+func (t *TimeOffRequestInput) GetUnits() *Units {
+	if t == nil {
 		return nil
 	}
-	return o.Units
+	return t.Units
 }
 
-func (o *TimeOffRequestInput) GetAmount() *float64 {
-	if o == nil {
+func (t *TimeOffRequestInput) GetAmount() *float64 {
+	if t == nil {
 		return nil
 	}
-	return o.Amount
+	return t.Amount
 }
 
-func (o *TimeOffRequestInput) GetDayPart() *string {
-	if o == nil {
+func (t *TimeOffRequestInput) GetDayPart() *string {
+	if t == nil {
 		return nil
 	}
-	return o.DayPart
+	return t.DayPart
 }
 
-func (o *TimeOffRequestInput) GetNotes() *Notes {
-	if o == nil {
+func (t *TimeOffRequestInput) GetNotes() *Notes {
+	if t == nil {
 		return nil
 	}
-	return o.Notes
+	return t.Notes
 }
 
-func (o *TimeOffRequestInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (t *TimeOffRequestInput) GetPassThrough() []PassThroughBody {
+	if t == nil {
 		return nil
 	}
-	return o.PassThrough
+	return t.PassThrough
 }
 
-func (o *TimeOffRequestInput) GetPolicyType() *string {
-	if o == nil {
+func (t *TimeOffRequestInput) GetPolicyType() *string {
+	if t == nil {
 		return nil
 	}
-	return o.PolicyType
+	return t.PolicyType
 }

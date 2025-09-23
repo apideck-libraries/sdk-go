@@ -74,177 +74,177 @@ func (p *PaymentInput) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *PaymentInput) GetCurrency() *Currency {
-	if o == nil {
+func (p *PaymentInput) GetCurrency() *Currency {
+	if p == nil {
 		return nil
 	}
-	return o.Currency
+	return p.Currency
 }
 
-func (o *PaymentInput) GetCurrencyRate() *float64 {
-	if o == nil {
+func (p *PaymentInput) GetCurrencyRate() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.CurrencyRate
+	return p.CurrencyRate
 }
 
-func (o *PaymentInput) GetTotalAmount() *float64 {
-	if o == nil {
+func (p *PaymentInput) GetTotalAmount() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.TotalAmount
+	return p.TotalAmount
 }
 
-func (o *PaymentInput) GetReference() *string {
-	if o == nil {
+func (p *PaymentInput) GetReference() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Reference
+	return p.Reference
 }
 
-func (o *PaymentInput) GetPaymentMethod() *string {
-	if o == nil {
+func (p *PaymentInput) GetPaymentMethod() *string {
+	if p == nil {
 		return nil
 	}
-	return o.PaymentMethod
+	return p.PaymentMethod
 }
 
-func (o *PaymentInput) GetPaymentMethodReference() *string {
-	if o == nil {
+func (p *PaymentInput) GetPaymentMethodReference() *string {
+	if p == nil {
 		return nil
 	}
-	return o.PaymentMethodReference
+	return p.PaymentMethodReference
 }
 
-func (o *PaymentInput) GetPaymentMethodID() *string {
-	if o == nil {
+func (p *PaymentInput) GetPaymentMethodID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.PaymentMethodID
+	return p.PaymentMethodID
 }
 
-func (o *PaymentInput) GetAccountsReceivableAccountType() *string {
-	if o == nil {
+func (p *PaymentInput) GetAccountsReceivableAccountType() *string {
+	if p == nil {
 		return nil
 	}
-	return o.AccountsReceivableAccountType
+	return p.AccountsReceivableAccountType
 }
 
-func (o *PaymentInput) GetAccountsReceivableAccountID() *string {
-	if o == nil {
+func (p *PaymentInput) GetAccountsReceivableAccountID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.AccountsReceivableAccountID
+	return p.AccountsReceivableAccountID
 }
 
-func (o *PaymentInput) GetAccount() *LinkedLedgerAccountInput {
-	if o == nil {
+func (p *PaymentInput) GetAccount() *LinkedLedgerAccountInput {
+	if p == nil {
 		return nil
 	}
-	return o.Account
+	return p.Account
 }
 
-func (o *PaymentInput) GetTransactionDate() *time.Time {
-	if o == nil {
+func (p *PaymentInput) GetTransactionDate() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.TransactionDate
+	return p.TransactionDate
 }
 
-func (o *PaymentInput) GetCustomer() *LinkedCustomerInput {
-	if o == nil {
+func (p *PaymentInput) GetCustomer() *LinkedCustomerInput {
+	if p == nil {
 		return nil
 	}
-	return o.Customer
+	return p.Customer
 }
 
-func (o *PaymentInput) GetSupplier() *DeprecatedLinkedSupplierInput {
-	if o == nil {
+func (p *PaymentInput) GetSupplier() *DeprecatedLinkedSupplierInput {
+	if p == nil {
 		return nil
 	}
-	return o.Supplier
+	return p.Supplier
 }
 
-func (o *PaymentInput) GetCompanyID() *string {
-	if o == nil {
+func (p *PaymentInput) GetCompanyID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.CompanyID
+	return p.CompanyID
 }
 
-func (o *PaymentInput) GetReconciled() *bool {
-	if o == nil {
+func (p *PaymentInput) GetReconciled() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.Reconciled
+	return p.Reconciled
 }
 
-func (o *PaymentInput) GetStatus() *PaymentStatus {
-	if o == nil {
+func (p *PaymentInput) GetStatus() *PaymentStatus {
+	if p == nil {
 		return nil
 	}
-	return o.Status
+	return p.Status
 }
 
-func (o *PaymentInput) GetType() *PaymentType {
-	if o == nil {
+func (p *PaymentInput) GetType() *PaymentType {
+	if p == nil {
 		return nil
 	}
-	return o.Type
+	return p.Type
 }
 
-func (o *PaymentInput) GetAllocations() []AllocationInput {
-	if o == nil {
+func (p *PaymentInput) GetAllocations() []AllocationInput {
+	if p == nil {
 		return nil
 	}
-	return o.Allocations
+	return p.Allocations
 }
 
-func (o *PaymentInput) GetNote() *string {
-	if o == nil {
+func (p *PaymentInput) GetNote() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Note
+	return p.Note
 }
 
-func (o *PaymentInput) GetNumber() *string {
-	if o == nil {
+func (p *PaymentInput) GetNumber() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Number
+	return p.Number
 }
 
-func (o *PaymentInput) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (p *PaymentInput) GetTrackingCategories() []*LinkedTrackingCategory {
+	if p == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return p.TrackingCategories
 }
 
-func (o *PaymentInput) GetCustomFields() []CustomField {
-	if o == nil {
+func (p *PaymentInput) GetCustomFields() []CustomField {
+	if p == nil {
 		return nil
 	}
-	return o.CustomFields
+	return p.CustomFields
 }
 
-func (o *PaymentInput) GetRowVersion() *string {
-	if o == nil {
+func (p *PaymentInput) GetRowVersion() *string {
+	if p == nil {
 		return nil
 	}
-	return o.RowVersion
+	return p.RowVersion
 }
 
-func (o *PaymentInput) GetDisplayID() *string {
-	if o == nil {
+func (p *PaymentInput) GetDisplayID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.DisplayID
+	return p.DisplayID
 }
 
-func (o *PaymentInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (p *PaymentInput) GetPassThrough() []PassThroughBody {
+	if p == nil {
 		return nil
 	}
-	return o.PassThrough
+	return p.PassThrough
 }

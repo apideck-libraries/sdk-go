@@ -23,65 +23,65 @@ type GetPurchaseOrdersResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetPurchaseOrdersResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetPurchaseOrdersResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetPurchaseOrdersResponse) GetStatus() string {
-	if o == nil {
+func (g *GetPurchaseOrdersResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetPurchaseOrdersResponse) GetService() string {
-	if o == nil {
+func (g *GetPurchaseOrdersResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetPurchaseOrdersResponse) GetResource() string {
-	if o == nil {
+func (g *GetPurchaseOrdersResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetPurchaseOrdersResponse) GetOperation() string {
-	if o == nil {
+func (g *GetPurchaseOrdersResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetPurchaseOrdersResponse) GetData() []PurchaseOrder {
-	if o == nil {
+func (g *GetPurchaseOrdersResponse) GetData() []PurchaseOrder {
+	if g == nil {
 		return []PurchaseOrder{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetPurchaseOrdersResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetPurchaseOrdersResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetPurchaseOrdersResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetPurchaseOrdersResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }
 
-func (o *GetPurchaseOrdersResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetPurchaseOrdersResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

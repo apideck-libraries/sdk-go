@@ -13,18 +13,18 @@ type VaultValidateConnectionStateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultValidateConnectionStateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultValidateConnectionStateGlobals) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultValidateConnectionStateGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultValidateConnectionStateGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultValidateConnectionStateRequestBody struct {
@@ -42,39 +42,39 @@ type VaultValidateConnectionStateRequest struct {
 	RequestBody *VaultValidateConnectionStateRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *VaultValidateConnectionStateRequest) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultValidateConnectionStateRequest) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultValidateConnectionStateRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultValidateConnectionStateRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultValidateConnectionStateRequest) GetServiceID() string {
-	if o == nil {
+func (v *VaultValidateConnectionStateRequest) GetServiceID() string {
+	if v == nil {
 		return ""
 	}
-	return o.ServiceID
+	return v.ServiceID
 }
 
-func (o *VaultValidateConnectionStateRequest) GetUnifiedAPI() string {
-	if o == nil {
+func (v *VaultValidateConnectionStateRequest) GetUnifiedAPI() string {
+	if v == nil {
 		return ""
 	}
-	return o.UnifiedAPI
+	return v.UnifiedAPI
 }
 
-func (o *VaultValidateConnectionStateRequest) GetRequestBody() *VaultValidateConnectionStateRequestBody {
-	if o == nil {
+func (v *VaultValidateConnectionStateRequest) GetRequestBody() *VaultValidateConnectionStateRequestBody {
+	if v == nil {
 		return nil
 	}
-	return o.RequestBody
+	return v.RequestBody
 }
 
 type VaultValidateConnectionStateResponse struct {
@@ -85,23 +85,23 @@ type VaultValidateConnectionStateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultValidateConnectionStateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultValidateConnectionStateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultValidateConnectionStateResponse) GetValidateConnectionStateResponse() *components.ValidateConnectionStateResponse {
-	if o == nil {
+func (v *VaultValidateConnectionStateResponse) GetValidateConnectionStateResponse() *components.ValidateConnectionStateResponse {
+	if v == nil {
 		return nil
 	}
-	return o.ValidateConnectionStateResponse
+	return v.ValidateConnectionStateResponse
 }
 
-func (o *VaultValidateConnectionStateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultValidateConnectionStateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

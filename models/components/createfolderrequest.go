@@ -15,37 +15,37 @@ type CreateFolderRequest struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *CreateFolderRequest) GetName() string {
-	if o == nil {
+func (c *CreateFolderRequest) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateFolderRequest) GetDescription() *string {
-	if o == nil {
+func (c *CreateFolderRequest) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateFolderRequest) GetParentFolderID() string {
-	if o == nil {
+func (c *CreateFolderRequest) GetParentFolderID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ParentFolderID
+	return c.ParentFolderID
 }
 
-func (o *CreateFolderRequest) GetDriveID() *string {
-	if o == nil {
+func (c *CreateFolderRequest) GetDriveID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.DriveID
+	return c.DriveID
 }
 
-func (o *CreateFolderRequest) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (c *CreateFolderRequest) GetPassThrough() []PassThroughBody {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }

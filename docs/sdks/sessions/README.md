@@ -40,27 +40,27 @@ func main() {
 
     res, err := s.Vault.Sessions.Create(ctx, &components.Session{
         ConsumerMetadata: &components.ConsumerMetadata{
-            AccountName: sdkgo.String("SpaceX"),
-            UserName: sdkgo.String("Elon Musk"),
-            Email: sdkgo.String("elon@musk.com"),
-            Image: sdkgo.String("https://www.spacex.com/static/images/share.jpg"),
+            AccountName: sdkgo.Pointer("SpaceX"),
+            UserName: sdkgo.Pointer("Elon Musk"),
+            Email: sdkgo.Pointer("elon@musk.com"),
+            Image: sdkgo.Pointer("https://www.spacex.com/static/images/share.jpg"),
         },
-        RedirectURI: sdkgo.String("https://mysaas.com/dashboard"),
+        RedirectURI: sdkgo.Pointer("https://mysaas.com/dashboard"),
         Settings: &components.Settings{
             UnifiedApis: []components.UnifiedAPIID{
                 components.UnifiedAPIIDCrm,
             },
-            SessionLength: sdkgo.String("30m"),
+            SessionLength: sdkgo.Pointer("30m"),
         },
         Theme: &components.Theme{
-            Favicon: sdkgo.String("https://res.cloudinary.com/apideck/icons/intercom"),
-            Logo: sdkgo.String("https://res.cloudinary.com/apideck/icons/intercom"),
-            PrimaryColor: sdkgo.String("#286efa"),
-            SidepanelBackgroundColor: sdkgo.String("#286efa"),
-            SidepanelTextColor: sdkgo.String("#FFFFFF"),
-            VaultName: sdkgo.String("Intercom"),
-            PrivacyURL: sdkgo.String("https://compliance.apideck.com/privacy-policy"),
-            TermsURL: sdkgo.String("https://www.termsfeed.com/terms-conditions/957c85c1b089ae9e3219c83eff65377e"),
+            Favicon: sdkgo.Pointer("https://res.cloudinary.com/apideck/icons/intercom"),
+            Logo: sdkgo.Pointer("https://res.cloudinary.com/apideck/icons/intercom"),
+            PrimaryColor: sdkgo.Pointer("#286efa"),
+            SidepanelBackgroundColor: sdkgo.Pointer("#286efa"),
+            SidepanelTextColor: sdkgo.Pointer("#FFFFFF"),
+            VaultName: sdkgo.Pointer("Intercom"),
+            PrivacyURL: sdkgo.Pointer("https://compliance.apideck.com/privacy-policy"),
+            TermsURL: sdkgo.Pointer("https://www.termsfeed.com/terms-conditions/957c85c1b089ae9e3219c83eff65377e"),
         },
         CustomConsumerSettings: map[string]any{
             "feature_flag_1": true,

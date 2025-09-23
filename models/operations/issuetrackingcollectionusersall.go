@@ -14,18 +14,18 @@ type IssueTrackingCollectionUsersAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *IssueTrackingCollectionUsersAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionUsersAllGlobals) GetConsumerID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return i.ConsumerID
 }
 
-func (o *IssueTrackingCollectionUsersAllGlobals) GetAppID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionUsersAllGlobals) GetAppID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.AppID
+	return i.AppID
 }
 
 type IssueTrackingCollectionUsersAllRequest struct {
@@ -60,67 +60,67 @@ func (i *IssueTrackingCollectionUsersAllRequest) UnmarshalJSON(data []byte) erro
 	return nil
 }
 
-func (o *IssueTrackingCollectionUsersAllRequest) GetCollectionID() string {
-	if o == nil {
+func (i *IssueTrackingCollectionUsersAllRequest) GetCollectionID() string {
+	if i == nil {
 		return ""
 	}
-	return o.CollectionID
+	return i.CollectionID
 }
 
-func (o *IssueTrackingCollectionUsersAllRequest) GetRaw() *bool {
-	if o == nil {
+func (i *IssueTrackingCollectionUsersAllRequest) GetRaw() *bool {
+	if i == nil {
 		return nil
 	}
-	return o.Raw
+	return i.Raw
 }
 
-func (o *IssueTrackingCollectionUsersAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionUsersAllRequest) GetConsumerID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return i.ConsumerID
 }
 
-func (o *IssueTrackingCollectionUsersAllRequest) GetAppID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionUsersAllRequest) GetAppID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.AppID
+	return i.AppID
 }
 
-func (o *IssueTrackingCollectionUsersAllRequest) GetServiceID() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionUsersAllRequest) GetServiceID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ServiceID
+	return i.ServiceID
 }
 
-func (o *IssueTrackingCollectionUsersAllRequest) GetCursor() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionUsersAllRequest) GetCursor() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Cursor
+	return i.Cursor
 }
 
-func (o *IssueTrackingCollectionUsersAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (i *IssueTrackingCollectionUsersAllRequest) GetLimit() *int64 {
+	if i == nil {
 		return nil
 	}
-	return o.Limit
+	return i.Limit
 }
 
-func (o *IssueTrackingCollectionUsersAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (i *IssueTrackingCollectionUsersAllRequest) GetPassThrough() map[string]any {
+	if i == nil {
 		return nil
 	}
-	return o.PassThrough
+	return i.PassThrough
 }
 
-func (o *IssueTrackingCollectionUsersAllRequest) GetFields() *string {
-	if o == nil {
+func (i *IssueTrackingCollectionUsersAllRequest) GetFields() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Fields
+	return i.Fields
 }
 
 type IssueTrackingCollectionUsersAllResponse struct {
@@ -133,23 +133,23 @@ type IssueTrackingCollectionUsersAllResponse struct {
 	Next func() (*IssueTrackingCollectionUsersAllResponse, error)
 }
 
-func (o *IssueTrackingCollectionUsersAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (i *IssueTrackingCollectionUsersAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if i == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return i.HTTPMeta
 }
 
-func (o *IssueTrackingCollectionUsersAllResponse) GetGetCollectionUsersResponse() *components.GetCollectionUsersResponse {
-	if o == nil {
+func (i *IssueTrackingCollectionUsersAllResponse) GetGetCollectionUsersResponse() *components.GetCollectionUsersResponse {
+	if i == nil {
 		return nil
 	}
-	return o.GetCollectionUsersResponse
+	return i.GetCollectionUsersResponse
 }
 
-func (o *IssueTrackingCollectionUsersAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (i *IssueTrackingCollectionUsersAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if i == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return i.UnexpectedErrorResponse
 }

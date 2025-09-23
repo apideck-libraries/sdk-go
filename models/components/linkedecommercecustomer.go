@@ -18,51 +18,51 @@ type LinkedEcommerceCustomer struct {
 	Emails       []Email       `json:"emails,omitempty"`
 }
 
-func (o *LinkedEcommerceCustomer) GetID() *string {
-	if o == nil {
+func (l *LinkedEcommerceCustomer) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinkedEcommerceCustomer) GetName() *string {
-	if o == nil {
+func (l *LinkedEcommerceCustomer) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *LinkedEcommerceCustomer) GetFirstName() *string {
-	if o == nil {
+func (l *LinkedEcommerceCustomer) GetFirstName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.FirstName
+	return l.FirstName
 }
 
-func (o *LinkedEcommerceCustomer) GetLastName() *string {
-	if o == nil {
+func (l *LinkedEcommerceCustomer) GetLastName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.LastName
+	return l.LastName
 }
 
-func (o *LinkedEcommerceCustomer) GetCompanyName() *string {
-	if o == nil {
+func (l *LinkedEcommerceCustomer) GetCompanyName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.CompanyName
+	return l.CompanyName
 }
 
-func (o *LinkedEcommerceCustomer) GetPhoneNumbers() []PhoneNumber {
-	if o == nil {
+func (l *LinkedEcommerceCustomer) GetPhoneNumbers() []PhoneNumber {
+	if l == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return l.PhoneNumbers
 }
 
-func (o *LinkedEcommerceCustomer) GetEmails() []Email {
-	if o == nil {
+func (l *LinkedEcommerceCustomer) GetEmails() []Email {
+	if l == nil {
 		return nil
 	}
-	return o.Emails
+	return l.Emails
 }

@@ -14,18 +14,18 @@ type AccountingQuotesOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingQuotesOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingQuotesOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingQuotesOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingQuotesOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingQuotesOneRequest struct {
@@ -52,39 +52,39 @@ func (a *AccountingQuotesOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingQuotesOneRequest) GetID() string {
-	if o == nil {
+func (a *AccountingQuotesOneRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingQuotesOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingQuotesOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingQuotesOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingQuotesOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingQuotesOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingQuotesOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingQuotesOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingQuotesOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
 type AccountingQuotesOneResponse struct {
@@ -95,23 +95,23 @@ type AccountingQuotesOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingQuotesOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingQuotesOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingQuotesOneResponse) GetGetQuoteResponse() *components.GetQuoteResponse {
-	if o == nil {
+func (a *AccountingQuotesOneResponse) GetGetQuoteResponse() *components.GetQuoteResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetQuoteResponse
+	return a.GetQuoteResponse
 }
 
-func (o *AccountingQuotesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingQuotesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

@@ -13,30 +13,30 @@ type DeleteWebhookResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *DeleteWebhookResponse) GetStatusCode() int64 {
-	if o == nil {
+func (d *DeleteWebhookResponse) GetStatusCode() int64 {
+	if d == nil {
 		return 0
 	}
-	return o.StatusCode
+	return d.StatusCode
 }
 
-func (o *DeleteWebhookResponse) GetStatus() string {
-	if o == nil {
+func (d *DeleteWebhookResponse) GetStatus() string {
+	if d == nil {
 		return ""
 	}
-	return o.Status
+	return d.Status
 }
 
-func (o *DeleteWebhookResponse) GetData() Webhook {
-	if o == nil {
+func (d *DeleteWebhookResponse) GetData() Webhook {
+	if d == nil {
 		return Webhook{}
 	}
-	return o.Data
+	return d.Data
 }
 
-func (o *DeleteWebhookResponse) GetRaw() map[string]any {
-	if o == nil {
+func (d *DeleteWebhookResponse) GetRaw() map[string]any {
+	if d == nil {
 		return nil
 	}
-	return o.Raw
+	return d.Raw
 }

@@ -14,18 +14,18 @@ type AccountingSubsidiariesDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingSubsidiariesDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingSubsidiariesDeleteGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingSubsidiariesDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingSubsidiariesDeleteGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingSubsidiariesDeleteRequest struct {
@@ -52,39 +52,39 @@ func (a *AccountingSubsidiariesDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingSubsidiariesDeleteRequest) GetID() string {
-	if o == nil {
+func (a *AccountingSubsidiariesDeleteRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingSubsidiariesDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingSubsidiariesDeleteRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingSubsidiariesDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingSubsidiariesDeleteRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingSubsidiariesDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingSubsidiariesDeleteRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingSubsidiariesDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingSubsidiariesDeleteRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
 type AccountingSubsidiariesDeleteResponse struct {
@@ -95,23 +95,23 @@ type AccountingSubsidiariesDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingSubsidiariesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingSubsidiariesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingSubsidiariesDeleteResponse) GetDeleteSubsidiaryResponse() *components.DeleteSubsidiaryResponse {
-	if o == nil {
+func (a *AccountingSubsidiariesDeleteResponse) GetDeleteSubsidiaryResponse() *components.DeleteSubsidiaryResponse {
+	if a == nil {
 		return nil
 	}
-	return o.DeleteSubsidiaryResponse
+	return a.DeleteSubsidiaryResponse
 }
 
-func (o *AccountingSubsidiariesDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingSubsidiariesDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

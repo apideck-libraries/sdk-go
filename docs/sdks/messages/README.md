@@ -39,8 +39,8 @@ func main() {
     )
 
     res, err := s.Sms.Messages.List(ctx, operations.SmsMessagesAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -116,17 +116,17 @@ func main() {
     )
 
     res, err := s.Sms.Messages.Create(ctx, operations.SmsMessagesAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Message: components.MessageInput{
             From: "+15017122661",
             To: "+15017122662",
-            Subject: sdkgo.String("Picture"),
+            Subject: sdkgo.Pointer("Picture"),
             Body: "Hi! How are you doing?",
             Type: components.MessageTypeSms.ToPointer(),
             ScheduledAt: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
-            WebhookURL: sdkgo.String("https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/x/sms"),
-            Reference: sdkgo.String("CUST001"),
-            MessagingServiceID: sdkgo.String("123456"),
+            WebhookURL: sdkgo.Pointer("https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/x/sms"),
+            Reference: sdkgo.Pointer("CUST001"),
+            MessagingServiceID: sdkgo.Pointer("123456"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -234,8 +234,8 @@ func main() {
 
     res, err := s.Sms.Messages.Get(ctx, operations.SmsMessagesOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -300,17 +300,17 @@ func main() {
 
     res, err := s.Sms.Messages.Update(ctx, operations.SmsMessagesUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Message: components.MessageInput{
             From: "+15017122661",
             To: "+15017122662",
-            Subject: sdkgo.String("Picture"),
+            Subject: sdkgo.Pointer("Picture"),
             Body: "Hi! How are you doing?",
             Type: components.MessageTypeSms.ToPointer(),
             ScheduledAt: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
-            WebhookURL: sdkgo.String("https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/x/sms"),
-            Reference: sdkgo.String("CUST001"),
-            MessagingServiceID: sdkgo.String("123456"),
+            WebhookURL: sdkgo.Pointer("https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/x/sms"),
+            Reference: sdkgo.Pointer("CUST001"),
+            MessagingServiceID: sdkgo.Pointer("123456"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -402,7 +402,7 @@ func main() {
 
     res, err := s.Sms.Messages.Delete(ctx, operations.SmsMessagesDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

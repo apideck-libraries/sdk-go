@@ -14,18 +14,18 @@ type CrmCustomObjectSchemasAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmCustomObjectSchemasAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmCustomObjectSchemasAddGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmCustomObjectSchemasAddGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmCustomObjectSchemasAddGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmCustomObjectSchemasAddRequest struct {
@@ -51,39 +51,39 @@ func (c *CrmCustomObjectSchemasAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmCustomObjectSchemasAddRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmCustomObjectSchemasAddRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmCustomObjectSchemasAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmCustomObjectSchemasAddRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmCustomObjectSchemasAddRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmCustomObjectSchemasAddRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmCustomObjectSchemasAddRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmCustomObjectSchemasAddRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmCustomObjectSchemasAddRequest) GetCustomObjectSchema() components.CustomObjectSchemaInput {
-	if o == nil {
+func (c *CrmCustomObjectSchemasAddRequest) GetCustomObjectSchema() components.CustomObjectSchemaInput {
+	if c == nil {
 		return components.CustomObjectSchemaInput{}
 	}
-	return o.CustomObjectSchema
+	return c.CustomObjectSchema
 }
 
 type CrmCustomObjectSchemasAddResponse struct {
@@ -94,23 +94,23 @@ type CrmCustomObjectSchemasAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmCustomObjectSchemasAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmCustomObjectSchemasAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmCustomObjectSchemasAddResponse) GetCreateCustomObjectSchemaResponse() *components.CreateCustomObjectSchemaResponse {
-	if o == nil {
+func (c *CrmCustomObjectSchemasAddResponse) GetCreateCustomObjectSchemaResponse() *components.CreateCustomObjectSchemaResponse {
+	if c == nil {
 		return nil
 	}
-	return o.CreateCustomObjectSchemaResponse
+	return c.CreateCustomObjectSchemaResponse
 }
 
-func (o *CrmCustomObjectSchemasAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmCustomObjectSchemasAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

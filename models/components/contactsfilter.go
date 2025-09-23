@@ -19,51 +19,51 @@ type ContactsFilter struct {
 	OwnerID *string `queryParam:"name=owner_id"`
 }
 
-func (o *ContactsFilter) GetName() *string {
-	if o == nil {
+func (c *ContactsFilter) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *ContactsFilter) GetFirstName() *string {
-	if o == nil {
+func (c *ContactsFilter) GetFirstName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.FirstName
+	return c.FirstName
 }
 
-func (o *ContactsFilter) GetLastName() *string {
-	if o == nil {
+func (c *ContactsFilter) GetLastName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.LastName
+	return c.LastName
 }
 
-func (o *ContactsFilter) GetEmail() *string {
-	if o == nil {
+func (c *ContactsFilter) GetEmail() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Email
+	return c.Email
 }
 
-func (o *ContactsFilter) GetPhoneNumber() *string {
-	if o == nil {
+func (c *ContactsFilter) GetPhoneNumber() *string {
+	if c == nil {
 		return nil
 	}
-	return o.PhoneNumber
+	return c.PhoneNumber
 }
 
-func (o *ContactsFilter) GetCompanyID() *string {
-	if o == nil {
+func (c *ContactsFilter) GetCompanyID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CompanyID
+	return c.CompanyID
 }
 
-func (o *ContactsFilter) GetOwnerID() *string {
-	if o == nil {
+func (c *ContactsFilter) GetOwnerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.OwnerID
+	return c.OwnerID
 }

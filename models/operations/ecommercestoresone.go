@@ -14,18 +14,18 @@ type EcommerceStoresOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *EcommerceStoresOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (e *EcommerceStoresOneGlobals) GetConsumerID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return e.ConsumerID
 }
 
-func (o *EcommerceStoresOneGlobals) GetAppID() *string {
-	if o == nil {
+func (e *EcommerceStoresOneGlobals) GetAppID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.AppID
+	return e.AppID
 }
 
 type EcommerceStoresOneRequest struct {
@@ -52,39 +52,39 @@ func (e *EcommerceStoresOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *EcommerceStoresOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (e *EcommerceStoresOneRequest) GetConsumerID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return e.ConsumerID
 }
 
-func (o *EcommerceStoresOneRequest) GetAppID() *string {
-	if o == nil {
+func (e *EcommerceStoresOneRequest) GetAppID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.AppID
+	return e.AppID
 }
 
-func (o *EcommerceStoresOneRequest) GetServiceID() *string {
-	if o == nil {
+func (e *EcommerceStoresOneRequest) GetServiceID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ServiceID
+	return e.ServiceID
 }
 
-func (o *EcommerceStoresOneRequest) GetRaw() *bool {
-	if o == nil {
+func (e *EcommerceStoresOneRequest) GetRaw() *bool {
+	if e == nil {
 		return nil
 	}
-	return o.Raw
+	return e.Raw
 }
 
-func (o *EcommerceStoresOneRequest) GetFields() *string {
-	if o == nil {
+func (e *EcommerceStoresOneRequest) GetFields() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Fields
+	return e.Fields
 }
 
 type EcommerceStoresOneResponse struct {
@@ -95,23 +95,23 @@ type EcommerceStoresOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *EcommerceStoresOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (e *EcommerceStoresOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if e == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return e.HTTPMeta
 }
 
-func (o *EcommerceStoresOneResponse) GetGetStoreResponse() *components.GetStoreResponse {
-	if o == nil {
+func (e *EcommerceStoresOneResponse) GetGetStoreResponse() *components.GetStoreResponse {
+	if e == nil {
 		return nil
 	}
-	return o.GetStoreResponse
+	return e.GetStoreResponse
 }
 
-func (o *EcommerceStoresOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (e *EcommerceStoresOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if e == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return e.UnexpectedErrorResponse
 }

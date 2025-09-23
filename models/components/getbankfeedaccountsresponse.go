@@ -23,65 +23,65 @@ type GetBankFeedAccountsResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetBankFeedAccountsResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetBankFeedAccountsResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetBankFeedAccountsResponse) GetStatus() string {
-	if o == nil {
+func (g *GetBankFeedAccountsResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetBankFeedAccountsResponse) GetService() string {
-	if o == nil {
+func (g *GetBankFeedAccountsResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetBankFeedAccountsResponse) GetResource() string {
-	if o == nil {
+func (g *GetBankFeedAccountsResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetBankFeedAccountsResponse) GetOperation() string {
-	if o == nil {
+func (g *GetBankFeedAccountsResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetBankFeedAccountsResponse) GetData() []BankFeedAccount {
-	if o == nil {
+func (g *GetBankFeedAccountsResponse) GetData() []BankFeedAccount {
+	if g == nil {
 		return []BankFeedAccount{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetBankFeedAccountsResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetBankFeedAccountsResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetBankFeedAccountsResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetBankFeedAccountsResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }
 
-func (o *GetBankFeedAccountsResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetBankFeedAccountsResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

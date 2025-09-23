@@ -178,18 +178,18 @@ type Categories struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *Categories) GetID() *string {
-	if o == nil {
+func (c *Categories) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *Categories) GetName() *string {
-	if o == nil {
+func (c *Categories) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
 type ParentAccount struct {
@@ -201,25 +201,25 @@ type ParentAccount struct {
 	DisplayID *string `json:"display_id,omitempty"`
 }
 
-func (o *ParentAccount) GetID() *string {
-	if o == nil {
+func (p *ParentAccount) GetID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *ParentAccount) GetName() *string {
-	if o == nil {
+func (p *ParentAccount) GetName() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Name
+	return p.Name
 }
 
-func (o *ParentAccount) GetDisplayID() *string {
-	if o == nil {
+func (p *ParentAccount) GetDisplayID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.DisplayID
+	return p.DisplayID
 }
 
 type SubAccounts struct {
@@ -229,18 +229,18 @@ type SubAccounts struct {
 	AccountSubName *string `json:"account_sub_name,omitempty"`
 }
 
-func (o *SubAccounts) GetID() *string {
-	if o == nil {
+func (s *SubAccounts) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SubAccounts) GetAccountSubName() *string {
-	if o == nil {
+func (s *SubAccounts) GetAccountSubName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.AccountSubName
+	return s.AccountSubName
 }
 
 type LedgerAccountSubsidiaries struct {
@@ -248,11 +248,11 @@ type LedgerAccountSubsidiaries struct {
 	ID *string `json:"id,omitempty"`
 }
 
-func (o *LedgerAccountSubsidiaries) GetID() *string {
-	if o == nil {
+func (l *LedgerAccountSubsidiaries) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
 type LedgerAccount struct {
@@ -334,242 +334,242 @@ func (l *LedgerAccount) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *LedgerAccount) GetID() *string {
-	if o == nil {
+func (l *LedgerAccount) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LedgerAccount) GetDisplayID() *string {
-	if o == nil {
+func (l *LedgerAccount) GetDisplayID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.DisplayID
+	return l.DisplayID
 }
 
-func (o *LedgerAccount) GetNominalCode() *string {
-	if o == nil {
+func (l *LedgerAccount) GetNominalCode() *string {
+	if l == nil {
 		return nil
 	}
-	return o.NominalCode
+	return l.NominalCode
 }
 
-func (o *LedgerAccount) GetCode() *string {
-	if o == nil {
+func (l *LedgerAccount) GetCode() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Code
+	return l.Code
 }
 
-func (o *LedgerAccount) GetClassification() *LedgerAccountClassification {
-	if o == nil {
+func (l *LedgerAccount) GetClassification() *LedgerAccountClassification {
+	if l == nil {
 		return nil
 	}
-	return o.Classification
+	return l.Classification
 }
 
-func (o *LedgerAccount) GetType() *LedgerAccountType {
-	if o == nil {
+func (l *LedgerAccount) GetType() *LedgerAccountType {
+	if l == nil {
 		return nil
 	}
-	return o.Type
+	return l.Type
 }
 
-func (o *LedgerAccount) GetSubType() *string {
-	if o == nil {
+func (l *LedgerAccount) GetSubType() *string {
+	if l == nil {
 		return nil
 	}
-	return o.SubType
+	return l.SubType
 }
 
-func (o *LedgerAccount) GetName() *string {
-	if o == nil {
+func (l *LedgerAccount) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *LedgerAccount) GetFullyQualifiedName() *string {
-	if o == nil {
+func (l *LedgerAccount) GetFullyQualifiedName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.FullyQualifiedName
+	return l.FullyQualifiedName
 }
 
-func (o *LedgerAccount) GetDescription() *string {
-	if o == nil {
+func (l *LedgerAccount) GetDescription() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Description
+	return l.Description
 }
 
-func (o *LedgerAccount) GetOpeningBalance() *float64 {
-	if o == nil {
+func (l *LedgerAccount) GetOpeningBalance() *float64 {
+	if l == nil {
 		return nil
 	}
-	return o.OpeningBalance
+	return l.OpeningBalance
 }
 
-func (o *LedgerAccount) GetCurrentBalance() *float64 {
-	if o == nil {
+func (l *LedgerAccount) GetCurrentBalance() *float64 {
+	if l == nil {
 		return nil
 	}
-	return o.CurrentBalance
+	return l.CurrentBalance
 }
 
-func (o *LedgerAccount) GetCurrency() *Currency {
-	if o == nil {
+func (l *LedgerAccount) GetCurrency() *Currency {
+	if l == nil {
 		return nil
 	}
-	return o.Currency
+	return l.Currency
 }
 
-func (o *LedgerAccount) GetTaxType() *string {
-	if o == nil {
+func (l *LedgerAccount) GetTaxType() *string {
+	if l == nil {
 		return nil
 	}
-	return o.TaxType
+	return l.TaxType
 }
 
-func (o *LedgerAccount) GetTaxRate() *LinkedTaxRate {
-	if o == nil {
+func (l *LedgerAccount) GetTaxRate() *LinkedTaxRate {
+	if l == nil {
 		return nil
 	}
-	return o.TaxRate
+	return l.TaxRate
 }
 
-func (o *LedgerAccount) GetLevel() *float64 {
-	if o == nil {
+func (l *LedgerAccount) GetLevel() *float64 {
+	if l == nil {
 		return nil
 	}
-	return o.Level
+	return l.Level
 }
 
-func (o *LedgerAccount) GetActive() *bool {
-	if o == nil {
+func (l *LedgerAccount) GetActive() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.Active
+	return l.Active
 }
 
-func (o *LedgerAccount) GetStatus() *AccountStatus {
-	if o == nil {
+func (l *LedgerAccount) GetStatus() *AccountStatus {
+	if l == nil {
 		return nil
 	}
-	return o.Status
+	return l.Status
 }
 
-func (o *LedgerAccount) GetHeader() *bool {
-	if o == nil {
+func (l *LedgerAccount) GetHeader() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.Header
+	return l.Header
 }
 
-func (o *LedgerAccount) GetBankAccount() *BankAccount {
-	if o == nil {
+func (l *LedgerAccount) GetBankAccount() *BankAccount {
+	if l == nil {
 		return nil
 	}
-	return o.BankAccount
+	return l.BankAccount
 }
 
-func (o *LedgerAccount) GetCategories() []Categories {
-	if o == nil {
+func (l *LedgerAccount) GetCategories() []Categories {
+	if l == nil {
 		return nil
 	}
-	return o.Categories
+	return l.Categories
 }
 
-func (o *LedgerAccount) GetParentAccount() *ParentAccount {
-	if o == nil {
+func (l *LedgerAccount) GetParentAccount() *ParentAccount {
+	if l == nil {
 		return nil
 	}
-	return o.ParentAccount
+	return l.ParentAccount
 }
 
-func (o *LedgerAccount) GetSubAccount() *bool {
-	if o == nil {
+func (l *LedgerAccount) GetSubAccount() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.SubAccount
+	return l.SubAccount
 }
 
-func (o *LedgerAccount) GetSubAccounts() []SubAccounts {
-	if o == nil {
+func (l *LedgerAccount) GetSubAccounts() []SubAccounts {
+	if l == nil {
 		return nil
 	}
-	return o.SubAccounts
+	return l.SubAccounts
 }
 
-func (o *LedgerAccount) GetLastReconciliationDate() *types.Date {
-	if o == nil {
+func (l *LedgerAccount) GetLastReconciliationDate() *types.Date {
+	if l == nil {
 		return nil
 	}
-	return o.LastReconciliationDate
+	return l.LastReconciliationDate
 }
 
-func (o *LedgerAccount) GetSubsidiaries() []LedgerAccountSubsidiaries {
-	if o == nil {
+func (l *LedgerAccount) GetSubsidiaries() []LedgerAccountSubsidiaries {
+	if l == nil {
 		return nil
 	}
-	return o.Subsidiaries
+	return l.Subsidiaries
 }
 
-func (o *LedgerAccount) GetCustomMappings() map[string]any {
-	if o == nil {
+func (l *LedgerAccount) GetCustomMappings() map[string]any {
+	if l == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return l.CustomMappings
 }
 
-func (o *LedgerAccount) GetCustomFields() []CustomField {
-	if o == nil {
+func (l *LedgerAccount) GetCustomFields() []CustomField {
+	if l == nil {
 		return nil
 	}
-	return o.CustomFields
+	return l.CustomFields
 }
 
-func (o *LedgerAccount) GetRowVersion() *string {
-	if o == nil {
+func (l *LedgerAccount) GetRowVersion() *string {
+	if l == nil {
 		return nil
 	}
-	return o.RowVersion
+	return l.RowVersion
 }
 
-func (o *LedgerAccount) GetUpdatedBy() *string {
-	if o == nil {
+func (l *LedgerAccount) GetUpdatedBy() *string {
+	if l == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return l.UpdatedBy
 }
 
-func (o *LedgerAccount) GetCreatedBy() *string {
-	if o == nil {
+func (l *LedgerAccount) GetCreatedBy() *string {
+	if l == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return l.CreatedBy
 }
 
-func (o *LedgerAccount) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (l *LedgerAccount) GetUpdatedAt() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return l.UpdatedAt
 }
 
-func (o *LedgerAccount) GetCreatedAt() *time.Time {
-	if o == nil {
+func (l *LedgerAccount) GetCreatedAt() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return l.CreatedAt
 }
 
-func (o *LedgerAccount) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (l *LedgerAccount) GetPassThrough() []PassThroughBody {
+	if l == nil {
 		return nil
 	}
-	return o.PassThrough
+	return l.PassThrough
 }
 
 type LedgerAccountInput struct {
@@ -635,184 +635,184 @@ func (l *LedgerAccountInput) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *LedgerAccountInput) GetDisplayID() *string {
-	if o == nil {
+func (l *LedgerAccountInput) GetDisplayID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.DisplayID
+	return l.DisplayID
 }
 
-func (o *LedgerAccountInput) GetNominalCode() *string {
-	if o == nil {
+func (l *LedgerAccountInput) GetNominalCode() *string {
+	if l == nil {
 		return nil
 	}
-	return o.NominalCode
+	return l.NominalCode
 }
 
-func (o *LedgerAccountInput) GetCode() *string {
-	if o == nil {
+func (l *LedgerAccountInput) GetCode() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Code
+	return l.Code
 }
 
-func (o *LedgerAccountInput) GetClassification() *LedgerAccountClassification {
-	if o == nil {
+func (l *LedgerAccountInput) GetClassification() *LedgerAccountClassification {
+	if l == nil {
 		return nil
 	}
-	return o.Classification
+	return l.Classification
 }
 
-func (o *LedgerAccountInput) GetType() *LedgerAccountType {
-	if o == nil {
+func (l *LedgerAccountInput) GetType() *LedgerAccountType {
+	if l == nil {
 		return nil
 	}
-	return o.Type
+	return l.Type
 }
 
-func (o *LedgerAccountInput) GetSubType() *string {
-	if o == nil {
+func (l *LedgerAccountInput) GetSubType() *string {
+	if l == nil {
 		return nil
 	}
-	return o.SubType
+	return l.SubType
 }
 
-func (o *LedgerAccountInput) GetName() *string {
-	if o == nil {
+func (l *LedgerAccountInput) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *LedgerAccountInput) GetFullyQualifiedName() *string {
-	if o == nil {
+func (l *LedgerAccountInput) GetFullyQualifiedName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.FullyQualifiedName
+	return l.FullyQualifiedName
 }
 
-func (o *LedgerAccountInput) GetDescription() *string {
-	if o == nil {
+func (l *LedgerAccountInput) GetDescription() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Description
+	return l.Description
 }
 
-func (o *LedgerAccountInput) GetOpeningBalance() *float64 {
-	if o == nil {
+func (l *LedgerAccountInput) GetOpeningBalance() *float64 {
+	if l == nil {
 		return nil
 	}
-	return o.OpeningBalance
+	return l.OpeningBalance
 }
 
-func (o *LedgerAccountInput) GetCurrentBalance() *float64 {
-	if o == nil {
+func (l *LedgerAccountInput) GetCurrentBalance() *float64 {
+	if l == nil {
 		return nil
 	}
-	return o.CurrentBalance
+	return l.CurrentBalance
 }
 
-func (o *LedgerAccountInput) GetCurrency() *Currency {
-	if o == nil {
+func (l *LedgerAccountInput) GetCurrency() *Currency {
+	if l == nil {
 		return nil
 	}
-	return o.Currency
+	return l.Currency
 }
 
-func (o *LedgerAccountInput) GetTaxType() *string {
-	if o == nil {
+func (l *LedgerAccountInput) GetTaxType() *string {
+	if l == nil {
 		return nil
 	}
-	return o.TaxType
+	return l.TaxType
 }
 
-func (o *LedgerAccountInput) GetTaxRate() *LinkedTaxRateInput {
-	if o == nil {
+func (l *LedgerAccountInput) GetTaxRate() *LinkedTaxRateInput {
+	if l == nil {
 		return nil
 	}
-	return o.TaxRate
+	return l.TaxRate
 }
 
-func (o *LedgerAccountInput) GetLevel() *float64 {
-	if o == nil {
+func (l *LedgerAccountInput) GetLevel() *float64 {
+	if l == nil {
 		return nil
 	}
-	return o.Level
+	return l.Level
 }
 
-func (o *LedgerAccountInput) GetActive() *bool {
-	if o == nil {
+func (l *LedgerAccountInput) GetActive() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.Active
+	return l.Active
 }
 
-func (o *LedgerAccountInput) GetStatus() *AccountStatus {
-	if o == nil {
+func (l *LedgerAccountInput) GetStatus() *AccountStatus {
+	if l == nil {
 		return nil
 	}
-	return o.Status
+	return l.Status
 }
 
-func (o *LedgerAccountInput) GetHeader() *bool {
-	if o == nil {
+func (l *LedgerAccountInput) GetHeader() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.Header
+	return l.Header
 }
 
-func (o *LedgerAccountInput) GetBankAccount() *BankAccount {
-	if o == nil {
+func (l *LedgerAccountInput) GetBankAccount() *BankAccount {
+	if l == nil {
 		return nil
 	}
-	return o.BankAccount
+	return l.BankAccount
 }
 
-func (o *LedgerAccountInput) GetParentAccount() *ParentAccount {
-	if o == nil {
+func (l *LedgerAccountInput) GetParentAccount() *ParentAccount {
+	if l == nil {
 		return nil
 	}
-	return o.ParentAccount
+	return l.ParentAccount
 }
 
-func (o *LedgerAccountInput) GetSubAccount() *bool {
-	if o == nil {
+func (l *LedgerAccountInput) GetSubAccount() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.SubAccount
+	return l.SubAccount
 }
 
-func (o *LedgerAccountInput) GetLastReconciliationDate() *types.Date {
-	if o == nil {
+func (l *LedgerAccountInput) GetLastReconciliationDate() *types.Date {
+	if l == nil {
 		return nil
 	}
-	return o.LastReconciliationDate
+	return l.LastReconciliationDate
 }
 
-func (o *LedgerAccountInput) GetSubsidiaries() []LedgerAccountSubsidiaries {
-	if o == nil {
+func (l *LedgerAccountInput) GetSubsidiaries() []LedgerAccountSubsidiaries {
+	if l == nil {
 		return nil
 	}
-	return o.Subsidiaries
+	return l.Subsidiaries
 }
 
-func (o *LedgerAccountInput) GetCustomFields() []CustomField {
-	if o == nil {
+func (l *LedgerAccountInput) GetCustomFields() []CustomField {
+	if l == nil {
 		return nil
 	}
-	return o.CustomFields
+	return l.CustomFields
 }
 
-func (o *LedgerAccountInput) GetRowVersion() *string {
-	if o == nil {
+func (l *LedgerAccountInput) GetRowVersion() *string {
+	if l == nil {
 		return nil
 	}
-	return o.RowVersion
+	return l.RowVersion
 }
 
-func (o *LedgerAccountInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (l *LedgerAccountInput) GetPassThrough() []PassThroughBody {
+	if l == nil {
 		return nil
 	}
-	return o.PassThrough
+	return l.PassThrough
 }

@@ -15,37 +15,37 @@ type TaxRatesFilter struct {
 	Revenue *bool `queryParam:"name=revenue"`
 }
 
-func (o *TaxRatesFilter) GetAssets() *bool {
-	if o == nil {
+func (t *TaxRatesFilter) GetAssets() *bool {
+	if t == nil {
 		return nil
 	}
-	return o.Assets
+	return t.Assets
 }
 
-func (o *TaxRatesFilter) GetEquity() *bool {
-	if o == nil {
+func (t *TaxRatesFilter) GetEquity() *bool {
+	if t == nil {
 		return nil
 	}
-	return o.Equity
+	return t.Equity
 }
 
-func (o *TaxRatesFilter) GetExpenses() *bool {
-	if o == nil {
+func (t *TaxRatesFilter) GetExpenses() *bool {
+	if t == nil {
 		return nil
 	}
-	return o.Expenses
+	return t.Expenses
 }
 
-func (o *TaxRatesFilter) GetLiabilities() *bool {
-	if o == nil {
+func (t *TaxRatesFilter) GetLiabilities() *bool {
+	if t == nil {
 		return nil
 	}
-	return o.Liabilities
+	return t.Liabilities
 }
 
-func (o *TaxRatesFilter) GetRevenue() *bool {
-	if o == nil {
+func (t *TaxRatesFilter) GetRevenue() *bool {
+	if t == nil {
 		return nil
 	}
-	return o.Revenue
+	return t.Revenue
 }

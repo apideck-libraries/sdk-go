@@ -14,18 +14,18 @@ type VaultLogsAllGlobals struct {
 	ConsumerID *string `header:"style=simple,explode=false,name=x-apideck-consumer-id"`
 }
 
-func (o *VaultLogsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultLogsAllGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultLogsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultLogsAllGlobals) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
 type VaultLogsAllRequest struct {
@@ -52,39 +52,39 @@ func (v *VaultLogsAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *VaultLogsAllRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultLogsAllRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultLogsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultLogsAllRequest) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultLogsAllRequest) GetFilter() *components.LogsFilter {
-	if o == nil {
+func (v *VaultLogsAllRequest) GetFilter() *components.LogsFilter {
+	if v == nil {
 		return nil
 	}
-	return o.Filter
+	return v.Filter
 }
 
-func (o *VaultLogsAllRequest) GetCursor() *string {
-	if o == nil {
+func (v *VaultLogsAllRequest) GetCursor() *string {
+	if v == nil {
 		return nil
 	}
-	return o.Cursor
+	return v.Cursor
 }
 
-func (o *VaultLogsAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (v *VaultLogsAllRequest) GetLimit() *int64 {
+	if v == nil {
 		return nil
 	}
-	return o.Limit
+	return v.Limit
 }
 
 type VaultLogsAllResponse struct {
@@ -97,23 +97,23 @@ type VaultLogsAllResponse struct {
 	Next func() (*VaultLogsAllResponse, error)
 }
 
-func (o *VaultLogsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultLogsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultLogsAllResponse) GetGetLogsResponse() *components.GetLogsResponse {
-	if o == nil {
+func (v *VaultLogsAllResponse) GetGetLogsResponse() *components.GetLogsResponse {
+	if v == nil {
 		return nil
 	}
-	return o.GetLogsResponse
+	return v.GetLogsResponse
 }
 
-func (o *VaultLogsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultLogsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

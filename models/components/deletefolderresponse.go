@@ -20,51 +20,51 @@ type DeleteFolderResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *DeleteFolderResponse) GetStatusCode() int64 {
-	if o == nil {
+func (d *DeleteFolderResponse) GetStatusCode() int64 {
+	if d == nil {
 		return 0
 	}
-	return o.StatusCode
+	return d.StatusCode
 }
 
-func (o *DeleteFolderResponse) GetStatus() string {
-	if o == nil {
+func (d *DeleteFolderResponse) GetStatus() string {
+	if d == nil {
 		return ""
 	}
-	return o.Status
+	return d.Status
 }
 
-func (o *DeleteFolderResponse) GetService() string {
-	if o == nil {
+func (d *DeleteFolderResponse) GetService() string {
+	if d == nil {
 		return ""
 	}
-	return o.Service
+	return d.Service
 }
 
-func (o *DeleteFolderResponse) GetResource() string {
-	if o == nil {
+func (d *DeleteFolderResponse) GetResource() string {
+	if d == nil {
 		return ""
 	}
-	return o.Resource
+	return d.Resource
 }
 
-func (o *DeleteFolderResponse) GetOperation() string {
-	if o == nil {
+func (d *DeleteFolderResponse) GetOperation() string {
+	if d == nil {
 		return ""
 	}
-	return o.Operation
+	return d.Operation
 }
 
-func (o *DeleteFolderResponse) GetData() UnifiedID {
-	if o == nil {
+func (d *DeleteFolderResponse) GetData() UnifiedID {
+	if d == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return d.Data
 }
 
-func (o *DeleteFolderResponse) GetRaw() map[string]any {
-	if o == nil {
+func (d *DeleteFolderResponse) GetRaw() map[string]any {
+	if d == nil {
 		return nil
 	}
-	return o.Raw
+	return d.Raw
 }

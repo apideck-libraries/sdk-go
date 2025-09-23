@@ -15,37 +15,37 @@ type WebhookSubscription struct {
 	CreatedAt *string `json:"created_at,omitempty"`
 }
 
-func (o *WebhookSubscription) GetDownstreamID() *string {
-	if o == nil {
+func (w *WebhookSubscription) GetDownstreamID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.DownstreamID
+	return w.DownstreamID
 }
 
-func (o *WebhookSubscription) GetUnifyEventTypes() []string {
-	if o == nil {
+func (w *WebhookSubscription) GetUnifyEventTypes() []string {
+	if w == nil {
 		return nil
 	}
-	return o.UnifyEventTypes
+	return w.UnifyEventTypes
 }
 
-func (o *WebhookSubscription) GetDownstreamEventTypes() []string {
-	if o == nil {
+func (w *WebhookSubscription) GetDownstreamEventTypes() []string {
+	if w == nil {
 		return nil
 	}
-	return o.DownstreamEventTypes
+	return w.DownstreamEventTypes
 }
 
-func (o *WebhookSubscription) GetExecuteURL() *string {
-	if o == nil {
+func (w *WebhookSubscription) GetExecuteURL() *string {
+	if w == nil {
 		return nil
 	}
-	return o.ExecuteURL
+	return w.ExecuteURL
 }
 
-func (o *WebhookSubscription) GetCreatedAt() *string {
-	if o == nil {
+func (w *WebhookSubscription) GetCreatedAt() *string {
+	if w == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return w.CreatedAt
 }

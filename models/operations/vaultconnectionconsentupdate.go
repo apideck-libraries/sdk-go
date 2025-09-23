@@ -13,18 +13,18 @@ type VaultConnectionConsentUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultConnectionConsentUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionConsentUpdateGlobals) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionConsentUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionConsentUpdateGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultConnectionConsentUpdateRequest struct {
@@ -40,39 +40,39 @@ type VaultConnectionConsentUpdateRequest struct {
 	UpdateConsentRequest components.UpdateConsentRequest `request:"mediaType=application/json"`
 }
 
-func (o *VaultConnectionConsentUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionConsentUpdateRequest) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionConsentUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionConsentUpdateRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultConnectionConsentUpdateRequest) GetServiceID() string {
-	if o == nil {
+func (v *VaultConnectionConsentUpdateRequest) GetServiceID() string {
+	if v == nil {
 		return ""
 	}
-	return o.ServiceID
+	return v.ServiceID
 }
 
-func (o *VaultConnectionConsentUpdateRequest) GetUnifiedAPI() string {
-	if o == nil {
+func (v *VaultConnectionConsentUpdateRequest) GetUnifiedAPI() string {
+	if v == nil {
 		return ""
 	}
-	return o.UnifiedAPI
+	return v.UnifiedAPI
 }
 
-func (o *VaultConnectionConsentUpdateRequest) GetUpdateConsentRequest() components.UpdateConsentRequest {
-	if o == nil {
+func (v *VaultConnectionConsentUpdateRequest) GetUpdateConsentRequest() components.UpdateConsentRequest {
+	if v == nil {
 		return components.UpdateConsentRequest{}
 	}
-	return o.UpdateConsentRequest
+	return v.UpdateConsentRequest
 }
 
 type VaultConnectionConsentUpdateResponse struct {
@@ -83,23 +83,23 @@ type VaultConnectionConsentUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultConnectionConsentUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultConnectionConsentUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultConnectionConsentUpdateResponse) GetUpdateConsentResponse() *components.UpdateConsentResponse {
-	if o == nil {
+func (v *VaultConnectionConsentUpdateResponse) GetUpdateConsentResponse() *components.UpdateConsentResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UpdateConsentResponse
+	return v.UpdateConsentResponse
 }
 
-func (o *VaultConnectionConsentUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultConnectionConsentUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

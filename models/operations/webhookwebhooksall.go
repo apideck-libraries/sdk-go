@@ -12,11 +12,11 @@ type WebhookWebhooksAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *WebhookWebhooksAllGlobals) GetAppID() *string {
-	if o == nil {
+func (w *WebhookWebhooksAllGlobals) GetAppID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.AppID
+	return w.AppID
 }
 
 type WebhookWebhooksAllRequest struct {
@@ -39,25 +39,25 @@ func (w *WebhookWebhooksAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *WebhookWebhooksAllRequest) GetAppID() *string {
-	if o == nil {
+func (w *WebhookWebhooksAllRequest) GetAppID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.AppID
+	return w.AppID
 }
 
-func (o *WebhookWebhooksAllRequest) GetCursor() *string {
-	if o == nil {
+func (w *WebhookWebhooksAllRequest) GetCursor() *string {
+	if w == nil {
 		return nil
 	}
-	return o.Cursor
+	return w.Cursor
 }
 
-func (o *WebhookWebhooksAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (w *WebhookWebhooksAllRequest) GetLimit() *int64 {
+	if w == nil {
 		return nil
 	}
-	return o.Limit
+	return w.Limit
 }
 
 type WebhookWebhooksAllResponse struct {
@@ -70,23 +70,23 @@ type WebhookWebhooksAllResponse struct {
 	Next func() (*WebhookWebhooksAllResponse, error)
 }
 
-func (o *WebhookWebhooksAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (w *WebhookWebhooksAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if w == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return w.HTTPMeta
 }
 
-func (o *WebhookWebhooksAllResponse) GetGetWebhooksResponse() *components.GetWebhooksResponse {
-	if o == nil {
+func (w *WebhookWebhooksAllResponse) GetGetWebhooksResponse() *components.GetWebhooksResponse {
+	if w == nil {
 		return nil
 	}
-	return o.GetWebhooksResponse
+	return w.GetWebhooksResponse
 }
 
-func (o *WebhookWebhooksAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (w *WebhookWebhooksAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if w == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return w.UnexpectedErrorResponse
 }

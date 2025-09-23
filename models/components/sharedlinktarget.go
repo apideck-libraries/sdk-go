@@ -11,23 +11,23 @@ type SharedLinkTarget struct {
 	Type *FileType `json:"type,omitempty"`
 }
 
-func (o *SharedLinkTarget) GetID() string {
-	if o == nil {
+func (s *SharedLinkTarget) GetID() string {
+	if s == nil {
 		return ""
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SharedLinkTarget) GetName() *string {
-	if o == nil {
+func (s *SharedLinkTarget) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *SharedLinkTarget) GetType() *FileType {
-	if o == nil {
+func (s *SharedLinkTarget) GetType() *FileType {
+	if s == nil {
 		return nil
 	}
-	return o.Type
+	return s.Type
 }

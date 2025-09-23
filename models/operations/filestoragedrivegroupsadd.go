@@ -14,18 +14,18 @@ type FileStorageDriveGroupsAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *FileStorageDriveGroupsAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageDriveGroupsAddGlobals) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageDriveGroupsAddGlobals) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageDriveGroupsAddGlobals) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
 type FileStorageDriveGroupsAddRequest struct {
@@ -51,39 +51,39 @@ func (f *FileStorageDriveGroupsAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FileStorageDriveGroupsAddRequest) GetRaw() *bool {
-	if o == nil {
+func (f *FileStorageDriveGroupsAddRequest) GetRaw() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Raw
+	return f.Raw
 }
 
-func (o *FileStorageDriveGroupsAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageDriveGroupsAddRequest) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageDriveGroupsAddRequest) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageDriveGroupsAddRequest) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
-func (o *FileStorageDriveGroupsAddRequest) GetServiceID() *string {
-	if o == nil {
+func (f *FileStorageDriveGroupsAddRequest) GetServiceID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ServiceID
+	return f.ServiceID
 }
 
-func (o *FileStorageDriveGroupsAddRequest) GetDriveGroup() components.DriveGroupInput {
-	if o == nil {
+func (f *FileStorageDriveGroupsAddRequest) GetDriveGroup() components.DriveGroupInput {
+	if f == nil {
 		return components.DriveGroupInput{}
 	}
-	return o.DriveGroup
+	return f.DriveGroup
 }
 
 type FileStorageDriveGroupsAddResponse struct {
@@ -94,23 +94,23 @@ type FileStorageDriveGroupsAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *FileStorageDriveGroupsAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (f *FileStorageDriveGroupsAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if f == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return f.HTTPMeta
 }
 
-func (o *FileStorageDriveGroupsAddResponse) GetCreateDriveGroupResponse() *components.CreateDriveGroupResponse {
-	if o == nil {
+func (f *FileStorageDriveGroupsAddResponse) GetCreateDriveGroupResponse() *components.CreateDriveGroupResponse {
+	if f == nil {
 		return nil
 	}
-	return o.CreateDriveGroupResponse
+	return f.CreateDriveGroupResponse
 }
 
-func (o *FileStorageDriveGroupsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (f *FileStorageDriveGroupsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return f.UnexpectedErrorResponse
 }

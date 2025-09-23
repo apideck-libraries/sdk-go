@@ -14,18 +14,18 @@ type AccountingPaymentsOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingPaymentsOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingPaymentsOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingPaymentsOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingPaymentsOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingPaymentsOneRequest struct {
@@ -54,46 +54,46 @@ func (a *AccountingPaymentsOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingPaymentsOneRequest) GetID() string {
-	if o == nil {
+func (a *AccountingPaymentsOneRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingPaymentsOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingPaymentsOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingPaymentsOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingPaymentsOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingPaymentsOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingPaymentsOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingPaymentsOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingPaymentsOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingPaymentsOneRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingPaymentsOneRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingPaymentsOneResponse struct {
@@ -104,23 +104,23 @@ type AccountingPaymentsOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingPaymentsOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingPaymentsOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingPaymentsOneResponse) GetGetPaymentResponse() *components.GetPaymentResponse {
-	if o == nil {
+func (a *AccountingPaymentsOneResponse) GetGetPaymentResponse() *components.GetPaymentResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetPaymentResponse
+	return a.GetPaymentResponse
 }
 
-func (o *AccountingPaymentsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingPaymentsOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

@@ -13,18 +13,18 @@ type VaultConnectionConsentsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *VaultConnectionConsentsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionConsentsAllGlobals) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionConsentsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionConsentsAllGlobals) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
 type VaultConnectionConsentsAllRequest struct {
@@ -38,32 +38,32 @@ type VaultConnectionConsentsAllRequest struct {
 	UnifiedAPI string `pathParam:"style=simple,explode=false,name=unified_api"`
 }
 
-func (o *VaultConnectionConsentsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (v *VaultConnectionConsentsAllRequest) GetConsumerID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return v.ConsumerID
 }
 
-func (o *VaultConnectionConsentsAllRequest) GetAppID() *string {
-	if o == nil {
+func (v *VaultConnectionConsentsAllRequest) GetAppID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.AppID
+	return v.AppID
 }
 
-func (o *VaultConnectionConsentsAllRequest) GetServiceID() string {
-	if o == nil {
+func (v *VaultConnectionConsentsAllRequest) GetServiceID() string {
+	if v == nil {
 		return ""
 	}
-	return o.ServiceID
+	return v.ServiceID
 }
 
-func (o *VaultConnectionConsentsAllRequest) GetUnifiedAPI() string {
-	if o == nil {
+func (v *VaultConnectionConsentsAllRequest) GetUnifiedAPI() string {
+	if v == nil {
 		return ""
 	}
-	return o.UnifiedAPI
+	return v.UnifiedAPI
 }
 
 type VaultConnectionConsentsAllResponse struct {
@@ -74,23 +74,23 @@ type VaultConnectionConsentsAllResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *VaultConnectionConsentsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (v *VaultConnectionConsentsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if v == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return v.HTTPMeta
 }
 
-func (o *VaultConnectionConsentsAllResponse) GetGetConsentRecordsResponse() *components.GetConsentRecordsResponse {
-	if o == nil {
+func (v *VaultConnectionConsentsAllResponse) GetGetConsentRecordsResponse() *components.GetConsentRecordsResponse {
+	if v == nil {
 		return nil
 	}
-	return o.GetConsentRecordsResponse
+	return v.GetConsentRecordsResponse
 }
 
-func (o *VaultConnectionConsentsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (v *VaultConnectionConsentsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if v == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return v.UnexpectedErrorResponse
 }

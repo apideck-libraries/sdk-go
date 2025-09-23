@@ -14,18 +14,18 @@ type AtsJobsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AtsJobsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AtsJobsAllGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AtsJobsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AtsJobsAllGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AtsJobsAllRequest struct {
@@ -58,60 +58,60 @@ func (a *AtsJobsAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AtsJobsAllRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AtsJobsAllRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AtsJobsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AtsJobsAllRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AtsJobsAllRequest) GetAppID() *string {
-	if o == nil {
+func (a *AtsJobsAllRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AtsJobsAllRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AtsJobsAllRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AtsJobsAllRequest) GetCursor() *string {
-	if o == nil {
+func (a *AtsJobsAllRequest) GetCursor() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Cursor
+	return a.Cursor
 }
 
-func (o *AtsJobsAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (a *AtsJobsAllRequest) GetLimit() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.Limit
+	return a.Limit
 }
 
-func (o *AtsJobsAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (a *AtsJobsAllRequest) GetPassThrough() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
-func (o *AtsJobsAllRequest) GetFields() *string {
-	if o == nil {
+func (a *AtsJobsAllRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AtsJobsAllResponse struct {
@@ -124,23 +124,23 @@ type AtsJobsAllResponse struct {
 	Next func() (*AtsJobsAllResponse, error)
 }
 
-func (o *AtsJobsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AtsJobsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AtsJobsAllResponse) GetGetJobsResponse() *components.GetJobsResponse {
-	if o == nil {
+func (a *AtsJobsAllResponse) GetGetJobsResponse() *components.GetJobsResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetJobsResponse
+	return a.GetJobsResponse
 }
 
-func (o *AtsJobsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AtsJobsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

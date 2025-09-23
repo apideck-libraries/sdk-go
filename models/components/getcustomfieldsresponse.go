@@ -13,30 +13,30 @@ type GetCustomFieldsResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetCustomFieldsResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetCustomFieldsResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetCustomFieldsResponse) GetStatus() string {
-	if o == nil {
+func (g *GetCustomFieldsResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetCustomFieldsResponse) GetData() []CustomFieldFinder {
-	if o == nil {
+func (g *GetCustomFieldsResponse) GetData() []CustomFieldFinder {
+	if g == nil {
 		return []CustomFieldFinder{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetCustomFieldsResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetCustomFieldsResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

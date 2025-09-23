@@ -14,18 +14,18 @@ type CrmNotesDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmNotesDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmNotesDeleteGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmNotesDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmNotesDeleteGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmNotesDeleteRequest struct {
@@ -52,39 +52,39 @@ func (c *CrmNotesDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmNotesDeleteRequest) GetID() string {
-	if o == nil {
+func (c *CrmNotesDeleteRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CrmNotesDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmNotesDeleteRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmNotesDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmNotesDeleteRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmNotesDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmNotesDeleteRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmNotesDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmNotesDeleteRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
 type CrmNotesDeleteResponse struct {
@@ -95,23 +95,23 @@ type CrmNotesDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmNotesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmNotesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmNotesDeleteResponse) GetDeleteNoteResponse() *components.DeleteNoteResponse {
-	if o == nil {
+func (c *CrmNotesDeleteResponse) GetDeleteNoteResponse() *components.DeleteNoteResponse {
+	if c == nil {
 		return nil
 	}
-	return o.DeleteNoteResponse
+	return c.DeleteNoteResponse
 }
 
-func (o *CrmNotesDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmNotesDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

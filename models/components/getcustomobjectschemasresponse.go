@@ -23,65 +23,65 @@ type GetCustomObjectSchemasResponse struct {
 	Links *Links `json:"links,omitempty"`
 }
 
-func (o *GetCustomObjectSchemasResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetCustomObjectSchemasResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetCustomObjectSchemasResponse) GetStatus() string {
-	if o == nil {
+func (g *GetCustomObjectSchemasResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetCustomObjectSchemasResponse) GetService() string {
-	if o == nil {
+func (g *GetCustomObjectSchemasResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetCustomObjectSchemasResponse) GetResource() string {
-	if o == nil {
+func (g *GetCustomObjectSchemasResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetCustomObjectSchemasResponse) GetOperation() string {
-	if o == nil {
+func (g *GetCustomObjectSchemasResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetCustomObjectSchemasResponse) GetData() []CustomObjectSchema {
-	if o == nil {
+func (g *GetCustomObjectSchemasResponse) GetData() []CustomObjectSchema {
+	if g == nil {
 		return []CustomObjectSchema{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetCustomObjectSchemasResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetCustomObjectSchemasResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }
 
-func (o *GetCustomObjectSchemasResponse) GetMeta() *Meta {
-	if o == nil {
+func (g *GetCustomObjectSchemasResponse) GetMeta() *Meta {
+	if g == nil {
 		return nil
 	}
-	return o.Meta
+	return g.Meta
 }
 
-func (o *GetCustomObjectSchemasResponse) GetLinks() *Links {
-	if o == nil {
+func (g *GetCustomObjectSchemasResponse) GetLinks() *Links {
+	if g == nil {
 		return nil
 	}
-	return o.Links
+	return g.Links
 }

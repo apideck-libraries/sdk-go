@@ -111,107 +111,107 @@ func (f *FormField) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FormField) GetID() *string {
-	if o == nil {
+func (f *FormField) GetID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *FormField) GetLabel() *string {
-	if o == nil {
+func (f *FormField) GetLabel() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Label
+	return f.Label
 }
 
-func (o *FormField) GetPlaceholder() *string {
-	if o == nil {
+func (f *FormField) GetPlaceholder() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Placeholder
+	return f.Placeholder
 }
 
-func (o *FormField) GetDescription() *string {
-	if o == nil {
+func (f *FormField) GetDescription() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Description
+	return f.Description
 }
 
-func (o *FormField) GetType() *FormFieldType {
-	if o == nil {
+func (f *FormField) GetType() *FormFieldType {
+	if f == nil {
 		return nil
 	}
-	return o.Type
+	return f.Type
 }
 
-func (o *FormField) GetRequired() *bool {
-	if o == nil {
+func (f *FormField) GetRequired() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Required
+	return f.Required
 }
 
-func (o *FormField) GetCustomField() *bool {
-	if o == nil {
+func (f *FormField) GetCustomField() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.CustomField
+	return f.CustomField
 }
 
-func (o *FormField) GetAllowCustomValues() *bool {
-	if o == nil {
+func (f *FormField) GetAllowCustomValues() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.AllowCustomValues
+	return f.AllowCustomValues
 }
 
-func (o *FormField) GetDisabled() *bool {
-	if o == nil {
+func (f *FormField) GetDisabled() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Disabled
+	return f.Disabled
 }
 
-func (o *FormField) GetHidden() *bool {
-	if o == nil {
+func (f *FormField) GetHidden() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Hidden
+	return f.Hidden
 }
 
-func (o *FormField) GetDeprecated() *bool {
-	if o == nil {
+func (f *FormField) GetDeprecated() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Deprecated
+	return f.Deprecated
 }
 
-func (o *FormField) GetSensitive() *bool {
-	if o == nil {
+func (f *FormField) GetSensitive() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Sensitive
+	return f.Sensitive
 }
 
-func (o *FormField) GetPrefix() *string {
-	if o == nil {
+func (f *FormField) GetPrefix() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Prefix
+	return f.Prefix
 }
 
-func (o *FormField) GetSuffix() *string {
-	if o == nil {
+func (f *FormField) GetSuffix() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Suffix
+	return f.Suffix
 }
 
-func (o *FormField) GetOptions() []FormFieldOption {
-	if o == nil {
+func (f *FormField) GetOptions() []FormFieldOption {
+	if f == nil {
 		return nil
 	}
-	return o.Options
+	return f.Options
 }

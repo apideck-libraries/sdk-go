@@ -13,32 +13,32 @@ type PipelineStages struct {
 	DisplayOrder *int64 `json:"display_order,omitempty"`
 }
 
-func (o *PipelineStages) GetName() *string {
-	if o == nil {
+func (p *PipelineStages) GetName() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Name
+	return p.Name
 }
 
-func (o *PipelineStages) GetValue() *string {
-	if o == nil {
+func (p *PipelineStages) GetValue() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Value
+	return p.Value
 }
 
-func (o *PipelineStages) GetWinProbability() *int64 {
-	if o == nil {
+func (p *PipelineStages) GetWinProbability() *int64 {
+	if p == nil {
 		return nil
 	}
-	return o.WinProbability
+	return p.WinProbability
 }
 
-func (o *PipelineStages) GetDisplayOrder() *int64 {
-	if o == nil {
+func (p *PipelineStages) GetDisplayOrder() *int64 {
+	if p == nil {
 		return nil
 	}
-	return o.DisplayOrder
+	return p.DisplayOrder
 }
 
 type PipelineInput struct {
@@ -62,65 +62,65 @@ type PipelineInput struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *PipelineInput) GetID() *string {
-	if o == nil {
+func (p *PipelineInput) GetID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *PipelineInput) GetName() string {
-	if o == nil {
+func (p *PipelineInput) GetName() string {
+	if p == nil {
 		return ""
 	}
-	return o.Name
+	return p.Name
 }
 
-func (o *PipelineInput) GetCurrency() *Currency {
-	if o == nil {
+func (p *PipelineInput) GetCurrency() *Currency {
+	if p == nil {
 		return nil
 	}
-	return o.Currency
+	return p.Currency
 }
 
-func (o *PipelineInput) GetArchived() *bool {
-	if o == nil {
+func (p *PipelineInput) GetArchived() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.Archived
+	return p.Archived
 }
 
-func (o *PipelineInput) GetActive() *bool {
-	if o == nil {
+func (p *PipelineInput) GetActive() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.Active
+	return p.Active
 }
 
-func (o *PipelineInput) GetDisplayOrder() *int64 {
-	if o == nil {
+func (p *PipelineInput) GetDisplayOrder() *int64 {
+	if p == nil {
 		return nil
 	}
-	return o.DisplayOrder
+	return p.DisplayOrder
 }
 
-func (o *PipelineInput) GetWinProbabilityEnabled() *bool {
-	if o == nil {
+func (p *PipelineInput) GetWinProbabilityEnabled() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.WinProbabilityEnabled
+	return p.WinProbabilityEnabled
 }
 
-func (o *PipelineInput) GetStages() []PipelineStages {
-	if o == nil {
+func (p *PipelineInput) GetStages() []PipelineStages {
+	if p == nil {
 		return nil
 	}
-	return o.Stages
+	return p.Stages
 }
 
-func (o *PipelineInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (p *PipelineInput) GetPassThrough() []PassThroughBody {
+	if p == nil {
 		return nil
 	}
-	return o.PassThrough
+	return p.PassThrough
 }

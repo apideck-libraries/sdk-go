@@ -24,23 +24,23 @@ func (p *PaymentsFilter) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *PaymentsFilter) GetUpdatedSince() *time.Time {
-	if o == nil {
+func (p *PaymentsFilter) GetUpdatedSince() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.UpdatedSince
+	return p.UpdatedSince
 }
 
-func (o *PaymentsFilter) GetInvoiceID() *string {
-	if o == nil {
+func (p *PaymentsFilter) GetInvoiceID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.InvoiceID
+	return p.InvoiceID
 }
 
-func (o *PaymentsFilter) GetSupplierID() *string {
-	if o == nil {
+func (p *PaymentsFilter) GetSupplierID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.SupplierID
+	return p.SupplierID
 }

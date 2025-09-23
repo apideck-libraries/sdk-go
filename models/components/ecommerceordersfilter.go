@@ -13,30 +13,30 @@ type EcommerceOrdersFilter struct {
 	CreatedSince *string `queryParam:"name=created_since"`
 }
 
-func (o *EcommerceOrdersFilter) GetEmail() *string {
-	if o == nil {
+func (e *EcommerceOrdersFilter) GetEmail() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Email
+	return e.Email
 }
 
-func (o *EcommerceOrdersFilter) GetCustomerID() *string {
-	if o == nil {
+func (e *EcommerceOrdersFilter) GetCustomerID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CustomerID
+	return e.CustomerID
 }
 
-func (o *EcommerceOrdersFilter) GetUpdatedSince() *string {
-	if o == nil {
+func (e *EcommerceOrdersFilter) GetUpdatedSince() *string {
+	if e == nil {
 		return nil
 	}
-	return o.UpdatedSince
+	return e.UpdatedSince
 }
 
-func (o *EcommerceOrdersFilter) GetCreatedSince() *string {
-	if o == nil {
+func (e *EcommerceOrdersFilter) GetCreatedSince() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CreatedSince
+	return e.CreatedSince
 }

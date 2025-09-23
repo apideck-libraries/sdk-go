@@ -12,25 +12,25 @@ type Cursors struct {
 	Next *string `json:"next,omitempty"`
 }
 
-func (o *Cursors) GetPrevious() *string {
-	if o == nil {
+func (c *Cursors) GetPrevious() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Previous
+	return c.Previous
 }
 
-func (o *Cursors) GetCurrent() *string {
-	if o == nil {
+func (c *Cursors) GetCurrent() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Current
+	return c.Current
 }
 
-func (o *Cursors) GetNext() *string {
-	if o == nil {
+func (c *Cursors) GetNext() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Next
+	return c.Next
 }
 
 // Meta - Response metadata
@@ -41,16 +41,16 @@ type Meta struct {
 	Cursors *Cursors `json:"cursors,omitempty"`
 }
 
-func (o *Meta) GetItemsOnPage() *int64 {
-	if o == nil {
+func (m *Meta) GetItemsOnPage() *int64 {
+	if m == nil {
 		return nil
 	}
-	return o.ItemsOnPage
+	return m.ItemsOnPage
 }
 
-func (o *Meta) GetCursors() *Cursors {
-	if o == nil {
+func (m *Meta) GetCursors() *Cursors {
+	if m == nil {
 		return nil
 	}
-	return o.Cursors
+	return m.Cursors
 }

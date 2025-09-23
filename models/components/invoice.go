@@ -114,25 +114,25 @@ func (p *PaymentAllocations) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *PaymentAllocations) GetID() *string {
-	if o == nil {
+func (p *PaymentAllocations) GetID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *PaymentAllocations) GetAllocatedAmount() *float64 {
-	if o == nil {
+func (p *PaymentAllocations) GetAllocatedAmount() *float64 {
+	if p == nil {
 		return nil
 	}
-	return o.AllocatedAmount
+	return p.AllocatedAmount
 }
 
-func (o *PaymentAllocations) GetDate() *time.Time {
-	if o == nil {
+func (p *PaymentAllocations) GetDate() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.Date
+	return p.Date
 }
 
 type Invoice struct {
@@ -241,347 +241,347 @@ func (i *Invoice) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Invoice) GetID() *string {
-	if o == nil {
+func (i *Invoice) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *Invoice) GetDownstreamID() *string {
-	if o == nil {
+func (i *Invoice) GetDownstreamID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.DownstreamID
+	return i.DownstreamID
 }
 
-func (o *Invoice) GetDisplayID() *string {
-	if o == nil {
+func (i *Invoice) GetDisplayID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.DisplayID
+	return i.DisplayID
 }
 
-func (o *Invoice) GetType() *InvoiceType {
-	if o == nil {
+func (i *Invoice) GetType() *InvoiceType {
+	if i == nil {
 		return nil
 	}
-	return o.Type
+	return i.Type
 }
 
-func (o *Invoice) GetNumber() *string {
-	if o == nil {
+func (i *Invoice) GetNumber() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Number
+	return i.Number
 }
 
-func (o *Invoice) GetCustomer() *LinkedCustomer {
-	if o == nil {
+func (i *Invoice) GetCustomer() *LinkedCustomer {
+	if i == nil {
 		return nil
 	}
-	return o.Customer
+	return i.Customer
 }
 
-func (o *Invoice) GetCompanyID() *string {
-	if o == nil {
+func (i *Invoice) GetCompanyID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.CompanyID
+	return i.CompanyID
 }
 
-func (o *Invoice) GetDepartmentID() *string {
-	if o == nil {
+func (i *Invoice) GetDepartmentID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return i.DepartmentID
 }
 
-func (o *Invoice) GetInvoiceDate() *types.Date {
-	if o == nil {
+func (i *Invoice) GetInvoiceDate() *types.Date {
+	if i == nil {
 		return nil
 	}
-	return o.InvoiceDate
+	return i.InvoiceDate
 }
 
-func (o *Invoice) GetDueDate() *types.Date {
-	if o == nil {
+func (i *Invoice) GetDueDate() *types.Date {
+	if i == nil {
 		return nil
 	}
-	return o.DueDate
+	return i.DueDate
 }
 
-func (o *Invoice) GetTerms() *string {
-	if o == nil {
+func (i *Invoice) GetTerms() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Terms
+	return i.Terms
 }
 
-func (o *Invoice) GetPoNumber() *string {
-	if o == nil {
+func (i *Invoice) GetPoNumber() *string {
+	if i == nil {
 		return nil
 	}
-	return o.PoNumber
+	return i.PoNumber
 }
 
-func (o *Invoice) GetReference() *string {
-	if o == nil {
+func (i *Invoice) GetReference() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Reference
+	return i.Reference
 }
 
-func (o *Invoice) GetStatus() *InvoiceStatus {
-	if o == nil {
+func (i *Invoice) GetStatus() *InvoiceStatus {
+	if i == nil {
 		return nil
 	}
-	return o.Status
+	return i.Status
 }
 
-func (o *Invoice) GetInvoiceSent() *bool {
-	if o == nil {
+func (i *Invoice) GetInvoiceSent() *bool {
+	if i == nil {
 		return nil
 	}
-	return o.InvoiceSent
+	return i.InvoiceSent
 }
 
-func (o *Invoice) GetCurrency() *Currency {
-	if o == nil {
+func (i *Invoice) GetCurrency() *Currency {
+	if i == nil {
 		return nil
 	}
-	return o.Currency
+	return i.Currency
 }
 
-func (o *Invoice) GetCurrencyRate() *float64 {
-	if o == nil {
+func (i *Invoice) GetCurrencyRate() *float64 {
+	if i == nil {
 		return nil
 	}
-	return o.CurrencyRate
+	return i.CurrencyRate
 }
 
-func (o *Invoice) GetTaxInclusive() *bool {
-	if o == nil {
+func (i *Invoice) GetTaxInclusive() *bool {
+	if i == nil {
 		return nil
 	}
-	return o.TaxInclusive
+	return i.TaxInclusive
 }
 
-func (o *Invoice) GetSubTotal() *float64 {
-	if o == nil {
+func (i *Invoice) GetSubTotal() *float64 {
+	if i == nil {
 		return nil
 	}
-	return o.SubTotal
+	return i.SubTotal
 }
 
-func (o *Invoice) GetTotalTax() *float64 {
-	if o == nil {
+func (i *Invoice) GetTotalTax() *float64 {
+	if i == nil {
 		return nil
 	}
-	return o.TotalTax
+	return i.TotalTax
 }
 
-func (o *Invoice) GetTaxCode() *string {
-	if o == nil {
+func (i *Invoice) GetTaxCode() *string {
+	if i == nil {
 		return nil
 	}
-	return o.TaxCode
+	return i.TaxCode
 }
 
-func (o *Invoice) GetDiscountPercentage() *float64 {
-	if o == nil {
+func (i *Invoice) GetDiscountPercentage() *float64 {
+	if i == nil {
 		return nil
 	}
-	return o.DiscountPercentage
+	return i.DiscountPercentage
 }
 
-func (o *Invoice) GetDiscountAmount() *float64 {
-	if o == nil {
+func (i *Invoice) GetDiscountAmount() *float64 {
+	if i == nil {
 		return nil
 	}
-	return o.DiscountAmount
+	return i.DiscountAmount
 }
 
-func (o *Invoice) GetTotal() *float64 {
-	if o == nil {
+func (i *Invoice) GetTotal() *float64 {
+	if i == nil {
 		return nil
 	}
-	return o.Total
+	return i.Total
 }
 
-func (o *Invoice) GetBalance() *float64 {
-	if o == nil {
+func (i *Invoice) GetBalance() *float64 {
+	if i == nil {
 		return nil
 	}
-	return o.Balance
+	return i.Balance
 }
 
-func (o *Invoice) GetDeposit() *float64 {
-	if o == nil {
+func (i *Invoice) GetDeposit() *float64 {
+	if i == nil {
 		return nil
 	}
-	return o.Deposit
+	return i.Deposit
 }
 
-func (o *Invoice) GetCustomerMemo() *string {
-	if o == nil {
+func (i *Invoice) GetCustomerMemo() *string {
+	if i == nil {
 		return nil
 	}
-	return o.CustomerMemo
+	return i.CustomerMemo
 }
 
-func (o *Invoice) GetTrackingCategory() *DeprecatedLinkedTrackingCategory {
-	if o == nil {
+func (i *Invoice) GetTrackingCategory() *DeprecatedLinkedTrackingCategory {
+	if i == nil {
 		return nil
 	}
-	return o.TrackingCategory
+	return i.TrackingCategory
 }
 
-func (o *Invoice) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (i *Invoice) GetTrackingCategories() []*LinkedTrackingCategory {
+	if i == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return i.TrackingCategories
 }
 
-func (o *Invoice) GetLineItems() []InvoiceLineItem {
-	if o == nil {
+func (i *Invoice) GetLineItems() []InvoiceLineItem {
+	if i == nil {
 		return nil
 	}
-	return o.LineItems
+	return i.LineItems
 }
 
-func (o *Invoice) GetBillingAddress() *Address {
-	if o == nil {
+func (i *Invoice) GetBillingAddress() *Address {
+	if i == nil {
 		return nil
 	}
-	return o.BillingAddress
+	return i.BillingAddress
 }
 
-func (o *Invoice) GetShippingAddress() *Address {
-	if o == nil {
+func (i *Invoice) GetShippingAddress() *Address {
+	if i == nil {
 		return nil
 	}
-	return o.ShippingAddress
+	return i.ShippingAddress
 }
 
-func (o *Invoice) GetTemplateID() *string {
-	if o == nil {
+func (i *Invoice) GetTemplateID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.TemplateID
+	return i.TemplateID
 }
 
-func (o *Invoice) GetSourceDocumentURL() *string {
-	if o == nil {
+func (i *Invoice) GetSourceDocumentURL() *string {
+	if i == nil {
 		return nil
 	}
-	return o.SourceDocumentURL
+	return i.SourceDocumentURL
 }
 
-func (o *Invoice) GetPaymentAllocations() []PaymentAllocations {
-	if o == nil {
+func (i *Invoice) GetPaymentAllocations() []PaymentAllocations {
+	if i == nil {
 		return nil
 	}
-	return o.PaymentAllocations
+	return i.PaymentAllocations
 }
 
-func (o *Invoice) GetPaymentMethod() *string {
-	if o == nil {
+func (i *Invoice) GetPaymentMethod() *string {
+	if i == nil {
 		return nil
 	}
-	return o.PaymentMethod
+	return i.PaymentMethod
 }
 
-func (o *Invoice) GetChannel() *string {
-	if o == nil {
+func (i *Invoice) GetChannel() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Channel
+	return i.Channel
 }
 
-func (o *Invoice) GetLanguage() *string {
-	if o == nil {
+func (i *Invoice) GetLanguage() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Language
+	return i.Language
 }
 
-func (o *Invoice) GetAccountingByRow() *bool {
-	if o == nil {
+func (i *Invoice) GetAccountingByRow() *bool {
+	if i == nil {
 		return nil
 	}
-	return o.AccountingByRow
+	return i.AccountingByRow
 }
 
-func (o *Invoice) GetBankAccount() *BankAccount {
-	if o == nil {
+func (i *Invoice) GetBankAccount() *BankAccount {
+	if i == nil {
 		return nil
 	}
-	return o.BankAccount
+	return i.BankAccount
 }
 
-func (o *Invoice) GetLedgerAccount() *LinkedLedgerAccount {
-	if o == nil {
+func (i *Invoice) GetLedgerAccount() *LinkedLedgerAccount {
+	if i == nil {
 		return nil
 	}
-	return o.LedgerAccount
+	return i.LedgerAccount
 }
 
-func (o *Invoice) GetCustomMappings() map[string]any {
-	if o == nil {
+func (i *Invoice) GetCustomMappings() map[string]any {
+	if i == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return i.CustomMappings
 }
 
-func (o *Invoice) GetCustomFields() []CustomField {
-	if o == nil {
+func (i *Invoice) GetCustomFields() []CustomField {
+	if i == nil {
 		return nil
 	}
-	return o.CustomFields
+	return i.CustomFields
 }
 
-func (o *Invoice) GetRowVersion() *string {
-	if o == nil {
+func (i *Invoice) GetRowVersion() *string {
+	if i == nil {
 		return nil
 	}
-	return o.RowVersion
+	return i.RowVersion
 }
 
-func (o *Invoice) GetUpdatedBy() *string {
-	if o == nil {
+func (i *Invoice) GetUpdatedBy() *string {
+	if i == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return i.UpdatedBy
 }
 
-func (o *Invoice) GetCreatedBy() *string {
-	if o == nil {
+func (i *Invoice) GetCreatedBy() *string {
+	if i == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return i.CreatedBy
 }
 
-func (o *Invoice) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (i *Invoice) GetUpdatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return i.UpdatedAt
 }
 
-func (o *Invoice) GetCreatedAt() *time.Time {
-	if o == nil {
+func (i *Invoice) GetCreatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return i.CreatedAt
 }
 
-func (o *Invoice) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (i *Invoice) GetPassThrough() []PassThroughBody {
+	if i == nil {
 		return nil
 	}
-	return o.PassThrough
+	return i.PassThrough
 }
 
 type InvoiceInput struct {
@@ -676,296 +676,296 @@ func (i *InvoiceInput) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *InvoiceInput) GetDisplayID() *string {
-	if o == nil {
+func (i *InvoiceInput) GetDisplayID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.DisplayID
+	return i.DisplayID
 }
 
-func (o *InvoiceInput) GetType() *InvoiceType {
-	if o == nil {
+func (i *InvoiceInput) GetType() *InvoiceType {
+	if i == nil {
 		return nil
 	}
-	return o.Type
+	return i.Type
 }
 
-func (o *InvoiceInput) GetNumber() *string {
-	if o == nil {
+func (i *InvoiceInput) GetNumber() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Number
+	return i.Number
 }
 
-func (o *InvoiceInput) GetCustomer() *LinkedCustomerInput {
-	if o == nil {
+func (i *InvoiceInput) GetCustomer() *LinkedCustomerInput {
+	if i == nil {
 		return nil
 	}
-	return o.Customer
+	return i.Customer
 }
 
-func (o *InvoiceInput) GetCompanyID() *string {
-	if o == nil {
+func (i *InvoiceInput) GetCompanyID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.CompanyID
+	return i.CompanyID
 }
 
-func (o *InvoiceInput) GetDepartmentID() *string {
-	if o == nil {
+func (i *InvoiceInput) GetDepartmentID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return i.DepartmentID
 }
 
-func (o *InvoiceInput) GetInvoiceDate() *types.Date {
-	if o == nil {
+func (i *InvoiceInput) GetInvoiceDate() *types.Date {
+	if i == nil {
 		return nil
 	}
-	return o.InvoiceDate
+	return i.InvoiceDate
 }
 
-func (o *InvoiceInput) GetDueDate() *types.Date {
-	if o == nil {
+func (i *InvoiceInput) GetDueDate() *types.Date {
+	if i == nil {
 		return nil
 	}
-	return o.DueDate
+	return i.DueDate
 }
 
-func (o *InvoiceInput) GetTerms() *string {
-	if o == nil {
+func (i *InvoiceInput) GetTerms() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Terms
+	return i.Terms
 }
 
-func (o *InvoiceInput) GetPoNumber() *string {
-	if o == nil {
+func (i *InvoiceInput) GetPoNumber() *string {
+	if i == nil {
 		return nil
 	}
-	return o.PoNumber
+	return i.PoNumber
 }
 
-func (o *InvoiceInput) GetReference() *string {
-	if o == nil {
+func (i *InvoiceInput) GetReference() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Reference
+	return i.Reference
 }
 
-func (o *InvoiceInput) GetStatus() *InvoiceStatus {
-	if o == nil {
+func (i *InvoiceInput) GetStatus() *InvoiceStatus {
+	if i == nil {
 		return nil
 	}
-	return o.Status
+	return i.Status
 }
 
-func (o *InvoiceInput) GetInvoiceSent() *bool {
-	if o == nil {
+func (i *InvoiceInput) GetInvoiceSent() *bool {
+	if i == nil {
 		return nil
 	}
-	return o.InvoiceSent
+	return i.InvoiceSent
 }
 
-func (o *InvoiceInput) GetCurrency() *Currency {
-	if o == nil {
+func (i *InvoiceInput) GetCurrency() *Currency {
+	if i == nil {
 		return nil
 	}
-	return o.Currency
+	return i.Currency
 }
 
-func (o *InvoiceInput) GetCurrencyRate() *float64 {
-	if o == nil {
+func (i *InvoiceInput) GetCurrencyRate() *float64 {
+	if i == nil {
 		return nil
 	}
-	return o.CurrencyRate
+	return i.CurrencyRate
 }
 
-func (o *InvoiceInput) GetTaxInclusive() *bool {
-	if o == nil {
+func (i *InvoiceInput) GetTaxInclusive() *bool {
+	if i == nil {
 		return nil
 	}
-	return o.TaxInclusive
+	return i.TaxInclusive
 }
 
-func (o *InvoiceInput) GetSubTotal() *float64 {
-	if o == nil {
+func (i *InvoiceInput) GetSubTotal() *float64 {
+	if i == nil {
 		return nil
 	}
-	return o.SubTotal
+	return i.SubTotal
 }
 
-func (o *InvoiceInput) GetTotalTax() *float64 {
-	if o == nil {
+func (i *InvoiceInput) GetTotalTax() *float64 {
+	if i == nil {
 		return nil
 	}
-	return o.TotalTax
+	return i.TotalTax
 }
 
-func (o *InvoiceInput) GetTaxCode() *string {
-	if o == nil {
+func (i *InvoiceInput) GetTaxCode() *string {
+	if i == nil {
 		return nil
 	}
-	return o.TaxCode
+	return i.TaxCode
 }
 
-func (o *InvoiceInput) GetDiscountPercentage() *float64 {
-	if o == nil {
+func (i *InvoiceInput) GetDiscountPercentage() *float64 {
+	if i == nil {
 		return nil
 	}
-	return o.DiscountPercentage
+	return i.DiscountPercentage
 }
 
-func (o *InvoiceInput) GetDiscountAmount() *float64 {
-	if o == nil {
+func (i *InvoiceInput) GetDiscountAmount() *float64 {
+	if i == nil {
 		return nil
 	}
-	return o.DiscountAmount
+	return i.DiscountAmount
 }
 
-func (o *InvoiceInput) GetTotal() *float64 {
-	if o == nil {
+func (i *InvoiceInput) GetTotal() *float64 {
+	if i == nil {
 		return nil
 	}
-	return o.Total
+	return i.Total
 }
 
-func (o *InvoiceInput) GetBalance() *float64 {
-	if o == nil {
+func (i *InvoiceInput) GetBalance() *float64 {
+	if i == nil {
 		return nil
 	}
-	return o.Balance
+	return i.Balance
 }
 
-func (o *InvoiceInput) GetDeposit() *float64 {
-	if o == nil {
+func (i *InvoiceInput) GetDeposit() *float64 {
+	if i == nil {
 		return nil
 	}
-	return o.Deposit
+	return i.Deposit
 }
 
-func (o *InvoiceInput) GetCustomerMemo() *string {
-	if o == nil {
+func (i *InvoiceInput) GetCustomerMemo() *string {
+	if i == nil {
 		return nil
 	}
-	return o.CustomerMemo
+	return i.CustomerMemo
 }
 
-func (o *InvoiceInput) GetTrackingCategory() *DeprecatedLinkedTrackingCategory {
-	if o == nil {
+func (i *InvoiceInput) GetTrackingCategory() *DeprecatedLinkedTrackingCategory {
+	if i == nil {
 		return nil
 	}
-	return o.TrackingCategory
+	return i.TrackingCategory
 }
 
-func (o *InvoiceInput) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (i *InvoiceInput) GetTrackingCategories() []*LinkedTrackingCategory {
+	if i == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return i.TrackingCategories
 }
 
-func (o *InvoiceInput) GetLineItems() []InvoiceLineItemInput {
-	if o == nil {
+func (i *InvoiceInput) GetLineItems() []InvoiceLineItemInput {
+	if i == nil {
 		return nil
 	}
-	return o.LineItems
+	return i.LineItems
 }
 
-func (o *InvoiceInput) GetBillingAddress() *Address {
-	if o == nil {
+func (i *InvoiceInput) GetBillingAddress() *Address {
+	if i == nil {
 		return nil
 	}
-	return o.BillingAddress
+	return i.BillingAddress
 }
 
-func (o *InvoiceInput) GetShippingAddress() *Address {
-	if o == nil {
+func (i *InvoiceInput) GetShippingAddress() *Address {
+	if i == nil {
 		return nil
 	}
-	return o.ShippingAddress
+	return i.ShippingAddress
 }
 
-func (o *InvoiceInput) GetTemplateID() *string {
-	if o == nil {
+func (i *InvoiceInput) GetTemplateID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.TemplateID
+	return i.TemplateID
 }
 
-func (o *InvoiceInput) GetSourceDocumentURL() *string {
-	if o == nil {
+func (i *InvoiceInput) GetSourceDocumentURL() *string {
+	if i == nil {
 		return nil
 	}
-	return o.SourceDocumentURL
+	return i.SourceDocumentURL
 }
 
-func (o *InvoiceInput) GetPaymentAllocations() []PaymentAllocations {
-	if o == nil {
+func (i *InvoiceInput) GetPaymentAllocations() []PaymentAllocations {
+	if i == nil {
 		return nil
 	}
-	return o.PaymentAllocations
+	return i.PaymentAllocations
 }
 
-func (o *InvoiceInput) GetPaymentMethod() *string {
-	if o == nil {
+func (i *InvoiceInput) GetPaymentMethod() *string {
+	if i == nil {
 		return nil
 	}
-	return o.PaymentMethod
+	return i.PaymentMethod
 }
 
-func (o *InvoiceInput) GetChannel() *string {
-	if o == nil {
+func (i *InvoiceInput) GetChannel() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Channel
+	return i.Channel
 }
 
-func (o *InvoiceInput) GetLanguage() *string {
-	if o == nil {
+func (i *InvoiceInput) GetLanguage() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Language
+	return i.Language
 }
 
-func (o *InvoiceInput) GetAccountingByRow() *bool {
-	if o == nil {
+func (i *InvoiceInput) GetAccountingByRow() *bool {
+	if i == nil {
 		return nil
 	}
-	return o.AccountingByRow
+	return i.AccountingByRow
 }
 
-func (o *InvoiceInput) GetBankAccount() *BankAccount {
-	if o == nil {
+func (i *InvoiceInput) GetBankAccount() *BankAccount {
+	if i == nil {
 		return nil
 	}
-	return o.BankAccount
+	return i.BankAccount
 }
 
-func (o *InvoiceInput) GetLedgerAccount() *LinkedLedgerAccountInput {
-	if o == nil {
+func (i *InvoiceInput) GetLedgerAccount() *LinkedLedgerAccountInput {
+	if i == nil {
 		return nil
 	}
-	return o.LedgerAccount
+	return i.LedgerAccount
 }
 
-func (o *InvoiceInput) GetCustomFields() []CustomField {
-	if o == nil {
+func (i *InvoiceInput) GetCustomFields() []CustomField {
+	if i == nil {
 		return nil
 	}
-	return o.CustomFields
+	return i.CustomFields
 }
 
-func (o *InvoiceInput) GetRowVersion() *string {
-	if o == nil {
+func (i *InvoiceInput) GetRowVersion() *string {
+	if i == nil {
 		return nil
 	}
-	return o.RowVersion
+	return i.RowVersion
 }
 
-func (o *InvoiceInput) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (i *InvoiceInput) GetPassThrough() []PassThroughBody {
+	if i == nil {
 		return nil
 	}
-	return o.PassThrough
+	return i.PassThrough
 }

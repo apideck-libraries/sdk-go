@@ -14,18 +14,18 @@ type CrmActivitiesAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmActivitiesAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmActivitiesAllGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmActivitiesAllGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmActivitiesAllGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmActivitiesAllRequest struct {
@@ -62,74 +62,74 @@ func (c *CrmActivitiesAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmActivitiesAllRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmActivitiesAllRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmActivitiesAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmActivitiesAllRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmActivitiesAllRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmActivitiesAllRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmActivitiesAllRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmActivitiesAllRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmActivitiesAllRequest) GetCursor() *string {
-	if o == nil {
+func (c *CrmActivitiesAllRequest) GetCursor() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Cursor
+	return c.Cursor
 }
 
-func (o *CrmActivitiesAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (c *CrmActivitiesAllRequest) GetLimit() *int64 {
+	if c == nil {
 		return nil
 	}
-	return o.Limit
+	return c.Limit
 }
 
-func (o *CrmActivitiesAllRequest) GetFilter() *components.ActivitiesFilter {
-	if o == nil {
+func (c *CrmActivitiesAllRequest) GetFilter() *components.ActivitiesFilter {
+	if c == nil {
 		return nil
 	}
-	return o.Filter
+	return c.Filter
 }
 
-func (o *CrmActivitiesAllRequest) GetSort() *components.ActivitiesSort {
-	if o == nil {
+func (c *CrmActivitiesAllRequest) GetSort() *components.ActivitiesSort {
+	if c == nil {
 		return nil
 	}
-	return o.Sort
+	return c.Sort
 }
 
-func (o *CrmActivitiesAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (c *CrmActivitiesAllRequest) GetPassThrough() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.PassThrough
+	return c.PassThrough
 }
 
-func (o *CrmActivitiesAllRequest) GetFields() *string {
-	if o == nil {
+func (c *CrmActivitiesAllRequest) GetFields() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Fields
+	return c.Fields
 }
 
 type CrmActivitiesAllResponse struct {
@@ -142,23 +142,23 @@ type CrmActivitiesAllResponse struct {
 	Next func() (*CrmActivitiesAllResponse, error)
 }
 
-func (o *CrmActivitiesAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmActivitiesAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmActivitiesAllResponse) GetGetActivitiesResponse() *components.GetActivitiesResponse {
-	if o == nil {
+func (c *CrmActivitiesAllResponse) GetGetActivitiesResponse() *components.GetActivitiesResponse {
+	if c == nil {
 		return nil
 	}
-	return o.GetActivitiesResponse
+	return c.GetActivitiesResponse
 }
 
-func (o *CrmActivitiesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmActivitiesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

@@ -19,51 +19,51 @@ type GetTicketResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetTicketResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetTicketResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetTicketResponse) GetStatus() string {
-	if o == nil {
+func (g *GetTicketResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetTicketResponse) GetService() string {
-	if o == nil {
+func (g *GetTicketResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetTicketResponse) GetResource() string {
-	if o == nil {
+func (g *GetTicketResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetTicketResponse) GetOperation() string {
-	if o == nil {
+func (g *GetTicketResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetTicketResponse) GetData() Ticket {
-	if o == nil {
+func (g *GetTicketResponse) GetData() Ticket {
+	if g == nil {
 		return Ticket{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetTicketResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetTicketResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

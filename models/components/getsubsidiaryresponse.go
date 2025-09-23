@@ -19,51 +19,51 @@ type GetSubsidiaryResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetSubsidiaryResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetSubsidiaryResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetSubsidiaryResponse) GetStatus() string {
-	if o == nil {
+func (g *GetSubsidiaryResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetSubsidiaryResponse) GetService() string {
-	if o == nil {
+func (g *GetSubsidiaryResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetSubsidiaryResponse) GetResource() string {
-	if o == nil {
+func (g *GetSubsidiaryResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetSubsidiaryResponse) GetOperation() string {
-	if o == nil {
+func (g *GetSubsidiaryResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetSubsidiaryResponse) GetData() Subsidiary {
-	if o == nil {
+func (g *GetSubsidiaryResponse) GetData() Subsidiary {
+	if g == nil {
 		return Subsidiary{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetSubsidiaryResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetSubsidiaryResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

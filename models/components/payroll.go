@@ -25,72 +25,72 @@ type Payroll struct {
 	CustomMappings map[string]any `json:"custom_mappings,omitempty"`
 }
 
-func (o *Payroll) GetID() *string {
-	if o == nil {
+func (p *Payroll) GetID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *Payroll) GetCompanyID() *string {
-	if o == nil {
+func (p *Payroll) GetCompanyID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.CompanyID
+	return p.CompanyID
 }
 
-func (o *Payroll) GetProcessed() *bool {
-	if o == nil {
+func (p *Payroll) GetProcessed() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.Processed
+	return p.Processed
 }
 
-func (o *Payroll) GetProcessedDate() *string {
-	if o == nil {
+func (p *Payroll) GetProcessedDate() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ProcessedDate
+	return p.ProcessedDate
 }
 
-func (o *Payroll) GetCheckDate() *string {
-	if o == nil {
+func (p *Payroll) GetCheckDate() *string {
+	if p == nil {
 		return nil
 	}
-	return o.CheckDate
+	return p.CheckDate
 }
 
-func (o *Payroll) GetStartDate() *string {
-	if o == nil {
+func (p *Payroll) GetStartDate() *string {
+	if p == nil {
 		return nil
 	}
-	return o.StartDate
+	return p.StartDate
 }
 
-func (o *Payroll) GetEndDate() *string {
-	if o == nil {
+func (p *Payroll) GetEndDate() *string {
+	if p == nil {
 		return nil
 	}
-	return o.EndDate
+	return p.EndDate
 }
 
-func (o *Payroll) GetTotals() *PayrollTotals {
-	if o == nil {
+func (p *Payroll) GetTotals() *PayrollTotals {
+	if p == nil {
 		return nil
 	}
-	return o.Totals
+	return p.Totals
 }
 
-func (o *Payroll) GetCompensations() []Compensation {
-	if o == nil {
+func (p *Payroll) GetCompensations() []Compensation {
+	if p == nil {
 		return nil
 	}
-	return o.Compensations
+	return p.Compensations
 }
 
-func (o *Payroll) GetCustomMappings() map[string]any {
-	if o == nil {
+func (p *Payroll) GetCustomMappings() map[string]any {
+	if p == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return p.CustomMappings
 }

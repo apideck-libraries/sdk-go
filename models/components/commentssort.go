@@ -53,16 +53,16 @@ func (c *CommentsSort) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CommentsSort) GetBy() *CommentsSortBy {
-	if o == nil {
+func (c *CommentsSort) GetBy() *CommentsSortBy {
+	if c == nil {
 		return nil
 	}
-	return o.By
+	return c.By
 }
 
-func (o *CommentsSort) GetDirection() *SortDirection {
-	if o == nil {
+func (c *CommentsSort) GetDirection() *SortDirection {
+	if c == nil {
 		return nil
 	}
-	return o.Direction
+	return c.Direction
 }

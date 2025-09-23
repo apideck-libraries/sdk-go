@@ -39,11 +39,11 @@ func main() {
     )
 
     res, err := s.FileStorage.SharedLinks.List(ctx, operations.FileStorageSharedLinksAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -118,10 +118,10 @@ func main() {
     )
 
     res, err := s.FileStorage.SharedLinks.Create(ctx, operations.FileStorageSharedLinksAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         SharedLink: components.SharedLinkInput{
-            DownloadURL: sdkgo.String("https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg"),
-            TargetID: sdkgo.String("<id>"),
+            DownloadURL: sdkgo.Pointer("https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg"),
+            TargetID: sdkgo.Pointer("<id>"),
             Scope: components.ScopeCompany.ToPointer(),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
@@ -227,8 +227,8 @@ func main() {
 
     res, err := s.FileStorage.SharedLinks.Get(ctx, operations.FileStorageSharedLinksOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -292,10 +292,10 @@ func main() {
 
     res, err := s.FileStorage.SharedLinks.Update(ctx, operations.FileStorageSharedLinksUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         SharedLink: components.SharedLinkInput{
-            DownloadURL: sdkgo.String("https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg"),
-            TargetID: sdkgo.String("<id>"),
+            DownloadURL: sdkgo.Pointer("https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg"),
+            TargetID: sdkgo.Pointer("<id>"),
             Scope: components.ScopeCompany.ToPointer(),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
@@ -404,7 +404,7 @@ func main() {
 
     res, err := s.FileStorage.SharedLinks.Delete(ctx, operations.FileStorageSharedLinksDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

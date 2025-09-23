@@ -14,18 +14,18 @@ type AccountingQuotesAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingQuotesAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingQuotesAllGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingQuotesAllGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingQuotesAllGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingQuotesAllRequest struct {
@@ -54,46 +54,46 @@ func (a *AccountingQuotesAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingQuotesAllRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingQuotesAllRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingQuotesAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingQuotesAllRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingQuotesAllRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingQuotesAllRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingQuotesAllRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingQuotesAllRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingQuotesAllRequest) GetCursor() *string {
-	if o == nil {
+func (a *AccountingQuotesAllRequest) GetCursor() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Cursor
+	return a.Cursor
 }
 
-func (o *AccountingQuotesAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (a *AccountingQuotesAllRequest) GetLimit() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.Limit
+	return a.Limit
 }
 
 type AccountingQuotesAllResponse struct {
@@ -106,23 +106,23 @@ type AccountingQuotesAllResponse struct {
 	Next func() (*AccountingQuotesAllResponse, error)
 }
 
-func (o *AccountingQuotesAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingQuotesAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingQuotesAllResponse) GetGetQuotesResponse() *components.GetQuotesResponse {
-	if o == nil {
+func (a *AccountingQuotesAllResponse) GetGetQuotesResponse() *components.GetQuotesResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetQuotesResponse
+	return a.GetQuotesResponse
 }
 
-func (o *AccountingQuotesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingQuotesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

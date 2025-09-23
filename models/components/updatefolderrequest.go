@@ -13,30 +13,30 @@ type UpdateFolderRequest struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (o *UpdateFolderRequest) GetName() *string {
-	if o == nil {
+func (u *UpdateFolderRequest) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateFolderRequest) GetDescription() *string {
-	if o == nil {
+func (u *UpdateFolderRequest) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateFolderRequest) GetParentFolderID() *string {
-	if o == nil {
+func (u *UpdateFolderRequest) GetParentFolderID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ParentFolderID
+	return u.ParentFolderID
 }
 
-func (o *UpdateFolderRequest) GetPassThrough() []PassThroughBody {
-	if o == nil {
+func (u *UpdateFolderRequest) GetPassThrough() []PassThroughBody {
+	if u == nil {
 		return nil
 	}
-	return o.PassThrough
+	return u.PassThrough
 }

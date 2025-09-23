@@ -36,14 +36,14 @@ func main() {
     )
 
     res, err := s.Accounting.BalanceSheet.Get(ctx, operations.AccountingBalanceSheetOneRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
         Filter: &components.BalanceSheetFilter{
-            StartDate: sdkgo.String("2021-01-01"),
-            EndDate: sdkgo.String("2021-12-31"),
-            PeriodCount: sdkgo.Int64(3),
+            StartDate: sdkgo.Pointer("2021-01-01"),
+            EndDate: sdkgo.Pointer("2021-12-31"),
+            PeriodCount: sdkgo.Pointer[int64](3),
             PeriodType: components.PeriodTypeMonth.ToPointer(),
         },
     })

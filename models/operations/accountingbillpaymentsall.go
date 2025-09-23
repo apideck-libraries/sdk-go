@@ -14,18 +14,18 @@ type AccountingBillPaymentsAllGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingBillPaymentsAllGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingBillPaymentsAllGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingBillPaymentsAllGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingBillPaymentsAllGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingBillPaymentsAllRequest struct {
@@ -62,74 +62,74 @@ func (a *AccountingBillPaymentsAllRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingBillPaymentsAllRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingBillPaymentsAllRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingBillPaymentsAllRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingBillPaymentsAllRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingBillPaymentsAllRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingBillPaymentsAllRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingBillPaymentsAllRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingBillPaymentsAllRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingBillPaymentsAllRequest) GetCursor() *string {
-	if o == nil {
+func (a *AccountingBillPaymentsAllRequest) GetCursor() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Cursor
+	return a.Cursor
 }
 
-func (o *AccountingBillPaymentsAllRequest) GetLimit() *int64 {
-	if o == nil {
+func (a *AccountingBillPaymentsAllRequest) GetLimit() *int64 {
+	if a == nil {
 		return nil
 	}
-	return o.Limit
+	return a.Limit
 }
 
-func (o *AccountingBillPaymentsAllRequest) GetFilter() *components.PaymentsFilter {
-	if o == nil {
+func (a *AccountingBillPaymentsAllRequest) GetFilter() *components.PaymentsFilter {
+	if a == nil {
 		return nil
 	}
-	return o.Filter
+	return a.Filter
 }
 
-func (o *AccountingBillPaymentsAllRequest) GetSort() *components.PaymentsSort {
-	if o == nil {
+func (a *AccountingBillPaymentsAllRequest) GetSort() *components.PaymentsSort {
+	if a == nil {
 		return nil
 	}
-	return o.Sort
+	return a.Sort
 }
 
-func (o *AccountingBillPaymentsAllRequest) GetPassThrough() map[string]any {
-	if o == nil {
+func (a *AccountingBillPaymentsAllRequest) GetPassThrough() map[string]any {
+	if a == nil {
 		return nil
 	}
-	return o.PassThrough
+	return a.PassThrough
 }
 
-func (o *AccountingBillPaymentsAllRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingBillPaymentsAllRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingBillPaymentsAllResponse struct {
@@ -142,23 +142,23 @@ type AccountingBillPaymentsAllResponse struct {
 	Next func() (*AccountingBillPaymentsAllResponse, error)
 }
 
-func (o *AccountingBillPaymentsAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingBillPaymentsAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingBillPaymentsAllResponse) GetGetBillPaymentsResponse() *components.GetBillPaymentsResponse {
-	if o == nil {
+func (a *AccountingBillPaymentsAllResponse) GetGetBillPaymentsResponse() *components.GetBillPaymentsResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetBillPaymentsResponse
+	return a.GetBillPaymentsResponse
 }
 
-func (o *AccountingBillPaymentsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingBillPaymentsAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

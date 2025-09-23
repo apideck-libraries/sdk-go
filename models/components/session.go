@@ -79,81 +79,81 @@ func (s *Settings) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Settings) GetUnifiedApis() []UnifiedAPIID {
-	if o == nil {
+func (s *Settings) GetUnifiedApis() []UnifiedAPIID {
+	if s == nil {
 		return nil
 	}
-	return o.UnifiedApis
+	return s.UnifiedApis
 }
 
-func (o *Settings) GetHideResourceSettings() *bool {
-	if o == nil {
+func (s *Settings) GetHideResourceSettings() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.HideResourceSettings
+	return s.HideResourceSettings
 }
 
-func (o *Settings) GetSandboxMode() *bool {
-	if o == nil {
+func (s *Settings) GetSandboxMode() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.SandboxMode
+	return s.SandboxMode
 }
 
-func (o *Settings) GetIsolationMode() *bool {
-	if o == nil {
+func (s *Settings) GetIsolationMode() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.IsolationMode
+	return s.IsolationMode
 }
 
-func (o *Settings) GetSessionLength() *string {
-	if o == nil {
+func (s *Settings) GetSessionLength() *string {
+	if s == nil {
 		return nil
 	}
-	return o.SessionLength
+	return s.SessionLength
 }
 
-func (o *Settings) GetShowLogs() *bool {
-	if o == nil {
+func (s *Settings) GetShowLogs() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.ShowLogs
+	return s.ShowLogs
 }
 
-func (o *Settings) GetShowSuggestions() *bool {
-	if o == nil {
+func (s *Settings) GetShowSuggestions() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.ShowSuggestions
+	return s.ShowSuggestions
 }
 
-func (o *Settings) GetShowSidebar() *bool {
-	if o == nil {
+func (s *Settings) GetShowSidebar() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.ShowSidebar
+	return s.ShowSidebar
 }
 
-func (o *Settings) GetAutoRedirect() *bool {
-	if o == nil {
+func (s *Settings) GetAutoRedirect() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.AutoRedirect
+	return s.AutoRedirect
 }
 
-func (o *Settings) GetHideGuides() *bool {
-	if o == nil {
+func (s *Settings) GetHideGuides() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.HideGuides
+	return s.HideGuides
 }
 
-func (o *Settings) GetAllowActions() []AllowActions {
-	if o == nil {
+func (s *Settings) GetAllowActions() []AllowActions {
+	if s == nil {
 		return nil
 	}
-	return o.AllowActions
+	return s.AllowActions
 }
 
 // Theme - Theming options to change the look and feel of Vault.
@@ -176,60 +176,60 @@ type Theme struct {
 	TermsURL *string `json:"terms_url,omitempty"`
 }
 
-func (o *Theme) GetFavicon() *string {
-	if o == nil {
+func (t *Theme) GetFavicon() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Favicon
+	return t.Favicon
 }
 
-func (o *Theme) GetLogo() *string {
-	if o == nil {
+func (t *Theme) GetLogo() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Logo
+	return t.Logo
 }
 
-func (o *Theme) GetPrimaryColor() *string {
-	if o == nil {
+func (t *Theme) GetPrimaryColor() *string {
+	if t == nil {
 		return nil
 	}
-	return o.PrimaryColor
+	return t.PrimaryColor
 }
 
-func (o *Theme) GetSidepanelBackgroundColor() *string {
-	if o == nil {
+func (t *Theme) GetSidepanelBackgroundColor() *string {
+	if t == nil {
 		return nil
 	}
-	return o.SidepanelBackgroundColor
+	return t.SidepanelBackgroundColor
 }
 
-func (o *Theme) GetSidepanelTextColor() *string {
-	if o == nil {
+func (t *Theme) GetSidepanelTextColor() *string {
+	if t == nil {
 		return nil
 	}
-	return o.SidepanelTextColor
+	return t.SidepanelTextColor
 }
 
-func (o *Theme) GetVaultName() *string {
-	if o == nil {
+func (t *Theme) GetVaultName() *string {
+	if t == nil {
 		return nil
 	}
-	return o.VaultName
+	return t.VaultName
 }
 
-func (o *Theme) GetPrivacyURL() *string {
-	if o == nil {
+func (t *Theme) GetPrivacyURL() *string {
+	if t == nil {
 		return nil
 	}
-	return o.PrivacyURL
+	return t.PrivacyURL
 }
 
-func (o *Theme) GetTermsURL() *string {
-	if o == nil {
+func (t *Theme) GetTermsURL() *string {
+	if t == nil {
 		return nil
 	}
-	return o.TermsURL
+	return t.TermsURL
 }
 
 type Session struct {
@@ -245,37 +245,37 @@ type Session struct {
 	CustomConsumerSettings map[string]any `json:"custom_consumer_settings,omitempty"`
 }
 
-func (o *Session) GetConsumerMetadata() *ConsumerMetadata {
-	if o == nil {
+func (s *Session) GetConsumerMetadata() *ConsumerMetadata {
+	if s == nil {
 		return nil
 	}
-	return o.ConsumerMetadata
+	return s.ConsumerMetadata
 }
 
-func (o *Session) GetRedirectURI() *string {
-	if o == nil {
+func (s *Session) GetRedirectURI() *string {
+	if s == nil {
 		return nil
 	}
-	return o.RedirectURI
+	return s.RedirectURI
 }
 
-func (o *Session) GetSettings() *Settings {
-	if o == nil {
+func (s *Session) GetSettings() *Settings {
+	if s == nil {
 		return nil
 	}
-	return o.Settings
+	return s.Settings
 }
 
-func (o *Session) GetTheme() *Theme {
-	if o == nil {
+func (s *Session) GetTheme() *Theme {
+	if s == nil {
 		return nil
 	}
-	return o.Theme
+	return s.Theme
 }
 
-func (o *Session) GetCustomConsumerSettings() map[string]any {
-	if o == nil {
+func (s *Session) GetCustomConsumerSettings() map[string]any {
+	if s == nil {
 		return nil
 	}
-	return o.CustomConsumerSettings
+	return s.CustomConsumerSettings
 }

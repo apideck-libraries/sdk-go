@@ -37,15 +37,15 @@ func main() {
     )
 
     res, err := s.Ecommerce.Customers.List(ctx, operations.EcommerceCustomersAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Filter: &components.EcommerceCustomersFilter{
-            Email: sdkgo.String("elon@musk.com"),
-            PhoneNumber: sdkgo.String("111-111-1111"),
+            Email: sdkgo.Pointer("elon@musk.com"),
+            PhoneNumber: sdkgo.Pointer("111-111-1111"),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -120,8 +120,8 @@ func main() {
 
     res, err := s.Ecommerce.Customers.Get(ctx, operations.EcommerceCustomersOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)

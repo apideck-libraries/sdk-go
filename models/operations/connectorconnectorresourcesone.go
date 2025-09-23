@@ -11,11 +11,11 @@ type ConnectorConnectorResourcesOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *ConnectorConnectorResourcesOneGlobals) GetAppID() *string {
-	if o == nil {
+func (c *ConnectorConnectorResourcesOneGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type ConnectorConnectorResourcesOneRequest struct {
@@ -29,32 +29,32 @@ type ConnectorConnectorResourcesOneRequest struct {
 	UnifiedAPI *components.UnifiedAPIID `queryParam:"style=form,explode=true,name=unified_api"`
 }
 
-func (o *ConnectorConnectorResourcesOneRequest) GetAppID() *string {
-	if o == nil {
+func (c *ConnectorConnectorResourcesOneRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *ConnectorConnectorResourcesOneRequest) GetID() string {
-	if o == nil {
+func (c *ConnectorConnectorResourcesOneRequest) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ConnectorConnectorResourcesOneRequest) GetResourceID() string {
-	if o == nil {
+func (c *ConnectorConnectorResourcesOneRequest) GetResourceID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ResourceID
+	return c.ResourceID
 }
 
-func (o *ConnectorConnectorResourcesOneRequest) GetUnifiedAPI() *components.UnifiedAPIID {
-	if o == nil {
+func (c *ConnectorConnectorResourcesOneRequest) GetUnifiedAPI() *components.UnifiedAPIID {
+	if c == nil {
 		return nil
 	}
-	return o.UnifiedAPI
+	return c.UnifiedAPI
 }
 
 type ConnectorConnectorResourcesOneResponse struct {
@@ -65,23 +65,23 @@ type ConnectorConnectorResourcesOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *ConnectorConnectorResourcesOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *ConnectorConnectorResourcesOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *ConnectorConnectorResourcesOneResponse) GetGetConnectorResourceResponse() *components.GetConnectorResourceResponse {
-	if o == nil {
+func (c *ConnectorConnectorResourcesOneResponse) GetGetConnectorResourceResponse() *components.GetConnectorResourceResponse {
+	if c == nil {
 		return nil
 	}
-	return o.GetConnectorResourceResponse
+	return c.GetConnectorResourceResponse
 }
 
-func (o *ConnectorConnectorResourcesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *ConnectorConnectorResourcesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

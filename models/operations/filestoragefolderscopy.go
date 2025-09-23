@@ -14,18 +14,18 @@ type FileStorageFoldersCopyGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *FileStorageFoldersCopyGlobals) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageFoldersCopyGlobals) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageFoldersCopyGlobals) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageFoldersCopyGlobals) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
 type FileStorageFoldersCopyRequest struct {
@@ -55,53 +55,53 @@ func (f *FileStorageFoldersCopyRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FileStorageFoldersCopyRequest) GetID() string {
-	if o == nil {
+func (f *FileStorageFoldersCopyRequest) GetID() string {
+	if f == nil {
 		return ""
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *FileStorageFoldersCopyRequest) GetConsumerID() *string {
-	if o == nil {
+func (f *FileStorageFoldersCopyRequest) GetConsumerID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return f.ConsumerID
 }
 
-func (o *FileStorageFoldersCopyRequest) GetAppID() *string {
-	if o == nil {
+func (f *FileStorageFoldersCopyRequest) GetAppID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AppID
+	return f.AppID
 }
 
-func (o *FileStorageFoldersCopyRequest) GetServiceID() *string {
-	if o == nil {
+func (f *FileStorageFoldersCopyRequest) GetServiceID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ServiceID
+	return f.ServiceID
 }
 
-func (o *FileStorageFoldersCopyRequest) GetRaw() *bool {
-	if o == nil {
+func (f *FileStorageFoldersCopyRequest) GetRaw() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.Raw
+	return f.Raw
 }
 
-func (o *FileStorageFoldersCopyRequest) GetFields() *string {
-	if o == nil {
+func (f *FileStorageFoldersCopyRequest) GetFields() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Fields
+	return f.Fields
 }
 
-func (o *FileStorageFoldersCopyRequest) GetCopyFolderRequest() components.CopyFolderRequest {
-	if o == nil {
+func (f *FileStorageFoldersCopyRequest) GetCopyFolderRequest() components.CopyFolderRequest {
+	if f == nil {
 		return components.CopyFolderRequest{}
 	}
-	return o.CopyFolderRequest
+	return f.CopyFolderRequest
 }
 
 type FileStorageFoldersCopyResponse struct {
@@ -112,23 +112,23 @@ type FileStorageFoldersCopyResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *FileStorageFoldersCopyResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (f *FileStorageFoldersCopyResponse) GetHTTPMeta() components.HTTPMetadata {
+	if f == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return f.HTTPMeta
 }
 
-func (o *FileStorageFoldersCopyResponse) GetUpdateFolderResponse() *components.UpdateFolderResponse {
-	if o == nil {
+func (f *FileStorageFoldersCopyResponse) GetUpdateFolderResponse() *components.UpdateFolderResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UpdateFolderResponse
+	return f.UpdateFolderResponse
 }
 
-func (o *FileStorageFoldersCopyResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (f *FileStorageFoldersCopyResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if f == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return f.UnexpectedErrorResponse
 }

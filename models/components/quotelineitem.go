@@ -108,186 +108,186 @@ func (q *QuoteLineItem) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *QuoteLineItem) GetID() *string {
-	if o == nil {
+func (q *QuoteLineItem) GetID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.ID
+	return q.ID
 }
 
-func (o *QuoteLineItem) GetRowID() *string {
-	if o == nil {
+func (q *QuoteLineItem) GetRowID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.RowID
+	return q.RowID
 }
 
-func (o *QuoteLineItem) GetCode() *string {
-	if o == nil {
+func (q *QuoteLineItem) GetCode() *string {
+	if q == nil {
 		return nil
 	}
-	return o.Code
+	return q.Code
 }
 
-func (o *QuoteLineItem) GetLineNumber() *int64 {
-	if o == nil {
+func (q *QuoteLineItem) GetLineNumber() *int64 {
+	if q == nil {
 		return nil
 	}
-	return o.LineNumber
+	return q.LineNumber
 }
 
-func (o *QuoteLineItem) GetDescription() *string {
-	if o == nil {
+func (q *QuoteLineItem) GetDescription() *string {
+	if q == nil {
 		return nil
 	}
-	return o.Description
+	return q.Description
 }
 
-func (o *QuoteLineItem) GetType() *QuoteLineItemType {
-	if o == nil {
+func (q *QuoteLineItem) GetType() *QuoteLineItemType {
+	if q == nil {
 		return nil
 	}
-	return o.Type
+	return q.Type
 }
 
-func (o *QuoteLineItem) GetTaxAmount() *float64 {
-	if o == nil {
+func (q *QuoteLineItem) GetTaxAmount() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.TaxAmount
+	return q.TaxAmount
 }
 
-func (o *QuoteLineItem) GetTotalAmount() *float64 {
-	if o == nil {
+func (q *QuoteLineItem) GetTotalAmount() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.TotalAmount
+	return q.TotalAmount
 }
 
-func (o *QuoteLineItem) GetQuantity() *float64 {
-	if o == nil {
+func (q *QuoteLineItem) GetQuantity() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.Quantity
+	return q.Quantity
 }
 
-func (o *QuoteLineItem) GetUnitPrice() *float64 {
-	if o == nil {
+func (q *QuoteLineItem) GetUnitPrice() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.UnitPrice
+	return q.UnitPrice
 }
 
-func (o *QuoteLineItem) GetUnitOfMeasure() *string {
-	if o == nil {
+func (q *QuoteLineItem) GetUnitOfMeasure() *string {
+	if q == nil {
 		return nil
 	}
-	return o.UnitOfMeasure
+	return q.UnitOfMeasure
 }
 
-func (o *QuoteLineItem) GetDiscountPercentage() *float64 {
-	if o == nil {
+func (q *QuoteLineItem) GetDiscountPercentage() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.DiscountPercentage
+	return q.DiscountPercentage
 }
 
-func (o *QuoteLineItem) GetDiscountAmount() *float64 {
-	if o == nil {
+func (q *QuoteLineItem) GetDiscountAmount() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.DiscountAmount
+	return q.DiscountAmount
 }
 
-func (o *QuoteLineItem) GetCategoryID() *string {
-	if o == nil {
+func (q *QuoteLineItem) GetCategoryID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.CategoryID
+	return q.CategoryID
 }
 
-func (o *QuoteLineItem) GetLocationID() *string {
-	if o == nil {
+func (q *QuoteLineItem) GetLocationID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.LocationID
+	return q.LocationID
 }
 
-func (o *QuoteLineItem) GetDepartmentID() *string {
-	if o == nil {
+func (q *QuoteLineItem) GetDepartmentID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return q.DepartmentID
 }
 
-func (o *QuoteLineItem) GetItem() *LinkedInvoiceItem {
-	if o == nil {
+func (q *QuoteLineItem) GetItem() *LinkedInvoiceItem {
+	if q == nil {
 		return nil
 	}
-	return o.Item
+	return q.Item
 }
 
-func (o *QuoteLineItem) GetTaxRate() *LinkedTaxRate {
-	if o == nil {
+func (q *QuoteLineItem) GetTaxRate() *LinkedTaxRate {
+	if q == nil {
 		return nil
 	}
-	return o.TaxRate
+	return q.TaxRate
 }
 
-func (o *QuoteLineItem) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (q *QuoteLineItem) GetTrackingCategories() []*LinkedTrackingCategory {
+	if q == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return q.TrackingCategories
 }
 
-func (o *QuoteLineItem) GetLedgerAccount() *LinkedLedgerAccount {
-	if o == nil {
+func (q *QuoteLineItem) GetLedgerAccount() *LinkedLedgerAccount {
+	if q == nil {
 		return nil
 	}
-	return o.LedgerAccount
+	return q.LedgerAccount
 }
 
-func (o *QuoteLineItem) GetCustomFields() []CustomField {
-	if o == nil {
+func (q *QuoteLineItem) GetCustomFields() []CustomField {
+	if q == nil {
 		return nil
 	}
-	return o.CustomFields
+	return q.CustomFields
 }
 
-func (o *QuoteLineItem) GetRowVersion() *string {
-	if o == nil {
+func (q *QuoteLineItem) GetRowVersion() *string {
+	if q == nil {
 		return nil
 	}
-	return o.RowVersion
+	return q.RowVersion
 }
 
-func (o *QuoteLineItem) GetUpdatedBy() *string {
-	if o == nil {
+func (q *QuoteLineItem) GetUpdatedBy() *string {
+	if q == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return q.UpdatedBy
 }
 
-func (o *QuoteLineItem) GetCreatedBy() *string {
-	if o == nil {
+func (q *QuoteLineItem) GetCreatedBy() *string {
+	if q == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return q.CreatedBy
 }
 
-func (o *QuoteLineItem) GetCreatedAt() *time.Time {
-	if o == nil {
+func (q *QuoteLineItem) GetCreatedAt() *time.Time {
+	if q == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return q.CreatedAt
 }
 
-func (o *QuoteLineItem) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (q *QuoteLineItem) GetUpdatedAt() *time.Time {
+	if q == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return q.UpdatedAt
 }
 
 type QuoteLineItemInput struct {
@@ -331,156 +331,156 @@ type QuoteLineItemInput struct {
 	RowVersion *string `json:"row_version,omitempty"`
 }
 
-func (o *QuoteLineItemInput) GetID() *string {
-	if o == nil {
+func (q *QuoteLineItemInput) GetID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.ID
+	return q.ID
 }
 
-func (o *QuoteLineItemInput) GetRowID() *string {
-	if o == nil {
+func (q *QuoteLineItemInput) GetRowID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.RowID
+	return q.RowID
 }
 
-func (o *QuoteLineItemInput) GetCode() *string {
-	if o == nil {
+func (q *QuoteLineItemInput) GetCode() *string {
+	if q == nil {
 		return nil
 	}
-	return o.Code
+	return q.Code
 }
 
-func (o *QuoteLineItemInput) GetLineNumber() *int64 {
-	if o == nil {
+func (q *QuoteLineItemInput) GetLineNumber() *int64 {
+	if q == nil {
 		return nil
 	}
-	return o.LineNumber
+	return q.LineNumber
 }
 
-func (o *QuoteLineItemInput) GetDescription() *string {
-	if o == nil {
+func (q *QuoteLineItemInput) GetDescription() *string {
+	if q == nil {
 		return nil
 	}
-	return o.Description
+	return q.Description
 }
 
-func (o *QuoteLineItemInput) GetType() *QuoteLineItemType {
-	if o == nil {
+func (q *QuoteLineItemInput) GetType() *QuoteLineItemType {
+	if q == nil {
 		return nil
 	}
-	return o.Type
+	return q.Type
 }
 
-func (o *QuoteLineItemInput) GetTaxAmount() *float64 {
-	if o == nil {
+func (q *QuoteLineItemInput) GetTaxAmount() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.TaxAmount
+	return q.TaxAmount
 }
 
-func (o *QuoteLineItemInput) GetTotalAmount() *float64 {
-	if o == nil {
+func (q *QuoteLineItemInput) GetTotalAmount() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.TotalAmount
+	return q.TotalAmount
 }
 
-func (o *QuoteLineItemInput) GetQuantity() *float64 {
-	if o == nil {
+func (q *QuoteLineItemInput) GetQuantity() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.Quantity
+	return q.Quantity
 }
 
-func (o *QuoteLineItemInput) GetUnitPrice() *float64 {
-	if o == nil {
+func (q *QuoteLineItemInput) GetUnitPrice() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.UnitPrice
+	return q.UnitPrice
 }
 
-func (o *QuoteLineItemInput) GetUnitOfMeasure() *string {
-	if o == nil {
+func (q *QuoteLineItemInput) GetUnitOfMeasure() *string {
+	if q == nil {
 		return nil
 	}
-	return o.UnitOfMeasure
+	return q.UnitOfMeasure
 }
 
-func (o *QuoteLineItemInput) GetDiscountPercentage() *float64 {
-	if o == nil {
+func (q *QuoteLineItemInput) GetDiscountPercentage() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.DiscountPercentage
+	return q.DiscountPercentage
 }
 
-func (o *QuoteLineItemInput) GetDiscountAmount() *float64 {
-	if o == nil {
+func (q *QuoteLineItemInput) GetDiscountAmount() *float64 {
+	if q == nil {
 		return nil
 	}
-	return o.DiscountAmount
+	return q.DiscountAmount
 }
 
-func (o *QuoteLineItemInput) GetCategoryID() *string {
-	if o == nil {
+func (q *QuoteLineItemInput) GetCategoryID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.CategoryID
+	return q.CategoryID
 }
 
-func (o *QuoteLineItemInput) GetLocationID() *string {
-	if o == nil {
+func (q *QuoteLineItemInput) GetLocationID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.LocationID
+	return q.LocationID
 }
 
-func (o *QuoteLineItemInput) GetDepartmentID() *string {
-	if o == nil {
+func (q *QuoteLineItemInput) GetDepartmentID() *string {
+	if q == nil {
 		return nil
 	}
-	return o.DepartmentID
+	return q.DepartmentID
 }
 
-func (o *QuoteLineItemInput) GetItem() *LinkedInvoiceItem {
-	if o == nil {
+func (q *QuoteLineItemInput) GetItem() *LinkedInvoiceItem {
+	if q == nil {
 		return nil
 	}
-	return o.Item
+	return q.Item
 }
 
-func (o *QuoteLineItemInput) GetTaxRate() *LinkedTaxRateInput {
-	if o == nil {
+func (q *QuoteLineItemInput) GetTaxRate() *LinkedTaxRateInput {
+	if q == nil {
 		return nil
 	}
-	return o.TaxRate
+	return q.TaxRate
 }
 
-func (o *QuoteLineItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
-	if o == nil {
+func (q *QuoteLineItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
+	if q == nil {
 		return nil
 	}
-	return o.TrackingCategories
+	return q.TrackingCategories
 }
 
-func (o *QuoteLineItemInput) GetLedgerAccount() *LinkedLedgerAccountInput {
-	if o == nil {
+func (q *QuoteLineItemInput) GetLedgerAccount() *LinkedLedgerAccountInput {
+	if q == nil {
 		return nil
 	}
-	return o.LedgerAccount
+	return q.LedgerAccount
 }
 
-func (o *QuoteLineItemInput) GetCustomFields() []CustomField {
-	if o == nil {
+func (q *QuoteLineItemInput) GetCustomFields() []CustomField {
+	if q == nil {
 		return nil
 	}
-	return o.CustomFields
+	return q.CustomFields
 }
 
-func (o *QuoteLineItemInput) GetRowVersion() *string {
-	if o == nil {
+func (q *QuoteLineItemInput) GetRowVersion() *string {
+	if q == nil {
 		return nil
 	}
-	return o.RowVersion
+	return q.RowVersion
 }

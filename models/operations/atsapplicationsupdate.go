@@ -14,18 +14,18 @@ type AtsApplicationsUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AtsApplicationsUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AtsApplicationsUpdateGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AtsApplicationsUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AtsApplicationsUpdateGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AtsApplicationsUpdateRequest struct {
@@ -53,46 +53,46 @@ func (a *AtsApplicationsUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AtsApplicationsUpdateRequest) GetID() string {
-	if o == nil {
+func (a *AtsApplicationsUpdateRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AtsApplicationsUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AtsApplicationsUpdateRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AtsApplicationsUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (a *AtsApplicationsUpdateRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AtsApplicationsUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AtsApplicationsUpdateRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AtsApplicationsUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AtsApplicationsUpdateRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AtsApplicationsUpdateRequest) GetApplication() components.ApplicationInput {
-	if o == nil {
+func (a *AtsApplicationsUpdateRequest) GetApplication() components.ApplicationInput {
+	if a == nil {
 		return components.ApplicationInput{}
 	}
-	return o.Application
+	return a.Application
 }
 
 type AtsApplicationsUpdateResponse struct {
@@ -103,23 +103,23 @@ type AtsApplicationsUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AtsApplicationsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AtsApplicationsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AtsApplicationsUpdateResponse) GetUpdateApplicationResponse() *components.UpdateApplicationResponse {
-	if o == nil {
+func (a *AtsApplicationsUpdateResponse) GetUpdateApplicationResponse() *components.UpdateApplicationResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UpdateApplicationResponse
+	return a.UpdateApplicationResponse
 }
 
-func (o *AtsApplicationsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AtsApplicationsUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

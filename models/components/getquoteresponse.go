@@ -17,44 +17,44 @@ type GetQuoteResponse struct {
 	Data      Quote  `json:"data"`
 }
 
-func (o *GetQuoteResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetQuoteResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetQuoteResponse) GetStatus() string {
-	if o == nil {
+func (g *GetQuoteResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetQuoteResponse) GetService() string {
-	if o == nil {
+func (g *GetQuoteResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetQuoteResponse) GetResource() string {
-	if o == nil {
+func (g *GetQuoteResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetQuoteResponse) GetOperation() string {
-	if o == nil {
+func (g *GetQuoteResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetQuoteResponse) GetData() Quote {
-	if o == nil {
+func (g *GetQuoteResponse) GetData() Quote {
+	if g == nil {
 		return Quote{}
 	}
-	return o.Data
+	return g.Data
 }

@@ -14,18 +14,18 @@ type AccountingCreditNotesOneGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingCreditNotesOneGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesOneGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingCreditNotesOneGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesOneGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingCreditNotesOneRequest struct {
@@ -54,46 +54,46 @@ func (a *AccountingCreditNotesOneRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AccountingCreditNotesOneRequest) GetID() string {
-	if o == nil {
+func (a *AccountingCreditNotesOneRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingCreditNotesOneRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesOneRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingCreditNotesOneRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesOneRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingCreditNotesOneRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingCreditNotesOneRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingCreditNotesOneRequest) GetRaw() *bool {
-	if o == nil {
+func (a *AccountingCreditNotesOneRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Raw
+	return a.Raw
 }
 
-func (o *AccountingCreditNotesOneRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingCreditNotesOneRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingCreditNotesOneResponse struct {
@@ -104,23 +104,23 @@ type AccountingCreditNotesOneResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingCreditNotesOneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingCreditNotesOneResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingCreditNotesOneResponse) GetGetCreditNoteResponse() *components.GetCreditNoteResponse {
-	if o == nil {
+func (a *AccountingCreditNotesOneResponse) GetGetCreditNoteResponse() *components.GetCreditNoteResponse {
+	if a == nil {
 		return nil
 	}
-	return o.GetCreditNoteResponse
+	return a.GetCreditNoteResponse
 }
 
-func (o *AccountingCreditNotesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingCreditNotesOneResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

@@ -19,51 +19,51 @@ type GetBankFeedStatementResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *GetBankFeedStatementResponse) GetStatusCode() int64 {
-	if o == nil {
+func (g *GetBankFeedStatementResponse) GetStatusCode() int64 {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetBankFeedStatementResponse) GetStatus() string {
-	if o == nil {
+func (g *GetBankFeedStatementResponse) GetStatus() string {
+	if g == nil {
 		return ""
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetBankFeedStatementResponse) GetService() string {
-	if o == nil {
+func (g *GetBankFeedStatementResponse) GetService() string {
+	if g == nil {
 		return ""
 	}
-	return o.Service
+	return g.Service
 }
 
-func (o *GetBankFeedStatementResponse) GetResource() string {
-	if o == nil {
+func (g *GetBankFeedStatementResponse) GetResource() string {
+	if g == nil {
 		return ""
 	}
-	return o.Resource
+	return g.Resource
 }
 
-func (o *GetBankFeedStatementResponse) GetOperation() string {
-	if o == nil {
+func (g *GetBankFeedStatementResponse) GetOperation() string {
+	if g == nil {
 		return ""
 	}
-	return o.Operation
+	return g.Operation
 }
 
-func (o *GetBankFeedStatementResponse) GetData() BankFeedStatement {
-	if o == nil {
+func (g *GetBankFeedStatementResponse) GetData() BankFeedStatement {
+	if g == nil {
 		return BankFeedStatement{}
 	}
-	return o.Data
+	return g.Data
 }
 
-func (o *GetBankFeedStatementResponse) GetRaw() map[string]any {
-	if o == nil {
+func (g *GetBankFeedStatementResponse) GetRaw() map[string]any {
+	if g == nil {
 		return nil
 	}
-	return o.Raw
+	return g.Raw
 }

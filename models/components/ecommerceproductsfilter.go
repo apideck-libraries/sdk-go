@@ -11,23 +11,23 @@ type EcommerceProductsFilter struct {
 	CreatedSince *string `queryParam:"name=created_since"`
 }
 
-func (o *EcommerceProductsFilter) GetName() *string {
-	if o == nil {
+func (e *EcommerceProductsFilter) GetName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Name
+	return e.Name
 }
 
-func (o *EcommerceProductsFilter) GetUpdatedSince() *string {
-	if o == nil {
+func (e *EcommerceProductsFilter) GetUpdatedSince() *string {
+	if e == nil {
 		return nil
 	}
-	return o.UpdatedSince
+	return e.UpdatedSince
 }
 
-func (o *EcommerceProductsFilter) GetCreatedSince() *string {
-	if o == nil {
+func (e *EcommerceProductsFilter) GetCreatedSince() *string {
+	if e == nil {
 		return nil
 	}
-	return o.CreatedSince
+	return e.CreatedSince
 }

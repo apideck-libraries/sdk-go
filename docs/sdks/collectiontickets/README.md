@@ -40,7 +40,7 @@ func main() {
     )
 
     res, err := s.IssueTracking.CollectionTickets.List(ctx, operations.IssueTrackingCollectionTicketsAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         CollectionID: "apideck-io",
         Sort: &components.TicketsSort{
             By: components.TicketsSortByCreatedAt.ToPointer(),
@@ -54,7 +54,7 @@ func main() {
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -130,14 +130,14 @@ func main() {
     )
 
     res, err := s.IssueTracking.CollectionTickets.Create(ctx, operations.IssueTrackingCollectionTicketsAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         CollectionID: "apideck-io",
         Ticket: components.TicketInput{
-            ParentID: sdkgo.String("12345"),
-            Type: sdkgo.String("Technical"),
-            Subject: sdkgo.String("Technical Support Request"),
-            Description: sdkgo.String("I am facing issues with my internet connection"),
-            Status: sdkgo.String("open"),
+            ParentID: sdkgo.Pointer("12345"),
+            Type: sdkgo.Pointer("Technical"),
+            Subject: sdkgo.Pointer("Technical Support Request"),
+            Description: sdkgo.Pointer("I am facing issues with my internet connection"),
+            Status: sdkgo.Pointer("open"),
             Priority: components.PriorityHigh.ToPointer(),
             Assignees: []components.AssigneeInput{
                 components.AssigneeInput{
@@ -153,13 +153,13 @@ func main() {
             DueDate: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
             Tags: []components.CollectionTagInput{
                 components.CollectionTagInput{
-                    ID: sdkgo.String("12345"),
+                    ID: sdkgo.Pointer("12345"),
                 },
                 components.CollectionTagInput{
-                    ID: sdkgo.String("12345"),
+                    ID: sdkgo.Pointer("12345"),
                 },
                 components.CollectionTagInput{
-                    ID: sdkgo.String("12345"),
+                    ID: sdkgo.Pointer("12345"),
                 },
             },
             PassThrough: []components.PassThroughBody{
@@ -290,9 +290,9 @@ func main() {
 
     res, err := s.IssueTracking.CollectionTickets.Get(ctx, operations.IssueTrackingCollectionTicketsOneRequest{
         TicketID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         CollectionID: "apideck-io",
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -357,14 +357,14 @@ func main() {
 
     res, err := s.IssueTracking.CollectionTickets.Update(ctx, operations.IssueTrackingCollectionTicketsUpdateRequest{
         TicketID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         CollectionID: "apideck-io",
         Ticket: components.TicketInput{
-            ParentID: sdkgo.String("12345"),
-            Type: sdkgo.String("Technical"),
-            Subject: sdkgo.String("Technical Support Request"),
-            Description: sdkgo.String("I am facing issues with my internet connection"),
-            Status: sdkgo.String("open"),
+            ParentID: sdkgo.Pointer("12345"),
+            Type: sdkgo.Pointer("Technical"),
+            Subject: sdkgo.Pointer("Technical Support Request"),
+            Description: sdkgo.Pointer("I am facing issues with my internet connection"),
+            Status: sdkgo.Pointer("open"),
             Priority: components.PriorityHigh.ToPointer(),
             Assignees: []components.AssigneeInput{
                 components.AssigneeInput{
@@ -377,7 +377,7 @@ func main() {
             DueDate: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
             Tags: []components.CollectionTagInput{
                 components.CollectionTagInput{
-                    ID: sdkgo.String("12345"),
+                    ID: sdkgo.Pointer("12345"),
                 },
             },
             PassThrough: []components.PassThroughBody{
@@ -508,7 +508,7 @@ func main() {
 
     res, err := s.IssueTracking.CollectionTickets.Delete(ctx, operations.IssueTrackingCollectionTicketsDeleteRequest{
         TicketID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         CollectionID: "apideck-io",
     })
     if err != nil {

@@ -14,18 +14,18 @@ type AccountingAttachmentsDownloadGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *AccountingAttachmentsDownloadGlobals) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsDownloadGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingAttachmentsDownloadGlobals) GetAppID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsDownloadGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
 type AccountingAttachmentsDownloadRequest struct {
@@ -45,53 +45,53 @@ type AccountingAttachmentsDownloadRequest struct {
 	Fields *string `queryParam:"style=form,explode=true,name=fields"`
 }
 
-func (o *AccountingAttachmentsDownloadRequest) GetReferenceType() components.AttachmentReferenceType {
-	if o == nil {
+func (a *AccountingAttachmentsDownloadRequest) GetReferenceType() components.AttachmentReferenceType {
+	if a == nil {
 		return components.AttachmentReferenceType("")
 	}
-	return o.ReferenceType
+	return a.ReferenceType
 }
 
-func (o *AccountingAttachmentsDownloadRequest) GetReferenceID() string {
-	if o == nil {
+func (a *AccountingAttachmentsDownloadRequest) GetReferenceID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ReferenceID
+	return a.ReferenceID
 }
 
-func (o *AccountingAttachmentsDownloadRequest) GetID() string {
-	if o == nil {
+func (a *AccountingAttachmentsDownloadRequest) GetID() string {
+	if a == nil {
 		return ""
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AccountingAttachmentsDownloadRequest) GetConsumerID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsDownloadRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return a.ConsumerID
 }
 
-func (o *AccountingAttachmentsDownloadRequest) GetAppID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsDownloadRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *AccountingAttachmentsDownloadRequest) GetServiceID() *string {
-	if o == nil {
+func (a *AccountingAttachmentsDownloadRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceID
+	return a.ServiceID
 }
 
-func (o *AccountingAttachmentsDownloadRequest) GetFields() *string {
-	if o == nil {
+func (a *AccountingAttachmentsDownloadRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Fields
+	return a.Fields
 }
 
 type AccountingAttachmentsDownloadResponse struct {
@@ -103,23 +103,23 @@ type AccountingAttachmentsDownloadResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *AccountingAttachmentsDownloadResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (a *AccountingAttachmentsDownloadResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (o *AccountingAttachmentsDownloadResponse) GetGetAttachmentDownloadResponse() io.ReadCloser {
-	if o == nil {
+func (a *AccountingAttachmentsDownloadResponse) GetGetAttachmentDownloadResponse() io.ReadCloser {
+	if a == nil {
 		return nil
 	}
-	return o.GetAttachmentDownloadResponse
+	return a.GetAttachmentDownloadResponse
 }
 
-func (o *AccountingAttachmentsDownloadResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (a *AccountingAttachmentsDownloadResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

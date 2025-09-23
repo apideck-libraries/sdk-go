@@ -14,18 +14,18 @@ type HrisDepartmentsDeleteGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *HrisDepartmentsDeleteGlobals) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisDepartmentsDeleteGlobals) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisDepartmentsDeleteGlobals) GetAppID() *string {
-	if o == nil {
+func (h *HrisDepartmentsDeleteGlobals) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
 type HrisDepartmentsDeleteRequest struct {
@@ -52,39 +52,39 @@ func (h *HrisDepartmentsDeleteRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *HrisDepartmentsDeleteRequest) GetID() string {
-	if o == nil {
+func (h *HrisDepartmentsDeleteRequest) GetID() string {
+	if h == nil {
 		return ""
 	}
-	return o.ID
+	return h.ID
 }
 
-func (o *HrisDepartmentsDeleteRequest) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisDepartmentsDeleteRequest) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisDepartmentsDeleteRequest) GetAppID() *string {
-	if o == nil {
+func (h *HrisDepartmentsDeleteRequest) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
-func (o *HrisDepartmentsDeleteRequest) GetServiceID() *string {
-	if o == nil {
+func (h *HrisDepartmentsDeleteRequest) GetServiceID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ServiceID
+	return h.ServiceID
 }
 
-func (o *HrisDepartmentsDeleteRequest) GetRaw() *bool {
-	if o == nil {
+func (h *HrisDepartmentsDeleteRequest) GetRaw() *bool {
+	if h == nil {
 		return nil
 	}
-	return o.Raw
+	return h.Raw
 }
 
 type HrisDepartmentsDeleteResponse struct {
@@ -95,23 +95,23 @@ type HrisDepartmentsDeleteResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *HrisDepartmentsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (h *HrisDepartmentsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
+	if h == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return h.HTTPMeta
 }
 
-func (o *HrisDepartmentsDeleteResponse) GetDeleteDepartmentResponse() *components.DeleteDepartmentResponse {
-	if o == nil {
+func (h *HrisDepartmentsDeleteResponse) GetDeleteDepartmentResponse() *components.DeleteDepartmentResponse {
+	if h == nil {
 		return nil
 	}
-	return o.DeleteDepartmentResponse
+	return h.DeleteDepartmentResponse
 }
 
-func (o *HrisDepartmentsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (h *HrisDepartmentsDeleteResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if h == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return h.UnexpectedErrorResponse
 }

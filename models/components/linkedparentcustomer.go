@@ -10,16 +10,16 @@ type LinkedParentCustomer struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *LinkedParentCustomer) GetID() string {
-	if o == nil {
+func (l *LinkedParentCustomer) GetID() string {
+	if l == nil {
 		return ""
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinkedParentCustomer) GetName() *string {
-	if o == nil {
+func (l *LinkedParentCustomer) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }

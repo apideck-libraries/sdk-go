@@ -20,44 +20,44 @@ type LinkedCustomer struct {
 	Email *string `json:"email,omitempty"`
 }
 
-func (o *LinkedCustomer) GetID() *string {
-	if o == nil {
+func (l *LinkedCustomer) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinkedCustomer) GetDisplayID() *string {
-	if o == nil {
+func (l *LinkedCustomer) GetDisplayID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.DisplayID
+	return l.DisplayID
 }
 
-func (o *LinkedCustomer) GetDisplayName() *string {
-	if o == nil {
+func (l *LinkedCustomer) GetDisplayName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.DisplayName
+	return l.DisplayName
 }
 
-func (o *LinkedCustomer) GetName() *string {
-	if o == nil {
+func (l *LinkedCustomer) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *LinkedCustomer) GetCompanyName() *string {
-	if o == nil {
+func (l *LinkedCustomer) GetCompanyName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.CompanyName
+	return l.CompanyName
 }
 
-func (o *LinkedCustomer) GetEmail() *string {
-	if o == nil {
+func (l *LinkedCustomer) GetEmail() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Email
+	return l.Email
 }

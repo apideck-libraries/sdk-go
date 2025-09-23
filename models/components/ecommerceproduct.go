@@ -43,18 +43,18 @@ type Images struct {
 	URL *string `json:"url,omitempty"`
 }
 
-func (o *Images) GetID() *string {
-	if o == nil {
+func (i *Images) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *Images) GetURL() *string {
-	if o == nil {
+func (i *Images) GetURL() *string {
+	if i == nil {
 		return nil
 	}
-	return o.URL
+	return i.URL
 }
 
 type EcommerceProductOptions struct {
@@ -65,25 +65,25 @@ type EcommerceProductOptions struct {
 	Values []*string `json:"values,omitempty"`
 }
 
-func (o *EcommerceProductOptions) GetID() *string {
-	if o == nil {
+func (e *EcommerceProductOptions) GetID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *EcommerceProductOptions) GetName() *string {
-	if o == nil {
+func (e *EcommerceProductOptions) GetName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Name
+	return e.Name
 }
 
-func (o *EcommerceProductOptions) GetValues() []*string {
-	if o == nil {
+func (e *EcommerceProductOptions) GetValues() []*string {
+	if e == nil {
 		return nil
 	}
-	return o.Values
+	return e.Values
 }
 
 type EcommerceProductVariantsOptions struct {
@@ -95,25 +95,25 @@ type EcommerceProductVariantsOptions struct {
 	Value *string `json:"value,omitempty"`
 }
 
-func (o *EcommerceProductVariantsOptions) GetID() *string {
-	if o == nil {
+func (e *EcommerceProductVariantsOptions) GetID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *EcommerceProductVariantsOptions) GetName() *string {
-	if o == nil {
+func (e *EcommerceProductVariantsOptions) GetName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Name
+	return e.Name
 }
 
-func (o *EcommerceProductVariantsOptions) GetValue() *string {
-	if o == nil {
+func (e *EcommerceProductVariantsOptions) GetValue() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Value
+	return e.Value
 }
 
 type EcommerceProductImages struct {
@@ -123,18 +123,18 @@ type EcommerceProductImages struct {
 	URL *string `json:"url,omitempty"`
 }
 
-func (o *EcommerceProductImages) GetID() *string {
-	if o == nil {
+func (e *EcommerceProductImages) GetID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *EcommerceProductImages) GetURL() *string {
-	if o == nil {
+func (e *EcommerceProductImages) GetURL() *string {
+	if e == nil {
 		return nil
 	}
-	return o.URL
+	return e.URL
 }
 
 type Variants struct {
@@ -156,67 +156,67 @@ type Variants struct {
 	Images     []EcommerceProductImages          `json:"images,omitempty"`
 }
 
-func (o *Variants) GetID() *string {
-	if o == nil {
+func (v *Variants) GetID() *string {
+	if v == nil {
 		return nil
 	}
-	return o.ID
+	return v.ID
 }
 
-func (o *Variants) GetName() *string {
-	if o == nil {
+func (v *Variants) GetName() *string {
+	if v == nil {
 		return nil
 	}
-	return o.Name
+	return v.Name
 }
 
-func (o *Variants) GetPrice() *string {
-	if o == nil {
+func (v *Variants) GetPrice() *string {
+	if v == nil {
 		return nil
 	}
-	return o.Price
+	return v.Price
 }
 
-func (o *Variants) GetSku() *string {
-	if o == nil {
+func (v *Variants) GetSku() *string {
+	if v == nil {
 		return nil
 	}
-	return o.Sku
+	return v.Sku
 }
 
-func (o *Variants) GetInventoryQuantity() *string {
-	if o == nil {
+func (v *Variants) GetInventoryQuantity() *string {
+	if v == nil {
 		return nil
 	}
-	return o.InventoryQuantity
+	return v.InventoryQuantity
 }
 
-func (o *Variants) GetWeight() *string {
-	if o == nil {
+func (v *Variants) GetWeight() *string {
+	if v == nil {
 		return nil
 	}
-	return o.Weight
+	return v.Weight
 }
 
-func (o *Variants) GetWeightUnit() *string {
-	if o == nil {
+func (v *Variants) GetWeightUnit() *string {
+	if v == nil {
 		return nil
 	}
-	return o.WeightUnit
+	return v.WeightUnit
 }
 
-func (o *Variants) GetOptions() []EcommerceProductVariantsOptions {
-	if o == nil {
+func (v *Variants) GetOptions() []EcommerceProductVariantsOptions {
+	if v == nil {
 		return nil
 	}
-	return o.Options
+	return v.Options
 }
 
-func (o *Variants) GetImages() []EcommerceProductImages {
-	if o == nil {
+func (v *Variants) GetImages() []EcommerceProductImages {
+	if v == nil {
 		return nil
 	}
-	return o.Images
+	return v.Images
 }
 
 type EcommerceProductCategories struct {
@@ -226,18 +226,18 @@ type EcommerceProductCategories struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *EcommerceProductCategories) GetID() *string {
-	if o == nil {
+func (e *EcommerceProductCategories) GetID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *EcommerceProductCategories) GetName() *string {
-	if o == nil {
+func (e *EcommerceProductCategories) GetName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Name
+	return e.Name
 }
 
 type EcommerceProduct struct {
@@ -287,121 +287,121 @@ func (e *EcommerceProduct) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *EcommerceProduct) GetID() string {
-	if o == nil {
+func (e *EcommerceProduct) GetID() string {
+	if e == nil {
 		return ""
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *EcommerceProduct) GetName() *string {
-	if o == nil {
+func (e *EcommerceProduct) GetName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Name
+	return e.Name
 }
 
-func (o *EcommerceProduct) GetDescription() *string {
-	if o == nil {
+func (e *EcommerceProduct) GetDescription() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Description
+	return e.Description
 }
 
-func (o *EcommerceProduct) GetStatus() *ProductStatus {
-	if o == nil {
+func (e *EcommerceProduct) GetStatus() *ProductStatus {
+	if e == nil {
 		return nil
 	}
-	return o.Status
+	return e.Status
 }
 
-func (o *EcommerceProduct) GetPrice() *string {
-	if o == nil {
+func (e *EcommerceProduct) GetPrice() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Price
+	return e.Price
 }
 
-func (o *EcommerceProduct) GetSku() *string {
-	if o == nil {
+func (e *EcommerceProduct) GetSku() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Sku
+	return e.Sku
 }
 
-func (o *EcommerceProduct) GetInventoryQuantity() *string {
-	if o == nil {
+func (e *EcommerceProduct) GetInventoryQuantity() *string {
+	if e == nil {
 		return nil
 	}
-	return o.InventoryQuantity
+	return e.InventoryQuantity
 }
 
-func (o *EcommerceProduct) GetImages() []Images {
-	if o == nil {
+func (e *EcommerceProduct) GetImages() []Images {
+	if e == nil {
 		return nil
 	}
-	return o.Images
+	return e.Images
 }
 
-func (o *EcommerceProduct) GetWeight() *string {
-	if o == nil {
+func (e *EcommerceProduct) GetWeight() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Weight
+	return e.Weight
 }
 
-func (o *EcommerceProduct) GetWeightUnit() *string {
-	if o == nil {
+func (e *EcommerceProduct) GetWeightUnit() *string {
+	if e == nil {
 		return nil
 	}
-	return o.WeightUnit
+	return e.WeightUnit
 }
 
-func (o *EcommerceProduct) GetOptions() []EcommerceProductOptions {
-	if o == nil {
+func (e *EcommerceProduct) GetOptions() []EcommerceProductOptions {
+	if e == nil {
 		return nil
 	}
-	return o.Options
+	return e.Options
 }
 
-func (o *EcommerceProduct) GetVariants() []Variants {
-	if o == nil {
+func (e *EcommerceProduct) GetVariants() []Variants {
+	if e == nil {
 		return nil
 	}
-	return o.Variants
+	return e.Variants
 }
 
-func (o *EcommerceProduct) GetTags() []*string {
-	if o == nil {
+func (e *EcommerceProduct) GetTags() []*string {
+	if e == nil {
 		return nil
 	}
-	return o.Tags
+	return e.Tags
 }
 
-func (o *EcommerceProduct) GetCategories() []EcommerceProductCategories {
-	if o == nil {
+func (e *EcommerceProduct) GetCategories() []EcommerceProductCategories {
+	if e == nil {
 		return nil
 	}
-	return o.Categories
+	return e.Categories
 }
 
-func (o *EcommerceProduct) GetCustomMappings() map[string]any {
-	if o == nil {
+func (e *EcommerceProduct) GetCustomMappings() map[string]any {
+	if e == nil {
 		return nil
 	}
-	return o.CustomMappings
+	return e.CustomMappings
 }
 
-func (o *EcommerceProduct) GetCreatedAt() *time.Time {
-	if o == nil {
+func (e *EcommerceProduct) GetCreatedAt() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return e.CreatedAt
 }
 
-func (o *EcommerceProduct) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (e *EcommerceProduct) GetUpdatedAt() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return e.UpdatedAt
 }

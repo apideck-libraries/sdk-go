@@ -15,37 +15,37 @@ type CustomFieldFinder struct {
 	Finder *string `json:"finder,omitempty"`
 }
 
-func (o *CustomFieldFinder) GetID() *string {
-	if o == nil {
+func (c *CustomFieldFinder) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CustomFieldFinder) GetName() *string {
-	if o == nil {
+func (c *CustomFieldFinder) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CustomFieldFinder) GetDescription() *string {
-	if o == nil {
+func (c *CustomFieldFinder) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CustomFieldFinder) GetValue() any {
-	if o == nil {
+func (c *CustomFieldFinder) GetValue() any {
+	if c == nil {
 		return nil
 	}
-	return o.Value
+	return c.Value
 }
 
-func (o *CustomFieldFinder) GetFinder() *string {
-	if o == nil {
+func (c *CustomFieldFinder) GetFinder() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Finder
+	return c.Finder
 }

@@ -14,18 +14,18 @@ type HrisCompaniesUpdateGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *HrisCompaniesUpdateGlobals) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisCompaniesUpdateGlobals) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisCompaniesUpdateGlobals) GetAppID() *string {
-	if o == nil {
+func (h *HrisCompaniesUpdateGlobals) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
 type HrisCompaniesUpdateRequest struct {
@@ -53,46 +53,46 @@ func (h *HrisCompaniesUpdateRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *HrisCompaniesUpdateRequest) GetID() string {
-	if o == nil {
+func (h *HrisCompaniesUpdateRequest) GetID() string {
+	if h == nil {
 		return ""
 	}
-	return o.ID
+	return h.ID
 }
 
-func (o *HrisCompaniesUpdateRequest) GetConsumerID() *string {
-	if o == nil {
+func (h *HrisCompaniesUpdateRequest) GetConsumerID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return h.ConsumerID
 }
 
-func (o *HrisCompaniesUpdateRequest) GetAppID() *string {
-	if o == nil {
+func (h *HrisCompaniesUpdateRequest) GetAppID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.AppID
+	return h.AppID
 }
 
-func (o *HrisCompaniesUpdateRequest) GetServiceID() *string {
-	if o == nil {
+func (h *HrisCompaniesUpdateRequest) GetServiceID() *string {
+	if h == nil {
 		return nil
 	}
-	return o.ServiceID
+	return h.ServiceID
 }
 
-func (o *HrisCompaniesUpdateRequest) GetRaw() *bool {
-	if o == nil {
+func (h *HrisCompaniesUpdateRequest) GetRaw() *bool {
+	if h == nil {
 		return nil
 	}
-	return o.Raw
+	return h.Raw
 }
 
-func (o *HrisCompaniesUpdateRequest) GetHrisCompany() components.HrisCompanyInput {
-	if o == nil {
+func (h *HrisCompaniesUpdateRequest) GetHrisCompany() components.HrisCompanyInput {
+	if h == nil {
 		return components.HrisCompanyInput{}
 	}
-	return o.HrisCompany
+	return h.HrisCompany
 }
 
 type HrisCompaniesUpdateResponse struct {
@@ -103,23 +103,23 @@ type HrisCompaniesUpdateResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *HrisCompaniesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (h *HrisCompaniesUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
+	if h == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return h.HTTPMeta
 }
 
-func (o *HrisCompaniesUpdateResponse) GetUpdateHrisCompanyResponse() *components.UpdateHrisCompanyResponse {
-	if o == nil {
+func (h *HrisCompaniesUpdateResponse) GetUpdateHrisCompanyResponse() *components.UpdateHrisCompanyResponse {
+	if h == nil {
 		return nil
 	}
-	return o.UpdateHrisCompanyResponse
+	return h.UpdateHrisCompanyResponse
 }
 
-func (o *HrisCompaniesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (h *HrisCompaniesUpdateResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if h == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return h.UnexpectedErrorResponse
 }

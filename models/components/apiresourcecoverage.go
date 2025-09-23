@@ -22,67 +22,67 @@ type Coverage struct {
 	SupportedListFields []SupportedProperty `json:"supported_list_fields,omitempty"`
 }
 
-func (o *Coverage) GetDownstreamID() *string {
-	if o == nil {
+func (c *Coverage) GetDownstreamID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.DownstreamID
+	return c.DownstreamID
 }
 
-func (o *Coverage) GetDownstreamName() *string {
-	if o == nil {
+func (c *Coverage) GetDownstreamName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.DownstreamName
+	return c.DownstreamName
 }
 
-func (o *Coverage) GetPaginationSupported() *bool {
-	if o == nil {
+func (c *Coverage) GetPaginationSupported() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.PaginationSupported
+	return c.PaginationSupported
 }
 
-func (o *Coverage) GetPagination() *PaginationCoverage {
-	if o == nil {
+func (c *Coverage) GetPagination() *PaginationCoverage {
+	if c == nil {
 		return nil
 	}
-	return o.Pagination
+	return c.Pagination
 }
 
-func (o *Coverage) GetSupportedOperations() []string {
-	if o == nil {
+func (c *Coverage) GetSupportedOperations() []string {
+	if c == nil {
 		return nil
 	}
-	return o.SupportedOperations
+	return c.SupportedOperations
 }
 
-func (o *Coverage) GetSupportedFilters() []string {
-	if o == nil {
+func (c *Coverage) GetSupportedFilters() []string {
+	if c == nil {
 		return nil
 	}
-	return o.SupportedFilters
+	return c.SupportedFilters
 }
 
-func (o *Coverage) GetSupportedSortBy() []string {
-	if o == nil {
+func (c *Coverage) GetSupportedSortBy() []string {
+	if c == nil {
 		return nil
 	}
-	return o.SupportedSortBy
+	return c.SupportedSortBy
 }
 
-func (o *Coverage) GetSupportedFields() []SupportedProperty {
-	if o == nil {
+func (c *Coverage) GetSupportedFields() []SupportedProperty {
+	if c == nil {
 		return nil
 	}
-	return o.SupportedFields
+	return c.SupportedFields
 }
 
-func (o *Coverage) GetSupportedListFields() []SupportedProperty {
-	if o == nil {
+func (c *Coverage) GetSupportedListFields() []SupportedProperty {
+	if c == nil {
 		return nil
 	}
-	return o.SupportedListFields
+	return c.SupportedListFields
 }
 
 type APIResourceCoverage struct {
@@ -95,30 +95,30 @@ type APIResourceCoverage struct {
 	Coverage []Coverage      `json:"coverage,omitempty"`
 }
 
-func (o *APIResourceCoverage) GetID() *string {
-	if o == nil {
+func (a *APIResourceCoverage) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *APIResourceCoverage) GetName() *string {
-	if o == nil {
+func (a *APIResourceCoverage) GetName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Name
+	return a.Name
 }
 
-func (o *APIResourceCoverage) GetStatus() *ResourceStatus {
-	if o == nil {
+func (a *APIResourceCoverage) GetStatus() *ResourceStatus {
+	if a == nil {
 		return nil
 	}
-	return o.Status
+	return a.Status
 }
 
-func (o *APIResourceCoverage) GetCoverage() []Coverage {
-	if o == nil {
+func (a *APIResourceCoverage) GetCoverage() []Coverage {
+	if a == nil {
 		return nil
 	}
-	return o.Coverage
+	return a.Coverage
 }

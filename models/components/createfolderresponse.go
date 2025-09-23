@@ -20,51 +20,51 @@ type CreateFolderResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *CreateFolderResponse) GetStatusCode() int64 {
-	if o == nil {
+func (c *CreateFolderResponse) GetStatusCode() int64 {
+	if c == nil {
 		return 0
 	}
-	return o.StatusCode
+	return c.StatusCode
 }
 
-func (o *CreateFolderResponse) GetStatus() string {
-	if o == nil {
+func (c *CreateFolderResponse) GetStatus() string {
+	if c == nil {
 		return ""
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CreateFolderResponse) GetService() string {
-	if o == nil {
+func (c *CreateFolderResponse) GetService() string {
+	if c == nil {
 		return ""
 	}
-	return o.Service
+	return c.Service
 }
 
-func (o *CreateFolderResponse) GetResource() string {
-	if o == nil {
+func (c *CreateFolderResponse) GetResource() string {
+	if c == nil {
 		return ""
 	}
-	return o.Resource
+	return c.Resource
 }
 
-func (o *CreateFolderResponse) GetOperation() string {
-	if o == nil {
+func (c *CreateFolderResponse) GetOperation() string {
+	if c == nil {
 		return ""
 	}
-	return o.Operation
+	return c.Operation
 }
 
-func (o *CreateFolderResponse) GetData() UnifiedID {
-	if o == nil {
+func (c *CreateFolderResponse) GetData() UnifiedID {
+	if c == nil {
 		return UnifiedID{}
 	}
-	return o.Data
+	return c.Data
 }
 
-func (o *CreateFolderResponse) GetRaw() map[string]any {
-	if o == nil {
+func (c *CreateFolderResponse) GetRaw() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }

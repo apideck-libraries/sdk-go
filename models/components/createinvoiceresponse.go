@@ -19,51 +19,51 @@ type CreateInvoiceResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *CreateInvoiceResponse) GetStatusCode() int64 {
-	if o == nil {
+func (c *CreateInvoiceResponse) GetStatusCode() int64 {
+	if c == nil {
 		return 0
 	}
-	return o.StatusCode
+	return c.StatusCode
 }
 
-func (o *CreateInvoiceResponse) GetStatus() string {
-	if o == nil {
+func (c *CreateInvoiceResponse) GetStatus() string {
+	if c == nil {
 		return ""
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CreateInvoiceResponse) GetService() string {
-	if o == nil {
+func (c *CreateInvoiceResponse) GetService() string {
+	if c == nil {
 		return ""
 	}
-	return o.Service
+	return c.Service
 }
 
-func (o *CreateInvoiceResponse) GetResource() string {
-	if o == nil {
+func (c *CreateInvoiceResponse) GetResource() string {
+	if c == nil {
 		return ""
 	}
-	return o.Resource
+	return c.Resource
 }
 
-func (o *CreateInvoiceResponse) GetOperation() string {
-	if o == nil {
+func (c *CreateInvoiceResponse) GetOperation() string {
+	if c == nil {
 		return ""
 	}
-	return o.Operation
+	return c.Operation
 }
 
-func (o *CreateInvoiceResponse) GetData() InvoiceResponse {
-	if o == nil {
+func (c *CreateInvoiceResponse) GetData() InvoiceResponse {
+	if c == nil {
 		return InvoiceResponse{}
 	}
-	return o.Data
+	return c.Data
 }
 
-func (o *CreateInvoiceResponse) GetRaw() map[string]any {
-	if o == nil {
+func (c *CreateInvoiceResponse) GetRaw() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }

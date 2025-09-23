@@ -35,8 +35,8 @@ func main() {
     )
 
     res, err := s.Ecommerce.Stores.Get(ctx, operations.EcommerceStoresOneRequest{
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)

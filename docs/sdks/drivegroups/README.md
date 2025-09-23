@@ -40,14 +40,14 @@ func main() {
     )
 
     res, err := s.FileStorage.DriveGroups.List(ctx, operations.FileStorageDriveGroupsAllRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         Filter: &components.DriveGroupsFilter{
-            ParentGroupID: sdkgo.String("1234"),
+            ParentGroupID: sdkgo.Pointer("1234"),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
-        Fields: sdkgo.String("id,updated_at"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -122,11 +122,11 @@ func main() {
     )
 
     res, err := s.FileStorage.DriveGroups.Create(ctx, operations.FileStorageDriveGroupsAddRequest{
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         DriveGroup: components.DriveGroupInput{
             Name: "accounting",
-            DisplayName: sdkgo.String("accounting"),
-            Description: sdkgo.String("A description"),
+            DisplayName: sdkgo.Pointer("accounting"),
+            Description: sdkgo.Pointer("A description"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -234,8 +234,8 @@ func main() {
 
     res, err := s.FileStorage.DriveGroups.Get(ctx, operations.FileStorageDriveGroupsOneRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
-        Fields: sdkgo.String("id,updated_at"),
+        ServiceID: sdkgo.Pointer("salesforce"),
+        Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
         log.Fatal(err)
@@ -299,11 +299,11 @@ func main() {
 
     res, err := s.FileStorage.DriveGroups.Update(ctx, operations.FileStorageDriveGroupsUpdateRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
         DriveGroup: components.DriveGroupInput{
             Name: "accounting",
-            DisplayName: sdkgo.String("accounting"),
-            Description: sdkgo.String("A description"),
+            DisplayName: sdkgo.Pointer("accounting"),
+            Description: sdkgo.Pointer("A description"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -432,7 +432,7 @@ func main() {
 
     res, err := s.FileStorage.DriveGroups.Delete(ctx, operations.FileStorageDriveGroupsDeleteRequest{
         ID: "<id>",
-        ServiceID: sdkgo.String("salesforce"),
+        ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)

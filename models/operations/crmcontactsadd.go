@@ -14,18 +14,18 @@ type CrmContactsAddGlobals struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (o *CrmContactsAddGlobals) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmContactsAddGlobals) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmContactsAddGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CrmContactsAddGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CrmContactsAddRequest struct {
@@ -51,39 +51,39 @@ func (c *CrmContactsAddRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CrmContactsAddRequest) GetRaw() *bool {
-	if o == nil {
+func (c *CrmContactsAddRequest) GetRaw() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }
 
-func (o *CrmContactsAddRequest) GetConsumerID() *string {
-	if o == nil {
+func (c *CrmContactsAddRequest) GetConsumerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConsumerID
+	return c.ConsumerID
 }
 
-func (o *CrmContactsAddRequest) GetAppID() *string {
-	if o == nil {
+func (c *CrmContactsAddRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CrmContactsAddRequest) GetServiceID() *string {
-	if o == nil {
+func (c *CrmContactsAddRequest) GetServiceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CrmContactsAddRequest) GetContact() components.ContactInput {
-	if o == nil {
+func (c *CrmContactsAddRequest) GetContact() components.ContactInput {
+	if c == nil {
 		return components.ContactInput{}
 	}
-	return o.Contact
+	return c.Contact
 }
 
 type CrmContactsAddResponse struct {
@@ -94,23 +94,23 @@ type CrmContactsAddResponse struct {
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 }
 
-func (o *CrmContactsAddResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
+func (c *CrmContactsAddResponse) GetHTTPMeta() components.HTTPMetadata {
+	if c == nil {
 		return components.HTTPMetadata{}
 	}
-	return o.HTTPMeta
+	return c.HTTPMeta
 }
 
-func (o *CrmContactsAddResponse) GetCreateContactResponse() *components.CreateContactResponse {
-	if o == nil {
+func (c *CrmContactsAddResponse) GetCreateContactResponse() *components.CreateContactResponse {
+	if c == nil {
 		return nil
 	}
-	return o.CreateContactResponse
+	return c.CreateContactResponse
 }
 
-func (o *CrmContactsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if o == nil {
+func (c *CrmContactsAddResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if c == nil {
 		return nil
 	}
-	return o.UnexpectedErrorResponse
+	return c.UnexpectedErrorResponse
 }

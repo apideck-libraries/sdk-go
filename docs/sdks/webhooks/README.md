@@ -36,7 +36,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Webhook.Webhooks.List(ctx, nil, sdkgo.Int64(20))
+    res, err := s.Webhook.Webhooks.List(ctx, nil, sdkgo.Pointer[int64](20))
     if err != nil {
         log.Fatal(err)
     }
@@ -110,7 +110,7 @@ func main() {
     )
 
     res, err := s.Webhook.Webhooks.Create(ctx, components.CreateWebhookRequest{
-        Description: sdkgo.String("A description"),
+        Description: sdkgo.Pointer("A description"),
         UnifiedAPI: components.UnifiedAPIIDCrm,
         Status: components.StatusEnabled,
         DeliveryURL: "https://example.com/my/webhook/endpoint",
@@ -238,9 +238,9 @@ func main() {
     )
 
     res, err := s.Webhook.Webhooks.Update(ctx, "<id>", components.UpdateWebhookRequest{
-        Description: sdkgo.String("A description"),
+        Description: sdkgo.Pointer("A description"),
         Status: components.StatusEnabled.ToPointer(),
-        DeliveryURL: sdkgo.String("https://example.com/my/webhook/endpoint"),
+        DeliveryURL: sdkgo.Pointer("https://example.com/my/webhook/endpoint"),
         Events: []components.WebhookEventType{
             components.WebhookEventTypeVaultConnectionCreated,
             components.WebhookEventTypeVaultConnectionUpdated,

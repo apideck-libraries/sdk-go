@@ -7,18 +7,18 @@ type CreateSessionResponseData struct {
 	SessionToken string `json:"session_token"`
 }
 
-func (o *CreateSessionResponseData) GetSessionURI() string {
-	if o == nil {
+func (c *CreateSessionResponseData) GetSessionURI() string {
+	if c == nil {
 		return ""
 	}
-	return o.SessionURI
+	return c.SessionURI
 }
 
-func (o *CreateSessionResponseData) GetSessionToken() string {
-	if o == nil {
+func (c *CreateSessionResponseData) GetSessionToken() string {
+	if c == nil {
 		return ""
 	}
-	return o.SessionToken
+	return c.SessionToken
 }
 
 // CreateSessionResponse - Session created
@@ -32,30 +32,30 @@ type CreateSessionResponse struct {
 	Raw map[string]any `json:"_raw,omitempty"`
 }
 
-func (o *CreateSessionResponse) GetStatusCode() int64 {
-	if o == nil {
+func (c *CreateSessionResponse) GetStatusCode() int64 {
+	if c == nil {
 		return 0
 	}
-	return o.StatusCode
+	return c.StatusCode
 }
 
-func (o *CreateSessionResponse) GetStatus() string {
-	if o == nil {
+func (c *CreateSessionResponse) GetStatus() string {
+	if c == nil {
 		return ""
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CreateSessionResponse) GetData() CreateSessionResponseData {
-	if o == nil {
+func (c *CreateSessionResponse) GetData() CreateSessionResponseData {
+	if c == nil {
 		return CreateSessionResponseData{}
 	}
-	return o.Data
+	return c.Data
 }
 
-func (o *CreateSessionResponse) GetRaw() map[string]any {
-	if o == nil {
+func (c *CreateSessionResponse) GetRaw() map[string]any {
+	if c == nil {
 		return nil
 	}
-	return o.Raw
+	return c.Raw
 }

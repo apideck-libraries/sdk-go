@@ -81,102 +81,102 @@ func (a *ActivityAttendee) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ActivityAttendee) GetID() *string {
-	if o == nil {
+func (a *ActivityAttendee) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *ActivityAttendee) GetName() *string {
-	if o == nil {
+func (a *ActivityAttendee) GetName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Name
+	return a.Name
 }
 
-func (o *ActivityAttendee) GetFirstName() *string {
-	if o == nil {
+func (a *ActivityAttendee) GetFirstName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.FirstName
+	return a.FirstName
 }
 
-func (o *ActivityAttendee) GetMiddleName() *string {
-	if o == nil {
+func (a *ActivityAttendee) GetMiddleName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.MiddleName
+	return a.MiddleName
 }
 
-func (o *ActivityAttendee) GetLastName() *string {
-	if o == nil {
+func (a *ActivityAttendee) GetLastName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.LastName
+	return a.LastName
 }
 
-func (o *ActivityAttendee) GetPrefix() *string {
-	if o == nil {
+func (a *ActivityAttendee) GetPrefix() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Prefix
+	return a.Prefix
 }
 
-func (o *ActivityAttendee) GetSuffix() *string {
-	if o == nil {
+func (a *ActivityAttendee) GetSuffix() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Suffix
+	return a.Suffix
 }
 
-func (o *ActivityAttendee) GetEmailAddress() *string {
-	if o == nil {
+func (a *ActivityAttendee) GetEmailAddress() *string {
+	if a == nil {
 		return nil
 	}
-	return o.EmailAddress
+	return a.EmailAddress
 }
 
-func (o *ActivityAttendee) GetIsOrganizer() *bool {
-	if o == nil {
+func (a *ActivityAttendee) GetIsOrganizer() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.IsOrganizer
+	return a.IsOrganizer
 }
 
-func (o *ActivityAttendee) GetStatus() *ActivityAttendeeStatus {
-	if o == nil {
+func (a *ActivityAttendee) GetStatus() *ActivityAttendeeStatus {
+	if a == nil {
 		return nil
 	}
-	return o.Status
+	return a.Status
 }
 
-func (o *ActivityAttendee) GetUserID() *string {
-	if o == nil {
+func (a *ActivityAttendee) GetUserID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.UserID
+	return a.UserID
 }
 
-func (o *ActivityAttendee) GetContactID() *string {
-	if o == nil {
+func (a *ActivityAttendee) GetContactID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ContactID
+	return a.ContactID
 }
 
-func (o *ActivityAttendee) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (a *ActivityAttendee) GetUpdatedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return a.UpdatedAt
 }
 
-func (o *ActivityAttendee) GetCreatedAt() *time.Time {
-	if o == nil {
+func (a *ActivityAttendee) GetCreatedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return a.CreatedAt
 }
 
 type ActivityAttendeeInput struct {
@@ -200,65 +200,65 @@ type ActivityAttendeeInput struct {
 	Status *ActivityAttendeeStatus `json:"status,omitempty"`
 }
 
-func (o *ActivityAttendeeInput) GetName() *string {
-	if o == nil {
+func (a *ActivityAttendeeInput) GetName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Name
+	return a.Name
 }
 
-func (o *ActivityAttendeeInput) GetFirstName() *string {
-	if o == nil {
+func (a *ActivityAttendeeInput) GetFirstName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.FirstName
+	return a.FirstName
 }
 
-func (o *ActivityAttendeeInput) GetMiddleName() *string {
-	if o == nil {
+func (a *ActivityAttendeeInput) GetMiddleName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.MiddleName
+	return a.MiddleName
 }
 
-func (o *ActivityAttendeeInput) GetLastName() *string {
-	if o == nil {
+func (a *ActivityAttendeeInput) GetLastName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.LastName
+	return a.LastName
 }
 
-func (o *ActivityAttendeeInput) GetPrefix() *string {
-	if o == nil {
+func (a *ActivityAttendeeInput) GetPrefix() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Prefix
+	return a.Prefix
 }
 
-func (o *ActivityAttendeeInput) GetSuffix() *string {
-	if o == nil {
+func (a *ActivityAttendeeInput) GetSuffix() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Suffix
+	return a.Suffix
 }
 
-func (o *ActivityAttendeeInput) GetEmailAddress() *string {
-	if o == nil {
+func (a *ActivityAttendeeInput) GetEmailAddress() *string {
+	if a == nil {
 		return nil
 	}
-	return o.EmailAddress
+	return a.EmailAddress
 }
 
-func (o *ActivityAttendeeInput) GetIsOrganizer() *bool {
-	if o == nil {
+func (a *ActivityAttendeeInput) GetIsOrganizer() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.IsOrganizer
+	return a.IsOrganizer
 }
 
-func (o *ActivityAttendeeInput) GetStatus() *ActivityAttendeeStatus {
-	if o == nil {
+func (a *ActivityAttendeeInput) GetStatus() *ActivityAttendeeStatus {
+	if a == nil {
 		return nil
 	}
-	return o.Status
+	return a.Status
 }
