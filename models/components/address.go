@@ -69,6 +69,8 @@ type Address struct {
 	Line3 *string `json:"line3,omitempty"`
 	// Line 4 of the address
 	Line4 *string `json:"line4,omitempty"`
+	// Line 5 of the address
+	Line5 *string `json:"line5,omitempty"`
 	// Street number
 	StreetNumber *string `json:"street_number,omitempty"`
 	// Name of city.
@@ -157,6 +159,13 @@ func (a *Address) GetLine4() *string {
 		return nil
 	}
 	return a.Line4
+}
+
+func (a *Address) GetLine5() *string {
+	if a == nil {
+		return nil
+	}
+	return a.Line5
 }
 
 func (a *Address) GetStreetNumber() *string {

@@ -17,8 +17,8 @@ const (
 )
 
 type FormFieldOption struct {
-	SimpleFormFieldOption *SimpleFormFieldOption `queryParam:"inline" name:"FormFieldOption"`
-	FormFieldOptionGroup  *FormFieldOptionGroup  `queryParam:"inline" name:"FormFieldOption"`
+	SimpleFormFieldOption *SimpleFormFieldOption `queryParam:"inline,name=FormFieldOption"`
+	FormFieldOptionGroup  *FormFieldOptionGroup  `queryParam:"inline,name=FormFieldOption"`
 
 	Type FormFieldOptionType
 }

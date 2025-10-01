@@ -138,7 +138,7 @@ func main() {
             Subject: sdkgo.Pointer("Technical Support Request"),
             Description: sdkgo.Pointer("I am facing issues with my internet connection"),
             Status: sdkgo.Pointer("open"),
-            Priority: components.PriorityHigh.ToPointer(),
+            Priority: components.TicketPriorityHigh.ToPointer(),
             Assignees: []components.AssigneeInput{
                 components.AssigneeInput{
                     ID: "12345",
@@ -365,7 +365,7 @@ func main() {
             Subject: sdkgo.Pointer("Technical Support Request"),
             Description: sdkgo.Pointer("I am facing issues with my internet connection"),
             Status: sdkgo.Pointer("open"),
-            Priority: components.PriorityHigh.ToPointer(),
+            Priority: components.TicketPriorityHigh.ToPointer(),
             Assignees: []components.AssigneeInput{
                 components.AssigneeInput{
                     ID: "12345",

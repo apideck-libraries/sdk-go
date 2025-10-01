@@ -73,8 +73,8 @@ const (
 )
 
 type UpdateConsentRequestResources struct {
-	MapOfMapOf1 map[string]map[string]One `queryParam:"inline" name:"resources"`
-	Two         *Two                      `queryParam:"inline" name:"resources"`
+	MapOfMapOf1 map[string]map[string]One `queryParam:"inline,name=resources"`
+	Two         *Two                      `queryParam:"inline,name=resources"`
 
 	Type UpdateConsentRequestResourcesType
 }

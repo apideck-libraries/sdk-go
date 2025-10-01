@@ -10,3 +10,4 @@ The type of the category.
 | `CategoriesFilterTypeSupplier` | supplier                       |
 | `CategoriesFilterTypeExpense`  | expense                        |
 | `CategoriesFilterTypeRevenue`  | revenue                        |
+| `CategoriesFilterTypeCustomer` | customer                       |

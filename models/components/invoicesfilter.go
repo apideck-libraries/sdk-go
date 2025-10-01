@@ -12,6 +12,8 @@ type InvoicesFilter struct {
 	CreatedSince *time.Time `queryParam:"name=created_since"`
 	// Invoice number to search for
 	Number *string `queryParam:"name=number"`
+	// Supplier ID to filter invoices by
+	SupplierID *string `queryParam:"name=supplier_id"`
 }
 
 func (i InvoicesFilter) MarshalJSON() ([]byte, error) {
@@ -44,4 +46,11 @@ func (i *InvoicesFilter) GetNumber() *string {
 		return nil
 	}
 	return i.Number
+}
+
+func (i *InvoicesFilter) GetSupplierID() *string {
+	if i == nil {
+		return nil
+	}
+	return i.SupplierID
 }
