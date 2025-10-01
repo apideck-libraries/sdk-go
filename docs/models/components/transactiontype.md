@@ -1,14 +1,11 @@
 # TransactionType
 
-Type of the transaction.
+The kind of transaction, indicating whether it is a sales transaction or a purchase transaction.
 
 
 ## Values
 
-| Name                         | Value                        |
-| ---------------------------- | ---------------------------- |
-| `TransactionTypeInvoice`     | invoice                      |
-| `TransactionTypeCreditNote`  | credit_note                  |
-| `TransactionTypeBill`        | bill                         |
-| `TransactionTypePayment`     | payment                      |
-| `TransactionTypeBillPayment` | bill_payment                 |
+| Name                      | Value                     |
+| ------------------------- | ------------------------- |
+| `TransactionTypeSale`     | sale                      |
+| `TransactionTypePurchase` | purchase                  |

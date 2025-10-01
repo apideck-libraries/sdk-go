@@ -18,10 +18,10 @@ const (
 )
 
 type Five struct {
-	Str      *string        `queryParam:"inline" name:"five"`
-	Number   *float64       `queryParam:"inline" name:"five"`
-	Boolean  *bool          `queryParam:"inline" name:"five"`
-	MapOfAny map[string]any `queryParam:"inline" name:"five"`
+	Str      *string        `queryParam:"inline,name=five"`
+	Number   *float64       `queryParam:"inline,name=five"`
+	Boolean  *bool          `queryParam:"inline,name=five"`
+	MapOfAny map[string]any `queryParam:"inline,name=five"`
 
 	Type FiveType
 }
@@ -126,11 +126,11 @@ const (
 )
 
 type Value struct {
-	Str      *string        `queryParam:"inline" name:"value"`
-	Number   *float64       `queryParam:"inline" name:"value"`
-	Boolean  *bool          `queryParam:"inline" name:"value"`
-	MapOfAny map[string]any `queryParam:"inline" name:"value"`
-	ArrayOf5 []*Five        `queryParam:"inline" name:"value"`
+	Str      *string        `queryParam:"inline,name=value"`
+	Number   *float64       `queryParam:"inline,name=value"`
+	Boolean  *bool          `queryParam:"inline,name=value"`
+	MapOfAny map[string]any `queryParam:"inline,name=value"`
+	ArrayOf5 []*Five        `queryParam:"inline,name=value"`
 
 	Type ValueType
 }

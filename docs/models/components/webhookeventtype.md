@@ -126,3 +126,6 @@
 | `WebhookEventTypeAccountingQuoteCreated`            | accounting.quote.created                            |
 | `WebhookEventTypeAccountingQuoteUpdated`            | accounting.quote.updated                            |
 | `WebhookEventTypeAccountingQuoteDeleted`            | accounting.quote.deleted                            |
+| `WebhookEventTypeAccountingProjectCreated`          | accounting.project.created                          |
+| `WebhookEventTypeAccountingProjectUpdated`          | accounting.project.updated                          |
+| `WebhookEventTypeAccountingProjectDeleted`          | accounting.project.deleted                          |

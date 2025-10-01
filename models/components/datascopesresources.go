@@ -74,8 +74,8 @@ const (
 
 // DataScopesResources - Data scopes resource configuration that can be either detailed field permissions or a wildcard
 type DataScopesResources struct {
-	MapOfMapOfDataScopesResources1 map[string]map[string]DataScopesResources1 `queryParam:"inline" name:"DataScopesResources"`
-	DataScopesResources2           *DataScopesResources2                      `queryParam:"inline" name:"DataScopesResources"`
+	MapOfMapOfDataScopesResources1 map[string]map[string]DataScopesResources1 `queryParam:"inline,name=DataScopesResources"`
+	DataScopesResources2           *DataScopesResources2                      `queryParam:"inline,name=DataScopesResources"`
 
 	Type DataScopesResourcesType
 }
