@@ -71,7 +71,7 @@ func (s *TimeOffRequests) List(ctx context.Context, request operations.HrisTimeO
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.timeOffRequestsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *TimeOffRequests) List(ctx context.Context, request operations.HrisTimeO
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -471,7 +471,7 @@ func (s *TimeOffRequests) Create(ctx context.Context, request operations.HrisTim
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.timeOffRequestsAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "TimeOffRequest", "json", `request:"mediaType=application/json"`)
@@ -525,7 +525,7 @@ func (s *TimeOffRequests) Create(ctx context.Context, request operations.HrisTim
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -825,7 +825,7 @@ func (s *TimeOffRequests) Get(ctx context.Context, request operations.HrisTimeOf
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.timeOffRequestsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -872,7 +872,7 @@ func (s *TimeOffRequests) Get(ctx context.Context, request operations.HrisTimeOf
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1172,7 +1172,7 @@ func (s *TimeOffRequests) Update(ctx context.Context, request operations.HrisTim
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.timeOffRequestsUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "TimeOffRequest", "json", `request:"mediaType=application/json"`)
@@ -1226,7 +1226,7 @@ func (s *TimeOffRequests) Update(ctx context.Context, request operations.HrisTim
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1526,7 +1526,7 @@ func (s *TimeOffRequests) Delete(ctx context.Context, request operations.HrisTim
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.timeOffRequestsDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1573,7 +1573,7 @@ func (s *TimeOffRequests) Delete(ctx context.Context, request operations.HrisTim
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

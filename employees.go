@@ -71,7 +71,7 @@ func (s *Employees) List(ctx context.Context, request operations.HrisEmployeesAl
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.employeesAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Employees) List(ctx context.Context, request operations.HrisEmployeesAl
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -472,7 +472,7 @@ func (s *Employees) Create(ctx context.Context, request operations.HrisEmployees
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.employeesAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Employee", "json", `request:"mediaType=application/json"`)
@@ -526,7 +526,7 @@ func (s *Employees) Create(ctx context.Context, request operations.HrisEmployees
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -826,7 +826,7 @@ func (s *Employees) Get(ctx context.Context, request operations.HrisEmployeesOne
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.employeesOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -873,7 +873,7 @@ func (s *Employees) Get(ctx context.Context, request operations.HrisEmployeesOne
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1173,7 +1173,7 @@ func (s *Employees) Update(ctx context.Context, request operations.HrisEmployees
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.employeesUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Employee", "json", `request:"mediaType=application/json"`)
@@ -1227,7 +1227,7 @@ func (s *Employees) Update(ctx context.Context, request operations.HrisEmployees
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1527,7 +1527,7 @@ func (s *Employees) Delete(ctx context.Context, request operations.HrisEmployees
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.employeesDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1574,7 +1574,7 @@ func (s *Employees) Delete(ctx context.Context, request operations.HrisEmployees
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

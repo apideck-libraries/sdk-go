@@ -77,7 +77,7 @@ func (s *Connections) List(ctx context.Context, consumerID *string, appID *strin
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "vault.connectionsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -124,7 +124,7 @@ func (s *Connections) List(ctx context.Context, consumerID *string, appID *strin
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -431,7 +431,7 @@ func (s *Connections) Get(ctx context.Context, serviceID string, unifiedAPI stri
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "vault.connectionsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -474,7 +474,7 @@ func (s *Connections) Get(ctx context.Context, serviceID string, unifiedAPI stri
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -774,7 +774,7 @@ func (s *Connections) Update(ctx context.Context, request operations.VaultConnec
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "vault.connectionsUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Connection", "json", `request:"mediaType=application/json"`)
@@ -824,7 +824,7 @@ func (s *Connections) Update(ctx context.Context, request operations.VaultConnec
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1131,7 +1131,7 @@ func (s *Connections) Delete(ctx context.Context, serviceID string, unifiedAPI s
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "vault.connectionsDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1174,7 +1174,7 @@ func (s *Connections) Delete(ctx context.Context, serviceID string, unifiedAPI s
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1454,7 +1454,7 @@ func (s *Connections) Imports(ctx context.Context, request operations.VaultConne
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "vault.connectionsImport",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "ConnectionImportData", "json", `request:"mediaType=application/json"`)
@@ -1504,7 +1504,7 @@ func (s *Connections) Imports(ctx context.Context, request operations.VaultConne
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1809,7 +1809,7 @@ func (s *Connections) Token(ctx context.Context, request operations.VaultConnect
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "vault.connectionsToken",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -1859,7 +1859,7 @@ func (s *Connections) Token(ctx context.Context, request operations.VaultConnect
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

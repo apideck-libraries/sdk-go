@@ -71,7 +71,7 @@ func (s *Messages) List(ctx context.Context, request operations.SmsMessagesAllRe
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "sms.messagesAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Messages) List(ctx context.Context, request operations.SmsMessagesAllRe
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -469,7 +469,7 @@ func (s *Messages) Create(ctx context.Context, request operations.SmsMessagesAdd
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "sms.messagesAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Message", "json", `request:"mediaType=application/json"`)
@@ -523,7 +523,7 @@ func (s *Messages) Create(ctx context.Context, request operations.SmsMessagesAdd
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -823,7 +823,7 @@ func (s *Messages) Get(ctx context.Context, request operations.SmsMessagesOneReq
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "sms.messagesOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -870,7 +870,7 @@ func (s *Messages) Get(ctx context.Context, request operations.SmsMessagesOneReq
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1170,7 +1170,7 @@ func (s *Messages) Update(ctx context.Context, request operations.SmsMessagesUpd
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "sms.messagesUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Message", "json", `request:"mediaType=application/json"`)
@@ -1224,7 +1224,7 @@ func (s *Messages) Update(ctx context.Context, request operations.SmsMessagesUpd
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1524,7 +1524,7 @@ func (s *Messages) Delete(ctx context.Context, request operations.SmsMessagesDel
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "sms.messagesDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1571,7 +1571,7 @@ func (s *Messages) Delete(ctx context.Context, request operations.SmsMessagesDel
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

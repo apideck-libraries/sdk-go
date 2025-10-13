@@ -76,7 +76,7 @@ func (s *Webhooks) List(ctx context.Context, appID *string, cursor *string, limi
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "webhook.webhooksAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -123,7 +123,7 @@ func (s *Webhooks) List(ctx context.Context, appID *string, cursor *string, limi
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -472,7 +472,7 @@ func (s *Webhooks) Create(ctx context.Context, createWebhookRequest components.C
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "webhook.webhooksAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateWebhookRequest", "json", `request:"mediaType=application/json"`)
@@ -522,7 +522,7 @@ func (s *Webhooks) Create(ctx context.Context, createWebhookRequest components.C
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -826,7 +826,7 @@ func (s *Webhooks) Get(ctx context.Context, id string, appID *string, opts ...op
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "webhook.webhooksOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -869,7 +869,7 @@ func (s *Webhooks) Get(ctx context.Context, id string, appID *string, opts ...op
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1174,7 +1174,7 @@ func (s *Webhooks) Update(ctx context.Context, id string, updateWebhookRequest c
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "webhook.webhooksUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateWebhookRequest", "json", `request:"mediaType=application/json"`)
@@ -1224,7 +1224,7 @@ func (s *Webhooks) Update(ctx context.Context, id string, updateWebhookRequest c
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1528,7 +1528,7 @@ func (s *Webhooks) Delete(ctx context.Context, id string, appID *string, opts ..
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "webhook.webhooksDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1571,7 +1571,7 @@ func (s *Webhooks) Delete(ctx context.Context, id string, appID *string, opts ..
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

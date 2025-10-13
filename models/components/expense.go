@@ -153,7 +153,7 @@ func (e Expense) MarshalJSON() ([]byte, error) {
 }
 
 func (e *Expense) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &e, "", false, []string{"transaction_date", "account_id", "line_items"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &e, "", false, []string{"account_id", "line_items"}); err != nil {
 		return err
 	}
 	return nil
@@ -396,7 +396,7 @@ func (e ExpenseInput) MarshalJSON() ([]byte, error) {
 }
 
 func (e *ExpenseInput) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &e, "", false, []string{"transaction_date", "account_id", "line_items"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &e, "", false, []string{"account_id", "line_items"}); err != nil {
 		return err
 	}
 	return nil

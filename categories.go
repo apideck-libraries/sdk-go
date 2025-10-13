@@ -71,7 +71,7 @@ func (s *Categories) List(ctx context.Context, request operations.AccountingCate
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.categoriesAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Categories) List(ctx context.Context, request operations.AccountingCate
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -470,7 +470,7 @@ func (s *Categories) Get(ctx context.Context, request operations.AccountingCateg
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.categoriesOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -517,7 +517,7 @@ func (s *Categories) Get(ctx context.Context, request operations.AccountingCateg
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

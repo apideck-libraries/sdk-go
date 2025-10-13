@@ -70,7 +70,7 @@ func (s *CollectionUsers) List(ctx context.Context, request operations.IssueTrac
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "issueTracking.collectionUsersAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -117,7 +117,7 @@ func (s *CollectionUsers) List(ctx context.Context, request operations.IssueTrac
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -470,7 +470,7 @@ func (s *CollectionUsers) Get(ctx context.Context, request operations.IssueTrack
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "issueTracking.collectionUsersOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -517,7 +517,7 @@ func (s *CollectionUsers) Get(ctx context.Context, request operations.IssueTrack
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

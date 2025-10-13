@@ -71,7 +71,7 @@ func (s *ApideckCustomers) List(ctx context.Context, request operations.Ecommerc
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "ecommerce.customersAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *ApideckCustomers) List(ctx context.Context, request operations.Ecommerc
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -471,7 +471,7 @@ func (s *ApideckCustomers) Get(ctx context.Context, request operations.Ecommerce
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "ecommerce.customersOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -518,7 +518,7 @@ func (s *ApideckCustomers) Get(ctx context.Context, request operations.Ecommerce
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

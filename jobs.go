@@ -71,7 +71,7 @@ func (s *Jobs) List(ctx context.Context, request operations.AtsJobsAllRequest, o
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "ats.jobsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Jobs) List(ctx context.Context, request operations.AtsJobsAllRequest, o
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -470,7 +470,7 @@ func (s *Jobs) Get(ctx context.Context, request operations.AtsJobsOneRequest, op
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "ats.jobsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -517,7 +517,7 @@ func (s *Jobs) Get(ctx context.Context, request operations.AtsJobsOneRequest, op
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

@@ -71,7 +71,7 @@ func (s *CreditNotes) List(ctx context.Context, request operations.AccountingCre
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.creditNotesAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *CreditNotes) List(ctx context.Context, request operations.AccountingCre
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -472,7 +472,7 @@ func (s *CreditNotes) Create(ctx context.Context, request operations.AccountingC
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.creditNotesAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreditNote", "json", `request:"mediaType=application/json"`)
@@ -526,7 +526,7 @@ func (s *CreditNotes) Create(ctx context.Context, request operations.AccountingC
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -826,7 +826,7 @@ func (s *CreditNotes) Get(ctx context.Context, request operations.AccountingCred
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.creditNotesOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -873,7 +873,7 @@ func (s *CreditNotes) Get(ctx context.Context, request operations.AccountingCred
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1173,7 +1173,7 @@ func (s *CreditNotes) Update(ctx context.Context, request operations.AccountingC
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.creditNotesUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreditNote", "json", `request:"mediaType=application/json"`)
@@ -1227,7 +1227,7 @@ func (s *CreditNotes) Update(ctx context.Context, request operations.AccountingC
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1527,7 +1527,7 @@ func (s *CreditNotes) Delete(ctx context.Context, request operations.AccountingC
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.creditNotesDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1574,7 +1574,7 @@ func (s *CreditNotes) Delete(ctx context.Context, request operations.AccountingC
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

@@ -71,7 +71,7 @@ func (s *Users) List(ctx context.Context, request operations.CrmUsersAllRequest,
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.usersAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Users) List(ctx context.Context, request operations.CrmUsersAllRequest,
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -470,7 +470,7 @@ func (s *Users) Create(ctx context.Context, request operations.CrmUsersAddReques
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.usersAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "User", "json", `request:"mediaType=application/json"`)
@@ -524,7 +524,7 @@ func (s *Users) Create(ctx context.Context, request operations.CrmUsersAddReques
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -824,7 +824,7 @@ func (s *Users) Get(ctx context.Context, request operations.CrmUsersOneRequest, 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.usersOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -871,7 +871,7 @@ func (s *Users) Get(ctx context.Context, request operations.CrmUsersOneRequest, 
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1171,7 +1171,7 @@ func (s *Users) Update(ctx context.Context, request operations.CrmUsersUpdateReq
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.usersUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "User", "json", `request:"mediaType=application/json"`)
@@ -1225,7 +1225,7 @@ func (s *Users) Update(ctx context.Context, request operations.CrmUsersUpdateReq
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1525,7 +1525,7 @@ func (s *Users) Delete(ctx context.Context, request operations.CrmUsersDeleteReq
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.usersDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1572,7 +1572,7 @@ func (s *Users) Delete(ctx context.Context, request operations.CrmUsersDeleteReq
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

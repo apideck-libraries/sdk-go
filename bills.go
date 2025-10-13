@@ -71,7 +71,7 @@ func (s *Bills) List(ctx context.Context, request operations.AccountingBillsAllR
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.billsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Bills) List(ctx context.Context, request operations.AccountingBillsAllR
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -472,7 +472,7 @@ func (s *Bills) Create(ctx context.Context, request operations.AccountingBillsAd
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.billsAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Bill", "json", `request:"mediaType=application/json"`)
@@ -526,7 +526,7 @@ func (s *Bills) Create(ctx context.Context, request operations.AccountingBillsAd
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -826,7 +826,7 @@ func (s *Bills) Get(ctx context.Context, request operations.AccountingBillsOneRe
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.billsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -873,7 +873,7 @@ func (s *Bills) Get(ctx context.Context, request operations.AccountingBillsOneRe
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1173,7 +1173,7 @@ func (s *Bills) Update(ctx context.Context, request operations.AccountingBillsUp
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.billsUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Bill", "json", `request:"mediaType=application/json"`)
@@ -1227,7 +1227,7 @@ func (s *Bills) Update(ctx context.Context, request operations.AccountingBillsUp
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1527,7 +1527,7 @@ func (s *Bills) Delete(ctx context.Context, request operations.AccountingBillsDe
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.billsDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1574,7 +1574,7 @@ func (s *Bills) Delete(ctx context.Context, request operations.AccountingBillsDe
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

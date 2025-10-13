@@ -71,7 +71,7 @@ func (s *CustomObjectSchemas) List(ctx context.Context, request operations.CrmCu
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.customObjectSchemasAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *CustomObjectSchemas) List(ctx context.Context, request operations.CrmCu
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -469,7 +469,7 @@ func (s *CustomObjectSchemas) Create(ctx context.Context, request operations.Crm
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.customObjectSchemasAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CustomObjectSchema", "json", `request:"mediaType=application/json"`)
@@ -523,7 +523,7 @@ func (s *CustomObjectSchemas) Create(ctx context.Context, request operations.Crm
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -823,7 +823,7 @@ func (s *CustomObjectSchemas) Get(ctx context.Context, request operations.CrmCus
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.customObjectSchemasOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -870,7 +870,7 @@ func (s *CustomObjectSchemas) Get(ctx context.Context, request operations.CrmCus
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1170,7 +1170,7 @@ func (s *CustomObjectSchemas) Update(ctx context.Context, request operations.Crm
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.customObjectSchemasUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CustomObjectSchema", "json", `request:"mediaType=application/json"`)
@@ -1224,7 +1224,7 @@ func (s *CustomObjectSchemas) Update(ctx context.Context, request operations.Crm
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1524,7 +1524,7 @@ func (s *CustomObjectSchemas) Delete(ctx context.Context, request operations.Crm
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.customObjectSchemasDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1571,7 +1571,7 @@ func (s *CustomObjectSchemas) Delete(ctx context.Context, request operations.Crm
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

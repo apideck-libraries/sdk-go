@@ -71,7 +71,7 @@ func (s *Expenses) List(ctx context.Context, request operations.AccountingExpens
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.expensesAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Expenses) List(ctx context.Context, request operations.AccountingExpens
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -469,7 +469,7 @@ func (s *Expenses) Create(ctx context.Context, request operations.AccountingExpe
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.expensesAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Expense", "json", `request:"mediaType=application/json"`)
@@ -523,7 +523,7 @@ func (s *Expenses) Create(ctx context.Context, request operations.AccountingExpe
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -823,7 +823,7 @@ func (s *Expenses) Get(ctx context.Context, request operations.AccountingExpense
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.expensesOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -870,7 +870,7 @@ func (s *Expenses) Get(ctx context.Context, request operations.AccountingExpense
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1170,7 +1170,7 @@ func (s *Expenses) Update(ctx context.Context, request operations.AccountingExpe
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.expensesUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Expense", "json", `request:"mediaType=application/json"`)
@@ -1224,7 +1224,7 @@ func (s *Expenses) Update(ctx context.Context, request operations.AccountingExpe
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1524,7 +1524,7 @@ func (s *Expenses) Delete(ctx context.Context, request operations.AccountingExpe
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.expensesDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1571,7 +1571,7 @@ func (s *Expenses) Delete(ctx context.Context, request operations.AccountingExpe
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

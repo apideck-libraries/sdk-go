@@ -71,7 +71,7 @@ func (s *DriveGroups) List(ctx context.Context, request operations.FileStorageDr
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.driveGroupsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *DriveGroups) List(ctx context.Context, request operations.FileStorageDr
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -471,7 +471,7 @@ func (s *DriveGroups) Create(ctx context.Context, request operations.FileStorage
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.driveGroupsAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "DriveGroup", "json", `request:"mediaType=application/json"`)
@@ -525,7 +525,7 @@ func (s *DriveGroups) Create(ctx context.Context, request operations.FileStorage
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -825,7 +825,7 @@ func (s *DriveGroups) Get(ctx context.Context, request operations.FileStorageDri
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.driveGroupsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -872,7 +872,7 @@ func (s *DriveGroups) Get(ctx context.Context, request operations.FileStorageDri
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1172,7 +1172,7 @@ func (s *DriveGroups) Update(ctx context.Context, request operations.FileStorage
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.driveGroupsUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "DriveGroup", "json", `request:"mediaType=application/json"`)
@@ -1226,7 +1226,7 @@ func (s *DriveGroups) Update(ctx context.Context, request operations.FileStorage
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1526,7 +1526,7 @@ func (s *DriveGroups) Delete(ctx context.Context, request operations.FileStorage
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.driveGroupsDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1573,7 +1573,7 @@ func (s *DriveGroups) Delete(ctx context.Context, request operations.FileStorage
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

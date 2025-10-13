@@ -72,7 +72,7 @@ func (s *APIResources) Get(ctx context.Context, id string, resourceID string, ap
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "connector.apiResourcesOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -115,7 +115,7 @@ func (s *APIResources) Get(ctx context.Context, id string, resourceID string, ap
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

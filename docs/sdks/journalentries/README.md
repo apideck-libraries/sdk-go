@@ -23,8 +23,8 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/apideck-libraries/sdk-go"
 	"os"
+	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
@@ -110,8 +110,8 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/apideck-libraries/sdk-go"
 	"os"
+	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/operations"
@@ -359,8 +359,8 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/apideck-libraries/sdk-go"
 	"os"
+	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -423,8 +423,8 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/apideck-libraries/sdk-go"
 	"os"
+	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/operations"
@@ -637,8 +637,8 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/apideck-libraries/sdk-go"
 	"os"
+	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )

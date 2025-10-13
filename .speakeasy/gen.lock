@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: b2f385cf1eb9f6c464497621f79caeb5
-  docVersion: 10.21.2
-  speakeasyVersion: 1.631.5
-  generationVersion: 2.716.16
-  releaseVersion: 0.19.0
-  configChecksum: f400917c890d00f4ddd5d5fb6f56a12f
+  docChecksum: efe4635baedb3c35156ddcd5d1173663
+  docVersion: 10.21.4
+  speakeasyVersion: 1.636.3
+  generationVersion: 2.723.11
+  releaseVersion: 0.20.0
+  configChecksum: b8bf07bd59969c822326c41a7a1a0b55
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 features:
@@ -28,18 +28,18 @@ features:
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.3
     globals: 2.82.2
-    groups: 2.81.2
+    groups: 2.81.3
     inputOutputModels: 2.83.0
     intellisenseMarkdownSupport: 0.1.0
     methodServerURLs: 2.82.1
     nameOverrides: 2.81.2
-    nullables: 0.2.0
+    nullables: 0.2.1
     pagination: 2.82.4
     responseFormat: 0.1.2
     retries: 2.84.2
     sdkHooks: 0.2.0
     typeOverrides: 2.81.1
-    unions: 2.85.14
+    unions: 2.86.0
     uploadStreams: 0.1.0
 generatedFiles:
   - .devcontainer/README.md
@@ -2789,11 +2789,9 @@ generatedFiles:
   - docs/models/operations/webhookwebhooksupdateglobals.md
   - docs/models/operations/webhookwebhooksupdaterequest.md
   - docs/models/operations/webhookwebhooksupdateresponse.md
-  - docs/sdks/accounting/README.md
   - docs/sdks/activities/README.md
   - docs/sdks/agedcreditors/README.md
   - docs/sdks/ageddebtors/README.md
-  - docs/sdks/apideck/README.md
   - docs/sdks/apideckcompanies/README.md
   - docs/sdks/apideckcustomers/README.md
   - docs/sdks/apideckdepartments/README.md
@@ -2802,7 +2800,6 @@ generatedFiles:
   - docs/sdks/apis/README.md
   - docs/sdks/applicants/README.md
   - docs/sdks/applications/README.md
-  - docs/sdks/ats/README.md
   - docs/sdks/attachments/README.md
   - docs/sdks/balancesheet/README.md
   - docs/sdks/bankaccounts/README.md
@@ -2823,7 +2820,6 @@ generatedFiles:
   - docs/sdks/connectioncustommappings/README.md
   - docs/sdks/connections/README.md
   - docs/sdks/connectionsettings/README.md
-  - docs/sdks/connector/README.md
   - docs/sdks/connectordocs/README.md
   - docs/sdks/connectorresources/README.md
   - docs/sdks/connectors/README.md
@@ -2832,7 +2828,6 @@ generatedFiles:
   - docs/sdks/contacts/README.md
   - docs/sdks/createcallback/README.md
   - docs/sdks/creditnotes/README.md
-  - docs/sdks/crm/README.md
   - docs/sdks/customers/README.md
   - docs/sdks/customfields/README.md
   - docs/sdks/custommappings/README.md
@@ -2841,19 +2836,15 @@ generatedFiles:
   - docs/sdks/departments/README.md
   - docs/sdks/drivegroups/README.md
   - docs/sdks/drives/README.md
-  - docs/sdks/ecommerce/README.md
   - docs/sdks/employeepayrolls/README.md
   - docs/sdks/employees/README.md
   - docs/sdks/employeeschedules/README.md
   - docs/sdks/eventlogs/README.md
   - docs/sdks/expenses/README.md
   - docs/sdks/files/README.md
-  - docs/sdks/filestorage/README.md
   - docs/sdks/folders/README.md
-  - docs/sdks/hris/README.md
   - docs/sdks/invoiceitems/README.md
   - docs/sdks/invoices/README.md
-  - docs/sdks/issuetracking/README.md
   - docs/sdks/jobs/README.md
   - docs/sdks/journalentries/README.md
   - docs/sdks/leads/README.md
@@ -2874,7 +2865,6 @@ generatedFiles:
   - docs/sdks/quotes/README.md
   - docs/sdks/sessions/README.md
   - docs/sdks/sharedlinks/README.md
-  - docs/sdks/sms/README.md
   - docs/sdks/stores/README.md
   - docs/sdks/subsidiaries/README.md
   - docs/sdks/suppliers/README.md
@@ -2884,8 +2874,6 @@ generatedFiles:
   - docs/sdks/uploadsessions/README.md
   - docs/sdks/users/README.md
   - docs/sdks/validateconnection/README.md
-  - docs/sdks/vault/README.md
-  - docs/sdks/webhook/README.md
   - docs/sdks/webhooks/README.md
   - docs/types/date.md
   - drivegroups.go
@@ -18355,7 +18343,7 @@ examples:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
           x-apideck-service-id: "salesforce"
       requestBody:
-        application/json: {"name": "Website Redesign Project", "display_id": "PROJ-001", "reference_id": "WD-REF-2024-001", "description": "Complete redesign of the company website including new branding and improved user experience", "status": "active", "project_type": "client_project", "priority": "high", "completion_percentage": 75.5, "start_date": "2024-01-15", "end_date": "2024-06-30", "customer": {"id": "12345", "display_name": "Windsurf Shop", "email": "boring@boring.com"}, "department": {"id": "DEPT-001", "name": "Marketing"}, "company_id": "12345", "owner_id": "12345", "parent_project": {"id": "PROJ-PARENT-001", "name": "Company Website Overhaul"}, "currency": "USD", "budget_amount": 50000, "approved_amount": 48000, "budget_hours": 400, "hourly_rate": 125, "billing_method": "time_and_materials", "is_billable": true, "phase": "execution", "tax_rate": {"id": "123456", "rate": 10}, "tracking_categories": [{"id": "123456", "name": "New York", "parent_id": "123456", "parent_name": "New York"}], "tags": ["website", "redesign", "urgent"], "notes": "Client has requested modern design with mobile-first approach", "contract_number": "CNT-2024-001", "profit_margin": 15.5, "schedule_status": "on_schedule", "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "line5": "Attention: Finance Dept", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "team_size": 8, "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "row_version": "1-12345"}
+        application/json: {"name": "Website Redesign Project", "display_id": "PROJ-001", "reference_id": "WD-REF-2024-001", "description": "Complete redesign of the company website including new branding and improved user experience", "status": "active", "active": true, "project_type": "client_project", "priority": "high", "completion_percentage": 75.5, "start_date": "2024-01-15", "end_date": "2024-06-30", "customer": {"id": "12345", "display_name": "Windsurf Shop", "email": "boring@boring.com"}, "department": {"id": "DEPT-001", "name": "Marketing"}, "company_id": "12345", "owner_id": "12345", "parent_project": {"id": "PROJ-PARENT-001", "name": "Company Website Overhaul"}, "currency": "USD", "budget_amount": 50000, "approved_amount": 48000, "budget_hours": 400, "hourly_rate": 125, "billing_method": "time_and_materials", "is_billable": true, "phase": "execution", "tax_rate": {"id": "123456", "rate": 10}, "tracking_categories": [{"id": "123456", "name": "New York", "parent_id": "123456", "parent_name": "New York"}], "tags": ["website", "redesign", "urgent"], "notes": "Client has requested modern design with mobile-first approach", "contract_number": "CNT-2024-001", "profit_margin": 15.5, "schedule_status": "on_schedule", "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "line5": "Attention: Finance Dept", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "team_size": 8, "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "row_version": "1-12345"}
       responses:
         "201":
           application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "Projects", "operation": "add", "data": {"id": "12345"}}
@@ -18384,7 +18372,7 @@ examples:
           x-apideck-service-id: "salesforce"
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "Projects", "operation": "one", "data": {"id": "12345", "downstream_id": "12345", "name": "Website Redesign Project", "display_id": "PROJ-001", "reference_id": "WD-REF-2024-001", "description": "Complete redesign of the company website including new branding and improved user experience", "status": "active", "project_type": "client_project", "priority": "high", "completion_percentage": 75.5, "start_date": "2024-01-15", "end_date": "2024-06-30", "customer": {"id": "12345", "display_id": "CUST00101", "display_name": "Windsurf Shop", "company_name": "The boring company", "email": "boring@boring.com"}, "department": {"id": "DEPT-001", "name": "Marketing"}, "company_id": "12345", "owner_id": "12345", "parent_project": {"id": "PROJ-PARENT-001", "name": "Company Website Overhaul"}, "currency": "USD", "budget_amount": 50000, "approved_amount": 48000, "actual_amount": 45250.75, "budget_hours": 400, "actual_hours": 385.5, "hourly_rate": 125, "billing_method": "time_and_materials", "is_billable": true, "phase": "execution", "tax_rate": {"id": "123456", "code": "N-T", "name": "GST on Purchases", "rate": 10}, "tracking_categories": [{"id": "123456", "name": "New York", "parent_id": "123456", "parent_name": "New York"}], "tags": ["website", "redesign", "urgent"], "notes": "Client has requested modern design with mobile-first approach", "contract_number": "CNT-2024-001", "profit_margin": 15.5, "schedule_status": "on_schedule", "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "line5": "Attention: Finance Dept", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "team_size": 8, "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "row_version": "1-12345", "updated_by": "12345", "created_by": "12345", "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z"}}
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "Projects", "operation": "one", "data": {"id": "12345", "downstream_id": "12345", "name": "Website Redesign Project", "display_id": "PROJ-001", "reference_id": "WD-REF-2024-001", "description": "Complete redesign of the company website including new branding and improved user experience", "status": "active", "active": true, "project_type": "client_project", "priority": "high", "completion_percentage": 75.5, "start_date": "2024-01-15", "end_date": "2024-06-30", "customer": {"id": "12345", "display_id": "CUST00101", "display_name": "Windsurf Shop", "company_name": "The boring company", "email": "boring@boring.com"}, "department": {"id": "DEPT-001", "name": "Marketing"}, "company_id": "12345", "owner_id": "12345", "parent_project": {"id": "PROJ-PARENT-001", "name": "Company Website Overhaul"}, "currency": "USD", "budget_amount": 50000, "approved_amount": 48000, "actual_amount": 45250.75, "budget_hours": 400, "actual_hours": 385.5, "hourly_rate": 125, "billing_method": "time_and_materials", "is_billable": true, "phase": "execution", "tax_rate": {"id": "123456", "code": "N-T", "name": "GST on Purchases", "rate": 10}, "tracking_categories": [{"id": "123456", "name": "New York", "parent_id": "123456", "parent_name": "New York"}], "tags": ["website", "redesign", "urgent"], "notes": "Client has requested modern design with mobile-first approach", "contract_number": "CNT-2024-001", "profit_margin": 15.5, "schedule_status": "on_schedule", "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "line5": "Attention: Finance Dept", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "team_size": 8, "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "row_version": "1-12345", "updated_by": "12345", "created_by": "12345", "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z"}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
         "401":
@@ -18409,7 +18397,7 @@ examples:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
           x-apideck-service-id: "salesforce"
       requestBody:
-        application/json: {"name": "Website Redesign Project", "display_id": "PROJ-001", "reference_id": "WD-REF-2024-001", "description": "Complete redesign of the company website including new branding and improved user experience", "status": "active", "project_type": "client_project", "priority": "high", "completion_percentage": 75.5, "start_date": "2024-01-15", "end_date": "2024-06-30", "customer": null, "department": {"id": "DEPT-001", "name": "Marketing"}, "company_id": "12345", "owner_id": "12345", "parent_project": {"id": "PROJ-PARENT-001", "name": "Company Website Overhaul"}, "currency": "USD", "budget_amount": 50000, "approved_amount": 48000, "budget_hours": 400, "hourly_rate": 125, "billing_method": "time_and_materials", "is_billable": true, "phase": "execution", "tax_rate": {"id": "123456", "rate": 10}, "tracking_categories": [{"id": "123456", "name": "New York", "parent_id": "123456", "parent_name": "New York"}], "tags": ["website", "redesign", "urgent"], "notes": "Client has requested modern design with mobile-first approach", "contract_number": "CNT-2024-001", "profit_margin": 15.5, "schedule_status": "on_schedule", "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "line5": "Attention: Finance Dept", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "team_size": 8, "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "row_version": "1-12345"}
+        application/json: {"name": "Website Redesign Project", "display_id": "PROJ-001", "reference_id": "WD-REF-2024-001", "description": "Complete redesign of the company website including new branding and improved user experience", "status": "active", "active": true, "project_type": "client_project", "priority": "high", "completion_percentage": 75.5, "start_date": "2024-01-15", "end_date": "2024-06-30", "customer": null, "department": {"id": "DEPT-001", "name": "Marketing"}, "company_id": "12345", "owner_id": "12345", "parent_project": {"id": "PROJ-PARENT-001", "name": "Company Website Overhaul"}, "currency": "USD", "budget_amount": 50000, "approved_amount": 48000, "budget_hours": 400, "hourly_rate": 125, "billing_method": "time_and_materials", "is_billable": true, "phase": "execution", "tax_rate": {"id": "123456", "rate": 10}, "tracking_categories": [{"id": "123456", "name": "New York", "parent_id": "123456", "parent_name": "New York"}], "tags": ["website", "redesign", "urgent"], "notes": "Client has requested modern design with mobile-first approach", "contract_number": "CNT-2024-001", "profit_margin": 15.5, "schedule_status": "on_schedule", "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "line5": "Attention: Finance Dept", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "team_size": 8, "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "row_version": "1-12345"}
       responses:
         "200":
           application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "Projects", "operation": "update", "data": {"id": "12345"}}
@@ -18453,4 +18441,4 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes Detected:\n* `Apideck.Accounting.Projects.List()`: **Added**\n* `Apideck.Accounting.Projects.Create()`: **Added**\n* `Apideck.Accounting.Projects.Get()`: **Added**\n* `Apideck.Accounting.Projects.Update()`: **Added**\n* `Apideck.Accounting.Projects.Delete()`: **Added**\n* `Apideck.Accounting.Bills.List()`:  `response.Data.[].Supplier.Address.Line5` **Added**\n* `Apideck.Accounting.Bills.Create()`: \n  *  `request.Request.Bill.Supplier.Address.Line5` **Added**\n* `Apideck.Accounting.Bills.Get()`:  `response.Data.Supplier.Address.Line5` **Added**\n* `Apideck.Accounting.Bills.Update()`: \n  *  `request.Request.Bill.Supplier.Address.Line5` **Added**\n* `Apideck.Accounting.Invoices.List()`: \n  *  `request.Request.Filter` **Changed**\n  *  `response.Data.[].BillingAddress.Line5` **Added**\n* `Apideck.Accounting.Invoices.Create()`: \n  *  `request.Request.Invoice.BillingAddress.Line5` **Added**\n* `Apideck.Accounting.Invoices.Get()`:  `response.Data.BillingAddress.Line5` **Added**\n* `Apideck.Accounting.Invoices.Update()`: \n  *  `request.Request.Invoice.BillingAddress.Line5` **Added**\n* `Apideck.Accounting.InvoiceItems.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.InvoiceItems.Get()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.CreditNotes.List()`:  `response.Data.[].BillingAddress.Line5` **Added**\n* `Apideck.Accounting.CreditNotes.Create()`: \n  *  `request.Request.CreditNote.BillingAddress.Line5` **Added**\n* `Apideck.Accounting.CreditNotes.Get()`:  `response.Data.BillingAddress.Line5` **Added**\n* `Apideck.Accounting.CreditNotes.Update()`: \n  *  `request.Request.CreditNote.BillingAddress.Line5` **Added**\n* `Apideck.Accounting.Customers.List()`:  `response.Data.[]` **Changed**\n* `Apideck.Accounting.Customers.Create()`: \n  *  `request.Request.Customer` **Changed**\n* `Apideck.Accounting.Customers.Get()`:  `response.Data` **Changed**\n* `Apideck.Accounting.Customers.Update()`: \n  *  `request.Request.Customer` **Changed**\n* `Apideck.Accounting.Suppliers.List()`:  `response.Data.[].Addresses.[].Line5` **Added**\n* `Apideck.Accounting.Suppliers.Create()`: \n  *  `request.Request.Supplier.Addresses.[].Line5` **Added**\n* `Apideck.Accounting.Suppliers.Get()`:  `response.Data.Addresses.[].Line5` **Added**\n* `Apideck.Accounting.Suppliers.Update()`: \n  *  `request.Request.Supplier.Addresses.[].Line5` **Added**\n* `Apideck.Accounting.Payments.List()`:  `response.Data.[].Supplier.Address.Line5` **Added**\n* `Apideck.Accounting.Payments.Create()`: \n  *  `request.Request.Payment.Supplier.Address.Line5` **Added**\n* `Apideck.Accounting.Payments.Get()`:  `response.Data.Supplier.Address.Line5` **Added**\n* `Apideck.Accounting.Payments.Update()`: \n  *  `request.Request.Payment.Supplier.Address.Line5` **Added**\n* `Apideck.Accounting.CompanyInfo.Get()`:  `response.Data.Addresses.[].Line5` **Added**\n* `Apideck.Accounting.JournalEntries.List()`:  `response.Data.[]` **Changed**\n* `Apideck.Accounting.JournalEntries.Create()`: \n  *  `request.Request.JournalEntry` **Changed**\n* `Apideck.Accounting.JournalEntries.Get()`:  `response.Data` **Changed**\n* `Apideck.Accounting.JournalEntries.Update()`: \n  *  `request.Request.JournalEntry` **Changed**\n* `Apideck.Accounting.PurchaseOrders.List()`:  `response.Data.[].Supplier.Address.Line5` **Added**\n* `Apideck.Accounting.PurchaseOrders.Create()`: \n  *  `request.Request.PurchaseOrder.Supplier.Address.Line5` **Added**\n* `Apideck.Accounting.PurchaseOrders.Get()`:  `response.Data.Supplier.Address.Line5` **Added**\n* `Apideck.Accounting.PurchaseOrders.Update()`: \n  *  `request.Request.PurchaseOrder.Supplier.Address.Line5` **Added**\n* `Apideck.Accounting.Locations.List()`:  `response.Data.[].Addresses.[].Line5` **Added**\n* `Apideck.Accounting.Locations.Create()`: \n  *  `request.Request.AccountingLocation.Addresses.[].Line5` **Added**\n* `Apideck.Accounting.Locations.Get()`:  `response.Data.Addresses.[].Line5` **Added**\n* `Apideck.Accounting.Locations.Update()`: \n  *  `request.Request.AccountingLocation.Addresses.[].Line5` **Added**\n* `Apideck.Accounting.BillPayments.List()`:  `response.Data.[].Supplier.Address.Line5` **Added**\n* `Apideck.Accounting.BillPayments.Create()`: \n  *  `request.Request.BillPayment.Supplier.Address.Line5` **Added**\n* `Apideck.Accounting.BillPayments.Get()`:  `response.Data.Supplier.Address.Line5` **Added**\n* `Apideck.Accounting.BillPayments.Update()`: \n  *  `request.Request.BillPayment.Supplier.Address.Line5` **Added**\n* `Apideck.Accounting.Categories.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.Categories.Get()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.Quotes.List()`:  `response.Data.[].BillingAddress.Line5` **Added**\n* `Apideck.Accounting.Quotes.Create()`: \n  *  `request.Request.Quote.BillingAddress.Line5` **Added**\n* `Apideck.Accounting.Quotes.Get()`:  `response.Data.BillingAddress.Line5` **Added**\n* `Apideck.Accounting.Quotes.Update()`: \n  *  `request.Request.Quote.BillingAddress.Line5` **Added**\n* `Apideck.Ats.Jobs.List()`:  `response.Data.[].Addresses.[].Line5` **Added**\n* `Apideck.Ats.Jobs.Get()`:  `response.Data.Addresses.[].Line5` **Added**\n* `Apideck.Ats.Applicants.List()`:  `response.Data.[].Addresses.[].Line5` **Added**\n* `Apideck.Ats.Applicants.Create()`: \n  *  `request.Request.Applicant.Addresses.[].Line5` **Added**\n* `Apideck.Ats.Applicants.Get()`:  `response.Data.Addresses.[].Line5` **Added**\n* `Apideck.Ats.Applicants.Update()`: \n  *  `request.Request.Applicant.Addresses.[].Line5` **Added**\n* `Apideck.Crm.Companies.List()`:  `response.Data.[].Addresses.[].Line5` **Added**\n* `Apideck.Crm.Companies.Create()`: \n  *  `request.Request.Company1.Addresses.[].Line5` **Added**\n* `Apideck.Crm.Companies.Get()`:  `response.Data.Addresses.[].Line5` **Added**\n* `Apideck.Crm.Companies.Update()`: \n  *  `request.Request.Company1.Addresses.[].Line5` **Added**\n* `Apideck.Crm.Contacts.List()`:  `response.Data.[].Addresses.[].Line5` **Added**\n* `Apideck.Crm.Contacts.Create()`: \n  *  `request.Request.Contact.Addresses.[].Line5` **Added**\n* `Apideck.Crm.Contacts.Get()`:  `response.Data.Addresses.[].Line5` **Added**\n* `Apideck.Crm.Contacts.Update()`: \n  *  `request.Request.Contact.Addresses.[].Line5` **Added**\n* `Apideck.Crm.Leads.List()`:  `response.Data.[].Addresses.[].Line5` **Added**\n* `Apideck.Crm.Leads.Create()`: \n  *  `request.Request.Lead.Addresses.[].Line5` **Added**\n* `Apideck.Crm.Leads.Get()`:  `response.Data.Addresses.[].Line5` **Added**\n* `Apideck.Crm.Leads.Update()`: \n  *  `request.Request.Lead.Addresses.[].Line5` **Added**\n* `Apideck.Crm.Users.List()`:  `response.Data.[].Addresses.[].Line5` **Added**\n* `Apideck.Crm.Users.Create()`: \n  *  `request.Request.User.Addresses.[].Line5` **Added**\n* `Apideck.Crm.Users.Get()`:  `response.Data.Addresses.[].Line5` **Added**\n* `Apideck.Crm.Users.Update()`: \n  *  `request.Request.User.Addresses.[].Line5` **Added**\n* `Apideck.Crm.Activities.List()`:  `response.Data.[].LocationAddress.Line5` **Added**\n* `Apideck.Crm.Activities.Create()`: \n  *  `request.Request.Activity.LocationAddress.Line5` **Added**\n* `Apideck.Crm.Activities.Get()`:  `response.Data.LocationAddress.Line5` **Added**\n* `Apideck.Crm.Activities.Update()`: \n  *  `request.Request.Activity.LocationAddress.Line5` **Added**\n* `Apideck.Hris.Employees.List()`:  `response.Data.[].Jobs.[].Location.Line5` **Added**\n* `Apideck.Hris.Employees.Create()`: \n  *  `request.Request.Employee.Jobs.[].Location.Line5` **Added**\n* `Apideck.Hris.Employees.Get()`:  `response.Data.Jobs.[].Location.Line5` **Added**\n* `Apideck.Hris.Employees.Update()`: \n  *  `request.Request.Employee.Jobs.[].Location.Line5` **Added**\n* `Apideck.Hris.Companies.List()`:  `response.Data.[].Addresses.[].Line5` **Added**\n* `Apideck.Hris.Companies.Create()`: \n  *  `request.Request.HrisCompany.Addresses.[].Line5` **Added**\n* `Apideck.Hris.Companies.Get()`:  `response.Data.Addresses.[].Line5` **Added**\n* `Apideck.Hris.Companies.Update()`: \n  *  `request.Request.HrisCompany.Addresses.[].Line5` **Added**\n* `Apideck.Hris.EmployeeSchedules.List()`:  `response.Data.Employee.Jobs.[].Location.Line5` **Added**\n"
+releaseNotes: "## Go SDK Changes Detected:\n* `Apideck.Accounting.Invoices.List()`:  `response.Data.[].LineItems.[].ServiceDate` **Added**\n* `Apideck.Accounting.Invoices.Create()`: \n  *  `request.Request.Invoice.LineItems.[].ServiceDate` **Added**\n* `Apideck.Accounting.Invoices.Get()`:  `response.Data.LineItems.[].ServiceDate` **Added**\n* `Apideck.Accounting.Invoices.Update()`: \n  *  `request.Request.Invoice.LineItems.[].ServiceDate` **Added**\n* `Apideck.Accounting.CreditNotes.List()`:  `response.Data.[].LineItems.[].ServiceDate` **Added**\n* `Apideck.Accounting.CreditNotes.Create()`: \n  *  `request.Request.CreditNote.LineItems.[].ServiceDate` **Added**\n* `Apideck.Accounting.CreditNotes.Get()`:  `response.Data.LineItems.[].ServiceDate` **Added**\n* `Apideck.Accounting.CreditNotes.Update()`: \n  *  `request.Request.CreditNote.LineItems.[].ServiceDate` **Added**\n* `Apideck.Accounting.PurchaseOrders.List()`:  `response.Data.[].LineItems.[].ServiceDate` **Added**\n* `Apideck.Accounting.PurchaseOrders.Create()`: \n  *  `request.Request.PurchaseOrder.LineItems.[].ServiceDate` **Added**\n* `Apideck.Accounting.PurchaseOrders.Get()`:  `response.Data.LineItems.[].ServiceDate` **Added**\n* `Apideck.Accounting.PurchaseOrders.Update()`: \n  *  `request.Request.PurchaseOrder.LineItems.[].ServiceDate` **Added**\n* `Apideck.Accounting.Quotes.List()`:  `response.Data.[].LineItems.[].ServiceDate` **Added**\n* `Apideck.Accounting.Quotes.Create()`: \n  *  `request.Request.Quote.LineItems.[].ServiceDate` **Added**\n* `Apideck.Accounting.Quotes.Get()`:  `response.Data.LineItems.[].ServiceDate` **Added**\n* `Apideck.Accounting.Quotes.Update()`: \n  *  `request.Request.Quote.LineItems.[].ServiceDate` **Added**\n* `Apideck.Accounting.Projects.List()`:  `response.Data.[].Active` **Added**\n* `Apideck.Accounting.Projects.Create()`: \n  *  `request.Request.Project.Active` **Added**\n* `Apideck.Accounting.Projects.Get()`:  `response.Data.Active` **Added**\n* `Apideck.Accounting.Projects.Update()`: \n  *  `request.Request.Project.Active` **Added**\n"

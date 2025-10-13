@@ -71,7 +71,7 @@ func (s *Products) List(ctx context.Context, request operations.EcommerceProduct
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "ecommerce.productsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Products) List(ctx context.Context, request operations.EcommerceProduct
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -471,7 +471,7 @@ func (s *Products) Get(ctx context.Context, request operations.EcommerceProducts
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "ecommerce.productsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -518,7 +518,7 @@ func (s *Products) Get(ctx context.Context, request operations.EcommerceProducts
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

@@ -67,7 +67,7 @@ func (s *ConnectionConsent) Update(ctx context.Context, request operations.Vault
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "vault.connectionConsentUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateConsentRequest", "json", `request:"mediaType=application/json"`)
@@ -117,7 +117,7 @@ func (s *ConnectionConsent) Update(ctx context.Context, request operations.Vault
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

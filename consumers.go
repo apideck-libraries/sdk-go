@@ -75,7 +75,7 @@ func (s *Consumers) Create(ctx context.Context, createConsumerRequest components
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "vault.consumersAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateConsumerRequest", "json", `request:"mediaType=application/json"`)
@@ -125,7 +125,7 @@ func (s *Consumers) Create(ctx context.Context, createConsumerRequest components
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -430,7 +430,7 @@ func (s *Consumers) List(ctx context.Context, appID *string, cursor *string, lim
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "vault.consumersAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -477,7 +477,7 @@ func (s *Consumers) List(ctx context.Context, appID *string, cursor *string, lim
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -826,7 +826,7 @@ func (s *Consumers) Get(ctx context.Context, consumerID string, appID *string, o
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "vault.consumersOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -869,7 +869,7 @@ func (s *Consumers) Get(ctx context.Context, consumerID string, appID *string, o
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1174,7 +1174,7 @@ func (s *Consumers) Update(ctx context.Context, consumerID string, updateConsume
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "vault.consumersUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateConsumerRequest", "json", `request:"mediaType=application/json"`)
@@ -1224,7 +1224,7 @@ func (s *Consumers) Update(ctx context.Context, consumerID string, updateConsume
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1528,7 +1528,7 @@ func (s *Consumers) Delete(ctx context.Context, consumerID string, appID *string
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "vault.consumersDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1571,7 +1571,7 @@ func (s *Consumers) Delete(ctx context.Context, consumerID string, appID *string
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

@@ -71,7 +71,7 @@ func (s *Locations) List(ctx context.Context, request operations.AccountingLocat
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.locationsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Locations) List(ctx context.Context, request operations.AccountingLocat
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -470,7 +470,7 @@ func (s *Locations) Create(ctx context.Context, request operations.AccountingLoc
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.locationsAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "AccountingLocation", "json", `request:"mediaType=application/json"`)
@@ -524,7 +524,7 @@ func (s *Locations) Create(ctx context.Context, request operations.AccountingLoc
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -824,7 +824,7 @@ func (s *Locations) Get(ctx context.Context, request operations.AccountingLocati
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.locationsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -871,7 +871,7 @@ func (s *Locations) Get(ctx context.Context, request operations.AccountingLocati
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1171,7 +1171,7 @@ func (s *Locations) Update(ctx context.Context, request operations.AccountingLoc
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.locationsUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "AccountingLocation", "json", `request:"mediaType=application/json"`)
@@ -1225,7 +1225,7 @@ func (s *Locations) Update(ctx context.Context, request operations.AccountingLoc
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1525,7 +1525,7 @@ func (s *Locations) Delete(ctx context.Context, request operations.AccountingLoc
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.locationsDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1572,7 +1572,7 @@ func (s *Locations) Delete(ctx context.Context, request operations.AccountingLoc
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

@@ -68,7 +68,7 @@ func (s *AgedDebtors) Get(ctx context.Context, request operations.AccountingAged
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.agedDebtorsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -115,7 +115,7 @@ func (s *AgedDebtors) Get(ctx context.Context, request operations.AccountingAged
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

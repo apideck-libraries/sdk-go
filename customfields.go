@@ -67,7 +67,7 @@ func (s *CustomFields) List(ctx context.Context, request operations.VaultCustomF
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "vault.customFieldsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -114,7 +114,7 @@ func (s *CustomFields) List(ctx context.Context, request operations.VaultCustomF
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

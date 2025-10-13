@@ -71,7 +71,7 @@ func (s *Activities) List(ctx context.Context, request operations.CrmActivitiesA
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.activitiesAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Activities) List(ctx context.Context, request operations.CrmActivitiesA
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -472,7 +472,7 @@ func (s *Activities) Create(ctx context.Context, request operations.CrmActivitie
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.activitiesAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Activity", "json", `request:"mediaType=application/json"`)
@@ -526,7 +526,7 @@ func (s *Activities) Create(ctx context.Context, request operations.CrmActivitie
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -826,7 +826,7 @@ func (s *Activities) Get(ctx context.Context, request operations.CrmActivitiesOn
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.activitiesOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -873,7 +873,7 @@ func (s *Activities) Get(ctx context.Context, request operations.CrmActivitiesOn
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1173,7 +1173,7 @@ func (s *Activities) Update(ctx context.Context, request operations.CrmActivitie
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.activitiesUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Activity", "json", `request:"mediaType=application/json"`)
@@ -1227,7 +1227,7 @@ func (s *Activities) Update(ctx context.Context, request operations.CrmActivitie
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1527,7 +1527,7 @@ func (s *Activities) Delete(ctx context.Context, request operations.CrmActivitie
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.activitiesDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1574,7 +1574,7 @@ func (s *Activities) Delete(ctx context.Context, request operations.CrmActivitie
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

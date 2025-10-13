@@ -70,7 +70,7 @@ func (s *Attachments) List(ctx context.Context, request operations.AccountingAtt
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.attachmentsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -117,7 +117,7 @@ func (s *Attachments) List(ctx context.Context, request operations.AccountingAtt
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -469,7 +469,7 @@ func (s *Attachments) Upload(ctx context.Context, request operations.AccountingA
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.attachmentsUpload",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RequestBody", "raw", `request:"mediaType=*/*"`)
@@ -523,7 +523,7 @@ func (s *Attachments) Upload(ctx context.Context, request operations.AccountingA
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -823,7 +823,7 @@ func (s *Attachments) Get(ctx context.Context, request operations.AccountingAtta
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.attachmentsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -870,7 +870,7 @@ func (s *Attachments) Get(ctx context.Context, request operations.AccountingAtta
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1170,7 +1170,7 @@ func (s *Attachments) Delete(ctx context.Context, request operations.AccountingA
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.attachmentsDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1217,7 +1217,7 @@ func (s *Attachments) Delete(ctx context.Context, request operations.AccountingA
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1518,7 +1518,7 @@ func (s *Attachments) Download(ctx context.Context, request operations.Accountin
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.attachmentsDownload",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1570,7 +1570,7 @@ func (s *Attachments) Download(ctx context.Context, request operations.Accountin
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

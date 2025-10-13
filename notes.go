@@ -71,7 +71,7 @@ func (s *Notes) List(ctx context.Context, request operations.CrmNotesAllRequest,
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.notesAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Notes) List(ctx context.Context, request operations.CrmNotesAllRequest,
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -470,7 +470,7 @@ func (s *Notes) Create(ctx context.Context, request operations.CrmNotesAddReques
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.notesAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Note", "json", `request:"mediaType=application/json"`)
@@ -524,7 +524,7 @@ func (s *Notes) Create(ctx context.Context, request operations.CrmNotesAddReques
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -824,7 +824,7 @@ func (s *Notes) Get(ctx context.Context, request operations.CrmNotesOneRequest, 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.notesOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -871,7 +871,7 @@ func (s *Notes) Get(ctx context.Context, request operations.CrmNotesOneRequest, 
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1171,7 +1171,7 @@ func (s *Notes) Update(ctx context.Context, request operations.CrmNotesUpdateReq
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.notesUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Note", "json", `request:"mediaType=application/json"`)
@@ -1225,7 +1225,7 @@ func (s *Notes) Update(ctx context.Context, request operations.CrmNotesUpdateReq
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1525,7 +1525,7 @@ func (s *Notes) Delete(ctx context.Context, request operations.CrmNotesDeleteReq
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.notesDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1572,7 +1572,7 @@ func (s *Notes) Delete(ctx context.Context, request operations.CrmNotesDeleteReq
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

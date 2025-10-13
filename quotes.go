@@ -71,7 +71,7 @@ func (s *Quotes) List(ctx context.Context, request operations.AccountingQuotesAl
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.quotesAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Quotes) List(ctx context.Context, request operations.AccountingQuotesAl
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -468,7 +468,7 @@ func (s *Quotes) Create(ctx context.Context, request operations.AccountingQuotes
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.quotesAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Quote", "json", `request:"mediaType=application/json"`)
@@ -522,7 +522,7 @@ func (s *Quotes) Create(ctx context.Context, request operations.AccountingQuotes
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -822,7 +822,7 @@ func (s *Quotes) Get(ctx context.Context, request operations.AccountingQuotesOne
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.quotesOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -869,7 +869,7 @@ func (s *Quotes) Get(ctx context.Context, request operations.AccountingQuotesOne
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1169,7 +1169,7 @@ func (s *Quotes) Update(ctx context.Context, request operations.AccountingQuotes
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.quotesUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Quote", "json", `request:"mediaType=application/json"`)
@@ -1223,7 +1223,7 @@ func (s *Quotes) Update(ctx context.Context, request operations.AccountingQuotes
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1523,7 +1523,7 @@ func (s *Quotes) Delete(ctx context.Context, request operations.AccountingQuotes
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.quotesDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1570,7 +1570,7 @@ func (s *Quotes) Delete(ctx context.Context, request operations.AccountingQuotes
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

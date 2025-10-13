@@ -71,7 +71,7 @@ func (s *Leads) List(ctx context.Context, request operations.CrmLeadsAllRequest,
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.leadsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Leads) List(ctx context.Context, request operations.CrmLeadsAllRequest,
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -472,7 +472,7 @@ func (s *Leads) Create(ctx context.Context, request operations.CrmLeadsAddReques
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.leadsAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Lead", "json", `request:"mediaType=application/json"`)
@@ -526,7 +526,7 @@ func (s *Leads) Create(ctx context.Context, request operations.CrmLeadsAddReques
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -826,7 +826,7 @@ func (s *Leads) Get(ctx context.Context, request operations.CrmLeadsOneRequest, 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.leadsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -873,7 +873,7 @@ func (s *Leads) Get(ctx context.Context, request operations.CrmLeadsOneRequest, 
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1173,7 +1173,7 @@ func (s *Leads) Update(ctx context.Context, request operations.CrmLeadsUpdateReq
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.leadsUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Lead", "json", `request:"mediaType=application/json"`)
@@ -1227,7 +1227,7 @@ func (s *Leads) Update(ctx context.Context, request operations.CrmLeadsUpdateReq
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1527,7 +1527,7 @@ func (s *Leads) Delete(ctx context.Context, request operations.CrmLeadsDeleteReq
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.leadsDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1574,7 +1574,7 @@ func (s *Leads) Delete(ctx context.Context, request operations.CrmLeadsDeleteReq
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

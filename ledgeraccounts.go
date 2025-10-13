@@ -71,7 +71,7 @@ func (s *LedgerAccounts) List(ctx context.Context, request operations.Accounting
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.ledgerAccountsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *LedgerAccounts) List(ctx context.Context, request operations.Accounting
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -472,7 +472,7 @@ func (s *LedgerAccounts) Create(ctx context.Context, request operations.Accounti
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.ledgerAccountsAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "LedgerAccount", "json", `request:"mediaType=application/json"`)
@@ -526,7 +526,7 @@ func (s *LedgerAccounts) Create(ctx context.Context, request operations.Accounti
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -826,7 +826,7 @@ func (s *LedgerAccounts) Get(ctx context.Context, request operations.AccountingL
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.ledgerAccountsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -873,7 +873,7 @@ func (s *LedgerAccounts) Get(ctx context.Context, request operations.AccountingL
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1173,7 +1173,7 @@ func (s *LedgerAccounts) Update(ctx context.Context, request operations.Accounti
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.ledgerAccountsUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "LedgerAccount", "json", `request:"mediaType=application/json"`)
@@ -1227,7 +1227,7 @@ func (s *LedgerAccounts) Update(ctx context.Context, request operations.Accounti
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1527,7 +1527,7 @@ func (s *LedgerAccounts) Delete(ctx context.Context, request operations.Accounti
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.ledgerAccountsDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1574,7 +1574,7 @@ func (s *LedgerAccounts) Delete(ctx context.Context, request operations.Accounti
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
