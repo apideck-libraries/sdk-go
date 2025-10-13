@@ -71,7 +71,7 @@ func (s *TrackingCategories) List(ctx context.Context, request operations.Accoun
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.trackingCategoriesAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *TrackingCategories) List(ctx context.Context, request operations.Accoun
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -470,7 +470,7 @@ func (s *TrackingCategories) Create(ctx context.Context, request operations.Acco
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.trackingCategoriesAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "TrackingCategory", "json", `request:"mediaType=application/json"`)
@@ -524,7 +524,7 @@ func (s *TrackingCategories) Create(ctx context.Context, request operations.Acco
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -824,7 +824,7 @@ func (s *TrackingCategories) Get(ctx context.Context, request operations.Account
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.trackingCategoriesOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -871,7 +871,7 @@ func (s *TrackingCategories) Get(ctx context.Context, request operations.Account
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1171,7 +1171,7 @@ func (s *TrackingCategories) Update(ctx context.Context, request operations.Acco
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.trackingCategoriesUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "TrackingCategory", "json", `request:"mediaType=application/json"`)
@@ -1225,7 +1225,7 @@ func (s *TrackingCategories) Update(ctx context.Context, request operations.Acco
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1525,7 +1525,7 @@ func (s *TrackingCategories) Delete(ctx context.Context, request operations.Acco
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.trackingCategoriesDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1572,7 +1572,7 @@ func (s *TrackingCategories) Delete(ctx context.Context, request operations.Acco
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

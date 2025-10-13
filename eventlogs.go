@@ -77,7 +77,7 @@ func (s *EventLogs) List(ctx context.Context, appID *string, cursor *string, lim
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "webhook.eventLogsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -124,7 +124,7 @@ func (s *EventLogs) List(ctx context.Context, appID *string, cursor *string, lim
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

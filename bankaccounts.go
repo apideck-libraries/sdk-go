@@ -71,7 +71,7 @@ func (s *BankAccounts) List(ctx context.Context, request operations.AccountingBa
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.bankAccountsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *BankAccounts) List(ctx context.Context, request operations.AccountingBa
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -472,7 +472,7 @@ func (s *BankAccounts) Create(ctx context.Context, request operations.Accounting
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.bankAccountsAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "AccountingBankAccount", "json", `request:"mediaType=application/json"`)
@@ -526,7 +526,7 @@ func (s *BankAccounts) Create(ctx context.Context, request operations.Accounting
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -826,7 +826,7 @@ func (s *BankAccounts) Get(ctx context.Context, request operations.AccountingBan
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.bankAccountsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -873,7 +873,7 @@ func (s *BankAccounts) Get(ctx context.Context, request operations.AccountingBan
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1173,7 +1173,7 @@ func (s *BankAccounts) Update(ctx context.Context, request operations.Accounting
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.bankAccountsUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "AccountingBankAccount", "json", `request:"mediaType=application/json"`)
@@ -1227,7 +1227,7 @@ func (s *BankAccounts) Update(ctx context.Context, request operations.Accounting
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1527,7 +1527,7 @@ func (s *BankAccounts) Delete(ctx context.Context, request operations.Accounting
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.bankAccountsDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1574,7 +1574,7 @@ func (s *BankAccounts) Delete(ctx context.Context, request operations.Accounting
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

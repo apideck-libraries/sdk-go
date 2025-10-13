@@ -71,7 +71,7 @@ func (s *Drives) List(ctx context.Context, request operations.FileStorageDrivesA
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.drivesAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Drives) List(ctx context.Context, request operations.FileStorageDrivesA
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -470,7 +470,7 @@ func (s *Drives) Create(ctx context.Context, request operations.FileStorageDrive
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.drivesAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Drive", "json", `request:"mediaType=application/json"`)
@@ -524,7 +524,7 @@ func (s *Drives) Create(ctx context.Context, request operations.FileStorageDrive
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -824,7 +824,7 @@ func (s *Drives) Get(ctx context.Context, request operations.FileStorageDrivesOn
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.drivesOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -871,7 +871,7 @@ func (s *Drives) Get(ctx context.Context, request operations.FileStorageDrivesOn
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1171,7 +1171,7 @@ func (s *Drives) Update(ctx context.Context, request operations.FileStorageDrive
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.drivesUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Drive", "json", `request:"mediaType=application/json"`)
@@ -1225,7 +1225,7 @@ func (s *Drives) Update(ctx context.Context, request operations.FileStorageDrive
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1525,7 +1525,7 @@ func (s *Drives) Delete(ctx context.Context, request operations.FileStorageDrive
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.drivesDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1572,7 +1572,7 @@ func (s *Drives) Delete(ctx context.Context, request operations.FileStorageDrive
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

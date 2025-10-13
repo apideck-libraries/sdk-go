@@ -71,7 +71,7 @@ func (s *Payments) List(ctx context.Context, request operations.AccountingPaymen
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.paymentsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Payments) List(ctx context.Context, request operations.AccountingPaymen
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -472,7 +472,7 @@ func (s *Payments) Create(ctx context.Context, request operations.AccountingPaym
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.paymentsAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Payment", "json", `request:"mediaType=application/json"`)
@@ -526,7 +526,7 @@ func (s *Payments) Create(ctx context.Context, request operations.AccountingPaym
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -826,7 +826,7 @@ func (s *Payments) Get(ctx context.Context, request operations.AccountingPayment
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.paymentsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -873,7 +873,7 @@ func (s *Payments) Get(ctx context.Context, request operations.AccountingPayment
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1173,7 +1173,7 @@ func (s *Payments) Update(ctx context.Context, request operations.AccountingPaym
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.paymentsUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Payment", "json", `request:"mediaType=application/json"`)
@@ -1227,7 +1227,7 @@ func (s *Payments) Update(ctx context.Context, request operations.AccountingPaym
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1527,7 +1527,7 @@ func (s *Payments) Delete(ctx context.Context, request operations.AccountingPaym
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.paymentsDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1574,7 +1574,7 @@ func (s *Payments) Delete(ctx context.Context, request operations.AccountingPaym
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

@@ -67,7 +67,7 @@ func (s *ConnectionSettings) List(ctx context.Context, request operations.VaultC
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "vault.connectionSettingsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -110,7 +110,7 @@ func (s *ConnectionSettings) List(ctx context.Context, request operations.VaultC
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -410,7 +410,7 @@ func (s *ConnectionSettings) Update(ctx context.Context, request operations.Vaul
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "vault.connectionSettingsUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Connection", "json", `request:"mediaType=application/json"`)
@@ -460,7 +460,7 @@ func (s *ConnectionSettings) Update(ctx context.Context, request operations.Vaul
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

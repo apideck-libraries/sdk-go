@@ -77,7 +77,7 @@ func (s *Apis) List(ctx context.Context, appID *string, cursor *string, limit *i
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "connector.apisAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -124,7 +124,7 @@ func (s *Apis) List(ctx context.Context, appID *string, cursor *string, limit *i
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -432,7 +432,7 @@ func (s *Apis) Get(ctx context.Context, id string, appID *string, opts ...operat
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "connector.apisOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -475,7 +475,7 @@ func (s *Apis) Get(ctx context.Context, id string, appID *string, opts ...operat
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

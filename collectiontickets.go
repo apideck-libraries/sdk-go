@@ -70,7 +70,7 @@ func (s *CollectionTickets) List(ctx context.Context, request operations.IssueTr
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "issueTracking.collectionTicketsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -117,7 +117,7 @@ func (s *CollectionTickets) List(ctx context.Context, request operations.IssueTr
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -472,7 +472,7 @@ func (s *CollectionTickets) Create(ctx context.Context, request operations.Issue
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "issueTracking.collectionTicketsAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Ticket", "json", `request:"mediaType=application/json"`)
@@ -526,7 +526,7 @@ func (s *CollectionTickets) Create(ctx context.Context, request operations.Issue
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -826,7 +826,7 @@ func (s *CollectionTickets) Get(ctx context.Context, request operations.IssueTra
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "issueTracking.collectionTicketsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -873,7 +873,7 @@ func (s *CollectionTickets) Get(ctx context.Context, request operations.IssueTra
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1173,7 +1173,7 @@ func (s *CollectionTickets) Update(ctx context.Context, request operations.Issue
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "issueTracking.collectionTicketsUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Ticket", "json", `request:"mediaType=application/json"`)
@@ -1227,7 +1227,7 @@ func (s *CollectionTickets) Update(ctx context.Context, request operations.Issue
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1527,7 +1527,7 @@ func (s *CollectionTickets) Delete(ctx context.Context, request operations.Issue
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "issueTracking.collectionTicketsDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1574,7 +1574,7 @@ func (s *CollectionTickets) Delete(ctx context.Context, request operations.Issue
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

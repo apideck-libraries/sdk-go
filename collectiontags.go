@@ -70,7 +70,7 @@ func (s *CollectionTags) List(ctx context.Context, request operations.IssueTrack
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "issueTracking.collectionTagsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -117,7 +117,7 @@ func (s *CollectionTags) List(ctx context.Context, request operations.IssueTrack
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

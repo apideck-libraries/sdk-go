@@ -71,7 +71,7 @@ func (s *JournalEntries) List(ctx context.Context, request operations.Accounting
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.journalEntriesAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *JournalEntries) List(ctx context.Context, request operations.Accounting
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -472,7 +472,7 @@ func (s *JournalEntries) Create(ctx context.Context, request operations.Accounti
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.journalEntriesAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "JournalEntry", "json", `request:"mediaType=application/json"`)
@@ -526,7 +526,7 @@ func (s *JournalEntries) Create(ctx context.Context, request operations.Accounti
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -826,7 +826,7 @@ func (s *JournalEntries) Get(ctx context.Context, request operations.AccountingJ
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.journalEntriesOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -873,7 +873,7 @@ func (s *JournalEntries) Get(ctx context.Context, request operations.AccountingJ
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1173,7 +1173,7 @@ func (s *JournalEntries) Update(ctx context.Context, request operations.Accounti
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.journalEntriesUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "JournalEntry", "json", `request:"mediaType=application/json"`)
@@ -1227,7 +1227,7 @@ func (s *JournalEntries) Update(ctx context.Context, request operations.Accounti
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1527,7 +1527,7 @@ func (s *JournalEntries) Delete(ctx context.Context, request operations.Accounti
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.journalEntriesDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1574,7 +1574,7 @@ func (s *JournalEntries) Delete(ctx context.Context, request operations.Accounti
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

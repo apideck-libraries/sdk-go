@@ -71,7 +71,7 @@ func (s *TaxRates) List(ctx context.Context, request operations.AccountingTaxRat
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.taxRatesAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *TaxRates) List(ctx context.Context, request operations.AccountingTaxRat
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -471,7 +471,7 @@ func (s *TaxRates) Create(ctx context.Context, request operations.AccountingTaxR
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.taxRatesAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "TaxRate", "json", `request:"mediaType=application/json"`)
@@ -525,7 +525,7 @@ func (s *TaxRates) Create(ctx context.Context, request operations.AccountingTaxR
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -825,7 +825,7 @@ func (s *TaxRates) Get(ctx context.Context, request operations.AccountingTaxRate
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.taxRatesOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -872,7 +872,7 @@ func (s *TaxRates) Get(ctx context.Context, request operations.AccountingTaxRate
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1172,7 +1172,7 @@ func (s *TaxRates) Update(ctx context.Context, request operations.AccountingTaxR
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.taxRatesUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "TaxRate", "json", `request:"mediaType=application/json"`)
@@ -1226,7 +1226,7 @@ func (s *TaxRates) Update(ctx context.Context, request operations.AccountingTaxR
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1526,7 +1526,7 @@ func (s *TaxRates) Delete(ctx context.Context, request operations.AccountingTaxR
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.taxRatesDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1573,7 +1573,7 @@ func (s *TaxRates) Delete(ctx context.Context, request operations.AccountingTaxR
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

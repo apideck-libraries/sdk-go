@@ -71,7 +71,7 @@ func (s *Applications) List(ctx context.Context, request operations.AtsApplicati
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "ats.applicationsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Applications) List(ctx context.Context, request operations.AtsApplicati
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -469,7 +469,7 @@ func (s *Applications) Create(ctx context.Context, request operations.AtsApplica
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "ats.applicationsAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Application", "json", `request:"mediaType=application/json"`)
@@ -523,7 +523,7 @@ func (s *Applications) Create(ctx context.Context, request operations.AtsApplica
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -823,7 +823,7 @@ func (s *Applications) Get(ctx context.Context, request operations.AtsApplicatio
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "ats.applicationsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -870,7 +870,7 @@ func (s *Applications) Get(ctx context.Context, request operations.AtsApplicatio
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1170,7 +1170,7 @@ func (s *Applications) Update(ctx context.Context, request operations.AtsApplica
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "ats.applicationsUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Application", "json", `request:"mediaType=application/json"`)
@@ -1224,7 +1224,7 @@ func (s *Applications) Update(ctx context.Context, request operations.AtsApplica
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1524,7 +1524,7 @@ func (s *Applications) Delete(ctx context.Context, request operations.AtsApplica
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "ats.applicationsDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1571,7 +1571,7 @@ func (s *Applications) Delete(ctx context.Context, request operations.AtsApplica
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

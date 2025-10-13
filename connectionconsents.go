@@ -74,7 +74,7 @@ func (s *ConnectionConsents) List(ctx context.Context, serviceID string, unified
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "vault.connectionConsentsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -117,7 +117,7 @@ func (s *ConnectionConsents) List(ctx context.Context, serviceID string, unified
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

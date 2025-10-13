@@ -23,8 +23,8 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/apideck-libraries/sdk-go"
 	"os"
+	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/operations"
@@ -112,8 +112,8 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/apideck-libraries/sdk-go"
 	"os"
+	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/operations"
@@ -137,6 +137,7 @@ func main() {
             ReferenceID: sdkgo.Pointer("WD-REF-2024-001"),
             Description: sdkgo.Pointer("Complete redesign of the company website including new branding and improved user experience"),
             Status: components.ProjectProjectStatusActive.ToPointer(),
+            Active: sdkgo.Pointer(true),
             ProjectType: components.ProjectTypeClientProject.ToPointer(),
             Priority: components.PriorityHigh.ToPointer(),
             CompletionPercentage: sdkgo.Pointer[float64](75.5),
@@ -272,8 +273,8 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/apideck-libraries/sdk-go"
 	"os"
+	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -335,8 +336,8 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/apideck-libraries/sdk-go"
 	"os"
+	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/operations"
@@ -361,6 +362,7 @@ func main() {
             ReferenceID: sdkgo.Pointer("WD-REF-2024-001"),
             Description: sdkgo.Pointer("Complete redesign of the company website including new branding and improved user experience"),
             Status: components.ProjectProjectStatusActive.ToPointer(),
+            Active: sdkgo.Pointer(true),
             ProjectType: components.ProjectTypeClientProject.ToPointer(),
             Priority: components.PriorityHigh.ToPointer(),
             CompletionPercentage: sdkgo.Pointer[float64](75.5),
@@ -492,8 +494,8 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/apideck-libraries/sdk-go"
 	"os"
+	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )

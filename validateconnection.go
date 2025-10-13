@@ -72,7 +72,7 @@ func (s *ValidateConnection) State(ctx context.Context, request operations.Vault
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "vault.validateConnectionState",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -122,7 +122,7 @@ func (s *ValidateConnection) State(ctx context.Context, request operations.Vault
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

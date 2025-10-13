@@ -71,7 +71,7 @@ func (s *ApideckDepartments) List(ctx context.Context, request operations.HrisDe
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.departmentsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *ApideckDepartments) List(ctx context.Context, request operations.HrisDe
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -470,7 +470,7 @@ func (s *ApideckDepartments) Create(ctx context.Context, request operations.Hris
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.departmentsAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Department", "json", `request:"mediaType=application/json"`)
@@ -524,7 +524,7 @@ func (s *ApideckDepartments) Create(ctx context.Context, request operations.Hris
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -824,7 +824,7 @@ func (s *ApideckDepartments) Get(ctx context.Context, request operations.HrisDep
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.departmentsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -871,7 +871,7 @@ func (s *ApideckDepartments) Get(ctx context.Context, request operations.HrisDep
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1171,7 +1171,7 @@ func (s *ApideckDepartments) Update(ctx context.Context, request operations.Hris
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.departmentsUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Department", "json", `request:"mediaType=application/json"`)
@@ -1225,7 +1225,7 @@ func (s *ApideckDepartments) Update(ctx context.Context, request operations.Hris
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1525,7 +1525,7 @@ func (s *ApideckDepartments) Delete(ctx context.Context, request operations.Hris
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.departmentsDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1572,7 +1572,7 @@ func (s *ApideckDepartments) Delete(ctx context.Context, request operations.Hris
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

@@ -67,7 +67,7 @@ func (s *UploadSessions) Create(ctx context.Context, request operations.FileStor
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.uploadSessionsAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateUploadSessionRequest", "json", `request:"mediaType=application/json"`)
@@ -121,7 +121,7 @@ func (s *UploadSessions) Create(ctx context.Context, request operations.FileStor
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -420,7 +420,7 @@ func (s *UploadSessions) Get(ctx context.Context, request operations.FileStorage
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.uploadSessionsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -467,7 +467,7 @@ func (s *UploadSessions) Get(ctx context.Context, request operations.FileStorage
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -766,7 +766,7 @@ func (s *UploadSessions) Upload(ctx context.Context, request operations.FileStor
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.uploadSessionsUpload",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RequestBody", "raw", `request:"mediaType=*/*"`)
@@ -820,7 +820,7 @@ func (s *UploadSessions) Upload(ctx context.Context, request operations.FileStor
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1120,7 +1120,7 @@ func (s *UploadSessions) Delete(ctx context.Context, request operations.FileStor
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.uploadSessionsDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1167,7 +1167,7 @@ func (s *UploadSessions) Delete(ctx context.Context, request operations.FileStor
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1466,7 +1466,7 @@ func (s *UploadSessions) Finish(ctx context.Context, request operations.FileStor
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.uploadSessionsFinish",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -1520,7 +1520,7 @@ func (s *UploadSessions) Finish(ctx context.Context, request operations.FileStor
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

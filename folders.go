@@ -68,7 +68,7 @@ func (s *Folders) Create(ctx context.Context, request operations.FileStorageFold
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.foldersAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateFolderRequest", "json", `request:"mediaType=application/json"`)
@@ -122,7 +122,7 @@ func (s *Folders) Create(ctx context.Context, request operations.FileStorageFold
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -422,7 +422,7 @@ func (s *Folders) Get(ctx context.Context, request operations.FileStorageFolders
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.foldersOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -469,7 +469,7 @@ func (s *Folders) Get(ctx context.Context, request operations.FileStorageFolders
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -769,7 +769,7 @@ func (s *Folders) Update(ctx context.Context, request operations.FileStorageFold
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.foldersUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateFolderRequest", "json", `request:"mediaType=application/json"`)
@@ -823,7 +823,7 @@ func (s *Folders) Update(ctx context.Context, request operations.FileStorageFold
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1123,7 +1123,7 @@ func (s *Folders) Delete(ctx context.Context, request operations.FileStorageFold
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.foldersDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1170,7 +1170,7 @@ func (s *Folders) Delete(ctx context.Context, request operations.FileStorageFold
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1470,7 +1470,7 @@ func (s *Folders) Copy(ctx context.Context, request operations.FileStorageFolder
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.foldersCopy",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CopyFolderRequest", "json", `request:"mediaType=application/json"`)
@@ -1524,7 +1524,7 @@ func (s *Folders) Copy(ctx context.Context, request operations.FileStorageFolder
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

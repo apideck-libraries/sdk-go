@@ -14,12 +14,14 @@ import (
 type ProjectProjectStatus string
 
 const (
-	ProjectProjectStatusActive    ProjectProjectStatus = "active"
-	ProjectProjectStatusCompleted ProjectProjectStatus = "completed"
-	ProjectProjectStatusOnHold    ProjectProjectStatus = "on_hold"
-	ProjectProjectStatusCancelled ProjectProjectStatus = "cancelled"
-	ProjectProjectStatusDraft     ProjectProjectStatus = "draft"
-	ProjectProjectStatusOther     ProjectProjectStatus = "other"
+	ProjectProjectStatusActive     ProjectProjectStatus = "active"
+	ProjectProjectStatusCompleted  ProjectProjectStatus = "completed"
+	ProjectProjectStatusOnHold     ProjectProjectStatus = "on_hold"
+	ProjectProjectStatusCancelled  ProjectProjectStatus = "cancelled"
+	ProjectProjectStatusDraft      ProjectProjectStatus = "draft"
+	ProjectProjectStatusInProgress ProjectProjectStatus = "in_progress"
+	ProjectProjectStatusApproved   ProjectProjectStatus = "approved"
+	ProjectProjectStatusOther      ProjectProjectStatus = "other"
 )
 
 func (e ProjectProjectStatus) ToPointer() *ProjectProjectStatus {
@@ -40,6 +42,10 @@ func (e *ProjectProjectStatus) UnmarshalJSON(data []byte) error {
 	case "cancelled":
 		fallthrough
 	case "draft":
+		fallthrough
+	case "in_progress":
+		fallthrough
+	case "approved":
 		fallthrough
 	case "other":
 		*e = ProjectProjectStatus(v)
@@ -288,6 +294,8 @@ type Project struct {
 	Description *string `json:"description,omitempty"`
 	// Current status of the project
 	Status *ProjectProjectStatus `json:"status,omitempty"`
+	// Indicates whether the project is currently active or inactive
+	Active *bool `json:"active,omitempty"`
 	// Type or category of the project
 	ProjectType *ProjectType `json:"project_type,omitempty"`
 	// Priority level of the project
@@ -416,6 +424,13 @@ func (p *Project) GetStatus() *ProjectProjectStatus {
 		return nil
 	}
 	return p.Status
+}
+
+func (p *Project) GetActive() *bool {
+	if p == nil {
+		return nil
+	}
+	return p.Active
 }
 
 func (p *Project) GetProjectType() *ProjectType {
@@ -674,6 +689,8 @@ type ProjectInput struct {
 	Description *string `json:"description,omitempty"`
 	// Current status of the project
 	Status *ProjectProjectStatus `json:"status,omitempty"`
+	// Indicates whether the project is currently active or inactive
+	Active *bool `json:"active,omitempty"`
 	// Type or category of the project
 	ProjectType *ProjectType `json:"project_type,omitempty"`
 	// Priority level of the project
@@ -776,6 +793,13 @@ func (p *ProjectInput) GetStatus() *ProjectProjectStatus {
 		return nil
 	}
 	return p.Status
+}
+
+func (p *ProjectInput) GetActive() *bool {
+	if p == nil {
+		return nil
+	}
+	return p.Active
 }
 
 func (p *ProjectInput) GetProjectType() *ProjectType {

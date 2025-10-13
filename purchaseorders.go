@@ -71,7 +71,7 @@ func (s *PurchaseOrders) List(ctx context.Context, request operations.Accounting
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.purchaseOrdersAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *PurchaseOrders) List(ctx context.Context, request operations.Accounting
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -471,7 +471,7 @@ func (s *PurchaseOrders) Create(ctx context.Context, request operations.Accounti
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.purchaseOrdersAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "PurchaseOrder", "json", `request:"mediaType=application/json"`)
@@ -525,7 +525,7 @@ func (s *PurchaseOrders) Create(ctx context.Context, request operations.Accounti
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -825,7 +825,7 @@ func (s *PurchaseOrders) Get(ctx context.Context, request operations.AccountingP
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.purchaseOrdersOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -872,7 +872,7 @@ func (s *PurchaseOrders) Get(ctx context.Context, request operations.AccountingP
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1172,7 +1172,7 @@ func (s *PurchaseOrders) Update(ctx context.Context, request operations.Accounti
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.purchaseOrdersUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "PurchaseOrder", "json", `request:"mediaType=application/json"`)
@@ -1226,7 +1226,7 @@ func (s *PurchaseOrders) Update(ctx context.Context, request operations.Accounti
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1526,7 +1526,7 @@ func (s *PurchaseOrders) Delete(ctx context.Context, request operations.Accounti
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.purchaseOrdersDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1573,7 +1573,7 @@ func (s *PurchaseOrders) Delete(ctx context.Context, request operations.Accounti
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

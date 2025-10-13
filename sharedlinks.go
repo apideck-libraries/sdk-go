@@ -71,7 +71,7 @@ func (s *SharedLinks) List(ctx context.Context, request operations.FileStorageSh
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.sharedLinksAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *SharedLinks) List(ctx context.Context, request operations.FileStorageSh
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -470,7 +470,7 @@ func (s *SharedLinks) Create(ctx context.Context, request operations.FileStorage
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.sharedLinksAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "SharedLink", "json", `request:"mediaType=application/json"`)
@@ -524,7 +524,7 @@ func (s *SharedLinks) Create(ctx context.Context, request operations.FileStorage
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -824,7 +824,7 @@ func (s *SharedLinks) Get(ctx context.Context, request operations.FileStorageSha
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.sharedLinksOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -871,7 +871,7 @@ func (s *SharedLinks) Get(ctx context.Context, request operations.FileStorageSha
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1171,7 +1171,7 @@ func (s *SharedLinks) Update(ctx context.Context, request operations.FileStorage
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.sharedLinksUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "SharedLink", "json", `request:"mediaType=application/json"`)
@@ -1225,7 +1225,7 @@ func (s *SharedLinks) Update(ctx context.Context, request operations.FileStorage
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1525,7 +1525,7 @@ func (s *SharedLinks) Delete(ctx context.Context, request operations.FileStorage
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.sharedLinksDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1572,7 +1572,7 @@ func (s *SharedLinks) Delete(ctx context.Context, request operations.FileStorage
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

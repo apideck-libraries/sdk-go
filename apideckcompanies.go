@@ -71,7 +71,7 @@ func (s *ApideckCompanies) List(ctx context.Context, request operations.HrisComp
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.companiesAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *ApideckCompanies) List(ctx context.Context, request operations.HrisComp
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -470,7 +470,7 @@ func (s *ApideckCompanies) Create(ctx context.Context, request operations.HrisCo
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.companiesAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "HrisCompany", "json", `request:"mediaType=application/json"`)
@@ -524,7 +524,7 @@ func (s *ApideckCompanies) Create(ctx context.Context, request operations.HrisCo
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -824,7 +824,7 @@ func (s *ApideckCompanies) Get(ctx context.Context, request operations.HrisCompa
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.companiesOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -871,7 +871,7 @@ func (s *ApideckCompanies) Get(ctx context.Context, request operations.HrisCompa
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1171,7 +1171,7 @@ func (s *ApideckCompanies) Update(ctx context.Context, request operations.HrisCo
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.companiesUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "HrisCompany", "json", `request:"mediaType=application/json"`)
@@ -1225,7 +1225,7 @@ func (s *ApideckCompanies) Update(ctx context.Context, request operations.HrisCo
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1525,7 +1525,7 @@ func (s *ApideckCompanies) Delete(ctx context.Context, request operations.HrisCo
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.companiesDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1572,7 +1572,7 @@ func (s *ApideckCompanies) Delete(ctx context.Context, request operations.HrisCo
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

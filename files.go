@@ -71,7 +71,7 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.filesAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -472,7 +472,7 @@ func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesS
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.filesSearch",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "FilesSearch", "json", `request:"mediaType=application/json"`)
@@ -526,7 +526,7 @@ func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesS
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -826,7 +826,7 @@ func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneR
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.filesOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -873,7 +873,7 @@ func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneR
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1173,7 +1173,7 @@ func (s *Files) Update(ctx context.Context, request operations.FileStorageFilesU
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.filesUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateFileRequest", "json", `request:"mediaType=application/json"`)
@@ -1227,7 +1227,7 @@ func (s *Files) Update(ctx context.Context, request operations.FileStorageFilesU
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1527,7 +1527,7 @@ func (s *Files) Delete(ctx context.Context, request operations.FileStorageFilesD
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.filesDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1574,7 +1574,7 @@ func (s *Files) Delete(ctx context.Context, request operations.FileStorageFilesD
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1875,7 +1875,7 @@ func (s *Files) Download(ctx context.Context, request operations.FileStorageFile
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.filesDownload",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1927,7 +1927,7 @@ func (s *Files) Download(ctx context.Context, request operations.FileStorageFile
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -2220,7 +2220,7 @@ func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesE
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "fileStorage.filesExport",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2272,7 +2272,7 @@ func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesE
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

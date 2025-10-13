@@ -77,7 +77,7 @@ func (s *Sessions) Create(ctx context.Context, consumerID *string, appID *string
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "vault.sessionsCreate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Session", "json", `request:"mediaType=application/json"`)
@@ -127,7 +127,7 @@ func (s *Sessions) Create(ctx context.Context, consumerID *string, appID *string
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

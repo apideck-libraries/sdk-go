@@ -70,7 +70,7 @@ func (s *CustomObjects) List(ctx context.Context, request operations.CrmCustomOb
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.customObjectsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -117,7 +117,7 @@ func (s *CustomObjects) List(ctx context.Context, request operations.CrmCustomOb
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -470,7 +470,7 @@ func (s *CustomObjects) Create(ctx context.Context, request operations.CrmCustom
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.customObjectsAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CustomObject", "json", `request:"mediaType=application/json"`)
@@ -524,7 +524,7 @@ func (s *CustomObjects) Create(ctx context.Context, request operations.CrmCustom
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -824,7 +824,7 @@ func (s *CustomObjects) Get(ctx context.Context, request operations.CrmCustomObj
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.customObjectsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -871,7 +871,7 @@ func (s *CustomObjects) Get(ctx context.Context, request operations.CrmCustomObj
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1171,7 +1171,7 @@ func (s *CustomObjects) Update(ctx context.Context, request operations.CrmCustom
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.customObjectsUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CustomObject", "json", `request:"mediaType=application/json"`)
@@ -1225,7 +1225,7 @@ func (s *CustomObjects) Update(ctx context.Context, request operations.CrmCustom
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1525,7 +1525,7 @@ func (s *CustomObjects) Delete(ctx context.Context, request operations.CrmCustom
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.customObjectsDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1572,7 +1572,7 @@ func (s *CustomObjects) Delete(ctx context.Context, request operations.CrmCustom
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

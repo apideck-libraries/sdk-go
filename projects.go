@@ -71,7 +71,7 @@ func (s *Projects) List(ctx context.Context, request operations.AccountingProjec
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.projectsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Projects) List(ctx context.Context, request operations.AccountingProjec
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -472,7 +472,7 @@ func (s *Projects) Create(ctx context.Context, request operations.AccountingProj
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.projectsAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Project", "json", `request:"mediaType=application/json"`)
@@ -526,7 +526,7 @@ func (s *Projects) Create(ctx context.Context, request operations.AccountingProj
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -826,7 +826,7 @@ func (s *Projects) Get(ctx context.Context, request operations.AccountingProject
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.projectsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -873,7 +873,7 @@ func (s *Projects) Get(ctx context.Context, request operations.AccountingProject
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1173,7 +1173,7 @@ func (s *Projects) Update(ctx context.Context, request operations.AccountingProj
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.projectsUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Project", "json", `request:"mediaType=application/json"`)
@@ -1227,7 +1227,7 @@ func (s *Projects) Update(ctx context.Context, request operations.AccountingProj
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1527,7 +1527,7 @@ func (s *Projects) Delete(ctx context.Context, request operations.AccountingProj
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.projectsDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1574,7 +1574,7 @@ func (s *Projects) Delete(ctx context.Context, request operations.AccountingProj
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

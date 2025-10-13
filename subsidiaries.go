@@ -71,7 +71,7 @@ func (s *Subsidiaries) List(ctx context.Context, request operations.AccountingSu
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.subsidiariesAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Subsidiaries) List(ctx context.Context, request operations.AccountingSu
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -469,7 +469,7 @@ func (s *Subsidiaries) Create(ctx context.Context, request operations.Accounting
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.subsidiariesAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Subsidiary", "json", `request:"mediaType=application/json"`)
@@ -523,7 +523,7 @@ func (s *Subsidiaries) Create(ctx context.Context, request operations.Accounting
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -823,7 +823,7 @@ func (s *Subsidiaries) Get(ctx context.Context, request operations.AccountingSub
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.subsidiariesOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -870,7 +870,7 @@ func (s *Subsidiaries) Get(ctx context.Context, request operations.AccountingSub
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1170,7 +1170,7 @@ func (s *Subsidiaries) Update(ctx context.Context, request operations.Accounting
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.subsidiariesUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Subsidiary", "json", `request:"mediaType=application/json"`)
@@ -1224,7 +1224,7 @@ func (s *Subsidiaries) Update(ctx context.Context, request operations.Accounting
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1524,7 +1524,7 @@ func (s *Subsidiaries) Delete(ctx context.Context, request operations.Accounting
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.subsidiariesDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1571,7 +1571,7 @@ func (s *Subsidiaries) Delete(ctx context.Context, request operations.Accounting
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

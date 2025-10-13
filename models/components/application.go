@@ -90,7 +90,7 @@ func (a Application) MarshalJSON() ([]byte, error) {
 }
 
 func (a *Application) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &a, "", false, []string{"applicant_id", "job_id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
 		return err
 	}
 	return nil

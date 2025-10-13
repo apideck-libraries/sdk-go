@@ -71,7 +71,7 @@ func (s *Pipelines) List(ctx context.Context, request operations.CrmPipelinesAll
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.pipelinesAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Pipelines) List(ctx context.Context, request operations.CrmPipelinesAll
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -470,7 +470,7 @@ func (s *Pipelines) Create(ctx context.Context, request operations.CrmPipelinesA
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.pipelinesAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Pipeline", "json", `request:"mediaType=application/json"`)
@@ -524,7 +524,7 @@ func (s *Pipelines) Create(ctx context.Context, request operations.CrmPipelinesA
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -824,7 +824,7 @@ func (s *Pipelines) Get(ctx context.Context, request operations.CrmPipelinesOneR
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.pipelinesOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -871,7 +871,7 @@ func (s *Pipelines) Get(ctx context.Context, request operations.CrmPipelinesOneR
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1171,7 +1171,7 @@ func (s *Pipelines) Update(ctx context.Context, request operations.CrmPipelinesU
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.pipelinesUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Pipeline", "json", `request:"mediaType=application/json"`)
@@ -1225,7 +1225,7 @@ func (s *Pipelines) Update(ctx context.Context, request operations.CrmPipelinesU
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1525,7 +1525,7 @@ func (s *Pipelines) Delete(ctx context.Context, request operations.CrmPipelinesD
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "crm.pipelinesDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1572,7 +1572,7 @@ func (s *Pipelines) Delete(ctx context.Context, request operations.CrmPipelinesD
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

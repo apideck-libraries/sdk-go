@@ -67,7 +67,7 @@ func (s *EmployeePayrolls) List(ctx context.Context, request operations.HrisEmpl
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.employeePayrollsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -114,7 +114,7 @@ func (s *EmployeePayrolls) List(ctx context.Context, request operations.HrisEmpl
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -414,7 +414,7 @@ func (s *EmployeePayrolls) Get(ctx context.Context, request operations.HrisEmplo
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "hris.employeePayrollsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -461,7 +461,7 @@ func (s *EmployeePayrolls) Get(ctx context.Context, request operations.HrisEmplo
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

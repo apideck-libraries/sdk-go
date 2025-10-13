@@ -71,7 +71,7 @@ func (s *Departments) List(ctx context.Context, request operations.AccountingDep
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.departmentsAll",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -118,7 +118,7 @@ func (s *Departments) List(ctx context.Context, request operations.AccountingDep
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -470,7 +470,7 @@ func (s *Departments) Create(ctx context.Context, request operations.AccountingD
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.departmentsAdd",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "AccountingDepartment", "json", `request:"mediaType=application/json"`)
@@ -524,7 +524,7 @@ func (s *Departments) Create(ctx context.Context, request operations.AccountingD
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -824,7 +824,7 @@ func (s *Departments) Get(ctx context.Context, request operations.AccountingDepa
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.departmentsOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -871,7 +871,7 @@ func (s *Departments) Get(ctx context.Context, request operations.AccountingDepa
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1171,7 +1171,7 @@ func (s *Departments) Update(ctx context.Context, request operations.AccountingD
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.departmentsUpdate",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "AccountingDepartment", "json", `request:"mediaType=application/json"`)
@@ -1225,7 +1225,7 @@ func (s *Departments) Update(ctx context.Context, request operations.AccountingD
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
@@ -1525,7 +1525,7 @@ func (s *Departments) Delete(ctx context.Context, request operations.AccountingD
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.departmentsDelete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1572,7 +1572,7 @@ func (s *Departments) Delete(ctx context.Context, request operations.AccountingD
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}

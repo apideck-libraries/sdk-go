@@ -68,7 +68,7 @@ func (s *BalanceSheet) Get(ctx context.Context, request operations.AccountingBal
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "accounting.balanceSheetOne",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -115,7 +115,7 @@ func (s *BalanceSheet) Get(ctx context.Context, request operations.AccountingBal
 					InitialInterval: 500,
 					MaxInterval:     60000,
 					Exponent:        1.5,
-					MaxElapsedTime:  3600000,
+					MaxElapsedTime:  900000,
 				},
 				RetryConnectionErrors: true,
 			}
