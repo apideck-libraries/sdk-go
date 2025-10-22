@@ -53,9 +53,36 @@ func (e *ExpensesFilterStatus) UnmarshalJSON(data []byte) error {
 	}
 }
 
+type ExpensesFilterType string
+
+const (
+	ExpensesFilterTypeExpense ExpensesFilterType = "expense"
+	ExpensesFilterTypeRefund  ExpensesFilterType = "refund"
+)
+
+func (e ExpensesFilterType) ToPointer() *ExpensesFilterType {
+	return &e
+}
+func (e *ExpensesFilterType) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "expense":
+		fallthrough
+	case "refund":
+		*e = ExpensesFilterType(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for ExpensesFilterType: %v", v)
+	}
+}
+
 type ExpensesFilter struct {
 	UpdatedSince *time.Time            `queryParam:"name=updated_since"`
 	Status       *ExpensesFilterStatus `queryParam:"name=status"`
+	Type         *ExpensesFilterType   `queryParam:"name=type"`
 }
 
 func (e ExpensesFilter) MarshalJSON() ([]byte, error) {
@@ -81,4 +108,11 @@ func (e *ExpensesFilter) GetStatus() *ExpensesFilterStatus {
 		return nil
 	}
 	return e.Status
+}
+
+func (e *ExpensesFilter) GetType() *ExpensesFilterType {
+	if e == nil {
+		return nil
+	}
+	return e.Type
 }

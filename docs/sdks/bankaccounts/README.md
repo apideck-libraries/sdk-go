@@ -128,8 +128,15 @@ func main() {
         AccountingBankAccount: components.AccountingBankAccountInput{
             DisplayID: sdkgo.Pointer("BA-001"),
             Name: sdkgo.Pointer("Main Operating Account"),
-            AccountNumber: sdkgo.Pointer("1234567890"),
+            AccountNumber: sdkgo.Pointer("123465"),
             AccountType: components.AccountingBankAccountAccountTypeChecking.ToPointer(),
+            LedgerAccount: &components.LinkedLedgerAccountInput{
+                ID: sdkgo.Pointer("123456"),
+                NominalCode: sdkgo.Pointer("N091"),
+                Code: sdkgo.Pointer("453"),
+                ParentID: sdkgo.Pointer("123456"),
+                DisplayID: sdkgo.Pointer("123456"),
+            },
             BankName: sdkgo.Pointer("Chase Bank"),
             Currency: components.CurrencyUsd.ToPointer(),
             Balance: sdkgo.Pointer[float64](25000),
@@ -286,8 +293,15 @@ func main() {
         AccountingBankAccount: components.AccountingBankAccountInput{
             DisplayID: sdkgo.Pointer("BA-001"),
             Name: sdkgo.Pointer("Main Operating Account"),
-            AccountNumber: sdkgo.Pointer("1234567890"),
+            AccountNumber: sdkgo.Pointer("123465"),
             AccountType: components.AccountingBankAccountAccountTypeChecking.ToPointer(),
+            LedgerAccount: &components.LinkedLedgerAccountInput{
+                ID: sdkgo.Pointer("123456"),
+                NominalCode: sdkgo.Pointer("N091"),
+                Code: sdkgo.Pointer("453"),
+                ParentID: sdkgo.Pointer("123456"),
+                DisplayID: sdkgo.Pointer("123456"),
+            },
             BankName: sdkgo.Pointer("Chase Bank"),
             Currency: components.CurrencyUsd.ToPointer(),
             Balance: sdkgo.Pointer[float64](25000),

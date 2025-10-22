@@ -2,6 +2,10 @@
 
 package components
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/utils"
+)
+
 type LinkedLedgerAccount struct {
 	// The unique identifier for the account.
 	ID *string `json:"id,omitempty"`
@@ -11,6 +15,21 @@ type LinkedLedgerAccount struct {
 	NominalCode *string `json:"nominal_code,omitempty"`
 	// The code assigned to the account.
 	Code *string `json:"code,omitempty"`
+	// The parent ID of the account.
+	ParentID *string `json:"parent_id,omitempty"`
+	// The display ID of the account.
+	DisplayID *string `json:"display_id,omitempty"`
+}
+
+func (l LinkedLedgerAccount) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(l, "", false)
+}
+
+func (l *LinkedLedgerAccount) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &l, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (l *LinkedLedgerAccount) GetID() *string {
@@ -39,4 +58,18 @@ func (l *LinkedLedgerAccount) GetCode() *string {
 		return nil
 	}
 	return l.Code
+}
+
+func (l *LinkedLedgerAccount) GetParentID() *string {
+	if l == nil {
+		return nil
+	}
+	return l.ParentID
+}
+
+func (l *LinkedLedgerAccount) GetDisplayID() *string {
+	if l == nil {
+		return nil
+	}
+	return l.DisplayID
 }
