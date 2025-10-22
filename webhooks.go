@@ -432,7 +432,11 @@ func (s *Webhooks) List(ctx context.Context, appID *string, cursor *string, limi
 }
 
 // Create webhook subscription
-// Create a webhook subscription to receive events
+// Create a webhook subscription to receive events.
+//
+// **Delivery URL Validation**: The provided `delivery_url` will be validated synchronously by sending an HTTP POST request with an HMAC signature. If validation fails (network error, timeout, non-2xx response), the webhook will still be created but with `status: "disabled"` and `disabled_reason: "delivery_url_validation_failed"`.
+//
+// **Important**: Always check the `status` and `disabled_reason` fields in the response to ensure the webhook is active.
 func (s *Webhooks) Create(ctx context.Context, createWebhookRequest components.CreateWebhookRequest, appID *string, opts ...operations.Option) (*operations.WebhookWebhooksAddResponse, error) {
 	request := operations.WebhookWebhooksAddRequest{
 		AppID:                appID,
@@ -1133,7 +1137,11 @@ func (s *Webhooks) Get(ctx context.Context, id string, appID *string, opts ...op
 }
 
 // Update webhook subscription
-// Update a webhook subscription
+// Update a webhook subscription.
+//
+// **Delivery URL Validation**: When updating the `delivery_url`, it will be validated synchronously by sending an HTTP POST request with an HMAC signature. If validation fails (network error, timeout, non-2xx response), the webhook will still be updated but with `status: "disabled"` and `disabled_reason: "delivery_url_validation_failed"`. Validation only occurs when the URL is changed.
+//
+// **Important**: Always check the `status` and `disabled_reason` fields in the response to ensure the webhook is active.
 func (s *Webhooks) Update(ctx context.Context, id string, updateWebhookRequest components.UpdateWebhookRequest, appID *string, opts ...operations.Option) (*operations.WebhookWebhooksUpdateResponse, error) {
 	request := operations.WebhookWebhooksUpdateRequest{
 		ID:                   id,

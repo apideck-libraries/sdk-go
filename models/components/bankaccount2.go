@@ -7,19 +7,19 @@ import (
 	"fmt"
 )
 
-// BankAccount1AccountType - The type of bank account.
-type BankAccount1AccountType string
+// BankAccount2AccountType - The type of bank account.
+type BankAccount2AccountType string
 
 const (
-	BankAccount1AccountTypeBankAccount BankAccount1AccountType = "bank_account"
-	BankAccount1AccountTypeCreditCard  BankAccount1AccountType = "credit_card"
-	BankAccount1AccountTypeOther       BankAccount1AccountType = "other"
+	BankAccount2AccountTypeBankAccount BankAccount2AccountType = "bank_account"
+	BankAccount2AccountTypeCreditCard  BankAccount2AccountType = "credit_card"
+	BankAccount2AccountTypeOther       BankAccount2AccountType = "other"
 )
 
-func (e BankAccount1AccountType) ToPointer() *BankAccount1AccountType {
+func (e BankAccount2AccountType) ToPointer() *BankAccount2AccountType {
 	return &e
 }
-func (e *BankAccount1AccountType) UnmarshalJSON(data []byte) error {
+func (e *BankAccount2AccountType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -30,14 +30,14 @@ func (e *BankAccount1AccountType) UnmarshalJSON(data []byte) error {
 	case "credit_card":
 		fallthrough
 	case "other":
-		*e = BankAccount1AccountType(v)
+		*e = BankAccount2AccountType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for BankAccount1AccountType: %v", v)
+		return fmt.Errorf("invalid value for BankAccount2AccountType: %v", v)
 	}
 }
 
-type BankAccount1 struct {
+type BankAccount2 struct {
 	// The name of the bank or financial institution
 	BankName *string `json:"bank_name,omitempty"`
 	// The bank account number
@@ -45,7 +45,7 @@ type BankAccount1 struct {
 	// The name of the bank account
 	AccountName *string `json:"account_name,omitempty"`
 	// The type of bank account.
-	AccountType *BankAccount1AccountType `json:"account_type,omitempty"`
+	AccountType *BankAccount2AccountType `json:"account_type,omitempty"`
 	// International Bank Account Number
 	Iban *string `json:"iban,omitempty"`
 	// Bank Identifier Code / SWIFT Code
@@ -64,84 +64,84 @@ type BankAccount1 struct {
 	Country *string `json:"country,omitempty"`
 }
 
-func (b *BankAccount1) GetBankName() *string {
+func (b *BankAccount2) GetBankName() *string {
 	if b == nil {
 		return nil
 	}
 	return b.BankName
 }
 
-func (b *BankAccount1) GetAccountNumber() *string {
+func (b *BankAccount2) GetAccountNumber() *string {
 	if b == nil {
 		return nil
 	}
 	return b.AccountNumber
 }
 
-func (b *BankAccount1) GetAccountName() *string {
+func (b *BankAccount2) GetAccountName() *string {
 	if b == nil {
 		return nil
 	}
 	return b.AccountName
 }
 
-func (b *BankAccount1) GetAccountType() *BankAccount1AccountType {
+func (b *BankAccount2) GetAccountType() *BankAccount2AccountType {
 	if b == nil {
 		return nil
 	}
 	return b.AccountType
 }
 
-func (b *BankAccount1) GetIban() *string {
+func (b *BankAccount2) GetIban() *string {
 	if b == nil {
 		return nil
 	}
 	return b.Iban
 }
 
-func (b *BankAccount1) GetBic() *string {
+func (b *BankAccount2) GetBic() *string {
 	if b == nil {
 		return nil
 	}
 	return b.Bic
 }
 
-func (b *BankAccount1) GetRoutingNumber() *string {
+func (b *BankAccount2) GetRoutingNumber() *string {
 	if b == nil {
 		return nil
 	}
 	return b.RoutingNumber
 }
 
-func (b *BankAccount1) GetBsbNumber() *string {
+func (b *BankAccount2) GetBsbNumber() *string {
 	if b == nil {
 		return nil
 	}
 	return b.BsbNumber
 }
 
-func (b *BankAccount1) GetBranchIdentifier() *string {
+func (b *BankAccount2) GetBranchIdentifier() *string {
 	if b == nil {
 		return nil
 	}
 	return b.BranchIdentifier
 }
 
-func (b *BankAccount1) GetBankCode() *string {
+func (b *BankAccount2) GetBankCode() *string {
 	if b == nil {
 		return nil
 	}
 	return b.BankCode
 }
 
-func (b *BankAccount1) GetCurrency() *Currency {
+func (b *BankAccount2) GetCurrency() *Currency {
 	if b == nil {
 		return nil
 	}
 	return b.Currency
 }
 
-func (b *BankAccount1) GetCountry() *string {
+func (b *BankAccount2) GetCountry() *string {
 	if b == nil {
 		return nil
 	}

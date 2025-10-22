@@ -2,13 +2,20 @@
 
 package components
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/utils"
+)
+
 type ExpenseLineItem struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
 	// A list of linked tracking categories.
 	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
-	// The unique identifier for the ledger account.
-	AccountID *string `json:"account_id,omitempty"`
+	// The unique identifier for the ledger account. Deprecated, use account instead.
+	//
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+	AccountID *string              `json:"account_id,omitempty"`
+	Account   *LinkedLedgerAccount `json:"account,omitempty"`
 	// The ID of the customer this expense item is linked to.
 	CustomerID *string `json:"customer_id,omitempty"`
 	// The ID of the department
@@ -30,6 +37,17 @@ type ExpenseLineItem struct {
 	Rebilling *Rebilling `json:"rebilling,omitempty"`
 }
 
+func (e ExpenseLineItem) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(e, "", false)
+}
+
+func (e *ExpenseLineItem) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &e, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (e *ExpenseLineItem) GetID() *string {
 	if e == nil {
 		return nil
@@ -49,6 +67,13 @@ func (e *ExpenseLineItem) GetAccountID() *string {
 		return nil
 	}
 	return e.AccountID
+}
+
+func (e *ExpenseLineItem) GetAccount() *LinkedLedgerAccount {
+	if e == nil {
+		return nil
+	}
+	return e.Account
 }
 
 func (e *ExpenseLineItem) GetCustomerID() *string {

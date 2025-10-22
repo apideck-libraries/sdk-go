@@ -316,15 +316,15 @@ type Employee struct {
 	Jobs          []EmployeeJob          `json:"jobs,omitempty"`
 	Compensations []EmployeeCompensation `json:"compensations,omitempty"`
 	// Indicates if the employee works from a remote location.
-	WorksRemote  *bool         `json:"works_remote,omitempty"`
-	Addresses    []Address     `json:"addresses,omitempty"`
-	PhoneNumbers []PhoneNumber `json:"phone_numbers,omitempty"`
-	Emails       []Email       `json:"emails,omitempty"`
-	CustomFields []CustomField `json:"custom_fields,omitempty"`
-	SocialLinks  []SocialLink  `json:"social_links,omitempty"`
-	BankAccounts []BankAccount `json:"bank_accounts,omitempty"`
-	TaxCode      *string       `json:"tax_code,omitempty"`
-	TaxID        *string       `json:"tax_id,omitempty"`
+	WorksRemote  *bool          `json:"works_remote,omitempty"`
+	Addresses    []Address      `json:"addresses,omitempty"`
+	PhoneNumbers []PhoneNumber  `json:"phone_numbers,omitempty"`
+	Emails       []Email        `json:"emails,omitempty"`
+	CustomFields []CustomField  `json:"custom_fields,omitempty"`
+	SocialLinks  []SocialLink   `json:"social_links,omitempty"`
+	BankAccounts []BankAccount2 `json:"bank_accounts,omitempty"`
+	TaxCode      *string        `json:"tax_code,omitempty"`
+	TaxID        *string        `json:"tax_id,omitempty"`
 	// Indicate the employee's dietary preference.
 	DietaryPreference *string `json:"dietary_preference,omitempty"`
 	// Indicate the employee's food allergies.
@@ -724,7 +724,7 @@ func (e *Employee) GetSocialLinks() []SocialLink {
 	return e.SocialLinks
 }
 
-func (e *Employee) GetBankAccounts() []BankAccount {
+func (e *Employee) GetBankAccounts() []BankAccount2 {
 	if e == nil {
 		return nil
 	}
@@ -915,15 +915,15 @@ type EmployeeInput struct {
 	Jobs          []EmployeeJobInput          `json:"jobs,omitempty"`
 	Compensations []EmployeeCompensationInput `json:"compensations,omitempty"`
 	// Indicates if the employee works from a remote location.
-	WorksRemote  *bool         `json:"works_remote,omitempty"`
-	Addresses    []Address     `json:"addresses,omitempty"`
-	PhoneNumbers []PhoneNumber `json:"phone_numbers,omitempty"`
-	Emails       []Email       `json:"emails,omitempty"`
-	CustomFields []CustomField `json:"custom_fields,omitempty"`
-	SocialLinks  []SocialLink  `json:"social_links,omitempty"`
-	BankAccounts []BankAccount `json:"bank_accounts,omitempty"`
-	TaxCode      *string       `json:"tax_code,omitempty"`
-	TaxID        *string       `json:"tax_id,omitempty"`
+	WorksRemote  *bool          `json:"works_remote,omitempty"`
+	Addresses    []Address      `json:"addresses,omitempty"`
+	PhoneNumbers []PhoneNumber  `json:"phone_numbers,omitempty"`
+	Emails       []Email        `json:"emails,omitempty"`
+	CustomFields []CustomField  `json:"custom_fields,omitempty"`
+	SocialLinks  []SocialLink   `json:"social_links,omitempty"`
+	BankAccounts []BankAccount2 `json:"bank_accounts,omitempty"`
+	TaxCode      *string        `json:"tax_code,omitempty"`
+	TaxID        *string        `json:"tax_id,omitempty"`
 	// Indicate the employee's dietary preference.
 	DietaryPreference *string `json:"dietary_preference,omitempty"`
 	// Indicate the employee's food allergies.
@@ -1306,7 +1306,7 @@ func (e *EmployeeInput) GetSocialLinks() []SocialLink {
 	return e.SocialLinks
 }
 
-func (e *EmployeeInput) GetBankAccounts() []BankAccount {
+func (e *EmployeeInput) GetBankAccounts() []BankAccount2 {
 	if e == nil {
 		return nil
 	}

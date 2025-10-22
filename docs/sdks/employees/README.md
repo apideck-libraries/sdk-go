@@ -434,12 +434,12 @@ func main() {
                     Type: sdkgo.Pointer("twitter"),
                 },
             },
-            BankAccounts: []components.BankAccount{
-                components.BankAccount{
+            BankAccounts: []components.BankAccount2{
+                components.BankAccount2{
                     BankName: sdkgo.Pointer("Monzo"),
                     AccountNumber: sdkgo.Pointer("123465"),
                     AccountName: sdkgo.Pointer("SPACEX LLC"),
-                    AccountType: components.AccountTypeCreditCard.ToPointer(),
+                    AccountType: components.BankAccount2AccountTypeCreditCard.ToPointer(),
                     Iban: sdkgo.Pointer("CH2989144532982975332"),
                     Bic: sdkgo.Pointer("AUDSCHGGXXX"),
                     RoutingNumber: sdkgo.Pointer("012345678"),
@@ -448,11 +448,11 @@ func main() {
                     BankCode: sdkgo.Pointer("BNH"),
                     Currency: components.CurrencyUsd.ToPointer(),
                 },
-                components.BankAccount{
+                components.BankAccount2{
                     BankName: sdkgo.Pointer("Monzo"),
                     AccountNumber: sdkgo.Pointer("123465"),
                     AccountName: sdkgo.Pointer("SPACEX LLC"),
-                    AccountType: components.AccountTypeCreditCard.ToPointer(),
+                    AccountType: components.BankAccount2AccountTypeCreditCard.ToPointer(),
                     Iban: sdkgo.Pointer("CH2989144532982975332"),
                     Bic: sdkgo.Pointer("AUDSCHGGXXX"),
                     RoutingNumber: sdkgo.Pointer("012345678"),
@@ -461,11 +461,11 @@ func main() {
                     BankCode: sdkgo.Pointer("BNH"),
                     Currency: components.CurrencyUsd.ToPointer(),
                 },
-                components.BankAccount{
+                components.BankAccount2{
                     BankName: sdkgo.Pointer("Monzo"),
                     AccountNumber: sdkgo.Pointer("123465"),
                     AccountName: sdkgo.Pointer("SPACEX LLC"),
-                    AccountType: components.AccountTypeCreditCard.ToPointer(),
+                    AccountType: components.BankAccount2AccountTypeCreditCard.ToPointer(),
                     Iban: sdkgo.Pointer("CH2989144532982975332"),
                     Bic: sdkgo.Pointer("AUDSCHGGXXX"),
                     RoutingNumber: sdkgo.Pointer("012345678"),
@@ -900,12 +900,12 @@ func main() {
                     Type: sdkgo.Pointer("twitter"),
                 },
             },
-            BankAccounts: []components.BankAccount{
-                components.BankAccount{
+            BankAccounts: []components.BankAccount2{
+                components.BankAccount2{
                     BankName: sdkgo.Pointer("Monzo"),
                     AccountNumber: sdkgo.Pointer("123465"),
                     AccountName: sdkgo.Pointer("SPACEX LLC"),
-                    AccountType: components.AccountTypeCreditCard.ToPointer(),
+                    AccountType: components.BankAccount2AccountTypeCreditCard.ToPointer(),
                     Iban: sdkgo.Pointer("CH2989144532982975332"),
                     Bic: sdkgo.Pointer("AUDSCHGGXXX"),
                     RoutingNumber: sdkgo.Pointer("012345678"),
