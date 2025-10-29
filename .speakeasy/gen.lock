@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: a72cfc70644d3aa2ad0b1fd3f53202be
-  docVersion: 10.21.6
-  speakeasyVersion: 1.638.0
-  generationVersion: 2.728.0
-  releaseVersion: 0.21.0
-  configChecksum: d4471f0f2a29c5052984f3d16cb3877a
+  docChecksum: 0b8f08924226654aa94e8403c482d651
+  docVersion: 10.21.7
+  speakeasyVersion: 1.642.2
+  generationVersion: 2.731.6
+  releaseVersion: 0.22.0
+  configChecksum: ed5af6c4a3fd6f7118df9bb98f05de6b
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 features:
@@ -39,7 +39,7 @@ features:
     retries: 2.84.2
     sdkHooks: 0.2.0
     typeOverrides: 2.81.1
-    unions: 2.86.0
+    unions: 2.87.0
     uploadStreams: 0.1.0
 generatedFiles:
   - .devcontainer/README.md
@@ -18459,4 +18459,3 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes Detected:\n* `Apideck.Accounting.BankAccounts.List()`:  `response.Data.[]` **Changed** **Breaking** :warning:\n* `Apideck.Accounting.BankAccounts.Get()`:  `response.Data` **Changed** **Breaking** :warning:\n* `Apideck.Accounting.Expenses.List()`: \n  *  `request.Request.Filter` **Changed**\n  *  `response.Data.[]` **Changed** **Breaking** :warning:\n* `Apideck.Accounting.Expenses.Create()`: \n  *  `request.Request.Expense` **Changed** **Breaking** :warning:\n* `Apideck.Accounting.Expenses.Get()`:  `response.Data` **Changed** **Breaking** :warning:\n* `Apideck.Accounting.Expenses.Update()`: \n  *  `request.Request.Expense` **Changed** **Breaking** :warning:\n* `Apideck.Accounting.Suppliers.Create()`: \n  *  `request.Request.Supplier.Account` **Changed**\n* `Apideck.Accounting.Payments.List()`:  `response.Data.[].Account` **Changed**\n* `Apideck.Accounting.Bills.Update()`: \n  *  `request.Request.Bill.LineItems.[].LedgerAccount` **Changed**\n* `Apideck.Accounting.Invoices.List()`:  `response.Data.[].LineItems.[].LedgerAccount` **Changed**\n* `Apideck.Accounting.Invoices.Create()`: \n  *  `request.Request.Invoice.LineItems.[].LedgerAccount` **Changed**\n* `Apideck.Accounting.Invoices.Get()`:  `response.Data.LineItems.[].LedgerAccount` **Changed**\n* `Apideck.Accounting.Invoices.Update()`: \n  *  `request.Request.Invoice.LineItems.[].LedgerAccount` **Changed**\n* `Apideck.Accounting.InvoiceItems.List()`:  `response.Data.[].AssetAccount` **Changed**\n* `Apideck.Accounting.InvoiceItems.Create()`: \n  *  `request.Request.InvoiceItem.AssetAccount` **Changed**\n* `Apideck.Accounting.InvoiceItems.Get()`:  `response.Data.AssetAccount` **Changed**\n* `Apideck.Accounting.InvoiceItems.Update()`: \n  *  `request.Request.InvoiceItem.AssetAccount` **Changed**\n* `Apideck.Accounting.CreditNotes.List()`:  `response.Data.[].Account` **Changed**\n* `Apideck.Accounting.CreditNotes.Create()`: \n  *  `request.Request.CreditNote.Account` **Changed**\n* `Apideck.Accounting.CreditNotes.Get()`:  `response.Data.Account` **Changed**\n* `Apideck.Accounting.CreditNotes.Update()`: \n  *  `request.Request.CreditNote.Account` **Changed**\n* `Apideck.Accounting.Customers.List()`:  `response.Data.[].Account` **Changed**\n* `Apideck.Accounting.Customers.Create()`: \n  *  `request.Request.Customer.Account` **Changed**\n* `Apideck.Accounting.Customers.Get()`:  `response.Data.Account` **Changed**\n* `Apideck.Accounting.Customers.Update()`: \n  *  `request.Request.Customer.Account` **Changed**\n* `Apideck.Accounting.Suppliers.List()`:  `response.Data.[].Account` **Changed**\n* `Apideck.Accounting.Bills.Create()`: \n  *  `request.Request.Bill.LineItems.[].LedgerAccount` **Changed**\n* `Apideck.Accounting.Suppliers.Get()`:  `response.Data.Account` **Changed**\n* `Apideck.Accounting.Suppliers.Update()`: \n  *  `request.Request.Supplier.Account` **Changed**\n* `Apideck.Accounting.Bills.Get()`:  `response.Data.LineItems.[].LedgerAccount` **Changed**\n* `Apideck.Accounting.Payments.Create()`: \n  *  `request.Request.Payment.Account` **Changed**\n* `Apideck.Accounting.Payments.Get()`:  `response.Data.Account` **Changed**\n* `Apideck.Accounting.Payments.Update()`: \n  *  `request.Request.Payment.Account` **Changed**\n* `Apideck.Accounting.JournalEntries.List()`:  `response.Data.[].LineItems.[]` **Changed**\n* `Apideck.Accounting.JournalEntries.Create()`: \n  *  `request.Request.JournalEntry.LineItems.[]` **Changed**\n* `Apideck.Accounting.JournalEntries.Get()`:  `response.Data.LineItems.[]` **Changed**\n* `Apideck.Accounting.JournalEntries.Update()`: \n  *  `request.Request.JournalEntry.LineItems.[]` **Changed**\n* `Apideck.Accounting.PurchaseOrders.List()`:  `response.Data.[].LineItems.[].LedgerAccount` **Changed**\n* `Apideck.Accounting.PurchaseOrders.Create()`: \n  *  `request.Request.PurchaseOrder.LineItems.[].LedgerAccount` **Changed**\n* `Apideck.Accounting.PurchaseOrders.Get()`:  `response.Data.LineItems.[].LedgerAccount` **Changed**\n* `Apideck.Accounting.PurchaseOrders.Update()`: \n  *  `request.Request.PurchaseOrder.LineItems.[].LedgerAccount` **Changed**\n* `Apideck.Accounting.BankAccounts.Create()`: \n  *  `request.Request.AccountingBankAccount` **Changed**\n* `Apideck.Accounting.BankAccounts.Update()`: \n  *  `request.Request.AccountingBankAccount` **Changed**\n* `Apideck.Accounting.BillPayments.List()`:  `response.Data.[].Account` **Changed**\n* `Apideck.Accounting.Bills.List()`:  `response.Data.[].LineItems.[].LedgerAccount` **Changed**\n* `Apideck.Accounting.BillPayments.Create()`: \n  *  `request.Request.BillPayment.Account` **Changed**\n* `Apideck.Accounting.BillPayments.Get()`:  `response.Data.Account` **Changed**\n* `Apideck.Accounting.BillPayments.Update()`: \n  *  `request.Request.BillPayment.Account` **Changed**\n* `Apideck.Accounting.Quotes.List()`:  `response.Data.[].LineItems.[].LedgerAccount` **Changed**\n* `Apideck.Accounting.Quotes.Create()`: \n  *  `request.Request.Quote.LineItems.[].LedgerAccount` **Changed**\n* `Apideck.Accounting.Quotes.Get()`:  `response.Data.LineItems.[].LedgerAccount` **Changed**\n* `Apideck.Accounting.Quotes.Update()`: \n  *  `request.Request.Quote.LineItems.[].LedgerAccount` **Changed**\n"

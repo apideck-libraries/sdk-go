@@ -15,3 +15,4 @@ Invoice status
 | `BillStatusVoid`          | void                      |
 | `BillStatusCredit`        | credit                    |
 | `BillStatusDeleted`       | deleted                   |
+| `BillStatusPosted`        | posted                    |
