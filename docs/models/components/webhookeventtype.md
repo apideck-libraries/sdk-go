@@ -58,6 +58,9 @@
 | `WebhookEventTypeAccountingBillCreated`             | accounting.bill.created                             |
 | `WebhookEventTypeAccountingBillUpdated`             | accounting.bill.updated                             |
 | `WebhookEventTypeAccountingBillDeleted`             | accounting.bill.deleted                             |
+| `WebhookEventTypeAccountingBillPaymentCreated`      | accounting.bill_payment.created                     |
+| `WebhookEventTypeAccountingBillPaymentUpdated`      | accounting.bill_payment.updated                     |
+| `WebhookEventTypeAccountingBillPaymentDeleted`      | accounting.bill_payment.deleted                     |
 | `WebhookEventTypeAccountingPaymentCreated`          | accounting.payment.created                          |
 | `WebhookEventTypeAccountingPaymentUpdated`          | accounting.payment.updated                          |
 | `WebhookEventTypeAccountingPaymentDeleted`          | accounting.payment.deleted                          |
