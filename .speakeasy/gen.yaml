@@ -27,7 +27,7 @@ generation:
     generateNewTests: false
     skipResponseBodyAssertions: false
 go:
-  version: 0.22.0
+  version: 0.23.0
   additionalDependencies: {}
   allowUnknownFieldsInWeakUnions: false
   baseErrorName: ApideckError
@@ -43,6 +43,7 @@ go:
       operations: models/operations
       shared: models/components
       webhooks: models/webhooks
+  includeEmptyObjects: false
   inputModelSuffix: input
   maxMethodParams: 4
   methodArguments: require-security-and-request

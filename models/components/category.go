@@ -74,6 +74,8 @@ type Category struct {
 	ID *string `json:"id,omitempty"`
 	// The name of the category.
 	Name *string `json:"name,omitempty"`
+	// Display ID of the category
+	DisplayID *string `json:"display_id,omitempty"`
 	// The type of the category.
 	Type *CategoryType `json:"type,omitempty"`
 	// Based on the status some functionality is enabled or disabled.
@@ -117,6 +119,13 @@ func (c *Category) GetName() *string {
 		return nil
 	}
 	return c.Name
+}
+
+func (c *Category) GetDisplayID() *string {
+	if c == nil {
+		return nil
+	}
+	return c.DisplayID
 }
 
 func (c *Category) GetType() *CategoryType {

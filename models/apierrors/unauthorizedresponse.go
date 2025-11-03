@@ -9,17 +9,174 @@ import (
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 )
 
+// Request - HTTP request details
+type Request struct {
+}
+
+func (r Request) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(r, "", false)
+}
+
+func (r *Request) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &r, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
+// Response - HTTP response details
+type Response struct {
+}
+
+func (r Response) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(r, "", false)
+}
+
+func (r *Response) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &r, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
+// Debug information including request/response details and OAuth timing metadata
+type Debug struct {
+	// HTTP request details
+	Request *Request `json:"request,omitempty"`
+	// HTTP response details
+	Response *Response `json:"response,omitempty"`
+	// Error message from downstream provider or network layer
+	Message *string `json:"message,omitempty"`
+	// Error code (e.g., ETIMEDOUT, ECONNREFUSED)
+	Code *string `json:"code,omitempty"`
+	// Unix timestamp (milliseconds) when credentials will be deleted if not refreshed. Only present for non-recoverable errors (401, 400). Credentials are preserved indefinitely for recoverable/network errors.
+	CredentialsExpireAtMs *float64 `json:"credentials_expire_at_ms,omitempty"`
+	// Unix timestamp (milliseconds) when token refresh retry is allowed after cooldown period expires.
+	RetryAfterMs *float64 `json:"retry_after_ms,omitempty"`
+	// Milliseconds remaining in cooldown period before retry is allowed.
+	CooldownRemainingMs *float64 `json:"cooldown_remaining_ms,omitempty"`
+}
+
+func (d Debug) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(d, "", false)
+}
+
+func (d *Debug) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &d, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (d *Debug) GetRequest() *Request {
+	if d == nil {
+		return nil
+	}
+	return d.Request
+}
+
+func (d *Debug) GetResponse() *Response {
+	if d == nil {
+		return nil
+	}
+	return d.Response
+}
+
+func (d *Debug) GetMessage() *string {
+	if d == nil {
+		return nil
+	}
+	return d.Message
+}
+
+func (d *Debug) GetCode() *string {
+	if d == nil {
+		return nil
+	}
+	return d.Code
+}
+
+func (d *Debug) GetCredentialsExpireAtMs() *float64 {
+	if d == nil {
+		return nil
+	}
+	return d.CredentialsExpireAtMs
+}
+
+func (d *Debug) GetRetryAfterMs() *float64 {
+	if d == nil {
+		return nil
+	}
+	return d.RetryAfterMs
+}
+
+func (d *Debug) GetCooldownRemainingMs() *float64 {
+	if d == nil {
+		return nil
+	}
+	return d.CooldownRemainingMs
+}
+
+type Two struct {
+	// Error type identifier
+	Type *string `json:"type,omitempty"`
+	// Detailed error message
+	Message *string `json:"message,omitempty"`
+	// Debug information including request/response details and OAuth timing metadata
+	Debug                *Debug         `json:"debug,omitempty"`
+	AdditionalProperties map[string]any `additionalProperties:"true" json:"-"`
+}
+
+func (t Two) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(t, "", false)
+}
+
+func (t *Two) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &t, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (t *Two) GetType() *string {
+	if t == nil {
+		return nil
+	}
+	return t.Type
+}
+
+func (t *Two) GetMessage() *string {
+	if t == nil {
+		return nil
+	}
+	return t.Message
+}
+
+func (t *Two) GetDebug() *Debug {
+	if t == nil {
+		return nil
+	}
+	return t.Debug
+}
+
+func (t *Two) GetAdditionalProperties() map[string]any {
+	if t == nil {
+		return nil
+	}
+	return t.AdditionalProperties
+}
+
 type UnauthorizedResponseDetailType string
 
 const (
-	UnauthorizedResponseDetailTypeStr      UnauthorizedResponseDetailType = "str"
-	UnauthorizedResponseDetailTypeMapOfAny UnauthorizedResponseDetailType = "mapOfAny"
+	UnauthorizedResponseDetailTypeStr UnauthorizedResponseDetailType = "str"
+	UnauthorizedResponseDetailTypeTwo UnauthorizedResponseDetailType = "2"
 )
 
 // UnauthorizedResponseDetail - Contains parameter or domain specific information related to the error and why it occurred.
 type UnauthorizedResponseDetail struct {
-	Str      *string        `queryParam:"inline,name=detail"`
-	MapOfAny map[string]any `queryParam:"inline,name=detail"`
+	Str *string `queryParam:"inline,name=detail"`
+	Two *Two    `queryParam:"inline,name=detail"`
 
 	Type UnauthorizedResponseDetailType
 }
@@ -35,12 +192,12 @@ func CreateUnauthorizedResponseDetailStr(str string) UnauthorizedResponseDetail 
 	}
 }
 
-func CreateUnauthorizedResponseDetailMapOfAny(mapOfAny map[string]any) UnauthorizedResponseDetail {
-	typ := UnauthorizedResponseDetailTypeMapOfAny
+func CreateUnauthorizedResponseDetailTwo(two Two) UnauthorizedResponseDetail {
+	typ := UnauthorizedResponseDetailTypeTwo
 
 	return UnauthorizedResponseDetail{
-		MapOfAny: mapOfAny,
-		Type:     typ,
+		Two:  &two,
+		Type: typ,
 	}
 }
 
@@ -53,10 +210,10 @@ func (u *UnauthorizedResponseDetail) UnmarshalJSON(data []byte) error {
 		return nil
 	}
 
-	var mapOfAny map[string]any = map[string]any{}
-	if err := utils.UnmarshalJSON(data, &mapOfAny, "", true, nil); err == nil {
-		u.MapOfAny = mapOfAny
-		u.Type = UnauthorizedResponseDetailTypeMapOfAny
+	var two Two = Two{}
+	if err := utils.UnmarshalJSON(data, &two, "", true, nil); err == nil {
+		u.Two = &two
+		u.Type = UnauthorizedResponseDetailTypeTwo
 		return nil
 	}
 
@@ -68,8 +225,8 @@ func (u UnauthorizedResponseDetail) MarshalJSON() ([]byte, error) {
 		return utils.MarshalJSON(u.Str, "", true)
 	}
 
-	if u.MapOfAny != nil {
-		return utils.MarshalJSON(u.MapOfAny, "", true)
+	if u.Two != nil {
+		return utils.MarshalJSON(u.Two, "", true)
 	}
 
 	return nil, errors.New("could not marshal union type UnauthorizedResponseDetail: all fields are null")
@@ -80,8 +237,8 @@ func (u UnauthorizedResponseDetail) Error() string {
 	case UnauthorizedResponseDetailTypeStr:
 		data, _ := json.Marshal(u.Str)
 		return string(data)
-	case UnauthorizedResponseDetailTypeMapOfAny:
-		data, _ := json.Marshal(u.MapOfAny)
+	case UnauthorizedResponseDetailTypeTwo:
+		data, _ := json.Marshal(u.Two)
 		return string(data)
 	default:
 		return "unknown error"
