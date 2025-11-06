@@ -151,7 +151,7 @@ func main() {
             DateIssued: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
             DatePaid: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
             Type: components.CreditNoteTypeAccountsReceivableCredit.ToPointer(),
-            Account: &components.LinkedLedgerAccountInput{
+            Account: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
                 NominalCode: sdkgo.Pointer("N091"),
                 Code: sdkgo.Pointer("453"),
@@ -192,7 +192,7 @@ func main() {
                             Name: sdkgo.Pointer("New York"),
                         },
                     },
-                    LedgerAccount: &components.LinkedLedgerAccountInput{
+                    LedgerAccount: &components.LinkedLedgerAccount{
                         ID: sdkgo.Pointer("123456"),
                         NominalCode: sdkgo.Pointer("N091"),
                         Code: sdkgo.Pointer("453"),
@@ -471,7 +471,7 @@ func main() {
             DateIssued: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
             DatePaid: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
             Type: components.CreditNoteTypeAccountsReceivableCredit.ToPointer(),
-            Account: &components.LinkedLedgerAccountInput{
+            Account: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
                 NominalCode: sdkgo.Pointer("N091"),
                 Code: sdkgo.Pointer("453"),
@@ -508,7 +508,7 @@ func main() {
                             Name: sdkgo.Pointer("New York"),
                         },
                     },
-                    LedgerAccount: &components.LinkedLedgerAccountInput{
+                    LedgerAccount: &components.LinkedLedgerAccount{
                         ID: sdkgo.Pointer("123456"),
                         NominalCode: sdkgo.Pointer("N091"),
                         Code: sdkgo.Pointer("453"),

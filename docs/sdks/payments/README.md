@@ -138,7 +138,7 @@ func main() {
             PaymentMethod: sdkgo.Pointer("cash"),
             PaymentMethodReference: sdkgo.Pointer("123456"),
             PaymentMethodID: sdkgo.Pointer("12345"),
-            Account: &components.LinkedLedgerAccountInput{
+            Account: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
                 NominalCode: sdkgo.Pointer("N091"),
                 Code: sdkgo.Pointer("453"),
@@ -355,7 +355,7 @@ func main() {
             PaymentMethod: sdkgo.Pointer("cash"),
             PaymentMethodReference: sdkgo.Pointer("123456"),
             PaymentMethodID: sdkgo.Pointer("12345"),
-            Account: &components.LinkedLedgerAccountInput{
+            Account: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
                 NominalCode: sdkgo.Pointer("N091"),
                 Code: sdkgo.Pointer("453"),

@@ -2,14 +2,7 @@
 
 package components
 
-import (
-	"github.com/apideck-libraries/sdk-go/internal/utils"
-	"time"
-)
-
-type BillLineItem struct {
-	// A unique identifier for an object.
-	ID *string `json:"id,omitempty"`
+type BillLineItemInput struct {
 	// Row ID
 	RowID *string `json:"row_id,omitempty"`
 	// User defined item code
@@ -57,300 +50,246 @@ type BillLineItem struct {
 	// Payment amount
 	PaymentAmount *float64             `json:"payment_amount,omitempty"`
 	Item          *LinkedInvoiceItem   `json:"item,omitempty"`
-	TaxRate       *LinkedTaxRate       `json:"tax_rate,omitempty"`
+	TaxRate       *LinkedTaxRateInput  `json:"tax_rate,omitempty"`
 	LedgerAccount *LinkedLedgerAccount `json:"ledger_account,omitempty"`
 	PurchaseOrder *LinkedPurchaseOrder `json:"purchase_order,omitempty"`
 	// A list of linked tracking categories.
 	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// The customer this entity is linked to.
-	Customer *LinkedCustomer `json:"customer,omitempty"`
+	Customer *LinkedCustomerInput `json:"customer,omitempty"`
 	// Rebilling metadata for this line item.
 	Rebilling *Rebilling `json:"rebilling,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
 	RowVersion *string `json:"row_version,omitempty"`
-	// The user who last updated the object.
-	UpdatedBy *string `json:"updated_by,omitempty"`
-	// The user who created the object.
-	CreatedBy *string `json:"created_by,omitempty"`
-	// The date and time when the object was created.
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	// The date and time when the object was last updated.
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
 	// A list of linked worktags. This is only supported for Workday.
 	Worktags []*LinkedWorktag `json:"worktags,omitempty"`
 }
 
-func (b BillLineItem) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(b, "", false)
-}
-
-func (b *BillLineItem) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &b, "", false, nil); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (b *BillLineItem) GetID() *string {
-	if b == nil {
-		return nil
-	}
-	return b.ID
-}
-
-func (b *BillLineItem) GetRowID() *string {
+func (b *BillLineItemInput) GetRowID() *string {
 	if b == nil {
 		return nil
 	}
 	return b.RowID
 }
 
-func (b *BillLineItem) GetCode() *string {
+func (b *BillLineItemInput) GetCode() *string {
 	if b == nil {
 		return nil
 	}
 	return b.Code
 }
 
-func (b *BillLineItem) GetLineNumber() *int64 {
+func (b *BillLineItemInput) GetLineNumber() *int64 {
 	if b == nil {
 		return nil
 	}
 	return b.LineNumber
 }
 
-func (b *BillLineItem) GetDescription() *string {
+func (b *BillLineItemInput) GetDescription() *string {
 	if b == nil {
 		return nil
 	}
 	return b.Description
 }
 
-func (b *BillLineItem) GetType() *LineItemType {
+func (b *BillLineItemInput) GetType() *LineItemType {
 	if b == nil {
 		return nil
 	}
 	return b.Type
 }
 
-func (b *BillLineItem) GetTaxAmount() *float64 {
+func (b *BillLineItemInput) GetTaxAmount() *float64 {
 	if b == nil {
 		return nil
 	}
 	return b.TaxAmount
 }
 
-func (b *BillLineItem) GetTotalAmount() *float64 {
+func (b *BillLineItemInput) GetTotalAmount() *float64 {
 	if b == nil {
 		return nil
 	}
 	return b.TotalAmount
 }
 
-func (b *BillLineItem) GetQuantity() *float64 {
+func (b *BillLineItemInput) GetQuantity() *float64 {
 	if b == nil {
 		return nil
 	}
 	return b.Quantity
 }
 
-func (b *BillLineItem) GetUnitPrice() *float64 {
+func (b *BillLineItemInput) GetUnitPrice() *float64 {
 	if b == nil {
 		return nil
 	}
 	return b.UnitPrice
 }
 
-func (b *BillLineItem) GetUnitOfMeasure() *string {
+func (b *BillLineItemInput) GetUnitOfMeasure() *string {
 	if b == nil {
 		return nil
 	}
 	return b.UnitOfMeasure
 }
 
-func (b *BillLineItem) GetDiscountPercentage() *float64 {
+func (b *BillLineItemInput) GetDiscountPercentage() *float64 {
 	if b == nil {
 		return nil
 	}
 	return b.DiscountPercentage
 }
 
-func (b *BillLineItem) GetDiscountAmount() *float64 {
+func (b *BillLineItemInput) GetDiscountAmount() *float64 {
 	if b == nil {
 		return nil
 	}
 	return b.DiscountAmount
 }
 
-func (b *BillLineItem) GetLocationID() *string {
+func (b *BillLineItemInput) GetLocationID() *string {
 	if b == nil {
 		return nil
 	}
 	return b.LocationID
 }
 
-func (b *BillLineItem) GetDepartmentID() *string {
+func (b *BillLineItemInput) GetDepartmentID() *string {
 	if b == nil {
 		return nil
 	}
 	return b.DepartmentID
 }
 
-func (b *BillLineItem) GetSubsidiaryID() *string {
+func (b *BillLineItemInput) GetSubsidiaryID() *string {
 	if b == nil {
 		return nil
 	}
 	return b.SubsidiaryID
 }
 
-func (b *BillLineItem) GetCategoryID() *string {
+func (b *BillLineItemInput) GetCategoryID() *string {
 	if b == nil {
 		return nil
 	}
 	return b.CategoryID
 }
 
-func (b *BillLineItem) GetShippingID() *string {
+func (b *BillLineItemInput) GetShippingID() *string {
 	if b == nil {
 		return nil
 	}
 	return b.ShippingID
 }
 
-func (b *BillLineItem) GetMemo() *string {
+func (b *BillLineItemInput) GetMemo() *string {
 	if b == nil {
 		return nil
 	}
 	return b.Memo
 }
 
-func (b *BillLineItem) GetPrepaid() *bool {
+func (b *BillLineItemInput) GetPrepaid() *bool {
 	if b == nil {
 		return nil
 	}
 	return b.Prepaid
 }
 
-func (b *BillLineItem) GetTaxApplicableOn() *string {
+func (b *BillLineItemInput) GetTaxApplicableOn() *string {
 	if b == nil {
 		return nil
 	}
 	return b.TaxApplicableOn
 }
 
-func (b *BillLineItem) GetTaxRecoverability() *string {
+func (b *BillLineItemInput) GetTaxRecoverability() *string {
 	if b == nil {
 		return nil
 	}
 	return b.TaxRecoverability
 }
 
-func (b *BillLineItem) GetTaxMethod() *string {
+func (b *BillLineItemInput) GetTaxMethod() *string {
 	if b == nil {
 		return nil
 	}
 	return b.TaxMethod
 }
 
-func (b *BillLineItem) GetRetentionAmount() *float64 {
+func (b *BillLineItemInput) GetRetentionAmount() *float64 {
 	if b == nil {
 		return nil
 	}
 	return b.RetentionAmount
 }
 
-func (b *BillLineItem) GetPaymentAmount() *float64 {
+func (b *BillLineItemInput) GetPaymentAmount() *float64 {
 	if b == nil {
 		return nil
 	}
 	return b.PaymentAmount
 }
 
-func (b *BillLineItem) GetItem() *LinkedInvoiceItem {
+func (b *BillLineItemInput) GetItem() *LinkedInvoiceItem {
 	if b == nil {
 		return nil
 	}
 	return b.Item
 }
 
-func (b *BillLineItem) GetTaxRate() *LinkedTaxRate {
+func (b *BillLineItemInput) GetTaxRate() *LinkedTaxRateInput {
 	if b == nil {
 		return nil
 	}
 	return b.TaxRate
 }
 
-func (b *BillLineItem) GetLedgerAccount() *LinkedLedgerAccount {
+func (b *BillLineItemInput) GetLedgerAccount() *LinkedLedgerAccount {
 	if b == nil {
 		return nil
 	}
 	return b.LedgerAccount
 }
 
-func (b *BillLineItem) GetPurchaseOrder() *LinkedPurchaseOrder {
+func (b *BillLineItemInput) GetPurchaseOrder() *LinkedPurchaseOrder {
 	if b == nil {
 		return nil
 	}
 	return b.PurchaseOrder
 }
 
-func (b *BillLineItem) GetTrackingCategories() []*LinkedTrackingCategory {
+func (b *BillLineItemInput) GetTrackingCategories() []*LinkedTrackingCategory {
 	if b == nil {
 		return nil
 	}
 	return b.TrackingCategories
 }
 
-func (b *BillLineItem) GetCustomer() *LinkedCustomer {
+func (b *BillLineItemInput) GetCustomer() *LinkedCustomerInput {
 	if b == nil {
 		return nil
 	}
 	return b.Customer
 }
 
-func (b *BillLineItem) GetRebilling() *Rebilling {
+func (b *BillLineItemInput) GetRebilling() *Rebilling {
 	if b == nil {
 		return nil
 	}
 	return b.Rebilling
 }
 
-func (b *BillLineItem) GetRowVersion() *string {
+func (b *BillLineItemInput) GetRowVersion() *string {
 	if b == nil {
 		return nil
 	}
 	return b.RowVersion
 }
 
-func (b *BillLineItem) GetUpdatedBy() *string {
-	if b == nil {
-		return nil
-	}
-	return b.UpdatedBy
-}
-
-func (b *BillLineItem) GetCreatedBy() *string {
-	if b == nil {
-		return nil
-	}
-	return b.CreatedBy
-}
-
-func (b *BillLineItem) GetCreatedAt() *time.Time {
-	if b == nil {
-		return nil
-	}
-	return b.CreatedAt
-}
-
-func (b *BillLineItem) GetUpdatedAt() *time.Time {
-	if b == nil {
-		return nil
-	}
-	return b.UpdatedAt
-}
-
-func (b *BillLineItem) GetWorktags() []*LinkedWorktag {
+func (b *BillLineItemInput) GetWorktags() []*LinkedWorktag {
 	if b == nil {
 		return nil
 	}

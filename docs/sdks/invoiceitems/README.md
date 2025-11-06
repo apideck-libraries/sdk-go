@@ -159,17 +159,17 @@ func main() {
             },
             Quantity: sdkgo.Pointer[float64](1),
             UnitPrice: sdkgo.Pointer[float64](27500.5),
-            AssetAccount: &components.LinkedLedgerAccountInput{
+            AssetAccount: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
                 NominalCode: sdkgo.Pointer("N091"),
                 Code: sdkgo.Pointer("453"),
             },
-            IncomeAccount: &components.LinkedLedgerAccountInput{
+            IncomeAccount: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
                 NominalCode: sdkgo.Pointer("N091"),
                 Code: sdkgo.Pointer("453"),
             },
-            ExpenseAccount: &components.LinkedLedgerAccountInput{
+            ExpenseAccount: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
                 NominalCode: sdkgo.Pointer("N091"),
                 Code: sdkgo.Pointer("453"),
@@ -368,13 +368,13 @@ func main() {
             },
             Quantity: sdkgo.Pointer[float64](1),
             UnitPrice: sdkgo.Pointer[float64](27500.5),
-            AssetAccount: &components.LinkedLedgerAccountInput{
+            AssetAccount: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
                 NominalCode: sdkgo.Pointer("N091"),
                 Code: sdkgo.Pointer("453"),
             },
             IncomeAccount: nil,
-            ExpenseAccount: &components.LinkedLedgerAccountInput{
+            ExpenseAccount: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
                 NominalCode: sdkgo.Pointer("N091"),
                 Code: sdkgo.Pointer("453"),

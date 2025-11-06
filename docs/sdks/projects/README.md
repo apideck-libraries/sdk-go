@@ -167,6 +167,7 @@ func main() {
             Phase: components.ProjectPhaseExecution.ToPointer(),
             TaxRate: &components.LinkedTaxRateInput{
                 ID: sdkgo.Pointer("123456"),
+                Code: sdkgo.Pointer("N-T"),
                 Rate: sdkgo.Pointer[float64](10),
             },
             TrackingCategories: []*components.LinkedTrackingCategory{
@@ -388,6 +389,7 @@ func main() {
             Phase: components.ProjectPhaseExecution.ToPointer(),
             TaxRate: &components.LinkedTaxRateInput{
                 ID: sdkgo.Pointer("123456"),
+                Code: sdkgo.Pointer("N-T"),
                 Rate: sdkgo.Pointer[float64](10),
             },
             TrackingCategories: []*components.LinkedTrackingCategory{

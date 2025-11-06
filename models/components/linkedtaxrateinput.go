@@ -2,26 +2,13 @@
 
 package components
 
-import (
-	"github.com/apideck-libraries/sdk-go/internal/utils"
-)
-
 type LinkedTaxRateInput struct {
 	// The ID of the object.
 	ID *string `json:"id,omitempty"`
+	// Tax rate code
+	Code *string `json:"code,omitempty"`
 	// Rate of the tax rate
 	Rate *float64 `json:"rate,omitempty"`
-}
-
-func (l LinkedTaxRateInput) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(l, "", false)
-}
-
-func (l *LinkedTaxRateInput) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &l, "", false, nil); err != nil {
-		return err
-	}
-	return nil
 }
 
 func (l *LinkedTaxRateInput) GetID() *string {
@@ -29,6 +16,13 @@ func (l *LinkedTaxRateInput) GetID() *string {
 		return nil
 	}
 	return l.ID
+}
+
+func (l *LinkedTaxRateInput) GetCode() *string {
+	if l == nil {
+		return nil
+	}
+	return l.Code
 }
 
 func (l *LinkedTaxRateInput) GetRate() *float64 {

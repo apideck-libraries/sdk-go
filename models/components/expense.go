@@ -4,731 +4,10 @@ package components
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
-
-// Expense3PaymentType - The type of payment for the expense.
-type Expense3PaymentType string
-
-const (
-	Expense3PaymentTypeCash       Expense3PaymentType = "cash"
-	Expense3PaymentTypeCheck      Expense3PaymentType = "check"
-	Expense3PaymentTypeCreditCard Expense3PaymentType = "credit_card"
-	Expense3PaymentTypeOther      Expense3PaymentType = "other"
-)
-
-func (e Expense3PaymentType) ToPointer() *Expense3PaymentType {
-	return &e
-}
-func (e *Expense3PaymentType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
-	}
-	switch v {
-	case "cash":
-		fallthrough
-	case "check":
-		fallthrough
-	case "credit_card":
-		fallthrough
-	case "other":
-		*e = Expense3PaymentType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Expense3PaymentType: %v", v)
-	}
-}
-
-// Expense3ExpenseType - The type of expense.
-type Expense3ExpenseType string
-
-const (
-	Expense3ExpenseTypeExpense Expense3ExpenseType = "expense"
-	Expense3ExpenseTypeRefund  Expense3ExpenseType = "refund"
-)
-
-func (e Expense3ExpenseType) ToPointer() *Expense3ExpenseType {
-	return &e
-}
-func (e *Expense3ExpenseType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
-	}
-	switch v {
-	case "expense":
-		fallthrough
-	case "refund":
-		*e = Expense3ExpenseType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Expense3ExpenseType: %v", v)
-	}
-}
-
-// Expense3Status - Expense status
-type Expense3Status string
-
-const (
-	Expense3StatusDraft  Expense3Status = "draft"
-	Expense3StatusPosted Expense3Status = "posted"
-)
-
-func (e Expense3Status) ToPointer() *Expense3Status {
-	return &e
-}
-func (e *Expense3Status) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
-	}
-	switch v {
-	case "draft":
-		fallthrough
-	case "posted":
-		*e = Expense3Status(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Expense3Status: %v", v)
-	}
-}
-
-type Three struct {
-	// A unique identifier for an object.
-	ID *string `json:"id,omitempty"`
-	// Number.
-	Number *string `json:"number,omitempty"`
-	// The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
-	TransactionDate *time.Time `json:"transaction_date"`
-	// The unique identifier for the ledger account that this expense should be credited to. Deprecated, use account instead.
-	//
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
-	AccountID   *string              `json:"account_id,omitempty"`
-	Account     *LinkedLedgerAccount `json:"account,omitempty"`
-	BankAccount *LinkedBankAccount   `json:"bank_account"`
-	// The ID of the customer this entity is linked to. Used for expenses that should be marked as billable to customers.
-	CustomerID *string `json:"customer_id,omitempty"`
-	// The ID of the supplier this entity is linked to.
-	SupplierID *string `json:"supplier_id,omitempty"`
-	// The company ID the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
-	// The ID of the department
-	DepartmentID *string `json:"department_id,omitempty"`
-	// The type of payment for the expense.
-	PaymentType *Expense3PaymentType `json:"payment_type,omitempty"`
-	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-	Currency *Currency `json:"currency,omitempty"`
-	// Currency Exchange Rate at the time entity was recorded/generated.
-	CurrencyRate *float64 `json:"currency_rate,omitempty"`
-	// The type of expense.
-	Type *Expense3ExpenseType `json:"type,omitempty"`
-	// The memo of the expense.
-	Memo    *string        `json:"memo,omitempty"`
-	TaxRate *LinkedTaxRate `json:"tax_rate,omitempty"`
-	// The total amount of the expense line item.
-	TotalAmount *float64 `json:"total_amount,omitempty"`
-	// Expense line items linked to this expense.
-	LineItems []ExpenseLineItem `json:"line_items"`
-	// Optional reference identifier for the transaction.
-	Reference *string `json:"reference,omitempty"`
-	// URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.
-	SourceDocumentURL *string       `json:"source_document_url,omitempty"`
-	CustomFields      []CustomField `json:"custom_fields,omitempty"`
-	// When custom mappings are configured on the resource, the result is included here.
-	CustomMappings map[string]any `json:"custom_mappings,omitempty"`
-	// Expense status
-	Status *Expense3Status `json:"status,omitempty"`
-	// The date and time when the object was last updated.
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
-	// The date and time when the object was created.
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-	RowVersion *string `json:"row_version,omitempty"`
-	// The user who last updated the object.
-	UpdatedBy *string `json:"updated_by,omitempty"`
-	// The user who created the object.
-	CreatedBy *string `json:"created_by,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-}
-
-func (t Three) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(t, "", false)
-}
-
-func (t *Three) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &t, "", false, []string{"line_items"}); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (t *Three) GetID() *string {
-	if t == nil {
-		return nil
-	}
-	return t.ID
-}
-
-func (t *Three) GetNumber() *string {
-	if t == nil {
-		return nil
-	}
-	return t.Number
-}
-
-func (t *Three) GetTransactionDate() *time.Time {
-	if t == nil {
-		return nil
-	}
-	return t.TransactionDate
-}
-
-func (t *Three) GetAccountID() *string {
-	if t == nil {
-		return nil
-	}
-	return t.AccountID
-}
-
-func (t *Three) GetAccount() *LinkedLedgerAccount {
-	if t == nil {
-		return nil
-	}
-	return t.Account
-}
-
-func (t *Three) GetBankAccount() *LinkedBankAccount {
-	if t == nil {
-		return nil
-	}
-	return t.BankAccount
-}
-
-func (t *Three) GetCustomerID() *string {
-	if t == nil {
-		return nil
-	}
-	return t.CustomerID
-}
-
-func (t *Three) GetSupplierID() *string {
-	if t == nil {
-		return nil
-	}
-	return t.SupplierID
-}
-
-func (t *Three) GetCompanyID() *string {
-	if t == nil {
-		return nil
-	}
-	return t.CompanyID
-}
-
-func (t *Three) GetDepartmentID() *string {
-	if t == nil {
-		return nil
-	}
-	return t.DepartmentID
-}
-
-func (t *Three) GetPaymentType() *Expense3PaymentType {
-	if t == nil {
-		return nil
-	}
-	return t.PaymentType
-}
-
-func (t *Three) GetCurrency() *Currency {
-	if t == nil {
-		return nil
-	}
-	return t.Currency
-}
-
-func (t *Three) GetCurrencyRate() *float64 {
-	if t == nil {
-		return nil
-	}
-	return t.CurrencyRate
-}
-
-func (t *Three) GetType() *Expense3ExpenseType {
-	if t == nil {
-		return nil
-	}
-	return t.Type
-}
-
-func (t *Three) GetMemo() *string {
-	if t == nil {
-		return nil
-	}
-	return t.Memo
-}
-
-func (t *Three) GetTaxRate() *LinkedTaxRate {
-	if t == nil {
-		return nil
-	}
-	return t.TaxRate
-}
-
-func (t *Three) GetTotalAmount() *float64 {
-	if t == nil {
-		return nil
-	}
-	return t.TotalAmount
-}
-
-func (t *Three) GetLineItems() []ExpenseLineItem {
-	if t == nil {
-		return []ExpenseLineItem{}
-	}
-	return t.LineItems
-}
-
-func (t *Three) GetReference() *string {
-	if t == nil {
-		return nil
-	}
-	return t.Reference
-}
-
-func (t *Three) GetSourceDocumentURL() *string {
-	if t == nil {
-		return nil
-	}
-	return t.SourceDocumentURL
-}
-
-func (t *Three) GetCustomFields() []CustomField {
-	if t == nil {
-		return nil
-	}
-	return t.CustomFields
-}
-
-func (t *Three) GetCustomMappings() map[string]any {
-	if t == nil {
-		return nil
-	}
-	return t.CustomMappings
-}
-
-func (t *Three) GetStatus() *Expense3Status {
-	if t == nil {
-		return nil
-	}
-	return t.Status
-}
-
-func (t *Three) GetUpdatedAt() *time.Time {
-	if t == nil {
-		return nil
-	}
-	return t.UpdatedAt
-}
-
-func (t *Three) GetCreatedAt() *time.Time {
-	if t == nil {
-		return nil
-	}
-	return t.CreatedAt
-}
-
-func (t *Three) GetRowVersion() *string {
-	if t == nil {
-		return nil
-	}
-	return t.RowVersion
-}
-
-func (t *Three) GetUpdatedBy() *string {
-	if t == nil {
-		return nil
-	}
-	return t.UpdatedBy
-}
-
-func (t *Three) GetCreatedBy() *string {
-	if t == nil {
-		return nil
-	}
-	return t.CreatedBy
-}
-
-func (t *Three) GetPassThrough() []PassThroughBody {
-	if t == nil {
-		return nil
-	}
-	return t.PassThrough
-}
-
-// Expense2PaymentType - The type of payment for the expense.
-type Expense2PaymentType string
-
-const (
-	Expense2PaymentTypeCash       Expense2PaymentType = "cash"
-	Expense2PaymentTypeCheck      Expense2PaymentType = "check"
-	Expense2PaymentTypeCreditCard Expense2PaymentType = "credit_card"
-	Expense2PaymentTypeOther      Expense2PaymentType = "other"
-)
-
-func (e Expense2PaymentType) ToPointer() *Expense2PaymentType {
-	return &e
-}
-func (e *Expense2PaymentType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
-	}
-	switch v {
-	case "cash":
-		fallthrough
-	case "check":
-		fallthrough
-	case "credit_card":
-		fallthrough
-	case "other":
-		*e = Expense2PaymentType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Expense2PaymentType: %v", v)
-	}
-}
-
-// ExpenseExpenseType - The type of expense.
-type ExpenseExpenseType string
-
-const (
-	ExpenseExpenseTypeExpense ExpenseExpenseType = "expense"
-	ExpenseExpenseTypeRefund  ExpenseExpenseType = "refund"
-)
-
-func (e ExpenseExpenseType) ToPointer() *ExpenseExpenseType {
-	return &e
-}
-func (e *ExpenseExpenseType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
-	}
-	switch v {
-	case "expense":
-		fallthrough
-	case "refund":
-		*e = ExpenseExpenseType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ExpenseExpenseType: %v", v)
-	}
-}
-
-// Expense2Status - Expense status
-type Expense2Status string
-
-const (
-	Expense2StatusDraft  Expense2Status = "draft"
-	Expense2StatusPosted Expense2Status = "posted"
-)
-
-func (e Expense2Status) ToPointer() *Expense2Status {
-	return &e
-}
-func (e *Expense2Status) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
-	}
-	switch v {
-	case "draft":
-		fallthrough
-	case "posted":
-		*e = Expense2Status(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Expense2Status: %v", v)
-	}
-}
-
-type Expense2 struct {
-	// A unique identifier for an object.
-	ID *string `json:"id,omitempty"`
-	// Number.
-	Number *string `json:"number,omitempty"`
-	// The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
-	TransactionDate *time.Time `json:"transaction_date"`
-	// The unique identifier for the ledger account that this expense should be credited to. Deprecated, use account instead.
-	//
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
-	AccountID   *string              `json:"account_id,omitempty"`
-	Account     *LinkedLedgerAccount `json:"account"`
-	BankAccount *LinkedBankAccount   `json:"bank_account,omitempty"`
-	// The ID of the customer this entity is linked to. Used for expenses that should be marked as billable to customers.
-	CustomerID *string `json:"customer_id,omitempty"`
-	// The ID of the supplier this entity is linked to.
-	SupplierID *string `json:"supplier_id,omitempty"`
-	// The company ID the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
-	// The ID of the department
-	DepartmentID *string `json:"department_id,omitempty"`
-	// The type of payment for the expense.
-	PaymentType *Expense2PaymentType `json:"payment_type,omitempty"`
-	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-	Currency *Currency `json:"currency,omitempty"`
-	// Currency Exchange Rate at the time entity was recorded/generated.
-	CurrencyRate *float64 `json:"currency_rate,omitempty"`
-	// The type of expense.
-	Type *ExpenseExpenseType `json:"type,omitempty"`
-	// The memo of the expense.
-	Memo    *string        `json:"memo,omitempty"`
-	TaxRate *LinkedTaxRate `json:"tax_rate,omitempty"`
-	// The total amount of the expense line item.
-	TotalAmount *float64 `json:"total_amount,omitempty"`
-	// Expense line items linked to this expense.
-	LineItems []ExpenseLineItem `json:"line_items"`
-	// Optional reference identifier for the transaction.
-	Reference *string `json:"reference,omitempty"`
-	// URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.
-	SourceDocumentURL *string       `json:"source_document_url,omitempty"`
-	CustomFields      []CustomField `json:"custom_fields,omitempty"`
-	// When custom mappings are configured on the resource, the result is included here.
-	CustomMappings map[string]any `json:"custom_mappings,omitempty"`
-	// Expense status
-	Status *Expense2Status `json:"status,omitempty"`
-	// The date and time when the object was last updated.
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
-	// The date and time when the object was created.
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-	RowVersion *string `json:"row_version,omitempty"`
-	// The user who last updated the object.
-	UpdatedBy *string `json:"updated_by,omitempty"`
-	// The user who created the object.
-	CreatedBy *string `json:"created_by,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-}
-
-func (e Expense2) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(e, "", false)
-}
-
-func (e *Expense2) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &e, "", false, []string{"line_items"}); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (e *Expense2) GetID() *string {
-	if e == nil {
-		return nil
-	}
-	return e.ID
-}
-
-func (e *Expense2) GetNumber() *string {
-	if e == nil {
-		return nil
-	}
-	return e.Number
-}
-
-func (e *Expense2) GetTransactionDate() *time.Time {
-	if e == nil {
-		return nil
-	}
-	return e.TransactionDate
-}
-
-func (e *Expense2) GetAccountID() *string {
-	if e == nil {
-		return nil
-	}
-	return e.AccountID
-}
-
-func (e *Expense2) GetAccount() *LinkedLedgerAccount {
-	if e == nil {
-		return nil
-	}
-	return e.Account
-}
-
-func (e *Expense2) GetBankAccount() *LinkedBankAccount {
-	if e == nil {
-		return nil
-	}
-	return e.BankAccount
-}
-
-func (e *Expense2) GetCustomerID() *string {
-	if e == nil {
-		return nil
-	}
-	return e.CustomerID
-}
-
-func (e *Expense2) GetSupplierID() *string {
-	if e == nil {
-		return nil
-	}
-	return e.SupplierID
-}
-
-func (e *Expense2) GetCompanyID() *string {
-	if e == nil {
-		return nil
-	}
-	return e.CompanyID
-}
-
-func (e *Expense2) GetDepartmentID() *string {
-	if e == nil {
-		return nil
-	}
-	return e.DepartmentID
-}
-
-func (e *Expense2) GetPaymentType() *Expense2PaymentType {
-	if e == nil {
-		return nil
-	}
-	return e.PaymentType
-}
-
-func (e *Expense2) GetCurrency() *Currency {
-	if e == nil {
-		return nil
-	}
-	return e.Currency
-}
-
-func (e *Expense2) GetCurrencyRate() *float64 {
-	if e == nil {
-		return nil
-	}
-	return e.CurrencyRate
-}
-
-func (e *Expense2) GetType() *ExpenseExpenseType {
-	if e == nil {
-		return nil
-	}
-	return e.Type
-}
-
-func (e *Expense2) GetMemo() *string {
-	if e == nil {
-		return nil
-	}
-	return e.Memo
-}
-
-func (e *Expense2) GetTaxRate() *LinkedTaxRate {
-	if e == nil {
-		return nil
-	}
-	return e.TaxRate
-}
-
-func (e *Expense2) GetTotalAmount() *float64 {
-	if e == nil {
-		return nil
-	}
-	return e.TotalAmount
-}
-
-func (e *Expense2) GetLineItems() []ExpenseLineItem {
-	if e == nil {
-		return []ExpenseLineItem{}
-	}
-	return e.LineItems
-}
-
-func (e *Expense2) GetReference() *string {
-	if e == nil {
-		return nil
-	}
-	return e.Reference
-}
-
-func (e *Expense2) GetSourceDocumentURL() *string {
-	if e == nil {
-		return nil
-	}
-	return e.SourceDocumentURL
-}
-
-func (e *Expense2) GetCustomFields() []CustomField {
-	if e == nil {
-		return nil
-	}
-	return e.CustomFields
-}
-
-func (e *Expense2) GetCustomMappings() map[string]any {
-	if e == nil {
-		return nil
-	}
-	return e.CustomMappings
-}
-
-func (e *Expense2) GetStatus() *Expense2Status {
-	if e == nil {
-		return nil
-	}
-	return e.Status
-}
-
-func (e *Expense2) GetUpdatedAt() *time.Time {
-	if e == nil {
-		return nil
-	}
-	return e.UpdatedAt
-}
-
-func (e *Expense2) GetCreatedAt() *time.Time {
-	if e == nil {
-		return nil
-	}
-	return e.CreatedAt
-}
-
-func (e *Expense2) GetRowVersion() *string {
-	if e == nil {
-		return nil
-	}
-	return e.RowVersion
-}
-
-func (e *Expense2) GetUpdatedBy() *string {
-	if e == nil {
-		return nil
-	}
-	return e.UpdatedBy
-}
-
-func (e *Expense2) GetCreatedBy() *string {
-	if e == nil {
-		return nil
-	}
-	return e.CreatedBy
-}
-
-func (e *Expense2) GetPassThrough() []PassThroughBody {
-	if e == nil {
-		return nil
-	}
-	return e.PassThrough
-}
 
 // ExpensePaymentType - The type of payment for the expense.
 type ExpensePaymentType string
@@ -817,7 +96,7 @@ func (e *ExpenseStatus) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type Expense1 struct {
+type Expense struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
 	// Number.
@@ -827,13 +106,17 @@ type Expense1 struct {
 	// The unique identifier for the ledger account that this expense should be credited to. Deprecated, use account instead.
 	//
 	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
-	AccountID   string               `json:"account_id"`
+	AccountID   *string              `json:"account_id,omitempty"`
 	Account     *LinkedLedgerAccount `json:"account,omitempty"`
 	BankAccount *LinkedBankAccount   `json:"bank_account,omitempty"`
 	// The ID of the customer this entity is linked to. Used for expenses that should be marked as billable to customers.
 	CustomerID *string `json:"customer_id,omitempty"`
-	// The ID of the supplier this entity is linked to.
+	// The ID of the supplier this entity is linked to. Deprecated, use supplier instead.
+	//
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	SupplierID *string `json:"supplier_id,omitempty"`
+	// The supplier this entity is linked to.
+	Supplier *LinkedSupplier `json:"supplier,omitempty"`
 	// The company ID the transaction belongs to
 	CompanyID *string `json:"company_id,omitempty"`
 	// The ID of the department
@@ -849,6 +132,12 @@ type Expense1 struct {
 	// The memo of the expense.
 	Memo    *string        `json:"memo,omitempty"`
 	TaxRate *LinkedTaxRate `json:"tax_rate,omitempty"`
+	// Amounts are including tax
+	TaxInclusive *bool `json:"tax_inclusive,omitempty"`
+	// Subtotal amount, normally before tax.
+	SubTotal *float64 `json:"sub_total,omitempty"`
+	// Total tax amount applied to this transaction.
+	TotalTax *float64 `json:"total_tax,omitempty"`
 	// The total amount of the expense line item.
 	TotalAmount *float64 `json:"total_amount,omitempty"`
 	// Expense line items linked to this expense.
@@ -876,306 +165,249 @@ type Expense1 struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (e Expense1) MarshalJSON() ([]byte, error) {
+func (e Expense) MarshalJSON() ([]byte, error) {
 	return utils.MarshalJSON(e, "", false)
 }
 
-func (e *Expense1) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &e, "", false, []string{"account_id", "line_items"}); err != nil {
+func (e *Expense) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &e, "", false, []string{"line_items"}); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (e *Expense1) GetID() *string {
+func (e *Expense) GetID() *string {
 	if e == nil {
 		return nil
 	}
 	return e.ID
 }
 
-func (e *Expense1) GetNumber() *string {
+func (e *Expense) GetNumber() *string {
 	if e == nil {
 		return nil
 	}
 	return e.Number
 }
 
-func (e *Expense1) GetTransactionDate() *time.Time {
+func (e *Expense) GetTransactionDate() *time.Time {
 	if e == nil {
 		return nil
 	}
 	return e.TransactionDate
 }
 
-func (e *Expense1) GetAccountID() string {
+func (e *Expense) GetAccountID() *string {
 	if e == nil {
-		return ""
+		return nil
 	}
 	return e.AccountID
 }
 
-func (e *Expense1) GetAccount() *LinkedLedgerAccount {
+func (e *Expense) GetAccount() *LinkedLedgerAccount {
 	if e == nil {
 		return nil
 	}
 	return e.Account
 }
 
-func (e *Expense1) GetBankAccount() *LinkedBankAccount {
+func (e *Expense) GetBankAccount() *LinkedBankAccount {
 	if e == nil {
 		return nil
 	}
 	return e.BankAccount
 }
 
-func (e *Expense1) GetCustomerID() *string {
+func (e *Expense) GetCustomerID() *string {
 	if e == nil {
 		return nil
 	}
 	return e.CustomerID
 }
 
-func (e *Expense1) GetSupplierID() *string {
+func (e *Expense) GetSupplierID() *string {
 	if e == nil {
 		return nil
 	}
 	return e.SupplierID
 }
 
-func (e *Expense1) GetCompanyID() *string {
+func (e *Expense) GetSupplier() *LinkedSupplier {
+	if e == nil {
+		return nil
+	}
+	return e.Supplier
+}
+
+func (e *Expense) GetCompanyID() *string {
 	if e == nil {
 		return nil
 	}
 	return e.CompanyID
 }
 
-func (e *Expense1) GetDepartmentID() *string {
+func (e *Expense) GetDepartmentID() *string {
 	if e == nil {
 		return nil
 	}
 	return e.DepartmentID
 }
 
-func (e *Expense1) GetPaymentType() *ExpensePaymentType {
+func (e *Expense) GetPaymentType() *ExpensePaymentType {
 	if e == nil {
 		return nil
 	}
 	return e.PaymentType
 }
 
-func (e *Expense1) GetCurrency() *Currency {
+func (e *Expense) GetCurrency() *Currency {
 	if e == nil {
 		return nil
 	}
 	return e.Currency
 }
 
-func (e *Expense1) GetCurrencyRate() *float64 {
+func (e *Expense) GetCurrencyRate() *float64 {
 	if e == nil {
 		return nil
 	}
 	return e.CurrencyRate
 }
 
-func (e *Expense1) GetType() *ExpenseType {
+func (e *Expense) GetType() *ExpenseType {
 	if e == nil {
 		return nil
 	}
 	return e.Type
 }
 
-func (e *Expense1) GetMemo() *string {
+func (e *Expense) GetMemo() *string {
 	if e == nil {
 		return nil
 	}
 	return e.Memo
 }
 
-func (e *Expense1) GetTaxRate() *LinkedTaxRate {
+func (e *Expense) GetTaxRate() *LinkedTaxRate {
 	if e == nil {
 		return nil
 	}
 	return e.TaxRate
 }
 
-func (e *Expense1) GetTotalAmount() *float64 {
+func (e *Expense) GetTaxInclusive() *bool {
+	if e == nil {
+		return nil
+	}
+	return e.TaxInclusive
+}
+
+func (e *Expense) GetSubTotal() *float64 {
+	if e == nil {
+		return nil
+	}
+	return e.SubTotal
+}
+
+func (e *Expense) GetTotalTax() *float64 {
+	if e == nil {
+		return nil
+	}
+	return e.TotalTax
+}
+
+func (e *Expense) GetTotalAmount() *float64 {
 	if e == nil {
 		return nil
 	}
 	return e.TotalAmount
 }
 
-func (e *Expense1) GetLineItems() []ExpenseLineItem {
+func (e *Expense) GetLineItems() []ExpenseLineItem {
 	if e == nil {
 		return []ExpenseLineItem{}
 	}
 	return e.LineItems
 }
 
-func (e *Expense1) GetReference() *string {
+func (e *Expense) GetReference() *string {
 	if e == nil {
 		return nil
 	}
 	return e.Reference
 }
 
-func (e *Expense1) GetSourceDocumentURL() *string {
+func (e *Expense) GetSourceDocumentURL() *string {
 	if e == nil {
 		return nil
 	}
 	return e.SourceDocumentURL
 }
 
-func (e *Expense1) GetCustomFields() []CustomField {
+func (e *Expense) GetCustomFields() []CustomField {
 	if e == nil {
 		return nil
 	}
 	return e.CustomFields
 }
 
-func (e *Expense1) GetCustomMappings() map[string]any {
+func (e *Expense) GetCustomMappings() map[string]any {
 	if e == nil {
 		return nil
 	}
 	return e.CustomMappings
 }
 
-func (e *Expense1) GetStatus() *ExpenseStatus {
+func (e *Expense) GetStatus() *ExpenseStatus {
 	if e == nil {
 		return nil
 	}
 	return e.Status
 }
 
-func (e *Expense1) GetUpdatedAt() *time.Time {
+func (e *Expense) GetUpdatedAt() *time.Time {
 	if e == nil {
 		return nil
 	}
 	return e.UpdatedAt
 }
 
-func (e *Expense1) GetCreatedAt() *time.Time {
+func (e *Expense) GetCreatedAt() *time.Time {
 	if e == nil {
 		return nil
 	}
 	return e.CreatedAt
 }
 
-func (e *Expense1) GetRowVersion() *string {
+func (e *Expense) GetRowVersion() *string {
 	if e == nil {
 		return nil
 	}
 	return e.RowVersion
 }
 
-func (e *Expense1) GetUpdatedBy() *string {
+func (e *Expense) GetUpdatedBy() *string {
 	if e == nil {
 		return nil
 	}
 	return e.UpdatedBy
 }
 
-func (e *Expense1) GetCreatedBy() *string {
+func (e *Expense) GetCreatedBy() *string {
 	if e == nil {
 		return nil
 	}
 	return e.CreatedBy
 }
 
-func (e *Expense1) GetPassThrough() []PassThroughBody {
+func (e *Expense) GetPassThrough() []PassThroughBody {
 	if e == nil {
 		return nil
 	}
 	return e.PassThrough
 }
 
-type ExpenseUnionType string
-
-const (
-	ExpenseUnionTypeExpense1 ExpenseUnionType = "Expense_1"
-	ExpenseUnionTypeExpense2 ExpenseUnionType = "Expense_2"
-	ExpenseUnionTypeThree    ExpenseUnionType = "3"
-)
-
-type Expense struct {
-	Expense1 *Expense1 `queryParam:"inline,name=Expense"`
-	Expense2 *Expense2 `queryParam:"inline,name=Expense"`
-	Three    *Three    `queryParam:"inline,name=Expense"`
-
-	Type ExpenseUnionType
-}
-
-func CreateExpenseExpense1(expense1 Expense1) Expense {
-	typ := ExpenseUnionTypeExpense1
-
-	return Expense{
-		Expense1: &expense1,
-		Type:     typ,
-	}
-}
-
-func CreateExpenseExpense2(expense2 Expense2) Expense {
-	typ := ExpenseUnionTypeExpense2
-
-	return Expense{
-		Expense2: &expense2,
-		Type:     typ,
-	}
-}
-
-func CreateExpenseThree(three Three) Expense {
-	typ := ExpenseUnionTypeThree
-
-	return Expense{
-		Three: &three,
-		Type:  typ,
-	}
-}
-
-func (u *Expense) UnmarshalJSON(data []byte) error {
-
-	var expense1 Expense1 = Expense1{}
-	if err := utils.UnmarshalJSON(data, &expense1, "", true, nil); err == nil {
-		u.Expense1 = &expense1
-		u.Type = ExpenseUnionTypeExpense1
-		return nil
-	}
-
-	var expense2 Expense2 = Expense2{}
-	if err := utils.UnmarshalJSON(data, &expense2, "", true, nil); err == nil {
-		u.Expense2 = &expense2
-		u.Type = ExpenseUnionTypeExpense2
-		return nil
-	}
-
-	var three Three = Three{}
-	if err := utils.UnmarshalJSON(data, &three, "", true, nil); err == nil {
-		u.Three = &three
-		u.Type = ExpenseUnionTypeThree
-		return nil
-	}
-
-	return fmt.Errorf("could not unmarshal `%s` into any supported union types for Expense", string(data))
-}
-
-func (u Expense) MarshalJSON() ([]byte, error) {
-	if u.Expense1 != nil {
-		return utils.MarshalJSON(u.Expense1, "", true)
-	}
-
-	if u.Expense2 != nil {
-		return utils.MarshalJSON(u.Expense2, "", true)
-	}
-
-	if u.Three != nil {
-		return utils.MarshalJSON(u.Three, "", true)
-	}
-
-	return nil, errors.New("could not marshal union type Expense: all fields are null")
-}
-
-type Expense3 struct {
+type ExpenseInput struct {
 	// Number.
 	Number *string `json:"number,omitempty"`
 	// The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
@@ -1183,451 +415,17 @@ type Expense3 struct {
 	// The unique identifier for the ledger account that this expense should be credited to. Deprecated, use account instead.
 	//
 	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
-	AccountID   *string                   `json:"account_id,omitempty"`
-	Account     *LinkedLedgerAccountInput `json:"account,omitempty"`
-	BankAccount *LinkedBankAccount        `json:"bank_account"`
+	AccountID   *string              `json:"account_id,omitempty"`
+	Account     *LinkedLedgerAccount `json:"account,omitempty"`
+	BankAccount *LinkedBankAccount   `json:"bank_account,omitempty"`
 	// The ID of the customer this entity is linked to. Used for expenses that should be marked as billable to customers.
 	CustomerID *string `json:"customer_id,omitempty"`
-	// The ID of the supplier this entity is linked to.
-	SupplierID *string `json:"supplier_id,omitempty"`
-	// The company ID the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
-	// The ID of the department
-	DepartmentID *string `json:"department_id,omitempty"`
-	// The type of payment for the expense.
-	PaymentType *Expense3PaymentType `json:"payment_type,omitempty"`
-	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-	Currency *Currency `json:"currency,omitempty"`
-	// Currency Exchange Rate at the time entity was recorded/generated.
-	CurrencyRate *float64 `json:"currency_rate,omitempty"`
-	// The type of expense.
-	Type *Expense3ExpenseType `json:"type,omitempty"`
-	// The memo of the expense.
-	Memo    *string             `json:"memo,omitempty"`
-	TaxRate *LinkedTaxRateInput `json:"tax_rate,omitempty"`
-	// The total amount of the expense line item.
-	TotalAmount *float64 `json:"total_amount,omitempty"`
-	// Expense line items linked to this expense.
-	LineItems []ExpenseLineItemInput `json:"line_items"`
-	// Optional reference identifier for the transaction.
-	Reference *string `json:"reference,omitempty"`
-	// URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.
-	SourceDocumentURL *string       `json:"source_document_url,omitempty"`
-	CustomFields      []CustomField `json:"custom_fields,omitempty"`
-	// Expense status
-	Status *Expense3Status `json:"status,omitempty"`
-	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-	RowVersion *string `json:"row_version,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-}
-
-func (e Expense3) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(e, "", false)
-}
-
-func (e *Expense3) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &e, "", false, []string{"line_items"}); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (e *Expense3) GetNumber() *string {
-	if e == nil {
-		return nil
-	}
-	return e.Number
-}
-
-func (e *Expense3) GetTransactionDate() *time.Time {
-	if e == nil {
-		return nil
-	}
-	return e.TransactionDate
-}
-
-func (e *Expense3) GetAccountID() *string {
-	if e == nil {
-		return nil
-	}
-	return e.AccountID
-}
-
-func (e *Expense3) GetAccount() *LinkedLedgerAccountInput {
-	if e == nil {
-		return nil
-	}
-	return e.Account
-}
-
-func (e *Expense3) GetBankAccount() *LinkedBankAccount {
-	if e == nil {
-		return nil
-	}
-	return e.BankAccount
-}
-
-func (e *Expense3) GetCustomerID() *string {
-	if e == nil {
-		return nil
-	}
-	return e.CustomerID
-}
-
-func (e *Expense3) GetSupplierID() *string {
-	if e == nil {
-		return nil
-	}
-	return e.SupplierID
-}
-
-func (e *Expense3) GetCompanyID() *string {
-	if e == nil {
-		return nil
-	}
-	return e.CompanyID
-}
-
-func (e *Expense3) GetDepartmentID() *string {
-	if e == nil {
-		return nil
-	}
-	return e.DepartmentID
-}
-
-func (e *Expense3) GetPaymentType() *Expense3PaymentType {
-	if e == nil {
-		return nil
-	}
-	return e.PaymentType
-}
-
-func (e *Expense3) GetCurrency() *Currency {
-	if e == nil {
-		return nil
-	}
-	return e.Currency
-}
-
-func (e *Expense3) GetCurrencyRate() *float64 {
-	if e == nil {
-		return nil
-	}
-	return e.CurrencyRate
-}
-
-func (e *Expense3) GetType() *Expense3ExpenseType {
-	if e == nil {
-		return nil
-	}
-	return e.Type
-}
-
-func (e *Expense3) GetMemo() *string {
-	if e == nil {
-		return nil
-	}
-	return e.Memo
-}
-
-func (e *Expense3) GetTaxRate() *LinkedTaxRateInput {
-	if e == nil {
-		return nil
-	}
-	return e.TaxRate
-}
-
-func (e *Expense3) GetTotalAmount() *float64 {
-	if e == nil {
-		return nil
-	}
-	return e.TotalAmount
-}
-
-func (e *Expense3) GetLineItems() []ExpenseLineItemInput {
-	if e == nil {
-		return []ExpenseLineItemInput{}
-	}
-	return e.LineItems
-}
-
-func (e *Expense3) GetReference() *string {
-	if e == nil {
-		return nil
-	}
-	return e.Reference
-}
-
-func (e *Expense3) GetSourceDocumentURL() *string {
-	if e == nil {
-		return nil
-	}
-	return e.SourceDocumentURL
-}
-
-func (e *Expense3) GetCustomFields() []CustomField {
-	if e == nil {
-		return nil
-	}
-	return e.CustomFields
-}
-
-func (e *Expense3) GetStatus() *Expense3Status {
-	if e == nil {
-		return nil
-	}
-	return e.Status
-}
-
-func (e *Expense3) GetRowVersion() *string {
-	if e == nil {
-		return nil
-	}
-	return e.RowVersion
-}
-
-func (e *Expense3) GetPassThrough() []PassThroughBody {
-	if e == nil {
-		return nil
-	}
-	return e.PassThrough
-}
-
-type Expense2Input struct {
-	// Number.
-	Number *string `json:"number,omitempty"`
-	// The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
-	TransactionDate *time.Time `json:"transaction_date"`
-	// The unique identifier for the ledger account that this expense should be credited to. Deprecated, use account instead.
+	// The ID of the supplier this entity is linked to. Deprecated, use supplier instead.
 	//
 	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
-	AccountID   *string                   `json:"account_id,omitempty"`
-	Account     *LinkedLedgerAccountInput `json:"account"`
-	BankAccount *LinkedBankAccount        `json:"bank_account,omitempty"`
-	// The ID of the customer this entity is linked to. Used for expenses that should be marked as billable to customers.
-	CustomerID *string `json:"customer_id,omitempty"`
-	// The ID of the supplier this entity is linked to.
 	SupplierID *string `json:"supplier_id,omitempty"`
-	// The company ID the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
-	// The ID of the department
-	DepartmentID *string `json:"department_id,omitempty"`
-	// The type of payment for the expense.
-	PaymentType *Expense2PaymentType `json:"payment_type,omitempty"`
-	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-	Currency *Currency `json:"currency,omitempty"`
-	// Currency Exchange Rate at the time entity was recorded/generated.
-	CurrencyRate *float64 `json:"currency_rate,omitempty"`
-	// The type of expense.
-	Type *ExpenseExpenseType `json:"type,omitempty"`
-	// The memo of the expense.
-	Memo    *string             `json:"memo,omitempty"`
-	TaxRate *LinkedTaxRateInput `json:"tax_rate,omitempty"`
-	// The total amount of the expense line item.
-	TotalAmount *float64 `json:"total_amount,omitempty"`
-	// Expense line items linked to this expense.
-	LineItems []ExpenseLineItemInput `json:"line_items"`
-	// Optional reference identifier for the transaction.
-	Reference *string `json:"reference,omitempty"`
-	// URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.
-	SourceDocumentURL *string       `json:"source_document_url,omitempty"`
-	CustomFields      []CustomField `json:"custom_fields,omitempty"`
-	// Expense status
-	Status *Expense2Status `json:"status,omitempty"`
-	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-	RowVersion *string `json:"row_version,omitempty"`
-	// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
-}
-
-func (e Expense2Input) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(e, "", false)
-}
-
-func (e *Expense2Input) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &e, "", false, []string{"line_items"}); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (e *Expense2Input) GetNumber() *string {
-	if e == nil {
-		return nil
-	}
-	return e.Number
-}
-
-func (e *Expense2Input) GetTransactionDate() *time.Time {
-	if e == nil {
-		return nil
-	}
-	return e.TransactionDate
-}
-
-func (e *Expense2Input) GetAccountID() *string {
-	if e == nil {
-		return nil
-	}
-	return e.AccountID
-}
-
-func (e *Expense2Input) GetAccount() *LinkedLedgerAccountInput {
-	if e == nil {
-		return nil
-	}
-	return e.Account
-}
-
-func (e *Expense2Input) GetBankAccount() *LinkedBankAccount {
-	if e == nil {
-		return nil
-	}
-	return e.BankAccount
-}
-
-func (e *Expense2Input) GetCustomerID() *string {
-	if e == nil {
-		return nil
-	}
-	return e.CustomerID
-}
-
-func (e *Expense2Input) GetSupplierID() *string {
-	if e == nil {
-		return nil
-	}
-	return e.SupplierID
-}
-
-func (e *Expense2Input) GetCompanyID() *string {
-	if e == nil {
-		return nil
-	}
-	return e.CompanyID
-}
-
-func (e *Expense2Input) GetDepartmentID() *string {
-	if e == nil {
-		return nil
-	}
-	return e.DepartmentID
-}
-
-func (e *Expense2Input) GetPaymentType() *Expense2PaymentType {
-	if e == nil {
-		return nil
-	}
-	return e.PaymentType
-}
-
-func (e *Expense2Input) GetCurrency() *Currency {
-	if e == nil {
-		return nil
-	}
-	return e.Currency
-}
-
-func (e *Expense2Input) GetCurrencyRate() *float64 {
-	if e == nil {
-		return nil
-	}
-	return e.CurrencyRate
-}
-
-func (e *Expense2Input) GetType() *ExpenseExpenseType {
-	if e == nil {
-		return nil
-	}
-	return e.Type
-}
-
-func (e *Expense2Input) GetMemo() *string {
-	if e == nil {
-		return nil
-	}
-	return e.Memo
-}
-
-func (e *Expense2Input) GetTaxRate() *LinkedTaxRateInput {
-	if e == nil {
-		return nil
-	}
-	return e.TaxRate
-}
-
-func (e *Expense2Input) GetTotalAmount() *float64 {
-	if e == nil {
-		return nil
-	}
-	return e.TotalAmount
-}
-
-func (e *Expense2Input) GetLineItems() []ExpenseLineItemInput {
-	if e == nil {
-		return []ExpenseLineItemInput{}
-	}
-	return e.LineItems
-}
-
-func (e *Expense2Input) GetReference() *string {
-	if e == nil {
-		return nil
-	}
-	return e.Reference
-}
-
-func (e *Expense2Input) GetSourceDocumentURL() *string {
-	if e == nil {
-		return nil
-	}
-	return e.SourceDocumentURL
-}
-
-func (e *Expense2Input) GetCustomFields() []CustomField {
-	if e == nil {
-		return nil
-	}
-	return e.CustomFields
-}
-
-func (e *Expense2Input) GetStatus() *Expense2Status {
-	if e == nil {
-		return nil
-	}
-	return e.Status
-}
-
-func (e *Expense2Input) GetRowVersion() *string {
-	if e == nil {
-		return nil
-	}
-	return e.RowVersion
-}
-
-func (e *Expense2Input) GetPassThrough() []PassThroughBody {
-	if e == nil {
-		return nil
-	}
-	return e.PassThrough
-}
-
-type Expense1Input struct {
-	// Number.
-	Number *string `json:"number,omitempty"`
-	// The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
-	TransactionDate *time.Time `json:"transaction_date"`
-	// The unique identifier for the ledger account that this expense should be credited to. Deprecated, use account instead.
-	//
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
-	AccountID   string                    `json:"account_id"`
-	Account     *LinkedLedgerAccountInput `json:"account,omitempty"`
-	BankAccount *LinkedBankAccount        `json:"bank_account,omitempty"`
-	// The ID of the customer this entity is linked to. Used for expenses that should be marked as billable to customers.
-	CustomerID *string `json:"customer_id,omitempty"`
-	// The ID of the supplier this entity is linked to.
-	SupplierID *string `json:"supplier_id,omitempty"`
+	// The supplier this entity is linked to.
+	Supplier *LinkedSupplierInput `json:"supplier,omitempty"`
 	// The company ID the transaction belongs to
 	CompanyID *string `json:"company_id,omitempty"`
 	// The ID of the department
@@ -1643,6 +441,12 @@ type Expense1Input struct {
 	// The memo of the expense.
 	Memo    *string             `json:"memo,omitempty"`
 	TaxRate *LinkedTaxRateInput `json:"tax_rate,omitempty"`
+	// Amounts are including tax
+	TaxInclusive *bool `json:"tax_inclusive,omitempty"`
+	// Subtotal amount, normally before tax.
+	SubTotal *float64 `json:"sub_total,omitempty"`
+	// Total tax amount applied to this transaction.
+	TotalTax *float64 `json:"total_tax,omitempty"`
 	// The total amount of the expense line item.
 	TotalAmount *float64 `json:"total_amount,omitempty"`
 	// Expense line items linked to this expense.
@@ -1660,259 +464,202 @@ type Expense1Input struct {
 	PassThrough []PassThroughBody `json:"pass_through,omitempty"`
 }
 
-func (e Expense1Input) MarshalJSON() ([]byte, error) {
+func (e ExpenseInput) MarshalJSON() ([]byte, error) {
 	return utils.MarshalJSON(e, "", false)
 }
 
-func (e *Expense1Input) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &e, "", false, []string{"account_id", "line_items"}); err != nil {
+func (e *ExpenseInput) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &e, "", false, []string{"line_items"}); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (e *Expense1Input) GetNumber() *string {
+func (e *ExpenseInput) GetNumber() *string {
 	if e == nil {
 		return nil
 	}
 	return e.Number
 }
 
-func (e *Expense1Input) GetTransactionDate() *time.Time {
+func (e *ExpenseInput) GetTransactionDate() *time.Time {
 	if e == nil {
 		return nil
 	}
 	return e.TransactionDate
 }
 
-func (e *Expense1Input) GetAccountID() string {
+func (e *ExpenseInput) GetAccountID() *string {
 	if e == nil {
-		return ""
+		return nil
 	}
 	return e.AccountID
 }
 
-func (e *Expense1Input) GetAccount() *LinkedLedgerAccountInput {
+func (e *ExpenseInput) GetAccount() *LinkedLedgerAccount {
 	if e == nil {
 		return nil
 	}
 	return e.Account
 }
 
-func (e *Expense1Input) GetBankAccount() *LinkedBankAccount {
+func (e *ExpenseInput) GetBankAccount() *LinkedBankAccount {
 	if e == nil {
 		return nil
 	}
 	return e.BankAccount
 }
 
-func (e *Expense1Input) GetCustomerID() *string {
+func (e *ExpenseInput) GetCustomerID() *string {
 	if e == nil {
 		return nil
 	}
 	return e.CustomerID
 }
 
-func (e *Expense1Input) GetSupplierID() *string {
+func (e *ExpenseInput) GetSupplierID() *string {
 	if e == nil {
 		return nil
 	}
 	return e.SupplierID
 }
 
-func (e *Expense1Input) GetCompanyID() *string {
+func (e *ExpenseInput) GetSupplier() *LinkedSupplierInput {
+	if e == nil {
+		return nil
+	}
+	return e.Supplier
+}
+
+func (e *ExpenseInput) GetCompanyID() *string {
 	if e == nil {
 		return nil
 	}
 	return e.CompanyID
 }
 
-func (e *Expense1Input) GetDepartmentID() *string {
+func (e *ExpenseInput) GetDepartmentID() *string {
 	if e == nil {
 		return nil
 	}
 	return e.DepartmentID
 }
 
-func (e *Expense1Input) GetPaymentType() *ExpensePaymentType {
+func (e *ExpenseInput) GetPaymentType() *ExpensePaymentType {
 	if e == nil {
 		return nil
 	}
 	return e.PaymentType
 }
 
-func (e *Expense1Input) GetCurrency() *Currency {
+func (e *ExpenseInput) GetCurrency() *Currency {
 	if e == nil {
 		return nil
 	}
 	return e.Currency
 }
 
-func (e *Expense1Input) GetCurrencyRate() *float64 {
+func (e *ExpenseInput) GetCurrencyRate() *float64 {
 	if e == nil {
 		return nil
 	}
 	return e.CurrencyRate
 }
 
-func (e *Expense1Input) GetType() *ExpenseType {
+func (e *ExpenseInput) GetType() *ExpenseType {
 	if e == nil {
 		return nil
 	}
 	return e.Type
 }
 
-func (e *Expense1Input) GetMemo() *string {
+func (e *ExpenseInput) GetMemo() *string {
 	if e == nil {
 		return nil
 	}
 	return e.Memo
 }
 
-func (e *Expense1Input) GetTaxRate() *LinkedTaxRateInput {
+func (e *ExpenseInput) GetTaxRate() *LinkedTaxRateInput {
 	if e == nil {
 		return nil
 	}
 	return e.TaxRate
 }
 
-func (e *Expense1Input) GetTotalAmount() *float64 {
+func (e *ExpenseInput) GetTaxInclusive() *bool {
+	if e == nil {
+		return nil
+	}
+	return e.TaxInclusive
+}
+
+func (e *ExpenseInput) GetSubTotal() *float64 {
+	if e == nil {
+		return nil
+	}
+	return e.SubTotal
+}
+
+func (e *ExpenseInput) GetTotalTax() *float64 {
+	if e == nil {
+		return nil
+	}
+	return e.TotalTax
+}
+
+func (e *ExpenseInput) GetTotalAmount() *float64 {
 	if e == nil {
 		return nil
 	}
 	return e.TotalAmount
 }
 
-func (e *Expense1Input) GetLineItems() []ExpenseLineItemInput {
+func (e *ExpenseInput) GetLineItems() []ExpenseLineItemInput {
 	if e == nil {
 		return []ExpenseLineItemInput{}
 	}
 	return e.LineItems
 }
 
-func (e *Expense1Input) GetReference() *string {
+func (e *ExpenseInput) GetReference() *string {
 	if e == nil {
 		return nil
 	}
 	return e.Reference
 }
 
-func (e *Expense1Input) GetSourceDocumentURL() *string {
+func (e *ExpenseInput) GetSourceDocumentURL() *string {
 	if e == nil {
 		return nil
 	}
 	return e.SourceDocumentURL
 }
 
-func (e *Expense1Input) GetCustomFields() []CustomField {
+func (e *ExpenseInput) GetCustomFields() []CustomField {
 	if e == nil {
 		return nil
 	}
 	return e.CustomFields
 }
 
-func (e *Expense1Input) GetStatus() *ExpenseStatus {
+func (e *ExpenseInput) GetStatus() *ExpenseStatus {
 	if e == nil {
 		return nil
 	}
 	return e.Status
 }
 
-func (e *Expense1Input) GetRowVersion() *string {
+func (e *ExpenseInput) GetRowVersion() *string {
 	if e == nil {
 		return nil
 	}
 	return e.RowVersion
 }
 
-func (e *Expense1Input) GetPassThrough() []PassThroughBody {
+func (e *ExpenseInput) GetPassThrough() []PassThroughBody {
 	if e == nil {
 		return nil
 	}
 	return e.PassThrough
-}
-
-type ExpenseInputType string
-
-const (
-	ExpenseInputTypeExpense1Input ExpenseInputType = "Expense_1_input"
-	ExpenseInputTypeExpense2Input ExpenseInputType = "Expense_2_input"
-	ExpenseInputTypeExpense3      ExpenseInputType = "Expense_3"
-)
-
-type ExpenseInput struct {
-	Expense1Input *Expense1Input `queryParam:"inline,name=Expense"`
-	Expense2Input *Expense2Input `queryParam:"inline,name=Expense"`
-	Expense3      *Expense3      `queryParam:"inline,name=Expense"`
-
-	Type ExpenseInputType
-}
-
-func CreateExpenseInputExpense1Input(expense1Input Expense1Input) ExpenseInput {
-	typ := ExpenseInputTypeExpense1Input
-
-	return ExpenseInput{
-		Expense1Input: &expense1Input,
-		Type:          typ,
-	}
-}
-
-func CreateExpenseInputExpense2Input(expense2Input Expense2Input) ExpenseInput {
-	typ := ExpenseInputTypeExpense2Input
-
-	return ExpenseInput{
-		Expense2Input: &expense2Input,
-		Type:          typ,
-	}
-}
-
-func CreateExpenseInputExpense3(expense3 Expense3) ExpenseInput {
-	typ := ExpenseInputTypeExpense3
-
-	return ExpenseInput{
-		Expense3: &expense3,
-		Type:     typ,
-	}
-}
-
-func (u *ExpenseInput) UnmarshalJSON(data []byte) error {
-
-	var expense1Input Expense1Input = Expense1Input{}
-	if err := utils.UnmarshalJSON(data, &expense1Input, "", true, nil); err == nil {
-		u.Expense1Input = &expense1Input
-		u.Type = ExpenseInputTypeExpense1Input
-		return nil
-	}
-
-	var expense2Input Expense2Input = Expense2Input{}
-	if err := utils.UnmarshalJSON(data, &expense2Input, "", true, nil); err == nil {
-		u.Expense2Input = &expense2Input
-		u.Type = ExpenseInputTypeExpense2Input
-		return nil
-	}
-
-	var expense3 Expense3 = Expense3{}
-	if err := utils.UnmarshalJSON(data, &expense3, "", true, nil); err == nil {
-		u.Expense3 = &expense3
-		u.Type = ExpenseInputTypeExpense3
-		return nil
-	}
-
-	return fmt.Errorf("could not unmarshal `%s` into any supported union types for ExpenseInput", string(data))
-}
-
-func (u ExpenseInput) MarshalJSON() ([]byte, error) {
-	if u.Expense1Input != nil {
-		return utils.MarshalJSON(u.Expense1Input, "", true)
-	}
-
-	if u.Expense2Input != nil {
-		return utils.MarshalJSON(u.Expense2Input, "", true)
-	}
-
-	if u.Expense3 != nil {
-		return utils.MarshalJSON(u.Expense3, "", true)
-	}
-
-	return nil, errors.New("could not marshal union type ExpenseInput: all fields are null")
 }
