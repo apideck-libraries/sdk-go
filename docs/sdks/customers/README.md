@@ -244,7 +244,7 @@ func main() {
             },
             TaxNumber: sdkgo.Pointer("US123945459"),
             Currency: components.CurrencyUsd.ToPointer(),
-            Account: &components.LinkedLedgerAccountInput{
+            Account: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
                 NominalCode: sdkgo.Pointer("N091"),
                 Code: sdkgo.Pointer("453"),
@@ -559,7 +559,7 @@ func main() {
             },
             TaxNumber: sdkgo.Pointer("US123945459"),
             Currency: components.CurrencyUsd.ToPointer(),
-            Account: &components.LinkedLedgerAccountInput{
+            Account: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
                 NominalCode: sdkgo.Pointer("N091"),
                 Code: sdkgo.Pointer("453"),

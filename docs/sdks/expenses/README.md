@@ -123,145 +123,143 @@ func main() {
 
     res, err := s.Accounting.Expenses.Create(ctx, operations.AccountingExpensesAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
-        Expense: components.CreateExpenseInputExpense1Input(
-            components.Expense1Input{
-                Number: sdkgo.Pointer("OIT00546"),
-                TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
-                AccountID: "123456",
-                CustomerID: sdkgo.Pointer("12345"),
-                SupplierID: sdkgo.Pointer("12345"),
-                CompanyID: sdkgo.Pointer("12345"),
-                DepartmentID: sdkgo.Pointer("12345"),
-                PaymentType: components.ExpensePaymentTypeCash.ToPointer(),
-                Currency: components.CurrencyUsd.ToPointer(),
-                CurrencyRate: sdkgo.Pointer[float64](0.69),
-                Type: components.ExpenseTypeExpense.ToPointer(),
-                Memo: sdkgo.Pointer("For travel expenses incurred on 2024-05-15"),
-                TaxRate: &components.LinkedTaxRateInput{
-                    ID: sdkgo.Pointer("123456"),
-                    Rate: sdkgo.Pointer[float64](10),
-                },
-                TotalAmount: sdkgo.Pointer[float64](275),
-                LineItems: []components.ExpenseLineItemInput{
-                    components.ExpenseLineItemInput{
-                        TrackingCategories: []*components.LinkedTrackingCategory{
-                            &components.LinkedTrackingCategory{
-                                ID: sdkgo.Pointer("123456"),
-                                Name: sdkgo.Pointer("New York"),
-                            },
-                            &components.LinkedTrackingCategory{
-                                ID: sdkgo.Pointer("123456"),
-                                Name: sdkgo.Pointer("New York"),
-                            },
-                            &components.LinkedTrackingCategory{
-                                ID: sdkgo.Pointer("123456"),
-                                Name: sdkgo.Pointer("New York"),
-                            },
-                        },
-                        AccountID: sdkgo.Pointer("123456"),
-                        CustomerID: sdkgo.Pointer("12345"),
-                        DepartmentID: sdkgo.Pointer("12345"),
-                        LocationID: sdkgo.Pointer("12345"),
-                        SubsidiaryID: sdkgo.Pointer("12345"),
-                        TaxRate: &components.LinkedTaxRateInput{
+        Expense: components.ExpenseInput{
+            Number: sdkgo.Pointer("OIT00546"),
+            TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
+            AccountID: sdkgo.Pointer("123456"),
+            CustomerID: sdkgo.Pointer("12345"),
+            SupplierID: sdkgo.Pointer("12345"),
+            CompanyID: sdkgo.Pointer("12345"),
+            DepartmentID: sdkgo.Pointer("12345"),
+            PaymentType: components.ExpensePaymentTypeCash.ToPointer(),
+            Currency: components.CurrencyUsd.ToPointer(),
+            CurrencyRate: sdkgo.Pointer[float64](0.69),
+            Type: components.ExpenseTypeExpense.ToPointer(),
+            Memo: sdkgo.Pointer("For travel expenses incurred on 2024-05-15"),
+            TaxRate: &components.LinkedTaxRateInput{
+                ID: sdkgo.Pointer("123456"),
+                Rate: sdkgo.Pointer[float64](10),
+            },
+            TotalAmount: sdkgo.Pointer[float64](275),
+            LineItems: []components.ExpenseLineItemInput{
+                components.ExpenseLineItemInput{
+                    TrackingCategories: []*components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.Pointer("123456"),
-                            Rate: sdkgo.Pointer[float64](10),
+                            Name: sdkgo.Pointer("New York"),
                         },
-                        Description: sdkgo.Pointer("Travel US."),
-                        TotalAmount: sdkgo.Pointer[float64](275),
-                        Billable: sdkgo.Pointer(true),
-                        LineNumber: sdkgo.Pointer[int64](1),
-                    },
-                },
-                CustomFields: []components.CustomField{
-                    components.CustomField{
-                        ID: sdkgo.Pointer("2389328923893298"),
-                        Name: sdkgo.Pointer("employee_level"),
-                        Description: sdkgo.Pointer("Employee Level"),
-                        Value: sdkgo.Pointer(components.CreateValueStr(
-                            "Uses Salesforce and Marketo",
-                        )),
-                    },
-                    components.CustomField{
-                        ID: sdkgo.Pointer("2389328923893298"),
-                        Name: sdkgo.Pointer("employee_level"),
-                        Description: sdkgo.Pointer("Employee Level"),
-                        Value: sdkgo.Pointer(components.CreateValueStr(
-                            "Uses Salesforce and Marketo",
-                        )),
-                    },
-                    components.CustomField{
-                        ID: sdkgo.Pointer("2389328923893298"),
-                        Name: sdkgo.Pointer("employee_level"),
-                        Description: sdkgo.Pointer("Employee Level"),
-                        Value: sdkgo.Pointer(components.CreateValueStr(
-                            "Uses Salesforce and Marketo",
-                        )),
-                    },
-                },
-                RowVersion: sdkgo.Pointer("1-12345"),
-                PassThrough: []components.PassThroughBody{
-                    components.PassThroughBody{
-                        ServiceID: "<id>",
-                        ExtendPaths: []components.ExtendPaths{
-                            components.ExtendPaths{
-                                Path: "$.nested.property",
-                                Value: map[string]any{
-                                    "TaxClassificationRef": map[string]any{
-                                        "value": "EUC-99990201-V1-00020000",
-                                    },
-                                },
-                            },
-                            components.ExtendPaths{
-                                Path: "$.nested.property",
-                                Value: map[string]any{
-                                    "TaxClassificationRef": map[string]any{
-                                        "value": "EUC-99990201-V1-00020000",
-                                    },
-                                },
-                            },
-                            components.ExtendPaths{
-                                Path: "$.nested.property",
-                                Value: map[string]any{
-                                    "TaxClassificationRef": map[string]any{
-                                        "value": "EUC-99990201-V1-00020000",
-                                    },
-                                },
-                            },
+                        &components.LinkedTrackingCategory{
+                            ID: sdkgo.Pointer("123456"),
+                            Name: sdkgo.Pointer("New York"),
+                        },
+                        &components.LinkedTrackingCategory{
+                            ID: sdkgo.Pointer("123456"),
+                            Name: sdkgo.Pointer("New York"),
                         },
                     },
-                    components.PassThroughBody{
-                        ServiceID: "<id>",
-                        ExtendPaths: []components.ExtendPaths{
-                            components.ExtendPaths{
-                                Path: "$.nested.property",
-                                Value: map[string]any{
-                                    "TaxClassificationRef": map[string]any{
-                                        "value": "EUC-99990201-V1-00020000",
-                                    },
+                    AccountID: sdkgo.Pointer("123456"),
+                    CustomerID: sdkgo.Pointer("12345"),
+                    DepartmentID: sdkgo.Pointer("12345"),
+                    LocationID: sdkgo.Pointer("12345"),
+                    SubsidiaryID: sdkgo.Pointer("12345"),
+                    TaxRate: &components.LinkedTaxRateInput{
+                        ID: sdkgo.Pointer("123456"),
+                        Rate: sdkgo.Pointer[float64](10),
+                    },
+                    Description: sdkgo.Pointer("Travel US."),
+                    TotalAmount: sdkgo.Pointer[float64](275),
+                    Billable: sdkgo.Pointer(true),
+                    LineNumber: sdkgo.Pointer[int64](1),
+                },
+            },
+            CustomFields: []components.CustomField{
+                components.CustomField{
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueStr(
+                        "Uses Salesforce and Marketo",
+                    )),
+                },
+                components.CustomField{
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueStr(
+                        "Uses Salesforce and Marketo",
+                    )),
+                },
+                components.CustomField{
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueStr(
+                        "Uses Salesforce and Marketo",
+                    )),
+                },
+            },
+            RowVersion: sdkgo.Pointer("1-12345"),
+            PassThrough: []components.PassThroughBody{
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
                                 },
                             },
-                            components.ExtendPaths{
-                                Path: "$.nested.property",
-                                Value: map[string]any{
-                                    "TaxClassificationRef": map[string]any{
-                                        "value": "EUC-99990201-V1-00020000",
-                                    },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
                                 },
                             },
-                            components.ExtendPaths{
-                                Path: "$.nested.property",
-                                Value: map[string]any{
-                                    "TaxClassificationRef": map[string]any{
-                                        "value": "EUC-99990201-V1-00020000",
-                                    },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                    },
+                },
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
                                 },
                             },
                         },
                     },
                 },
             },
-        ),
+        },
     })
     if err != nil {
         log.Fatal(err)
@@ -390,110 +388,108 @@ func main() {
     res, err := s.Accounting.Expenses.Update(ctx, operations.AccountingExpensesUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
-        Expense: components.CreateExpenseInputExpense1Input(
-            components.Expense1Input{
-                Number: sdkgo.Pointer("OIT00546"),
-                TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
-                AccountID: "123456",
-                CustomerID: sdkgo.Pointer("12345"),
-                SupplierID: sdkgo.Pointer("12345"),
-                CompanyID: sdkgo.Pointer("12345"),
-                DepartmentID: sdkgo.Pointer("12345"),
-                PaymentType: components.ExpensePaymentTypeCash.ToPointer(),
-                Currency: components.CurrencyUsd.ToPointer(),
-                CurrencyRate: sdkgo.Pointer[float64](0.69),
-                Type: components.ExpenseTypeExpense.ToPointer(),
-                Memo: sdkgo.Pointer("For travel expenses incurred on 2024-05-15"),
-                TaxRate: &components.LinkedTaxRateInput{
-                    ID: sdkgo.Pointer("123456"),
-                    Rate: sdkgo.Pointer[float64](10),
-                },
-                TotalAmount: sdkgo.Pointer[float64](275),
-                LineItems: []components.ExpenseLineItemInput{
-                    components.ExpenseLineItemInput{
-                        TrackingCategories: []*components.LinkedTrackingCategory{
-                            &components.LinkedTrackingCategory{
-                                ID: sdkgo.Pointer("123456"),
-                                Name: sdkgo.Pointer("New York"),
-                            },
-                            &components.LinkedTrackingCategory{
-                                ID: sdkgo.Pointer("123456"),
-                                Name: sdkgo.Pointer("New York"),
-                            },
-                            &components.LinkedTrackingCategory{
-                                ID: sdkgo.Pointer("123456"),
-                                Name: sdkgo.Pointer("New York"),
-                            },
-                        },
-                        AccountID: sdkgo.Pointer("123456"),
-                        CustomerID: sdkgo.Pointer("12345"),
-                        DepartmentID: sdkgo.Pointer("12345"),
-                        LocationID: sdkgo.Pointer("12345"),
-                        SubsidiaryID: sdkgo.Pointer("12345"),
-                        TaxRate: &components.LinkedTaxRateInput{
+        Expense: components.ExpenseInput{
+            Number: sdkgo.Pointer("OIT00546"),
+            TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
+            AccountID: sdkgo.Pointer("123456"),
+            CustomerID: sdkgo.Pointer("12345"),
+            SupplierID: sdkgo.Pointer("12345"),
+            CompanyID: sdkgo.Pointer("12345"),
+            DepartmentID: sdkgo.Pointer("12345"),
+            PaymentType: components.ExpensePaymentTypeCash.ToPointer(),
+            Currency: components.CurrencyUsd.ToPointer(),
+            CurrencyRate: sdkgo.Pointer[float64](0.69),
+            Type: components.ExpenseTypeExpense.ToPointer(),
+            Memo: sdkgo.Pointer("For travel expenses incurred on 2024-05-15"),
+            TaxRate: &components.LinkedTaxRateInput{
+                ID: sdkgo.Pointer("123456"),
+                Rate: sdkgo.Pointer[float64](10),
+            },
+            TotalAmount: sdkgo.Pointer[float64](275),
+            LineItems: []components.ExpenseLineItemInput{
+                components.ExpenseLineItemInput{
+                    TrackingCategories: []*components.LinkedTrackingCategory{
+                        &components.LinkedTrackingCategory{
                             ID: sdkgo.Pointer("123456"),
-                            Rate: sdkgo.Pointer[float64](10),
+                            Name: sdkgo.Pointer("New York"),
                         },
-                        Description: sdkgo.Pointer("Travel US."),
-                        TotalAmount: sdkgo.Pointer[float64](275),
-                        Billable: sdkgo.Pointer(true),
-                        LineNumber: sdkgo.Pointer[int64](1),
+                        &components.LinkedTrackingCategory{
+                            ID: sdkgo.Pointer("123456"),
+                            Name: sdkgo.Pointer("New York"),
+                        },
+                        &components.LinkedTrackingCategory{
+                            ID: sdkgo.Pointer("123456"),
+                            Name: sdkgo.Pointer("New York"),
+                        },
                     },
-                },
-                CustomFields: []components.CustomField{
-                    components.CustomField{
-                        ID: sdkgo.Pointer("2389328923893298"),
-                        Name: sdkgo.Pointer("employee_level"),
-                        Description: sdkgo.Pointer("Employee Level"),
-                        Value: sdkgo.Pointer(components.CreateValueStr(
-                            "Uses Salesforce and Marketo",
-                        )),
+                    AccountID: sdkgo.Pointer("123456"),
+                    CustomerID: sdkgo.Pointer("12345"),
+                    DepartmentID: sdkgo.Pointer("12345"),
+                    LocationID: sdkgo.Pointer("12345"),
+                    SubsidiaryID: sdkgo.Pointer("12345"),
+                    TaxRate: &components.LinkedTaxRateInput{
+                        ID: sdkgo.Pointer("123456"),
+                        Rate: sdkgo.Pointer[float64](10),
                     },
+                    Description: sdkgo.Pointer("Travel US."),
+                    TotalAmount: sdkgo.Pointer[float64](275),
+                    Billable: sdkgo.Pointer(true),
+                    LineNumber: sdkgo.Pointer[int64](1),
                 },
-                RowVersion: sdkgo.Pointer("1-12345"),
-                PassThrough: []components.PassThroughBody{
-                    components.PassThroughBody{
-                        ServiceID: "<id>",
-                        ExtendPaths: []components.ExtendPaths{
-                            components.ExtendPaths{
-                                Path: "$.nested.property",
-                                Value: map[string]any{
-                                    "TaxClassificationRef": map[string]any{
-                                        "value": "EUC-99990201-V1-00020000",
-                                    },
+            },
+            CustomFields: []components.CustomField{
+                components.CustomField{
+                    ID: sdkgo.Pointer("2389328923893298"),
+                    Name: sdkgo.Pointer("employee_level"),
+                    Description: sdkgo.Pointer("Employee Level"),
+                    Value: sdkgo.Pointer(components.CreateValueStr(
+                        "Uses Salesforce and Marketo",
+                    )),
+                },
+            },
+            RowVersion: sdkgo.Pointer("1-12345"),
+            PassThrough: []components.PassThroughBody{
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
                                 },
                             },
                         },
                     },
-                    components.PassThroughBody{
-                        ServiceID: "<id>",
-                        ExtendPaths: []components.ExtendPaths{
-                            components.ExtendPaths{
-                                Path: "$.nested.property",
-                                Value: map[string]any{
-                                    "TaxClassificationRef": map[string]any{
-                                        "value": "EUC-99990201-V1-00020000",
-                                    },
+                },
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
                                 },
                             },
                         },
                     },
-                    components.PassThroughBody{
-                        ServiceID: "<id>",
-                        ExtendPaths: []components.ExtendPaths{
-                            components.ExtendPaths{
-                                Path: "$.nested.property",
-                                Value: map[string]any{
-                                    "TaxClassificationRef": map[string]any{
-                                        "value": "EUC-99990201-V1-00020000",
-                                    },
+                },
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
                                 },
                             },
                         },
                     },
                 },
             },
-        ),
+        },
     })
     if err != nil {
         log.Fatal(err)

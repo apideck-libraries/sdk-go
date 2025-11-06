@@ -177,7 +177,7 @@ func main() {
                             ParentName: sdkgo.Pointer("New York"),
                         },
                     },
-                    LedgerAccount: &components.LinkedLedgerAccountInput{
+                    LedgerAccount: &components.LinkedLedgerAccount{
                         ID: sdkgo.Pointer("123456"),
                         NominalCode: sdkgo.Pointer("N091"),
                         Code: sdkgo.Pointer("453"),
@@ -468,7 +468,7 @@ func main() {
                         Rate: sdkgo.Pointer[float64](10),
                     },
                     TrackingCategories: nil,
-                    LedgerAccount: &components.LinkedLedgerAccountInput{
+                    LedgerAccount: &components.LinkedLedgerAccount{
                         ID: sdkgo.Pointer("123456"),
                         NominalCode: sdkgo.Pointer("N091"),
                         Code: sdkgo.Pointer("453"),

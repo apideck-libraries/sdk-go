@@ -130,8 +130,9 @@ func main() {
             Name: sdkgo.Pointer("Main Operating Account"),
             AccountNumber: sdkgo.Pointer("123465"),
             AccountType: components.AccountingBankAccountAccountTypeChecking.ToPointer(),
-            LedgerAccount: &components.LinkedLedgerAccountInput{
+            LedgerAccount: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
+                Name: sdkgo.Pointer("Bank account"),
                 NominalCode: sdkgo.Pointer("N091"),
                 Code: sdkgo.Pointer("453"),
                 ParentID: sdkgo.Pointer("123456"),
@@ -295,8 +296,9 @@ func main() {
             Name: sdkgo.Pointer("Main Operating Account"),
             AccountNumber: sdkgo.Pointer("123465"),
             AccountType: components.AccountingBankAccountAccountTypeChecking.ToPointer(),
-            LedgerAccount: &components.LinkedLedgerAccountInput{
+            LedgerAccount: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
+                Name: sdkgo.Pointer("Bank account"),
                 NominalCode: sdkgo.Pointer("N091"),
                 Code: sdkgo.Pointer("453"),
                 ParentID: sdkgo.Pointer("123456"),

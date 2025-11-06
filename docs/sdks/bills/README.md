@@ -176,7 +176,7 @@ func main() {
                     Code: sdkgo.Pointer("120-C"),
                     LineNumber: sdkgo.Pointer[int64](1),
                     Description: sdkgo.Pointer("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
-                    Type: components.BillLineItemTypeExpenseAccount.ToPointer(),
+                    Type: components.LineItemTypeExpenseAccount.ToPointer(),
                     TaxAmount: sdkgo.Pointer[float64](27500),
                     TotalAmount: sdkgo.Pointer[float64](27500),
                     Quantity: sdkgo.Pointer[float64](1),
@@ -195,7 +195,7 @@ func main() {
                         ID: sdkgo.Pointer("123456"),
                         Rate: sdkgo.Pointer[float64](10),
                     },
-                    LedgerAccount: &components.LinkedLedgerAccountInput{
+                    LedgerAccount: &components.LinkedLedgerAccount{
                         ID: sdkgo.Pointer("123456"),
                         NominalCode: sdkgo.Pointer("N091"),
                         Code: sdkgo.Pointer("453"),
@@ -226,7 +226,7 @@ func main() {
             TaxCode: sdkgo.Pointer("1234"),
             Notes: sdkgo.Pointer("Some notes about this bill."),
             Status: components.BillStatusDraft.ToPointer(),
-            LedgerAccount: &components.LinkedLedgerAccountInput{
+            LedgerAccount: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
                 NominalCode: sdkgo.Pointer("N091"),
                 Code: sdkgo.Pointer("453"),
@@ -545,7 +545,7 @@ func main() {
                     Code: sdkgo.Pointer("120-C"),
                     LineNumber: sdkgo.Pointer[int64](1),
                     Description: sdkgo.Pointer("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
-                    Type: components.BillLineItemTypeExpenseAccount.ToPointer(),
+                    Type: components.LineItemTypeExpenseAccount.ToPointer(),
                     TaxAmount: sdkgo.Pointer[float64](27500),
                     TotalAmount: sdkgo.Pointer[float64](27500),
                     Quantity: sdkgo.Pointer[float64](1),
@@ -564,7 +564,7 @@ func main() {
                         ID: sdkgo.Pointer("123456"),
                         Rate: sdkgo.Pointer[float64](10),
                     },
-                    LedgerAccount: &components.LinkedLedgerAccountInput{
+                    LedgerAccount: &components.LinkedLedgerAccount{
                         ID: sdkgo.Pointer("123456"),
                         NominalCode: sdkgo.Pointer("N091"),
                         Code: sdkgo.Pointer("453"),
@@ -582,7 +582,7 @@ func main() {
                     Code: sdkgo.Pointer("120-C"),
                     LineNumber: sdkgo.Pointer[int64](1),
                     Description: sdkgo.Pointer("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
-                    Type: components.BillLineItemTypeExpenseAccount.ToPointer(),
+                    Type: components.LineItemTypeExpenseAccount.ToPointer(),
                     TaxAmount: sdkgo.Pointer[float64](27500),
                     TotalAmount: sdkgo.Pointer[float64](27500),
                     Quantity: sdkgo.Pointer[float64](1),
@@ -601,7 +601,7 @@ func main() {
                         ID: sdkgo.Pointer("123456"),
                         Rate: sdkgo.Pointer[float64](10),
                     },
-                    LedgerAccount: &components.LinkedLedgerAccountInput{
+                    LedgerAccount: &components.LinkedLedgerAccount{
                         ID: sdkgo.Pointer("123456"),
                         NominalCode: sdkgo.Pointer("N091"),
                         Code: sdkgo.Pointer("453"),
@@ -624,7 +624,7 @@ func main() {
             TaxCode: sdkgo.Pointer("1234"),
             Notes: sdkgo.Pointer("Some notes about this bill."),
             Status: components.BillStatusDraft.ToPointer(),
-            LedgerAccount: &components.LinkedLedgerAccountInput{
+            LedgerAccount: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
                 NominalCode: sdkgo.Pointer("N091"),
                 Code: sdkgo.Pointer("453"),
