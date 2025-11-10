@@ -46,7 +46,8 @@ type Subsidiary struct {
 	// Display ID of the subsidiary
 	DisplayID *string `json:"display_id,omitempty"`
 	// Based on the status some functionality is enabled or disabled.
-	Status *SubsidiaryStatus `json:"status,omitempty"`
+	Status  *SubsidiaryStatus `json:"status,omitempty"`
+	Address *Address          `json:"address,omitempty"`
 	// List of currencies supported by this subsidiary
 	Currencies []*Currency `json:"currencies,omitempty"`
 	// When custom mappings are configured on the resource, the result is included here.
@@ -109,6 +110,13 @@ func (s *Subsidiary) GetStatus() *SubsidiaryStatus {
 		return nil
 	}
 	return s.Status
+}
+
+func (s *Subsidiary) GetAddress() *Address {
+	if s == nil {
+		return nil
+	}
+	return s.Address
 }
 
 func (s *Subsidiary) GetCurrencies() []*Currency {
@@ -175,7 +183,8 @@ type SubsidiaryInput struct {
 	// Display ID of the subsidiary
 	DisplayID *string `json:"display_id,omitempty"`
 	// Based on the status some functionality is enabled or disabled.
-	Status *SubsidiaryStatus `json:"status,omitempty"`
+	Status  *SubsidiaryStatus `json:"status,omitempty"`
+	Address *Address          `json:"address,omitempty"`
 	// List of currencies supported by this subsidiary
 	Currencies []*Currency `json:"currencies,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -210,6 +219,13 @@ func (s *SubsidiaryInput) GetStatus() *SubsidiaryStatus {
 		return nil
 	}
 	return s.Status
+}
+
+func (s *SubsidiaryInput) GetAddress() *Address {
+	if s == nil {
+		return nil
+	}
+	return s.Address
 }
 
 func (s *SubsidiaryInput) GetCurrencies() []*Currency {
