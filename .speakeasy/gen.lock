@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 57b4bbe6a7692f54a6b642d0741788e2
-  docVersion: 10.21.11
-  speakeasyVersion: 1.650.0
-  generationVersion: 2.743.2
-  releaseVersion: 0.23.1
-  configChecksum: 6cc3a9b73ff63902c3cc138d61d2f634
+  docChecksum: 37075682a3ec50b147e5d33dd5c7eeb9
+  docVersion: 10.21.12
+  speakeasyVersion: 1.651.0
+  generationVersion: 2.745.2
+  releaseVersion: 0.23.2
+  configChecksum: 5c7317aba45c252f5670a82c6fe1e393
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 features:
@@ -18454,4 +18454,3 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes Detected:\n* `Apideck.Accounting.Expenses.List()`:  `response.Data.[]` **Changed** **Breaking** :warning:\n* `Apideck.Accounting.Expenses.Update()`: \n  *  `request.Request.Expense` **Changed** **Breaking** :warning:\n* `Apideck.Accounting.Expenses.Get()`:  `response.Data` **Changed** **Breaking** :warning:\n* `Apideck.Accounting.Expenses.Create()`: \n  *  `request.Request.Expense` **Changed** **Breaking** :warning:\n* `Apideck.Accounting.CreditNotes.Create()`: \n  *  `request.Request.CreditNote` **Changed**\n* `Apideck.Accounting.JournalEntries.Update()`: \n  *  `request.Request.JournalEntry.LineItems.[]` **Changed**\n* `Apideck.Accounting.InvoiceItems.Create()`: \n  *  `request.Request.InvoiceItem` **Changed**\n* `Apideck.Accounting.InvoiceItems.Update()`: \n  *  `request.Request.InvoiceItem` **Changed**\n* `Apideck.Accounting.Bills.Create()`: \n  *  `request.Request.Bill.LineItems.[]` **Changed**\n* `Apideck.Accounting.CreditNotes.Update()`: \n  *  `request.Request.CreditNote` **Changed**\n* `Apideck.Accounting.Customers.Create()`: \n  *  `request.Request.Customer` **Changed**\n* `Apideck.Accounting.Customers.Update()`: \n  *  `request.Request.Customer` **Changed**\n* `Apideck.Accounting.Suppliers.Create()`: \n  *  `request.Request.Supplier` **Changed**\n* `Apideck.Accounting.Suppliers.Update()`: \n  *  `request.Request.Supplier` **Changed**\n* `Apideck.Accounting.Payments.Create()`: \n  *  `request.Request.Payment.Account.Name` **Added**\n* `Apideck.Accounting.Payments.Update()`: \n  *  `request.Request.Payment.Account.Name` **Added**\n* `Apideck.Accounting.JournalEntries.Create()`: \n  *  `request.Request.JournalEntry.LineItems.[]` **Changed**\n* `Apideck.Accounting.LedgerAccounts.Update()`: \n  *  `request.Request.LedgerAccount.TaxRate.Code` **Added**\n* `Apideck.Accounting.PurchaseOrders.Create()`: \n  *  `request.Request.PurchaseOrder.LineItems.[]` **Changed**\n* `Apideck.Accounting.PurchaseOrders.Update()`: \n  *  `request.Request.PurchaseOrder.LineItems.[]` **Changed**\n* `Apideck.Accounting.BankAccounts.Create()`: \n  *  `request.Request.AccountingBankAccount.LedgerAccount.Name` **Added**\n* `Apideck.Accounting.BankAccounts.Update()`: \n  *  `request.Request.AccountingBankAccount.LedgerAccount.Name` **Added**\n* `Apideck.Accounting.BillPayments.Create()`: \n  *  `request.Request.BillPayment.Account.Name` **Added**\n* `Apideck.Accounting.BillPayments.Update()`: \n  *  `request.Request.BillPayment.Account.Name` **Added**\n* `Apideck.Accounting.LedgerAccounts.Create()`: \n  *  `request.Request.LedgerAccount.TaxRate.Code` **Added**\n* `Apideck.Accounting.Invoices.Update()`: \n  *  `request.Request.Invoice.LineItems.[]` **Changed**\n* `Apideck.Accounting.Invoices.Create()`: \n  *  `request.Request.Invoice.LineItems.[]` **Changed**\n* `Apideck.Accounting.Bills.Update()`: \n  *  `request.Request.Bill.LineItems.[]` **Changed**\n* `Apideck.Accounting.Quotes.Create()`: \n  *  `request.Request.Quote.LineItems.[]` **Changed**\n* `Apideck.Accounting.Quotes.Update()`: \n  *  `request.Request.Quote.LineItems.[]` **Changed**\n* `Apideck.Accounting.Projects.Create()`: \n  *  `request.Request.Project.TaxRate.Code` **Added**\n* `Apideck.Accounting.Projects.Update()`: \n  *  `request.Request.Project.TaxRate.Code` **Added**\n"
