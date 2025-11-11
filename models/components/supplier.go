@@ -80,6 +80,8 @@ type Supplier struct {
 	Notes     *string        `json:"notes,omitempty"`
 	TaxRate   *LinkedTaxRate `json:"tax_rate,omitempty"`
 	TaxNumber *string        `json:"tax_number,omitempty"`
+	// Whether the entity is subject to taxation
+	Taxable *bool `json:"taxable,omitempty"`
 	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
 	Currency *Currency            `json:"currency,omitempty"`
 	Account  *LinkedLedgerAccount `json:"account,omitempty"`
@@ -276,6 +278,13 @@ func (s *Supplier) GetTaxNumber() *string {
 	return s.TaxNumber
 }
 
+func (s *Supplier) GetTaxable() *bool {
+	if s == nil {
+		return nil
+	}
+	return s.Taxable
+}
+
 func (s *Supplier) GetCurrency() *Currency {
 	if s == nil {
 		return nil
@@ -447,6 +456,8 @@ type SupplierInput struct {
 	Notes     *string             `json:"notes,omitempty"`
 	TaxRate   *LinkedTaxRateInput `json:"tax_rate,omitempty"`
 	TaxNumber *string             `json:"tax_number,omitempty"`
+	// Whether the entity is subject to taxation
+	Taxable *bool `json:"taxable,omitempty"`
 	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
 	Currency *Currency            `json:"currency,omitempty"`
 	Account  *LinkedLedgerAccount `json:"account,omitempty"`
@@ -606,6 +617,13 @@ func (s *SupplierInput) GetTaxNumber() *string {
 		return nil
 	}
 	return s.TaxNumber
+}
+
+func (s *SupplierInput) GetTaxable() *bool {
+	if s == nil {
+		return nil
+	}
+	return s.Taxable
 }
 
 func (s *SupplierInput) GetCurrency() *Currency {
