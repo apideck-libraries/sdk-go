@@ -1488,8 +1488,8 @@ func (s *Notes) Update(ctx context.Context, request operations.CrmNotesUpdateReq
 
 }
 
-// Delete custom object
-// Delete custom object
+// Delete note
+// Delete note
 func (s *Notes) Delete(ctx context.Context, request operations.CrmNotesDeleteRequest, opts ...operations.Option) (*operations.CrmNotesDeleteResponse, error) {
 	globals := operations.CrmNotesDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,

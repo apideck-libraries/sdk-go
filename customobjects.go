@@ -1134,8 +1134,8 @@ func (s *CustomObjects) Get(ctx context.Context, request operations.CrmCustomObj
 
 }
 
-// Update note
-// Update note
+// Update custom object
+// Update custom object
 func (s *CustomObjects) Update(ctx context.Context, request operations.CrmCustomObjectsUpdateRequest, opts ...operations.Option) (*operations.CrmCustomObjectsUpdateResponse, error) {
 	globals := operations.CrmCustomObjectsUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
