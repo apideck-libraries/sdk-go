@@ -12,6 +12,7 @@ Invoice status
 | `InvoiceStatusAuthorised`    | authorised                   |
 | `InvoiceStatusPartiallyPaid` | partially_paid               |
 | `InvoiceStatusPaid`          | paid                         |
+| `InvoiceStatusUnpaid`        | unpaid                       |
 | `InvoiceStatusVoid`          | void                         |
 | `InvoiceStatusCredit`        | credit                       |
 | `InvoiceStatusDeleted`       | deleted                      |
