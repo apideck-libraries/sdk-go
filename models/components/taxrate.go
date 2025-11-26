@@ -99,6 +99,8 @@ type TaxRate struct {
 	Description *string `json:"description,omitempty"`
 	// Effective tax rate
 	EffectiveTaxRate *float64 `json:"effective_tax_rate,omitempty"`
+	// Country code according to ISO 3166-1 alpha-2.
+	Country *string `json:"country,omitempty"`
 	// Not compounded sum of the components of a tax rate
 	TotalTaxRate *float64 `json:"total_tax_rate,omitempty"`
 	// Unique identifier for the account for tax collected.
@@ -184,6 +186,13 @@ func (t *TaxRate) GetEffectiveTaxRate() *float64 {
 		return nil
 	}
 	return t.EffectiveTaxRate
+}
+
+func (t *TaxRate) GetCountry() *string {
+	if t == nil {
+		return nil
+	}
+	return t.Country
 }
 
 func (t *TaxRate) GetTotalTaxRate() *float64 {
@@ -318,6 +327,8 @@ type TaxRateInput struct {
 	Description *string `json:"description,omitempty"`
 	// Effective tax rate
 	EffectiveTaxRate *float64 `json:"effective_tax_rate,omitempty"`
+	// Country code according to ISO 3166-1 alpha-2.
+	Country *string `json:"country,omitempty"`
 	// Not compounded sum of the components of a tax rate
 	TotalTaxRate *float64 `json:"total_tax_rate,omitempty"`
 	// Unique identifier for the account for tax collected.
@@ -382,6 +393,13 @@ func (t *TaxRateInput) GetEffectiveTaxRate() *float64 {
 		return nil
 	}
 	return t.EffectiveTaxRate
+}
+
+func (t *TaxRateInput) GetCountry() *string {
+	if t == nil {
+		return nil
+	}
+	return t.Country
 }
 
 func (t *TaxRateInput) GetTotalTaxRate() *float64 {
