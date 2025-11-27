@@ -43,6 +43,7 @@ func main() {
         ServiceID: sdkgo.Pointer("salesforce"),
         Filter: &components.BankAccountsFilter{
             Name: sdkgo.Pointer("Main Operating"),
+            AccountType: components.BankAccountsFilterAccountTypeChecking.ToPointer(),
             Status: components.BankAccountsFilterStatusActive.ToPointer(),
         },
         Sort: &components.BankAccountsSort{},

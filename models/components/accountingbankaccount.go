@@ -84,6 +84,8 @@ func (e *AccountingBankAccountStatus) UnmarshalJSON(data []byte) error {
 type AccountingBankAccount struct {
 	// A unique identifier for an object.
 	ID string `json:"id"`
+	// The third-party API ID of original entity
+	DownstreamID *string `json:"downstream_id,omitempty"`
 	// Display ID for the bank account
 	DisplayID *string `json:"display_id,omitempty"`
 	// The name of the bank account
@@ -150,6 +152,13 @@ func (a *AccountingBankAccount) GetID() string {
 		return ""
 	}
 	return a.ID
+}
+
+func (a *AccountingBankAccount) GetDownstreamID() *string {
+	if a == nil {
+		return nil
+	}
+	return a.DownstreamID
 }
 
 func (a *AccountingBankAccount) GetDisplayID() *string {
