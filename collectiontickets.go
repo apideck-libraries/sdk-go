@@ -94,7 +94,7 @@ func (s *CollectionTickets) List(ctx context.Context, request operations.IssueTr
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, globals); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, globals, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -503,7 +503,7 @@ func (s *CollectionTickets) Create(ctx context.Context, request operations.Issue
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, globals); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, globals, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -850,7 +850,7 @@ func (s *CollectionTickets) Get(ctx context.Context, request operations.IssueTra
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, globals); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, globals, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -1204,7 +1204,7 @@ func (s *CollectionTickets) Update(ctx context.Context, request operations.Issue
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, globals); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, globals, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -1551,7 +1551,7 @@ func (s *CollectionTickets) Delete(ctx context.Context, request operations.Issue
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, globals); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, globals, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 

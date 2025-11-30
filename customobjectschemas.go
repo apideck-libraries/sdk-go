@@ -95,7 +95,7 @@ func (s *CustomObjectSchemas) List(ctx context.Context, request operations.CrmCu
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, globals); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, globals, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -500,7 +500,7 @@ func (s *CustomObjectSchemas) Create(ctx context.Context, request operations.Crm
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, globals); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, globals, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -847,7 +847,7 @@ func (s *CustomObjectSchemas) Get(ctx context.Context, request operations.CrmCus
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, globals); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, globals, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -1201,7 +1201,7 @@ func (s *CustomObjectSchemas) Update(ctx context.Context, request operations.Crm
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, globals); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, globals, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -1548,7 +1548,7 @@ func (s *CustomObjectSchemas) Delete(ctx context.Context, request operations.Crm
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, globals); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, globals, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 

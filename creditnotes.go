@@ -95,7 +95,7 @@ func (s *CreditNotes) List(ctx context.Context, request operations.AccountingCre
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, globals); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, globals, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -503,7 +503,7 @@ func (s *CreditNotes) Create(ctx context.Context, request operations.AccountingC
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, globals); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, globals, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -850,7 +850,7 @@ func (s *CreditNotes) Get(ctx context.Context, request operations.AccountingCred
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, globals); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, globals, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -1204,7 +1204,7 @@ func (s *CreditNotes) Update(ctx context.Context, request operations.AccountingC
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, globals); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, globals, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -1551,7 +1551,7 @@ func (s *CreditNotes) Delete(ctx context.Context, request operations.AccountingC
 
 	utils.PopulateHeaders(ctx, req, request, globals)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, globals); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, globals, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 5a64228df36ed373024a7e607d7107cf
-  docVersion: 10.21.19
-  speakeasyVersion: 1.662.0
-  generationVersion: 2.763.3
-  releaseVersion: 0.23.13
-  configChecksum: 5b8dc1c3d09df8c7dda044d0cd53afe5
+  docChecksum: 82d2a94bf2e121e55493fcc2bc072337
+  docVersion: 10.22.0
+  speakeasyVersion: 1.665.0
+  generationVersion: 2.767.2
+  releaseVersion: 0.24.0
+  configChecksum: e3b052e1d2344732640e2b78ebb4cc3a
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 features:
@@ -15,7 +15,7 @@ features:
     additionalDependencies: 0.1.0
     additionalProperties: 0.1.2
     constsAndDefaults: 0.1.12
-    core: 3.13.3
+    core: 3.13.5
     deepObjectParams: 0.1.1
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.3
@@ -38,7 +38,7 @@ features:
     pagination: 2.82.5
     responseFormat: 0.1.2
     retries: 2.84.2
-    sdkHooks: 0.2.0
+    sdkHooks: 0.3.0
     typeOverrides: 2.81.1
     unions: 2.87.2
     uploadStreams: 0.1.0
@@ -18457,4 +18457,3 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes Detected:\n* `Apideck.Accounting.BalanceSheet.Get()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.ProfitAndLoss.Get()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.BankAccounts.List()`: \n  *  `request.Request.Filter` **Changed**\n  *  `response.Data.[].DownstreamId` **Added**\n* `Apideck.Accounting.BankAccounts.Get()`:  `response.Data.DownstreamId` **Added**\n"
