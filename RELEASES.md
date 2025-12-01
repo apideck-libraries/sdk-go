@@ -619,3 +619,13 @@ Based on:
 - [go v0.23.13] .
 ### Releases
 - [Go v0.23.13] https://github.com/apideck-libraries/sdk-go/releases/tag/v0.23.13 - .
+
+## 2025-12-01 00:32:02
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.665.0 (2.767.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v0.24.0] .
+### Releases
+- [Go v0.24.0] https://github.com/apideck-libraries/sdk-go/releases/tag/v0.24.0 - .
