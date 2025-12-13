@@ -46,7 +46,7 @@ func (c CrmNotesDeleteRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CrmNotesDeleteRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil

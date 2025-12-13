@@ -29,7 +29,7 @@ func (e EcommerceStore) MarshalJSON() ([]byte, error) {
 }
 
 func (e *EcommerceStore) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &e, "", false, []string{"id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &e, "", false, nil); err != nil {
 		return err
 	}
 	return nil

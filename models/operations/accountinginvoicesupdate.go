@@ -47,7 +47,7 @@ func (a AccountingInvoicesUpdateRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (a *AccountingInvoicesUpdateRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &a, "", false, []string{"id", "Invoice"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
 		return err
 	}
 	return nil

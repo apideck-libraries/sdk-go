@@ -47,7 +47,7 @@ func (a AccountingTaxRatesUpdateRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (a *AccountingTaxRatesUpdateRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &a, "", false, []string{"id", "TaxRate"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
 		return err
 	}
 	return nil

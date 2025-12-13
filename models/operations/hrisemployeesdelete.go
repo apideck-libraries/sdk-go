@@ -46,7 +46,7 @@ func (h HrisEmployeesDeleteRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (h *HrisEmployeesDeleteRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &h, "", false, []string{"id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &h, "", false, nil); err != nil {
 		return err
 	}
 	return nil
