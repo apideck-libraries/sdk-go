@@ -371,7 +371,7 @@ func (p Project) MarshalJSON() ([]byte, error) {
 }
 
 func (p *Project) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &p, "", false, []string{"name"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -754,7 +754,7 @@ func (p ProjectInput) MarshalJSON() ([]byte, error) {
 }
 
 func (p *ProjectInput) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &p, "", false, []string{"name"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
 		return err
 	}
 	return nil

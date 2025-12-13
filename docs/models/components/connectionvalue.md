@@ -30,6 +30,6 @@ connectionValue := components.CreateConnectionValueBoolean(bool{/* values here *
 ### 
 
 ```go
-connectionValue := components.CreateConnectionValueArrayOfConnectionValue5([]components.ConnectionValue5{/* values here */})
+connectionValue := components.CreateConnectionValueArrayOfValue5([]components.Value5{/* values here */})
 ```
 

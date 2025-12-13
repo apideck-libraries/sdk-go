@@ -1,5 +1,4 @@
-# Applicants
-(*Ats.Applicants*)
+# Ats.Applicants
 
 ## Overview
 
@@ -143,22 +142,26 @@ func main() {
                 },
             },
             CustomFields: []components.CustomField{
-                components.CustomField{
-                    ID: sdkgo.Pointer("2389328923893298"),
-                    Name: sdkgo.Pointer("employee_level"),
-                    Description: sdkgo.Pointer("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueStr(
-                        "Uses Salesforce and Marketo",
-                    )),
-                },
-                components.CustomField{
-                    ID: sdkgo.Pointer("2389328923893298"),
-                    Name: sdkgo.Pointer("employee_level"),
-                    Description: sdkgo.Pointer("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueStr(
-                        "Uses Salesforce and Marketo",
-                    )),
-                },
+                components.CreateCustomFieldCustomField1(
+                    components.CustomField1{
+                        ID: sdkgo.Pointer("2389328923893298"),
+                        Name: sdkgo.Pointer("employee_level"),
+                        Description: sdkgo.Pointer("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateCustomField1ValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
+                ),
+                components.CreateCustomFieldCustomField1(
+                    components.CustomField1{
+                        ID: sdkgo.Pointer("2389328923893298"),
+                        Name: sdkgo.Pointer("employee_level"),
+                        Description: sdkgo.Pointer("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateCustomField1ValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
+                ),
             },
             PhoneNumbers: []components.PhoneNumber{
                 components.PhoneNumber{
@@ -499,14 +502,16 @@ func main() {
                 },
             },
             CustomFields: []components.CustomField{
-                components.CustomField{
-                    ID: sdkgo.Pointer("2389328923893298"),
-                    Name: sdkgo.Pointer("employee_level"),
-                    Description: sdkgo.Pointer("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueStr(
-                        "Uses Salesforce and Marketo",
-                    )),
-                },
+                components.CreateCustomFieldCustomField1(
+                    components.CustomField1{
+                        ID: sdkgo.Pointer("2389328923893298"),
+                        Name: sdkgo.Pointer("employee_level"),
+                        Description: sdkgo.Pointer("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateCustomField1ValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
+                ),
             },
             PhoneNumbers: []components.PhoneNumber{
                 components.PhoneNumber{
