@@ -41,6 +41,10 @@ type AccountingLocation struct {
 	ID *string `json:"id,omitempty"`
 	// A unique identifier for an object.
 	ParentID *string `json:"parent_id,omitempty"`
+	// Id to be displayed.
+	DisplayID *string `json:"display_id,omitempty"`
+	// The third-party API ID of original entity
+	DownstreamID *string `json:"downstream_id,omitempty"`
 	// The name of the company.
 	CompanyName *string `json:"company_name,omitempty"`
 	// The display name of the location.
@@ -88,6 +92,20 @@ func (a *AccountingLocation) GetParentID() *string {
 		return nil
 	}
 	return a.ParentID
+}
+
+func (a *AccountingLocation) GetDisplayID() *string {
+	if a == nil {
+		return nil
+	}
+	return a.DisplayID
+}
+
+func (a *AccountingLocation) GetDownstreamID() *string {
+	if a == nil {
+		return nil
+	}
+	return a.DownstreamID
 }
 
 func (a *AccountingLocation) GetCompanyName() *string {
@@ -177,6 +195,8 @@ func (a *AccountingLocation) GetPassThrough() []PassThroughBody {
 type AccountingLocationInput struct {
 	// A unique identifier for an object.
 	ParentID *string `json:"parent_id,omitempty"`
+	// Id to be displayed.
+	DisplayID *string `json:"display_id,omitempty"`
 	// The name of the company.
 	CompanyName *string `json:"company_name,omitempty"`
 	// The display name of the location.
@@ -196,6 +216,13 @@ func (a *AccountingLocationInput) GetParentID() *string {
 		return nil
 	}
 	return a.ParentID
+}
+
+func (a *AccountingLocationInput) GetDisplayID() *string {
+	if a == nil {
+		return nil
+	}
+	return a.DisplayID
 }
 
 func (a *AccountingLocationInput) GetCompanyName() *string {

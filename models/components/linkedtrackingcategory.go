@@ -5,6 +5,8 @@ package components
 type LinkedTrackingCategory struct {
 	// The unique identifier for the tracking category.
 	ID *string `json:"id,omitempty"`
+	// The code of the tracking category.
+	Code *string `json:"code,omitempty"`
 	// The name of the tracking category.
 	Name *string `json:"name,omitempty"`
 	// The unique identifier for the parent tracking category.
@@ -18,6 +20,13 @@ func (l *LinkedTrackingCategory) GetID() *string {
 		return nil
 	}
 	return l.ID
+}
+
+func (l *LinkedTrackingCategory) GetCode() *string {
+	if l == nil {
+		return nil
+	}
+	return l.Code
 }
 
 func (l *LinkedTrackingCategory) GetName() *string {

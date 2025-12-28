@@ -1,5 +1,4 @@
-# Expenses
-(*Accounting.Expenses*)
+# Accounting.Expenses
 
 ## Overview
 
@@ -127,7 +126,6 @@ func main() {
             Number: sdkgo.Pointer("OIT00546"),
             TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
             AccountID: sdkgo.Pointer("123456"),
-            CustomerID: sdkgo.Pointer("12345"),
             SupplierID: sdkgo.Pointer("12345"),
             CompanyID: sdkgo.Pointer("12345"),
             DepartmentID: sdkgo.Pointer("12345"),
@@ -161,42 +159,46 @@ func main() {
                     CustomerID: sdkgo.Pointer("12345"),
                     DepartmentID: sdkgo.Pointer("12345"),
                     LocationID: sdkgo.Pointer("12345"),
-                    SubsidiaryID: sdkgo.Pointer("12345"),
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.Pointer("123456"),
                         Rate: sdkgo.Pointer[float64](10),
                     },
                     Description: sdkgo.Pointer("Travel US."),
                     TotalAmount: sdkgo.Pointer[float64](275),
-                    Billable: sdkgo.Pointer(true),
                     LineNumber: sdkgo.Pointer[int64](1),
                 },
             },
             CustomFields: []components.CustomField{
-                components.CustomField{
-                    ID: sdkgo.Pointer("2389328923893298"),
-                    Name: sdkgo.Pointer("employee_level"),
-                    Description: sdkgo.Pointer("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueStr(
-                        "Uses Salesforce and Marketo",
-                    )),
-                },
-                components.CustomField{
-                    ID: sdkgo.Pointer("2389328923893298"),
-                    Name: sdkgo.Pointer("employee_level"),
-                    Description: sdkgo.Pointer("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueStr(
-                        "Uses Salesforce and Marketo",
-                    )),
-                },
-                components.CustomField{
-                    ID: sdkgo.Pointer("2389328923893298"),
-                    Name: sdkgo.Pointer("employee_level"),
-                    Description: sdkgo.Pointer("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueStr(
-                        "Uses Salesforce and Marketo",
-                    )),
-                },
+                components.CreateCustomFieldCustomField1(
+                    components.CustomField1{
+                        ID: sdkgo.Pointer("2389328923893298"),
+                        Name: sdkgo.Pointer("employee_level"),
+                        Description: sdkgo.Pointer("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateCustomField1ValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
+                ),
+                components.CreateCustomFieldCustomField1(
+                    components.CustomField1{
+                        ID: sdkgo.Pointer("2389328923893298"),
+                        Name: sdkgo.Pointer("employee_level"),
+                        Description: sdkgo.Pointer("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateCustomField1ValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
+                ),
+                components.CreateCustomFieldCustomField1(
+                    components.CustomField1{
+                        ID: sdkgo.Pointer("2389328923893298"),
+                        Name: sdkgo.Pointer("employee_level"),
+                        Description: sdkgo.Pointer("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateCustomField1ValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
+                ),
             },
             RowVersion: sdkgo.Pointer("1-12345"),
             PassThrough: []components.PassThroughBody{
@@ -392,7 +394,6 @@ func main() {
             Number: sdkgo.Pointer("OIT00546"),
             TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
             AccountID: sdkgo.Pointer("123456"),
-            CustomerID: sdkgo.Pointer("12345"),
             SupplierID: sdkgo.Pointer("12345"),
             CompanyID: sdkgo.Pointer("12345"),
             DepartmentID: sdkgo.Pointer("12345"),
@@ -426,26 +427,26 @@ func main() {
                     CustomerID: sdkgo.Pointer("12345"),
                     DepartmentID: sdkgo.Pointer("12345"),
                     LocationID: sdkgo.Pointer("12345"),
-                    SubsidiaryID: sdkgo.Pointer("12345"),
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.Pointer("123456"),
                         Rate: sdkgo.Pointer[float64](10),
                     },
                     Description: sdkgo.Pointer("Travel US."),
                     TotalAmount: sdkgo.Pointer[float64](275),
-                    Billable: sdkgo.Pointer(true),
                     LineNumber: sdkgo.Pointer[int64](1),
                 },
             },
             CustomFields: []components.CustomField{
-                components.CustomField{
-                    ID: sdkgo.Pointer("2389328923893298"),
-                    Name: sdkgo.Pointer("employee_level"),
-                    Description: sdkgo.Pointer("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueStr(
-                        "Uses Salesforce and Marketo",
-                    )),
-                },
+                components.CreateCustomFieldCustomField1(
+                    components.CustomField1{
+                        ID: sdkgo.Pointer("2389328923893298"),
+                        Name: sdkgo.Pointer("employee_level"),
+                        Description: sdkgo.Pointer("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateCustomField1ValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
+                ),
             },
             RowVersion: sdkgo.Pointer("1-12345"),
             PassThrough: []components.PassThroughBody{

@@ -48,7 +48,7 @@ func (h HrisDepartmentsOneRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (h *HrisDepartmentsOneRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &h, "", false, []string{"id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &h, "", false, nil); err != nil {
 		return err
 	}
 	return nil

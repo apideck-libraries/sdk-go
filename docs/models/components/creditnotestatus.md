@@ -9,6 +9,7 @@ Status of credit notes
 | ------------------------------- | ------------------------------- |
 | `CreditNoteStatusDraft`         | draft                           |
 | `CreditNoteStatusAuthorised`    | authorised                      |
+| `CreditNoteStatusPosted`        | posted                          |
 | `CreditNoteStatusPartiallyPaid` | partially_paid                  |
 | `CreditNoteStatusPaid`          | paid                            |
 | `CreditNoteStatusVoided`        | voided                          |
