@@ -11,6 +11,8 @@ type PipelineStages struct {
 	WinProbability *int64 `json:"win_probability,omitempty"`
 	// The order in which the Pipeline Stage is displayed in the UI.
 	DisplayOrder *int64 `json:"display_order,omitempty"`
+	// Whether the Pipeline Stage is archived or not.
+	Archived *bool `json:"archived,omitempty"`
 }
 
 func (p *PipelineStages) GetName() *string {
@@ -39,6 +41,13 @@ func (p *PipelineStages) GetDisplayOrder() *int64 {
 		return nil
 	}
 	return p.DisplayOrder
+}
+
+func (p *PipelineStages) GetArchived() *bool {
+	if p == nil {
+		return nil
+	}
+	return p.Archived
 }
 
 type PipelineInput struct {

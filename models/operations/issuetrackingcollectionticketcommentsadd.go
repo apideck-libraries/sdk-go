@@ -49,7 +49,7 @@ func (i IssueTrackingCollectionTicketCommentsAddRequest) MarshalJSON() ([]byte, 
 }
 
 func (i *IssueTrackingCollectionTicketCommentsAddRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &i, "", false, []string{"collection_id", "ticket_id", "CollectionTicketComment"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
 		return err
 	}
 	return nil

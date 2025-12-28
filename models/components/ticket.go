@@ -82,7 +82,7 @@ func (t Ticket) MarshalJSON() ([]byte, error) {
 }
 
 func (t *Ticket) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &t, "", false, []string{"id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &t, "", false, nil); err != nil {
 		return err
 	}
 	return nil

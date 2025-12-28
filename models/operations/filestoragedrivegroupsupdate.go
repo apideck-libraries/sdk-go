@@ -47,7 +47,7 @@ func (f FileStorageDriveGroupsUpdateRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (f *FileStorageDriveGroupsUpdateRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &f, "", false, []string{"id", "DriveGroup"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &f, "", false, nil); err != nil {
 		return err
 	}
 	return nil

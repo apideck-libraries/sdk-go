@@ -1,11 +1,17 @@
 # CustomField
 
 
-## Fields
+## Supported Types
 
-| Field                                                 | Type                                                  | Required                                              | Description                                           | Example                                               |
-| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| `ID`                                                  | *string*                                              | :heavy_check_mark:                                    | Unique identifier for the custom field.               | 2389328923893298                                      |
-| `Name`                                                | **string*                                             | :heavy_minus_sign:                                    | Name of the custom field.                             | employee_level                                        |
-| `Description`                                         | **string*                                             | :heavy_minus_sign:                                    | More information about the custom field               | Employee Level                                        |
-| `Value`                                               | [*components.Value](../../models/components/value.md) | :heavy_minus_sign:                                    | N/A                                                   |                                                       |
+### CustomField1
+
+```go
+customField := components.CreateCustomFieldCustomField1(components.CustomField1{/* values here */})
+```
+
+### CustomField2
+
+```go
+customField := components.CreateCustomFieldCustomField2(components.CustomField2{/* values here */})
+```
+

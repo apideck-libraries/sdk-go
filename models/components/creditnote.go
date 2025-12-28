@@ -15,6 +15,7 @@ type CreditNoteStatus string
 const (
 	CreditNoteStatusDraft         CreditNoteStatus = "draft"
 	CreditNoteStatusAuthorised    CreditNoteStatus = "authorised"
+	CreditNoteStatusPosted        CreditNoteStatus = "posted"
 	CreditNoteStatusPartiallyPaid CreditNoteStatus = "partially_paid"
 	CreditNoteStatusPaid          CreditNoteStatus = "paid"
 	CreditNoteStatusVoided        CreditNoteStatus = "voided"
@@ -33,6 +34,8 @@ func (e *CreditNoteStatus) UnmarshalJSON(data []byte) error {
 	case "draft":
 		fallthrough
 	case "authorised":
+		fallthrough
+	case "posted":
 		fallthrough
 	case "partially_paid":
 		fallthrough
@@ -147,7 +150,7 @@ func (c CreditNote) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreditNote) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"id", "total_amount"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -458,7 +461,7 @@ func (c CreditNoteInput) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreditNoteInput) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"total_amount"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil

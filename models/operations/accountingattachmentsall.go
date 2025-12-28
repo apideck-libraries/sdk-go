@@ -54,7 +54,7 @@ func (a AccountingAttachmentsAllRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (a *AccountingAttachmentsAllRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &a, "", false, []string{"reference_type", "reference_id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
 		return err
 	}
 	return nil
