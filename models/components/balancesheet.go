@@ -241,7 +241,7 @@ func (r Reports) MarshalJSON() ([]byte, error) {
 }
 
 func (r *Reports) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &r, "", false, []string{"end_date", "assets", "liabilities", "equity"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &r, "", false, nil); err != nil {
 		return err
 	}
 	return nil

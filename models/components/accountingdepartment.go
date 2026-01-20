@@ -41,6 +41,8 @@ type AccountingDepartment struct {
 	ID *string `json:"id,omitempty"`
 	// A unique identifier for an object.
 	ParentID *string `json:"parent_id,omitempty"`
+	// Id to be displayed.
+	DisplayID *string `json:"display_id,omitempty"`
 	// The name of the department.
 	Name *string `json:"name,omitempty"`
 	// Based on the status some functionality is enabled or disabled.
@@ -48,6 +50,8 @@ type AccountingDepartment struct {
 	Subsidiaries []SubsidiaryReference `json:"subsidiaries,omitempty"`
 	// The code of the department.
 	Code *string `json:"code,omitempty"`
+	// The third-party API ID of original entity
+	DownstreamID *string `json:"downstream_id,omitempty"`
 	// When custom mappings are configured on the resource, the result is included here.
 	CustomMappings map[string]any `json:"custom_mappings,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -89,6 +93,13 @@ func (a *AccountingDepartment) GetParentID() *string {
 	return a.ParentID
 }
 
+func (a *AccountingDepartment) GetDisplayID() *string {
+	if a == nil {
+		return nil
+	}
+	return a.DisplayID
+}
+
 func (a *AccountingDepartment) GetName() *string {
 	if a == nil {
 		return nil
@@ -115,6 +126,13 @@ func (a *AccountingDepartment) GetCode() *string {
 		return nil
 	}
 	return a.Code
+}
+
+func (a *AccountingDepartment) GetDownstreamID() *string {
+	if a == nil {
+		return nil
+	}
+	return a.DownstreamID
 }
 
 func (a *AccountingDepartment) GetCustomMappings() map[string]any {
@@ -169,6 +187,8 @@ func (a *AccountingDepartment) GetPassThrough() []PassThroughBody {
 type AccountingDepartmentInput struct {
 	// A unique identifier for an object.
 	ParentID *string `json:"parent_id,omitempty"`
+	// Id to be displayed.
+	DisplayID *string `json:"display_id,omitempty"`
 	// The name of the department.
 	Name *string `json:"name,omitempty"`
 	// Based on the status some functionality is enabled or disabled.
@@ -187,6 +207,13 @@ func (a *AccountingDepartmentInput) GetParentID() *string {
 		return nil
 	}
 	return a.ParentID
+}
+
+func (a *AccountingDepartmentInput) GetDisplayID() *string {
+	if a == nil {
+		return nil
+	}
+	return a.DisplayID
 }
 
 func (a *AccountingDepartmentInput) GetName() *string {

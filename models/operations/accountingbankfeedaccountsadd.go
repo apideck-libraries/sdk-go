@@ -45,7 +45,7 @@ func (a AccountingBankFeedAccountsAddRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (a *AccountingBankFeedAccountsAddRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &a, "", false, []string{"BankFeedAccount"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
 		return err
 	}
 	return nil

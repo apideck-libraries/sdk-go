@@ -10,6 +10,8 @@ import (
 type Folder struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
+	// The third-party API ID of original entity
+	DownstreamID *string `json:"downstream_id,omitempty"`
 	// The name of the folder
 	Name string `json:"name"`
 	// Optional description of the folder
@@ -17,8 +19,10 @@ type Folder struct {
 	// The full path of the folder (includes the folder name)
 	Path *string `json:"path,omitempty"`
 	// The size of the folder in bytes
-	Size  *int64 `json:"size,omitempty"`
-	Owner *Owner `json:"owner,omitempty"`
+	Size *int64 `json:"size,omitempty"`
+	// Whether the current user can download the contents of this folder
+	Downloadable *bool  `json:"downloadable,omitempty"`
+	Owner        *Owner `json:"owner,omitempty"`
 	// The parent folders of the file, starting from the root
 	ParentFolders []LinkedFolder `json:"parent_folders"`
 	// Whether the list of parent folder is complete. Some connectors only return the direct parent of a folder
@@ -40,7 +44,7 @@ func (f Folder) MarshalJSON() ([]byte, error) {
 }
 
 func (f *Folder) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &f, "", false, []string{"name", "parent_folders"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &f, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -51,6 +55,13 @@ func (f *Folder) GetID() *string {
 		return nil
 	}
 	return f.ID
+}
+
+func (f *Folder) GetDownstreamID() *string {
+	if f == nil {
+		return nil
+	}
+	return f.DownstreamID
 }
 
 func (f *Folder) GetName() string {
@@ -79,6 +90,13 @@ func (f *Folder) GetSize() *int64 {
 		return nil
 	}
 	return f.Size
+}
+
+func (f *Folder) GetDownloadable() *bool {
+	if f == nil {
+		return nil
+	}
+	return f.Downloadable
 }
 
 func (f *Folder) GetOwner() *Owner {

@@ -13,6 +13,8 @@ type LeadInput struct {
 	OwnerName *string `json:"owner_name,omitempty"`
 	// The company the lead is associated with.
 	CompanyID *string `json:"company_id,omitempty"`
+	// The contact the lead is associated with.
+	ContactID *string `json:"contact_id,omitempty"`
 	// The identifier of the lead.
 	LeadID *string `json:"lead_id,omitempty"`
 	// The source of the lead.
@@ -80,6 +82,13 @@ func (l *LeadInput) GetCompanyID() *string {
 		return nil
 	}
 	return l.CompanyID
+}
+
+func (l *LeadInput) GetContactID() *string {
+	if l == nil {
+		return nil
+	}
+	return l.ContactID
 }
 
 func (l *LeadInput) GetLeadID() *string {

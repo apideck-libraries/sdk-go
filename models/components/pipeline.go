@@ -18,6 +18,23 @@ type Stages struct {
 	WinProbability *int64 `json:"win_probability,omitempty"`
 	// The order in which the Pipeline Stage is displayed in the UI.
 	DisplayOrder *int64 `json:"display_order,omitempty"`
+	// Whether the Pipeline Stage is archived or not.
+	Archived *bool `json:"archived,omitempty"`
+	// The date and time when the Pipeline Stage was created.
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+	// The date and time when the Pipeline Stage was last updated.
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+}
+
+func (s Stages) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *Stages) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *Stages) GetID() *string {
@@ -55,6 +72,27 @@ func (s *Stages) GetDisplayOrder() *int64 {
 	return s.DisplayOrder
 }
 
+func (s *Stages) GetArchived() *bool {
+	if s == nil {
+		return nil
+	}
+	return s.Archived
+}
+
+func (s *Stages) GetCreatedAt() *time.Time {
+	if s == nil {
+		return nil
+	}
+	return s.CreatedAt
+}
+
+func (s *Stages) GetUpdatedAt() *time.Time {
+	if s == nil {
+		return nil
+	}
+	return s.UpdatedAt
+}
+
 type Pipeline struct {
 	// The unique identifier of the Pipeline.
 	ID *string `json:"id,omitempty"`
@@ -85,7 +123,7 @@ func (p Pipeline) MarshalJSON() ([]byte, error) {
 }
 
 func (p *Pipeline) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &p, "", false, []string{"name"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
 		return err
 	}
 	return nil

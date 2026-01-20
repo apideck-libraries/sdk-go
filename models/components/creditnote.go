@@ -15,6 +15,7 @@ type CreditNoteStatus string
 const (
 	CreditNoteStatusDraft         CreditNoteStatus = "draft"
 	CreditNoteStatusAuthorised    CreditNoteStatus = "authorised"
+	CreditNoteStatusPosted        CreditNoteStatus = "posted"
 	CreditNoteStatusPartiallyPaid CreditNoteStatus = "partially_paid"
 	CreditNoteStatusPaid          CreditNoteStatus = "paid"
 	CreditNoteStatusVoided        CreditNoteStatus = "voided"
@@ -33,6 +34,8 @@ func (e *CreditNoteStatus) UnmarshalJSON(data []byte) error {
 	case "draft":
 		fallthrough
 	case "authorised":
+		fallthrough
+	case "posted":
 		fallthrough
 	case "partially_paid":
 		fallthrough
@@ -84,6 +87,8 @@ type CreditNote struct {
 	Customer *LinkedCustomer `json:"customer,omitempty"`
 	// The company ID the transaction belongs to
 	CompanyID *string `json:"company_id,omitempty"`
+	// The ID of the location
+	LocationID *string `json:"location_id,omitempty"`
 	// The ID of the department
 	DepartmentID *string `json:"department_id,omitempty"`
 	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
@@ -147,7 +152,7 @@ func (c CreditNote) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreditNote) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"id", "total_amount"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -179,6 +184,13 @@ func (c *CreditNote) GetCompanyID() *string {
 		return nil
 	}
 	return c.CompanyID
+}
+
+func (c *CreditNote) GetLocationID() *string {
+	if c == nil {
+		return nil
+	}
+	return c.LocationID
 }
 
 func (c *CreditNote) GetDepartmentID() *string {
@@ -405,6 +417,8 @@ type CreditNoteInput struct {
 	Customer *LinkedCustomerInput `json:"customer,omitempty"`
 	// The company ID the transaction belongs to
 	CompanyID *string `json:"company_id,omitempty"`
+	// The ID of the location
+	LocationID *string `json:"location_id,omitempty"`
 	// The ID of the department
 	DepartmentID *string `json:"department_id,omitempty"`
 	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
@@ -458,7 +472,7 @@ func (c CreditNoteInput) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreditNoteInput) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"total_amount"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -483,6 +497,13 @@ func (c *CreditNoteInput) GetCompanyID() *string {
 		return nil
 	}
 	return c.CompanyID
+}
+
+func (c *CreditNoteInput) GetLocationID() *string {
+	if c == nil {
+		return nil
+	}
+	return c.LocationID
 }
 
 func (c *CreditNoteInput) GetDepartmentID() *string {

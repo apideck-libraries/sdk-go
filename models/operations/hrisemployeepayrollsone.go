@@ -50,7 +50,7 @@ func (h HrisEmployeePayrollsOneRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (h *HrisEmployeePayrollsOneRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &h, "", false, []string{"payroll_id", "employee_id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &h, "", false, nil); err != nil {
 		return err
 	}
 	return nil

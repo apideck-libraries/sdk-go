@@ -1,5 +1,4 @@
-# EventLogs
-(*Webhook.EventLogs*)
+# Webhook.EventLogs
 
 ## Overview
 

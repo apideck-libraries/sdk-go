@@ -8,94 +8,94 @@ import (
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 )
 
-type FiveType string
+type CustomFieldValue25Type string
 
 const (
-	FiveTypeStr      FiveType = "str"
-	FiveTypeNumber   FiveType = "number"
-	FiveTypeBoolean  FiveType = "boolean"
-	FiveTypeMapOfAny FiveType = "mapOfAny"
+	CustomFieldValue25TypeStr      CustomFieldValue25Type = "str"
+	CustomFieldValue25TypeNumber   CustomFieldValue25Type = "number"
+	CustomFieldValue25TypeBoolean  CustomFieldValue25Type = "boolean"
+	CustomFieldValue25TypeMapOfAny CustomFieldValue25Type = "mapOfAny"
 )
 
-type Five struct {
-	Str      *string        `queryParam:"inline,name=five"`
-	Number   *float64       `queryParam:"inline,name=five"`
-	Boolean  *bool          `queryParam:"inline,name=five"`
-	MapOfAny map[string]any `queryParam:"inline,name=five"`
+type CustomFieldValue25 struct {
+	Str      *string        `queryParam:"inline" union:"member"`
+	Number   *float64       `queryParam:"inline" union:"member"`
+	Boolean  *bool          `queryParam:"inline" union:"member"`
+	MapOfAny map[string]any `queryParam:"inline" union:"member"`
 
-	Type FiveType
+	Type CustomFieldValue25Type
 }
 
-func CreateFiveStr(str string) Five {
-	typ := FiveTypeStr
+func CreateCustomFieldValue25Str(str string) CustomFieldValue25 {
+	typ := CustomFieldValue25TypeStr
 
-	return Five{
+	return CustomFieldValue25{
 		Str:  &str,
 		Type: typ,
 	}
 }
 
-func CreateFiveNumber(number float64) Five {
-	typ := FiveTypeNumber
+func CreateCustomFieldValue25Number(number float64) CustomFieldValue25 {
+	typ := CustomFieldValue25TypeNumber
 
-	return Five{
+	return CustomFieldValue25{
 		Number: &number,
 		Type:   typ,
 	}
 }
 
-func CreateFiveBoolean(boolean bool) Five {
-	typ := FiveTypeBoolean
+func CreateCustomFieldValue25Boolean(boolean bool) CustomFieldValue25 {
+	typ := CustomFieldValue25TypeBoolean
 
-	return Five{
+	return CustomFieldValue25{
 		Boolean: &boolean,
 		Type:    typ,
 	}
 }
 
-func CreateFiveMapOfAny(mapOfAny map[string]any) Five {
-	typ := FiveTypeMapOfAny
+func CreateCustomFieldValue25MapOfAny(mapOfAny map[string]any) CustomFieldValue25 {
+	typ := CustomFieldValue25TypeMapOfAny
 
-	return Five{
+	return CustomFieldValue25{
 		MapOfAny: mapOfAny,
 		Type:     typ,
 	}
 }
 
-func (u *Five) UnmarshalJSON(data []byte) error {
+func (u *CustomFieldValue25) UnmarshalJSON(data []byte) error {
 
 	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
 		u.Str = &str
-		u.Type = FiveTypeStr
+		u.Type = CustomFieldValue25TypeStr
 		return nil
 	}
 
 	var number float64 = float64(0)
 	if err := utils.UnmarshalJSON(data, &number, "", true, nil); err == nil {
 		u.Number = &number
-		u.Type = FiveTypeNumber
+		u.Type = CustomFieldValue25TypeNumber
 		return nil
 	}
 
 	var boolean bool = false
 	if err := utils.UnmarshalJSON(data, &boolean, "", true, nil); err == nil {
 		u.Boolean = &boolean
-		u.Type = FiveTypeBoolean
+		u.Type = CustomFieldValue25TypeBoolean
 		return nil
 	}
 
 	var mapOfAny map[string]any = map[string]any{}
 	if err := utils.UnmarshalJSON(data, &mapOfAny, "", true, nil); err == nil {
 		u.MapOfAny = mapOfAny
-		u.Type = FiveTypeMapOfAny
+		u.Type = CustomFieldValue25TypeMapOfAny
 		return nil
 	}
 
-	return fmt.Errorf("could not unmarshal `%s` into any supported union types for Five", string(data))
+	return fmt.Errorf("could not unmarshal `%s` into any supported union types for CustomFieldValue25", string(data))
 }
 
-func (u Five) MarshalJSON() ([]byte, error) {
+func (u CustomFieldValue25) MarshalJSON() ([]byte, error) {
 	if u.Str != nil {
 		return utils.MarshalJSON(u.Str, "", true)
 	}
@@ -112,115 +112,115 @@ func (u Five) MarshalJSON() ([]byte, error) {
 		return utils.MarshalJSON(u.MapOfAny, "", true)
 	}
 
-	return nil, errors.New("could not marshal union type Five: all fields are null")
+	return nil, errors.New("could not marshal union type CustomFieldValue25: all fields are null")
 }
 
-type ValueType string
+type CustomFieldValueType string
 
 const (
-	ValueTypeStr      ValueType = "str"
-	ValueTypeNumber   ValueType = "number"
-	ValueTypeBoolean  ValueType = "boolean"
-	ValueTypeMapOfAny ValueType = "mapOfAny"
-	ValueTypeArrayOf5 ValueType = "arrayOf5"
+	CustomFieldValueTypeStr                       CustomFieldValueType = "str"
+	CustomFieldValueTypeNumber                    CustomFieldValueType = "number"
+	CustomFieldValueTypeBoolean                   CustomFieldValueType = "boolean"
+	CustomFieldValueTypeMapOfAny                  CustomFieldValueType = "mapOfAny"
+	CustomFieldValueTypeArrayOfCustomFieldValue25 CustomFieldValueType = "arrayOfCustomFieldValue25"
 )
 
-type Value struct {
-	Str      *string        `queryParam:"inline,name=value"`
-	Number   *float64       `queryParam:"inline,name=value"`
-	Boolean  *bool          `queryParam:"inline,name=value"`
-	MapOfAny map[string]any `queryParam:"inline,name=value"`
-	ArrayOf5 []*Five        `queryParam:"inline,name=value"`
+type CustomFieldValue struct {
+	Str                       *string               `queryParam:"inline" union:"member"`
+	Number                    *float64              `queryParam:"inline" union:"member"`
+	Boolean                   *bool                 `queryParam:"inline" union:"member"`
+	MapOfAny                  map[string]any        `queryParam:"inline" union:"member"`
+	ArrayOfCustomFieldValue25 []*CustomFieldValue25 `queryParam:"inline" union:"member"`
 
-	Type ValueType
+	Type CustomFieldValueType
 }
 
-func CreateValueStr(str string) Value {
-	typ := ValueTypeStr
+func CreateCustomFieldValueStr(str string) CustomFieldValue {
+	typ := CustomFieldValueTypeStr
 
-	return Value{
+	return CustomFieldValue{
 		Str:  &str,
 		Type: typ,
 	}
 }
 
-func CreateValueNumber(number float64) Value {
-	typ := ValueTypeNumber
+func CreateCustomFieldValueNumber(number float64) CustomFieldValue {
+	typ := CustomFieldValueTypeNumber
 
-	return Value{
+	return CustomFieldValue{
 		Number: &number,
 		Type:   typ,
 	}
 }
 
-func CreateValueBoolean(boolean bool) Value {
-	typ := ValueTypeBoolean
+func CreateCustomFieldValueBoolean(boolean bool) CustomFieldValue {
+	typ := CustomFieldValueTypeBoolean
 
-	return Value{
+	return CustomFieldValue{
 		Boolean: &boolean,
 		Type:    typ,
 	}
 }
 
-func CreateValueMapOfAny(mapOfAny map[string]any) Value {
-	typ := ValueTypeMapOfAny
+func CreateCustomFieldValueMapOfAny(mapOfAny map[string]any) CustomFieldValue {
+	typ := CustomFieldValueTypeMapOfAny
 
-	return Value{
+	return CustomFieldValue{
 		MapOfAny: mapOfAny,
 		Type:     typ,
 	}
 }
 
-func CreateValueArrayOf5(arrayOf5 []*Five) Value {
-	typ := ValueTypeArrayOf5
+func CreateCustomFieldValueArrayOfCustomFieldValue25(arrayOfCustomFieldValue25 []*CustomFieldValue25) CustomFieldValue {
+	typ := CustomFieldValueTypeArrayOfCustomFieldValue25
 
-	return Value{
-		ArrayOf5: arrayOf5,
-		Type:     typ,
+	return CustomFieldValue{
+		ArrayOfCustomFieldValue25: arrayOfCustomFieldValue25,
+		Type:                      typ,
 	}
 }
 
-func (u *Value) UnmarshalJSON(data []byte) error {
+func (u *CustomFieldValue) UnmarshalJSON(data []byte) error {
 
 	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
 		u.Str = &str
-		u.Type = ValueTypeStr
+		u.Type = CustomFieldValueTypeStr
 		return nil
 	}
 
 	var number float64 = float64(0)
 	if err := utils.UnmarshalJSON(data, &number, "", true, nil); err == nil {
 		u.Number = &number
-		u.Type = ValueTypeNumber
+		u.Type = CustomFieldValueTypeNumber
 		return nil
 	}
 
 	var boolean bool = false
 	if err := utils.UnmarshalJSON(data, &boolean, "", true, nil); err == nil {
 		u.Boolean = &boolean
-		u.Type = ValueTypeBoolean
+		u.Type = CustomFieldValueTypeBoolean
 		return nil
 	}
 
 	var mapOfAny map[string]any = map[string]any{}
 	if err := utils.UnmarshalJSON(data, &mapOfAny, "", true, nil); err == nil {
 		u.MapOfAny = mapOfAny
-		u.Type = ValueTypeMapOfAny
+		u.Type = CustomFieldValueTypeMapOfAny
 		return nil
 	}
 
-	var arrayOf5 []*Five = []*Five{}
-	if err := utils.UnmarshalJSON(data, &arrayOf5, "", true, nil); err == nil {
-		u.ArrayOf5 = arrayOf5
-		u.Type = ValueTypeArrayOf5
+	var arrayOfCustomFieldValue25 []*CustomFieldValue25 = []*CustomFieldValue25{}
+	if err := utils.UnmarshalJSON(data, &arrayOfCustomFieldValue25, "", true, nil); err == nil {
+		u.ArrayOfCustomFieldValue25 = arrayOfCustomFieldValue25
+		u.Type = CustomFieldValueTypeArrayOfCustomFieldValue25
 		return nil
 	}
 
-	return fmt.Errorf("could not unmarshal `%s` into any supported union types for Value", string(data))
+	return fmt.Errorf("could not unmarshal `%s` into any supported union types for CustomFieldValue", string(data))
 }
 
-func (u Value) MarshalJSON() ([]byte, error) {
+func (u CustomFieldValue) MarshalJSON() ([]byte, error) {
 	if u.Str != nil {
 		return utils.MarshalJSON(u.Str, "", true)
 	}
@@ -237,47 +237,406 @@ func (u Value) MarshalJSON() ([]byte, error) {
 		return utils.MarshalJSON(u.MapOfAny, "", true)
 	}
 
-	if u.ArrayOf5 != nil {
-		return utils.MarshalJSON(u.ArrayOf5, "", true)
+	if u.ArrayOfCustomFieldValue25 != nil {
+		return utils.MarshalJSON(u.ArrayOfCustomFieldValue25, "", true)
 	}
 
-	return nil, errors.New("could not marshal union type Value: all fields are null")
+	return nil, errors.New("could not marshal union type CustomFieldValue: all fields are null")
 }
 
-type CustomField struct {
+type CustomField2 struct {
 	// Unique identifier for the custom field.
-	ID *string `json:"id"`
+	ID *string `json:"id,omitempty"`
 	// Name of the custom field.
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name"`
 	// More information about the custom field
-	Description *string `json:"description,omitempty"`
-	Value       *Value  `json:"value,omitempty"`
+	Description *string           `json:"description,omitempty"`
+	Value       *CustomFieldValue `json:"value,omitempty"`
 }
 
-func (c *CustomField) GetID() *string {
+func (c CustomField2) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CustomField2) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (c *CustomField2) GetID() *string {
 	if c == nil {
 		return nil
 	}
 	return c.ID
 }
 
-func (c *CustomField) GetName() *string {
+func (c *CustomField2) GetName() *string {
 	if c == nil {
 		return nil
 	}
 	return c.Name
 }
 
-func (c *CustomField) GetDescription() *string {
+func (c *CustomField2) GetDescription() *string {
 	if c == nil {
 		return nil
 	}
 	return c.Description
 }
 
-func (c *CustomField) GetValue() *Value {
+func (c *CustomField2) GetValue() *CustomFieldValue {
 	if c == nil {
 		return nil
 	}
 	return c.Value
+}
+
+type CustomFieldValue5Type string
+
+const (
+	CustomFieldValue5TypeStr      CustomFieldValue5Type = "str"
+	CustomFieldValue5TypeNumber   CustomFieldValue5Type = "number"
+	CustomFieldValue5TypeBoolean  CustomFieldValue5Type = "boolean"
+	CustomFieldValue5TypeMapOfAny CustomFieldValue5Type = "mapOfAny"
+)
+
+type CustomFieldValue5 struct {
+	Str      *string        `queryParam:"inline" union:"member"`
+	Number   *float64       `queryParam:"inline" union:"member"`
+	Boolean  *bool          `queryParam:"inline" union:"member"`
+	MapOfAny map[string]any `queryParam:"inline" union:"member"`
+
+	Type CustomFieldValue5Type
+}
+
+func CreateCustomFieldValue5Str(str string) CustomFieldValue5 {
+	typ := CustomFieldValue5TypeStr
+
+	return CustomFieldValue5{
+		Str:  &str,
+		Type: typ,
+	}
+}
+
+func CreateCustomFieldValue5Number(number float64) CustomFieldValue5 {
+	typ := CustomFieldValue5TypeNumber
+
+	return CustomFieldValue5{
+		Number: &number,
+		Type:   typ,
+	}
+}
+
+func CreateCustomFieldValue5Boolean(boolean bool) CustomFieldValue5 {
+	typ := CustomFieldValue5TypeBoolean
+
+	return CustomFieldValue5{
+		Boolean: &boolean,
+		Type:    typ,
+	}
+}
+
+func CreateCustomFieldValue5MapOfAny(mapOfAny map[string]any) CustomFieldValue5 {
+	typ := CustomFieldValue5TypeMapOfAny
+
+	return CustomFieldValue5{
+		MapOfAny: mapOfAny,
+		Type:     typ,
+	}
+}
+
+func (u *CustomFieldValue5) UnmarshalJSON(data []byte) error {
+
+	var str string = ""
+	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
+		u.Str = &str
+		u.Type = CustomFieldValue5TypeStr
+		return nil
+	}
+
+	var number float64 = float64(0)
+	if err := utils.UnmarshalJSON(data, &number, "", true, nil); err == nil {
+		u.Number = &number
+		u.Type = CustomFieldValue5TypeNumber
+		return nil
+	}
+
+	var boolean bool = false
+	if err := utils.UnmarshalJSON(data, &boolean, "", true, nil); err == nil {
+		u.Boolean = &boolean
+		u.Type = CustomFieldValue5TypeBoolean
+		return nil
+	}
+
+	var mapOfAny map[string]any = map[string]any{}
+	if err := utils.UnmarshalJSON(data, &mapOfAny, "", true, nil); err == nil {
+		u.MapOfAny = mapOfAny
+		u.Type = CustomFieldValue5TypeMapOfAny
+		return nil
+	}
+
+	return fmt.Errorf("could not unmarshal `%s` into any supported union types for CustomFieldValue5", string(data))
+}
+
+func (u CustomFieldValue5) MarshalJSON() ([]byte, error) {
+	if u.Str != nil {
+		return utils.MarshalJSON(u.Str, "", true)
+	}
+
+	if u.Number != nil {
+		return utils.MarshalJSON(u.Number, "", true)
+	}
+
+	if u.Boolean != nil {
+		return utils.MarshalJSON(u.Boolean, "", true)
+	}
+
+	if u.MapOfAny != nil {
+		return utils.MarshalJSON(u.MapOfAny, "", true)
+	}
+
+	return nil, errors.New("could not marshal union type CustomFieldValue5: all fields are null")
+}
+
+type CustomField1ValueType string
+
+const (
+	CustomField1ValueTypeStr                      CustomField1ValueType = "str"
+	CustomField1ValueTypeNumber                   CustomField1ValueType = "number"
+	CustomField1ValueTypeBoolean                  CustomField1ValueType = "boolean"
+	CustomField1ValueTypeMapOfAny                 CustomField1ValueType = "mapOfAny"
+	CustomField1ValueTypeArrayOfCustomFieldValue5 CustomField1ValueType = "arrayOfCustomFieldValue5"
+)
+
+type CustomField1Value struct {
+	Str                      *string              `queryParam:"inline" union:"member"`
+	Number                   *float64             `queryParam:"inline" union:"member"`
+	Boolean                  *bool                `queryParam:"inline" union:"member"`
+	MapOfAny                 map[string]any       `queryParam:"inline" union:"member"`
+	ArrayOfCustomFieldValue5 []*CustomFieldValue5 `queryParam:"inline" union:"member"`
+
+	Type CustomField1ValueType
+}
+
+func CreateCustomField1ValueStr(str string) CustomField1Value {
+	typ := CustomField1ValueTypeStr
+
+	return CustomField1Value{
+		Str:  &str,
+		Type: typ,
+	}
+}
+
+func CreateCustomField1ValueNumber(number float64) CustomField1Value {
+	typ := CustomField1ValueTypeNumber
+
+	return CustomField1Value{
+		Number: &number,
+		Type:   typ,
+	}
+}
+
+func CreateCustomField1ValueBoolean(boolean bool) CustomField1Value {
+	typ := CustomField1ValueTypeBoolean
+
+	return CustomField1Value{
+		Boolean: &boolean,
+		Type:    typ,
+	}
+}
+
+func CreateCustomField1ValueMapOfAny(mapOfAny map[string]any) CustomField1Value {
+	typ := CustomField1ValueTypeMapOfAny
+
+	return CustomField1Value{
+		MapOfAny: mapOfAny,
+		Type:     typ,
+	}
+}
+
+func CreateCustomField1ValueArrayOfCustomFieldValue5(arrayOfCustomFieldValue5 []*CustomFieldValue5) CustomField1Value {
+	typ := CustomField1ValueTypeArrayOfCustomFieldValue5
+
+	return CustomField1Value{
+		ArrayOfCustomFieldValue5: arrayOfCustomFieldValue5,
+		Type:                     typ,
+	}
+}
+
+func (u *CustomField1Value) UnmarshalJSON(data []byte) error {
+
+	var str string = ""
+	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
+		u.Str = &str
+		u.Type = CustomField1ValueTypeStr
+		return nil
+	}
+
+	var number float64 = float64(0)
+	if err := utils.UnmarshalJSON(data, &number, "", true, nil); err == nil {
+		u.Number = &number
+		u.Type = CustomField1ValueTypeNumber
+		return nil
+	}
+
+	var boolean bool = false
+	if err := utils.UnmarshalJSON(data, &boolean, "", true, nil); err == nil {
+		u.Boolean = &boolean
+		u.Type = CustomField1ValueTypeBoolean
+		return nil
+	}
+
+	var mapOfAny map[string]any = map[string]any{}
+	if err := utils.UnmarshalJSON(data, &mapOfAny, "", true, nil); err == nil {
+		u.MapOfAny = mapOfAny
+		u.Type = CustomField1ValueTypeMapOfAny
+		return nil
+	}
+
+	var arrayOfCustomFieldValue5 []*CustomFieldValue5 = []*CustomFieldValue5{}
+	if err := utils.UnmarshalJSON(data, &arrayOfCustomFieldValue5, "", true, nil); err == nil {
+		u.ArrayOfCustomFieldValue5 = arrayOfCustomFieldValue5
+		u.Type = CustomField1ValueTypeArrayOfCustomFieldValue5
+		return nil
+	}
+
+	return fmt.Errorf("could not unmarshal `%s` into any supported union types for CustomField1Value", string(data))
+}
+
+func (u CustomField1Value) MarshalJSON() ([]byte, error) {
+	if u.Str != nil {
+		return utils.MarshalJSON(u.Str, "", true)
+	}
+
+	if u.Number != nil {
+		return utils.MarshalJSON(u.Number, "", true)
+	}
+
+	if u.Boolean != nil {
+		return utils.MarshalJSON(u.Boolean, "", true)
+	}
+
+	if u.MapOfAny != nil {
+		return utils.MarshalJSON(u.MapOfAny, "", true)
+	}
+
+	if u.ArrayOfCustomFieldValue5 != nil {
+		return utils.MarshalJSON(u.ArrayOfCustomFieldValue5, "", true)
+	}
+
+	return nil, errors.New("could not marshal union type CustomField1Value: all fields are null")
+}
+
+type CustomField1 struct {
+	// Unique identifier for the custom field.
+	ID *string `json:"id"`
+	// Name of the custom field.
+	Name *string `json:"name,omitempty"`
+	// More information about the custom field
+	Description *string            `json:"description,omitempty"`
+	Value       *CustomField1Value `json:"value,omitempty"`
+}
+
+func (c CustomField1) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CustomField1) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (c *CustomField1) GetID() *string {
+	if c == nil {
+		return nil
+	}
+	return c.ID
+}
+
+func (c *CustomField1) GetName() *string {
+	if c == nil {
+		return nil
+	}
+	return c.Name
+}
+
+func (c *CustomField1) GetDescription() *string {
+	if c == nil {
+		return nil
+	}
+	return c.Description
+}
+
+func (c *CustomField1) GetValue() *CustomField1Value {
+	if c == nil {
+		return nil
+	}
+	return c.Value
+}
+
+type CustomFieldType string
+
+const (
+	CustomFieldTypeCustomField1 CustomFieldType = "CustomField_1"
+	CustomFieldTypeCustomField2 CustomFieldType = "CustomField_2"
+)
+
+type CustomField struct {
+	CustomField1 *CustomField1 `queryParam:"inline" union:"member"`
+	CustomField2 *CustomField2 `queryParam:"inline" union:"member"`
+
+	Type CustomFieldType
+}
+
+func CreateCustomFieldCustomField1(customField1 CustomField1) CustomField {
+	typ := CustomFieldTypeCustomField1
+
+	return CustomField{
+		CustomField1: &customField1,
+		Type:         typ,
+	}
+}
+
+func CreateCustomFieldCustomField2(customField2 CustomField2) CustomField {
+	typ := CustomFieldTypeCustomField2
+
+	return CustomField{
+		CustomField2: &customField2,
+		Type:         typ,
+	}
+}
+
+func (u *CustomField) UnmarshalJSON(data []byte) error {
+
+	var customField1 CustomField1 = CustomField1{}
+	if err := utils.UnmarshalJSON(data, &customField1, "", true, nil); err == nil {
+		u.CustomField1 = &customField1
+		u.Type = CustomFieldTypeCustomField1
+		return nil
+	}
+
+	var customField2 CustomField2 = CustomField2{}
+	if err := utils.UnmarshalJSON(data, &customField2, "", true, nil); err == nil {
+		u.CustomField2 = &customField2
+		u.Type = CustomFieldTypeCustomField2
+		return nil
+	}
+
+	return fmt.Errorf("could not unmarshal `%s` into any supported union types for CustomField", string(data))
+}
+
+func (u CustomField) MarshalJSON() ([]byte, error) {
+	if u.CustomField1 != nil {
+		return utils.MarshalJSON(u.CustomField1, "", true)
+	}
+
+	if u.CustomField2 != nil {
+		return utils.MarshalJSON(u.CustomField2, "", true)
+	}
+
+	return nil, errors.New("could not marshal union type CustomField: all fields are null")
 }

@@ -31,6 +31,8 @@ func (a *AccountingBankAccountsOneGlobals) GetAppID() *string {
 type AccountingBankAccountsOneRequest struct {
 	// ID of the record you are acting upon.
 	ID string `pathParam:"style=simple,explode=false,name=id"`
+	// Apply filters
+	Filter *components.BankAccountFilter `queryParam:"style=deepObject,explode=true,name=filter"`
 	// ID of the consumer which you want to get or push data from
 	ConsumerID *string `header:"style=simple,explode=false,name=x-apideck-consumer-id"`
 	// The ID of your Unify application
@@ -48,7 +50,7 @@ func (a AccountingBankAccountsOneRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (a *AccountingBankAccountsOneRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &a, "", false, []string{"id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -59,6 +61,13 @@ func (a *AccountingBankAccountsOneRequest) GetID() string {
 		return ""
 	}
 	return a.ID
+}
+
+func (a *AccountingBankAccountsOneRequest) GetFilter() *components.BankAccountFilter {
+	if a == nil {
+		return nil
+	}
+	return a.Filter
 }
 
 func (a *AccountingBankAccountsOneRequest) GetConsumerID() *string {

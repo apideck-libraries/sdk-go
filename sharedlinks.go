@@ -34,8 +34,8 @@ func newSharedLinks(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *
 	}
 }
 
-// List SharedLinks
-// List SharedLinks
+// List Shared Links
+// List Shared Links
 func (s *SharedLinks) List(ctx context.Context, request operations.FileStorageSharedLinksAllRequest, opts ...operations.Option) (*operations.FileStorageSharedLinksAllResponse, error) {
 	globals := operations.FileStorageSharedLinksAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
