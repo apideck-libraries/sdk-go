@@ -98,6 +98,8 @@ type PurchaseOrder struct {
 	SubsidiaryID *string `json:"subsidiary_id,omitempty"`
 	// The company ID the transaction belongs to
 	CompanyID *string `json:"company_id,omitempty"`
+	// The ID of the location
+	LocationID *string `json:"location_id,omitempty"`
 	// The ID of the department
 	DepartmentID *string              `json:"department_id,omitempty"`
 	Status       *PurchaseOrderStatus `json:"status,omitempty"`
@@ -236,6 +238,13 @@ func (p *PurchaseOrder) GetCompanyID() *string {
 		return nil
 	}
 	return p.CompanyID
+}
+
+func (p *PurchaseOrder) GetLocationID() *string {
+	if p == nil {
+		return nil
+	}
+	return p.LocationID
 }
 
 func (p *PurchaseOrder) GetDepartmentID() *string {
@@ -524,6 +533,8 @@ type PurchaseOrderInput struct {
 	SubsidiaryID *string `json:"subsidiary_id,omitempty"`
 	// The company ID the transaction belongs to
 	CompanyID *string `json:"company_id,omitempty"`
+	// The ID of the location
+	LocationID *string `json:"location_id,omitempty"`
 	// The ID of the department
 	DepartmentID *string              `json:"department_id,omitempty"`
 	Status       *PurchaseOrderStatus `json:"status,omitempty"`
@@ -638,6 +649,13 @@ func (p *PurchaseOrderInput) GetCompanyID() *string {
 		return nil
 	}
 	return p.CompanyID
+}
+
+func (p *PurchaseOrderInput) GetLocationID() *string {
+	if p == nil {
+		return nil
+	}
+	return p.LocationID
 }
 
 func (p *PurchaseOrderInput) GetDepartmentID() *string {

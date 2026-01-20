@@ -194,7 +194,7 @@ func (b BillPayment) MarshalJSON() ([]byte, error) {
 }
 
 func (b *BillPayment) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &b, "", false, []string{"id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &b, "", false, nil); err != nil {
 		return err
 	}
 	return nil

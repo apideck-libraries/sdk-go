@@ -1,5 +1,4 @@
-# BankAccounts
-(*Accounting.BankAccounts*)
+# Accounting.BankAccounts
 
 ## Overview
 
@@ -154,14 +153,16 @@ func main() {
             Status: components.AccountingBankAccountStatusActive.ToPointer(),
             Description: sdkgo.Pointer("Primary operating account for daily transactions"),
             CustomFields: []components.CustomField{
-                components.CustomField{
-                    ID: sdkgo.Pointer("2389328923893298"),
-                    Name: sdkgo.Pointer("employee_level"),
-                    Description: sdkgo.Pointer("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueStr(
-                        "Uses Salesforce and Marketo",
-                    )),
-                },
+                components.CreateCustomFieldCustomField1(
+                    components.CustomField1{
+                        ID: sdkgo.Pointer("2389328923893298"),
+                        Name: sdkgo.Pointer("employee_level"),
+                        Description: sdkgo.Pointer("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateCustomField1ValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
+                ),
             },
         },
     })
@@ -211,6 +212,7 @@ import(
 	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -226,6 +228,9 @@ func main() {
 
     res, err := s.Accounting.BankAccounts.Get(ctx, operations.AccountingBankAccountsOneRequest{
         ID: "<id>",
+        Filter: &components.BankAccountFilter{
+            AccountType: components.BankAccountFilterAccountTypeChecking.ToPointer(),
+        },
         ServiceID: sdkgo.Pointer("salesforce"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
@@ -320,14 +325,16 @@ func main() {
             Status: components.AccountingBankAccountStatusActive.ToPointer(),
             Description: sdkgo.Pointer("Primary operating account for daily transactions"),
             CustomFields: []components.CustomField{
-                components.CustomField{
-                    ID: sdkgo.Pointer("2389328923893298"),
-                    Name: sdkgo.Pointer("employee_level"),
-                    Description: sdkgo.Pointer("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueStr(
-                        "Uses Salesforce and Marketo",
-                    )),
-                },
+                components.CreateCustomFieldCustomField1(
+                    components.CustomField1{
+                        ID: sdkgo.Pointer("2389328923893298"),
+                        Name: sdkgo.Pointer("employee_level"),
+                        Description: sdkgo.Pointer("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateCustomField1ValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
+                ),
             },
         },
     })

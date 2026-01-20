@@ -48,7 +48,7 @@ func (c CrmCompaniesOneRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CrmCompaniesOneRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil

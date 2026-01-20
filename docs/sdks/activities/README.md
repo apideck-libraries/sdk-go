@@ -1,5 +1,4 @@
-# Activities
-(*Crm.Activities*)
+# Crm.Activities
 
 ## Overview
 
@@ -196,12 +195,14 @@ func main() {
             VideoConferenceURL: sdkgo.Pointer("https://us02web.zoom.us/j/88120759396"),
             VideoConferenceID: sdkgo.Pointer("zoom:88120759396"),
             CustomFields: []components.CustomField{
-                components.CustomField{
-                    ID: sdkgo.Pointer("2389328923893298"),
-                    Name: sdkgo.Pointer("employee_level"),
-                    Description: sdkgo.Pointer("Employee Level"),
-                    Value: nil,
-                },
+                components.CreateCustomFieldCustomField1(
+                    components.CustomField1{
+                        ID: sdkgo.Pointer("2389328923893298"),
+                        Name: sdkgo.Pointer("employee_level"),
+                        Description: sdkgo.Pointer("Employee Level"),
+                        Value: nil,
+                    },
+                ),
             },
             Attendees: []components.ActivityAttendeeInput{
                 components.ActivityAttendeeInput{
@@ -428,22 +429,26 @@ func main() {
             VideoConferenceURL: sdkgo.Pointer("https://us02web.zoom.us/j/88120759396"),
             VideoConferenceID: sdkgo.Pointer("zoom:88120759396"),
             CustomFields: []components.CustomField{
-                components.CustomField{
-                    ID: sdkgo.Pointer("2389328923893298"),
-                    Name: sdkgo.Pointer("employee_level"),
-                    Description: sdkgo.Pointer("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueStr(
-                        "Uses Salesforce and Marketo",
-                    )),
-                },
-                components.CustomField{
-                    ID: sdkgo.Pointer("2389328923893298"),
-                    Name: sdkgo.Pointer("employee_level"),
-                    Description: sdkgo.Pointer("Employee Level"),
-                    Value: sdkgo.Pointer(components.CreateValueStr(
-                        "Uses Salesforce and Marketo",
-                    )),
-                },
+                components.CreateCustomFieldCustomField1(
+                    components.CustomField1{
+                        ID: sdkgo.Pointer("2389328923893298"),
+                        Name: sdkgo.Pointer("employee_level"),
+                        Description: sdkgo.Pointer("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateCustomField1ValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
+                ),
+                components.CreateCustomFieldCustomField1(
+                    components.CustomField1{
+                        ID: sdkgo.Pointer("2389328923893298"),
+                        Name: sdkgo.Pointer("employee_level"),
+                        Description: sdkgo.Pointer("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateCustomField1ValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
+                ),
             },
             Attendees: []components.ActivityAttendeeInput{
                 components.ActivityAttendeeInput{

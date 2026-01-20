@@ -65,76 +65,76 @@ func (e *Target) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type ConnectionValue5Type string
+type Value5Type string
 
 const (
-	ConnectionValue5TypeStr     ConnectionValue5Type = "str"
-	ConnectionValue5TypeInteger ConnectionValue5Type = "integer"
-	ConnectionValue5TypeNumber  ConnectionValue5Type = "number"
+	Value5TypeStr     Value5Type = "str"
+	Value5TypeInteger Value5Type = "integer"
+	Value5TypeNumber  Value5Type = "number"
 )
 
-type ConnectionValue5 struct {
-	Str     *string  `queryParam:"inline,name=five"`
-	Integer *int64   `queryParam:"inline,name=five"`
-	Number  *float64 `queryParam:"inline,name=five"`
+type Value5 struct {
+	Str     *string  `queryParam:"inline" union:"member"`
+	Integer *int64   `queryParam:"inline" union:"member"`
+	Number  *float64 `queryParam:"inline" union:"member"`
 
-	Type ConnectionValue5Type
+	Type Value5Type
 }
 
-func CreateConnectionValue5Str(str string) ConnectionValue5 {
-	typ := ConnectionValue5TypeStr
+func CreateValue5Str(str string) Value5 {
+	typ := Value5TypeStr
 
-	return ConnectionValue5{
+	return Value5{
 		Str:  &str,
 		Type: typ,
 	}
 }
 
-func CreateConnectionValue5Integer(integer int64) ConnectionValue5 {
-	typ := ConnectionValue5TypeInteger
+func CreateValue5Integer(integer int64) Value5 {
+	typ := Value5TypeInteger
 
-	return ConnectionValue5{
+	return Value5{
 		Integer: &integer,
 		Type:    typ,
 	}
 }
 
-func CreateConnectionValue5Number(number float64) ConnectionValue5 {
-	typ := ConnectionValue5TypeNumber
+func CreateValue5Number(number float64) Value5 {
+	typ := Value5TypeNumber
 
-	return ConnectionValue5{
+	return Value5{
 		Number: &number,
 		Type:   typ,
 	}
 }
 
-func (u *ConnectionValue5) UnmarshalJSON(data []byte) error {
+func (u *Value5) UnmarshalJSON(data []byte) error {
 
 	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
 		u.Str = &str
-		u.Type = ConnectionValue5TypeStr
+		u.Type = Value5TypeStr
 		return nil
 	}
 
 	var integer int64 = int64(0)
 	if err := utils.UnmarshalJSON(data, &integer, "", true, nil); err == nil {
 		u.Integer = &integer
-		u.Type = ConnectionValue5TypeInteger
+		u.Type = Value5TypeInteger
 		return nil
 	}
 
 	var number float64 = float64(0)
 	if err := utils.UnmarshalJSON(data, &number, "", true, nil); err == nil {
 		u.Number = &number
-		u.Type = ConnectionValue5TypeNumber
+		u.Type = Value5TypeNumber
 		return nil
 	}
 
-	return fmt.Errorf("could not unmarshal `%s` into any supported union types for ConnectionValue5", string(data))
+	return fmt.Errorf("could not unmarshal `%s` into any supported union types for Value5", string(data))
 }
 
-func (u ConnectionValue5) MarshalJSON() ([]byte, error) {
+func (u Value5) MarshalJSON() ([]byte, error) {
 	if u.Str != nil {
 		return utils.MarshalJSON(u.Str, "", true)
 	}
@@ -147,25 +147,25 @@ func (u ConnectionValue5) MarshalJSON() ([]byte, error) {
 		return utils.MarshalJSON(u.Number, "", true)
 	}
 
-	return nil, errors.New("could not marshal union type ConnectionValue5: all fields are null")
+	return nil, errors.New("could not marshal union type Value5: all fields are null")
 }
 
 type ConnectionValueType string
 
 const (
-	ConnectionValueTypeStr                     ConnectionValueType = "str"
-	ConnectionValueTypeInteger                 ConnectionValueType = "integer"
-	ConnectionValueTypeNumber                  ConnectionValueType = "number"
-	ConnectionValueTypeBoolean                 ConnectionValueType = "boolean"
-	ConnectionValueTypeArrayOfConnectionValue5 ConnectionValueType = "arrayOfConnectionValue5"
+	ConnectionValueTypeStr           ConnectionValueType = "str"
+	ConnectionValueTypeInteger       ConnectionValueType = "integer"
+	ConnectionValueTypeNumber        ConnectionValueType = "number"
+	ConnectionValueTypeBoolean       ConnectionValueType = "boolean"
+	ConnectionValueTypeArrayOfValue5 ConnectionValueType = "arrayOfValue5"
 )
 
 type ConnectionValue struct {
-	Str                     *string            `queryParam:"inline,name=value"`
-	Integer                 *int64             `queryParam:"inline,name=value"`
-	Number                  *float64           `queryParam:"inline,name=value"`
-	Boolean                 *bool              `queryParam:"inline,name=value"`
-	ArrayOfConnectionValue5 []ConnectionValue5 `queryParam:"inline,name=value"`
+	Str           *string  `queryParam:"inline" union:"member"`
+	Integer       *int64   `queryParam:"inline" union:"member"`
+	Number        *float64 `queryParam:"inline" union:"member"`
+	Boolean       *bool    `queryParam:"inline" union:"member"`
+	ArrayOfValue5 []Value5 `queryParam:"inline" union:"member"`
 
 	Type ConnectionValueType
 }
@@ -206,12 +206,12 @@ func CreateConnectionValueBoolean(boolean bool) ConnectionValue {
 	}
 }
 
-func CreateConnectionValueArrayOfConnectionValue5(arrayOfConnectionValue5 []ConnectionValue5) ConnectionValue {
-	typ := ConnectionValueTypeArrayOfConnectionValue5
+func CreateConnectionValueArrayOfValue5(arrayOfValue5 []Value5) ConnectionValue {
+	typ := ConnectionValueTypeArrayOfValue5
 
 	return ConnectionValue{
-		ArrayOfConnectionValue5: arrayOfConnectionValue5,
-		Type:                    typ,
+		ArrayOfValue5: arrayOfValue5,
+		Type:          typ,
 	}
 }
 
@@ -245,10 +245,10 @@ func (u *ConnectionValue) UnmarshalJSON(data []byte) error {
 		return nil
 	}
 
-	var arrayOfConnectionValue5 []ConnectionValue5 = []ConnectionValue5{}
-	if err := utils.UnmarshalJSON(data, &arrayOfConnectionValue5, "", true, nil); err == nil {
-		u.ArrayOfConnectionValue5 = arrayOfConnectionValue5
-		u.Type = ConnectionValueTypeArrayOfConnectionValue5
+	var arrayOfValue5 []Value5 = []Value5{}
+	if err := utils.UnmarshalJSON(data, &arrayOfValue5, "", true, nil); err == nil {
+		u.ArrayOfValue5 = arrayOfValue5
+		u.Type = ConnectionValueTypeArrayOfValue5
 		return nil
 	}
 
@@ -272,8 +272,8 @@ func (u ConnectionValue) MarshalJSON() ([]byte, error) {
 		return utils.MarshalJSON(u.Boolean, "", true)
 	}
 
-	if u.ArrayOfConnectionValue5 != nil {
-		return utils.MarshalJSON(u.ArrayOfConnectionValue5, "", true)
+	if u.ArrayOfValue5 != nil {
+		return utils.MarshalJSON(u.ArrayOfValue5, "", true)
 	}
 
 	return nil, errors.New("could not marshal union type ConnectionValue: all fields are null")
