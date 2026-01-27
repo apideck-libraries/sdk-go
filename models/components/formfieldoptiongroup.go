@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 )
 
@@ -17,18 +15,16 @@ const (
 func (e FormFieldOptionGroupOptionType) ToPointer() *FormFieldOptionGroupOptionType {
 	return &e
 }
-func (e *FormFieldOptionGroupOptionType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *FormFieldOptionGroupOptionType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "group":
+			return true
+		}
 	}
-	switch v {
-	case "group":
-		*e = FormFieldOptionGroupOptionType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for FormFieldOptionGroupOptionType: %v", v)
-	}
+	return false
 }
 
 type FormFieldOptionGroup struct {

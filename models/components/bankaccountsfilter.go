@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // BankAccountsFilterAccountType - Filter by account type
 type BankAccountsFilterAccountType string
 
@@ -23,30 +18,16 @@ const (
 func (e BankAccountsFilterAccountType) ToPointer() *BankAccountsFilterAccountType {
 	return &e
 }
-func (e *BankAccountsFilterAccountType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *BankAccountsFilterAccountType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "checking", "savings", "credit_card", "money_market", "line_of_credit", "other", "cash":
+			return true
+		}
 	}
-	switch v {
-	case "checking":
-		fallthrough
-	case "savings":
-		fallthrough
-	case "credit_card":
-		fallthrough
-	case "money_market":
-		fallthrough
-	case "line_of_credit":
-		fallthrough
-	case "other":
-		fallthrough
-	case "cash":
-		*e = BankAccountsFilterAccountType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for BankAccountsFilterAccountType: %v", v)
-	}
+	return false
 }
 
 // BankAccountsFilterStatus - Filter by account status
@@ -61,22 +42,16 @@ const (
 func (e BankAccountsFilterStatus) ToPointer() *BankAccountsFilterStatus {
 	return &e
 }
-func (e *BankAccountsFilterStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *BankAccountsFilterStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "active", "inactive", "closed":
+			return true
+		}
 	}
-	switch v {
-	case "active":
-		fallthrough
-	case "inactive":
-		fallthrough
-	case "closed":
-		*e = BankAccountsFilterStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for BankAccountsFilterStatus: %v", v)
-	}
+	return false
 }
 
 type BankAccountsFilter struct {

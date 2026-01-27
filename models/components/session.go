@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 )
 
@@ -20,24 +18,16 @@ const (
 func (e AllowActions) ToPointer() *AllowActions {
 	return &e
 }
-func (e *AllowActions) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AllowActions) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "delete", "disconnect", "reauthorize", "disable":
+			return true
+		}
 	}
-	switch v {
-	case "delete":
-		fallthrough
-	case "disconnect":
-		fallthrough
-	case "reauthorize":
-		fallthrough
-	case "disable":
-		*e = AllowActions(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for AllowActions: %v", v)
-	}
+	return false
 }
 
 // Settings to change the way the Vault is displayed.

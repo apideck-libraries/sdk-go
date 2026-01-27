@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
@@ -21,22 +19,16 @@ const (
 func (e StatementStatus) ToPointer() *StatementStatus {
 	return &e
 }
-func (e *StatementStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *StatementStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "pending", "rejected", "success":
+			return true
+		}
 	}
-	switch v {
-	case "pending":
-		fallthrough
-	case "rejected":
-		fallthrough
-	case "success":
-		*e = StatementStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for StatementStatus: %v", v)
-	}
+	return false
 }
 
 // BankFeedStatementTransactionType - Type of transaction.
@@ -54,28 +46,16 @@ const (
 func (e BankFeedStatementTransactionType) ToPointer() *BankFeedStatementTransactionType {
 	return &e
 }
-func (e *BankFeedStatementTransactionType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *BankFeedStatementTransactionType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "credit", "debit", "deposit", "transfer", "payment", "other":
+			return true
+		}
 	}
-	switch v {
-	case "credit":
-		fallthrough
-	case "debit":
-		fallthrough
-	case "deposit":
-		fallthrough
-	case "transfer":
-		fallthrough
-	case "payment":
-		fallthrough
-	case "other":
-		*e = BankFeedStatementTransactionType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for BankFeedStatementTransactionType: %v", v)
-	}
+	return false
 }
 
 type Transactions struct {

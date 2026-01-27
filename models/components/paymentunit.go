@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // PaymentUnit - Unit of measurement for employee compensation.
 type PaymentUnit string
 
@@ -22,26 +17,14 @@ const (
 func (e PaymentUnit) ToPointer() *PaymentUnit {
 	return &e
 }
-func (e *PaymentUnit) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *PaymentUnit) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "hour", "week", "month", "year", "paycheck", "other":
+			return true
+		}
 	}
-	switch v {
-	case "hour":
-		fallthrough
-	case "week":
-		fallthrough
-	case "month":
-		fallthrough
-	case "year":
-		fallthrough
-	case "paycheck":
-		fallthrough
-	case "other":
-		*e = PaymentUnit(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for PaymentUnit: %v", v)
-	}
+	return false
 }

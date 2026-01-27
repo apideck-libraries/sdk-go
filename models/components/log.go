@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // Operation - The request as defined in OpenApi Spec.
 type Operation struct {
 	// The OpenApi Operation Id associated with the request
@@ -72,40 +67,16 @@ const (
 func (e UnifiedAPI) ToPointer() *UnifiedAPI {
 	return &e
 }
-func (e *UnifiedAPI) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *UnifiedAPI) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "crm", "lead", "proxy", "vault", "accounting", "hris", "ats", "ecommerce", "issue-tracking", "pos", "file-storage", "sms":
+			return true
+		}
 	}
-	switch v {
-	case "crm":
-		fallthrough
-	case "lead":
-		fallthrough
-	case "proxy":
-		fallthrough
-	case "vault":
-		fallthrough
-	case "accounting":
-		fallthrough
-	case "hris":
-		fallthrough
-	case "ats":
-		fallthrough
-	case "ecommerce":
-		fallthrough
-	case "issue-tracking":
-		fallthrough
-	case "pos":
-		fallthrough
-	case "file-storage":
-		fallthrough
-	case "sms":
-		*e = UnifiedAPI(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for UnifiedAPI: %v", v)
-	}
+	return false
 }
 
 type Log struct {

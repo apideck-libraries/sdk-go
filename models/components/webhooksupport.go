@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // Mode of the webhook support.
 type Mode string
 
@@ -19,22 +14,16 @@ const (
 func (e Mode) ToPointer() *Mode {
 	return &e
 }
-func (e *Mode) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Mode) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "native", "virtual", "none":
+			return true
+		}
 	}
-	switch v {
-	case "native":
-		fallthrough
-	case "virtual":
-		fallthrough
-	case "none":
-		*e = Mode(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Mode: %v", v)
-	}
+	return false
 }
 
 // SubscriptionLevel - Received events are scoped to connection or across integration.
@@ -48,20 +37,16 @@ const (
 func (e SubscriptionLevel) ToPointer() *SubscriptionLevel {
 	return &e
 }
-func (e *SubscriptionLevel) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *SubscriptionLevel) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "connection", "integration":
+			return true
+		}
 	}
-	switch v {
-	case "connection":
-		fallthrough
-	case "integration":
-		*e = SubscriptionLevel(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for SubscriptionLevel: %v", v)
-	}
+	return false
 }
 
 // ManagedVia - How the subscription is managed in the downstream.
@@ -75,20 +60,16 @@ const (
 func (e ManagedVia) ToPointer() *ManagedVia {
 	return &e
 }
-func (e *ManagedVia) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ManagedVia) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "manual", "api":
+			return true
+		}
 	}
-	switch v {
-	case "manual":
-		fallthrough
-	case "api":
-		*e = ManagedVia(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ManagedVia: %v", v)
-	}
+	return false
 }
 
 // Unit - The window unit for the rate.
@@ -104,24 +85,16 @@ const (
 func (e Unit) ToPointer() *Unit {
 	return &e
 }
-func (e *Unit) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Unit) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "second", "minute", "hour", "day":
+			return true
+		}
 	}
-	switch v {
-	case "second":
-		fallthrough
-	case "minute":
-		fallthrough
-	case "hour":
-		fallthrough
-	case "day":
-		*e = Unit(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Unit: %v", v)
-	}
+	return false
 }
 
 // RequestRate - The rate at which requests for resources will be made to downstream.

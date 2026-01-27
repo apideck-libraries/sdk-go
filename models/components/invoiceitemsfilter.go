@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // InvoiceItemType - The type of invoice item, indicating whether it is an inventory item, a service, or another type.
 type InvoiceItemType string
 
@@ -19,22 +14,16 @@ const (
 func (e InvoiceItemType) ToPointer() *InvoiceItemType {
 	return &e
 }
-func (e *InvoiceItemType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *InvoiceItemType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "inventory", "service", "other":
+			return true
+		}
 	}
-	switch v {
-	case "inventory":
-		fallthrough
-	case "service":
-		fallthrough
-	case "other":
-		*e = InvoiceItemType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for InvoiceItemType: %v", v)
-	}
+	return false
 }
 
 // TransactionType - The kind of transaction, indicating whether it is a sales transaction or a purchase transaction.
@@ -48,20 +37,16 @@ const (
 func (e TransactionType) ToPointer() *TransactionType {
 	return &e
 }
-func (e *TransactionType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *TransactionType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "sale", "purchase":
+			return true
+		}
 	}
-	switch v {
-	case "sale":
-		fallthrough
-	case "purchase":
-		*e = TransactionType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for TransactionType: %v", v)
-	}
+	return false
 }
 
 type InvoiceItemsFilter struct {

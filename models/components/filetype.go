@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // FileType - The type of resource. Could be file, folder or url
 type FileType string
 
@@ -19,20 +14,14 @@ const (
 func (e FileType) ToPointer() *FileType {
 	return &e
 }
-func (e *FileType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *FileType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "file", "folder", "url":
+			return true
+		}
 	}
-	switch v {
-	case "file":
-		fallthrough
-	case "folder":
-		fallthrough
-	case "url":
-		*e = FileType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for FileType: %v", v)
-	}
+	return false
 }

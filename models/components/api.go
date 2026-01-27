@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // APIType - Indicates whether the API is a Unified API. If unified_api is false, the API is a Platform API.
 type APIType string
 
@@ -18,20 +13,16 @@ const (
 func (e APIType) ToPointer() *APIType {
 	return &e
 }
-func (e *APIType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *APIType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "platform", "unified":
+			return true
+		}
 	}
-	switch v {
-	case "platform":
-		fallthrough
-	case "unified":
-		*e = APIType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for APIType: %v", v)
-	}
+	return false
 }
 
 type Resources struct {

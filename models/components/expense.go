@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
@@ -22,24 +20,16 @@ const (
 func (e ExpensePaymentType) ToPointer() *ExpensePaymentType {
 	return &e
 }
-func (e *ExpensePaymentType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ExpensePaymentType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "cash", "check", "credit_card", "other":
+			return true
+		}
 	}
-	switch v {
-	case "cash":
-		fallthrough
-	case "check":
-		fallthrough
-	case "credit_card":
-		fallthrough
-	case "other":
-		*e = ExpensePaymentType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ExpensePaymentType: %v", v)
-	}
+	return false
 }
 
 // ExpenseType - The type of expense.
@@ -53,20 +43,16 @@ const (
 func (e ExpenseType) ToPointer() *ExpenseType {
 	return &e
 }
-func (e *ExpenseType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ExpenseType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "expense", "refund":
+			return true
+		}
 	}
-	switch v {
-	case "expense":
-		fallthrough
-	case "refund":
-		*e = ExpenseType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ExpenseType: %v", v)
-	}
+	return false
 }
 
 // ExpenseStatus - Expense status
@@ -80,20 +66,16 @@ const (
 func (e ExpenseStatus) ToPointer() *ExpenseStatus {
 	return &e
 }
-func (e *ExpenseStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ExpenseStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "draft", "posted":
+			return true
+		}
 	}
-	switch v {
-	case "draft":
-		fallthrough
-	case "posted":
-		*e = ExpenseStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ExpenseStatus: %v", v)
-	}
+	return false
 }
 
 type Expense struct {
@@ -107,13 +89,13 @@ type Expense struct {
 	TransactionDate *time.Time `json:"transaction_date"`
 	// The unique identifier for the ledger account that this expense should be credited to. Deprecated, use account instead.
 	//
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: Deprecated. Use account instead..
 	AccountID *string `json:"account_id,omitempty"`
 	// A flexible account reference that can represent either a ledger account (GL account) or a bank account, depending on the connector's requirements.
 	Account *LinkedFinancialAccount `json:"account,omitempty"`
 	// The ID of the supplier this entity is linked to. Deprecated, use supplier instead.
 	//
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: Deprecated. Use supplier instead..
 	SupplierID *string `json:"supplier_id,omitempty"`
 	// The supplier this entity is linked to.
 	Supplier *LinkedSupplier `json:"supplier,omitempty"`
@@ -434,13 +416,13 @@ type ExpenseInput struct {
 	TransactionDate *time.Time `json:"transaction_date"`
 	// The unique identifier for the ledger account that this expense should be credited to. Deprecated, use account instead.
 	//
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: Deprecated. Use account instead..
 	AccountID *string `json:"account_id,omitempty"`
 	// A flexible account reference that can represent either a ledger account (GL account) or a bank account, depending on the connector's requirements.
 	Account *LinkedFinancialAccountInput `json:"account,omitempty"`
 	// The ID of the supplier this entity is linked to. Deprecated, use supplier instead.
 	//
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: Deprecated. Use supplier instead..
 	SupplierID *string `json:"supplier_id,omitempty"`
 	// The supplier this entity is linked to.
 	Supplier *LinkedSupplierInput `json:"supplier,omitempty"`

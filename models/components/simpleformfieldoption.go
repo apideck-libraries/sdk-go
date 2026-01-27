@@ -3,7 +3,6 @@
 package components
 
 import (
-	"encoding/json"
 	"errors"
 	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
@@ -232,18 +231,16 @@ const (
 func (e OptionType) ToPointer() *OptionType {
 	return &e
 }
-func (e *OptionType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *OptionType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "simple":
+			return true
+		}
 	}
-	switch v {
-	case "simple":
-		*e = OptionType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for OptionType: %v", v)
-	}
+	return false
 }
 
 type SimpleFormFieldOption struct {
