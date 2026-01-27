@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // EventSource - Unify event source
 type EventSource string
 
@@ -18,20 +13,16 @@ const (
 func (e EventSource) ToPointer() *EventSource {
 	return &e
 }
-func (e *EventSource) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *EventSource) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "native", "virtual":
+			return true
+		}
 	}
-	switch v {
-	case "native":
-		fallthrough
-	case "virtual":
-		*e = EventSource(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for EventSource: %v", v)
-	}
+	return false
 }
 
 // ConnectorEvent - Unify event that is supported on the connector. Events are delivered via Webhooks.

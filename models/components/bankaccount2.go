@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // BankAccount2AccountType - The type of bank account.
 type BankAccount2AccountType string
 
@@ -19,22 +14,16 @@ const (
 func (e BankAccount2AccountType) ToPointer() *BankAccount2AccountType {
 	return &e
 }
-func (e *BankAccount2AccountType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *BankAccount2AccountType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "bank_account", "credit_card", "other":
+			return true
+		}
 	}
-	switch v {
-	case "bank_account":
-		fallthrough
-	case "credit_card":
-		fallthrough
-	case "other":
-		*e = BankAccount2AccountType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for BankAccount2AccountType: %v", v)
-	}
+	return false
 }
 
 type BankAccount2 struct {

@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // LineItemType - Line Item type
 type LineItemType string
 
@@ -19,20 +14,14 @@ const (
 func (e LineItemType) ToPointer() *LineItemType {
 	return &e
 }
-func (e *LineItemType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *LineItemType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "expense_item", "expense_account", "other":
+			return true
+		}
 	}
-	switch v {
-	case "expense_item":
-		fallthrough
-	case "expense_account":
-		fallthrough
-	case "other":
-		*e = LineItemType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for LineItemType: %v", v)
-	}
+	return false
 }

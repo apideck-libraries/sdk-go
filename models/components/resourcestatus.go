@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // ResourceStatus - Status of the resource. Resources with status live or beta are callable.
 type ResourceStatus string
 
@@ -21,24 +16,14 @@ const (
 func (e ResourceStatus) ToPointer() *ResourceStatus {
 	return &e
 }
-func (e *ResourceStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ResourceStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "live", "beta", "development", "upcoming", "considering":
+			return true
+		}
 	}
-	switch v {
-	case "live":
-		fallthrough
-	case "beta":
-		fallthrough
-	case "development":
-		fallthrough
-	case "upcoming":
-		fallthrough
-	case "considering":
-		*e = ResourceStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ResourceStatus: %v", v)
-	}
+	return false
 }

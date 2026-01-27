@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
@@ -20,20 +18,16 @@ const (
 func (e BankAccountType) ToPointer() *BankAccountType {
 	return &e
 }
-func (e *BankAccountType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *BankAccountType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "bank", "credit_card":
+			return true
+		}
 	}
-	switch v {
-	case "bank":
-		fallthrough
-	case "credit_card":
-		*e = BankAccountType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for BankAccountType: %v", v)
-	}
+	return false
 }
 
 // FeedStatus - Current status of the bank feed.
@@ -47,20 +41,16 @@ const (
 func (e FeedStatus) ToPointer() *FeedStatus {
 	return &e
 }
-func (e *FeedStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *FeedStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "pending", "rejected":
+			return true
+		}
 	}
-	switch v {
-	case "pending":
-		fallthrough
-	case "rejected":
-		*e = FeedStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for FeedStatus: %v", v)
-	}
+	return false
 }
 
 type BankFeedAccount struct {

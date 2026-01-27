@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
@@ -26,32 +24,16 @@ const (
 func (e JournalEntryStatus) ToPointer() *JournalEntryStatus {
 	return &e
 }
-func (e *JournalEntryStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *JournalEntryStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "draft", "pending_approval", "approved", "posted", "voided", "rejected", "deleted", "other":
+			return true
+		}
 	}
-	switch v {
-	case "draft":
-		fallthrough
-	case "pending_approval":
-		fallthrough
-	case "approved":
-		fallthrough
-	case "posted":
-		fallthrough
-	case "voided":
-		fallthrough
-	case "rejected":
-		fallthrough
-	case "deleted":
-		fallthrough
-	case "other":
-		*e = JournalEntryStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for JournalEntryStatus: %v", v)
-	}
+	return false
 }
 
 type JournalEntry struct {

@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"github.com/apideck-libraries/sdk-go/types"
 	"time"
@@ -21,20 +19,16 @@ const (
 func (e CompanyStatus) ToPointer() *CompanyStatus {
 	return &e
 }
-func (e *CompanyStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *CompanyStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "active", "inactive":
+			return true
+		}
 	}
-	switch v {
-	case "active":
-		fallthrough
-	case "inactive":
-		*e = CompanyStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for CompanyStatus: %v", v)
-	}
+	return false
 }
 
 // TheStartMonthOfFiscalYear - The start month of fiscal year.
@@ -58,40 +52,16 @@ const (
 func (e TheStartMonthOfFiscalYear) ToPointer() *TheStartMonthOfFiscalYear {
 	return &e
 }
-func (e *TheStartMonthOfFiscalYear) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *TheStartMonthOfFiscalYear) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December":
+			return true
+		}
 	}
-	switch v {
-	case "January":
-		fallthrough
-	case "February":
-		fallthrough
-	case "March":
-		fallthrough
-	case "April":
-		fallthrough
-	case "May":
-		fallthrough
-	case "June":
-		fallthrough
-	case "July":
-		fallthrough
-	case "August":
-		fallthrough
-	case "September":
-		fallthrough
-	case "October":
-		fallthrough
-	case "November":
-		fallthrough
-	case "December":
-		*e = TheStartMonthOfFiscalYear(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for TheStartMonthOfFiscalYear: %v", v)
-	}
+	return false
 }
 
 // TrackingCategoriesMode - The mode of tracking categories for the company on transactions
@@ -107,24 +77,16 @@ const (
 func (e TrackingCategoriesMode) ToPointer() *TrackingCategoriesMode {
 	return &e
 }
-func (e *TrackingCategoriesMode) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *TrackingCategoriesMode) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "transaction", "line", "both", "disabled":
+			return true
+		}
 	}
-	switch v {
-	case "transaction":
-		fallthrough
-	case "line":
-		fallthrough
-	case "both":
-		fallthrough
-	case "disabled":
-		*e = TrackingCategoriesMode(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for TrackingCategoriesMode: %v", v)
-	}
+	return false
 }
 
 type CompanyInfo struct {

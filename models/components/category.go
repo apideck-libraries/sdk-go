@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
@@ -22,24 +20,16 @@ const (
 func (e CategoryType) ToPointer() *CategoryType {
 	return &e
 }
-func (e *CategoryType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *CategoryType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "supplier", "expense", "revenue", "customer":
+			return true
+		}
 	}
-	switch v {
-	case "supplier":
-		fallthrough
-	case "expense":
-		fallthrough
-	case "revenue":
-		fallthrough
-	case "customer":
-		*e = CategoryType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for CategoryType: %v", v)
-	}
+	return false
 }
 
 // CategoryStatus - Based on the status some functionality is enabled or disabled.
@@ -53,20 +43,16 @@ const (
 func (e CategoryStatus) ToPointer() *CategoryStatus {
 	return &e
 }
-func (e *CategoryStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *CategoryStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "active", "inactive":
+			return true
+		}
 	}
-	switch v {
-	case "active":
-		fallthrough
-	case "inactive":
-		*e = CategoryStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for CategoryStatus: %v", v)
-	}
+	return false
 }
 
 type Category struct {

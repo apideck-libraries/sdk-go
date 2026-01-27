@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // UnifiedAPIID - Name of Apideck Unified API
 type UnifiedAPIID string
 
@@ -43,68 +38,14 @@ const (
 func (e UnifiedAPIID) ToPointer() *UnifiedAPIID {
 	return &e
 }
-func (e *UnifiedAPIID) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *UnifiedAPIID) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "accounting", "ats", "calendar", "crm", "csp", "customer-support", "ecommerce", "email", "email-marketing", "expense-management", "file-storage", "form", "hris", "lead", "payroll", "pos", "procurement", "project-management", "script", "sms", "spreadsheet", "team-messaging", "issue-tracking", "time-registration", "transactional-email", "vault", "data-warehouse":
+			return true
+		}
 	}
-	switch v {
-	case "accounting":
-		fallthrough
-	case "ats":
-		fallthrough
-	case "calendar":
-		fallthrough
-	case "crm":
-		fallthrough
-	case "csp":
-		fallthrough
-	case "customer-support":
-		fallthrough
-	case "ecommerce":
-		fallthrough
-	case "email":
-		fallthrough
-	case "email-marketing":
-		fallthrough
-	case "expense-management":
-		fallthrough
-	case "file-storage":
-		fallthrough
-	case "form":
-		fallthrough
-	case "hris":
-		fallthrough
-	case "lead":
-		fallthrough
-	case "payroll":
-		fallthrough
-	case "pos":
-		fallthrough
-	case "procurement":
-		fallthrough
-	case "project-management":
-		fallthrough
-	case "script":
-		fallthrough
-	case "sms":
-		fallthrough
-	case "spreadsheet":
-		fallthrough
-	case "team-messaging":
-		fallthrough
-	case "issue-tracking":
-		fallthrough
-	case "time-registration":
-		fallthrough
-	case "transactional-email":
-		fallthrough
-	case "vault":
-		fallthrough
-	case "data-warehouse":
-		*e = UnifiedAPIID(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for UnifiedAPIID: %v", v)
-	}
+	return false
 }

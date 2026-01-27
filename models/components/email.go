@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // EmailType - Email type
 type EmailType string
 
@@ -22,28 +17,16 @@ const (
 func (e EmailType) ToPointer() *EmailType {
 	return &e
 }
-func (e *EmailType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *EmailType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "primary", "secondary", "work", "personal", "billing", "other":
+			return true
+		}
 	}
-	switch v {
-	case "primary":
-		fallthrough
-	case "secondary":
-		fallthrough
-	case "work":
-		fallthrough
-	case "personal":
-		fallthrough
-	case "billing":
-		fallthrough
-	case "other":
-		*e = EmailType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for EmailType: %v", v)
-	}
+	return false
 }
 
 type Email struct {

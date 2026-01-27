@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"github.com/apideck-libraries/sdk-go/types"
 	"time"
@@ -24,26 +22,16 @@ const (
 func (e ApplicantGender) ToPointer() *ApplicantGender {
 	return &e
 }
-func (e *ApplicantGender) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ApplicantGender) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "male", "female", "unisex", "other", "not_specified":
+			return true
+		}
 	}
-	switch v {
-	case "male":
-		fallthrough
-	case "female":
-		fallthrough
-	case "unisex":
-		fallthrough
-	case "other":
-		fallthrough
-	case "not_specified":
-		*e = ApplicantGender(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ApplicantGender: %v", v)
-	}
+	return false
 }
 
 // ApplicantType - The type of website
@@ -60,26 +48,16 @@ const (
 func (e ApplicantType) ToPointer() *ApplicantType {
 	return &e
 }
-func (e *ApplicantType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ApplicantType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "primary", "secondary", "work", "personal", "other":
+			return true
+		}
 	}
-	switch v {
-	case "primary":
-		fallthrough
-	case "secondary":
-		fallthrough
-	case "work":
-		fallthrough
-	case "personal":
-		fallthrough
-	case "other":
-		*e = ApplicantType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ApplicantType: %v", v)
-	}
+	return false
 }
 
 type Websites struct {
@@ -184,7 +162,7 @@ type Applicant struct {
 	ApplicationIds []string      `json:"application_ids,omitempty"`
 	// Deprecated: Use application_ids instead. Array of application IDs associated with the applicant.
 	//
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: Deprecated. Use application_ids instead..
 	Applications      []string   `json:"applications,omitempty"`
 	Followers         []string   `json:"followers,omitempty"`
 	Sources           []string   `json:"sources,omitempty"`
@@ -612,7 +590,7 @@ type ApplicantInput struct {
 	ApplicationIds []string      `json:"application_ids,omitempty"`
 	// Deprecated: Use application_ids instead. Array of application IDs associated with the applicant.
 	//
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: Deprecated. Use application_ids instead..
 	Applications []string `json:"applications,omitempty"`
 	Followers    []string `json:"followers,omitempty"`
 	Sources      []string `json:"sources,omitempty"`

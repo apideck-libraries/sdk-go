@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
@@ -24,28 +22,16 @@ const (
 func (e TimeOffRequestStatusStatus) ToPointer() *TimeOffRequestStatusStatus {
 	return &e
 }
-func (e *TimeOffRequestStatusStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *TimeOffRequestStatusStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "requested", "approved", "declined", "cancelled", "deleted", "other":
+			return true
+		}
 	}
-	switch v {
-	case "requested":
-		fallthrough
-	case "approved":
-		fallthrough
-	case "declined":
-		fallthrough
-	case "cancelled":
-		fallthrough
-	case "deleted":
-		fallthrough
-	case "other":
-		*e = TimeOffRequestStatusStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for TimeOffRequestStatusStatus: %v", v)
-	}
+	return false
 }
 
 // RequestType - The type of request
@@ -64,30 +50,16 @@ const (
 func (e RequestType) ToPointer() *RequestType {
 	return &e
 }
-func (e *RequestType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *RequestType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "vacation", "sick", "personal", "jury_duty", "volunteer", "bereavement", "other":
+			return true
+		}
 	}
-	switch v {
-	case "vacation":
-		fallthrough
-	case "sick":
-		fallthrough
-	case "personal":
-		fallthrough
-	case "jury_duty":
-		fallthrough
-	case "volunteer":
-		fallthrough
-	case "bereavement":
-		fallthrough
-	case "other":
-		*e = RequestType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for RequestType: %v", v)
-	}
+	return false
 }
 
 // Units - The unit of time off requested. Possible values include: `hours`, `days`, or `other`.
@@ -102,22 +74,16 @@ const (
 func (e Units) ToPointer() *Units {
 	return &e
 }
-func (e *Units) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Units) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "days", "hours", "other":
+			return true
+		}
 	}
-	switch v {
-	case "days":
-		fallthrough
-	case "hours":
-		fallthrough
-	case "other":
-		*e = Units(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Units: %v", v)
-	}
+	return false
 }
 
 type Notes struct {

@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
@@ -23,26 +21,16 @@ const (
 func (e ProjectStatus) ToPointer() *ProjectStatus {
 	return &e
 }
-func (e *ProjectStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ProjectStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "active", "completed", "on_hold", "cancelled", "draft":
+			return true
+		}
 	}
-	switch v {
-	case "active":
-		fallthrough
-	case "completed":
-		fallthrough
-	case "on_hold":
-		fallthrough
-	case "cancelled":
-		fallthrough
-	case "draft":
-		*e = ProjectStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ProjectStatus: %v", v)
-	}
+	return false
 }
 
 type ProjectsFilter struct {
