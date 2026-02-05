@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
@@ -25,32 +23,16 @@ const (
 func (e PaymentsFilterType) ToPointer() *PaymentsFilterType {
 	return &e
 }
-func (e *PaymentsFilterType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *PaymentsFilterType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "accounts_receivable", "accounts_payable", "accounts_receivable_credit", "accounts_payable_credit", "accounts_receivable_overpayment", "accounts_payable_overpayment", "accounts_receivable_prepayment", "accounts_payable_prepayment":
+			return true
+		}
 	}
-	switch v {
-	case "accounts_receivable":
-		fallthrough
-	case "accounts_payable":
-		fallthrough
-	case "accounts_receivable_credit":
-		fallthrough
-	case "accounts_payable_credit":
-		fallthrough
-	case "accounts_receivable_overpayment":
-		fallthrough
-	case "accounts_payable_overpayment":
-		fallthrough
-	case "accounts_receivable_prepayment":
-		fallthrough
-	case "accounts_payable_prepayment":
-		*e = PaymentsFilterType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for PaymentsFilterType: %v", v)
-	}
+	return false
 }
 
 type PaymentsFilter struct {

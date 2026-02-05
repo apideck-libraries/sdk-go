@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"github.com/apideck-libraries/sdk-go/types"
 	"time"
@@ -27,32 +25,16 @@ const (
 func (e QuoteStatus) ToPointer() *QuoteStatus {
 	return &e
 }
-func (e *QuoteStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *QuoteStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "draft", "sent", "accepted", "rejected", "expired", "converted", "void", "deleted":
+			return true
+		}
 	}
-	switch v {
-	case "draft":
-		fallthrough
-	case "sent":
-		fallthrough
-	case "accepted":
-		fallthrough
-	case "rejected":
-		fallthrough
-	case "expired":
-		fallthrough
-	case "converted":
-		fallthrough
-	case "void":
-		fallthrough
-	case "deleted":
-		*e = QuoteStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for QuoteStatus: %v", v)
-	}
+	return false
 }
 
 type Quote struct {

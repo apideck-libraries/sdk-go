@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"github.com/apideck-libraries/sdk-go/types"
 	"time"
@@ -23,24 +21,16 @@ const (
 func (e LeavingReason) ToPointer() *LeavingReason {
 	return &e
 }
-func (e *LeavingReason) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *LeavingReason) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "dismissed", "resigned", "redundancy", "other":
+			return true
+		}
 	}
-	switch v {
-	case "dismissed":
-		fallthrough
-	case "resigned":
-		fallthrough
-	case "redundancy":
-		fallthrough
-	case "other":
-		*e = LeavingReason(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for LeavingReason: %v", v)
-	}
+	return false
 }
 
 // EmploymentType - The type of employment relationship the employee has with the organization.
@@ -58,28 +48,16 @@ const (
 func (e EmploymentType) ToPointer() *EmploymentType {
 	return &e
 }
-func (e *EmploymentType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *EmploymentType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "contractor", "employee", "freelance", "temp", "internship", "other":
+			return true
+		}
 	}
-	switch v {
-	case "contractor":
-		fallthrough
-	case "employee":
-		fallthrough
-	case "freelance":
-		fallthrough
-	case "temp":
-		fallthrough
-	case "internship":
-		fallthrough
-	case "other":
-		*e = EmploymentType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for EmploymentType: %v", v)
-	}
+	return false
 }
 
 // EmploymentSubType - The work schedule of the employee.
@@ -96,26 +74,16 @@ const (
 func (e EmploymentSubType) ToPointer() *EmploymentSubType {
 	return &e
 }
-func (e *EmploymentSubType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *EmploymentSubType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "full_time", "part_time", "hourly", "other", "not_specified":
+			return true
+		}
 	}
-	switch v {
-	case "full_time":
-		fallthrough
-	case "part_time":
-		fallthrough
-	case "hourly":
-		fallthrough
-	case "other":
-		fallthrough
-	case "not_specified":
-		*e = EmploymentSubType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for EmploymentSubType: %v", v)
-	}
+	return false
 }
 
 type EmploymentRole struct {
@@ -258,7 +226,7 @@ type Employee struct {
 	DivisionID *string `json:"division_id,omitempty"`
 	// The department the person is currently in. [Deprecated](https://developers.apideck.com/changelog) in favor of the dedicated department_id and department_name field.
 	//
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: Deprecated. Use department_id instead..
 	Department *string `json:"department,omitempty"`
 	// Unique identifier of the department ID this employee belongs to.
 	DepartmentID *string `json:"department_id,omitempty"`
@@ -857,7 +825,7 @@ type EmployeeInput struct {
 	DivisionID *string `json:"division_id,omitempty"`
 	// The department the person is currently in. [Deprecated](https://developers.apideck.com/changelog) in favor of the dedicated department_id and department_name field.
 	//
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: Deprecated. Use department_id instead..
 	Department *string `json:"department,omitempty"`
 	// Unique identifier of the department ID this employee belongs to.
 	DepartmentID *string `json:"department_id,omitempty"`

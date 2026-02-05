@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // ProfitAndLossFilterAccountingMethod - The accounting method used for the report: cash or accrual.
 type ProfitAndLossFilterAccountingMethod string
 
@@ -18,20 +13,16 @@ const (
 func (e ProfitAndLossFilterAccountingMethod) ToPointer() *ProfitAndLossFilterAccountingMethod {
 	return &e
 }
-func (e *ProfitAndLossFilterAccountingMethod) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ProfitAndLossFilterAccountingMethod) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "cash", "accrual":
+			return true
+		}
 	}
-	switch v {
-	case "cash":
-		fallthrough
-	case "accrual":
-		*e = ProfitAndLossFilterAccountingMethod(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ProfitAndLossFilterAccountingMethod: %v", v)
-	}
+	return false
 }
 
 type ProfitAndLossFilter struct {

@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // PeriodType - The type of period to include in the resource: month, quarter, year.
 type PeriodType string
 
@@ -19,22 +14,16 @@ const (
 func (e PeriodType) ToPointer() *PeriodType {
 	return &e
 }
-func (e *PeriodType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *PeriodType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "month", "quarter", "year":
+			return true
+		}
 	}
-	switch v {
-	case "month":
-		fallthrough
-	case "quarter":
-		fallthrough
-	case "year":
-		*e = PeriodType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for PeriodType: %v", v)
-	}
+	return false
 }
 
 // AccountingMethod - The accounting method used for the report: cash or accrual.
@@ -48,26 +37,22 @@ const (
 func (e AccountingMethod) ToPointer() *AccountingMethod {
 	return &e
 }
-func (e *AccountingMethod) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AccountingMethod) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "cash", "accrual":
+			return true
+		}
 	}
-	switch v {
-	case "cash":
-		fallthrough
-	case "accrual":
-		*e = AccountingMethod(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for AccountingMethod: %v", v)
-	}
+	return false
 }
 
 type BalanceSheetFilter struct {
 	// The start date of the period to include in the resource.
 	//
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This field is deprecated and may be removed in a future version..
 	StartDate *string `queryParam:"name=start_date"`
 	// The end date of the period to include in the resource.
 	EndDate *string `queryParam:"name=end_date"`

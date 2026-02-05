@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // PhoneNumberType - The type of phone number
 type PhoneNumberType string
 
@@ -28,40 +23,16 @@ const (
 func (e PhoneNumberType) ToPointer() *PhoneNumberType {
 	return &e
 }
-func (e *PhoneNumberType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *PhoneNumberType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "primary", "secondary", "home", "work", "office", "mobile", "assistant", "fax", "direct-dial-in", "personal", "billing", "other":
+			return true
+		}
 	}
-	switch v {
-	case "primary":
-		fallthrough
-	case "secondary":
-		fallthrough
-	case "home":
-		fallthrough
-	case "work":
-		fallthrough
-	case "office":
-		fallthrough
-	case "mobile":
-		fallthrough
-	case "assistant":
-		fallthrough
-	case "fax":
-		fallthrough
-	case "direct-dial-in":
-		fallthrough
-	case "personal":
-		fallthrough
-	case "billing":
-		fallthrough
-	case "other":
-		*e = PhoneNumberType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for PhoneNumberType: %v", v)
-	}
+	return false
 }
 
 type PhoneNumber struct {

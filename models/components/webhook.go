@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
@@ -22,24 +20,16 @@ const (
 func (e DisabledReason) ToPointer() *DisabledReason {
 	return &e
 }
-func (e *DisabledReason) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *DisabledReason) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "none", "retry_limit", "usage_limit", "delivery_url_validation_failed":
+			return true
+		}
 	}
-	switch v {
-	case "none":
-		fallthrough
-	case "retry_limit":
-		fallthrough
-	case "usage_limit":
-		fallthrough
-	case "delivery_url_validation_failed":
-		*e = DisabledReason(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for DisabledReason: %v", v)
-	}
+	return false
 }
 
 type Webhook struct {

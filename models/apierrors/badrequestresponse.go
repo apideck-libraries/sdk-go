@@ -88,6 +88,36 @@ func (u Detail) Error() string {
 	}
 }
 
+type DownstreamErrors struct {
+	// Error message from the downstream provider
+	Message *string `json:"message,omitempty"`
+	// Additional error details
+	Detail *string `json:"detail,omitempty"`
+	// Error code from the downstream provider
+	Code *string `json:"code,omitempty"`
+}
+
+func (d *DownstreamErrors) GetMessage() *string {
+	if d == nil {
+		return nil
+	}
+	return d.Message
+}
+
+func (d *DownstreamErrors) GetDetail() *string {
+	if d == nil {
+		return nil
+	}
+	return d.Detail
+}
+
+func (d *DownstreamErrors) GetCode() *string {
+	if d == nil {
+		return nil
+	}
+	return d.Code
+}
+
 // BadRequestResponse - Bad Request
 type BadRequestResponse struct {
 	// HTTP status code
@@ -102,6 +132,8 @@ type BadRequestResponse struct {
 	Detail *Detail `json:"detail,omitempty"`
 	// Link to documentation of error type
 	Ref *string `json:"ref,omitempty"`
+	// Contains downstream errors returned from the connector. Only present when type_name is ConnectorExecutionError.
+	DownstreamErrors []DownstreamErrors `json:"downstream_errors,omitempty"`
 }
 
 var _ error = &BadRequestResponse{}

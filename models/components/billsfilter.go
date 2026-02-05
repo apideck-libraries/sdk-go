@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
@@ -21,22 +19,16 @@ const (
 func (e BillsFilterStatus) ToPointer() *BillsFilterStatus {
 	return &e
 }
-func (e *BillsFilterStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *BillsFilterStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "paid", "unpaid", "partially_paid":
+			return true
+		}
 	}
-	switch v {
-	case "paid":
-		fallthrough
-	case "unpaid":
-		fallthrough
-	case "partially_paid":
-		*e = BillsFilterStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for BillsFilterStatus: %v", v)
-	}
+	return false
 }
 
 type BillsFilter struct {

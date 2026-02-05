@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
@@ -20,20 +18,16 @@ const (
 func (e CustomerStatus) ToPointer() *CustomerStatus {
 	return &e
 }
-func (e *CustomerStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *CustomerStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "active", "archived":
+			return true
+		}
 	}
-	switch v {
-	case "active":
-		fallthrough
-	case "archived":
-		*e = CustomerStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for CustomerStatus: %v", v)
-	}
+	return false
 }
 
 type EcommerceCustomerType string
@@ -47,22 +41,16 @@ const (
 func (e EcommerceCustomerType) ToPointer() *EcommerceCustomerType {
 	return &e
 }
-func (e *EcommerceCustomerType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *EcommerceCustomerType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "billing", "shipping", "other":
+			return true
+		}
 	}
-	switch v {
-	case "billing":
-		fallthrough
-	case "shipping":
-		fallthrough
-	case "other":
-		*e = EcommerceCustomerType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for EcommerceCustomerType: %v", v)
-	}
+	return false
 }
 
 type Addresses struct {

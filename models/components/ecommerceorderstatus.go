@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // EcommerceOrderStatus - Current status of the order.
 type EcommerceOrderStatus string
 
@@ -22,26 +17,14 @@ const (
 func (e EcommerceOrderStatus) ToPointer() *EcommerceOrderStatus {
 	return &e
 }
-func (e *EcommerceOrderStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *EcommerceOrderStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "active", "completed", "cancelled", "archived", "unknown", "other":
+			return true
+		}
 	}
-	switch v {
-	case "active":
-		fallthrough
-	case "completed":
-		fallthrough
-	case "cancelled":
-		fallthrough
-	case "archived":
-		fallthrough
-	case "unknown":
-		fallthrough
-	case "other":
-		*e = EcommerceOrderStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for EcommerceOrderStatus: %v", v)
-	}
+	return false
 }

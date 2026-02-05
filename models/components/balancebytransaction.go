@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"github.com/apideck-libraries/sdk-go/types"
 )
@@ -23,26 +21,16 @@ const (
 func (e BalanceByTransactionTransactionType) ToPointer() *BalanceByTransactionTransactionType {
 	return &e
 }
-func (e *BalanceByTransactionTransactionType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *BalanceByTransactionTransactionType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "invoice", "credit_note", "bill", "payment", "bill_payment":
+			return true
+		}
 	}
-	switch v {
-	case "invoice":
-		fallthrough
-	case "credit_note":
-		fallthrough
-	case "bill":
-		fallthrough
-	case "payment":
-		fallthrough
-	case "bill_payment":
-		*e = BalanceByTransactionTransactionType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for BalanceByTransactionTransactionType: %v", v)
-	}
+	return false
 }
 
 type BalanceByTransaction struct {

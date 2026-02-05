@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // CreditOrDebit - Whether the amount is a credit or debit.
 type CreditOrDebit string
 
@@ -18,18 +13,14 @@ const (
 func (e CreditOrDebit) ToPointer() *CreditOrDebit {
 	return &e
 }
-func (e *CreditOrDebit) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *CreditOrDebit) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "credit", "debit":
+			return true
+		}
 	}
-	switch v {
-	case "credit":
-		fallthrough
-	case "debit":
-		*e = CreditOrDebit(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for CreditOrDebit: %v", v)
-	}
+	return false
 }

@@ -3,7 +3,6 @@
 package components
 
 import (
-	"encoding/json"
 	"errors"
 	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
@@ -19,18 +18,16 @@ const (
 func (e DataScopesResources2) ToPointer() *DataScopesResources2 {
 	return &e
 }
-func (e *DataScopesResources2) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *DataScopesResources2) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "*":
+			return true
+		}
 	}
-	switch v {
-	case "*":
-		*e = DataScopesResources2(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for DataScopesResources2: %v", v)
-	}
+	return false
 }
 
 type DataScopesResources1 struct {

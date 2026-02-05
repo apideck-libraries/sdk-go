@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 )
 
@@ -19,20 +17,16 @@ const (
 func (e ActivitiesSortBy) ToPointer() *ActivitiesSortBy {
 	return &e
 }
-func (e *ActivitiesSortBy) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ActivitiesSortBy) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "created_at", "updated_at":
+			return true
+		}
 	}
-	switch v {
-	case "created_at":
-		fallthrough
-	case "updated_at":
-		*e = ActivitiesSortBy(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ActivitiesSortBy: %v", v)
-	}
+	return false
 }
 
 type ActivitiesSort struct {
