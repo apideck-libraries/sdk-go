@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
@@ -25,30 +23,16 @@ const (
 func (e CreditNoteStatus) ToPointer() *CreditNoteStatus {
 	return &e
 }
-func (e *CreditNoteStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *CreditNoteStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "draft", "authorised", "posted", "partially_paid", "paid", "voided", "deleted":
+			return true
+		}
 	}
-	switch v {
-	case "draft":
-		fallthrough
-	case "authorised":
-		fallthrough
-	case "posted":
-		fallthrough
-	case "partially_paid":
-		fallthrough
-	case "paid":
-		fallthrough
-	case "voided":
-		fallthrough
-	case "deleted":
-		*e = CreditNoteStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for CreditNoteStatus: %v", v)
-	}
+	return false
 }
 
 // CreditNoteType - Type of payment
@@ -62,20 +46,16 @@ const (
 func (e CreditNoteType) ToPointer() *CreditNoteType {
 	return &e
 }
-func (e *CreditNoteType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *CreditNoteType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "accounts_receivable_credit", "accounts_payable_credit":
+			return true
+		}
 	}
-	switch v {
-	case "accounts_receivable_credit":
-		fallthrough
-	case "accounts_payable_credit":
-		*e = CreditNoteType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for CreditNoteType: %v", v)
-	}
+	return false
 }
 
 type CreditNote struct {

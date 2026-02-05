@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // Audience for the doc.
 type Audience string
 
@@ -18,20 +13,16 @@ const (
 func (e Audience) ToPointer() *Audience {
 	return &e
 }
-func (e *Audience) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Audience) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "application_owner", "consumer":
+			return true
+		}
 	}
-	switch v {
-	case "application_owner":
-		fallthrough
-	case "consumer":
-		*e = Audience(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Audience: %v", v)
-	}
+	return false
 }
 
 // Format of the doc.
@@ -44,18 +35,16 @@ const (
 func (e Format) ToPointer() *Format {
 	return &e
 }
-func (e *Format) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Format) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "markdown":
+			return true
+		}
 	}
-	switch v {
-	case "markdown":
-		*e = Format(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Format: %v", v)
-	}
+	return false
 }
 
 type ConnectorDoc struct {

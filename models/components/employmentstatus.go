@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // EmploymentStatus - The employment status of the employee, indicating whether they are currently employed, inactive, terminated, or in another status.
 type EmploymentStatus string
 
@@ -20,22 +15,14 @@ const (
 func (e EmploymentStatus) ToPointer() *EmploymentStatus {
 	return &e
 }
-func (e *EmploymentStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *EmploymentStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "active", "inactive", "terminated", "other":
+			return true
+		}
 	}
-	switch v {
-	case "active":
-		fallthrough
-	case "inactive":
-		fallthrough
-	case "terminated":
-		fallthrough
-	case "other":
-		*e = EmploymentStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for EmploymentStatus: %v", v)
-	}
+	return false
 }

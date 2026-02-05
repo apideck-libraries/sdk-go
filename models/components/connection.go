@@ -3,7 +3,6 @@
 package components
 
 import (
-	"encoding/json"
 	"errors"
 	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
@@ -21,22 +20,16 @@ const (
 func (e ConnectionStatus) ToPointer() *ConnectionStatus {
 	return &e
 }
-func (e *ConnectionStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ConnectionStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "live", "upcoming", "requested":
+			return true
+		}
 	}
-	switch v {
-	case "live":
-		fallthrough
-	case "upcoming":
-		fallthrough
-	case "requested":
-		*e = ConnectionStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ConnectionStatus: %v", v)
-	}
+	return false
 }
 
 type Target string
@@ -49,20 +42,16 @@ const (
 func (e Target) ToPointer() *Target {
 	return &e
 }
-func (e *Target) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Target) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "custom_fields", "resource":
+			return true
+		}
 	}
-	switch v {
-	case "custom_fields":
-		fallthrough
-	case "resource":
-		*e = Target(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Target: %v", v)
-	}
+	return false
 }
 
 type Value5Type string
@@ -348,28 +337,16 @@ const (
 func (e Health) ToPointer() *Health {
 	return &e
 }
-func (e *Health) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Health) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "revoked", "missing_settings", "needs_consent", "needs_auth", "pending_refresh", "ok":
+			return true
+		}
 	}
-	switch v {
-	case "revoked":
-		fallthrough
-	case "missing_settings":
-		fallthrough
-	case "needs_consent":
-		fallthrough
-	case "needs_auth":
-		fallthrough
-	case "pending_refresh":
-		fallthrough
-	case "ok":
-		*e = Health(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Health: %v", v)
-	}
+	return false
 }
 
 type Connection struct {

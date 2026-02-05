@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
@@ -22,24 +20,16 @@ const (
 func (e ContactType) ToPointer() *ContactType {
 	return &e
 }
-func (e *ContactType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ContactType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "customer", "supplier", "employee", "personal":
+			return true
+		}
 	}
-	switch v {
-	case "customer":
-		fallthrough
-	case "supplier":
-		fallthrough
-	case "employee":
-		fallthrough
-	case "personal":
-		*e = ContactType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ContactType: %v", v)
-	}
+	return false
 }
 
 // ContactGender - The gender of the contact.
@@ -54,22 +44,16 @@ const (
 func (e ContactGender) ToPointer() *ContactGender {
 	return &e
 }
-func (e *ContactGender) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ContactGender) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "male", "female", "unisex":
+			return true
+		}
 	}
-	switch v {
-	case "male":
-		fallthrough
-	case "female":
-		fallthrough
-	case "unisex":
-		*e = ContactGender(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ContactGender: %v", v)
-	}
+	return false
 }
 
 type Contact struct {
@@ -107,7 +91,7 @@ type Contact struct {
 	Gender *ContactGender `json:"gender,omitempty"`
 	// The birthday of the contact.
 	Birthday *string `json:"birthday,omitempty"`
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This field is deprecated and may be removed in a future version..
 	Image *string `json:"image,omitempty"`
 	// The URL of the photo of a person.
 	PhotoURL *string `json:"photo_url,omitempty"`
@@ -480,7 +464,7 @@ type ContactInput struct {
 	Gender *ContactGender `json:"gender,omitempty"`
 	// The birthday of the contact.
 	Birthday *string `json:"birthday,omitempty"`
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+	// Deprecated: This field is deprecated and may be removed in a future version..
 	Image *string `json:"image,omitempty"`
 	// The URL of the photo of a person.
 	PhotoURL *string `json:"photo_url,omitempty"`

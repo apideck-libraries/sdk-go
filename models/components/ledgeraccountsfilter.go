@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
@@ -28,36 +26,16 @@ const (
 func (e Classification) ToPointer() *Classification {
 	return &e
 }
-func (e *Classification) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Classification) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "asset", "equity", "expense", "liability", "revenue", "income", "other_income", "other_expense", "costs_of_sales", "other":
+			return true
+		}
 	}
-	switch v {
-	case "asset":
-		fallthrough
-	case "equity":
-		fallthrough
-	case "expense":
-		fallthrough
-	case "liability":
-		fallthrough
-	case "revenue":
-		fallthrough
-	case "income":
-		fallthrough
-	case "other_income":
-		fallthrough
-	case "other_expense":
-		fallthrough
-	case "costs_of_sales":
-		fallthrough
-	case "other":
-		*e = Classification(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Classification: %v", v)
-	}
+	return false
 }
 
 type LedgerAccountsFilter struct {

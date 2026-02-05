@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"github.com/apideck-libraries/sdk-go/types"
 	"time"
@@ -28,34 +26,16 @@ const (
 func (e BillStatus) ToPointer() *BillStatus {
 	return &e
 }
-func (e *BillStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *BillStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "draft", "submitted", "authorised", "partially_paid", "paid", "void", "credit", "deleted", "posted":
+			return true
+		}
 	}
-	switch v {
-	case "draft":
-		fallthrough
-	case "submitted":
-		fallthrough
-	case "authorised":
-		fallthrough
-	case "partially_paid":
-		fallthrough
-	case "paid":
-		fallthrough
-	case "void":
-		fallthrough
-	case "credit":
-		fallthrough
-	case "deleted":
-		fallthrough
-	case "posted":
-		*e = BillStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for BillStatus: %v", v)
-	}
+	return false
 }
 
 // AmortizationType - Type of amortization
@@ -71,24 +51,16 @@ const (
 func (e AmortizationType) ToPointer() *AmortizationType {
 	return &e
 }
-func (e *AmortizationType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AmortizationType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "manual", "receipt", "schedule", "other":
+			return true
+		}
 	}
-	switch v {
-	case "manual":
-		fallthrough
-	case "receipt":
-		fallthrough
-	case "schedule":
-		fallthrough
-	case "other":
-		*e = AmortizationType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for AmortizationType: %v", v)
-	}
+	return false
 }
 
 type Bill struct {

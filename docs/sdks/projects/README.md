@@ -142,6 +142,7 @@ func main() {
             CompletionPercentage: sdkgo.Pointer[float64](75.5),
             StartDate: types.MustNewDateFromString("2024-01-15"),
             EndDate: types.MustNewDateFromString("2024-06-30"),
+            CompletionDate: types.MustNewDateFromString("2024-08-06"),
             Customer: &components.LinkedCustomerInput{
                 ID: sdkgo.Pointer("12345"),
                 DisplayName: sdkgo.Pointer("Windsurf Shop"),
@@ -370,6 +371,7 @@ func main() {
             CompletionPercentage: sdkgo.Pointer[float64](75.5),
             StartDate: types.MustNewDateFromString("2024-01-15"),
             EndDate: types.MustNewDateFromString("2024-06-30"),
+            CompletionDate: types.MustNewDateFromString("2024-08-06"),
             Customer: nil,
             Department: &components.ProjectDepartment{
                 ID: sdkgo.Pointer("DEPT-001"),

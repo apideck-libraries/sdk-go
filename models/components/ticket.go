@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
@@ -22,24 +20,16 @@ const (
 func (e TicketPriority) ToPointer() *TicketPriority {
 	return &e
 }
-func (e *TicketPriority) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *TicketPriority) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "low", "normal", "high", "urgent":
+			return true
+		}
 	}
-	switch v {
-	case "low":
-		fallthrough
-	case "normal":
-		fallthrough
-	case "high":
-		fallthrough
-	case "urgent":
-		*e = TicketPriority(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for TicketPriority: %v", v)
-	}
+	return false
 }
 
 type Ticket struct {

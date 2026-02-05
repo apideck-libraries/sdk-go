@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
@@ -20,20 +18,16 @@ const (
 func (e MessageType) ToPointer() *MessageType {
 	return &e
 }
-func (e *MessageType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *MessageType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "sms", "mms":
+			return true
+		}
 	}
-	switch v {
-	case "sms":
-		fallthrough
-	case "mms":
-		*e = MessageType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for MessageType: %v", v)
-	}
+	return false
 }
 
 // Direction - The direction of the message.
@@ -50,26 +44,16 @@ const (
 func (e Direction) ToPointer() *Direction {
 	return &e
 }
-func (e *Direction) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Direction) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "inbound", "outbound-api", "outbound-call", "outbound-reply", "unknown":
+			return true
+		}
 	}
-	switch v {
-	case "inbound":
-		fallthrough
-	case "outbound-api":
-		fallthrough
-	case "outbound-call":
-		fallthrough
-	case "outbound-reply":
-		fallthrough
-	case "unknown":
-		*e = Direction(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Direction: %v", v)
-	}
+	return false
 }
 
 // MessageStatus - Status of the delivery of the message.
@@ -93,40 +77,16 @@ const (
 func (e MessageStatus) ToPointer() *MessageStatus {
 	return &e
 }
-func (e *MessageStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *MessageStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "accepted", "scheduled", "canceled", "queued", "sending", "sent", "failed", "delivered", "undelivered", "receiving", "received", "read":
+			return true
+		}
 	}
-	switch v {
-	case "accepted":
-		fallthrough
-	case "scheduled":
-		fallthrough
-	case "canceled":
-		fallthrough
-	case "queued":
-		fallthrough
-	case "sending":
-		fallthrough
-	case "sent":
-		fallthrough
-	case "failed":
-		fallthrough
-	case "delivered":
-		fallthrough
-	case "undelivered":
-		fallthrough
-	case "receiving":
-		fallthrough
-	case "received":
-		fallthrough
-	case "read":
-		*e = MessageStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for MessageStatus: %v", v)
-	}
+	return false
 }
 
 // Price of the message.

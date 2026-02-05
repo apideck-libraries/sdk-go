@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // ActivityType - The type of the activity
 type ActivityType string
 
@@ -25,34 +20,16 @@ const (
 func (e ActivityType) ToPointer() *ActivityType {
 	return &e
 }
-func (e *ActivityType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ActivityType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "call", "meeting", "email", "note", "task", "deadline", "send-letter", "send-quote", "other":
+			return true
+		}
 	}
-	switch v {
-	case "call":
-		fallthrough
-	case "meeting":
-		fallthrough
-	case "email":
-		fallthrough
-	case "note":
-		fallthrough
-	case "task":
-		fallthrough
-	case "deadline":
-		fallthrough
-	case "send-letter":
-		fallthrough
-	case "send-quote":
-		fallthrough
-	case "other":
-		*e = ActivityType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ActivityType: %v", v)
-	}
+	return false
 }
 
 type ShowAs string
@@ -65,20 +42,16 @@ const (
 func (e ShowAs) ToPointer() *ShowAs {
 	return &e
 }
-func (e *ShowAs) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ShowAs) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "free", "busy":
+			return true
+		}
 	}
-	switch v {
-	case "free":
-		fallthrough
-	case "busy":
-		*e = ShowAs(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ShowAs: %v", v)
-	}
+	return false
 }
 
 type Activity struct {

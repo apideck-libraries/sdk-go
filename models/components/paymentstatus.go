@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // PaymentStatus - Status of payment
 type PaymentStatus string
 
@@ -22,26 +17,14 @@ const (
 func (e PaymentStatus) ToPointer() *PaymentStatus {
 	return &e
 }
-func (e *PaymentStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *PaymentStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "draft", "authorised", "rejected", "paid", "voided", "deleted":
+			return true
+		}
 	}
-	switch v {
-	case "draft":
-		fallthrough
-	case "authorised":
-		fallthrough
-	case "rejected":
-		fallthrough
-	case "paid":
-		fallthrough
-	case "voided":
-		fallthrough
-	case "deleted":
-		*e = PaymentStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for PaymentStatus: %v", v)
-	}
+	return false
 }

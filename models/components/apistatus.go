@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // APIStatus - Status of the API. APIs with status live or beta are callable.
 type APIStatus string
 
@@ -20,22 +15,14 @@ const (
 func (e APIStatus) ToPointer() *APIStatus {
 	return &e
 }
-func (e *APIStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *APIStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "live", "beta", "development", "considering":
+			return true
+		}
 	}
-	switch v {
-	case "live":
-		fallthrough
-	case "beta":
-		fallthrough
-	case "development":
-		fallthrough
-	case "considering":
-		*e = APIStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for APIStatus: %v", v)
-	}
+	return false
 }

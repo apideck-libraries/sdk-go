@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"github.com/apideck-libraries/sdk-go/types"
 	"time"
@@ -27,32 +25,16 @@ const (
 func (e ProjectProjectStatus) ToPointer() *ProjectProjectStatus {
 	return &e
 }
-func (e *ProjectProjectStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ProjectProjectStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "active", "completed", "on_hold", "cancelled", "draft", "in_progress", "approved", "other":
+			return true
+		}
 	}
-	switch v {
-	case "active":
-		fallthrough
-	case "completed":
-		fallthrough
-	case "on_hold":
-		fallthrough
-	case "cancelled":
-		fallthrough
-	case "draft":
-		fallthrough
-	case "in_progress":
-		fallthrough
-	case "approved":
-		fallthrough
-	case "other":
-		*e = ProjectProjectStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ProjectProjectStatus: %v", v)
-	}
+	return false
 }
 
 // ProjectType - Type or category of the project
@@ -70,28 +52,16 @@ const (
 func (e ProjectType) ToPointer() *ProjectType {
 	return &e
 }
-func (e *ProjectType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ProjectType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "client_project", "internal_project", "maintenance", "research_development", "training", "other":
+			return true
+		}
 	}
-	switch v {
-	case "client_project":
-		fallthrough
-	case "internal_project":
-		fallthrough
-	case "maintenance":
-		fallthrough
-	case "research_development":
-		fallthrough
-	case "training":
-		fallthrough
-	case "other":
-		*e = ProjectType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ProjectType: %v", v)
-	}
+	return false
 }
 
 // Priority level of the project
@@ -107,24 +77,16 @@ const (
 func (e Priority) ToPointer() *Priority {
 	return &e
 }
-func (e *Priority) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Priority) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "low", "medium", "high", "critical":
+			return true
+		}
 	}
-	switch v {
-	case "low":
-		fallthrough
-	case "medium":
-		fallthrough
-	case "high":
-		fallthrough
-	case "critical":
-		*e = Priority(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Priority: %v", v)
-	}
+	return false
 }
 
 // ProjectDepartment - Department or organizational unit associated with the project
@@ -185,26 +147,16 @@ const (
 func (e BillingMethod) ToPointer() *BillingMethod {
 	return &e
 }
-func (e *BillingMethod) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *BillingMethod) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "fixed_price", "time_and_materials", "milestone_based", "retainer", "non_billable":
+			return true
+		}
 	}
-	switch v {
-	case "fixed_price":
-		fallthrough
-	case "time_and_materials":
-		fallthrough
-	case "milestone_based":
-		fallthrough
-	case "retainer":
-		fallthrough
-	case "non_billable":
-		*e = BillingMethod(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for BillingMethod: %v", v)
-	}
+	return false
 }
 
 // ProjectPhase - Current phase of the project lifecycle
@@ -222,28 +174,16 @@ const (
 func (e ProjectPhase) ToPointer() *ProjectPhase {
 	return &e
 }
-func (e *ProjectPhase) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ProjectPhase) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "initiation", "planning", "execution", "monitoring", "closure", "other":
+			return true
+		}
 	}
-	switch v {
-	case "initiation":
-		fallthrough
-	case "planning":
-		fallthrough
-	case "execution":
-		fallthrough
-	case "monitoring":
-		fallthrough
-	case "closure":
-		fallthrough
-	case "other":
-		*e = ProjectPhase(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ProjectPhase: %v", v)
-	}
+	return false
 }
 
 // ScheduleStatus - Current status of project schedule compared to plan
@@ -259,24 +199,16 @@ const (
 func (e ScheduleStatus) ToPointer() *ScheduleStatus {
 	return &e
 }
-func (e *ScheduleStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ScheduleStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ahead_of_schedule", "on_schedule", "behind_schedule", "critical_delay":
+			return true
+		}
 	}
-	switch v {
-	case "ahead_of_schedule":
-		fallthrough
-	case "on_schedule":
-		fallthrough
-	case "behind_schedule":
-		fallthrough
-	case "critical_delay":
-		*e = ScheduleStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ScheduleStatus: %v", v)
-	}
+	return false
 }
 
 type Project struct {
@@ -304,8 +236,10 @@ type Project struct {
 	CompletionPercentage *float64 `json:"completion_percentage,omitempty"`
 	// Start date of the project
 	StartDate *types.Date `json:"start_date,omitempty"`
-	// Expected or actual end date of the project
+	// Expected or planned end date of the project
 	EndDate *types.Date `json:"end_date,omitempty"`
+	// Actual end date of the project
+	CompletionDate *types.Date `json:"completion_date,omitempty"`
 	// The customer this entity is linked to.
 	Customer *LinkedCustomer `json:"customer,omitempty"`
 	// Department or organizational unit associated with the project
@@ -466,6 +400,13 @@ func (p *Project) GetEndDate() *types.Date {
 		return nil
 	}
 	return p.EndDate
+}
+
+func (p *Project) GetCompletionDate() *types.Date {
+	if p == nil {
+		return nil
+	}
+	return p.CompletionDate
 }
 
 func (p *Project) GetCustomer() *LinkedCustomer {
@@ -699,8 +640,10 @@ type ProjectInput struct {
 	CompletionPercentage *float64 `json:"completion_percentage,omitempty"`
 	// Start date of the project
 	StartDate *types.Date `json:"start_date,omitempty"`
-	// Expected or actual end date of the project
+	// Expected or planned end date of the project
 	EndDate *types.Date `json:"end_date,omitempty"`
+	// Actual end date of the project
+	CompletionDate *types.Date `json:"completion_date,omitempty"`
 	// The customer this entity is linked to.
 	Customer *LinkedCustomerInput `json:"customer,omitempty"`
 	// Department or organizational unit associated with the project
@@ -835,6 +778,13 @@ func (p *ProjectInput) GetEndDate() *types.Date {
 		return nil
 	}
 	return p.EndDate
+}
+
+func (p *ProjectInput) GetCompletionDate() *types.Date {
+	if p == nil {
+		return nil
+	}
+	return p.CompletionDate
 }
 
 func (p *ProjectInput) GetCustomer() *LinkedCustomerInput {

@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 )
 
@@ -19,20 +17,16 @@ const (
 func (e InvoiceItemsSortBy) ToPointer() *InvoiceItemsSortBy {
 	return &e
 }
-func (e *InvoiceItemsSortBy) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *InvoiceItemsSortBy) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "created_at", "updated_at":
+			return true
+		}
 	}
-	switch v {
-	case "created_at":
-		fallthrough
-	case "updated_at":
-		*e = InvoiceItemsSortBy(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for InvoiceItemsSortBy: %v", v)
-	}
+	return false
 }
 
 type InvoiceItemsSort struct {

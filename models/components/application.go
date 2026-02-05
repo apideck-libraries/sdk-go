@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"time"
 )
@@ -22,26 +20,16 @@ const (
 func (e ApplicationStatus) ToPointer() *ApplicationStatus {
 	return &e
 }
-func (e *ApplicationStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ApplicationStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "open", "rejected", "hired", "converted", "other":
+			return true
+		}
 	}
-	switch v {
-	case "open":
-		fallthrough
-	case "rejected":
-		fallthrough
-	case "hired":
-		fallthrough
-	case "converted":
-		fallthrough
-	case "other":
-		*e = ApplicationStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ApplicationStatus: %v", v)
-	}
+	return false
 }
 
 type Stage struct {

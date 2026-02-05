@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // AllocationType - Type of entity this payment should be attributed to.
 type AllocationType string
 
@@ -25,34 +20,16 @@ const (
 func (e AllocationType) ToPointer() *AllocationType {
 	return &e
 }
-func (e *AllocationType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AllocationType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "invoice", "order", "expense", "credit_memo", "over_payment", "pre_payment", "journal_entry", "other", "bill":
+			return true
+		}
 	}
-	switch v {
-	case "invoice":
-		fallthrough
-	case "order":
-		fallthrough
-	case "expense":
-		fallthrough
-	case "credit_memo":
-		fallthrough
-	case "over_payment":
-		fallthrough
-	case "pre_payment":
-		fallthrough
-	case "journal_entry":
-		fallthrough
-	case "other":
-		fallthrough
-	case "bill":
-		*e = AllocationType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for AllocationType: %v", v)
-	}
+	return false
 }
 
 type Allocation struct {
