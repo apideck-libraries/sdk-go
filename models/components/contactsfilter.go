@@ -2,6 +2,11 @@
 
 package components
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/utils"
+	"time"
+)
+
 type ContactsFilter struct {
 	// Name of the contact to filter on
 	Name *string `queryParam:"name=name"`
@@ -16,7 +21,20 @@ type ContactsFilter struct {
 	// Unique identifier for the associated company of the contact to filter on
 	CompanyID *string `queryParam:"name=company_id"`
 	// Unique identifier for the owner of the contact to filter on
-	OwnerID *string `queryParam:"name=owner_id"`
+	OwnerID      *string    `queryParam:"name=owner_id"`
+	UpdatedSince *time.Time `queryParam:"name=updated_since"`
+	CreatedSince *time.Time `queryParam:"name=created_since"`
+}
+
+func (c ContactsFilter) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *ContactsFilter) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *ContactsFilter) GetName() *string {
@@ -66,4 +84,18 @@ func (c *ContactsFilter) GetOwnerID() *string {
 		return nil
 	}
 	return c.OwnerID
+}
+
+func (c *ContactsFilter) GetUpdatedSince() *time.Time {
+	if c == nil {
+		return nil
+	}
+	return c.UpdatedSince
+}
+
+func (c *ContactsFilter) GetCreatedSince() *time.Time {
+	if c == nil {
+		return nil
+	}
+	return c.CreatedSince
 }

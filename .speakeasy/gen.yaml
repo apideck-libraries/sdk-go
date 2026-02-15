@@ -31,7 +31,7 @@ generation:
     generateNewTests: false
     skipResponseBodyAssertions: false
 go:
-  version: 0.26.0
+  version: 0.26.1
   additionalDependencies: {}
   allowUnknownFieldsInWeakUnions: false
   baseErrorName: ApideckError
@@ -40,6 +40,7 @@ go:
   envVarPrefix: APIDECK
   flattenGlobalSecurity: true
   forwardCompatibleEnumsByDefault: false
+  forwardCompatibleUnionsByDefault: "false"
   imports:
     option: openapi
     paths:

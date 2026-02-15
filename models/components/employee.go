@@ -15,6 +15,7 @@ const (
 	LeavingReasonDismissed  LeavingReason = "dismissed"
 	LeavingReasonResigned   LeavingReason = "resigned"
 	LeavingReasonRedundancy LeavingReason = "redundancy"
+	LeavingReasonRetired    LeavingReason = "retired"
 	LeavingReasonOther      LeavingReason = "other"
 )
 
@@ -26,7 +27,7 @@ func (e LeavingReason) ToPointer() *LeavingReason {
 func (e *LeavingReason) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "dismissed", "resigned", "redundancy", "other":
+		case "dismissed", "resigned", "redundancy", "retired", "other":
 			return true
 		}
 	}
