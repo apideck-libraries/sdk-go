@@ -667,6 +667,15 @@ func main() {
 * [List](docs/sdks/collectionusers/README.md#list) - List Users
 * [Get](docs/sdks/collectionusers/README.md#get) - Get user
 
+### [Proxy](docs/sdks/proxy/README.md)
+
+* [Get](docs/sdks/proxy/README.md#get) - GET
+* [Options](docs/sdks/proxy/README.md#options) - OPTIONS
+* [Post](docs/sdks/proxy/README.md#post) - POST
+* [Put](docs/sdks/proxy/README.md#put) - PUT
+* [Patch](docs/sdks/proxy/README.md#patch) - PATCH
+* [Delete](docs/sdks/proxy/README.md#delete) - DELETE
+
 ### [Sms.Messages](docs/sdks/messages/README.md)
 
 * [List](docs/sdks/messages/README.md#list) - List Messages

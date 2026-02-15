@@ -2,9 +2,27 @@
 
 package components
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/utils"
+	"time"
+)
+
 type CompaniesFilter struct {
 	// Name of the company to filter on
-	Name *string `queryParam:"name=name"`
+	Name         *string    `queryParam:"name=name"`
+	UpdatedSince *time.Time `queryParam:"name=updated_since"`
+	CreatedSince *time.Time `queryParam:"name=created_since"`
+}
+
+func (c CompaniesFilter) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CompaniesFilter) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CompaniesFilter) GetName() *string {
@@ -12,4 +30,18 @@ func (c *CompaniesFilter) GetName() *string {
 		return nil
 	}
 	return c.Name
+}
+
+func (c *CompaniesFilter) GetUpdatedSince() *time.Time {
+	if c == nil {
+		return nil
+	}
+	return c.UpdatedSince
+}
+
+func (c *CompaniesFilter) GetCreatedSince() *time.Time {
+	if c == nil {
+		return nil
+	}
+	return c.CreatedSince
 }
