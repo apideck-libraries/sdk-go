@@ -10,4 +10,5 @@ The reason because the employment ended.
 | `LeavingReasonDismissed`  | dismissed                 |
 | `LeavingReasonResigned`   | resigned                  |
 | `LeavingReasonRedundancy` | redundancy                |
+| `LeavingReasonRetired`    | retired                   |
 | `LeavingReasonOther`      | other                     |

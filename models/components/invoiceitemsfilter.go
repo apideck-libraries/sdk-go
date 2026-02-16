@@ -2,6 +2,11 @@
 
 package components
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/utils"
+	"time"
+)
+
 // InvoiceItemType - The type of invoice item, indicating whether it is an inventory item, a service, or another type.
 type InvoiceItemType string
 
@@ -50,12 +55,31 @@ func (e *TransactionType) IsExact() bool {
 }
 
 type InvoiceItemsFilter struct {
+	UpdatedSince *time.Time `queryParam:"name=updated_since"`
 	// Name of Invoice Items to search for
 	Name *string `queryParam:"name=name"`
 	// The type of invoice item, indicating whether it is an inventory item, a service, or another type.
 	Type *InvoiceItemType `queryParam:"name=type"`
 	// The kind of transaction, indicating whether it is a sales transaction or a purchase transaction.
 	TransactionType *TransactionType `queryParam:"name=transaction_type"`
+}
+
+func (i InvoiceItemsFilter) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *InvoiceItemsFilter) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (i *InvoiceItemsFilter) GetUpdatedSince() *time.Time {
+	if i == nil {
+		return nil
+	}
+	return i.UpdatedSince
 }
 
 func (i *InvoiceItemsFilter) GetName() *string {

@@ -2,7 +2,7 @@
 
 package sdkgo
 
-// Generated from OpenAPI doc version 10.23.13 and generator version 2.808.1
+// Generated from OpenAPI doc version 10.23.19 and generator version 2.824.1
 
 import (
 	"context"
@@ -62,6 +62,7 @@ type Apideck struct {
 	Sms           *Sms
 	IssueTracking *IssueTracking
 	Connector     *Connector
+	Proxy         *Proxy
 	Vault         *Vault
 	Webhook       *Webhook
 
@@ -154,9 +155,9 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *Apideck {
 	sdk := &Apideck{
-		SDKVersion: "0.26.0",
+		SDKVersion: "0.26.1",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 0.26.0 2.808.1 10.23.13 github.com/apideck-libraries/sdk-go",
+			UserAgent:  "speakeasy-sdk/go 0.26.1 2.824.1 10.23.19 github.com/apideck-libraries/sdk-go",
 			Globals:    globals.Globals{},
 			ServerList: ServerList,
 		},
@@ -196,6 +197,7 @@ func New(opts ...SDKOption) *Apideck {
 	sdk.Sms = newSms(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.IssueTracking = newIssueTracking(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Connector = newConnector(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Proxy = newProxy(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Vault = newVault(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Webhook = newWebhook(sdk, sdk.sdkConfiguration, sdk.hooks)
 
