@@ -1,0 +1,19 @@
+# ProxyGetProxyResponse
+
+
+## Fields
+
+| Field                                                              | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `HTTPMeta`                                                         | [components.HTTPMetadata](../../models/components/httpmetadata.md) | :heavy_check_mark:                                                 | N/A                                                                |
+| `ResponseJSON`                                                     | map[string]*any*                                                   | :heavy_minus_sign:                                                 | Ok                                                                 |
+| `ResponseBinary`                                                   | *io.ReadCloser*                                                    | :heavy_minus_sign:                                                 | Ok                                                                 |
+| `ResponsePdf`                                                      | *io.ReadCloser*                                                    | :heavy_minus_sign:                                                 | Ok                                                                 |
+| `ResponseXML`                                                      | **string*                                                          | :heavy_minus_sign:                                                 | Ok                                                                 |
+| `ResponseCsv`                                                      | **string*                                                          | :heavy_minus_sign:                                                 | Ok                                                                 |
+| `ResponseText`                                                     | **string*                                                          | :heavy_minus_sign:                                                 | Ok                                                                 |
+| `ErrorJSON`                                                        | map[string]*any*                                                   | :heavy_minus_sign:                                                 | Proxy error                                                        |
+| `ErrorXML`                                                         | **string*                                                          | :heavy_minus_sign:                                                 | Proxy error                                                        |
+| `ErrorHTML`                                                        | **string*                                                          | :heavy_minus_sign:                                                 | Proxy error                                                        |
+| `ErrorText`                                                        | **string*                                                          | :heavy_minus_sign:                                                 | Proxy error                                                        |
+| `Headers`                                                          | map[string][]*string*                                              | :heavy_check_mark:                                                 | N/A                                                                |

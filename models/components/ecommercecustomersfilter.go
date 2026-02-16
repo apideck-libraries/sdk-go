@@ -9,6 +9,10 @@ type EcommerceCustomersFilter struct {
 	PhoneNumber *string `queryParam:"name=phone_number"`
 	// Filter by customer IDs. Specify multiple IDs as a comma-separated string.
 	CustomerIds *string `queryParam:"name=customer_ids"`
+	// Minimum date the customer was last modified
+	UpdatedSince *string `queryParam:"name=updated_since"`
+	// Minimum date the customer was created
+	CreatedSince *string `queryParam:"name=created_since"`
 }
 
 func (e *EcommerceCustomersFilter) GetEmail() *string {
@@ -30,4 +34,18 @@ func (e *EcommerceCustomersFilter) GetCustomerIds() *string {
 		return nil
 	}
 	return e.CustomerIds
+}
+
+func (e *EcommerceCustomersFilter) GetUpdatedSince() *string {
+	if e == nil {
+		return nil
+	}
+	return e.UpdatedSince
+}
+
+func (e *EcommerceCustomersFilter) GetCreatedSince() *string {
+	if e == nil {
+		return nil
+	}
+	return e.CreatedSince
 }

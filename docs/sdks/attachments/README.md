@@ -94,7 +94,7 @@ Upload attachment
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="accounting.attachmentsUpload" method="post" path="/accounting/attachments/{reference_type}/{reference_id}" -->
+<!-- UsageSnippet language="go" operationID="accounting.attachmentsUpload" method="post" path="/accounting/attachments/{reference_type}/{reference_id}" example="basic" -->
 ```go
 package main
 
@@ -123,7 +123,7 @@ func main() {
 
     res, err := s.Accounting.Attachments.Upload(ctx, operations.AccountingAttachmentsUploadRequest{
         ReferenceType: components.AttachmentReferenceTypeInvoice,
-        ReferenceID: "123456",
+        ReferenceID: "12345",
         XApideckMetadata: sdkgo.Pointer("{\"name\":\"document.pdf\",\"description\":\"Invoice attachment\"}"),
         ServiceID: sdkgo.Pointer("salesforce"),
         RequestBody: example,
