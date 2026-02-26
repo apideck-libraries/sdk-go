@@ -17,3 +17,15 @@ unauthorizedResponseDetail := apierrors.CreateUnauthorizedResponseDetailStr(stri
 unauthorizedResponseDetail := apierrors.CreateUnauthorizedResponseDetailTwo(apierrors.Two{/* values here */})
 ```
 
+## Union Discrimination
+
+Use the `Type` field to determine which variant is active, then access the corresponding field:
+
+```go
+switch unauthorizedResponseDetail.Type {
+	case apierrors.UnauthorizedResponseDetailTypeStr:
+		// unauthorizedResponseDetail.Str is populated
+	case apierrors.UnauthorizedResponseDetailTypeTwo:
+		// unauthorizedResponseDetail.Two is populated
+}
+```

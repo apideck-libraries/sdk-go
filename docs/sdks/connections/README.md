@@ -338,6 +338,7 @@ import(
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"log"
+	"github.com/apideck-libraries/sdk-go/models/components"
 )
 
 func main() {
@@ -354,7 +355,13 @@ func main() {
         log.Fatal(err)
     }
     if res.UnexpectedErrorResponse != nil {
-        // handle response
+        switch res.UnexpectedErrorResponse.Detail.Type {
+            case components.DetailTypeStr:
+                // res.UnexpectedErrorResponse.Detail.Str is populated
+            case components.DetailTypeMapOfAny:
+                // res.UnexpectedErrorResponse.Detail.MapOfAny is populated
+        }
+
     }
 }
 ```
