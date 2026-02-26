@@ -279,6 +279,30 @@ func main() {
 * [Update](docs/sdks/departments/README.md#update) - Update Department
 * [Delete](docs/sdks/departments/README.md#delete) - Delete Department
 
+### [Accounting.Employees](docs/sdks/employees/README.md)
+
+* [List](docs/sdks/employees/README.md#list) - List Employees
+* [Create](docs/sdks/employees/README.md#create) - Create Employee
+* [Get](docs/sdks/employees/README.md#get) - Get Employee
+* [Update](docs/sdks/employees/README.md#update) - Update Employee
+* [Delete](docs/sdks/employees/README.md#delete) - Delete Employee
+
+### [Accounting.ExpenseCategories](docs/sdks/expensecategories/README.md)
+
+* [List](docs/sdks/expensecategories/README.md#list) - List Expense Categories
+* [Create](docs/sdks/expensecategories/README.md#create) - Create Expense Category
+* [Get](docs/sdks/expensecategories/README.md#get) - Get Expense Category
+* [Update](docs/sdks/expensecategories/README.md#update) - Update Expense Category
+* [Delete](docs/sdks/expensecategories/README.md#delete) - Delete Expense Category
+
+### [Accounting.ExpenseReports](docs/sdks/expensereports/README.md)
+
+* [List](docs/sdks/expensereports/README.md#list) - List Expense Reports
+* [Create](docs/sdks/expensereports/README.md#create) - Create Expense Report
+* [Get](docs/sdks/expensereports/README.md#get) - Get Expense Report
+* [Update](docs/sdks/expensereports/README.md#update) - Update Expense Report
+* [Delete](docs/sdks/expensereports/README.md#delete) - Delete Expense Report
+
 ### [Accounting.Expenses](docs/sdks/expenses/README.md)
 
 * [List](docs/sdks/expenses/README.md#list) - List Expenses
@@ -612,13 +636,13 @@ func main() {
 * [List](docs/sdks/employeepayrolls/README.md#list) - List Employee Payrolls
 * [Get](docs/sdks/employeepayrolls/README.md#get) - Get Employee Payroll
 
-### [Hris.Employees](docs/sdks/employees/README.md)
+### [Hris.Employees](docs/sdks/apideckemployees/README.md)
 
-* [List](docs/sdks/employees/README.md#list) - List Employees
-* [Create](docs/sdks/employees/README.md#create) - Create Employee
-* [Get](docs/sdks/employees/README.md#get) - Get Employee
-* [Update](docs/sdks/employees/README.md#update) - Update Employee
-* [Delete](docs/sdks/employees/README.md#delete) - Delete Employee
+* [List](docs/sdks/apideckemployees/README.md#list) - List Employees
+* [Create](docs/sdks/apideckemployees/README.md#create) - Create Employee
+* [Get](docs/sdks/apideckemployees/README.md#get) - Get Employee
+* [Update](docs/sdks/apideckemployees/README.md#update) - Update Employee
+* [Delete](docs/sdks/apideckemployees/README.md#delete) - Delete Employee
 
 ### [Hris.EmployeeSchedules](docs/sdks/employeeschedules/README.md)
 

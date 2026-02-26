@@ -17,3 +17,15 @@ detail := components.CreateDetailStr(string{/* values here */})
 detail := components.CreateDetailMapOfAny(map[string]any{/* values here */})
 ```
 
+## Union Discrimination
+
+Use the `Type` field to determine which variant is active, then access the corresponding field:
+
+```go
+switch detail.Type {
+	case components.DetailTypeStr:
+		// detail.Str is populated
+	case components.DetailTypeMapOfAny:
+		// detail.MapOfAny is populated
+}
+```

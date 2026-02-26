@@ -35,9 +35,9 @@ func newEmployees(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *ho
 }
 
 // List Employees
-// Apideck operates as a stateless Unified API, which means that the list endpoint only provides a portion of the employee model. This is due to the fact that most HRIS systems do not readily provide all data in every call. However, you can access the complete employee model through an employee detail call.
-func (s *Employees) List(ctx context.Context, request operations.HrisEmployeesAllRequest, opts ...operations.Option) (*operations.HrisEmployeesAllResponse, error) {
-	globals := operations.HrisEmployeesAllGlobals{
+// List Employees
+func (s *Employees) List(ctx context.Context, request operations.AccountingEmployeesAllRequest, opts ...operations.Option) (*operations.AccountingEmployeesAllResponse, error) {
+	globals := operations.AccountingEmployeesAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
 	}
@@ -60,7 +60,7 @@ func (s *Employees) List(ctx context.Context, request operations.HrisEmployeesAl
 	} else {
 		baseURL = *o.ServerURL
 	}
-	opURL, err := url.JoinPath(baseURL, "/hris/employees")
+	opURL, err := url.JoinPath(baseURL, "/accounting/employees")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
@@ -70,7 +70,7 @@ func (s *Employees) List(ctx context.Context, request operations.HrisEmployeesAl
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "hris.employeesAll",
+		OperationID:      "accounting.employeesAll",
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
@@ -208,13 +208,13 @@ func (s *Employees) List(ctx context.Context, request operations.HrisEmployeesAl
 		}
 	}
 
-	res := &operations.HrisEmployeesAllResponse{
+	res := &operations.AccountingEmployeesAllResponse{
 		HTTPMeta: components.HTTPMetadata{
 			Request:  req,
 			Response: httpRes,
 		},
 	}
-	res.Next = func() (*operations.HrisEmployeesAllResponse, error) {
+	res.Next = func() (*operations.AccountingEmployeesAllResponse, error) {
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
 			return nil, err
@@ -253,17 +253,15 @@ func (s *Employees) List(ctx context.Context, request operations.HrisEmployeesAl
 
 		return s.List(
 			ctx,
-			operations.HrisEmployeesAllRequest{
-				Raw:         request.Raw,
-				ConsumerID:  request.ConsumerID,
-				AppID:       request.AppID,
-				ServiceID:   request.ServiceID,
-				Cursor:      &nCVal,
-				Limit:       request.Limit,
-				Filter:      request.Filter,
-				Sort:        request.Sort,
-				PassThrough: request.PassThrough,
-				Fields:      request.Fields,
+			operations.AccountingEmployeesAllRequest{
+				Raw:        request.Raw,
+				ConsumerID: request.ConsumerID,
+				AppID:      request.AppID,
+				ServiceID:  request.ServiceID,
+				Cursor:     &nCVal,
+				Limit:      request.Limit,
+				Fields:     request.Fields,
+				Filter:     request.Filter,
 			},
 			opts...,
 		)
@@ -278,12 +276,12 @@ func (s *Employees) List(ctx context.Context, request operations.HrisEmployeesAl
 				return nil, err
 			}
 
-			var out components.GetEmployeesResponse
+			var out components.GetAccountingEmployeesResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetEmployeesResponse = &out
+			res.GetAccountingEmployeesResponse = &out
 		default:
 			rawBody, err := utils.ConsumeRawBody(httpRes)
 			if err != nil {
@@ -437,8 +435,8 @@ func (s *Employees) List(ctx context.Context, request operations.HrisEmployeesAl
 
 // Create Employee
 // Create Employee
-func (s *Employees) Create(ctx context.Context, request operations.HrisEmployeesAddRequest, opts ...operations.Option) (*operations.HrisEmployeesAddResponse, error) {
-	globals := operations.HrisEmployeesAddGlobals{
+func (s *Employees) Create(ctx context.Context, request operations.AccountingEmployeesAddRequest, opts ...operations.Option) (*operations.AccountingEmployeesAddResponse, error) {
+	globals := operations.AccountingEmployeesAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
 	}
@@ -461,7 +459,7 @@ func (s *Employees) Create(ctx context.Context, request operations.HrisEmployees
 	} else {
 		baseURL = *o.ServerURL
 	}
-	opURL, err := url.JoinPath(baseURL, "/hris/employees")
+	opURL, err := url.JoinPath(baseURL, "/accounting/employees")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
@@ -471,11 +469,11 @@ func (s *Employees) Create(ctx context.Context, request operations.HrisEmployees
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "hris.employeesAdd",
+		OperationID:      "accounting.employeesAdd",
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Employee", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "AccountingEmployee", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -616,7 +614,7 @@ func (s *Employees) Create(ctx context.Context, request operations.HrisEmployees
 		}
 	}
 
-	res := &operations.HrisEmployeesAddResponse{
+	res := &operations.AccountingEmployeesAddResponse{
 		HTTPMeta: components.HTTPMetadata{
 			Request:  req,
 			Response: httpRes,
@@ -632,12 +630,12 @@ func (s *Employees) Create(ctx context.Context, request operations.HrisEmployees
 				return nil, err
 			}
 
-			var out components.CreateEmployeeResponse
+			var out components.CreateAccountingEmployeeResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateEmployeeResponse = &out
+			res.CreateAccountingEmployeeResponse = &out
 		default:
 			rawBody, err := utils.ConsumeRawBody(httpRes)
 			if err != nil {
@@ -791,8 +789,8 @@ func (s *Employees) Create(ctx context.Context, request operations.HrisEmployees
 
 // Get Employee
 // Get Employee
-func (s *Employees) Get(ctx context.Context, request operations.HrisEmployeesOneRequest, opts ...operations.Option) (*operations.HrisEmployeesOneResponse, error) {
-	globals := operations.HrisEmployeesOneGlobals{
+func (s *Employees) Get(ctx context.Context, request operations.AccountingEmployeesOneRequest, opts ...operations.Option) (*operations.AccountingEmployeesOneResponse, error) {
+	globals := operations.AccountingEmployeesOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
 	}
@@ -815,7 +813,7 @@ func (s *Employees) Get(ctx context.Context, request operations.HrisEmployeesOne
 	} else {
 		baseURL = *o.ServerURL
 	}
-	opURL, err := utils.GenerateURL(ctx, baseURL, "/hris/employees/{id}", request, globals)
+	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/employees/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
@@ -825,7 +823,7 @@ func (s *Employees) Get(ctx context.Context, request operations.HrisEmployeesOne
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "hris.employeesOne",
+		OperationID:      "accounting.employeesOne",
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
@@ -963,7 +961,7 @@ func (s *Employees) Get(ctx context.Context, request operations.HrisEmployeesOne
 		}
 	}
 
-	res := &operations.HrisEmployeesOneResponse{
+	res := &operations.AccountingEmployeesOneResponse{
 		HTTPMeta: components.HTTPMetadata{
 			Request:  req,
 			Response: httpRes,
@@ -979,12 +977,12 @@ func (s *Employees) Get(ctx context.Context, request operations.HrisEmployeesOne
 				return nil, err
 			}
 
-			var out components.GetEmployeeResponse
+			var out components.GetAccountingEmployeeResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetEmployeeResponse = &out
+			res.GetAccountingEmployeeResponse = &out
 		default:
 			rawBody, err := utils.ConsumeRawBody(httpRes)
 			if err != nil {
@@ -1138,8 +1136,8 @@ func (s *Employees) Get(ctx context.Context, request operations.HrisEmployeesOne
 
 // Update Employee
 // Update Employee
-func (s *Employees) Update(ctx context.Context, request operations.HrisEmployeesUpdateRequest, opts ...operations.Option) (*operations.HrisEmployeesUpdateResponse, error) {
-	globals := operations.HrisEmployeesUpdateGlobals{
+func (s *Employees) Update(ctx context.Context, request operations.AccountingEmployeesUpdateRequest, opts ...operations.Option) (*operations.AccountingEmployeesUpdateResponse, error) {
+	globals := operations.AccountingEmployeesUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
 	}
@@ -1162,7 +1160,7 @@ func (s *Employees) Update(ctx context.Context, request operations.HrisEmployees
 	} else {
 		baseURL = *o.ServerURL
 	}
-	opURL, err := utils.GenerateURL(ctx, baseURL, "/hris/employees/{id}", request, globals)
+	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/employees/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
@@ -1172,11 +1170,11 @@ func (s *Employees) Update(ctx context.Context, request operations.HrisEmployees
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "hris.employeesUpdate",
+		OperationID:      "accounting.employeesUpdate",
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Employee", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "AccountingEmployee", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -1317,7 +1315,7 @@ func (s *Employees) Update(ctx context.Context, request operations.HrisEmployees
 		}
 	}
 
-	res := &operations.HrisEmployeesUpdateResponse{
+	res := &operations.AccountingEmployeesUpdateResponse{
 		HTTPMeta: components.HTTPMetadata{
 			Request:  req,
 			Response: httpRes,
@@ -1333,12 +1331,12 @@ func (s *Employees) Update(ctx context.Context, request operations.HrisEmployees
 				return nil, err
 			}
 
-			var out components.UpdateEmployeeResponse
+			var out components.UpdateAccountingEmployeeResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateEmployeeResponse = &out
+			res.UpdateAccountingEmployeeResponse = &out
 		default:
 			rawBody, err := utils.ConsumeRawBody(httpRes)
 			if err != nil {
@@ -1492,8 +1490,8 @@ func (s *Employees) Update(ctx context.Context, request operations.HrisEmployees
 
 // Delete Employee
 // Delete Employee
-func (s *Employees) Delete(ctx context.Context, request operations.HrisEmployeesDeleteRequest, opts ...operations.Option) (*operations.HrisEmployeesDeleteResponse, error) {
-	globals := operations.HrisEmployeesDeleteGlobals{
+func (s *Employees) Delete(ctx context.Context, request operations.AccountingEmployeesDeleteRequest, opts ...operations.Option) (*operations.AccountingEmployeesDeleteResponse, error) {
+	globals := operations.AccountingEmployeesDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
 	}
@@ -1516,7 +1514,7 @@ func (s *Employees) Delete(ctx context.Context, request operations.HrisEmployees
 	} else {
 		baseURL = *o.ServerURL
 	}
-	opURL, err := utils.GenerateURL(ctx, baseURL, "/hris/employees/{id}", request, globals)
+	opURL, err := utils.GenerateURL(ctx, baseURL, "/accounting/employees/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
@@ -1526,7 +1524,7 @@ func (s *Employees) Delete(ctx context.Context, request operations.HrisEmployees
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "hris.employeesDelete",
+		OperationID:      "accounting.employeesDelete",
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
@@ -1664,7 +1662,7 @@ func (s *Employees) Delete(ctx context.Context, request operations.HrisEmployees
 		}
 	}
 
-	res := &operations.HrisEmployeesDeleteResponse{
+	res := &operations.AccountingEmployeesDeleteResponse{
 		HTTPMeta: components.HTTPMetadata{
 			Request:  req,
 			Response: httpRes,
@@ -1680,12 +1678,12 @@ func (s *Employees) Delete(ctx context.Context, request operations.HrisEmployees
 				return nil, err
 			}
 
-			var out components.DeleteEmployeeResponse
+			var out components.DeleteAccountingEmployeeResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteEmployeeResponse = &out
+			res.DeleteAccountingEmployeeResponse = &out
 		default:
 			rawBody, err := utils.ConsumeRawBody(httpRes)
 			if err != nil {

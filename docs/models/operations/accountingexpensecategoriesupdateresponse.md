@@ -1,0 +1,10 @@
+# AccountingExpenseCategoriesUpdateResponse
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                            | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                    | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
+| `UpdateExpenseCategoryResponse`                                                                       | [*components.UpdateExpenseCategoryResponse](../../models/components/updateexpensecategoryresponse.md) | :heavy_minus_sign:                                                                                    | Expense Categories                                                                                    |
+| `UnexpectedErrorResponse`                                                                             | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)             | :heavy_minus_sign:                                                                                    | Unexpected error                                                                                      |

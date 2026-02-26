@@ -7,7 +7,7 @@ type BillLineItemInput struct {
 	RowID *string `json:"row_id,omitempty"`
 	// User defined item code
 	Code *string `json:"code,omitempty"`
-	// Line number in the invoice
+	// Line number of the resource
 	LineNumber *int64 `json:"line_number,omitempty"`
 	// User defined description
 	Description *string `json:"description,omitempty"`
