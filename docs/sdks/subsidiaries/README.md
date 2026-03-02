@@ -39,6 +39,7 @@ func main() {
 
     res, err := s.Accounting.Subsidiaries.List(ctx, operations.AccountingSubsidiariesAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
@@ -115,6 +116,7 @@ func main() {
 
     res, err := s.Accounting.Subsidiaries.Create(ctx, operations.AccountingSubsidiariesAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Subsidiary: components.SubsidiaryInput{
             ParentID: sdkgo.Pointer("12345"),
             Name: sdkgo.Pointer("SpaceX"),
@@ -225,6 +227,7 @@ func main() {
     res, err := s.Accounting.Subsidiaries.Get(ctx, operations.AccountingSubsidiariesOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
@@ -290,6 +293,7 @@ func main() {
     res, err := s.Accounting.Subsidiaries.Update(ctx, operations.AccountingSubsidiariesUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Subsidiary: components.SubsidiaryInput{
             ParentID: sdkgo.Pointer("12345"),
             Name: sdkgo.Pointer("SpaceX"),
@@ -382,6 +386,7 @@ func main() {
     res, err := s.Accounting.Subsidiaries.Delete(ctx, operations.AccountingSubsidiariesDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
     })
     if err != nil {
         log.Fatal(err)

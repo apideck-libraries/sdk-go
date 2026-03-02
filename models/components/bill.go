@@ -99,6 +99,8 @@ type Bill struct {
 	LineItems []BillLineItem `json:"line_items,omitempty"`
 	// Terms of payment.
 	Terms *string `json:"terms,omitempty"`
+	// The ID of the payment terms
+	TermsID *string `json:"terms_id,omitempty"`
 	// Balance of bill due.
 	Balance *float64 `json:"balance,omitempty"`
 	// Amount of deposit made to this bill.
@@ -295,6 +297,13 @@ func (b *Bill) GetTerms() *string {
 		return nil
 	}
 	return b.Terms
+}
+
+func (b *Bill) GetTermsID() *string {
+	if b == nil {
+		return nil
+	}
+	return b.TermsID
 }
 
 func (b *Bill) GetBalance() *float64 {
@@ -553,6 +562,8 @@ type BillInput struct {
 	LineItems []BillLineItemInput `json:"line_items,omitempty"`
 	// Terms of payment.
 	Terms *string `json:"terms,omitempty"`
+	// The ID of the payment terms
+	TermsID *string `json:"terms_id,omitempty"`
 	// Balance of bill due.
 	Balance *float64 `json:"balance,omitempty"`
 	// Amount of deposit made to this bill.
@@ -725,6 +736,13 @@ func (b *BillInput) GetTerms() *string {
 		return nil
 	}
 	return b.Terms
+}
+
+func (b *BillInput) GetTermsID() *string {
+	if b == nil {
+		return nil
+	}
+	return b.TermsID
 }
 
 func (b *BillInput) GetBalance() *float64 {

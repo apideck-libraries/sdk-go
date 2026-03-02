@@ -41,6 +41,7 @@ func main() {
 
     res, err := s.Accounting.Customers.List(ctx, operations.AccountingCustomersAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Filter: &components.CustomersFilter{
             CompanyName: sdkgo.Pointer("SpaceX"),
             DisplayName: sdkgo.Pointer("Elon Musk"),
@@ -134,6 +135,7 @@ func main() {
 
     res, err := s.Accounting.Customers.Create(ctx, operations.AccountingCustomersAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Customer: components.CustomerInput{
             DisplayID: sdkgo.Pointer("EMP00101"),
             DisplayName: sdkgo.Pointer("Windsurf Shop"),
@@ -369,6 +371,7 @@ func main() {
     res, err := s.Accounting.Customers.Get(ctx, operations.AccountingCustomersOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {

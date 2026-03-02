@@ -1,22 +1,22 @@
-# Hris.Companies
+# Crm.Companies
 
 ## Overview
 
 ### Available Operations
 
-* [List](#list) - List Companies
-* [Create](#create) - Create Company
-* [Get](#get) - Get Company
-* [Update](#update) - Update Company
-* [Delete](#delete) - Delete Company
+* [List](#list) - List companies
+* [Create](#create) - Create company
+* [Get](#get) - Get company
+* [Update](#update) - Update company
+* [Delete](#delete) - Delete company
 
 ## List
 
-List Companies
+List companies
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="hris.companiesAll" method="get" path="/hris/companies" -->
+<!-- UsageSnippet language="go" operationID="crm.companiesAll" method="get" path="/crm/companies" -->
 ```go
 package main
 
@@ -24,6 +24,7 @@ import(
 	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -37,8 +38,15 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Hris.Companies.List(ctx, operations.HrisCompaniesAllRequest{
+    res, err := s.Crm.Companies.List(ctx, operations.CrmCompaniesAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        Filter: &components.CompaniesFilter{
+            Name: sdkgo.Pointer("SpaceX"),
+        },
+        Sort: &components.CompaniesSort{
+            By: components.CompaniesSortByCreatedAt.ToPointer(),
+            Direction: components.SortDirectionDesc.ToPointer(),
+        },
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
@@ -47,7 +55,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.GetHrisCompaniesResponse != nil {
+    if res.GetCompaniesResponse1 != nil {
         for {
             // handle items
 
@@ -67,15 +75,15 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
-| `request`                                                                                | [operations.HrisCompaniesAllRequest](../../models/operations/hriscompaniesallrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `opts`                                                                                   | [][operations.Option](../../models/operations/option.md)                                 | :heavy_minus_sign:                                                                       | The options for this request.                                                            |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
+| `request`                                                                              | [operations.CrmCompaniesAllRequest](../../models/operations/crmcompaniesallrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `opts`                                                                                 | [][operations.Option](../../models/operations/option.md)                               | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
 
 ### Response
 
-**[*operations.HrisCompaniesAllResponse](../../models/operations/hriscompaniesallresponse.md), error**
+**[*operations.CrmCompaniesAllResponse](../../models/operations/crmcompaniesallresponse.md), error**
 
 ### Errors
 
@@ -90,11 +98,11 @@ func main() {
 
 ## Create
 
-Create Company
+Create company
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="hris.companiesAdd" method="post" path="/hris/companies" -->
+<!-- UsageSnippet language="go" operationID="crm.companiesAdd" method="post" path="/crm/companies" -->
 ```go
 package main
 
@@ -103,6 +111,7 @@ import(
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
+	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -116,15 +125,76 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Hris.Companies.Create(ctx, operations.HrisCompaniesAddRequest{
+    res, err := s.Crm.Companies.Create(ctx, operations.CrmCompaniesAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
-        HrisCompany: components.HrisCompanyInput{
-            LegalName: sdkgo.Pointer("SpaceX"),
-            DisplayName: sdkgo.Pointer("SpaceX"),
-            Subdomain: sdkgo.Pointer("company"),
-            Status: components.HrisCompanyStatusActive.ToPointer(),
-            CompanyNumber: sdkgo.Pointer("123456-AB"),
+        Company1: components.Company1Input{
+            Name: sdkgo.Pointer("SpaceX"),
+            OwnerID: sdkgo.Pointer("12345"),
+            Image: sdkgo.Pointer("https://www.spacex.com/static/images/share.jpg"),
+            Description: sdkgo.Pointer("Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California."),
+            VatNumber: sdkgo.Pointer("BE0689615164"),
             Currency: components.CurrencyUsd.ToPointer(),
+            Status: sdkgo.Pointer("Open"),
+            Fax: sdkgo.Pointer("+12129876543"),
+            AnnualRevenue: sdkgo.Pointer("+$35m"),
+            NumberOfEmployees: sdkgo.Pointer("500-1000"),
+            Industry: sdkgo.Pointer("Apparel"),
+            Ownership: sdkgo.Pointer("Public"),
+            SalesTaxNumber: sdkgo.Pointer("12456EN"),
+            PayeeNumber: sdkgo.Pointer("78932EN"),
+            AbnOrTfn: sdkgo.Pointer("46 115 614 695"),
+            AbnBranch: sdkgo.Pointer("123"),
+            Acn: sdkgo.Pointer("XXX XXX XXX"),
+            FirstName: sdkgo.Pointer("Elon"),
+            LastName: sdkgo.Pointer("Musk"),
+            BankAccounts: []components.BankAccount1{
+                components.BankAccount1{
+                    BankName: sdkgo.Pointer("Monzo"),
+                    AccountNumber: sdkgo.Pointer("123465"),
+                    AccountName: sdkgo.Pointer("SPACEX LLC"),
+                    AccountType: components.BankAccount1AccountTypeCreditCard.ToPointer(),
+                    Iban: sdkgo.Pointer("CH2989144532982975332"),
+                    Bic: sdkgo.Pointer("AUDSCHGGXXX"),
+                    RoutingNumber: sdkgo.Pointer("012345678"),
+                    BsbNumber: sdkgo.Pointer("062-001"),
+                    BranchIdentifier: sdkgo.Pointer("001"),
+                    BankCode: sdkgo.Pointer("BNH"),
+                    Currency: components.CurrencyUsd.ToPointer(),
+                },
+                components.BankAccount1{
+                    BankName: sdkgo.Pointer("Monzo"),
+                    AccountNumber: sdkgo.Pointer("123465"),
+                    AccountName: sdkgo.Pointer("SPACEX LLC"),
+                    AccountType: components.BankAccount1AccountTypeCreditCard.ToPointer(),
+                    Iban: sdkgo.Pointer("CH2989144532982975332"),
+                    Bic: sdkgo.Pointer("AUDSCHGGXXX"),
+                    RoutingNumber: sdkgo.Pointer("012345678"),
+                    BsbNumber: sdkgo.Pointer("062-001"),
+                    BranchIdentifier: sdkgo.Pointer("001"),
+                    BankCode: sdkgo.Pointer("BNH"),
+                    Currency: components.CurrencyUsd.ToPointer(),
+                },
+                components.BankAccount1{
+                    BankName: sdkgo.Pointer("Monzo"),
+                    AccountNumber: sdkgo.Pointer("123465"),
+                    AccountName: sdkgo.Pointer("SPACEX LLC"),
+                    AccountType: components.BankAccount1AccountTypeCreditCard.ToPointer(),
+                    Iban: sdkgo.Pointer("CH2989144532982975332"),
+                    Bic: sdkgo.Pointer("AUDSCHGGXXX"),
+                    RoutingNumber: sdkgo.Pointer("012345678"),
+                    BsbNumber: sdkgo.Pointer("062-001"),
+                    BranchIdentifier: sdkgo.Pointer("001"),
+                    BankCode: sdkgo.Pointer("BNH"),
+                    Currency: components.CurrencyUsd.ToPointer(),
+                },
+            },
+            Websites: []components.Website{
+                components.Website{
+                    ID: sdkgo.Pointer("12345"),
+                    URL: "http://example.com",
+                    Type: components.WebsiteTypePrimary.ToPointer(),
+                },
+            },
             Addresses: []components.Address{
                 components.Address{
                     ID: sdkgo.Pointer("123"),
@@ -152,60 +222,23 @@ func main() {
                     Notes: sdkgo.Pointer("Address notes or delivery instructions."),
                     RowVersion: sdkgo.Pointer("1-12345"),
                 },
-                components.Address{
-                    ID: sdkgo.Pointer("123"),
-                    Type: components.TypePrimary.ToPointer(),
-                    String: sdkgo.Pointer("25 Spring Street, Blackburn, VIC 3130"),
-                    Name: sdkgo.Pointer("HQ US"),
-                    Line1: sdkgo.Pointer("Main street"),
-                    Line2: sdkgo.Pointer("apt #"),
-                    Line3: sdkgo.Pointer("Suite #"),
-                    Line4: sdkgo.Pointer("delivery instructions"),
-                    StreetNumber: sdkgo.Pointer("25"),
-                    City: sdkgo.Pointer("San Francisco"),
-                    State: sdkgo.Pointer("CA"),
-                    PostalCode: sdkgo.Pointer("94104"),
-                    Country: sdkgo.Pointer("US"),
-                    Latitude: sdkgo.Pointer("40.759211"),
-                    Longitude: sdkgo.Pointer("-73.984638"),
-                    County: sdkgo.Pointer("Santa Clara"),
-                    ContactName: sdkgo.Pointer("Elon Musk"),
-                    Salutation: sdkgo.Pointer("Mr"),
-                    PhoneNumber: sdkgo.Pointer("111-111-1111"),
-                    Fax: sdkgo.Pointer("122-111-1111"),
-                    Email: sdkgo.Pointer("elon@musk.com"),
-                    Website: sdkgo.Pointer("https://elonmusk.com"),
-                    Notes: sdkgo.Pointer("Address notes or delivery instructions."),
-                    RowVersion: sdkgo.Pointer("1-12345"),
-                },
-                components.Address{
-                    ID: sdkgo.Pointer("123"),
-                    Type: components.TypePrimary.ToPointer(),
-                    String: sdkgo.Pointer("25 Spring Street, Blackburn, VIC 3130"),
-                    Name: sdkgo.Pointer("HQ US"),
-                    Line1: sdkgo.Pointer("Main street"),
-                    Line2: sdkgo.Pointer("apt #"),
-                    Line3: sdkgo.Pointer("Suite #"),
-                    Line4: sdkgo.Pointer("delivery instructions"),
-                    StreetNumber: sdkgo.Pointer("25"),
-                    City: sdkgo.Pointer("San Francisco"),
-                    State: sdkgo.Pointer("CA"),
-                    PostalCode: sdkgo.Pointer("94104"),
-                    Country: sdkgo.Pointer("US"),
-                    Latitude: sdkgo.Pointer("40.759211"),
-                    Longitude: sdkgo.Pointer("-73.984638"),
-                    County: sdkgo.Pointer("Santa Clara"),
-                    ContactName: sdkgo.Pointer("Elon Musk"),
-                    Salutation: sdkgo.Pointer("Mr"),
-                    PhoneNumber: sdkgo.Pointer("111-111-1111"),
-                    Fax: sdkgo.Pointer("122-111-1111"),
-                    Email: sdkgo.Pointer("elon@musk.com"),
-                    Website: sdkgo.Pointer("https://elonmusk.com"),
-                    Notes: sdkgo.Pointer("Address notes or delivery instructions."),
-                    RowVersion: sdkgo.Pointer("1-12345"),
+            },
+            SocialLinks: []components.SocialLink{
+                components.SocialLink{
+                    ID: sdkgo.Pointer("12345"),
+                    URL: "https://www.twitter.com/apideck",
+                    Type: sdkgo.Pointer("twitter"),
                 },
             },
             PhoneNumbers: []components.PhoneNumber{
+                components.PhoneNumber{
+                    ID: sdkgo.Pointer("12345"),
+                    CountryCode: sdkgo.Pointer("1"),
+                    AreaCode: sdkgo.Pointer("323"),
+                    Number: "111-111-1111",
+                    Extension: sdkgo.Pointer("105"),
+                    Type: components.PhoneNumberTypePrimary.ToPointer(),
+                },
                 components.PhoneNumber{
                     ID: sdkgo.Pointer("12345"),
                     CountryCode: sdkgo.Pointer("1"),
@@ -229,25 +262,39 @@ func main() {
                     Email: sdkgo.Pointer("elon@musk.com"),
                     Type: components.EmailTypePrimary.ToPointer(),
                 },
-                components.Email{
-                    ID: sdkgo.Pointer("123"),
-                    Email: sdkgo.Pointer("elon@musk.com"),
-                    Type: components.EmailTypePrimary.ToPointer(),
-                },
-                components.Email{
-                    ID: sdkgo.Pointer("123"),
-                    Email: sdkgo.Pointer("elon@musk.com"),
-                    Type: components.EmailTypePrimary.ToPointer(),
-                },
             },
-            Websites: []components.Website{
-                components.Website{
-                    ID: sdkgo.Pointer("12345"),
-                    URL: "http://example.com",
-                    Type: components.WebsiteTypePrimary.ToPointer(),
-                },
+            RowType: &components.CompanyRowType{
+                ID: sdkgo.Pointer("12345"),
+                Name: sdkgo.Pointer("Customer Account"),
             },
-            DebtorID: sdkgo.Pointer("12345"),
+            CustomFields: []components.CustomField{
+                components.CreateCustomFieldCustomField1(
+                    components.CustomField1{
+                        ID: sdkgo.Pointer("2389328923893298"),
+                        Name: sdkgo.Pointer("employee_level"),
+                        Description: sdkgo.Pointer("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateCustomField1ValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
+                ),
+                components.CreateCustomFieldCustomField1(
+                    components.CustomField1{
+                        ID: sdkgo.Pointer("2389328923893298"),
+                        Name: sdkgo.Pointer("employee_level"),
+                        Description: sdkgo.Pointer("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateCustomField1ValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
+                ),
+            },
+            Tags: []string{
+                "New",
+            },
+            ReadOnly: sdkgo.Pointer(false),
+            Salutation: sdkgo.Pointer("Mr"),
+            Birthday: types.MustNewDateFromString("2000-08-12"),
             PassThrough: []components.PassThroughBody{
                 components.PassThroughBody{
                     ServiceID: "<id>",
@@ -284,7 +331,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.CreateHrisCompanyResponse != nil {
+    if res.CreateCompanyResponse != nil {
         // handle response
     }
 }
@@ -292,15 +339,15 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
-| `request`                                                                                | [operations.HrisCompaniesAddRequest](../../models/operations/hriscompaniesaddrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `opts`                                                                                   | [][operations.Option](../../models/operations/option.md)                                 | :heavy_minus_sign:                                                                       | The options for this request.                                                            |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
+| `request`                                                                              | [operations.CrmCompaniesAddRequest](../../models/operations/crmcompaniesaddrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `opts`                                                                                 | [][operations.Option](../../models/operations/option.md)                               | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
 
 ### Response
 
-**[*operations.HrisCompaniesAddResponse](../../models/operations/hriscompaniesaddresponse.md), error**
+**[*operations.CrmCompaniesAddResponse](../../models/operations/crmcompaniesaddresponse.md), error**
 
 ### Errors
 
@@ -315,11 +362,11 @@ func main() {
 
 ## Get
 
-Get Company
+Get company
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="hris.companiesOne" method="get" path="/hris/companies/{id}" -->
+<!-- UsageSnippet language="go" operationID="crm.companiesOne" method="get" path="/crm/companies/{id}" -->
 ```go
 package main
 
@@ -340,7 +387,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Hris.Companies.Get(ctx, operations.HrisCompaniesOneRequest{
+    res, err := s.Crm.Companies.Get(ctx, operations.CrmCompaniesOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
         Fields: sdkgo.Pointer("id,updated_at"),
@@ -348,7 +395,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.GetHrisCompanyResponse != nil {
+    if res.GetCompanyResponse != nil {
         // handle response
     }
 }
@@ -356,15 +403,15 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
-| `request`                                                                                | [operations.HrisCompaniesOneRequest](../../models/operations/hriscompaniesonerequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `opts`                                                                                   | [][operations.Option](../../models/operations/option.md)                                 | :heavy_minus_sign:                                                                       | The options for this request.                                                            |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
+| `request`                                                                              | [operations.CrmCompaniesOneRequest](../../models/operations/crmcompaniesonerequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `opts`                                                                                 | [][operations.Option](../../models/operations/option.md)                               | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
 
 ### Response
 
-**[*operations.HrisCompaniesOneResponse](../../models/operations/hriscompaniesoneresponse.md), error**
+**[*operations.CrmCompaniesOneResponse](../../models/operations/crmcompaniesoneresponse.md), error**
 
 ### Errors
 
@@ -379,11 +426,11 @@ func main() {
 
 ## Update
 
-Update Company
+Update company
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="hris.companiesUpdate" method="patch" path="/hris/companies/{id}" -->
+<!-- UsageSnippet language="go" operationID="crm.companiesUpdate" method="patch" path="/crm/companies/{id}" -->
 ```go
 package main
 
@@ -392,6 +439,7 @@ import(
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
 	"github.com/apideck-libraries/sdk-go/models/components"
+	"github.com/apideck-libraries/sdk-go/types"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -405,16 +453,61 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Hris.Companies.Update(ctx, operations.HrisCompaniesUpdateRequest{
+    res, err := s.Crm.Companies.Update(ctx, operations.CrmCompaniesUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
-        HrisCompany: components.HrisCompanyInput{
-            LegalName: sdkgo.Pointer("SpaceX"),
-            DisplayName: sdkgo.Pointer("SpaceX"),
-            Subdomain: sdkgo.Pointer("company"),
-            Status: components.HrisCompanyStatusActive.ToPointer(),
-            CompanyNumber: sdkgo.Pointer("123456-AB"),
+        Company1: components.Company1Input{
+            Name: sdkgo.Pointer("SpaceX"),
+            OwnerID: sdkgo.Pointer("12345"),
+            Image: sdkgo.Pointer("https://www.spacex.com/static/images/share.jpg"),
+            Description: sdkgo.Pointer("Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California."),
+            VatNumber: sdkgo.Pointer("BE0689615164"),
             Currency: components.CurrencyUsd.ToPointer(),
+            Status: sdkgo.Pointer("Open"),
+            Fax: sdkgo.Pointer("+12129876543"),
+            AnnualRevenue: sdkgo.Pointer("+$35m"),
+            NumberOfEmployees: sdkgo.Pointer("500-1000"),
+            Industry: sdkgo.Pointer("Apparel"),
+            Ownership: sdkgo.Pointer("Public"),
+            SalesTaxNumber: sdkgo.Pointer("12456EN"),
+            PayeeNumber: sdkgo.Pointer("78932EN"),
+            AbnOrTfn: sdkgo.Pointer("46 115 614 695"),
+            AbnBranch: sdkgo.Pointer("123"),
+            Acn: sdkgo.Pointer("XXX XXX XXX"),
+            FirstName: sdkgo.Pointer("Elon"),
+            LastName: sdkgo.Pointer("Musk"),
+            BankAccounts: []components.BankAccount1{
+                components.BankAccount1{
+                    BankName: sdkgo.Pointer("Monzo"),
+                    AccountNumber: sdkgo.Pointer("123465"),
+                    AccountName: sdkgo.Pointer("SPACEX LLC"),
+                    AccountType: components.BankAccount1AccountTypeCreditCard.ToPointer(),
+                    Iban: sdkgo.Pointer("CH2989144532982975332"),
+                    Bic: sdkgo.Pointer("AUDSCHGGXXX"),
+                    RoutingNumber: sdkgo.Pointer("012345678"),
+                    BsbNumber: sdkgo.Pointer("062-001"),
+                    BranchIdentifier: sdkgo.Pointer("001"),
+                    BankCode: sdkgo.Pointer("BNH"),
+                    Currency: components.CurrencyUsd.ToPointer(),
+                },
+            },
+            Websites: []components.Website{
+                components.Website{
+                    ID: sdkgo.Pointer("12345"),
+                    URL: "http://example.com",
+                    Type: components.WebsiteTypePrimary.ToPointer(),
+                },
+                components.Website{
+                    ID: sdkgo.Pointer("12345"),
+                    URL: "http://example.com",
+                    Type: components.WebsiteTypePrimary.ToPointer(),
+                },
+                components.Website{
+                    ID: sdkgo.Pointer("12345"),
+                    URL: "http://example.com",
+                    Type: components.WebsiteTypePrimary.ToPointer(),
+                },
+            },
             Addresses: []components.Address{
                 components.Address{
                     ID: sdkgo.Pointer("123"),
@@ -495,15 +588,14 @@ func main() {
                     RowVersion: sdkgo.Pointer("1-12345"),
                 },
             },
-            PhoneNumbers: []components.PhoneNumber{
-                components.PhoneNumber{
+            SocialLinks: []components.SocialLink{
+                components.SocialLink{
                     ID: sdkgo.Pointer("12345"),
-                    CountryCode: sdkgo.Pointer("1"),
-                    AreaCode: sdkgo.Pointer("323"),
-                    Number: "111-111-1111",
-                    Extension: sdkgo.Pointer("105"),
-                    Type: components.PhoneNumberTypePrimary.ToPointer(),
+                    URL: "https://www.twitter.com/apideck",
+                    Type: sdkgo.Pointer("twitter"),
                 },
+            },
+            PhoneNumbers: []components.PhoneNumber{
                 components.PhoneNumber{
                     ID: sdkgo.Pointer("12345"),
                     CountryCode: sdkgo.Pointer("1"),
@@ -528,20 +620,52 @@ func main() {
                     Type: components.EmailTypePrimary.ToPointer(),
                 },
             },
-            Websites: []components.Website{
-                components.Website{
-                    ID: sdkgo.Pointer("12345"),
-                    URL: "http://example.com",
-                    Type: components.WebsiteTypePrimary.ToPointer(),
-                },
-                components.Website{
-                    ID: sdkgo.Pointer("12345"),
-                    URL: "http://example.com",
-                    Type: components.WebsiteTypePrimary.ToPointer(),
-                },
+            RowType: &components.CompanyRowType{
+                ID: sdkgo.Pointer("12345"),
+                Name: sdkgo.Pointer("Customer Account"),
             },
-            DebtorID: sdkgo.Pointer("12345"),
+            CustomFields: []components.CustomField{
+                components.CreateCustomFieldCustomField1(
+                    components.CustomField1{
+                        ID: sdkgo.Pointer("2389328923893298"),
+                        Name: sdkgo.Pointer("employee_level"),
+                        Description: sdkgo.Pointer("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateCustomField1ValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
+                ),
+                components.CreateCustomFieldCustomField1(
+                    components.CustomField1{
+                        ID: sdkgo.Pointer("2389328923893298"),
+                        Name: sdkgo.Pointer("employee_level"),
+                        Description: sdkgo.Pointer("Employee Level"),
+                        Value: sdkgo.Pointer(components.CreateCustomField1ValueStr(
+                            "Uses Salesforce and Marketo",
+                        )),
+                    },
+                ),
+            },
+            Tags: []string{
+                "New",
+            },
+            ReadOnly: sdkgo.Pointer(false),
+            Salutation: sdkgo.Pointer("Mr"),
+            Birthday: types.MustNewDateFromString("2000-08-12"),
             PassThrough: []components.PassThroughBody{
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                    },
+                },
                 components.PassThroughBody{
                     ServiceID: "<id>",
                     ExtendPaths: []components.ExtendPaths{
@@ -574,7 +698,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.UpdateHrisCompanyResponse != nil {
+    if res.UpdateCompanyResponse != nil {
         // handle response
     }
 }
@@ -582,15 +706,15 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
-| `request`                                                                                      | [operations.HrisCompaniesUpdateRequest](../../models/operations/hriscompaniesupdaterequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `opts`                                                                                         | [][operations.Option](../../models/operations/option.md)                                       | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
+| `request`                                                                                    | [operations.CrmCompaniesUpdateRequest](../../models/operations/crmcompaniesupdaterequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `opts`                                                                                       | [][operations.Option](../../models/operations/option.md)                                     | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
 
 ### Response
 
-**[*operations.HrisCompaniesUpdateResponse](../../models/operations/hriscompaniesupdateresponse.md), error**
+**[*operations.CrmCompaniesUpdateResponse](../../models/operations/crmcompaniesupdateresponse.md), error**
 
 ### Errors
 
@@ -605,11 +729,11 @@ func main() {
 
 ## Delete
 
-Delete Company
+Delete company
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="hris.companiesDelete" method="delete" path="/hris/companies/{id}" -->
+<!-- UsageSnippet language="go" operationID="crm.companiesDelete" method="delete" path="/crm/companies/{id}" -->
 ```go
 package main
 
@@ -630,14 +754,14 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Hris.Companies.Delete(ctx, operations.HrisCompaniesDeleteRequest{
+    res, err := s.Crm.Companies.Delete(ctx, operations.CrmCompaniesDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.DeleteHrisCompanyResponse != nil {
+    if res.DeleteCompanyResponse != nil {
         // handle response
     }
 }
@@ -645,15 +769,15 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
-| `request`                                                                                      | [operations.HrisCompaniesDeleteRequest](../../models/operations/hriscompaniesdeleterequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `opts`                                                                                         | [][operations.Option](../../models/operations/option.md)                                       | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
+| `request`                                                                                    | [operations.CrmCompaniesDeleteRequest](../../models/operations/crmcompaniesdeleterequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `opts`                                                                                       | [][operations.Option](../../models/operations/option.md)                                     | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
 
 ### Response
 
-**[*operations.HrisCompaniesDeleteResponse](../../models/operations/hriscompaniesdeleteresponse.md), error**
+**[*operations.CrmCompaniesDeleteResponse](../../models/operations/crmcompaniesdeleteresponse.md), error**
 
 ### Errors
 

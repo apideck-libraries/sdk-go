@@ -135,7 +135,7 @@ func (c *CrmCompaniesAllRequest) GetFields() *string {
 type CrmCompaniesAllResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// Companies
-	GetCompaniesResponse *components.GetCompaniesResponse
+	GetCompaniesResponse1 *components.GetCompaniesResponse1
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 
@@ -149,11 +149,11 @@ func (c *CrmCompaniesAllResponse) GetHTTPMeta() components.HTTPMetadata {
 	return c.HTTPMeta
 }
 
-func (c *CrmCompaniesAllResponse) GetGetCompaniesResponse() *components.GetCompaniesResponse {
+func (c *CrmCompaniesAllResponse) GetGetCompaniesResponse1() *components.GetCompaniesResponse1 {
 	if c == nil {
 		return nil
 	}
-	return c.GetCompaniesResponse
+	return c.GetCompaniesResponse1
 }
 
 func (c *CrmCompaniesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {

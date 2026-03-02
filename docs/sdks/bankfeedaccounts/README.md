@@ -39,6 +39,7 @@ func main() {
 
     res, err := s.Accounting.BankFeedAccounts.List(ctx, operations.AccountingBankFeedAccountsAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
@@ -223,6 +224,7 @@ func main() {
     res, err := s.Accounting.BankFeedAccounts.Get(ctx, operations.AccountingBankFeedAccountsOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {

@@ -8,7 +8,7 @@ import (
 )
 
 type Crm struct {
-	Companies           *Companies
+	Companies           *ApideckCompanies
 	Contacts            *Contacts
 	Opportunities       *Opportunities
 	Leads               *Leads
@@ -29,7 +29,7 @@ func newCrm(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *hooks.Ho
 		rootSDK:             rootSDK,
 		sdkConfiguration:    sdkConfig,
 		hooks:               hooks,
-		Companies:           newCompanies(rootSDK, sdkConfig, hooks),
+		Companies:           newApideckCompanies(rootSDK, sdkConfig, hooks),
 		Contacts:            newContacts(rootSDK, sdkConfig, hooks),
 		Opportunities:       newOpportunities(rootSDK, sdkConfig, hooks),
 		Leads:               newLeads(rootSDK, sdkConfig, hooks),

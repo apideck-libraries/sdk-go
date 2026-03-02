@@ -39,6 +39,7 @@ func main() {
 
     res, err := s.Accounting.Quotes.List(ctx, operations.AccountingQuotesAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
     })
     if err != nil {
         log.Fatal(err)
@@ -115,6 +116,7 @@ func main() {
 
     res, err := s.Accounting.Quotes.Create(ctx, operations.AccountingQuotesAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Quote: components.QuoteInput{
             Number: sdkgo.Pointer("QT00546"),
             Customer: &components.LinkedCustomerInput{
@@ -129,6 +131,7 @@ func main() {
             QuoteDate: types.MustNewDateFromString("2020-09-30"),
             ExpiryDate: types.MustNewDateFromString("2020-10-30"),
             Terms: sdkgo.Pointer("Valid for 30 days"),
+            TermsID: sdkgo.Pointer("12345"),
             Reference: sdkgo.Pointer("INV-2024-001"),
             Status: components.QuoteStatusDraft.ToPointer(),
             Currency: components.CurrencyUsd.ToPointer(),
@@ -352,6 +355,7 @@ func main() {
     res, err := s.Accounting.Quotes.Get(ctx, operations.AccountingQuotesOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
     })
     if err != nil {
         log.Fatal(err)
@@ -417,6 +421,7 @@ func main() {
     res, err := s.Accounting.Quotes.Update(ctx, operations.AccountingQuotesUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Quote: components.QuoteInput{
             Number: sdkgo.Pointer("QT00546"),
             Customer: &components.LinkedCustomerInput{
@@ -431,6 +436,7 @@ func main() {
             QuoteDate: types.MustNewDateFromString("2020-09-30"),
             ExpiryDate: types.MustNewDateFromString("2020-10-30"),
             Terms: sdkgo.Pointer("Valid for 30 days"),
+            TermsID: sdkgo.Pointer("12345"),
             Reference: sdkgo.Pointer("INV-2024-001"),
             Status: components.QuoteStatusDraft.ToPointer(),
             Currency: components.CurrencyUsd.ToPointer(),
@@ -647,6 +653,7 @@ func main() {
     res, err := s.Accounting.Quotes.Delete(ctx, operations.AccountingQuotesDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
     })
     if err != nil {
         log.Fatal(err)

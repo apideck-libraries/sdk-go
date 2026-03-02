@@ -3,13 +3,8 @@
 
 ## Values
 
-| Name                                  | Value                                 |
-| ------------------------------------- | ------------------------------------- |
-| `ExpensesFilterStatusDraft`           | draft                                 |
-| `ExpensesFilterStatusPendingApproval` | pending_approval                      |
-| `ExpensesFilterStatusApproved`        | approved                              |
-| `ExpensesFilterStatusPosted`          | posted                                |
-| `ExpensesFilterStatusVoided`          | voided                                |
-| `ExpensesFilterStatusRejected`        | rejected                              |
-| `ExpensesFilterStatusDeleted`         | deleted                               |
-| `ExpensesFilterStatusOther`           | other                                 |
+| Name                         | Value                        |
+| ---------------------------- | ---------------------------- |
+| `ExpensesFilterStatusDraft`  | draft                        |
+| `ExpensesFilterStatusPosted` | posted                       |
+| `ExpensesFilterStatusVoided` | voided                       |

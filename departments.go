@@ -258,6 +258,7 @@ func (s *Departments) List(ctx context.Context, request operations.AccountingDep
 				ConsumerID: request.ConsumerID,
 				AppID:      request.AppID,
 				ServiceID:  request.ServiceID,
+				CompanyID:  request.CompanyID,
 				Cursor:     &nCVal,
 				Limit:      request.Limit,
 				Fields:     request.Fields,

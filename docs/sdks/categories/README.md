@@ -37,6 +37,7 @@ func main() {
 
     res, err := s.Accounting.Categories.List(ctx, operations.AccountingCategoriesAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
         Filter: &components.CategoriesFilter{
             Type: components.CategoriesFilterTypeExpense.ToPointer(),
@@ -117,6 +118,7 @@ func main() {
     res, err := s.Accounting.Categories.Get(ctx, operations.AccountingCategoriesOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
         Filter: &components.CategoriesFilter{
             Type: components.CategoriesFilterTypeExpense.ToPointer(),

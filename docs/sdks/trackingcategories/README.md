@@ -39,6 +39,7 @@ func main() {
 
     res, err := s.Accounting.TrackingCategories.List(ctx, operations.AccountingTrackingCategoriesAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
@@ -118,6 +119,7 @@ func main() {
 
     res, err := s.Accounting.TrackingCategories.Create(ctx, operations.AccountingTrackingCategoriesAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         TrackingCategory: components.TrackingCategoryInput{
             ParentID: sdkgo.Pointer("12345"),
             Name: sdkgo.Pointer("Department"),
@@ -248,6 +250,7 @@ func main() {
     res, err := s.Accounting.TrackingCategories.Get(ctx, operations.AccountingTrackingCategoriesOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
@@ -313,6 +316,7 @@ func main() {
     res, err := s.Accounting.TrackingCategories.Update(ctx, operations.AccountingTrackingCategoriesUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         TrackingCategory: components.TrackingCategoryInput{
             ParentID: sdkgo.Pointer("12345"),
             Name: sdkgo.Pointer("Department"),
@@ -406,6 +410,7 @@ func main() {
     res, err := s.Accounting.TrackingCategories.Delete(ctx, operations.AccountingTrackingCategoriesDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
     })
     if err != nil {
         log.Fatal(err)

@@ -41,6 +41,7 @@ func main() {
 
     res, err := s.Accounting.Expenses.List(ctx, operations.AccountingExpensesAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Filter: &components.ExpensesFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
             Status: components.ExpensesFilterStatusDraft.ToPointer(),
@@ -122,6 +123,7 @@ func main() {
 
     res, err := s.Accounting.Expenses.Create(ctx, operations.AccountingExpensesAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Expense: components.ExpenseInput{
             Number: sdkgo.Pointer("OIT00546"),
             TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
@@ -325,6 +327,7 @@ func main() {
     res, err := s.Accounting.Expenses.Get(ctx, operations.AccountingExpensesOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
     })
     if err != nil {
         log.Fatal(err)

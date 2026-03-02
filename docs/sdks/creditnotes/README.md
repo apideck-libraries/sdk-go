@@ -41,6 +41,7 @@ func main() {
 
     res, err := s.Accounting.CreditNotes.List(ctx, operations.AccountingCreditNotesAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Filter: &components.CreditNotesFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
         },
@@ -128,6 +129,7 @@ func main() {
 
     res, err := s.Accounting.CreditNotes.Create(ctx, operations.AccountingCreditNotesAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         CreditNote: components.CreditNoteInput{
             Number: sdkgo.Pointer("OIT00546"),
             Customer: &components.LinkedCustomerInput{
@@ -390,6 +392,7 @@ func main() {
     res, err := s.Accounting.CreditNotes.Get(ctx, operations.AccountingCreditNotesOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {

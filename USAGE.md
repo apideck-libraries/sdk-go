@@ -22,6 +22,7 @@ func main() {
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
 		ServiceID: sdkgo.Pointer("salesforce"),
+		CompanyID: sdkgo.Pointer("12345"),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Pointer(true),
 			Equity:      sdkgo.Pointer(true),

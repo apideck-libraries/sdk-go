@@ -41,6 +41,7 @@ func main() {
 
     res, err := s.Accounting.Bills.List(ctx, operations.AccountingBillsAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Filter: &components.BillsFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
         },
@@ -437,6 +438,7 @@ func main() {
     res, err := s.Accounting.Bills.Get(ctx, operations.AccountingBillsOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
