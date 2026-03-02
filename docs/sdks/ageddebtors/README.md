@@ -36,6 +36,7 @@ func main() {
 
     res, err := s.Accounting.AgedDebtors.Get(ctx, operations.AccountingAgedDebtorsOneRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Filter: &components.AgedReportFilter{
             CustomerID: sdkgo.Pointer("123abc"),
             SupplierID: sdkgo.Pointer("123abc"),

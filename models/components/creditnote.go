@@ -105,7 +105,9 @@ type CreditNote struct {
 	// Optional note to be associated with the credit note.
 	Note *string `json:"note,omitempty"`
 	// Optional terms to be associated with the credit note.
-	Terms           *string  `json:"terms,omitempty"`
+	Terms *string `json:"terms,omitempty"`
+	// The ID of the payment terms
+	TermsID         *string  `json:"terms_id,omitempty"`
 	BillingAddress  *Address `json:"billing_address,omitempty"`
 	ShippingAddress *Address `json:"shipping_address,omitempty"`
 	// A list of linked tracking categories.
@@ -313,6 +315,13 @@ func (c *CreditNote) GetTerms() *string {
 	return c.Terms
 }
 
+func (c *CreditNote) GetTermsID() *string {
+	if c == nil {
+		return nil
+	}
+	return c.TermsID
+}
+
 func (c *CreditNote) GetBillingAddress() *Address {
 	if c == nil {
 		return nil
@@ -435,7 +444,9 @@ type CreditNoteInput struct {
 	// Optional note to be associated with the credit note.
 	Note *string `json:"note,omitempty"`
 	// Optional terms to be associated with the credit note.
-	Terms           *string  `json:"terms,omitempty"`
+	Terms *string `json:"terms,omitempty"`
+	// The ID of the payment terms
+	TermsID         *string  `json:"terms_id,omitempty"`
 	BillingAddress  *Address `json:"billing_address,omitempty"`
 	ShippingAddress *Address `json:"shipping_address,omitempty"`
 	// A list of linked tracking categories.
@@ -624,6 +635,13 @@ func (c *CreditNoteInput) GetTerms() *string {
 		return nil
 	}
 	return c.Terms
+}
+
+func (c *CreditNoteInput) GetTermsID() *string {
+	if c == nil {
+		return nil
+	}
+	return c.TermsID
 }
 
 func (c *CreditNoteInput) GetBillingAddress() *Address {

@@ -258,6 +258,7 @@ func (s *PurchaseOrders) List(ctx context.Context, request operations.Accounting
 				ConsumerID:  request.ConsumerID,
 				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
+				CompanyID:   request.CompanyID,
 				Cursor:      &nCVal,
 				PassThrough: request.PassThrough,
 				Limit:       request.Limit,

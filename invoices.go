@@ -258,6 +258,7 @@ func (s *Invoices) List(ctx context.Context, request operations.AccountingInvoic
 				ConsumerID:  request.ConsumerID,
 				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
+				CompanyID:   request.CompanyID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
 				Filter:      request.Filter,

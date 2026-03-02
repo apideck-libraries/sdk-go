@@ -40,6 +40,7 @@ func main() {
 
     res, err := s.Accounting.InvoiceItems.List(ctx, operations.AccountingInvoiceItemsAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Filter: &components.InvoiceItemsFilter{
             Name: sdkgo.Pointer("Widgets Large"),
             Type: components.InvoiceItemTypeService.ToPointer(),
@@ -128,6 +129,7 @@ func main() {
 
     res, err := s.Accounting.InvoiceItems.Create(ctx, operations.AccountingInvoiceItemsAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         InvoiceItem: components.InvoiceItemInput{
             Name: sdkgo.Pointer("Model Y"),
             Description: sdkgo.Pointer("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
@@ -268,6 +270,7 @@ func main() {
     res, err := s.Accounting.InvoiceItems.Get(ctx, operations.AccountingInvoiceItemsOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
         Filter: &components.InvoiceItemFilter{
             Type: components.InvoiceItemFilterInvoiceItemTypeService.ToPointer(),

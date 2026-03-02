@@ -34,10 +34,10 @@ func newApideckCompanies(rootSDK *Apideck, sdkConfig config.SDKConfiguration, ho
 	}
 }
 
-// List Companies
-// List Companies
-func (s *ApideckCompanies) List(ctx context.Context, request operations.HrisCompaniesAllRequest, opts ...operations.Option) (*operations.HrisCompaniesAllResponse, error) {
-	globals := operations.HrisCompaniesAllGlobals{
+// List companies
+// List companies
+func (s *ApideckCompanies) List(ctx context.Context, request operations.CrmCompaniesAllRequest, opts ...operations.Option) (*operations.CrmCompaniesAllResponse, error) {
+	globals := operations.CrmCompaniesAllGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
 	}
@@ -60,7 +60,7 @@ func (s *ApideckCompanies) List(ctx context.Context, request operations.HrisComp
 	} else {
 		baseURL = *o.ServerURL
 	}
-	opURL, err := url.JoinPath(baseURL, "/hris/companies")
+	opURL, err := url.JoinPath(baseURL, "/crm/companies")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
@@ -70,7 +70,7 @@ func (s *ApideckCompanies) List(ctx context.Context, request operations.HrisComp
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "hris.companiesAll",
+		OperationID:      "crm.companiesAll",
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
@@ -208,13 +208,13 @@ func (s *ApideckCompanies) List(ctx context.Context, request operations.HrisComp
 		}
 	}
 
-	res := &operations.HrisCompaniesAllResponse{
+	res := &operations.CrmCompaniesAllResponse{
 		HTTPMeta: components.HTTPMetadata{
 			Request:  req,
 			Response: httpRes,
 		},
 	}
-	res.Next = func() (*operations.HrisCompaniesAllResponse, error) {
+	res.Next = func() (*operations.CrmCompaniesAllResponse, error) {
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
 			return nil, err
@@ -253,13 +253,15 @@ func (s *ApideckCompanies) List(ctx context.Context, request operations.HrisComp
 
 		return s.List(
 			ctx,
-			operations.HrisCompaniesAllRequest{
+			operations.CrmCompaniesAllRequest{
 				Raw:         request.Raw,
 				ConsumerID:  request.ConsumerID,
 				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
+				Filter:      request.Filter,
+				Sort:        request.Sort,
 				PassThrough: request.PassThrough,
 				Fields:      request.Fields,
 			},
@@ -276,12 +278,12 @@ func (s *ApideckCompanies) List(ctx context.Context, request operations.HrisComp
 				return nil, err
 			}
 
-			var out components.GetHrisCompaniesResponse
+			var out components.GetCompaniesResponse1
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetHrisCompaniesResponse = &out
+			res.GetCompaniesResponse1 = &out
 		default:
 			rawBody, err := utils.ConsumeRawBody(httpRes)
 			if err != nil {
@@ -433,10 +435,10 @@ func (s *ApideckCompanies) List(ctx context.Context, request operations.HrisComp
 
 }
 
-// Create Company
-// Create Company
-func (s *ApideckCompanies) Create(ctx context.Context, request operations.HrisCompaniesAddRequest, opts ...operations.Option) (*operations.HrisCompaniesAddResponse, error) {
-	globals := operations.HrisCompaniesAddGlobals{
+// Create company
+// Create company
+func (s *ApideckCompanies) Create(ctx context.Context, request operations.CrmCompaniesAddRequest, opts ...operations.Option) (*operations.CrmCompaniesAddResponse, error) {
+	globals := operations.CrmCompaniesAddGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
 	}
@@ -459,7 +461,7 @@ func (s *ApideckCompanies) Create(ctx context.Context, request operations.HrisCo
 	} else {
 		baseURL = *o.ServerURL
 	}
-	opURL, err := url.JoinPath(baseURL, "/hris/companies")
+	opURL, err := url.JoinPath(baseURL, "/crm/companies")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
@@ -469,11 +471,11 @@ func (s *ApideckCompanies) Create(ctx context.Context, request operations.HrisCo
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "hris.companiesAdd",
+		OperationID:      "crm.companiesAdd",
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "HrisCompany", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Company1", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -614,7 +616,7 @@ func (s *ApideckCompanies) Create(ctx context.Context, request operations.HrisCo
 		}
 	}
 
-	res := &operations.HrisCompaniesAddResponse{
+	res := &operations.CrmCompaniesAddResponse{
 		HTTPMeta: components.HTTPMetadata{
 			Request:  req,
 			Response: httpRes,
@@ -630,12 +632,12 @@ func (s *ApideckCompanies) Create(ctx context.Context, request operations.HrisCo
 				return nil, err
 			}
 
-			var out components.CreateHrisCompanyResponse
+			var out components.CreateCompanyResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateHrisCompanyResponse = &out
+			res.CreateCompanyResponse = &out
 		default:
 			rawBody, err := utils.ConsumeRawBody(httpRes)
 			if err != nil {
@@ -787,10 +789,10 @@ func (s *ApideckCompanies) Create(ctx context.Context, request operations.HrisCo
 
 }
 
-// Get Company
-// Get Company
-func (s *ApideckCompanies) Get(ctx context.Context, request operations.HrisCompaniesOneRequest, opts ...operations.Option) (*operations.HrisCompaniesOneResponse, error) {
-	globals := operations.HrisCompaniesOneGlobals{
+// Get company
+// Get company
+func (s *ApideckCompanies) Get(ctx context.Context, request operations.CrmCompaniesOneRequest, opts ...operations.Option) (*operations.CrmCompaniesOneResponse, error) {
+	globals := operations.CrmCompaniesOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
 	}
@@ -813,7 +815,7 @@ func (s *ApideckCompanies) Get(ctx context.Context, request operations.HrisCompa
 	} else {
 		baseURL = *o.ServerURL
 	}
-	opURL, err := utils.GenerateURL(ctx, baseURL, "/hris/companies/{id}", request, globals)
+	opURL, err := utils.GenerateURL(ctx, baseURL, "/crm/companies/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
@@ -823,7 +825,7 @@ func (s *ApideckCompanies) Get(ctx context.Context, request operations.HrisCompa
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "hris.companiesOne",
+		OperationID:      "crm.companiesOne",
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
@@ -961,7 +963,7 @@ func (s *ApideckCompanies) Get(ctx context.Context, request operations.HrisCompa
 		}
 	}
 
-	res := &operations.HrisCompaniesOneResponse{
+	res := &operations.CrmCompaniesOneResponse{
 		HTTPMeta: components.HTTPMetadata{
 			Request:  req,
 			Response: httpRes,
@@ -977,12 +979,12 @@ func (s *ApideckCompanies) Get(ctx context.Context, request operations.HrisCompa
 				return nil, err
 			}
 
-			var out components.GetHrisCompanyResponse
+			var out components.GetCompanyResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetHrisCompanyResponse = &out
+			res.GetCompanyResponse = &out
 		default:
 			rawBody, err := utils.ConsumeRawBody(httpRes)
 			if err != nil {
@@ -1134,10 +1136,10 @@ func (s *ApideckCompanies) Get(ctx context.Context, request operations.HrisCompa
 
 }
 
-// Update Company
-// Update Company
-func (s *ApideckCompanies) Update(ctx context.Context, request operations.HrisCompaniesUpdateRequest, opts ...operations.Option) (*operations.HrisCompaniesUpdateResponse, error) {
-	globals := operations.HrisCompaniesUpdateGlobals{
+// Update company
+// Update company
+func (s *ApideckCompanies) Update(ctx context.Context, request operations.CrmCompaniesUpdateRequest, opts ...operations.Option) (*operations.CrmCompaniesUpdateResponse, error) {
+	globals := operations.CrmCompaniesUpdateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
 	}
@@ -1160,7 +1162,7 @@ func (s *ApideckCompanies) Update(ctx context.Context, request operations.HrisCo
 	} else {
 		baseURL = *o.ServerURL
 	}
-	opURL, err := utils.GenerateURL(ctx, baseURL, "/hris/companies/{id}", request, globals)
+	opURL, err := utils.GenerateURL(ctx, baseURL, "/crm/companies/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
@@ -1170,11 +1172,11 @@ func (s *ApideckCompanies) Update(ctx context.Context, request operations.HrisCo
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "hris.companiesUpdate",
+		OperationID:      "crm.companiesUpdate",
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "HrisCompany", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Company1", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -1315,7 +1317,7 @@ func (s *ApideckCompanies) Update(ctx context.Context, request operations.HrisCo
 		}
 	}
 
-	res := &operations.HrisCompaniesUpdateResponse{
+	res := &operations.CrmCompaniesUpdateResponse{
 		HTTPMeta: components.HTTPMetadata{
 			Request:  req,
 			Response: httpRes,
@@ -1331,12 +1333,12 @@ func (s *ApideckCompanies) Update(ctx context.Context, request operations.HrisCo
 				return nil, err
 			}
 
-			var out components.UpdateHrisCompanyResponse
+			var out components.UpdateCompanyResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateHrisCompanyResponse = &out
+			res.UpdateCompanyResponse = &out
 		default:
 			rawBody, err := utils.ConsumeRawBody(httpRes)
 			if err != nil {
@@ -1488,10 +1490,10 @@ func (s *ApideckCompanies) Update(ctx context.Context, request operations.HrisCo
 
 }
 
-// Delete Company
-// Delete Company
-func (s *ApideckCompanies) Delete(ctx context.Context, request operations.HrisCompaniesDeleteRequest, opts ...operations.Option) (*operations.HrisCompaniesDeleteResponse, error) {
-	globals := operations.HrisCompaniesDeleteGlobals{
+// Delete company
+// Delete company
+func (s *ApideckCompanies) Delete(ctx context.Context, request operations.CrmCompaniesDeleteRequest, opts ...operations.Option) (*operations.CrmCompaniesDeleteResponse, error) {
+	globals := operations.CrmCompaniesDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,
 		AppID:      s.sdkConfiguration.Globals.AppID,
 	}
@@ -1514,7 +1516,7 @@ func (s *ApideckCompanies) Delete(ctx context.Context, request operations.HrisCo
 	} else {
 		baseURL = *o.ServerURL
 	}
-	opURL, err := utils.GenerateURL(ctx, baseURL, "/hris/companies/{id}", request, globals)
+	opURL, err := utils.GenerateURL(ctx, baseURL, "/crm/companies/{id}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
@@ -1524,7 +1526,7 @@ func (s *ApideckCompanies) Delete(ctx context.Context, request operations.HrisCo
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "hris.companiesDelete",
+		OperationID:      "crm.companiesDelete",
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
@@ -1662,7 +1664,7 @@ func (s *ApideckCompanies) Delete(ctx context.Context, request operations.HrisCo
 		}
 	}
 
-	res := &operations.HrisCompaniesDeleteResponse{
+	res := &operations.CrmCompaniesDeleteResponse{
 		HTTPMeta: components.HTTPMetadata{
 			Request:  req,
 			Response: httpRes,
@@ -1678,12 +1680,12 @@ func (s *ApideckCompanies) Delete(ctx context.Context, request operations.HrisCo
 				return nil, err
 			}
 
-			var out components.DeleteHrisCompanyResponse
+			var out components.DeleteCompanyResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteHrisCompanyResponse = &out
+			res.DeleteCompanyResponse = &out
 		default:
 			rawBody, err := utils.ConsumeRawBody(httpRes)
 			if err != nil {

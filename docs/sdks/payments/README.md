@@ -41,6 +41,7 @@ func main() {
 
     res, err := s.Accounting.Payments.List(ctx, operations.AccountingPaymentsAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Filter: &components.PaymentsFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
             InvoiceID: sdkgo.Pointer("123"),
@@ -129,6 +130,7 @@ func main() {
 
     res, err := s.Accounting.Payments.Create(ctx, operations.AccountingPaymentsAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Payment: components.PaymentInput{
             Currency: components.CurrencyUsd.ToPointer(),
             CurrencyRate: sdkgo.Pointer[float64](0.69),
@@ -282,6 +284,7 @@ func main() {
     res, err := s.Accounting.Payments.Get(ctx, operations.AccountingPaymentsOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
@@ -348,6 +351,7 @@ func main() {
     res, err := s.Accounting.Payments.Update(ctx, operations.AccountingPaymentsUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Payment: components.PaymentInput{
             Currency: components.CurrencyUsd.ToPointer(),
             CurrencyRate: sdkgo.Pointer[float64](0.69),
@@ -502,6 +506,7 @@ func main() {
     res, err := s.Accounting.Payments.Delete(ctx, operations.AccountingPaymentsDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
     })
     if err != nil {
         log.Fatal(err)

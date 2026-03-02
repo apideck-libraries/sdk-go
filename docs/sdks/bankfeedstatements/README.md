@@ -39,6 +39,7 @@ func main() {
 
     res, err := s.Accounting.BankFeedStatements.List(ctx, operations.AccountingBankFeedStatementsAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
@@ -119,6 +120,7 @@ func main() {
 
     res, err := s.Accounting.BankFeedStatements.Create(ctx, operations.AccountingBankFeedStatementsAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         BankFeedStatement: components.BankFeedStatementInput{
             BankFeedAccountID: sdkgo.Pointer("acc_456"),
             Status: components.StatementStatusPending.ToPointer(),
@@ -224,6 +226,7 @@ func main() {
     res, err := s.Accounting.BankFeedStatements.Get(ctx, operations.AccountingBankFeedStatementsOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {

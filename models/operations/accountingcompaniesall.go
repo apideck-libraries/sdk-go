@@ -7,28 +7,28 @@ import (
 	"github.com/apideck-libraries/sdk-go/models/components"
 )
 
-type HrisCompaniesAllGlobals struct {
+type AccountingCompaniesAllGlobals struct {
 	// ID of the consumer which you want to get or push data from
 	ConsumerID *string `header:"style=simple,explode=false,name=x-apideck-consumer-id"`
 	// The ID of your Unify application
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 }
 
-func (h *HrisCompaniesAllGlobals) GetConsumerID() *string {
-	if h == nil {
+func (a *AccountingCompaniesAllGlobals) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return h.ConsumerID
+	return a.ConsumerID
 }
 
-func (h *HrisCompaniesAllGlobals) GetAppID() *string {
-	if h == nil {
+func (a *AccountingCompaniesAllGlobals) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return h.AppID
+	return a.AppID
 }
 
-type HrisCompaniesAllRequest struct {
+type AccountingCompaniesAllRequest struct {
 	// Include raw response. Mostly used for debugging purposes
 	Raw *bool `default:"false" queryParam:"style=form,explode=true,name=raw"`
 	// ID of the consumer which you want to get or push data from
@@ -37,110 +37,110 @@ type HrisCompaniesAllRequest struct {
 	AppID *string `header:"style=simple,explode=false,name=x-apideck-app-id"`
 	// Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.
 	ServiceID *string `header:"style=simple,explode=false,name=x-apideck-service-id"`
+	// The ID of the company to scope requests to. For connectors that support multi-company, this overrides the default company configured in connection settings.
+	CompanyID *string `header:"style=simple,explode=false,name=x-apideck-company-id"`
 	// Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 	Cursor *string `queryParam:"style=form,explode=true,name=cursor"`
 	// Number of results to return. Minimum 1, Maximum 200, Default 20
 	Limit *int64 `default:"20" queryParam:"style=form,explode=true,name=limit"`
-	// Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
-	PassThrough map[string]any `queryParam:"style=deepObject,explode=true,name=pass_through"`
 	// The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 	Fields *string `queryParam:"style=form,explode=true,name=fields"`
 }
 
-func (h HrisCompaniesAllRequest) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(h, "", false)
+func (a AccountingCompaniesAllRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(a, "", false)
 }
 
-func (h *HrisCompaniesAllRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &h, "", false, nil); err != nil {
+func (a *AccountingCompaniesAllRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (h *HrisCompaniesAllRequest) GetRaw() *bool {
-	if h == nil {
+func (a *AccountingCompaniesAllRequest) GetRaw() *bool {
+	if a == nil {
 		return nil
 	}
-	return h.Raw
+	return a.Raw
 }
 
-func (h *HrisCompaniesAllRequest) GetConsumerID() *string {
-	if h == nil {
+func (a *AccountingCompaniesAllRequest) GetConsumerID() *string {
+	if a == nil {
 		return nil
 	}
-	return h.ConsumerID
+	return a.ConsumerID
 }
 
-func (h *HrisCompaniesAllRequest) GetAppID() *string {
-	if h == nil {
+func (a *AccountingCompaniesAllRequest) GetAppID() *string {
+	if a == nil {
 		return nil
 	}
-	return h.AppID
+	return a.AppID
 }
 
-func (h *HrisCompaniesAllRequest) GetServiceID() *string {
-	if h == nil {
+func (a *AccountingCompaniesAllRequest) GetServiceID() *string {
+	if a == nil {
 		return nil
 	}
-	return h.ServiceID
+	return a.ServiceID
 }
 
-func (h *HrisCompaniesAllRequest) GetCursor() *string {
-	if h == nil {
+func (a *AccountingCompaniesAllRequest) GetCompanyID() *string {
+	if a == nil {
 		return nil
 	}
-	return h.Cursor
+	return a.CompanyID
 }
 
-func (h *HrisCompaniesAllRequest) GetLimit() *int64 {
-	if h == nil {
+func (a *AccountingCompaniesAllRequest) GetCursor() *string {
+	if a == nil {
 		return nil
 	}
-	return h.Limit
+	return a.Cursor
 }
 
-func (h *HrisCompaniesAllRequest) GetPassThrough() map[string]any {
-	if h == nil {
+func (a *AccountingCompaniesAllRequest) GetLimit() *int64 {
+	if a == nil {
 		return nil
 	}
-	return h.PassThrough
+	return a.Limit
 }
 
-func (h *HrisCompaniesAllRequest) GetFields() *string {
-	if h == nil {
+func (a *AccountingCompaniesAllRequest) GetFields() *string {
+	if a == nil {
 		return nil
 	}
-	return h.Fields
+	return a.Fields
 }
 
-type HrisCompaniesAllResponse struct {
+type AccountingCompaniesAllResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// Companies
-	GetHrisCompaniesResponse *components.GetHrisCompaniesResponse
+	GetCompaniesResponse *components.GetCompaniesResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
 
-	Next func() (*HrisCompaniesAllResponse, error)
+	Next func() (*AccountingCompaniesAllResponse, error)
 }
 
-func (h *HrisCompaniesAllResponse) GetHTTPMeta() components.HTTPMetadata {
-	if h == nil {
+func (a *AccountingCompaniesAllResponse) GetHTTPMeta() components.HTTPMetadata {
+	if a == nil {
 		return components.HTTPMetadata{}
 	}
-	return h.HTTPMeta
+	return a.HTTPMeta
 }
 
-func (h *HrisCompaniesAllResponse) GetGetHrisCompaniesResponse() *components.GetHrisCompaniesResponse {
-	if h == nil {
+func (a *AccountingCompaniesAllResponse) GetGetCompaniesResponse() *components.GetCompaniesResponse {
+	if a == nil {
 		return nil
 	}
-	return h.GetHrisCompaniesResponse
+	return a.GetCompaniesResponse
 }
 
-func (h *HrisCompaniesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
-	if h == nil {
+func (a *AccountingCompaniesAllResponse) GetUnexpectedErrorResponse() *components.UnexpectedErrorResponse {
+	if a == nil {
 		return nil
 	}
-	return h.UnexpectedErrorResponse
+	return a.UnexpectedErrorResponse
 }

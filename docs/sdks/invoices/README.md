@@ -41,6 +41,7 @@ func main() {
 
     res, err := s.Accounting.Invoices.List(ctx, operations.AccountingInvoicesAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Filter: &components.InvoicesFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
             CreatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
@@ -130,6 +131,7 @@ func main() {
 
     res, err := s.Accounting.Invoices.Create(ctx, operations.AccountingInvoicesAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Invoice: components.InvoiceInput{
             Type: components.InvoiceTypeService.ToPointer(),
             Number: sdkgo.Pointer("OIT00546"),
@@ -425,6 +427,7 @@ func main() {
     res, err := s.Accounting.Invoices.Get(ctx, operations.AccountingInvoicesOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {

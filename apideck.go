@@ -2,7 +2,7 @@
 
 package sdkgo
 
-// Generated from OpenAPI doc version 10.23.21 and generator version 2.844.3
+// Generated from OpenAPI doc version 10.24.0 and generator version 2.845.15
 
 import (
 	"context"
@@ -72,7 +72,7 @@ type Apideck struct {
 
 type SDKOption func(*Apideck)
 
-// WithServerURL allows the overriding of the default server URL
+// WithServerURL allows providing an alternative server URL
 func WithServerURL(serverURL string) SDKOption {
 	return func(sdk *Apideck) {
 		sdk.sdkConfiguration.ServerURL = serverURL
@@ -155,9 +155,9 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *Apideck {
 	sdk := &Apideck{
-		SDKVersion: "0.26.2",
+		SDKVersion: "0.27.0",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 0.26.2 2.844.3 10.23.21 github.com/apideck-libraries/sdk-go",
+			UserAgent:  "speakeasy-sdk/go 0.27.0 2.845.15 10.24.0 github.com/apideck-libraries/sdk-go",
 			Globals:    globals.Globals{},
 			ServerList: ServerList,
 		},

@@ -36,6 +36,7 @@ func main() {
 
     res, err := s.Accounting.ProfitAndLoss.Get(ctx, operations.AccountingProfitAndLossOneRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Filter: &components.ProfitAndLossFilter{
             CustomerID: sdkgo.Pointer("123abc"),
             StartDate: sdkgo.Pointer("2021-01-01"),

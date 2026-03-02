@@ -116,6 +116,8 @@ type PurchaseOrder struct {
 	PaymentMethod *string `json:"payment_method,omitempty"`
 	// Terms of payment.
 	Terms *string `json:"terms,omitempty"`
+	// The ID of the payment terms
+	TermsID *string `json:"terms_id,omitempty"`
 	// Type of amortization
 	AmortizationType *PurchaseOrderAmortizationType `json:"amortization_type,omitempty"`
 	// Applicable tax id/code override if tax is not supplied on a line item basis.
@@ -379,6 +381,13 @@ func (p *PurchaseOrder) GetTerms() *string {
 	return p.Terms
 }
 
+func (p *PurchaseOrder) GetTermsID() *string {
+	if p == nil {
+		return nil
+	}
+	return p.TermsID
+}
+
 func (p *PurchaseOrder) GetAmortizationType() *PurchaseOrderAmortizationType {
 	if p == nil {
 		return nil
@@ -551,6 +560,8 @@ type PurchaseOrderInput struct {
 	PaymentMethod *string `json:"payment_method,omitempty"`
 	// Terms of payment.
 	Terms *string `json:"terms,omitempty"`
+	// The ID of the payment terms
+	TermsID *string `json:"terms_id,omitempty"`
 	// Type of amortization
 	AmortizationType *PurchaseOrderAmortizationType `json:"amortization_type,omitempty"`
 	// Applicable tax id/code override if tax is not supplied on a line item basis.
@@ -788,6 +799,13 @@ func (p *PurchaseOrderInput) GetTerms() *string {
 		return nil
 	}
 	return p.Terms
+}
+
+func (p *PurchaseOrderInput) GetTermsID() *string {
+	if p == nil {
+		return nil
+	}
+	return p.TermsID
 }
 
 func (p *PurchaseOrderInput) GetAmortizationType() *PurchaseOrderAmortizationType {
