@@ -258,6 +258,7 @@ func (s *Subsidiaries) List(ctx context.Context, request operations.AccountingSu
 				ConsumerID: request.ConsumerID,
 				AppID:      request.AppID,
 				ServiceID:  request.ServiceID,
+				CompanyID:  request.CompanyID,
 				Cursor:     &nCVal,
 				Limit:      request.Limit,
 				Fields:     request.Fields,

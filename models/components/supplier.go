@@ -79,6 +79,8 @@ type Supplier struct {
 	PaymentMethod *string `json:"payment_method,omitempty"`
 	// Terms of payment.
 	Terms *string `json:"terms,omitempty"`
+	// The ID of the payment terms
+	TermsID *string `json:"terms_id,omitempty"`
 	// The channel through which the transaction is processed.
 	Channel *string `json:"channel,omitempty"`
 	// Method of issuance of the purchase order for the supplier
@@ -308,6 +310,13 @@ func (s *Supplier) GetTerms() *string {
 	return s.Terms
 }
 
+func (s *Supplier) GetTermsID() *string {
+	if s == nil {
+		return nil
+	}
+	return s.TermsID
+}
+
 func (s *Supplier) GetChannel() *string {
 	if s == nil {
 		return nil
@@ -455,6 +464,8 @@ type SupplierInput struct {
 	PaymentMethod *string `json:"payment_method,omitempty"`
 	// Terms of payment.
 	Terms *string `json:"terms,omitempty"`
+	// The ID of the payment terms
+	TermsID *string `json:"terms_id,omitempty"`
 	// The channel through which the transaction is processed.
 	Channel *string `json:"channel,omitempty"`
 	// Method of issuance of the purchase order for the supplier
@@ -647,6 +658,13 @@ func (s *SupplierInput) GetTerms() *string {
 		return nil
 	}
 	return s.Terms
+}
+
+func (s *SupplierInput) GetTermsID() *string {
+	if s == nil {
+		return nil
+	}
+	return s.TermsID
 }
 
 func (s *SupplierInput) GetChannel() *string {

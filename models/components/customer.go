@@ -83,6 +83,8 @@ type Customer struct {
 	PaymentMethod *string `json:"payment_method,omitempty"`
 	// Terms of payment.
 	Terms *string `json:"terms,omitempty"`
+	// The ID of the payment terms
+	TermsID *string `json:"terms_id,omitempty"`
 	// The channel through which the transaction is processed.
 	Channel      *string       `json:"channel,omitempty"`
 	CustomFields []CustomField `json:"custom_fields,omitempty"`
@@ -316,6 +318,13 @@ func (c *Customer) GetTerms() *string {
 	return c.Terms
 }
 
+func (c *Customer) GetTermsID() *string {
+	if c == nil {
+		return nil
+	}
+	return c.TermsID
+}
+
 func (c *Customer) GetChannel() *string {
 	if c == nil {
 		return nil
@@ -425,6 +434,8 @@ type CustomerInput struct {
 	PaymentMethod *string `json:"payment_method,omitempty"`
 	// Terms of payment.
 	Terms *string `json:"terms,omitempty"`
+	// The ID of the payment terms
+	TermsID *string `json:"terms_id,omitempty"`
 	// The channel through which the transaction is processed.
 	Channel      *string       `json:"channel,omitempty"`
 	CustomFields []CustomField `json:"custom_fields,omitempty"`
@@ -621,6 +632,13 @@ func (c *CustomerInput) GetTerms() *string {
 		return nil
 	}
 	return c.Terms
+}
+
+func (c *CustomerInput) GetTermsID() *string {
+	if c == nil {
+		return nil
+	}
+	return c.TermsID
 }
 
 func (c *CustomerInput) GetChannel() *string {

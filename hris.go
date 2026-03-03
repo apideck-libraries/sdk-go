@@ -9,7 +9,7 @@ import (
 
 type Hris struct {
 	Employees         *ApideckEmployees
-	Companies         *ApideckCompanies
+	Companies         *ApideckHrisCompanies
 	Departments       *ApideckDepartments
 	Payrolls          *Payrolls
 	EmployeePayrolls  *EmployeePayrolls
@@ -27,7 +27,7 @@ func newHris(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *hooks.H
 		sdkConfiguration:  sdkConfig,
 		hooks:             hooks,
 		Employees:         newApideckEmployees(rootSDK, sdkConfig, hooks),
-		Companies:         newApideckCompanies(rootSDK, sdkConfig, hooks),
+		Companies:         newApideckHrisCompanies(rootSDK, sdkConfig, hooks),
 		Departments:       newApideckDepartments(rootSDK, sdkConfig, hooks),
 		Payrolls:          newPayrolls(rootSDK, sdkConfig, hooks),
 		EmployeePayrolls:  newEmployeePayrolls(rootSDK, sdkConfig, hooks),

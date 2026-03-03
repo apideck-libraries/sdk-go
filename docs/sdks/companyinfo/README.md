@@ -35,6 +35,7 @@ func main() {
 
     res, err := s.Accounting.CompanyInfo.Get(ctx, operations.AccountingCompanyInfoOneRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {

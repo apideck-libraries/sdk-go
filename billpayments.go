@@ -258,6 +258,7 @@ func (s *BillPayments) List(ctx context.Context, request operations.AccountingBi
 				ConsumerID:  request.ConsumerID,
 				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
+				CompanyID:   request.CompanyID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
 				Filter:      request.Filter,

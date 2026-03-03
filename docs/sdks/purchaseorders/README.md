@@ -41,6 +41,7 @@ func main() {
 
     res, err := s.Accounting.PurchaseOrders.List(ctx, operations.AccountingPurchaseOrdersAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
@@ -128,6 +129,7 @@ func main() {
 
     res, err := s.Accounting.PurchaseOrders.Create(ctx, operations.AccountingPurchaseOrdersAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         PurchaseOrder: components.PurchaseOrderInput{
             PoNumber: sdkgo.Pointer("90000117"),
             Reference: sdkgo.Pointer("123456"),
@@ -525,6 +527,7 @@ func main() {
     res, err := s.Accounting.PurchaseOrders.Get(ctx, operations.AccountingPurchaseOrdersOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
     })
     if err != nil {
         log.Fatal(err)
@@ -590,6 +593,7 @@ func main() {
     res, err := s.Accounting.PurchaseOrders.Update(ctx, operations.AccountingPurchaseOrdersUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         PurchaseOrder: components.PurchaseOrderInput{
             PoNumber: sdkgo.Pointer("90000117"),
             Reference: sdkgo.Pointer("123456"),
@@ -943,6 +947,7 @@ func main() {
     res, err := s.Accounting.PurchaseOrders.Delete(ctx, operations.AccountingPurchaseOrdersDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
     })
     if err != nil {
         log.Fatal(err)

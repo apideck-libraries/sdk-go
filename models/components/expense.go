@@ -61,6 +61,7 @@ type ExpenseStatus string
 const (
 	ExpenseStatusDraft  ExpenseStatus = "draft"
 	ExpenseStatusPosted ExpenseStatus = "posted"
+	ExpenseStatusVoided ExpenseStatus = "voided"
 )
 
 func (e ExpenseStatus) ToPointer() *ExpenseStatus {
@@ -71,7 +72,7 @@ func (e ExpenseStatus) ToPointer() *ExpenseStatus {
 func (e *ExpenseStatus) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "draft", "posted":
+		case "draft", "posted", "voided":
 			return true
 		}
 	}
