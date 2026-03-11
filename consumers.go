@@ -390,9 +390,10 @@ func (s *Consumers) Create(ctx context.Context, createConsumerRequest components
 
 // List - Get all consumers
 // This endpoint includes all application consumers, along with an aggregated count of requests made.
-func (s *Consumers) List(ctx context.Context, appID *string, cursor *string, limit *int64, opts ...operations.Option) (*operations.VaultConsumersAllResponse, error) {
+func (s *Consumers) List(ctx context.Context, appID *string, filter *components.ConsumersFilter, cursor *string, limit *int64, opts ...operations.Option) (*operations.VaultConsumersAllResponse, error) {
 	request := operations.VaultConsumersAllRequest{
 		AppID:  appID,
+		Filter: filter,
 		Cursor: cursor,
 		Limit:  limit,
 	}
@@ -613,6 +614,7 @@ func (s *Consumers) List(ctx context.Context, appID *string, cursor *string, lim
 		return s.List(
 			ctx,
 			appID,
+			filter,
 			&nCVal,
 			limit,
 			opts...,

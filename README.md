@@ -75,6 +75,7 @@ func main() {
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
 		ServiceID: sdkgo.Pointer("salesforce"),
+		CompanyID: sdkgo.Pointer("12345"),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Pointer(true),
 			Equity:      sdkgo.Pointer(true),
@@ -145,6 +146,7 @@ func main() {
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
 		ServiceID: sdkgo.Pointer("salesforce"),
+		CompanyID: sdkgo.Pointer("12345"),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Pointer(true),
 			Equity:      sdkgo.Pointer(true),
@@ -250,6 +252,10 @@ func main() {
 
 * [List](docs/sdks/categories/README.md#list) - List Categories
 * [Get](docs/sdks/categories/README.md#get) - Get Category
+
+### [Accounting.Companies](docs/sdks/companies/README.md)
+
+* [List](docs/sdks/companies/README.md#list) - List companies
 
 ### [Accounting.CompanyInfo](docs/sdks/companyinfo/README.md)
 
@@ -387,6 +393,14 @@ func main() {
 * [Update](docs/sdks/quotes/README.md#update) - Update Quote
 * [Delete](docs/sdks/quotes/README.md#delete) - Delete Quote
 
+### [Accounting.Refunds](docs/sdks/refunds/README.md)
+
+* [List](docs/sdks/refunds/README.md#list) - List Refunds
+* [Create](docs/sdks/refunds/README.md#create) - Create Refund
+* [Get](docs/sdks/refunds/README.md#get) - Get Refund
+* [Update](docs/sdks/refunds/README.md#update) - Update Refund
+* [Delete](docs/sdks/refunds/README.md#delete) - Delete Refund
+
 ### [Accounting.Subsidiaries](docs/sdks/subsidiaries/README.md)
 
 * [List](docs/sdks/subsidiaries/README.md#list) - List Subsidiaries
@@ -438,7 +452,10 @@ func main() {
 ### [Ats.Jobs](docs/sdks/jobs/README.md)
 
 * [List](docs/sdks/jobs/README.md#list) - List Jobs
+* [Create](docs/sdks/jobs/README.md#create) - Create Job
 * [Get](docs/sdks/jobs/README.md#get) - Get Job
+* [Update](docs/sdks/jobs/README.md#update) - Update Job
+* [Delete](docs/sdks/jobs/README.md#delete) - Delete Job
 
 ### [Connector.ApiResourceCoverage](docs/sdks/apiresourcecoverage/README.md)
 
@@ -474,13 +491,13 @@ func main() {
 * [Update](docs/sdks/activities/README.md#update) - Update activity
 * [Delete](docs/sdks/activities/README.md#delete) - Delete activity
 
-### [Crm.Companies](docs/sdks/companies/README.md)
+### [Crm.Companies](docs/sdks/apideckcompanies/README.md)
 
-* [List](docs/sdks/companies/README.md#list) - List companies
-* [Create](docs/sdks/companies/README.md#create) - Create company
-* [Get](docs/sdks/companies/README.md#get) - Get company
-* [Update](docs/sdks/companies/README.md#update) - Update company
-* [Delete](docs/sdks/companies/README.md#delete) - Delete company
+* [List](docs/sdks/apideckcompanies/README.md#list) - List companies
+* [Create](docs/sdks/apideckcompanies/README.md#create) - Create company
+* [Get](docs/sdks/apideckcompanies/README.md#get) - Get company
+* [Update](docs/sdks/apideckcompanies/README.md#update) - Update company
+* [Delete](docs/sdks/apideckcompanies/README.md#delete) - Delete company
 
 ### [Crm.Contacts](docs/sdks/contacts/README.md)
 
@@ -615,13 +632,13 @@ func main() {
 * [Delete](docs/sdks/uploadsessions/README.md#delete) - Abort Upload Session
 * [Finish](docs/sdks/uploadsessions/README.md#finish) - Finish Upload Session
 
-### [Hris.Companies](docs/sdks/apideckcompanies/README.md)
+### [Hris.Companies](docs/sdks/apideckhriscompanies/README.md)
 
-* [List](docs/sdks/apideckcompanies/README.md#list) - List Companies
-* [Create](docs/sdks/apideckcompanies/README.md#create) - Create Company
-* [Get](docs/sdks/apideckcompanies/README.md#get) - Get Company
-* [Update](docs/sdks/apideckcompanies/README.md#update) - Update Company
-* [Delete](docs/sdks/apideckcompanies/README.md#delete) - Delete Company
+* [List](docs/sdks/apideckhriscompanies/README.md#list) - List Companies
+* [Create](docs/sdks/apideckhriscompanies/README.md#create) - Create Company
+* [Get](docs/sdks/apideckhriscompanies/README.md#get) - Get Company
+* [Update](docs/sdks/apideckhriscompanies/README.md#update) - Update Company
+* [Delete](docs/sdks/apideckhriscompanies/README.md#delete) - Delete Company
 
 ### [Hris.Departments](docs/sdks/apideckdepartments/README.md)
 
@@ -816,6 +833,7 @@ func main() {
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
 		ServiceID: sdkgo.Pointer("salesforce"),
+		CompanyID: sdkgo.Pointer("12345"),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Pointer(true),
 			Equity:      sdkgo.Pointer(true),
@@ -882,6 +900,7 @@ func main() {
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
 		ServiceID: sdkgo.Pointer("salesforce"),
+		CompanyID: sdkgo.Pointer("12345"),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Pointer(true),
 			Equity:      sdkgo.Pointer(true),
@@ -962,6 +981,7 @@ func main() {
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
 		ServiceID: sdkgo.Pointer("salesforce"),
+		CompanyID: sdkgo.Pointer("12345"),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Pointer(true),
 			Equity:      sdkgo.Pointer(true),
@@ -1042,6 +1062,7 @@ func main() {
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
 		ServiceID: sdkgo.Pointer("salesforce"),
+		CompanyID: sdkgo.Pointer("12345"),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Pointer(true),
 			Equity:      sdkgo.Pointer(true),
@@ -1127,6 +1148,7 @@ func main() {
 
 	res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
 		ServiceID: sdkgo.Pointer("salesforce"),
+		CompanyID: sdkgo.Pointer("12345"),
 		Filter: &components.TaxRatesFilter{
 			Assets:      sdkgo.Pointer(true),
 			Equity:      sdkgo.Pointer(true),

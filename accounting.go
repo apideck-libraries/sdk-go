@@ -17,7 +17,9 @@ type Accounting struct {
 	Customers          *Customers
 	Suppliers          *Suppliers
 	Payments           *Payments
+	Refunds            *Refunds
 	CompanyInfo        *CompanyInfo
+	Companies          *Companies
 	BalanceSheet       *BalanceSheet
 	ProfitAndLoss      *ProfitAndLoss
 	JournalEntries     *JournalEntries
@@ -60,7 +62,9 @@ func newAccounting(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *h
 		Customers:          newCustomers(rootSDK, sdkConfig, hooks),
 		Suppliers:          newSuppliers(rootSDK, sdkConfig, hooks),
 		Payments:           newPayments(rootSDK, sdkConfig, hooks),
+		Refunds:            newRefunds(rootSDK, sdkConfig, hooks),
 		CompanyInfo:        newCompanyInfo(rootSDK, sdkConfig, hooks),
+		Companies:          newCompanies(rootSDK, sdkConfig, hooks),
 		BalanceSheet:       newBalanceSheet(rootSDK, sdkConfig, hooks),
 		ProfitAndLoss:      newProfitAndLoss(rootSDK, sdkConfig, hooks),
 		JournalEntries:     newJournalEntries(rootSDK, sdkConfig, hooks),

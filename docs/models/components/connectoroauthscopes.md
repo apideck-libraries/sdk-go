@@ -7,5 +7,5 @@ OAuth scopes required for the connector. Add these scopes to your OAuth app.
 
 | Field                               | Type                                | Required                            | Description                         | Example                             |
 | ----------------------------------- | ----------------------------------- | ----------------------------------- | ----------------------------------- | ----------------------------------- |
-| `ID`                                | **string*                           | :heavy_minus_sign:                  | ID of the OAuth scope.              | contacts:all                        |
-| `Label`                             | **string*                           | :heavy_minus_sign:                  | Label of the OAuth scope.           | Read/write on the Contacts resource |
+| `ID`                                | `*string`                           | :heavy_minus_sign:                  | ID of the OAuth scope.              | contacts:all                        |
+| `Label`                             | `*string`                           | :heavy_minus_sign:                  | Label of the OAuth scope.           | Read/write on the Contacts resource |

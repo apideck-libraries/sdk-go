@@ -2,6 +2,19 @@
 
 The classification of account.
 
+## Example Usage
+
+```go
+import (
+	"github.com/apideck-libraries/sdk-go/models/components"
+)
+
+value := components.LedgerAccountClassificationAsset
+
+// Open enum: custom values can be created with a direct type cast
+custom := components.LedgerAccountClassification("custom_value")
+```
+
 
 ## Values
 

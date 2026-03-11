@@ -2,6 +2,19 @@
 
 The type of bank account.
 
+## Example Usage
+
+```go
+import (
+	"github.com/apideck-libraries/sdk-go/models/components"
+)
+
+value := components.BankAccount2AccountTypeBankAccount
+
+// Open enum: custom values can be created with a direct type cast
+custom := components.BankAccount2AccountType("custom_value")
+```
+
 
 ## Values
 

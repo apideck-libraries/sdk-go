@@ -2,6 +2,19 @@
 
 Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
 
+## Example Usage
+
+```go
+import (
+	"github.com/apideck-libraries/sdk-go/models/components"
+)
+
+value := components.CurrencyUnknownCurrency
+
+// Open enum: custom values can be created with a direct type cast
+custom := components.Currency("custom_value")
+```
+
 
 ## Values
 

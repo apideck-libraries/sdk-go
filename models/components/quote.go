@@ -62,6 +62,8 @@ type Quote struct {
 	ExpiryDate *types.Date `json:"expiry_date,omitempty"`
 	// Terms of the quote.
 	Terms *string `json:"terms,omitempty"`
+	// The ID of the payment terms
+	TermsID *string `json:"terms_id,omitempty"`
 	// Optional reference identifier for the transaction.
 	Reference *string `json:"reference,omitempty"`
 	// Quote status
@@ -203,6 +205,13 @@ func (q *Quote) GetTerms() *string {
 		return nil
 	}
 	return q.Terms
+}
+
+func (q *Quote) GetTermsID() *string {
+	if q == nil {
+		return nil
+	}
+	return q.TermsID
 }
 
 func (q *Quote) GetReference() *string {
@@ -399,6 +408,8 @@ type QuoteInput struct {
 	ExpiryDate *types.Date `json:"expiry_date,omitempty"`
 	// Terms of the quote.
 	Terms *string `json:"terms,omitempty"`
+	// The ID of the payment terms
+	TermsID *string `json:"terms_id,omitempty"`
 	// Optional reference identifier for the transaction.
 	Reference *string `json:"reference,omitempty"`
 	// Quote status
@@ -511,6 +522,13 @@ func (q *QuoteInput) GetTerms() *string {
 		return nil
 	}
 	return q.Terms
+}
+
+func (q *QuoteInput) GetTermsID() *string {
+	if q == nil {
+		return nil
+	}
+	return q.TermsID
 }
 
 func (q *QuoteInput) GetReference() *string {

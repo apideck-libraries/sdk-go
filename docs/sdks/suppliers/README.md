@@ -41,6 +41,7 @@ func main() {
 
     res, err := s.Accounting.Suppliers.List(ctx, operations.AccountingSuppliersAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Filter: &components.SuppliersFilter{
             CompanyName: sdkgo.Pointer("SpaceX"),
             DisplayName: sdkgo.Pointer("Elon Musk"),
@@ -132,6 +133,7 @@ func main() {
 
     res, err := s.Accounting.Suppliers.Create(ctx, operations.AccountingSuppliersAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Supplier: components.SupplierInput{
             DisplayID: sdkgo.Pointer("EMP00101"),
             DisplayName: sdkgo.Pointer("Windsurf Shop"),
@@ -359,6 +361,7 @@ func main() {
     res, err := s.Accounting.Suppliers.Get(ctx, operations.AccountingSuppliersOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
@@ -424,6 +427,7 @@ func main() {
     res, err := s.Accounting.Suppliers.Update(ctx, operations.AccountingSuppliersUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Supplier: components.SupplierInput{
             DisplayID: sdkgo.Pointer("EMP00101"),
             DisplayName: sdkgo.Pointer("Windsurf Shop"),
@@ -641,6 +645,7 @@ func main() {
     res, err := s.Accounting.Suppliers.Delete(ctx, operations.AccountingSuppliersDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
     })
     if err != nil {
         log.Fatal(err)

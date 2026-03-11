@@ -41,6 +41,7 @@ func main() {
 
     res, err := s.Accounting.JournalEntries.List(ctx, operations.AccountingJournalEntriesAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Filter: &components.JournalEntriesFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
         },
@@ -128,6 +129,7 @@ func main() {
 
     res, err := s.Accounting.JournalEntries.Create(ctx, operations.AccountingJournalEntriesAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         JournalEntry: components.JournalEntryInput{
             Title: sdkgo.Pointer("Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry"),
             CurrencyRate: sdkgo.Pointer[float64](0.69),
@@ -378,6 +380,7 @@ func main() {
     res, err := s.Accounting.JournalEntries.Get(ctx, operations.AccountingJournalEntriesOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
@@ -444,6 +447,7 @@ func main() {
     res, err := s.Accounting.JournalEntries.Update(ctx, operations.AccountingJournalEntriesUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         JournalEntry: components.JournalEntryInput{
             Title: sdkgo.Pointer("Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry"),
             CurrencyRate: sdkgo.Pointer[float64](0.69),
@@ -658,6 +662,7 @@ func main() {
     res, err := s.Accounting.JournalEntries.Delete(ctx, operations.AccountingJournalEntriesDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
     })
     if err != nil {
         log.Fatal(err)

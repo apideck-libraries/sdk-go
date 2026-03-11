@@ -1,5 +1,15 @@
 # FormFieldType
 
+## Example Usage
+
+```go
+import (
+	"github.com/apideck-libraries/sdk-go/models/components"
+)
+
+value := components.FormFieldTypeText
+```
+
 
 ## Values
 

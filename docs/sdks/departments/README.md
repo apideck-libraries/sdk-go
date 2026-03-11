@@ -40,6 +40,7 @@ func main() {
 
     res, err := s.Accounting.Departments.List(ctx, operations.AccountingDepartmentsAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
         Filter: &components.AccountingDepartmentsFilter{
             Subsidiary: sdkgo.Pointer("1"),
@@ -119,6 +120,7 @@ func main() {
 
     res, err := s.Accounting.Departments.Create(ctx, operations.AccountingDepartmentsAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         AccountingDepartment: components.AccountingDepartmentInput{
             ParentID: sdkgo.Pointer("12345"),
             Name: sdkgo.Pointer("Sales"),
@@ -215,6 +217,7 @@ func main() {
     res, err := s.Accounting.Departments.Get(ctx, operations.AccountingDepartmentsOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {

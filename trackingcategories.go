@@ -258,6 +258,7 @@ func (s *TrackingCategories) List(ctx context.Context, request operations.Accoun
 				ConsumerID:  request.ConsumerID,
 				AppID:       request.AppID,
 				ServiceID:   request.ServiceID,
+				CompanyID:   request.CompanyID,
 				Cursor:      &nCVal,
 				Limit:       request.Limit,
 				PassThrough: request.PassThrough,
