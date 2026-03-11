@@ -1,5 +1,15 @@
 # ConnectorSettingType
 
+## Example Usage
+
+```go
+import (
+	"github.com/apideck-libraries/sdk-go/models/components"
+)
+
+value := components.ConnectorSettingTypeText
+```
+
 
 ## Values
 

@@ -36,6 +36,7 @@ func main() {
 
     res, err := s.Accounting.BalanceSheet.Get(ctx, operations.AccountingBalanceSheetOneRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         PassThrough: map[string]any{
             "search": "San Francisco",
         },

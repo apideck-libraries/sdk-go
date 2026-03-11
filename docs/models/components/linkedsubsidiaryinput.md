@@ -5,5 +5,5 @@
 
 | Field                     | Type                      | Required                  | Description               | Example                   |
 | ------------------------- | ------------------------- | ------------------------- | ------------------------- | ------------------------- |
-| `DisplayID`               | **string*                 | :heavy_minus_sign:        | Id to be displayed.       | 123456                    |
-| `Name`                    | **string*                 | :heavy_minus_sign:        | The name of the resource. | Acme Inc.                 |
+| `DisplayID`               | `*string`                 | :heavy_minus_sign:        | Id to be displayed.       | 123456                    |
+| `Name`                    | `*string`                 | :heavy_minus_sign:        | The name of the resource. | Acme Inc.                 |

@@ -1,0 +1,10 @@
+# AccountingCompaniesAllResponse
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                | [components.HTTPMetadata](../../models/components/httpmetadata.md)                        | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `GetCompaniesResponse`                                                                    | [*components.GetCompaniesResponse](../../models/components/getcompaniesresponse.md)       | :heavy_minus_sign:                                                                        | Companies                                                                                 |
+| `UnexpectedErrorResponse`                                                                 | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md) | :heavy_minus_sign:                                                                        | Unexpected error                                                                          |

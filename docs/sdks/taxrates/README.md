@@ -41,6 +41,7 @@ func main() {
 
     res, err := s.Accounting.TaxRates.List(ctx, operations.AccountingTaxRatesAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Filter: &components.TaxRatesFilter{
             Assets: sdkgo.Pointer(true),
             Equity: sdkgo.Pointer(true),
@@ -127,6 +128,7 @@ func main() {
 
     res, err := s.Accounting.TaxRates.Create(ctx, operations.AccountingTaxRatesAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         TaxRate: components.TaxRateInput{
             ID: sdkgo.Pointer("1234"),
             Name: sdkgo.Pointer("GST on Purchases"),
@@ -267,6 +269,7 @@ func main() {
     res, err := s.Accounting.TaxRates.Get(ctx, operations.AccountingTaxRatesOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
@@ -332,6 +335,7 @@ func main() {
     res, err := s.Accounting.TaxRates.Update(ctx, operations.AccountingTaxRatesUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         TaxRate: components.TaxRateInput{
             ID: sdkgo.Pointer("1234"),
             Name: sdkgo.Pointer("GST on Purchases"),
@@ -512,6 +516,7 @@ func main() {
     res, err := s.Accounting.TaxRates.Delete(ctx, operations.AccountingTaxRatesDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
     })
     if err != nil {
         log.Fatal(err)

@@ -1,0 +1,10 @@
+# AccountingRefundsDeleteResponse
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                | [components.HTTPMetadata](../../models/components/httpmetadata.md)                        | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `DeleteRefundResponse`                                                                    | [*components.DeleteRefundResponse](../../models/components/deleterefundresponse.md)       | :heavy_minus_sign:                                                                        | Refund deleted                                                                            |
+| `UnexpectedErrorResponse`                                                                 | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md) | :heavy_minus_sign:                                                                        | Unexpected error                                                                          |

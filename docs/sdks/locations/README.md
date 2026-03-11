@@ -40,6 +40,7 @@ func main() {
 
     res, err := s.Accounting.Locations.List(ctx, operations.AccountingLocationsAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
         Filter: &components.AccountingLocationsFilter{
             Subsidiary: sdkgo.Pointer("1"),
@@ -119,6 +120,7 @@ func main() {
 
     res, err := s.Accounting.Locations.Create(ctx, operations.AccountingLocationsAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         AccountingLocation: components.AccountingLocationInput{
             ParentID: sdkgo.Pointer("12345"),
             CompanyName: sdkgo.Pointer("SpaceX"),
@@ -240,6 +242,7 @@ func main() {
     res, err := s.Accounting.Locations.Get(ctx, operations.AccountingLocationsOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
@@ -305,6 +308,7 @@ func main() {
     res, err := s.Accounting.Locations.Update(ctx, operations.AccountingLocationsUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         AccountingLocation: components.AccountingLocationInput{
             ParentID: sdkgo.Pointer("12345"),
             CompanyName: sdkgo.Pointer("SpaceX"),
@@ -497,6 +501,7 @@ func main() {
     res, err := s.Accounting.Locations.Delete(ctx, operations.AccountingLocationsDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
     })
     if err != nil {
         log.Fatal(err)

@@ -7,5 +7,5 @@ Details of the branch for which the job is created.
 
 | Field                              | Type                               | Required                           | Description                        | Example                            |
 | ---------------------------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- |
-| `ID`                               | **string*                          | :heavy_minus_sign:                 | A unique identifier for an object. | 12345                              |
-| `Name`                             | **string*                          | :heavy_minus_sign:                 | Name of the branch.                | HQ NY                              |
+| `ID`                               | `*string`                          | :heavy_minus_sign:                 | A unique identifier for an object. | 12345                              |
+| `Name`                             | `*string`                          | :heavy_minus_sign:                 | Name of the branch.                | HQ NY                              |

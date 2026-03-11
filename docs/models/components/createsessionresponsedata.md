@@ -5,5 +5,5 @@
 
 | Field                                             | Type                                              | Required                                          | Description                                       | Example                                           |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| `SessionURI`                                      | *string*                                          | :heavy_check_mark:                                | N/A                                               | https://vault.apideck.com/session/<session_token> |
-| `SessionToken`                                    | *string*                                          | :heavy_check_mark:                                | N/A                                               | <session_token>                                   |
+| `SessionURI`                                      | `string`                                          | :heavy_check_mark:                                | N/A                                               | https://vault.apideck.com/session/<session_token> |
+| `SessionToken`                                    | `string`                                          | :heavy_check_mark:                                | N/A                                               | <session_token>                                   |

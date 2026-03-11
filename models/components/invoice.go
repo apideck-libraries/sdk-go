@@ -132,6 +132,8 @@ type Invoice struct {
 	DueDate *types.Date `json:"due_date,omitempty"`
 	// Terms of payment.
 	Terms *string `json:"terms,omitempty"`
+	// The ID of the payment terms
+	TermsID *string `json:"terms_id,omitempty"`
 	// A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the invoice to the Purchase Order.
 	PoNumber *string `json:"po_number,omitempty"`
 	// Optional reference identifier for the transaction.
@@ -297,6 +299,13 @@ func (i *Invoice) GetTerms() *string {
 		return nil
 	}
 	return i.Terms
+}
+
+func (i *Invoice) GetTermsID() *string {
+	if i == nil {
+		return nil
+	}
+	return i.TermsID
 }
 
 func (i *Invoice) GetPoNumber() *string {
@@ -586,6 +595,8 @@ type InvoiceInput struct {
 	DueDate *types.Date `json:"due_date,omitempty"`
 	// Terms of payment.
 	Terms *string `json:"terms,omitempty"`
+	// The ID of the payment terms
+	TermsID *string `json:"terms_id,omitempty"`
 	// A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the invoice to the Purchase Order.
 	PoNumber *string `json:"po_number,omitempty"`
 	// Optional reference identifier for the transaction.
@@ -727,6 +738,13 @@ func (i *InvoiceInput) GetTerms() *string {
 		return nil
 	}
 	return i.Terms
+}
+
+func (i *InvoiceInput) GetTermsID() *string {
+	if i == nil {
+		return nil
+	}
+	return i.TermsID
 }
 
 func (i *InvoiceInput) GetPoNumber() *string {

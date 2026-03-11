@@ -41,6 +41,7 @@ func main() {
 
     res, err := s.Accounting.LedgerAccounts.List(ctx, operations.AccountingLedgerAccountsAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Filter: &components.LedgerAccountsFilter{
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
         },
@@ -128,6 +129,7 @@ func main() {
 
     res, err := s.Accounting.LedgerAccounts.Create(ctx, operations.AccountingLedgerAccountsAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         LedgerAccount: components.LedgerAccountInput{
             DisplayID: sdkgo.Pointer("1-12345"),
             Code: sdkgo.Pointer("453"),
@@ -287,6 +289,7 @@ func main() {
     res, err := s.Accounting.LedgerAccounts.Get(ctx, operations.AccountingLedgerAccountsOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {
@@ -353,6 +356,7 @@ func main() {
     res, err := s.Accounting.LedgerAccounts.Update(ctx, operations.AccountingLedgerAccountsUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         LedgerAccount: components.LedgerAccountInput{
             DisplayID: sdkgo.Pointer("1-12345"),
             Code: sdkgo.Pointer("453"),
@@ -504,6 +508,7 @@ func main() {
     res, err := s.Accounting.LedgerAccounts.Delete(ctx, operations.AccountingLedgerAccountsDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
     })
     if err != nil {
         log.Fatal(err)

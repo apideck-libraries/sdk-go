@@ -40,6 +40,7 @@ func main() {
 
     res, err := s.Accounting.BankAccounts.List(ctx, operations.AccountingBankAccountsAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Filter: &components.BankAccountsFilter{
             Name: sdkgo.Pointer("Main Operating"),
             AccountType: components.BankAccountsFilterAccountTypeChecking.ToPointer(),
@@ -232,6 +233,7 @@ func main() {
             AccountType: components.BankAccountFilterAccountTypeChecking.ToPointer(),
         },
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
     })
     if err != nil {

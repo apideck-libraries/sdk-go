@@ -258,6 +258,7 @@ func (s *Quotes) List(ctx context.Context, request operations.AccountingQuotesAl
 				ConsumerID: request.ConsumerID,
 				AppID:      request.AppID,
 				ServiceID:  request.ServiceID,
+				CompanyID:  request.CompanyID,
 				Cursor:     &nCVal,
 				Limit:      request.Limit,
 			},

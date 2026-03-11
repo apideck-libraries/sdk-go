@@ -561,3 +561,334 @@ func (j *Job) GetCreatedAt() *time.Time {
 	}
 	return j.CreatedAt
 }
+
+// JobBranch - Details of the branch for which the job is created.
+type JobBranch struct {
+	// Name of the branch.
+	Name *string `json:"name,omitempty"`
+}
+
+func (j *JobBranch) GetName() *string {
+	if j == nil {
+		return nil
+	}
+	return j.Name
+}
+
+type JobInput struct {
+	Slug *string `json:"slug,omitempty"`
+	// The job title of the person.
+	Title *string `json:"title,omitempty"`
+	// Sequence in relation to other jobs.
+	Sequence *int64 `json:"sequence,omitempty"`
+	// The visibility of the job
+	Visibility *Visibility `json:"visibility,omitempty"`
+	// The status of the job.
+	Status *JobStatus `json:"status,omitempty"`
+	// The code of the job.
+	Code *string `json:"code,omitempty"`
+	// language code according to ISO 639-1. For the United States - EN
+	Language        *string          `json:"language,omitempty"`
+	EmploymentTerms *EmploymentTerms `json:"employment_terms,omitempty"`
+	// Level of experience required for the job role.
+	Experience *string `json:"experience,omitempty"`
+	// Specifies the location for the job posting.
+	Location *string `json:"location,omitempty"`
+	// Specifies whether the posting is for a remote job.
+	Remote *bool `json:"remote,omitempty"`
+	// A job's Requisition ID (Req ID) allows your organization to identify and track a job based on alphanumeric naming conventions unique to your company's internal processes.
+	RequisitionID *string          `json:"requisition_id,omitempty"`
+	Department    *DepartmentInput `json:"department,omitempty"`
+	// Details of the branch for which the job is created.
+	Branch *JobBranch `json:"branch,omitempty"`
+	// The recruiter is generally someone who is tasked to help the hiring manager find and screen qualified applicant
+	Recruiters     []string `json:"recruiters,omitempty"`
+	HiringManagers []string `json:"hiring_managers,omitempty"`
+	Followers      []string `json:"followers,omitempty"`
+	// A description of the object.
+	Description *string `json:"description,omitempty"`
+	// The job description in HTML format
+	DescriptionHTML *string  `json:"description_html,omitempty"`
+	Blocks          []Blocks `json:"blocks,omitempty"`
+	Closing         *string  `json:"closing,omitempty"`
+	// The closing section of the job description in HTML format
+	ClosingHTML *string     `json:"closing_html,omitempty"`
+	ClosingDate *types.Date `json:"closing_date,omitempty"`
+	Salary      *Salary     `json:"salary,omitempty"`
+	// URL of the job description
+	//
+	// Deprecated: This field is deprecated and may be removed in a future version..
+	URL *string `json:"url,omitempty"`
+	// URL of the job portal
+	//
+	// Deprecated: This field is deprecated and may be removed in a future version..
+	JobPortalURL *string `json:"job_portal_url,omitempty"`
+	// Deprecated: This field is deprecated and may be removed in a future version..
+	RecordURL    *string    `json:"record_url,omitempty"`
+	Links        []JobLinks `json:"links,omitempty"`
+	Confidential *bool      `json:"confidential,omitempty"`
+	// Specifies whether an employee of the organization can apply for the job.
+	AvailableToEmployees *bool         `json:"available_to_employees,omitempty"`
+	Tags                 []string      `json:"tags,omitempty"`
+	Addresses            []Address     `json:"addresses,omitempty"`
+	CustomFields         []CustomField `json:"custom_fields,omitempty"`
+	// Flag to indicate if the object is deleted.
+	Deleted *bool   `json:"deleted,omitempty"`
+	OwnerID *string `json:"owner_id,omitempty"`
+}
+
+func (j JobInput) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(j, "", false)
+}
+
+func (j *JobInput) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &j, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (j *JobInput) GetSlug() *string {
+	if j == nil {
+		return nil
+	}
+	return j.Slug
+}
+
+func (j *JobInput) GetTitle() *string {
+	if j == nil {
+		return nil
+	}
+	return j.Title
+}
+
+func (j *JobInput) GetSequence() *int64 {
+	if j == nil {
+		return nil
+	}
+	return j.Sequence
+}
+
+func (j *JobInput) GetVisibility() *Visibility {
+	if j == nil {
+		return nil
+	}
+	return j.Visibility
+}
+
+func (j *JobInput) GetStatus() *JobStatus {
+	if j == nil {
+		return nil
+	}
+	return j.Status
+}
+
+func (j *JobInput) GetCode() *string {
+	if j == nil {
+		return nil
+	}
+	return j.Code
+}
+
+func (j *JobInput) GetLanguage() *string {
+	if j == nil {
+		return nil
+	}
+	return j.Language
+}
+
+func (j *JobInput) GetEmploymentTerms() *EmploymentTerms {
+	if j == nil {
+		return nil
+	}
+	return j.EmploymentTerms
+}
+
+func (j *JobInput) GetExperience() *string {
+	if j == nil {
+		return nil
+	}
+	return j.Experience
+}
+
+func (j *JobInput) GetLocation() *string {
+	if j == nil {
+		return nil
+	}
+	return j.Location
+}
+
+func (j *JobInput) GetRemote() *bool {
+	if j == nil {
+		return nil
+	}
+	return j.Remote
+}
+
+func (j *JobInput) GetRequisitionID() *string {
+	if j == nil {
+		return nil
+	}
+	return j.RequisitionID
+}
+
+func (j *JobInput) GetDepartment() *DepartmentInput {
+	if j == nil {
+		return nil
+	}
+	return j.Department
+}
+
+func (j *JobInput) GetBranch() *JobBranch {
+	if j == nil {
+		return nil
+	}
+	return j.Branch
+}
+
+func (j *JobInput) GetRecruiters() []string {
+	if j == nil {
+		return nil
+	}
+	return j.Recruiters
+}
+
+func (j *JobInput) GetHiringManagers() []string {
+	if j == nil {
+		return nil
+	}
+	return j.HiringManagers
+}
+
+func (j *JobInput) GetFollowers() []string {
+	if j == nil {
+		return nil
+	}
+	return j.Followers
+}
+
+func (j *JobInput) GetDescription() *string {
+	if j == nil {
+		return nil
+	}
+	return j.Description
+}
+
+func (j *JobInput) GetDescriptionHTML() *string {
+	if j == nil {
+		return nil
+	}
+	return j.DescriptionHTML
+}
+
+func (j *JobInput) GetBlocks() []Blocks {
+	if j == nil {
+		return nil
+	}
+	return j.Blocks
+}
+
+func (j *JobInput) GetClosing() *string {
+	if j == nil {
+		return nil
+	}
+	return j.Closing
+}
+
+func (j *JobInput) GetClosingHTML() *string {
+	if j == nil {
+		return nil
+	}
+	return j.ClosingHTML
+}
+
+func (j *JobInput) GetClosingDate() *types.Date {
+	if j == nil {
+		return nil
+	}
+	return j.ClosingDate
+}
+
+func (j *JobInput) GetSalary() *Salary {
+	if j == nil {
+		return nil
+	}
+	return j.Salary
+}
+
+func (j *JobInput) GetURL() *string {
+	if j == nil {
+		return nil
+	}
+	return j.URL
+}
+
+func (j *JobInput) GetJobPortalURL() *string {
+	if j == nil {
+		return nil
+	}
+	return j.JobPortalURL
+}
+
+func (j *JobInput) GetRecordURL() *string {
+	if j == nil {
+		return nil
+	}
+	return j.RecordURL
+}
+
+func (j *JobInput) GetLinks() []JobLinks {
+	if j == nil {
+		return nil
+	}
+	return j.Links
+}
+
+func (j *JobInput) GetConfidential() *bool {
+	if j == nil {
+		return nil
+	}
+	return j.Confidential
+}
+
+func (j *JobInput) GetAvailableToEmployees() *bool {
+	if j == nil {
+		return nil
+	}
+	return j.AvailableToEmployees
+}
+
+func (j *JobInput) GetTags() []string {
+	if j == nil {
+		return nil
+	}
+	return j.Tags
+}
+
+func (j *JobInput) GetAddresses() []Address {
+	if j == nil {
+		return nil
+	}
+	return j.Addresses
+}
+
+func (j *JobInput) GetCustomFields() []CustomField {
+	if j == nil {
+		return nil
+	}
+	return j.CustomFields
+}
+
+func (j *JobInput) GetDeleted() *bool {
+	if j == nil {
+		return nil
+	}
+	return j.Deleted
+}
+
+func (j *JobInput) GetOwnerID() *string {
+	if j == nil {
+		return nil
+	}
+	return j.OwnerID
+}

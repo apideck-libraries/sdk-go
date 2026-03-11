@@ -13,14 +13,12 @@ type GetCompaniesResponse struct {
 	// Unified API resource name
 	Resource string `json:"resource"`
 	// Operation performed
-	Operation string     `json:"operation"`
-	Data      []Company1 `json:"data"`
+	Operation string                        `json:"operation"`
+	Data      []AccountingConnectionCompany `json:"data"`
 	// Response metadata
 	Meta *Meta `json:"meta,omitempty"`
 	// Links to navigate to previous or next pages through the API
 	Links *Links `json:"links,omitempty"`
-	// Raw response from the integration when raw=true query param is provided
-	Raw map[string]any `json:"_raw,omitempty"`
 }
 
 func (g *GetCompaniesResponse) GetStatusCode() int64 {
@@ -58,9 +56,9 @@ func (g *GetCompaniesResponse) GetOperation() string {
 	return g.Operation
 }
 
-func (g *GetCompaniesResponse) GetData() []Company1 {
+func (g *GetCompaniesResponse) GetData() []AccountingConnectionCompany {
 	if g == nil {
-		return []Company1{}
+		return []AccountingConnectionCompany{}
 	}
 	return g.Data
 }
@@ -77,11 +75,4 @@ func (g *GetCompaniesResponse) GetLinks() *Links {
 		return nil
 	}
 	return g.Links
-}
-
-func (g *GetCompaniesResponse) GetRaw() map[string]any {
-	if g == nil {
-		return nil
-	}
-	return g.Raw
 }

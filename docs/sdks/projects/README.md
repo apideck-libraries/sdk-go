@@ -41,6 +41,7 @@ func main() {
 
     res, err := s.Accounting.Projects.List(ctx, operations.AccountingProjectsAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Filter: &components.ProjectsFilter{
             Name: sdkgo.Pointer("Website Redesign"),
             Status: components.ProjectStatusActive.ToPointer(),
@@ -130,6 +131,7 @@ func main() {
 
     res, err := s.Accounting.Projects.Create(ctx, operations.AccountingProjectsAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Project: components.ProjectInput{
             Name: "Website Redesign Project",
             DisplayID: sdkgo.Pointer("PROJ-001"),
@@ -294,6 +296,7 @@ func main() {
     res, err := s.Accounting.Projects.Get(ctx, operations.AccountingProjectsOneRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
     })
     if err != nil {
         log.Fatal(err)
@@ -359,6 +362,7 @@ func main() {
     res, err := s.Accounting.Projects.Update(ctx, operations.AccountingProjectsUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
         Project: components.ProjectInput{
             Name: "Website Redesign Project",
             DisplayID: sdkgo.Pointer("PROJ-001"),
@@ -519,6 +523,7 @@ func main() {
     res, err := s.Accounting.Projects.Delete(ctx, operations.AccountingProjectsDeleteRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
     })
     if err != nil {
         log.Fatal(err)

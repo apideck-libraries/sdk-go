@@ -7,5 +7,5 @@ Department or organizational unit associated with the project
 
 | Field                                | Type                                 | Required                             | Description                          | Example                              |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| `ID`                                 | **string*                            | :heavy_minus_sign:                   | Unique identifier for the department | DEPT-001                             |
-| `Name`                               | **string*                            | :heavy_minus_sign:                   | Name of the department               | Marketing                            |
+| `ID`                                 | `*string`                            | :heavy_minus_sign:                   | Unique identifier for the department | DEPT-001                             |
+| `Name`                               | `*string`                            | :heavy_minus_sign:                   | Name of the department               | Marketing                            |

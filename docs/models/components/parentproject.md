@@ -7,5 +7,5 @@ Parent project if this is a subproject
 
 | Field                                    | Type                                     | Required                                 | Description                              | Example                                  |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| `ID`                                     | **string*                                | :heavy_minus_sign:                       | Unique identifier for the parent project | PROJ-PARENT-001                          |
-| `Name`                                   | **string*                                | :heavy_minus_sign:                       | Name of the parent project               | Company Website Overhaul                 |
+| `ID`                                     | `*string`                                | :heavy_minus_sign:                       | Unique identifier for the parent project | PROJ-PARENT-001                          |
+| `Name`                                   | `*string`                                | :heavy_minus_sign:                       | Name of the parent project               | Company Website Overhaul                 |
