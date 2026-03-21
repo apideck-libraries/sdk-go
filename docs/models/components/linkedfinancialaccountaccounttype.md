@@ -22,3 +22,4 @@ custom := components.LinkedFinancialAccountAccountType("custom_value")
 | ------------------------------------------------ | ------------------------------------------------ |
 | `LinkedFinancialAccountAccountTypeLedgerAccount` | ledger_account                                   |
 | `LinkedFinancialAccountAccountTypeBankAccount`   | bank_account                                     |
+| `LinkedFinancialAccountAccountTypeEmployee`      | employee                                         |

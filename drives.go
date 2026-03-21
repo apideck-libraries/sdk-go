@@ -250,19 +250,11 @@ func (s *Drives) List(ctx context.Context, request operations.FileStorageDrivesA
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.List(
 			ctx,
-			operations.FileStorageDrivesAllRequest{
-				Raw:        request.Raw,
-				ConsumerID: request.ConsumerID,
-				AppID:      request.AppID,
-				ServiceID:  request.ServiceID,
-				Cursor:     &nCVal,
-				Limit:      request.Limit,
-				Filter:     request.Filter,
-				Fields:     request.Fields,
-			},
+			request,
 			opts...,
 		)
 	}

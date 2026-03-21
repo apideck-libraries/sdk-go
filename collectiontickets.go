@@ -249,22 +249,11 @@ func (s *CollectionTickets) List(ctx context.Context, request operations.IssueTr
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.List(
 			ctx,
-			operations.IssueTrackingCollectionTicketsAllRequest{
-				CollectionID: request.CollectionID,
-				Raw:          request.Raw,
-				ConsumerID:   request.ConsumerID,
-				AppID:        request.AppID,
-				ServiceID:    request.ServiceID,
-				Cursor:       &nCVal,
-				Limit:        request.Limit,
-				Sort:         request.Sort,
-				Filter:       request.Filter,
-				PassThrough:  request.PassThrough,
-				Fields:       request.Fields,
-			},
+			request,
 			opts...,
 		)
 	}

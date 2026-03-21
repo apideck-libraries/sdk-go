@@ -250,19 +250,11 @@ func (s *Expenses) List(ctx context.Context, request operations.AccountingExpens
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.List(
 			ctx,
-			operations.AccountingExpensesAllRequest{
-				Raw:        request.Raw,
-				ConsumerID: request.ConsumerID,
-				AppID:      request.AppID,
-				ServiceID:  request.ServiceID,
-				CompanyID:  request.CompanyID,
-				Cursor:     &nCVal,
-				Limit:      request.Limit,
-				Filter:     request.Filter,
-			},
+			request,
 			opts...,
 		)
 	}

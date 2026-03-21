@@ -249,21 +249,11 @@ func (s *Attachments) List(ctx context.Context, request operations.AccountingAtt
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.List(
 			ctx,
-			operations.AccountingAttachmentsAllRequest{
-				ReferenceType: request.ReferenceType,
-				ReferenceID:   request.ReferenceID,
-				Raw:           request.Raw,
-				ConsumerID:    request.ConsumerID,
-				AppID:         request.AppID,
-				ServiceID:     request.ServiceID,
-				CompanyID:     request.CompanyID,
-				Cursor:        &nCVal,
-				Limit:         request.Limit,
-				Fields:        request.Fields,
-			},
+			request,
 			opts...,
 		)
 	}

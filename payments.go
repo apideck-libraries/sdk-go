@@ -250,22 +250,11 @@ func (s *Payments) List(ctx context.Context, request operations.AccountingPaymen
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.List(
 			ctx,
-			operations.AccountingPaymentsAllRequest{
-				Raw:         request.Raw,
-				ConsumerID:  request.ConsumerID,
-				AppID:       request.AppID,
-				ServiceID:   request.ServiceID,
-				CompanyID:   request.CompanyID,
-				Cursor:      &nCVal,
-				Limit:       request.Limit,
-				Filter:      request.Filter,
-				Sort:        request.Sort,
-				PassThrough: request.PassThrough,
-				Fields:      request.Fields,
-			},
+			request,
 			opts...,
 		)
 	}

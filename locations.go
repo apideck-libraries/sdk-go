@@ -250,20 +250,11 @@ func (s *Locations) List(ctx context.Context, request operations.AccountingLocat
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.List(
 			ctx,
-			operations.AccountingLocationsAllRequest{
-				Raw:        request.Raw,
-				ConsumerID: request.ConsumerID,
-				AppID:      request.AppID,
-				ServiceID:  request.ServiceID,
-				CompanyID:  request.CompanyID,
-				Cursor:     &nCVal,
-				Limit:      request.Limit,
-				Fields:     request.Fields,
-				Filter:     request.Filter,
-			},
+			request,
 			opts...,
 		)
 	}

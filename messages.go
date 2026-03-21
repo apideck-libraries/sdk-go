@@ -250,18 +250,11 @@ func (s *Messages) List(ctx context.Context, request operations.SmsMessagesAllRe
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.List(
 			ctx,
-			operations.SmsMessagesAllRequest{
-				Raw:        request.Raw,
-				ConsumerID: request.ConsumerID,
-				AppID:      request.AppID,
-				ServiceID:  request.ServiceID,
-				Cursor:     &nCVal,
-				Limit:      request.Limit,
-				Fields:     request.Fields,
-			},
+			request,
 			opts...,
 		)
 	}

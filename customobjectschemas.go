@@ -250,18 +250,11 @@ func (s *CustomObjectSchemas) List(ctx context.Context, request operations.CrmCu
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.List(
 			ctx,
-			operations.CrmCustomObjectSchemasAllRequest{
-				Raw:         request.Raw,
-				ConsumerID:  request.ConsumerID,
-				AppID:       request.AppID,
-				ServiceID:   request.ServiceID,
-				Cursor:      &nCVal,
-				Limit:       request.Limit,
-				PassThrough: request.PassThrough,
-			},
+			request,
 			opts...,
 		)
 	}

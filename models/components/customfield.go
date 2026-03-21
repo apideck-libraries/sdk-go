@@ -293,6 +293,9 @@ func (c *CustomField2) GetValue() *CustomFieldValue {
 	return c.Value
 }
 
+// #region class-body-customfield2
+// #endregion class-body-customfield2
+
 type CustomFieldValue5Type string
 
 const (
@@ -577,6 +580,9 @@ func (c *CustomField1) GetValue() *CustomField1Value {
 	}
 	return c.Value
 }
+
+// #region class-body-customfield1
+// #endregion class-body-customfield1
 
 type CustomFieldType string
 

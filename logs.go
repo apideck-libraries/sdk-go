@@ -250,16 +250,11 @@ func (s *Logs) List(ctx context.Context, request operations.VaultLogsAllRequest,
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.List(
 			ctx,
-			operations.VaultLogsAllRequest{
-				AppID:      request.AppID,
-				ConsumerID: request.ConsumerID,
-				Filter:     request.Filter,
-				Cursor:     &nCVal,
-				Limit:      request.Limit,
-			},
+			request,
 			opts...,
 		)
 	}

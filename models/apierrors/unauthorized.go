@@ -158,6 +158,9 @@ func (d *Detail2) GetDebug() *DetailDebug {
 	return d.Debug
 }
 
+// #region class-body-detail2
+// #endregion class-body-detail2
+
 type UnauthorizedDetailType string
 
 const (

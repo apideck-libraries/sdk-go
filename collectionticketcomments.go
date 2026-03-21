@@ -249,22 +249,11 @@ func (s *CollectionTicketComments) List(ctx context.Context, request operations.
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.List(
 			ctx,
-			operations.IssueTrackingCollectionTicketCommentsAllRequest{
-				CollectionID: request.CollectionID,
-				TicketID:     request.TicketID,
-				Raw:          request.Raw,
-				ConsumerID:   request.ConsumerID,
-				AppID:        request.AppID,
-				ServiceID:    request.ServiceID,
-				Cursor:       &nCVal,
-				Limit:        request.Limit,
-				Sort:         request.Sort,
-				PassThrough:  request.PassThrough,
-				Fields:       request.Fields,
-			},
+			request,
 			opts...,
 		)
 	}
@@ -1005,21 +994,11 @@ func (s *CollectionTicketComments) Get(ctx context.Context, request operations.I
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.Get(
 			ctx,
-			operations.IssueTrackingCollectionTicketCommentsOneRequest{
-				ID:           request.ID,
-				CollectionID: request.CollectionID,
-				TicketID:     request.TicketID,
-				Raw:          request.Raw,
-				ConsumerID:   request.ConsumerID,
-				AppID:        request.AppID,
-				ServiceID:    request.ServiceID,
-				Cursor:       &nCVal,
-				Limit:        request.Limit,
-				Fields:       request.Fields,
-			},
+			request,
 			opts...,
 		)
 	}
