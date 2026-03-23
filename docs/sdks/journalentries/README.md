@@ -141,7 +141,7 @@ func main() {
                     TaxAmount: sdkgo.Pointer[float64](27500),
                     SubTotal: sdkgo.Pointer[float64](27500),
                     TotalAmount: sdkgo.Pointer[float64](27500),
-                    Type: components.JournalEntryLineItemTypeDebit,
+                    Type: components.JournalEntryLineItemTypeDebit.ToPointer(),
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.Pointer("123456"),
                         Rate: sdkgo.Pointer[float64](10),
@@ -459,7 +459,7 @@ func main() {
                     TaxAmount: sdkgo.Pointer[float64](27500),
                     SubTotal: sdkgo.Pointer[float64](27500),
                     TotalAmount: sdkgo.Pointer[float64](27500),
-                    Type: components.JournalEntryLineItemTypeDebit,
+                    Type: components.JournalEntryLineItemTypeDebit.ToPointer(),
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.Pointer("123456"),
                         Rate: sdkgo.Pointer[float64](10),

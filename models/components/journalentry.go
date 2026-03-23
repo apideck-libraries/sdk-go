@@ -61,7 +61,9 @@ type JournalEntry struct {
 	PostedAt *time.Time `json:"posted_at,omitempty"`
 	// Journal symbol of the entry. For example IND for indirect costs
 	JournalSymbol *string `json:"journal_symbol,omitempty"`
-	// The specific category of tax associated with a transaction like sales or purchase
+	// Deprecated — use line_items[].tax_type for per-line tax applicability. Kept as fallback: applies to all lines that do not set their own tax_type.
+	//
+	// Deprecated: Deprecated — use line_items[]..
 	TaxType *string `json:"tax_type,omitempty"`
 	// Applicable tax id/code override if tax is not supplied on a line item basis.
 	TaxCode *string `json:"tax_code,omitempty"`
@@ -322,7 +324,9 @@ type JournalEntryInput struct {
 	PostedAt *time.Time `json:"posted_at,omitempty"`
 	// Journal symbol of the entry. For example IND for indirect costs
 	JournalSymbol *string `json:"journal_symbol,omitempty"`
-	// The specific category of tax associated with a transaction like sales or purchase
+	// Deprecated — use line_items[].tax_type for per-line tax applicability. Kept as fallback: applies to all lines that do not set their own tax_type.
+	//
+	// Deprecated: Deprecated — use line_items[]..
 	TaxType *string `json:"tax_type,omitempty"`
 	// Applicable tax id/code override if tax is not supplied on a line item basis.
 	TaxCode *string `json:"tax_code,omitempty"`

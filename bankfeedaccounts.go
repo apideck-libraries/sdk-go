@@ -250,20 +250,11 @@ func (s *BankFeedAccounts) List(ctx context.Context, request operations.Accounti
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.List(
 			ctx,
-			operations.AccountingBankFeedAccountsAllRequest{
-				Raw:         request.Raw,
-				ConsumerID:  request.ConsumerID,
-				AppID:       request.AppID,
-				ServiceID:   request.ServiceID,
-				CompanyID:   request.CompanyID,
-				Cursor:      &nCVal,
-				Limit:       request.Limit,
-				PassThrough: request.PassThrough,
-				Fields:      request.Fields,
-			},
+			request,
 			opts...,
 		)
 	}

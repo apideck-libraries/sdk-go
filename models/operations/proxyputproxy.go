@@ -43,6 +43,9 @@ func (r *RequestBody3) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
+// #region class-body-requestbody3
+// #endregion class-body-requestbody3
+
 type RequestBody1 struct {
 }
 
@@ -56,6 +59,9 @@ func (r *RequestBody1) UnmarshalJSON(data []byte) error {
 	}
 	return nil
 }
+
+// #region class-body-requestbody1
+// #endregion class-body-requestbody1
 
 type ProxyPutProxyRequest struct {
 	// ID of the consumer which you want to get or push data from

@@ -43,6 +43,9 @@ func (p *ProxyPatchProxyRequestBody3) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
+// #region class-body-proxypatchproxyrequestbody3
+// #endregion class-body-proxypatchproxyrequestbody3
+
 type ProxyPatchProxyRequestBody1 struct {
 }
 
@@ -56,6 +59,9 @@ func (p *ProxyPatchProxyRequestBody1) UnmarshalJSON(data []byte) error {
 	}
 	return nil
 }
+
+// #region class-body-proxypatchproxyrequestbody1
+// #endregion class-body-proxypatchproxyrequestbody1
 
 type ProxyPatchProxyRequest struct {
 	// ID of the consumer which you want to get or push data from

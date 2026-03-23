@@ -25,6 +25,29 @@ func (e *JournalEntryLineItemType) IsExact() bool {
 	return false
 }
 
+// TaxType - The tax applicability of this line item. Overrides the root-level tax_type for this line.
+type TaxType string
+
+const (
+	TaxTypeSales    TaxType = "sales"
+	TaxTypePurchase TaxType = "purchase"
+)
+
+func (e TaxType) ToPointer() *TaxType {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *TaxType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "sales", "purchase":
+			return true
+		}
+	}
+	return false
+}
+
 type JournalEntryLineItem struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
@@ -37,8 +60,10 @@ type JournalEntryLineItem struct {
 	// Debit entries are considered positive, and credit entries are considered negative.
 	TotalAmount *float64 `json:"total_amount,omitempty"`
 	// Debit entries are considered positive, and credit entries are considered negative.
-	Type    JournalEntryLineItemType `json:"type"`
-	TaxRate *LinkedTaxRate           `json:"tax_rate,omitempty"`
+	Type    *JournalEntryLineItemType `json:"type"`
+	TaxRate *LinkedTaxRate            `json:"tax_rate,omitempty"`
+	// The tax applicability of this line item. Overrides the root-level tax_type for this line.
+	TaxType *TaxType `json:"tax_type,omitempty"`
 	// Deprecated: This field is deprecated and may be removed in a future version..
 	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
 	// A list of linked tracking categories.
@@ -48,6 +73,8 @@ type JournalEntryLineItem struct {
 	Customer *LinkedCustomer `json:"customer,omitempty"`
 	// The supplier this entity is linked to.
 	Supplier *LinkedSupplier `json:"supplier,omitempty"`
+	// The employee this entity is linked to.
+	Employee *LinkedEmployee `json:"employee,omitempty"`
 	// The ID of the department
 	DepartmentID *string `json:"department_id,omitempty"`
 	// The ID of the location
@@ -93,9 +120,9 @@ func (j *JournalEntryLineItem) GetTotalAmount() *float64 {
 	return j.TotalAmount
 }
 
-func (j *JournalEntryLineItem) GetType() JournalEntryLineItemType {
+func (j *JournalEntryLineItem) GetType() *JournalEntryLineItemType {
 	if j == nil {
-		return JournalEntryLineItemType("")
+		return nil
 	}
 	return j.Type
 }
@@ -105,6 +132,13 @@ func (j *JournalEntryLineItem) GetTaxRate() *LinkedTaxRate {
 		return nil
 	}
 	return j.TaxRate
+}
+
+func (j *JournalEntryLineItem) GetTaxType() *TaxType {
+	if j == nil {
+		return nil
+	}
+	return j.TaxType
 }
 
 func (j *JournalEntryLineItem) GetTrackingCategory() *DeprecatedLinkedTrackingCategory {
@@ -140,6 +174,13 @@ func (j *JournalEntryLineItem) GetSupplier() *LinkedSupplier {
 		return nil
 	}
 	return j.Supplier
+}
+
+func (j *JournalEntryLineItem) GetEmployee() *LinkedEmployee {
+	if j == nil {
+		return nil
+	}
+	return j.Employee
 }
 
 func (j *JournalEntryLineItem) GetDepartmentID() *string {
@@ -180,8 +221,10 @@ type JournalEntryLineItemInput struct {
 	// Debit entries are considered positive, and credit entries are considered negative.
 	TotalAmount *float64 `json:"total_amount,omitempty"`
 	// Debit entries are considered positive, and credit entries are considered negative.
-	Type    JournalEntryLineItemType `json:"type"`
-	TaxRate *LinkedTaxRateInput      `json:"tax_rate,omitempty"`
+	Type    *JournalEntryLineItemType `json:"type"`
+	TaxRate *LinkedTaxRateInput       `json:"tax_rate,omitempty"`
+	// The tax applicability of this line item. Overrides the root-level tax_type for this line.
+	TaxType *TaxType `json:"tax_type,omitempty"`
 	// Deprecated: This field is deprecated and may be removed in a future version..
 	TrackingCategory *DeprecatedLinkedTrackingCategory `json:"tracking_category,omitempty"`
 	// A list of linked tracking categories.
@@ -191,6 +234,8 @@ type JournalEntryLineItemInput struct {
 	Customer *LinkedCustomerInput `json:"customer,omitempty"`
 	// The supplier this entity is linked to.
 	Supplier *LinkedSupplierInput `json:"supplier,omitempty"`
+	// The employee this entity is linked to.
+	Employee *LinkedEmployee `json:"employee,omitempty"`
 	// The ID of the department
 	DepartmentID *string `json:"department_id,omitempty"`
 	// The ID of the location
@@ -229,9 +274,9 @@ func (j *JournalEntryLineItemInput) GetTotalAmount() *float64 {
 	return j.TotalAmount
 }
 
-func (j *JournalEntryLineItemInput) GetType() JournalEntryLineItemType {
+func (j *JournalEntryLineItemInput) GetType() *JournalEntryLineItemType {
 	if j == nil {
-		return JournalEntryLineItemType("")
+		return nil
 	}
 	return j.Type
 }
@@ -241,6 +286,13 @@ func (j *JournalEntryLineItemInput) GetTaxRate() *LinkedTaxRateInput {
 		return nil
 	}
 	return j.TaxRate
+}
+
+func (j *JournalEntryLineItemInput) GetTaxType() *TaxType {
+	if j == nil {
+		return nil
+	}
+	return j.TaxType
 }
 
 func (j *JournalEntryLineItemInput) GetTrackingCategory() *DeprecatedLinkedTrackingCategory {
@@ -276,6 +328,13 @@ func (j *JournalEntryLineItemInput) GetSupplier() *LinkedSupplierInput {
 		return nil
 	}
 	return j.Supplier
+}
+
+func (j *JournalEntryLineItemInput) GetEmployee() *LinkedEmployee {
+	if j == nil {
+		return nil
+	}
+	return j.Employee
 }
 
 func (j *JournalEntryLineItemInput) GetDepartmentID() *string {

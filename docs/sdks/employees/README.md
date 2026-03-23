@@ -209,6 +209,20 @@ func main() {
                     Type: components.PhoneNumberTypePrimary.ToPointer(),
                 },
             },
+            BankAccount: &components.BankAccount{
+                BankName: sdkgo.Pointer("Chase Bank"),
+                AccountNumber: sdkgo.Pointer("123465"),
+                AccountName: sdkgo.Pointer("Main Operating Account"),
+                AccountType: components.AccountTypeCreditCard.ToPointer(),
+                Iban: sdkgo.Pointer("GB33BUKB20201555555555"),
+                Bic: sdkgo.Pointer("CHASUS33"),
+                RoutingNumber: sdkgo.Pointer("021000021"),
+                BsbNumber: sdkgo.Pointer("062-001"),
+                BranchIdentifier: sdkgo.Pointer("001"),
+                BankCode: sdkgo.Pointer("BNH"),
+                Currency: components.CurrencyUsd.ToPointer(),
+                Country: sdkgo.Pointer("US"),
+            },
             CustomFields: []components.CustomField{
                 components.CreateCustomFieldCustomField1(
                     components.CustomField1{
@@ -453,6 +467,20 @@ func main() {
                     Extension: sdkgo.Pointer("105"),
                     Type: components.PhoneNumberTypePrimary.ToPointer(),
                 },
+            },
+            BankAccount: &components.BankAccount{
+                BankName: sdkgo.Pointer("Chase Bank"),
+                AccountNumber: sdkgo.Pointer("123465"),
+                AccountName: sdkgo.Pointer("Main Operating Account"),
+                AccountType: components.AccountTypeCreditCard.ToPointer(),
+                Iban: sdkgo.Pointer("GB33BUKB20201555555555"),
+                Bic: sdkgo.Pointer("CHASUS33"),
+                RoutingNumber: sdkgo.Pointer("021000021"),
+                BsbNumber: sdkgo.Pointer("062-001"),
+                BranchIdentifier: sdkgo.Pointer("001"),
+                BankCode: sdkgo.Pointer("BNH"),
+                Currency: components.CurrencyUsd.ToPointer(),
+                Country: sdkgo.Pointer("US"),
             },
             CustomFields: []components.CustomField{
                 components.CreateCustomFieldCustomField1(

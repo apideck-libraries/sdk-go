@@ -250,18 +250,11 @@ func (s *Quotes) List(ctx context.Context, request operations.AccountingQuotesAl
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.List(
 			ctx,
-			operations.AccountingQuotesAllRequest{
-				Raw:        request.Raw,
-				ConsumerID: request.ConsumerID,
-				AppID:      request.AppID,
-				ServiceID:  request.ServiceID,
-				CompanyID:  request.CompanyID,
-				Cursor:     &nCVal,
-				Limit:      request.Limit,
-			},
+			request,
 			opts...,
 		)
 	}

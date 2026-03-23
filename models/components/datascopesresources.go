@@ -62,6 +62,9 @@ func (d *DataScopesResources1) GetWrite() *bool {
 	return d.Write
 }
 
+// #region class-body-datascopesresources1
+// #endregion class-body-datascopesresources1
+
 type DataScopesResourcesType string
 
 const (
