@@ -250,21 +250,11 @@ func (s *ApideckCompanies) List(ctx context.Context, request operations.CrmCompa
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.List(
 			ctx,
-			operations.CrmCompaniesAllRequest{
-				Raw:         request.Raw,
-				ConsumerID:  request.ConsumerID,
-				AppID:       request.AppID,
-				ServiceID:   request.ServiceID,
-				Cursor:      &nCVal,
-				Limit:       request.Limit,
-				Filter:      request.Filter,
-				Sort:        request.Sort,
-				PassThrough: request.PassThrough,
-				Fields:      request.Fields,
-			},
+			request,
 			opts...,
 		)
 	}

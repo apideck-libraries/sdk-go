@@ -410,6 +410,9 @@ func (c *Company1) GetPassThrough() []PassThroughBody {
 	return c.PassThrough
 }
 
+// #region class-body-company1
+// #endregion class-body-company1
+
 type Company1Input struct {
 	// Name of the company
 	Name *string `json:"name"`
@@ -702,3 +705,6 @@ func (c *Company1Input) GetPassThrough() []PassThroughBody {
 	}
 	return c.PassThrough
 }
+
+// #region class-body-company1input
+// #endregion class-body-company1input

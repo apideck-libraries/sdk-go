@@ -250,19 +250,11 @@ func (s *Users) List(ctx context.Context, request operations.CrmUsersAllRequest,
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.List(
 			ctx,
-			operations.CrmUsersAllRequest{
-				Raw:         request.Raw,
-				ConsumerID:  request.ConsumerID,
-				AppID:       request.AppID,
-				ServiceID:   request.ServiceID,
-				Cursor:      &nCVal,
-				Limit:       request.Limit,
-				PassThrough: request.PassThrough,
-				Fields:      request.Fields,
-			},
+			request,
 			opts...,
 		)
 	}

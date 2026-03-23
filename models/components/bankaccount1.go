@@ -136,3 +136,6 @@ func (b *BankAccount1) GetCountry() *string {
 	}
 	return b.Country
 }
+
+// #region class-body-bankaccount1
+// #endregion class-body-bankaccount1

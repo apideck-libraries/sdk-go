@@ -250,20 +250,11 @@ func (s *Collections) List(ctx context.Context, request operations.IssueTracking
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.List(
 			ctx,
-			operations.IssueTrackingCollectionsAllRequest{
-				Raw:         request.Raw,
-				ConsumerID:  request.ConsumerID,
-				AppID:       request.AppID,
-				ServiceID:   request.ServiceID,
-				Cursor:      &nCVal,
-				Limit:       request.Limit,
-				Sort:        request.Sort,
-				PassThrough: request.PassThrough,
-				Fields:      request.Fields,
-			},
+			request,
 			opts...,
 		)
 	}

@@ -92,7 +92,7 @@ type Expense struct {
 	//
 	// Deprecated: Deprecated. Use account instead..
 	AccountID *string `json:"account_id,omitempty"`
-	// A flexible account reference that can represent either a ledger account (GL account) or a bank account, depending on the connector's requirements.
+	// A flexible account reference that can represent a ledger account (GL account), a bank account, or an employee payable account, depending on the connector's requirements.
 	Account *LinkedFinancialAccount `json:"account,omitempty"`
 	// The ID of the supplier this entity is linked to. Deprecated, use supplier instead.
 	//
@@ -419,7 +419,7 @@ type ExpenseInput struct {
 	//
 	// Deprecated: Deprecated. Use account instead..
 	AccountID *string `json:"account_id,omitempty"`
-	// A flexible account reference that can represent either a ledger account (GL account) or a bank account, depending on the connector's requirements.
+	// A flexible account reference that can represent a ledger account (GL account), a bank account, or an employee payable account, depending on the connector's requirements.
 	Account *LinkedFinancialAccountInput `json:"account,omitempty"`
 	// The ID of the supplier this entity is linked to. Deprecated, use supplier instead.
 	//

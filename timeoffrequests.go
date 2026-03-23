@@ -250,20 +250,11 @@ func (s *TimeOffRequests) List(ctx context.Context, request operations.HrisTimeO
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.List(
 			ctx,
-			operations.HrisTimeOffRequestsAllRequest{
-				Raw:         request.Raw,
-				ConsumerID:  request.ConsumerID,
-				AppID:       request.AppID,
-				ServiceID:   request.ServiceID,
-				Cursor:      &nCVal,
-				Limit:       request.Limit,
-				Filter:      request.Filter,
-				PassThrough: request.PassThrough,
-				Fields:      request.Fields,
-			},
+			request,
 			opts...,
 		)
 	}

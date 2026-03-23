@@ -85,3 +85,6 @@ func (g *GetCompaniesResponse1) GetRaw() map[string]any {
 	}
 	return g.Raw
 }
+
+// #region class-body-getcompaniesresponse1
+// #endregion class-body-getcompaniesresponse1

@@ -250,22 +250,11 @@ func (s *InvoiceItems) List(ctx context.Context, request operations.AccountingIn
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.List(
 			ctx,
-			operations.AccountingInvoiceItemsAllRequest{
-				Raw:         request.Raw,
-				ConsumerID:  request.ConsumerID,
-				AppID:       request.AppID,
-				ServiceID:   request.ServiceID,
-				CompanyID:   request.CompanyID,
-				Cursor:      &nCVal,
-				Limit:       request.Limit,
-				Filter:      request.Filter,
-				Sort:        request.Sort,
-				PassThrough: request.PassThrough,
-				Fields:      request.Fields,
-			},
+			request,
 			opts...,
 		)
 	}

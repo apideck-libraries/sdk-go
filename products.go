@@ -250,20 +250,11 @@ func (s *Products) List(ctx context.Context, request operations.EcommerceProduct
 				return nil, nil
 			}
 		}
+		request.Cursor = &nCVal
 
 		return s.List(
 			ctx,
-			operations.EcommerceProductsAllRequest{
-				Raw:         request.Raw,
-				ConsumerID:  request.ConsumerID,
-				AppID:       request.AppID,
-				ServiceID:   request.ServiceID,
-				Cursor:      &nCVal,
-				Limit:       request.Limit,
-				PassThrough: request.PassThrough,
-				Fields:      request.Fields,
-				Filter:      request.Filter,
-			},
+			request,
 			opts...,
 		)
 	}
