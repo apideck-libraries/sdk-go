@@ -38,7 +38,7 @@ func main() {
     res, err := s.Vault.Logs.List(ctx, operations.VaultLogsAllRequest{
         Filter: &components.LogsFilter{
             ConnectorID: sdkgo.Pointer("crm+salesforce"),
-            StatusCode: sdkgo.Pointer[float64](201),
+            StatusCode: sdkgo.Pointer[float64](201.0),
             ExcludeUnifiedApis: sdkgo.Pointer("vault,proxy"),
         },
     })

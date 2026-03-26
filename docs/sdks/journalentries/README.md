@@ -138,13 +138,13 @@ func main() {
             LineItems: []components.JournalEntryLineItemInput{
                 components.JournalEntryLineItemInput{
                     Description: sdkgo.Pointer("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
-                    TaxAmount: sdkgo.Pointer[float64](27500),
-                    SubTotal: sdkgo.Pointer[float64](27500),
-                    TotalAmount: sdkgo.Pointer[float64](27500),
+                    TaxAmount: sdkgo.Pointer[float64](27500.0),
+                    SubTotal: sdkgo.Pointer[float64](27500.0),
+                    TotalAmount: sdkgo.Pointer[float64](27500.0),
                     Type: components.JournalEntryLineItemTypeDebit.ToPointer(),
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.Pointer("123456"),
-                        Rate: sdkgo.Pointer[float64](10),
+                        Rate: sdkgo.Pointer[float64](10.0),
                     },
                     TrackingCategories: []*components.LinkedTrackingCategory{
                         &components.LinkedTrackingCategory{
@@ -456,13 +456,13 @@ func main() {
             LineItems: []components.JournalEntryLineItemInput{
                 components.JournalEntryLineItemInput{
                     Description: sdkgo.Pointer("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
-                    TaxAmount: sdkgo.Pointer[float64](27500),
-                    SubTotal: sdkgo.Pointer[float64](27500),
-                    TotalAmount: sdkgo.Pointer[float64](27500),
+                    TaxAmount: sdkgo.Pointer[float64](27500.0),
+                    SubTotal: sdkgo.Pointer[float64](27500.0),
+                    TotalAmount: sdkgo.Pointer[float64](27500.0),
                     Type: components.JournalEntryLineItemTypeDebit.ToPointer(),
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.Pointer("123456"),
-                        Rate: sdkgo.Pointer[float64](10),
+                        Rate: sdkgo.Pointer[float64](10.0),
                     },
                     TrackingCategories: []*components.LinkedTrackingCategory{
                         &components.LinkedTrackingCategory{

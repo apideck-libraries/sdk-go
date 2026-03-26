@@ -137,12 +137,12 @@ func main() {
             Currency: components.CurrencyUsd.ToPointer(),
             CurrencyRate: sdkgo.Pointer[float64](0.69),
             TaxInclusive: sdkgo.Pointer(true),
-            SubTotal: sdkgo.Pointer[float64](27500),
-            TotalTax: sdkgo.Pointer[float64](2500),
+            SubTotal: sdkgo.Pointer[float64](27500.0),
+            TotalTax: sdkgo.Pointer[float64](2500.0),
             TaxCode: sdkgo.Pointer("1234"),
             DiscountPercentage: sdkgo.Pointer[float64](5.5),
-            DiscountAmount: sdkgo.Pointer[float64](25),
-            Total: sdkgo.Pointer[float64](27500),
+            DiscountAmount: sdkgo.Pointer[float64](25.0),
+            Total: sdkgo.Pointer[float64](27500.0),
             CustomerMemo: sdkgo.Pointer("Thank you for considering our services!"),
             LineItems: []components.QuoteLineItemInput{
                 components.QuoteLineItemInput{
@@ -152,9 +152,9 @@ func main() {
                     LineNumber: sdkgo.Pointer[int64](1),
                     Description: sdkgo.Pointer("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
                     Type: components.QuoteLineItemTypeSalesItem.ToPointer(),
-                    TaxAmount: sdkgo.Pointer[float64](27500),
-                    TotalAmount: sdkgo.Pointer[float64](27500),
-                    Quantity: sdkgo.Pointer[float64](1),
+                    TaxAmount: sdkgo.Pointer[float64](27500.0),
+                    TotalAmount: sdkgo.Pointer[float64](27500.0),
+                    Quantity: sdkgo.Pointer[float64](1.0),
                     UnitPrice: sdkgo.Pointer[float64](27500.5),
                     UnitOfMeasure: sdkgo.Pointer("pc."),
                     DiscountPercentage: sdkgo.Pointer[float64](0.01),
@@ -169,7 +169,7 @@ func main() {
                     },
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.Pointer("123456"),
-                        Rate: sdkgo.Pointer[float64](10),
+                        Rate: sdkgo.Pointer[float64](10.0),
                     },
                     TrackingCategories: []*components.LinkedTrackingCategory{
                         &components.LinkedTrackingCategory{
@@ -442,12 +442,12 @@ func main() {
             Currency: components.CurrencyUsd.ToPointer(),
             CurrencyRate: sdkgo.Pointer[float64](0.69),
             TaxInclusive: sdkgo.Pointer(true),
-            SubTotal: sdkgo.Pointer[float64](27500),
-            TotalTax: sdkgo.Pointer[float64](2500),
+            SubTotal: sdkgo.Pointer[float64](27500.0),
+            TotalTax: sdkgo.Pointer[float64](2500.0),
             TaxCode: sdkgo.Pointer("1234"),
             DiscountPercentage: sdkgo.Pointer[float64](5.5),
-            DiscountAmount: sdkgo.Pointer[float64](25),
-            Total: sdkgo.Pointer[float64](27500),
+            DiscountAmount: sdkgo.Pointer[float64](25.0),
+            Total: sdkgo.Pointer[float64](27500.0),
             CustomerMemo: sdkgo.Pointer("Thank you for considering our services!"),
             LineItems: []components.QuoteLineItemInput{
                 components.QuoteLineItemInput{
@@ -457,9 +457,9 @@ func main() {
                     LineNumber: sdkgo.Pointer[int64](1),
                     Description: sdkgo.Pointer("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
                     Type: components.QuoteLineItemTypeSalesItem.ToPointer(),
-                    TaxAmount: sdkgo.Pointer[float64](27500),
-                    TotalAmount: sdkgo.Pointer[float64](27500),
-                    Quantity: sdkgo.Pointer[float64](1),
+                    TaxAmount: sdkgo.Pointer[float64](27500.0),
+                    TotalAmount: sdkgo.Pointer[float64](27500.0),
+                    Quantity: sdkgo.Pointer[float64](1.0),
                     UnitPrice: sdkgo.Pointer[float64](27500.5),
                     UnitOfMeasure: sdkgo.Pointer("pc."),
                     DiscountPercentage: sdkgo.Pointer[float64](0.01),
@@ -474,7 +474,7 @@ func main() {
                     },
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.Pointer("123456"),
-                        Rate: sdkgo.Pointer[float64](10),
+                        Rate: sdkgo.Pointer[float64](10.0),
                     },
                     TrackingCategories: nil,
                     LedgerAccount: &components.LinkedLedgerAccount{

@@ -138,9 +138,9 @@ func main() {
             Memo: sdkgo.Pointer("For travel expenses incurred on 2024-05-15"),
             TaxRate: &components.LinkedTaxRateInput{
                 ID: sdkgo.Pointer("123456"),
-                Rate: sdkgo.Pointer[float64](10),
+                Rate: sdkgo.Pointer[float64](10.0),
             },
-            TotalAmount: sdkgo.Pointer[float64](275),
+            TotalAmount: sdkgo.Pointer[float64](275.0),
             LineItems: []components.ExpenseLineItemInput{
                 components.ExpenseLineItemInput{
                     TrackingCategories: []*components.LinkedTrackingCategory{
@@ -163,10 +163,10 @@ func main() {
                     LocationID: sdkgo.Pointer("12345"),
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.Pointer("123456"),
-                        Rate: sdkgo.Pointer[float64](10),
+                        Rate: sdkgo.Pointer[float64](10.0),
                     },
                     Description: sdkgo.Pointer("Travel US."),
-                    TotalAmount: sdkgo.Pointer[float64](275),
+                    TotalAmount: sdkgo.Pointer[float64](275.0),
                     LineNumber: sdkgo.Pointer[int64](1),
                 },
             },
@@ -407,9 +407,9 @@ func main() {
             Memo: sdkgo.Pointer("For travel expenses incurred on 2024-05-15"),
             TaxRate: &components.LinkedTaxRateInput{
                 ID: sdkgo.Pointer("123456"),
-                Rate: sdkgo.Pointer[float64](10),
+                Rate: sdkgo.Pointer[float64](10.0),
             },
-            TotalAmount: sdkgo.Pointer[float64](275),
+            TotalAmount: sdkgo.Pointer[float64](275.0),
             LineItems: []components.ExpenseLineItemInput{
                 components.ExpenseLineItemInput{
                     TrackingCategories: []*components.LinkedTrackingCategory{
@@ -432,10 +432,10 @@ func main() {
                     LocationID: sdkgo.Pointer("12345"),
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.Pointer("123456"),
-                        Rate: sdkgo.Pointer[float64](10),
+                        Rate: sdkgo.Pointer[float64](10.0),
                     },
                     Description: sdkgo.Pointer("Travel US."),
-                    TotalAmount: sdkgo.Pointer[float64](275),
+                    TotalAmount: sdkgo.Pointer[float64](275.0),
                     LineNumber: sdkgo.Pointer[int64](1),
                 },
             },

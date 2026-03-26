@@ -263,7 +263,7 @@ func main() {
     res, err := s.FileStorage.UploadSessions.Upload(ctx, operations.FileStorageUploadSessionsUploadRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
-        PartNumber: 0,
+        PartNumber: 0.0,
         Digest: sdkgo.Pointer("sha=fpRyg5eVQletdZqEKaFlqwBXJzM="),
         RequestBody: bytes.NewBuffer([]byte("<binary string>")),
     })

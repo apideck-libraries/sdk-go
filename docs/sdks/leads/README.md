@@ -144,7 +144,7 @@ func main() {
             Title: sdkgo.Pointer("CEO"),
             Language: sdkgo.Pointer("EN"),
             Status: sdkgo.Pointer("New"),
-            MonetaryAmount: sdkgo.Pointer[float64](75000),
+            MonetaryAmount: sdkgo.Pointer[float64](75000.0),
             Currency: components.CurrencyUsd.ToPointer(),
             Fax: sdkgo.Pointer("+12129876543"),
             Websites: []components.Website{
@@ -536,7 +536,7 @@ func main() {
             Title: sdkgo.Pointer("CEO"),
             Language: sdkgo.Pointer("EN"),
             Status: sdkgo.Pointer("New"),
-            MonetaryAmount: sdkgo.Pointer[float64](75000),
+            MonetaryAmount: sdkgo.Pointer[float64](75000.0),
             Currency: components.CurrencyUsd.ToPointer(),
             Fax: sdkgo.Pointer("+12129876543"),
             Websites: []components.Website{

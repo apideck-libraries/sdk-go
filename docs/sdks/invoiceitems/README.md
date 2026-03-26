@@ -146,7 +146,7 @@ func main() {
                 TaxInclusive: sdkgo.Pointer(true),
                 TaxRate: &components.LinkedTaxRateInput{
                     ID: sdkgo.Pointer("123456"),
-                    Rate: sdkgo.Pointer[float64](10),
+                    Rate: sdkgo.Pointer[float64](10.0),
                 },
             },
             PurchaseDetails: &components.InvoiceItemPurchaseDetails{
@@ -155,10 +155,10 @@ func main() {
                 TaxInclusive: sdkgo.Pointer(true),
                 TaxRate: &components.LinkedTaxRateInput{
                     ID: sdkgo.Pointer("123456"),
-                    Rate: sdkgo.Pointer[float64](10),
+                    Rate: sdkgo.Pointer[float64](10.0),
                 },
             },
-            Quantity: sdkgo.Pointer[float64](1),
+            Quantity: sdkgo.Pointer[float64](1.0),
             UnitPrice: sdkgo.Pointer[float64](27500.5),
             AssetAccount: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
@@ -356,7 +356,7 @@ func main() {
                 TaxInclusive: sdkgo.Pointer(true),
                 TaxRate: &components.LinkedTaxRateInput{
                     ID: sdkgo.Pointer("123456"),
-                    Rate: sdkgo.Pointer[float64](10),
+                    Rate: sdkgo.Pointer[float64](10.0),
                 },
             },
             PurchaseDetails: &components.InvoiceItemPurchaseDetails{
@@ -365,10 +365,10 @@ func main() {
                 TaxInclusive: sdkgo.Pointer(true),
                 TaxRate: &components.LinkedTaxRateInput{
                     ID: sdkgo.Pointer("123456"),
-                    Rate: sdkgo.Pointer[float64](10),
+                    Rate: sdkgo.Pointer[float64](10.0),
                 },
             },
-            Quantity: sdkgo.Pointer[float64](1),
+            Quantity: sdkgo.Pointer[float64](1.0),
             UnitPrice: sdkgo.Pointer[float64](27500.5),
             AssetAccount: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
