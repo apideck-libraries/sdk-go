@@ -134,7 +134,7 @@ func main() {
                 components.Transactions{
                     PostedDate: types.MustTimeFromString("2025-01-15T12:00:00.000Z"),
                     Description: sdkgo.Pointer("Payment received from ACME Corp"),
-                    Amount: 250,
+                    Amount: 250.0,
                     CreditOrDebit: components.CreditOrDebitDebit,
                     SourceTransactionID: "txn_987",
                     Counterparty: sdkgo.Pointer("ACME Corp"),
@@ -144,7 +144,7 @@ func main() {
                 components.Transactions{
                     PostedDate: types.MustTimeFromString("2025-01-15T12:00:00.000Z"),
                     Description: sdkgo.Pointer("Payment received from ACME Corp"),
-                    Amount: 250,
+                    Amount: 250.0,
                     CreditOrDebit: components.CreditOrDebitDebit,
                     SourceTransactionID: "txn_987",
                     Counterparty: sdkgo.Pointer("ACME Corp"),
@@ -154,7 +154,7 @@ func main() {
                 components.Transactions{
                     PostedDate: types.MustTimeFromString("2025-01-15T12:00:00.000Z"),
                     Description: sdkgo.Pointer("Payment received from ACME Corp"),
-                    Amount: 250,
+                    Amount: 250.0,
                     CreditOrDebit: components.CreditOrDebitDebit,
                     SourceTransactionID: "txn_987",
                     Counterparty: sdkgo.Pointer("ACME Corp"),
@@ -306,7 +306,7 @@ func main() {
                 components.Transactions{
                     PostedDate: types.MustTimeFromString("2025-01-15T12:00:00.000Z"),
                     Description: sdkgo.Pointer("Payment received from ACME Corp"),
-                    Amount: 250,
+                    Amount: 250.0,
                     CreditOrDebit: components.CreditOrDebitDebit,
                     SourceTransactionID: "txn_987",
                     Counterparty: sdkgo.Pointer("ACME Corp"),
@@ -316,7 +316,7 @@ func main() {
                 components.Transactions{
                     PostedDate: types.MustTimeFromString("2025-01-15T12:00:00.000Z"),
                     Description: sdkgo.Pointer("Payment received from ACME Corp"),
-                    Amount: 250,
+                    Amount: 250.0,
                     CreditOrDebit: components.CreditOrDebitDebit,
                     SourceTransactionID: "txn_987",
                     Counterparty: sdkgo.Pointer("ACME Corp"),

@@ -161,16 +161,16 @@ func main() {
                 Name: sdkgo.Pointer("Company Website Overhaul"),
             },
             Currency: components.CurrencyUsd.ToPointer(),
-            BudgetAmount: sdkgo.Pointer[float64](50000),
-            ApprovedAmount: sdkgo.Pointer[float64](48000),
-            BudgetHours: sdkgo.Pointer[float64](400),
-            HourlyRate: sdkgo.Pointer[float64](125),
+            BudgetAmount: sdkgo.Pointer[float64](50000.0),
+            ApprovedAmount: sdkgo.Pointer[float64](48000.0),
+            BudgetHours: sdkgo.Pointer[float64](400.0),
+            HourlyRate: sdkgo.Pointer[float64](125.0),
             BillingMethod: components.BillingMethodTimeAndMaterials.ToPointer(),
             Phase: components.ProjectPhaseExecution.ToPointer(),
             TaxRate: &components.LinkedTaxRateInput{
                 ID: sdkgo.Pointer("123456"),
                 Code: sdkgo.Pointer("N-T"),
-                Rate: sdkgo.Pointer[float64](10),
+                Rate: sdkgo.Pointer[float64](10.0),
             },
             TrackingCategories: []*components.LinkedTrackingCategory{
                 &components.LinkedTrackingCategory{
@@ -388,16 +388,16 @@ func main() {
                 Name: sdkgo.Pointer("Company Website Overhaul"),
             },
             Currency: components.CurrencyUsd.ToPointer(),
-            BudgetAmount: sdkgo.Pointer[float64](50000),
-            ApprovedAmount: sdkgo.Pointer[float64](48000),
-            BudgetHours: sdkgo.Pointer[float64](400),
-            HourlyRate: sdkgo.Pointer[float64](125),
+            BudgetAmount: sdkgo.Pointer[float64](50000.0),
+            ApprovedAmount: sdkgo.Pointer[float64](48000.0),
+            BudgetHours: sdkgo.Pointer[float64](400.0),
+            HourlyRate: sdkgo.Pointer[float64](125.0),
             BillingMethod: components.BillingMethodTimeAndMaterials.ToPointer(),
             Phase: components.ProjectPhaseExecution.ToPointer(),
             TaxRate: &components.LinkedTaxRateInput{
                 ID: sdkgo.Pointer("123456"),
                 Code: sdkgo.Pointer("N-T"),
-                Rate: sdkgo.Pointer[float64](10),
+                Rate: sdkgo.Pointer[float64](10.0),
             },
             TrackingCategories: []*components.LinkedTrackingCategory{
                 &components.LinkedTrackingCategory{

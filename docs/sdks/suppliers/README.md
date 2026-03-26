@@ -233,7 +233,7 @@ func main() {
             Notes: sdkgo.Pointer("Some notes about this supplier"),
             TaxRate: &components.LinkedTaxRateInput{
                 ID: sdkgo.Pointer("123456"),
-                Rate: sdkgo.Pointer[float64](10),
+                Rate: sdkgo.Pointer[float64](10.0),
             },
             TaxNumber: sdkgo.Pointer("US123945459"),
             Currency: components.CurrencyUsd.ToPointer(),
@@ -530,7 +530,7 @@ func main() {
             Notes: sdkgo.Pointer("Some notes about this supplier"),
             TaxRate: &components.LinkedTaxRateInput{
                 ID: sdkgo.Pointer("123456"),
-                Rate: sdkgo.Pointer[float64](10),
+                Rate: sdkgo.Pointer[float64](10.0),
             },
             TaxNumber: sdkgo.Pointer("US123945459"),
             Currency: components.CurrencyUsd.ToPointer(),

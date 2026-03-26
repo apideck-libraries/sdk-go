@@ -146,7 +146,7 @@ func main() {
             TaxRate: &components.LinkedTaxRateInput{
                 ID: sdkgo.Pointer("123456"),
                 Code: sdkgo.Pointer("N-T"),
-                Rate: sdkgo.Pointer[float64](10),
+                Rate: sdkgo.Pointer[float64](10.0),
             },
             RateRequired: sdkgo.Pointer(false),
             DefaultRate: sdkgo.Pointer[float64](0.67),
@@ -320,7 +320,7 @@ func main() {
             TaxRate: &components.LinkedTaxRateInput{
                 ID: sdkgo.Pointer("123456"),
                 Code: sdkgo.Pointer("N-T"),
-                Rate: sdkgo.Pointer[float64](10),
+                Rate: sdkgo.Pointer[float64](10.0),
             },
             RateRequired: sdkgo.Pointer(false),
             DefaultRate: sdkgo.Pointer[float64](0.67),

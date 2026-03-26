@@ -171,9 +171,9 @@ func main() {
             ExpectedArrivalDate: types.MustNewDateFromString("2020-09-30"),
             Currency: components.CurrencyUsd.ToPointer(),
             CurrencyRate: sdkgo.Pointer[float64](0.69),
-            SubTotal: sdkgo.Pointer[float64](27500),
-            TotalTax: sdkgo.Pointer[float64](2500),
-            Total: sdkgo.Pointer[float64](27500),
+            SubTotal: sdkgo.Pointer[float64](27500.0),
+            TotalTax: sdkgo.Pointer[float64](2500.0),
+            Total: sdkgo.Pointer[float64](27500.0),
             TaxInclusive: sdkgo.Pointer(true),
             LineItems: []components.InvoiceLineItemInput{
                 components.InvoiceLineItemInput{
@@ -183,9 +183,9 @@ func main() {
                     LineNumber: sdkgo.Pointer[int64](1),
                     Description: sdkgo.Pointer("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
                     Type: components.InvoiceLineItemTypeSalesItem.ToPointer(),
-                    TaxAmount: sdkgo.Pointer[float64](27500),
-                    TotalAmount: sdkgo.Pointer[float64](27500),
-                    Quantity: sdkgo.Pointer[float64](1),
+                    TaxAmount: sdkgo.Pointer[float64](27500.0),
+                    TotalAmount: sdkgo.Pointer[float64](27500.0),
+                    Quantity: sdkgo.Pointer[float64](1.0),
                     UnitPrice: sdkgo.Pointer[float64](27500.5),
                     UnitOfMeasure: sdkgo.Pointer("pc."),
                     DiscountPercentage: sdkgo.Pointer[float64](0.01),
@@ -199,7 +199,7 @@ func main() {
                     },
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.Pointer("123456"),
-                        Rate: sdkgo.Pointer[float64](10),
+                        Rate: sdkgo.Pointer[float64](10.0),
                     },
                     TrackingCategories: []*components.LinkedTrackingCategory{
                         &components.LinkedTrackingCategory{
@@ -233,9 +233,9 @@ func main() {
                     LineNumber: sdkgo.Pointer[int64](1),
                     Description: sdkgo.Pointer("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
                     Type: components.InvoiceLineItemTypeSalesItem.ToPointer(),
-                    TaxAmount: sdkgo.Pointer[float64](27500),
-                    TotalAmount: sdkgo.Pointer[float64](27500),
-                    Quantity: sdkgo.Pointer[float64](1),
+                    TaxAmount: sdkgo.Pointer[float64](27500.0),
+                    TotalAmount: sdkgo.Pointer[float64](27500.0),
+                    Quantity: sdkgo.Pointer[float64](1.0),
                     UnitPrice: sdkgo.Pointer[float64](27500.5),
                     UnitOfMeasure: sdkgo.Pointer("pc."),
                     DiscountPercentage: sdkgo.Pointer[float64](0.01),
@@ -249,7 +249,7 @@ func main() {
                     },
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.Pointer("123456"),
-                        Rate: sdkgo.Pointer[float64](10),
+                        Rate: sdkgo.Pointer[float64](10.0),
                     },
                     TrackingCategories: []*components.LinkedTrackingCategory{
                         &components.LinkedTrackingCategory{
@@ -283,9 +283,9 @@ func main() {
                     LineNumber: sdkgo.Pointer[int64](1),
                     Description: sdkgo.Pointer("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
                     Type: components.InvoiceLineItemTypeSalesItem.ToPointer(),
-                    TaxAmount: sdkgo.Pointer[float64](27500),
-                    TotalAmount: sdkgo.Pointer[float64](27500),
-                    Quantity: sdkgo.Pointer[float64](1),
+                    TaxAmount: sdkgo.Pointer[float64](27500.0),
+                    TotalAmount: sdkgo.Pointer[float64](27500.0),
+                    Quantity: sdkgo.Pointer[float64](1.0),
                     UnitPrice: sdkgo.Pointer[float64](27500.5),
                     UnitOfMeasure: sdkgo.Pointer("pc."),
                     DiscountPercentage: sdkgo.Pointer[float64](0.01),
@@ -299,7 +299,7 @@ func main() {
                     },
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.Pointer("123456"),
-                        Rate: sdkgo.Pointer[float64](10),
+                        Rate: sdkgo.Pointer[float64](10.0),
                     },
                     TrackingCategories: []*components.LinkedTrackingCategory{
                         &components.LinkedTrackingCategory{
@@ -635,9 +635,9 @@ func main() {
             ExpectedArrivalDate: types.MustNewDateFromString("2020-09-30"),
             Currency: components.CurrencyUsd.ToPointer(),
             CurrencyRate: sdkgo.Pointer[float64](0.69),
-            SubTotal: sdkgo.Pointer[float64](27500),
-            TotalTax: sdkgo.Pointer[float64](2500),
-            Total: sdkgo.Pointer[float64](27500),
+            SubTotal: sdkgo.Pointer[float64](27500.0),
+            TotalTax: sdkgo.Pointer[float64](2500.0),
+            Total: sdkgo.Pointer[float64](27500.0),
             TaxInclusive: sdkgo.Pointer(true),
             LineItems: []components.InvoiceLineItemInput{
                 components.InvoiceLineItemInput{
@@ -647,9 +647,9 @@ func main() {
                     LineNumber: sdkgo.Pointer[int64](1),
                     Description: sdkgo.Pointer("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
                     Type: components.InvoiceLineItemTypeSalesItem.ToPointer(),
-                    TaxAmount: sdkgo.Pointer[float64](27500),
-                    TotalAmount: sdkgo.Pointer[float64](27500),
-                    Quantity: sdkgo.Pointer[float64](1),
+                    TaxAmount: sdkgo.Pointer[float64](27500.0),
+                    TotalAmount: sdkgo.Pointer[float64](27500.0),
+                    Quantity: sdkgo.Pointer[float64](1.0),
                     UnitPrice: sdkgo.Pointer[float64](27500.5),
                     UnitOfMeasure: sdkgo.Pointer("pc."),
                     DiscountPercentage: sdkgo.Pointer[float64](0.01),
@@ -663,7 +663,7 @@ func main() {
                     },
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.Pointer("123456"),
-                        Rate: sdkgo.Pointer[float64](10),
+                        Rate: sdkgo.Pointer[float64](10.0),
                     },
                     TrackingCategories: nil,
                     LedgerAccount: &components.LinkedLedgerAccount{
@@ -712,9 +712,9 @@ func main() {
                     LineNumber: sdkgo.Pointer[int64](1),
                     Description: sdkgo.Pointer("Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection."),
                     Type: components.InvoiceLineItemTypeSalesItem.ToPointer(),
-                    TaxAmount: sdkgo.Pointer[float64](27500),
-                    TotalAmount: sdkgo.Pointer[float64](27500),
-                    Quantity: sdkgo.Pointer[float64](1),
+                    TaxAmount: sdkgo.Pointer[float64](27500.0),
+                    TotalAmount: sdkgo.Pointer[float64](27500.0),
+                    Quantity: sdkgo.Pointer[float64](1.0),
                     UnitPrice: sdkgo.Pointer[float64](27500.5),
                     UnitOfMeasure: sdkgo.Pointer("pc."),
                     DiscountPercentage: sdkgo.Pointer[float64](0.01),
@@ -728,7 +728,7 @@ func main() {
                     },
                     TaxRate: &components.LinkedTaxRateInput{
                         ID: sdkgo.Pointer("123456"),
-                        Rate: sdkgo.Pointer[float64](10),
+                        Rate: sdkgo.Pointer[float64](10.0),
                     },
                     TrackingCategories: nil,
                     LedgerAccount: &components.LinkedLedgerAccount{

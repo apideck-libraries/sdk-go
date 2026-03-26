@@ -210,7 +210,7 @@ func main() {
                     Role: sdkgo.Pointer("Sales"),
                     StartDate: types.MustNewDateFromString("2020-08-12"),
                     EndDate: types.MustNewDateFromString("2020-08-12"),
-                    CompensationRate: sdkgo.Pointer[float64](72000),
+                    CompensationRate: sdkgo.Pointer[float64](72000.0),
                     Currency: components.CurrencyUsd.ToPointer(),
                     PaymentUnit: components.PaymentUnitYear.ToPointer(),
                     HiredAt: types.MustNewDateFromString("2020-08-12"),
@@ -249,7 +249,7 @@ func main() {
                     Role: sdkgo.Pointer("Sales"),
                     StartDate: types.MustNewDateFromString("2020-08-12"),
                     EndDate: types.MustNewDateFromString("2020-08-12"),
-                    CompensationRate: sdkgo.Pointer[float64](72000),
+                    CompensationRate: sdkgo.Pointer[float64](72000.0),
                     Currency: components.CurrencyUsd.ToPointer(),
                     PaymentUnit: components.PaymentUnitYear.ToPointer(),
                     HiredAt: types.MustNewDateFromString("2020-08-12"),
@@ -288,7 +288,7 @@ func main() {
                     Role: sdkgo.Pointer("Sales"),
                     StartDate: types.MustNewDateFromString("2020-08-12"),
                     EndDate: types.MustNewDateFromString("2020-08-12"),
-                    CompensationRate: sdkgo.Pointer[float64](72000),
+                    CompensationRate: sdkgo.Pointer[float64](72000.0),
                     Currency: components.CurrencyUsd.ToPointer(),
                     PaymentUnit: components.PaymentUnitYear.ToPointer(),
                     HiredAt: types.MustNewDateFromString("2020-08-12"),
@@ -325,7 +325,7 @@ func main() {
             },
             Compensations: []components.EmployeeCompensationInput{
                 components.EmployeeCompensationInput{
-                    Rate: sdkgo.Pointer[float64](50),
+                    Rate: sdkgo.Pointer[float64](50.0),
                     PaymentUnit: components.PaymentUnitHour.ToPointer(),
                     FlsaStatus: components.FlsaStatusNonexempt.ToPointer(),
                     EffectiveDate: sdkgo.Pointer("2021-06-11"),
@@ -768,7 +768,7 @@ func main() {
                     Role: sdkgo.Pointer("Sales"),
                     StartDate: types.MustNewDateFromString("2020-08-12"),
                     EndDate: types.MustNewDateFromString("2020-08-12"),
-                    CompensationRate: sdkgo.Pointer[float64](72000),
+                    CompensationRate: sdkgo.Pointer[float64](72000.0),
                     Currency: components.CurrencyUsd.ToPointer(),
                     PaymentUnit: components.PaymentUnitYear.ToPointer(),
                     HiredAt: types.MustNewDateFromString("2020-08-12"),
@@ -805,7 +805,7 @@ func main() {
             },
             Compensations: []components.EmployeeCompensationInput{
                 components.EmployeeCompensationInput{
-                    Rate: sdkgo.Pointer[float64](50),
+                    Rate: sdkgo.Pointer[float64](50.0),
                     PaymentUnit: components.PaymentUnitHour.ToPointer(),
                     FlsaStatus: components.FlsaStatusNonexempt.ToPointer(),
                     EffectiveDate: sdkgo.Pointer("2021-06-11"),
