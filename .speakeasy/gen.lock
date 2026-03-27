@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 135473acf19662d9c8e7b8f99c7c1760
-  docVersion: 10.24.9
+  docChecksum: aaccfaf769a5ef00ecc6f004f8f0a38e
+  docVersion: 10.24.10
   speakeasyVersion: 1.759.3
   generationVersion: 2.869.25
-  releaseVersion: 0.27.3
-  configChecksum: eb23bbe4f1d4731781a64c7dbe4c02a3
+  releaseVersion: 0.27.4
+  configChecksum: ca88a7871e1b85f33f99f194c9ad0a7e
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: a707e360-54e3-4fe2-bfad-c2009ffca82b
-  pristine_commit_hash: e432f8ab0ff2baafdbdaf21d1d49ce2f97750427
-  pristine_tree_hash: a600ac4380cc793c0d5846d29dbf73a2a7d8c64c
+  generation_id: 1fb3b23c-5426-4bb2-bb1f-068ec46feb27
+  pristine_commit_hash: 17cf8bca9c67051dd832e6c830840f6487bd10b5
+  pristine_tree_hash: 032d29c5f6518853b33ca11c19e5422a7598ca23
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: ce84829a51c57e1d83e2c215f2c0ca88a78f1f68
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:c5397fee3670493c7f4e4b2eed8301696eff0286
-    pristine_git_object: 9a5f631983d0c33c134d8030bb76ef4fd51fb77b
+    last_write_checksum: sha1:d6a44c9eefa28d63b2e7c87de6c2d5885a5d4836
+    pristine_git_object: 990724ab539ddaa08c37a1140830eec420c7f3e1
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:37ce1c349557c6a3037bec2905140054be4f2a96
@@ -908,6 +908,10 @@ trackedFiles:
     id: 02796ba68134
     last_write_checksum: sha1:407773f63238258723fb05102f3deb836ed580b9
     pristine_git_object: a224ea6be7365605ab42c714a5de3946e1bf4abb
+  docs/models/components/connectionhealth.md:
+    id: 0d9b32221078
+    last_write_checksum: sha1:01992624602bb4167148457c570dc52d9dbc7d5e
+    pristine_git_object: ece40cf84c6ebd0830f432a7be6f3af4447e91f5
   docs/models/components/connectionimportdata.md:
     id: bf2d23b1d017
     last_write_checksum: sha1:f92e98bcdd9729e1aac546a9bbeb91e77a221cbb
@@ -990,8 +994,8 @@ trackedFiles:
     pristine_git_object: 6852d1459ce62960a35f0c0233300712ec3e2cfe
   docs/models/components/consumerconnection.md:
     id: 19d663e6a01f
-    last_write_checksum: sha1:bf51ef40b97584fbe3a24fd846b2647e7a69a1e2
-    pristine_git_object: 7bfa096b728652fdb9ff4ecc4512f72dcb80c026
+    last_write_checksum: sha1:af61cef6f06583b87bb3ef5217fc9fe7530e1825
+    pristine_git_object: bd60a69b5d0c4120be6dc183228404a1c8d227ce
   docs/models/components/consumermetadata.md:
     id: 16d475f9c6e0
     last_write_checksum: sha1:db80d13d7991c90928746641b9b1f7731f018c2b
@@ -4142,8 +4146,8 @@ trackedFiles:
     pristine_git_object: 63d6c7bd5b09632ba369b3acb489cb27d0d5e6c5
   docs/models/components/webhookeventtype.md:
     id: b979b3765280
-    last_write_checksum: sha1:588d2333ae962d464ba83a152a9bcfd49043bebe
-    pristine_git_object: cfc38cc38eb4a8906ad6fb006941ccb47b04d345
+    last_write_checksum: sha1:d02d4205c16f79e99da4641b1a0a5f84481df2ba
+    pristine_git_object: b47031e7349128f967fd7d07a7cb2fc99225f741
   docs/models/components/webhooksubscription.md:
     id: c88220e1de92
     last_write_checksum: sha1:f97c5293a19bc0cd1813595728fe11b7472eafdd
@@ -9060,6 +9064,10 @@ trackedFiles:
     id: ec3cda6288e4
     last_write_checksum: sha1:1ec855693c4702a940e33c0bc0c244b9fde8c03b
     pristine_git_object: 0ce674123b0611b3965081e16d38a435073fb676
+  models/components/connectionhealth.go:
+    id: 79427c85a961
+    last_write_checksum: sha1:58a0fbdc0a728e1a171434e0fe405294aeb8c3d7
+    pristine_git_object: dc90c96686cbcea6be5905bbe5b537eb9ae98405
   models/components/connectionimportdata.go:
     id: 43b8eb33b95e
     last_write_checksum: sha1:774230f6879e05ce3df97177ec31add24b665ed9
@@ -9114,8 +9122,8 @@ trackedFiles:
     pristine_git_object: 807a36992c300e780a3c7955c958a12c0236a285
   models/components/consumerconnection.go:
     id: 7827220ffc2b
-    last_write_checksum: sha1:a0a46cb29474cef385cfe8d3a54c9856e311baab
-    pristine_git_object: b7c4dd16dfbac2d6e747f45b12e4cc73c64913fa
+    last_write_checksum: sha1:f624495f0ecf993bcc62b2a11d0e5b7244fe3cff
+    pristine_git_object: 69e1dfcaa4734810004b7184597fd848720dae38
   models/components/consumermetadata.go:
     id: 57a46b5ec3f9
     last_write_checksum: sha1:3446ab6dfea4ad5d176da6df8cbdca125050ae40
@@ -11318,8 +11326,8 @@ trackedFiles:
     pristine_git_object: bd6ca89e7d68e78500d0e123f199b9f66bbdfb95
   models/components/webhookeventtype.go:
     id: eb6328fbc2b7
-    last_write_checksum: sha1:d1cf8bf08f897f0b80389e6d74c2556718aeb953
-    pristine_git_object: 5dfdb6d0f05d7efc0ba1bd12940d8fa9b4a830f2
+    last_write_checksum: sha1:b0d4ec9e55d40227bc6f5a8caa8bec8181a1fd7c
+    pristine_git_object: be58a44ed9f50eff2edc9c4dd82a76a77b73a212
   models/components/webhooksubscription.go:
     id: 08bb704a2412
     last_write_checksum: sha1:337fa67dd6314fd7ac61a2c2fb36b666b6654af3
@@ -29201,6 +29209,7 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Go SDK Changes:\n* `Apideck.Vault.Consumers.Create()`:  `response.Data.Connections[]` **Changed**\n* `Apideck.Vault.Consumers.Get()`:  `response.Data.Connections[]` **Changed**\n* `Apideck.Vault.Consumers.Update()`:  `response.Data.Connections[]` **Changed**\n* `Apideck.Webhook.Webhooks.List()`:  `response.Data[].Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Create()`: \n  *  `request.CreateWebhookRequest.Events[]` **Changed**\n  *  `response.Data.Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Get()`:  `response.Data.Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Update()`: \n  *  `request.UpdateWebhookRequest.Events[]` **Changed**\n  *  `response.Data.Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Delete()`:  `response.Data.Events[]` **Changed**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
