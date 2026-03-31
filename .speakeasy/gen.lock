@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: aaccfaf769a5ef00ecc6f004f8f0a38e
-  docVersion: 10.24.10
-  speakeasyVersion: 1.759.3
-  generationVersion: 2.869.25
-  releaseVersion: 0.27.4
-  configChecksum: ca88a7871e1b85f33f99f194c9ad0a7e
+  docChecksum: 97d22df53affc8a9a7ca8183172d67d7
+  docVersion: 10.24.12
+  speakeasyVersion: 1.761.0
+  generationVersion: 2.879.1
+  releaseVersion: 0.27.5
+  configChecksum: 92a53c8c7ddd8d7946f8558d79f2b02e
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: 1fb3b23c-5426-4bb2-bb1f-068ec46feb27
-  pristine_commit_hash: 17cf8bca9c67051dd832e6c830840f6487bd10b5
-  pristine_tree_hash: 032d29c5f6518853b33ca11c19e5422a7598ca23
+  generation_id: b7a96c18-864c-4ef6-87df-cc55ceb38d53
+  pristine_commit_hash: 245f50cbc8242f26cca7818b144fa9553a27431f
+  pristine_tree_hash: dd3c12b1cbbf631e27813a385dd4508e1721190e
 features:
   go:
     acceptHeaders: 2.81.2
@@ -28,7 +28,7 @@ features:
     envVarSecurityUsage: 0.3.2
     errors: 2.83.0
     flattening: 2.81.2
-    globalSecurity: 2.82.13
+    globalSecurity: 2.82.15
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.83.1
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: ce84829a51c57e1d83e2c215f2c0ca88a78f1f68
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:d6a44c9eefa28d63b2e7c87de6c2d5885a5d4836
-    pristine_git_object: 990724ab539ddaa08c37a1140830eec420c7f3e1
+    last_write_checksum: sha1:3989271bd5f9b35b42596f16a31c5889d6e50772
+    pristine_git_object: 540abc8af5832764c557245ad94cd75b816a92e0
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:37ce1c349557c6a3037bec2905140054be4f2a96
@@ -8698,8 +8698,8 @@ trackedFiles:
     pristine_git_object: a6ed643b3736dea5930adf1e084a8db7a6e27acf
   internal/utils/json.go:
     id: ad03e3c502d8
-    last_write_checksum: sha1:95e0003c5d43a5fd0e5aa63f6b9b3288264f0f2b
-    pristine_git_object: c99c40234579312dd57f4dabcb92ab24f2bb01c0
+    last_write_checksum: sha1:9a4851b23d72a178cb1ad4b4f79f461953259dd5
+    pristine_git_object: 797c3bbdc3ee4f16e1b0a0b2fcefacbed6fcd10f
   internal/utils/pathparams.go:
     id: 1f3e0c30fd90
     last_write_checksum: sha1:82b2e0fe1d1600642e4f2ad7a32b4f8f73174913
@@ -8718,8 +8718,8 @@ trackedFiles:
     pristine_git_object: c9b298f3407207c120fb1017dbaf54bd26ce7720
   internal/utils/security.go:
     id: eeb54c55241b
-    last_write_checksum: sha1:52cefded5223c60fcac5bd56574370e27a4bc3d5
-    pristine_git_object: ce2e1c0cffe3bbd3f111eace502f895175daad22
+    last_write_checksum: sha1:1c0b332b3cf0fa405df0c5bf4e03f335139566b6
+    pristine_git_object: 7c1a372ae314a9d82ab82c3db610e7ffe67ecfab
   internal/utils/union.go:
     id: db86c85746b6
     last_write_checksum: sha1:8c996d904c2aa2a23f17ca09f3188d885673cbe3
@@ -29209,7 +29209,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes:\n* `Apideck.Vault.Consumers.Create()`:  `response.Data.Connections[]` **Changed**\n* `Apideck.Vault.Consumers.Get()`:  `response.Data.Connections[]` **Changed**\n* `Apideck.Vault.Consumers.Update()`:  `response.Data.Connections[]` **Changed**\n* `Apideck.Webhook.Webhooks.List()`:  `response.Data[].Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Create()`: \n  *  `request.CreateWebhookRequest.Events[]` **Changed**\n  *  `response.Data.Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Get()`:  `response.Data.Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Update()`: \n  *  `request.UpdateWebhookRequest.Events[]` **Changed**\n  *  `response.Data.Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Delete()`:  `response.Data.Events[]` **Changed**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
