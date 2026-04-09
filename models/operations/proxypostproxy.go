@@ -70,9 +70,22 @@ type ProxyPostProxyRequest struct {
 	DownstreamURL string `header:"style=simple,explode=false,name=x-apideck-downstream-url"`
 	// Downstream authorization header. This will skip the Vault token injection.
 	DownstreamAuthorization *string `header:"style=simple,explode=false,name=x-apideck-downstream-authorization"`
+	// Override the default downstream request timeout in milliseconds. The default is 28000 (28 seconds).
+	Timeout *int64 `default:"28000" header:"style=simple,explode=false,name=x-apideck-timeout"`
 	// Depending on the verb/method of the request this will contain the request body you want to POST/PATCH/PUT.
 	// This field accepts []byte data or io.Reader implementations, such as *os.File.
 	RequestBody *any `request:"mediaType=*/*"`
+}
+
+func (p ProxyPostProxyRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(p, "", false)
+}
+
+func (p *ProxyPostProxyRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (p *ProxyPostProxyRequest) GetConsumerID() *string {
@@ -115,6 +128,13 @@ func (p *ProxyPostProxyRequest) GetDownstreamAuthorization() *string {
 		return nil
 	}
 	return p.DownstreamAuthorization
+}
+
+func (p *ProxyPostProxyRequest) GetTimeout() *int64 {
+	if p == nil {
+		return nil
+	}
+	return p.Timeout
 }
 
 func (p *ProxyPostProxyRequest) GetRequestBody() *any {

@@ -2,6 +2,30 @@
 
 package components
 
+// TaxRatesFilterStatus - Filter by tax rate status
+type TaxRatesFilterStatus string
+
+const (
+	TaxRatesFilterStatusActive   TaxRatesFilterStatus = "active"
+	TaxRatesFilterStatusInactive TaxRatesFilterStatus = "inactive"
+	TaxRatesFilterStatusArchived TaxRatesFilterStatus = "archived"
+)
+
+func (e TaxRatesFilterStatus) ToPointer() *TaxRatesFilterStatus {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *TaxRatesFilterStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "active", "inactive", "archived":
+			return true
+		}
+	}
+	return false
+}
+
 type TaxRatesFilter struct {
 	// Boolean to describe if tax rate can be used for asset accounts
 	Assets *bool `queryParam:"name=assets"`
@@ -13,6 +37,8 @@ type TaxRatesFilter struct {
 	Liabilities *bool `queryParam:"name=liabilities"`
 	// Boolean to describe if tax rate can be used for revenue accounts
 	Revenue *bool `queryParam:"name=revenue"`
+	// Filter by tax rate status
+	Status *TaxRatesFilterStatus `queryParam:"name=status"`
 }
 
 func (t *TaxRatesFilter) GetAssets() *bool {
@@ -48,4 +74,11 @@ func (t *TaxRatesFilter) GetRevenue() *bool {
 		return nil
 	}
 	return t.Revenue
+}
+
+func (t *TaxRatesFilter) GetStatus() *TaxRatesFilterStatus {
+	if t == nil {
+		return nil
+	}
+	return t.Status
 }

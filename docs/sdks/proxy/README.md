@@ -45,6 +45,7 @@ func main() {
         UnifiedAPI: sdkgo.Pointer("hris"),
         DownstreamURL: "https://api.close.com/api/v1/lead",
         DownstreamAuthorization: sdkgo.Pointer("Bearer <token>"),
+        Timeout: sdkgo.Pointer[int64](30000),
     })
     if err != nil {
         log.Fatal(err)
@@ -108,6 +109,7 @@ func main() {
         UnifiedAPI: sdkgo.Pointer("hris"),
         DownstreamURL: "https://api.close.com/api/v1/lead",
         DownstreamAuthorization: sdkgo.Pointer("Bearer <token>"),
+        Timeout: sdkgo.Pointer[int64](30000),
     })
     if err != nil {
         log.Fatal(err)
@@ -171,6 +173,7 @@ func main() {
         UnifiedAPI: sdkgo.Pointer("hris"),
         DownstreamURL: "https://api.close.com/api/v1/lead",
         DownstreamAuthorization: sdkgo.Pointer("Bearer <token>"),
+        Timeout: sdkgo.Pointer[int64](30000),
     })
     if err != nil {
         log.Fatal(err)
@@ -234,6 +237,7 @@ func main() {
         UnifiedAPI: sdkgo.Pointer("hris"),
         DownstreamURL: "https://api.close.com/api/v1/lead",
         DownstreamAuthorization: sdkgo.Pointer("Bearer <token>"),
+        Timeout: sdkgo.Pointer[int64](30000),
     })
     if err != nil {
         log.Fatal(err)
@@ -297,6 +301,7 @@ func main() {
         UnifiedAPI: sdkgo.Pointer("hris"),
         DownstreamURL: "https://api.close.com/api/v1/lead",
         DownstreamAuthorization: sdkgo.Pointer("Bearer <token>"),
+        Timeout: sdkgo.Pointer[int64](30000),
     })
     if err != nil {
         log.Fatal(err)
@@ -360,6 +365,7 @@ func main() {
         UnifiedAPI: sdkgo.Pointer("hris"),
         DownstreamURL: "https://api.close.com/api/v1/lead",
         DownstreamAuthorization: sdkgo.Pointer("Bearer <token>"),
+        Timeout: sdkgo.Pointer[int64](30000),
     })
     if err != nil {
         log.Fatal(err)

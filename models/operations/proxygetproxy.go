@@ -3,6 +3,7 @@
 package operations
 
 import (
+	"github.com/apideck-libraries/sdk-go/internal/utils"
 	"github.com/apideck-libraries/sdk-go/models/components"
 	"io"
 )
@@ -41,6 +42,19 @@ type ProxyGetProxyRequest struct {
 	DownstreamURL string `header:"style=simple,explode=false,name=x-apideck-downstream-url"`
 	// Downstream authorization header. This will skip the Vault token injection.
 	DownstreamAuthorization *string `header:"style=simple,explode=false,name=x-apideck-downstream-authorization"`
+	// Override the default downstream request timeout in milliseconds. The default is 28000 (28 seconds).
+	Timeout *int64 `default:"28000" header:"style=simple,explode=false,name=x-apideck-timeout"`
+}
+
+func (p ProxyGetProxyRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(p, "", false)
+}
+
+func (p *ProxyGetProxyRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (p *ProxyGetProxyRequest) GetConsumerID() *string {
@@ -83,6 +97,13 @@ func (p *ProxyGetProxyRequest) GetDownstreamAuthorization() *string {
 		return nil
 	}
 	return p.DownstreamAuthorization
+}
+
+func (p *ProxyGetProxyRequest) GetTimeout() *int64 {
+	if p == nil {
+		return nil
+	}
+	return p.Timeout
 }
 
 type ProxyGetProxyResponse struct {

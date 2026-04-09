@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: c061e5fbc3fef2d99ad596160d8389ee
-  docVersion: 10.24.14
+  docChecksum: 8a7f8b2f475b990578d2d0bcf778b54f
+  docVersion: 10.24.21
   speakeasyVersion: 1.761.1
   generationVersion: 2.879.6
-  releaseVersion: 0.27.6
-  configChecksum: 5127df7bf4c46b0235165fd9195056d2
+  releaseVersion: 0.27.7
+  configChecksum: ebef1a649293bdd4a5c38801e175bed6
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: b6e4aebe-1544-4491-9069-e321ba2f2837
-  pristine_commit_hash: 9cdc9585efaaaf2fd68912986a1170b165f09bd5
-  pristine_tree_hash: 98f63a8cd34b0e581eb0c39f2a1a8b64c2223941
+  generation_id: b75840b0-7a47-45ce-82c5-0f75dee25548
+  pristine_commit_hash: c1082305595980646c31efeaa0f2fbd7c3be5d82
+  pristine_tree_hash: 2cba312ae891b587ecccdd25197aa09d8b609a2d
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: ce84829a51c57e1d83e2c215f2c0ca88a78f1f68
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:cc4b1aa26b037868c570e6040b899476bf2aa30e
-    pristine_git_object: d0dfd5f6c4cc7efd9107ddb3aca04d62bc9eb646
+    last_write_checksum: sha1:098df94cdfcbba5f8de511e15eeaf99c5a527776
+    pristine_git_object: b625b1cad6c2f0c8bf2e01416c42f834a7567b4c
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:37ce1c349557c6a3037bec2905140054be4f2a96
@@ -3694,8 +3694,12 @@ trackedFiles:
     pristine_git_object: 340adf24d2e60fcf2acbe9233389a1ec555c23c9
   docs/models/components/taxratesfilter.md:
     id: 6921f2234703
-    last_write_checksum: sha1:1c3e119b3be5380a22789e68cf198900ebee4d9f
-    pristine_git_object: 7c95698d83dcc2fb13de3ff4f15ef4a403e18081
+    last_write_checksum: sha1:db98f0f28d4a388316d7c2d2d72f365dda272e98
+    pristine_git_object: a8e9493e577b4d24961dba526f4d566c80adaf18
+  docs/models/components/taxratesfilterstatus.md:
+    id: e3a3e5501bb0
+    last_write_checksum: sha1:6e5838bc6bd0e3aebbffc8cdb004e61d46c86a21
+    pristine_git_object: db1b1e891ac8b06739e0ff31e8020c2081c6d14f
   docs/models/components/taxratestatus.md:
     id: 6a5ea13620aa
     last_write_checksum: sha1:050d5e5ea8112756e413dca28ca2dc888773d718
@@ -5790,8 +5794,8 @@ trackedFiles:
     pristine_git_object: 71b4bf62af98e112233889862d7017bf99b35f57
   docs/models/operations/accountingtaxratesallrequest.md:
     id: 58ab7e4e5ae6
-    last_write_checksum: sha1:784b0ec02468e3754473540cc8f031030eb7d125
-    pristine_git_object: 9fc099e124a65b26276d24e04d7916ef659e0ccd
+    last_write_checksum: sha1:a94967b9c1326309858325a63be11ce5a125d5b7
+    pristine_git_object: b0adc9bb474d5eb7bc653d1bf224e93168ee84f0
   docs/models/operations/accountingtaxratesallresponse.md:
     id: 3705bed56a60
     last_write_checksum: sha1:2d8393f520143c1651a5679fb3d85183b80d47c2
@@ -7734,8 +7738,8 @@ trackedFiles:
     pristine_git_object: 540bf9f4516c384b997b5fea05cf143d10397073
   docs/models/operations/proxydeleteproxyrequest.md:
     id: 87a3164a6b8b
-    last_write_checksum: sha1:3fc4abd0d33aaf04fe8b65548c3a35cdb90f0fa8
-    pristine_git_object: 8bbbfb06bdbd6645f9b9a099d706aba4036d203d
+    last_write_checksum: sha1:8034dab80c6360f2bee5ded37665d0ad19f9e72d
+    pristine_git_object: 9c38a513b1b83ad357a2fe79b6e6c897b0fbe638
   docs/models/operations/proxydeleteproxyresponse.md:
     id: df4a0bb99e82
     last_write_checksum: sha1:e3b2b754de4f68bd028dad60b14b104cc600253d
@@ -7746,8 +7750,8 @@ trackedFiles:
     pristine_git_object: 42b08cdc42fc0cbc026fa7305e45218a1d9472eb
   docs/models/operations/proxygetproxyrequest.md:
     id: a536b7375a5d
-    last_write_checksum: sha1:8b34217dd0d19a8faac8cf48a6af4427c27eefcb
-    pristine_git_object: 7fd0434fbcac1e2ac5643ab391ae58fcae1bc1ef
+    last_write_checksum: sha1:c25b0c20a04c30f4afeb2aec8756e8bacb49875b
+    pristine_git_object: 18863bc17c83182b228a76c24fc39b3196a92537
   docs/models/operations/proxygetproxyresponse.md:
     id: 967009e66f09
     last_write_checksum: sha1:801d32813bd63db0f413717ad6f2369e8ad5510f
@@ -7758,8 +7762,8 @@ trackedFiles:
     pristine_git_object: 92f48b49ec55f1dcc48e85b7a773c0d511b3a09e
   docs/models/operations/proxyoptionsproxyrequest.md:
     id: acb4a0755a57
-    last_write_checksum: sha1:b1cd5a88243a4522ee52c5c88ab53b60d78b3935
-    pristine_git_object: b7543d55e22883d3707857ac9bae4a1fa558d386
+    last_write_checksum: sha1:cb007d940fd12802604b2babb1892edb3c9513b2
+    pristine_git_object: 33b902e3fd127d49c57a5845ff34f366cb2287bc
   docs/models/operations/proxyoptionsproxyresponse.md:
     id: a25ef8821382
     last_write_checksum: sha1:e8ddcfd551d949298f6026f8e6022d16e6b3e7a2
@@ -7770,8 +7774,8 @@ trackedFiles:
     pristine_git_object: 7909b4be97cf310a5274e03e9f515d2815ac04dd
   docs/models/operations/proxypatchproxyrequest.md:
     id: 1b68291e4740
-    last_write_checksum: sha1:b2b7824f84321a0aa76b7c5d060cec212cd41873
-    pristine_git_object: 75909098407fdf6466fd01e5aa08c79065256cb9
+    last_write_checksum: sha1:1d902832bd739aee0ffdfffa0c9eabded4ab5f1d
+    pristine_git_object: d09147f4d9859c51a1780f1678755619c0ff8ade
   docs/models/operations/proxypatchproxyrequestbody1.md:
     id: "0728008240e7"
     last_write_checksum: sha1:e7e8bbb12c000abebef2594ac8da50e8a7f74560
@@ -7790,8 +7794,8 @@ trackedFiles:
     pristine_git_object: f7672d5740e4814e7e6ab13879548f1907fac51c
   docs/models/operations/proxypostproxyrequest.md:
     id: 07511d842c51
-    last_write_checksum: sha1:2ee5d9e13821fb8d80ad4d9e02dd666a0711a93e
-    pristine_git_object: 4a409db3f7b7ebfce5fc63c6e2c27b09b3a15767
+    last_write_checksum: sha1:13d92aaaf67ab097297fa67691f2c26d70079b24
+    pristine_git_object: 76cc3a2d8939d9660e80608e5da76d10f1711b1a
   docs/models/operations/proxypostproxyresponse.md:
     id: 0d6217eaf683
     last_write_checksum: sha1:d7ca8a2226b38a8e0c8f3ad401453ad1c5f89861
@@ -7802,8 +7806,8 @@ trackedFiles:
     pristine_git_object: 0c1fe4cecae3b8c2977d9eacbcb9760c2ebb4b31
   docs/models/operations/proxyputproxyrequest.md:
     id: 9f53dd3b3f54
-    last_write_checksum: sha1:f1055cef158908a817b56e81696bffed8c1a38e2
-    pristine_git_object: 8a88c34e9b7c55c74c600ac1f49e1a94afb432db
+    last_write_checksum: sha1:3d82a9f63b614c5781f9f4f406014822968bbeae
+    pristine_git_object: 24de3c8cb184014675afa3f57ec5024ffca5f7a1
   docs/models/operations/proxyputproxyresponse.md:
     id: 416fd65e46ad
     last_write_checksum: sha1:a301f81c828b0bdb9e9e4bb181f650480ccdadd8
@@ -8542,8 +8546,8 @@ trackedFiles:
     pristine_git_object: bd62f21939ac3fd9b78278e5ed87602d8f45b49b
   docs/sdks/proxy/README.md:
     id: 2c72b780f1d0
-    last_write_checksum: sha1:c52868b23189f96744942dbb927e78288554dff5
-    pristine_git_object: cc90054b091fb111e08682ec1208e7f6a7628333
+    last_write_checksum: sha1:3901263706d345d6d93d315b17e97caff1886edd
+    pristine_git_object: 9a167a1ee453f41312b8a51ea5f6c519629b602b
   docs/sdks/purchaseorders/README.md:
     id: bdb6c1926bcc
     last_write_checksum: sha1:2acd7831a43cf5213c8c52d3050a872b869a0ad7
@@ -11006,8 +11010,8 @@ trackedFiles:
     pristine_git_object: 9154ba224dd3ad53cf3614ad921779a54ad1bf15
   models/components/taxratesfilter.go:
     id: c382b0919269
-    last_write_checksum: sha1:a879c487431e21d62a655d3fb2abca0cf4ad1406
-    pristine_git_object: aed931dc99d4cff564234dba35f264c92cb66dab
+    last_write_checksum: sha1:e301b7e29542fd0825a7255d3a85cc3367b738fa
+    pristine_git_object: 42b086332d54f5f9a3cb5dd114348505e1a568ea
   models/components/team.go:
     id: 4a0769c90ba2
     last_write_checksum: sha1:14dba9aaf7ecea25438dce09b8935fb3b8cbae17
@@ -12526,28 +12530,28 @@ trackedFiles:
     pristine_git_object: 8da00b204e447ea73da3c59fbfaade7aec56490d
   models/operations/proxydeleteproxy.go:
     id: 0339dcbfe16c
-    last_write_checksum: sha1:d2ba49f30d95466040e7d9fb4830ea779cdf6ee8
-    pristine_git_object: cd87f68f180cf1d90df73fcf085342d9322e206e
+    last_write_checksum: sha1:999861bd3e3ced0a389c35355e94f400e0f362f2
+    pristine_git_object: 7ff5f7fc87ffe0ea9bbdca429e50e3ba4c3972f5
   models/operations/proxygetproxy.go:
     id: 2281a75ef5c0
-    last_write_checksum: sha1:30f3797fe0ceb51eeec7a8b36eebb46774eaa180
-    pristine_git_object: 7e303c2be2364930bef3682f3ebeff85554c6069
+    last_write_checksum: sha1:369c7c3a2a7b2aaa62a99e6fa57e23d8b1c45088
+    pristine_git_object: ae4df850c870c2abd30de0c7a63b0a7798da5ed8
   models/operations/proxyoptionsproxy.go:
     id: cc80e34509bc
-    last_write_checksum: sha1:7242739d2bf82b507d2c84f38df32ad5a6d70333
-    pristine_git_object: dd1fb11e43730d82e5257d8574dadab04d51aea9
+    last_write_checksum: sha1:ead9390186cc41b9a050cfb1399e78c367e047a3
+    pristine_git_object: 2d1828851e5273e90c793b6521fc68349a836318
   models/operations/proxypatchproxy.go:
     id: ee81dd1107f1
-    last_write_checksum: sha1:ee3a9fe255ebfa0abf03a9a32ac87e3ed4fa66b5
-    pristine_git_object: 46aaa7e349a01cc71fbadb6923107336f4ad148a
+    last_write_checksum: sha1:6234adcb8f378bd043d681fcec5b6b2343685e5f
+    pristine_git_object: 61aecf7e4bd3a152b031df08a90206d75d87a9b2
   models/operations/proxypostproxy.go:
     id: 140543c00e28
-    last_write_checksum: sha1:0304349f94d5686b8699bbcde710396e78a9edff
-    pristine_git_object: 90d3a624a1bcd7ffaa0d7ab604aca344ebd04df6
+    last_write_checksum: sha1:90de7b067ac370156fe9b1e63a9dd0198da5b3e2
+    pristine_git_object: bb5deefc221395dfec98aa3ee378c238718356ab
   models/operations/proxyputproxy.go:
     id: d08410121bc3
-    last_write_checksum: sha1:042d8e3a0c2740b64280716339adf29ea23c1ec1
-    pristine_git_object: 5e6ed78274ce45f2a8c57261118a1461fecacc99
+    last_write_checksum: sha1:e2796803907d6f7cc610f2b60440c13b3d547134
+    pristine_git_object: 4780d259af09a60fe5d86472ea167cb309eaed67
   models/operations/smsmessagesadd.go:
     id: f33f0a18e32d
     last_write_checksum: sha1:3c164611b5c9c8177a21d5b7144135725d627e81
@@ -12858,7 +12862,7 @@ examples:
         query:
           raw: false
           limit: 20
-          filter: {"assets": true, "equity": true, "expenses": true, "liabilities": true, "revenue": true}
+          filter: {"assets": true, "equity": true, "expenses": true, "liabilities": true, "revenue": true, "status": "active"}
           pass_through: {"search": "San Francisco"}
           fields: "id,updated_at"
         header:
@@ -28422,6 +28426,7 @@ examples:
           x-apideck-unified-api: "hris"
           x-apideck-downstream-url: "https://api.close.com/api/v1/lead"
           x-apideck-downstream-authorization: "Bearer <token>"
+          x-apideck-timeout: 30000
       responses:
         "200":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
@@ -28447,6 +28452,7 @@ examples:
           x-apideck-unified-api: "hris"
           x-apideck-downstream-url: "https://api.close.com/api/v1/lead"
           x-apideck-downstream-authorization: "Bearer <token>"
+          x-apideck-timeout: 30000
       responses:
         "200":
           application/json: {"key": "<value>", "key1": "<value>"}
@@ -28472,6 +28478,7 @@ examples:
           x-apideck-unified-api: "hris"
           x-apideck-downstream-url: "https://api.close.com/api/v1/lead"
           x-apideck-downstream-authorization: "Bearer <token>"
+          x-apideck-timeout: 30000
       responses:
         "200":
           application/json: {"key": "<value>"}
@@ -28497,6 +28504,7 @@ examples:
           x-apideck-unified-api: "hris"
           x-apideck-downstream-url: "https://api.close.com/api/v1/lead"
           x-apideck-downstream-authorization: "Bearer <token>"
+          x-apideck-timeout: 30000
       responses:
         "200":
           application/json: {"key": "<value>"}
@@ -28522,6 +28530,7 @@ examples:
           x-apideck-unified-api: "hris"
           x-apideck-downstream-url: "https://api.close.com/api/v1/lead"
           x-apideck-downstream-authorization: "Bearer <token>"
+          x-apideck-timeout: 30000
       responses:
         "200":
           application/json: {"key": "<value>", "key1": "<value>"}
@@ -28547,6 +28556,7 @@ examples:
           x-apideck-unified-api: "hris"
           x-apideck-downstream-url: "https://api.close.com/api/v1/lead"
           x-apideck-downstream-authorization: "Bearer <token>"
+          x-apideck-timeout: 30000
       responses:
         "200":
           application/json: {"key": "<value>", "key1": "<value>"}
@@ -29209,6 +29219,7 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Go SDK Changes:\n* `Apideck.Accounting.TaxRates.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Proxy.Get()`: \n  *  `request.Request.Timeout` **Added**\n* `Apideck.Proxy.Options()`: \n  *  `request.Request.Timeout` **Added**\n* `Apideck.Proxy.Post()`: \n  *  `request.Request.Timeout` **Added**\n* `Apideck.Proxy.Put()`: \n  *  `request.Request.Timeout` **Added**\n* `Apideck.Proxy.Patch()`: \n  *  `request.Request.Timeout` **Added**\n* `Apideck.Proxy.Delete()`: \n  *  `request.Request.Timeout` **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
