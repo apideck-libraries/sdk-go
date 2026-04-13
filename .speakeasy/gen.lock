@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 8a7f8b2f475b990578d2d0bcf778b54f
-  docVersion: 10.24.21
-  speakeasyVersion: 1.761.1
-  generationVersion: 2.879.6
-  releaseVersion: 0.27.7
-  configChecksum: ebef1a649293bdd4a5c38801e175bed6
+  docChecksum: e2684d88f2380916377e6ad3acdec71d
+  docVersion: 10.24.22
+  speakeasyVersion: 1.761.3
+  generationVersion: 2.879.11
+  releaseVersion: 0.27.8
+  configChecksum: 6a1b9de8895241b4db2c1170d71d79d8
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: b75840b0-7a47-45ce-82c5-0f75dee25548
-  pristine_commit_hash: c1082305595980646c31efeaa0f2fbd7c3be5d82
-  pristine_tree_hash: 2cba312ae891b587ecccdd25197aa09d8b609a2d
+  generation_id: 323803d0-b66a-4e6d-bb50-804b0f36197b
+  pristine_commit_hash: d8e14dacad3bfad99bce92e92d525811a5399f7b
+  pristine_tree_hash: 5e4761b36ab53be2d7913aaf4bda6041d8f0eebf
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: ce84829a51c57e1d83e2c215f2c0ca88a78f1f68
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:098df94cdfcbba5f8de511e15eeaf99c5a527776
-    pristine_git_object: b625b1cad6c2f0c8bf2e01416c42f834a7567b4c
+    last_write_checksum: sha1:eec6744651880e74476c46691bc046bdc13a3590
+    pristine_git_object: acec1b0bb7e7b6e40ebf31c973506bdc3805a9b3
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:37ce1c349557c6a3037bec2905140054be4f2a96
@@ -29219,7 +29219,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes:\n* `Apideck.Accounting.TaxRates.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Proxy.Get()`: \n  *  `request.Request.Timeout` **Added**\n* `Apideck.Proxy.Options()`: \n  *  `request.Request.Timeout` **Added**\n* `Apideck.Proxy.Post()`: \n  *  `request.Request.Timeout` **Added**\n* `Apideck.Proxy.Put()`: \n  *  `request.Request.Timeout` **Added**\n* `Apideck.Proxy.Patch()`: \n  *  `request.Request.Timeout` **Added**\n* `Apideck.Proxy.Delete()`: \n  *  `request.Request.Timeout` **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
