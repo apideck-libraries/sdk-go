@@ -38,6 +38,7 @@ func (e *PaymentsFilterType) IsExact() bool {
 type PaymentsFilter struct {
 	UpdatedSince *time.Time `queryParam:"name=updated_since"`
 	InvoiceID    *string    `queryParam:"name=invoice_id"`
+	BillID       *string    `queryParam:"name=bill_id"`
 	SupplierID   *string    `queryParam:"name=supplier_id"`
 	// Filter by customer id
 	CustomerID *string             `queryParam:"name=customer_id"`
@@ -67,6 +68,13 @@ func (p *PaymentsFilter) GetInvoiceID() *string {
 		return nil
 	}
 	return p.InvoiceID
+}
+
+func (p *PaymentsFilter) GetBillID() *string {
+	if p == nil {
+		return nil
+	}
+	return p.BillID
 }
 
 func (p *PaymentsFilter) GetSupplierID() *string {
