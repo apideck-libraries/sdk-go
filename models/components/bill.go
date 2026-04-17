@@ -140,6 +140,8 @@ type Bill struct {
 	DocumentReceived *bool `json:"document_received,omitempty"`
 	// URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.
 	SourceDocumentURL *string `json:"source_document_url,omitempty"`
+	// A list of linked payment allocations.
+	PaymentAllocations []*LinkedPaymentAllocations `json:"payment_allocations,omitempty"`
 	// A list of linked tracking categories.
 	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// The user who last updated the object.
@@ -453,6 +455,13 @@ func (b *Bill) GetSourceDocumentURL() *string {
 	return b.SourceDocumentURL
 }
 
+func (b *Bill) GetPaymentAllocations() []*LinkedPaymentAllocations {
+	if b == nil {
+		return nil
+	}
+	return b.PaymentAllocations
+}
+
 func (b *Bill) GetTrackingCategories() []*LinkedTrackingCategory {
 	if b == nil {
 		return nil
@@ -603,6 +612,8 @@ type BillInput struct {
 	DocumentReceived *bool `json:"document_received,omitempty"`
 	// URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.
 	SourceDocumentURL *string `json:"source_document_url,omitempty"`
+	// A list of linked payment allocations.
+	PaymentAllocations []*LinkedPaymentAllocations `json:"payment_allocations,omitempty"`
 	// A list of linked tracking categories.
 	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -890,6 +901,13 @@ func (b *BillInput) GetSourceDocumentURL() *string {
 		return nil
 	}
 	return b.SourceDocumentURL
+}
+
+func (b *BillInput) GetPaymentAllocations() []*LinkedPaymentAllocations {
+	if b == nil {
+		return nil
+	}
+	return b.PaymentAllocations
 }
 
 func (b *BillInput) GetTrackingCategories() []*LinkedTrackingCategory {
