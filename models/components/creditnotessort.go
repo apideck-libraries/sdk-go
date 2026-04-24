@@ -12,6 +12,7 @@ type CreditNotesSortBy string
 const (
 	CreditNotesSortByCreatedAt CreditNotesSortBy = "created_at"
 	CreditNotesSortByUpdatedAt CreditNotesSortBy = "updated_at"
+	CreditNotesSortByID        CreditNotesSortBy = "id"
 )
 
 func (e CreditNotesSortBy) ToPointer() *CreditNotesSortBy {
@@ -22,7 +23,7 @@ func (e CreditNotesSortBy) ToPointer() *CreditNotesSortBy {
 func (e *CreditNotesSortBy) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "created_at", "updated_at":
+		case "created_at", "updated_at", "id":
 			return true
 		}
 	}
