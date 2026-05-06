@@ -22,3 +22,4 @@ custom := components.InvoicesSortBy("custom_value")
 | ------------------------- | ------------------------- |
 | `InvoicesSortByCreatedAt` | created_at                |
 | `InvoicesSortByUpdatedAt` | updated_at                |
+| `InvoicesSortByID`        | id                        |

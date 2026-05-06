@@ -12,6 +12,7 @@ type InvoicesSortBy string
 const (
 	InvoicesSortByCreatedAt InvoicesSortBy = "created_at"
 	InvoicesSortByUpdatedAt InvoicesSortBy = "updated_at"
+	InvoicesSortByID        InvoicesSortBy = "id"
 )
 
 func (e InvoicesSortBy) ToPointer() *InvoicesSortBy {
@@ -22,7 +23,7 @@ func (e InvoicesSortBy) ToPointer() *InvoicesSortBy {
 func (e *InvoicesSortBy) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "created_at", "updated_at":
+		case "created_at", "updated_at", "id":
 			return true
 		}
 	}

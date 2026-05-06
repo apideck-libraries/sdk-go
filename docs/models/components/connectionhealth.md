@@ -18,11 +18,12 @@ custom := components.ConnectionHealth("custom_value")
 
 ## Values
 
-| Name                              | Value                             |
-| --------------------------------- | --------------------------------- |
-| `ConnectionHealthOk`              | ok                                |
-| `ConnectionHealthPendingRefresh`  | pending_refresh                   |
-| `ConnectionHealthNeedsAuth`       | needs_auth                        |
-| `ConnectionHealthNeedsConsent`    | needs_consent                     |
-| `ConnectionHealthRevoked`         | revoked                           |
-| `ConnectionHealthMissingSettings` | missing_settings                  |
+| Name                                  | Value                                 |
+| ------------------------------------- | ------------------------------------- |
+| `ConnectionHealthOk`                  | ok                                    |
+| `ConnectionHealthPendingRefresh`      | pending_refresh                       |
+| `ConnectionHealthNeedsAuth`           | needs_auth                            |
+| `ConnectionHealthPendingConfirmation` | pending_confirmation                  |
+| `ConnectionHealthNeedsConsent`        | needs_consent                         |
+| `ConnectionHealthRevoked`             | revoked                               |
+| `ConnectionHealthMissingSettings`     | missing_settings                      |

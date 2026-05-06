@@ -26,20 +26,20 @@ func (e *PeriodType) IsExact() bool {
 	return false
 }
 
-// AccountingMethod - The accounting method used for the report: cash or accrual.
-type AccountingMethod string
+// BalanceSheetFilterAccountingMethod - The accounting method used for the report: cash or accrual.
+type BalanceSheetFilterAccountingMethod string
 
 const (
-	AccountingMethodCash    AccountingMethod = "cash"
-	AccountingMethodAccrual AccountingMethod = "accrual"
+	BalanceSheetFilterAccountingMethodCash    BalanceSheetFilterAccountingMethod = "cash"
+	BalanceSheetFilterAccountingMethodAccrual BalanceSheetFilterAccountingMethod = "accrual"
 )
 
-func (e AccountingMethod) ToPointer() *AccountingMethod {
+func (e BalanceSheetFilterAccountingMethod) ToPointer() *BalanceSheetFilterAccountingMethod {
 	return &e
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
-func (e *AccountingMethod) IsExact() bool {
+func (e *BalanceSheetFilterAccountingMethod) IsExact() bool {
 	if e != nil {
 		switch *e {
 		case "cash", "accrual":
@@ -63,7 +63,7 @@ type BalanceSheetFilter struct {
 	// The ID of the location to include in the resource.
 	LocationID *string `queryParam:"name=location_id"`
 	// The accounting method used for the report: cash or accrual.
-	AccountingMethod *AccountingMethod `queryParam:"name=accounting_method"`
+	AccountingMethod *BalanceSheetFilterAccountingMethod `queryParam:"name=accounting_method"`
 }
 
 func (b *BalanceSheetFilter) GetStartDate() *string {
@@ -101,7 +101,7 @@ func (b *BalanceSheetFilter) GetLocationID() *string {
 	return b.LocationID
 }
 
-func (b *BalanceSheetFilter) GetAccountingMethod() *AccountingMethod {
+func (b *BalanceSheetFilter) GetAccountingMethod() *BalanceSheetFilterAccountingMethod {
 	if b == nil {
 		return nil
 	}

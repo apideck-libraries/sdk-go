@@ -326,12 +326,13 @@ func (c *Configuration) GetDefaults() []Defaults {
 type Health string
 
 const (
-	HealthRevoked         Health = "revoked"
-	HealthMissingSettings Health = "missing_settings"
-	HealthNeedsConsent    Health = "needs_consent"
-	HealthNeedsAuth       Health = "needs_auth"
-	HealthPendingRefresh  Health = "pending_refresh"
-	HealthOk              Health = "ok"
+	HealthRevoked             Health = "revoked"
+	HealthMissingSettings     Health = "missing_settings"
+	HealthNeedsConsent        Health = "needs_consent"
+	HealthPendingConfirmation Health = "pending_confirmation"
+	HealthNeedsAuth           Health = "needs_auth"
+	HealthPendingRefresh      Health = "pending_refresh"
+	HealthOk                  Health = "ok"
 )
 
 func (e Health) ToPointer() *Health {
@@ -342,7 +343,7 @@ func (e Health) ToPointer() *Health {
 func (e *Health) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "revoked", "missing_settings", "needs_consent", "needs_auth", "pending_refresh", "ok":
+		case "revoked", "missing_settings", "needs_consent", "pending_confirmation", "needs_auth", "pending_refresh", "ok":
 			return true
 		}
 	}

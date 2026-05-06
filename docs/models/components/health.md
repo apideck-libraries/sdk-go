@@ -18,11 +18,12 @@ custom := components.Health("custom_value")
 
 ## Values
 
-| Name                    | Value                   |
-| ----------------------- | ----------------------- |
-| `HealthRevoked`         | revoked                 |
-| `HealthMissingSettings` | missing_settings        |
-| `HealthNeedsConsent`    | needs_consent           |
-| `HealthNeedsAuth`       | needs_auth              |
-| `HealthPendingRefresh`  | pending_refresh         |
-| `HealthOk`              | ok                      |
+| Name                        | Value                       |
+| --------------------------- | --------------------------- |
+| `HealthRevoked`             | revoked                     |
+| `HealthMissingSettings`     | missing_settings            |
+| `HealthNeedsConsent`        | needs_consent               |
+| `HealthPendingConfirmation` | pending_confirmation        |
+| `HealthNeedsAuth`           | needs_auth                  |
+| `HealthPendingRefresh`      | pending_refresh             |
+| `HealthOk`                  | ok                          |

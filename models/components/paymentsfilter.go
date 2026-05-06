@@ -35,6 +35,33 @@ func (e *PaymentsFilterType) IsExact() bool {
 	return false
 }
 
+// PaymentsFilterPaymentStatus - Filter by payment status
+type PaymentsFilterPaymentStatus string
+
+const (
+	PaymentsFilterPaymentStatusDraft      PaymentsFilterPaymentStatus = "draft"
+	PaymentsFilterPaymentStatusAuthorised PaymentsFilterPaymentStatus = "authorised"
+	PaymentsFilterPaymentStatusRejected   PaymentsFilterPaymentStatus = "rejected"
+	PaymentsFilterPaymentStatusPaid       PaymentsFilterPaymentStatus = "paid"
+	PaymentsFilterPaymentStatusVoided     PaymentsFilterPaymentStatus = "voided"
+	PaymentsFilterPaymentStatusDeleted    PaymentsFilterPaymentStatus = "deleted"
+)
+
+func (e PaymentsFilterPaymentStatus) ToPointer() *PaymentsFilterPaymentStatus {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *PaymentsFilterPaymentStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "draft", "authorised", "rejected", "paid", "voided", "deleted":
+			return true
+		}
+	}
+	return false
+}
+
 type PaymentsFilter struct {
 	UpdatedSince *time.Time `queryParam:"name=updated_since"`
 	InvoiceID    *string    `queryParam:"name=invoice_id"`
@@ -43,6 +70,8 @@ type PaymentsFilter struct {
 	// Filter by customer id
 	CustomerID *string             `queryParam:"name=customer_id"`
 	Type       *PaymentsFilterType `queryParam:"name=type"`
+	// Filter by payment status
+	Status *PaymentsFilterPaymentStatus `queryParam:"name=status"`
 }
 
 func (p PaymentsFilter) MarshalJSON() ([]byte, error) {
@@ -96,4 +125,11 @@ func (p *PaymentsFilter) GetType() *PaymentsFilterType {
 		return nil
 	}
 	return p.Type
+}
+
+func (p *PaymentsFilter) GetStatus() *PaymentsFilterPaymentStatus {
+	if p == nil {
+		return nil
+	}
+	return p.Status
 }
