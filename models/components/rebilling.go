@@ -9,6 +9,7 @@ const (
 	RebillStatusPending RebillStatus = "pending"
 	RebillStatusBilled  RebillStatus = "billed"
 	RebillStatusVoided  RebillStatus = "voided"
+	RebillStatusOther   RebillStatus = "other"
 )
 
 func (e RebillStatus) ToPointer() *RebillStatus {
@@ -19,7 +20,7 @@ func (e RebillStatus) ToPointer() *RebillStatus {
 func (e *RebillStatus) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "pending", "billed", "voided":
+		case "pending", "billed", "voided", "other":
 			return true
 		}
 	}

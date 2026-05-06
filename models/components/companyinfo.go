@@ -89,6 +89,29 @@ func (e *TrackingCategoriesMode) IsExact() bool {
 	return false
 }
 
+// AccountingMethod - The accounting basis used by the company for financial reports.
+type AccountingMethod string
+
+const (
+	AccountingMethodCash    AccountingMethod = "cash"
+	AccountingMethodAccrual AccountingMethod = "accrual"
+)
+
+func (e AccountingMethod) ToPointer() *AccountingMethod {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AccountingMethod) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "cash", "accrual":
+			return true
+		}
+	}
+	return false
+}
+
 type CompanyInfo struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
@@ -123,6 +146,8 @@ type CompanyInfo struct {
 	TrackingCategoriesEnabled *bool `json:"tracking_categories_enabled,omitempty"`
 	// The mode of tracking categories for the company on transactions
 	TrackingCategoriesMode *TrackingCategoriesMode `json:"tracking_categories_mode,omitempty"`
+	// The accounting basis used by the company for financial reports.
+	AccountingMethod *AccountingMethod `json:"accounting_method,omitempty"`
 	// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
 	RowVersion *string `json:"row_version,omitempty"`
 	// The user who last updated the object.
@@ -277,6 +302,13 @@ func (c *CompanyInfo) GetTrackingCategoriesMode() *TrackingCategoriesMode {
 		return nil
 	}
 	return c.TrackingCategoriesMode
+}
+
+func (c *CompanyInfo) GetAccountingMethod() *AccountingMethod {
+	if c == nil {
+		return nil
+	}
+	return c.AccountingMethod
 }
 
 func (c *CompanyInfo) GetRowVersion() *string {
