@@ -22,3 +22,4 @@ custom := components.By("custom_value")
 | ------------- | ------------- |
 | `ByUpdatedAt` | updated_at    |
 | `ByCreatedAt` | created_at    |
+| `ByID`        | id            |
