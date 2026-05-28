@@ -436,6 +436,8 @@ func (s *Webhooks) List(ctx context.Context, appID *string, cursor *string, limi
 //
 // **Delivery URL Validation**: The provided `delivery_url` will be validated synchronously by sending an HTTP POST request with an HMAC signature. If validation fails (network error, timeout, non-2xx response), the webhook will still be created but with `status: "disabled"` and `disabled_reason: "delivery_url_validation_failed"`.
 //
+// **Delivery Timeout**: Each delivery attempt has a hard 60-second timeout. Endpoints that do not respond within 60 seconds are recorded as failed deliveries (`success: false`, `status_code: 0` on the event log) and follow the standard retry policy. Endpoints should acknowledge requests quickly (HTTP 2xx) and defer work asynchronously.
+//
 // **Important**: Always check the `status` and `disabled_reason` fields in the response to ensure the webhook is active.
 func (s *Webhooks) Create(ctx context.Context, createWebhookRequest components.CreateWebhookRequest, appID *string, opts ...operations.Option) (*operations.WebhookWebhooksAddResponse, error) {
 	request := operations.WebhookWebhooksAddRequest{
@@ -1140,6 +1142,8 @@ func (s *Webhooks) Get(ctx context.Context, id string, appID *string, opts ...op
 // Update a webhook subscription.
 //
 // **Delivery URL Validation**: When updating the `delivery_url`, it will be validated synchronously by sending an HTTP POST request with an HMAC signature. If validation fails (network error, timeout, non-2xx response), the webhook will still be updated but with `status: "disabled"` and `disabled_reason: "delivery_url_validation_failed"`. Validation only occurs when the URL is changed.
+//
+// **Delivery Timeout**: Each delivery attempt has a hard 60-second timeout. Endpoints that do not respond within 60 seconds are recorded as failed deliveries (`success: false`, `status_code: 0` on the event log) and follow the standard retry policy. Endpoints should acknowledge requests quickly (HTTP 2xx) and defer work asynchronously.
 //
 // **Important**: Always check the `status` and `disabled_reason` fields in the response to ensure the webhook is active.
 func (s *Webhooks) Update(ctx context.Context, id string, updateWebhookRequest components.UpdateWebhookRequest, appID *string, opts ...operations.Option) (*operations.WebhookWebhooksUpdateResponse, error) {

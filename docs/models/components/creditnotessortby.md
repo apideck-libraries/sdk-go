@@ -22,3 +22,4 @@ custom := components.CreditNotesSortBy("custom_value")
 | ---------------------------- | ---------------------------- |
 | `CreditNotesSortByCreatedAt` | created_at                   |
 | `CreditNotesSortByUpdatedAt` | updated_at                   |
+| `CreditNotesSortByID`        | id                           |

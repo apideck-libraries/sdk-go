@@ -12,6 +12,7 @@ type By string
 const (
 	ByUpdatedAt By = "updated_at"
 	ByCreatedAt By = "created_at"
+	ByID        By = "id"
 )
 
 func (e By) ToPointer() *By {
@@ -22,7 +23,7 @@ func (e By) ToPointer() *By {
 func (e *By) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "updated_at", "created_at":
+		case "updated_at", "created_at", "id":
 			return true
 		}
 	}

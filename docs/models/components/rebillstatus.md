@@ -23,3 +23,4 @@ custom := components.RebillStatus("custom_value")
 | `RebillStatusPending` | pending               |
 | `RebillStatusBilled`  | billed                |
 | `RebillStatusVoided`  | voided                |
+| `RebillStatusOther`   | other                 |

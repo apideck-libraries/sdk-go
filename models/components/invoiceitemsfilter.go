@@ -56,6 +56,8 @@ func (e *TransactionType) IsExact() bool {
 
 type InvoiceItemsFilter struct {
 	UpdatedSince *time.Time `queryParam:"name=updated_since"`
+	// Comma-separated list of invoice item IDs to filter by (e.g. `12345,67890`).
+	Ids *string `queryParam:"name=ids"`
 	// Name of Invoice Items to search for
 	Name *string `queryParam:"name=name"`
 	// The type of invoice item, indicating whether it is an inventory item, a service, or another type.
@@ -80,6 +82,13 @@ func (i *InvoiceItemsFilter) GetUpdatedSince() *time.Time {
 		return nil
 	}
 	return i.UpdatedSince
+}
+
+func (i *InvoiceItemsFilter) GetIds() *string {
+	if i == nil {
+		return nil
+	}
+	return i.Ids
 }
 
 func (i *InvoiceItemsFilter) GetName() *string {
