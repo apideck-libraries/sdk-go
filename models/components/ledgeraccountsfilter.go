@@ -38,12 +38,37 @@ func (e *Classification) IsExact() bool {
 	return false
 }
 
+// LedgerAccountsFilterStatus - Filter by account status.
+type LedgerAccountsFilterStatus string
+
+const (
+	LedgerAccountsFilterStatusActive   LedgerAccountsFilterStatus = "active"
+	LedgerAccountsFilterStatusInactive LedgerAccountsFilterStatus = "inactive"
+)
+
+func (e LedgerAccountsFilterStatus) ToPointer() *LedgerAccountsFilterStatus {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *LedgerAccountsFilterStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "active", "inactive":
+			return true
+		}
+	}
+	return false
+}
+
 type LedgerAccountsFilter struct {
 	// Filter by ledger account name
 	Name         *string    `queryParam:"name=name"`
 	UpdatedSince *time.Time `queryParam:"name=updated_since"`
 	// Filter by account classification.
 	Classification *Classification `queryParam:"name=classification"`
+	// Filter by account status.
+	Status *LedgerAccountsFilterStatus `queryParam:"name=status"`
 }
 
 func (l LedgerAccountsFilter) MarshalJSON() ([]byte, error) {
@@ -76,4 +101,11 @@ func (l *LedgerAccountsFilter) GetClassification() *Classification {
 		return nil
 	}
 	return l.Classification
+}
+
+func (l *LedgerAccountsFilter) GetStatus() *LedgerAccountsFilterStatus {
+	if l == nil {
+		return nil
+	}
+	return l.Status
 }

@@ -121,7 +121,8 @@ type Invoice struct {
 	// The customer this entity is linked to.
 	Customer *LinkedCustomer `json:"customer,omitempty"`
 	// The company ID the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
+	CompanyID  *string           `json:"company_id,omitempty"`
+	Subsidiary *LinkedSubsidiary `json:"subsidiary,omitempty"`
 	// The ID of the location
 	LocationID *string `json:"location_id,omitempty"`
 	// The ID of the department
@@ -264,6 +265,13 @@ func (i *Invoice) GetCompanyID() *string {
 		return nil
 	}
 	return i.CompanyID
+}
+
+func (i *Invoice) GetSubsidiary() *LinkedSubsidiary {
+	if i == nil {
+		return nil
+	}
+	return i.Subsidiary
 }
 
 func (i *Invoice) GetLocationID() *string {
@@ -584,7 +592,8 @@ type InvoiceInput struct {
 	// The customer this entity is linked to.
 	Customer *LinkedCustomerInput `json:"customer,omitempty"`
 	// The company ID the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
+	CompanyID  *string                `json:"company_id,omitempty"`
+	Subsidiary *LinkedSubsidiaryInput `json:"subsidiary,omitempty"`
 	// The ID of the location
 	LocationID *string `json:"location_id,omitempty"`
 	// The ID of the department
@@ -703,6 +712,13 @@ func (i *InvoiceInput) GetCompanyID() *string {
 		return nil
 	}
 	return i.CompanyID
+}
+
+func (i *InvoiceInput) GetSubsidiary() *LinkedSubsidiaryInput {
+	if i == nil {
+		return nil
+	}
+	return i.Subsidiary
 }
 
 func (i *InvoiceInput) GetLocationID() *string {

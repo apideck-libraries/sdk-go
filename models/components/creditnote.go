@@ -66,7 +66,8 @@ type CreditNote struct {
 	// The customer this entity is linked to.
 	Customer *LinkedCustomer `json:"customer,omitempty"`
 	// The company ID the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
+	CompanyID  *string           `json:"company_id,omitempty"`
+	Subsidiary *LinkedSubsidiary `json:"subsidiary,omitempty"`
 	// The ID of the location
 	LocationID *string `json:"location_id,omitempty"`
 	// The ID of the department
@@ -166,6 +167,13 @@ func (c *CreditNote) GetCompanyID() *string {
 		return nil
 	}
 	return c.CompanyID
+}
+
+func (c *CreditNote) GetSubsidiary() *LinkedSubsidiary {
+	if c == nil {
+		return nil
+	}
+	return c.Subsidiary
 }
 
 func (c *CreditNote) GetLocationID() *string {
@@ -405,7 +413,8 @@ type CreditNoteInput struct {
 	// The customer this entity is linked to.
 	Customer *LinkedCustomerInput `json:"customer,omitempty"`
 	// The company ID the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
+	CompanyID  *string                `json:"company_id,omitempty"`
+	Subsidiary *LinkedSubsidiaryInput `json:"subsidiary,omitempty"`
 	// The ID of the location
 	LocationID *string `json:"location_id,omitempty"`
 	// The ID of the department
@@ -488,6 +497,13 @@ func (c *CreditNoteInput) GetCompanyID() *string {
 		return nil
 	}
 	return c.CompanyID
+}
+
+func (c *CreditNoteInput) GetSubsidiary() *LinkedSubsidiaryInput {
+	if c == nil {
+		return nil
+	}
+	return c.Subsidiary
 }
 
 func (c *CreditNoteInput) GetLocationID() *string {

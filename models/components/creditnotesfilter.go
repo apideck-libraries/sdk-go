@@ -8,7 +8,12 @@ import (
 )
 
 type CreditNotesFilter struct {
+	// Return records with a row ID greater than or equal to the given value
+	IDSince      *string    `queryParam:"name=id_since"`
 	UpdatedSince *time.Time `queryParam:"name=updated_since"`
+	CreatedSince *time.Time `queryParam:"name=created_since"`
+	// Credit note number to search for
+	Number *string `queryParam:"name=number"`
 }
 
 func (c CreditNotesFilter) MarshalJSON() ([]byte, error) {
@@ -22,9 +27,30 @@ func (c *CreditNotesFilter) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
+func (c *CreditNotesFilter) GetIDSince() *string {
+	if c == nil {
+		return nil
+	}
+	return c.IDSince
+}
+
 func (c *CreditNotesFilter) GetUpdatedSince() *time.Time {
 	if c == nil {
 		return nil
 	}
 	return c.UpdatedSince
+}
+
+func (c *CreditNotesFilter) GetCreatedSince() *time.Time {
+	if c == nil {
+		return nil
+	}
+	return c.CreatedSince
+}
+
+func (c *CreditNotesFilter) GetNumber() *string {
+	if c == nil {
+		return nil
+	}
+	return c.Number
 }

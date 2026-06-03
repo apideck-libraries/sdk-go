@@ -132,7 +132,8 @@ type BillPayment struct {
 	// The supplier this entity is linked to.
 	Supplier *LinkedSupplier `json:"supplier,omitempty"`
 	// The company ID the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
+	CompanyID  *string           `json:"company_id,omitempty"`
+	Subsidiary *LinkedSubsidiary `json:"subsidiary,omitempty"`
 	// Indicates if the transaction has been reconciled.
 	Reconciled *bool `json:"reconciled,omitempty"`
 	// Status of payment
@@ -265,6 +266,13 @@ func (b *BillPayment) GetCompanyID() *string {
 		return nil
 	}
 	return b.CompanyID
+}
+
+func (b *BillPayment) GetSubsidiary() *LinkedSubsidiary {
+	if b == nil {
+		return nil
+	}
+	return b.Subsidiary
 }
 
 func (b *BillPayment) GetReconciled() *bool {
@@ -439,7 +447,8 @@ type BillPaymentInput struct {
 	// The supplier this entity is linked to.
 	Supplier *LinkedSupplierInput `json:"supplier,omitempty"`
 	// The company ID the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
+	CompanyID  *string                `json:"company_id,omitempty"`
+	Subsidiary *LinkedSubsidiaryInput `json:"subsidiary,omitempty"`
 	// Indicates if the transaction has been reconciled.
 	Reconciled *bool `json:"reconciled,omitempty"`
 	// Status of payment
@@ -548,6 +557,13 @@ func (b *BillPaymentInput) GetCompanyID() *string {
 		return nil
 	}
 	return b.CompanyID
+}
+
+func (b *BillPaymentInput) GetSubsidiary() *LinkedSubsidiaryInput {
+	if b == nil {
+		return nil
+	}
+	return b.Subsidiary
 }
 
 func (b *BillPaymentInput) GetReconciled() *bool {

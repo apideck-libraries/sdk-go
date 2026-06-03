@@ -32,6 +32,8 @@ func (e *BillsFilterStatus) IsExact() bool {
 }
 
 type BillsFilter struct {
+	// Return records with a row ID greater than or equal to the given value
+	IDSince      *string    `queryParam:"name=id_since"`
 	UpdatedSince *time.Time `queryParam:"name=updated_since"`
 	// Filter by bill status
 	Status *BillsFilterStatus `queryParam:"name=status"`
@@ -46,6 +48,13 @@ func (b *BillsFilter) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
+}
+
+func (b *BillsFilter) GetIDSince() *string {
+	if b == nil {
+		return nil
+	}
+	return b.IDSince
 }
 
 func (b *BillsFilter) GetUpdatedSince() *time.Time {

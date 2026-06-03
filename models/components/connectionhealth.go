@@ -6,12 +6,13 @@ package components
 type ConnectionHealth string
 
 const (
-	ConnectionHealthOk              ConnectionHealth = "ok"
-	ConnectionHealthPendingRefresh  ConnectionHealth = "pending_refresh"
-	ConnectionHealthNeedsAuth       ConnectionHealth = "needs_auth"
-	ConnectionHealthNeedsConsent    ConnectionHealth = "needs_consent"
-	ConnectionHealthRevoked         ConnectionHealth = "revoked"
-	ConnectionHealthMissingSettings ConnectionHealth = "missing_settings"
+	ConnectionHealthOk                  ConnectionHealth = "ok"
+	ConnectionHealthPendingRefresh      ConnectionHealth = "pending_refresh"
+	ConnectionHealthNeedsAuth           ConnectionHealth = "needs_auth"
+	ConnectionHealthPendingConfirmation ConnectionHealth = "pending_confirmation"
+	ConnectionHealthNeedsConsent        ConnectionHealth = "needs_consent"
+	ConnectionHealthRevoked             ConnectionHealth = "revoked"
+	ConnectionHealthMissingSettings     ConnectionHealth = "missing_settings"
 )
 
 func (e ConnectionHealth) ToPointer() *ConnectionHealth {
@@ -22,7 +23,7 @@ func (e ConnectionHealth) ToPointer() *ConnectionHealth {
 func (e *ConnectionHealth) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "ok", "pending_refresh", "needs_auth", "needs_consent", "revoked", "missing_settings":
+		case "ok", "pending_refresh", "needs_auth", "pending_confirmation", "needs_consent", "revoked", "missing_settings":
 			return true
 		}
 	}

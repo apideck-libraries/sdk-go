@@ -50,7 +50,8 @@ type JournalEntry struct {
 	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
 	Currency *Currency `json:"currency,omitempty"`
 	// The company ID the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
+	CompanyID  *string           `json:"company_id,omitempty"`
+	Subsidiary *LinkedSubsidiary `json:"subsidiary,omitempty"`
 	// Requires a minimum of 2 line items that sum to 0
 	LineItems []JournalEntryLineItem `json:"line_items,omitempty"`
 	// Journal entry status
@@ -154,6 +155,13 @@ func (j *JournalEntry) GetCompanyID() *string {
 		return nil
 	}
 	return j.CompanyID
+}
+
+func (j *JournalEntry) GetSubsidiary() *LinkedSubsidiary {
+	if j == nil {
+		return nil
+	}
+	return j.Subsidiary
 }
 
 func (j *JournalEntry) GetLineItems() []JournalEntryLineItem {
@@ -313,7 +321,8 @@ type JournalEntryInput struct {
 	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
 	Currency *Currency `json:"currency,omitempty"`
 	// The company ID the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
+	CompanyID  *string                `json:"company_id,omitempty"`
+	Subsidiary *LinkedSubsidiaryInput `json:"subsidiary,omitempty"`
 	// Requires a minimum of 2 line items that sum to 0
 	LineItems []JournalEntryLineItemInput `json:"line_items,omitempty"`
 	// Journal entry status
@@ -393,6 +402,13 @@ func (j *JournalEntryInput) GetCompanyID() *string {
 		return nil
 	}
 	return j.CompanyID
+}
+
+func (j *JournalEntryInput) GetSubsidiary() *LinkedSubsidiaryInput {
+	if j == nil {
+		return nil
+	}
+	return j.Subsidiary
 }
 
 func (j *JournalEntryInput) GetLineItems() []JournalEntryLineItemInput {
