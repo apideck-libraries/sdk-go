@@ -44,7 +44,8 @@ type Payment struct {
 	// Deprecated: This field is deprecated and may be removed in a future version..
 	Supplier *DeprecatedLinkedSupplier `json:"supplier,omitempty"`
 	// The company ID the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
+	CompanyID  *string           `json:"company_id,omitempty"`
+	Subsidiary *LinkedSubsidiary `json:"subsidiary,omitempty"`
 	// Indicates if the transaction has been reconciled.
 	Reconciled *bool `json:"reconciled,omitempty"`
 	// Status of payment
@@ -198,6 +199,13 @@ func (p *Payment) GetCompanyID() *string {
 		return nil
 	}
 	return p.CompanyID
+}
+
+func (p *Payment) GetSubsidiary() *LinkedSubsidiary {
+	if p == nil {
+		return nil
+	}
+	return p.Subsidiary
 }
 
 func (p *Payment) GetReconciled() *bool {

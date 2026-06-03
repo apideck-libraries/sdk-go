@@ -75,7 +75,8 @@ type Bill struct {
 	// The supplier this entity is linked to.
 	Supplier *LinkedSupplier `json:"supplier,omitempty"`
 	// The company ID the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
+	CompanyID  *string           `json:"company_id,omitempty"`
+	Subsidiary *LinkedSubsidiary `json:"subsidiary,omitempty"`
 	// The ID of the location
 	LocationID *string `json:"location_id,omitempty"`
 	// The ID of the department
@@ -215,6 +216,13 @@ func (b *Bill) GetCompanyID() *string {
 		return nil
 	}
 	return b.CompanyID
+}
+
+func (b *Bill) GetSubsidiary() *LinkedSubsidiary {
+	if b == nil {
+		return nil
+	}
+	return b.Subsidiary
 }
 
 func (b *Bill) GetLocationID() *string {
@@ -547,7 +555,8 @@ type BillInput struct {
 	// The supplier this entity is linked to.
 	Supplier *LinkedSupplierInput `json:"supplier,omitempty"`
 	// The company ID the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
+	CompanyID  *string                `json:"company_id,omitempty"`
+	Subsidiary *LinkedSubsidiaryInput `json:"subsidiary,omitempty"`
 	// The ID of the location
 	LocationID *string `json:"location_id,omitempty"`
 	// The ID of the department
@@ -663,6 +672,13 @@ func (b *BillInput) GetCompanyID() *string {
 		return nil
 	}
 	return b.CompanyID
+}
+
+func (b *BillInput) GetSubsidiary() *LinkedSubsidiaryInput {
+	if b == nil {
+		return nil
+	}
+	return b.Subsidiary
 }
 
 func (b *BillInput) GetLocationID() *string {
