@@ -779,8 +779,8 @@ func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesS
 
 }
 
-// Get Connector Doc content
-// Get Connector Doc content
+// Get File
+// Get File
 func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneRequest, opts ...operations.Option) (*operations.FileStorageFilesOneResponse, error) {
 	globals := operations.FileStorageFilesOneGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,

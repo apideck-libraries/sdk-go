@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 1741681bd80d0b4dc069116ae5fca533
-  docVersion: 10.24.38
+  docChecksum: 9c2270cbf7ade2fdce4480609d8d26a5
+  docVersion: 10.24.39
   speakeasyVersion: 1.770.0
   generationVersion: 2.893.0
-  releaseVersion: 0.27.11
-  configChecksum: 9454fd906b74ac41c1c714d281878c0b
+  releaseVersion: 0.27.12
+  configChecksum: 1c122c5055f55d1bbff1e0279ba352ed
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: 45d30427-d817-4dfb-8a13-a82af716009c
-  pristine_commit_hash: b5a01a48e82f1d3649d9006c85002b9c92e871af
-  pristine_tree_hash: 5e7b2bcc66bb204d0ce642dc37a51e99fca26db6
+  generation_id: 1b4e66f1-fc0e-4387-ad5a-d462730a333d
+  pristine_commit_hash: 17e96c61f07415e15673168a4dc41c734c1824fb
+  pristine_tree_hash: 1ac3fe468dc5da207433ee9c0467559a5e5aab1d
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: d800a06c77eca75b00ead46c9a8ef3985533ce72
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:f357892afb35b5563dd6f5aee892748189fdd631
-    pristine_git_object: 7b84663f142081d95220fc151077abda418edf5e
+    last_write_checksum: sha1:724b59d15c23c1f76b2aa2abcaf2ebef042a78d4
+    pristine_git_object: 0c4cc92cce39e1a71e86de8eaf6cbd030286cdbf
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:1408555013a145bf95d6b88b27c4a688d3625fb0
@@ -8674,8 +8674,8 @@ trackedFiles:
     pristine_git_object: 6ba9b0ae590e2f123fb6a74fd2c32498cd81bcdb
   files.go:
     id: 2321d71bc458
-    last_write_checksum: sha1:7fdcfd24e8b56912556dcb43e8163d6943a42c50
-    pristine_git_object: 9eaee2526eafcc46c029345e21587f7baf269bb4
+    last_write_checksum: sha1:7fec63c5a96443cbd1b80ea3e38203513dc0e229
+    pristine_git_object: f1e957fb9da6bddf40ceeb41ff27ac38a574d020
   filestorage.go:
     id: fe8d11040679
     last_write_checksum: sha1:b62001976ddb9fd151e8260fb4cc2e11bb474c72
@@ -29243,7 +29243,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes:\n* `Apideck.Accounting.Bills.List()`: \n  *  `request.Request` **Changed**\n  *  `response.Data[]` **Changed**\n* `Apideck.Accounting.Bills.Create()`: \n  *  `request.Request.Bill` **Changed**\n* `Apideck.Accounting.Bills.Get()`:  `response.Data` **Changed**\n* `Apideck.Accounting.Bills.Update()`: \n  *  `request.Request.Bill` **Changed**\n* `Apideck.Accounting.Invoices.List()`: \n  *  `request.Request` **Changed**\n  *  `response.Data[].Subsidiary` **Added**\n* `Apideck.Accounting.Invoices.Create()`: \n  *  `request.Request.Invoice.Subsidiary` **Added**\n* `Apideck.Accounting.Invoices.Get()`:  `response.Data.Subsidiary` **Added**\n* `Apideck.Accounting.Invoices.Update()`: \n  *  `request.Request.Invoice.Subsidiary` **Added**\n* `Apideck.Accounting.LedgerAccounts.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.InvoiceItems.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.CreditNotes.List()`: \n  *  `request.Request` **Changed**\n  *  `response.Data[].Subsidiary` **Added**\n* `Apideck.Accounting.CreditNotes.Create()`: \n  *  `request.Request.CreditNote.Subsidiary` **Added**\n* `Apideck.Accounting.CreditNotes.Get()`:  `response.Data.Subsidiary` **Added**\n* `Apideck.Accounting.CreditNotes.Update()`: \n  *  `request.Request.CreditNote.Subsidiary` **Added**\n* `Apideck.Accounting.Payments.List()`: \n  *  `request.Request.Filter` **Changed**\n  *  `response.Data[].Subsidiary` **Added**\n* `Apideck.Accounting.Payments.Create()`: \n  *  `request.Request.Payment.Subsidiary` **Added**\n* `Apideck.Accounting.Payments.Get()`:  `response.Data.Subsidiary` **Added**\n* `Apideck.Accounting.Payments.Update()`: \n  *  `request.Request.Payment.Subsidiary` **Added**\n* `Apideck.Accounting.CompanyInfo.Get()`:  `response.Data.AccountingMethod` **Added**\n* `Apideck.Accounting.JournalEntries.List()`:  `response.Data[].Subsidiary` **Added**\n* `Apideck.Accounting.JournalEntries.Create()`: \n  *  `request.Request.JournalEntry.Subsidiary` **Added**\n* `Apideck.Accounting.JournalEntries.Get()`:  `response.Data.Subsidiary` **Added**\n* `Apideck.Accounting.JournalEntries.Update()`: \n  *  `request.Request.JournalEntry.Subsidiary` **Added**\n* `Apideck.Accounting.BillPayments.List()`: \n  *  `request.Request.Filter` **Changed**\n  *  `response.Data[].Subsidiary` **Added**\n* `Apideck.Accounting.BillPayments.Create()`: \n  *  `request.Request.BillPayment.Subsidiary` **Added**\n* `Apideck.Accounting.BillPayments.Get()`:  `response.Data.Subsidiary` **Added**\n* `Apideck.Accounting.BillPayments.Update()`: \n  *  `request.Request.BillPayment.Subsidiary` **Added**\n* `Apideck.Accounting.Expenses.List()`:  `response.Data[].LineItems[].Rebilling.RebillStatus.Enum(other)` **Added**\n* `Apideck.Accounting.Expenses.Create()`: \n  *  `request.Request.Expense.LineItems[].Rebilling.RebillStatus.Enum(other)` **Added**\n* `Apideck.Accounting.Expenses.Get()`:  `response.Data.LineItems[].Rebilling.RebillStatus.Enum(other)` **Added**\n* `Apideck.Accounting.Expenses.Update()`: \n  *  `request.Request.Expense.LineItems[].Rebilling.RebillStatus.Enum(other)` **Added**\n* `Apideck.Connector.Connectors.List()`: \n  *  `request.Filter` **Changed**\n  *  `response.Data[].UnifiedApis[].Id.Enum(subscriptionAnalytics)` **Added**\n* `Apideck.Connector.Connectors.Get()`:  `response.Data.UnifiedApis[].Id.Enum(subscriptionAnalytics)` **Added**\n* `Apideck.Connector.ConnectorResources.Get()`:  `request.UnifiedApi` **Changed**\n* `Apideck.Vault.Consumers.Create()`:  `response.Data.Connections[].Health.Enum(pendingConfirmation)` **Added**\n* `Apideck.Vault.Consumers.Get()`:  `response.Data.Connections[].Health.Enum(pendingConfirmation)` **Added**\n* `Apideck.Vault.Consumers.Update()`:  `response.Data.Connections[].Health.Enum(pendingConfirmation)` **Added**\n* `Apideck.Vault.Connections.List()`:  `response.Data[].Health.Enum(pendingConfirmation)` **Added**\n* `Apideck.Vault.Connections.Get()`:  `response.Data.Health.Enum(pendingConfirmation)` **Added**\n* `Apideck.Vault.Connections.Update()`:  `response.Data.Health.Enum(pendingConfirmation)` **Added**\n* `Apideck.Vault.Connections.Imports()`:  `response.Data.Health.Enum(pendingConfirmation)` **Added**\n* `Apideck.Vault.Connections.Token()`:  `response.Data.Health.Enum(pendingConfirmation)` **Added**\n* `Apideck.Vault.ConnectionSettings.List()`:  `response.Data.Health.Enum(pendingConfirmation)` **Added**\n* `Apideck.Vault.ConnectionSettings.Update()`:  `response.Data.Health.Enum(pendingConfirmation)` **Added**\n* `Apideck.Vault.Sessions.Create()`: \n  *  `request.Session.Settings.UnifiedApis[].Enum(subscriptionAnalytics)` **Added**\n* `Apideck.Vault.Logs.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Webhook.Webhooks.List()`:  `response.Data[].UnifiedApi.Enum(subscriptionAnalytics)` **Added**\n* `Apideck.Webhook.Webhooks.Create()`: \n  *  `request.CreateWebhookRequest.UnifiedApi.Enum(subscriptionAnalytics)` **Added**\n  *  `response.Data.UnifiedApi.Enum(subscriptionAnalytics)` **Added**\n* `Apideck.Webhook.Webhooks.Get()`:  `response.Data.UnifiedApi.Enum(subscriptionAnalytics)` **Added**\n* `Apideck.Webhook.Webhooks.Update()`:  `response.Data.UnifiedApi.Enum(subscriptionAnalytics)` **Added**\n* `Apideck.Webhook.Webhooks.Delete()`:  `response.Data.UnifiedApi.Enum(subscriptionAnalytics)` **Added**\n* `Apideck.Webhook.EventLogs.List()`:  `response.Data[].UnifiedApi.Enum(subscriptionAnalytics)` **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
