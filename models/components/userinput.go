@@ -7,6 +7,8 @@ type UserInput struct {
 	ParentID *string `json:"parent_id,omitempty"`
 	// The username of the user
 	Username *string `json:"username,omitempty"`
+	// The name of the resource.
+	Name *string `json:"name,omitempty"`
 	// The first name of the person.
 	FirstName *string `json:"first_name,omitempty"`
 	// The last name of the person.
@@ -52,6 +54,13 @@ func (u *UserInput) GetUsername() *string {
 		return nil
 	}
 	return u.Username
+}
+
+func (u *UserInput) GetName() *string {
+	if u == nil {
+		return nil
+	}
+	return u.Name
 }
 
 func (u *UserInput) GetFirstName() *string {

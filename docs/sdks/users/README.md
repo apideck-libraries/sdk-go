@@ -24,6 +24,7 @@ import(
 	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -39,6 +40,9 @@ func main() {
 
     res, err := s.Crm.Users.List(ctx, operations.CrmUsersAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        Filter: &components.UsersFilter{
+            Email: sdkgo.Pointer("elon@apideck.com"),
+        },
         PassThrough: map[string]any{
             "search": "San Francisco",
         },
