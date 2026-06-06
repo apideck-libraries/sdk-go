@@ -24,6 +24,7 @@ import(
 	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -39,6 +40,9 @@ func main() {
 
     res, err := s.Crm.Notes.List(ctx, operations.CrmNotesAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        Filter: &components.NotesFilter{
+            Title: sdkgo.Pointer("Follow up call"),
+        },
         PassThrough: map[string]any{
             "search": "San Francisco",
         },

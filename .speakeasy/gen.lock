@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 9c2270cbf7ade2fdce4480609d8d26a5
-  docVersion: 10.24.39
-  speakeasyVersion: 1.770.0
+  docChecksum: 4662d8e384c00dca61641a06a71e56c7
+  docVersion: 10.24.40
+  speakeasyVersion: 1.771.0
   generationVersion: 2.893.0
-  releaseVersion: 0.27.12
-  configChecksum: 1c122c5055f55d1bbff1e0279ba352ed
+  releaseVersion: 0.27.13
+  configChecksum: 9724c7954b68402017a18b1f4464aa7a
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: 1b4e66f1-fc0e-4387-ad5a-d462730a333d
-  pristine_commit_hash: 17e96c61f07415e15673168a4dc41c734c1824fb
-  pristine_tree_hash: 1ac3fe468dc5da207433ee9c0467559a5e5aab1d
+  generation_id: 069dbcca-a2c0-4451-9476-0a086131a043
+  pristine_commit_hash: a0e8240634c64ac6b589fdd0283bff2ab43370ad
+  pristine_tree_hash: b85e9d9a3336548164f22b50defbe70bd7231014
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: d800a06c77eca75b00ead46c9a8ef3985533ce72
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:724b59d15c23c1f76b2aa2abcaf2ebef042a78d4
-    pristine_git_object: 0c4cc92cce39e1a71e86de8eaf6cbd030286cdbf
+    last_write_checksum: sha1:10926f04bd2b2381892780c82fd1f930d28d077c
+    pristine_git_object: b2d332813cbf7c4928d437ca32d7d2e66a19385f
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:1408555013a145bf95d6b88b27c4a688d3625fb0
@@ -3144,6 +3144,10 @@ trackedFiles:
     id: 121e055391ff
     last_write_checksum: sha1:8e6a7565e8331eac25df690a90004aa14a6b2be4
     pristine_git_object: 669db744e504b030a113d38c717ec5052ee96afe
+  docs/models/components/notesfilter.md:
+    id: 2ff1ec05f822
+    last_write_checksum: sha1:8b9cc5be1b0078609f1b7c435833ce80c1ea3e76
+    pristine_git_object: 4e93b4e650f62cc537f983985309852dc73f2bc5
   docs/models/components/oauthcredentialssource.md:
     id: 12c7610801c5
     last_write_checksum: sha1:841d1e147661bdf15ea63c6e8c67bee745d82d62
@@ -4114,12 +4118,16 @@ trackedFiles:
     pristine_git_object: 0a64dc6836f494e80f08b5ae9d19a382705f2c26
   docs/models/components/user.md:
     id: 9615438c874c
-    last_write_checksum: sha1:238d2683be6e82c4810ac5c23911da4f4d973c10
-    pristine_git_object: 0b9f094577e0d743a6e898764b996d9e895537b6
+    last_write_checksum: sha1:e164d2b7214738a7d2b09aebb824c1a4889d5a6a
+    pristine_git_object: 14c9fef644fed9581215f9726b84ebaba43786a5
   docs/models/components/userinput.md:
     id: 99bd874e64b5
-    last_write_checksum: sha1:3813b6a8f7905311cc085374c29fa58cde63db10
-    pristine_git_object: 67dbefef9db91f4004ec45ee5b94008e8e2d2ee7
+    last_write_checksum: sha1:c5a3a196b8ca5b0829685fa1e07b50521c22c03e
+    pristine_git_object: 2a49e1f784e670a2544989dadddf107e221e586f
+  docs/models/components/usersfilter.md:
+    id: a022f1b7e21f
+    last_write_checksum: sha1:ebe7b5a222f43c11a384d4c8c5b3914476bc32df
+    pristine_git_object: e190d27ece6850eb0c35f7dd6f234939e2e49e40
   docs/models/components/validateconnectionstateresponse.md:
     id: 3039b79849a7
     last_write_checksum: sha1:1660ebfb34a79c56aa3a7525c623e09090a223f5
@@ -6570,8 +6578,8 @@ trackedFiles:
     pristine_git_object: 6c5854a5a78efa611a9a071c1a73a74c5c5e6c42
   docs/models/operations/crmnotesallrequest.md:
     id: 45cc5a467b20
-    last_write_checksum: sha1:b742f30950da23fb0f96b60dd83a3253e87d8011
-    pristine_git_object: ae58d5c3d0986f08ee4391eb19d58d508b1a1fb7
+    last_write_checksum: sha1:3a3fdaa09ddea8a4de2f7689d9ec6e8bea45a178
+    pristine_git_object: d1627b2fa4d2c47989bbbde339402e96507a3913
   docs/models/operations/crmnotesallresponse.md:
     id: ffe47b3961db
     last_write_checksum: sha1:72e5549fd0b628b12d1b4c26309e345a56ab3d7d
@@ -6750,8 +6758,8 @@ trackedFiles:
     pristine_git_object: 9349825e710229d1dbc1d0063d741b85824bde58
   docs/models/operations/crmusersallrequest.md:
     id: b24b28f72ce4
-    last_write_checksum: sha1:9be325085cb3d7fcfbafe6b01480e6d83d82ae01
-    pristine_git_object: 02914c00592f45e3d9829fd58b1c12b125ffbd2f
+    last_write_checksum: sha1:cf6210d0d989c1aa34b8e4db1cd13430aca6c6ec
+    pristine_git_object: 6eca879b3d587c11e273926d7a5c2a37c3a51987
   docs/models/operations/crmusersallresponse.md:
     id: a56230bdc919
     last_write_checksum: sha1:0b02a33ad64feab43e151d992a61b5a99f0f9379
@@ -8530,8 +8538,8 @@ trackedFiles:
     pristine_git_object: 40146d3fa6fa66e6ff65e4315fb76c5fbfd173ee
   docs/sdks/notes/README.md:
     id: 541aead547ce
-    last_write_checksum: sha1:2f589e2df393abf5080faa960f9461d7796d1700
-    pristine_git_object: 368c8f113117a99164495917dbc5096f990e4d88
+    last_write_checksum: sha1:3155428e7cdff1de3814e283cbc66775e43b096f
+    pristine_git_object: e18b7d5297085f39a6f8d1eba20eb6dcb774b231
   docs/sdks/opportunities/README.md:
     id: 28cc90122db0
     last_write_checksum: sha1:b69fa488622e72798810eaf04dd41004b9d4cd0e
@@ -8618,8 +8626,8 @@ trackedFiles:
     pristine_git_object: 92838c7b5714fd201217861acca9b1a66397d33b
   docs/sdks/users/README.md:
     id: 5d80027045fe
-    last_write_checksum: sha1:214a0e3d6b8b63c9b6f86c6e514f8b73e4ffb390
-    pristine_git_object: 4ee8e7cb9c7fd5a6809a4583163656ea9ff8ecd3
+    last_write_checksum: sha1:0790423836bdca7c5709c62daf3c05d7f6ad28eb
+    pristine_git_object: 5d2cd5b454145497fd5263182a7c001d47f3e23e
   docs/sdks/validateconnection/README.md:
     id: 8755afabedd1
     last_write_checksum: sha1:c3e832a1433d60925889bb740f5b47652b240ad3
@@ -10760,6 +10768,10 @@ trackedFiles:
     id: 5f3d94fa3122
     last_write_checksum: sha1:1a823cc8f9464a96c8a6c94fc98ee5e4d5887a6c
     pristine_git_object: 7d94a6594118c41dc699056ed437d21414bb7b25
+  models/components/notesfilter.go:
+    id: b0619ba60329
+    last_write_checksum: sha1:d6f64303dc285646bb0a0934c3b405e3ceb6258c
+    pristine_git_object: 09cf1a36842a40d915324336468ed4722b1eef9c
   models/components/oauthgranttype.go:
     id: f09f74d9bfee
     last_write_checksum: sha1:ea178caad4384267eaa56e6d75c2cd58fb74ee87
@@ -11330,12 +11342,16 @@ trackedFiles:
     pristine_git_object: fb9ae2358757870a248a73ceaa0e4e01fbecba83
   models/components/user.go:
     id: 972e0ca973c7
-    last_write_checksum: sha1:f1233a67c8e27b60738ba2a008a1444fd0dfebdf
-    pristine_git_object: 8398ddfd8164c9bb67a324b5ba6310a0fd53207e
+    last_write_checksum: sha1:3367d6d4a09030c5cd89d44a1a18e7eaa88e67cd
+    pristine_git_object: c35b175570ed86e8e9af5c35e1e46b97dfeb6e2f
   models/components/userinput.go:
     id: 4cd3a879041f
-    last_write_checksum: sha1:190466f80a777ef82791d7126ab22dd1d70d3315
-    pristine_git_object: 0f3d3dc34e8a9e5e9884b51c92fbc144d804d36b
+    last_write_checksum: sha1:d721a2857d9072a59ebf1eb2011a8bea0b59bd04
+    pristine_git_object: 40a14e68c7bf0f64e1f8c7a6e5896b4d0ab080e1
+  models/components/usersfilter.go:
+    id: 25c4aa3b6eab
+    last_write_checksum: sha1:0473b3ae0bc5296251d21957e7c5e283a61b4725
+    pristine_git_object: 90da8b1b2b772ea0143b37efd79a290e15eaf311
   models/components/validateconnectionstateresponse.go:
     id: f6505ee0ab91
     last_write_checksum: sha1:461e0e6372a087c9e166ec64ac0b206a85735b66
@@ -12158,8 +12174,8 @@ trackedFiles:
     pristine_git_object: 4b29aa05c43c2e73758a076b098bb1b48e328d83
   models/operations/crmnotesall.go:
     id: e2edab2c089a
-    last_write_checksum: sha1:0c001f65af5306a941a8c2a1fead502947e4b5a7
-    pristine_git_object: 7b47f3d44d70160d12aeeed6b8c353b7a7bed6f1
+    last_write_checksum: sha1:ea63a4043344c1a394f91f7fe08d09efa0d60464
+    pristine_git_object: 37af113d475ee4f2393986e63e1ec1f3b84c0bf5
   models/operations/crmnotesdelete.go:
     id: d8679392b1b2
     last_write_checksum: sha1:8b7a0fd0a343e5b5d81cd2ef63843f0f7ccf3249
@@ -12218,8 +12234,8 @@ trackedFiles:
     pristine_git_object: cf3158e605304827b24d4b0d3d13447649824316
   models/operations/crmusersall.go:
     id: 996418fc34ad
-    last_write_checksum: sha1:bf1d529ef7f2f2fe975f4fff3158c0fc6d64c70f
-    pristine_git_object: a088c56762a5a8b38db5767b1569283b2592dac3
+    last_write_checksum: sha1:b3025bab94ca84cbce7ed2997643bdd9ca3e31a0
+    pristine_git_object: 2d86f4aa0c1518daf9909311f861afa3a8d16529
   models/operations/crmusersdelete.go:
     id: 83770852625e
     last_write_checksum: sha1:f5ed7d6ed0e00412f61ea5e9f8824a4f9b40c946
@@ -20534,6 +20550,7 @@ examples:
           limit: 20
           pass_through: {"search": "San Francisco"}
           fields: "id,updated_at"
+          filter: {"title": "Follow up call"}
         header:
           x-apideck-consumer-id: "test-consumer"
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
@@ -20797,6 +20814,7 @@ examples:
           limit: 20
           pass_through: {"search": "San Francisco"}
           fields: "id,updated_at"
+          filter: {"email": "elon@apideck.com"}
         header:
           x-apideck-consumer-id: "test-consumer"
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
@@ -20851,7 +20869,7 @@ examples:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
           x-apideck-service-id: "salesforce"
       requestBody:
-        application/json: {"parent_id": "54321", "username": "masterofcoin", "first_name": "Elon", "last_name": "Musk", "title": "CEO", "division": "Europe", "company_name": "SpaceX", "employee_number": "123456-AB", "description": "A description", "image": "https://logo.clearbit.com/spacex.com?s=128", "language": "EN", "status": "active", "password": "supersecretpassword", "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}]}
+        application/json: {"parent_id": "54321", "username": "masterofcoin", "name": "Acme Inc.", "first_name": "Elon", "last_name": "Musk", "title": "CEO", "division": "Europe", "company_name": "SpaceX", "employee_number": "123456-AB", "description": "A description", "image": "https://logo.clearbit.com/spacex.com?s=128", "language": "EN", "status": "active", "password": "supersecretpassword", "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}]}
       responses:
         "201":
           application/json: {"status_code": 200, "status": "OK", "service": "zoho-crm", "resource": "users", "operation": "add", "data": {"id": "12345"}}
@@ -20907,7 +20925,7 @@ examples:
           x-apideck-service-id: "salesforce"
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "service": "zoho-crm", "resource": "companies", "operation": "one", "data": {"id": "12345", "parent_id": "54321", "username": "masterofcoin", "first_name": "Elon", "last_name": "Musk", "title": "CEO", "division": "Europe", "company_name": "SpaceX", "employee_number": "123456-AB", "description": "A description", "image": "https://logo.clearbit.com/spacex.com?s=128", "language": "EN", "status": "active", "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [], "updated_at": "2017-08-12T20:43:21.291Z", "created_at": "2017-08-12T20:43:21.291Z", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}]}}
+          application/json: {"status_code": 200, "status": "OK", "service": "zoho-crm", "resource": "companies", "operation": "one", "data": {"id": "12345", "parent_id": "54321", "username": "masterofcoin", "name": "Acme Inc.", "first_name": "Elon", "last_name": "Musk", "title": "CEO", "division": "Europe", "company_name": "SpaceX", "employee_number": "123456-AB", "description": "A description", "image": "https://logo.clearbit.com/spacex.com?s=128", "language": "EN", "status": "active", "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [], "updated_at": "2017-08-12T20:43:21.291Z", "created_at": "2017-08-12T20:43:21.291Z", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}]}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
         "401":
@@ -20959,7 +20977,7 @@ examples:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
           x-apideck-service-id: "salesforce"
       requestBody:
-        application/json: {"parent_id": "54321", "username": "masterofcoin", "first_name": "Elon", "last_name": "Musk", "title": "CEO", "division": "Europe", "company_name": "SpaceX", "employee_number": "123456-AB", "description": "A description", "image": "https://logo.clearbit.com/spacex.com?s=128", "language": "EN", "status": "active", "password": "supersecretpassword", "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [], "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}]}
+        application/json: {"parent_id": "54321", "username": "masterofcoin", "name": "Acme Inc.", "first_name": "Elon", "last_name": "Musk", "title": "CEO", "division": "Europe", "company_name": "SpaceX", "employee_number": "123456-AB", "description": "A description", "image": "https://logo.clearbit.com/spacex.com?s=128", "language": "EN", "status": "active", "password": "supersecretpassword", "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [], "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}]}
       responses:
         "200":
           application/json: {"status_code": 200, "status": "OK", "service": "zoho-crm", "resource": "companies", "operation": "update", "data": {"id": "12345"}}
@@ -29243,6 +29261,7 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Go SDK Changes:\n* `Apideck.Crm.Notes.List()`: \n  *  `request.Request.Filter` **Added**\n* `Apideck.Crm.Users.List()`: \n  *  `request.Request.Filter` **Added**\n  *  `response.Data[].Name` **Added**\n* `Apideck.Crm.Users.Create()`: \n  *  `request.Request.User.Name` **Added**\n* `Apideck.Crm.Users.Get()`:  `response.Data.Name` **Added**\n* `Apideck.Crm.Users.Update()`: \n  *  `request.Request.User.Name` **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
