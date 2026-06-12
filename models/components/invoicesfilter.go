@@ -16,6 +16,8 @@ type InvoicesFilter struct {
 	Number *string `queryParam:"name=number"`
 	// Supplier ID to filter invoices by
 	SupplierID *string `queryParam:"name=supplier_id"`
+	// Filter by the subsidiary (legal entity) the record belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+	SubsidiaryID *string `queryParam:"name=subsidiary_id"`
 }
 
 func (i InvoicesFilter) MarshalJSON() ([]byte, error) {
@@ -62,4 +64,11 @@ func (i *InvoicesFilter) GetSupplierID() *string {
 		return nil
 	}
 	return i.SupplierID
+}
+
+func (i *InvoicesFilter) GetSubsidiaryID() *string {
+	if i == nil {
+		return nil
+	}
+	return i.SubsidiaryID
 }

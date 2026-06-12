@@ -49,6 +49,8 @@ custom := components.WebhookEventType("custom_value")
 | `WebhookEventTypeVaultConnectionTokenRefreshFailed`    | vault.connection.token_refresh.failed                  |
 | `WebhookEventTypeVaultConnectionTokenRefreshPending`   | vault.connection.token_refresh.pending                 |
 | `WebhookEventTypeVaultConnectionTokenRefreshRecovered` | vault.connection.token_refresh.recovered               |
+| `WebhookEventTypeVaultConnectionDownstreamDegraded`    | vault.connection.downstream.degraded                   |
+| `WebhookEventTypeVaultConnectionDownstreamRecovered`   | vault.connection.downstream.recovered                  |
 | `WebhookEventTypeAtsJobCreated`                        | ats.job.created                                        |
 | `WebhookEventTypeAtsJobUpdated`                        | ats.job.updated                                        |
 | `WebhookEventTypeAtsJobDeleted`                        | ats.job.deleted                                        |

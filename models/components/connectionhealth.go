@@ -13,6 +13,7 @@ const (
 	ConnectionHealthNeedsConsent        ConnectionHealth = "needs_consent"
 	ConnectionHealthRevoked             ConnectionHealth = "revoked"
 	ConnectionHealthMissingSettings     ConnectionHealth = "missing_settings"
+	ConnectionHealthDegraded            ConnectionHealth = "degraded"
 )
 
 func (e ConnectionHealth) ToPointer() *ConnectionHealth {
@@ -23,7 +24,7 @@ func (e ConnectionHealth) ToPointer() *ConnectionHealth {
 func (e *ConnectionHealth) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "ok", "pending_refresh", "needs_auth", "pending_confirmation", "needs_consent", "revoked", "missing_settings":
+		case "ok", "pending_refresh", "needs_auth", "pending_confirmation", "needs_consent", "revoked", "missing_settings", "degraded":
 			return true
 		}
 	}

@@ -1,0 +1,10 @@
+# GeneralLedgerTransactionsFilter
+
+
+## Fields
+
+| Field                                                                  | Type                                                                   | Required                                                               | Description                                                            | Example                                                                |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `SourceType`                                                           | [*components.SourceType](../../models/components/sourcetype.md)        | :heavy_minus_sign:                                                     | Filter by the originating transaction type.                            |                                                                        |
+| `SourceID`                                                             | `*string`                                                              | :heavy_minus_sign:                                                     | Return only transactions originated from the given source document id. | 12345                                                                  |
+| `UpdatedSince`                                                         | [*time.Time](https://pkg.go.dev/time#Time)                             | :heavy_minus_sign:                                                     | Return transactions updated on or after this timestamp.                | 2024-09-30T07:43:32.000Z                                               |

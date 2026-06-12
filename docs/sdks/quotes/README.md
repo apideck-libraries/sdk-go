@@ -24,6 +24,8 @@ import(
 	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/types"
+	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -40,6 +42,11 @@ func main() {
     res, err := s.Accounting.Quotes.List(ctx, operations.AccountingQuotesAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
         CompanyID: sdkgo.Pointer("12345"),
+        Filter: &components.QuotesFilter{
+            UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
+            CreatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
+            Number: sdkgo.Pointer("OIT00546"),
+        },
     })
     if err != nil {
         log.Fatal(err)

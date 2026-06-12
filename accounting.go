@@ -8,40 +8,41 @@ import (
 )
 
 type Accounting struct {
-	TaxRates           *TaxRates
-	Bills              *Bills
-	Invoices           *Invoices
-	LedgerAccounts     *LedgerAccounts
-	InvoiceItems       *InvoiceItems
-	CreditNotes        *CreditNotes
-	Customers          *Customers
-	Suppliers          *Suppliers
-	Payments           *Payments
-	Refunds            *Refunds
-	CompanyInfo        *CompanyInfo
-	Companies          *Companies
-	BalanceSheet       *BalanceSheet
-	ProfitAndLoss      *ProfitAndLoss
-	JournalEntries     *JournalEntries
-	PurchaseOrders     *PurchaseOrders
-	Subsidiaries       *Subsidiaries
-	Locations          *Locations
-	Departments        *Departments
-	Attachments        *Attachments
-	BankAccounts       *BankAccounts
-	TrackingCategories *TrackingCategories
-	BillPayments       *BillPayments
-	Expenses           *Expenses
-	AgedCreditors      *AgedCreditors
-	AgedDebtors        *AgedDebtors
-	BankFeedAccounts   *BankFeedAccounts
-	BankFeedStatements *BankFeedStatements
-	Categories         *Categories
-	Quotes             *Quotes
-	Projects           *Projects
-	Employees          *Employees
-	ExpenseCategories  *ExpenseCategories
-	ExpenseReports     *ExpenseReports
+	TaxRates                  *TaxRates
+	Bills                     *Bills
+	Invoices                  *Invoices
+	LedgerAccounts            *LedgerAccounts
+	InvoiceItems              *InvoiceItems
+	CreditNotes               *CreditNotes
+	Customers                 *Customers
+	Suppliers                 *Suppliers
+	Payments                  *Payments
+	Refunds                   *Refunds
+	CompanyInfo               *CompanyInfo
+	Companies                 *Companies
+	BalanceSheet              *BalanceSheet
+	ProfitAndLoss             *ProfitAndLoss
+	JournalEntries            *JournalEntries
+	GeneralLedgerTransactions *GeneralLedgerTransactions
+	PurchaseOrders            *PurchaseOrders
+	Subsidiaries              *Subsidiaries
+	Locations                 *Locations
+	Departments               *Departments
+	Attachments               *Attachments
+	BankAccounts              *BankAccounts
+	TrackingCategories        *TrackingCategories
+	BillPayments              *BillPayments
+	Expenses                  *Expenses
+	AgedCreditors             *AgedCreditors
+	AgedDebtors               *AgedDebtors
+	BankFeedAccounts          *BankFeedAccounts
+	BankFeedStatements        *BankFeedStatements
+	Categories                *Categories
+	Quotes                    *Quotes
+	Projects                  *Projects
+	Employees                 *Employees
+	ExpenseCategories         *ExpenseCategories
+	ExpenseReports            *ExpenseReports
 
 	rootSDK          *Apideck
 	sdkConfiguration config.SDKConfiguration
@@ -50,42 +51,43 @@ type Accounting struct {
 
 func newAccounting(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *hooks.Hooks) *Accounting {
 	return &Accounting{
-		rootSDK:            rootSDK,
-		sdkConfiguration:   sdkConfig,
-		hooks:              hooks,
-		TaxRates:           newTaxRates(rootSDK, sdkConfig, hooks),
-		Bills:              newBills(rootSDK, sdkConfig, hooks),
-		Invoices:           newInvoices(rootSDK, sdkConfig, hooks),
-		LedgerAccounts:     newLedgerAccounts(rootSDK, sdkConfig, hooks),
-		InvoiceItems:       newInvoiceItems(rootSDK, sdkConfig, hooks),
-		CreditNotes:        newCreditNotes(rootSDK, sdkConfig, hooks),
-		Customers:          newCustomers(rootSDK, sdkConfig, hooks),
-		Suppliers:          newSuppliers(rootSDK, sdkConfig, hooks),
-		Payments:           newPayments(rootSDK, sdkConfig, hooks),
-		Refunds:            newRefunds(rootSDK, sdkConfig, hooks),
-		CompanyInfo:        newCompanyInfo(rootSDK, sdkConfig, hooks),
-		Companies:          newCompanies(rootSDK, sdkConfig, hooks),
-		BalanceSheet:       newBalanceSheet(rootSDK, sdkConfig, hooks),
-		ProfitAndLoss:      newProfitAndLoss(rootSDK, sdkConfig, hooks),
-		JournalEntries:     newJournalEntries(rootSDK, sdkConfig, hooks),
-		PurchaseOrders:     newPurchaseOrders(rootSDK, sdkConfig, hooks),
-		Subsidiaries:       newSubsidiaries(rootSDK, sdkConfig, hooks),
-		Locations:          newLocations(rootSDK, sdkConfig, hooks),
-		Departments:        newDepartments(rootSDK, sdkConfig, hooks),
-		Attachments:        newAttachments(rootSDK, sdkConfig, hooks),
-		BankAccounts:       newBankAccounts(rootSDK, sdkConfig, hooks),
-		TrackingCategories: newTrackingCategories(rootSDK, sdkConfig, hooks),
-		BillPayments:       newBillPayments(rootSDK, sdkConfig, hooks),
-		Expenses:           newExpenses(rootSDK, sdkConfig, hooks),
-		AgedCreditors:      newAgedCreditors(rootSDK, sdkConfig, hooks),
-		AgedDebtors:        newAgedDebtors(rootSDK, sdkConfig, hooks),
-		BankFeedAccounts:   newBankFeedAccounts(rootSDK, sdkConfig, hooks),
-		BankFeedStatements: newBankFeedStatements(rootSDK, sdkConfig, hooks),
-		Categories:         newCategories(rootSDK, sdkConfig, hooks),
-		Quotes:             newQuotes(rootSDK, sdkConfig, hooks),
-		Projects:           newProjects(rootSDK, sdkConfig, hooks),
-		Employees:          newEmployees(rootSDK, sdkConfig, hooks),
-		ExpenseCategories:  newExpenseCategories(rootSDK, sdkConfig, hooks),
-		ExpenseReports:     newExpenseReports(rootSDK, sdkConfig, hooks),
+		rootSDK:                   rootSDK,
+		sdkConfiguration:          sdkConfig,
+		hooks:                     hooks,
+		TaxRates:                  newTaxRates(rootSDK, sdkConfig, hooks),
+		Bills:                     newBills(rootSDK, sdkConfig, hooks),
+		Invoices:                  newInvoices(rootSDK, sdkConfig, hooks),
+		LedgerAccounts:            newLedgerAccounts(rootSDK, sdkConfig, hooks),
+		InvoiceItems:              newInvoiceItems(rootSDK, sdkConfig, hooks),
+		CreditNotes:               newCreditNotes(rootSDK, sdkConfig, hooks),
+		Customers:                 newCustomers(rootSDK, sdkConfig, hooks),
+		Suppliers:                 newSuppliers(rootSDK, sdkConfig, hooks),
+		Payments:                  newPayments(rootSDK, sdkConfig, hooks),
+		Refunds:                   newRefunds(rootSDK, sdkConfig, hooks),
+		CompanyInfo:               newCompanyInfo(rootSDK, sdkConfig, hooks),
+		Companies:                 newCompanies(rootSDK, sdkConfig, hooks),
+		BalanceSheet:              newBalanceSheet(rootSDK, sdkConfig, hooks),
+		ProfitAndLoss:             newProfitAndLoss(rootSDK, sdkConfig, hooks),
+		JournalEntries:            newJournalEntries(rootSDK, sdkConfig, hooks),
+		GeneralLedgerTransactions: newGeneralLedgerTransactions(rootSDK, sdkConfig, hooks),
+		PurchaseOrders:            newPurchaseOrders(rootSDK, sdkConfig, hooks),
+		Subsidiaries:              newSubsidiaries(rootSDK, sdkConfig, hooks),
+		Locations:                 newLocations(rootSDK, sdkConfig, hooks),
+		Departments:               newDepartments(rootSDK, sdkConfig, hooks),
+		Attachments:               newAttachments(rootSDK, sdkConfig, hooks),
+		BankAccounts:              newBankAccounts(rootSDK, sdkConfig, hooks),
+		TrackingCategories:        newTrackingCategories(rootSDK, sdkConfig, hooks),
+		BillPayments:              newBillPayments(rootSDK, sdkConfig, hooks),
+		Expenses:                  newExpenses(rootSDK, sdkConfig, hooks),
+		AgedCreditors:             newAgedCreditors(rootSDK, sdkConfig, hooks),
+		AgedDebtors:               newAgedDebtors(rootSDK, sdkConfig, hooks),
+		BankFeedAccounts:          newBankFeedAccounts(rootSDK, sdkConfig, hooks),
+		BankFeedStatements:        newBankFeedStatements(rootSDK, sdkConfig, hooks),
+		Categories:                newCategories(rootSDK, sdkConfig, hooks),
+		Quotes:                    newQuotes(rootSDK, sdkConfig, hooks),
+		Projects:                  newProjects(rootSDK, sdkConfig, hooks),
+		Employees:                 newEmployees(rootSDK, sdkConfig, hooks),
+		ExpenseCategories:         newExpenseCategories(rootSDK, sdkConfig, hooks),
+		ExpenseReports:            newExpenseReports(rootSDK, sdkConfig, hooks),
 	}
 }

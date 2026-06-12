@@ -317,6 +317,11 @@ func main() {
 * [Update](docs/sdks/expenses/README.md#update) - Update Expense
 * [Delete](docs/sdks/expenses/README.md#delete) - Delete Expense
 
+### [Accounting.GeneralLedgerTransactions](docs/sdks/generalledgertransactions/README.md)
+
+* [List](docs/sdks/generalledgertransactions/README.md#list) - List General Ledger Transactions
+* [Get](docs/sdks/generalledgertransactions/README.md#get) - Get General Ledger Transaction
+
 ### [Accounting.InvoiceItems](docs/sdks/invoiceitems/README.md)
 
 * [List](docs/sdks/invoiceitems/README.md#list) - List Invoice Items

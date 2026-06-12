@@ -27,3 +27,4 @@ custom := components.ConnectionHealth("custom_value")
 | `ConnectionHealthNeedsConsent`        | needs_consent                         |
 | `ConnectionHealthRevoked`             | revoked                               |
 | `ConnectionHealthMissingSettings`     | missing_settings                      |
+| `ConnectionHealthDegraded`            | degraded                              |

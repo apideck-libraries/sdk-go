@@ -10,6 +10,8 @@ import (
 type PurchaseOrdersFilter struct {
 	UpdatedSince *time.Time `queryParam:"name=updated_since"`
 	SupplierID   *string    `queryParam:"name=supplier_id"`
+	// Filter by the subsidiary (legal entity) the record belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+	SubsidiaryID *string `queryParam:"name=subsidiary_id"`
 }
 
 func (p PurchaseOrdersFilter) MarshalJSON() ([]byte, error) {
@@ -35,4 +37,11 @@ func (p *PurchaseOrdersFilter) GetSupplierID() *string {
 		return nil
 	}
 	return p.SupplierID
+}
+
+func (p *PurchaseOrdersFilter) GetSubsidiaryID() *string {
+	if p == nil {
+		return nil
+	}
+	return p.SubsidiaryID
 }
