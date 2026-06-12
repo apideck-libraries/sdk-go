@@ -333,6 +333,7 @@ const (
 	HealthNeedsAuth           Health = "needs_auth"
 	HealthPendingRefresh      Health = "pending_refresh"
 	HealthOk                  Health = "ok"
+	HealthDegraded            Health = "degraded"
 )
 
 func (e Health) ToPointer() *Health {
@@ -343,7 +344,7 @@ func (e Health) ToPointer() *Health {
 func (e *Health) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "revoked", "missing_settings", "needs_consent", "pending_confirmation", "needs_auth", "pending_refresh", "ok":
+		case "revoked", "missing_settings", "needs_consent", "pending_confirmation", "needs_auth", "pending_refresh", "ok", "degraded":
 			return true
 		}
 	}
@@ -413,8 +414,10 @@ type Connection struct {
 	CredentialsExpireAt *float64 `json:"credentials_expire_at,omitempty"`
 	// Unix timestamp in milliseconds of the last failed token refresh attempt. A value of 0 indicates no recent failures. This field is used internally to enforce cooldown periods between retry attempts.
 	LastRefreshFailedAt *float64 `json:"last_refresh_failed_at,omitempty"`
-	CreatedAt           *float64 `json:"created_at,omitempty"`
-	UpdatedAt           *float64 `json:"updated_at,omitempty"`
+	// Unix timestamp in milliseconds of the last downstream unreachable error (502/504 network class). A value of 0 indicates no active error. Connection remains callable while this is set; health surfaces as 'degraded'.
+	LastDownstreamErrorAt *float64 `json:"last_downstream_error_at,omitempty"`
+	CreatedAt             *float64 `json:"created_at,omitempty"`
+	UpdatedAt             *float64 `json:"updated_at,omitempty"`
 }
 
 func (c *Connection) GetID() *string {
@@ -667,6 +670,13 @@ func (c *Connection) GetLastRefreshFailedAt() *float64 {
 		return nil
 	}
 	return c.LastRefreshFailedAt
+}
+
+func (c *Connection) GetLastDownstreamErrorAt() *float64 {
+	if c == nil {
+		return nil
+	}
+	return c.LastDownstreamErrorAt
 }
 
 func (c *Connection) GetCreatedAt() *float64 {

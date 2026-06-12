@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 4662d8e384c00dca61641a06a71e56c7
-  docVersion: 10.24.40
-  speakeasyVersion: 1.771.0
-  generationVersion: 2.893.0
-  releaseVersion: 0.27.13
-  configChecksum: 9724c7954b68402017a18b1f4464aa7a
+  docChecksum: 0bd20ed3eea3b6629c09d81e827d35bf
+  docVersion: 10.24.43
+  speakeasyVersion: 1.777.2
+  generationVersion: 2.903.5
+  releaseVersion: 0.27.14
+  configChecksum: 81a1ae54648139ba6df0eb40a741997b
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: 069dbcca-a2c0-4451-9476-0a086131a043
-  pristine_commit_hash: a0e8240634c64ac6b589fdd0283bff2ab43370ad
-  pristine_tree_hash: b85e9d9a3336548164f22b50defbe70bd7231014
+  generation_id: 78f146a5-0c6d-4c97-9c29-f6c12ef8e842
+  pristine_commit_hash: 23687e1e30339bf47061d72944cf70735eae1d66
+  pristine_tree_hash: 3a6ac32078f8d65323f9dce11e44c6072a969b38
 features:
   go:
     acceptHeaders: 2.81.2
@@ -70,8 +70,8 @@ trackedFiles:
     pristine_git_object: 9cd0011e38cee44f38b9234d62d9187bdf79f87a
   accounting.go:
     id: df501d995c0f
-    last_write_checksum: sha1:403f72ff2cff46945393105b49e1890764737bec
-    pristine_git_object: 592cdb268f6b9ef6c93cea7cbd91e5f22e12caf1
+    last_write_checksum: sha1:36bbaac8ddce4068adf9699b092791a419106d71
+    pristine_git_object: cad905fecfc36cc74fca6a4e4432ccaa4abf0885
   activities.go:
     id: 015f1934bbce
     last_write_checksum: sha1:ce49a83eee1ac84a940b28259788555ce46d3c9e
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: d800a06c77eca75b00ead46c9a8ef3985533ce72
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:10926f04bd2b2381892780c82fd1f930d28d077c
-    pristine_git_object: b2d332813cbf7c4928d437ca32d7d2e66a19385f
+    last_write_checksum: sha1:50ac503b38598ec5060bab0c9c4560f567231e32
+    pristine_git_object: 856786ae2bbb43e785e516f38e31ecc371bb2f98
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:1408555013a145bf95d6b88b27c4a688d3625fb0
@@ -762,8 +762,8 @@ trackedFiles:
     pristine_git_object: 0a0adf7ced43223ee4f7d31e071c63a611f012b1
   docs/models/components/billsfilter.md:
     id: d9547573d030
-    last_write_checksum: sha1:a85f4194f8cca144f622a75c9764130c41429c5f
-    pristine_git_object: fd771729f816eed9f54555562fbb8bee5c795671
+    last_write_checksum: sha1:a859f9d81b441a13def2c36745383e3726524ff7
+    pristine_git_object: 2ce598dde4aca72d96a8b4c7e7bf34c0d8c23ecc
   docs/models/components/billsfilterstatus.md:
     id: 8719d0140b8c
     last_write_checksum: sha1:1e2df405800dc8f9e5055e7d65964f37cb2a543a
@@ -902,8 +902,8 @@ trackedFiles:
     pristine_git_object: 84fd7da1a24d42bf082725b9bc924e1bde9d5d16
   docs/models/components/connection.md:
     id: d23163567720
-    last_write_checksum: sha1:bd11691da97fb20736feed2e3a8a01c2640b0c87
-    pristine_git_object: 670952c334a6e2244f3c39817ca0f94331a68074
+    last_write_checksum: sha1:d1ce2209de7a12ac5fc08e1a9aa5f3a5a1b8887e
+    pristine_git_object: 08421c00f646f57f7449a09388b0f63927846b4b
   docs/models/components/connectionconfiguration.md:
     id: 5ee3fce9a529
     last_write_checksum: sha1:8ffbe4ecf9086a9d1f08b5ed5c7dc905a6722a4e
@@ -914,8 +914,8 @@ trackedFiles:
     pristine_git_object: a224ea6be7365605ab42c714a5de3946e1bf4abb
   docs/models/components/connectionhealth.md:
     id: 0d9b32221078
-    last_write_checksum: sha1:4386d7cdf61783cebd2f1fe04310f87ca5bdc2c3
-    pristine_git_object: d7f234b553d81edee5cf1dbbb4991ef9f6223fa2
+    last_write_checksum: sha1:487ce2312104be0d2fff816af730080964883f92
+    pristine_git_object: 480aec23a47d24b16722b67e0292ff9ac3c43eea
   docs/models/components/connectionimportdata.md:
     id: bf2d23b1d017
     last_write_checksum: sha1:f92e98bcdd9729e1aac546a9bbeb91e77a221cbb
@@ -1326,8 +1326,8 @@ trackedFiles:
     pristine_git_object: be53525396e0debd6a7742cc4aed15215c50d673
   docs/models/components/creditnotesfilter.md:
     id: da6742ff1983
-    last_write_checksum: sha1:7da4e05bc2b34c00b1f9a2cef5dabf7f49fff96e
-    pristine_git_object: 6fe6df149d33a0e1af2bd004578ce2fdfac29b5c
+    last_write_checksum: sha1:6709ccdf4102eb2db3e0e465d5a926214009e27c
+    pristine_git_object: 51320f937ec6f7ac75b83c192a094a0418614161
   docs/models/components/creditnotessort.md:
     id: b28a8f253329
     last_write_checksum: sha1:69811a62df9db6dbb936f3a251aa430381985f34
@@ -1366,8 +1366,8 @@ trackedFiles:
     pristine_git_object: 65a6149c609f32def09227e0512a66c3a4ef745b
   docs/models/components/customersfilter.md:
     id: 5912443a5c51
-    last_write_checksum: sha1:c8f56d858bd908574f642c6ca59f9ae8544a7374
-    pristine_git_object: 08817f417835a38de56ae2303996d86445e75671
+    last_write_checksum: sha1:6619866a3974551321686cd6b8896227d8528916
+    pristine_git_object: 06a9d704f3c8b781b5e1ca8d4c3f95f28bfdb5ef
   docs/models/components/customersfilterstatus.md:
     id: b576e6ef689b
     last_write_checksum: sha1:ebbcff2cffad16500829b465ecaf793c3226384c
@@ -2002,8 +2002,8 @@ trackedFiles:
     pristine_git_object: 96ef0d896221ab8933262e9c97285bf6bcc8732d
   docs/models/components/expensereportsfilter.md:
     id: fbeeb54088fe
-    last_write_checksum: sha1:e80cdcc93974a040aadebd73ec1c3e209da98812
-    pristine_git_object: baef652d4593d372975acf97954d2d188a7ba75a
+    last_write_checksum: sha1:76e6f6fac8facd049e484f4554b3f14edf9874cb
+    pristine_git_object: 75fcfdf896e5b2b79878bb57d884466083acfb7a
   docs/models/components/expensereportsfilterstatus.md:
     id: 42003313c390
     last_write_checksum: sha1:c2a4eea080f77cfb66674cc8eafce6887026fe82
@@ -2112,6 +2112,34 @@ trackedFiles:
     id: 0af406e5993a
     last_write_checksum: sha1:5b3bb600d9084f81445a58ccc085f839203c4b46
     pristine_git_object: f9807a39e72ad42c482471beb53eb9f10e5cb437
+  docs/models/components/generalledgertransaction.md:
+    id: b538b44356b4
+    last_write_checksum: sha1:a5b1646eb2bc8a354d3fba52cbd402933d1946f1
+    pristine_git_object: 438db50e7d926d934bbf9d6f3ac6f2514daff849
+  docs/models/components/generalledgertransactionlineitem.md:
+    id: 45e266ea5f29
+    last_write_checksum: sha1:848cd3029973403b75501a2e18d256c8ccb69d66
+    pristine_git_object: 2cde8dd67d73e367266bb92448965bf0a77cc58a
+  docs/models/components/generalledgertransactionlineitemtype.md:
+    id: c08644a8ce5b
+    last_write_checksum: sha1:22d04356bae9332029f81b7997b44ca2f56c10f4
+    pristine_git_object: 0d16946f4f4e50b70fa59c84d5142b96f73ba38e
+  docs/models/components/generalledgertransactionsfilter.md:
+    id: 2fe233e927a5
+    last_write_checksum: sha1:13a5ff6c7d98d76bb488b3812222e0b42220738e
+    pristine_git_object: 0a3392c5a0e209a9bb6576935aba77c3cd59aed4
+  docs/models/components/generalledgertransactionsourcetype.md:
+    id: 9e9aad28aa83
+    last_write_checksum: sha1:833bdd2cb9330ccec461f8221817e6d100a2036e
+    pristine_git_object: 234bdf3ee7072fe1ca728f672ca01097edeed6fd
+  docs/models/components/generalledgertransactionssort.md:
+    id: c6c6e38505bf
+    last_write_checksum: sha1:a2a8f762662a5429fc930b542825190796a5cea6
+    pristine_git_object: 96ee651f898c96a995a42c5955036b3737b6516b
+  docs/models/components/generalledgertransactionssortby.md:
+    id: 0298c45c9c21
+    last_write_checksum: sha1:4ab3096f6b4de3ab1ba332478901e46fba94c7ae
+    pristine_git_object: 811e60ea2253f6609db7d9efb1a0ce76953eb166
   docs/models/components/getaccountingdepartmentresponse.md:
     id: f97ba75177c2
     last_write_checksum: sha1:744746a46a335d943430c327444275ea6ac04279
@@ -2464,6 +2492,14 @@ trackedFiles:
     id: 775f8143da5f
     last_write_checksum: sha1:e36ac0df26a3c28d085df0baea716dd8418f61d2
     pristine_git_object: fa69678a4b79c834e924421f12b3aa941e5edd2a
+  docs/models/components/getgeneralledgertransactionresponse.md:
+    id: d4e88c83943a
+    last_write_checksum: sha1:d4ada0bc95cc1714425fcf24bd73bdaf5acacb1d
+    pristine_git_object: 969b12c8a1fb34f9eae14f3432120f377323b66f
+  docs/models/components/getgeneralledgertransactionsresponse.md:
+    id: 4986c9c00ca9
+    last_write_checksum: sha1:f1d618b8d4e0710bfaaf686d85bc4c0669fd8bcf
+    pristine_git_object: fcaf7840e706941c68905839fd3cf65b8f16c4d9
   docs/models/components/gethriscompaniesresponse.md:
     id: 23e4cf154148
     last_write_checksum: sha1:467c998bb9440abd30c95d341b19b20ede99eb10
@@ -2702,8 +2738,8 @@ trackedFiles:
     pristine_git_object: 242a5005c792a809201fd84c45e9aa2b78031552
   docs/models/components/health.md:
     id: 4aa53911d97e
-    last_write_checksum: sha1:297218f528effc8df3c7f88e52c41936ee20e623
-    pristine_git_object: bd6299b141be17c5e53cfc1c847d6cee9edc334a
+    last_write_checksum: sha1:33dca187357b8eb4ccd754fccd8fcc8697e7fc57
+    pristine_git_object: c8dc49506c378618d75a8d973b180861504ffeee
   docs/models/components/hriscompany.md:
     id: c38b0e83db6b
     last_write_checksum: sha1:c1e670e8f54aab564173769f417ba3c59f7d4f05
@@ -2770,8 +2806,8 @@ trackedFiles:
     pristine_git_object: 497cc3846b64cda024de86c56e62f5d4d6ef3ec2
   docs/models/components/invoiceitemsfilter.md:
     id: 0ad5d7b875fd
-    last_write_checksum: sha1:539fba4d904b956acdd5bee8c65cb33d0f464074
-    pristine_git_object: f620109a84f700d246cebff46866ab175103273e
+    last_write_checksum: sha1:d7e2dcb13fd75290ad340f4ec2978956c79c00cd
+    pristine_git_object: ec2712ad8ca7ea0c05ef0f4852d0df3063f24feb
   docs/models/components/invoiceitemssort.md:
     id: cd8a5bb067cf
     last_write_checksum: sha1:9bb2f3d5593787133d126765ca6ceee94aa643e3
@@ -2806,8 +2842,8 @@ trackedFiles:
     pristine_git_object: 2adfcd176b257ab510339ef1b4a7106e27153c09
   docs/models/components/invoicesfilter.md:
     id: 794380577e6e
-    last_write_checksum: sha1:7af59ddb0ddce3f5bdad489a5599e1516271a44c
-    pristine_git_object: cd0b9fb22eda4735ac04d39545924634674f6154
+    last_write_checksum: sha1:b79858804e42b0580f7be0ecd68f74c461aab42c
+    pristine_git_object: addc9be98625562a0d63d915445c73d67cd30c71
   docs/models/components/invoicessort.md:
     id: 183a55ba24d2
     last_write_checksum: sha1:3dbf5febfd942a067ca2f1e9d471963a50ba8bab
@@ -2854,8 +2890,12 @@ trackedFiles:
     pristine_git_object: f6e6e0fcdfad4cf6ea91f3678da1f4e786b9baee
   docs/models/components/journalentriesfilter.md:
     id: 819bc66fec88
-    last_write_checksum: sha1:4fcd304eb8d5e8a657d80d4a22924b5598ceb7db
-    pristine_git_object: e78213490be07edeb08df6ad38af74c70291d8e7
+    last_write_checksum: sha1:d51ece318f83cadca3e888a1c6aaab0ee72d8fe5
+    pristine_git_object: 60bcc8322c500024c0665cbbd20fbfc78732a164
+  docs/models/components/journalentriesfilterscope.md:
+    id: 2cee55f0b5bc
+    last_write_checksum: sha1:55f54b7b9d5e411953d1f095505ba75cd76801a1
+    pristine_git_object: 1732eea6a9937294ab99249f43ea0d10ab252b62
   docs/models/components/journalentriesfilterstatus.md:
     id: 328254c4059f
     last_write_checksum: sha1:2cff1f1d322087877e488f5e2c554f62eece758f
@@ -2930,8 +2970,8 @@ trackedFiles:
     pristine_git_object: 46448fd3c69b2519c28ab5e1a96520d9dc59b3c1
   docs/models/components/ledgeraccountsfilter.md:
     id: 7635e5c3f5a0
-    last_write_checksum: sha1:3bcc227027461be7d96693af936ceb8339377ca8
-    pristine_git_object: 9802640664516ac734b23ce6933d3a106a5174c5
+    last_write_checksum: sha1:ae5959ab7c653344bf6c12deb15f359f9866d8c3
+    pristine_git_object: b70cf99943657bab7d0a538ccaf5487d2c1bc4c8
   docs/models/components/ledgeraccountsfilterstatus.md:
     id: 315b610a4ad8
     last_write_checksum: sha1:1359d1027b995d04dfdf4a91dfe4f3c414686fc2
@@ -3274,8 +3314,8 @@ trackedFiles:
     pristine_git_object: 0db952f57338ed8f2d6bc223c1f8bfcf9c8baae4
   docs/models/components/paymentsfilter.md:
     id: 4ed75257c049
-    last_write_checksum: sha1:3b16c38a9cbf130a866cc4a693b6e2b82d8ebc0c
-    pristine_git_object: 4429b97a58fa12b03dfcd5361d1e6d4c582216a4
+    last_write_checksum: sha1:9c9c497393ceb4ec9d3065dd2c0fe722f5814460
+    pristine_git_object: 2fc7a6f5632f095581bbb90233017cea67c68079
   docs/models/components/paymentsfilterpaymentstatus.md:
     id: 85361f4aa481
     last_write_checksum: sha1:e3552316a5db611dac45b1bb3bbb578379431e30
@@ -3410,8 +3450,8 @@ trackedFiles:
     pristine_git_object: 2801fb4eded7d5a4501f344c46c9085f0a6b80e3
   docs/models/components/projectsfilter.md:
     id: bb1d268c656f
-    last_write_checksum: sha1:f2b3fa8bf8de5f9b7f89336ac15fda7e41cec402
-    pristine_git_object: c9e568c4f91b71296f268e532316c8ecd706e8b0
+    last_write_checksum: sha1:b231fe449ea7dd593c3737c73dcc5c9e00cf7e0c
+    pristine_git_object: 0a7045ca7af364f629e09c47f4a411c5275b86ec
   docs/models/components/projectssort.md:
     id: 8acc59b059ed
     last_write_checksum: sha1:2f103dc30be5019a7a6ceccd3420705805fed09f
@@ -3446,8 +3486,8 @@ trackedFiles:
     pristine_git_object: e1927129006305f10566ba329ec1a58064783fc3
   docs/models/components/purchaseordersfilter.md:
     id: f344e020666c
-    last_write_checksum: sha1:6cbf55aa3df6b863bc8fde4e1be76cd5cfab3490
-    pristine_git_object: 5a42abe461c70efe0f4faa16284688d8c9d6f376
+    last_write_checksum: sha1:f614d3eb714a8a28cb93855d048ad0bb41902ab4
+    pristine_git_object: aad2151d36853ba29356fd6bdb06953099bbd507
   docs/models/components/purchaseorderssort.md:
     id: 81a631f73ca2
     last_write_checksum: sha1:fe57909868404c24840054ddba555247d5fdaf27
@@ -3480,6 +3520,10 @@ trackedFiles:
     id: e5cf93b59a9c
     last_write_checksum: sha1:b1e8dba599e5a1857a12dcf1ec7c51b7f974fe0b
     pristine_git_object: b22064231f7bd1809ab7bd0b84cd5a5af152dc2b
+  docs/models/components/quotesfilter.md:
+    id: 93f3bb187ff6
+    last_write_checksum: sha1:ad9cf21b35a345eedbe9cd38bc2fc62168139b25
+    pristine_git_object: 36b7b58a3616a230d40e6314d9d5f817079cea5f
   docs/models/components/quotestatus.md:
     id: 0338b8b887d4
     last_write_checksum: sha1:19ec93965a3b99e95ab9f6f57397b980a716f75c
@@ -3624,6 +3668,10 @@ trackedFiles:
     id: 220131802aa3
     last_write_checksum: sha1:98174d549d245f2c485a3129900b5b98d0c2cd28
     pristine_git_object: 80af0adbb5053237a6fe719756920040acb1199b
+  docs/models/components/sourcetype.md:
+    id: 618ed8957b63
+    last_write_checksum: sha1:e4871972a274a463b93bd4e3c06f669d41397605
+    pristine_git_object: 059d5d287ddb4b2a87261979ceea641841052e9e
   docs/models/components/stage.md:
     id: f8b4715ddbb8
     last_write_checksum: sha1:cc888fe64a7873099c6ae35981a9959b027d5a57
@@ -3682,8 +3730,8 @@ trackedFiles:
     pristine_git_object: 78959ddd8bdb8ba108e1dcc2fad2a12d482f507d
   docs/models/components/suppliersfilter.md:
     id: b9da9071aec8
-    last_write_checksum: sha1:390b9506fb71c56f97e3811255c6d3a0d8629028
-    pristine_git_object: ec7372b15f9d6e173e697cd78c7381464b4972c7
+    last_write_checksum: sha1:3c6231db934cf25287904f6f13dc51d9be927503
+    pristine_git_object: 6002f92a1a75ac83f8ed45ca42689d626a0fd38e
   docs/models/components/supplierssort.md:
     id: ebcbb3bebec1
     last_write_checksum: sha1:13fdc5fc98459542812d7619761b623514c549f3
@@ -4178,8 +4226,8 @@ trackedFiles:
     pristine_git_object: 63d6c7bd5b09632ba369b3acb489cb27d0d5e6c5
   docs/models/components/webhookeventtype.md:
     id: b979b3765280
-    last_write_checksum: sha1:d02d4205c16f79e99da4641b1a0a5f84481df2ba
-    pristine_git_object: b47031e7349128f967fd7d07a7cb2fc99225f741
+    last_write_checksum: sha1:62c602c21e01fcd53f480fed56c7152cfc2e42ce
+    pristine_git_object: 167f90177fbca869be4600037d7ca2f4df2d7c6c
   docs/models/components/webhooksubscription.md:
     id: c88220e1de92
     last_write_checksum: sha1:f97c5293a19bc0cd1813595728fe11b7472eafdd
@@ -5072,6 +5120,30 @@ trackedFiles:
     id: a230b0038ff0
     last_write_checksum: sha1:11d1050345d33f7b4dbc76210d32622f50bd1a23
     pristine_git_object: df54f79ce97bb36474c2d2907a2fc580ae911576
+  docs/models/operations/accountinggeneralledgertransactionsallglobals.md:
+    id: b2bda74e42e4
+    last_write_checksum: sha1:970967185b599b5f226cb85109a64460419288d1
+    pristine_git_object: 2db200c0557a3baf1863c9c59130b6b848fc113b
+  docs/models/operations/accountinggeneralledgertransactionsallrequest.md:
+    id: c580718e8978
+    last_write_checksum: sha1:754d842ae1b64cf294bf26a5917dc90c3b3092bc
+    pristine_git_object: cd9f2e37efa09237591e2ce5ab93c4a7d039a255
+  docs/models/operations/accountinggeneralledgertransactionsallresponse.md:
+    id: f51432c4cd82
+    last_write_checksum: sha1:206b6d583c7c7eddd29f59ec2e891d20eb0b5248
+    pristine_git_object: 4c06842f8be581aeab7f2dee2f432362d1d6e7b2
+  docs/models/operations/accountinggeneralledgertransactionsoneglobals.md:
+    id: 8f9467397115
+    last_write_checksum: sha1:f6d69fa9c2d9101b59cf4ec0142386bc980901ae
+    pristine_git_object: 0bc4c8b219312136a9e9d732ee559afbe1e3b57a
+  docs/models/operations/accountinggeneralledgertransactionsonerequest.md:
+    id: 6fc8b5c7806c
+    last_write_checksum: sha1:3997bb090ad0afdec3f3dad309a6a448ae20d595
+    pristine_git_object: 4aa10dd47611c72983498ee256ab51d2db094705
+  docs/models/operations/accountinggeneralledgertransactionsoneresponse.md:
+    id: 315c0e8747b9
+    last_write_checksum: sha1:3565195def07d9b3fbfb718205c39055f46e5c2f
+    pristine_git_object: 6b79f194f6f587f283ed990cf9a3497d3d70de5d
   docs/models/operations/accountinginvoiceitemsaddglobals.md:
     id: d37efde6f9ec
     last_write_checksum: sha1:0bcfdafab063408880e66f9b95fdc6ad8e934214
@@ -5582,8 +5654,8 @@ trackedFiles:
     pristine_git_object: 28bdc34aa83dae644037b89d8102bfa05d0d5e39
   docs/models/operations/accountingquotesallrequest.md:
     id: aaf1fccdec9a
-    last_write_checksum: sha1:fd3f9b85c78811b1bc4153df22a220e63f1598f5
-    pristine_git_object: 9f15955fde4b902e781c53213dc7d30e088ce29a
+    last_write_checksum: sha1:5ac80e03af7aa2c13c73b988c02f0bde2171fd7f
+    pristine_git_object: 34adb78492cf131b79acb8d4cc0ce9f543f1c4d3
   docs/models/operations/accountingquotesallresponse.md:
     id: bd3493a2afa9
     last_write_checksum: sha1:195d112a49b3694c6fe65acc24357ae720b84cdb
@@ -8500,6 +8572,10 @@ trackedFiles:
     id: ffb38e069dec
     last_write_checksum: sha1:0c3bf07d15aa56f9bd21b7e7f9fd5d3ed80b853c
     pristine_git_object: a2e89c6b8979681304e905453abb637db0496961
+  docs/sdks/generalledgertransactions/README.md:
+    id: 08248e876436
+    last_write_checksum: sha1:991ac0ab6c7c97453b1e8320d28276359c4d32a0
+    pristine_git_object: 2bb0e221df8ad74bfce53a7f9475edc3891cceeb
   docs/sdks/invoiceitems/README.md:
     id: 546dbc84e138
     last_write_checksum: sha1:e4c82d902706f2769ef8f37164ae791ae9bb5a4b
@@ -8582,8 +8658,8 @@ trackedFiles:
     pristine_git_object: 80974979e914ea002002c7d95c65a94feba636fd
   docs/sdks/quotes/README.md:
     id: 05d5cafc463e
-    last_write_checksum: sha1:98f74b0e5c9ccaf8cdfe46f1a9c97c4afb259196
-    pristine_git_object: f06ea82a10b15d14232d641e570dceab6c45822d
+    last_write_checksum: sha1:b3e44d0b38fa272f0e71e64abae52a6dd181d93f
+    pristine_git_object: 2ac56807f454a6f63d3ad14ecd54449c899702ac
   docs/sdks/refunds/README.md:
     id: 451a9838a921
     last_write_checksum: sha1:60e1d56f618ab9b4cebcd1e93c2a5c4baa6f82d9
@@ -8692,6 +8768,10 @@ trackedFiles:
     id: 4bb65d2111dd
     last_write_checksum: sha1:2e7b011d91575a874eb96fddf4ba3c9806325363
     pristine_git_object: 22a133cf3c20c436f32ec934dc327a92039a8c75
+  generalledgertransactions.go:
+    id: 1d2c5c5ed63b
+    last_write_checksum: sha1:2f65cdde68e3699c971ef2560c87f394a471bbda
+    pristine_git_object: d7703f061e7a08bdea098845354061e3f1a05dab
   go.mod:
     id: c47645c391ad
     last_write_checksum: sha1:baa3a328811814cf21fd87a7f397ca85aa093fa4
@@ -9026,8 +9106,8 @@ trackedFiles:
     pristine_git_object: c413544821b0f9a65e51646e803402a00d0bb7b1
   models/components/billsfilter.go:
     id: 37a1a34ff242
-    last_write_checksum: sha1:036aa8d4fcea285bac7470abab2f651a90f398e0
-    pristine_git_object: 4c2ca3d723a81e125dddcad690ae817262fed31f
+    last_write_checksum: sha1:6e6ed5792cf9df2b7f95ec48071b72bd0dfa093f
+    pristine_git_object: cef3b5eefe1170c5e1b4881a879b01ca5941ad62
   models/components/billssort.go:
     id: 2dcd9ec66b86
     last_write_checksum: sha1:ebe7e042db1d1af4433e794c7483e28877081b5b
@@ -9094,12 +9174,12 @@ trackedFiles:
     pristine_git_object: 62b63405e6cf453bc0cd993e78a69c3d8002b03d
   models/components/connection.go:
     id: ec3cda6288e4
-    last_write_checksum: sha1:c57930df6cfcd0ca3b534274dfc46f5e0f02d458
-    pristine_git_object: 7546681551e3df854bf122cb83dce5452a7de5f0
+    last_write_checksum: sha1:39bc82952201183f2af9f42e2d51474cb48d3f7c
+    pristine_git_object: ee70ae1b1705735e7ff6bbbc3d311bae3c8b7bad
   models/components/connectionhealth.go:
     id: 79427c85a961
-    last_write_checksum: sha1:2d9a2a2eaa557dadc45ce0829c8fcbe7dc1f0182
-    pristine_git_object: 8858311654609219711e0d02e383a2f4c7cd3dcb
+    last_write_checksum: sha1:8139f960ec81405d8f13e32cf8fc98400475687f
+    pristine_git_object: e1b28a068dc02e18c97bc48586c96be031b904c1
   models/components/connectionimportdata.go:
     id: 43b8eb33b95e
     last_write_checksum: sha1:774230f6879e05ce3df97177ec31add24b665ed9
@@ -9438,8 +9518,8 @@ trackedFiles:
     pristine_git_object: ade983887d53b7ee8fa9b0146ce0f8a8a921439a
   models/components/creditnotesfilter.go:
     id: 49332a7e6f34
-    last_write_checksum: sha1:a6fda42c1cf4051c715c08471fd44f6bb477d773
-    pristine_git_object: a5aee87accbeef6a25d75f97c55fa2ea5b02a360
+    last_write_checksum: sha1:7bcd941b99b2b2a270d6f3f85ad7aaefd710045d
+    pristine_git_object: 06f22aeb99499d3a0e438b817744433f1c9ecf77
   models/components/creditnotessort.go:
     id: e487a976ba5b
     last_write_checksum: sha1:fc5caa941ebbb2af6beb674fc7012da0d4bc6c60
@@ -9458,8 +9538,8 @@ trackedFiles:
     pristine_git_object: b3adfac6ed9504946fece83084792989e77631d3
   models/components/customersfilter.go:
     id: e0c43c66bc8c
-    last_write_checksum: sha1:e9c1f2eca46e6fef4493a7f09eab2dd942d503af
-    pristine_git_object: fe4930f0177e24c97c9c1b94c192c3fe884e54cf
+    last_write_checksum: sha1:37f36036f0b9d0c5808766e57a6fc39633bf5647
+    pristine_git_object: eb16b032a4105152cdfcb96a7e540649bf9d3083
   models/components/customerssort.go:
     id: da6081f27e89
     last_write_checksum: sha1:94ef5adec4cd2c8368b983b0828b3af43cb14d79
@@ -9886,8 +9966,8 @@ trackedFiles:
     pristine_git_object: a5f96dc455a60725389f6c657ee86a08bec3b05e
   models/components/expensereportsfilter.go:
     id: 9775b530d228
-    last_write_checksum: sha1:a580b29f68829a7669d3f580e4e3d05177255656
-    pristine_git_object: e7963a7e78d5e5404cf091b61eb4909c41313341
+    last_write_checksum: sha1:87e0e66fcee5c37b92a67ad675fa39757a820829
+    pristine_git_object: c682cd3b12fc69a69fb6b76c4abfbe21c1c87612
   models/components/expensesfilter.go:
     id: 14c414995b3a
     last_write_checksum: sha1:903a7979be13895d646a9f15b31129db07a627e7
@@ -9928,6 +10008,22 @@ trackedFiles:
     id: c22e8bd05815
     last_write_checksum: sha1:41aa66dc6a5d3bf1687b0d711dfb546253c7f42b
     pristine_git_object: 2bfa333a5c4e3bda290a5234df89becf4d681b99
+  models/components/generalledgertransaction.go:
+    id: 9f8d8046f902
+    last_write_checksum: sha1:4f782f62e8141c7223fd1357b5ae4b6dfd03b5e9
+    pristine_git_object: 6fabac4fd32fa82de9d5cc666583d5b18ae1b3cb
+  models/components/generalledgertransactionlineitem.go:
+    id: 8484c62ffca7
+    last_write_checksum: sha1:16c9b595139763398332efcb6eebfa46812b0218
+    pristine_git_object: a243245df9166f07a444bafa999eab180a7118bc
+  models/components/generalledgertransactionsfilter.go:
+    id: e24d9f79cb71
+    last_write_checksum: sha1:bb3c20deda60bf7bc8afcb477063cc460d162660
+    pristine_git_object: eec18df317e8bdd42e0e25e47f4fa68b4a72eaea
+  models/components/generalledgertransactionssort.go:
+    id: 101a6082d44c
+    last_write_checksum: sha1:e47ae241d8a5e7eda4dc79594af83e1443cf743f
+    pristine_git_object: 33daf6db1b5bd72366df36b1e4f2960488ff4f3d
   models/components/getaccountingdepartmentresponse.go:
     id: 0cf65c37de31
     last_write_checksum: sha1:4568ca159b11ad56d0f4281c9739d33d2c781adb
@@ -10280,6 +10376,14 @@ trackedFiles:
     id: 762b02bca7e3
     last_write_checksum: sha1:9e85df56c6c407857d4ee04f7f4097ef78784d72
     pristine_git_object: c153de78d3de00af3e317e03c3eacc9d9e9a5600
+  models/components/getgeneralledgertransactionresponse.go:
+    id: 26c773187016
+    last_write_checksum: sha1:51d5fd2d33f177b38b74e5ce50e99a038d2e4ae2
+    pristine_git_object: 40f8d4ec6ba53610283dbdea951668ad4a4e1342
+  models/components/getgeneralledgertransactionsresponse.go:
+    id: 0de8b49fe1ca
+    last_write_checksum: sha1:ca6d119a6c19592af5d742637dcc9f05bf2b8656
+    pristine_git_object: ef224ba20b0612976ebbdeb5c82b904fabd0d541
   models/components/gethriscompaniesresponse.go:
     id: 74ec2658b36f
     last_write_checksum: sha1:cd32105349fb83371fd11432fd08003e419e2eb6
@@ -10542,8 +10646,8 @@ trackedFiles:
     pristine_git_object: 6f4ade2831d69f4f0e15e4447cdc560038292ddc
   models/components/invoiceitemsfilter.go:
     id: f28105d8dde5
-    last_write_checksum: sha1:02ee5d0cfcfc0e7785ef2ca65fc2c0e52f22dbd4
-    pristine_git_object: 92ec9d9cb89347f09491f75edadb25f920f3245e
+    last_write_checksum: sha1:7d5904e83b54128498d4c10c35b2d8c99300e57a
+    pristine_git_object: cf54da1a1ae02855e2bb9c5158da3b65df2ba79e
   models/components/invoiceitemssort.go:
     id: e6b63ade21a2
     last_write_checksum: sha1:3d64f3674d6fab9af80f47c01732d20b9d709f18
@@ -10558,8 +10662,8 @@ trackedFiles:
     pristine_git_object: f7891c3bf3e7144a2b4a2addf7c5e237acc74d92
   models/components/invoicesfilter.go:
     id: 87a1c80cfff3
-    last_write_checksum: sha1:ffbffe8e99e72160b910fe181dd86f27848257b7
-    pristine_git_object: 825f62bb8ddb3ca4ecee6fa136b73022e37fba7f
+    last_write_checksum: sha1:cca7edf93fd71f5380fe0abd1f6d28c5cf014197
+    pristine_git_object: 055aadb9b4a9168443d568f699bf300defa08a6c
   models/components/invoicessort.go:
     id: 98cd37aeddc2
     last_write_checksum: sha1:c1a6751d35e1ac918617135b97686d92af9890fa
@@ -10578,8 +10682,8 @@ trackedFiles:
     pristine_git_object: 4a5c8d7a105548fb87ad5793ed5187d9f6feb301
   models/components/journalentriesfilter.go:
     id: 84d808a4881d
-    last_write_checksum: sha1:15ea1c50c006c997614ebe629170313c214fdc89
-    pristine_git_object: ed9cd60a580f3702adabb57cdd0a1c6e57fe33fd
+    last_write_checksum: sha1:697fd80b009754fe681559ec8927a6347457fa1a
+    pristine_git_object: 77c5eb73f986875f158178fba74ca8d055c6ade3
   models/components/journalentriessort.go:
     id: 83601e5eed0d
     last_write_checksum: sha1:e23cf3e35ed92b4a0599ef7ef7faac3a4de23f3d
@@ -10614,8 +10718,8 @@ trackedFiles:
     pristine_git_object: a91128416a76913455b214e050d2a5ffd4295f23
   models/components/ledgeraccountsfilter.go:
     id: 5bea72cb3487
-    last_write_checksum: sha1:8852c581f27025eb60f9d4251532a655f1967c6b
-    pristine_git_object: 9892318d6df5ab2e7aa147fef8631f51b2a415f3
+    last_write_checksum: sha1:d83958e64e64b8139299b67d8f876de487219222
+    pristine_git_object: 058b0a6ed64b7d1743ebbad86dfd9074e162ac99
   models/components/ledgeraccountssort.go:
     id: 3a3d582323ec
     last_write_checksum: sha1:eaaa0b0bf44f42a7db5d394319976f368613ccc4
@@ -10834,8 +10938,8 @@ trackedFiles:
     pristine_git_object: 5b206e3aaac2df87ad34f05fa6f76f742b6f4748
   models/components/paymentsfilter.go:
     id: 1ba7a430fdca
-    last_write_checksum: sha1:5623a886bbe01174f5e6a0537534c3669707c932
-    pristine_git_object: 506f2e1a6266958fcfff1e838d4c41a2941840ed
+    last_write_checksum: sha1:8a0701cae8ebeb7808a97af8b639ea90f3bb10a0
+    pristine_git_object: 84da5b8b41bc7637849d0aef237ab55c2d6417b4
   models/components/paymentssort.go:
     id: ebdd732dbbde
     last_write_checksum: sha1:b6e183e20108852fab3709158f8ba734644e5e3c
@@ -10906,8 +11010,8 @@ trackedFiles:
     pristine_git_object: 7a9494b5b4f5f3d39fb0e53a149f52018b0eb85d
   models/components/projectsfilter.go:
     id: 2a4476c01788
-    last_write_checksum: sha1:51678e74c36df94ceb8076b13038a233d59e48d5
-    pristine_git_object: ff1814a7e0b44c66a88be3a678d544f006559978
+    last_write_checksum: sha1:bef10e2bd6991e786d6439d3715f56ff7234b397
+    pristine_git_object: 21ce7694e92de5490388290523a6335edfc2454c
   models/components/projectssort.go:
     id: 3eba9db8210f
     last_write_checksum: sha1:759ff3699f1576de518deb6e706a516cd29f9c4a
@@ -10918,8 +11022,8 @@ trackedFiles:
     pristine_git_object: 4bfecb28872af5ea2deab76978b651b95bb6e428
   models/components/purchaseordersfilter.go:
     id: 893e4a408259
-    last_write_checksum: sha1:cad3113d3f15006722dd14da890fe07aad59d686
-    pristine_git_object: 0db668036174ade08beccdcd55eb7549eb84df1a
+    last_write_checksum: sha1:b3e48c65f3047f659154264f43d7ddc54ef57f37
+    pristine_git_object: ec95a133d53f614faa189fc6db08b4d75bb7e175
   models/components/purchaseorderssort.go:
     id: 0a3517c894d3
     last_write_checksum: sha1:5d2c95171741a4507740e3e63b576c596ad33b1b
@@ -10932,6 +11036,10 @@ trackedFiles:
     id: 06e0a175eba6
     last_write_checksum: sha1:30c557680f38529a771501f7e2132c4c7e457fae
     pristine_git_object: 5232249b7507090737ac664b62277688853ce5c2
+  models/components/quotesfilter.go:
+    id: 1cbf90e3fbe6
+    last_write_checksum: sha1:f7d59c975a8eedd6fc703ac335109f0a653e9c13
+    pristine_git_object: 92e46e567cb812598ed19d3a374da082a5d4c337
   models/components/rebilling.go:
     id: f9bf7c66827d
     last_write_checksum: sha1:9e9cce1847fa6889f0864ebc29c1424a85a81203
@@ -11026,8 +11134,8 @@ trackedFiles:
     pristine_git_object: a5cc8f9dbeb6cbd51728c9fe0fbb9051b421a1bb
   models/components/suppliersfilter.go:
     id: 94b13eb6224d
-    last_write_checksum: sha1:aec0b12bd5780e640609606cf7136efa3bb6939e
-    pristine_git_object: 2e0b744ece3be915fdafae965e66348971b5988e
+    last_write_checksum: sha1:0986d45e32a794cbfebe82116294396722dc6931
+    pristine_git_object: f7f75561ce53ebe0cd06128062294c2321a6dc76
   models/components/supplierssort.go:
     id: be0b96f26a45
     last_write_checksum: sha1:56fc6ac93f66455fcb7eae0b8599b42c1ee4471a
@@ -11370,8 +11478,8 @@ trackedFiles:
     pristine_git_object: bd6ca89e7d68e78500d0e123f199b9f66bbdfb95
   models/components/webhookeventtype.go:
     id: eb6328fbc2b7
-    last_write_checksum: sha1:b0d4ec9e55d40227bc6f5a8caa8bec8181a1fd7c
-    pristine_git_object: be58a44ed9f50eff2edc9c4dd82a76a77b73a212
+    last_write_checksum: sha1:f77cbc6c44f0ef6517cf085cce01b4da72d65564
+    pristine_git_object: f195e99a34378f522396516529d31615ca52800b
   models/components/webhooksubscription.go:
     id: 08bb704a2412
     last_write_checksum: sha1:337fa67dd6314fd7ac61a2c2fb36b666b6654af3
@@ -11672,6 +11780,14 @@ trackedFiles:
     id: ead4fac8704e
     last_write_checksum: sha1:14d480cb783c14882ff3b312eb3181a312109daa
     pristine_git_object: 9cd39f7d0bc234bd7c0a07bc376a861c3680116e
+  models/operations/accountinggeneralledgertransactionsall.go:
+    id: 42d5dc4cebca
+    last_write_checksum: sha1:20c652755f01cdd07e6421010ea316d5d17c7730
+    pristine_git_object: 4eaffe9857befe565e3ed27e1b5ef073521f01bc
+  models/operations/accountinggeneralledgertransactionsone.go:
+    id: 7a5629c83539
+    last_write_checksum: sha1:50059eef6a460c27005a05f7ac1875c56cff4550
+    pristine_git_object: 4d5988a77508b97fcd877f244de607429adb3db3
   models/operations/accountinginvoiceitemsadd.go:
     id: d36b66b517f3
     last_write_checksum: sha1:f6fa23fdb25e42222a6b795798fe0b4b4bfbf524
@@ -11842,8 +11958,8 @@ trackedFiles:
     pristine_git_object: e8022735ced860fd1c798a0b50837b5cd82412e2
   models/operations/accountingquotesall.go:
     id: 2fe9cb0a3f0b
-    last_write_checksum: sha1:fb2b28337278869089e4cda302cf7bd8b32b9b2b
-    pristine_git_object: 58148880dd11566d3825d8d984aa16d4ea5a207a
+    last_write_checksum: sha1:c68a5e4fa7b7761a0fa1bf56b9600e59d9e4db91
+    pristine_git_object: 2999c88dedc55ba81812db9c4529734e800f2ca6
   models/operations/accountingquotesdelete.go:
     id: 00a930ae38d9
     last_write_checksum: sha1:fa79cc62645f8208debe7dda9d3527c33bbd4226
@@ -26488,7 +26604,7 @@ examples:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "data": {"id": "crm+salesforce", "service_id": "salesforce", "name": "Salesforce", "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.", "unified_api": "crm", "state": "authorized", "integration_state": "configured", "auth_type": "oauth2", "oauth_grant_type": "authorization_code", "enabled": true, "website": "https://www.salesforce.com", "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png", "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg", "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>", "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>", "settings": {"instance_url": "https://eu28.salesforce.com", "api_key": "12345xxxxxx"}, "metadata": {"account": {"name": "My Company", "id": "c01458a5-7276-41ce-bc19-639906b0450a"}, "plan": "enterprise"}, "form_fields": [{"id": "instance_url", "label": "Instance url", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": false}, {"id": "api_key", "label": "API Key", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": true}], "configuration": [{"resource": "leads", "defaults": [{"target": "custom_fields", "id": "ProductInterest", "options": [{"label": "General Channel", "options": [], "option_type": "group"}], "value": "GC5000 series"}]}], "configurable_resources": ["opportunities", "companies", "contacts", "leads"], "resource_schema_support": ["leads"], "resource_settings_support": ["leads"], "settings_required_for_authorization": ["client_id", "client_secret"], "subscriptions": [{"downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f", "unify_event_types": ["crm.contact.created"], "downstream_event_types": ["contacts.CREATED"], "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}", "created_at": "2020-10-01T12:00:00.000Z"}], "has_guide": true, "custom_mappings": [{"id": "hris+employees+first_aid_training", "label": "First Aid Training", "description": "First Aid Training completed after 2019-01-01", "value": "$.root.training.first_aid", "key": "first_aid_training", "required": false, "custom_field": true, "consumer_id": "test_user_id", "example": "Some value"}], "consent_state": "granted", "consents": [{"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}], "latest_consent": {"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "application_data_scopes": {"enabled": true, "updated_at": "2025-04-15T14:30:00Z", "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "health": "ok", "credentials_expire_at": 1730172800000, "last_refresh_failed_at": 1730000000000, "created_at": 1615563533390, "updated_at": 1616662325753}}
+          application/json: {"status_code": 200, "status": "OK", "data": {"id": "crm+salesforce", "service_id": "salesforce", "name": "Salesforce", "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.", "unified_api": "crm", "state": "authorized", "integration_state": "configured", "auth_type": "oauth2", "oauth_grant_type": "authorization_code", "enabled": true, "website": "https://www.salesforce.com", "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png", "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg", "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>", "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>", "settings": {"instance_url": "https://eu28.salesforce.com", "api_key": "12345xxxxxx"}, "metadata": {"account": {"name": "My Company", "id": "c01458a5-7276-41ce-bc19-639906b0450a"}, "plan": "enterprise"}, "form_fields": [{"id": "instance_url", "label": "Instance url", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": false}, {"id": "api_key", "label": "API Key", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": true}], "configuration": [{"resource": "leads", "defaults": [{"target": "custom_fields", "id": "ProductInterest", "options": [{"label": "General Channel", "options": [], "option_type": "group"}], "value": "GC5000 series"}]}], "configurable_resources": ["opportunities", "companies", "contacts", "leads"], "resource_schema_support": ["leads"], "resource_settings_support": ["leads"], "settings_required_for_authorization": ["client_id", "client_secret"], "subscriptions": [{"downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f", "unify_event_types": ["crm.contact.created"], "downstream_event_types": ["contacts.CREATED"], "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}", "created_at": "2020-10-01T12:00:00.000Z"}], "has_guide": true, "custom_mappings": [{"id": "hris+employees+first_aid_training", "label": "First Aid Training", "description": "First Aid Training completed after 2019-01-01", "value": "$.root.training.first_aid", "key": "first_aid_training", "required": false, "custom_field": true, "consumer_id": "test_user_id", "example": "Some value"}], "consent_state": "granted", "consents": [{"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}], "latest_consent": {"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "application_data_scopes": {"enabled": true, "updated_at": "2025-04-15T14:30:00Z", "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "health": "ok", "credentials_expire_at": 1730172800000, "last_refresh_failed_at": 1730000000000, "last_downstream_error_at": 1730000000000, "created_at": 1615563533390, "updated_at": 1616662325753}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
         "401":
@@ -26539,7 +26655,7 @@ examples:
         application/json: {"enabled": true, "settings": {"instance_url": "https://eu28.salesforce.com", "api_key": "12345xxxxxx"}, "metadata": {"account": {"name": "My Company", "id": "c01458a5-7276-41ce-bc19-639906b0450a"}, "plan": "enterprise"}, "configuration": [{"resource": "leads", "defaults": [{"id": "ProductInterest", "options": [{"label": "General Channel", "option_type": "simple"}], "value": "GC5000 series"}]}], "custom_mappings": [{"value": "$.root.training.first_aid"}], "consent_state": "granted", "latest_consent": {"granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "application_data_scopes": {"enabled": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}}
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "data": {"id": "crm+salesforce", "service_id": "salesforce", "name": "Salesforce", "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.", "unified_api": "crm", "state": "authorized", "integration_state": "configured", "auth_type": "oauth2", "oauth_grant_type": "authorization_code", "enabled": true, "website": "https://www.salesforce.com", "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png", "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg", "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>", "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>", "settings": {"instance_url": "https://eu28.salesforce.com", "api_key": "12345xxxxxx"}, "metadata": {"account": {"name": "My Company", "id": "c01458a5-7276-41ce-bc19-639906b0450a"}, "plan": "enterprise"}, "form_fields": [{"id": "instance_url", "label": "Instance url", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": false}, {"id": "api_key", "label": "API Key", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": true}], "configuration": [{"resource": "leads", "defaults": [{"target": "custom_fields", "id": "ProductInterest", "options": [{"label": "General Channel", "option_type": "simple"}], "value": "GC5000 series"}]}], "configurable_resources": ["opportunities", "companies", "contacts", "leads"], "resource_schema_support": ["leads"], "resource_settings_support": ["leads"], "settings_required_for_authorization": ["client_id", "client_secret"], "subscriptions": [{"downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f", "unify_event_types": ["crm.contact.created"], "downstream_event_types": ["contacts.CREATED"], "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}", "created_at": "2020-10-01T12:00:00.000Z"}], "has_guide": true, "custom_mappings": [{"id": "hris+employees+first_aid_training", "label": "First Aid Training", "description": "First Aid Training completed after 2019-01-01", "value": "$.root.training.first_aid", "key": "first_aid_training", "required": false, "custom_field": true, "consumer_id": "test_user_id", "example": "Some value"}], "consent_state": "granted", "consents": [{"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}], "latest_consent": {"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "application_data_scopes": {"enabled": true, "updated_at": "2025-04-15T14:30:00Z", "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "health": "ok", "credentials_expire_at": 1730172800000, "last_refresh_failed_at": 1730000000000, "created_at": 1615563533390, "updated_at": 1616662325753}}
+          application/json: {"status_code": 200, "status": "OK", "data": {"id": "crm+salesforce", "service_id": "salesforce", "name": "Salesforce", "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.", "unified_api": "crm", "state": "authorized", "integration_state": "configured", "auth_type": "oauth2", "oauth_grant_type": "authorization_code", "enabled": true, "website": "https://www.salesforce.com", "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png", "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg", "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>", "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>", "settings": {"instance_url": "https://eu28.salesforce.com", "api_key": "12345xxxxxx"}, "metadata": {"account": {"name": "My Company", "id": "c01458a5-7276-41ce-bc19-639906b0450a"}, "plan": "enterprise"}, "form_fields": [{"id": "instance_url", "label": "Instance url", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": false}, {"id": "api_key", "label": "API Key", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": true}], "configuration": [{"resource": "leads", "defaults": [{"target": "custom_fields", "id": "ProductInterest", "options": [{"label": "General Channel", "option_type": "simple"}], "value": "GC5000 series"}]}], "configurable_resources": ["opportunities", "companies", "contacts", "leads"], "resource_schema_support": ["leads"], "resource_settings_support": ["leads"], "settings_required_for_authorization": ["client_id", "client_secret"], "subscriptions": [{"downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f", "unify_event_types": ["crm.contact.created"], "downstream_event_types": ["contacts.CREATED"], "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}", "created_at": "2020-10-01T12:00:00.000Z"}], "has_guide": true, "custom_mappings": [{"id": "hris+employees+first_aid_training", "label": "First Aid Training", "description": "First Aid Training completed after 2019-01-01", "value": "$.root.training.first_aid", "key": "first_aid_training", "required": false, "custom_field": true, "consumer_id": "test_user_id", "example": "Some value"}], "consent_state": "granted", "consents": [{"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}], "latest_consent": {"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "application_data_scopes": {"enabled": true, "updated_at": "2025-04-15T14:30:00Z", "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "health": "ok", "credentials_expire_at": 1730172800000, "last_refresh_failed_at": 1730000000000, "last_downstream_error_at": 1730000000000, "created_at": 1615563533390, "updated_at": 1616662325753}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
         "401":
@@ -26633,7 +26749,7 @@ examples:
         application/json: {"credentials": {"refresh_token": "<refresh_token>", "access_token": "<access_token>"}, "settings": {"instance_url": "https://eu28.salesforce.com"}, "metadata": {"account": {"name": "My Company", "id": "c01458a5-7276-41ce-bc19-639906b0450a"}, "plan": "enterprise"}}
       responses:
         "200":
-          application/json: {"status_code": 201, "status": "OK", "data": {"id": "crm+salesforce", "service_id": "salesforce", "name": "Salesforce", "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.", "unified_api": "crm", "state": "authorized", "integration_state": "configured", "auth_type": "oauth2", "oauth_grant_type": "authorization_code", "enabled": true, "website": "https://www.salesforce.com", "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png", "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg", "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>", "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>", "settings": {"instance_url": "https://eu28.salesforce.com", "api_key": "12345xxxxxx"}, "metadata": {"account": {"name": "My Company", "id": "c01458a5-7276-41ce-bc19-639906b0450a"}, "plan": "enterprise"}, "form_fields": [{"id": "instance_url", "label": "Instance url", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": false}, {"id": "api_key", "label": "API Key", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": true}], "configuration": [{"resource": "leads", "defaults": [{"target": "custom_fields", "id": "ProductInterest", "options": [{"label": "General Channel", "option_type": "simple"}], "value": "GC5000 series"}]}], "configurable_resources": ["opportunities", "companies", "contacts", "leads"], "resource_schema_support": ["leads"], "resource_settings_support": ["leads"], "settings_required_for_authorization": ["client_id", "client_secret"], "subscriptions": [{"downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f", "unify_event_types": ["crm.contact.created"], "downstream_event_types": ["contacts.CREATED"], "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}", "created_at": "2020-10-01T12:00:00.000Z"}], "has_guide": true, "custom_mappings": [{"id": "hris+employees+first_aid_training", "label": "First Aid Training", "description": "First Aid Training completed after 2019-01-01", "value": "$.root.training.first_aid", "key": "first_aid_training", "required": false, "custom_field": true, "consumer_id": "test_user_id", "example": "Some value"}], "consent_state": "granted", "consents": [{"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}], "latest_consent": {"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "application_data_scopes": {"enabled": true, "updated_at": "2025-04-15T14:30:00Z", "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "health": "ok", "credentials_expire_at": 1730172800000, "last_refresh_failed_at": 1730000000000, "created_at": 1615563533390, "updated_at": 1616662325753}}
+          application/json: {"status_code": 201, "status": "OK", "data": {"id": "crm+salesforce", "service_id": "salesforce", "name": "Salesforce", "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.", "unified_api": "crm", "state": "authorized", "integration_state": "configured", "auth_type": "oauth2", "oauth_grant_type": "authorization_code", "enabled": true, "website": "https://www.salesforce.com", "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png", "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg", "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>", "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>", "settings": {"instance_url": "https://eu28.salesforce.com", "api_key": "12345xxxxxx"}, "metadata": {"account": {"name": "My Company", "id": "c01458a5-7276-41ce-bc19-639906b0450a"}, "plan": "enterprise"}, "form_fields": [{"id": "instance_url", "label": "Instance url", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": false}, {"id": "api_key", "label": "API Key", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": true}], "configuration": [{"resource": "leads", "defaults": [{"target": "custom_fields", "id": "ProductInterest", "options": [{"label": "General Channel", "option_type": "simple"}], "value": "GC5000 series"}]}], "configurable_resources": ["opportunities", "companies", "contacts", "leads"], "resource_schema_support": ["leads"], "resource_settings_support": ["leads"], "settings_required_for_authorization": ["client_id", "client_secret"], "subscriptions": [{"downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f", "unify_event_types": ["crm.contact.created"], "downstream_event_types": ["contacts.CREATED"], "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}", "created_at": "2020-10-01T12:00:00.000Z"}], "has_guide": true, "custom_mappings": [{"id": "hris+employees+first_aid_training", "label": "First Aid Training", "description": "First Aid Training completed after 2019-01-01", "value": "$.root.training.first_aid", "key": "first_aid_training", "required": false, "custom_field": true, "consumer_id": "test_user_id", "example": "Some value"}], "consent_state": "granted", "consents": [{"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}], "latest_consent": {"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "application_data_scopes": {"enabled": true, "updated_at": "2025-04-15T14:30:00Z", "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "health": "ok", "credentials_expire_at": 1730172800000, "last_refresh_failed_at": 1730000000000, "last_downstream_error_at": 1730000000000, "created_at": 1615563533390, "updated_at": 1616662325753}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
         "401":
@@ -26680,7 +26796,7 @@ examples:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "data": {"id": "crm+salesforce", "service_id": "salesforce", "name": "Salesforce", "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.", "unified_api": "crm", "state": "authorized", "integration_state": "configured", "auth_type": "oauth2", "oauth_grant_type": "authorization_code", "enabled": true, "website": "https://www.salesforce.com", "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png", "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg", "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>", "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>", "settings": {"instance_url": "https://eu28.salesforce.com", "api_key": "12345xxxxxx"}, "metadata": {"account": {"name": "My Company", "id": "c01458a5-7276-41ce-bc19-639906b0450a"}, "plan": "enterprise"}, "form_fields": [{"id": "instance_url", "label": "Instance url", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": false}, {"id": "api_key", "label": "API Key", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": true}], "configuration": [{"resource": "leads", "defaults": [{"target": "custom_fields", "id": "ProductInterest", "options": [{"label": "General Channel", "options": [], "option_type": "group"}], "value": "GC5000 series"}]}], "configurable_resources": ["opportunities", "companies", "contacts", "leads"], "resource_schema_support": ["leads"], "resource_settings_support": ["leads"], "settings_required_for_authorization": ["client_id", "client_secret"], "subscriptions": [{"downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f", "unify_event_types": ["crm.contact.created"], "downstream_event_types": ["contacts.CREATED"], "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}", "created_at": "2020-10-01T12:00:00.000Z"}], "has_guide": true, "custom_mappings": [{"id": "hris+employees+first_aid_training", "label": "First Aid Training", "description": "First Aid Training completed after 2019-01-01", "value": "$.root.training.first_aid", "key": "first_aid_training", "required": false, "custom_field": true, "consumer_id": "test_user_id", "example": "Some value"}], "consent_state": "granted", "consents": [{"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}], "latest_consent": {"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "application_data_scopes": {"enabled": true, "updated_at": "2025-04-15T14:30:00Z", "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "health": "ok", "credentials_expire_at": 1730172800000, "last_refresh_failed_at": 1730000000000, "created_at": 1615563533390, "updated_at": 1616662325753}}
+          application/json: {"status_code": 200, "status": "OK", "data": {"id": "crm+salesforce", "service_id": "salesforce", "name": "Salesforce", "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.", "unified_api": "crm", "state": "authorized", "integration_state": "configured", "auth_type": "oauth2", "oauth_grant_type": "authorization_code", "enabled": true, "website": "https://www.salesforce.com", "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png", "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg", "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>", "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>", "settings": {"instance_url": "https://eu28.salesforce.com", "api_key": "12345xxxxxx"}, "metadata": {"account": {"name": "My Company", "id": "c01458a5-7276-41ce-bc19-639906b0450a"}, "plan": "enterprise"}, "form_fields": [{"id": "instance_url", "label": "Instance url", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": false}, {"id": "api_key", "label": "API Key", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": true}], "configuration": [{"resource": "leads", "defaults": [{"target": "custom_fields", "id": "ProductInterest", "options": [{"label": "General Channel", "options": [], "option_type": "group"}], "value": "GC5000 series"}]}], "configurable_resources": ["opportunities", "companies", "contacts", "leads"], "resource_schema_support": ["leads"], "resource_settings_support": ["leads"], "settings_required_for_authorization": ["client_id", "client_secret"], "subscriptions": [{"downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f", "unify_event_types": ["crm.contact.created"], "downstream_event_types": ["contacts.CREATED"], "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}", "created_at": "2020-10-01T12:00:00.000Z"}], "has_guide": true, "custom_mappings": [{"id": "hris+employees+first_aid_training", "label": "First Aid Training", "description": "First Aid Training completed after 2019-01-01", "value": "$.root.training.first_aid", "key": "first_aid_training", "required": false, "custom_field": true, "consumer_id": "test_user_id", "example": "Some value"}], "consent_state": "granted", "consents": [{"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}], "latest_consent": {"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "application_data_scopes": {"enabled": true, "updated_at": "2025-04-15T14:30:00Z", "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "health": "ok", "credentials_expire_at": 1730172800000, "last_refresh_failed_at": 1730000000000, "last_downstream_error_at": 1730000000000, "created_at": 1615563533390, "updated_at": 1616662325753}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
         "401":
@@ -26827,7 +26943,7 @@ examples:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "data": {"id": "crm+salesforce", "service_id": "salesforce", "name": "Salesforce", "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.", "unified_api": "crm", "state": "authorized", "integration_state": "configured", "auth_type": "oauth2", "oauth_grant_type": "authorization_code", "enabled": true, "website": "https://www.salesforce.com", "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png", "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg", "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>", "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>", "settings": {"instance_url": "https://eu28.salesforce.com", "api_key": "12345xxxxxx"}, "metadata": {"account": {"name": "My Company", "id": "c01458a5-7276-41ce-bc19-639906b0450a"}, "plan": "enterprise"}, "form_fields": [{"id": "instance_url", "label": "Instance url", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": false}, {"id": "api_key", "label": "API Key", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": true}], "configuration": [{"resource": "leads", "defaults": [{"target": "custom_fields", "id": "ProductInterest", "options": [{"label": "General Channel", "options": [], "option_type": "group"}], "value": "GC5000 series"}]}], "configurable_resources": ["opportunities", "companies", "contacts", "leads"], "resource_schema_support": ["leads"], "resource_settings_support": ["leads"], "settings_required_for_authorization": ["client_id", "client_secret"], "subscriptions": [{"downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f", "unify_event_types": ["crm.contact.created"], "downstream_event_types": ["contacts.CREATED"], "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}", "created_at": "2020-10-01T12:00:00.000Z"}], "has_guide": true, "custom_mappings": [{"id": "hris+employees+first_aid_training", "label": "First Aid Training", "description": "First Aid Training completed after 2019-01-01", "value": "$.root.training.first_aid", "key": "first_aid_training", "required": false, "custom_field": true, "consumer_id": "test_user_id", "example": "Some value"}], "consent_state": "granted", "consents": [{"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}], "latest_consent": {"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "application_data_scopes": {"enabled": true, "updated_at": "2025-04-15T14:30:00Z", "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "health": "ok", "credentials_expire_at": 1730172800000, "last_refresh_failed_at": 1730000000000, "created_at": 1615563533390, "updated_at": 1616662325753}}
+          application/json: {"status_code": 200, "status": "OK", "data": {"id": "crm+salesforce", "service_id": "salesforce", "name": "Salesforce", "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.", "unified_api": "crm", "state": "authorized", "integration_state": "configured", "auth_type": "oauth2", "oauth_grant_type": "authorization_code", "enabled": true, "website": "https://www.salesforce.com", "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png", "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg", "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>", "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>", "settings": {"instance_url": "https://eu28.salesforce.com", "api_key": "12345xxxxxx"}, "metadata": {"account": {"name": "My Company", "id": "c01458a5-7276-41ce-bc19-639906b0450a"}, "plan": "enterprise"}, "form_fields": [{"id": "instance_url", "label": "Instance url", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": false}, {"id": "api_key", "label": "API Key", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": true}], "configuration": [{"resource": "leads", "defaults": [{"target": "custom_fields", "id": "ProductInterest", "options": [{"label": "General Channel", "options": [], "option_type": "group"}], "value": "GC5000 series"}]}], "configurable_resources": ["opportunities", "companies", "contacts", "leads"], "resource_schema_support": ["leads"], "resource_settings_support": ["leads"], "settings_required_for_authorization": ["client_id", "client_secret"], "subscriptions": [{"downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f", "unify_event_types": ["crm.contact.created"], "downstream_event_types": ["contacts.CREATED"], "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}", "created_at": "2020-10-01T12:00:00.000Z"}], "has_guide": true, "custom_mappings": [{"id": "hris+employees+first_aid_training", "label": "First Aid Training", "description": "First Aid Training completed after 2019-01-01", "value": "$.root.training.first_aid", "key": "first_aid_training", "required": false, "custom_field": true, "consumer_id": "test_user_id", "example": "Some value"}], "consent_state": "granted", "consents": [{"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}], "latest_consent": {"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "application_data_scopes": {"enabled": true, "updated_at": "2025-04-15T14:30:00Z", "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "health": "ok", "credentials_expire_at": 1730172800000, "last_refresh_failed_at": 1730000000000, "last_downstream_error_at": 1730000000000, "created_at": 1615563533390, "updated_at": 1616662325753}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
         "401":
@@ -26880,7 +26996,7 @@ examples:
         application/json: {"enabled": true, "settings": {"instance_url": "https://eu28.salesforce.com", "api_key": "12345xxxxxx"}, "metadata": {"account": {"name": "My Company", "id": "c01458a5-7276-41ce-bc19-639906b0450a"}, "plan": "enterprise"}, "configuration": [{"resource": "leads", "defaults": [{"id": "ProductInterest", "options": [{"label": "General Channel", "options": [{"label": "General Channel", "value": "general", "option_type": "simple"}], "option_type": "group"}], "value": "GC5000 series"}]}], "custom_mappings": [{"value": "$.root.training.first_aid"}], "consent_state": "granted", "latest_consent": {"granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "application_data_scopes": {"enabled": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}}
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "data": {"id": "crm+salesforce", "service_id": "salesforce", "name": "Salesforce", "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.", "unified_api": "crm", "state": "authorized", "integration_state": "configured", "auth_type": "oauth2", "oauth_grant_type": "authorization_code", "enabled": true, "website": "https://www.salesforce.com", "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png", "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg", "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>", "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>", "settings": {"instance_url": "https://eu28.salesforce.com", "api_key": "12345xxxxxx"}, "metadata": {"account": {"name": "My Company", "id": "c01458a5-7276-41ce-bc19-639906b0450a"}, "plan": "enterprise"}, "form_fields": [{"id": "instance_url", "label": "Instance url", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": false}, {"id": "api_key", "label": "API Key", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": true}], "configuration": [{"resource": "leads", "defaults": [{"target": "custom_fields", "id": "ProductInterest", "options": [{"label": "General Channel", "option_type": "simple"}], "value": "GC5000 series"}]}], "configurable_resources": ["opportunities", "companies", "contacts", "leads"], "resource_schema_support": ["leads"], "resource_settings_support": ["leads"], "settings_required_for_authorization": ["client_id", "client_secret"], "subscriptions": [{"downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f", "unify_event_types": ["crm.contact.created"], "downstream_event_types": ["contacts.CREATED"], "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}", "created_at": "2020-10-01T12:00:00.000Z"}], "has_guide": true, "custom_mappings": [{"id": "hris+employees+first_aid_training", "label": "First Aid Training", "description": "First Aid Training completed after 2019-01-01", "value": "$.root.training.first_aid", "key": "first_aid_training", "required": false, "custom_field": true, "consumer_id": "test_user_id", "example": "Some value"}], "consent_state": "granted", "consents": [{"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}], "latest_consent": {"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "application_data_scopes": {"enabled": true, "updated_at": "2025-04-15T14:30:00Z", "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "health": "ok", "credentials_expire_at": 1730172800000, "last_refresh_failed_at": 1730000000000, "created_at": 1615563533390, "updated_at": 1616662325753}}
+          application/json: {"status_code": 200, "status": "OK", "data": {"id": "crm+salesforce", "service_id": "salesforce", "name": "Salesforce", "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.", "unified_api": "crm", "state": "authorized", "integration_state": "configured", "auth_type": "oauth2", "oauth_grant_type": "authorization_code", "enabled": true, "website": "https://www.salesforce.com", "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png", "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg", "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>", "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>", "settings": {"instance_url": "https://eu28.salesforce.com", "api_key": "12345xxxxxx"}, "metadata": {"account": {"name": "My Company", "id": "c01458a5-7276-41ce-bc19-639906b0450a"}, "plan": "enterprise"}, "form_fields": [{"id": "instance_url", "label": "Instance url", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": false}, {"id": "api_key", "label": "API Key", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": true}], "configuration": [{"resource": "leads", "defaults": [{"target": "custom_fields", "id": "ProductInterest", "options": [{"label": "General Channel", "option_type": "simple"}], "value": "GC5000 series"}]}], "configurable_resources": ["opportunities", "companies", "contacts", "leads"], "resource_schema_support": ["leads"], "resource_settings_support": ["leads"], "settings_required_for_authorization": ["client_id", "client_secret"], "subscriptions": [{"downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f", "unify_event_types": ["crm.contact.created"], "downstream_event_types": ["contacts.CREATED"], "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}", "created_at": "2020-10-01T12:00:00.000Z"}], "has_guide": true, "custom_mappings": [{"id": "hris+employees+first_aid_training", "label": "First Aid Training", "description": "First Aid Training completed after 2019-01-01", "value": "$.root.training.first_aid", "key": "first_aid_training", "required": false, "custom_field": true, "consumer_id": "test_user_id", "example": "Some value"}], "consent_state": "granted", "consents": [{"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}], "latest_consent": {"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "application_data_scopes": {"enabled": true, "updated_at": "2025-04-15T14:30:00Z", "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "health": "ok", "credentials_expire_at": 1730172800000, "last_refresh_failed_at": 1730000000000, "last_downstream_error_at": 1730000000000, "created_at": 1615563533390, "updated_at": 1616662325753}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
         "401":
@@ -27999,6 +28115,7 @@ examples:
         query:
           raw: false
           limit: 20
+          filter: {"updated_since": "2020-09-30T07:43:32.000Z", "created_since": "2020-09-30T07:43:32.000Z", "number": "OIT00546"}
         header:
           x-apideck-consumer-id: "test-consumer"
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
@@ -29259,9 +29376,67 @@ examples:
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.generalLedgerTransactionsAll:
+    speakeasy-default-accounting-general-ledger-transactions-all:
+      parameters:
+        query:
+          raw: false
+          limit: 20
+          filter: {"source_type": "invoice", "updated_since": "2024-09-30T07:43:32.000Z"}
+          sort: {"by": "posted_at", "direction": "desc"}
+          pass_through: {"search": "San Francisco"}
+          fields: "id,updated_at"
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+          x-apideck-company-id: "12345"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "xero", "resource": "general-ledger-transactions", "operation": "all", "data": [], "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}}, "links": {"previous": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D", "current": "https://unify.apideck.com/crm/companies", "next": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.generalLedgerTransactionsOne:
+    speakeasy-default-accounting-general-ledger-transactions-one:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          raw: false
+          fields: "id,updated_at"
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+          x-apideck-company-id: "12345"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "xero", "resource": "general-ledger-transactions", "operation": "one", "data": {"id": "12345", "source_type": "invoice", "source_id": "12345", "posted_at": "2020-09-30T07:43:32.000Z", "reference": "INV-2024-001", "number": "JNL-001", "currency": "USD", "currency_rate": 0.69, "memo": "Year-end adjustment for inventory revaluation", "line_items": [{"id": "12345", "description": "Sales revenue from Q3 batch", "net_amount": 27500, "type": "debit", "tax_amount": 0, "tax_rate": {"id": "123456", "code": "N-T", "name": "GST on Purchases", "rate": 10}, "tracking_categories": [{"id": "123456", "code": "100", "name": "New York", "parent_id": "123456", "parent_name": "New York"}], "ledger_account": {"id": "123456", "name": "Bank account", "nominal_code": "N091", "code": "453", "parent_id": "123456", "display_id": "123456"}, "line_number": 1}], "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "updated_by": "12345", "created_by": "12345", "updated_at": "2020-09-30T07:43:32.000Z", "created_at": "2020-09-30T07:43:32.000Z", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}]}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes:\n* `Apideck.Crm.Notes.List()`: \n  *  `request.Request.Filter` **Added**\n* `Apideck.Crm.Users.List()`: \n  *  `request.Request.Filter` **Added**\n  *  `response.Data[].Name` **Added**\n* `Apideck.Crm.Users.Create()`: \n  *  `request.Request.User.Name` **Added**\n* `Apideck.Crm.Users.Get()`:  `response.Data.Name` **Added**\n* `Apideck.Crm.Users.Update()`: \n  *  `request.Request.User.Name` **Added**\n"
+releaseNotes: "## Go SDK Changes:\n* `Apideck.Accounting.GeneralLedgerTransactions.List()`: **Added**\n* `Apideck.Accounting.GeneralLedgerTransactions.Get()`: **Added**\n* `Apideck.Accounting.Bills.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.Invoices.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.LedgerAccounts.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.InvoiceItems.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.CreditNotes.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.Customers.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.Suppliers.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.Payments.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.JournalEntries.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.PurchaseOrders.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.BillPayments.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.Quotes.List()`: \n  *  `request.Request.Filter` **Added**\n* `Apideck.Accounting.Projects.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.ExpenseReports.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Vault.Consumers.Create()`:  `response.Data.Connections[].Health.Enum(degraded)` **Added**\n* `Apideck.Vault.Consumers.Get()`:  `response.Data.Connections[].Health.Enum(degraded)` **Added**\n* `Apideck.Vault.Consumers.Update()`:  `response.Data.Connections[].Health.Enum(degraded)` **Added**\n* `Apideck.Vault.Connections.List()`:  `response.Data[]` **Changed**\n* `Apideck.Vault.Connections.Get()`:  `response.Data` **Changed**\n* `Apideck.Vault.Connections.Update()`:  `response.Data` **Changed**\n* `Apideck.Vault.Connections.Imports()`:  `response.Data` **Changed**\n* `Apideck.Vault.Connections.Token()`:  `response.Data` **Changed**\n* `Apideck.Vault.ConnectionSettings.List()`:  `response.Data` **Changed**\n* `Apideck.Vault.ConnectionSettings.Update()`:  `response.Data` **Changed**\n* `Apideck.Webhook.Webhooks.List()`:  `response.Data[].Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Create()`: \n  *  `request.CreateWebhookRequest.Events[]` **Changed**\n  *  `response.Data.Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Get()`:  `response.Data.Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Update()`: \n  *  `request.UpdateWebhookRequest.Events[]` **Changed**\n  *  `response.Data.Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Delete()`:  `response.Data.Events[]` **Changed**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json

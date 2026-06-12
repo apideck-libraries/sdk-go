@@ -35,9 +35,36 @@ func (e *JournalEntriesFilterStatus) IsExact() bool {
 	return false
 }
 
+// JournalEntriesFilterScope - Connector-specific scope hint that controls which downstream source backs the read. On Xero, `manual` reads from `ManualJournals` (free in every tier), while `system` reads from `Journals` (the full general ledger view including manual journal postings, paid post 2026-03-02). Omitting the filter is equivalent to `system` and preserves the legacy default. Only honored on connectors where the distinction is exposed; ignored elsewhere.
+type JournalEntriesFilterScope string
+
+const (
+	JournalEntriesFilterScopeManual JournalEntriesFilterScope = "manual"
+	JournalEntriesFilterScopeSystem JournalEntriesFilterScope = "system"
+)
+
+func (e JournalEntriesFilterScope) ToPointer() *JournalEntriesFilterScope {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *JournalEntriesFilterScope) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "manual", "system":
+			return true
+		}
+	}
+	return false
+}
+
 type JournalEntriesFilter struct {
 	UpdatedSince *time.Time                  `queryParam:"name=updated_since"`
 	Status       *JournalEntriesFilterStatus `queryParam:"name=status"`
+	// Connector-specific scope hint that controls which downstream source backs the read. On Xero, `manual` reads from `ManualJournals` (free in every tier), while `system` reads from `Journals` (the full general ledger view including manual journal postings, paid post 2026-03-02). Omitting the filter is equivalent to `system` and preserves the legacy default. Only honored on connectors where the distinction is exposed; ignored elsewhere.
+	Scope *JournalEntriesFilterScope `queryParam:"name=scope"`
+	// Filter by the subsidiary (legal entity) the record belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+	SubsidiaryID *string `queryParam:"name=subsidiary_id"`
 }
 
 func (j JournalEntriesFilter) MarshalJSON() ([]byte, error) {
@@ -63,4 +90,18 @@ func (j *JournalEntriesFilter) GetStatus() *JournalEntriesFilterStatus {
 		return nil
 	}
 	return j.Status
+}
+
+func (j *JournalEntriesFilter) GetScope() *JournalEntriesFilterScope {
+	if j == nil {
+		return nil
+	}
+	return j.Scope
+}
+
+func (j *JournalEntriesFilter) GetSubsidiaryID() *string {
+	if j == nil {
+		return nil
+	}
+	return j.SubsidiaryID
 }

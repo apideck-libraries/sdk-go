@@ -14,6 +14,8 @@ type CreditNotesFilter struct {
 	CreatedSince *time.Time `queryParam:"name=created_since"`
 	// Credit note number to search for
 	Number *string `queryParam:"name=number"`
+	// Filter by the subsidiary (legal entity) the record belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+	SubsidiaryID *string `queryParam:"name=subsidiary_id"`
 }
 
 func (c CreditNotesFilter) MarshalJSON() ([]byte, error) {
@@ -53,4 +55,11 @@ func (c *CreditNotesFilter) GetNumber() *string {
 		return nil
 	}
 	return c.Number
+}
+
+func (c *CreditNotesFilter) GetSubsidiaryID() *string {
+	if c == nil {
+		return nil
+	}
+	return c.SubsidiaryID
 }

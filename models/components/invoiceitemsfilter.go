@@ -64,6 +64,8 @@ type InvoiceItemsFilter struct {
 	Type *InvoiceItemType `queryParam:"name=type"`
 	// The kind of transaction, indicating whether it is a sales transaction or a purchase transaction.
 	TransactionType *TransactionType `queryParam:"name=transaction_type"`
+	// Filter by the subsidiary (legal entity) the record belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+	SubsidiaryID *string `queryParam:"name=subsidiary_id"`
 }
 
 func (i InvoiceItemsFilter) MarshalJSON() ([]byte, error) {
@@ -110,4 +112,11 @@ func (i *InvoiceItemsFilter) GetTransactionType() *TransactionType {
 		return nil
 	}
 	return i.TransactionType
+}
+
+func (i *InvoiceItemsFilter) GetSubsidiaryID() *string {
+	if i == nil {
+		return nil
+	}
+	return i.SubsidiaryID
 }

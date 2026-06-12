@@ -37,6 +37,8 @@ type BillsFilter struct {
 	UpdatedSince *time.Time `queryParam:"name=updated_since"`
 	// Filter by bill status
 	Status *BillsFilterStatus `queryParam:"name=status"`
+	// Filter by the subsidiary (legal entity) the record belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+	SubsidiaryID *string `queryParam:"name=subsidiary_id"`
 }
 
 func (b BillsFilter) MarshalJSON() ([]byte, error) {
@@ -69,4 +71,11 @@ func (b *BillsFilter) GetStatus() *BillsFilterStatus {
 		return nil
 	}
 	return b.Status
+}
+
+func (b *BillsFilter) GetSubsidiaryID() *string {
+	if b == nil {
+		return nil
+	}
+	return b.SubsidiaryID
 }

@@ -69,6 +69,8 @@ type LedgerAccountsFilter struct {
 	Classification *Classification `queryParam:"name=classification"`
 	// Filter by account status.
 	Status *LedgerAccountsFilterStatus `queryParam:"name=status"`
+	// Filter by the subsidiary (legal entity) the record belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+	SubsidiaryID *string `queryParam:"name=subsidiary_id"`
 }
 
 func (l LedgerAccountsFilter) MarshalJSON() ([]byte, error) {
@@ -108,4 +110,11 @@ func (l *LedgerAccountsFilter) GetStatus() *LedgerAccountsFilterStatus {
 		return nil
 	}
 	return l.Status
+}
+
+func (l *LedgerAccountsFilter) GetSubsidiaryID() *string {
+	if l == nil {
+		return nil
+	}
+	return l.SubsidiaryID
 }

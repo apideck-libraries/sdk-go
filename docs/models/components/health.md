@@ -27,3 +27,4 @@ custom := components.Health("custom_value")
 | `HealthNeedsAuth`           | needs_auth                  |
 | `HealthPendingRefresh`      | pending_refresh             |
 | `HealthOk`                  | ok                          |
+| `HealthDegraded`            | degraded                    |
