@@ -5,10 +5,11 @@ package components
 type AttachmentReferenceType string
 
 const (
-	AttachmentReferenceTypeInvoice AttachmentReferenceType = "invoice"
-	AttachmentReferenceTypeBill    AttachmentReferenceType = "bill"
-	AttachmentReferenceTypeExpense AttachmentReferenceType = "expense"
-	AttachmentReferenceTypeQuote   AttachmentReferenceType = "quote"
+	AttachmentReferenceTypeInvoice       AttachmentReferenceType = "invoice"
+	AttachmentReferenceTypeBill          AttachmentReferenceType = "bill"
+	AttachmentReferenceTypeExpense       AttachmentReferenceType = "expense"
+	AttachmentReferenceTypeExpenseReport AttachmentReferenceType = "expense-report"
+	AttachmentReferenceTypeQuote         AttachmentReferenceType = "quote"
 )
 
 func (e AttachmentReferenceType) ToPointer() *AttachmentReferenceType {
@@ -19,7 +20,7 @@ func (e AttachmentReferenceType) ToPointer() *AttachmentReferenceType {
 func (e *AttachmentReferenceType) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "invoice", "bill", "expense", "quote":
+		case "invoice", "bill", "expense", "expense-report", "quote":
 			return true
 		}
 	}
