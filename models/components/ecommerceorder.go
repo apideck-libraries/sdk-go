@@ -86,6 +86,8 @@ type EcommerceOrder struct {
 	TotalAmount *string `json:"total_amount,omitempty"`
 	// Refunded amount, if any.
 	RefundedAmount *string `json:"refunded_amount,omitempty"`
+	// Indicates whether the order's monetary amounts are inclusive of tax.
+	TaxInclusive *bool `json:"tax_inclusive,omitempty"`
 	// Current status of the order.
 	Status *EcommerceOrderStatus `json:"status,omitempty"`
 	// Current payment status of the order.
@@ -199,6 +201,13 @@ func (e *EcommerceOrder) GetRefundedAmount() *string {
 		return nil
 	}
 	return e.RefundedAmount
+}
+
+func (e *EcommerceOrder) GetTaxInclusive() *bool {
+	if e == nil {
+		return nil
+	}
+	return e.TaxInclusive
 }
 
 func (e *EcommerceOrder) GetStatus() *EcommerceOrderStatus {
