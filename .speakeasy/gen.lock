@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 1366ae5a5fd96fa353ba6f2628435561
+  docChecksum: 554718be0d800287c855ef2a0a35edb4
   docVersion: 10.24.44
-  speakeasyVersion: 1.783.1
-  generationVersion: 2.910.1
-  releaseVersion: 0.27.16
-  configChecksum: e8f7bbbb993e2e92527007d54ec5f7d0
+  speakeasyVersion: 1.784.0
+  generationVersion: 2.911.0
+  releaseVersion: 0.27.17
+  configChecksum: 58547020fdd12c4c86a8b62db809a29a
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: 12512432-4b28-4678-bb9f-42a04da10720
-  pristine_commit_hash: dc98d51dd04e5bfbe4d7f541591db23eff08e5a4
-  pristine_tree_hash: f727e07748a2a4c99bf960db021d49bd8a235fa5
+  generation_id: cd8600f4-022f-47d0-8e52-8aaee17073d6
+  pristine_commit_hash: 9ef5ea34f1c4636fad2f0653d13010f4cc92e7ac
+  pristine_tree_hash: d4be7e2b82ce2af0ae9117d1eb4d3a013dadc3ec
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: d800a06c77eca75b00ead46c9a8ef3985533ce72
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:1e1fb72509223bc21069f1ec63c7a9172350bfd2
-    pristine_git_object: a0bfb872c50477f68def315e3c7322e6cc23f5a4
+    last_write_checksum: sha1:133378aaef22e4b01619fff234a6620458317cac
+    pristine_git_object: 7eb25234bbaa4d240dc7566b563e3e475dc8ec03
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:1408555013a145bf95d6b88b27c4a688d3625fb0
@@ -12850,8 +12850,8 @@ trackedFiles:
     pristine_git_object: 88074c60c3d062e96f59872ce586558e9b4b7392
   opportunities.go:
     id: 51bbeb2502d8
-    last_write_checksum: sha1:05f4cd7a1c3d7eaa64e55073463fda56f3f02b87
-    pristine_git_object: 2a727eb757f3a63c493e0471e44de0a07f402744
+    last_write_checksum: sha1:e506327dbc67979809bdef22ea61cdbc466a4711
+    pristine_git_object: 0399f578f5e931b5f2f067844e1be2cee1c43e60
   optionalnullable/optionalnullable.go:
     id: ce60f259ead3
     last_write_checksum: sha1:d6aff1a420c31e025ea21d46cf056e305ae76fe8
@@ -29436,10 +29436,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Go SDK Changes:
-  * `Apideck.Ecommerce.Orders.List()`:  `response.Data[].TaxInclusive` **Added**
-  * `Apideck.Ecommerce.Orders.Get()`:  `response.Data.TaxInclusive` **Added**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
