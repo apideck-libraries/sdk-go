@@ -15,6 +15,8 @@ type GetJobResponse struct {
 	// Operation performed
 	Operation string `json:"operation"`
 	Data      Job    `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -59,6 +61,13 @@ func (g *GetJobResponse) GetData() Job {
 		return Job{}
 	}
 	return g.Data
+}
+
+func (g *GetJobResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetJobResponse) GetRaw() map[string]any {

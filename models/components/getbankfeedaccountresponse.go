@@ -15,6 +15,8 @@ type GetBankFeedAccountResponse struct {
 	// Operation performed
 	Operation string          `json:"operation"`
 	Data      BankFeedAccount `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -59,6 +61,13 @@ func (g *GetBankFeedAccountResponse) GetData() BankFeedAccount {
 		return BankFeedAccount{}
 	}
 	return g.Data
+}
+
+func (g *GetBankFeedAccountResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetBankFeedAccountResponse) GetRaw() map[string]any {

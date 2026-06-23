@@ -15,6 +15,8 @@ type GetTimeOffRequestResponse struct {
 	// Operation performed
 	Operation string         `json:"operation"`
 	Data      TimeOffRequest `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -59,6 +61,13 @@ func (g *GetTimeOffRequestResponse) GetData() TimeOffRequest {
 		return TimeOffRequest{}
 	}
 	return g.Data
+}
+
+func (g *GetTimeOffRequestResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetTimeOffRequestResponse) GetRaw() map[string]any {

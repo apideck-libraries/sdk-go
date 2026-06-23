@@ -15,6 +15,8 @@ type GetDriveResponse struct {
 	// Operation performed
 	Operation string `json:"operation"`
 	Data      Drive  `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -59,6 +61,13 @@ func (g *GetDriveResponse) GetData() Drive {
 		return Drive{}
 	}
 	return g.Data
+}
+
+func (g *GetDriveResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetDriveResponse) GetRaw() map[string]any {

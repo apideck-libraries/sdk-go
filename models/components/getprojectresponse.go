@@ -15,6 +15,8 @@ type GetProjectResponse struct {
 	// Operation performed
 	Operation string  `json:"operation"`
 	Data      Project `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 }
 
 func (g *GetProjectResponse) GetStatusCode() int64 {
@@ -57,4 +59,11 @@ func (g *GetProjectResponse) GetData() Project {
 		return Project{}
 	}
 	return g.Data
+}
+
+func (g *GetProjectResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }

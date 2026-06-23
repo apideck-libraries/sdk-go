@@ -15,6 +15,8 @@ type GetFolderResponse struct {
 	// Operation performed
 	Operation string `json:"operation"`
 	Data      Folder `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -59,6 +61,13 @@ func (g *GetFolderResponse) GetData() Folder {
 		return Folder{}
 	}
 	return g.Data
+}
+
+func (g *GetFolderResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetFolderResponse) GetRaw() map[string]any {

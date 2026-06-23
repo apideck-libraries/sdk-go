@@ -33,6 +33,55 @@ func (c *Cursors) GetNext() *string {
 	return c.Next
 }
 
+// Warnings - Advisory warning emitted when an optional workflow step fails non-fatally. The overall request still succeeds (HTTP 200); inspect this to detect partial or degraded data.
+type Warnings struct {
+	// Discriminator for the warning kind.
+	Type *string `json:"type,omitempty"`
+	// HTTP status code returned by the failed downstream request, when available.
+	StatusCode *int64 `json:"status_code,omitempty"`
+	// Short error description from the downstream provider, when available.
+	Error *string `json:"error,omitempty"`
+	// Identifier of the workflow step that failed.
+	Operation *string `json:"operation,omitempty"`
+	// Detailed message from the downstream provider, when available.
+	Message *string `json:"message,omitempty"`
+}
+
+func (w *Warnings) GetType() *string {
+	if w == nil {
+		return nil
+	}
+	return w.Type
+}
+
+func (w *Warnings) GetStatusCode() *int64 {
+	if w == nil {
+		return nil
+	}
+	return w.StatusCode
+}
+
+func (w *Warnings) GetError() *string {
+	if w == nil {
+		return nil
+	}
+	return w.Error
+}
+
+func (w *Warnings) GetOperation() *string {
+	if w == nil {
+		return nil
+	}
+	return w.Operation
+}
+
+func (w *Warnings) GetMessage() *string {
+	if w == nil {
+		return nil
+	}
+	return w.Message
+}
+
 // Meta - Response metadata
 type Meta struct {
 	// Number of items returned in the data property of the response
@@ -41,6 +90,8 @@ type Meta struct {
 	Cursors *Cursors `json:"cursors,omitempty"`
 	// Number of records available in total for this resource
 	TotalCount *int64 `json:"total_count,omitempty"`
+	// Non-fatal warnings emitted when optional workflow steps failed. Present only when at least one step degraded; the response status remains 200.
+	Warnings []Warnings `json:"warnings,omitempty"`
 }
 
 func (m *Meta) GetItemsOnPage() *int64 {
@@ -62,4 +113,11 @@ func (m *Meta) GetTotalCount() *int64 {
 		return nil
 	}
 	return m.TotalCount
+}
+
+func (m *Meta) GetWarnings() []Warnings {
+	if m == nil {
+		return nil
+	}
+	return m.Warnings
 }

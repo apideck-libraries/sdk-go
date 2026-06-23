@@ -15,6 +15,8 @@ type GetPurchaseOrderResponse struct {
 	// Operation performed
 	Operation string        `json:"operation"`
 	Data      PurchaseOrder `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -59,6 +61,13 @@ func (g *GetPurchaseOrderResponse) GetData() PurchaseOrder {
 		return PurchaseOrder{}
 	}
 	return g.Data
+}
+
+func (g *GetPurchaseOrderResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetPurchaseOrderResponse) GetRaw() map[string]any {

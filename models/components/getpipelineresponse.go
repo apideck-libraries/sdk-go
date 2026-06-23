@@ -15,6 +15,8 @@ type GetPipelineResponse struct {
 	// Operation performed
 	Operation string   `json:"operation"`
 	Data      Pipeline `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -59,6 +61,13 @@ func (g *GetPipelineResponse) GetData() Pipeline {
 		return Pipeline{}
 	}
 	return g.Data
+}
+
+func (g *GetPipelineResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetPipelineResponse) GetRaw() map[string]any {

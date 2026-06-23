@@ -15,6 +15,8 @@ type GetAgedCreditorsResponse struct {
 	// Operation performed
 	Operation string        `json:"operation"`
 	Data      AgedCreditors `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -59,6 +61,13 @@ func (g *GetAgedCreditorsResponse) GetData() AgedCreditors {
 		return AgedCreditors{}
 	}
 	return g.Data
+}
+
+func (g *GetAgedCreditorsResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetAgedCreditorsResponse) GetRaw() map[string]any {

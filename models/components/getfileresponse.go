@@ -15,6 +15,8 @@ type GetFileResponse struct {
 	// Operation performed
 	Operation string      `json:"operation"`
 	Data      UnifiedFile `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -59,6 +61,13 @@ func (g *GetFileResponse) GetData() UnifiedFile {
 		return UnifiedFile{}
 	}
 	return g.Data
+}
+
+func (g *GetFileResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetFileResponse) GetRaw() map[string]any {

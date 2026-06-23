@@ -15,6 +15,8 @@ type GetLedgerAccountResponse struct {
 	// Operation performed
 	Operation string        `json:"operation"`
 	Data      LedgerAccount `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -59,6 +61,13 @@ func (g *GetLedgerAccountResponse) GetData() LedgerAccount {
 		return LedgerAccount{}
 	}
 	return g.Data
+}
+
+func (g *GetLedgerAccountResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetLedgerAccountResponse) GetRaw() map[string]any {
