@@ -9,6 +9,8 @@ type GetConsumerResponse struct {
 	// HTTP Response Status
 	Status string   `json:"status"`
 	Data   Consumer `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -32,6 +34,13 @@ func (g *GetConsumerResponse) GetData() Consumer {
 		return Consumer{}
 	}
 	return g.Data
+}
+
+func (g *GetConsumerResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetConsumerResponse) GetRaw() map[string]any {

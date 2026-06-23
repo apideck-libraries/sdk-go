@@ -1480,8 +1480,8 @@ func (s *Opportunities) Update(ctx context.Context, request operations.CrmOpport
 
 }
 
-// Delete File
-// Delete File
+// Delete opportunity
+// Delete opportunity
 func (s *Opportunities) Delete(ctx context.Context, request operations.CrmOpportunitiesDeleteRequest, opts ...operations.Option) (*operations.CrmOpportunitiesDeleteResponse, error) {
 	globals := operations.CrmOpportunitiesDeleteGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,

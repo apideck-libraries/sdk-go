@@ -9,6 +9,8 @@ type GetConnectionResponse struct {
 	// HTTP Response Status
 	Status string     `json:"status"`
 	Data   Connection `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -32,6 +34,13 @@ func (g *GetConnectionResponse) GetData() Connection {
 		return Connection{}
 	}
 	return g.Data
+}
+
+func (g *GetConnectionResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetConnectionResponse) GetRaw() map[string]any {

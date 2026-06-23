@@ -15,6 +15,8 @@ type GetCustomObjectResponse struct {
 	// Operation performed
 	Operation string       `json:"operation"`
 	Data      CustomObject `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -59,6 +61,13 @@ func (g *GetCustomObjectResponse) GetData() CustomObject {
 		return CustomObject{}
 	}
 	return g.Data
+}
+
+func (g *GetCustomObjectResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetCustomObjectResponse) GetRaw() map[string]any {

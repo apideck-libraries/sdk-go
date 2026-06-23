@@ -15,6 +15,8 @@ type GetSharedLinkResponse struct {
 	// Operation performed
 	Operation string     `json:"operation"`
 	Data      SharedLink `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -59,6 +61,13 @@ func (g *GetSharedLinkResponse) GetData() SharedLink {
 		return SharedLink{}
 	}
 	return g.Data
+}
+
+func (g *GetSharedLinkResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetSharedLinkResponse) GetRaw() map[string]any {

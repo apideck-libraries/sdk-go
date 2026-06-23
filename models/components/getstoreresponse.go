@@ -15,6 +15,8 @@ type GetStoreResponse struct {
 	// Operation performed
 	Operation string         `json:"operation"`
 	Data      EcommerceStore `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -59,6 +61,13 @@ func (g *GetStoreResponse) GetData() EcommerceStore {
 		return EcommerceStore{}
 	}
 	return g.Data
+}
+
+func (g *GetStoreResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetStoreResponse) GetRaw() map[string]any {

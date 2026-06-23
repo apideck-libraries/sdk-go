@@ -15,6 +15,8 @@ type GetContactResponse struct {
 	// Operation performed
 	Operation string  `json:"operation"`
 	Data      Contact `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -59,6 +61,13 @@ func (g *GetContactResponse) GetData() Contact {
 		return Contact{}
 	}
 	return g.Data
+}
+
+func (g *GetContactResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetContactResponse) GetRaw() map[string]any {

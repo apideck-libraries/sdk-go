@@ -15,6 +15,8 @@ type GetInvoiceItemResponse struct {
 	// Operation performed
 	Operation string      `json:"operation"`
 	Data      InvoiceItem `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -59,6 +61,13 @@ func (g *GetInvoiceItemResponse) GetData() InvoiceItem {
 		return InvoiceItem{}
 	}
 	return g.Data
+}
+
+func (g *GetInvoiceItemResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetInvoiceItemResponse) GetRaw() map[string]any {

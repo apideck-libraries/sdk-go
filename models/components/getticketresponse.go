@@ -15,6 +15,8 @@ type GetTicketResponse struct {
 	// Operation performed
 	Operation string `json:"operation"`
 	Data      Ticket `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -59,6 +61,13 @@ func (g *GetTicketResponse) GetData() Ticket {
 		return Ticket{}
 	}
 	return g.Data
+}
+
+func (g *GetTicketResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetTicketResponse) GetRaw() map[string]any {

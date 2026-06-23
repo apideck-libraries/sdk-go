@@ -15,6 +15,8 @@ type GetExpenseReportResponse struct {
 	// Operation performed
 	Operation string        `json:"operation"`
 	Data      ExpenseReport `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -59,6 +61,13 @@ func (g *GetExpenseReportResponse) GetData() ExpenseReport {
 		return ExpenseReport{}
 	}
 	return g.Data
+}
+
+func (g *GetExpenseReportResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetExpenseReportResponse) GetRaw() map[string]any {

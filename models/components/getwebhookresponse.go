@@ -9,6 +9,8 @@ type GetWebhookResponse struct {
 	// HTTP Response Status
 	Status string  `json:"status"`
 	Data   Webhook `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -32,6 +34,13 @@ func (g *GetWebhookResponse) GetData() Webhook {
 		return Webhook{}
 	}
 	return g.Data
+}
+
+func (g *GetWebhookResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetWebhookResponse) GetRaw() map[string]any {

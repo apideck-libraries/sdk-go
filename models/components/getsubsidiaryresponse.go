@@ -15,6 +15,8 @@ type GetSubsidiaryResponse struct {
 	// Operation performed
 	Operation string     `json:"operation"`
 	Data      Subsidiary `json:"data"`
+	// Response metadata
+	Meta *Meta `json:"meta,omitempty"`
 	// Raw response from the integration when raw=true query param is provided
 	Raw map[string]any `json:"_raw,omitempty"`
 }
@@ -59,6 +61,13 @@ func (g *GetSubsidiaryResponse) GetData() Subsidiary {
 		return Subsidiary{}
 	}
 	return g.Data
+}
+
+func (g *GetSubsidiaryResponse) GetMeta() *Meta {
+	if g == nil {
+		return nil
+	}
+	return g.Meta
 }
 
 func (g *GetSubsidiaryResponse) GetRaw() map[string]any {
