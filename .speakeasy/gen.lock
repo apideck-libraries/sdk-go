@@ -1,25 +1,25 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 0255bcee6b7b46efd5ff4bb8fc8b8514
-  docVersion: 10.24.46
-  speakeasyVersion: 1.787.0
-  generationVersion: 2.914.0
-  releaseVersion: 0.27.24
-  configChecksum: 1688bb9df6d6a520a9a1b43cdbf6869b
+  docChecksum: 050df171336a3f72c7d9fa293aee56ef
+  docVersion: 10.24.47
+  speakeasyVersion: 1.788.1
+  generationVersion: 2.915.1
+  releaseVersion: 0.27.25
+  configChecksum: 3cf9eb28dac8b7672534f75469682a67
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: 819262fb-fea5-4f8b-ba39-b0849d4ec7ee
-  pristine_commit_hash: ec2fd04bbb660f849b3ea4733b344d54e7df2c4f
-  pristine_tree_hash: 2e8b55b7f5a340f80407231b608d19041e2dd7f5
+  generation_id: b974dde0-0802-4dd6-8f46-7f4be762cf44
+  pristine_commit_hash: e144fe8b3d91371e72a33c86dc5ad588427ab58e
+  pristine_tree_hash: b9f81b9b508fb2ba7c774d34762aa3e8a5a760a2
 features:
   go:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     additionalProperties: 0.1.2
     constsAndDefaults: 0.1.14
-    core: 3.13.46
+    core: 3.13.47
     deepObjectParams: 0.1.1
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.3
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: d800a06c77eca75b00ead46c9a8ef3985533ce72
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:44c211f8f4aff79c9d25c350486abe4879625228
-    pristine_git_object: 89d68f51566220257edfa050b9cf8795cb1136a2
+    last_write_checksum: sha1:e6d53e1c42316728c8a4ab6d4421e465edfda7a4
+    pristine_git_object: acf3567a3dd9c2bd3fc085a54246a1050dcdffd4
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:1408555013a145bf95d6b88b27c4a688d3625fb0
@@ -2970,12 +2970,12 @@ trackedFiles:
     pristine_git_object: 46448fd3c69b2519c28ab5e1a96520d9dc59b3c1
   docs/models/components/ledgeraccountsfilter.md:
     id: 7635e5c3f5a0
-    last_write_checksum: sha1:ae5959ab7c653344bf6c12deb15f359f9866d8c3
-    pristine_git_object: b70cf99943657bab7d0a538ccaf5487d2c1bc4c8
+    last_write_checksum: sha1:fc1f30135bc3183df7506964d2be143ad6150e87
+    pristine_git_object: d88dd7c0712357b045a0eddba78b0f2032dd7a40
   docs/models/components/ledgeraccountsfilterstatus.md:
     id: 315b610a4ad8
-    last_write_checksum: sha1:1359d1027b995d04dfdf4a91dfe4f3c414686fc2
-    pristine_git_object: 69d4e8371f3640bc9409bccddbbd5ad03d31305e
+    last_write_checksum: sha1:f43ae21f922c90b4da60836ef1b715218dd9e132
+    pristine_git_object: 0095e74004692ca0f30efbc8ff611ba74027abea
   docs/models/components/ledgeraccountssort.md:
     id: ea7491279bca
     last_write_checksum: sha1:8c7ea89efe6b2e465bb13f4c35e335e599a01d93
@@ -4230,8 +4230,8 @@ trackedFiles:
     pristine_git_object: 63d6c7bd5b09632ba369b3acb489cb27d0d5e6c5
   docs/models/components/webhookeventtype.md:
     id: b979b3765280
-    last_write_checksum: sha1:62c602c21e01fcd53f480fed56c7152cfc2e42ce
-    pristine_git_object: 167f90177fbca869be4600037d7ca2f4df2d7c6c
+    last_write_checksum: sha1:61e8d44880f1f03d93d3f7b19d4a3fc839b95425
+    pristine_git_object: fd40509ea50652025e816c308a64073c8ceac8c0
   docs/models/components/webhooksubscription.md:
     id: c88220e1de92
     last_write_checksum: sha1:f97c5293a19bc0cd1813595728fe11b7472eafdd
@@ -10722,8 +10722,8 @@ trackedFiles:
     pristine_git_object: a91128416a76913455b214e050d2a5ffd4295f23
   models/components/ledgeraccountsfilter.go:
     id: 5bea72cb3487
-    last_write_checksum: sha1:d83958e64e64b8139299b67d8f876de487219222
-    pristine_git_object: 058b0a6ed64b7d1743ebbad86dfd9074e162ac99
+    last_write_checksum: sha1:238e7b5bd6caa972eb036cbe6517ce1fd36f6815
+    pristine_git_object: c78eb12004f66f87c89f2b06fa03957d6c8115a2
   models/components/ledgeraccountssort.go:
     id: 3a3d582323ec
     last_write_checksum: sha1:eaaa0b0bf44f42a7db5d394319976f368613ccc4
@@ -11482,8 +11482,8 @@ trackedFiles:
     pristine_git_object: bd6ca89e7d68e78500d0e123f199b9f66bbdfb95
   models/components/webhookeventtype.go:
     id: eb6328fbc2b7
-    last_write_checksum: sha1:f77cbc6c44f0ef6517cf085cce01b4da72d65564
-    pristine_git_object: f195e99a34378f522396516529d31615ca52800b
+    last_write_checksum: sha1:fc184c9d9bf5732af21c2d06c18a0018f660a0b3
+    pristine_git_object: c1fdbe77d01f6a1d532bac2d4819037600937712
   models/components/webhooksubscription.go:
     id: 08bb704a2412
     last_write_checksum: sha1:337fa67dd6314fd7ac61a2c2fb36b666b6654af3
@@ -29440,6 +29440,7 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Go SDK Changes:\n* `Apideck.Webhook.Webhooks.List()`:  `response.Data[].Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Create()`: \n  *  `request.CreateWebhookRequest.Events[]` **Changed**\n  *  `response.Data.Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Get()`:  `response.Data.Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Update()`: \n  *  `request.UpdateWebhookRequest.Events[]` **Changed**\n  *  `response.Data.Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Delete()`:  `response.Data.Events[]` **Changed**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
