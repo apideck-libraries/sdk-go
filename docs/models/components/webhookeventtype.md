@@ -149,3 +149,6 @@ custom := components.WebhookEventType("custom_value")
 | `WebhookEventTypeAccountingProjectCreated`             | accounting.project.created                             |
 | `WebhookEventTypeAccountingProjectUpdated`             | accounting.project.updated                             |
 | `WebhookEventTypeAccountingProjectDeleted`             | accounting.project.deleted                             |
+| `WebhookEventTypeAccountingTrackingCategoryCreated`    | accounting.tracking_category.created                   |
+| `WebhookEventTypeAccountingTrackingCategoryUpdated`    | accounting.tracking_category.updated                   |
+| `WebhookEventTypeAccountingTrackingCategoryDeleted`    | accounting.tracking_category.deleted                   |
