@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 050df171336a3f72c7d9fa293aee56ef
+  docChecksum: dfe6f0f5d02c51f97215a38a4147d219
   docVersion: 10.24.47
   speakeasyVersion: 1.788.1
   generationVersion: 2.915.1
-  releaseVersion: 0.27.25
-  configChecksum: 3cf9eb28dac8b7672534f75469682a67
+  releaseVersion: 0.27.26
+  configChecksum: 0a1b9b89ef6eb88321664953df866f31
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: b974dde0-0802-4dd6-8f46-7f4be762cf44
-  pristine_commit_hash: e144fe8b3d91371e72a33c86dc5ad588427ab58e
-  pristine_tree_hash: b9f81b9b508fb2ba7c774d34762aa3e8a5a760a2
+  generation_id: 2b819fe8-322c-422f-8ee0-016bd929ac90
+  pristine_commit_hash: 33055e79484b86622e79214c5b6614459c1ede6a
+  pristine_tree_hash: 5a76441f534652247e9c73292beae63be0e7e2fd
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: d800a06c77eca75b00ead46c9a8ef3985533ce72
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:e6d53e1c42316728c8a4ab6d4421e465edfda7a4
-    pristine_git_object: acf3567a3dd9c2bd3fc085a54246a1050dcdffd4
+    last_write_checksum: sha1:5e0d1b1bab776ccbc7dafb4f7e62ed3eef3c7c18
+    pristine_git_object: c82a25dc95489065823d2397f4eaaa6f242b0503
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:1408555013a145bf95d6b88b27c4a688d3625fb0
@@ -4222,8 +4222,8 @@ trackedFiles:
     pristine_git_object: 2c77867302edd1249f4839effc198d93198640ec
   docs/models/components/webhookeventlogsfilter.md:
     id: 8d450c131dc4
-    last_write_checksum: sha1:318e6f4ec1003921ea400aca86d39a97bc1eebae
-    pristine_git_object: 43a785f32e00ff1519dbd5aee3288b7cce818dc2
+    last_write_checksum: sha1:63b25373a31cc0cfb3cf6464283c30df792b2235
+    pristine_git_object: 772b9e018ce89be327e266b14447e60095798f91
   docs/models/components/webhookeventlogsfilterservice.md:
     id: 08961a186736
     last_write_checksum: sha1:dd1a21ae1fd98166f65d821169be2f8507468b15
@@ -11478,8 +11478,8 @@ trackedFiles:
     pristine_git_object: 57a08a4ecc9f07c1b3c2d1464a1e04a3ba8d74ad
   models/components/webhookeventlogsfilter.go:
     id: c2707f3d1388
-    last_write_checksum: sha1:050311fe2bd14199d8115c42e855f82997095201
-    pristine_git_object: bd6ca89e7d68e78500d0e123f199b9f66bbdfb95
+    last_write_checksum: sha1:1ff3a6ac2200a2699616b0164a169683e8613f49
+    pristine_git_object: 3b7054b709607e06e8b16ba9bfb790acb68eee31
   models/components/webhookeventtype.go:
     id: eb6328fbc2b7
     last_write_checksum: sha1:fc184c9d9bf5732af21c2d06c18a0018f660a0b3
@@ -27504,7 +27504,7 @@ examples:
       parameters:
         query:
           limit: 20
-          filter: {"exclude_apis": "vault,proxy", "consumer_id": "test_user_id", "entity_type": "Connection", "event_type": "vault.connection.callable"}
+          filter: {"exclude_apis": "vault,proxy", "consumer_id": "test_user_id", "entity_type": "Connection", "event_type": "vault.connection.callable", "start_date": "2024-01-01T00:00:00.000Z", "end_date": "2024-01-31T23:59:59.999Z", "status_code": 201, "status_codes": [200, 201, 204]}
         header:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
       responses:
@@ -29440,7 +29440,9 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes:\n* `Apideck.Webhook.Webhooks.List()`:  `response.Data[].Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Create()`: \n  *  `request.CreateWebhookRequest.Events[]` **Changed**\n  *  `response.Data.Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Get()`:  `response.Data.Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Update()`: \n  *  `request.UpdateWebhookRequest.Events[]` **Changed**\n  *  `response.Data.Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Delete()`:  `response.Data.Events[]` **Changed**\n"
+releaseNotes: |
+  ## Go SDK Changes:
+  * `Apideck.Webhook.EventLogs.List()`:  `request.Filter` **Changed**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
