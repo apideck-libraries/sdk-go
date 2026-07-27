@@ -47,6 +47,9 @@ func main() {
             Status: components.ExpensesFilterStatusDraft.ToPointer(),
             Type: components.ExpensesFilterTypeExpense.ToPointer(),
         },
+        PassThrough: map[string]any{
+            "search": "San Francisco",
+        },
     })
     if err != nil {
         log.Fatal(err)

@@ -46,6 +46,9 @@ func main() {
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
             Status: components.ExpenseReportsFilterStatusSubmitted.ToPointer(),
         },
+        PassThrough: map[string]any{
+            "search": "San Francisco",
+        },
     })
     if err != nil {
         log.Fatal(err)
@@ -156,6 +159,7 @@ func main() {
                 Name: sdkgo.Pointer("Q1 2024"),
             },
             LineItems: []components.ExpenseReportLineItemInput{},
+            Reference: sdkgo.Pointer("INV-2024-001"),
             Subsidiary: &components.LinkedSubsidiaryInput{
                 DisplayID: sdkgo.Pointer("123456"),
                 Name: sdkgo.Pointer("Acme Inc."),
@@ -373,6 +377,7 @@ func main() {
                 Name: sdkgo.Pointer("Q1 2024"),
             },
             LineItems: []components.ExpenseReportLineItemInput{},
+            Reference: sdkgo.Pointer("INV-2024-001"),
             Subsidiary: &components.LinkedSubsidiaryInput{
                 DisplayID: sdkgo.Pointer("123456"),
                 Name: sdkgo.Pointer("Acme Inc."),

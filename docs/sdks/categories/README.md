@@ -42,6 +42,9 @@ func main() {
         Filter: &components.CategoriesFilter{
             Type: components.CategoriesFilterTypeExpense.ToPointer(),
         },
+        PassThrough: map[string]any{
+            "search": "San Francisco",
+        },
     })
     if err != nil {
         log.Fatal(err)

@@ -45,6 +45,8 @@ type AccountingExpensesAllRequest struct {
 	Limit *int64 `default:"20" queryParam:"style=form,explode=true,name=limit"`
 	// Apply filters
 	Filter *components.ExpensesFilter `queryParam:"style=deepObject,explode=true,name=filter"`
+	// Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
+	PassThrough map[string]any `queryParam:"style=deepObject,explode=true,name=pass_through"`
 }
 
 func (a AccountingExpensesAllRequest) MarshalJSON() ([]byte, error) {
@@ -112,6 +114,13 @@ func (a *AccountingExpensesAllRequest) GetFilter() *components.ExpensesFilter {
 		return nil
 	}
 	return a.Filter
+}
+
+func (a *AccountingExpensesAllRequest) GetPassThrough() map[string]any {
+	if a == nil {
+		return nil
+	}
+	return a.PassThrough
 }
 
 type AccountingExpensesAllResponse struct {

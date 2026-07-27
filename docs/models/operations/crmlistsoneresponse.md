@@ -1,0 +1,10 @@
+# CrmListsOneResponse
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                | [components.HTTPMetadata](../../models/components/httpmetadata.md)                        | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `GetListResponse`                                                                         | [*components.GetListResponse](../../models/components/getlistresponse.md)                 | :heavy_minus_sign:                                                                        | List                                                                                      |
+| `UnexpectedErrorResponse`                                                                 | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md) | :heavy_minus_sign:                                                                        | Unexpected error                                                                          |

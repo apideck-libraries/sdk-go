@@ -46,6 +46,9 @@ func main() {
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
             Status: components.ExpenseCategoriesFilterStatusActive.ToPointer(),
         },
+        PassThrough: map[string]any{
+            "search": "San Francisco",
+        },
     })
     if err != nil {
         log.Fatal(err)

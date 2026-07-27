@@ -536,6 +536,11 @@ func main() {
 * [Update](docs/sdks/leads/README.md#update) - Update lead
 * [Delete](docs/sdks/leads/README.md#delete) - Delete lead
 
+### [Crm.Lists](docs/sdks/lists/README.md)
+
+* [List](docs/sdks/lists/README.md#list) - List lists
+* [Get](docs/sdks/lists/README.md#get) - Get list
+
 ### [Crm.Notes](docs/sdks/notes/README.md)
 
 * [List](docs/sdks/notes/README.md#list) - List notes

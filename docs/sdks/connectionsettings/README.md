@@ -110,12 +110,14 @@ func main() {
                 "instance_url": "https://eu28.salesforce.com",
                 "api_key": "12345xxxxxx",
             },
-            Metadata: map[string]any{
-                "account": map[string]any{
-                    "name": "My Company",
-                    "id": "c01458a5-7276-41ce-bc19-639906b0450a",
+            Metadata: &components.ConnectionMetadataInput{
+                AdditionalProperties: map[string]any{
+                    "account": map[string]any{
+                        "name": "My Company",
+                        "id": "c01458a5-7276-41ce-bc19-639906b0450a",
+                    },
+                    "plan": "enterprise",
                 },
-                "plan": "enterprise",
             },
             Configuration: []components.ConnectionConfiguration{
                 components.ConnectionConfiguration{
