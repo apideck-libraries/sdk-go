@@ -45,6 +45,9 @@ func main() {
         Filter: &components.AccountingDepartmentsFilter{
             Subsidiary: sdkgo.Pointer("1"),
         },
+        PassThrough: map[string]any{
+            "search": "San Francisco",
+        },
     })
     if err != nil {
         log.Fatal(err)

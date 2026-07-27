@@ -2,6 +2,11 @@
 
 package components
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/utils"
+	"time"
+)
+
 type WebhookEventLogsFilterService struct {
 	ID *string `queryParam:"name=id"`
 }
@@ -19,6 +24,31 @@ type WebhookEventLogsFilter struct {
 	ConsumerID  *string                        `queryParam:"name=consumer_id"`
 	EntityType  *string                        `queryParam:"name=entity_type"`
 	EventType   *string                        `queryParam:"name=event_type"`
+	// Filter logs at or after this ISO 8601 date-time (inclusive).
+	StartDate *time.Time `queryParam:"name=start_date"`
+	// Filter logs at or before this ISO 8601 date-time (inclusive). Must be on or after start_date.
+	EndDate *time.Time `queryParam:"name=end_date"`
+	// Filter by delivery success or failure.
+	Success *bool `queryParam:"name=success"`
+	// Filter by a single HTTP status code. For backward compatibility - use status_codes for multiple values.
+	StatusCode *float64 `queryParam:"name=status_code"`
+	// Filter by multiple HTTP status codes. Values must be between 100-599. Maximum 50 status codes allowed.
+	StatusCodes []float64 `queryParam:"name=status_codes"`
+	// Filter by webhook event ID.
+	EventID *string `queryParam:"name=event_id"`
+	// Filter by the delivery attempt number.
+	ExecutionAttempt *float64 `queryParam:"name=execution_attempt"`
+}
+
+func (w WebhookEventLogsFilter) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(w, "", false)
+}
+
+func (w *WebhookEventLogsFilter) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &w, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (w *WebhookEventLogsFilter) GetExcludeApis() *string {
@@ -54,4 +84,53 @@ func (w *WebhookEventLogsFilter) GetEventType() *string {
 		return nil
 	}
 	return w.EventType
+}
+
+func (w *WebhookEventLogsFilter) GetStartDate() *time.Time {
+	if w == nil {
+		return nil
+	}
+	return w.StartDate
+}
+
+func (w *WebhookEventLogsFilter) GetEndDate() *time.Time {
+	if w == nil {
+		return nil
+	}
+	return w.EndDate
+}
+
+func (w *WebhookEventLogsFilter) GetSuccess() *bool {
+	if w == nil {
+		return nil
+	}
+	return w.Success
+}
+
+func (w *WebhookEventLogsFilter) GetStatusCode() *float64 {
+	if w == nil {
+		return nil
+	}
+	return w.StatusCode
+}
+
+func (w *WebhookEventLogsFilter) GetStatusCodes() []float64 {
+	if w == nil {
+		return nil
+	}
+	return w.StatusCodes
+}
+
+func (w *WebhookEventLogsFilter) GetEventID() *string {
+	if w == nil {
+		return nil
+	}
+	return w.EventID
+}
+
+func (w *WebhookEventLogsFilter) GetExecutionAttempt() *float64 {
+	if w == nil {
+		return nil
+	}
+	return w.ExecutionAttempt
 }

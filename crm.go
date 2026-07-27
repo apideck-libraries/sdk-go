@@ -13,6 +13,7 @@ type Crm struct {
 	Opportunities       *Opportunities
 	Leads               *Leads
 	Pipelines           *Pipelines
+	Lists               *Lists
 	Notes               *Notes
 	Users               *Users
 	Activities          *Activities
@@ -34,6 +35,7 @@ func newCrm(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *hooks.Ho
 		Opportunities:       newOpportunities(rootSDK, sdkConfig, hooks),
 		Leads:               newLeads(rootSDK, sdkConfig, hooks),
 		Pipelines:           newPipelines(rootSDK, sdkConfig, hooks),
+		Lists:               newLists(rootSDK, sdkConfig, hooks),
 		Notes:               newNotes(rootSDK, sdkConfig, hooks),
 		Users:               newUsers(rootSDK, sdkConfig, hooks),
 		Activities:          newActivities(rootSDK, sdkConfig, hooks),

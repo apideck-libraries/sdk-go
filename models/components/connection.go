@@ -32,6 +32,38 @@ func (e *ConnectionStatus) IsExact() bool {
 	return false
 }
 
+// ConnectionMetadata - Attach your own consumer specific metadata
+type ConnectionMetadata struct {
+	// Normalized identifier of the authorized organization, copied from the connector-specific setting (e.g. Xero tenant_id, QuickBooks realm_id, NetSuite account_id).
+	CompanyID            *string        `json:"company_id,omitempty"`
+	AdditionalProperties map[string]any `additionalProperties:"true" json:"-"`
+}
+
+func (c ConnectionMetadata) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *ConnectionMetadata) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (c *ConnectionMetadata) GetCompanyID() *string {
+	if c == nil {
+		return nil
+	}
+	return c.CompanyID
+}
+
+func (c *ConnectionMetadata) GetAdditionalProperties() map[string]any {
+	if c == nil {
+		return nil
+	}
+	return c.AdditionalProperties
+}
+
 type Target string
 
 const (
@@ -386,7 +418,7 @@ type Connection struct {
 	// Connection settings. Values will persist to `form_fields` with corresponding id
 	Settings map[string]any `json:"settings,omitempty"`
 	// Attach your own consumer specific metadata
-	Metadata map[string]any `json:"metadata,omitempty"`
+	Metadata *ConnectionMetadata `json:"metadata,omitempty"`
 	// The settings that are wanted to create a connection.
 	FormFields              []FormField     `json:"form_fields,omitempty"`
 	Configuration           []Configuration `json:"configuration,omitempty"`
@@ -539,7 +571,7 @@ func (c *Connection) GetSettings() map[string]any {
 	return c.Settings
 }
 
-func (c *Connection) GetMetadata() map[string]any {
+func (c *Connection) GetMetadata() *ConnectionMetadata {
 	if c == nil {
 		return nil
 	}
@@ -693,6 +725,29 @@ func (c *Connection) GetUpdatedAt() *float64 {
 	return c.UpdatedAt
 }
 
+// ConnectionMetadataInput - Attach your own consumer specific metadata
+type ConnectionMetadataInput struct {
+	AdditionalProperties map[string]any `additionalProperties:"true" json:"-"`
+}
+
+func (c ConnectionMetadataInput) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *ConnectionMetadataInput) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (c *ConnectionMetadataInput) GetAdditionalProperties() map[string]any {
+	if c == nil {
+		return nil
+	}
+	return c.AdditionalProperties
+}
+
 type ConnectionDefaults struct {
 	ID      *string           `json:"id,omitempty"`
 	Options []FormFieldOption `json:"options,omitempty"`
@@ -745,7 +800,7 @@ type ConnectionInput struct {
 	// Connection settings. Values will persist to `form_fields` with corresponding id
 	Settings map[string]any `json:"settings,omitempty"`
 	// Attach your own consumer specific metadata
-	Metadata      map[string]any            `json:"metadata,omitempty"`
+	Metadata      *ConnectionMetadataInput  `json:"metadata,omitempty"`
 	Configuration []ConnectionConfiguration `json:"configuration,omitempty"`
 	// List of custom mappings configured for this connection
 	CustomMappings []CustomMappingInput `json:"custom_mappings,omitempty"`
@@ -769,7 +824,7 @@ func (c *ConnectionInput) GetSettings() map[string]any {
 	return c.Settings
 }
 
-func (c *ConnectionInput) GetMetadata() map[string]any {
+func (c *ConnectionInput) GetMetadata() *ConnectionMetadataInput {
 	if c == nil {
 		return nil
 	}

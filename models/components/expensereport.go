@@ -141,8 +141,10 @@ type ExpenseReport struct {
 	// The accounting period the expense report is posted to.
 	AccountingPeriod *AccountingPeriod `json:"accounting_period,omitempty"`
 	// Expense line items linked to this expense report.
-	LineItems  []ExpenseReportLineItem `json:"line_items"`
-	Subsidiary *LinkedSubsidiary       `json:"subsidiary,omitempty"`
+	LineItems []ExpenseReportLineItem `json:"line_items"`
+	// Optional reference identifier for the transaction.
+	Reference  *string           `json:"reference,omitempty"`
+	Subsidiary *LinkedSubsidiary `json:"subsidiary,omitempty"`
 	// A list of linked tracking categories.
 	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// Amounts are including tax
@@ -324,6 +326,13 @@ func (e *ExpenseReport) GetLineItems() []ExpenseReportLineItem {
 	return e.LineItems
 }
 
+func (e *ExpenseReport) GetReference() *string {
+	if e == nil {
+		return nil
+	}
+	return e.Reference
+}
+
 func (e *ExpenseReport) GetSubsidiary() *LinkedSubsidiary {
 	if e == nil {
 		return nil
@@ -445,8 +454,10 @@ type ExpenseReportInput struct {
 	// The accounting period the expense report is posted to.
 	AccountingPeriod *AccountingPeriod `json:"accounting_period,omitempty"`
 	// Expense line items linked to this expense report.
-	LineItems  []ExpenseReportLineItemInput `json:"line_items"`
-	Subsidiary *LinkedSubsidiaryInput       `json:"subsidiary,omitempty"`
+	LineItems []ExpenseReportLineItemInput `json:"line_items"`
+	// Optional reference identifier for the transaction.
+	Reference  *string                `json:"reference,omitempty"`
+	Subsidiary *LinkedSubsidiaryInput `json:"subsidiary,omitempty"`
 	// A list of linked tracking categories.
 	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// Amounts are including tax
@@ -609,6 +620,13 @@ func (e *ExpenseReportInput) GetLineItems() []ExpenseReportLineItemInput {
 		return []ExpenseReportLineItemInput{}
 	}
 	return e.LineItems
+}
+
+func (e *ExpenseReportInput) GetReference() *string {
+	if e == nil {
+		return nil
+	}
+	return e.Reference
 }
 
 func (e *ExpenseReportInput) GetSubsidiary() *LinkedSubsidiaryInput {

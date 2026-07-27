@@ -45,6 +45,8 @@ type AccountingEmployeesAllRequest struct {
 	Fields *string `queryParam:"style=form,explode=true,name=fields"`
 	// Apply filters
 	Filter *components.AccountingEmployeesFilter `queryParam:"style=deepObject,explode=true,name=filter"`
+	// Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
+	PassThrough map[string]any `queryParam:"style=deepObject,explode=true,name=pass_through"`
 }
 
 func (a AccountingEmployeesAllRequest) MarshalJSON() ([]byte, error) {
@@ -112,6 +114,13 @@ func (a *AccountingEmployeesAllRequest) GetFilter() *components.AccountingEmploy
 		return nil
 	}
 	return a.Filter
+}
+
+func (a *AccountingEmployeesAllRequest) GetPassThrough() map[string]any {
+	if a == nil {
+		return nil
+	}
+	return a.PassThrough
 }
 
 type AccountingEmployeesAllResponse struct {

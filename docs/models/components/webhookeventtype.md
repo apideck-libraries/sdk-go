@@ -121,6 +121,9 @@ custom := components.WebhookEventType("custom_value")
 | `WebhookEventTypeHrisCompanyCreated`                   | hris.company.created                                   |
 | `WebhookEventTypeHrisCompanyUpdated`                   | hris.company.updated                                   |
 | `WebhookEventTypeHrisCompanyDeleted`                   | hris.company.deleted                                   |
+| `WebhookEventTypeHrisTimeOffRequestCreated`            | hris.time-off-request.created                          |
+| `WebhookEventTypeHrisTimeOffRequestUpdated`            | hris.time-off-request.updated                          |
+| `WebhookEventTypeHrisTimeOffRequestDeleted`            | hris.time-off-request.deleted                          |
 | `WebhookEventTypeFileStorageFileCreated`               | file-storage.file.created                              |
 | `WebhookEventTypeFileStorageFileUpdated`               | file-storage.file.updated                              |
 | `WebhookEventTypeFileStorageFileDeleted`               | file-storage.file.deleted                              |

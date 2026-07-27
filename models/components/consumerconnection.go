@@ -2,6 +2,42 @@
 
 package components
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/utils"
+)
+
+// Metadata - Attach your own consumer specific metadata
+type Metadata struct {
+	// Normalized identifier of the authorized organization, copied from the connector-specific setting (e.g. Xero tenant_id, QuickBooks realm_id, NetSuite account_id).
+	CompanyID            *string        `json:"company_id,omitempty"`
+	AdditionalProperties map[string]any `additionalProperties:"true" json:"-"`
+}
+
+func (m Metadata) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(m, "", false)
+}
+
+func (m *Metadata) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &m, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *Metadata) GetCompanyID() *string {
+	if m == nil {
+		return nil
+	}
+	return m.CompanyID
+}
+
+func (m *Metadata) GetAdditionalProperties() map[string]any {
+	if m == nil {
+		return nil
+	}
+	return m.AdditionalProperties
+}
+
 type ConsumerConnection struct {
 	ID         *string `json:"id,omitempty"`
 	Name       *string `json:"name,omitempty"`
@@ -18,9 +54,9 @@ type ConsumerConnection struct {
 	// Connection settings. Values will persist to `form_fields` with corresponding id
 	Settings map[string]any `json:"settings,omitempty"`
 	// Attach your own consumer specific metadata
-	Metadata  map[string]any `json:"metadata,omitempty"`
-	CreatedAt *string        `json:"created_at,omitempty"`
-	UpdatedAt *string        `json:"updated_at,omitempty"`
+	Metadata  *Metadata `json:"metadata,omitempty"`
+	CreatedAt *string   `json:"created_at,omitempty"`
+	UpdatedAt *string   `json:"updated_at,omitempty"`
 	// [Connection state flow](#section/Connection-state)
 	State *ConnectionState `json:"state,omitempty"`
 	// The operational health status of the connection
@@ -115,7 +151,7 @@ func (c *ConsumerConnection) GetSettings() map[string]any {
 	return c.Settings
 }
 
-func (c *ConsumerConnection) GetMetadata() map[string]any {
+func (c *ConsumerConnection) GetMetadata() *Metadata {
 	if c == nil {
 		return nil
 	}
