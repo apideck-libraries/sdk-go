@@ -155,9 +155,9 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *Apideck {
 	sdk := &Apideck{
-		SDKVersion: "0.28.1",
+		SDKVersion: "0.28.2",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 0.28.1 2.924.0 10.28.2 github.com/apideck-libraries/sdk-go",
+			UserAgent:  "speakeasy-sdk/go 0.28.2 2.924.0 10.28.2 github.com/apideck-libraries/sdk-go",
 			Globals:    globals.Globals{},
 			ServerList: ServerList,
 		},
