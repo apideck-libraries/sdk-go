@@ -46,6 +46,7 @@ func main() {
             UpdatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
             CreatedSince: types.MustNewTimeFromString("2020-09-30T07:43:32.000Z"),
             Number: sdkgo.Pointer("OIT00546"),
+            CustomerID: sdkgo.Pointer("123abc"),
         },
         PassThrough: map[string]any{
             "search": "San Francisco",

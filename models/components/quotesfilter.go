@@ -12,6 +12,8 @@ type QuotesFilter struct {
 	CreatedSince *time.Time `queryParam:"name=created_since"`
 	// Quote number to search for
 	Number *string `queryParam:"name=number"`
+	// Filter by customer id
+	CustomerID *string `queryParam:"name=customer_id"`
 }
 
 func (q QuotesFilter) MarshalJSON() ([]byte, error) {
@@ -44,4 +46,11 @@ func (q *QuotesFilter) GetNumber() *string {
 		return nil
 	}
 	return q.Number
+}
+
+func (q *QuotesFilter) GetCustomerID() *string {
+	if q == nil {
+		return nil
+	}
+	return q.CustomerID
 }
