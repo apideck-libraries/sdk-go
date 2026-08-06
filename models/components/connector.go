@@ -233,6 +233,8 @@ type Connector struct {
 	PartnerSignupURL *string `json:"partner_signup_url,omitempty"`
 	// Set to `true` when the connector offers a free trial. Use `signup_url` to sign up for a free trial
 	FreeTrialAvailable *bool `json:"free_trial_available,omitempty"`
+	// Service ids of connectors this connector's connections can be migrated to via the Vault connectionsMigrate operation.
+	MigrationTargets []string `json:"migration_targets,omitempty"`
 	// Type of authorization used by the connector
 	AuthType *ConnectorAuthType `json:"auth_type,omitempty"`
 	// Indicates whether a connector only supports authentication. In this case the connector is not mapped to a Unified API, but can be used with the Proxy API
@@ -338,6 +340,13 @@ func (c *Connector) GetFreeTrialAvailable() *bool {
 		return nil
 	}
 	return c.FreeTrialAvailable
+}
+
+func (c *Connector) GetMigrationTargets() []string {
+	if c == nil {
+		return nil
+	}
+	return c.MigrationTargets
 }
 
 func (c *Connector) GetAuthType() *ConnectorAuthType {

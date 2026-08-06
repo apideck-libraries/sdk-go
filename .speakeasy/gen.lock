@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 30cc01ec3f12ef0cce72cd50b7ead2be
-  docVersion: 10.29.1
-  speakeasyVersion: 1.791.0
-  generationVersion: 2.924.0
-  releaseVersion: 0.29.0
-  configChecksum: 6e9bff0abc20fa3199487b4eec8d958f
+  docChecksum: 8eb7746fd60545ccbdd89ac13589745a
+  docVersion: 10.32.0
+  speakeasyVersion: 1.791.4
+  generationVersion: 2.926.8
+  releaseVersion: 0.30.0
+  configChecksum: a07a1d1603c1b5d2e20355426bacb6e0
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: 76fee18b-6289-481c-963e-84139782ddba
-  pristine_commit_hash: b6c8fe91a907939e74ab5a5fee392dd79908d656
-  pristine_tree_hash: b362426deb8702dbfc68d030e119f7ffd4f324ca
+  generation_id: eb0bb036-0cd5-49ab-9e36-62a867a111df
+  pristine_commit_hash: 192cb97957631044e9604dd947cf6d0a6996a282
+  pristine_tree_hash: c18e5b4c6556b195dd07d372fc90dce9c8289a8b
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: d800a06c77eca75b00ead46c9a8ef3985533ce72
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:320657d0018703a23d23e139567b06f268374974
-    pristine_git_object: f9c8989d34ce25d6cecd60850040d864fd5df7d2
+    last_write_checksum: sha1:fe18418473f5e04a6bdf3957fedc42a6bcb4b443
+    pristine_git_object: 4c3f6b04fe19e13d5c62814f4f565b73d678a473
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:1408555013a145bf95d6b88b27c4a688d3625fb0
@@ -206,8 +206,8 @@ trackedFiles:
     pristine_git_object: d52581dad6ac5b4cd620bcce36bbfb45fb2df695
   connections.go:
     id: ac4365dc1b72
-    last_write_checksum: sha1:879cd7c0f33d5b115799d2391b067ac1fbe70169
-    pristine_git_object: 6fa1d091fd8fd62c0041ece6796f3976677071f2
+    last_write_checksum: sha1:55495ed5c42ff36ed45fd61142a5f3c6887747ce
+    pristine_git_object: 3c0006185fa7a5a2dcabc0a3f5639fe15d4cb1ef
   connectionsettings.go:
     id: 7d258c9c635d
     last_write_checksum: sha1:7aab204eeaf0bec4e7649a35088682d318a06637
@@ -250,8 +250,8 @@ trackedFiles:
     pristine_git_object: 1530c15497c5632f8413bf4cebc1c4c48d19a109
   crm.go:
     id: c3adfd9e8d89
-    last_write_checksum: sha1:67a8dfe0281bcc05c80a1f7818157ceffbc08bd3
-    pristine_git_object: 97620b9a6dd30ac419d50cb969b0f8afd17df6a7
+    last_write_checksum: sha1:94f79003c3f9930920109c023d860e56e38ad372
+    pristine_git_object: b323ca45dee3f549d6339684350428b9385de772
   customers.go:
     id: a1d3d926ce55
     last_write_checksum: sha1:727bc401ae3a08e18b96702c37810b8ec88b71b3
@@ -280,6 +280,14 @@ trackedFiles:
     id: f9e9d34c749d
     last_write_checksum: sha1:9efb297de58ca179cbf47ed14a27ec57916acbd1
     pristine_git_object: fec74e8b6e105114b54398eb774ae0574960f86e
+  docs/models/apierrors/conflictresponse.md:
+    id: 3f64b1f99d29
+    last_write_checksum: sha1:70477dbf96364e4c44e555a82e167f27b67be15b
+    pristine_git_object: f2fffdcb184013645ae692c1421367bd866823d9
+  docs/models/apierrors/conflictresponsedetail.md:
+    id: 74c636518968
+    last_write_checksum: sha1:f3987692ca6fc546a9a9a069041fa9ea4951a9ea
+    pristine_git_object: 76bc84e6d9af22a0839be8c1bf04ccdcf31a9843
   docs/models/apierrors/debug.md:
     id: c7c2e0521229
     last_write_checksum: sha1:3c3cbb2317a0e6b28952eb3969f652513802cddf
@@ -932,6 +940,10 @@ trackedFiles:
     id: 8b5826935121
     last_write_checksum: sha1:28a48d861b9b6b98ed7602cd6b194d5bb53ed846
     pristine_git_object: b8bd4625f72a0c06a02a8fe184938be9ee625ac5
+  docs/models/components/connectionmigratedata.md:
+    id: 0837dc73bd9c
+    last_write_checksum: sha1:146abf433f815944f07b02d38990d2009ac4db77
+    pristine_git_object: 4ec6dd613fd9357bf9bf216006fb56c159847cc2
   docs/models/components/connectionstate.md:
     id: "643505875034"
     last_write_checksum: sha1:a1796aec4fca7e1a13d27f83729df49764689900
@@ -946,8 +958,8 @@ trackedFiles:
     pristine_git_object: 4ed28980c5477cb50d97fa746ce6b996773c2da0
   docs/models/components/connector.md:
     id: c3e2692bb99b
-    last_write_checksum: sha1:49cd1398d71ffb424637e3354fbb2ec650aad5e8
-    pristine_git_object: c50c739988e31cd2bb73706574e9adcb3ecc54bd
+    last_write_checksum: sha1:a984e15bb15ad3084d2c1150624977201f23e4e2
+    pristine_git_object: bdd222c79e86ff92b848997f18fbfdc18503c4a3
   docs/models/components/connectorauthtype.md:
     id: a5073b070de6
     last_write_checksum: sha1:bb5321d3773933e1c5faf3fde7913cb03b0e46e6
@@ -1370,12 +1382,12 @@ trackedFiles:
     pristine_git_object: 1e8286c005f9ffbfd6a2113ca5667eca347d1370
   docs/models/components/customer.md:
     id: c4a50385ed0c
-    last_write_checksum: sha1:08b4160d50b7d88878d552918b59226ab5e87d99
-    pristine_git_object: f3659abc89c2fea8c2b49fc886d475f433928b9e
+    last_write_checksum: sha1:50391320c0d5988fdca2c24972002446d22d7864
+    pristine_git_object: 46fd590c6b261d6a7082f10bb0a77811a0ad0237
   docs/models/components/customerinput.md:
     id: f269b8117696
-    last_write_checksum: sha1:2d40babb5878521bb3346bc7fcfdde201c4a908b
-    pristine_git_object: 65a6149c609f32def09227e0512a66c3a4ef745b
+    last_write_checksum: sha1:e65eec21f062d3c40c912a57f429fe3d718d4543
+    pristine_git_object: 6e15d22dd50abcbc96b245c1018fa7deb6589d0b
   docs/models/components/customersfilter.md:
     id: 5912443a5c51
     last_write_checksum: sha1:6619866a3974551321686cd6b8896227d8528916
@@ -2580,6 +2592,10 @@ trackedFiles:
     id: 267ae6be544c
     last_write_checksum: sha1:6fb1dac1b83a4a1fbbd66c79a7c881220e9faf17
     pristine_git_object: 4578a61554e2159345064a374540ae6262643281
+  docs/models/components/getlistmembersresponse.md:
+    id: ae4a9b3af160
+    last_write_checksum: sha1:b783b69e3dff9ade397854cbb0e9ed18731d9353
+    pristine_git_object: 05e23af36bfaa5d1c98e6a1e51598aa4487f3e51
   docs/models/components/getlistresponse.md:
     id: 943b33058376
     last_write_checksum: sha1:f510544ddf1cf32da9c694a002ec1cb182c360a6
@@ -3164,6 +3180,10 @@ trackedFiles:
     id: e8f29fdfc91a
     last_write_checksum: sha1:0617b242864e3159234dfae0205f094c7d595f17
     pristine_git_object: e28dfa13b4856a9ba5f6c9a84660aa617ed5f4ae
+  docs/models/components/listmember.md:
+    id: c2311dd0c37d
+    last_write_checksum: sha1:13c0ca2ef82891e403fa26702ed3a472aee45e0e
+    pristine_git_object: 757889e3a7dcf34b8e3eec959f52d494b4002e3b
   docs/models/components/listtype.md:
     id: c20ca87ff051
     last_write_checksum: sha1:43d244fbc69d93ca7fa8d9c049674e6a56f89304
@@ -3774,12 +3794,12 @@ trackedFiles:
     pristine_git_object: f50ce6e037452b97c20614a7b5b310166dccaa21
   docs/models/components/supplier.md:
     id: 46b04bb397ac
-    last_write_checksum: sha1:43a3534de0467972092005f1dc168c56e5627e11
-    pristine_git_object: d00431c5111d6c07b0c80437610ca22790650734
+    last_write_checksum: sha1:90460a1826e5a304e1663b809095d7127604d4d2
+    pristine_git_object: 4fa812b5f737692f20d56046f408c6b7ab7ef6ff
   docs/models/components/supplierinput.md:
     id: be28c60113d5
-    last_write_checksum: sha1:7ef25ff197d5c200c40b49f075d3d1089962b02b
-    pristine_git_object: 78959ddd8bdb8ba108e1dcc2fad2a12d482f507d
+    last_write_checksum: sha1:2adc758b7b160a596446cd561bffc2fb1a2f1063
+    pristine_git_object: 341f57c8aca6e3e7d4bc35d54374b052a2ecf212
   docs/models/components/suppliersfilter.md:
     id: b9da9071aec8
     last_write_checksum: sha1:3c6231db934cf25287904f6f13dc51d9be927503
@@ -4286,8 +4306,8 @@ trackedFiles:
     pristine_git_object: 63d6c7bd5b09632ba369b3acb489cb27d0d5e6c5
   docs/models/components/webhookeventtype.md:
     id: b979b3765280
-    last_write_checksum: sha1:dc40f71c0adc6b491028cc25661a2be19b58f0b6
-    pristine_git_object: ac610c049b1129e842ef06abd2bbf15cac5b4a0a
+    last_write_checksum: sha1:c1022b79aa14fc81c379433201d9f03c593652fc
+    pristine_git_object: 5c67018f02b5bf509104c32f5983ad50295d70a2
   docs/models/components/webhooksubscription.md:
     id: c88220e1de92
     last_write_checksum: sha1:f97c5293a19bc0cd1813595728fe11b7472eafdd
@@ -6692,6 +6712,18 @@ trackedFiles:
     id: be5b0e1aa9e7
     last_write_checksum: sha1:f50a28c332f40b9e1e5dd99bf735e5af019f37e8
     pristine_git_object: f00b15be1b33981275b20771584f09a35b2cb43b
+  docs/models/operations/crmlistmembersallglobals.md:
+    id: 719a0c50e8b2
+    last_write_checksum: sha1:318c82eb16103401ec976973dab4c85e669ec12e
+    pristine_git_object: d0b4d0253827360e5d1d9c24eb322ffdbd3493e6
+  docs/models/operations/crmlistmembersallrequest.md:
+    id: 426f27d883ec
+    last_write_checksum: sha1:e837e5dd6d0a588d2d511adba7ffcee53d5931fd
+    pristine_git_object: 8e96db0be58ae96a2e61b5825e55d405587c8bdc
+  docs/models/operations/crmlistmembersallresponse.md:
+    id: da5843979791
+    last_write_checksum: sha1:4db5f5d88468f1d0103599f443569a749f180c20
+    pristine_git_object: 39a8599c732c8bc99c0d1c3915ceca594b2b944f
   docs/models/operations/crmlistsallglobals.md:
     id: 95197a6861b6
     last_write_checksum: sha1:2bfe65860649b0108503d488790a8d97d44ad1dd
@@ -8164,6 +8196,18 @@ trackedFiles:
     id: 20b2c09ecca3
     last_write_checksum: sha1:7c016f998e3a9e9b9542cf35a0805283aee13228
     pristine_git_object: bba828da99a122e49e1a0b71cdc4856a083fdc05
+  docs/models/operations/vaultconnectionsmigrateglobals.md:
+    id: e18435232986
+    last_write_checksum: sha1:7849c77e38442ed01aa5e75bdbad92105693e60f
+    pristine_git_object: 7562bf76afcf9eeed4d408a9a55b041dca61e84b
+  docs/models/operations/vaultconnectionsmigraterequest.md:
+    id: 541ff23be994
+    last_write_checksum: sha1:38e9a66bf6d23db961b6aef20e65ec294b1180b5
+    pristine_git_object: d5d6cd1b3658955945afb0cfbbe765496fda6fc3
+  docs/models/operations/vaultconnectionsmigrateresponse.md:
+    id: 8a7a1366310d
+    last_write_checksum: sha1:e9a852fc836631092d0575ca5df03cd64e5c34be
+    pristine_git_object: 31256ae336c7c7ddc1515af9da0ade6e1583ec9e
   docs/models/operations/vaultconnectionsoneglobals.md:
     id: dc673ce684fa
     last_write_checksum: sha1:c7f3d1558524bc12c19e907c6c02e59f9fa09cdd
@@ -8550,8 +8594,8 @@ trackedFiles:
     pristine_git_object: 3f642d3042508087e9238c212af45eefa1c2dbd0
   docs/sdks/connections/README.md:
     id: 3ef8931411ea
-    last_write_checksum: sha1:38c103debe64cc105de39c24f8442411628d88ae
-    pristine_git_object: f328eb7d01b47464c9339ee7f3f5a94eb5234c81
+    last_write_checksum: sha1:00245ab14171d25e745a3b701b94ce600f75b4e6
+    pristine_git_object: f2cd3e47f290d64f07f128f6b9fc0b20d32e50dd
   docs/sdks/connectionsettings/README.md:
     id: 644e68edbec9
     last_write_checksum: sha1:1e7a60e88440d70ce84d58f5fc9281c7c31dd277
@@ -8684,6 +8728,10 @@ trackedFiles:
     id: 5169c83ca089
     last_write_checksum: sha1:afb683a405c5b9096e33d1d88c121dc4f3db97e9
     pristine_git_object: 776a2d74731e018e8661bde98593c2b3efc3069e
+  docs/sdks/listmembers/README.md:
+    id: 25721cb6a379
+    last_write_checksum: sha1:378cbdf49b8e022db5c826937ce8c02d16e5b209
+    pristine_git_object: f6fce9db33cc6e081e391334189798355fb0921f
   docs/sdks/lists/README.md:
     id: 2bf91000d730
     last_write_checksum: sha1:cd25e85a611d922ba060214eca01b3f6680ee579
@@ -8960,6 +9008,10 @@ trackedFiles:
     id: 5e7fee9e9d7a
     last_write_checksum: sha1:77cf4ec078edff69460c9f0f971771693f38cdd0
     pristine_git_object: 2a6e71d30e957233b762f71895da65c1ce9f0b54
+  listmembers.go:
+    id: f80d2c442ad6
+    last_write_checksum: sha1:01c02c1fb4f6b1d75650e998903f0d4f3ffb8863
+    pristine_git_object: 85bac688ae4e91c2bcd53c294b6869d1b6d0861c
   lists.go:
     id: 50a410c2dc43
     last_write_checksum: sha1:23d3546459ed80c062b9025f04fe8cf7ef7ffbcb
@@ -8984,6 +9036,10 @@ trackedFiles:
     id: c25707ef1785
     last_write_checksum: sha1:386e0c5bf69e2ec6f11ae79362fdd4277cd50eba
     pristine_git_object: 28bf3ea9ddaf625f8aa26c76e6eea56405c47570
+  models/apierrors/conflictresponse.go:
+    id: 2df9a2ec6d8b
+    last_write_checksum: sha1:f6e99476c81f03992d83732c6596269300490df1
+    pristine_git_object: 35d5dd56fe4b346ff13ff4ec2716f0a6d5a3840c
   models/apierrors/notfoundresponse.go:
     id: 64b37be76b4c
     last_write_checksum: sha1:36a909cdfe1543986756bf0ac9685927578f53ae
@@ -9276,14 +9332,18 @@ trackedFiles:
     id: 43b8eb33b95e
     last_write_checksum: sha1:774230f6879e05ce3df97177ec31add24b665ed9
     pristine_git_object: 1334ccd1f6685648837061320f43901eb47d2f34
+  models/components/connectionmigratedata.go:
+    id: eb7a0f13d9f6
+    last_write_checksum: sha1:2c67b4fb85681cdc34551ef0c5cf6f8ca8548efb
+    pristine_git_object: 1c08c5a8dc843f26952d3d2b0734c4116853b03a
   models/components/connectionstate.go:
     id: cad0bd1a0718
     last_write_checksum: sha1:66f13d9a0667c69ed1d123d94c94297b31163d79
     pristine_git_object: fa84441eb0ee6f202df3ce4063014e45afe47b05
   models/components/connector.go:
     id: 58ff737acf12
-    last_write_checksum: sha1:0057dde9dbc38bde6649d712cda2e6685dd0513a
-    pristine_git_object: f2266111b41a0ce185bbd5326ca5b02085811d19
+    last_write_checksum: sha1:58975cbc923076cfedaddd40ed6a9d5cbebe7faf
+    pristine_git_object: 10174855906f8e75917c3e4870ea8544279413e2
   models/components/connectordoc.go:
     id: 137a440ee967
     last_write_checksum: sha1:b99bd27c3cff2cf9925a459876bd5c63d126cceb
@@ -9630,8 +9690,8 @@ trackedFiles:
     pristine_git_object: 3dd25aeaeb310cf6921919161ce6f3b0a29651ef
   models/components/customer.go:
     id: 7b4196fbf3ca
-    last_write_checksum: sha1:457663a9fa05c9c2cde64d9a994254f4fded2673
-    pristine_git_object: b3adfac6ed9504946fece83084792989e77631d3
+    last_write_checksum: sha1:b6ffc26365b70b71975d3963cd229205a7810487
+    pristine_git_object: f1741366f5c3c55e35e8a5a861069a405e6e6d2f
   models/components/customersfilter.go:
     id: e0c43c66bc8c
     last_write_checksum: sha1:37f36036f0b9d0c5808766e57a6fc39633bf5647
@@ -10536,6 +10596,10 @@ trackedFiles:
     id: 4547bfa84c82
     last_write_checksum: sha1:42fef4787e8de4560be9c47611f2f629350c0c77
     pristine_git_object: f016708902660990fc3b02f62b61c697501b7681
+  models/components/getlistmembersresponse.go:
+    id: 8b81efc43e43
+    last_write_checksum: sha1:07ad12ba692f3121aa657e5a5270e460efc8ffb6
+    pristine_git_object: e3df2abece9cfef8cfdd680d6d8353bc4787dde7
   models/components/getlistresponse.go:
     id: 074584c3f0ea
     last_write_checksum: sha1:ff4cbe161c54e5bee50a7f506d025d4309357e40
@@ -10956,6 +11020,10 @@ trackedFiles:
     id: 0aaa858ed5ff
     last_write_checksum: sha1:b7fa5b742e498e285135e2951217200014a11b87
     pristine_git_object: 83bfc25f38e74d3b90c2c721db8beabc721a52d9
+  models/components/listmember.go:
+    id: 14b9821a93bc
+    last_write_checksum: sha1:c67e16e9b8c685c0dcf51c001deeb63100db138d
+    pristine_git_object: 41e3f49f1e0c16423dcb42be15e1d0191fbc026c
   models/components/log.go:
     id: "076958063552"
     last_write_checksum: sha1:ac4517b8b7f316d1d7e4cec3b67713b93596674d
@@ -11238,8 +11306,8 @@ trackedFiles:
     pristine_git_object: fe9ab068481df0ae99a3f436c1ceedb8b86d69f3
   models/components/supplier.go:
     id: e448e9696a2c
-    last_write_checksum: sha1:e749c509996a339ca2f52aa92ac1e878d4f83d6b
-    pristine_git_object: a5cc8f9dbeb6cbd51728c9fe0fbb9051b421a1bb
+    last_write_checksum: sha1:64f683e53f9b57b6b1fa839aa0c662d06b9c1877
+    pristine_git_object: 752571665364c55cd5b3c2d309bdcf5188ef7269
   models/components/suppliersfilter.go:
     id: 94b13eb6224d
     last_write_checksum: sha1:0986d45e32a794cbfebe82116294396722dc6931
@@ -11586,8 +11654,8 @@ trackedFiles:
     pristine_git_object: 3b7054b709607e06e8b16ba9bfb790acb68eee31
   models/components/webhookeventtype.go:
     id: eb6328fbc2b7
-    last_write_checksum: sha1:8a02bce0ee230208253146ae09d2ec0772efdf87
-    pristine_git_object: c2855875a0c8a04a69bb6111289165c933689529
+    last_write_checksum: sha1:c2f1164dfbdf9e0deab9a3d3400a2c8c2f1c5b18
+    pristine_git_object: b6aa8938aed80cad14ccf86f7a3e5e79471ae82e
   models/components/webhooksubscription.go:
     id: 08bb704a2412
     last_write_checksum: sha1:337fa67dd6314fd7ac61a2c2fb36b666b6654af3
@@ -12392,6 +12460,10 @@ trackedFiles:
     id: 06b7c9fc5c84
     last_write_checksum: sha1:890da68bcd7aa3ce2301558e5d98f58351d60925
     pristine_git_object: 5add673dcc6969f5cdf7d14a67e55788a5341aef
+  models/operations/crmlistmembersall.go:
+    id: 354b27477162
+    last_write_checksum: sha1:bfb89bc8ed59d51cc2df3c26006704f1dbcf7180
+    pristine_git_object: 1198a2d6b7fcaba380ecf36d8f4c0bee6172fc43
   models/operations/crmlistsall.go:
     id: 81b84c9e0c61
     last_write_checksum: sha1:7d83ae9943b2f654dbfe111dc672164621235356
@@ -12876,6 +12948,10 @@ trackedFiles:
     id: 033428d91934
     last_write_checksum: sha1:44cd356c8d29a9addfc2be6a6120512bd2044cde
     pristine_git_object: ed8806f4495237edc0f2f290f92564a13b1ae433
+  models/operations/vaultconnectionsmigrate.go:
+    id: 7bd2dd7651c0
+    last_write_checksum: sha1:f0f7ad22520ace5d71e00a9da219972201fff6f8
+    pristine_git_object: 98e26b35d02f09a9c8965dca1fa957214691b070
   models/operations/vaultconnectionsone.go:
     id: 379f298bca7a
     last_write_checksum: sha1:558d37c34924746fc486e2dfb150bbb97fb675be
@@ -14818,7 +14894,7 @@ examples:
           x-apideck-service-id: "salesforce"
           x-apideck-company-id: "12345"
       requestBody:
-        application/json: {"display_id": "EMP00101", "display_name": "Windsurf Shop", "company_name": "SpaceX", "company_id": "12345", "customer_category": "Insurance", "title": "CEO", "first_name": "Elon", "middle_name": "D.", "last_name": "Musk", "suffix": "Jr.", "individual": true, "project": false, "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "websites": [{"id": "12345", "url": "http://example.com", "type": "primary"}], "bank_accounts": [{"bank_name": "Monzo", "account_number": "123465", "account_name": "SPACEX LLC", "account_type": "credit_card", "iban": "CH2989144532982975332", "bic": "AUDSCHGGXXX", "routing_number": "012345678", "bsb_number": "062-001", "branch_identifier": "001", "bank_code": "BNH", "currency": "USD"}], "notes": "Some notes about this customer", "tax_rate": {"id": "123456", "code": "N-T", "rate": 10}, "tax_number": "US123945459", "taxable": true, "currency": "USD", "account": null, "parent": {"id": "12345", "name": "Windsurf Shop"}, "status": "active", "payment_method": "cash", "terms": "Net 30 days", "terms_id": "12345", "channel": "email", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": null}], "row_version": "1-12345", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}]}
+        application/json: {"display_id": "EMP00101", "display_name": "Windsurf Shop", "company_name": "SpaceX", "company_id": "12345", "subsidiary": null, "customer_category": "Insurance", "title": "CEO", "first_name": "Elon", "middle_name": "D.", "last_name": "Musk", "suffix": "Jr.", "individual": true, "project": false, "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "websites": [{"id": "12345", "url": "http://example.com", "type": "primary"}], "bank_accounts": [{"bank_name": "Monzo", "account_number": "123465", "account_name": "SPACEX LLC", "account_type": "credit_card", "iban": "CH2989144532982975332", "bic": "AUDSCHGGXXX", "routing_number": "012345678", "bsb_number": "062-001", "branch_identifier": "001", "bank_code": "BNH", "currency": "USD"}], "notes": "Some notes about this customer", "tax_rate": {"id": "123456", "code": "N-T", "rate": 10}, "tax_number": "US123945459", "taxable": true, "currency": "USD", "account": null, "parent": {"id": "12345", "name": "Windsurf Shop"}, "status": "active", "payment_method": "cash", "terms": "Net 30 days", "terms_id": "12345", "channel": "email", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": null}], "row_version": "1-12345", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}]}
       responses:
         "201":
           application/json: {"status_code": 200, "status": "OK", "service": "xero", "resource": "customers", "operation": "add", "data": {"id": "12345"}}
@@ -14875,7 +14951,7 @@ examples:
           x-apideck-company-id: "12345"
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "service": "xero", "resource": "customers", "operation": "one", "data": {"id": "12345", "downstream_id": "12345", "display_id": "EMP00101", "display_name": "Windsurf Shop", "company_name": "SpaceX", "company_id": "12345", "customer_category": "Insurance", "title": "CEO", "first_name": "Elon", "middle_name": "D.", "last_name": "Musk", "suffix": "Jr.", "individual": true, "project": false, "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "websites": [{"id": "12345", "url": "http://example.com", "type": "primary"}], "bank_accounts": [{"bank_name": "Monzo", "account_number": "123465", "account_name": "SPACEX LLC", "account_type": "credit_card", "iban": "CH2989144532982975332", "bic": "AUDSCHGGXXX", "routing_number": "012345678", "bsb_number": "062-001", "branch_identifier": "001", "bank_code": "BNH", "currency": "USD"}], "notes": "Some notes about this customer", "tax_rate": {"id": "123456", "code": "N-T", "name": "GST on Purchases", "rate": 10}, "tax_number": "US123945459", "taxable": true, "currency": "USD", "account": {"id": "123456", "name": "Bank account", "nominal_code": "N091", "code": "453", "parent_id": "123456", "display_id": "123456"}, "parent": {"id": "12345", "name": "Windsurf Shop"}, "status": "active", "payment_method": "cash", "terms": "Net 30 days", "terms_id": "12345", "channel": "email", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "updated_by": "12345", "created_by": "12345", "updated_at": "2020-09-30T07:43:32.000Z", "created_at": "2020-09-30T07:43:32.000Z", "row_version": "1-12345", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}]}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}}
+          application/json: {"status_code": 200, "status": "OK", "service": "xero", "resource": "customers", "operation": "one", "data": {"id": "12345", "downstream_id": "12345", "display_id": "EMP00101", "display_name": "Windsurf Shop", "company_name": "SpaceX", "company_id": "12345", "subsidiary": {"id": "12345", "display_id": "123456", "name": "Acme Inc."}, "customer_category": "Insurance", "title": "CEO", "first_name": "Elon", "middle_name": "D.", "last_name": "Musk", "suffix": "Jr.", "individual": true, "project": false, "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "websites": [{"id": "12345", "url": "http://example.com", "type": "primary"}], "bank_accounts": [{"bank_name": "Monzo", "account_number": "123465", "account_name": "SPACEX LLC", "account_type": "credit_card", "iban": "CH2989144532982975332", "bic": "AUDSCHGGXXX", "routing_number": "012345678", "bsb_number": "062-001", "branch_identifier": "001", "bank_code": "BNH", "currency": "USD"}], "notes": "Some notes about this customer", "tax_rate": {"id": "123456", "code": "N-T", "name": "GST on Purchases", "rate": 10}, "tax_number": "US123945459", "taxable": true, "currency": "USD", "account": {"id": "123456", "name": "Bank account", "nominal_code": "N091", "code": "453", "parent_id": "123456", "display_id": "123456"}, "parent": {"id": "12345", "name": "Windsurf Shop"}, "status": "active", "payment_method": "cash", "terms": "Net 30 days", "terms_id": "12345", "channel": "email", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "updated_by": "12345", "created_by": "12345", "updated_at": "2020-09-30T07:43:32.000Z", "created_at": "2020-09-30T07:43:32.000Z", "row_version": "1-12345", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}]}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
         "401":
@@ -14927,7 +15003,7 @@ examples:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
           x-apideck-service-id: "salesforce"
       requestBody:
-        application/json: {"display_id": "EMP00101", "display_name": "Windsurf Shop", "company_name": "SpaceX", "company_id": "12345", "customer_category": "Insurance", "title": "CEO", "first_name": "Elon", "middle_name": "D.", "last_name": "Musk", "suffix": "Jr.", "individual": true, "project": false, "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "websites": [{"id": "12345", "url": "http://example.com", "type": "primary"}], "bank_accounts": [{"bank_name": "Monzo", "account_number": "123465", "account_name": "SPACEX LLC", "account_type": "credit_card", "iban": "CH2989144532982975332", "bic": "AUDSCHGGXXX", "routing_number": "012345678", "bsb_number": "062-001", "branch_identifier": "001", "bank_code": "BNH", "currency": "USD"}], "notes": "Some notes about this customer", "tax_rate": {"id": "123456", "code": "N-T", "rate": 10}, "tax_number": "US123945459", "taxable": true, "currency": "USD", "account": {"id": "123456", "name": "Bank account", "nominal_code": "N091", "code": "453", "parent_id": "123456", "display_id": "123456"}, "parent": {"id": "12345", "name": "Windsurf Shop"}, "status": "active", "payment_method": "cash", "terms": "Net 30 days", "terms_id": "12345", "channel": "email", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "row_version": "1-12345", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}]}
+        application/json: {"display_id": "EMP00101", "display_name": "Windsurf Shop", "company_name": "SpaceX", "company_id": "12345", "subsidiary": {"display_id": "123456", "name": "Acme Inc."}, "customer_category": "Insurance", "title": "CEO", "first_name": "Elon", "middle_name": "D.", "last_name": "Musk", "suffix": "Jr.", "individual": true, "project": false, "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "websites": [{"id": "12345", "url": "http://example.com", "type": "primary"}], "bank_accounts": [{"bank_name": "Monzo", "account_number": "123465", "account_name": "SPACEX LLC", "account_type": "credit_card", "iban": "CH2989144532982975332", "bic": "AUDSCHGGXXX", "routing_number": "012345678", "bsb_number": "062-001", "branch_identifier": "001", "bank_code": "BNH", "currency": "USD"}], "notes": "Some notes about this customer", "tax_rate": {"id": "123456", "code": "N-T", "rate": 10}, "tax_number": "US123945459", "taxable": true, "currency": "USD", "account": {"id": "123456", "name": "Bank account", "nominal_code": "N091", "code": "453", "parent_id": "123456", "display_id": "123456"}, "parent": {"id": "12345", "name": "Windsurf Shop"}, "status": "active", "payment_method": "cash", "terms": "Net 30 days", "terms_id": "12345", "channel": "email", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "row_version": "1-12345", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}]}
       responses:
         "200":
           application/json: {"status_code": 200, "status": "OK", "service": "xero", "resource": "customers", "operation": "update", "data": {"id": "12345"}}
@@ -15088,7 +15164,7 @@ examples:
           x-apideck-service-id: "salesforce"
           x-apideck-company-id: "12345"
       requestBody:
-        application/json: {"display_id": "EMP00101", "display_name": "Windsurf Shop", "company_name": "SpaceX", "company_id": "12345", "supplier_category": "Insurance", "title": "CEO", "first_name": "Elon", "middle_name": "D.", "last_name": "Musk", "suffix": "Jr.", "individual": true, "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "websites": [{"id": "12345", "url": "http://example.com", "type": "primary"}], "bank_accounts": [{"bank_name": "Monzo", "account_number": "123465", "account_name": "SPACEX LLC", "account_type": "credit_card", "iban": "CH2989144532982975332", "bic": "AUDSCHGGXXX", "routing_number": "012345678", "bsb_number": "062-001", "branch_identifier": "001", "bank_code": "BNH", "currency": "USD"}], "notes": "Some notes about this supplier", "tax_rate": {"id": "123456", "code": "N-T", "rate": 10}, "tax_number": "US123945459", "taxable": true, "currency": "USD", "account": {"id": "123456", "name": "Bank account", "nominal_code": "N091", "code": "453", "parent_id": "123456", "display_id": "123456"}, "status": "active", "payment_method": "cash", "terms": "Net 30 days", "terms_id": "12345", "channel": "email", "issued_method": "Email", "issued_email": "john.doe@example.com", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "tax_details": [{"type": "GST on Purchases", "number": "123456", "is_transaction_tax": true, "is_primary_tax": true}], "tax_status_details": [{"country": "US", "transaction_tax_status": "taxable"}], "row_version": "1-12345", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}], "subsidiary_id": "12345", "integration_system_id": "12345"}
+        application/json: {"display_id": "EMP00101", "display_name": "Windsurf Shop", "company_name": "SpaceX", "company_id": "12345", "subsidiary": {"display_id": "123456", "name": "Acme Inc."}, "supplier_category": "Insurance", "title": "CEO", "first_name": "Elon", "middle_name": "D.", "last_name": "Musk", "suffix": "Jr.", "individual": true, "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "websites": [{"id": "12345", "url": "http://example.com", "type": "primary"}], "bank_accounts": [{"bank_name": "Monzo", "account_number": "123465", "account_name": "SPACEX LLC", "account_type": "credit_card", "iban": "CH2989144532982975332", "bic": "AUDSCHGGXXX", "routing_number": "012345678", "bsb_number": "062-001", "branch_identifier": "001", "bank_code": "BNH", "currency": "USD"}], "notes": "Some notes about this supplier", "tax_rate": {"id": "123456", "code": "N-T", "rate": 10}, "tax_number": "US123945459", "taxable": true, "currency": "USD", "account": {"id": "123456", "name": "Bank account", "nominal_code": "N091", "code": "453", "parent_id": "123456", "display_id": "123456"}, "status": "active", "payment_method": "cash", "terms": "Net 30 days", "terms_id": "12345", "channel": "email", "issued_method": "Email", "issued_email": "john.doe@example.com", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "tax_details": [{"type": "GST on Purchases", "number": "123456", "is_transaction_tax": true, "is_primary_tax": true}], "tax_status_details": [{"country": "US", "transaction_tax_status": "taxable"}], "row_version": "1-12345", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}], "subsidiary_id": "12345", "integration_system_id": "12345"}
       responses:
         "201":
           application/json: {"status_code": 200, "status": "OK", "service": "xero", "resource": "payments", "operation": "add", "data": {"id": "12345"}}
@@ -15145,7 +15221,7 @@ examples:
           x-apideck-company-id: "12345"
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "service": "xero", "resource": "suppliers", "operation": "one", "data": {"id": "12345", "downstream_id": "12345", "display_id": "EMP00101", "display_name": "Windsurf Shop", "company_name": "SpaceX", "company_id": "12345", "supplier_category": "Insurance", "title": "CEO", "first_name": "Elon", "middle_name": "D.", "last_name": "Musk", "suffix": "Jr.", "individual": true, "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "websites": [{"id": "12345", "url": "http://example.com", "type": "primary"}], "bank_accounts": [{"bank_name": "Monzo", "account_number": "123465", "account_name": "SPACEX LLC", "account_type": "credit_card", "iban": "CH2989144532982975332", "bic": "AUDSCHGGXXX", "routing_number": "012345678", "bsb_number": "062-001", "branch_identifier": "001", "bank_code": "BNH", "currency": "USD"}], "notes": "Some notes about this supplier", "tax_rate": {"id": "123456", "code": "N-T", "name": "GST on Purchases", "rate": 10}, "tax_number": "US123945459", "taxable": true, "currency": "USD", "account": {"id": "123456", "name": "Bank account", "nominal_code": "N091", "code": "453", "parent_id": "123456", "display_id": "123456"}, "status": "active", "payment_method": "cash", "terms": "Net 30 days", "terms_id": "12345", "channel": "email", "issued_method": "Email", "issued_email": "john.doe@example.com", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "tax_details": [{"type": "GST on Purchases", "number": "123456", "is_transaction_tax": true, "is_primary_tax": true}], "tax_status_details": [{"country": "US", "transaction_tax_status": "taxable"}], "updated_by": "12345", "created_by": "12345", "updated_at": "2020-09-30T07:43:32.000Z", "created_at": "2020-09-30T07:43:32.000Z", "row_version": "1-12345", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}], "subsidiary_id": "12345", "integration_system_id": "12345"}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}}
+          application/json: {"status_code": 200, "status": "OK", "service": "xero", "resource": "suppliers", "operation": "one", "data": {"id": "12345", "downstream_id": "12345", "display_id": "EMP00101", "display_name": "Windsurf Shop", "company_name": "SpaceX", "company_id": "12345", "subsidiary": {"id": "12345", "display_id": "123456", "name": "Acme Inc."}, "supplier_category": "Insurance", "title": "CEO", "first_name": "Elon", "middle_name": "D.", "last_name": "Musk", "suffix": "Jr.", "individual": true, "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "websites": [{"id": "12345", "url": "http://example.com", "type": "primary"}], "bank_accounts": [{"bank_name": "Monzo", "account_number": "123465", "account_name": "SPACEX LLC", "account_type": "credit_card", "iban": "CH2989144532982975332", "bic": "AUDSCHGGXXX", "routing_number": "012345678", "bsb_number": "062-001", "branch_identifier": "001", "bank_code": "BNH", "currency": "USD"}], "notes": "Some notes about this supplier", "tax_rate": {"id": "123456", "code": "N-T", "name": "GST on Purchases", "rate": 10}, "tax_number": "US123945459", "taxable": true, "currency": "USD", "account": {"id": "123456", "name": "Bank account", "nominal_code": "N091", "code": "453", "parent_id": "123456", "display_id": "123456"}, "status": "active", "payment_method": "cash", "terms": "Net 30 days", "terms_id": "12345", "channel": "email", "issued_method": "Email", "issued_email": "john.doe@example.com", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "tax_details": [{"type": "GST on Purchases", "number": "123456", "is_transaction_tax": true, "is_primary_tax": true}], "tax_status_details": [{"country": "US", "transaction_tax_status": "taxable"}], "updated_by": "12345", "created_by": "12345", "updated_at": "2020-09-30T07:43:32.000Z", "created_at": "2020-09-30T07:43:32.000Z", "row_version": "1-12345", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}], "subsidiary_id": "12345", "integration_system_id": "12345"}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
         "401":
@@ -15198,7 +15274,7 @@ examples:
           x-apideck-service-id: "salesforce"
           x-apideck-company-id: "12345"
       requestBody:
-        application/json: {"display_id": "EMP00101", "display_name": "Windsurf Shop", "company_name": "SpaceX", "company_id": "12345", "supplier_category": "Insurance", "title": "CEO", "first_name": "Elon", "middle_name": "D.", "last_name": "Musk", "suffix": "Jr.", "individual": true, "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "websites": [{"id": "12345", "url": "http://example.com", "type": "primary"}], "bank_accounts": [{"bank_name": "Monzo", "account_number": "123465", "account_name": "SPACEX LLC", "account_type": "credit_card", "iban": "CH2989144532982975332", "bic": "AUDSCHGGXXX", "routing_number": "012345678", "bsb_number": "062-001", "branch_identifier": "001", "bank_code": "BNH", "currency": "USD"}], "notes": "Some notes about this supplier", "tax_rate": {"id": "123456", "code": "N-T", "rate": 10}, "tax_number": "US123945459", "taxable": true, "currency": "USD", "account": {"id": "123456", "name": "Bank account", "nominal_code": "N091", "code": "453", "parent_id": "123456", "display_id": "123456"}, "status": "active", "payment_method": "cash", "terms": "Net 30 days", "terms_id": "12345", "channel": "email", "issued_method": "Email", "issued_email": "john.doe@example.com", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "tax_details": [{"type": "GST on Purchases", "number": "123456", "is_transaction_tax": true, "is_primary_tax": true}], "tax_status_details": [{"country": "US", "transaction_tax_status": "taxable"}], "row_version": "1-12345", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}], "subsidiary_id": "12345", "integration_system_id": "12345"}
+        application/json: {"display_id": "EMP00101", "display_name": "Windsurf Shop", "company_name": "SpaceX", "company_id": "12345", "subsidiary": {"display_id": "123456", "name": "Acme Inc."}, "supplier_category": "Insurance", "title": "CEO", "first_name": "Elon", "middle_name": "D.", "last_name": "Musk", "suffix": "Jr.", "individual": true, "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "websites": [{"id": "12345", "url": "http://example.com", "type": "primary"}], "bank_accounts": [{"bank_name": "Monzo", "account_number": "123465", "account_name": "SPACEX LLC", "account_type": "credit_card", "iban": "CH2989144532982975332", "bic": "AUDSCHGGXXX", "routing_number": "012345678", "bsb_number": "062-001", "branch_identifier": "001", "bank_code": "BNH", "currency": "USD"}], "notes": "Some notes about this supplier", "tax_rate": {"id": "123456", "code": "N-T", "rate": 10}, "tax_number": "US123945459", "taxable": true, "currency": "USD", "account": {"id": "123456", "name": "Bank account", "nominal_code": "N091", "code": "453", "parent_id": "123456", "display_id": "123456"}, "status": "active", "payment_method": "cash", "terms": "Net 30 days", "terms_id": "12345", "channel": "email", "issued_method": "Email", "issued_email": "john.doe@example.com", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "tax_details": [{"type": "GST on Purchases", "number": "123456", "is_transaction_tax": true, "is_primary_tax": true}], "tax_status_details": [{"country": "US", "transaction_tax_status": "taxable"}], "row_version": "1-12345", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}], "subsidiary_id": "12345", "integration_system_id": "12345"}
       responses:
         "200":
           application/json: {"status_code": 200, "status": "OK", "service": "xero", "resource": "suppliers", "operation": "update", "data": {"id": "12345"}}
@@ -29615,9 +29691,66 @@ examples:
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  crm.listMembersAll:
+    speakeasy-default-crm-list-members-all:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          raw: false
+          limit: 20
+          pass_through: {"search": "San Francisco"}
+          fields: "id,updated_at"
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "hubspot", "resource": "list-members", "operation": "all", "data": [{"id": "12345", "object_type": "contacts"}], "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}, "links": {"previous": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D", "current": "https://unify.apideck.com/crm/companies", "next": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  vault.connectionsMigrate:
+    speakeasy-default-vault-connections-migrate:
+      parameters:
+        path:
+          service_id: "pipedrive"
+          unified_api: "crm"
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+      requestBody:
+        application/json: {"target_service_id": "intuit-enterprise-suite"}
+      responses:
+        "200":
+          application/json: {"status_code": 201, "status": "OK", "data": {"id": "crm+salesforce", "service_id": "salesforce", "name": "Salesforce", "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.", "unified_api": "crm", "state": "authorized", "integration_state": "configured", "auth_type": "oauth2", "oauth_grant_type": "authorization_code", "enabled": true, "website": "https://www.salesforce.com", "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png", "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg", "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>", "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>", "settings": {"instance_url": "https://eu28.salesforce.com", "api_key": "12345xxxxxx"}, "metadata": {"account": {"name": "My Company", "id": "c01458a5-7276-41ce-bc19-639906b0450a"}, "plan": "enterprise"}, "form_fields": [{"id": "instance_url", "label": "Instance url", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": false}, {"id": "api_key", "label": "API Key", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": true}], "configuration": [{"resource": "leads", "defaults": [{"target": "custom_fields", "id": "ProductInterest", "options": [{"label": "General Channel", "options": [{"label": "General Channel", "value": "general", "option_type": "simple"}], "option_type": "group"}], "value": "GC5000 series"}]}], "configurable_resources": ["opportunities", "companies", "contacts", "leads"], "resource_schema_support": ["leads"], "resource_settings_support": ["leads"], "settings_required_for_authorization": ["client_id", "client_secret"], "subscriptions": [{"downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f", "unify_event_types": ["crm.contact.created"], "downstream_event_types": ["contacts.CREATED"], "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}", "created_at": "2020-10-01T12:00:00.000Z"}], "has_guide": true, "custom_mappings": [{"id": "hris+employees+first_aid_training", "label": "First Aid Training", "description": "First Aid Training completed after 2019-01-01", "value": "$.root.training.first_aid", "key": "first_aid_training", "required": false, "custom_field": true, "consumer_id": "test_user_id", "example": "Some value"}], "consent_state": "granted", "consents": [{"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}], "latest_consent": {"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "application_data_scopes": {"enabled": true, "updated_at": "2025-04-15T14:30:00Z", "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "health": "ok", "credentials_expire_at": 1730172800000, "last_refresh_failed_at": 1730000000000, "last_downstream_error_at": 1730000000000, "created_at": 1615563533390, "updated_at": 1616662325753}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "409":
+          application/json: {"status_code": 409, "error": "Conflict", "type_name": "ConflictError", "message": "Conflict", "detail": "A connection already exists for the target connector", "ref": "https://developers.apideck.com/errors#conflicterror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes:\n* `Apideck.Accounting.Invoices.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.CreditNotes.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.Quotes.List()`: \n  *  `request.Request.Filter` **Changed**\n"
+releaseNotes: "## Go SDK Changes:\n* `Apideck.Crm.ListMembers.List()`: **Added**\n* `Apideck.Vault.Connections.Migrate()`: **Added**\n* `Apideck.Accounting.Customers.List()`:  `response.Data[].Subsidiary` **Added**\n* `Apideck.Accounting.Customers.Create()`: \n  *  `request.Request.Customer.Subsidiary` **Added**\n* `Apideck.Accounting.Customers.Get()`:  `response.Data.Subsidiary` **Added**\n* `Apideck.Accounting.Customers.Update()`: \n  *  `request.Request.Customer.Subsidiary` **Added**\n* `Apideck.Accounting.Suppliers.List()`:  `response.Data[].Subsidiary` **Added**\n* `Apideck.Accounting.Suppliers.Create()`: \n  *  `request.Request.Supplier.Subsidiary` **Added**\n* `Apideck.Accounting.Suppliers.Get()`:  `response.Data.Subsidiary` **Added**\n* `Apideck.Accounting.Suppliers.Update()`: \n  *  `request.Request.Supplier.Subsidiary` **Added**\n* `Apideck.Connector.Connectors.List()`:  `response.Data[].MigrationTargets` **Added**\n* `Apideck.Connector.Connectors.Get()`:  `response.Data.MigrationTargets` **Added**\n* `Apideck.Webhook.Webhooks.List()`:  `response.Data[].Events[].Enum(vault.connection.migrated)` **Added**\n* `Apideck.Webhook.Webhooks.Create()`: \n  *  `request.CreateWebhookRequest.Events[].Enum(vault.connection.migrated)` **Added**\n  *  `response.Data.Events[].Enum(vault.connection.migrated)` **Added**\n* `Apideck.Webhook.Webhooks.Get()`:  `response.Data.Events[].Enum(vault.connection.migrated)` **Added**\n* `Apideck.Webhook.Webhooks.Update()`: \n  *  `request.UpdateWebhookRequest.Events[].Enum(vault.connection.migrated)` **Added**\n  *  `response.Data.Events[].Enum(vault.connection.migrated)` **Added**\n* `Apideck.Webhook.Webhooks.Delete()`:  `response.Data.Events[].Enum(vault.connection.migrated)` **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
