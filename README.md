@@ -536,6 +536,10 @@ func main() {
 * [Update](docs/sdks/leads/README.md#update) - Update lead
 * [Delete](docs/sdks/leads/README.md#delete) - Delete lead
 
+### [Crm.ListMembers](docs/sdks/listmembers/README.md)
+
+* [List](docs/sdks/listmembers/README.md#list) - List list members
+
 ### [Crm.Lists](docs/sdks/lists/README.md)
 
 * [List](docs/sdks/lists/README.md#list) - List lists
@@ -754,6 +758,7 @@ func main() {
 * [Update](docs/sdks/connections/README.md#update) - Update connection
 * [Delete](docs/sdks/connections/README.md#delete) - Deletes a connection
 * [Imports](docs/sdks/connections/README.md#imports) - Import connection
+* [Migrate](docs/sdks/connections/README.md#migrate) - Migrate connection
 * [Token](docs/sdks/connections/README.md#token) - Authorize Access Token
 
 ### [Vault.ConnectionSettings](docs/sdks/connectionsettings/README.md)

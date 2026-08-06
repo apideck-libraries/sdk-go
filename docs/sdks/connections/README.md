@@ -9,6 +9,7 @@
 * [Update](#update) - Update connection
 * [Delete](#delete) - Deletes a connection
 * [Imports](#imports) - Import connection
+* [Migrate](#migrate) - Migrate connection
 * [Token](#token) - Authorize Access Token
 
 ## List
@@ -472,6 +473,85 @@ func main() {
 | apierrors.UnauthorizedResponse    | 401                               | application/json                  |
 | apierrors.PaymentRequiredResponse | 402                               | application/json                  |
 | apierrors.NotFoundResponse        | 404                               | application/json                  |
+| apierrors.UnprocessableResponse   | 422                               | application/json                  |
+| apierrors.APIError                | 4XX, 5XX                          | \*/\*                             |
+
+## Migrate
+
+Migrate the connection to the target connector, keeping its credentials and connection state
+(settings, metadata, configuration, subscriptions, consents). The source connection record is
+removed WITHOUT revoking or disconnecting the downstream token.
+
+Available migration targets are declared per connector — refer to the connector's
+documentation page or the Connector API's `migration_targets` field.
+
+Migrated tokens carry the source connector's OAuth scopes, so operations exclusive to the
+target connector may require re-authorization.
+
+Retries are idempotent: a partially-completed migration resumes where it left off.
+
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="vault.connectionsMigrate" method="post" path="/vault/connections/{unified_api}/{service_id}/migrate" -->
+```go
+package main
+
+import(
+	"context"
+	"os"
+	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/components"
+	"github.com/apideck-libraries/sdk-go/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := sdkgo.New(
+        sdkgo.WithConsumerID("test-consumer"),
+        sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
+    )
+
+    res, err := s.Vault.Connections.Migrate(ctx, operations.VaultConnectionsMigrateRequest{
+        ServiceID: "pipedrive",
+        UnifiedAPI: "crm",
+        ConnectionMigrateData: components.ConnectionMigrateData{
+            TargetServiceID: "intuit-enterprise-suite",
+        },
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.CreateConnectionResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                  | :heavy_check_mark:                                                                                     | The context to use for the request.                                                                    |
+| `request`                                                                                              | [operations.VaultConnectionsMigrateRequest](../../models/operations/vaultconnectionsmigraterequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `opts`                                                                                                 | [][operations.Option](../../models/operations/option.md)                                               | :heavy_minus_sign:                                                                                     | The options for this request.                                                                          |
+
+### Response
+
+**[*operations.VaultConnectionsMigrateResponse](../../models/operations/vaultconnectionsmigrateresponse.md), error**
+
+### Errors
+
+| Error Type                        | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| apierrors.BadRequestResponse      | 400                               | application/json                  |
+| apierrors.UnauthorizedResponse    | 401                               | application/json                  |
+| apierrors.PaymentRequiredResponse | 402                               | application/json                  |
+| apierrors.NotFoundResponse        | 404                               | application/json                  |
+| apierrors.ConflictResponse        | 409                               | application/json                  |
 | apierrors.UnprocessableResponse   | 422                               | application/json                  |
 | apierrors.APIError                | 4XX, 5XX                          | \*/\*                             |
 

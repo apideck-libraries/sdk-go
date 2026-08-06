@@ -46,6 +46,7 @@ custom := components.WebhookEventType("custom_value")
 | `WebhookEventTypeVaultConnectionDeleted`               | vault.connection.deleted                               |
 | `WebhookEventTypeVaultConnectionCallable`              | vault.connection.callable                              |
 | `WebhookEventTypeVaultConnectionRevoked`               | vault.connection.revoked                               |
+| `WebhookEventTypeVaultConnectionMigrated`              | vault.connection.migrated                              |
 | `WebhookEventTypeVaultConnectionTokenRefreshFailed`    | vault.connection.token_refresh.failed                  |
 | `WebhookEventTypeVaultConnectionTokenRefreshPending`   | vault.connection.token_refresh.pending                 |
 | `WebhookEventTypeVaultConnectionTokenRefreshRecovered` | vault.connection.token_refresh.recovered               |

@@ -45,7 +45,8 @@ type Customer struct {
 	// The name of the company.
 	CompanyName *string `json:"company_name,omitempty"`
 	// The company ID the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
+	CompanyID  *string           `json:"company_id,omitempty"`
+	Subsidiary *LinkedSubsidiary `json:"subsidiary,omitempty"`
 	// The category/type of the customer
 	CustomerCategory *string `json:"customer_category,omitempty"`
 	// The job title of the person.
@@ -155,6 +156,13 @@ func (c *Customer) GetCompanyID() *string {
 		return nil
 	}
 	return c.CompanyID
+}
+
+func (c *Customer) GetSubsidiary() *LinkedSubsidiary {
+	if c == nil {
+		return nil
+	}
+	return c.Subsidiary
 }
 
 func (c *Customer) GetCustomerCategory() *string {
@@ -396,7 +404,8 @@ type CustomerInput struct {
 	// The name of the company.
 	CompanyName *string `json:"company_name,omitempty"`
 	// The company ID the transaction belongs to
-	CompanyID *string `json:"company_id,omitempty"`
+	CompanyID  *string                `json:"company_id,omitempty"`
+	Subsidiary *LinkedSubsidiaryInput `json:"subsidiary,omitempty"`
 	// The category/type of the customer
 	CustomerCategory *string `json:"customer_category,omitempty"`
 	// The job title of the person.
@@ -471,6 +480,13 @@ func (c *CustomerInput) GetCompanyID() *string {
 		return nil
 	}
 	return c.CompanyID
+}
+
+func (c *CustomerInput) GetSubsidiary() *LinkedSubsidiaryInput {
+	if c == nil {
+		return nil
+	}
+	return c.Subsidiary
 }
 
 func (c *CustomerInput) GetCustomerCategory() *string {
