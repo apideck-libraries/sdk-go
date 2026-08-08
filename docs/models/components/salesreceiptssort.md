@@ -1,0 +1,9 @@
+# SalesReceiptsSort
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       | Example                                                                           |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `By`                                                                              | [*components.SalesReceiptsSortBy](../../models/components/salesreceiptssortby.md) | :heavy_minus_sign:                                                                | The field on which to sort the Sales Receipts.                                    | updated_at                                                                        |
+| `Direction`                                                                       | [*components.SortDirection](../../models/components/sortdirection.md)             | :heavy_minus_sign:                                                                | The direction in which to sort the results                                        |                                                                                   |
