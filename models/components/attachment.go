@@ -21,6 +21,8 @@ type Attachment struct {
 	Reference *AttachmentReference `json:"reference,omitempty"`
 	// Optional description of the file
 	Description *string `json:"description,omitempty"`
+	// The URL to download or preview the file
+	FileURL *string `json:"file_url,omitempty"`
 	// The folder id where this attachment belong to
 	ParentFolderID *string `json:"parent_folder_id,omitempty"`
 	// The user who last updated the object.
@@ -93,6 +95,13 @@ func (a *Attachment) GetDescription() *string {
 		return nil
 	}
 	return a.Description
+}
+
+func (a *Attachment) GetFileURL() *string {
+	if a == nil {
+		return nil
+	}
+	return a.FileURL
 }
 
 func (a *Attachment) GetParentFolderID() *string {

@@ -24,6 +24,7 @@ type Accounting struct {
 	ProfitAndLoss             *ProfitAndLoss
 	JournalEntries            *JournalEntries
 	GeneralLedgerTransactions *GeneralLedgerTransactions
+	SalesReceipts             *SalesReceipts
 	PurchaseOrders            *PurchaseOrders
 	Subsidiaries              *Subsidiaries
 	Locations                 *Locations
@@ -70,6 +71,7 @@ func newAccounting(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *h
 		ProfitAndLoss:             newProfitAndLoss(rootSDK, sdkConfig, hooks),
 		JournalEntries:            newJournalEntries(rootSDK, sdkConfig, hooks),
 		GeneralLedgerTransactions: newGeneralLedgerTransactions(rootSDK, sdkConfig, hooks),
+		SalesReceipts:             newSalesReceipts(rootSDK, sdkConfig, hooks),
 		PurchaseOrders:            newPurchaseOrders(rootSDK, sdkConfig, hooks),
 		Subsidiaries:              newSubsidiaries(rootSDK, sdkConfig, hooks),
 		Locations:                 newLocations(rootSDK, sdkConfig, hooks),
