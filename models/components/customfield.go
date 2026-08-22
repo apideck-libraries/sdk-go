@@ -249,6 +249,8 @@ type CustomField2 struct {
 	ID *string `json:"id,omitempty"`
 	// Name of the custom field.
 	Name *string `json:"name"`
+	// Display name of the record a reference-type custom field points at. `value` carries that record's id; this carries its human-readable name, so a consumer does not need a second lookup to render it.
+	RefName *string `json:"ref_name,omitempty"`
 	// More information about the custom field
 	Description *string           `json:"description,omitempty"`
 	Value       *CustomFieldValue `json:"value,omitempty"`
@@ -277,6 +279,13 @@ func (c *CustomField2) GetName() *string {
 		return nil
 	}
 	return c.Name
+}
+
+func (c *CustomField2) GetRefName() *string {
+	if c == nil {
+		return nil
+	}
+	return c.RefName
 }
 
 func (c *CustomField2) GetDescription() *string {
@@ -537,6 +546,8 @@ type CustomField1 struct {
 	ID *string `json:"id"`
 	// Name of the custom field.
 	Name *string `json:"name,omitempty"`
+	// Display name of the record a reference-type custom field points at. `value` carries that record's id; this carries its human-readable name, so a consumer does not need a second lookup to render it.
+	RefName *string `json:"ref_name,omitempty"`
 	// More information about the custom field
 	Description *string            `json:"description,omitempty"`
 	Value       *CustomField1Value `json:"value,omitempty"`
@@ -565,6 +576,13 @@ func (c *CustomField1) GetName() *string {
 		return nil
 	}
 	return c.Name
+}
+
+func (c *CustomField1) GetRefName() *string {
+	if c == nil {
+		return nil
+	}
+	return c.RefName
 }
 
 func (c *CustomField1) GetDescription() *string {

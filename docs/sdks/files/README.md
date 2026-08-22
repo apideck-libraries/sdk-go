@@ -417,6 +417,7 @@ func main() {
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
         Fields: sdkgo.Pointer("id,updated_at"),
+        FollowRedirects: sdkgo.Pointer(false),
     })
     if err != nil {
         log.Fatal(err)

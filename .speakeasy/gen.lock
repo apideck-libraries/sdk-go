@@ -1,25 +1,25 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 22e7ad92dd9f5701110abebb15a61a0a
-  docVersion: 10.34.0
-  speakeasyVersion: 1.792.0
-  generationVersion: 2.927.0
-  releaseVersion: 0.31.0
-  configChecksum: 2f60488604fd0ba676722b4675e1b321
+  docChecksum: b0432f8b090f29832461c610ed2cab3a
+  docVersion: 10.44.0
+  speakeasyVersion: 1.795.1
+  generationVersion: 2.932.9
+  releaseVersion: 0.32.0
+  configChecksum: c5d9c2cf3d3661f316156c7a7800d980
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: 815ac67d-cbb2-4b8f-bfa8-86cb65b5b378
-  pristine_commit_hash: fa0471d919c03b06320b81a5b13970ef5a3d8ab0
-  pristine_tree_hash: 35ee3bbc40562654363ebd62907190b2cb3682c7
+  generation_id: e300708f-ee09-4a3a-84d3-d60c562a2d39
+  pristine_commit_hash: 777331e74b4393fc868ee919ed82f383a62c332f
+  pristine_tree_hash: 766336751302c4f2b7beeeda9af6a72f1cecafe4
 features:
   go:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     additionalProperties: 0.1.3
     constsAndDefaults: 0.1.14
-    core: 3.13.47
+    core: 3.13.48
     deepObjectParams: 0.1.1
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.3
@@ -45,7 +45,7 @@ features:
     retries: 2.84.3
     sdkHooks: 0.3.0
     typeOverrides: 2.81.1
-    unions: 2.87.8
+    unions: 2.87.9
     uploadStreams: 0.1.0
 trackedFiles:
   .devcontainer/README.md:
@@ -70,8 +70,8 @@ trackedFiles:
     pristine_git_object: 9cd0011e38cee44f38b9234d62d9187bdf79f87a
   accounting.go:
     id: df501d995c0f
-    last_write_checksum: sha1:838384085d648173df2557852322a84436c6ae57
-    pristine_git_object: 3f242a057162e9f028fd357905aa076e72c5bd61
+    last_write_checksum: sha1:59631d5de594664a8b1a33c9dd1dd092e775f97b
+    pristine_git_object: fb8c757fa4c98f0042bec5b6a9fb90229bd9a780
   activities.go:
     id: 015f1934bbce
     last_write_checksum: sha1:ce49a83eee1ac84a940b28259788555ce46d3c9e
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: d800a06c77eca75b00ead46c9a8ef3985533ce72
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:8ebf20336bb1b52ee808342b8c3dd87f9222ef88
-    pristine_git_object: c710c8572316b79246b845b277499a9ecd6d46f5
+    last_write_checksum: sha1:77a89954176ff1908a7ca9e0028e1eb597ca4c66
+    pristine_git_object: 671542cb7b745378937d80d6b171adf6bff0b7cb
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:1408555013a145bf95d6b88b27c4a688d3625fb0
@@ -432,6 +432,22 @@ trackedFiles:
     id: a62835908fda
     last_write_checksum: sha1:7d06ab68c62433c3bebf9acd8fa53391c8cb4c5e
     pristine_git_object: d76578ff3b42e892b1955ebe1e4ea2bbdae90db5
+  docs/models/components/accountingpaymentmethod.md:
+    id: 878e2c87aa77
+    last_write_checksum: sha1:f3a6d52227189e5f664685cff88b42fd9687d687
+    pristine_git_object: bc3aae73cc2a9e312b050a09b85332522a0b5110
+  docs/models/components/accountingpaymentmethodinput.md:
+    id: 7b9c2a7d6ea3
+    last_write_checksum: sha1:a6879d7ea63f3da16b1414c389341f0c63a15049
+    pristine_git_object: 9511a57e61796f5695dafd88ccdd7ce95a72782f
+  docs/models/components/accountingpaymentmethodstatus.md:
+    id: 014ea091e1a8
+    last_write_checksum: sha1:eacc26595ce5f0ecbc7f59b27d07f7a1de7a5ebd
+    pristine_git_object: 0fb3a25ba1c44025c0c66dd875a38fe4ca0cbf9b
+  docs/models/components/accountingpaymentmethodtype.md:
+    id: aadb1822e5e3
+    last_write_checksum: sha1:0be87cd2e45fd6712d4662f888b63619bd059a3e
+    pristine_git_object: 0a0de33af36930a770b0c7e1cb521346e3365444
   docs/models/components/accountingperiod.md:
     id: 8a080b210a32
     last_write_checksum: sha1:16e383a12bb4eac7bf497551c88a53478febb4ce
@@ -706,12 +722,12 @@ trackedFiles:
     pristine_git_object: bff36232217ac062db509544b9b48d2bafcee509
   docs/models/components/bankfeedaccount.md:
     id: 32af3b123213
-    last_write_checksum: sha1:06be15445b3617d194b1ae557b31226da92881f8
-    pristine_git_object: 0a293f7a15df517642ad4ec735511d45c485f1ff
+    last_write_checksum: sha1:e5d781d9d16c5ca288ebd97bc48279d69d87bf07
+    pristine_git_object: 0c38cdefc0a525404747d7f584434cd803844970
   docs/models/components/bankfeedaccountinput.md:
     id: 0c20d8e8cb48
-    last_write_checksum: sha1:25bf100fc26f5885b051fea5de4c89f6dab31f37
-    pristine_git_object: f8c31c6e770d37a98a0bc7c12772764e4ce3455d
+    last_write_checksum: sha1:4884ed103128b523631e88dae3b419864241a928
+    pristine_git_object: 4d1f4df2529620c1d632d94ae187ed46dfcc1dee
   docs/models/components/bankfeedstatement.md:
     id: 6f5892166068
     last_write_checksum: sha1:decd56778c0813badf4492d90090f62f497d7ec3
@@ -1256,6 +1272,10 @@ trackedFiles:
     id: c7f23f680b3b
     last_write_checksum: sha1:38f38a21212235b1eb59cbbbf7f7826d3b254c62
     pristine_git_object: 73cab3fcdc2b2b601c74295acd2098857fc73cc9
+  docs/models/components/createpaymentmethodresponse.md:
+    id: e366071f74a6
+    last_write_checksum: sha1:8e423f0d1c673ace6761b6ee423d0fd299f0cbbc
+    pristine_git_object: 8128ee78a61847b8b66c9f7e97f9b62887350557
   docs/models/components/createpaymentresponse.md:
     id: 68cead2b8fba
     last_write_checksum: sha1:be705a6a21b047d3e953243827b5828ceb8fe53f
@@ -1422,16 +1442,16 @@ trackedFiles:
     pristine_git_object: c3ac71f94b7c83a6c8a2933020126a3db3d533cb
   docs/models/components/customfield1.md:
     id: dfb27dec8027
-    last_write_checksum: sha1:55a01895965974d417c16326f30bea64a79aedfc
-    pristine_git_object: 37fa20411bb5301eddfd39958e513d158346b18c
+    last_write_checksum: sha1:109f75b5363e4121b49fed9df14ae4836cc1ecfd
+    pristine_git_object: c174016bb9075f65359640f4ce146f309023d560
   docs/models/components/customfield1value.md:
     id: 09d723044da2
     last_write_checksum: sha1:7370d20665a5751b5131d879be67f373199e2082
     pristine_git_object: c5d7908565cdd0d7c1b5a4908cc906e6894417d4
   docs/models/components/customfield2.md:
     id: 7331a2cfafd2
-    last_write_checksum: sha1:7feee0941840116c38516c87096d46ea186586c8
-    pristine_git_object: 02681b21fc76808aea7acc07c526e41f86596127
+    last_write_checksum: sha1:ea1faebf8b094c67a33aa5f7aaee28ed924a8d8e
+    pristine_git_object: 27dffb4ac19c46f4a7ce946d06625776e42cb6bd
   docs/models/components/customfieldfinder.md:
     id: 47ccea9231e0
     last_write_checksum: sha1:b46834c2d5de198c2300048a4335f6a356e4c996
@@ -1672,6 +1692,10 @@ trackedFiles:
     id: 3c52fd576d87
     last_write_checksum: sha1:88251b61f7b6d18524eac3e396e6630a34d3e29e
     pristine_git_object: c756b1b6b0970a84c4cb089336119d2c619ab78b
+  docs/models/components/deletepaymentmethodresponse.md:
+    id: 205d5413348e
+    last_write_checksum: sha1:24295a35ad7ee96b69a1df3d21228ffc428883e2
+    pristine_git_object: 2d8ac7664be910aba99a99c691920a4af06c5eda
   docs/models/components/deletepaymentresponse.md:
     id: fb3da8f5753b
     last_write_checksum: sha1:12654d6d2774b0c02004777378e7a28590fd822a
@@ -2640,6 +2664,14 @@ trackedFiles:
     id: b5006845ac0d
     last_write_checksum: sha1:0bfac266e322b3602d683152ff17553bd01f84f6
     pristine_git_object: ee358d3aa83c0a3ef346c0788be5da3ebb05c918
+  docs/models/components/getpaymentmethodresponse.md:
+    id: 47c71c2a0382
+    last_write_checksum: sha1:a9e62ac948c107e3d0fb901f316f45de5fb32289
+    pristine_git_object: 886a9f5bb59791f86491d78d3f727f0b3c0ee6c6
+  docs/models/components/getpaymentmethodsresponse.md:
+    id: 5d648775ed0e
+    last_write_checksum: sha1:d74697fed87e74d2461e5ce88bff18ab7ac9d9b6
+    pristine_git_object: 03fff10f97aff7fa7857b30baa0d11ed518efd82
   docs/models/components/getpaymentresponse.md:
     id: a1e9f1b662a7
     last_write_checksum: sha1:9a090bc4e62d5a273b30221af1485a93a0927a0f
@@ -2954,8 +2986,8 @@ trackedFiles:
     pristine_git_object: f6e6e0fcdfad4cf6ea91f3678da1f4e786b9baee
   docs/models/components/journalentriesfilter.md:
     id: 819bc66fec88
-    last_write_checksum: sha1:d51ece318f83cadca3e888a1c6aaab0ee72d8fe5
-    pristine_git_object: 60bcc8322c500024c0665cbbd20fbfc78732a164
+    last_write_checksum: sha1:9386eaa020d8e31461b8bc75517fbdc05aedac69
+    pristine_git_object: 68c53d6097e0281956ad1bcf264e44ac1c412a64
   docs/models/components/journalentriesfilterscope.md:
     id: 2cee55f0b5bc
     last_write_checksum: sha1:55f54b7b9d5e411953d1f095505ba75cd76801a1
@@ -3622,12 +3654,12 @@ trackedFiles:
     pristine_git_object: 0e6c7c6a04aac8e02799f42b65c57f5501214419
   docs/models/components/refund.md:
     id: a9ba6686865f
-    last_write_checksum: sha1:dd4f88aca94458732a6555717e6adb828e71386c
-    pristine_git_object: 17a9e62f32326fbce8bcc4365291c948ab3d4810
+    last_write_checksum: sha1:b412475207842d02466deb91fc51b4e380dcc326
+    pristine_git_object: 0cf3b890762328992b544dbb1a8bd46aeef36239
   docs/models/components/refundinput.md:
     id: 11f44010570c
-    last_write_checksum: sha1:6b5b085d2b8357674d5bb54244d816019c84489f
-    pristine_git_object: 2b252fad1d30201d08d9fe0676030c98915810df
+    last_write_checksum: sha1:d11a81d75457373b1822c8efe4cfdf1d976529c3
+    pristine_git_object: af9b90695daf3586f38b3cde32d53cf96e96bd89
   docs/models/components/refundsfilter.md:
     id: 880519f2337a
     last_write_checksum: sha1:64cba06e44aebbfff0a843a0528694cb1c8d2082
@@ -3646,8 +3678,8 @@ trackedFiles:
     pristine_git_object: 12e6f7ca11989b5626f29638d8bda83561b636ce
   docs/models/components/refundtype.md:
     id: 45c716e01f09
-    last_write_checksum: sha1:d90bbeb3f0ab0496b20a500240bd830f43d51c92
-    pristine_git_object: 6cbb9a7ac86f62986016299a02dd2f911b1e3045
+    last_write_checksum: sha1:73144412c1507e38d737b593b66ac921d2dc4522
+    pristine_git_object: 39c14ab88b242b5220babc8f560e8af10d78f7a6
   docs/models/components/reports.md:
     id: 608b97d4e5c7
     last_write_checksum: sha1:e50c7ee110d7e9a13fc5ceb22d7542e9b9575353
@@ -3974,8 +4006,8 @@ trackedFiles:
     pristine_git_object: b86c2e8331de559350d82b0760401e4f346aad31
   docs/models/components/transactions.md:
     id: 717a6b6c2c77
-    last_write_checksum: sha1:3cdec45cc52a19ad7cc3962703e7ce54d0e430eb
-    pristine_git_object: 39d4fcf024f30da7e8de16612ab79c814980daea
+    last_write_checksum: sha1:70cc460010ad5084346f57bfdb2f7fb4d50f187a
+    pristine_git_object: 7fd652739dbf0e949b51ba978233a922b9d8ee3f
   docs/models/components/transactiontype.md:
     id: 48cd8e184ec8
     last_write_checksum: sha1:f90ebb02a70a3e34a52ca8e861f7336de13cdef3
@@ -4204,6 +4236,10 @@ trackedFiles:
     id: 7d8fec7cdc19
     last_write_checksum: sha1:d733fc7e01463fa49a111755aaa85834f2402502
     pristine_git_object: 442f75023c2c22d084930ad02566a842b589adfc
+  docs/models/components/updatepaymentmethodresponse.md:
+    id: ff668160e571
+    last_write_checksum: sha1:1c0472617fd7c5ce2c58aa501185a82a00928c90
+    pristine_git_object: 1e2e3821f1065a5e0c61e0db1c87a5fcfb6a0d0f
   docs/models/components/updatepaymentresponse.md:
     id: 06dae0dba667
     last_write_checksum: sha1:5b2a61f29b375cdc9678199fdafab0180fe1ce62
@@ -4430,12 +4466,12 @@ trackedFiles:
     pristine_git_object: 60941dc88915152ca7a887f83d4d1e043975f2f6
   docs/models/operations/accountingattachmentsdownloadrequest.md:
     id: 83a2c0d80d53
-    last_write_checksum: sha1:3e42dc8e67da40428e90d46d7f4bc5be76f491f4
-    pristine_git_object: 2fe84b605a9ecfdf54dcc4826169f3adc061cac9
+    last_write_checksum: sha1:7c301cbd4d9b211df80f6c67c63ff5509cddd2bc
+    pristine_git_object: dec6f5e24f231c5e308e3bae4c3e5626fd38c920
   docs/models/operations/accountingattachmentsdownloadresponse.md:
     id: a90761570d85
-    last_write_checksum: sha1:1bbacce71882e755e92564d30196bf6197d7aa73
-    pristine_git_object: fe5e2be4805e79f2bf3063847ea28cf9dca32b9a
+    last_write_checksum: sha1:fb20e7e7c16c6c2c54418bba8c1ba941b0e7d80b
+    pristine_git_object: 80b2d37c9e2deffa2de5d76404d4ab609fbb67ba
   docs/models/operations/accountingattachmentsoneglobals.md:
     id: 521b000b9a0d
     last_write_checksum: sha1:f76b07d27d7406312b607ca9cc83649b86ef4353
@@ -5564,6 +5600,66 @@ trackedFiles:
     id: ec51dccc97cd
     last_write_checksum: sha1:38696cdd13a35ec475beda3aeae5b84764952d7a
     pristine_git_object: 3ef5b6d14489617ae6b7adac7d3c77455feea7e7
+  docs/models/operations/accountingpaymentmethodsaddglobals.md:
+    id: 1de76132adcb
+    last_write_checksum: sha1:3ddaf7facee8e8f38c66154449822e317cdfa6a0
+    pristine_git_object: 314468c2e0609305785379683aaa46b481787309
+  docs/models/operations/accountingpaymentmethodsaddrequest.md:
+    id: e860d1714652
+    last_write_checksum: sha1:d8e547acb9638042fbd3a6ddc55e1e0471c8eb33
+    pristine_git_object: 28ed54de5d9f0d4baf85ced4149d5884877ddf21
+  docs/models/operations/accountingpaymentmethodsaddresponse.md:
+    id: 39e4321c2c61
+    last_write_checksum: sha1:e706fe9512a8d32cb186c3941bce8df1c720f116
+    pristine_git_object: ff943c9706c6eb8540f2f1f3e35047e651e49005
+  docs/models/operations/accountingpaymentmethodsallglobals.md:
+    id: 01c709b809a9
+    last_write_checksum: sha1:742cd72f3b03f320186912f178d7318c620fae98
+    pristine_git_object: ebacb0d4fc275da04f4ceccb49cce28c1f43b3de
+  docs/models/operations/accountingpaymentmethodsallrequest.md:
+    id: 638b07137a64
+    last_write_checksum: sha1:1ec8842dabe1895c0a9fd6731ee2927a95a0868d
+    pristine_git_object: 18483481462a7e9dbf763adad2b8d20319a4fa25
+  docs/models/operations/accountingpaymentmethodsallresponse.md:
+    id: 3251b6ef221c
+    last_write_checksum: sha1:ef49cecd9f368f42baecb3115e76880d4edc0fbe
+    pristine_git_object: a0c410c4d8a2e26bd5598cff84f65ebf30e7d42b
+  docs/models/operations/accountingpaymentmethodsdeleteglobals.md:
+    id: 527e79337b8f
+    last_write_checksum: sha1:e7d35398cff68ccdb1dc7fa2049a829d5d149031
+    pristine_git_object: 42908a831e5d6da9cc059725fc2b0da1f7350cce
+  docs/models/operations/accountingpaymentmethodsdeleterequest.md:
+    id: 3b1e2cee2908
+    last_write_checksum: sha1:52d141698de40e339ccfbf6f45dcbdd2298dfe17
+    pristine_git_object: 5f1438782df08f396d21dabeda01839199ef5fc3
+  docs/models/operations/accountingpaymentmethodsdeleteresponse.md:
+    id: a9555b96b241
+    last_write_checksum: sha1:b8669663909bb6b57f6af4de2cc5aeb9c5bd89a4
+    pristine_git_object: 202193a029f333996a5a03327565e0053b95d279
+  docs/models/operations/accountingpaymentmethodsoneglobals.md:
+    id: 3ec0829cfbf5
+    last_write_checksum: sha1:b99f90519d4d7a22611100f371c2345e96d8bee2
+    pristine_git_object: 5c60c58b0f05ae5b3462eabf1fe1abb19a66b1bb
+  docs/models/operations/accountingpaymentmethodsonerequest.md:
+    id: 3135f71c7d73
+    last_write_checksum: sha1:979ebfb0d4eaa0d1685b2f8c4d7b5ef38a46c081
+    pristine_git_object: d1a7362b49aa1fe018f59710e6838b1a42210062
+  docs/models/operations/accountingpaymentmethodsoneresponse.md:
+    id: b84df3dfb419
+    last_write_checksum: sha1:e8dabb082ec71cfe034e59a3e55c408691f27000
+    pristine_git_object: ce29e933a967452e0266f9f5d1ba7c311edecd7f
+  docs/models/operations/accountingpaymentmethodsupdateglobals.md:
+    id: 6db1ec96f3ae
+    last_write_checksum: sha1:798c513a94396134c829a41680f58c316b57467a
+    pristine_git_object: 54342a5d5b2d8071f64a4d982f130683da235e6d
+  docs/models/operations/accountingpaymentmethodsupdaterequest.md:
+    id: 25998779ada9
+    last_write_checksum: sha1:6ef703895ecd774db10d8ce7856e923af45967f7
+    pristine_git_object: e4b23d6d1b0ee3aec79e9b6d40a8d564f6537b41
+  docs/models/operations/accountingpaymentmethodsupdateresponse.md:
+    id: c73a52aad01c
+    last_write_checksum: sha1:0a878496150fe1ecbeed2c8b8059ed55f69732d8
+    pristine_git_object: 1bb511d159be94c141fd52703f32c80082d42bfc
   docs/models/operations/accountingpaymentsaddglobals.md:
     id: 17cf218e3b10
     last_write_checksum: sha1:132b58853c3e2e1f5ceb488169502e6dc7cb4952
@@ -7322,12 +7418,12 @@ trackedFiles:
     pristine_git_object: 18e5c7892302342ff2ca4688c1e1a90c2cef6106
   docs/models/operations/filestoragefilesdownloadrequest.md:
     id: 598d84d30008
-    last_write_checksum: sha1:88b951905c2c19cc48d540fe0dea332c72dce160
-    pristine_git_object: bc594283186b242c8e3d8d3fe04ad496327da39d
+    last_write_checksum: sha1:90e4813b7ff5fb66b5eebee1e1a3b7dd3b21a751
+    pristine_git_object: 6b7d0dfd94e3ba9847d368a9cfb46a37b582ad80
   docs/models/operations/filestoragefilesdownloadresponse.md:
     id: 88146b439f57
-    last_write_checksum: sha1:6cd74f64e4d17922f5b0c69a4cb85df8dbb2ab4d
-    pristine_git_object: 29ecbdb1fd326486bb53452680bb1c6236d0dd5a
+    last_write_checksum: sha1:9cc2961188b73aed6ba3c035ed1378bc86cf0441
+    pristine_git_object: b68c3a39cb4b7fed959cf278ae9abddba75262c2
   docs/models/operations/filestoragefilesexportglobals.md:
     id: dedcd4fe9c33
     last_write_checksum: sha1:7bb919fb3774574f36898b5e1be7ef9d3bf05695
@@ -7338,8 +7434,8 @@ trackedFiles:
     pristine_git_object: 44cc4f495288b9fb454a303927db779faac8f328
   docs/models/operations/filestoragefilesexportresponse.md:
     id: ccb09305cb4a
-    last_write_checksum: sha1:0edd309089ab5ab6d33e1f4e248c371389e22890
-    pristine_git_object: aefec2e609ae97d584d3c3eec25626f89bd93f83
+    last_write_checksum: sha1:19a7bb81d4ef5c2990db4a5513d3f7cc41ccd5d0
+    pristine_git_object: 1342808f7a6742427f34a2eaa3d0276d2cbefd11
   docs/models/operations/filestoragefilesoneglobals.md:
     id: 4716907b8dd4
     last_write_checksum: sha1:d4106c6c3792d0613c5997f231c4998d5e0a2181
@@ -8054,44 +8150,44 @@ trackedFiles:
     pristine_git_object: 540bf9f4516c384b997b5fea05cf143d10397073
   docs/models/operations/proxydeleteproxyrequest.md:
     id: 87a3164a6b8b
-    last_write_checksum: sha1:8034dab80c6360f2bee5ded37665d0ad19f9e72d
-    pristine_git_object: 9c38a513b1b83ad357a2fe79b6e6c897b0fbe638
+    last_write_checksum: sha1:8d2973934bc9a9692f23d2cd4701e116679011d4
+    pristine_git_object: 119a4b45e2a532fca6b596157b2bdb461c6c58bd
   docs/models/operations/proxydeleteproxyresponse.md:
     id: df4a0bb99e82
-    last_write_checksum: sha1:e3b2b754de4f68bd028dad60b14b104cc600253d
-    pristine_git_object: 6c823fd599b8b8d875ae017169b5166b7d9f7f12
+    last_write_checksum: sha1:81230724a160636102df0edb54f5e0cc5095126f
+    pristine_git_object: 850f5500a1333fc5a9ada81c6a0f12f612924847
   docs/models/operations/proxygetproxyglobals.md:
     id: b942736499b8
     last_write_checksum: sha1:1f42315f2808de05a5301d8a5c1484557e870811
     pristine_git_object: 42b08cdc42fc0cbc026fa7305e45218a1d9472eb
   docs/models/operations/proxygetproxyrequest.md:
     id: a536b7375a5d
-    last_write_checksum: sha1:c25b0c20a04c30f4afeb2aec8756e8bacb49875b
-    pristine_git_object: 18863bc17c83182b228a76c24fc39b3196a92537
+    last_write_checksum: sha1:b32e0aa5885adca17e7f63243666828aa9327788
+    pristine_git_object: 76acdd0ed899499a7fa894c4f28cffd5dab0b258
   docs/models/operations/proxygetproxyresponse.md:
     id: 967009e66f09
-    last_write_checksum: sha1:801d32813bd63db0f413717ad6f2369e8ad5510f
-    pristine_git_object: 108806fdd0d98812515917472a06769a5a35b6c8
+    last_write_checksum: sha1:607cee9610d610b4c03b2b9c517433576ac44987
+    pristine_git_object: b5dc11f2655b3c415f9b64bb9db9abaeb59ea85a
   docs/models/operations/proxyoptionsproxyglobals.md:
     id: 4859d2c7ffb4
     last_write_checksum: sha1:8a62aff93bccdb328cadf36d14ed7606bccd4064
     pristine_git_object: 92f48b49ec55f1dcc48e85b7a773c0d511b3a09e
   docs/models/operations/proxyoptionsproxyrequest.md:
     id: acb4a0755a57
-    last_write_checksum: sha1:cb007d940fd12802604b2babb1892edb3c9513b2
-    pristine_git_object: 33b902e3fd127d49c57a5845ff34f366cb2287bc
+    last_write_checksum: sha1:fa0150b3e852b6781029bd3c78c1987ad70c41bc
+    pristine_git_object: fd7f0f9a7ae6fac0edb876666e01bc18afd22c67
   docs/models/operations/proxyoptionsproxyresponse.md:
     id: a25ef8821382
-    last_write_checksum: sha1:e8ddcfd551d949298f6026f8e6022d16e6b3e7a2
-    pristine_git_object: 43ff65aa00c54ea8e71431a215d915e86f5d34c1
+    last_write_checksum: sha1:b83c3870f53aaaf88cf94c0414d23c23093dde2e
+    pristine_git_object: 27a0d740b7139c3817e7ae52d16d9d8fff05be64
   docs/models/operations/proxypatchproxyglobals.md:
     id: 35768f573eae
     last_write_checksum: sha1:9366a27ff326d5c01c0feb793e0e51dc0dbae4d3
     pristine_git_object: 7909b4be97cf310a5274e03e9f515d2815ac04dd
   docs/models/operations/proxypatchproxyrequest.md:
     id: 1b68291e4740
-    last_write_checksum: sha1:1d902832bd739aee0ffdfffa0c9eabded4ab5f1d
-    pristine_git_object: d09147f4d9859c51a1780f1678755619c0ff8ade
+    last_write_checksum: sha1:27bf5eb8176decaf9532ecb33d7004f86af4a0b6
+    pristine_git_object: 3c5af242a2aeaec33fb5f0ffcb2085b447facb48
   docs/models/operations/proxypatchproxyrequestbody1.md:
     id: "0728008240e7"
     last_write_checksum: sha1:e7e8bbb12c000abebef2594ac8da50e8a7f74560
@@ -8102,32 +8198,32 @@ trackedFiles:
     pristine_git_object: 8378f5fca87fb01b61609a0c7fca44bde6acdd4e
   docs/models/operations/proxypatchproxyresponse.md:
     id: a1ebcc4f4c46
-    last_write_checksum: sha1:b52aaf3f929ec5d1275fd2741e304a6458a0bf3f
-    pristine_git_object: fd0720d54f14835608b220d35d0cf717b42ee05f
+    last_write_checksum: sha1:f149d0089ecfed78d874f7809754d955db6e8c50
+    pristine_git_object: fd17fff3cdf03d57e3575dae7497e4d9ba560682
   docs/models/operations/proxypostproxyglobals.md:
     id: 0140d840710c
     last_write_checksum: sha1:474a32b8149c9ee7cffb6b344b976a0f562769df
     pristine_git_object: f7672d5740e4814e7e6ab13879548f1907fac51c
   docs/models/operations/proxypostproxyrequest.md:
     id: 07511d842c51
-    last_write_checksum: sha1:13d92aaaf67ab097297fa67691f2c26d70079b24
-    pristine_git_object: 76cc3a2d8939d9660e80608e5da76d10f1711b1a
+    last_write_checksum: sha1:c38fbeb8fd35c5d99f4c9a206116f0bd2ab5e615
+    pristine_git_object: 60134ed04811b984101b27c40716b673ae7e8f74
   docs/models/operations/proxypostproxyresponse.md:
     id: 0d6217eaf683
-    last_write_checksum: sha1:d7ca8a2226b38a8e0c8f3ad401453ad1c5f89861
-    pristine_git_object: 9fb04f670297e3697d500a802ffcf3ef408f3010
+    last_write_checksum: sha1:a9d94c9ad4ca8bfb82d11696718123ecada668ea
+    pristine_git_object: 2ee61b7d1d4c59188f7bb7e07f2daba3c7a483b0
   docs/models/operations/proxyputproxyglobals.md:
     id: 203b5ea70d48
     last_write_checksum: sha1:ca8bb81e4cf2dcb2a2be19a111153d45c7144a51
     pristine_git_object: 0c1fe4cecae3b8c2977d9eacbcb9760c2ebb4b31
   docs/models/operations/proxyputproxyrequest.md:
     id: 9f53dd3b3f54
-    last_write_checksum: sha1:3d82a9f63b614c5781f9f4f406014822968bbeae
-    pristine_git_object: 24de3c8cb184014675afa3f57ec5024ffca5f7a1
+    last_write_checksum: sha1:0e620d4dd47a2138c332eef6572d19c5ad92b3f6
+    pristine_git_object: 83938ab80b611ed507c11d4663dab2ee5a5aba2c
   docs/models/operations/proxyputproxyresponse.md:
     id: 416fd65e46ad
-    last_write_checksum: sha1:a301f81c828b0bdb9e9e4bb181f650480ccdadd8
-    pristine_git_object: df28398653c5d7bb46abc407775022d3670d5a6c
+    last_write_checksum: sha1:ab54ea4068254555e9a0b282b69881c5f99671f4
+    pristine_git_object: 9d4ef79e021d58f4f28ff8239ffcf33e553fd55e
   docs/models/operations/requestbody1.md:
     id: 871009b490c3
     last_write_checksum: sha1:439fc916e85d97e47ece746cf2ae73d16023c204
@@ -8622,8 +8718,8 @@ trackedFiles:
     pristine_git_object: 8591cb916e998fd506cb54c8dab6eb3f446a498b
   docs/sdks/attachments/README.md:
     id: b60e6ecf628b
-    last_write_checksum: sha1:5e41b64094081c016358441d4322b2680bd099a6
-    pristine_git_object: 0ad13c35119659dd01bec190aeed19ac2d9d121e
+    last_write_checksum: sha1:aab5b6cd53f9c577257ecf05e5077d0957dd683b
+    pristine_git_object: 3d6dff2d4a6d2ca83faefb292f17429f9625cbd3
   docs/sdks/balancesheet/README.md:
     id: b360644f6413
     last_write_checksum: sha1:c6fa2af51a737efbde97479b9ff47dad49a2a29f
@@ -8794,8 +8890,8 @@ trackedFiles:
     pristine_git_object: bee7d98d4f9dd359a2d9e5c57650019c9eb4f0ea
   docs/sdks/files/README.md:
     id: e576d7a117f0
-    last_write_checksum: sha1:574f9c82200a9f1316d7934f287788e9468ae3e6
-    pristine_git_object: 1b4b003a7f42e0f2c4dbbccd2511553f52936f91
+    last_write_checksum: sha1:7a5d818a2eb9ff737150a11874cde87d7f6276f7
+    pristine_git_object: 04f83249beb863e2d8383378c351a602b536ac22
   docs/sdks/folders/README.md:
     id: ffb38e069dec
     last_write_checksum: sha1:0c3bf07d15aa56f9bd21b7e7f9fd5d3ed80b853c
@@ -8860,6 +8956,10 @@ trackedFiles:
     id: fc5b2caf3cb2
     last_write_checksum: sha1:82540a3d4ffdc72cb1d89978786980dd4b8d33a5
     pristine_git_object: 32bdd51ac68c156581ede004df3eeb8d141d4506
+  docs/sdks/paymentmethods/README.md:
+    id: 98b2df26035c
+    last_write_checksum: sha1:f29d5b1fdd78ef24108c6c2acc4bcc66ceedd40a
+    pristine_git_object: 927acf230588cfe62c7ecb2da654068eeb65fb43
   docs/sdks/payments/README.md:
     id: 0ddb15ec8c20
     last_write_checksum: sha1:529d423e4d6098e257e4a7f2303834d44e954ab2
@@ -8886,8 +8986,8 @@ trackedFiles:
     pristine_git_object: bd62f21939ac3fd9b78278e5ed87602d8f45b49b
   docs/sdks/proxy/README.md:
     id: 2c72b780f1d0
-    last_write_checksum: sha1:3901263706d345d6d93d315b17e97caff1886edd
-    pristine_git_object: 9a167a1ee453f41312b8a51ea5f6c519629b602b
+    last_write_checksum: sha1:119d0e1657b4111f7ce0fd79e580c6a0b2a48dd9
+    pristine_git_object: 8d42f89c907ffb3b34731c99b7ada884358897e6
   docs/sdks/purchaseorders/README.md:
     id: bdb6c1926bcc
     last_write_checksum: sha1:2acd7831a43cf5213c8c52d3050a872b869a0ad7
@@ -9014,8 +9114,8 @@ trackedFiles:
     pristine_git_object: d7703f061e7a08bdea098845354061e3f1a05dab
   go.mod:
     id: c47645c391ad
-    last_write_checksum: sha1:baa3a328811814cf21fd87a7f397ca85aa093fa4
-    pristine_git_object: b9b4636f891f9cf27fb1d6b7cfa298eb33275055
+    last_write_checksum: sha1:5d0a9d3073064b3f78c6334a6bab3e5d14c0e8fe
+    pristine_git_object: d1345c9ab6f0df899103b3f9924730cb7942712f
   hris.go:
     id: 9fa102e985f2
     last_write_checksum: sha1:2946fc42e2097a5c707d31739511be0c07a5670e
@@ -9196,6 +9296,10 @@ trackedFiles:
     id: 42fdd34706c1
     last_write_checksum: sha1:8d098ca3e02fc89107ea5ff7b4000e1ef5cd34fb
     pristine_git_object: 46103ace27ddae56e320309c3c227c4a98d2f4ca
+  models/components/accountingpaymentmethod.go:
+    id: cc8d05d2f141
+    last_write_checksum: sha1:cb4aa09cdfec94ce86ce3ba387bbc7f32c3ea649
+    pristine_git_object: 478192a37215b247098f185d12096e6ed8a7df28
   models/components/activitiesfilter.go:
     id: dd52b7d6d668
     last_write_checksum: sha1:c55ca7c481d904d831c4c688cfd38770d40ed128
@@ -9330,12 +9434,12 @@ trackedFiles:
     pristine_git_object: da20213e90b4b20523b474339003b2269073924a
   models/components/bankfeedaccount.go:
     id: 20d49b67a21f
-    last_write_checksum: sha1:a2dafded3484f29b89fd66974bbebcc4c39ea2b6
-    pristine_git_object: 81a2f2d885363150a1670b9b83e535a3b2646ad1
+    last_write_checksum: sha1:a4301afa7793eff4a3cacd5d307a663163927309
+    pristine_git_object: 2e03fcb3a7f6918550d2197e1c9f43dca6a32b83
   models/components/bankfeedstatement.go:
     id: b15951690635
-    last_write_checksum: sha1:88759a81912e0b47b929f7a9340cd9ee7dd937d3
-    pristine_git_object: bd96693eb0b9cc9b557525f262a9c209b9f80f68
+    last_write_checksum: sha1:0a9e05dcced267705462abd12ef77bda428fdd91
+    pristine_git_object: 4522b934c452511ae142482af860ac4f04badbbc
   models/components/benefit.go:
     id: f125201e9d6b
     last_write_checksum: sha1:df502c520d2d184ce397c79c5d676b48332dc2b3
@@ -9696,6 +9800,10 @@ trackedFiles:
     id: 3a7c1c424935
     last_write_checksum: sha1:645d04f7b80578e8fe78c1f8a1b6eff8a113abcd
     pristine_git_object: 0f98e6e0608f5fbb49835cf85ccbc47f5a26a700
+  models/components/createpaymentmethodresponse.go:
+    id: 2d4bb803d8a6
+    last_write_checksum: sha1:7a0b60074db57e4db239596ee16006ab42291b48
+    pristine_git_object: 1c9e0fa1c24af520dd0718ccb5f7dbf136376d69
   models/components/createpaymentresponse.go:
     id: 918ebfbd7ebc
     last_write_checksum: sha1:57e0ca3a16d73bf01b75d66da9a87beb24a870a4
@@ -9810,8 +9918,8 @@ trackedFiles:
     pristine_git_object: ad7763c9eb8ecf96fbda93b04713cd43ce8b89f2
   models/components/customfield.go:
     id: 05ae3ee15ba1
-    last_write_checksum: sha1:9607b4b680942cc22d071efe1a139cd0361624ea
-    pristine_git_object: 390a1080e19287b4c4673d68dd5c7c63e0ad9f59
+    last_write_checksum: sha1:6b34d8139a01c7bc69665dffcfac38451e02531e
+    pristine_git_object: edc3fbf7a12c1ccdb3746a9a17ffdfe0dad2e181
   models/components/customfieldfinder.go:
     id: c9c6368e7f81
     last_write_checksum: sha1:c68d19ca59dd5075dbbd3076d0988b43ace87c81
@@ -10000,6 +10108,10 @@ trackedFiles:
     id: c30e17f91fcc
     last_write_checksum: sha1:4fc35b32b06ff67752900f7d11df1f9e348807a4
     pristine_git_object: ab95e16d678f0af2fa4b64b5eb590ab1c8e98aa0
+  models/components/deletepaymentmethodresponse.go:
+    id: f5528f481303
+    last_write_checksum: sha1:757233f522f5d5f5de456f5af517fd0000985711
+    pristine_git_object: 3995952b91051830e5d44531a84f8ac7fafbf50d
   models/components/deletepaymentresponse.go:
     id: 8bd18017b1a1
     last_write_checksum: sha1:2a29e5a53085730a1c3c030340c261f9651b1954
@@ -10748,6 +10860,14 @@ trackedFiles:
     id: ec12770ce552
     last_write_checksum: sha1:130a3e73690d910378ba88e30c4940c331d69049
     pristine_git_object: fcf3fc509d6e8ef55882346c0dca267edf62dd22
+  models/components/getpaymentmethodresponse.go:
+    id: 092c4e4d2f86
+    last_write_checksum: sha1:6ca63a106bfda3468cd979894212ae416af52ca4
+    pristine_git_object: 668b703742cb8de0c2b358dbaece3032476a936a
+  models/components/getpaymentmethodsresponse.go:
+    id: f9d67f15898b
+    last_write_checksum: sha1:a028dfb475c3163457f6dc38f112aef0f698acc2
+    pristine_git_object: 3cdd02e8abbd7b8f390323d7fccad909e79b173c
   models/components/getpaymentresponse.go:
     id: ef5b125445bc
     last_write_checksum: sha1:61802a72a8a3165a2b8a78faabc2ff40edd5fde1
@@ -10970,8 +11090,8 @@ trackedFiles:
     pristine_git_object: 4a5c8d7a105548fb87ad5793ed5187d9f6feb301
   models/components/journalentriesfilter.go:
     id: 84d808a4881d
-    last_write_checksum: sha1:697fd80b009754fe681559ec8927a6347457fa1a
-    pristine_git_object: 77c5eb73f986875f158178fba74ca8d055c6ade3
+    last_write_checksum: sha1:5665f429ae5d4b486e3d07c83fe0dd66dccc0eae
+    pristine_git_object: 0e33d5ceddabcf90c1b6105e3fe37b137b271b78
   models/components/journalentriessort.go:
     id: 83601e5eed0d
     last_write_checksum: sha1:e23cf3e35ed92b4a0599ef7ef7faac3a4de23f3d
@@ -11342,12 +11462,12 @@ trackedFiles:
     pristine_git_object: bb9c0225c577333f329a82922995658de80e929e
   models/components/refund.go:
     id: 6120ea17a7e7
-    last_write_checksum: sha1:3b32fd529ed112a2628308cf4adf1b41f7e0111b
-    pristine_git_object: ce5aad1b9c81799ebc6946ba1ebd6b8b6909c48d
+    last_write_checksum: sha1:83c18c269b887bfeaf8e2e4b5f68a3e7b09637c6
+    pristine_git_object: d19f9d664dedfda6a8b37f2c83ace6ddf74262e8
   models/components/refundinput.go:
     id: b4e9d985ca8b
-    last_write_checksum: sha1:26288a98d1b494a183e206c0f6a8cfe194476575
-    pristine_git_object: 93641d85d8fb4810dab888930a79cb3ed2afd4f1
+    last_write_checksum: sha1:d346251bd36a416d865e6e538a9681f4305f0461
+    pristine_git_object: 35a4bf34c370096dad88fdac7dc335dd9c253486
   models/components/refundsfilter.go:
     id: dc08e3307c47
     last_write_checksum: sha1:9e6942205bbb72ec189babfa7f8388433e8a8be0
@@ -11362,8 +11482,8 @@ trackedFiles:
     pristine_git_object: 9f770933ba1df957ffae0cb2dd24232ea0751ce7
   models/components/refundtype.go:
     id: 0195b24789d5
-    last_write_checksum: sha1:beefc1a8479ef1ddb0076545dcadebe3a4811c82
-    pristine_git_object: e8136110ad9def4e5eb947b4cf40998fba146695
+    last_write_checksum: sha1:fe612216393e7de7902bd62ae490adb0b0010e95
+    pristine_git_object: 146b426ca6254e3eba53a1b74979a3358d083632
   models/components/requestcountallocation.go:
     id: 22f7030b6b98
     last_write_checksum: sha1:0ca7a105fafdff412399d283e7e95086cd8c78c9
@@ -11688,6 +11808,10 @@ trackedFiles:
     id: eef1a11f3e1b
     last_write_checksum: sha1:f35b65a379d2b4b06c599a6a5222f3e9ee3f1f29
     pristine_git_object: 80dafe23f1b42b2eb70f2f916616930444ce2f14
+  models/components/updatepaymentmethodresponse.go:
+    id: bd08e9a926ec
+    last_write_checksum: sha1:283ac494af6e51ee98f534512bbea78b89a541b3
+    pristine_git_object: ca33b37ca6e7f199c66923cf941839ee355672cf
   models/components/updatepaymentresponse.go:
     id: d3fbecf61168
     last_write_checksum: sha1:9b58ff3794adefe06110e353b358d16e42607759
@@ -11826,8 +11950,8 @@ trackedFiles:
     pristine_git_object: 8d0ad8b07f08a6f1692fa3ea44525ccc82f772fd
   models/operations/accountingattachmentsdownload.go:
     id: 1529bab40b11
-    last_write_checksum: sha1:5a6cf05e4f28cd83bfeef60400edca7845b38d62
-    pristine_git_object: 13b5d7265bcfa3c5b63e114328411473beee33a2
+    last_write_checksum: sha1:5d1a7e1cce2d0602d3183ed499c49ae35f254744
+    pristine_git_object: 64420934975abf65b384aef308eea00f791fb39c
   models/operations/accountingattachmentsone.go:
     id: e7dce51964ac
     last_write_checksum: sha1:154e2ae4ae27762ec932ab17165eff061610d904
@@ -12204,6 +12328,26 @@ trackedFiles:
     id: 58276479f985
     last_write_checksum: sha1:c3952b54b99c414478f2a9f9b85a1df5576dcaa4
     pristine_git_object: a80628736489d885427d3b1a30744d353a687afc
+  models/operations/accountingpaymentmethodsadd.go:
+    id: bdd3ace60799
+    last_write_checksum: sha1:7e8e3ac28831810b8362b6dcd13c7d8b056d14e2
+    pristine_git_object: 239aba87ba63331383469104919cfba4cbffb69d
+  models/operations/accountingpaymentmethodsall.go:
+    id: 80b85d87afab
+    last_write_checksum: sha1:fbc0b1af76c68c569ab3597d1094096524ef36d2
+    pristine_git_object: f2f9c36de8080c4b47cf21c1c3f313cd792f8d81
+  models/operations/accountingpaymentmethodsdelete.go:
+    id: 896f2297faae
+    last_write_checksum: sha1:daae2efef29dec4fc7e686208e4661cf3bb82ae9
+    pristine_git_object: 7f315c07f2375799a5bf7d534d3d74b6e0e7ca75
+  models/operations/accountingpaymentmethodsone.go:
+    id: ffeb705cca5d
+    last_write_checksum: sha1:b220d5112d02b0dc861d0d2cae3f379e89cd8de8
+    pristine_git_object: 63e5b78742fa097391f83ac6f07672d87f48b633
+  models/operations/accountingpaymentmethodsupdate.go:
+    id: 88a621f152ba
+    last_write_checksum: sha1:beca2f9bbb3cff9b9fad1bdf8dec70da5ab4922e
+    pristine_git_object: 1ee69b92588c17027a2bf5bf2ac186593bfcb108
   models/operations/accountingpaymentsadd.go:
     id: a4283b85bd00
     last_write_checksum: sha1:ba5920ffa15263bb098694b2d732fb9db3d737f0
@@ -12790,12 +12934,12 @@ trackedFiles:
     pristine_git_object: 1396369868733d7bd41946b608bb2a24a9bdcddf
   models/operations/filestoragefilesdownload.go:
     id: 3228d13145f1
-    last_write_checksum: sha1:4b98b902d933a50fb5abc160a4fcc867b8e3de83
-    pristine_git_object: 365a0b49ec56feafe077fa1476ff88a81e82df18
+    last_write_checksum: sha1:2e871d61c3372d147c67a1bce3fa04287be126f3
+    pristine_git_object: 368a17e246b1d55dc36c0755ecf8c05c2619adfd
   models/operations/filestoragefilesexport.go:
     id: e21f52d884a5
-    last_write_checksum: sha1:acb39f2b095ebc065ecfbda119a1cf2eda92ca10
-    pristine_git_object: 4945834165cf082c94e039fe5de33a500ba31dbd
+    last_write_checksum: sha1:3e5dfe250cdcbd3d4563b79fbdb944a488d9d661
+    pristine_git_object: 3cdbaa6e743ed518b5d9773d5d6f0505286fa769
   models/operations/filestoragefilesone.go:
     id: 6a81f5d75d8c
     last_write_checksum: sha1:180299a66afd9267807ee1b5a45416dd0cfa6c90
@@ -13034,28 +13178,28 @@ trackedFiles:
     pristine_git_object: 8da00b204e447ea73da3c59fbfaade7aec56490d
   models/operations/proxydeleteproxy.go:
     id: 0339dcbfe16c
-    last_write_checksum: sha1:999861bd3e3ced0a389c35355e94f400e0f362f2
-    pristine_git_object: 7ff5f7fc87ffe0ea9bbdca429e50e3ba4c3972f5
+    last_write_checksum: sha1:e84b1b664d233a0d65d21dc10c9e0c1dcbe54213
+    pristine_git_object: 0ae3cf069e50f6cb20dbf41ac321a29cf7feeebb
   models/operations/proxygetproxy.go:
     id: 2281a75ef5c0
-    last_write_checksum: sha1:369c7c3a2a7b2aaa62a99e6fa57e23d8b1c45088
-    pristine_git_object: ae4df850c870c2abd30de0c7a63b0a7798da5ed8
+    last_write_checksum: sha1:b6850620c0fc0de8a2f188272780e0c335826ff9
+    pristine_git_object: 937ed6e3006a8bd449ca267965bf80a5f8986f13
   models/operations/proxyoptionsproxy.go:
     id: cc80e34509bc
-    last_write_checksum: sha1:ead9390186cc41b9a050cfb1399e78c367e047a3
-    pristine_git_object: 2d1828851e5273e90c793b6521fc68349a836318
+    last_write_checksum: sha1:05d1de006b688b203b39f54dae418c2a2a029d70
+    pristine_git_object: 53d22f52914b2d354330bd49df42c6f26321e1f2
   models/operations/proxypatchproxy.go:
     id: ee81dd1107f1
-    last_write_checksum: sha1:6234adcb8f378bd043d681fcec5b6b2343685e5f
-    pristine_git_object: 61aecf7e4bd3a152b031df08a90206d75d87a9b2
+    last_write_checksum: sha1:2dbc299b814cfa969c9f18bfbfcbb9fc2b645faa
+    pristine_git_object: badeaf2ce8dfd8b22da07cb99edeb205a99fd6a1
   models/operations/proxypostproxy.go:
     id: 140543c00e28
-    last_write_checksum: sha1:90de7b067ac370156fe9b1e63a9dd0198da5b3e2
-    pristine_git_object: bb5deefc221395dfec98aa3ee378c238718356ab
+    last_write_checksum: sha1:c14307f8d9b6a2731c751b881ebd5452d2d06ee0
+    pristine_git_object: 117071315e7380d42ab4d399a67d6e7131b2e515
   models/operations/proxyputproxy.go:
     id: d08410121bc3
-    last_write_checksum: sha1:e2796803907d6f7cc610f2b60440c13b3d547134
-    pristine_git_object: 4780d259af09a60fe5d86472ea167cb309eaed67
+    last_write_checksum: sha1:19da7e4d4c4c9323b898843653e3a45e5c729185
+    pristine_git_object: e1ccff9add9425298f75cd38b7f22b25fcef0e63
   models/operations/smsmessagesadd.go:
     id: f33f0a18e32d
     last_write_checksum: sha1:3c164611b5c9c8177a21d5b7144135725d627e81
@@ -13216,6 +13360,10 @@ trackedFiles:
     id: 1b73efd3b2ef
     last_write_checksum: sha1:d2d8c17a866a86c52a157cafb010c87ca3d919cc
     pristine_git_object: 47eb02264d222b99268f348cf92cf39ee7613694
+  paymentmethods.go:
+    id: 53ac7e8fdc4b
+    last_write_checksum: sha1:157f6af7566d30c9e8cc8202c79ec8ee24cb805a
+    pristine_git_object: 2e2c758fa30b1832d6c4ba0e9dc684b55e51b3d1
   payments.go:
     id: d38f00179e5a
     last_write_checksum: sha1:8b04f52613ef899cc78f4946e9afc0e02e187182
@@ -17576,6 +17724,7 @@ examples:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
           x-apideck-service-id: "salesforce"
           x-apideck-company-id: "12345"
+          x-apideck-follow-redirects: false
       responses:
         "200":
           '*/*': "x-file: example.file"
@@ -18588,7 +18737,7 @@ examples:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
           x-apideck-service-id: "salesforce"
       requestBody:
-        application/json: {"bank_account_type": "bank", "source_account_id": "src_456", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "currency": "USD", "feed_status": "pending", "country": "US", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}]}
+        application/json: {"bank_account_type": "bank", "source_account_id": "src_456", "source_routing_number": "021000021", "source_account_number": "123465", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "balance": 25000, "available_balance": 24500, "currency": "USD", "feed_status": "pending", "country": "US", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}]}
       responses:
         "201":
           application/json: {"status_code": 200, "status": "OK", "service": "xero", "resource": "bills", "operation": "add", "data": {"id": "12345"}}
@@ -18645,7 +18794,7 @@ examples:
           x-apideck-company-id: "12345"
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-feed-accounts", "operation": "one", "data": {"id": "12345", "bank_account_type": "bank", "source_account_id": "src_456", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "currency": "USD", "feed_status": "pending", "country": "US", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z", "updated_by": "12345", "created_by": "12345"}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}}
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-feed-accounts", "operation": "one", "data": {"id": "12345", "bank_account_type": "bank", "source_account_id": "src_456", "source_routing_number": "021000021", "source_account_number": "123465", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "balance": 25000, "available_balance": 24500, "currency": "USD", "feed_status": "pending", "country": "US", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z", "updated_by": "12345", "created_by": "12345"}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
         "401":
@@ -18697,7 +18846,7 @@ examples:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
           x-apideck-service-id: "salesforce"
       requestBody:
-        application/json: {"bank_account_type": "bank", "source_account_id": "src_456", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "currency": "USD", "feed_status": "pending", "country": "US", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}]}
+        application/json: {"bank_account_type": "bank", "source_account_id": "src_456", "source_routing_number": "021000021", "source_account_number": "123465", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "balance": 25000, "available_balance": 24500, "currency": "USD", "feed_status": "pending", "country": "US", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}]}
       responses:
         "200":
           application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-feed-accounts", "operation": "update", "data": {"id": "12345"}}
@@ -22473,6 +22622,7 @@ examples:
           x-apideck-consumer-id: "test-consumer"
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
           x-apideck-service-id: "salesforce"
+          x-apideck-follow-redirects: false
       responses:
         "200":
           '*/*': "x-file: example.file"
@@ -28949,6 +29099,7 @@ examples:
           x-apideck-downstream-url: "https://api.close.com/api/v1/lead"
           x-apideck-downstream-authorization: "Bearer <token>"
           x-apideck-timeout: 30000
+          x-apideck-follow-redirects: false
       responses:
         "200":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
@@ -28975,6 +29126,7 @@ examples:
           x-apideck-downstream-url: "https://api.close.com/api/v1/lead"
           x-apideck-downstream-authorization: "Bearer <token>"
           x-apideck-timeout: 30000
+          x-apideck-follow-redirects: false
       responses:
         "200":
           application/json: {"key": "<value>", "key1": "<value>"}
@@ -29001,6 +29153,7 @@ examples:
           x-apideck-downstream-url: "https://api.close.com/api/v1/lead"
           x-apideck-downstream-authorization: "Bearer <token>"
           x-apideck-timeout: 30000
+          x-apideck-follow-redirects: false
       responses:
         "200":
           application/json: {"key": "<value>"}
@@ -29027,6 +29180,7 @@ examples:
           x-apideck-downstream-url: "https://api.close.com/api/v1/lead"
           x-apideck-downstream-authorization: "Bearer <token>"
           x-apideck-timeout: 30000
+          x-apideck-follow-redirects: false
       responses:
         "200":
           application/json: {"key": "<value>"}
@@ -29053,6 +29207,7 @@ examples:
           x-apideck-downstream-url: "https://api.close.com/api/v1/lead"
           x-apideck-downstream-authorization: "Bearer <token>"
           x-apideck-timeout: 30000
+          x-apideck-follow-redirects: false
       responses:
         "200":
           application/json: {"key": "<value>", "key1": "<value>"}
@@ -29079,6 +29234,7 @@ examples:
           x-apideck-downstream-url: "https://api.close.com/api/v1/lead"
           x-apideck-downstream-authorization: "Bearer <token>"
           x-apideck-timeout: 30000
+          x-apideck-follow-redirects: false
       responses:
         "200":
           application/json: {"key": "<value>", "key1": "<value>"}
@@ -30053,17 +30209,143 @@ examples:
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.paymentMethodsAll:
+    speakeasy-default-accounting-payment-methods-all:
+      parameters:
+        query:
+          raw: false
+          limit: 20
+          fields: "id,updated_at"
+          pass_through: {"search": "San Francisco"}
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "PaymentMethods", "operation": "all", "data": [], "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": null}, "links": {"previous": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D", "current": "https://unify.apideck.com/crm/companies", "next": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.paymentMethodsAdd:
+    speakeasy-default-accounting-payment-methods-add:
+      parameters:
+        query:
+          raw: false
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      requestBody:
+        application/json: {"name": "Cash", "type": "cash", "status": "active", "row_version": "1-12345", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}]}
+      responses:
+        "201":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "PaymentMethods", "operation": "add", "data": {"id": "12345"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.paymentMethodsOne:
+    speakeasy-default-accounting-payment-methods-one:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          raw: false
+          fields: "id,updated_at"
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "PaymentMethods", "operation": "one", "data": {"id": "12345", "name": "Cash", "type": "cash", "status": "active", "downstream_id": "12345", "row_version": "1-12345", "updated_by": "12345", "created_by": "12345", "updated_at": "2020-09-30T07:43:32.000Z", "created_at": "2020-09-30T07:43:32.000Z", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}]}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.paymentMethodsUpdate:
+    speakeasy-default-accounting-payment-methods-update:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          raw: false
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      requestBody:
+        application/json: {"name": "Cash", "type": "cash", "status": "active", "row_version": "1-12345", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}]}
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "PaymentMethods", "operation": "update", "data": {"id": "12345"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.paymentMethodsDelete:
+    speakeasy-default-accounting-payment-methods-delete:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          raw: false
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "PaymentMethods", "operation": "delete", "data": {"id": "12345"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Go SDK Changes:
-  * `Apideck.Accounting.SalesReceipts.List()`: **Added**
-  * `Apideck.Accounting.SalesReceipts.Create()`: **Added**
-  * `Apideck.Accounting.SalesReceipts.Get()`: **Added**
-  * `Apideck.Accounting.SalesReceipts.Update()`: **Added**
-  * `Apideck.Accounting.SalesReceipts.Delete()`: **Added**
-  * `Apideck.Accounting.Attachments.List()`:  `response.Data[].FileUrl` **Added**
-  * `Apideck.Accounting.Attachments.Get()`:  `response.Data.FileUrl` **Added**
+releaseNotes: "## Go SDK Changes:\n* `Apideck.Accounting.PaymentMethods.List()`: **Added**\n* `Apideck.Accounting.PaymentMethods.Create()`: **Added**\n* `Apideck.Accounting.PaymentMethods.Get()`: **Added**\n* `Apideck.Accounting.PaymentMethods.Update()`: **Added**\n* `Apideck.Accounting.PaymentMethods.Delete()`: **Added**\n* `Apideck.Accounting.TaxRates.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.TaxRates.Create()`: \n  *  `request.Request.TaxRate.CustomFields[]` **Changed**\n* `Apideck.Accounting.TaxRates.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.TaxRates.Update()`: \n  *  `request.Request.TaxRate.CustomFields[]` **Changed**\n* `Apideck.Accounting.Bills.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Bills.Create()`: \n  *  `request.Request.Bill.CustomFields[]` **Changed**\n* `Apideck.Accounting.Bills.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.Bills.Update()`: \n  *  `request.Request.Bill.CustomFields[]` **Changed**\n* `Apideck.Accounting.Invoices.List()`:  `response.Data[].LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Invoices.Create()`: \n  *  `request.Request.Invoice.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Invoices.Get()`:  `response.Data.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Invoices.Update()`: \n  *  `request.Request.Invoice.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.LedgerAccounts.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.LedgerAccounts.Create()`: \n  *  `request.Request.LedgerAccount.CustomFields[]` **Changed**\n* `Apideck.Accounting.LedgerAccounts.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.LedgerAccounts.Update()`: \n  *  `request.Request.LedgerAccount.CustomFields[]` **Changed**\n* `Apideck.Accounting.CreditNotes.List()`:  `response.Data[].LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.CreditNotes.Create()`: \n  *  `request.Request.CreditNote.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.CreditNotes.Get()`:  `response.Data.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.CreditNotes.Update()`: \n  *  `request.Request.CreditNote.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Customers.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Customers.Create()`: \n  *  `request.Request.Customer.CustomFields[]` **Changed**\n* `Apideck.Accounting.Customers.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.Customers.Update()`: \n  *  `request.Request.Customer.CustomFields[]` **Changed**\n* `Apideck.Accounting.Suppliers.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Suppliers.Create()`: \n  *  `request.Request.Supplier.CustomFields[]` **Changed**\n* `Apideck.Accounting.Suppliers.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.Suppliers.Update()`: \n  *  `request.Request.Supplier.CustomFields[]` **Changed**\n* `Apideck.Accounting.Payments.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Payments.Create()`: \n  *  `request.Request.Payment.CustomFields[]` **Changed**\n* `Apideck.Accounting.Payments.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.Payments.Update()`: \n  *  `request.Request.Payment.CustomFields[]` **Changed**\n* `Apideck.Accounting.Refunds.List()`:  `response.Data[]` **Changed**\n* `Apideck.Accounting.Refunds.Create()`: \n  *  `request.Request.Refund` **Changed**\n* `Apideck.Accounting.Refunds.Get()`:  `response.Data` **Changed**\n* `Apideck.Accounting.Refunds.Update()`: \n  *  `request.Request.Refund` **Changed**\n* `Apideck.Accounting.CompanyInfo.Get()`:  `response.Data.DefaultSalesTax.CustomFields[]` **Changed**\n* `Apideck.Accounting.JournalEntries.List()`: \n  *  `request.Request.Filter` **Changed**\n  *  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.JournalEntries.Create()`: \n  *  `request.Request.JournalEntry.CustomFields[]` **Changed**\n* `Apideck.Accounting.JournalEntries.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.JournalEntries.Update()`: \n  *  `request.Request.JournalEntry.CustomFields[]` **Changed**\n* `Apideck.Accounting.GeneralLedgerTransactions.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.GeneralLedgerTransactions.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.SalesReceipts.List()`:  `response.Data[].LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.SalesReceipts.Create()`: \n  *  `request.Request.SalesReceipt.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.SalesReceipts.Get()`:  `response.Data.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.SalesReceipts.Update()`: \n  *  `request.Request.SalesReceipt.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.PurchaseOrders.List()`:  `response.Data[].LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.PurchaseOrders.Create()`: \n  *  `request.Request.PurchaseOrder.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.PurchaseOrders.Get()`:  `response.Data.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.PurchaseOrders.Update()`: \n  *  `request.Request.PurchaseOrder.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Attachments.Download()`: \n  *  `request.Request.FollowRedirects` **Added**\n* `Apideck.Accounting.BankAccounts.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.BankAccounts.Create()`: \n  *  `request.Request.AccountingBankAccount.CustomFields[]` **Changed**\n* `Apideck.Accounting.BankAccounts.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.BankAccounts.Update()`: \n  *  `request.Request.AccountingBankAccount.CustomFields[]` **Changed**\n* `Apideck.Accounting.BillPayments.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.BillPayments.Create()`: \n  *  `request.Request.BillPayment.CustomFields[]` **Changed**\n* `Apideck.Accounting.BillPayments.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.BillPayments.Update()`: \n  *  `request.Request.BillPayment.CustomFields[]` **Changed**\n* `Apideck.Accounting.Expenses.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Expenses.Create()`: \n  *  `request.Request.Expense.CustomFields[]` **Changed**\n* `Apideck.Accounting.Expenses.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.Expenses.Update()`: \n  *  `request.Request.Expense.CustomFields[]` **Changed**\n* `Apideck.Accounting.BankFeedAccounts.List()`:  `response.Data[]` **Changed**\n* `Apideck.Accounting.BankFeedAccounts.Create()`: \n  *  `request.Request.BankFeedAccount` **Changed**\n* `Apideck.Accounting.BankFeedAccounts.Get()`:  `response.Data` **Changed**\n* `Apideck.Accounting.BankFeedAccounts.Update()`: \n  *  `request.Request.BankFeedAccount` **Changed**\n* `Apideck.Accounting.BankFeedStatements.List()`:  `response.Data[].Transactions[].MerchantCategoryCode` **Added**\n* `Apideck.Accounting.BankFeedStatements.Create()`: \n  *  `request.Request.BankFeedStatement.Transactions[].MerchantCategoryCode` **Added**\n* `Apideck.Accounting.BankFeedStatements.Get()`:  `response.Data.Transactions[].MerchantCategoryCode` **Added**\n* `Apideck.Accounting.BankFeedStatements.Update()`: \n  *  `request.Request.BankFeedStatement.Transactions[].MerchantCategoryCode` **Added**\n* `Apideck.Accounting.Quotes.List()`:  `response.Data[].LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Quotes.Create()`: \n  *  `request.Request.Quote.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Quotes.Get()`:  `response.Data.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Quotes.Update()`: \n  *  `request.Request.Quote.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Projects.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Projects.Create()`: \n  *  `request.Request.Project.CustomFields[]` **Changed**\n* `Apideck.Accounting.Projects.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.Projects.Update()`: \n  *  `request.Request.Project.CustomFields[]` **Changed**\n* `Apideck.Accounting.Employees.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Employees.Create()`: \n  *  `request.Request.AccountingEmployee.CustomFields[]` **Changed**\n* `Apideck.Accounting.Employees.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.Employees.Update()`: \n  *  `request.Request.AccountingEmployee.CustomFields[]` **Changed**\n* `Apideck.Accounting.ExpenseReports.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.ExpenseReports.Create()`: \n  *  `request.Request.ExpenseReport.CustomFields[]` **Changed**\n* `Apideck.Accounting.ExpenseReports.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.ExpenseReports.Update()`: \n  *  `request.Request.ExpenseReport.CustomFields[]` **Changed**\n* `Apideck.Ats.Jobs.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Ats.Jobs.Create()`: \n  *  `request.Request.Job.CustomFields[]` **Changed**\n* `Apideck.Ats.Jobs.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Ats.Jobs.Update()`: \n  *  `request.Request.Job.CustomFields[]` **Changed**\n* `Apideck.Ats.Applicants.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Ats.Applicants.Create()`: \n  *  `request.Request.Applicant.CustomFields[]` **Changed**\n* `Apideck.Ats.Applicants.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Ats.Applicants.Update()`: \n  *  `request.Request.Applicant.CustomFields[]` **Changed**\n* `Apideck.Crm.Companies.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Crm.Companies.Create()`: \n  *  `request.Request.Company1.CustomFields[]` **Changed**\n* `Apideck.Crm.Companies.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Crm.Companies.Update()`: \n  *  `request.Request.Company1.CustomFields[]` **Changed**\n* `Apideck.Crm.Contacts.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Crm.Contacts.Create()`: \n  *  `request.Request.Contact.CustomFields[]` **Changed**\n* `Apideck.Crm.Contacts.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Crm.Contacts.Update()`: \n  *  `request.Request.Contact.CustomFields[]` **Changed**\n* `Apideck.Crm.Opportunities.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Crm.Opportunities.Create()`: \n  *  `request.Request.Opportunity.CustomFields[]` **Changed**\n* `Apideck.Crm.Opportunities.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Crm.Opportunities.Update()`: \n  *  `request.Request.Opportunity.CustomFields[]` **Changed**\n* `Apideck.Crm.Leads.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Crm.Leads.Create()`: \n  *  `request.Request.Lead.CustomFields[]` **Changed**\n* `Apideck.Crm.Leads.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Crm.Leads.Update()`: \n  *  `request.Request.Lead.CustomFields[]` **Changed**\n* `Apideck.Crm.Lists.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Crm.Lists.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Crm.Activities.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Crm.Activities.Create()`: \n  *  `request.Request.Activity.CustomFields[]` **Changed**\n* `Apideck.Crm.Activities.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Crm.Activities.Update()`: \n  *  `request.Request.Activity.CustomFields[]` **Changed**\n* `Apideck.FileStorage.Files.Download()`: \n  *  `request.Request.FollowRedirects` **Added**\n* `Apideck.Hris.Employees.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Hris.Employees.Create()`: \n  *  `request.Request.Employee.CustomFields[]` **Changed**\n* `Apideck.Hris.Employees.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Hris.Employees.Update()`: \n  *  `request.Request.Employee.CustomFields[]` **Changed**\n* `Apideck.Hris.EmployeeSchedules.List()`:  `response.Data.Employee.CustomFields[]` **Changed**\n* `Apideck.Proxy.Get()`: \n  *  `request.Request.FollowRedirects` **Added**\n* `Apideck.Proxy.Options()`: \n  *  `request.Request.FollowRedirects` **Added**\n* `Apideck.Proxy.Post()`: \n  *  `request.Request.FollowRedirects` **Added**\n* `Apideck.Proxy.Put()`: \n  *  `request.Request.FollowRedirects` **Added**\n* `Apideck.Proxy.Patch()`: \n  *  `request.Request.FollowRedirects` **Added**\n* `Apideck.Proxy.Delete()`: \n  *  `request.Request.FollowRedirects` **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json

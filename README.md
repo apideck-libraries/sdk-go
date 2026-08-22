@@ -362,6 +362,14 @@ func main() {
 * [Update](docs/sdks/locations/README.md#update) - Update Location
 * [Delete](docs/sdks/locations/README.md#delete) - Delete Location
 
+### [Accounting.PaymentMethods](docs/sdks/paymentmethods/README.md)
+
+* [List](docs/sdks/paymentmethods/README.md#list) - List Payment Methods
+* [Create](docs/sdks/paymentmethods/README.md#create) - Create Payment Method
+* [Get](docs/sdks/paymentmethods/README.md#get) - Get Payment Method
+* [Update](docs/sdks/paymentmethods/README.md#update) - Update Payment Method
+* [Delete](docs/sdks/paymentmethods/README.md#delete) - Delete Payment Method
+
 ### [Accounting.Payments](docs/sdks/payments/README.md)
 
 * [List](docs/sdks/payments/README.md#list) - List Payments

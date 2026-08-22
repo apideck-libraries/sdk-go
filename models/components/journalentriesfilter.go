@@ -4,6 +4,7 @@ package components
 
 import (
 	"github.com/apideck-libraries/sdk-go/internal/utils"
+	"github.com/apideck-libraries/sdk-go/types"
 	"time"
 )
 
@@ -59,8 +60,12 @@ func (e *JournalEntriesFilterScope) IsExact() bool {
 }
 
 type JournalEntriesFilter struct {
-	UpdatedSince *time.Time                  `queryParam:"name=updated_since"`
-	Status       *JournalEntriesFilterStatus `queryParam:"name=status"`
+	UpdatedSince *time.Time `queryParam:"name=updated_since"`
+	// Return journal entries posted on or after this date (posting date, inclusive). Connectors without date-range support reject this filter with UnsupportedFiltersError.
+	StartDate *types.Date `queryParam:"name=start_date"`
+	// Return journal entries posted on or before this date (posting date, inclusive). Connectors without date-range support reject this filter with UnsupportedFiltersError.
+	EndDate *types.Date                 `queryParam:"name=end_date"`
+	Status  *JournalEntriesFilterStatus `queryParam:"name=status"`
 	// Connector-specific scope hint that controls which downstream source backs the read. On Xero, `manual` reads from `ManualJournals` (free in every tier), while `system` reads from `Journals` (the full general ledger view including manual journal postings, paid post 2026-03-02). Omitting the filter is equivalent to `system` and preserves the legacy default. Only honored on connectors where the distinction is exposed; ignored elsewhere.
 	Scope *JournalEntriesFilterScope `queryParam:"name=scope"`
 	// Filter by the subsidiary (legal entity) the record belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
@@ -83,6 +88,20 @@ func (j *JournalEntriesFilter) GetUpdatedSince() *time.Time {
 		return nil
 	}
 	return j.UpdatedSince
+}
+
+func (j *JournalEntriesFilter) GetStartDate() *types.Date {
+	if j == nil {
+		return nil
+	}
+	return j.StartDate
+}
+
+func (j *JournalEntriesFilter) GetEndDate() *types.Date {
+	if j == nil {
+		return nil
+	}
+	return j.EndDate
 }
 
 func (j *JournalEntriesFilter) GetStatus() *JournalEntriesFilterStatus {

@@ -46,6 +46,7 @@ func main() {
         DownstreamURL: "https://api.close.com/api/v1/lead",
         DownstreamAuthorization: sdkgo.Pointer("Bearer <token>"),
         Timeout: sdkgo.Pointer[int64](30000),
+        FollowRedirects: sdkgo.Pointer(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -110,6 +111,7 @@ func main() {
         DownstreamURL: "https://api.close.com/api/v1/lead",
         DownstreamAuthorization: sdkgo.Pointer("Bearer <token>"),
         Timeout: sdkgo.Pointer[int64](30000),
+        FollowRedirects: sdkgo.Pointer(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -174,6 +176,7 @@ func main() {
         DownstreamURL: "https://api.close.com/api/v1/lead",
         DownstreamAuthorization: sdkgo.Pointer("Bearer <token>"),
         Timeout: sdkgo.Pointer[int64](30000),
+        FollowRedirects: sdkgo.Pointer(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -238,6 +241,7 @@ func main() {
         DownstreamURL: "https://api.close.com/api/v1/lead",
         DownstreamAuthorization: sdkgo.Pointer("Bearer <token>"),
         Timeout: sdkgo.Pointer[int64](30000),
+        FollowRedirects: sdkgo.Pointer(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -302,6 +306,7 @@ func main() {
         DownstreamURL: "https://api.close.com/api/v1/lead",
         DownstreamAuthorization: sdkgo.Pointer("Bearer <token>"),
         Timeout: sdkgo.Pointer[int64](30000),
+        FollowRedirects: sdkgo.Pointer(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -366,6 +371,7 @@ func main() {
         DownstreamURL: "https://api.close.com/api/v1/lead",
         DownstreamAuthorization: sdkgo.Pointer("Bearer <token>"),
         Timeout: sdkgo.Pointer[int64](30000),
+        FollowRedirects: sdkgo.Pointer(false),
     })
     if err != nil {
         log.Fatal(err)

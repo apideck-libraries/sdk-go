@@ -75,6 +75,8 @@ type Transactions struct {
 	Reference *string `json:"reference,omitempty"`
 	// Type of transaction.
 	TransactionType *BankFeedStatementTransactionType `json:"transaction_type,omitempty"`
+	// The ISO 18245 merchant category code (MCC) classifying the merchant for this transaction, expected as a four-digit code such as `5812`. The format is not enforced by the API, matching the other bank identifier fields.
+	MerchantCategoryCode *string `json:"merchant_category_code,omitempty"`
 }
 
 func (t Transactions) MarshalJSON() ([]byte, error) {
@@ -142,6 +144,13 @@ func (t *Transactions) GetTransactionType() *BankFeedStatementTransactionType {
 		return nil
 	}
 	return t.TransactionType
+}
+
+func (t *Transactions) GetMerchantCategoryCode() *string {
+	if t == nil {
+		return nil
+	}
+	return t.MerchantCategoryCode
 }
 
 type BankFeedStatement struct {
