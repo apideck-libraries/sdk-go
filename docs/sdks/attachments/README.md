@@ -333,6 +333,7 @@ func main() {
         ServiceID: sdkgo.Pointer("salesforce"),
         CompanyID: sdkgo.Pointer("12345"),
         Fields: sdkgo.Pointer("id,updated_at"),
+        FollowRedirects: sdkgo.Pointer(false),
     })
     if err != nil {
         log.Fatal(err)

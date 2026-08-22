@@ -78,6 +78,8 @@ type ProxyPutProxyRequest struct {
 	DownstreamAuthorization *string `header:"style=simple,explode=false,name=x-apideck-downstream-authorization"`
 	// Override the default downstream request timeout in milliseconds. The default is 28000 (28 seconds).
 	Timeout *int64 `default:"28000" header:"style=simple,explode=false,name=x-apideck-timeout"`
+	// Set to `false` to opt out of the redirect to the presigned download URL. Instead of a `30x` response, you receive a `200` JSON body `{ url, expires_at }` containing the URL and its expiry, which you can fetch explicitly. Use this if your client automatically forwards the `Authorization` header onto redirects, since the downstream storage provider will reject that request. Any value other than `false` (or omitting the header) preserves the default redirect behavior.
+	FollowRedirects *bool `default:"true" header:"style=simple,explode=false,name=x-apideck-follow-redirects"`
 	// Depending on the verb/method of the request this will contain the request body you want to POST/PATCH/PUT.
 	// This field accepts []byte data or io.Reader implementations, such as *os.File.
 	RequestBody *any `request:"mediaType=*/*"`
@@ -143,6 +145,13 @@ func (p *ProxyPutProxyRequest) GetTimeout() *int64 {
 	return p.Timeout
 }
 
+func (p *ProxyPutProxyRequest) GetFollowRedirects() *bool {
+	if p == nil {
+		return nil
+	}
+	return p.FollowRedirects
+}
+
 func (p *ProxyPutProxyRequest) GetRequestBody() *any {
 	if p == nil {
 		return nil
@@ -152,19 +161,19 @@ func (p *ProxyPutProxyRequest) GetRequestBody() *any {
 
 type ProxyPutProxyResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Ok
+	// Ok. When the request includes `x-apideck-follow-redirects: false` and the downstream response would otherwise redirect to a presigned URL (oversized responses), the body is instead an `application/json` object `{ url, expires_at }` — fetch `url` explicitly (without the Authorization header) to retrieve the payload.
 	ResponseJSON map[string]any
-	// Ok
+	// Ok. When the request includes `x-apideck-follow-redirects: false` and the downstream response would otherwise redirect to a presigned URL (oversized responses), the body is instead an `application/json` object `{ url, expires_at }` — fetch `url` explicitly (without the Authorization header) to retrieve the payload.
 	// The Close method must be called on this field, even if it is not used, to prevent resource leaks.
 	ResponseBinary io.ReadCloser
-	// Ok
+	// Ok. When the request includes `x-apideck-follow-redirects: false` and the downstream response would otherwise redirect to a presigned URL (oversized responses), the body is instead an `application/json` object `{ url, expires_at }` — fetch `url` explicitly (without the Authorization header) to retrieve the payload.
 	// The Close method must be called on this field, even if it is not used, to prevent resource leaks.
 	ResponsePdf io.ReadCloser
-	// Ok
+	// Ok. When the request includes `x-apideck-follow-redirects: false` and the downstream response would otherwise redirect to a presigned URL (oversized responses), the body is instead an `application/json` object `{ url, expires_at }` — fetch `url` explicitly (without the Authorization header) to retrieve the payload.
 	ResponseXML *string
-	// Ok
+	// Ok. When the request includes `x-apideck-follow-redirects: false` and the downstream response would otherwise redirect to a presigned URL (oversized responses), the body is instead an `application/json` object `{ url, expires_at }` — fetch `url` explicitly (without the Authorization header) to retrieve the payload.
 	ResponseCsv *string
-	// Ok
+	// Ok. When the request includes `x-apideck-follow-redirects: false` and the downstream response would otherwise redirect to a presigned URL (oversized responses), the body is instead an `application/json` object `{ url, expires_at }` — fetch `url` explicitly (without the Authorization header) to retrieve the payload.
 	ResponseText *string
 	// Proxy error
 	ErrorJSON map[string]any

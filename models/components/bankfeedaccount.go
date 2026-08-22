@@ -60,12 +60,20 @@ type BankFeedAccount struct {
 	BankAccountType *BankAccountType `json:"bank_account_type,omitempty"`
 	// The source account's unique identifier.
 	SourceAccountID *string `json:"source_account_id,omitempty"`
+	// Bank routing number (US)
+	SourceRoutingNumber *string `json:"source_routing_number,omitempty"`
+	// The bank account number
+	SourceAccountNumber *string `json:"source_account_number,omitempty"`
 	// The target account's unique identifier in the accounting connector.
 	TargetAccountID *string `json:"target_account_id,omitempty"`
 	// Name associated with the target account.
 	TargetAccountName *string `json:"target_account_name,omitempty"`
 	// Account number of the destination bank account.
 	TargetAccountNumber *string `json:"target_account_number,omitempty"`
+	// The current balance of the source bank account.
+	Balance *float64 `json:"balance,omitempty"`
+	// The available balance of the source bank account (considering pending transactions and overdraft).
+	AvailableBalance *float64 `json:"available_balance,omitempty"`
 	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
 	Currency *Currency `json:"currency,omitempty"`
 	// Current status of the bank feed.
@@ -117,6 +125,20 @@ func (b *BankFeedAccount) GetSourceAccountID() *string {
 	return b.SourceAccountID
 }
 
+func (b *BankFeedAccount) GetSourceRoutingNumber() *string {
+	if b == nil {
+		return nil
+	}
+	return b.SourceRoutingNumber
+}
+
+func (b *BankFeedAccount) GetSourceAccountNumber() *string {
+	if b == nil {
+		return nil
+	}
+	return b.SourceAccountNumber
+}
+
 func (b *BankFeedAccount) GetTargetAccountID() *string {
 	if b == nil {
 		return nil
@@ -136,6 +158,20 @@ func (b *BankFeedAccount) GetTargetAccountNumber() *string {
 		return nil
 	}
 	return b.TargetAccountNumber
+}
+
+func (b *BankFeedAccount) GetBalance() *float64 {
+	if b == nil {
+		return nil
+	}
+	return b.Balance
+}
+
+func (b *BankFeedAccount) GetAvailableBalance() *float64 {
+	if b == nil {
+		return nil
+	}
+	return b.AvailableBalance
 }
 
 func (b *BankFeedAccount) GetCurrency() *Currency {
@@ -206,12 +242,20 @@ type BankFeedAccountInput struct {
 	BankAccountType *BankAccountType `json:"bank_account_type,omitempty"`
 	// The source account's unique identifier.
 	SourceAccountID *string `json:"source_account_id,omitempty"`
+	// Bank routing number (US)
+	SourceRoutingNumber *string `json:"source_routing_number,omitempty"`
+	// The bank account number
+	SourceAccountNumber *string `json:"source_account_number,omitempty"`
 	// The target account's unique identifier in the accounting connector.
 	TargetAccountID *string `json:"target_account_id,omitempty"`
 	// Name associated with the target account.
 	TargetAccountName *string `json:"target_account_name,omitempty"`
 	// Account number of the destination bank account.
 	TargetAccountNumber *string `json:"target_account_number,omitempty"`
+	// The current balance of the source bank account.
+	Balance *float64 `json:"balance,omitempty"`
+	// The available balance of the source bank account (considering pending transactions and overdraft).
+	AvailableBalance *float64 `json:"available_balance,omitempty"`
 	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
 	Currency *Currency `json:"currency,omitempty"`
 	// Current status of the bank feed.
@@ -235,6 +279,20 @@ func (b *BankFeedAccountInput) GetSourceAccountID() *string {
 	return b.SourceAccountID
 }
 
+func (b *BankFeedAccountInput) GetSourceRoutingNumber() *string {
+	if b == nil {
+		return nil
+	}
+	return b.SourceRoutingNumber
+}
+
+func (b *BankFeedAccountInput) GetSourceAccountNumber() *string {
+	if b == nil {
+		return nil
+	}
+	return b.SourceAccountNumber
+}
+
 func (b *BankFeedAccountInput) GetTargetAccountID() *string {
 	if b == nil {
 		return nil
@@ -254,6 +312,20 @@ func (b *BankFeedAccountInput) GetTargetAccountNumber() *string {
 		return nil
 	}
 	return b.TargetAccountNumber
+}
+
+func (b *BankFeedAccountInput) GetBalance() *float64 {
+	if b == nil {
+		return nil
+	}
+	return b.Balance
+}
+
+func (b *BankFeedAccountInput) GetAvailableBalance() *float64 {
+	if b == nil {
+		return nil
+	}
+	return b.AvailableBalance
 }
 
 func (b *BankFeedAccountInput) GetCurrency() *Currency {
