@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: b0432f8b090f29832461c610ed2cab3a
-  docVersion: 10.44.0
-  speakeasyVersion: 1.795.1
+  docChecksum: 872260321d2dcb0b0e68a799335cd7bb
+  docVersion: 10.45.0
+  speakeasyVersion: 1.795.3
   generationVersion: 2.932.9
-  releaseVersion: 0.32.0
-  configChecksum: c5d9c2cf3d3661f316156c7a7800d980
+  releaseVersion: 0.33.0
+  configChecksum: 69a8bc4cd7e952a1aeee3f51d5d4d611
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: e300708f-ee09-4a3a-84d3-d60c562a2d39
-  pristine_commit_hash: 777331e74b4393fc868ee919ed82f383a62c332f
-  pristine_tree_hash: 766336751302c4f2b7beeeda9af6a72f1cecafe4
+  generation_id: 67f75858-fb5c-496a-a5ca-60daf5194986
+  pristine_commit_hash: 4588508ad8ee8968d4972237522623669ab1da3e
+  pristine_tree_hash: 768d00a60db383337ebd1fd9195ac1224594969a
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: d800a06c77eca75b00ead46c9a8ef3985533ce72
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:77a89954176ff1908a7ca9e0028e1eb597ca4c66
-    pristine_git_object: 671542cb7b745378937d80d6b171adf6bff0b7cb
+    last_write_checksum: sha1:5a13b4df4349b613520055ef99cdcca49d4c88d8
+    pristine_git_object: cb3dd41494fbe31b3228f5e50c344e0f2ae3bdd2
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:1408555013a145bf95d6b88b27c4a688d3625fb0
@@ -1374,8 +1374,8 @@ trackedFiles:
     pristine_git_object: be53525396e0debd6a7742cc4aed15215c50d673
   docs/models/components/creditnotesfilter.md:
     id: da6742ff1983
-    last_write_checksum: sha1:29c4720e87b1ced8ce37cf865e299445ca42f21b
-    pristine_git_object: 7529e7edd6d7ff3732c9aa7a5919185f1a6226a2
+    last_write_checksum: sha1:aaa5b2e92a6954fb5d4db12b2d359dd5fff61d4a
+    pristine_git_object: 2ff937cf71ca8648fe26d1ee3715a707121682de
   docs/models/components/creditnotessort.md:
     id: b28a8f253329
     last_write_checksum: sha1:69811a62df9db6dbb936f3a251aa430381985f34
@@ -1414,8 +1414,8 @@ trackedFiles:
     pristine_git_object: 6e15d22dd50abcbc96b245c1018fa7deb6589d0b
   docs/models/components/customersfilter.md:
     id: 5912443a5c51
-    last_write_checksum: sha1:6619866a3974551321686cd6b8896227d8528916
-    pristine_git_object: 06a9d704f3c8b781b5e1ca8d4c3f95f28bfdb5ef
+    last_write_checksum: sha1:d713ded477432a28652f1deeffe25709088680ef
+    pristine_git_object: 6f57438880b089307428623476dc5f9f485f6f6d
   docs/models/components/customersfilterstatus.md:
     id: b576e6ef689b
     last_write_checksum: sha1:ebbcff2cffad16500829b465ecaf793c3226384c
@@ -2938,8 +2938,8 @@ trackedFiles:
     pristine_git_object: 2adfcd176b257ab510339ef1b4a7106e27153c09
   docs/models/components/invoicesfilter.md:
     id: 794380577e6e
-    last_write_checksum: sha1:35884391c28bf16aa976336e3155155d8a5ce085
-    pristine_git_object: baf2b22b4856fde0610f83813664d0f0d4acbced
+    last_write_checksum: sha1:44f06e63c4b9754499eb78a6735c2b5c21913969
+    pristine_git_object: 273fe37f7661889fa42938c03413891d2078b961
   docs/models/components/invoicessort.md:
     id: 183a55ba24d2
     last_write_checksum: sha1:3dbf5febfd942a067ca2f1e9d471963a50ba8bab
@@ -4874,8 +4874,8 @@ trackedFiles:
     pristine_git_object: badbde11be7d90df878612900d0b55fab2cf86b6
   docs/models/operations/accountingcreditnotesallrequest.md:
     id: cebb51ea9b13
-    last_write_checksum: sha1:c7ac380309def5f198a35d52a2e6b466484b0617
-    pristine_git_object: b468f6d8589e2e0cebf7fa4465f18fc516a17afc
+    last_write_checksum: sha1:9e02ac6009e3bb3a7cf481c09db0a0f7ff05145b
+    pristine_git_object: 91eab16236ded14b03b97e42ed4253fc91617799
   docs/models/operations/accountingcreditnotesallresponse.md:
     id: 3fc3e382cf62
     last_write_checksum: sha1:d5f18072d3825139d336deb9cf53f7d46aff2b8c
@@ -4934,8 +4934,8 @@ trackedFiles:
     pristine_git_object: 8d4eff814789e0f95a541a1b0223bfb166b63d7a
   docs/models/operations/accountingcustomersallrequest.md:
     id: 59d6b1ae9648
-    last_write_checksum: sha1:8759cb733d05f0a4fd511fddb352b204c6d76a34
-    pristine_git_object: 621b1768cc24aa3fae2cfbb55f2cb4927195d173
+    last_write_checksum: sha1:a026909eac1797f865913dfbce8c0f0793ef8751
+    pristine_git_object: 97502aceb8dfab0498d29d1083002a51094699ba
   docs/models/operations/accountingcustomersallresponse.md:
     id: 5858ad8de3db
     last_write_checksum: sha1:4bd5f5d56a6fd59fac372e85262b11bf0412d254
@@ -5378,8 +5378,8 @@ trackedFiles:
     pristine_git_object: d6c974250edb6af70d627190d7c26c2519342d41
   docs/models/operations/accountinginvoicesallrequest.md:
     id: 008ff90d5499
-    last_write_checksum: sha1:6e1fabb85b47e4be6ea3d12ee3a3f2e6f80b6cd9
-    pristine_git_object: 1d2ab3885920c3ec56225459286b1b322a92795c
+    last_write_checksum: sha1:4fd0430fb3742e97ce84feb3630304721353a268
+    pristine_git_object: 8542ba8027c4ee2c134abf1e107e4b96e338b820
   docs/models/operations/accountinginvoicesallresponse.md:
     id: 188008e8b823
     last_write_checksum: sha1:a99df2f4379dc2996a53a4203e38ba1113bf895c
@@ -9890,8 +9890,8 @@ trackedFiles:
     pristine_git_object: ade983887d53b7ee8fa9b0146ce0f8a8a921439a
   models/components/creditnotesfilter.go:
     id: 49332a7e6f34
-    last_write_checksum: sha1:9fdccbc16b4f51c96b531c5dd15910aa2d45579b
-    pristine_git_object: 804786240e1cf33c8ba9ab41fb03ce0a2b7f8e66
+    last_write_checksum: sha1:f764eafd80925b2b7c1b9263818c5e3148aa7a92
+    pristine_git_object: 76e400b60fe0ce5068f7b00640892c111c586ae8
   models/components/creditnotessort.go:
     id: e487a976ba5b
     last_write_checksum: sha1:fc5caa941ebbb2af6beb674fc7012da0d4bc6c60
@@ -9910,8 +9910,8 @@ trackedFiles:
     pristine_git_object: f1741366f5c3c55e35e8a5a861069a405e6e6d2f
   models/components/customersfilter.go:
     id: e0c43c66bc8c
-    last_write_checksum: sha1:37f36036f0b9d0c5808766e57a6fc39633bf5647
-    pristine_git_object: eb16b032a4105152cdfcb96a7e540649bf9d3083
+    last_write_checksum: sha1:872614e761883d1e816ededc838574df713a720b
+    pristine_git_object: b1483a835feec3715d0463b42fa0ac25ada40892
   models/components/customerssort.go:
     id: da6081f27e89
     last_write_checksum: sha1:94ef5adec4cd2c8368b983b0828b3af43cb14d79
@@ -11070,8 +11070,8 @@ trackedFiles:
     pristine_git_object: f7891c3bf3e7144a2b4a2addf7c5e237acc74d92
   models/components/invoicesfilter.go:
     id: 87a1c80cfff3
-    last_write_checksum: sha1:819897b291d0363178b1a228c4492cd62159ab11
-    pristine_git_object: 914b8d40696a99e0c1aff2b01f149a12a118e9eb
+    last_write_checksum: sha1:8901ddcfb3c028b30d71130b3f1a086fda3b3ece
+    pristine_git_object: b6c4270f3ce88e36f356242857d6e7ea46d6a92e
   models/components/invoicessort.go:
     id: 98cd37aeddc2
     last_write_checksum: sha1:c1a6751d35e1ac918617135b97686d92af9890fa
@@ -14062,7 +14062,7 @@ examples:
         query:
           raw: false
           limit: 20
-          filter: {"id_since": "1", "updated_since": "2020-09-30T07:43:32.000Z", "created_since": "2020-09-30T07:43:32.000Z", "number": "OIT00546", "supplier_id": "123", "customer_id": "123abc"}
+          filter: {"ids": "12345,67890", "id_since": "1", "updated_since": "2020-09-30T07:43:32.000Z", "created_since": "2020-09-30T07:43:32.000Z", "number": "OIT00546", "supplier_id": "123", "customer_id": "123abc"}
           sort: {"by": "updated_at", "direction": "desc"}
           pass_through: {"search": "San Francisco"}
           fields: "id,updated_at"
@@ -14876,7 +14876,7 @@ examples:
         query:
           raw: false
           limit: 20
-          filter: {"id_since": "1", "updated_since": "2020-09-30T07:43:32.000Z", "created_since": "2020-09-30T07:43:32.000Z", "number": "OIT00546", "customer_id": "123abc"}
+          filter: {"ids": "12345,67890", "id_since": "1", "updated_since": "2020-09-30T07:43:32.000Z", "created_since": "2020-09-30T07:43:32.000Z", "number": "OIT00546", "customer_id": "123abc"}
           sort: {"by": "updated_at", "direction": "desc"}
           pass_through: {"search": "San Francisco"}
           fields: "id,updated_at"
@@ -15146,7 +15146,7 @@ examples:
         query:
           raw: false
           limit: 20
-          filter: {"company_name": "SpaceX", "display_name": "Elon Musk", "first_name": "Elon", "last_name": "Musk", "email": "elon@musk.com", "status": "active", "updated_since": "2020-09-30T07:43:32.000Z", "supplier_id": "123"}
+          filter: {"ids": "12345,67890", "company_name": "SpaceX", "display_name": "Elon Musk", "first_name": "Elon", "last_name": "Musk", "email": "elon@musk.com", "status": "active", "updated_since": "2020-09-30T07:43:32.000Z", "supplier_id": "123"}
           sort: {"by": "updated_at", "direction": "desc"}
           pass_through: {"search": "San Francisco"}
           fields: "id,updated_at"
@@ -30345,7 +30345,7 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes:\n* `Apideck.Accounting.PaymentMethods.List()`: **Added**\n* `Apideck.Accounting.PaymentMethods.Create()`: **Added**\n* `Apideck.Accounting.PaymentMethods.Get()`: **Added**\n* `Apideck.Accounting.PaymentMethods.Update()`: **Added**\n* `Apideck.Accounting.PaymentMethods.Delete()`: **Added**\n* `Apideck.Accounting.TaxRates.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.TaxRates.Create()`: \n  *  `request.Request.TaxRate.CustomFields[]` **Changed**\n* `Apideck.Accounting.TaxRates.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.TaxRates.Update()`: \n  *  `request.Request.TaxRate.CustomFields[]` **Changed**\n* `Apideck.Accounting.Bills.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Bills.Create()`: \n  *  `request.Request.Bill.CustomFields[]` **Changed**\n* `Apideck.Accounting.Bills.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.Bills.Update()`: \n  *  `request.Request.Bill.CustomFields[]` **Changed**\n* `Apideck.Accounting.Invoices.List()`:  `response.Data[].LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Invoices.Create()`: \n  *  `request.Request.Invoice.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Invoices.Get()`:  `response.Data.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Invoices.Update()`: \n  *  `request.Request.Invoice.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.LedgerAccounts.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.LedgerAccounts.Create()`: \n  *  `request.Request.LedgerAccount.CustomFields[]` **Changed**\n* `Apideck.Accounting.LedgerAccounts.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.LedgerAccounts.Update()`: \n  *  `request.Request.LedgerAccount.CustomFields[]` **Changed**\n* `Apideck.Accounting.CreditNotes.List()`:  `response.Data[].LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.CreditNotes.Create()`: \n  *  `request.Request.CreditNote.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.CreditNotes.Get()`:  `response.Data.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.CreditNotes.Update()`: \n  *  `request.Request.CreditNote.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Customers.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Customers.Create()`: \n  *  `request.Request.Customer.CustomFields[]` **Changed**\n* `Apideck.Accounting.Customers.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.Customers.Update()`: \n  *  `request.Request.Customer.CustomFields[]` **Changed**\n* `Apideck.Accounting.Suppliers.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Suppliers.Create()`: \n  *  `request.Request.Supplier.CustomFields[]` **Changed**\n* `Apideck.Accounting.Suppliers.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.Suppliers.Update()`: \n  *  `request.Request.Supplier.CustomFields[]` **Changed**\n* `Apideck.Accounting.Payments.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Payments.Create()`: \n  *  `request.Request.Payment.CustomFields[]` **Changed**\n* `Apideck.Accounting.Payments.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.Payments.Update()`: \n  *  `request.Request.Payment.CustomFields[]` **Changed**\n* `Apideck.Accounting.Refunds.List()`:  `response.Data[]` **Changed**\n* `Apideck.Accounting.Refunds.Create()`: \n  *  `request.Request.Refund` **Changed**\n* `Apideck.Accounting.Refunds.Get()`:  `response.Data` **Changed**\n* `Apideck.Accounting.Refunds.Update()`: \n  *  `request.Request.Refund` **Changed**\n* `Apideck.Accounting.CompanyInfo.Get()`:  `response.Data.DefaultSalesTax.CustomFields[]` **Changed**\n* `Apideck.Accounting.JournalEntries.List()`: \n  *  `request.Request.Filter` **Changed**\n  *  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.JournalEntries.Create()`: \n  *  `request.Request.JournalEntry.CustomFields[]` **Changed**\n* `Apideck.Accounting.JournalEntries.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.JournalEntries.Update()`: \n  *  `request.Request.JournalEntry.CustomFields[]` **Changed**\n* `Apideck.Accounting.GeneralLedgerTransactions.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.GeneralLedgerTransactions.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.SalesReceipts.List()`:  `response.Data[].LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.SalesReceipts.Create()`: \n  *  `request.Request.SalesReceipt.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.SalesReceipts.Get()`:  `response.Data.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.SalesReceipts.Update()`: \n  *  `request.Request.SalesReceipt.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.PurchaseOrders.List()`:  `response.Data[].LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.PurchaseOrders.Create()`: \n  *  `request.Request.PurchaseOrder.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.PurchaseOrders.Get()`:  `response.Data.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.PurchaseOrders.Update()`: \n  *  `request.Request.PurchaseOrder.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Attachments.Download()`: \n  *  `request.Request.FollowRedirects` **Added**\n* `Apideck.Accounting.BankAccounts.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.BankAccounts.Create()`: \n  *  `request.Request.AccountingBankAccount.CustomFields[]` **Changed**\n* `Apideck.Accounting.BankAccounts.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.BankAccounts.Update()`: \n  *  `request.Request.AccountingBankAccount.CustomFields[]` **Changed**\n* `Apideck.Accounting.BillPayments.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.BillPayments.Create()`: \n  *  `request.Request.BillPayment.CustomFields[]` **Changed**\n* `Apideck.Accounting.BillPayments.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.BillPayments.Update()`: \n  *  `request.Request.BillPayment.CustomFields[]` **Changed**\n* `Apideck.Accounting.Expenses.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Expenses.Create()`: \n  *  `request.Request.Expense.CustomFields[]` **Changed**\n* `Apideck.Accounting.Expenses.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.Expenses.Update()`: \n  *  `request.Request.Expense.CustomFields[]` **Changed**\n* `Apideck.Accounting.BankFeedAccounts.List()`:  `response.Data[]` **Changed**\n* `Apideck.Accounting.BankFeedAccounts.Create()`: \n  *  `request.Request.BankFeedAccount` **Changed**\n* `Apideck.Accounting.BankFeedAccounts.Get()`:  `response.Data` **Changed**\n* `Apideck.Accounting.BankFeedAccounts.Update()`: \n  *  `request.Request.BankFeedAccount` **Changed**\n* `Apideck.Accounting.BankFeedStatements.List()`:  `response.Data[].Transactions[].MerchantCategoryCode` **Added**\n* `Apideck.Accounting.BankFeedStatements.Create()`: \n  *  `request.Request.BankFeedStatement.Transactions[].MerchantCategoryCode` **Added**\n* `Apideck.Accounting.BankFeedStatements.Get()`:  `response.Data.Transactions[].MerchantCategoryCode` **Added**\n* `Apideck.Accounting.BankFeedStatements.Update()`: \n  *  `request.Request.BankFeedStatement.Transactions[].MerchantCategoryCode` **Added**\n* `Apideck.Accounting.Quotes.List()`:  `response.Data[].LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Quotes.Create()`: \n  *  `request.Request.Quote.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Quotes.Get()`:  `response.Data.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Quotes.Update()`: \n  *  `request.Request.Quote.LineItems[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Projects.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Projects.Create()`: \n  *  `request.Request.Project.CustomFields[]` **Changed**\n* `Apideck.Accounting.Projects.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.Projects.Update()`: \n  *  `request.Request.Project.CustomFields[]` **Changed**\n* `Apideck.Accounting.Employees.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.Employees.Create()`: \n  *  `request.Request.AccountingEmployee.CustomFields[]` **Changed**\n* `Apideck.Accounting.Employees.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.Employees.Update()`: \n  *  `request.Request.AccountingEmployee.CustomFields[]` **Changed**\n* `Apideck.Accounting.ExpenseReports.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Accounting.ExpenseReports.Create()`: \n  *  `request.Request.ExpenseReport.CustomFields[]` **Changed**\n* `Apideck.Accounting.ExpenseReports.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Accounting.ExpenseReports.Update()`: \n  *  `request.Request.ExpenseReport.CustomFields[]` **Changed**\n* `Apideck.Ats.Jobs.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Ats.Jobs.Create()`: \n  *  `request.Request.Job.CustomFields[]` **Changed**\n* `Apideck.Ats.Jobs.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Ats.Jobs.Update()`: \n  *  `request.Request.Job.CustomFields[]` **Changed**\n* `Apideck.Ats.Applicants.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Ats.Applicants.Create()`: \n  *  `request.Request.Applicant.CustomFields[]` **Changed**\n* `Apideck.Ats.Applicants.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Ats.Applicants.Update()`: \n  *  `request.Request.Applicant.CustomFields[]` **Changed**\n* `Apideck.Crm.Companies.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Crm.Companies.Create()`: \n  *  `request.Request.Company1.CustomFields[]` **Changed**\n* `Apideck.Crm.Companies.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Crm.Companies.Update()`: \n  *  `request.Request.Company1.CustomFields[]` **Changed**\n* `Apideck.Crm.Contacts.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Crm.Contacts.Create()`: \n  *  `request.Request.Contact.CustomFields[]` **Changed**\n* `Apideck.Crm.Contacts.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Crm.Contacts.Update()`: \n  *  `request.Request.Contact.CustomFields[]` **Changed**\n* `Apideck.Crm.Opportunities.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Crm.Opportunities.Create()`: \n  *  `request.Request.Opportunity.CustomFields[]` **Changed**\n* `Apideck.Crm.Opportunities.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Crm.Opportunities.Update()`: \n  *  `request.Request.Opportunity.CustomFields[]` **Changed**\n* `Apideck.Crm.Leads.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Crm.Leads.Create()`: \n  *  `request.Request.Lead.CustomFields[]` **Changed**\n* `Apideck.Crm.Leads.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Crm.Leads.Update()`: \n  *  `request.Request.Lead.CustomFields[]` **Changed**\n* `Apideck.Crm.Lists.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Crm.Lists.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Crm.Activities.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Crm.Activities.Create()`: \n  *  `request.Request.Activity.CustomFields[]` **Changed**\n* `Apideck.Crm.Activities.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Crm.Activities.Update()`: \n  *  `request.Request.Activity.CustomFields[]` **Changed**\n* `Apideck.FileStorage.Files.Download()`: \n  *  `request.Request.FollowRedirects` **Added**\n* `Apideck.Hris.Employees.List()`:  `response.Data[].CustomFields[]` **Changed**\n* `Apideck.Hris.Employees.Create()`: \n  *  `request.Request.Employee.CustomFields[]` **Changed**\n* `Apideck.Hris.Employees.Get()`:  `response.Data.CustomFields[]` **Changed**\n* `Apideck.Hris.Employees.Update()`: \n  *  `request.Request.Employee.CustomFields[]` **Changed**\n* `Apideck.Hris.EmployeeSchedules.List()`:  `response.Data.Employee.CustomFields[]` **Changed**\n* `Apideck.Proxy.Get()`: \n  *  `request.Request.FollowRedirects` **Added**\n* `Apideck.Proxy.Options()`: \n  *  `request.Request.FollowRedirects` **Added**\n* `Apideck.Proxy.Post()`: \n  *  `request.Request.FollowRedirects` **Added**\n* `Apideck.Proxy.Put()`: \n  *  `request.Request.FollowRedirects` **Added**\n* `Apideck.Proxy.Patch()`: \n  *  `request.Request.FollowRedirects` **Added**\n* `Apideck.Proxy.Delete()`: \n  *  `request.Request.FollowRedirects` **Added**\n"
+releaseNotes: "## Go SDK Changes:\n* `Apideck.Accounting.Invoices.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.CreditNotes.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.Customers.List()`: \n  *  `request.Request.Filter` **Changed**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
