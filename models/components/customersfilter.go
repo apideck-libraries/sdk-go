@@ -33,6 +33,8 @@ func (e *CustomersFilterStatus) IsExact() bool {
 }
 
 type CustomersFilter struct {
+	// Comma-separated list of customer IDs to filter by (e.g. `12345,67890`).
+	Ids *string `queryParam:"name=ids"`
 	// Company Name of customer to search for
 	CompanyName *string `queryParam:"name=company_name"`
 	// Display Name of customer to search for
@@ -61,6 +63,13 @@ func (c *CustomersFilter) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
+}
+
+func (c *CustomersFilter) GetIds() *string {
+	if c == nil {
+		return nil
+	}
+	return c.Ids
 }
 
 func (c *CustomersFilter) GetCompanyName() *string {
