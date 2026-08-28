@@ -1,25 +1,25 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 46d632f3613c82f908742397d2bb1d28
+  docChecksum: 6d372a6748d13867f4f29ef40fe4695d
   docVersion: 10.45.0
-  speakeasyVersion: 1.796.0
-  generationVersion: 2.932.15
-  releaseVersion: 0.33.1
-  configChecksum: fe67975c82fa654174d84285e634db3e
+  speakeasyVersion: 1.796.1
+  generationVersion: 2.933.0
+  releaseVersion: 0.33.2
+  configChecksum: c4592e46ead22768c72066d8c2f6983b
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: 98e40bfe-bb9b-40c8-b71d-aa149c47a1d3
-  pristine_commit_hash: c377a54671a036c72f303629726b3f9d660e1508
-  pristine_tree_hash: 9e13f4931509f2a584dfae758011ebbe3b50e33b
+  generation_id: 648d5a78-ca45-4738-879e-53f3cf611723
+  pristine_commit_hash: b8cf405be52ad63adb93d42ce8b0b48a91f05129
+  pristine_tree_hash: 81672d2197ae21cf4badb1b496f2c06a1e6fb29d
 features:
   go:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     additionalProperties: 0.1.3
     constsAndDefaults: 0.1.14
-    core: 3.13.50
+    core: 3.13.51
     deepObjectParams: 0.1.1
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.3
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: d800a06c77eca75b00ead46c9a8ef3985533ce72
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:89971630a03fe419a99c2e0d8c2f958c89156566
-    pristine_git_object: 810c31cfe97c7c2d9a9ea1cc47ea3946a340a082
+    last_write_checksum: sha1:93c688cc6684353b3733054f722a06d731f981fd
+    pristine_git_object: ae75ece51ffbd7d01684a6cbbc5e0290c1ace461
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:1408555013a145bf95d6b88b27c4a688d3625fb0
