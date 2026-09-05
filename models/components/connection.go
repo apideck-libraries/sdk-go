@@ -129,7 +129,14 @@ func CreateValue5Number(number float64) Value5 {
 	}
 }
 
-func (u *Value5) UnmarshalJSON(data []byte) error {
+func (u *Value5) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = Value5{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
@@ -236,7 +243,14 @@ func CreateConnectionValueArrayOfValue5(arrayOfValue5 []Value5) ConnectionValue 
 	}
 }
 
-func (u *ConnectionValue) UnmarshalJSON(data []byte) error {
+func (u *ConnectionValue) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = ConnectionValue{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {

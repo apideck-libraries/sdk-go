@@ -98,7 +98,14 @@ func CreateDataScopesResourcesDataScopesResources2(dataScopesResources2 DataScop
 	}
 }
 
-func (u *DataScopesResources) UnmarshalJSON(data []byte) error {
+func (u *DataScopesResources) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = DataScopesResources{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var mapOfMapOfDataScopesResources1 map[string]map[string]DataScopesResources1 = map[string]map[string]DataScopesResources1{}
 	if err := utils.UnmarshalJSON(data, &mapOfMapOfDataScopesResources1, "", true, nil); err == nil {

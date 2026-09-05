@@ -44,7 +44,14 @@ func CreateNotFoundResponseDetailMapOfAny(mapOfAny map[string]any) NotFoundRespo
 	}
 }
 
-func (u *NotFoundResponseDetail) UnmarshalJSON(data []byte) error {
+func (u *NotFoundResponseDetail) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = NotFoundResponseDetail{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {

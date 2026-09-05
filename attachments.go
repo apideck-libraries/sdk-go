@@ -78,6 +78,7 @@ func (s *Attachments) List(ctx context.Context, request operations.AccountingAtt
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -252,7 +253,7 @@ func (s *Attachments) List(ctx context.Context, request operations.AccountingAtt
 		request.Cursor = &nCVal
 
 		return s.List(
-			ctx,
+			paginationCtx,
 			request,
 			opts...,
 		)
@@ -1518,10 +1519,17 @@ func (s *Attachments) Download(ctx context.Context, request operations.Accountin
 		timeout = s.sdkConfiguration.Timeout
 	}
 
+	var streamCancel context.CancelFunc
+
 	if timeout != nil {
 		var cancel context.CancelFunc
 		ctx, cancel = context.WithTimeout(ctx, *timeout)
-		defer cancel()
+		streamCancel = cancel
+		defer func() {
+			if streamCancel != nil {
+				streamCancel()
+			}
+		}()
 	}
 
 	req, err := http.NewRequestWithContext(ctx, "GET", opURL, nil)
@@ -1662,6 +1670,8 @@ func (s *Attachments) Download(ctx context.Context, request operations.Accountin
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `*/*`):
+			httpRes.Body = utils.BodyWithCancel(httpRes.Body, streamCancel)
+			streamCancel = nil
 			res.GetAttachmentDownloadResponse = httpRes.Body
 
 			return res, nil
