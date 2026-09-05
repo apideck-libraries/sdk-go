@@ -14,6 +14,7 @@ type Accounting struct {
 	LedgerAccounts            *LedgerAccounts
 	InvoiceItems              *InvoiceItems
 	CreditNotes               *CreditNotes
+	BillCreditNotes           *BillCreditNotes
 	Customers                 *Customers
 	Suppliers                 *Suppliers
 	Payments                  *Payments
@@ -62,6 +63,7 @@ func newAccounting(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *h
 		LedgerAccounts:            newLedgerAccounts(rootSDK, sdkConfig, hooks),
 		InvoiceItems:              newInvoiceItems(rootSDK, sdkConfig, hooks),
 		CreditNotes:               newCreditNotes(rootSDK, sdkConfig, hooks),
+		BillCreditNotes:           newBillCreditNotes(rootSDK, sdkConfig, hooks),
 		Customers:                 newCustomers(rootSDK, sdkConfig, hooks),
 		Suppliers:                 newSuppliers(rootSDK, sdkConfig, hooks),
 		Payments:                  newPayments(rootSDK, sdkConfig, hooks),

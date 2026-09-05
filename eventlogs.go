@@ -85,6 +85,7 @@ func (s *EventLogs) List(ctx context.Context, appID *string, cursor *string, lim
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -258,7 +259,7 @@ func (s *EventLogs) List(ctx context.Context, appID *string, cursor *string, lim
 		}
 
 		return s.List(
-			ctx,
+			paginationCtx,
 			appID,
 			&nCVal,
 			limit,

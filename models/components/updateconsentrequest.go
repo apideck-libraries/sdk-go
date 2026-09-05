@@ -94,7 +94,14 @@ func CreateUpdateConsentRequestResourcesTwo(two Two) UpdateConsentRequestResourc
 	}
 }
 
-func (u *UpdateConsentRequestResources) UnmarshalJSON(data []byte) error {
+func (u *UpdateConsentRequestResources) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = UpdateConsentRequestResources{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var mapOfMapOf1 map[string]map[string]One = map[string]map[string]One{}
 	if err := utils.UnmarshalJSON(data, &mapOfMapOf1, "", true, nil); err == nil {

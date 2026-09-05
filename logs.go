@@ -79,6 +79,7 @@ func (s *Logs) List(ctx context.Context, request operations.VaultLogsAllRequest,
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -253,7 +254,7 @@ func (s *Logs) List(ctx context.Context, request operations.VaultLogsAllRequest,
 		request.Cursor = &nCVal
 
 		return s.List(
-			ctx,
+			paginationCtx,
 			request,
 			opts...,
 		)

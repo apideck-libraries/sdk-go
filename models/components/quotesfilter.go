@@ -14,6 +14,8 @@ type QuotesFilter struct {
 	Number *string `queryParam:"name=number"`
 	// Filter by customer id
 	CustomerID *string `queryParam:"name=customer_id"`
+	// Filter by the subsidiary (legal entity) the record belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+	SubsidiaryID *string `queryParam:"name=subsidiary_id"`
 }
 
 func (q QuotesFilter) MarshalJSON() ([]byte, error) {
@@ -53,4 +55,11 @@ func (q *QuotesFilter) GetCustomerID() *string {
 		return nil
 	}
 	return q.CustomerID
+}
+
+func (q *QuotesFilter) GetSubsidiaryID() *string {
+	if q == nil {
+		return nil
+	}
+	return q.SubsidiaryID
 }

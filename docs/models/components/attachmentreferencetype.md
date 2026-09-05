@@ -16,10 +16,11 @@ custom := components.AttachmentReferenceType("custom_value")
 
 ## Values
 
-| Name                                   | Value                                  |
-| -------------------------------------- | -------------------------------------- |
-| `AttachmentReferenceTypeInvoice`       | invoice                                |
-| `AttachmentReferenceTypeBill`          | bill                                   |
-| `AttachmentReferenceTypeExpense`       | expense                                |
-| `AttachmentReferenceTypeExpenseReport` | expense-report                         |
-| `AttachmentReferenceTypeQuote`         | quote                                  |
+| Name                                    | Value                                   |
+| --------------------------------------- | --------------------------------------- |
+| `AttachmentReferenceTypeInvoice`        | invoice                                 |
+| `AttachmentReferenceTypeBill`           | bill                                    |
+| `AttachmentReferenceTypeBillCreditNote` | bill-credit-note                        |
+| `AttachmentReferenceTypeExpense`        | expense                                 |
+| `AttachmentReferenceTypeExpenseReport`  | expense-report                          |
+| `AttachmentReferenceTypeQuote`          | quote                                   |

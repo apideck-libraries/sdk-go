@@ -79,6 +79,7 @@ func (s *DriveGroups) List(ctx context.Context, request operations.FileStorageDr
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -253,7 +254,7 @@ func (s *DriveGroups) List(ctx context.Context, request operations.FileStorageDr
 		request.Cursor = &nCVal
 
 		return s.List(
-			ctx,
+			paginationCtx,
 			request,
 			opts...,
 		)

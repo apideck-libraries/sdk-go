@@ -47,7 +47,14 @@ func CreateFormFieldOptionGroup(group FormFieldOptionGroup) FormFieldOption {
 	}
 }
 
-func (u *FormFieldOption) UnmarshalJSON(data []byte) error {
+func (u *FormFieldOption) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = FormFieldOption{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	type discriminator struct {
 		OptionType string `json:"option_type"`
