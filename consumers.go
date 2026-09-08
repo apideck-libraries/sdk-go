@@ -439,6 +439,7 @@ func (s *Consumers) List(ctx context.Context, appID *string, filter *components.
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -612,7 +613,7 @@ func (s *Consumers) List(ctx context.Context, appID *string, filter *components.
 		}
 
 		return s.List(
-			ctx,
+			paginationCtx,
 			appID,
 			filter,
 			&nCVal,

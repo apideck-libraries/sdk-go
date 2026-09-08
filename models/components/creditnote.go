@@ -35,7 +35,7 @@ func (e *CreditNoteStatus) IsExact() bool {
 	return false
 }
 
-// CreditNoteType - Type of payment
+// CreditNoteType - Whether this credit note reduces an amount owed by a customer (accounts receivable) or owed to a supplier (accounts payable). `accounts_payable_credit` support is connector-specific — most connectors only expose the accounts-receivable side. Check the connector's gotchas for known deviations.
 type CreditNoteType string
 
 const (
@@ -98,7 +98,7 @@ type CreditNote struct {
 	DateIssued *time.Time `json:"date_issued,omitempty"`
 	// Date credit note paid - YYYY:MM::DDThh:mm:ss.sTZD
 	DatePaid *time.Time `json:"date_paid,omitempty"`
-	// Type of payment
+	// Whether this credit note reduces an amount owed by a customer (accounts receivable) or owed to a supplier (accounts payable). `accounts_payable_credit` support is connector-specific — most connectors only expose the accounts-receivable side. Check the connector's gotchas for known deviations.
 	Type        *CreditNoteType      `json:"type,omitempty"`
 	Account     *LinkedLedgerAccount `json:"account,omitempty"`
 	LineItems   []InvoiceLineItem    `json:"line_items,omitempty"`
@@ -445,7 +445,7 @@ type CreditNoteInput struct {
 	DateIssued *time.Time `json:"date_issued,omitempty"`
 	// Date credit note paid - YYYY:MM::DDThh:mm:ss.sTZD
 	DatePaid *time.Time `json:"date_paid,omitempty"`
-	// Type of payment
+	// Whether this credit note reduces an amount owed by a customer (accounts receivable) or owed to a supplier (accounts payable). `accounts_payable_credit` support is connector-specific — most connectors only expose the accounts-receivable side. Check the connector's gotchas for known deviations.
 	Type        *CreditNoteType        `json:"type,omitempty"`
 	Account     *LinkedLedgerAccount   `json:"account,omitempty"`
 	LineItems   []InvoiceLineItemInput `json:"line_items,omitempty"`

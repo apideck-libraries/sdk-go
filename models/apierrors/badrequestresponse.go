@@ -44,7 +44,14 @@ func CreateDetailMapOfAny(mapOfAny map[string]any) Detail {
 	}
 }
 
-func (u *Detail) UnmarshalJSON(data []byte) error {
+func (u *Detail) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = Detail{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {

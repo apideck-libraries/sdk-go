@@ -78,6 +78,7 @@ func (s *CollectionTicketComments) List(ctx context.Context, request operations.
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -252,7 +253,7 @@ func (s *CollectionTicketComments) List(ctx context.Context, request operations.
 		request.Cursor = &nCVal
 
 		return s.List(
-			ctx,
+			paginationCtx,
 			request,
 			opts...,
 		)
@@ -823,6 +824,7 @@ func (s *CollectionTicketComments) Get(ctx context.Context, request operations.I
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -997,7 +999,7 @@ func (s *CollectionTicketComments) Get(ctx context.Context, request operations.I
 		request.Cursor = &nCVal
 
 		return s.Get(
-			ctx,
+			paginationCtx,
 			request,
 			opts...,
 		)

@@ -196,7 +196,14 @@ func CreateUnauthorizedDetailDetail2(detail2 Detail2) UnauthorizedDetail {
 	}
 }
 
-func (u *UnauthorizedDetail) UnmarshalJSON(data []byte) error {
+func (u *UnauthorizedDetail) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = UnauthorizedDetail{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {

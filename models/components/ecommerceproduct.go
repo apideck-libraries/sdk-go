@@ -30,6 +30,30 @@ func (e *ProductStatus) IsExact() bool {
 	return false
 }
 
+// TaxStatus - The tax applicability of the product: `taxable` (the product is taxed), `shipping` (only the shipping is taxed, the product itself is exempt) or `none` (neither is taxed).
+type TaxStatus string
+
+const (
+	TaxStatusTaxable  TaxStatus = "taxable"
+	TaxStatusShipping TaxStatus = "shipping"
+	TaxStatusNone     TaxStatus = "none"
+)
+
+func (e TaxStatus) ToPointer() *TaxStatus {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *TaxStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "taxable", "shipping", "none":
+			return true
+		}
+	}
+	return false
+}
+
 type Images struct {
 	// A unique identifier for an object.
 	ID *string `json:"id,omitempty"`
@@ -243,6 +267,8 @@ type EcommerceProduct struct {
 	Description *string `json:"description,omitempty"`
 	// The current status of the product (active or archived).
 	Status *ProductStatus `json:"status,omitempty"`
+	// The tax applicability of the product: `taxable` (the product is taxed), `shipping` (only the shipping is taxed, the product itself is exempt) or `none` (neither is taxed).
+	TaxStatus *TaxStatus `json:"tax_status,omitempty"`
 	// The price of the product.
 	Price *string `json:"price,omitempty"`
 	// The stock keeping unit of the product.
@@ -307,6 +333,13 @@ func (e *EcommerceProduct) GetStatus() *ProductStatus {
 		return nil
 	}
 	return e.Status
+}
+
+func (e *EcommerceProduct) GetTaxStatus() *TaxStatus {
+	if e == nil {
+		return nil
+	}
+	return e.TaxStatus
 }
 
 func (e *EcommerceProduct) GetPrice() *string {

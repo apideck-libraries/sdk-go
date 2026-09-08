@@ -62,7 +62,14 @@ func CreateCustomFieldValue25MapOfAny(mapOfAny map[string]any) CustomFieldValue2
 	}
 }
 
-func (u *CustomFieldValue25) UnmarshalJSON(data []byte) error {
+func (u *CustomFieldValue25) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = CustomFieldValue25{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
@@ -180,7 +187,14 @@ func CreateCustomFieldValueArrayOfCustomFieldValue25(arrayOfCustomFieldValue25 [
 	}
 }
 
-func (u *CustomFieldValue) UnmarshalJSON(data []byte) error {
+func (u *CustomFieldValue) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = CustomFieldValue{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
@@ -359,7 +373,14 @@ func CreateCustomFieldValue5MapOfAny(mapOfAny map[string]any) CustomFieldValue5 
 	}
 }
 
-func (u *CustomFieldValue5) UnmarshalJSON(data []byte) error {
+func (u *CustomFieldValue5) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = CustomFieldValue5{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
@@ -477,7 +498,14 @@ func CreateCustomField1ValueArrayOfCustomFieldValue5(arrayOfCustomFieldValue5 []
 	}
 }
 
-func (u *CustomField1Value) UnmarshalJSON(data []byte) error {
+func (u *CustomField1Value) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = CustomField1Value{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
@@ -634,7 +662,14 @@ func CreateCustomFieldCustomField2(customField2 CustomField2) CustomField {
 	}
 }
 
-func (u *CustomField) UnmarshalJSON(data []byte) error {
+func (u *CustomField) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = CustomField{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var customField1 CustomField1 = CustomField1{}
 	if err := utils.UnmarshalJSON(data, &customField1, "", true, nil); err == nil {

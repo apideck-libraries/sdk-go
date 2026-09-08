@@ -79,6 +79,7 @@ func (s *Leads) List(ctx context.Context, request operations.CrmLeadsAllRequest,
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -253,7 +254,7 @@ func (s *Leads) List(ctx context.Context, request operations.CrmLeadsAllRequest,
 		request.Cursor = &nCVal
 
 		return s.List(
-			ctx,
+			paginationCtx,
 			request,
 			opts...,
 		)

@@ -79,6 +79,7 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -253,7 +254,7 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 		request.Cursor = &nCVal
 
 		return s.List(
-			ctx,
+			paginationCtx,
 			request,
 			opts...,
 		)
@@ -1874,10 +1875,17 @@ func (s *Files) Download(ctx context.Context, request operations.FileStorageFile
 		timeout = s.sdkConfiguration.Timeout
 	}
 
+	var streamCancel context.CancelFunc
+
 	if timeout != nil {
 		var cancel context.CancelFunc
 		ctx, cancel = context.WithTimeout(ctx, *timeout)
-		defer cancel()
+		streamCancel = cancel
+		defer func() {
+			if streamCancel != nil {
+				streamCancel()
+			}
+		}()
 	}
 
 	req, err := http.NewRequestWithContext(ctx, "GET", opURL, nil)
@@ -2018,6 +2026,8 @@ func (s *Files) Download(ctx context.Context, request operations.FileStorageFile
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `*/*`):
+			httpRes.Body = utils.BodyWithCancel(httpRes.Body, streamCancel)
+			streamCancel = nil
 			res.GetFileDownloadResponse = httpRes.Body
 
 			return res, nil
@@ -2219,10 +2229,17 @@ func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesE
 		timeout = s.sdkConfiguration.Timeout
 	}
 
+	var streamCancel context.CancelFunc
+
 	if timeout != nil {
 		var cancel context.CancelFunc
 		ctx, cancel = context.WithTimeout(ctx, *timeout)
-		defer cancel()
+		streamCancel = cancel
+		defer func() {
+			if streamCancel != nil {
+				streamCancel()
+			}
+		}()
 	}
 
 	req, err := http.NewRequestWithContext(ctx, "GET", opURL, nil)
@@ -2363,6 +2380,8 @@ func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesE
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `*/*`):
+			httpRes.Body = utils.BodyWithCancel(httpRes.Body, streamCancel)
+			streamCancel = nil
 			res.GetFileDownloadResponse = httpRes.Body
 
 			return res, nil
