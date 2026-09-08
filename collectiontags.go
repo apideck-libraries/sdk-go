@@ -78,6 +78,7 @@ func (s *CollectionTags) List(ctx context.Context, request operations.IssueTrack
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -252,7 +253,7 @@ func (s *CollectionTags) List(ctx context.Context, request operations.IssueTrack
 		request.Cursor = &nCVal
 
 		return s.List(
-			ctx,
+			paginationCtx,
 			request,
 			opts...,
 		)

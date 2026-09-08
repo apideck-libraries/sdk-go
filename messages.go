@@ -79,6 +79,7 @@ func (s *Messages) List(ctx context.Context, request operations.SmsMessagesAllRe
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -253,7 +254,7 @@ func (s *Messages) List(ctx context.Context, request operations.SmsMessagesAllRe
 		request.Cursor = &nCVal
 
 		return s.List(
-			ctx,
+			paginationCtx,
 			request,
 			opts...,
 		)

@@ -1,0 +1,10 @@
+# AccountingBillCreditNotesDeleteResponse
+
+
+## Fields
+
+| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                          | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                  | :heavy_check_mark:                                                                                  | N/A                                                                                                 |
+| `DeleteBillCreditNoteResponse`                                                                      | [*components.DeleteBillCreditNoteResponse](../../models/components/deletebillcreditnoteresponse.md) | :heavy_minus_sign:                                                                                  | Bill Credit Note deleted                                                                            |
+| `UnexpectedErrorResponse`                                                                           | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)           | :heavy_minus_sign:                                                                                  | Unexpected error                                                                                    |

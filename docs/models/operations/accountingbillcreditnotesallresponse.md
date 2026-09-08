@@ -1,0 +1,10 @@
+# AccountingBillCreditNotesAllResponse
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                      | [components.HTTPMetadata](../../models/components/httpmetadata.md)                              | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `GetBillCreditNotesResponse`                                                                    | [*components.GetBillCreditNotesResponse](../../models/components/getbillcreditnotesresponse.md) | :heavy_minus_sign:                                                                              | Bill Credit Notes                                                                               |
+| `UnexpectedErrorResponse`                                                                       | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)       | :heavy_minus_sign:                                                                              | Unexpected error                                                                                |

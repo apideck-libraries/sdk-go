@@ -11,6 +11,8 @@ type RefundsFilter struct {
 	UpdatedSince *time.Time `queryParam:"name=updated_since"`
 	// Filter by customer id
 	CustomerID *string `queryParam:"name=customer_id"`
+	// Filter by the subsidiary (legal entity) the record belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+	SubsidiaryID *string `queryParam:"name=subsidiary_id"`
 }
 
 func (r RefundsFilter) MarshalJSON() ([]byte, error) {
@@ -36,4 +38,11 @@ func (r *RefundsFilter) GetCustomerID() *string {
 		return nil
 	}
 	return r.CustomerID
+}
+
+func (r *RefundsFilter) GetSubsidiaryID() *string {
+	if r == nil {
+		return nil
+	}
+	return r.SubsidiaryID
 }

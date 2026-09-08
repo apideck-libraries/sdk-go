@@ -79,6 +79,7 @@ func (s *Expenses) List(ctx context.Context, request operations.AccountingExpens
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -253,7 +254,7 @@ func (s *Expenses) List(ctx context.Context, request operations.AccountingExpens
 		request.Cursor = &nCVal
 
 		return s.List(
-			ctx,
+			paginationCtx,
 			request,
 			opts...,
 		)

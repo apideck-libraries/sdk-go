@@ -51,7 +51,14 @@ func CreateFiveNumber(number float64) Five {
 	}
 }
 
-func (u *Five) UnmarshalJSON(data []byte) error {
+func (u *Five) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = Five{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
@@ -158,7 +165,14 @@ func CreateValueArrayOf5(arrayOf5 []Five) Value {
 	}
 }
 
-func (u *Value) UnmarshalJSON(data []byte) error {
+func (u *Value) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = Value{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {

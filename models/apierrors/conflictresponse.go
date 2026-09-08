@@ -44,7 +44,14 @@ func CreateConflictResponseDetailMapOfAny(mapOfAny map[string]any) ConflictRespo
 	}
 }
 
-func (u *ConflictResponseDetail) UnmarshalJSON(data []byte) error {
+func (u *ConflictResponseDetail) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = ConflictResponseDetail{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {

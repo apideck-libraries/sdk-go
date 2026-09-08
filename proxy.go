@@ -79,10 +79,17 @@ func (s *Proxy) Get(ctx context.Context, request operations.ProxyGetProxyRequest
 		timeout = s.sdkConfiguration.Timeout
 	}
 
+	var streamCancel context.CancelFunc
+
 	if timeout != nil {
 		var cancel context.CancelFunc
 		ctx, cancel = context.WithTimeout(ctx, *timeout)
-		defer cancel()
+		streamCancel = cancel
+		defer func() {
+			if streamCancel != nil {
+				streamCancel()
+			}
+		}()
 	}
 
 	req, err := http.NewRequestWithContext(ctx, "GET", opURL, nil)
@@ -231,10 +238,14 @@ func (s *Proxy) Get(ctx context.Context, request operations.ProxyGetProxyRequest
 
 			res.ResponseJSON = out
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/octet-stream`):
+			httpRes.Body = utils.BodyWithCancel(httpRes.Body, streamCancel)
+			streamCancel = nil
 			res.ResponseBinary = httpRes.Body
 
 			return res, nil
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/pdf`):
+			httpRes.Body = utils.BodyWithCancel(httpRes.Body, streamCancel)
+			streamCancel = nil
 			res.ResponsePdf = httpRes.Body
 
 			return res, nil
@@ -403,10 +414,17 @@ func (s *Proxy) Options(ctx context.Context, request operations.ProxyOptionsProx
 		timeout = s.sdkConfiguration.Timeout
 	}
 
+	var streamCancel context.CancelFunc
+
 	if timeout != nil {
 		var cancel context.CancelFunc
 		ctx, cancel = context.WithTimeout(ctx, *timeout)
-		defer cancel()
+		streamCancel = cancel
+		defer func() {
+			if streamCancel != nil {
+				streamCancel()
+			}
+		}()
 	}
 
 	req, err := http.NewRequestWithContext(ctx, "OPTIONS", opURL, nil)
@@ -555,10 +573,14 @@ func (s *Proxy) Options(ctx context.Context, request operations.ProxyOptionsProx
 
 			res.ResponseJSON = out
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/octet-stream`):
+			httpRes.Body = utils.BodyWithCancel(httpRes.Body, streamCancel)
+			streamCancel = nil
 			res.ResponseBinary = httpRes.Body
 
 			return res, nil
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/pdf`):
+			httpRes.Body = utils.BodyWithCancel(httpRes.Body, streamCancel)
+			streamCancel = nil
 			res.ResponsePdf = httpRes.Body
 
 			return res, nil
@@ -731,10 +753,17 @@ func (s *Proxy) Post(ctx context.Context, request operations.ProxyPostProxyReque
 		timeout = s.sdkConfiguration.Timeout
 	}
 
+	var streamCancel context.CancelFunc
+
 	if timeout != nil {
 		var cancel context.CancelFunc
 		ctx, cancel = context.WithTimeout(ctx, *timeout)
-		defer cancel()
+		streamCancel = cancel
+		defer func() {
+			if streamCancel != nil {
+				streamCancel()
+			}
+		}()
 	}
 
 	req, err := http.NewRequestWithContext(ctx, "POST", opURL, bodyReader)
@@ -886,10 +915,14 @@ func (s *Proxy) Post(ctx context.Context, request operations.ProxyPostProxyReque
 
 			res.ResponseJSON = out
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/octet-stream`):
+			httpRes.Body = utils.BodyWithCancel(httpRes.Body, streamCancel)
+			streamCancel = nil
 			res.ResponseBinary = httpRes.Body
 
 			return res, nil
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/pdf`):
+			httpRes.Body = utils.BodyWithCancel(httpRes.Body, streamCancel)
+			streamCancel = nil
 			res.ResponsePdf = httpRes.Body
 
 			return res, nil
@@ -1062,10 +1095,17 @@ func (s *Proxy) Put(ctx context.Context, request operations.ProxyPutProxyRequest
 		timeout = s.sdkConfiguration.Timeout
 	}
 
+	var streamCancel context.CancelFunc
+
 	if timeout != nil {
 		var cancel context.CancelFunc
 		ctx, cancel = context.WithTimeout(ctx, *timeout)
-		defer cancel()
+		streamCancel = cancel
+		defer func() {
+			if streamCancel != nil {
+				streamCancel()
+			}
+		}()
 	}
 
 	req, err := http.NewRequestWithContext(ctx, "PUT", opURL, bodyReader)
@@ -1217,10 +1257,14 @@ func (s *Proxy) Put(ctx context.Context, request operations.ProxyPutProxyRequest
 
 			res.ResponseJSON = out
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/octet-stream`):
+			httpRes.Body = utils.BodyWithCancel(httpRes.Body, streamCancel)
+			streamCancel = nil
 			res.ResponseBinary = httpRes.Body
 
 			return res, nil
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/pdf`):
+			httpRes.Body = utils.BodyWithCancel(httpRes.Body, streamCancel)
+			streamCancel = nil
 			res.ResponsePdf = httpRes.Body
 
 			return res, nil
@@ -1393,10 +1437,17 @@ func (s *Proxy) Patch(ctx context.Context, request operations.ProxyPatchProxyReq
 		timeout = s.sdkConfiguration.Timeout
 	}
 
+	var streamCancel context.CancelFunc
+
 	if timeout != nil {
 		var cancel context.CancelFunc
 		ctx, cancel = context.WithTimeout(ctx, *timeout)
-		defer cancel()
+		streamCancel = cancel
+		defer func() {
+			if streamCancel != nil {
+				streamCancel()
+			}
+		}()
 	}
 
 	req, err := http.NewRequestWithContext(ctx, "PATCH", opURL, bodyReader)
@@ -1548,10 +1599,14 @@ func (s *Proxy) Patch(ctx context.Context, request operations.ProxyPatchProxyReq
 
 			res.ResponseJSON = out
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/octet-stream`):
+			httpRes.Body = utils.BodyWithCancel(httpRes.Body, streamCancel)
+			streamCancel = nil
 			res.ResponseBinary = httpRes.Body
 
 			return res, nil
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/pdf`):
+			httpRes.Body = utils.BodyWithCancel(httpRes.Body, streamCancel)
+			streamCancel = nil
 			res.ResponsePdf = httpRes.Body
 
 			return res, nil
@@ -1720,10 +1775,17 @@ func (s *Proxy) Delete(ctx context.Context, request operations.ProxyDeleteProxyR
 		timeout = s.sdkConfiguration.Timeout
 	}
 
+	var streamCancel context.CancelFunc
+
 	if timeout != nil {
 		var cancel context.CancelFunc
 		ctx, cancel = context.WithTimeout(ctx, *timeout)
-		defer cancel()
+		streamCancel = cancel
+		defer func() {
+			if streamCancel != nil {
+				streamCancel()
+			}
+		}()
 	}
 
 	req, err := http.NewRequestWithContext(ctx, "DELETE", opURL, nil)
@@ -1872,10 +1934,14 @@ func (s *Proxy) Delete(ctx context.Context, request operations.ProxyDeleteProxyR
 
 			res.ResponseJSON = out
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/octet-stream`):
+			httpRes.Body = utils.BodyWithCancel(httpRes.Body, streamCancel)
+			streamCancel = nil
 			res.ResponseBinary = httpRes.Body
 
 			return res, nil
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/pdf`):
+			httpRes.Body = utils.BodyWithCancel(httpRes.Body, streamCancel)
+			streamCancel = nil
 			res.ResponsePdf = httpRes.Body
 
 			return res, nil

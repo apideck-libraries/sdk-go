@@ -84,6 +84,7 @@ func (s *Webhooks) List(ctx context.Context, appID *string, cursor *string, limi
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -257,7 +258,7 @@ func (s *Webhooks) List(ctx context.Context, appID *string, cursor *string, limi
 		}
 
 		return s.List(
-			ctx,
+			paginationCtx,
 			appID,
 			&nCVal,
 			limit,

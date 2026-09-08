@@ -232,6 +232,14 @@ func main() {
 * [Update](docs/sdks/bankfeedstatements/README.md#update) - Update Bank Feed Statement
 * [Delete](docs/sdks/bankfeedstatements/README.md#delete) - Delete Bank Feed Statement
 
+### [Accounting.BillCreditNotes](docs/sdks/billcreditnotes/README.md)
+
+* [List](docs/sdks/billcreditnotes/README.md#list) - List Bill Credit Notes
+* [Create](docs/sdks/billcreditnotes/README.md#create) - Create Bill Credit Note
+* [Get](docs/sdks/billcreditnotes/README.md#get) - Get Bill Credit Note
+* [Update](docs/sdks/billcreditnotes/README.md#update) - Update Bill Credit Note
+* [Delete](docs/sdks/billcreditnotes/README.md#delete) - Delete Bill Credit Note
+
 ### [Accounting.BillPayments](docs/sdks/billpayments/README.md)
 
 * [List](docs/sdks/billpayments/README.md#list) - List Bill Payments
