@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 421ff039c5764a88ac2a57281760a66e
-  docVersion: 10.52.0
+  docChecksum: 1d4a15dbdde2de60d8aa1b9b48e1b774
+  docVersion: 10.53.0
   speakeasyVersion: 1.796.4
   generationVersion: 2.935.1
-  releaseVersion: 0.34.0
-  configChecksum: a6b4e0621ba7cdd0abfcfaf851da7041
+  releaseVersion: 0.35.0
+  configChecksum: 12b555455df73abf78971c73bb7fb870
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: 001e602a-2a17-4e99-bfc0-535c78b3d4c7
-  pristine_commit_hash: a2624ee257458a960b99dcf800163efdba83e2c4
-  pristine_tree_hash: 9980276fe8dc6ae285d083622ce5ae032126cd55
+  generation_id: 120a4b97-d4b4-46f4-a2dd-216f6d2168fc
+  pristine_commit_hash: f567077ac1f4e8301214ac39fc17e70e1a03f3b2
+  pristine_tree_hash: f3b8f856e44abc70178e3152ed7119491a87c4e9
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: d800a06c77eca75b00ead46c9a8ef3985533ce72
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:98ec799a70992c3efb971c9acefcd820212c212a
-    pristine_git_object: 5aff69773e816667b107b854ee0aa2cdc2dcc707
+    last_write_checksum: sha1:ffc9dd1e09234bb3178277bed60cf5bfd231566a
+    pristine_git_object: 40d5286b8478b5707bc5a57fe8bcc0ace1a67cae
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:4debf0b560276190572c15765a8d4ff38d5b6114
@@ -30672,7 +30672,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes:\n* `Apideck.Accounting.BillCreditNotes.List()`: **Added**\n* `Apideck.Accounting.BillCreditNotes.Create()`: **Added**\n* `Apideck.Accounting.BillCreditNotes.Get()`: **Added**\n* `Apideck.Accounting.BillCreditNotes.Update()`: **Added**\n* `Apideck.Accounting.BillCreditNotes.Delete()`: **Added**\n* `Apideck.Accounting.Refunds.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.Attachments.List()`: \n  *  `request.Request.ReferenceType` **Changed**\n  *  `response.Data[].Reference.Type.Enum(billCreditNote)` **Added**\n* `Apideck.Accounting.Attachments.Upload()`: \n  *  `request.Request.ReferenceType` **Changed**\n* `Apideck.Accounting.Attachments.Get()`: \n  *  `request.Request.ReferenceType` **Changed**\n  *  `response.Data.Reference.Type.Enum(billCreditNote)` **Added**\n* `Apideck.Accounting.Attachments.Delete()`: \n  *  `request.Request.ReferenceType` **Changed**\n* `Apideck.Accounting.Attachments.Download()`: \n  *  `request.Request.ReferenceType` **Changed**\n* `Apideck.Accounting.Quotes.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Crm.Opportunities.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Ecommerce.Products.List()`:  `response.Data[].TaxStatus` **Added**\n* `Apideck.Ecommerce.Products.Get()`:  `response.Data.TaxStatus` **Added**\n* `Apideck.Vault.Connections.List()`:  `response.Data[].FormFields[].OptionsFetchError` **Added**\n* `Apideck.Vault.Connections.Get()`:  `response.Data.FormFields[].OptionsFetchError` **Added**\n* `Apideck.Vault.Connections.Update()`:  `response.Data.FormFields[].OptionsFetchError` **Added**\n* `Apideck.Vault.Connections.Imports()`:  `response.Data.FormFields[].OptionsFetchError` **Added**\n* `Apideck.Vault.Connections.Migrate()`:  `response.Data.FormFields[].OptionsFetchError` **Added**\n* `Apideck.Vault.Connections.Token()`:  `response.Data.FormFields[].OptionsFetchError` **Added**\n* `Apideck.Vault.ConnectionSettings.List()`:  `response.Data.FormFields[].OptionsFetchError` **Added**\n* `Apideck.Vault.ConnectionSettings.Update()`:  `response.Data.FormFields[].OptionsFetchError` **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
