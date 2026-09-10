@@ -21,6 +21,8 @@ custom := components.AttachmentReferenceType("custom_value")
 | `AttachmentReferenceTypeInvoice`        | invoice                                 |
 | `AttachmentReferenceTypeBill`           | bill                                    |
 | `AttachmentReferenceTypeBillCreditNote` | bill-credit-note                        |
+| `AttachmentReferenceTypeCreditNote`     | credit-note                             |
 | `AttachmentReferenceTypeExpense`        | expense                                 |
 | `AttachmentReferenceTypeExpenseReport`  | expense-report                          |
 | `AttachmentReferenceTypeQuote`          | quote                                   |
+| `AttachmentReferenceTypeJournalEntry`   | journal-entry                           |

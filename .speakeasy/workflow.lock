@@ -2,8 +2,8 @@ speakeasyVersion: 1.796.4
 sources:
     Apideck:
         sourceNamespace: apideck
-        sourceRevisionDigest: sha256:3be281f6751343698687eb686a68c875515d475992be17013647e075dc372015
-        sourceBlobDigest: sha256:8b11bb94da923ee900e21b7bc68a652f456ed9d8cfc20830028ce250303349e8
+        sourceRevisionDigest: sha256:6908cd6d7fc69069a7bc2c51e67344d5047aa3c3e75db490d04977f86ff63917
+        sourceBlobDigest: sha256:cddab16bc1cd66f7cd5fa199973897bab183a816516d1ccfb2569dbb113a4f87
         tags:
             - latest
             - 10.53.0
@@ -11,10 +11,10 @@ targets:
     apideck:
         source: Apideck
         sourceNamespace: apideck
-        sourceRevisionDigest: sha256:3be281f6751343698687eb686a68c875515d475992be17013647e075dc372015
-        sourceBlobDigest: sha256:8b11bb94da923ee900e21b7bc68a652f456ed9d8cfc20830028ce250303349e8
+        sourceRevisionDigest: sha256:6908cd6d7fc69069a7bc2c51e67344d5047aa3c3e75db490d04977f86ff63917
+        sourceBlobDigest: sha256:cddab16bc1cd66f7cd5fa199973897bab183a816516d1ccfb2569dbb113a4f87
         codeSamplesNamespace: apideck-go-code-samples
-        codeSamplesRevisionDigest: sha256:5a4f8ca185e440ca0f93157dbe490ddfc11fdfe3ae53033a900197069def5900
+        codeSamplesRevisionDigest: sha256:f417c9b7e2a61406695f761da56252beb67b5dc8d72fb0d0f5e47d1319c09681
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

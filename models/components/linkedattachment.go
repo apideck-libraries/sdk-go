@@ -7,7 +7,7 @@ type LinkedAttachment struct {
 	Name *string `json:"name,omitempty"`
 	// The MIME type of the file.
 	MimeType *string `json:"mime_type,omitempty"`
-	// Whether the file is c ompressed.
+	// Whether the file is compressed.
 	IsCompressed *bool `json:"is_compressed,omitempty"`
 	// The encoding of the file.
 	Encoding *string `json:"encoding,omitempty"`
