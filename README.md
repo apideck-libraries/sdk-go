@@ -354,6 +354,14 @@ func main() {
 * [Update](docs/sdks/journalentries/README.md#update) - Update Journal Entry
 * [Delete](docs/sdks/journalentries/README.md#delete) - Delete Journal Entry
 
+### [Accounting.Journals](docs/sdks/journals/README.md)
+
+* [List](docs/sdks/journals/README.md#list) - List Journals
+* [Create](docs/sdks/journals/README.md#create) - Create Journal
+* [Get](docs/sdks/journals/README.md#get) - Get Journal
+* [Update](docs/sdks/journals/README.md#update) - Update Journal
+* [Delete](docs/sdks/journals/README.md#delete) - Delete Journal
+
 ### [Accounting.LedgerAccounts](docs/sdks/ledgeraccounts/README.md)
 
 * [List](docs/sdks/ledgeraccounts/README.md#list) - List Ledger Accounts
