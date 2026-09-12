@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 7dd54a203a75639e3a71096822e5298b
+  docChecksum: 835abcad25f292e32e15679177560da7
   docVersion: 10.53.0
   speakeasyVersion: 1.796.4
   generationVersion: 2.935.1
-  releaseVersion: 0.35.1
-  configChecksum: 9912705a42f2da7473f9d25172cd125c
+  releaseVersion: 0.35.2
+  configChecksum: 9a23bd3b7efd801305b3cba5194e9fa6
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: fa60f8f1-eada-48ea-8068-8139002f4580
-  pristine_commit_hash: a731bde645371776d4fda0e6745e89dd5f57fa52
-  pristine_tree_hash: 94afce8a7ae38ad515f53f335ee60b6492480eb3
+  generation_id: a5d25178-c03a-4a80-a7da-3e829ba8106b
+  pristine_commit_hash: 24eb7619ab971a813b56027fe79b077cd9205b60
+  pristine_tree_hash: 045d1431a75c9ba796197b5ad7cb52cc34803076
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: d800a06c77eca75b00ead46c9a8ef3985533ce72
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:c743eba40734c70fb95e4583b1bbaf9fecc26df6
-    pristine_git_object: ebac18d145eba229ce2a9077498bac7ed78fed34
+    last_write_checksum: sha1:a5b6df51d24291eab78c99f5eea8dd90bc3af50b
+    pristine_git_object: 325d3687c51b7a2ae008ba2a060ff757006781d9
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:4debf0b560276190572c15765a8d4ff38d5b6114
@@ -30955,7 +30955,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes:\n* `Apideck.Accounting.Journals.List()`: **Added**\n* `Apideck.Accounting.Journals.Create()`: **Added**\n* `Apideck.Accounting.Journals.Get()`: **Added**\n* `Apideck.Accounting.Journals.Update()`: **Added**\n* `Apideck.Accounting.Journals.Delete()`: **Added**\n* `Apideck.Accounting.JournalEntries.List()`:  `response.Data[]` **Changed**\n* `Apideck.Accounting.JournalEntries.Create()`: \n  *  `request.Request.JournalEntry` **Changed**\n* `Apideck.Accounting.JournalEntries.Get()`:  `response.Data` **Changed**\n* `Apideck.Accounting.JournalEntries.Update()`: \n  *  `request.Request.JournalEntry` **Changed**\n* `Apideck.Accounting.Attachments.List()`: \n  *  `request.Request.ReferenceType` **Changed**\n  *  `response.Data[].Reference.Type` **Changed**\n* `Apideck.Accounting.Attachments.Upload()`: \n  *  `request.Request.ReferenceType` **Changed**\n* `Apideck.Accounting.Attachments.Get()`: \n  *  `request.Request.ReferenceType` **Changed**\n  *  `response.Data.Reference.Type` **Changed**\n* `Apideck.Accounting.Attachments.Delete()`: \n  *  `request.Request.ReferenceType` **Changed**\n* `Apideck.Accounting.Attachments.Download()`: \n  *  `request.Request.ReferenceType` **Changed**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
