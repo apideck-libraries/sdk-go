@@ -141,6 +141,10 @@ custom := components.WebhookEventType("custom_value")
 | `WebhookEventTypeEcommerceOrderCreated`                | ecommerce.order.created                                |
 | `WebhookEventTypeEcommerceOrderUpdated`                | ecommerce.order.updated                                |
 | `WebhookEventTypeEcommerceOrderDeleted`                | ecommerce.order.deleted                                |
+| `WebhookEventTypeEcommerceOrderPaid`                   | ecommerce.order.paid                                   |
+| `WebhookEventTypeEcommerceOrderShipped`                | ecommerce.order.shipped                                |
+| `WebhookEventTypeEcommerceOrderRefunded`               | ecommerce.order.refunded                               |
+| `WebhookEventTypeEcommerceOrderDelivered`              | ecommerce.order.delivered                              |
 | `WebhookEventTypeEcommerceProductCreated`              | ecommerce.product.created                              |
 | `WebhookEventTypeEcommerceProductUpdated`              | ecommerce.product.updated                              |
 | `WebhookEventTypeEcommerceProductDeleted`              | ecommerce.product.deleted                              |

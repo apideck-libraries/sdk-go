@@ -27,6 +27,7 @@ type Accounting struct {
 	GeneralLedgerTransactions *GeneralLedgerTransactions
 	SalesReceipts             *SalesReceipts
 	PurchaseOrders            *PurchaseOrders
+	GoodsReceipts             *GoodsReceipts
 	Subsidiaries              *Subsidiaries
 	Locations                 *Locations
 	Departments               *Departments
@@ -77,6 +78,7 @@ func newAccounting(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *h
 		GeneralLedgerTransactions: newGeneralLedgerTransactions(rootSDK, sdkConfig, hooks),
 		SalesReceipts:             newSalesReceipts(rootSDK, sdkConfig, hooks),
 		PurchaseOrders:            newPurchaseOrders(rootSDK, sdkConfig, hooks),
+		GoodsReceipts:             newGoodsReceipts(rootSDK, sdkConfig, hooks),
 		Subsidiaries:              newSubsidiaries(rootSDK, sdkConfig, hooks),
 		Locations:                 newLocations(rootSDK, sdkConfig, hooks),
 		Departments:               newDepartments(rootSDK, sdkConfig, hooks),
