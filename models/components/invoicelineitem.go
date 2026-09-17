@@ -77,6 +77,8 @@ type InvoiceLineItem struct {
 	// Whether the line item is prepaid
 	Prepaid *bool              `json:"prepaid,omitempty"`
 	Item    *LinkedInvoiceItem `json:"item,omitempty"`
+	// If true, this line item is subject to tax. Read-only, and only populated by connectors that record taxability on the line itself.
+	Taxable *bool `json:"taxable,omitempty"`
 	// Tax applicable on
 	TaxApplicableOn *string `json:"tax_applicable_on,omitempty"`
 	// Tax recoverability
@@ -265,6 +267,13 @@ func (i *InvoiceLineItem) GetItem() *LinkedInvoiceItem {
 		return nil
 	}
 	return i.Item
+}
+
+func (i *InvoiceLineItem) GetTaxable() *bool {
+	if i == nil {
+		return nil
+	}
+	return i.Taxable
 }
 
 func (i *InvoiceLineItem) GetTaxApplicableOn() *string {

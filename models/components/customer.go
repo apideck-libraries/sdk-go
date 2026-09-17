@@ -74,8 +74,10 @@ type Customer struct {
 	// Whether the entity is subject to taxation
 	Taxable *bool `json:"taxable,omitempty"`
 	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-	Currency *Currency            `json:"currency,omitempty"`
-	Account  *LinkedLedgerAccount `json:"account,omitempty"`
+	Currency *Currency `json:"currency,omitempty"`
+	// The customer's outstanding balance: the amount the customer currently owes, in the customer's currency. A positive value means the customer owes the business.
+	Balance *float64             `json:"balance,omitempty"`
+	Account *LinkedLedgerAccount `json:"account,omitempty"`
 	// The parent customer this entity is linked to.
 	Parent *LinkedParentCustomer `json:"parent,omitempty"`
 	// Customer status
@@ -289,6 +291,13 @@ func (c *Customer) GetCurrency() *Currency {
 		return nil
 	}
 	return c.Currency
+}
+
+func (c *Customer) GetBalance() *float64 {
+	if c == nil {
+		return nil
+	}
+	return c.Balance
 }
 
 func (c *Customer) GetAccount() *LinkedLedgerAccount {
