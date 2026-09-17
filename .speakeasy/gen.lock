@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: b6a33691ede3dc995a8d8d370e71360b
-  docVersion: 10.57.1
+  docChecksum: 5049ab380ce35c728e23d9f6b672a21e
+  docVersion: 10.57.5
   speakeasyVersion: 1.797.0
   generationVersion: 2.937.18
-  releaseVersion: 0.37.0
-  configChecksum: 5df0b3d06d12acd7dd6abc48711ca1dd
+  releaseVersion: 0.37.1
+  configChecksum: 6f13bd51828e377451449445181e56fe
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: d565b497-f372-4b57-a81e-d70bee483e1b
-  pristine_commit_hash: e1b94262dae9bb0b0f8847a3cb58fc35708ff1c7
-  pristine_tree_hash: 3d39f0a60850da85ccc3e36e8406a9b985a30027
+  generation_id: efa176f8-92b6-4a9e-a9b6-422b4f2918e4
+  pristine_commit_hash: 8f2a3b0a2a366887bfc06b225bea4ada47f86fd9
+  pristine_tree_hash: 0ab5167cbc01b69fed4adb46fc13148d64245ff1
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: d800a06c77eca75b00ead46c9a8ef3985533ce72
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:36048e7520d1f795b0cb2f3bf8763fe16bf90be8
-    pristine_git_object: d5845772141f3f3e57008d048e147bb0f880ce10
+    last_write_checksum: sha1:1a4c559d178fa85114098ec638bd12efa6fd3271
+    pristine_git_object: c103057d5d3a685fbcfabe7450d3375eeea8004a
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:4debf0b560276190572c15765a8d4ff38d5b6114
@@ -1454,8 +1454,8 @@ trackedFiles:
     pristine_git_object: 1e8286c005f9ffbfd6a2113ca5667eca347d1370
   docs/models/components/customer.md:
     id: c4a50385ed0c
-    last_write_checksum: sha1:50391320c0d5988fdca2c24972002446d22d7864
-    pristine_git_object: 46fd590c6b261d6a7082f10bb0a77811a0ad0237
+    last_write_checksum: sha1:ed0287dfa50dbe26ae50186b637b92603f58d625
+    pristine_git_object: 737b12196ba6de0cb4c4a0d4e6408c716b3ac360
   docs/models/components/customerinput.md:
     id: f269b8117696
     last_write_checksum: sha1:e65eec21f062d3c40c912a57f429fe3d718d4543
@@ -3026,8 +3026,8 @@ trackedFiles:
     pristine_git_object: 75c2e78ece1243eed03468c329b66db0d1902c2b
   docs/models/components/invoicelineitem.md:
     id: 6111c58120ad
-    last_write_checksum: sha1:b65b5c84f5a13c0c9dd7d2ede8bc05668bcd4039
-    pristine_git_object: ac1bda1f37aedc0624f701f0b13d91344b06fa2a
+    last_write_checksum: sha1:73e10710f50529afc7335cffe889772e1a3a76f9
+    pristine_git_object: acef6c70803cbe0b19765d5259f7b4231d863e6e
   docs/models/components/invoicelineiteminput.md:
     id: c80c384cf800
     last_write_checksum: sha1:11efeec641067c8af018093b6b60c9a6e67c68cc
@@ -10226,8 +10226,8 @@ trackedFiles:
     pristine_git_object: 3dd25aeaeb310cf6921919161ce6f3b0a29651ef
   models/components/customer.go:
     id: 7b4196fbf3ca
-    last_write_checksum: sha1:b6ffc26365b70b71975d3963cd229205a7810487
-    pristine_git_object: f1741366f5c3c55e35e8a5a861069a405e6e6d2f
+    last_write_checksum: sha1:251a270b5360d5aa88d6b62f325852d6f22b141a
+    pristine_git_object: 3445a517ae31010a158762309f910a548691e06d
   models/components/customersfilter.go:
     id: e0c43c66bc8c
     last_write_checksum: sha1:872614e761883d1e816ededc838574df713a720b
@@ -11430,8 +11430,8 @@ trackedFiles:
     pristine_git_object: 4d8432525e7ebec688bab29d5ee1f7e48d549a6a
   models/components/invoicelineitem.go:
     id: 4d7b115b3a42
-    last_write_checksum: sha1:1a232e68547f7e3073b901122751b3d8b72ef3a0
-    pristine_git_object: a298633c1ce890c780a7b90146bbba6e7c124fa7
+    last_write_checksum: sha1:dd97ef87788b12f5b68d92f9f0d8df1ef0304f4d
+    pristine_git_object: 7381ec7581f05a3d302fa1bcfdcae750bfbb2329
   models/components/invoiceresponse.go:
     id: 12b5a11fab30
     last_write_checksum: sha1:b39770697bae16d85a23a61eaa0e3c8e5a77dfcb
@@ -15691,7 +15691,7 @@ examples:
           x-apideck-company-id: "12345"
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "service": "xero", "resource": "customers", "operation": "one", "data": {"id": "12345", "downstream_id": "12345", "display_id": "EMP00101", "display_name": "Windsurf Shop", "company_name": "SpaceX", "company_id": "12345", "subsidiary": {"id": "12345", "display_id": "123456", "name": "Acme Inc."}, "customer_category": "Insurance", "title": "CEO", "first_name": "Elon", "middle_name": "D.", "last_name": "Musk", "suffix": "Jr.", "individual": true, "project": false, "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "websites": [{"id": "12345", "url": "http://example.com", "type": "primary"}], "bank_accounts": [{"bank_name": "Monzo", "account_number": "123465", "account_name": "SPACEX LLC", "account_type": "credit_card", "iban": "CH2989144532982975332", "bic": "AUDSCHGGXXX", "routing_number": "012345678", "bsb_number": "062-001", "branch_identifier": "001", "bank_code": "BNH", "currency": "USD"}], "notes": "Some notes about this customer", "tax_rate": {"id": "123456", "code": "N-T", "name": "GST on Purchases", "rate": 10}, "tax_number": "US123945459", "taxable": true, "currency": "USD", "account": {"id": "123456", "name": "Bank account", "nominal_code": "N091", "code": "453", "parent_id": "123456", "display_id": "123456"}, "parent": {"id": "12345", "name": "Windsurf Shop"}, "status": "active", "payment_method": "cash", "terms": "Net 30 days", "terms_id": "12345", "channel": "email", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "updated_by": "12345", "created_by": "12345", "updated_at": "2020-09-30T07:43:32.000Z", "created_at": "2020-09-30T07:43:32.000Z", "row_version": "1-12345", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}]}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}}
+          application/json: {"status_code": 200, "status": "OK", "service": "xero", "resource": "customers", "operation": "one", "data": {"id": "12345", "downstream_id": "12345", "display_id": "EMP00101", "display_name": "Windsurf Shop", "company_name": "SpaceX", "company_id": "12345", "subsidiary": {"id": "12345", "display_id": "123456", "name": "Acme Inc."}, "customer_category": "Insurance", "title": "CEO", "first_name": "Elon", "middle_name": "D.", "last_name": "Musk", "suffix": "Jr.", "individual": true, "project": false, "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "websites": [{"id": "12345", "url": "http://example.com", "type": "primary"}], "bank_accounts": [{"bank_name": "Monzo", "account_number": "123465", "account_name": "SPACEX LLC", "account_type": "credit_card", "iban": "CH2989144532982975332", "bic": "AUDSCHGGXXX", "routing_number": "012345678", "bsb_number": "062-001", "branch_identifier": "001", "bank_code": "BNH", "currency": "USD"}], "notes": "Some notes about this customer", "tax_rate": {"id": "123456", "code": "N-T", "name": "GST on Purchases", "rate": 10}, "tax_number": "US123945459", "taxable": true, "currency": "USD", "balance": 1250, "account": {"id": "123456", "name": "Bank account", "nominal_code": "N091", "code": "453", "parent_id": "123456", "display_id": "123456"}, "parent": {"id": "12345", "name": "Windsurf Shop"}, "status": "active", "payment_method": "cash", "terms": "Net 30 days", "terms_id": "12345", "channel": "email", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "updated_by": "12345", "created_by": "12345", "updated_at": "2020-09-30T07:43:32.000Z", "created_at": "2020-09-30T07:43:32.000Z", "row_version": "1-12345", "pass_through": [{"service_id": "<id>", "extend_paths": [{"path": "$.nested.property", "value": {"TaxClassificationRef": {"value": "EUC-99990201-V1-00020000"}}}]}]}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
         "401":
@@ -31109,7 +31109,20 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes:\n* `Apideck.Accounting.GoodsReceipts.List()`: **Added**\n* `Apideck.Accounting.GoodsReceipts.Get()`: **Added**\n* `Apideck.Accounting.Bills.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Webhook.Webhooks.List()`:  `response.Data[].Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Create()`: \n  *  `request.CreateWebhookRequest.Events[]` **Changed**\n  *  `response.Data.Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Get()`:  `response.Data.Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Update()`: \n  *  `request.UpdateWebhookRequest.Events[]` **Changed**\n  *  `response.Data.Events[]` **Changed**\n* `Apideck.Webhook.Webhooks.Delete()`:  `response.Data.Events[]` **Changed**\n"
+releaseNotes: |
+  ## Go SDK Changes:
+  * `Apideck.Accounting.Invoices.List()`:  `response.Data[].LineItems[].Taxable` **Added**
+  * `Apideck.Accounting.Invoices.Get()`:  `response.Data.LineItems[].Taxable` **Added**
+  * `Apideck.Accounting.CreditNotes.List()`:  `response.Data[].LineItems[].Taxable` **Added**
+  * `Apideck.Accounting.CreditNotes.Get()`:  `response.Data.LineItems[].Taxable` **Added**
+  * `Apideck.Accounting.Customers.List()`:  `response.Data[].Balance` **Added**
+  * `Apideck.Accounting.Customers.Get()`:  `response.Data.Balance` **Added**
+  * `Apideck.Accounting.Refunds.List()`:  `response.Data[].LineItems[].Taxable` **Added**
+  * `Apideck.Accounting.Refunds.Get()`:  `response.Data.LineItems[].Taxable` **Added**
+  * `Apideck.Accounting.SalesReceipts.List()`:  `response.Data[].LineItems[].Taxable` **Added**
+  * `Apideck.Accounting.SalesReceipts.Get()`:  `response.Data.LineItems[].Taxable` **Added**
+  * `Apideck.Accounting.PurchaseOrders.List()`:  `response.Data[].LineItems[].Taxable` **Added**
+  * `Apideck.Accounting.PurchaseOrders.Get()`:  `response.Data.LineItems[].Taxable` **Added**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
