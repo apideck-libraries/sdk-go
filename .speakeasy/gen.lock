@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 5049ab380ce35c728e23d9f6b672a21e
-  docVersion: 10.57.5
+  docChecksum: b79b41f73b3d60ea9d467a533cc61edd
+  docVersion: 10.58.0
   speakeasyVersion: 1.797.0
   generationVersion: 2.937.18
-  releaseVersion: 0.37.1
-  configChecksum: 6f13bd51828e377451449445181e56fe
+  releaseVersion: 0.38.0
+  configChecksum: 9d58616d17e25230188b48ba6a506f0e
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: efa176f8-92b6-4a9e-a9b6-422b4f2918e4
-  pristine_commit_hash: 8f2a3b0a2a366887bfc06b225bea4ada47f86fd9
-  pristine_tree_hash: 0ab5167cbc01b69fed4adb46fc13148d64245ff1
+  generation_id: 37cc0291-62e2-4a95-9fd8-86c816a3fef5
+  pristine_commit_hash: 0e7312e1325d032dea17ef69a85e2aa0a27132e7
+  pristine_tree_hash: e7b0f6f108b0dd4f94d01b895a1a3dd41fad606f
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: d800a06c77eca75b00ead46c9a8ef3985533ce72
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:1a4c559d178fa85114098ec638bd12efa6fd3271
-    pristine_git_object: c103057d5d3a685fbcfabe7450d3375eeea8004a
+    last_write_checksum: sha1:a8dfdfe4507eb769506c39dfd5dc2ca77bffbdf6
+    pristine_git_object: 58d5f8ded74c38973e98ae0f295b29677aff284b
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:4debf0b560276190572c15765a8d4ff38d5b6114
@@ -31109,20 +31109,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Go SDK Changes:
-  * `Apideck.Accounting.Invoices.List()`:  `response.Data[].LineItems[].Taxable` **Added**
-  * `Apideck.Accounting.Invoices.Get()`:  `response.Data.LineItems[].Taxable` **Added**
-  * `Apideck.Accounting.CreditNotes.List()`:  `response.Data[].LineItems[].Taxable` **Added**
-  * `Apideck.Accounting.CreditNotes.Get()`:  `response.Data.LineItems[].Taxable` **Added**
-  * `Apideck.Accounting.Customers.List()`:  `response.Data[].Balance` **Added**
-  * `Apideck.Accounting.Customers.Get()`:  `response.Data.Balance` **Added**
-  * `Apideck.Accounting.Refunds.List()`:  `response.Data[].LineItems[].Taxable` **Added**
-  * `Apideck.Accounting.Refunds.Get()`:  `response.Data.LineItems[].Taxable` **Added**
-  * `Apideck.Accounting.SalesReceipts.List()`:  `response.Data[].LineItems[].Taxable` **Added**
-  * `Apideck.Accounting.SalesReceipts.Get()`:  `response.Data.LineItems[].Taxable` **Added**
-  * `Apideck.Accounting.PurchaseOrders.List()`:  `response.Data[].LineItems[].Taxable` **Added**
-  * `Apideck.Accounting.PurchaseOrders.Get()`:  `response.Data.LineItems[].Taxable` **Added**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
