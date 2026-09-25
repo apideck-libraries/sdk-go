@@ -16,6 +16,8 @@ type EcommerceStore struct {
 	StoreURL *string `json:"store_url,omitempty"`
 	// The store's admin login URL
 	AdminURL *string `json:"admin_url,omitempty"`
+	// Seller-side addresses exposed by the platform for this store. Currently holds the store's default shipping origin when the platform designates one. Empty when none is available.
+	Addresses []EcommerceAddress `json:"addresses,omitempty"`
 	// When custom mappings are configured on the resource, the result is included here.
 	CustomMappings map[string]any `json:"custom_mappings,omitempty"`
 	// The date and time when the object was created.
@@ -61,6 +63,13 @@ func (e *EcommerceStore) GetAdminURL() *string {
 		return nil
 	}
 	return e.AdminURL
+}
+
+func (e *EcommerceStore) GetAddresses() []EcommerceAddress {
+	if e == nil {
+		return nil
+	}
+	return e.Addresses
 }
 
 func (e *EcommerceStore) GetCustomMappings() map[string]any {

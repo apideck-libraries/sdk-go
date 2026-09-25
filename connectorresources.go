@@ -32,7 +32,7 @@ func newConnectorResources(rootSDK *Apideck, sdkConfig config.SDKConfiguration, 
 
 // Get Connector Resource
 // Get Connector Resource
-func (s *ConnectorResources) Get(ctx context.Context, id string, resourceID string, appID *string, unifiedAPI *components.UnifiedAPIID, opts ...operations.Option) (*operations.ConnectorConnectorResourcesOneResponse, error) {
+func (s *ConnectorResources) Get(ctx context.Context, id string, resourceID string, appID *string, unifiedAPI *components.UnifiedAPI, opts ...operations.Option) (*operations.ConnectorConnectorResourcesOneResponse, error) {
 	request := operations.ConnectorConnectorResourcesOneRequest{
 		AppID:      appID,
 		ID:         id,
@@ -249,7 +249,7 @@ func (s *ConnectorResources) Get(ctx context.Context, id string, resourceID stri
 
 			var out apierrors.UnauthorizedResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -270,7 +270,7 @@ func (s *ConnectorResources) Get(ctx context.Context, id string, resourceID stri
 
 			var out apierrors.PaymentRequiredResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -291,7 +291,7 @@ func (s *ConnectorResources) Get(ctx context.Context, id string, resourceID stri
 
 			var out apierrors.NotFoundResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out

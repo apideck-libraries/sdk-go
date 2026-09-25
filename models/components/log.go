@@ -46,30 +46,30 @@ func (s *Service) GetName() string {
 	return s.Name
 }
 
-// UnifiedAPI - Which Unified Api request was made to.
-type UnifiedAPI string
+// LogUnifiedAPI - Which Unified Api request was made to.
+type LogUnifiedAPI string
 
 const (
-	UnifiedAPICrm           UnifiedAPI = "crm"
-	UnifiedAPILead          UnifiedAPI = "lead"
-	UnifiedAPIProxy         UnifiedAPI = "proxy"
-	UnifiedAPIVault         UnifiedAPI = "vault"
-	UnifiedAPIAccounting    UnifiedAPI = "accounting"
-	UnifiedAPIHris          UnifiedAPI = "hris"
-	UnifiedAPIAts           UnifiedAPI = "ats"
-	UnifiedAPIEcommerce     UnifiedAPI = "ecommerce"
-	UnifiedAPIIssueTracking UnifiedAPI = "issue-tracking"
-	UnifiedAPIPos           UnifiedAPI = "pos"
-	UnifiedAPIFileStorage   UnifiedAPI = "file-storage"
-	UnifiedAPISms           UnifiedAPI = "sms"
+	LogUnifiedAPICrm           LogUnifiedAPI = "crm"
+	LogUnifiedAPILead          LogUnifiedAPI = "lead"
+	LogUnifiedAPIProxy         LogUnifiedAPI = "proxy"
+	LogUnifiedAPIVault         LogUnifiedAPI = "vault"
+	LogUnifiedAPIAccounting    LogUnifiedAPI = "accounting"
+	LogUnifiedAPIHris          LogUnifiedAPI = "hris"
+	LogUnifiedAPIAts           LogUnifiedAPI = "ats"
+	LogUnifiedAPIEcommerce     LogUnifiedAPI = "ecommerce"
+	LogUnifiedAPIIssueTracking LogUnifiedAPI = "issue-tracking"
+	LogUnifiedAPIPos           LogUnifiedAPI = "pos"
+	LogUnifiedAPIFileStorage   LogUnifiedAPI = "file-storage"
+	LogUnifiedAPISms           LogUnifiedAPI = "sms"
 )
 
-func (e UnifiedAPI) ToPointer() *UnifiedAPI {
+func (e LogUnifiedAPI) ToPointer() *LogUnifiedAPI {
 	return &e
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
-func (e *UnifiedAPI) IsExact() bool {
+func (e *LogUnifiedAPI) IsExact() bool {
 	if e != nil {
 		switch *e {
 		case "crm", "lead", "proxy", "vault", "accounting", "hris", "ats", "ecommerce", "issue-tracking", "pos", "file-storage", "sms":
@@ -121,7 +121,7 @@ type Log struct {
 	// ISO Date and time when the request was made.
 	Timestamp string `json:"timestamp"`
 	// Which Unified Api request was made to.
-	UnifiedAPI UnifiedAPI `json:"unified_api"`
+	UnifiedAPI LogUnifiedAPI `json:"unified_api"`
 }
 
 func (l *Log) GetAPIStyle() string {
@@ -264,9 +264,9 @@ func (l *Log) GetTimestamp() string {
 	return l.Timestamp
 }
 
-func (l *Log) GetUnifiedAPI() UnifiedAPI {
+func (l *Log) GetUnifiedAPI() LogUnifiedAPI {
 	if l == nil {
-		return UnifiedAPI("")
+		return LogUnifiedAPI("")
 	}
 	return l.UnifiedAPI
 }

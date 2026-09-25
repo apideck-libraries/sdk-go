@@ -61,6 +61,8 @@ func (e *JournalEntriesFilterScope) IsExact() bool {
 
 type JournalEntriesFilter struct {
 	UpdatedSince *time.Time `queryParam:"name=updated_since"`
+	// Journal entry number to search for
+	Number *string `queryParam:"name=number"`
 	// Return journal entries posted on or after this date (posting date, inclusive). Connectors without date-range support reject this filter with UnsupportedFiltersError.
 	StartDate *types.Date `queryParam:"name=start_date"`
 	// Return journal entries posted on or before this date (posting date, inclusive). Connectors without date-range support reject this filter with UnsupportedFiltersError.
@@ -88,6 +90,13 @@ func (j *JournalEntriesFilter) GetUpdatedSince() *time.Time {
 		return nil
 	}
 	return j.UpdatedSince
+}
+
+func (j *JournalEntriesFilter) GetNumber() *string {
+	if j == nil {
+		return nil
+	}
+	return j.Number
 }
 
 func (j *JournalEntriesFilter) GetStartDate() *types.Date {

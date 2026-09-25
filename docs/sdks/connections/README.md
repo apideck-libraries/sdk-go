@@ -41,7 +41,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Vault.Connections.List(ctx, sdkgo.Pointer("crm"), sdkgo.Pointer(true))
+    res, err := s.Vault.Connections.List(ctx, nil, nil, sdkgo.Pointer("crm"), sdkgo.Pointer(true))
     if err != nil {
         log.Fatal(err)
     }
@@ -103,7 +103,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Vault.Connections.Get(ctx, "pipedrive", "crm")
+    res, err := s.Vault.Connections.Get(ctx, "pipedrive", "crm", nil, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -353,7 +353,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Vault.Connections.Delete(ctx, "pipedrive", "crm")
+    res, err := s.Vault.Connections.Delete(ctx, "pipedrive", "crm", nil, nil)
     if err != nil {
         log.Fatal(err)
     }

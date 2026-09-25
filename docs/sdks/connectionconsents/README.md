@@ -32,7 +32,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Vault.ConnectionConsents.List(ctx, "pipedrive", "crm")
+    res, err := s.Vault.ConnectionConsents.List(ctx, "pipedrive", "crm", nil, nil)
     if err != nil {
         log.Fatal(err)
     }

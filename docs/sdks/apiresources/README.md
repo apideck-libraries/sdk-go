@@ -31,7 +31,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Connector.APIResources.Get(ctx, "<id>", "<id>")
+    res, err := s.Connector.APIResources.Get(ctx, "<id>", "<id>", nil)
     if err != nil {
         log.Fatal(err)
     }

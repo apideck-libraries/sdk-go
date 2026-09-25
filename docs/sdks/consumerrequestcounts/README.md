@@ -32,7 +32,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Vault.ConsumerRequestCounts.List(ctx, "test_user_id", "2021-05-01T12:00:00.000Z", "2021-05-30T12:00:00.000Z")
+    res, err := s.Vault.ConsumerRequestCounts.List(ctx, "test_user_id", "2021-05-01T12:00:00.000Z", "2021-05-30T12:00:00.000Z", nil)
     if err != nil {
         log.Fatal(err)
     }

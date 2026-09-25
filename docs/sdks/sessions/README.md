@@ -37,7 +37,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Vault.Sessions.Create(ctx, &components.Session{
+    res, err := s.Vault.Sessions.Create(ctx, nil, nil, &components.Session{
         ConsumerMetadata: &components.ConsumerMetadata{
             AccountName: sdkgo.Pointer("SpaceX"),
             UserName: sdkgo.Pointer("Elon Musk"),

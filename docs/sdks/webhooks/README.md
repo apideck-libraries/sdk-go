@@ -35,7 +35,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Webhook.Webhooks.List(ctx, nil, sdkgo.Pointer[int64](20))
+    res, err := s.Webhook.Webhooks.List(ctx, nil, nil, sdkgo.Pointer[int64](20))
     if err != nil {
         log.Fatal(err)
     }
@@ -124,7 +124,7 @@ func main() {
             components.WebhookEventTypeVaultConnectionCreated,
             components.WebhookEventTypeVaultConnectionUpdated,
         },
-    })
+    }, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -183,7 +183,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Webhook.Webhooks.Get(ctx, "<id>")
+    res, err := s.Webhook.Webhooks.Get(ctx, "<id>", nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -258,7 +258,7 @@ func main() {
             components.WebhookEventTypeVaultConnectionCreated,
             components.WebhookEventTypeVaultConnectionUpdated,
         },
-    })
+    }, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -318,7 +318,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Webhook.Webhooks.Delete(ctx, "<id>")
+    res, err := s.Webhook.Webhooks.Delete(ctx, "<id>", nil)
     if err != nil {
         log.Fatal(err)
     }

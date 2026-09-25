@@ -32,7 +32,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Webhook.EventLogs.List(ctx, nil, sdkgo.Pointer[int64](20), &components.WebhookEventLogsFilter{
+    res, err := s.Webhook.EventLogs.List(ctx, nil, nil, sdkgo.Pointer[int64](20), &components.WebhookEventLogsFilter{
         ExcludeApis: sdkgo.Pointer("vault,proxy"),
         ConsumerID: sdkgo.Pointer("test_user_id"),
         EntityType: sdkgo.Pointer("Connection"),
