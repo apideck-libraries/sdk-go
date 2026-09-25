@@ -33,7 +33,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Connector.Apis.List(ctx, nil, sdkgo.Pointer[int64](20), &components.ApisFilter{
+    res, err := s.Connector.Apis.List(ctx, nil, nil, sdkgo.Pointer[int64](20), &components.ApisFilter{
         Status: components.APIStatusBeta.ToPointer(),
     })
     if err != nil {
@@ -106,7 +106,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Connector.Apis.Get(ctx, "<id>")
+    res, err := s.Connector.Apis.Get(ctx, "<id>", nil)
     if err != nil {
         log.Fatal(err)
     }

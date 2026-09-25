@@ -59,7 +59,7 @@ func (e *BillCreditNoteType) IsExact() bool {
 
 type BillCreditNote struct {
 	// Unique identifier representing the entity
-	ID string `json:"id"`
+	ID *string `json:"id,omitempty"`
 	// Bill credit note number.
 	Number *string `json:"number,omitempty"`
 	// The supplier this entity is linked to.
@@ -76,7 +76,7 @@ type BillCreditNote struct {
 	// Sub-total amount, normally before tax.
 	SubTotal *float64 `json:"sub_total,omitempty"`
 	// Amount of transaction
-	TotalAmount float64 `json:"total_amount"`
+	TotalAmount *float64 `json:"total_amount,omitempty"`
 	// Total tax amount applied to this bill credit note.
 	TotalTax *float64 `json:"total_tax,omitempty"`
 	// Applicable tax id/code override if tax is not supplied on a line item basis.
@@ -132,9 +132,9 @@ func (b *BillCreditNote) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (b *BillCreditNote) GetID() string {
+func (b *BillCreditNote) GetID() *string {
 	if b == nil {
-		return ""
+		return nil
 	}
 	return b.ID
 }
@@ -202,9 +202,9 @@ func (b *BillCreditNote) GetSubTotal() *float64 {
 	return b.SubTotal
 }
 
-func (b *BillCreditNote) GetTotalAmount() float64 {
+func (b *BillCreditNote) GetTotalAmount() *float64 {
 	if b == nil {
-		return 0.0
+		return nil
 	}
 	return b.TotalAmount
 }
@@ -387,7 +387,7 @@ type BillCreditNoteInput struct {
 	// Sub-total amount, normally before tax.
 	SubTotal *float64 `json:"sub_total,omitempty"`
 	// Amount of transaction
-	TotalAmount float64 `json:"total_amount"`
+	TotalAmount *float64 `json:"total_amount,omitempty"`
 	// Total tax amount applied to this bill credit note.
 	TotalTax *float64 `json:"total_tax,omitempty"`
 	// Applicable tax id/code override if tax is not supplied on a line item basis.
@@ -496,9 +496,9 @@ func (b *BillCreditNoteInput) GetSubTotal() *float64 {
 	return b.SubTotal
 }
 
-func (b *BillCreditNoteInput) GetTotalAmount() float64 {
+func (b *BillCreditNoteInput) GetTotalAmount() *float64 {
 	if b == nil {
-		return 0.0
+		return nil
 	}
 	return b.TotalAmount
 }

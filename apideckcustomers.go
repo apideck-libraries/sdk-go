@@ -292,7 +292,7 @@ func (s *ApideckCustomers) List(ctx context.Context, request operations.Ecommerc
 
 			var out apierrors.BadRequestResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -313,7 +313,7 @@ func (s *ApideckCustomers) List(ctx context.Context, request operations.Ecommerc
 
 			var out apierrors.UnauthorizedResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -334,7 +334,7 @@ func (s *ApideckCustomers) List(ctx context.Context, request operations.Ecommerc
 
 			var out apierrors.PaymentRequiredResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -355,7 +355,7 @@ func (s *ApideckCustomers) List(ctx context.Context, request operations.Ecommerc
 
 			var out apierrors.NotFoundResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -376,7 +376,7 @@ func (s *ApideckCustomers) List(ctx context.Context, request operations.Ecommerc
 
 			var out apierrors.UnprocessableResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -639,7 +639,7 @@ func (s *ApideckCustomers) Get(ctx context.Context, request operations.Ecommerce
 
 			var out apierrors.BadRequestResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -660,7 +660,7 @@ func (s *ApideckCustomers) Get(ctx context.Context, request operations.Ecommerce
 
 			var out apierrors.UnauthorizedResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -681,7 +681,7 @@ func (s *ApideckCustomers) Get(ctx context.Context, request operations.Ecommerce
 
 			var out apierrors.PaymentRequiredResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -702,7 +702,7 @@ func (s *ApideckCustomers) Get(ctx context.Context, request operations.Ecommerce
 
 			var out apierrors.NotFoundResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -723,7 +723,7 @@ func (s *ApideckCustomers) Get(ctx context.Context, request operations.Ecommerce
 
 			var out apierrors.UnprocessableResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out

@@ -2,6 +2,11 @@
 
 package components
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/utils"
+	"github.com/apideck-libraries/sdk-go/types"
+)
+
 // JournalEntryLineItemType - Debit entries are considered positive, and credit entries are considered negative.
 type JournalEntryLineItemType string
 
@@ -85,6 +90,21 @@ type JournalEntryLineItem struct {
 	LineNumber *int64 `json:"line_number,omitempty"`
 	// Worktags of the line item. This is currently only supported in Workday.
 	Worktags []*LinkedWorktag `json:"worktags,omitempty"`
+	// The financial date of this specific line, when it differs from the journal entry's own posted_at date - for example when booking a historical or backdated transaction. Not populated by every connector: some post the entry date at the header level only, in which case this line-level date is legitimately absent rather than wrong.
+	Date *types.Date `json:"date,omitempty"`
+	// A unique identifier for the source of this specific line, distinct from the journal entry's own source_id. Useful for reconciling an individual line back to an external system's own record when a single journal entry aggregates lines originating from more than one source.
+	SourceID *string `json:"source_id,omitempty"`
+}
+
+func (j JournalEntryLineItem) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(j, "", false)
+}
+
+func (j *JournalEntryLineItem) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &j, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (j *JournalEntryLineItem) GetID() *string {
@@ -220,6 +240,20 @@ func (j *JournalEntryLineItem) GetWorktags() []*LinkedWorktag {
 	return j.Worktags
 }
 
+func (j *JournalEntryLineItem) GetDate() *types.Date {
+	if j == nil {
+		return nil
+	}
+	return j.Date
+}
+
+func (j *JournalEntryLineItem) GetSourceID() *string {
+	if j == nil {
+		return nil
+	}
+	return j.SourceID
+}
+
 type JournalEntryLineItemInput struct {
 	// User defined description
 	Description *string `json:"description,omitempty"`
@@ -255,6 +289,21 @@ type JournalEntryLineItemInput struct {
 	LineNumber *int64 `json:"line_number,omitempty"`
 	// Worktags of the line item. This is currently only supported in Workday.
 	Worktags []*LinkedWorktag `json:"worktags,omitempty"`
+	// The financial date of this specific line, when it differs from the journal entry's own posted_at date - for example when booking a historical or backdated transaction. Not populated by every connector: some post the entry date at the header level only, in which case this line-level date is legitimately absent rather than wrong.
+	Date *types.Date `json:"date,omitempty"`
+	// A unique identifier for the source of this specific line, distinct from the journal entry's own source_id. Useful for reconciling an individual line back to an external system's own record when a single journal entry aggregates lines originating from more than one source.
+	SourceID *string `json:"source_id,omitempty"`
+}
+
+func (j JournalEntryLineItemInput) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(j, "", false)
+}
+
+func (j *JournalEntryLineItemInput) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &j, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (j *JournalEntryLineItemInput) GetDescription() *string {
@@ -381,4 +430,18 @@ func (j *JournalEntryLineItemInput) GetWorktags() []*LinkedWorktag {
 		return nil
 	}
 	return j.Worktags
+}
+
+func (j *JournalEntryLineItemInput) GetDate() *types.Date {
+	if j == nil {
+		return nil
+	}
+	return j.Date
+}
+
+func (j *JournalEntryLineItemInput) GetSourceID() *string {
+	if j == nil {
+		return nil
+	}
+	return j.SourceID
 }

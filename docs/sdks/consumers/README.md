@@ -44,7 +44,7 @@ func main() {
             Email: sdkgo.Pointer("elon@musk.com"),
             Image: sdkgo.Pointer("https://www.spacex.com/static/images/share.jpg"),
         },
-    })
+    }, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -105,7 +105,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Vault.Consumers.List(ctx, &components.ConsumersFilter{
+    res, err := s.Vault.Consumers.List(ctx, nil, &components.ConsumersFilter{
         ConsumerID: sdkgo.Pointer("test-consumer"),
         Search: sdkgo.Pointer("john"),
     }, nil, sdkgo.Pointer[int64](20))
@@ -182,7 +182,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Vault.Consumers.Get(ctx, "test_user_id")
+    res, err := s.Vault.Consumers.Get(ctx, "test_user_id", nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -249,7 +249,7 @@ func main() {
             Email: sdkgo.Pointer("elon@musk.com"),
             Image: sdkgo.Pointer("https://www.spacex.com/static/images/share.jpg"),
         },
-    })
+    }, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -309,7 +309,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Vault.Consumers.Delete(ctx, "test_user_id")
+    res, err := s.Vault.Consumers.Delete(ctx, "test_user_id", nil)
     if err != nil {
         log.Fatal(err)
     }

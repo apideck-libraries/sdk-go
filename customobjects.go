@@ -291,7 +291,7 @@ func (s *CustomObjects) List(ctx context.Context, request operations.CrmCustomOb
 
 			var out apierrors.BadRequestResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -312,7 +312,7 @@ func (s *CustomObjects) List(ctx context.Context, request operations.CrmCustomOb
 
 			var out apierrors.UnauthorizedResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -333,7 +333,7 @@ func (s *CustomObjects) List(ctx context.Context, request operations.CrmCustomOb
 
 			var out apierrors.PaymentRequiredResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -354,7 +354,7 @@ func (s *CustomObjects) List(ctx context.Context, request operations.CrmCustomOb
 
 			var out apierrors.NotFoundResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -375,7 +375,7 @@ func (s *CustomObjects) List(ctx context.Context, request operations.CrmCustomOb
 
 			var out apierrors.UnprocessableResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -645,7 +645,7 @@ func (s *CustomObjects) Create(ctx context.Context, request operations.CrmCustom
 
 			var out apierrors.BadRequestResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -666,7 +666,7 @@ func (s *CustomObjects) Create(ctx context.Context, request operations.CrmCustom
 
 			var out apierrors.UnauthorizedResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -687,7 +687,7 @@ func (s *CustomObjects) Create(ctx context.Context, request operations.CrmCustom
 
 			var out apierrors.PaymentRequiredResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -708,7 +708,7 @@ func (s *CustomObjects) Create(ctx context.Context, request operations.CrmCustom
 
 			var out apierrors.NotFoundResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -729,7 +729,7 @@ func (s *CustomObjects) Create(ctx context.Context, request operations.CrmCustom
 
 			var out apierrors.UnprocessableResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -992,7 +992,7 @@ func (s *CustomObjects) Get(ctx context.Context, request operations.CrmCustomObj
 
 			var out apierrors.BadRequestResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1013,7 +1013,7 @@ func (s *CustomObjects) Get(ctx context.Context, request operations.CrmCustomObj
 
 			var out apierrors.UnauthorizedResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1034,7 +1034,7 @@ func (s *CustomObjects) Get(ctx context.Context, request operations.CrmCustomObj
 
 			var out apierrors.PaymentRequiredResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1055,7 +1055,7 @@ func (s *CustomObjects) Get(ctx context.Context, request operations.CrmCustomObj
 
 			var out apierrors.NotFoundResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1076,7 +1076,7 @@ func (s *CustomObjects) Get(ctx context.Context, request operations.CrmCustomObj
 
 			var out apierrors.UnprocessableResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1346,7 +1346,7 @@ func (s *CustomObjects) Update(ctx context.Context, request operations.CrmCustom
 
 			var out apierrors.BadRequestResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1367,7 +1367,7 @@ func (s *CustomObjects) Update(ctx context.Context, request operations.CrmCustom
 
 			var out apierrors.UnauthorizedResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1388,7 +1388,7 @@ func (s *CustomObjects) Update(ctx context.Context, request operations.CrmCustom
 
 			var out apierrors.PaymentRequiredResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1409,7 +1409,7 @@ func (s *CustomObjects) Update(ctx context.Context, request operations.CrmCustom
 
 			var out apierrors.NotFoundResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1430,7 +1430,7 @@ func (s *CustomObjects) Update(ctx context.Context, request operations.CrmCustom
 
 			var out apierrors.UnprocessableResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1693,7 +1693,7 @@ func (s *CustomObjects) Delete(ctx context.Context, request operations.CrmCustom
 
 			var out apierrors.BadRequestResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1714,7 +1714,7 @@ func (s *CustomObjects) Delete(ctx context.Context, request operations.CrmCustom
 
 			var out apierrors.UnauthorizedResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1735,7 +1735,7 @@ func (s *CustomObjects) Delete(ctx context.Context, request operations.CrmCustom
 
 			var out apierrors.PaymentRequiredResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1756,7 +1756,7 @@ func (s *CustomObjects) Delete(ctx context.Context, request operations.CrmCustom
 
 			var out apierrors.NotFoundResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1777,7 +1777,7 @@ func (s *CustomObjects) Delete(ctx context.Context, request operations.CrmCustom
 
 			var out apierrors.UnprocessableResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out

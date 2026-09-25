@@ -1,6 +1,6 @@
 # UnifiedAPI
 
-Which Unified Api request was made to.
+Name of Apideck Unified API
 
 ## Example Usage
 
@@ -9,26 +9,39 @@ import (
 	"github.com/apideck-libraries/sdk-go/models/components"
 )
 
-value := components.UnifiedAPICrm
-
-// Open enum: custom values can be created with a direct type cast
-custom := components.UnifiedAPI("custom_value")
+value := components.UnifiedAPIAccounting
 ```
 
 
 ## Values
 
-| Name                      | Value                     |
-| ------------------------- | ------------------------- |
-| `UnifiedAPICrm`           | crm                       |
-| `UnifiedAPILead`          | lead                      |
-| `UnifiedAPIProxy`         | proxy                     |
-| `UnifiedAPIVault`         | vault                     |
-| `UnifiedAPIAccounting`    | accounting                |
-| `UnifiedAPIHris`          | hris                      |
-| `UnifiedAPIAts`           | ats                       |
-| `UnifiedAPIEcommerce`     | ecommerce                 |
-| `UnifiedAPIIssueTracking` | issue-tracking            |
-| `UnifiedAPIPos`           | pos                       |
-| `UnifiedAPIFileStorage`   | file-storage              |
-| `UnifiedAPISms`           | sms                       |
+| Name                              | Value                             |
+| --------------------------------- | --------------------------------- |
+| `UnifiedAPIAccounting`            | accounting                        |
+| `UnifiedAPIAts`                   | ats                               |
+| `UnifiedAPICalendar`              | calendar                          |
+| `UnifiedAPICrm`                   | crm                               |
+| `UnifiedAPICsp`                   | csp                               |
+| `UnifiedAPICustomerSupport`       | customer-support                  |
+| `UnifiedAPIEcommerce`             | ecommerce                         |
+| `UnifiedAPIEmail`                 | email                             |
+| `UnifiedAPIEmailMarketing`        | email-marketing                   |
+| `UnifiedAPIExpenseManagement`     | expense-management                |
+| `UnifiedAPIFileStorage`           | file-storage                      |
+| `UnifiedAPIForm`                  | form                              |
+| `UnifiedAPIHris`                  | hris                              |
+| `UnifiedAPILead`                  | lead                              |
+| `UnifiedAPIPayroll`               | payroll                           |
+| `UnifiedAPIPos`                   | pos                               |
+| `UnifiedAPIProcurement`           | procurement                       |
+| `UnifiedAPIProjectManagement`     | project-management                |
+| `UnifiedAPIScript`                | script                            |
+| `UnifiedAPISms`                   | sms                               |
+| `UnifiedAPISpreadsheet`           | spreadsheet                       |
+| `UnifiedAPISubscriptionAnalytics` | subscription-analytics            |
+| `UnifiedAPITeamMessaging`         | team-messaging                    |
+| `UnifiedAPIIssueTracking`         | issue-tracking                    |
+| `UnifiedAPITimeRegistration`      | time-registration                 |
+| `UnifiedAPITransactionalEmail`    | transactional-email               |
+| `UnifiedAPIVault`                 | vault                             |
+| `UnifiedAPIDataWarehouse`         | data-warehouse                    |

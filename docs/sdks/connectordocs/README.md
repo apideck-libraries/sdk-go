@@ -31,7 +31,7 @@ func main() {
         sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
     )
 
-    res, err := s.Connector.ConnectorDocs.Get(ctx, "<id>", "application_owner+oauth_credentials")
+    res, err := s.Connector.ConnectorDocs.Get(ctx, "<id>", "application_owner+oauth_credentials", nil)
     if err != nil {
         log.Fatal(err)
     }

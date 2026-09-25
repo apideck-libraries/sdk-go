@@ -292,7 +292,7 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 
 			var out apierrors.BadRequestResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -313,7 +313,7 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 
 			var out apierrors.UnauthorizedResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -334,7 +334,7 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 
 			var out apierrors.PaymentRequiredResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -355,7 +355,7 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 
 			var out apierrors.NotFoundResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -376,7 +376,7 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 
 			var out apierrors.UnprocessableResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -646,7 +646,7 @@ func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesS
 
 			var out apierrors.BadRequestResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -667,7 +667,7 @@ func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesS
 
 			var out apierrors.UnauthorizedResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -688,7 +688,7 @@ func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesS
 
 			var out apierrors.PaymentRequiredResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -709,7 +709,7 @@ func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesS
 
 			var out apierrors.NotFoundResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -730,7 +730,7 @@ func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesS
 
 			var out apierrors.UnprocessableResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -993,7 +993,7 @@ func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneR
 
 			var out apierrors.BadRequestResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1014,7 +1014,7 @@ func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneR
 
 			var out apierrors.UnauthorizedResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1035,7 +1035,7 @@ func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneR
 
 			var out apierrors.PaymentRequiredResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1056,7 +1056,7 @@ func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneR
 
 			var out apierrors.NotFoundResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1077,7 +1077,7 @@ func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneR
 
 			var out apierrors.UnprocessableResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1347,7 +1347,7 @@ func (s *Files) Update(ctx context.Context, request operations.FileStorageFilesU
 
 			var out apierrors.BadRequestResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1368,7 +1368,7 @@ func (s *Files) Update(ctx context.Context, request operations.FileStorageFilesU
 
 			var out apierrors.UnauthorizedResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1389,7 +1389,7 @@ func (s *Files) Update(ctx context.Context, request operations.FileStorageFilesU
 
 			var out apierrors.PaymentRequiredResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1410,7 +1410,7 @@ func (s *Files) Update(ctx context.Context, request operations.FileStorageFilesU
 
 			var out apierrors.NotFoundResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1431,7 +1431,7 @@ func (s *Files) Update(ctx context.Context, request operations.FileStorageFilesU
 
 			var out apierrors.UnprocessableResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1694,7 +1694,7 @@ func (s *Files) Delete(ctx context.Context, request operations.FileStorageFilesD
 
 			var out apierrors.BadRequestResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1715,7 +1715,7 @@ func (s *Files) Delete(ctx context.Context, request operations.FileStorageFilesD
 
 			var out apierrors.UnauthorizedResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1736,7 +1736,7 @@ func (s *Files) Delete(ctx context.Context, request operations.FileStorageFilesD
 
 			var out apierrors.PaymentRequiredResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1757,7 +1757,7 @@ func (s *Files) Delete(ctx context.Context, request operations.FileStorageFilesD
 
 			var out apierrors.NotFoundResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -1778,7 +1778,7 @@ func (s *Files) Delete(ctx context.Context, request operations.FileStorageFilesD
 
 			var out apierrors.UnprocessableResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -2048,7 +2048,7 @@ func (s *Files) Download(ctx context.Context, request operations.FileStorageFile
 
 			var out apierrors.BadRequestResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -2069,7 +2069,7 @@ func (s *Files) Download(ctx context.Context, request operations.FileStorageFile
 
 			var out apierrors.UnauthorizedResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -2090,7 +2090,7 @@ func (s *Files) Download(ctx context.Context, request operations.FileStorageFile
 
 			var out apierrors.PaymentRequiredResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -2111,7 +2111,7 @@ func (s *Files) Download(ctx context.Context, request operations.FileStorageFile
 
 			var out apierrors.NotFoundResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -2132,7 +2132,7 @@ func (s *Files) Download(ctx context.Context, request operations.FileStorageFile
 
 			var out apierrors.UnprocessableResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -2402,7 +2402,7 @@ func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesE
 
 			var out apierrors.BadRequestResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -2423,7 +2423,7 @@ func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesE
 
 			var out apierrors.UnauthorizedResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -2444,7 +2444,7 @@ func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesE
 
 			var out apierrors.PaymentRequiredResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -2465,7 +2465,7 @@ func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesE
 
 			var out apierrors.NotFoundResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out
@@ -2486,7 +2486,7 @@ func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesE
 
 			var out apierrors.UnprocessableResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
+				return nil, apierrors.NewResponseValidationError("response did not match the declared error schema", httpRes.StatusCode, string(rawBody), httpRes, err)
 			}
 
 			return nil, &out

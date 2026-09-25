@@ -451,7 +451,9 @@ type Company1Input struct {
 	// The first name of the person.
 	FirstName *string `json:"first_name,omitempty"`
 	// The last name of the person.
-	LastName     *string         `json:"last_name,omitempty"`
+	LastName *string `json:"last_name,omitempty"`
+	// Parent ID
+	ParentID     *string         `json:"parent_id,omitempty"`
 	BankAccounts []BankAccount1  `json:"bank_accounts,omitempty"`
 	Websites     []Website       `json:"websites,omitempty"`
 	Addresses    []Address       `json:"addresses,omitempty"`
@@ -613,6 +615,13 @@ func (c *Company1Input) GetLastName() *string {
 		return nil
 	}
 	return c.LastName
+}
+
+func (c *Company1Input) GetParentID() *string {
+	if c == nil {
+		return nil
+	}
+	return c.ParentID
 }
 
 func (c *Company1Input) GetBankAccounts() []BankAccount1 {
