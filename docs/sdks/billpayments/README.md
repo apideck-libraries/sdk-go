@@ -9,6 +9,7 @@
 * [Get](#get) - Get Bill Payment
 * [Update](#update) - Update Bill Payment
 * [Delete](#delete) - Delete Bill Payment
+* [CreateBatch](#createbatch) - Create Bill Payments in batch
 
 ## List
 
@@ -601,6 +602,184 @@ func main() {
 ### Response
 
 **[*operations.AccountingBillPaymentsDeleteResponse](../../models/operations/accountingbillpaymentsdeleteresponse.md), error**
+
+### Errors
+
+| Error Type                        | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| apierrors.BadRequestResponse      | 400                               | application/json                  |
+| apierrors.UnauthorizedResponse    | 401                               | application/json                  |
+| apierrors.PaymentRequiredResponse | 402                               | application/json                  |
+| apierrors.NotFoundResponse        | 404                               | application/json                  |
+| apierrors.UnprocessableResponse   | 422                               | application/json                  |
+| apierrors.APIError                | 4XX, 5XX                          | \*/\*                             |
+
+## CreateBatch
+
+Create multiple bill payments in a single request. Each item is processed independently, so some may be created while others fail; the response returns `200` with one result per item, in the order the items were sent. The maximum number of items accepted per request depends on the connector.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="accounting.billPaymentsBatchAdd" method="post" path="/accounting/bill-payments/batch" -->
+```go
+package main
+
+import(
+	"context"
+	"os"
+	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/components"
+	"github.com/apideck-libraries/sdk-go/types"
+	"github.com/apideck-libraries/sdk-go/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := sdkgo.New(
+        sdkgo.WithConsumerID("test-consumer"),
+        sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
+    )
+
+    res, err := s.Accounting.BillPayments.CreateBatch(ctx, operations.AccountingBillPaymentsBatchAddRequest{
+        ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
+        BatchBillPaymentsRequest: components.BatchBillPaymentsRequest{
+            Items: []components.BatchBillPaymentsRequestItems{
+                components.BatchBillPaymentsRequestItems{
+                    Ref: sdkgo.Pointer("item-1"),
+                    Data: components.BillPaymentCreateInput{
+                        Currency: components.CurrencyUsd.ToPointer(),
+                        CurrencyRate: sdkgo.Pointer[float64](0.69),
+                        TotalAmount: sdkgo.Pointer[float64](49.99),
+                        Reference: sdkgo.Pointer("123456"),
+                        PaymentMethod: sdkgo.Pointer("cash"),
+                        PaymentMethodReference: sdkgo.Pointer("123456"),
+                        PaymentMethodID: sdkgo.Pointer("12345"),
+                        Account: &components.LinkedLedgerAccount{
+                            ID: sdkgo.Pointer("123456"),
+                            Name: sdkgo.Pointer("Bank account"),
+                            NominalCode: sdkgo.Pointer("N091"),
+                            Code: sdkgo.Pointer("453"),
+                            ParentID: sdkgo.Pointer("123456"),
+                            DisplayID: sdkgo.Pointer("123456"),
+                        },
+                        TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
+                        Supplier: &components.LinkedSupplierInput{
+                            ID: sdkgo.Pointer("12345"),
+                            DisplayName: sdkgo.Pointer("Windsurf Shop"),
+                            Address: &components.Address{
+                                ID: sdkgo.Pointer("123"),
+                                Type: components.TypePrimary.ToPointer(),
+                                String: sdkgo.Pointer("25 Spring Street, Blackburn, VIC 3130"),
+                                Name: sdkgo.Pointer("HQ US"),
+                                Line1: sdkgo.Pointer("Main street"),
+                                Line2: sdkgo.Pointer("apt #"),
+                                Line3: sdkgo.Pointer("Suite #"),
+                                Line4: sdkgo.Pointer("delivery instructions"),
+                                Line5: sdkgo.Pointer("Attention: Finance Dept"),
+                                StreetNumber: sdkgo.Pointer("25"),
+                                City: sdkgo.Pointer("San Francisco"),
+                                State: sdkgo.Pointer("CA"),
+                                PostalCode: sdkgo.Pointer("94104"),
+                                Country: sdkgo.Pointer("US"),
+                                Latitude: sdkgo.Pointer("40.759211"),
+                                Longitude: sdkgo.Pointer("-73.984638"),
+                                County: sdkgo.Pointer("Santa Clara"),
+                                ContactName: sdkgo.Pointer("Elon Musk"),
+                                Salutation: sdkgo.Pointer("Mr"),
+                                PhoneNumber: sdkgo.Pointer("111-111-1111"),
+                                Fax: sdkgo.Pointer("122-111-1111"),
+                                Email: sdkgo.Pointer("elon@musk.com"),
+                                Website: sdkgo.Pointer("https://elonmusk.com"),
+                                Notes: sdkgo.Pointer("Address notes or delivery instructions."),
+                                RowVersion: sdkgo.Pointer("1-12345"),
+                            },
+                        },
+                        CompanyID: sdkgo.Pointer("12345"),
+                        Subsidiary: &components.LinkedSubsidiaryInput{
+                            DisplayID: sdkgo.Pointer("123456"),
+                            Name: sdkgo.Pointer("Acme Inc."),
+                        },
+                        Reconciled: sdkgo.Pointer(true),
+                        Status: components.PaymentStatusAuthorised.ToPointer(),
+                        Type: components.BillPaymentCreateInputBillPaymentTypeAccountsPayable.ToPointer(),
+                        Allocations: []components.BillPaymentCreateInputAllocations{
+                            components.BillPaymentCreateInputAllocations{
+                                ID: sdkgo.Pointer("12345"),
+                                Type: components.BillPaymentCreateInputAllocationTypeBill.ToPointer(),
+                                Amount: sdkgo.Pointer[float64](49.99),
+                                AllocationID: sdkgo.Pointer("123456"),
+                            },
+                        },
+                        Note: sdkgo.Pointer("Some notes about this transaction"),
+                        Number: sdkgo.Pointer("123456"),
+                        TrackingCategories: []*components.LinkedTrackingCategory{
+                            &components.LinkedTrackingCategory{
+                                ID: sdkgo.Pointer("123456"),
+                                Code: sdkgo.Pointer("100"),
+                                Name: sdkgo.Pointer("New York"),
+                                ParentID: sdkgo.Pointer("123456"),
+                                ParentName: sdkgo.Pointer("New York"),
+                            },
+                        },
+                        CustomFields: []components.CustomField{
+                            components.CreateCustomFieldCustomField1(
+                                components.CustomField1{
+                                    ID: sdkgo.Pointer("2389328923893298"),
+                                    Name: sdkgo.Pointer("employee_level"),
+                                    RefName: sdkgo.Pointer("Marketing"),
+                                    Description: sdkgo.Pointer("Employee Level"),
+                                    Value: sdkgo.Pointer(components.CreateCustomField1ValueStr(
+                                        "Uses Salesforce and Marketo",
+                                    )),
+                                },
+                            ),
+                        },
+                        RowVersion: sdkgo.Pointer("1-12345"),
+                        DisplayID: sdkgo.Pointer("123456"),
+                        PassThrough: []components.PassThroughBody{
+                            components.PassThroughBody{
+                                ServiceID: "<id>",
+                                ExtendPaths: []components.ExtendPaths{
+                                    components.ExtendPaths{
+                                        Path: "$.nested.property",
+                                        Value: map[string]any{
+                                            "TaxClassificationRef": map[string]any{
+                                                "value": "EUC-99990201-V1-00020000",
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.BatchBillPaymentsResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                | :heavy_check_mark:                                                                                                   | The context to use for the request.                                                                                  |
+| `request`                                                                                                            | [operations.AccountingBillPaymentsBatchAddRequest](../../models/operations/accountingbillpaymentsbatchaddrequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
+| `opts`                                                                                                               | [][operations.Option](../../models/operations/option.md)                                                             | :heavy_minus_sign:                                                                                                   | The options for this request.                                                                                        |
+
+### Response
+
+**[*operations.AccountingBillPaymentsBatchAddResponse](../../models/operations/accountingbillpaymentsbatchaddresponse.md), error**
 
 ### Errors
 
