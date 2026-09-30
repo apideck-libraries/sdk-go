@@ -239,6 +239,7 @@ func main() {
 * [Get](docs/sdks/billcreditnotes/README.md#get) - Get Bill Credit Note
 * [Update](docs/sdks/billcreditnotes/README.md#update) - Update Bill Credit Note
 * [Delete](docs/sdks/billcreditnotes/README.md#delete) - Delete Bill Credit Note
+* [CreateBatch](docs/sdks/billcreditnotes/README.md#createbatch) - Create Bill Credit Notes in batch
 
 ### [Accounting.BillPayments](docs/sdks/billpayments/README.md)
 
@@ -247,6 +248,7 @@ func main() {
 * [Get](docs/sdks/billpayments/README.md#get) - Get Bill Payment
 * [Update](docs/sdks/billpayments/README.md#update) - Update Bill Payment
 * [Delete](docs/sdks/billpayments/README.md#delete) - Delete Bill Payment
+* [CreateBatch](docs/sdks/billpayments/README.md#createbatch) - Create Bill Payments in batch
 
 ### [Accounting.Bills](docs/sdks/bills/README.md)
 
@@ -255,6 +257,7 @@ func main() {
 * [Get](docs/sdks/bills/README.md#get) - Get Bill
 * [Update](docs/sdks/bills/README.md#update) - Update Bill
 * [Delete](docs/sdks/bills/README.md#delete) - Delete Bill
+* [CreateBatch](docs/sdks/bills/README.md#createbatch) - Create Bills in batch
 
 ### [Accounting.Categories](docs/sdks/categories/README.md)
 
@@ -276,6 +279,7 @@ func main() {
 * [Get](docs/sdks/creditnotes/README.md#get) - Get Credit Note
 * [Update](docs/sdks/creditnotes/README.md#update) - Update Credit Note
 * [Delete](docs/sdks/creditnotes/README.md#delete) - Delete Credit Note
+* [CreateBatch](docs/sdks/creditnotes/README.md#createbatch) - Create Credit Notes in batch
 
 ### [Accounting.Customers](docs/sdks/customers/README.md)
 
@@ -350,6 +354,7 @@ func main() {
 * [Get](docs/sdks/invoices/README.md#get) - Get Invoice
 * [Update](docs/sdks/invoices/README.md#update) - Update Invoice
 * [Delete](docs/sdks/invoices/README.md#delete) - Delete Invoice
+* [CreateBatch](docs/sdks/invoices/README.md#createbatch) - Create Invoices in batch
 
 ### [Accounting.JournalEntries](docs/sdks/journalentries/README.md)
 
@@ -398,6 +403,7 @@ func main() {
 * [Get](docs/sdks/payments/README.md#get) - Get Payment
 * [Update](docs/sdks/payments/README.md#update) - Update Payment
 * [Delete](docs/sdks/payments/README.md#delete) - Delete Payment
+* [CreateBatch](docs/sdks/payments/README.md#createbatch) - Create Payments in batch
 
 ### [Accounting.ProfitAndLoss](docs/sdks/profitandloss/README.md)
 

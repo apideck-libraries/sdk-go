@@ -1,0 +1,10 @@
+# AccountingBillCreditNotesBatchAddResponse
+
+
+## Fields
+
+| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                          | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                  | :heavy_check_mark:                                                                                  | N/A                                                                                                 |
+| `BatchBillCreditNotesResponse`                                                                      | [*components.BatchBillCreditNotesResponse](../../models/components/batchbillcreditnotesresponse.md) | :heavy_minus_sign:                                                                                  | Bill Credit Notes batch processed                                                                   |
+| `UnexpectedErrorResponse`                                                                           | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)           | :heavy_minus_sign:                                                                                  | Unexpected error                                                                                    |

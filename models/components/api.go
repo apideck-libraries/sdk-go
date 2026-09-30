@@ -25,7 +25,7 @@ func (e *APIType) IsExact() bool {
 	return false
 }
 
-type Resources struct {
+type APIResources struct {
 	// ID of the resource, typically a lowercased version of its name.
 	ID *string `json:"id,omitempty"`
 	// Name of the resource (plural)
@@ -36,32 +36,32 @@ type Resources struct {
 	ExcludedFromCoverage *bool `json:"excluded_from_coverage,omitempty"`
 }
 
-func (r *Resources) GetID() *string {
-	if r == nil {
+func (a *APIResources) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return r.ID
+	return a.ID
 }
 
-func (r *Resources) GetName() *string {
-	if r == nil {
+func (a *APIResources) GetName() *string {
+	if a == nil {
 		return nil
 	}
-	return r.Name
+	return a.Name
 }
 
-func (r *Resources) GetStatus() *ResourceStatus {
-	if r == nil {
+func (a *APIResources) GetStatus() *ResourceStatus {
+	if a == nil {
 		return nil
 	}
-	return r.Status
+	return a.Status
 }
 
-func (r *Resources) GetExcludedFromCoverage() *bool {
-	if r == nil {
+func (a *APIResources) GetExcludedFromCoverage() *bool {
+	if a == nil {
 		return nil
 	}
-	return r.ExcludedFromCoverage
+	return a.ExcludedFromCoverage
 }
 
 type API struct {
@@ -84,7 +84,7 @@ type API struct {
 	// List of categories the API belongs to.
 	Categories []string `json:"categories,omitempty"`
 	// List of resources supported in this API.
-	Resources []Resources `json:"resources,omitempty"`
+	Resources []APIResources `json:"resources,omitempty"`
 	// List of event types this API supports.
 	Events []string `json:"events,omitempty"`
 }
@@ -152,7 +152,7 @@ func (a *API) GetCategories() []string {
 	return a.Categories
 }
 
-func (a *API) GetResources() []Resources {
+func (a *API) GetResources() []APIResources {
 	if a == nil {
 		return nil
 	}
