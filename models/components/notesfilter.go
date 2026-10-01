@@ -11,9 +11,15 @@ type NotesFilter struct {
 	// Title of the note to filter on
 	Title *string `queryParam:"name=title"`
 	// Owner ID to filter on
-	OwnerID      *string    `queryParam:"name=owner_id"`
-	UpdatedSince *time.Time `queryParam:"name=updated_since"`
-	CreatedSince *time.Time `queryParam:"name=created_since"`
+	OwnerID *string `queryParam:"name=owner_id"`
+	// Unique identifier of the contact to filter notes on
+	ContactID *string `queryParam:"name=contact_id"`
+	// Unique identifier of the company to filter notes on
+	CompanyID *string `queryParam:"name=company_id"`
+	// Unique identifier of the opportunity to filter notes on
+	OpportunityID *string    `queryParam:"name=opportunity_id"`
+	UpdatedSince  *time.Time `queryParam:"name=updated_since"`
+	CreatedSince  *time.Time `queryParam:"name=created_since"`
 }
 
 func (n NotesFilter) MarshalJSON() ([]byte, error) {
@@ -39,6 +45,27 @@ func (n *NotesFilter) GetOwnerID() *string {
 		return nil
 	}
 	return n.OwnerID
+}
+
+func (n *NotesFilter) GetContactID() *string {
+	if n == nil {
+		return nil
+	}
+	return n.ContactID
+}
+
+func (n *NotesFilter) GetCompanyID() *string {
+	if n == nil {
+		return nil
+	}
+	return n.CompanyID
+}
+
+func (n *NotesFilter) GetOpportunityID() *string {
+	if n == nil {
+		return nil
+	}
+	return n.OpportunityID
 }
 
 func (n *NotesFilter) GetUpdatedSince() *time.Time {

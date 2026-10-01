@@ -135,6 +135,13 @@ func main() {
                 DisplayID: sdkgo.Pointer("123456"),
                 AccountNumber: sdkgo.Pointer("123465"),
             },
+            ClearingAccount: &components.LinkedFinancialAccountInput{
+                ID: sdkgo.Pointer("123456"),
+                Type: components.LinkedFinancialAccountAccountTypeLedgerAccount.ToPointer(),
+                Code: sdkgo.Pointer("1100"),
+                DisplayID: sdkgo.Pointer("123456"),
+                AccountNumber: sdkgo.Pointer("123465"),
+            },
             Blocked: sdkgo.Pointer(false),
         },
     })
@@ -276,6 +283,7 @@ func main() {
             Currency: components.CurrencyUsd.ToPointer(),
             Iban: sdkgo.Pointer("GB33BUKB20201555555555"),
             DefaultAccount: nil,
+            ClearingAccount: nil,
             Blocked: sdkgo.Pointer(false),
         },
     })

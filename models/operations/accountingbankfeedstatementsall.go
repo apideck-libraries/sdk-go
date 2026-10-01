@@ -43,6 +43,8 @@ type AccountingBankFeedStatementsAllRequest struct {
 	Cursor *string `queryParam:"style=form,explode=true,name=cursor"`
 	// Number of results to return. Minimum 1, Maximum 200, Default 20
 	Limit *int64 `default:"20" queryParam:"style=form,explode=true,name=limit"`
+	// Apply filters
+	Filter *components.BankFeedStatementsFilter `queryParam:"style=deepObject,explode=true,name=filter"`
 	// Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 	PassThrough map[string]any `queryParam:"style=deepObject,explode=true,name=pass_through"`
 	// The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
@@ -107,6 +109,13 @@ func (a *AccountingBankFeedStatementsAllRequest) GetLimit() *int64 {
 		return nil
 	}
 	return a.Limit
+}
+
+func (a *AccountingBankFeedStatementsAllRequest) GetFilter() *components.BankFeedStatementsFilter {
+	if a == nil {
+		return nil
+	}
+	return a.Filter
 }
 
 func (a *AccountingBankFeedStatementsAllRequest) GetPassThrough() map[string]any {
