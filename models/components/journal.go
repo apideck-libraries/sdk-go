@@ -56,6 +56,8 @@ type Journal struct {
 	Iban *string `json:"iban,omitempty"`
 	// A flexible account reference that can represent a ledger account (GL account), a bank account, or an employee payable account, depending on the connector's requirements.
 	DefaultAccount *LinkedFinancialAccount `json:"default_account,omitempty"`
+	// A flexible account reference that can represent a ledger account (GL account), a bank account, or an employee payable account, depending on the connector's requirements.
+	ClearingAccount *LinkedFinancialAccount `json:"clearing_account,omitempty"`
 	// Whether the journal is blocked for posting.
 	Blocked *bool `json:"blocked,omitempty"`
 	// The date and time when the object was created.
@@ -140,6 +142,13 @@ func (j *Journal) GetDefaultAccount() *LinkedFinancialAccount {
 	return j.DefaultAccount
 }
 
+func (j *Journal) GetClearingAccount() *LinkedFinancialAccount {
+	if j == nil {
+		return nil
+	}
+	return j.ClearingAccount
+}
+
 func (j *Journal) GetBlocked() *bool {
 	if j == nil {
 		return nil
@@ -185,6 +194,8 @@ type JournalInput struct {
 	Iban *string `json:"iban,omitempty"`
 	// A flexible account reference that can represent a ledger account (GL account), a bank account, or an employee payable account, depending on the connector's requirements.
 	DefaultAccount *LinkedFinancialAccountInput `json:"default_account,omitempty"`
+	// A flexible account reference that can represent a ledger account (GL account), a bank account, or an employee payable account, depending on the connector's requirements.
+	ClearingAccount *LinkedFinancialAccountInput `json:"clearing_account,omitempty"`
 	// Whether the journal is blocked for posting.
 	Blocked *bool `json:"blocked,omitempty"`
 }
@@ -243,6 +254,13 @@ func (j *JournalInput) GetDefaultAccount() *LinkedFinancialAccountInput {
 		return nil
 	}
 	return j.DefaultAccount
+}
+
+func (j *JournalInput) GetClearingAccount() *LinkedFinancialAccountInput {
+	if j == nil {
+		return nil
+	}
+	return j.ClearingAccount
 }
 
 func (j *JournalInput) GetBlocked() *bool {

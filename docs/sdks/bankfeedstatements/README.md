@@ -24,6 +24,7 @@ import(
 	"context"
 	"os"
 	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/components"
 	"github.com/apideck-libraries/sdk-go/models/operations"
 	"log"
 )
@@ -40,6 +41,9 @@ func main() {
     res, err := s.Accounting.BankFeedStatements.List(ctx, operations.AccountingBankFeedStatementsAllRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
         CompanyID: sdkgo.Pointer("12345"),
+        Filter: &components.BankFeedStatementsFilter{
+            BankFeedAccountID: sdkgo.Pointer("12345"),
+        },
         PassThrough: map[string]any{
             "search": "San Francisco",
         },

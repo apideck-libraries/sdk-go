@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 2cbd01b60985a2f89655c9495c5bbb49
-  docVersion: 10.59.0
+  docChecksum: c63f90b23a31be17d33023eef98aface
+  docVersion: 10.59.1
   speakeasyVersion: 1.800.0
   generationVersion: 2.943.0
-  releaseVersion: 0.40.0
-  configChecksum: 7332ec2af35935f6a96bd6aba6b2b63e
+  releaseVersion: 0.40.1
+  configChecksum: 58f881bcd7d1fe4d441c055776395ed2
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: 9150628e-5abf-40e7-b3f3-29c0d3a8df5d
-  pristine_commit_hash: ca8bd7a742dc0013d5687e4abbc638df6346e04c
-  pristine_tree_hash: 9778aa56ac6aaceb940f4dda785f0b337fd66c89
+  generation_id: 1b9c3917-95b1-48f2-91f2-bd0f15d05ddc
+  pristine_commit_hash: ba5b4926950193c058acde25e517f058dbeb1b1a
+  pristine_tree_hash: ce718e7c942f5d53a70e78751c77c32f5c4fcd42
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: 33cd70e3511dcbf68b04622fffbcfa710b7d4702
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:7572d4031812822f10579fe58349ebef1c0061de
-    pristine_git_object: 9400f5b74d53bd7cd15490f0002bdb1deec75ad3
+    last_write_checksum: sha1:704665e736f0382f448839c1a04031310ac05604
+    pristine_git_object: 833cc777ef7c7152c6f6648a63c5a70e6c1be009
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:337bfd4e946e6fd89f99f5ffdec2a2cfa15e05d7
@@ -744,6 +744,10 @@ trackedFiles:
     id: 3e42156653fb
     last_write_checksum: sha1:e22b80c70afcb1263059e7ecf82c73cc5707efa9
     pristine_git_object: 527b833262d8660656699335d0deead995d8a819
+  docs/models/components/bankfeedstatementsfilter.md:
+    id: dc27044aa251
+    last_write_checksum: sha1:88b96b26b87e0c380a3a2cb0013ad555d865f9fb
+    pristine_git_object: b8da7ec34d2bc307922c01012f627003f46c7a9c
   docs/models/components/bankfeedstatementtransactiontype.md:
     id: af9a4a6e5e9b
     last_write_checksum: sha1:7bf07ff9a2b01a81bc55117300c80793fef75602
@@ -3266,8 +3270,8 @@ trackedFiles:
     pristine_git_object: f6e6e0fcdfad4cf6ea91f3678da1f4e786b9baee
   docs/models/components/journal.md:
     id: 3b4552acb1bd
-    last_write_checksum: sha1:18c8bc4f4ccb5c8dd2c0849bc240f56220a830ea
-    pristine_git_object: 6f7b113d23f735fc12a51954fcc4de0eef4ce4ea
+    last_write_checksum: sha1:0fb3f4a826c9245ec1c5c0aeb3a34ab27ae0fab3
+    pristine_git_object: e62f5880a2659faa9452ab2a4b9ba55bf073733c
   docs/models/components/journalentriesfilter.md:
     id: 819bc66fec88
     last_write_checksum: sha1:99fa3f95b65a38c298f41962e1586bf4ac761464
@@ -3314,8 +3318,8 @@ trackedFiles:
     pristine_git_object: 7cf1dcd3ffbe6a3b3faefa61283fcd7ba0e511ac
   docs/models/components/journalinput.md:
     id: 88098989c830
-    last_write_checksum: sha1:4466ae3b509d2c6a86d76b1ee4dfaa4ca675fdb9
-    pristine_git_object: e36f486b9b389b811d59cd8e12501d43494b61c4
+    last_write_checksum: sha1:79d0ab278c0ebff0ab4997c77269f404f27646f2
+    pristine_git_object: c406359161d0273eacff94b956c56e89c5983d31
   docs/models/components/journaltype.md:
     id: be62771e798b
     last_write_checksum: sha1:3c93db74f0552d2071bdaed28379d76389106c6e
@@ -3602,8 +3606,8 @@ trackedFiles:
     pristine_git_object: 669db744e504b030a113d38c717ec5052ee96afe
   docs/models/components/notesfilter.md:
     id: 2ff1ec05f822
-    last_write_checksum: sha1:8b9cc5be1b0078609f1b7c435833ce80c1ea3e76
-    pristine_git_object: 4e93b4e650f62cc537f983985309852dc73f2bc5
+    last_write_checksum: sha1:033091696bbf0d96338c84be873e1427abef5015
+    pristine_git_object: 77793f3c55d0e1617fd910e6bb23368b0ea8777a
   docs/models/components/oauthcredentialssource.md:
     id: 12c7610801c5
     last_write_checksum: sha1:841d1e147661bdf15ea63c6e8c67bee745d82d62
@@ -4962,8 +4966,8 @@ trackedFiles:
     pristine_git_object: 8fd29c002db3b839d3d920079bd59ad768ad6275
   docs/models/operations/accountingbankfeedstatementsallrequest.md:
     id: a095f964b5f4
-    last_write_checksum: sha1:6f1ac352101de432f5a0220311992ebdf8c2535b
-    pristine_git_object: c6a4da4458f15842c09650a5bab8ad976f583abe
+    last_write_checksum: sha1:661c45620a1819e0977c2c913cd41a2f2717ed74
+    pristine_git_object: 28c4e59e92ece27239c84f99d1fa39d9432d2e7c
   docs/models/operations/accountingbankfeedstatementsallresponse.md:
     id: 3cfc5ef5fa7d
     last_write_checksum: sha1:0e585ebb84c9fe99aaa36bbbeac662ac0e54584c
@@ -9266,8 +9270,8 @@ trackedFiles:
     pristine_git_object: a1e6a7d2500707a6ffd4c2b9293285f789372a46
   docs/sdks/bankfeedstatements/README.md:
     id: 3397e2a06eb3
-    last_write_checksum: sha1:38e6dad323bd30ce219b27538e9cf1b91e23c158
-    pristine_git_object: 02b6ad7db18803cf5c511bc7b29588709b9032c4
+    last_write_checksum: sha1:02a1dfcb99ef1d74cd63fad72da70c817222433e
+    pristine_git_object: ae36b4165120ba77013fbf6cda91d66c4d7c5459
   docs/sdks/billcreditnotes/README.md:
     id: 9f712b3a2216
     last_write_checksum: sha1:ba287008f38ed907ab76959ce78d087f9f4880fd
@@ -9458,8 +9462,8 @@ trackedFiles:
     pristine_git_object: 5cff3936dcc03339221f1fa64440d4f14bc78d85
   docs/sdks/journals/README.md:
     id: 255f988e78fc
-    last_write_checksum: sha1:c581f5991acc047d3d9214095a5b5ee564caf69d
-    pristine_git_object: 6b01349437e40bed3dfd2e100a8954c81a358d50
+    last_write_checksum: sha1:8f65965a3d66c172ae5dfeec098d84d0f4a07a99
+    pristine_git_object: b2fd74639ed18dd4e8a6b28ce0c40d6b0d0e813c
   docs/sdks/leads/README.md:
     id: f90d84a84468
     last_write_checksum: sha1:6b05f4055ad6975e24217d21433728559764f778
@@ -9996,6 +10000,10 @@ trackedFiles:
     id: b15951690635
     last_write_checksum: sha1:0a9e05dcced267705462abd12ef77bda428fdd91
     pristine_git_object: 4522b934c452511ae142482af860ac4f04badbbc
+  models/components/bankfeedstatementsfilter.go:
+    id: 99a43d0bb996
+    last_write_checksum: sha1:ff1bbabf33309f0edd026f09f0e36fcc758bd6d8
+    pristine_git_object: 0bfa51db8415408e6ffbabef0c61f8ca4a7263a7
   models/components/batchbillcreditnotesrequest.go:
     id: 1463a2bf5907
     last_write_checksum: sha1:0310f07ae45629f5dc3b5ccdcf986a00744b8f84
@@ -11798,8 +11806,8 @@ trackedFiles:
     pristine_git_object: 4a5c8d7a105548fb87ad5793ed5187d9f6feb301
   models/components/journal.go:
     id: 6b61b8bbb28c
-    last_write_checksum: sha1:631a69f133c94787e60fc87c1eef92e9fdb49e76
-    pristine_git_object: c212d6f79553dfb491b987c4a069baf565e933b0
+    last_write_checksum: sha1:ea8fc414cdad1de7d94dffacbcbd1c062a7a97cf
+    pristine_git_object: 952c87a5406ed9dfa96066c2d92ee436a1c5a849
   models/components/journalentriesfilter.go:
     id: 84d808a4881d
     last_write_checksum: sha1:768464f5075b688599fed95d51982d0d7ee0aafe
@@ -12002,8 +12010,8 @@ trackedFiles:
     pristine_git_object: 7d94a6594118c41dc699056ed437d21414bb7b25
   models/components/notesfilter.go:
     id: b0619ba60329
-    last_write_checksum: sha1:d6f64303dc285646bb0a0934c3b405e3ceb6258c
-    pristine_git_object: 09cf1a36842a40d915324336468ed4722b1eef9c
+    last_write_checksum: sha1:da9f2dbd8c3bcb72cd3703f06731126bbdd01584
+    pristine_git_object: 65d2e5b1f5c0670ffbe4ec8bfa23ad8c9542b65c
   models/components/oauthgranttype.go:
     id: f09f74d9bfee
     last_write_checksum: sha1:ea178caad4384267eaa56e6d75c2cd58fb74ee87
@@ -12738,8 +12746,8 @@ trackedFiles:
     pristine_git_object: 613d3c62afa3b908b5d3ebe64a7594e102fa8bb3
   models/operations/accountingbankfeedstatementsall.go:
     id: 4d2025c1dd10
-    last_write_checksum: sha1:8b97e9e9aa1b4fa04ae18533f6ef74ae4fadc4d3
-    pristine_git_object: c3b9e1bfb52f0c8498c31363d04839c877167955
+    last_write_checksum: sha1:69a6611c7be563eb7d956609a5e5d9fbc379f21e
+    pristine_git_object: 90cc02a07949821356ca0f19a4bf0f642b570158
   models/operations/accountingbankfeedstatementsdelete.go:
     id: 555412a096bc
     last_write_checksum: sha1:13d1298825c00e227065b8805e66611752bc1db2
@@ -19747,6 +19755,7 @@ examples:
           limit: 20
           pass_through: {"search": "San Francisco"}
           fields: "id,updated_at"
+          filter: {"bank_feed_account_id": "12345"}
         header:
           x-apideck-consumer-id: "test-consumer"
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
@@ -31321,7 +31330,7 @@ examples:
           x-apideck-service-id: "salesforce"
           x-apideck-company-id: "12345"
       requestBody:
-        application/json: {"code": "90", "name": "General journal", "description": "General journal", "type": "general", "allow_vat": true, "currency": "USD", "iban": "GB33BUKB20201555555555", "default_account": {"id": "123456", "type": "ledger_account", "code": "1100", "display_id": "123456", "account_number": "123465"}, "blocked": false}
+        application/json: {"code": "90", "name": "General journal", "description": "General journal", "type": "general", "allow_vat": true, "currency": "USD", "iban": "GB33BUKB20201555555555", "default_account": {"id": "123456", "type": "ledger_account", "code": "1100", "display_id": "123456", "account_number": "123465"}, "clearing_account": {"id": "123456", "type": "ledger_account", "code": "1100", "display_id": "123456", "account_number": "123465"}, "blocked": false}
       responses:
         "201":
           application/json: {"status_code": 200, "status": "OK", "service": "exact-online", "resource": "journals", "operation": "add", "data": {"id": "12345"}}
@@ -31352,7 +31361,7 @@ examples:
           x-apideck-company-id: "12345"
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "service": "exact-online", "resource": "journals", "operation": "one", "data": {"id": "12345", "code": "90", "name": "General journal", "description": "General journal", "type": "general", "allow_vat": true, "currency": "USD", "iban": "GB33BUKB20201555555555", "default_account": {"id": "123456", "type": "ledger_account", "code": "1100", "display_id": "123456", "account_number": "123465", "name": "Current assets", "downstream_id": "12345"}, "blocked": false, "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z"}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}}
+          application/json: {"status_code": 200, "status": "OK", "service": "exact-online", "resource": "journals", "operation": "one", "data": {"id": "12345", "code": "90", "name": "General journal", "description": "General journal", "type": "general", "allow_vat": true, "currency": "USD", "iban": "GB33BUKB20201555555555", "default_account": {"id": "123456", "type": "ledger_account", "code": "1100", "display_id": "123456", "account_number": "123465", "name": "Current assets", "downstream_id": "12345"}, "clearing_account": {"id": "123456", "type": "ledger_account", "code": "1100", "display_id": "123456", "account_number": "123465", "name": "Current assets", "downstream_id": "12345"}, "blocked": false, "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z"}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
         "401":
@@ -31378,7 +31387,7 @@ examples:
           x-apideck-service-id: "salesforce"
           x-apideck-company-id: "12345"
       requestBody:
-        application/json: {"code": "90", "name": "General journal", "description": "General journal", "type": "general", "allow_vat": true, "currency": "USD", "iban": "GB33BUKB20201555555555", "default_account": null, "blocked": false}
+        application/json: {"code": "90", "name": "General journal", "description": "General journal", "type": "general", "allow_vat": true, "currency": "USD", "iban": "GB33BUKB20201555555555", "default_account": null, "clearing_account": null, "blocked": false}
       responses:
         "200":
           application/json: {"status_code": 200, "status": "OK", "service": "exact-online", "resource": "journals", "operation": "update", "data": {"id": "12345"}}
@@ -31643,16 +31652,7 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Go SDK Changes:
-  * `Apideck.Accounting.Bills.CreateBatch()`: **Added**
-  * `Apideck.Accounting.Invoices.CreateBatch()`: **Added**
-  * `Apideck.Accounting.CreditNotes.CreateBatch()`: **Added**
-  * `Apideck.Accounting.BillCreditNotes.CreateBatch()`: **Added**
-  * `Apideck.Accounting.Payments.CreateBatch()`: **Added**
-  * `Apideck.Accounting.BillPayments.CreateBatch()`: **Added**
-  * `Apideck.Connector.Connectors.List()`:  `response.Data[].BatchSupport` **Added**
-  * `Apideck.Connector.Connectors.Get()`:  `response.Data.BatchSupport` **Added**
+releaseNotes: "## Go SDK Changes:\n* `Apideck.Accounting.Journals.List()`:  `response.Data[].ClearingAccount` **Added**\n* `Apideck.Accounting.Journals.Create()`: \n  *  `request.Request.Journal.ClearingAccount` **Added**\n* `Apideck.Accounting.Journals.Get()`:  `response.Data.ClearingAccount` **Added**\n* `Apideck.Accounting.Journals.Update()`: \n  *  `request.Request.Journal.ClearingAccount` **Added**\n* `Apideck.Accounting.BankFeedStatements.List()`: \n  *  `request.Request.Filter` **Added**\n* `Apideck.Crm.Notes.List()`: \n  *  `request.Request.Filter` **Changed**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
