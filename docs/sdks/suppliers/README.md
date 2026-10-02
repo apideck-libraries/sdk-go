@@ -9,6 +9,7 @@
 * [Get](#get) - Get Supplier
 * [Update](#update) - Update Supplier
 * [Delete](#delete) - Delete Supplier
+* [CreateBatch](#createbatch) - Create Suppliers in batch
 
 ## List
 
@@ -667,6 +668,232 @@ func main() {
 ### Response
 
 **[*operations.AccountingSuppliersDeleteResponse](../../models/operations/accountingsuppliersdeleteresponse.md), error**
+
+### Errors
+
+| Error Type                        | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| apierrors.BadRequestResponse      | 400                               | application/json                  |
+| apierrors.UnauthorizedResponse    | 401                               | application/json                  |
+| apierrors.PaymentRequiredResponse | 402                               | application/json                  |
+| apierrors.NotFoundResponse        | 404                               | application/json                  |
+| apierrors.UnprocessableResponse   | 422                               | application/json                  |
+| apierrors.APIError                | 4XX, 5XX                          | \*/\*                             |
+
+## CreateBatch
+
+Create multiple suppliers in a single request. Each item is processed independently, so some may be created while others fail; the response returns `200` with one result per item, in the order the items were sent. The maximum number of items accepted per request depends on the connector.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="accounting.suppliersBatchAdd" method="post" path="/accounting/suppliers/batch" -->
+```go
+package main
+
+import(
+	"context"
+	"os"
+	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/components"
+	"github.com/apideck-libraries/sdk-go/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := sdkgo.New(
+        sdkgo.WithConsumerID("test-consumer"),
+        sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
+    )
+
+    res, err := s.Accounting.Suppliers.CreateBatch(ctx, operations.AccountingSuppliersBatchAddRequest{
+        ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
+        BatchSuppliersRequest: components.BatchSuppliersRequest{
+            Items: []components.BatchSuppliersRequestItems{
+                components.BatchSuppliersRequestItems{
+                    Ref: sdkgo.Pointer("item-1"),
+                    Data: components.SupplierCreateInput{
+                        DisplayID: sdkgo.Pointer("EMP00101"),
+                        DisplayName: sdkgo.Pointer("Windsurf Shop"),
+                        CompanyName: sdkgo.Pointer("SpaceX"),
+                        CompanyID: sdkgo.Pointer("12345"),
+                        Subsidiary: &components.LinkedSubsidiaryInput{
+                            DisplayID: sdkgo.Pointer("123456"),
+                            Name: sdkgo.Pointer("Acme Inc."),
+                        },
+                        SupplierCategory: sdkgo.Pointer("Insurance"),
+                        Title: sdkgo.Pointer("CEO"),
+                        FirstName: sdkgo.Pointer("Elon"),
+                        MiddleName: sdkgo.Pointer("D."),
+                        LastName: sdkgo.Pointer("Musk"),
+                        Suffix: sdkgo.Pointer("Jr."),
+                        Individual: sdkgo.Pointer(true),
+                        Addresses: []components.Address{
+                            components.Address{
+                                ID: sdkgo.Pointer("123"),
+                                Type: components.TypePrimary.ToPointer(),
+                                String: sdkgo.Pointer("25 Spring Street, Blackburn, VIC 3130"),
+                                Name: sdkgo.Pointer("HQ US"),
+                                Line1: sdkgo.Pointer("Main street"),
+                                Line2: sdkgo.Pointer("apt #"),
+                                Line3: sdkgo.Pointer("Suite #"),
+                                Line4: sdkgo.Pointer("delivery instructions"),
+                                Line5: sdkgo.Pointer("Attention: Finance Dept"),
+                                StreetNumber: sdkgo.Pointer("25"),
+                                City: sdkgo.Pointer("San Francisco"),
+                                State: sdkgo.Pointer("CA"),
+                                PostalCode: sdkgo.Pointer("94104"),
+                                Country: sdkgo.Pointer("US"),
+                                Latitude: sdkgo.Pointer("40.759211"),
+                                Longitude: sdkgo.Pointer("-73.984638"),
+                                County: sdkgo.Pointer("Santa Clara"),
+                                ContactName: sdkgo.Pointer("Elon Musk"),
+                                Salutation: sdkgo.Pointer("Mr"),
+                                PhoneNumber: sdkgo.Pointer("111-111-1111"),
+                                Fax: sdkgo.Pointer("122-111-1111"),
+                                Email: sdkgo.Pointer("elon@musk.com"),
+                                Website: sdkgo.Pointer("https://elonmusk.com"),
+                                Notes: sdkgo.Pointer("Address notes or delivery instructions."),
+                                RowVersion: sdkgo.Pointer("1-12345"),
+                            },
+                        },
+                        PhoneNumbers: []components.PhoneNumber{
+                            components.PhoneNumber{
+                                ID: sdkgo.Pointer("12345"),
+                                CountryCode: sdkgo.Pointer("1"),
+                                AreaCode: sdkgo.Pointer("323"),
+                                Number: "111-111-1111",
+                                Extension: sdkgo.Pointer("105"),
+                                Type: components.PhoneNumberTypePrimary.ToPointer(),
+                            },
+                        },
+                        Emails: []components.Email{
+                            components.Email{
+                                ID: sdkgo.Pointer("123"),
+                                Email: sdkgo.Pointer("elon@musk.com"),
+                                Type: components.EmailTypePrimary.ToPointer(),
+                            },
+                        },
+                        Websites: []components.Website{
+                            components.Website{
+                                ID: sdkgo.Pointer("12345"),
+                                URL: "http://example.com",
+                                Type: components.WebsiteTypePrimary.ToPointer(),
+                            },
+                        },
+                        BankAccounts: []components.BankAccount{
+                            components.BankAccount{
+                                BankName: sdkgo.Pointer("Chase Bank"),
+                                AccountNumber: sdkgo.Pointer("123465"),
+                                AccountName: sdkgo.Pointer("Main Operating Account"),
+                                AccountType: components.AccountTypeCreditCard.ToPointer(),
+                                Iban: sdkgo.Pointer("GB33BUKB20201555555555"),
+                                Bic: sdkgo.Pointer("CHASUS33"),
+                                RoutingNumber: sdkgo.Pointer("021000021"),
+                                BsbNumber: sdkgo.Pointer("062-001"),
+                                BranchIdentifier: sdkgo.Pointer("001"),
+                                BankCode: sdkgo.Pointer("BNH"),
+                                Currency: components.CurrencyUsd.ToPointer(),
+                                Country: sdkgo.Pointer("US"),
+                            },
+                        },
+                        Notes: sdkgo.Pointer("Some notes about this supplier"),
+                        TaxRate: &components.LinkedTaxRateInput{
+                            ID: sdkgo.Pointer("123456"),
+                            Code: sdkgo.Pointer("N-T"),
+                            Rate: sdkgo.Pointer[float64](10.0),
+                        },
+                        TaxNumber: sdkgo.Pointer("US123945459"),
+                        Taxable: sdkgo.Pointer(true),
+                        Currency: components.CurrencyUsd.ToPointer(),
+                        Account: &components.LinkedLedgerAccount{
+                            ID: sdkgo.Pointer("123456"),
+                            Name: sdkgo.Pointer("Bank account"),
+                            NominalCode: sdkgo.Pointer("N091"),
+                            Code: sdkgo.Pointer("453"),
+                            ParentID: sdkgo.Pointer("123456"),
+                            DisplayID: sdkgo.Pointer("123456"),
+                        },
+                        Status: components.SupplierCreateInputStatusActive.ToPointer(),
+                        PaymentMethod: sdkgo.Pointer("cash"),
+                        Terms: sdkgo.Pointer("Net 30 days"),
+                        TermsID: sdkgo.Pointer("12345"),
+                        Channel: sdkgo.Pointer("email"),
+                        IssuedMethod: sdkgo.Pointer("Email"),
+                        IssuedEmail: sdkgo.Pointer("john.doe@example.com"),
+                        CustomFields: []components.CustomField{
+                            components.CreateCustomFieldCustomField1(
+                                components.CustomField1{
+                                    ID: sdkgo.Pointer("2389328923893298"),
+                                    Name: sdkgo.Pointer("employee_level"),
+                                    RefName: sdkgo.Pointer("Marketing"),
+                                    Description: sdkgo.Pointer("Employee Level"),
+                                    Value: sdkgo.Pointer(components.CreateCustomField1ValueStr(
+                                        "Uses Salesforce and Marketo",
+                                    )),
+                                },
+                            ),
+                        },
+                        TaxDetails: []*components.LinkedTaxDetail{
+                            &components.LinkedTaxDetail{
+                                Type: sdkgo.Pointer("GST on Purchases"),
+                                Number: sdkgo.Pointer("123456"),
+                                IsTransactionTax: sdkgo.Pointer(true),
+                                IsPrimaryTax: sdkgo.Pointer(true),
+                            },
+                        },
+                        TaxStatusDetails: []*components.LinkedTaxStatusDetail{
+                            &components.LinkedTaxStatusDetail{
+                                Country: sdkgo.Pointer("US"),
+                                TransactionTaxStatus: sdkgo.Pointer("taxable"),
+                            },
+                        },
+                        RowVersion: sdkgo.Pointer("1-12345"),
+                        PassThrough: []components.PassThroughBody{
+                            components.PassThroughBody{
+                                ServiceID: "<id>",
+                                ExtendPaths: []components.ExtendPaths{
+                                    components.ExtendPaths{
+                                        Path: "$.nested.property",
+                                        Value: map[string]any{
+                                            "TaxClassificationRef": map[string]any{
+                                                "value": "EUC-99990201-V1-00020000",
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                        SubsidiaryID: sdkgo.Pointer("12345"),
+                        IntegrationSystemID: sdkgo.Pointer("12345"),
+                    },
+                },
+            },
+        },
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.BatchSuppliersResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                                          | :heavy_check_mark:                                                                                             | The context to use for the request.                                                                            |
+| `request`                                                                                                      | [operations.AccountingSuppliersBatchAddRequest](../../models/operations/accountingsuppliersbatchaddrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+| `opts`                                                                                                         | [][operations.Option](../../models/operations/option.md)                                                       | :heavy_minus_sign:                                                                                             | The options for this request.                                                                                  |
+
+### Response
+
+**[*operations.AccountingSuppliersBatchAddResponse](../../models/operations/accountingsuppliersbatchaddresponse.md), error**
 
 ### Errors
 

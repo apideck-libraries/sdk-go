@@ -2,36 +2,36 @@
 
 package components
 
-type Items struct {
+type BatchBillsRequestItems struct {
 	// A caller-supplied reference for this item, echoed back on the matching result so each outcome can be tied to the record it came from. Must be unique within the request. Never sent to the connector.
 	Ref *string `json:"_ref,omitempty"`
 	// The writable shape of Bill for a batch create. Identical to [Bill](the model returned on reads) with the read-only properties removed — the same properties the single-record create endpoint rejects, so a batched record and a single-record create accept exactly the same body.
 	Data BillCreateInput `json:"data"`
 }
 
-func (i *Items) GetRef() *string {
-	if i == nil {
+func (b *BatchBillsRequestItems) GetRef() *string {
+	if b == nil {
 		return nil
 	}
-	return i.Ref
+	return b.Ref
 }
 
-func (i *Items) GetData() BillCreateInput {
-	if i == nil {
+func (b *BatchBillsRequestItems) GetData() BillCreateInput {
+	if b == nil {
 		return BillCreateInput{}
 	}
-	return i.Data
+	return b.Data
 }
 
 // BatchBillsRequest - A batch of bills to write in a single request. Each item is processed independently: some may succeed while others fail, and the response carries one result per item in the order they were sent.
 type BatchBillsRequest struct {
 	// The records to write. The per-connector limit is the real cap and is usually lower than the ceiling here: read `batch_support.resources[<resource>].max_items` on the Connector API for the connector you are calling, or the resource gotchas. This ceiling exists so an oversized array is rejected by request validation before any per-item work runs, rather than after it.
-	Items []Items `json:"items"`
+	Items []BatchBillsRequestItems `json:"items"`
 }
 
-func (b *BatchBillsRequest) GetItems() []Items {
+func (b *BatchBillsRequest) GetItems() []BatchBillsRequestItems {
 	if b == nil {
-		return []Items{}
+		return []BatchBillsRequestItems{}
 	}
 	return b.Items
 }
