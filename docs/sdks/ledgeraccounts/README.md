@@ -9,6 +9,7 @@
 * [Get](#get) - Get Ledger Account
 * [Update](#update) - Update Ledger Account
 * [Delete](#delete) - Delete Ledger Account
+* [CreateBatch](#createbatch) - Create Ledger Accounts in batch
 
 ## List
 
@@ -530,6 +531,151 @@ func main() {
 ### Response
 
 **[*operations.AccountingLedgerAccountsDeleteResponse](../../models/operations/accountingledgeraccountsdeleteresponse.md), error**
+
+### Errors
+
+| Error Type                        | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| apierrors.BadRequestResponse      | 400                               | application/json                  |
+| apierrors.UnauthorizedResponse    | 401                               | application/json                  |
+| apierrors.PaymentRequiredResponse | 402                               | application/json                  |
+| apierrors.NotFoundResponse        | 404                               | application/json                  |
+| apierrors.UnprocessableResponse   | 422                               | application/json                  |
+| apierrors.APIError                | 4XX, 5XX                          | \*/\*                             |
+
+## CreateBatch
+
+Create multiple ledger accounts in a single request. Each item is processed independently, so some may be created while others fail; the response returns `200` with one result per item, in the order the items were sent. The maximum number of items accepted per request depends on the connector.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="accounting.ledgerAccountsBatchAdd" method="post" path="/accounting/ledger-accounts/batch" -->
+```go
+package main
+
+import(
+	"context"
+	"os"
+	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/components"
+	"github.com/apideck-libraries/sdk-go/types"
+	"github.com/apideck-libraries/sdk-go/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := sdkgo.New(
+        sdkgo.WithConsumerID("test-consumer"),
+        sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
+    )
+
+    res, err := s.Accounting.LedgerAccounts.CreateBatch(ctx, operations.AccountingLedgerAccountsBatchAddRequest{
+        ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
+        BatchLedgerAccountsRequest: components.BatchLedgerAccountsRequest{
+            Items: []components.BatchLedgerAccountsRequestItems{
+                components.BatchLedgerAccountsRequestItems{
+                    Ref: sdkgo.Pointer("item-1"),
+                    Data: components.LedgerAccountCreateInput{
+                        DisplayID: sdkgo.Pointer("1-12345"),
+                        Code: sdkgo.Pointer("453"),
+                        Classification: components.LedgerAccountCreateInputClassificationAsset.ToPointer(),
+                        Type: components.LedgerAccountCreateInputTypeBank.ToPointer(),
+                        SubType: sdkgo.Pointer("CHECKING_ACCOUNT"),
+                        Name: sdkgo.Pointer("Bank account"),
+                        FullyQualifiedName: sdkgo.Pointer("Asset.Bank.Checking_Account"),
+                        Description: sdkgo.Pointer("Main checking account"),
+                        OpeningBalance: sdkgo.Pointer[float64](75000.0),
+                        CurrentBalance: sdkgo.Pointer[float64](20000.0),
+                        Currency: components.CurrencyUsd.ToPointer(),
+                        TaxType: sdkgo.Pointer("NONE"),
+                        TaxRate: &components.LinkedTaxRateInput{
+                            ID: sdkgo.Pointer("123456"),
+                            Code: sdkgo.Pointer("N-T"),
+                            Rate: sdkgo.Pointer[float64](10.0),
+                        },
+                        Level: sdkgo.Pointer[float64](1.0),
+                        Active: sdkgo.Pointer(true),
+                        Status: components.LedgerAccountCreateInputAccountStatusActive.ToPointer(),
+                        Header: sdkgo.Pointer(true),
+                        BankAccount: &components.BankAccount{
+                            BankName: sdkgo.Pointer("Chase Bank"),
+                            AccountNumber: sdkgo.Pointer("123465"),
+                            AccountName: sdkgo.Pointer("Main Operating Account"),
+                            AccountType: components.AccountTypeCreditCard.ToPointer(),
+                            Iban: sdkgo.Pointer("GB33BUKB20201555555555"),
+                            Bic: sdkgo.Pointer("CHASUS33"),
+                            RoutingNumber: sdkgo.Pointer("021000021"),
+                            BsbNumber: sdkgo.Pointer("062-001"),
+                            BranchIdentifier: sdkgo.Pointer("001"),
+                            BankCode: sdkgo.Pointer("BNH"),
+                            Currency: components.CurrencyUsd.ToPointer(),
+                            Country: sdkgo.Pointer("US"),
+                        },
+                        ParentAccount: &components.LedgerAccountCreateInputParentAccount{
+                            ID: sdkgo.Pointer("12345"),
+                            Name: sdkgo.Pointer("Bank Accounts"),
+                            DisplayID: sdkgo.Pointer("1-1100"),
+                        },
+                        SubAccount: sdkgo.Pointer(false),
+                        LastReconciliationDate: types.MustNewDateFromString("2020-09-30"),
+                        CustomFields: []components.CustomField{
+                            components.CreateCustomFieldCustomField1(
+                                components.CustomField1{
+                                    ID: sdkgo.Pointer("2389328923893298"),
+                                    Name: sdkgo.Pointer("employee_level"),
+                                    RefName: sdkgo.Pointer("Marketing"),
+                                    Description: sdkgo.Pointer("Employee Level"),
+                                    Value: sdkgo.Pointer(components.CreateCustomField1ValueStr(
+                                        "Uses Salesforce and Marketo",
+                                    )),
+                                },
+                            ),
+                        },
+                        RowVersion: sdkgo.Pointer("1-12345"),
+                        PassThrough: []components.PassThroughBody{
+                            components.PassThroughBody{
+                                ServiceID: "<id>",
+                                ExtendPaths: []components.ExtendPaths{
+                                    components.ExtendPaths{
+                                        Path: "$.nested.property",
+                                        Value: map[string]any{
+                                            "TaxClassificationRef": map[string]any{
+                                                "value": "EUC-99990201-V1-00020000",
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.BatchLedgerAccountsResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                    | :heavy_check_mark:                                                                                                       | The context to use for the request.                                                                                      |
+| `request`                                                                                                                | [operations.AccountingLedgerAccountsBatchAddRequest](../../models/operations/accountingledgeraccountsbatchaddrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
+| `opts`                                                                                                                   | [][operations.Option](../../models/operations/option.md)                                                                 | :heavy_minus_sign:                                                                                                       | The options for this request.                                                                                            |
+
+### Response
+
+**[*operations.AccountingLedgerAccountsBatchAddResponse](../../models/operations/accountingledgeraccountsbatchaddresponse.md), error**
 
 ### Errors
 

@@ -288,6 +288,7 @@ func main() {
 * [Get](docs/sdks/customers/README.md#get) - Get Customer
 * [Update](docs/sdks/customers/README.md#update) - Update Customer
 * [Delete](docs/sdks/customers/README.md#delete) - Delete Customer
+* [CreateBatch](docs/sdks/customers/README.md#createbatch) - Create Customers in batch
 
 ### [Accounting.Departments](docs/sdks/departments/README.md)
 
@@ -363,6 +364,7 @@ func main() {
 * [Get](docs/sdks/journalentries/README.md#get) - Get Journal Entry
 * [Update](docs/sdks/journalentries/README.md#update) - Update Journal Entry
 * [Delete](docs/sdks/journalentries/README.md#delete) - Delete Journal Entry
+* [CreateBatch](docs/sdks/journalentries/README.md#createbatch) - Create Journal Entries in batch
 
 ### [Accounting.Journals](docs/sdks/journals/README.md)
 
@@ -379,6 +381,7 @@ func main() {
 * [Get](docs/sdks/ledgeraccounts/README.md#get) - Get Ledger Account
 * [Update](docs/sdks/ledgeraccounts/README.md#update) - Update Ledger Account
 * [Delete](docs/sdks/ledgeraccounts/README.md#delete) - Delete Ledger Account
+* [CreateBatch](docs/sdks/ledgeraccounts/README.md#createbatch) - Create Ledger Accounts in batch
 
 ### [Accounting.Locations](docs/sdks/locations/README.md)
 
@@ -464,6 +467,7 @@ func main() {
 * [Get](docs/sdks/suppliers/README.md#get) - Get Supplier
 * [Update](docs/sdks/suppliers/README.md#update) - Update Supplier
 * [Delete](docs/sdks/suppliers/README.md#delete) - Delete Supplier
+* [CreateBatch](docs/sdks/suppliers/README.md#createbatch) - Create Suppliers in batch
 
 ### [Accounting.TaxRates](docs/sdks/taxrates/README.md)
 
@@ -480,6 +484,7 @@ func main() {
 * [Get](docs/sdks/trackingcategories/README.md#get) - Get Tracking Category
 * [Update](docs/sdks/trackingcategories/README.md#update) - Update Tracking Category
 * [Delete](docs/sdks/trackingcategories/README.md#delete) - Delete Tracking Category
+* [CreateBatch](docs/sdks/trackingcategories/README.md#createbatch) - Create Tracking Categories in batch
 
 ### [Ats.Applicants](docs/sdks/applicants/README.md)
 

@@ -843,7 +843,7 @@ func main() {
         ServiceID: sdkgo.Pointer("salesforce"),
         CompanyID: sdkgo.Pointer("12345"),
         BatchBillsRequest: components.BatchBillsRequest{
-            Items: []components.Items{},
+            Items: []components.BatchBillsRequestItems{},
         },
     })
     if err != nil {
