@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 9f0816ef5847413f8eb7e51dab13e534
-  docVersion: 10.60.0
-  speakeasyVersion: 1.800.0
+  docChecksum: 365177867ecb949db1c628eba806046d
+  docVersion: 10.60.1
+  speakeasyVersion: 1.800.1
   generationVersion: 2.943.0
-  releaseVersion: 0.41.0
-  configChecksum: d763867c8716340b7f323391da66da25
+  releaseVersion: 0.41.1
+  configChecksum: 02dfd3af06d6ec377f0ab020736709f5
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: 91655682-12fd-49e1-b65f-e01d56492603
-  pristine_commit_hash: cb85f0b1c57995f18e45aa0e2d6f08498e4ab7c6
-  pristine_tree_hash: 032aa082c2b68746f7bd4d9f5413eb7c21a34795
+  generation_id: 46578201-c400-4112-beb8-817db4c07e2c
+  pristine_commit_hash: 531e21d80225dc76df502267a73868a8c5087b0e
+  pristine_tree_hash: a7a96611440c69e5017a4e900a4a20d851974e0b
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: 33cd70e3511dcbf68b04622fffbcfa710b7d4702
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:80d567212476ea812325236e863b4c4edc291e95
-    pristine_git_object: 4dd136e38cd28fa8058dc9109ce3317374f6cd1c
+    last_write_checksum: sha1:a45038cad7f8632e4575a53dd9b321060ae28fef
+    pristine_git_object: 7c0d86dc3185c13f4b385ccff083abbf87758fbf
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:337bfd4e946e6fd89f99f5ffdec2a2cfa15e05d7
@@ -32047,13 +32047,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Go SDK Changes:
-  * `Apideck.Accounting.LedgerAccounts.CreateBatch()`: **Added**
-  * `Apideck.Accounting.Customers.CreateBatch()`: **Added**
-  * `Apideck.Accounting.Suppliers.CreateBatch()`: **Added**
-  * `Apideck.Accounting.JournalEntries.CreateBatch()`: **Added**
-  * `Apideck.Accounting.TrackingCategories.CreateBatch()`: **Added**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
