@@ -69,6 +69,8 @@ type Addresses struct {
 	PostalCode *string `json:"postal_code,omitempty"`
 	// Country of the customer
 	Country *string `json:"country,omitempty"`
+	// Tax or VAT identification number registered on this address
+	TaxNumber *string `json:"tax_number,omitempty"`
 }
 
 func (a *Addresses) GetType() *EcommerceCustomerType {
@@ -127,6 +129,13 @@ func (a *Addresses) GetCountry() *string {
 	return a.Country
 }
 
+func (a *Addresses) GetTaxNumber() *string {
+	if a == nil {
+		return nil
+	}
+	return a.TaxNumber
+}
+
 type EcommerceCustomer struct {
 	// A unique identifier for an object.
 	ID string `json:"id"`
@@ -140,6 +149,8 @@ type EcommerceCustomer struct {
 	CompanyName *string `json:"company_name,omitempty"`
 	// The current status of the customer
 	Status *CustomerStatus `json:"status,omitempty"`
+	// Tax or VAT identification number of the customer
+	TaxNumber *string `json:"tax_number,omitempty"`
 	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
 	Currency *Currency `json:"currency,omitempty"`
 	// An array of email addresses for the customer.
@@ -208,6 +219,13 @@ func (e *EcommerceCustomer) GetStatus() *CustomerStatus {
 		return nil
 	}
 	return e.Status
+}
+
+func (e *EcommerceCustomer) GetTaxNumber() *string {
+	if e == nil {
+		return nil
+	}
+	return e.TaxNumber
 }
 
 func (e *EcommerceCustomer) GetCurrency() *Currency {
