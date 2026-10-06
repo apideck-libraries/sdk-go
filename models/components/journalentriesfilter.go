@@ -63,6 +63,8 @@ type JournalEntriesFilter struct {
 	UpdatedSince *time.Time `queryParam:"name=updated_since"`
 	// Journal entry number to search for
 	Number *string `queryParam:"name=number"`
+	// Return only journal entries whose source_id equals the given value (the caller-supplied reference, where the connector stores one). Connectors without support reject this filter with UnsupportedFiltersError.
+	SourceID *string `queryParam:"name=source_id"`
 	// Return journal entries posted on or after this date (posting date, inclusive). Connectors without date-range support reject this filter with UnsupportedFiltersError.
 	StartDate *types.Date `queryParam:"name=start_date"`
 	// Return journal entries posted on or before this date (posting date, inclusive). Connectors without date-range support reject this filter with UnsupportedFiltersError.
@@ -97,6 +99,13 @@ func (j *JournalEntriesFilter) GetNumber() *string {
 		return nil
 	}
 	return j.Number
+}
+
+func (j *JournalEntriesFilter) GetSourceID() *string {
+	if j == nil {
+		return nil
+	}
+	return j.SourceID
 }
 
 func (j *JournalEntriesFilter) GetStartDate() *types.Date {
