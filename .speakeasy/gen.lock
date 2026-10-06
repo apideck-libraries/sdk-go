@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 365177867ecb949db1c628eba806046d
-  docVersion: 10.60.1
+  docChecksum: 43d0c8a483b068ae3985827d1f7b4edf
+  docVersion: 10.61.1
   speakeasyVersion: 1.800.1
   generationVersion: 2.943.0
-  releaseVersion: 0.41.1
-  configChecksum: 02dfd3af06d6ec377f0ab020736709f5
+  releaseVersion: 0.42.0
+  configChecksum: 2d6ea5529f05b517c5d6b75baf6f8d7e
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: 46578201-c400-4112-beb8-817db4c07e2c
-  pristine_commit_hash: 531e21d80225dc76df502267a73868a8c5087b0e
-  pristine_tree_hash: a7a96611440c69e5017a4e900a4a20d851974e0b
+  generation_id: b670a20a-c918-44eb-b411-02239ca7d6ec
+  pristine_commit_hash: e96a1dcf301c433f335273cb9f1d08ff1ba8c3b6
+  pristine_tree_hash: 3883ee19f8278bc12271f686484764fcdf045aeb
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: 33cd70e3511dcbf68b04622fffbcfa710b7d4702
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:a45038cad7f8632e4575a53dd9b321060ae28fef
-    pristine_git_object: 7c0d86dc3185c13f4b385ccff083abbf87758fbf
+    last_write_checksum: sha1:cd7ee5a8cad627a6fd80284d020f13e4307a3e55
+    pristine_git_object: 8a6d3aa1b50a11318c98f41b1007cdc5c8e62800
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:337bfd4e946e6fd89f99f5ffdec2a2cfa15e05d7
@@ -506,8 +506,8 @@ trackedFiles:
     pristine_git_object: dded9bc7ef0d77ce8fd913b95d02f778dc106e2f
   docs/models/components/addresses.md:
     id: 1809b87b327f
-    last_write_checksum: sha1:63717b4ff7cdcb149be523bb8cf428bce4804914
-    pristine_git_object: 711b1500df57b0f7c001c6f58a704dd922da8342
+    last_write_checksum: sha1:16b54f030a0e6c9dff127e6d7d1efecedad1254e
+    pristine_git_object: 20650e71e506448c79fdcf3099a4560d5729e805
   docs/models/components/agedcreditors.md:
     id: eac40b3be21d
     last_write_checksum: sha1:5b3b3177278eba179dad2c87f6024563908860b2
@@ -2118,8 +2118,8 @@ trackedFiles:
     pristine_git_object: 987efcaa0f4f0d96b47b73605da4e591f72258d3
   docs/models/components/ecommercecustomer.md:
     id: 60154a4a6fc5
-    last_write_checksum: sha1:5b5f8a4d08a0bf8bd833d287366f4b1d9122727d
-    pristine_git_object: 3ff04e1644d7a5741cbfa6bc4ca1180dffa61664
+    last_write_checksum: sha1:a8ff7c7e8e357d9a4a6b76aa53a870a85ff34475
+    pristine_git_object: 1b4a32788ed51a1ccc9502a7afbef0165aecd439
   docs/models/components/ecommercecustomersfilter.md:
     id: acb5d029327f
     last_write_checksum: sha1:dbda53ce35570ea79e6c9c23704b6a714a3eaec6
@@ -3342,8 +3342,8 @@ trackedFiles:
     pristine_git_object: e62f5880a2659faa9452ab2a4b9ba55bf073733c
   docs/models/components/journalentriesfilter.md:
     id: 819bc66fec88
-    last_write_checksum: sha1:99fa3f95b65a38c298f41962e1586bf4ac761464
-    pristine_git_object: 64ff79f40b2af57c47bb4c933f8f3ffa69360ed0
+    last_write_checksum: sha1:aa24dd012722d1f8ee55c84c0d6de99269db15c8
+    pristine_git_object: d44c3ee2f41abdf9b579d72c911ce2cd7ac137af
   docs/models/components/journalentriesfilterscope.md:
     id: 2cee55f0b5bc
     last_write_checksum: sha1:55f54b7b9d5e411953d1f095505ba75cd76801a1
@@ -11126,8 +11126,8 @@ trackedFiles:
     pristine_git_object: 856f555b9cc3c324874cfefe8f749683f7a90f36
   models/components/ecommercecustomer.go:
     id: 9c37a51ec293
-    last_write_checksum: sha1:3df3f492cb9bdd1fe5daf343dea8e2e50559d658
-    pristine_git_object: 8585529edb1b4a3fb230f08f73a4022acc27e911
+    last_write_checksum: sha1:52e7880d084266719ffc8b1efc8206ad633fa522
+    pristine_git_object: e098ed5656e24b02251a562ac4ba2a76566826d5
   models/components/ecommercecustomersfilter.go:
     id: c6f429c0a34f
     last_write_checksum: sha1:4e9eb9f2c10b2f8148319575f703d37207ba5dc1
@@ -12034,8 +12034,8 @@ trackedFiles:
     pristine_git_object: 952c87a5406ed9dfa96066c2d92ee436a1c5a849
   models/components/journalentriesfilter.go:
     id: 84d808a4881d
-    last_write_checksum: sha1:768464f5075b688599fed95d51982d0d7ee0aafe
-    pristine_git_object: 2fcb1b7d4331da7b1be2f666d41c9bf6353cb3ab
+    last_write_checksum: sha1:b4b009961f5505af3f17e59238e780291ad18a5d
+    pristine_git_object: feff33f1c27c6494ddfdefa0af2b0935aeb04c2d
   models/components/journalentriessort.go:
     id: 83601e5eed0d
     last_write_checksum: sha1:e23cf3e35ed92b4a0599ef7ef7faac3a4de23f3d
@@ -23318,7 +23318,7 @@ examples:
           x-apideck-service-id: "salesforce"
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "service": "shopify", "resource": "customers", "operation": "one", "data": {"id": "12345", "name": "John Doe", "first_name": "John", "last_name": "Doe", "company_name": "Acme Inc.", "status": "active", "currency": "USD", "emails": null, "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "addresses": [{"type": "billing", "id": "12345", "line1": "Main street", "line2": "apt #", "city": "Anytown", "state": "Ohio", "postal_code": "12345", "country": "US"}], "orders": [{"id": "12345", "total": "199.99", "status": "active"}], "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z"}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": null}}
+          application/json: {"status_code": 200, "status": "OK", "service": "shopify", "resource": "customers", "operation": "one", "data": {"id": "12345", "name": "John Doe", "first_name": "John", "last_name": "Doe", "company_name": "Acme Inc.", "status": "active", "tax_number": "BE0689615164", "currency": "USD", "emails": null, "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "addresses": [{"type": "billing", "id": "12345", "line1": "Main street", "line2": "apt #", "city": "Anytown", "state": "Ohio", "postal_code": "12345", "country": "US"}], "orders": [{"id": "12345", "total": "199.99", "status": "active"}], "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z"}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": null}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
         "401":
@@ -32047,6 +32047,7 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Go SDK Changes:\n* `Apideck.Accounting.JournalEntries.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Ecommerce.Customers.List()`:  `response.Data[]` **Changed**\n* `Apideck.Ecommerce.Customers.Get()`:  `response.Data` **Changed**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
