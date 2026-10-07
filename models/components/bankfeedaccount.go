@@ -79,7 +79,15 @@ type BankFeedAccount struct {
 	// Current status of the bank feed.
 	FeedStatus *FeedStatus `json:"feed_status,omitempty"`
 	// Country code according to ISO 3166-1 alpha-2.
-	Country      *string       `json:"country,omitempty"`
+	Country *string `json:"country,omitempty"`
+	// The people or businesses that hold the source bank account. Optional; `plaid-exchange` requires at least one.
+	AccountHolders []BankFeedAccountHolder `json:"account_holders,omitempty"`
+	// Email addresses of the account holders. Optional; `plaid-exchange` requires at least one.
+	Emails []Email `json:"emails,omitempty"`
+	// Addresses of the account holders. Optional; `plaid-exchange` requires at least one.
+	Addresses []Address `json:"addresses,omitempty"`
+	// Phone numbers of the account holders. Optional; `plaid-exchange` requires at least one.
+	PhoneNumbers []PhoneNumber `json:"phone_numbers,omitempty"`
 	CustomFields []CustomField `json:"custom_fields,omitempty"`
 	// When custom mappings are configured on the resource, the result is included here.
 	CustomMappings map[string]any `json:"custom_mappings,omitempty"`
@@ -195,6 +203,34 @@ func (b *BankFeedAccount) GetCountry() *string {
 	return b.Country
 }
 
+func (b *BankFeedAccount) GetAccountHolders() []BankFeedAccountHolder {
+	if b == nil {
+		return nil
+	}
+	return b.AccountHolders
+}
+
+func (b *BankFeedAccount) GetEmails() []Email {
+	if b == nil {
+		return nil
+	}
+	return b.Emails
+}
+
+func (b *BankFeedAccount) GetAddresses() []Address {
+	if b == nil {
+		return nil
+	}
+	return b.Addresses
+}
+
+func (b *BankFeedAccount) GetPhoneNumbers() []PhoneNumber {
+	if b == nil {
+		return nil
+	}
+	return b.PhoneNumbers
+}
+
 func (b *BankFeedAccount) GetCustomFields() []CustomField {
 	if b == nil {
 		return nil
@@ -261,7 +297,15 @@ type BankFeedAccountInput struct {
 	// Current status of the bank feed.
 	FeedStatus *FeedStatus `json:"feed_status,omitempty"`
 	// Country code according to ISO 3166-1 alpha-2.
-	Country      *string       `json:"country,omitempty"`
+	Country *string `json:"country,omitempty"`
+	// The people or businesses that hold the source bank account. Optional; `plaid-exchange` requires at least one.
+	AccountHolders []BankFeedAccountHolder `json:"account_holders,omitempty"`
+	// Email addresses of the account holders. Optional; `plaid-exchange` requires at least one.
+	Emails []Email `json:"emails,omitempty"`
+	// Addresses of the account holders. Optional; `plaid-exchange` requires at least one.
+	Addresses []Address `json:"addresses,omitempty"`
+	// Phone numbers of the account holders. Optional; `plaid-exchange` requires at least one.
+	PhoneNumbers []PhoneNumber `json:"phone_numbers,omitempty"`
 	CustomFields []CustomField `json:"custom_fields,omitempty"`
 }
 
@@ -347,6 +391,34 @@ func (b *BankFeedAccountInput) GetCountry() *string {
 		return nil
 	}
 	return b.Country
+}
+
+func (b *BankFeedAccountInput) GetAccountHolders() []BankFeedAccountHolder {
+	if b == nil {
+		return nil
+	}
+	return b.AccountHolders
+}
+
+func (b *BankFeedAccountInput) GetEmails() []Email {
+	if b == nil {
+		return nil
+	}
+	return b.Emails
+}
+
+func (b *BankFeedAccountInput) GetAddresses() []Address {
+	if b == nil {
+		return nil
+	}
+	return b.Addresses
+}
+
+func (b *BankFeedAccountInput) GetPhoneNumbers() []PhoneNumber {
+	if b == nil {
+		return nil
+	}
+	return b.PhoneNumbers
 }
 
 func (b *BankFeedAccountInput) GetCustomFields() []CustomField {
