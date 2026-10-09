@@ -2,7 +2,7 @@
 
 package sdkgo
 
-// Generated from OpenAPI doc version 10.63.0 and generator version 2.943.0
+// Generated from OpenAPI doc version 10.66.3 and generator version 2.946.0
 
 import (
 	"context"
@@ -155,12 +155,12 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *Apideck {
 	sdk := &Apideck{
-		SDKVersion: "0.43.0",
+		SDKVersion: "0.44.0",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:         "speakeasy-sdk/go 0.43.0 2.943.0 10.63.0 github.com/apideck-libraries/sdk-go",
-			SDKVersion:        "0.43.0",
-			GenVersion:        "2.943.0",
-			OpenAPIDocVersion: "10.63.0",
+			UserAgent:         "speakeasy-sdk/go 0.44.0 2.946.0 10.66.3 github.com/apideck-libraries/sdk-go",
+			SDKVersion:        "0.44.0",
+			GenVersion:        "2.946.0",
+			OpenAPIDocVersion: "10.66.3",
 			Globals:           globals.Globals{},
 			ServerList:        ServerList,
 		},

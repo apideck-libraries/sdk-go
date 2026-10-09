@@ -160,3 +160,9 @@ custom := components.WebhookEventType("custom_value")
 | `WebhookEventTypeAccountingTrackingCategoryCreated`    | accounting.tracking_category.created                   |
 | `WebhookEventTypeAccountingTrackingCategoryUpdated`    | accounting.tracking_category.updated                   |
 | `WebhookEventTypeAccountingTrackingCategoryDeleted`    | accounting.tracking_category.deleted                   |
+| `WebhookEventTypeAccountingSalesReceiptCreated`        | accounting.sales_receipt.created                       |
+| `WebhookEventTypeAccountingSalesReceiptUpdated`        | accounting.sales_receipt.updated                       |
+| `WebhookEventTypeAccountingSalesReceiptDeleted`        | accounting.sales_receipt.deleted                       |
+| `WebhookEventTypeAccountingRefundCreated`              | accounting.refund.created                              |
+| `WebhookEventTypeAccountingRefundUpdated`              | accounting.refund.updated                              |
+| `WebhookEventTypeAccountingRefundDeleted`              | accounting.refund.deleted                              |
