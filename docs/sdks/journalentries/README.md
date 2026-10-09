@@ -131,6 +131,7 @@ func main() {
     res, err := s.Accounting.JournalEntries.Create(ctx, operations.AccountingJournalEntriesAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
         CompanyID: sdkgo.Pointer("12345"),
+        IdempotencyKey: sdkgo.Pointer("your-unique-key-per-create"),
         JournalEntry: components.JournalEntryInput{
             Title: sdkgo.Pointer("Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry"),
             CurrencyRate: sdkgo.Pointer[float64](0.69),

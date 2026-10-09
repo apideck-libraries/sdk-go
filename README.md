@@ -444,6 +444,14 @@ func main() {
 * [Update](docs/sdks/refunds/README.md#update) - Update Refund
 * [Delete](docs/sdks/refunds/README.md#delete) - Delete Refund
 
+### [Accounting.SalesOrders](docs/sdks/salesorders/README.md)
+
+* [List](docs/sdks/salesorders/README.md#list) - List Sales Orders
+* [Create](docs/sdks/salesorders/README.md#create) - Create Sales Order
+* [Get](docs/sdks/salesorders/README.md#get) - Get Sales Order
+* [Update](docs/sdks/salesorders/README.md#update) - Update Sales Order
+* [Delete](docs/sdks/salesorders/README.md#delete) - Delete Sales Order
+
 ### [Accounting.SalesReceipts](docs/sdks/salesreceipts/README.md)
 
 * [List](docs/sdks/salesreceipts/README.md#list) - List Sales Receipts

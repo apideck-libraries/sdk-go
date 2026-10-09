@@ -44,6 +44,7 @@ type Accounting struct {
 	Categories                *Categories
 	Quotes                    *Quotes
 	Projects                  *Projects
+	SalesOrders               *SalesOrders
 	Employees                 *Employees
 	ExpenseCategories         *ExpenseCategories
 	PaymentMethods            *PaymentMethods
@@ -95,6 +96,7 @@ func newAccounting(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *h
 		Categories:                newCategories(rootSDK, sdkConfig, hooks),
 		Quotes:                    newQuotes(rootSDK, sdkConfig, hooks),
 		Projects:                  newProjects(rootSDK, sdkConfig, hooks),
+		SalesOrders:               newSalesOrders(rootSDK, sdkConfig, hooks),
 		Employees:                 newEmployees(rootSDK, sdkConfig, hooks),
 		ExpenseCategories:         newExpenseCategories(rootSDK, sdkConfig, hooks),
 		PaymentMethods:            newPaymentMethods(rootSDK, sdkConfig, hooks),

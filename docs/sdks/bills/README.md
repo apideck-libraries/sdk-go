@@ -130,6 +130,7 @@ func main() {
 
     res, err := s.Accounting.Bills.Create(ctx, operations.AccountingBillsAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
+        IdempotencyKey: sdkgo.Pointer("your-unique-key-per-create"),
         Bill: components.BillInput{
             BillNumber: sdkgo.Pointer("10001"),
             Supplier: &components.LinkedSupplierInput{
