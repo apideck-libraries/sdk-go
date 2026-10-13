@@ -34,6 +34,8 @@ type Accounting struct {
 	Attachments               *Attachments
 	BankAccounts              *BankAccounts
 	Journals                  *Journals
+	FiscalPeriods             *FiscalPeriods
+	TrialBalance              *TrialBalance
 	TrackingCategories        *TrackingCategories
 	BillPayments              *BillPayments
 	Expenses                  *Expenses
@@ -86,6 +88,8 @@ func newAccounting(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hooks *h
 		Attachments:               newAttachments(rootSDK, sdkConfig, hooks),
 		BankAccounts:              newBankAccounts(rootSDK, sdkConfig, hooks),
 		Journals:                  newJournals(rootSDK, sdkConfig, hooks),
+		FiscalPeriods:             newFiscalPeriods(rootSDK, sdkConfig, hooks),
+		TrialBalance:              newTrialBalance(rootSDK, sdkConfig, hooks),
 		TrackingCategories:        newTrackingCategories(rootSDK, sdkConfig, hooks),
 		BillPayments:              newBillPayments(rootSDK, sdkConfig, hooks),
 		Expenses:                  newExpenses(rootSDK, sdkConfig, hooks),
