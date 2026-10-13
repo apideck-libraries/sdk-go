@@ -330,6 +330,11 @@ func main() {
 * [Update](docs/sdks/expenses/README.md#update) - Update Expense
 * [Delete](docs/sdks/expenses/README.md#delete) - Delete Expense
 
+### [Accounting.FiscalPeriods](docs/sdks/fiscalperiods/README.md)
+
+* [List](docs/sdks/fiscalperiods/README.md#list) - List Fiscal Periods
+* [Get](docs/sdks/fiscalperiods/README.md#get) - Get Fiscal Period
+
 ### [Accounting.GeneralLedgerTransactions](docs/sdks/generalledgertransactions/README.md)
 
 * [List](docs/sdks/generalledgertransactions/README.md#list) - List General Ledger Transactions
@@ -493,6 +498,10 @@ func main() {
 * [Update](docs/sdks/trackingcategories/README.md#update) - Update Tracking Category
 * [Delete](docs/sdks/trackingcategories/README.md#delete) - Delete Tracking Category
 * [CreateBatch](docs/sdks/trackingcategories/README.md#createbatch) - Create Tracking Categories in batch
+
+### [Accounting.TrialBalance](docs/sdks/trialbalance/README.md)
+
+* [Get](docs/sdks/trialbalance/README.md#get) - Get Trial Balance
 
 ### [Ats.Applicants](docs/sdks/applicants/README.md)
 

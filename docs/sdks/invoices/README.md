@@ -496,6 +496,7 @@ func main() {
     res, err := s.Accounting.Invoices.Update(ctx, operations.AccountingInvoicesUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
+        IdempotencyKey: sdkgo.Pointer("your-unique-key-per-create"),
         Invoice: components.InvoiceInput{
             Type: components.InvoiceTypeService.ToPointer(),
             Number: sdkgo.Pointer("OIT00546"),
