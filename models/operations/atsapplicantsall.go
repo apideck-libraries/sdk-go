@@ -129,6 +129,7 @@ type AtsApplicantsAllResponse struct {
 	GetApplicantsResponse *components.GetApplicantsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 
 	Next func() (*AtsApplicantsAllResponse, error)
 }
@@ -152,4 +153,11 @@ func (a *AtsApplicantsAllResponse) GetUnexpectedErrorResponse() *components.Unex
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AtsApplicantsAllResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

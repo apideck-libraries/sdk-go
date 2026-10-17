@@ -129,6 +129,7 @@ type AccountingJournalsAllResponse struct {
 	GetJournalsResponse *components.GetJournalsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 
 	Next func() (*AccountingJournalsAllResponse, error)
 }
@@ -152,4 +153,11 @@ func (a *AccountingJournalsAllResponse) GetUnexpectedErrorResponse() *components
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingJournalsAllResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

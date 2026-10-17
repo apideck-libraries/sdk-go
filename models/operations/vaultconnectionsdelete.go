@@ -70,6 +70,7 @@ type VaultConnectionsDeleteResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (v *VaultConnectionsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -84,4 +85,11 @@ func (v *VaultConnectionsDeleteResponse) GetUnexpectedErrorResponse() *component
 		return nil
 	}
 	return v.UnexpectedErrorResponse
+}
+
+func (v *VaultConnectionsDeleteResponse) GetHeaders() map[string][]string {
+	if v == nil {
+		return map[string][]string{}
+	}
+	return v.Headers
 }

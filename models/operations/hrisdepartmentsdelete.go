@@ -93,6 +93,7 @@ type HrisDepartmentsDeleteResponse struct {
 	DeleteDepartmentResponse *components.DeleteDepartmentResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (h *HrisDepartmentsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -114,4 +115,11 @@ func (h *HrisDepartmentsDeleteResponse) GetUnexpectedErrorResponse() *components
 		return nil
 	}
 	return h.UnexpectedErrorResponse
+}
+
+func (h *HrisDepartmentsDeleteResponse) GetHeaders() map[string][]string {
+	if h == nil {
+		return map[string][]string{}
+	}
+	return h.Headers
 }

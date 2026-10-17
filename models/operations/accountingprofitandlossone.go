@@ -120,6 +120,7 @@ type AccountingProfitAndLossOneResponse struct {
 	GetProfitAndLossResponse *components.GetProfitAndLossResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (a *AccountingProfitAndLossOneResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -141,4 +142,11 @@ func (a *AccountingProfitAndLossOneResponse) GetUnexpectedErrorResponse() *compo
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingProfitAndLossOneResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

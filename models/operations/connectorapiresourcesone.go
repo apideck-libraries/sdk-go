@@ -54,6 +54,7 @@ type ConnectorAPIResourcesOneResponse struct {
 	GetAPIResourceResponse *components.GetAPIResourceResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (c *ConnectorAPIResourcesOneResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -75,4 +76,11 @@ func (c *ConnectorAPIResourcesOneResponse) GetUnexpectedErrorResponse() *compone
 		return nil
 	}
 	return c.UnexpectedErrorResponse
+}
+
+func (c *ConnectorAPIResourcesOneResponse) GetHeaders() map[string][]string {
+	if c == nil {
+		return map[string][]string{}
+	}
+	return c.Headers
 }

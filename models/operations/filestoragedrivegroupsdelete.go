@@ -93,6 +93,7 @@ type FileStorageDriveGroupsDeleteResponse struct {
 	DeleteDriveGroupResponse *components.DeleteDriveGroupResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (f *FileStorageDriveGroupsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -114,4 +115,11 @@ func (f *FileStorageDriveGroupsDeleteResponse) GetUnexpectedErrorResponse() *com
 		return nil
 	}
 	return f.UnexpectedErrorResponse
+}
+
+func (f *FileStorageDriveGroupsDeleteResponse) GetHeaders() map[string][]string {
+	if f == nil {
+		return map[string][]string{}
+	}
+	return f.Headers
 }

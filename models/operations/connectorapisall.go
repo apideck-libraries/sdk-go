@@ -75,6 +75,7 @@ type ConnectorApisAllResponse struct {
 	GetApisResponse *components.GetApisResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 
 	Next func() (*ConnectorApisAllResponse, error)
 }
@@ -98,4 +99,11 @@ func (c *ConnectorApisAllResponse) GetUnexpectedErrorResponse() *components.Unex
 		return nil
 	}
 	return c.UnexpectedErrorResponse
+}
+
+func (c *ConnectorApisAllResponse) GetHeaders() map[string][]string {
+	if c == nil {
+		return map[string][]string{}
+	}
+	return c.Headers
 }

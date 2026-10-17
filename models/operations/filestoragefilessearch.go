@@ -137,6 +137,7 @@ type FileStorageFilesSearchResponse struct {
 	GetFilesResponse *components.GetFilesResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (f *FileStorageFilesSearchResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -158,4 +159,11 @@ func (f *FileStorageFilesSearchResponse) GetUnexpectedErrorResponse() *component
 		return nil
 	}
 	return f.UnexpectedErrorResponse
+}
+
+func (f *FileStorageFilesSearchResponse) GetHeaders() map[string][]string {
+	if f == nil {
+		return map[string][]string{}
+	}
+	return f.Headers
 }

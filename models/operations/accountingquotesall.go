@@ -129,6 +129,7 @@ type AccountingQuotesAllResponse struct {
 	GetQuotesResponse *components.GetQuotesResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 
 	Next func() (*AccountingQuotesAllResponse, error)
 }
@@ -152,4 +153,11 @@ func (a *AccountingQuotesAllResponse) GetUnexpectedErrorResponse() *components.U
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingQuotesAllResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

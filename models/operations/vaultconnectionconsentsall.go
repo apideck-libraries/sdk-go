@@ -72,6 +72,7 @@ type VaultConnectionConsentsAllResponse struct {
 	GetConsentRecordsResponse *components.GetConsentRecordsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (v *VaultConnectionConsentsAllResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -93,4 +94,11 @@ func (v *VaultConnectionConsentsAllResponse) GetUnexpectedErrorResponse() *compo
 		return nil
 	}
 	return v.UnexpectedErrorResponse
+}
+
+func (v *VaultConnectionConsentsAllResponse) GetHeaders() map[string][]string {
+	if v == nil {
+		return map[string][]string{}
+	}
+	return v.Headers
 }

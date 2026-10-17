@@ -101,6 +101,7 @@ type CrmContactsUpdateResponse struct {
 	UpdateContactResponse *components.UpdateContactResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (c *CrmContactsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -122,4 +123,11 @@ func (c *CrmContactsUpdateResponse) GetUnexpectedErrorResponse() *components.Une
 		return nil
 	}
 	return c.UnexpectedErrorResponse
+}
+
+func (c *CrmContactsUpdateResponse) GetHeaders() map[string][]string {
+	if c == nil {
+		return map[string][]string{}
+	}
+	return c.Headers
 }

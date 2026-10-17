@@ -101,6 +101,7 @@ type AccountingTrackingCategoriesAddResponse struct {
 	CreateTrackingCategoryResponse *components.CreateTrackingCategoryResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (a *AccountingTrackingCategoriesAddResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -122,4 +123,11 @@ func (a *AccountingTrackingCategoriesAddResponse) GetUnexpectedErrorResponse() *
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingTrackingCategoriesAddResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

@@ -93,6 +93,7 @@ type AccountingBankFeedStatementsDeleteResponse struct {
 	DeleteBankFeedStatementResponse *components.DeleteBankFeedStatementResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (a *AccountingBankFeedStatementsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -114,4 +115,11 @@ func (a *AccountingBankFeedStatementsDeleteResponse) GetUnexpectedErrorResponse(
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingBankFeedStatementsDeleteResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

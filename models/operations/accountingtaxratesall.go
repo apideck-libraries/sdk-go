@@ -138,6 +138,7 @@ type AccountingTaxRatesAllResponse struct {
 	GetTaxRatesResponse *components.GetTaxRatesResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 
 	Next func() (*AccountingTaxRatesAllResponse, error)
 }
@@ -161,4 +162,11 @@ func (a *AccountingTaxRatesAllResponse) GetUnexpectedErrorResponse() *components
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingTaxRatesAllResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

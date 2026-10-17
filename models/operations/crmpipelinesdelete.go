@@ -93,6 +93,7 @@ type CrmPipelinesDeleteResponse struct {
 	DeletePipelineResponse *components.DeletePipelineResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (c *CrmPipelinesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -114,4 +115,11 @@ func (c *CrmPipelinesDeleteResponse) GetUnexpectedErrorResponse() *components.Un
 		return nil
 	}
 	return c.UnexpectedErrorResponse
+}
+
+func (c *CrmPipelinesDeleteResponse) GetHeaders() map[string][]string {
+	if c == nil {
+		return map[string][]string{}
+	}
+	return c.Headers
 }

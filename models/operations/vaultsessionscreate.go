@@ -63,6 +63,7 @@ type VaultSessionsCreateResponse struct {
 	CreateSessionResponse *components.CreateSessionResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (v *VaultSessionsCreateResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -84,4 +85,11 @@ func (v *VaultSessionsCreateResponse) GetUnexpectedErrorResponse() *components.U
 		return nil
 	}
 	return v.UnexpectedErrorResponse
+}
+
+func (v *VaultSessionsCreateResponse) GetHeaders() map[string][]string {
+	if v == nil {
+		return map[string][]string{}
+	}
+	return v.Headers
 }

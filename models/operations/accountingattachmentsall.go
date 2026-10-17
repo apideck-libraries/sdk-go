@@ -147,6 +147,7 @@ type AccountingAttachmentsAllResponse struct {
 	GetAttachmentsResponse *components.GetAttachmentsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 
 	Next func() (*AccountingAttachmentsAllResponse, error)
 }
@@ -170,4 +171,11 @@ func (a *AccountingAttachmentsAllResponse) GetUnexpectedErrorResponse() *compone
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingAttachmentsAllResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

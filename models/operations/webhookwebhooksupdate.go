@@ -53,6 +53,7 @@ type WebhookWebhooksUpdateResponse struct {
 	UpdateWebhookResponse *components.UpdateWebhookResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (w *WebhookWebhooksUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -74,4 +75,11 @@ func (w *WebhookWebhooksUpdateResponse) GetUnexpectedErrorResponse() *components
 		return nil
 	}
 	return w.UnexpectedErrorResponse
+}
+
+func (w *WebhookWebhooksUpdateResponse) GetHeaders() map[string][]string {
+	if w == nil {
+		return map[string][]string{}
+	}
+	return w.Headers
 }

@@ -92,6 +92,7 @@ type FileStorageSharedLinksAddResponse struct {
 	CreateSharedLinkResponse *components.CreateSharedLinkResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (f *FileStorageSharedLinksAddResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -113,4 +114,11 @@ func (f *FileStorageSharedLinksAddResponse) GetUnexpectedErrorResponse() *compon
 		return nil
 	}
 	return f.UnexpectedErrorResponse
+}
+
+func (f *FileStorageSharedLinksAddResponse) GetHeaders() map[string][]string {
+	if f == nil {
+		return map[string][]string{}
+	}
+	return f.Headers
 }

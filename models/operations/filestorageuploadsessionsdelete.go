@@ -93,6 +93,7 @@ type FileStorageUploadSessionsDeleteResponse struct {
 	DeleteUploadSessionResponse *components.DeleteUploadSessionResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (f *FileStorageUploadSessionsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -114,4 +115,11 @@ func (f *FileStorageUploadSessionsDeleteResponse) GetUnexpectedErrorResponse() *
 		return nil
 	}
 	return f.UnexpectedErrorResponse
+}
+
+func (f *FileStorageUploadSessionsDeleteResponse) GetHeaders() map[string][]string {
+	if f == nil {
+		return map[string][]string{}
+	}
+	return f.Headers
 }

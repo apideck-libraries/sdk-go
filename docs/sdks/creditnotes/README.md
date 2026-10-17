@@ -131,6 +131,7 @@ func main() {
     res, err := s.Accounting.CreditNotes.Create(ctx, operations.AccountingCreditNotesAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
         CompanyID: sdkgo.Pointer("12345"),
+        IdempotencyKey: sdkgo.Pointer("your-unique-key-per-create"),
         CreditNote: components.CreditNoteInput{
             Number: sdkgo.Pointer("OIT00546"),
             Customer: &components.LinkedCustomerInput{

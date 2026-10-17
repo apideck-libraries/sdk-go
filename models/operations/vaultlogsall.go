@@ -93,6 +93,7 @@ type VaultLogsAllResponse struct {
 	GetLogsResponse *components.GetLogsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 
 	Next func() (*VaultLogsAllResponse, error)
 }
@@ -116,4 +117,11 @@ func (v *VaultLogsAllResponse) GetUnexpectedErrorResponse() *components.Unexpect
 		return nil
 	}
 	return v.UnexpectedErrorResponse
+}
+
+func (v *VaultLogsAllResponse) GetHeaders() map[string][]string {
+	if v == nil {
+		return map[string][]string{}
+	}
+	return v.Headers
 }

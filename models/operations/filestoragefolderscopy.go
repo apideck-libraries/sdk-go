@@ -110,6 +110,7 @@ type FileStorageFoldersCopyResponse struct {
 	UpdateFolderResponse *components.UpdateFolderResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (f *FileStorageFoldersCopyResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -131,4 +132,11 @@ func (f *FileStorageFoldersCopyResponse) GetUnexpectedErrorResponse() *component
 		return nil
 	}
 	return f.UnexpectedErrorResponse
+}
+
+func (f *FileStorageFoldersCopyResponse) GetHeaders() map[string][]string {
+	if f == nil {
+		return map[string][]string{}
+	}
+	return f.Headers
 }

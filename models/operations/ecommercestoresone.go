@@ -93,6 +93,7 @@ type EcommerceStoresOneResponse struct {
 	GetStoreResponse *components.GetStoreResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (e *EcommerceStoresOneResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -114,4 +115,11 @@ func (e *EcommerceStoresOneResponse) GetUnexpectedErrorResponse() *components.Un
 		return nil
 	}
 	return e.UnexpectedErrorResponse
+}
+
+func (e *EcommerceStoresOneResponse) GetHeaders() map[string][]string {
+	if e == nil {
+		return map[string][]string{}
+	}
+	return e.Headers
 }

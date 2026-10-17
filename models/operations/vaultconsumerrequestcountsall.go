@@ -63,6 +63,7 @@ type VaultConsumerRequestCountsAllResponse struct {
 	ConsumerRequestCountsInDateRangeResponse *components.ConsumerRequestCountsInDateRangeResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (v *VaultConsumerRequestCountsAllResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -84,4 +85,11 @@ func (v *VaultConsumerRequestCountsAllResponse) GetUnexpectedErrorResponse() *co
 		return nil
 	}
 	return v.UnexpectedErrorResponse
+}
+
+func (v *VaultConsumerRequestCountsAllResponse) GetHeaders() map[string][]string {
+	if v == nil {
+		return map[string][]string{}
+	}
+	return v.Headers
 }
