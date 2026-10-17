@@ -93,6 +93,7 @@ type CrmCustomObjectSchemasDeleteResponse struct {
 	DeleteCustomObjectSchemaResponse *components.DeleteCustomObjectSchemaResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (c *CrmCustomObjectSchemasDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -114,4 +115,11 @@ func (c *CrmCustomObjectSchemasDeleteResponse) GetUnexpectedErrorResponse() *com
 		return nil
 	}
 	return c.UnexpectedErrorResponse
+}
+
+func (c *CrmCustomObjectSchemasDeleteResponse) GetHeaders() map[string][]string {
+	if c == nil {
+		return map[string][]string{}
+	}
+	return c.Headers
 }

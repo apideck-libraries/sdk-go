@@ -102,6 +102,7 @@ type HrisCompaniesOneResponse struct {
 	GetHrisCompanyResponse *components.GetHrisCompanyResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (h *HrisCompaniesOneResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -123,4 +124,11 @@ func (h *HrisCompaniesOneResponse) GetUnexpectedErrorResponse() *components.Unex
 		return nil
 	}
 	return h.UnexpectedErrorResponse
+}
+
+func (h *HrisCompaniesOneResponse) GetHeaders() map[string][]string {
+	if h == nil {
+		return map[string][]string{}
+	}
+	return h.Headers
 }

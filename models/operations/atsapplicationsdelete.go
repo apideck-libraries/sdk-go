@@ -93,6 +93,7 @@ type AtsApplicationsDeleteResponse struct {
 	DeleteApplicationResponse *components.DeleteApplicationResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (a *AtsApplicationsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -114,4 +115,11 @@ func (a *AtsApplicationsDeleteResponse) GetUnexpectedErrorResponse() *components
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AtsApplicationsDeleteResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

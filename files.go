@@ -262,6 +262,8 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 
 	switch {
 	case httpRes.StatusCode == 200:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -283,6 +285,8 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 400:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -304,6 +308,8 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -325,6 +331,8 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 402:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -346,6 +354,8 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -367,6 +377,8 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 422:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -400,6 +412,8 @@ func (s *Files) List(ctx context.Context, request operations.FileStorageFilesAll
 		}
 		return nil, apierrors.NewAPIError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -616,6 +630,8 @@ func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesS
 
 	switch {
 	case httpRes.StatusCode == 200:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -637,6 +653,8 @@ func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesS
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 400:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -658,6 +676,8 @@ func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesS
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -679,6 +699,8 @@ func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesS
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 402:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -700,6 +722,8 @@ func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesS
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -721,6 +745,8 @@ func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesS
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 422:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -754,6 +780,8 @@ func (s *Files) Search(ctx context.Context, request operations.FileStorageFilesS
 		}
 		return nil, apierrors.NewAPIError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -963,6 +991,8 @@ func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneR
 
 	switch {
 	case httpRes.StatusCode == 200:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -984,6 +1014,8 @@ func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneR
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 400:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1005,6 +1037,8 @@ func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneR
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1026,6 +1060,8 @@ func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneR
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 402:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1047,6 +1083,8 @@ func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneR
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1068,6 +1106,8 @@ func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneR
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 422:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1101,6 +1141,8 @@ func (s *Files) Get(ctx context.Context, request operations.FileStorageFilesOneR
 		}
 		return nil, apierrors.NewAPIError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1317,6 +1359,8 @@ func (s *Files) Update(ctx context.Context, request operations.FileStorageFilesU
 
 	switch {
 	case httpRes.StatusCode == 200:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1338,6 +1382,8 @@ func (s *Files) Update(ctx context.Context, request operations.FileStorageFilesU
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 400:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1359,6 +1405,8 @@ func (s *Files) Update(ctx context.Context, request operations.FileStorageFilesU
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1380,6 +1428,8 @@ func (s *Files) Update(ctx context.Context, request operations.FileStorageFilesU
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 402:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1401,6 +1451,8 @@ func (s *Files) Update(ctx context.Context, request operations.FileStorageFilesU
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1422,6 +1474,8 @@ func (s *Files) Update(ctx context.Context, request operations.FileStorageFilesU
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 422:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1455,6 +1509,8 @@ func (s *Files) Update(ctx context.Context, request operations.FileStorageFilesU
 		}
 		return nil, apierrors.NewAPIError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1664,6 +1720,8 @@ func (s *Files) Delete(ctx context.Context, request operations.FileStorageFilesD
 
 	switch {
 	case httpRes.StatusCode == 200:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1685,6 +1743,8 @@ func (s *Files) Delete(ctx context.Context, request operations.FileStorageFilesD
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 400:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1706,6 +1766,8 @@ func (s *Files) Delete(ctx context.Context, request operations.FileStorageFilesD
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1727,6 +1789,8 @@ func (s *Files) Delete(ctx context.Context, request operations.FileStorageFilesD
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 402:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1748,6 +1812,8 @@ func (s *Files) Delete(ctx context.Context, request operations.FileStorageFilesD
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1769,6 +1835,8 @@ func (s *Files) Delete(ctx context.Context, request operations.FileStorageFilesD
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 422:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1802,6 +1870,8 @@ func (s *Files) Delete(ctx context.Context, request operations.FileStorageFilesD
 		}
 		return nil, apierrors.NewAPIError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -2024,6 +2094,8 @@ func (s *Files) Download(ctx context.Context, request operations.FileStorageFile
 
 	switch {
 	case httpRes.StatusCode == 200:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `*/*`):
 			httpRes.Body = utils.BodyWithCancel(httpRes.Body, streamCancel)
@@ -2039,6 +2111,8 @@ func (s *Files) Download(ctx context.Context, request operations.FileStorageFile
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 400:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -2060,6 +2134,8 @@ func (s *Files) Download(ctx context.Context, request operations.FileStorageFile
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -2081,6 +2157,8 @@ func (s *Files) Download(ctx context.Context, request operations.FileStorageFile
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 402:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -2102,6 +2180,8 @@ func (s *Files) Download(ctx context.Context, request operations.FileStorageFile
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -2123,6 +2203,8 @@ func (s *Files) Download(ctx context.Context, request operations.FileStorageFile
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 422:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -2156,6 +2238,8 @@ func (s *Files) Download(ctx context.Context, request operations.FileStorageFile
 		}
 		return nil, apierrors.NewAPIError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -2378,6 +2462,8 @@ func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesE
 
 	switch {
 	case httpRes.StatusCode == 200:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `*/*`):
 			httpRes.Body = utils.BodyWithCancel(httpRes.Body, streamCancel)
@@ -2393,6 +2479,8 @@ func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesE
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 400:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -2414,6 +2502,8 @@ func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesE
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -2435,6 +2525,8 @@ func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesE
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 402:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -2456,6 +2548,8 @@ func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesE
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -2477,6 +2571,8 @@ func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesE
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 422:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -2510,6 +2606,8 @@ func (s *Files) Export(ctx context.Context, request operations.FileStorageFilesE
 		}
 		return nil, apierrors.NewAPIError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)

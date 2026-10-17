@@ -129,6 +129,7 @@ type HrisTimeOffRequestsAllResponse struct {
 	GetTimeOffRequestsResponse *components.GetTimeOffRequestsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 
 	Next func() (*HrisTimeOffRequestsAllResponse, error)
 }
@@ -152,4 +153,11 @@ func (h *HrisTimeOffRequestsAllResponse) GetUnexpectedErrorResponse() *component
 		return nil
 	}
 	return h.UnexpectedErrorResponse
+}
+
+func (h *HrisTimeOffRequestsAllResponse) GetHeaders() map[string][]string {
+	if h == nil {
+		return map[string][]string{}
+	}
+	return h.Headers
 }

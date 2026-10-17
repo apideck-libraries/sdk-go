@@ -101,6 +101,7 @@ type AccountingJournalEntriesBatchAddResponse struct {
 	BatchJournalEntriesResponse *components.BatchJournalEntriesResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (a *AccountingJournalEntriesBatchAddResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -122,4 +123,11 @@ func (a *AccountingJournalEntriesBatchAddResponse) GetUnexpectedErrorResponse() 
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingJournalEntriesBatchAddResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

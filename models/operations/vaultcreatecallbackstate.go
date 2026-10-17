@@ -81,6 +81,7 @@ type VaultCreateCallbackStateResponse struct {
 	CreateCallbackStateResponse *components.CreateCallbackStateResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (v *VaultCreateCallbackStateResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -102,4 +103,11 @@ func (v *VaultCreateCallbackStateResponse) GetUnexpectedErrorResponse() *compone
 		return nil
 	}
 	return v.UnexpectedErrorResponse
+}
+
+func (v *VaultCreateCallbackStateResponse) GetHeaders() map[string][]string {
+	if v == nil {
+		return map[string][]string{}
+	}
+	return v.Headers
 }

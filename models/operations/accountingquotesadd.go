@@ -101,6 +101,7 @@ type AccountingQuotesAddResponse struct {
 	CreateQuoteResponse *components.CreateQuoteResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (a *AccountingQuotesAddResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -122,4 +123,11 @@ func (a *AccountingQuotesAddResponse) GetUnexpectedErrorResponse() *components.U
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingQuotesAddResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

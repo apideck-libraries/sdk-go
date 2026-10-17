@@ -111,6 +111,7 @@ type SmsMessagesAllResponse struct {
 	GetMessagesResponse *components.GetMessagesResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 
 	Next func() (*SmsMessagesAllResponse, error)
 }
@@ -134,4 +135,11 @@ func (s *SmsMessagesAllResponse) GetUnexpectedErrorResponse() *components.Unexpe
 		return nil
 	}
 	return s.UnexpectedErrorResponse
+}
+
+func (s *SmsMessagesAllResponse) GetHeaders() map[string][]string {
+	if s == nil {
+		return map[string][]string{}
+	}
+	return s.Headers
 }

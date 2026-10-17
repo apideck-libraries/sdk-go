@@ -101,6 +101,7 @@ type AccountingLedgerAccountsAddResponse struct {
 	CreateLedgerAccountResponse *components.CreateLedgerAccountResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (a *AccountingLedgerAccountsAddResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -122,4 +123,11 @@ func (a *AccountingLedgerAccountsAddResponse) GetUnexpectedErrorResponse() *comp
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingLedgerAccountsAddResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

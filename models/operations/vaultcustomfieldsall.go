@@ -90,6 +90,7 @@ type VaultCustomFieldsAllResponse struct {
 	GetCustomFieldsResponse *components.GetCustomFieldsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (v *VaultCustomFieldsAllResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -111,4 +112,11 @@ func (v *VaultCustomFieldsAllResponse) GetUnexpectedErrorResponse() *components.
 		return nil
 	}
 	return v.UnexpectedErrorResponse
+}
+
+func (v *VaultCustomFieldsAllResponse) GetHeaders() map[string][]string {
+	if v == nil {
+		return map[string][]string{}
+	}
+	return v.Headers
 }

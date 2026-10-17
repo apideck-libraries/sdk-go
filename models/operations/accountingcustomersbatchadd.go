@@ -101,6 +101,7 @@ type AccountingCustomersBatchAddResponse struct {
 	BatchCustomersResponse *components.BatchCustomersResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (a *AccountingCustomersBatchAddResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -122,4 +123,11 @@ func (a *AccountingCustomersBatchAddResponse) GetUnexpectedErrorResponse() *comp
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingCustomersBatchAddResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

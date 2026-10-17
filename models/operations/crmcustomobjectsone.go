@@ -102,6 +102,7 @@ type CrmCustomObjectsOneResponse struct {
 	GetCustomObjectResponse *components.GetCustomObjectResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (c *CrmCustomObjectsOneResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -123,4 +124,11 @@ func (c *CrmCustomObjectsOneResponse) GetUnexpectedErrorResponse() *components.U
 		return nil
 	}
 	return c.UnexpectedErrorResponse
+}
+
+func (c *CrmCustomObjectsOneResponse) GetHeaders() map[string][]string {
+	if c == nil {
+		return map[string][]string{}
+	}
+	return c.Headers
 }

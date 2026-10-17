@@ -111,6 +111,7 @@ type HrisTimeOffRequestsOneResponse struct {
 	GetTimeOffRequestResponse *components.GetTimeOffRequestResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (h *HrisTimeOffRequestsOneResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -132,4 +133,11 @@ func (h *HrisTimeOffRequestsOneResponse) GetUnexpectedErrorResponse() *component
 		return nil
 	}
 	return h.UnexpectedErrorResponse
+}
+
+func (h *HrisTimeOffRequestsOneResponse) GetHeaders() map[string][]string {
+	if h == nil {
+		return map[string][]string{}
+	}
+	return h.Headers
 }

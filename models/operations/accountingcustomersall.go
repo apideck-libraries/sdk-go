@@ -147,6 +147,7 @@ type AccountingCustomersAllResponse struct {
 	GetCustomersResponse *components.GetCustomersResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 
 	Next func() (*AccountingCustomersAllResponse, error)
 }
@@ -170,4 +171,11 @@ func (a *AccountingCustomersAllResponse) GetUnexpectedErrorResponse() *component
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingCustomersAllResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

@@ -120,6 +120,7 @@ type CrmListsAllResponse struct {
 	GetListsResponse *components.GetListsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 
 	Next func() (*CrmListsAllResponse, error)
 }
@@ -143,4 +144,11 @@ func (c *CrmListsAllResponse) GetUnexpectedErrorResponse() *components.Unexpecte
 		return nil
 	}
 	return c.UnexpectedErrorResponse
+}
+
+func (c *CrmListsAllResponse) GetHeaders() map[string][]string {
+	if c == nil {
+		return map[string][]string{}
+	}
+	return c.Headers
 }

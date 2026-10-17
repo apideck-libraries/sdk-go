@@ -45,6 +45,7 @@ type WebhookWebhooksDeleteResponse struct {
 	DeleteWebhookResponse *components.DeleteWebhookResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (w *WebhookWebhooksDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -66,4 +67,11 @@ func (w *WebhookWebhooksDeleteResponse) GetUnexpectedErrorResponse() *components
 		return nil
 	}
 	return w.UnexpectedErrorResponse
+}
+
+func (w *WebhookWebhooksDeleteResponse) GetHeaders() map[string][]string {
+	if w == nil {
+		return map[string][]string{}
+	}
+	return w.Headers
 }

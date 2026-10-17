@@ -129,6 +129,7 @@ type AccountingFiscalPeriodsAllResponse struct {
 	GetFiscalPeriodsResponse *components.GetFiscalPeriodsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 
 	Next func() (*AccountingFiscalPeriodsAllResponse, error)
 }
@@ -152,4 +153,11 @@ func (a *AccountingFiscalPeriodsAllResponse) GetUnexpectedErrorResponse() *compo
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingFiscalPeriodsAllResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

@@ -120,6 +120,7 @@ type AccountingAgedCreditorsOneResponse struct {
 	GetAgedCreditorsResponse *components.GetAgedCreditorsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (a *AccountingAgedCreditorsOneResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -141,4 +142,11 @@ func (a *AccountingAgedCreditorsOneResponse) GetUnexpectedErrorResponse() *compo
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingAgedCreditorsOneResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

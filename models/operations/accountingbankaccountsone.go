@@ -120,6 +120,7 @@ type AccountingBankAccountsOneResponse struct {
 	GetBankAccountResponse *components.GetBankAccountResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (a *AccountingBankAccountsOneResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -141,4 +142,11 @@ func (a *AccountingBankAccountsOneResponse) GetUnexpectedErrorResponse() *compon
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingBankAccountsOneResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

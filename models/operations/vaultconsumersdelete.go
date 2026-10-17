@@ -45,6 +45,7 @@ type VaultConsumersDeleteResponse struct {
 	DeleteConsumerResponse *components.DeleteConsumerResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (v *VaultConsumersDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -66,4 +67,11 @@ func (v *VaultConsumersDeleteResponse) GetUnexpectedErrorResponse() *components.
 		return nil
 	}
 	return v.UnexpectedErrorResponse
+}
+
+func (v *VaultConsumersDeleteResponse) GetHeaders() map[string][]string {
+	if v == nil {
+		return map[string][]string{}
+	}
+	return v.Headers
 }

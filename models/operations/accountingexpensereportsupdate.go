@@ -101,6 +101,7 @@ type AccountingExpenseReportsUpdateResponse struct {
 	UpdateExpenseReportResponse *components.UpdateExpenseReportResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (a *AccountingExpenseReportsUpdateResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -122,4 +123,11 @@ func (a *AccountingExpenseReportsUpdateResponse) GetUnexpectedErrorResponse() *c
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingExpenseReportsUpdateResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

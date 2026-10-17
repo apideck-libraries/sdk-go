@@ -129,6 +129,7 @@ type CrmCustomObjectsAllResponse struct {
 	GetCustomObjectsResponse *components.GetCustomObjectsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 
 	Next func() (*CrmCustomObjectsAllResponse, error)
 }
@@ -152,4 +153,11 @@ func (c *CrmCustomObjectsAllResponse) GetUnexpectedErrorResponse() *components.U
 		return nil
 	}
 	return c.UnexpectedErrorResponse
+}
+
+func (c *CrmCustomObjectsAllResponse) GetHeaders() map[string][]string {
+	if c == nil {
+		return map[string][]string{}
+	}
+	return c.Headers
 }

@@ -101,6 +101,7 @@ type AccountingSuppliersAddResponse struct {
 	CreateSupplierResponse *components.CreateSupplierResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (a *AccountingSuppliersAddResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -122,4 +123,11 @@ func (a *AccountingSuppliersAddResponse) GetUnexpectedErrorResponse() *component
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingSuppliersAddResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

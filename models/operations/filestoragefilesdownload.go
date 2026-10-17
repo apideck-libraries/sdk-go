@@ -104,6 +104,7 @@ type FileStorageFilesDownloadResponse struct {
 	GetFileDownloadResponse io.ReadCloser
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (f *FileStorageFilesDownloadResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -125,4 +126,11 @@ func (f *FileStorageFilesDownloadResponse) GetUnexpectedErrorResponse() *compone
 		return nil
 	}
 	return f.UnexpectedErrorResponse
+}
+
+func (f *FileStorageFilesDownloadResponse) GetHeaders() map[string][]string {
+	if f == nil {
+		return map[string][]string{}
+	}
+	return f.Headers
 }

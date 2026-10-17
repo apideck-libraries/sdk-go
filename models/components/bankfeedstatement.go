@@ -68,7 +68,7 @@ type Transactions struct {
 	// Whether the amount is a credit or debit.
 	CreditOrDebit CreditOrDebit `json:"credit_or_debit"`
 	// The ID of the source transaction.
-	SourceTransactionID string `json:"source_transaction_id"`
+	SourceTransactionID *string `json:"source_transaction_id,omitempty"`
 	// The counterparty of the transaction.
 	Counterparty *string `json:"counterparty,omitempty"`
 	// The reference of the transaction.
@@ -118,9 +118,9 @@ func (t *Transactions) GetCreditOrDebit() CreditOrDebit {
 	return t.CreditOrDebit
 }
 
-func (t *Transactions) GetSourceTransactionID() string {
+func (t *Transactions) GetSourceTransactionID() *string {
 	if t == nil {
-		return ""
+		return nil
 	}
 	return t.SourceTransactionID
 }

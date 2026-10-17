@@ -102,6 +102,7 @@ type AtsApplicantsOneResponse struct {
 	GetApplicantResponse *components.GetApplicantResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (a *AtsApplicantsOneResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -123,4 +124,11 @@ func (a *AtsApplicantsOneResponse) GetUnexpectedErrorResponse() *components.Unex
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AtsApplicantsOneResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

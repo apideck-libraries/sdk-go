@@ -102,6 +102,7 @@ type AccountingTrackingCategoriesDeleteResponse struct {
 	DeleteTrackingCategoryResponse *components.DeleteTrackingCategoryResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (a *AccountingTrackingCategoriesDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -123,4 +124,11 @@ func (a *AccountingTrackingCategoriesDeleteResponse) GetUnexpectedErrorResponse(
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingTrackingCategoriesDeleteResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

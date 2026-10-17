@@ -106,6 +106,7 @@ type FileStorageUploadSessionsOneResponse struct {
 	GetUploadSessionResponse *components.GetUploadSessionResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (f *FileStorageUploadSessionsOneResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -127,4 +128,11 @@ func (f *FileStorageUploadSessionsOneResponse) GetUnexpectedErrorResponse() *com
 		return nil
 	}
 	return f.UnexpectedErrorResponse
+}
+
+func (f *FileStorageUploadSessionsOneResponse) GetHeaders() map[string][]string {
+	if f == nil {
+		return map[string][]string{}
+	}
+	return f.Headers
 }

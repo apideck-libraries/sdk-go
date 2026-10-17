@@ -93,6 +93,7 @@ type AccountingInvoiceItemsDeleteResponse struct {
 	DeleteTaxRateResponse *components.DeleteTaxRateResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (a *AccountingInvoiceItemsDeleteResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -114,4 +115,11 @@ func (a *AccountingInvoiceItemsDeleteResponse) GetUnexpectedErrorResponse() *com
 		return nil
 	}
 	return a.UnexpectedErrorResponse
+}
+
+func (a *AccountingInvoiceItemsDeleteResponse) GetHeaders() map[string][]string {
+	if a == nil {
+		return map[string][]string{}
+	}
+	return a.Headers
 }

@@ -224,6 +224,8 @@ func (s *Proxy) Get(ctx context.Context, request operations.ProxyGetProxyRequest
 
 	switch {
 	case httpRes.StatusCode == 200:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -281,6 +283,8 @@ func (s *Proxy) Get(ctx context.Context, request operations.ProxyGetProxyRequest
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -559,6 +563,8 @@ func (s *Proxy) Options(ctx context.Context, request operations.ProxyOptionsProx
 
 	switch {
 	case httpRes.StatusCode == 200:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -616,6 +622,8 @@ func (s *Proxy) Options(ctx context.Context, request operations.ProxyOptionsProx
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -901,6 +909,8 @@ func (s *Proxy) Post(ctx context.Context, request operations.ProxyPostProxyReque
 
 	switch {
 	case httpRes.StatusCode == 200:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -958,6 +968,8 @@ func (s *Proxy) Post(ctx context.Context, request operations.ProxyPostProxyReque
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1243,6 +1255,8 @@ func (s *Proxy) Put(ctx context.Context, request operations.ProxyPutProxyRequest
 
 	switch {
 	case httpRes.StatusCode == 200:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1300,6 +1314,8 @@ func (s *Proxy) Put(ctx context.Context, request operations.ProxyPutProxyRequest
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1585,6 +1601,8 @@ func (s *Proxy) Patch(ctx context.Context, request operations.ProxyPatchProxyReq
 
 	switch {
 	case httpRes.StatusCode == 200:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1642,6 +1660,8 @@ func (s *Proxy) Patch(ctx context.Context, request operations.ProxyPatchProxyReq
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1920,6 +1940,8 @@ func (s *Proxy) Delete(ctx context.Context, request operations.ProxyDeleteProxyR
 
 	switch {
 	case httpRes.StatusCode == 200:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1977,6 +1999,8 @@ func (s *Proxy) Delete(ctx context.Context, request operations.ProxyDeleteProxyR
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		res.Headers = httpRes.Header
+
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)

@@ -147,6 +147,7 @@ type IssueTrackingCollectionTicketCommentsAllResponse struct {
 	GetCommentsResponse *components.GetCommentsResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 
 	Next func() (*IssueTrackingCollectionTicketCommentsAllResponse, error)
 }
@@ -170,4 +171,11 @@ func (i *IssueTrackingCollectionTicketCommentsAllResponse) GetUnexpectedErrorRes
 		return nil
 	}
 	return i.UnexpectedErrorResponse
+}
+
+func (i *IssueTrackingCollectionTicketCommentsAllResponse) GetHeaders() map[string][]string {
+	if i == nil {
+		return map[string][]string{}
+	}
+	return i.Headers
 }

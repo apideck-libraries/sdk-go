@@ -102,6 +102,7 @@ type HrisDepartmentsOneResponse struct {
 	GetDepartmentResponse *components.GetDepartmentResponse
 	// Unexpected error
 	UnexpectedErrorResponse *components.UnexpectedErrorResponse
+	Headers                 map[string][]string
 }
 
 func (h *HrisDepartmentsOneResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -123,4 +124,11 @@ func (h *HrisDepartmentsOneResponse) GetUnexpectedErrorResponse() *components.Un
 		return nil
 	}
 	return h.UnexpectedErrorResponse
+}
+
+func (h *HrisDepartmentsOneResponse) GetHeaders() map[string][]string {
+	if h == nil {
+		return map[string][]string{}
+	}
+	return h.Headers
 }
