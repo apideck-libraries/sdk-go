@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: a414d46ef86d494be57026aca631d651
-  docVersion: 10.69.6
+  docChecksum: 8c3c4c93c21d2fc8a6f23d7263ccb2d2
+  docVersion: 10.69.9
   speakeasyVersion: 1.803.0
   generationVersion: 2.950.2
-  releaseVersion: 0.46.1
-  configChecksum: a289f0f3bd64c308d3b582dc258493b1
+  releaseVersion: 0.46.2
+  configChecksum: 552903123c3bb584bfb63b460e00319e
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: a843ce4b-fe0e-46f4-864e-6e69efaf0525
-  pristine_commit_hash: 890fbfb59ec47795deec7af45ae4230728515ab8
-  pristine_tree_hash: 72800b1c5f704edb32acfdda5d2a7255410a1b23
+  generation_id: b7e9d8b4-afdc-4da2-a04a-33d7eea3ea1d
+  pristine_commit_hash: 82c270eadad61d82cc511808734c01e4fc0ab7eb
+  pristine_tree_hash: 139bfd9191756464229b54d20e1914d26538857b
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: 5e719e283c42a5e48b9d7c5dfaf9d2bde6b4e8bd
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:7e036599ceda031551dd2e4ae0dad6e071f0130a
-    pristine_git_object: e76a0f6af9f56646ae70ddaff21d3c1b56a44579
+    last_write_checksum: sha1:e3b676124b3bd1dec2cbada6854bc8e4bc42f035
+    pristine_git_object: 7fc12538262d53b52ac65e1c172535efc6e15e90
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:00b31fb949e4844a56ce0a051df28131a5e49c3c
@@ -32573,10 +32573,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Go SDK Changes:
-  * `Apideck.Connector.Connectors.List()`:  `response.Data[].WebhookSupport.SharedWith` **Added**
-  * `Apideck.Connector.Connectors.Get()`:  `response.Data.WebhookSupport.SharedWith` **Added**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
