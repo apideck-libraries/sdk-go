@@ -53,6 +53,29 @@ func (e *FeedStatus) IsExact() bool {
 	return false
 }
 
+// BankFeedAccountStatus - Whether the data consumer may see this account. `revoked` hides it from the consumer without deleting it; `active` restores it. Unrelated to `feed_status`. Only connectors that list it support it; others ignore the field, so setting it there changes nothing.
+type BankFeedAccountStatus string
+
+const (
+	BankFeedAccountStatusActive  BankFeedAccountStatus = "active"
+	BankFeedAccountStatusRevoked BankFeedAccountStatus = "revoked"
+)
+
+func (e BankFeedAccountStatus) ToPointer() *BankFeedAccountStatus {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *BankFeedAccountStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "active", "revoked":
+			return true
+		}
+	}
+	return false
+}
+
 type BankFeedAccount struct {
 	// A unique identifier for an object.
 	ID string `json:"id"`
@@ -78,6 +101,8 @@ type BankFeedAccount struct {
 	Currency *Currency `json:"currency,omitempty"`
 	// Current status of the bank feed.
 	FeedStatus *FeedStatus `json:"feed_status,omitempty"`
+	// Whether the data consumer may see this account. `revoked` hides it from the consumer without deleting it; `active` restores it. Unrelated to `feed_status`. Only connectors that list it support it; others ignore the field, so setting it there changes nothing.
+	Status *BankFeedAccountStatus `json:"status,omitempty"`
 	// Country code according to ISO 3166-1 alpha-2.
 	Country *string `json:"country,omitempty"`
 	// The people or businesses that hold the source bank account. Optional; `plaid-exchange` requires at least one.
@@ -196,6 +221,13 @@ func (b *BankFeedAccount) GetFeedStatus() *FeedStatus {
 	return b.FeedStatus
 }
 
+func (b *BankFeedAccount) GetStatus() *BankFeedAccountStatus {
+	if b == nil {
+		return nil
+	}
+	return b.Status
+}
+
 func (b *BankFeedAccount) GetCountry() *string {
 	if b == nil {
 		return nil
@@ -296,6 +328,8 @@ type BankFeedAccountInput struct {
 	Currency *Currency `json:"currency,omitempty"`
 	// Current status of the bank feed.
 	FeedStatus *FeedStatus `json:"feed_status,omitempty"`
+	// Whether the data consumer may see this account. `revoked` hides it from the consumer without deleting it; `active` restores it. Unrelated to `feed_status`. Only connectors that list it support it; others ignore the field, so setting it there changes nothing.
+	Status *BankFeedAccountStatus `json:"status,omitempty"`
 	// Country code according to ISO 3166-1 alpha-2.
 	Country *string `json:"country,omitempty"`
 	// The people or businesses that hold the source bank account. Optional; `plaid-exchange` requires at least one.
@@ -384,6 +418,13 @@ func (b *BankFeedAccountInput) GetFeedStatus() *FeedStatus {
 		return nil
 	}
 	return b.FeedStatus
+}
+
+func (b *BankFeedAccountInput) GetStatus() *BankFeedAccountStatus {
+	if b == nil {
+		return nil
+	}
+	return b.Status
 }
 
 func (b *BankFeedAccountInput) GetCountry() *string {
