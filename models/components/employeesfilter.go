@@ -2,6 +2,11 @@
 
 package components
 
+import (
+	"github.com/apideck-libraries/sdk-go/internal/utils"
+	"github.com/apideck-libraries/sdk-go/types"
+)
+
 // EmployeesFilterEmploymentStatus - Employment status to filter on
 type EmployeesFilterEmploymentStatus string
 
@@ -50,6 +55,19 @@ type EmployeesFilter struct {
 	City *string `queryParam:"name=city"`
 	// Country to filter on
 	Country *string `queryParam:"name=country"`
+	// Return employees as of this date (YYYY-MM-DD). Set a future date to include future-dated hires. When omitted, employees are returned as of today.
+	AsOfDate *types.Date `queryParam:"name=as_of_date"`
+}
+
+func (e EmployeesFilter) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(e, "", false)
+}
+
+func (e *EmployeesFilter) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &e, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (e *EmployeesFilter) GetCompanyID() *string {
@@ -127,4 +145,11 @@ func (e *EmployeesFilter) GetCountry() *string {
 		return nil
 	}
 	return e.Country
+}
+
+func (e *EmployeesFilter) GetAsOfDate() *types.Date {
+	if e == nil {
+		return nil
+	}
+	return e.AsOfDate
 }

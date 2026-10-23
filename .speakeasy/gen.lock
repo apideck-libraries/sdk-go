@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 8c3c4c93c21d2fc8a6f23d7263ccb2d2
-  docVersion: 10.69.9
-  speakeasyVersion: 1.803.0
+  docChecksum: 435cd1f2692ea7ff623fd33d357deb15
+  docVersion: 10.71.0
+  speakeasyVersion: 1.803.1
   generationVersion: 2.950.2
-  releaseVersion: 0.46.2
-  configChecksum: 552903123c3bb584bfb63b460e00319e
+  releaseVersion: 0.47.0
+  configChecksum: 8df6c7f15c5f255b1a12761fc34c56d1
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: b7e9d8b4-afdc-4da2-a04a-33d7eea3ea1d
-  pristine_commit_hash: 82c270eadad61d82cc511808734c01e4fc0ab7eb
-  pristine_tree_hash: 139bfd9191756464229b54d20e1914d26538857b
+  generation_id: aa02fd99-16ba-4135-b8b1-9df54c1ed809
+  pristine_commit_hash: e69dc925141273c69f6db715c9459aa2bac576fd
+  pristine_tree_hash: 47ef02fc191a2376a2c13c6e3353022a393730c4
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: 5e719e283c42a5e48b9d7c5dfaf9d2bde6b4e8bd
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:e3b676124b3bd1dec2cbada6854bc8e4bc42f035
-    pristine_git_object: 7fc12538262d53b52ac65e1c172535efc6e15e90
+    last_write_checksum: sha1:68cdea8c817b069286af4f1c78e023d77c6f89cc
+    pristine_git_object: 049e8a0e4600cae35c0276af0d7e472dacd30f2c
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:00b31fb949e4844a56ce0a051df28131a5e49c3c
@@ -734,16 +734,20 @@ trackedFiles:
     pristine_git_object: bff36232217ac062db509544b9b48d2bafcee509
   docs/models/components/bankfeedaccount.md:
     id: 32af3b123213
-    last_write_checksum: sha1:86bf315cfba6186385263b8fe30733271e6fb9d4
-    pristine_git_object: 64f750a2015dff4fdb6386788626b4dd5cba2c1f
+    last_write_checksum: sha1:0daa25d44b84d4d73d6aed22c9da0ea729fd2106
+    pristine_git_object: d178ea1b896ddb13d6a14c46e566aa9c1a99be49
   docs/models/components/bankfeedaccountholder.md:
     id: 21daf2c140d3
     last_write_checksum: sha1:6d4f4b6ee73c5b62347351aae342703f2c4d841e
     pristine_git_object: 057fc85bc1158e13f78f752818b4fc4ab3475ffd
   docs/models/components/bankfeedaccountinput.md:
     id: 0c20d8e8cb48
-    last_write_checksum: sha1:bc5f349730daba545227348e95f39a6001d9686f
-    pristine_git_object: a1297e0b9953676ae98ff514ff52347223cbcf16
+    last_write_checksum: sha1:8fbe2b7eda561fe1d0f6fef8b2c1b21888978657
+    pristine_git_object: 7a20c34c20f6d17cf648071d795759b1b2ee5784
+  docs/models/components/bankfeedaccountstatus.md:
+    id: 8749d06694a4
+    last_write_checksum: sha1:db10472795fa29db54976b39147340fa37af5e20
+    pristine_git_object: 48b71e0c29ee748e3649b6c0f53165021b536d6d
   docs/models/components/bankfeedstatement.md:
     id: 6f5892166068
     last_write_checksum: sha1:decd56778c0813badf4492d90090f62f497d7ec3
@@ -1258,8 +1262,8 @@ trackedFiles:
     pristine_git_object: 55ef1fa47b742c6fb5e387f0d3ddf05885c0602e
   docs/models/components/connectorsetting.md:
     id: 1f6fee6b6e62
-    last_write_checksum: sha1:37781bf7801ece18cd1e3ab9787901fd3aff0638
-    pristine_git_object: cc8306fd66ae2d2d6ab4c33ebea86c378fe3fb29
+    last_write_checksum: sha1:010bae79194770faaccf2b082e5a9d6c03019c41
+    pristine_git_object: 36bbe9213733da93cc69562f415f0beee44dacd5
   docs/models/components/connectorsettingtype.md:
     id: 7d80f7e253ce
     last_write_checksum: sha1:a7a41ffa4b4a0ba11fd1fa4b0eea8d3387b79fd5
@@ -2246,8 +2250,8 @@ trackedFiles:
     pristine_git_object: b83a8c11a91b0050ab7da5c5edc081a393ddecce
   docs/models/components/employeesfilter.md:
     id: af012761d1f0
-    last_write_checksum: sha1:40cf689a22ac236a8eace2bba0d56e7df95a3174
-    pristine_git_object: a07cdb43206a017425b2514682606f8953b966dc
+    last_write_checksum: sha1:49ffb833c48e47b5c55b4f3122e57ab1ceab7fe3
+    pristine_git_object: da97036315a9af372e1a1949366ab9f0dec49927
   docs/models/components/employeesfilteremploymentstatus.md:
     id: 45058db6634b
     last_write_checksum: sha1:aa0a733b3a281faa321bfeedb031996c6e8469fb
@@ -2466,8 +2470,8 @@ trackedFiles:
     pristine_git_object: f7fe95f12a78ad1ecfbf16c8feb3f01cea1d67ae
   docs/models/components/formfield.md:
     id: 0e669a4a77f9
-    last_write_checksum: sha1:09cf1f8dc98f88b42a3a80a8e0dc4b3e563747d4
-    pristine_git_object: 9e1dee9c7c6b20bcf2b6eedb8b701783fec1ba78
+    last_write_checksum: sha1:1df5f2a8ce08d7590747c9b64a74ddef465e7e79
+    pristine_git_object: b60477d08c58e3de137b8be8fd38cac60dd015a2
   docs/models/components/formfieldoption.md:
     id: 565138e5673b
     last_write_checksum: sha1:c8475a0f90c6d24e95a08cbc5bba644542bc31f4
@@ -10378,8 +10382,8 @@ trackedFiles:
     pristine_git_object: da20213e90b4b20523b474339003b2269073924a
   models/components/bankfeedaccount.go:
     id: 20d49b67a21f
-    last_write_checksum: sha1:e06e174f89953509a3f54c8c41ecaa086f007a5c
-    pristine_git_object: 09afe15957d44f2035252f0c6fb19399421e553c
+    last_write_checksum: sha1:6d7d08adc4b24ffe321f4af38e98e38ac855d557
+    pristine_git_object: 89fa7c40aaba7c95a46e975acde28f4b38fa4a38
   models/components/bankfeedaccountholder.go:
     id: 922debd6bc9a
     last_write_checksum: sha1:304fca6d314e67745bdd14c81a6624ce6ec9a7ea
@@ -10650,8 +10654,8 @@ trackedFiles:
     pristine_git_object: e0e1c5272df9e583522c9d55e5dbd6c9e1d497e6
   models/components/connectorsetting.go:
     id: c2ccb3deee9a
-    last_write_checksum: sha1:1bc8bf57ea06069a8fabdd361b75de04fa98a6a6
-    pristine_git_object: 829b2d7a0e61eb890780ba272173aff5c857714a
+    last_write_checksum: sha1:8c823e19462b1279b7f08daf117821d646325dc6
+    pristine_git_object: a3c8362560c7fc8788fd8f1e425ad6735d4daa41
   models/components/connectorsfilter.go:
     id: 0282924024ca
     last_write_checksum: sha1:646d6c44a2fdd140ebf948a8258f9b45aa5b52ce
@@ -11410,8 +11414,8 @@ trackedFiles:
     pristine_git_object: 4944c6f1282a6b89071e2d3c24c3ec8a5cf8120b
   models/components/employeesfilter.go:
     id: 144d076940a8
-    last_write_checksum: sha1:070131b36d686fb0330c4ef306c57b7496add3b5
-    pristine_git_object: 1f2f52cb4e35c9bbe2731cd24c79673f3256aae6
+    last_write_checksum: sha1:8898b3be082c70dcdbaf7b0cf7b63d0ef4fc26c7
+    pristine_git_object: 992133c289b7be6cdd60005acf6194db5f5f3b23
   models/components/employeesonefilter.go:
     id: 8224ae01d89d
     last_write_checksum: sha1:6b51b4d35c25888465e1a9cf719131156dcea2cd
@@ -11490,8 +11494,8 @@ trackedFiles:
     pristine_git_object: 66bb6e3d5219b4ee16cc3376c154ff83687c721a
   models/components/formfield.go:
     id: 0c756f5f501b
-    last_write_checksum: sha1:3493fc3eda6f4977a64109dea5da906204f1b8e8
-    pristine_git_object: 0550b3c93cd181db7dcfcd249d96e7d59e980100
+    last_write_checksum: sha1:4a1b208f392cb393954b510ecc1f998fd552a539
+    pristine_git_object: ff58a7419642f3266f9305aaf3959fc5c45a9211
   models/components/formfieldoption.go:
     id: fa8247ec7227
     last_write_checksum: sha1:e08c8557d669aca07daff18bf375cddeced90f49
@@ -20110,7 +20114,7 @@ examples:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
           x-apideck-service-id: "salesforce"
       requestBody:
-        application/json: {"bank_account_type": "bank", "source_account_id": "src_456", "source_routing_number": "021000021", "source_account_number": "123465", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "balance": 25000, "available_balance": 24500, "currency": "USD", "feed_status": "pending", "country": "US", "account_holders": [{"type": "consumer", "relationship": "primary", "first_name": "Jane", "middle_name": "Quinn", "last_name": "Doe", "suffix": "Jr", "business_name": "Acme LLC"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "line5": "Attention: Finance Dept", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}]}
+        application/json: {"bank_account_type": "bank", "source_account_id": "src_456", "source_routing_number": "021000021", "source_account_number": "123465", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "balance": 25000, "available_balance": 24500, "currency": "USD", "feed_status": "pending", "status": "active", "country": "US", "account_holders": [{"type": "consumer", "relationship": "primary", "first_name": "Jane", "middle_name": "Quinn", "last_name": "Doe", "suffix": "Jr", "business_name": "Acme LLC"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "line5": "Attention: Finance Dept", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}]}
       responses:
         "201":
           application/json: {"status_code": 200, "status": "OK", "service": "xero", "resource": "bills", "operation": "add", "data": {"id": "12345"}}
@@ -20167,7 +20171,7 @@ examples:
           x-apideck-company-id: "12345"
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-feed-accounts", "operation": "one", "data": {"id": "12345", "bank_account_type": "bank", "source_account_id": "src_456", "source_routing_number": "021000021", "source_account_number": "123465", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "balance": 25000, "available_balance": 24500, "currency": "USD", "feed_status": "pending", "country": "US", "account_holders": [{"type": "consumer", "relationship": "primary", "first_name": "Jane", "middle_name": "Quinn", "last_name": "Doe", "suffix": "Jr", "business_name": "Acme LLC"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "line5": "Attention: Finance Dept", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z", "updated_by": "12345", "created_by": "12345"}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}}
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-feed-accounts", "operation": "one", "data": {"id": "12345", "bank_account_type": "bank", "source_account_id": "src_456", "source_routing_number": "021000021", "source_account_number": "123465", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "balance": 25000, "available_balance": 24500, "currency": "USD", "feed_status": "pending", "status": "active", "country": "US", "account_holders": [{"type": "consumer", "relationship": "primary", "first_name": "Jane", "middle_name": "Quinn", "last_name": "Doe", "suffix": "Jr", "business_name": "Acme LLC"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "line5": "Attention: Finance Dept", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z", "updated_by": "12345", "created_by": "12345"}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
         "401":
@@ -20219,7 +20223,7 @@ examples:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
           x-apideck-service-id: "salesforce"
       requestBody:
-        application/json: {"bank_account_type": "bank", "source_account_id": "src_456", "source_routing_number": "021000021", "source_account_number": "123465", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "balance": 25000, "available_balance": 24500, "currency": "USD", "feed_status": "pending", "country": "US", "account_holders": [{"type": "consumer", "relationship": "primary", "first_name": "Jane", "middle_name": "Quinn", "last_name": "Doe", "suffix": "Jr", "business_name": "Acme LLC"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "line5": "Attention: Finance Dept", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}]}
+        application/json: {"bank_account_type": "bank", "source_account_id": "src_456", "source_routing_number": "021000021", "source_account_number": "123465", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "balance": 25000, "available_balance": 24500, "currency": "USD", "feed_status": "pending", "status": "active", "country": "US", "account_holders": [{"type": "consumer", "relationship": "primary", "first_name": "Jane", "middle_name": "Quinn", "last_name": "Doe", "suffix": "Jr", "business_name": "Acme LLC"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "line5": "Attention: Finance Dept", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}]}
       responses:
         "200":
           application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-feed-accounts", "operation": "update", "data": {"id": "12345"}}
@@ -32573,6 +32577,7 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Go SDK Changes:\n* `Apideck.Accounting.BankFeedAccounts.List()`:  `response.Data[].Status` **Added**\n* `Apideck.Accounting.BankFeedAccounts.Create()`: \n  *  `request.Request.BankFeedAccount.Status` **Added**\n* `Apideck.Accounting.BankFeedAccounts.Get()`:  `response.Data.Status` **Added**\n* `Apideck.Accounting.BankFeedAccounts.Update()`: \n  *  `request.Request.BankFeedAccount.Status` **Added**\n* `Apideck.Hris.Employees.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Connector.Connectors.List()`:  `response.Data[].Settings[]` **Changed**\n* `Apideck.Connector.Connectors.Get()`:  `response.Data.Settings[]` **Changed**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
