@@ -1,25 +1,25 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 435cd1f2692ea7ff623fd33d357deb15
-  docVersion: 10.71.0
-  speakeasyVersion: 1.803.1
-  generationVersion: 2.950.2
-  releaseVersion: 0.47.0
-  configChecksum: 8df6c7f15c5f255b1a12761fc34c56d1
+  docChecksum: 8e0400bab6165e4dddfeffaf9a322d77
+  docVersion: 10.72.1
+  speakeasyVersion: 1.803.2
+  generationVersion: 2.950.13
+  releaseVersion: 0.48.0
+  configChecksum: 6f1085b8d02b7f49f18d4a22a35ca991
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: aa02fd99-16ba-4135-b8b1-9df54c1ed809
-  pristine_commit_hash: e69dc925141273c69f6db715c9459aa2bac576fd
-  pristine_tree_hash: 47ef02fc191a2376a2c13c6e3353022a393730c4
+  generation_id: e2a860d6-b8fe-43de-a24b-f07926163574
+  pristine_commit_hash: 53fc70f1c1460d77ff5aa58f5f5cb4f1b65806d9
+  pristine_tree_hash: beb6e96b4006fa4d4031d074cd2701307c5119d5
 features:
   go:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     additionalProperties: 0.1.3
     constsAndDefaults: 0.1.14
-    core: 3.16.2
+    core: 3.16.3
     deepObjectParams: 0.1.1
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.3
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: 5e719e283c42a5e48b9d7c5dfaf9d2bde6b4e8bd
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:68cdea8c817b069286af4f1c78e023d77c6f89cc
-    pristine_git_object: 049e8a0e4600cae35c0276af0d7e472dacd30f2c
+    last_write_checksum: sha1:274787b40a19cfa4fae72c3d8f455c2f8a4fb729
+    pristine_git_object: e5d2efa7bf7c7b8d2dc6001a2ccc4c076377a1be
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:00b31fb949e4844a56ce0a051df28131a5e49c3c
@@ -10050,8 +10050,8 @@ trackedFiles:
     pristine_git_object: 9219203c0a7d4f4ae350f7db7ddcb52c90792a97
   go.mod:
     id: c47645c391ad
-    last_write_checksum: sha1:3538b4019dab756638526fa5fc3ce695549583c8
-    pristine_git_object: 867a04acf5b33a3a83a32d9ec4880ac07e86d6ec
+    last_write_checksum: sha1:1d63049a00e6fdb7ba8049189c6ba58944063501
+    pristine_git_object: 74fd46d5b323f79da66aea019f1c8bef6907b8f7
   goodsreceipts.go:
     id: 1e0cd9ab5f32
     last_write_checksum: sha1:fd0fafe38e4904a1ff7b1e1ded3714c23cd9772d
@@ -32577,7 +32577,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes:\n* `Apideck.Accounting.BankFeedAccounts.List()`:  `response.Data[].Status` **Added**\n* `Apideck.Accounting.BankFeedAccounts.Create()`: \n  *  `request.Request.BankFeedAccount.Status` **Added**\n* `Apideck.Accounting.BankFeedAccounts.Get()`:  `response.Data.Status` **Added**\n* `Apideck.Accounting.BankFeedAccounts.Update()`: \n  *  `request.Request.BankFeedAccount.Status` **Added**\n* `Apideck.Hris.Employees.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Connector.Connectors.List()`:  `response.Data[].Settings[]` **Changed**\n* `Apideck.Connector.Connectors.Get()`:  `response.Data.Settings[]` **Changed**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
