@@ -80,6 +80,100 @@ func (e *LedgerAccountType) IsExact() bool {
 	return false
 }
 
+// DepreciationMethod - The depreciation method of the assets, normalised across accounting systems: declining-balance variants (for example 150% or 200%) are all `declining_balance`, and the accounting system's own value is in `downstream_depreciation_method`. Set only when every asset recorded in the account uses the same method.
+type DepreciationMethod string
+
+const (
+	DepreciationMethodOther            DepreciationMethod = "other"
+	DepreciationMethodStraightLine     DepreciationMethod = "straight_line"
+	DepreciationMethodDecliningBalance DepreciationMethod = "declining_balance"
+	DepreciationMethodNone             DepreciationMethod = "none"
+)
+
+func (e DepreciationMethod) ToPointer() *DepreciationMethod {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *DepreciationMethod) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "other", "straight_line", "declining_balance", "none":
+			return true
+		}
+	}
+	return false
+}
+
+// FixedAsset - For an account that holds the cost of fixed assets, the fixed-asset register's figures for the assets recorded in it. Null for other accounts, including accumulated-depreciation accounts, and when the accounting system does not provide them.
+type FixedAsset struct {
+	// The total cost of the fixed assets recorded in the account.
+	Cost *float64 `json:"cost,omitempty"`
+	// The depreciation accumulated so far on the fixed assets recorded in the account, as a positive amount.
+	AccumulatedDepreciation *float64 `json:"accumulated_depreciation,omitempty"`
+	// The date the assets were purchased - YYYY-MM-DD. Set only when every asset recorded in the account shares the same date.
+	AcquisitionDate *types.Date `json:"acquisition_date,omitempty"`
+	// The depreciation method of the assets, normalised across accounting systems: declining-balance variants (for example 150% or 200%) are all `declining_balance`, and the accounting system's own value is in `downstream_depreciation_method`. Set only when every asset recorded in the account uses the same method.
+	DepreciationMethod *DepreciationMethod `json:"depreciation_method,omitempty"`
+	// The depreciation method exactly as the accounting system names it, under the same condition as `depreciation_method`.
+	DownstreamDepreciationMethod *string `json:"downstream_depreciation_method,omitempty"`
+	// The useful life of the assets, in months. Set only when every asset recorded in the account has the same useful life.
+	UsefulLifeMonths *int64 `json:"useful_life_months,omitempty"`
+}
+
+func (f FixedAsset) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(f, "", false)
+}
+
+func (f *FixedAsset) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &f, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (f *FixedAsset) GetCost() *float64 {
+	if f == nil {
+		return nil
+	}
+	return f.Cost
+}
+
+func (f *FixedAsset) GetAccumulatedDepreciation() *float64 {
+	if f == nil {
+		return nil
+	}
+	return f.AccumulatedDepreciation
+}
+
+func (f *FixedAsset) GetAcquisitionDate() *types.Date {
+	if f == nil {
+		return nil
+	}
+	return f.AcquisitionDate
+}
+
+func (f *FixedAsset) GetDepreciationMethod() *DepreciationMethod {
+	if f == nil {
+		return nil
+	}
+	return f.DepreciationMethod
+}
+
+func (f *FixedAsset) GetDownstreamDepreciationMethod() *string {
+	if f == nil {
+		return nil
+	}
+	return f.DownstreamDepreciationMethod
+}
+
+func (f *FixedAsset) GetUsefulLifeMonths() *int64 {
+	if f == nil {
+		return nil
+	}
+	return f.UsefulLifeMonths
+}
+
 // AccountStatus - The status of the account.
 type AccountStatus string
 
@@ -214,6 +308,8 @@ type LedgerAccount struct {
 	OpeningBalance *float64 `json:"opening_balance,omitempty"`
 	// The current balance of the account.
 	CurrentBalance *float64 `json:"current_balance,omitempty"`
+	// For an account that holds the cost of fixed assets, the fixed-asset register's figures for the assets recorded in it. Null for other accounts, including accumulated-depreciation accounts, and when the accounting system does not provide them.
+	FixedAsset *FixedAsset `json:"fixed_asset,omitempty"`
 	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
 	Currency *Currency `json:"currency,omitempty"`
 	// The tax type of the account.
@@ -348,6 +444,13 @@ func (l *LedgerAccount) GetCurrentBalance() *float64 {
 		return nil
 	}
 	return l.CurrentBalance
+}
+
+func (l *LedgerAccount) GetFixedAsset() *FixedAsset {
+	if l == nil {
+		return nil
+	}
+	return l.FixedAsset
 }
 
 func (l *LedgerAccount) GetCurrency() *Currency {
