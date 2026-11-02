@@ -177,6 +177,8 @@ type InvoiceCreateInput struct {
 	SourceDocumentURL *string `json:"source_document_url,omitempty"`
 	// IDs of payments made on the invoice
 	PaymentAllocations []InvoiceCreateInputPaymentAllocations `json:"payment_allocations,omitempty"`
+	// A list of quotes linked to this record.
+	Quotes []LinkedQuotesInput `json:"quotes,omitempty"`
 	// Payment method used for the transaction, such as cash, credit card, bank transfer, or check
 	PaymentMethod *string `json:"payment_method,omitempty"`
 	// The channel through which the transaction is processed.
@@ -455,6 +457,13 @@ func (i *InvoiceCreateInput) GetPaymentAllocations() []InvoiceCreateInputPayment
 		return nil
 	}
 	return i.PaymentAllocations
+}
+
+func (i *InvoiceCreateInput) GetQuotes() []LinkedQuotesInput {
+	if i == nil {
+		return nil
+	}
+	return i.Quotes
 }
 
 func (i *InvoiceCreateInput) GetPaymentMethod() *string {
