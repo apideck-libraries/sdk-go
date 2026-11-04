@@ -353,7 +353,7 @@ func main() {
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
         CompanyID: sdkgo.Pointer("12345"),
-        Payment: components.PaymentInput{
+        PaymentUpdateInput: components.PaymentUpdateInput{
             Currency: components.CurrencyUsd.ToPointer(),
             CurrencyRate: sdkgo.Pointer[float64](0.69),
             TotalAmount: sdkgo.Pointer[float64](49.99),

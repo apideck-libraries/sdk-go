@@ -363,27 +363,27 @@ func main() {
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
         CompanyID: sdkgo.Pointer("12345"),
-        Project: components.ProjectInput{
-            Name: "Website Redesign Project",
+        ProjectUpdateInput: components.ProjectUpdateInput{
+            Name: sdkgo.Pointer("Website Redesign Project"),
             DisplayID: sdkgo.Pointer("PROJ-001"),
             ReferenceID: sdkgo.Pointer("WD-REF-2024-001"),
             Description: sdkgo.Pointer("Complete redesign of the company website including new branding and improved user experience"),
-            Status: components.ProjectProjectStatusActive.ToPointer(),
+            Status: components.ProjectUpdateInputProjectStatusActive.ToPointer(),
             Active: sdkgo.Pointer(true),
-            ProjectType: components.ProjectTypeClientProject.ToPointer(),
-            Priority: components.PriorityHigh.ToPointer(),
+            ProjectType: components.ProjectUpdateInputProjectTypeClientProject.ToPointer(),
+            Priority: components.ProjectUpdateInputPriorityHigh.ToPointer(),
             CompletionPercentage: sdkgo.Pointer[float64](75.5),
             StartDate: types.MustNewDateFromString("2024-01-15"),
             EndDate: types.MustNewDateFromString("2024-06-30"),
             CompletionDate: types.MustNewDateFromString("2024-08-06"),
             Customer: nil,
-            Department: &components.ProjectDepartment{
+            Department: &components.ProjectUpdateInputDepartment{
                 ID: sdkgo.Pointer("DEPT-001"),
                 Name: sdkgo.Pointer("Marketing"),
             },
             CompanyID: sdkgo.Pointer("12345"),
             OwnerID: sdkgo.Pointer("12345"),
-            ParentProject: &components.ParentProject{
+            ParentProject: &components.ProjectUpdateInputParentProject{
                 ID: sdkgo.Pointer("PROJ-PARENT-001"),
                 Name: sdkgo.Pointer("Company Website Overhaul"),
             },
@@ -392,8 +392,8 @@ func main() {
             ApprovedAmount: sdkgo.Pointer[float64](48000.0),
             BudgetHours: sdkgo.Pointer[float64](400.0),
             HourlyRate: sdkgo.Pointer[float64](125.0),
-            BillingMethod: components.BillingMethodTimeAndMaterials.ToPointer(),
-            Phase: components.ProjectPhaseExecution.ToPointer(),
+            BillingMethod: components.ProjectUpdateInputBillingMethodTimeAndMaterials.ToPointer(),
+            Phase: components.ProjectUpdateInputProjectPhaseExecution.ToPointer(),
             TaxRate: &components.LinkedTaxRateInput{
                 ID: sdkgo.Pointer("123456"),
                 Code: sdkgo.Pointer("N-T"),
@@ -415,7 +415,7 @@ func main() {
             Notes: sdkgo.Pointer("Client has requested modern design with mobile-first approach"),
             ContractNumber: sdkgo.Pointer("CNT-2024-001"),
             ProfitMargin: sdkgo.Pointer[float64](15.5),
-            ScheduleStatus: components.ScheduleStatusOnSchedule.ToPointer(),
+            ScheduleStatus: components.ProjectUpdateInputScheduleStatusOnSchedule.ToPointer(),
             Addresses: []components.Address{
                 components.Address{
                     ID: sdkgo.Pointer("123"),
