@@ -1209,7 +1209,7 @@ func (s *ExpenseReports) Update(ctx context.Context, request operations.Accounti
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "ExpenseReport", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "ExpenseReportUpdateInput", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}

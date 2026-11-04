@@ -396,17 +396,17 @@ func main() {
     res, err := s.Accounting.Expenses.Update(ctx, operations.AccountingExpensesUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
-        Expense: components.ExpenseInput{
+        ExpenseUpdateInput: components.ExpenseUpdateInput{
             Number: sdkgo.Pointer("OIT00546"),
             TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
             AccountID: sdkgo.Pointer("123456"),
             SupplierID: sdkgo.Pointer("12345"),
             CompanyID: sdkgo.Pointer("12345"),
             DepartmentID: sdkgo.Pointer("12345"),
-            PaymentType: components.ExpensePaymentTypeCash.ToPointer(),
+            PaymentType: components.ExpenseUpdateInputPaymentTypeCash.ToPointer(),
             Currency: components.CurrencyUsd.ToPointer(),
             CurrencyRate: sdkgo.Pointer[float64](0.69),
-            Type: components.ExpenseTypeExpense.ToPointer(),
+            Type: components.ExpenseUpdateInputExpenseTypeExpense.ToPointer(),
             Memo: sdkgo.Pointer("For travel expenses incurred on 2024-05-15"),
             TaxRate: &components.LinkedTaxRateInput{
                 ID: sdkgo.Pointer("123456"),

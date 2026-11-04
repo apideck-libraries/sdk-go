@@ -38,8 +38,8 @@ type AccountingBillPaymentsUpdateRequest struct {
 	// Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.
 	ServiceID *string `header:"style=simple,explode=false,name=x-apideck-service-id"`
 	// Include raw response. Mostly used for debugging purposes
-	Raw         *bool                       `default:"false" queryParam:"style=form,explode=true,name=raw"`
-	BillPayment components.BillPaymentInput `request:"mediaType=application/json"`
+	Raw                    *bool                             `default:"false" queryParam:"style=form,explode=true,name=raw"`
+	BillPaymentUpdateInput components.BillPaymentUpdateInput `request:"mediaType=application/json"`
 }
 
 func (a AccountingBillPaymentsUpdateRequest) MarshalJSON() ([]byte, error) {
@@ -88,11 +88,11 @@ func (a *AccountingBillPaymentsUpdateRequest) GetRaw() *bool {
 	return a.Raw
 }
 
-func (a *AccountingBillPaymentsUpdateRequest) GetBillPayment() components.BillPaymentInput {
+func (a *AccountingBillPaymentsUpdateRequest) GetBillPaymentUpdateInput() components.BillPaymentUpdateInput {
 	if a == nil {
-		return components.BillPaymentInput{}
+		return components.BillPaymentUpdateInput{}
 	}
-	return a.BillPayment
+	return a.BillPaymentUpdateInput
 }
 
 type AccountingBillPaymentsUpdateResponse struct {

@@ -470,7 +470,7 @@ func main() {
     res, err := s.Accounting.Refunds.Update(ctx, operations.AccountingRefundsUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
-        Refund: components.RefundInput{
+        RefundUpdateInput: components.RefundUpdateInput{
             Number: sdkgo.Pointer("RF-00001"),
             Customer: &components.LinkedCustomerInput{
                 ID: sdkgo.Pointer("12345"),

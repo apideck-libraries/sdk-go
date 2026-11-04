@@ -336,15 +336,15 @@ func main() {
     res, err := s.Accounting.ExpenseReports.Update(ctx, operations.AccountingExpenseReportsUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
-        ExpenseReport: components.ExpenseReportInput{
+        ExpenseReportUpdateInput: components.ExpenseReportUpdateInput{
             DisplayID: sdkgo.Pointer("123456"),
             Number: sdkgo.Pointer("ER-001"),
             Title: sdkgo.Pointer("Q1 Business Travel"),
-            Employee: components.ExpenseReportEmployee{
+            Employee: &components.ExpenseReportUpdateInputEmployee{
                 ID: sdkgo.Pointer("12345"),
                 DisplayName: sdkgo.Pointer("John Doe"),
             },
-            Status: components.ExpenseReportStatusSubmitted.ToPointer(),
+            Status: components.ExpenseReportUpdateInputStatusSubmitted.ToPointer(),
             TransactionDate: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
             PostingDate: types.MustNewDateFromString("2024-06-01"),
             DueDate: types.MustNewDateFromString("2024-06-15"),
@@ -372,7 +372,7 @@ func main() {
                 ParentID: sdkgo.Pointer("123456"),
                 DisplayID: sdkgo.Pointer("123456"),
             },
-            AccountingPeriod: &components.AccountingPeriod{
+            AccountingPeriod: &components.ExpenseReportUpdateInputAccountingPeriod{
                 ID: sdkgo.Pointer("12345"),
                 Name: sdkgo.Pointer("Q1 2024"),
             },
@@ -384,7 +384,7 @@ func main() {
             },
             TrackingCategories: nil,
             TaxInclusive: sdkgo.Pointer(true),
-            ApprovedBy: &components.ApprovedBy{
+            ApprovedBy: &components.ExpenseReportUpdateInputApprovedBy{
                 ID: sdkgo.Pointer("12345"),
                 DisplayName: sdkgo.Pointer("Jane Smith"),
             },
