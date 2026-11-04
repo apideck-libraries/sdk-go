@@ -463,7 +463,7 @@ func main() {
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
         CompanyID: sdkgo.Pointer("12345"),
-        SalesReceipt: components.SalesReceiptInput{
+        SalesReceiptUpdateInput: components.SalesReceiptUpdateInput{
             Number: sdkgo.Pointer("SR-00001"),
             Customer: &components.LinkedCustomerInput{
                 ID: sdkgo.Pointer("12345"),

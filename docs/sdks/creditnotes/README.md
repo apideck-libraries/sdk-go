@@ -461,7 +461,7 @@ func main() {
     res, err := s.Accounting.CreditNotes.Update(ctx, operations.AccountingCreditNotesUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
-        CreditNote: components.CreditNoteInput{
+        CreditNoteUpdateInput: components.CreditNoteUpdateInput{
             Number: sdkgo.Pointer("OIT00546"),
             Customer: &components.LinkedCustomerInput{
                 ID: sdkgo.Pointer("12345"),
@@ -473,16 +473,16 @@ func main() {
             CurrencyRate: sdkgo.Pointer[float64](0.69),
             TaxInclusive: sdkgo.Pointer(true),
             SubTotal: sdkgo.Pointer[float64](27500.0),
-            TotalAmount: 49.99,
+            TotalAmount: sdkgo.Pointer[float64](49.99),
             TotalTax: sdkgo.Pointer[float64](2500.0),
             TaxCode: sdkgo.Pointer("1234"),
             Balance: sdkgo.Pointer[float64](27500.0),
             RemainingCredit: sdkgo.Pointer[float64](27500.0),
-            Status: components.CreditNoteStatusAuthorised.ToPointer(),
+            Status: components.CreditNoteUpdateInputCreditNoteStatusAuthorised.ToPointer(),
             Reference: sdkgo.Pointer("123456"),
             DateIssued: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
             DatePaid: types.MustNewTimeFromString("2021-05-01T12:00:00.000Z"),
-            Type: components.CreditNoteTypeAccountsReceivableCredit.ToPointer(),
+            Type: components.CreditNoteUpdateInputCreditNoteTypeAccountsReceivableCredit.ToPointer(),
             Account: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
                 NominalCode: sdkgo.Pointer("N091"),

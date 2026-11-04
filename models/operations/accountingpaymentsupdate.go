@@ -40,8 +40,8 @@ type AccountingPaymentsUpdateRequest struct {
 	// The ID of the company to scope requests to. For connectors that support multi-company, this overrides the default company configured in connection settings.
 	CompanyID *string `header:"style=simple,explode=false,name=x-apideck-company-id"`
 	// Include raw response. Mostly used for debugging purposes
-	Raw     *bool                   `default:"false" queryParam:"style=form,explode=true,name=raw"`
-	Payment components.PaymentInput `request:"mediaType=application/json"`
+	Raw                *bool                         `default:"false" queryParam:"style=form,explode=true,name=raw"`
+	PaymentUpdateInput components.PaymentUpdateInput `request:"mediaType=application/json"`
 }
 
 func (a AccountingPaymentsUpdateRequest) MarshalJSON() ([]byte, error) {
@@ -97,11 +97,11 @@ func (a *AccountingPaymentsUpdateRequest) GetRaw() *bool {
 	return a.Raw
 }
 
-func (a *AccountingPaymentsUpdateRequest) GetPayment() components.PaymentInput {
+func (a *AccountingPaymentsUpdateRequest) GetPaymentUpdateInput() components.PaymentUpdateInput {
 	if a == nil {
-		return components.PaymentInput{}
+		return components.PaymentUpdateInput{}
 	}
-	return a.Payment
+	return a.PaymentUpdateInput
 }
 
 type AccountingPaymentsUpdateResponse struct {

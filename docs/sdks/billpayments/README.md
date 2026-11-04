@@ -404,7 +404,7 @@ func main() {
     res, err := s.Accounting.BillPayments.Update(ctx, operations.AccountingBillPaymentsUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
-        BillPayment: components.BillPaymentInput{
+        BillPaymentUpdateInput: components.BillPaymentUpdateInput{
             Currency: components.CurrencyUsd.ToPointer(),
             CurrencyRate: sdkgo.Pointer[float64](0.69),
             TotalAmount: sdkgo.Pointer[float64](49.99),
@@ -451,23 +451,23 @@ func main() {
             CompanyID: sdkgo.Pointer("12345"),
             Reconciled: sdkgo.Pointer(true),
             Status: components.PaymentStatusAuthorised.ToPointer(),
-            Type: components.BillPaymentTypeAccountsPayable.ToPointer(),
-            Allocations: []components.BillPaymentAllocations{
-                components.BillPaymentAllocations{
+            Type: components.BillPaymentUpdateInputBillPaymentTypeAccountsPayable.ToPointer(),
+            Allocations: []components.BillPaymentUpdateInputAllocations{
+                components.BillPaymentUpdateInputAllocations{
                     ID: sdkgo.Pointer("12345"),
-                    Type: components.BillPaymentAllocationTypeBill.ToPointer(),
+                    Type: components.BillPaymentUpdateInputAllocationTypeBill.ToPointer(),
                     Amount: sdkgo.Pointer[float64](49.99),
                     AllocationID: sdkgo.Pointer("123456"),
                 },
-                components.BillPaymentAllocations{
+                components.BillPaymentUpdateInputAllocations{
                     ID: sdkgo.Pointer("12345"),
-                    Type: components.BillPaymentAllocationTypeBill.ToPointer(),
+                    Type: components.BillPaymentUpdateInputAllocationTypeBill.ToPointer(),
                     Amount: sdkgo.Pointer[float64](49.99),
                     AllocationID: sdkgo.Pointer("123456"),
                 },
-                components.BillPaymentAllocations{
+                components.BillPaymentUpdateInputAllocations{
                     ID: sdkgo.Pointer("12345"),
-                    Type: components.BillPaymentAllocationTypeBill.ToPointer(),
+                    Type: components.BillPaymentUpdateInputAllocationTypeBill.ToPointer(),
                     Amount: sdkgo.Pointer[float64](49.99),
                     AllocationID: sdkgo.Pointer("123456"),
                 },

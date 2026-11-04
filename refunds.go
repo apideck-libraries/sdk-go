@@ -1209,7 +1209,7 @@ func (s *Refunds) Update(ctx context.Context, request operations.AccountingRefun
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Refund", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RefundUpdateInput", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}

@@ -298,12 +298,12 @@ func main() {
     res, err := s.Accounting.ExpenseCategories.Update(ctx, operations.AccountingExpenseCategoriesUpdateRequest{
         ID: "<id>",
         ServiceID: sdkgo.Pointer("salesforce"),
-        ExpenseCategory: components.ExpenseCategoryInput{
+        ExpenseCategoryUpdateInput: components.ExpenseCategoryUpdateInput{
             DisplayID: sdkgo.Pointer("123456"),
-            Name: "Travel",
+            Name: sdkgo.Pointer("Travel"),
             Code: sdkgo.Pointer("TRAVEL-001"),
             Description: sdkgo.Pointer("Travel-related expenses including flights, hotels, and ground transportation."),
-            Status: components.ExpenseCategoryStatusActive.ToPointer(),
+            Status: components.ExpenseCategoryUpdateInputStatusActive.ToPointer(),
             Account: &components.LinkedLedgerAccount{
                 ID: sdkgo.Pointer("123456"),
                 Name: sdkgo.Pointer("Bank account"),
