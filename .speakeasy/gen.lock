@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 4df0744ca714a8d3b6bf31216a28fa4a
-  docVersion: 10.77.0
+  docChecksum: 889f449266c935d9f1bce4dd4be9efff
+  docVersion: 10.78.0
   speakeasyVersion: 1.806.0
   generationVersion: 2.956.1
-  releaseVersion: 0.52.0
-  configChecksum: 470f263caca33fe16c598407f25a3b72
+  releaseVersion: 0.53.0
+  configChecksum: 87d23c9bda8a8bd7ff1a1eeabd6bee3d
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: 909b8193-7b77-406e-95b6-8ecfcc54a0c1
-  pristine_commit_hash: e85f4c9a6e7de927ca93aed6c24a87c1f5d39cdf
-  pristine_tree_hash: 8c7a9e634c841498e4e86c6c148b7f8fd7bf450c
+  generation_id: dde68d9f-a5b2-457a-9c7d-d16d5da0538a
+  pristine_commit_hash: 8c5b4d657a3ff2422e9a8ecce1562009bd55a795
+  pristine_tree_hash: 27cff4ea376de7053ec6dfd57982a9180da94c0e
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: 5e719e283c42a5e48b9d7c5dfaf9d2bde6b4e8bd
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:d935f458ea3e6fd8bff6744d0eba230bb9cae068
-    pristine_git_object: 1d3fda9f5047de8545b592ddd3912f92881a1d64
+    last_write_checksum: sha1:2239506946e887aecc8296d4f52c846a690960a0
+    pristine_git_object: 51cbf7cd9b5d4520ecdb71fc680cc097082a4842
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:00b31fb949e4844a56ce0a051df28131a5e49c3c
@@ -32757,17 +32757,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Go SDK Changes:
-  * `Apideck.Accounting.CreditNotes.Update()`:  `request.Request` **Changed** (Breaking ⚠️)
-  * `Apideck.Accounting.Payments.Update()`:  `request.Request` **Changed** (Breaking ⚠️)
-  * `Apideck.Accounting.Refunds.Update()`:  `request.Request` **Changed** (Breaking ⚠️)
-  * `Apideck.Accounting.SalesReceipts.Update()`:  `request.Request` **Changed** (Breaking ⚠️)
-  * `Apideck.Accounting.BillPayments.Update()`:  `request.Request` **Changed** (Breaking ⚠️)
-  * `Apideck.Accounting.Expenses.Update()`:  `request.Request` **Changed** (Breaking ⚠️)
-  * `Apideck.Accounting.Projects.Update()`:  `request.Request` **Changed** (Breaking ⚠️)
-  * `Apideck.Accounting.ExpenseCategories.Update()`:  `request.Request` **Changed** (Breaking ⚠️)
-  * `Apideck.Accounting.ExpenseReports.Update()`:  `request.Request` **Changed** (Breaking ⚠️)
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
