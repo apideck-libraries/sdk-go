@@ -245,6 +245,12 @@ func (u UnauthorizedResponseDetail) Error() string {
 		data, _ := json.Marshal(u.Str)
 		return string(data)
 	case UnauthorizedResponseDetailTypeTwo:
+		if u.Two != nil {
+			if u.Two.Message != nil {
+				return *u.Two.Message
+			}
+		}
+
 		data, _ := json.Marshal(u.Two)
 		return string(data)
 	default:

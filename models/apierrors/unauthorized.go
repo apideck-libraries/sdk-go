@@ -240,6 +240,12 @@ func (u UnauthorizedDetail) Error() string {
 		data, _ := json.Marshal(u.Str)
 		return string(data)
 	case UnauthorizedDetailTypeDetail2:
+		if u.Detail2 != nil {
+			if u.Detail2.Message != nil {
+				return *u.Detail2.Message
+			}
+		}
+
 		data, _ := json.Marshal(u.Detail2)
 		return string(data)
 	default:
