@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: a14a5e84095d070eb6061d46d5628901
-  docVersion: 10.79.0
-  speakeasyVersion: 1.808.0
-  generationVersion: 2.960.7
-  releaseVersion: 0.54.0
-  configChecksum: ceecb60144e25fdb82187b328f7faf85
+  docChecksum: cb72289b3d41ec87a1d9d2b5bc383dc8
+  docVersion: 10.80.3
+  speakeasyVersion: 1.808.1
+  generationVersion: 2.960.8
+  releaseVersion: 0.55.0
+  configChecksum: eecd4fc64f15add2379c45979ebec5e6
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: 9e6f4e2b-2e22-4830-8237-c0102b4f5f1b
-  pristine_commit_hash: d24d621fee4bf75a534cbb62bec7b40a3070cd08
-  pristine_tree_hash: 9530d3c5271b893157d8ba6a2988d5bb1e0732cb
+  generation_id: b5df8058-f516-43ce-830d-054221fb501a
+  pristine_commit_hash: 588083560b184a3164e3e2ecc5ea88520fadb322
+  pristine_tree_hash: c37b166d9ae291cbf22a97787cab60bf6047dced
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: 5e719e283c42a5e48b9d7c5dfaf9d2bde6b4e8bd
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:7b7a8e5310d12160e4365a7fbbaf8ef563cf2939
-    pristine_git_object: b0fe5ba73e2486f57a553c0a0bf97c22063bcc1e
+    last_write_checksum: sha1:ffe9dcd3dc912dc1e9cada8f16ae94d6dd90b0e5
+    pristine_git_object: b258f96ad938e3c1e90390ead6327a2ba3ab025d
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:00b31fb949e4844a56ce0a051df28131a5e49c3c
@@ -4528,6 +4528,10 @@ trackedFiles:
     id: 6b01d6776a4e
     last_write_checksum: sha1:0a4bfd31a645224336822295f25a083b9b5ca546
     pristine_git_object: c4092598aa487cca9955a758ba92527e209d17f8
+  docs/models/components/targeturlscope.md:
+    id: ddc88f90317c
+    last_write_checksum: sha1:f30bbc134730fa8d41af1a386b7e989ec7a327c3
+    pristine_git_object: 3f95afd4677e12b2928e9be826c4758e2c740c3a
   docs/models/components/tax.md:
     id: 1269092940ac
     last_write_checksum: sha1:1ccb8567635ff6734e3dcd837087d9518f03517b
@@ -5062,8 +5066,8 @@ trackedFiles:
     pristine_git_object: 9206459acb79833309befaee1b77600e08372e60
   docs/models/components/webhooksupport.md:
     id: c323b75a039a
-    last_write_checksum: sha1:93c4d1bda0b0fdea40870f86841a39e0ee4f2429
-    pristine_git_object: a346b302773532ddfbbd5dc10e9c574da6f01c5c
+    last_write_checksum: sha1:bc314a6f6927718f1510532e1fb71ef0c369bb91
+    pristine_git_object: 47910a9ab65fafad4642acec18d321c0fbae4235
   docs/models/components/webhooksupportresources.md:
     id: 10c2c3993326
     last_write_checksum: sha1:67011331df809c247f83cb669e4d313692be39f7
@@ -13346,8 +13350,8 @@ trackedFiles:
     pristine_git_object: 0056d49aa48c2e90a5d1e48c990cdb6460b19773
   models/components/webhooksupport.go:
     id: 655b0bff9af7
-    last_write_checksum: sha1:cac5766315c6d9b72c04187331fb58b1e8eb1264
-    pristine_git_object: 9cee4bb5499a636b2f3ea2a57a9594c1cf8932f4
+    last_write_checksum: sha1:6d50183c8ee2857ee38e317749ddbd87de61274e
+    pristine_git_object: 1d32bad8026706cdd8e4ad6faa0cb811f1e0ba0c
   models/components/website.go:
     id: ddc22303949f
     last_write_checksum: sha1:4ffbfed038679b33135ef4213f8b357e0692000f
@@ -28090,7 +28094,7 @@ examples:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "data": {"id": "crm+salesforce", "name": "Salesforce", "description": "A description", "icon_url": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png", "logo_url": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg", "website_url": "https://www.salesforce.com", "signup_url": "https://www.salesforce.com/signup", "partner_signup_url": "https://www.salesforce.com/partners", "auth_type": "oauth2", "auth_only": true, "blind_mapped": true, "oauth_grant_type": "authorization_code", "oauth_credentials_source": "integration", "oauth_scopes": [{"id": "contacts:all", "label": "Read/write on the Contacts resource", "default_apis": ["crm"]}], "custom_scopes": true, "has_sandbox_credentials": true, "settings": [{"id": "pipeline_id", "label": "Pipeline", "type": "select"}], "service_id": "close", "unified_apis": [{"id": "crm", "name": "File Storage API", "auth_only": true, "oauth_scopes": [{"id": "contacts:all", "label": "Read/write on the Contacts resource"}], "supported_resources": [{"id": "companies", "name": "Companies", "downstream_id": "accounts", "downstream_name": "Accounts"}], "downstream_unsupported_resources": ["companies"], "supported_events": [{"event_type": "employee.created", "event_source": "native", "downstream_event_type": "person_created", "resources": ["companies"], "entity_type": "employee"}]}], "supported_resources": [{"id": "companies", "name": "Companies", "downstream_id": "accounts", "downstream_name": "Accounts"}], "configurable_resources": ["leads", "companies"], "supported_events": [{"event_type": "employee.created", "event_source": "native", "downstream_event_type": "person_created", "resources": ["companies"], "entity_type": "employee"}], "webhook_support": {"mode": "native", "subscription_level": "integration", "managed_via": "api", "shared_with": ["intuit-enterprise-suite"]}, "batch_support": {"mode": "none", "resources": {"key": {"mode": "native", "max_items": 20}}}, "schema_support": {"supported": true}, "docs": [{"id": "12345", "name": "connection", "url": "https://unify.apideck.com/connector/connectors/workday/docs/consumer+connection"}], "overview": {"beta": false, "demo": false, "difficulty": "moderate", "difficulty_reason": "Self-Service Signup + App Review Required", "partnership_required": true, "apideck_credentials_available": true, "account_type_required": "<value>", "sandbox_available": true, "consumer_access_level": "<value>"}}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}, "links": {"previous": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D", "current": "https://unify.apideck.com/crm/companies", "next": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM"}}
+          application/json: {"status_code": 200, "status": "OK", "data": {"id": "crm+salesforce", "name": "Salesforce", "description": "A description", "icon_url": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png", "logo_url": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg", "website_url": "https://www.salesforce.com", "signup_url": "https://www.salesforce.com/signup", "partner_signup_url": "https://www.salesforce.com/partners", "auth_type": "oauth2", "auth_only": true, "blind_mapped": true, "oauth_grant_type": "authorization_code", "oauth_credentials_source": "integration", "oauth_scopes": [{"id": "contacts:all", "label": "Read/write on the Contacts resource", "default_apis": ["crm"]}], "custom_scopes": true, "has_sandbox_credentials": true, "settings": [{"id": "pipeline_id", "label": "Pipeline", "type": "select"}], "service_id": "close", "unified_apis": [{"id": "crm", "name": "File Storage API", "auth_only": true, "oauth_scopes": [{"id": "contacts:all", "label": "Read/write on the Contacts resource"}], "supported_resources": [{"id": "companies", "name": "Companies", "downstream_id": "accounts", "downstream_name": "Accounts"}], "downstream_unsupported_resources": ["companies"], "supported_events": [{"event_type": "employee.created", "event_source": "native", "downstream_event_type": "person_created", "resources": ["companies"], "entity_type": "employee"}]}], "supported_resources": [{"id": "companies", "name": "Companies", "downstream_id": "accounts", "downstream_name": "Accounts"}], "configurable_resources": ["leads", "companies"], "supported_events": [{"event_type": "employee.created", "event_source": "native", "downstream_event_type": "person_created", "resources": ["companies"], "entity_type": "employee"}], "webhook_support": {"mode": "native", "subscription_level": "integration", "managed_via": "api", "shared_with": ["intuit-enterprise-suite"], "target_url_scope": "app", "vendor_app_url": false}, "batch_support": {"mode": "none", "resources": {"key": {"mode": "native", "max_items": 20}}}, "schema_support": {"supported": true}, "docs": [{"id": "12345", "name": "connection", "url": "https://unify.apideck.com/connector/connectors/workday/docs/consumer+connection"}], "overview": {"beta": false, "demo": false, "difficulty": "moderate", "difficulty_reason": "Self-Service Signup + App Review Required", "partnership_required": true, "apideck_credentials_available": true, "account_type_required": "<value>", "sandbox_available": true, "consumer_access_level": "<value>"}}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}, "links": {"previous": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D", "current": "https://unify.apideck.com/crm/companies", "next": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM"}}
         "401":
           application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
         "402":
@@ -32757,6 +32761,10 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: |
+  ## Go SDK Changes:
+  * `Apideck.Connector.Connectors.List()`:  `response.Data[].WebhookSupport` **Changed**
+  * `Apideck.Connector.Connectors.Get()`:  `response.Data.WebhookSupport` **Changed**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
