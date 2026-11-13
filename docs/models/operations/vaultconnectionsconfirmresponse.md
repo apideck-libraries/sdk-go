@@ -1,0 +1,11 @@
+# VaultConnectionsConfirmResponse
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                    | [components.HTTPMetadata](../../models/components/httpmetadata.md)                            | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `ConfirmConnectionResponse`                                                                   | [*components.ConfirmConnectionResponse](../../models/components/confirmconnectionresponse.md) | :heavy_minus_sign:                                                                            | Connection confirmed                                                                          |
+| `UnexpectedErrorResponse`                                                                     | [*components.UnexpectedErrorResponse](../../models/components/unexpectederrorresponse.md)     | :heavy_minus_sign:                                                                            | Unexpected error                                                                              |
+| `Headers`                                                                                     | map[string][]`string`                                                                         | :heavy_check_mark:                                                                            | N/A                                                                                           |

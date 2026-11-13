@@ -32,6 +32,8 @@ func newCreateCallback(rootSDK *Apideck, sdkConfig config.SDKConfiguration, hook
 
 // State - Create Callback State
 // This endpoint creates a callback state that can be used to issue requests to the callback endpoint.
+//
+// Call it with your API key. For an application with `enforced` OAuth protection, a Vault session token (`x-apideck-auth-type: JWT`) gets a `401`, because a callback state skips the browser binding.
 func (s *CreateCallback) State(ctx context.Context, request operations.VaultCreateCallbackStateRequest, opts ...operations.Option) (*operations.VaultCreateCallbackStateResponse, error) {
 	globals := operations.VaultCreateCallbackStateGlobals{
 		ConsumerID: s.sdkConfiguration.Globals.ConsumerID,

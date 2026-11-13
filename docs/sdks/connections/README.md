@@ -11,6 +11,7 @@
 * [Imports](#imports) - Import connection
 * [Migrate](#migrate) - Migrate connection
 * [Token](#token) - Authorize Access Token
+* [Confirm](#confirm) - Confirm Connection
 
 ## List
 
@@ -612,6 +613,95 @@ func main() {
 ### Response
 
 **[*operations.VaultConnectionsTokenResponse](../../models/operations/vaultconnectionstokenresponse.md), error**
+
+### Errors
+
+| Error Type                        | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| apierrors.BadRequestResponse      | 400                               | application/json                  |
+| apierrors.UnauthorizedResponse    | 401                               | application/json                  |
+| apierrors.PaymentRequiredResponse | 402                               | application/json                  |
+| apierrors.NotFoundResponse        | 404                               | application/json                  |
+| apierrors.UnprocessableResponse   | 422                               | application/json                  |
+| apierrors.APIError                | 4XX, 5XX                          | \*/\*                             |
+
+## Confirm
+
+Confirms an OAuth connection after the callback by redeeming its confirm token.
+
+The confirm step is required when your application's OAuth protection mode was `enforced` when the
+authorization flow started. In that case Vault completes the OAuth exchange but leaves the connection
+**unconfirmed** and not callable, and the callback redirects to your `redirect_uri` with a hash
+fragment containing a `confirm_token`, the `service_id` and the `unified_api`, plus the `nonce` when
+the authorize request included one and the `target_origin` when it included an `opener_origin`:
+`#confirm_token=<token>&service_id=<service_id>&unified_api=<unified_api>&nonce=<nonce>&target_origin=<origin>`.
+Call this endpoint with that `confirm_token` to confirm the connection and make it callable.
+
+The `confirm_token` is single use and expires 30 minutes after the callback. Only confirm tokens are
+accepted; other tokens (such as an authorize `state`) are rejected. In the `off`
+protection mode there is no confirm step: the connection is callable immediately after the
+callback and no `confirm_token` is issued.
+
+Authenticate in one of two ways:
+
+- With the Vault session JWT as the bearer token (`Authorization: Bearer <session token>`) and the
+  `x-apideck-auth-type: JWT` header, as Hosted Vault and Vault JS do. The application and consumer
+  are taken from the session.
+- With your API key (`Authorization: Bearer <API key>`) plus the `x-apideck-app-id` and
+  `x-apideck-consumer-id` headers, from your backend.
+
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="vault.connectionsConfirm" method="post" path="/vault/connections/{unified_api}/{service_id}/confirm" -->
+```go
+package main
+
+import(
+	"context"
+	"os"
+	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/models/components"
+	"github.com/apideck-libraries/sdk-go/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := sdkgo.New(
+        sdkgo.WithConsumerID("test-consumer"),
+        sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
+    )
+
+    res, err := s.Vault.Connections.Confirm(ctx, operations.VaultConnectionsConfirmRequest{
+        ServiceID: "pipedrive",
+        UnifiedAPI: "crm",
+        ConfirmConnection: components.ConfirmConnection{
+            ConfirmToken: "550e8400-e29b-41d4-a716-446655440000",
+        },
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.ConfirmConnectionResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                  | :heavy_check_mark:                                                                                     | The context to use for the request.                                                                    |
+| `request`                                                                                              | [operations.VaultConnectionsConfirmRequest](../../models/operations/vaultconnectionsconfirmrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `opts`                                                                                                 | [][operations.Option](../../models/operations/option.md)                                               | :heavy_minus_sign:                                                                                     | The options for this request.                                                                          |
+
+### Response
+
+**[*operations.VaultConnectionsConfirmResponse](../../models/operations/vaultconnectionsconfirmresponse.md), error**
 
 ### Errors
 

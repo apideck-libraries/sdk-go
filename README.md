@@ -825,6 +825,7 @@ func main() {
 * [Imports](docs/sdks/connections/README.md#imports) - Import connection
 * [Migrate](docs/sdks/connections/README.md#migrate) - Migrate connection
 * [Token](docs/sdks/connections/README.md#token) - Authorize Access Token
+* [Confirm](docs/sdks/connections/README.md#confirm) - Confirm Connection
 
 ### [Vault.ConnectionSettings](docs/sdks/connectionsettings/README.md)
 
@@ -1106,14 +1107,15 @@ By Default, an API error will return `apierrors.APIError`. When custom error res
 
 For example, the `List` function may return the following errors:
 
-| Error Type                        | Status Code | Content Type     |
-| --------------------------------- | ----------- | ---------------- |
-| apierrors.BadRequestResponse      | 400         | application/json |
-| apierrors.UnauthorizedResponse    | 401         | application/json |
-| apierrors.PaymentRequiredResponse | 402         | application/json |
-| apierrors.NotFoundResponse        | 404         | application/json |
-| apierrors.UnprocessableResponse   | 422         | application/json |
-| apierrors.APIError                | 4XX, 5XX    | \*/\*            |
+| Error Type                         | Status Code | Content Type     |
+| ---------------------------------- | ----------- | ---------------- |
+| apierrors.BadRequestResponse       | 400         | application/json |
+| apierrors.UnauthorizedResponse     | 401         | application/json |
+| apierrors.PaymentRequiredResponse  | 402         | application/json |
+| apierrors.NotFoundResponse         | 404         | application/json |
+| apierrors.MethodNotAllowedResponse | 405         | application/json |
+| apierrors.UnprocessableResponse    | 422         | application/json |
+| apierrors.APIError                 | 4XX, 5XX    | \*/\*            |
 
 ### Example
 
@@ -1176,6 +1178,12 @@ func main() {
 		}
 
 		var e *apierrors.NotFoundResponse
+		if errors.As(err, &e) {
+			// handle error
+			log.Fatal(e.Error())
+		}
+
+		var e *apierrors.MethodNotAllowedResponse
 		if errors.As(err, &e) {
 			// handle error
 			log.Fatal(e.Error())
