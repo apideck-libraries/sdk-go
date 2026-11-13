@@ -78,14 +78,15 @@ func main() {
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| apierrors.BadRequestResponse      | 400                               | application/json                  |
-| apierrors.UnauthorizedResponse    | 401                               | application/json                  |
-| apierrors.PaymentRequiredResponse | 402                               | application/json                  |
-| apierrors.NotFoundResponse        | 404                               | application/json                  |
-| apierrors.UnprocessableResponse   | 422                               | application/json                  |
-| apierrors.APIError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type                         | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| apierrors.BadRequestResponse       | 400                                | application/json                   |
+| apierrors.UnauthorizedResponse     | 401                                | application/json                   |
+| apierrors.PaymentRequiredResponse  | 402                                | application/json                   |
+| apierrors.NotFoundResponse         | 404                                | application/json                   |
+| apierrors.MethodNotAllowedResponse | 405                                | application/json                   |
+| apierrors.UnprocessableResponse    | 422                                | application/json                   |
+| apierrors.APIError                 | 4XX, 5XX                           | \*/\*                              |
 
 ## Create
 
@@ -191,14 +192,15 @@ func main() {
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| apierrors.BadRequestResponse      | 400                               | application/json                  |
-| apierrors.UnauthorizedResponse    | 401                               | application/json                  |
-| apierrors.PaymentRequiredResponse | 402                               | application/json                  |
-| apierrors.NotFoundResponse        | 404                               | application/json                  |
-| apierrors.UnprocessableResponse   | 422                               | application/json                  |
-| apierrors.APIError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type                         | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| apierrors.BadRequestResponse       | 400                                | application/json                   |
+| apierrors.UnauthorizedResponse     | 401                                | application/json                   |
+| apierrors.PaymentRequiredResponse  | 402                                | application/json                   |
+| apierrors.NotFoundResponse         | 404                                | application/json                   |
+| apierrors.MethodNotAllowedResponse | 405                                | application/json                   |
+| apierrors.UnprocessableResponse    | 422                                | application/json                   |
+| apierrors.APIError                 | 4XX, 5XX                           | \*/\*                              |
 
 ## Get
 
@@ -254,14 +256,15 @@ func main() {
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| apierrors.BadRequestResponse      | 400                               | application/json                  |
-| apierrors.UnauthorizedResponse    | 401                               | application/json                  |
-| apierrors.PaymentRequiredResponse | 402                               | application/json                  |
-| apierrors.NotFoundResponse        | 404                               | application/json                  |
-| apierrors.UnprocessableResponse   | 422                               | application/json                  |
-| apierrors.APIError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type                         | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| apierrors.BadRequestResponse       | 400                                | application/json                   |
+| apierrors.UnauthorizedResponse     | 401                                | application/json                   |
+| apierrors.PaymentRequiredResponse  | 402                                | application/json                   |
+| apierrors.NotFoundResponse         | 404                                | application/json                   |
+| apierrors.MethodNotAllowedResponse | 405                                | application/json                   |
+| apierrors.UnprocessableResponse    | 422                                | application/json                   |
+| apierrors.APIError                 | 4XX, 5XX                           | \*/\*                              |
 
 ## Update
 
@@ -469,14 +472,15 @@ func main() {
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| apierrors.BadRequestResponse      | 400                               | application/json                  |
-| apierrors.UnauthorizedResponse    | 401                               | application/json                  |
-| apierrors.PaymentRequiredResponse | 402                               | application/json                  |
-| apierrors.NotFoundResponse        | 404                               | application/json                  |
-| apierrors.UnprocessableResponse   | 422                               | application/json                  |
-| apierrors.APIError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type                         | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| apierrors.BadRequestResponse       | 400                                | application/json                   |
+| apierrors.UnauthorizedResponse     | 401                                | application/json                   |
+| apierrors.PaymentRequiredResponse  | 402                                | application/json                   |
+| apierrors.NotFoundResponse         | 404                                | application/json                   |
+| apierrors.MethodNotAllowedResponse | 405                                | application/json                   |
+| apierrors.UnprocessableResponse    | 422                                | application/json                   |
+| apierrors.APIError                 | 4XX, 5XX                           | \*/\*                              |
 
 ## Delete
 
@@ -532,11 +536,12 @@ func main() {
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| apierrors.BadRequestResponse      | 400                               | application/json                  |
-| apierrors.UnauthorizedResponse    | 401                               | application/json                  |
-| apierrors.PaymentRequiredResponse | 402                               | application/json                  |
-| apierrors.NotFoundResponse        | 404                               | application/json                  |
-| apierrors.UnprocessableResponse   | 422                               | application/json                  |
-| apierrors.APIError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type                         | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| apierrors.BadRequestResponse       | 400                                | application/json                   |
+| apierrors.UnauthorizedResponse     | 401                                | application/json                   |
+| apierrors.PaymentRequiredResponse  | 402                                | application/json                   |
+| apierrors.NotFoundResponse         | 404                                | application/json                   |
+| apierrors.MethodNotAllowedResponse | 405                                | application/json                   |
+| apierrors.UnprocessableResponse    | 422                                | application/json                   |
+| apierrors.APIError                 | 4XX, 5XX                           | \*/\*                              |
