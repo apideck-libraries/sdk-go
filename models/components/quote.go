@@ -66,6 +66,8 @@ type Quote struct {
 	TermsID *string `json:"terms_id,omitempty"`
 	// Optional reference identifier for the transaction.
 	Reference *string `json:"reference,omitempty"`
+	// A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the quote to the Purchase Order.
+	PoNumber *string `json:"po_number,omitempty"`
 	// Quote status
 	Status *QuoteStatus `json:"status,omitempty"`
 	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
@@ -219,6 +221,13 @@ func (q *Quote) GetReference() *string {
 		return nil
 	}
 	return q.Reference
+}
+
+func (q *Quote) GetPoNumber() *string {
+	if q == nil {
+		return nil
+	}
+	return q.PoNumber
 }
 
 func (q *Quote) GetStatus() *QuoteStatus {
@@ -412,6 +421,8 @@ type QuoteInput struct {
 	TermsID *string `json:"terms_id,omitempty"`
 	// Optional reference identifier for the transaction.
 	Reference *string `json:"reference,omitempty"`
+	// A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the quote to the Purchase Order.
+	PoNumber *string `json:"po_number,omitempty"`
 	// Quote status
 	Status *QuoteStatus `json:"status,omitempty"`
 	// Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
@@ -536,6 +547,13 @@ func (q *QuoteInput) GetReference() *string {
 		return nil
 	}
 	return q.Reference
+}
+
+func (q *QuoteInput) GetPoNumber() *string {
+	if q == nil {
+		return nil
+	}
+	return q.PoNumber
 }
 
 func (q *QuoteInput) GetStatus() *QuoteStatus {

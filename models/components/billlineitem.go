@@ -60,6 +60,7 @@ type BillLineItem struct {
 	TaxRate       *LinkedTaxRate       `json:"tax_rate,omitempty"`
 	LedgerAccount *LinkedLedgerAccount `json:"ledger_account,omitempty"`
 	PurchaseOrder *LinkedPurchaseOrder `json:"purchase_order,omitempty"`
+	CustomFields  []CustomField        `json:"custom_fields,omitempty"`
 	// A list of linked tracking categories.
 	TrackingCategories []*LinkedTrackingCategory `json:"tracking_categories,omitempty"`
 	// The customer this entity is linked to.
@@ -292,6 +293,13 @@ func (b *BillLineItem) GetPurchaseOrder() *LinkedPurchaseOrder {
 		return nil
 	}
 	return b.PurchaseOrder
+}
+
+func (b *BillLineItem) GetCustomFields() []CustomField {
+	if b == nil {
+		return nil
+	}
+	return b.CustomFields
 }
 
 func (b *BillLineItem) GetTrackingCategories() []*LinkedTrackingCategory {

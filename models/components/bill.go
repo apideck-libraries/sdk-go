@@ -116,7 +116,9 @@ type Bill struct {
 	TaxCode *string `json:"tax_code,omitempty"`
 	Notes   *string `json:"notes,omitempty"`
 	// Invoice status
-	Status        *BillStatus          `json:"status,omitempty"`
+	Status *BillStatus `json:"status,omitempty"`
+	// Whether the bill is on payment hold. A bill on hold is not ready to pay, whatever its status. Not returned by connectors that do not report a payment hold.
+	PaymentHold   *bool                `json:"payment_hold,omitempty"`
 	LedgerAccount *LinkedLedgerAccount `json:"ledger_account,omitempty"`
 	// Payment method used for the transaction, such as cash, credit card, bank transfer, or check
 	PaymentMethod *string `json:"payment_method,omitempty"`
@@ -370,6 +372,13 @@ func (b *Bill) GetStatus() *BillStatus {
 		return nil
 	}
 	return b.Status
+}
+
+func (b *Bill) GetPaymentHold() *bool {
+	if b == nil {
+		return nil
+	}
+	return b.PaymentHold
 }
 
 func (b *Bill) GetLedgerAccount() *LinkedLedgerAccount {
