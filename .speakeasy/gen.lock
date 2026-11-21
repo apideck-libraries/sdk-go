@@ -1,24 +1,24 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 5aa163c2a05544f4966cf63a68345ed9
+  docChecksum: 15c1007636f662134659f5c4685cc734
   docVersion: 10.88.0
-  speakeasyVersion: 1.810.0
-  generationVersion: 2.961.1
-  releaseVersion: 0.60.0
-  configChecksum: 436bf609da58b3820a8d535bfe238852
+  speakeasyVersion: 1.811.0
+  generationVersion: 2.968.1
+  releaseVersion: 0.60.1
+  configChecksum: 4999cdcb9bc15dad752c65a68de1ac54
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: f1fd0cb4-da42-4293-ac89-9690194442e8
-  pristine_commit_hash: f723dad3432332cb5cb57bc8eaa5e6781eda6593
-  pristine_tree_hash: 7115650b2ba7a5b1ec70e5e30c7ed681a569680f
+  generation_id: df607eef-3328-41fe-b260-6cb5431184ea
+  pristine_commit_hash: 1319e08c15535b7510defaa781a3c170a1521a82
+  pristine_tree_hash: 5959da29ae6b4b1f2d8f0f5f41b7ea9fa95f3426
 features:
   go:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     additionalProperties: 0.1.3
-    constsAndDefaults: 0.1.15
+    constsAndDefaults: 0.1.16
     core: 3.16.7
     deepObjectParams: 0.1.1
     defaultEnabledRetries: 0.2.0
@@ -26,7 +26,7 @@ features:
     devContainers: 2.90.0
     downloadStreams: 0.1.3
     envVarSecurityUsage: 0.3.2
-    errors: 2.83.4
+    errors: 2.83.5
     flattening: 2.81.2
     globalSecurity: 2.82.15
     globalSecurityCallbacks: 0.1.0
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: c8a7789214496a3e119e9016b92c1d1673848dcd
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:0f7222a34f04266a5f71df9521badb96db86178d
-    pristine_git_object: c073e69d4b60b72bfda69fac4f0118cac8c100a5
+    last_write_checksum: sha1:56f44d8b8ba66d9c5a528e4ce902e64204df7265
+    pristine_git_object: 07b1fff56eb488c22745952363830eb9558e74c8
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:8983663485b56992d031ce959db7ee182a9a2f56
@@ -10270,8 +10270,8 @@ trackedFiles:
     pristine_git_object: 765433a5044221b4f1de93ef3de8ae2971455051
   internal/utils/json.go:
     id: ad03e3c502d8
-    last_write_checksum: sha1:f870d1d1784356abdddd631cfc281dd5517ce795
-    pristine_git_object: 8bcfb433abfdef19ed86fa30c46292f6dfacbfb9
+    last_write_checksum: sha1:d0ad64c3e9f3773ea0d58d513b14bf7be1ca158b
+    pristine_git_object: 7631d73f1d2826b9bc7a0feef3ddabe890c65060
   internal/utils/pathparams.go:
     id: 1f3e0c30fd90
     last_write_checksum: sha1:8e3f61f2235aec4df4810ac88267678f0eb00f0b
@@ -10362,40 +10362,40 @@ trackedFiles:
     pristine_git_object: 61a9628a6533548245be5af929f1d4f96dd780b5
   models/apierrors/badrequestresponse.go:
     id: c25707ef1785
-    last_write_checksum: sha1:2f30c806ebf8d873714d236bd35a3f6301c28048
-    pristine_git_object: 5fe5375a567c358d7cb109e1a86485431c860a1e
+    last_write_checksum: sha1:864e73397ccb246477d4a2db949eea99dc71099b
+    pristine_git_object: 99d3c58287ad37f627ab1da60d7d949fda447e3f
   models/apierrors/conflictresponse.go:
     id: 2df9a2ec6d8b
-    last_write_checksum: sha1:1111eb7081add45142c6070495193c0b83cb375b
-    pristine_git_object: 3d051ff3e9b2783ec014a5424746553a28e54a91
+    last_write_checksum: sha1:ddd8827db98baa00c13a10ccd526cb5d003b5e5f
+    pristine_git_object: 6b8ef2cae33a3194e1c0144d69a4be2537a89118
   models/apierrors/methodnotallowedresponse.go:
     id: f278c25ac385
-    last_write_checksum: sha1:69a49f447567f08285af6a6b2f4ac283a9f7bee3
-    pristine_git_object: fef6c340ed36cc0f89bfa80c8dd6f35f2e579f28
+    last_write_checksum: sha1:21519e214250ae7824d6ff9131de0f0663f726aa
+    pristine_git_object: e5125777b6d7cb23c5ea72706bbcd08cd75b168f
   models/apierrors/notfoundresponse.go:
     id: 64b37be76b4c
-    last_write_checksum: sha1:75db54fb8429a2ea94164e5df786c640dc3f87de
-    pristine_git_object: 2527896fae5e5d65b8048fee144a580f3f6c6813
+    last_write_checksum: sha1:2eb5815536fae1af1c3c685b0c84f9d577ba917d
+    pristine_git_object: 6cc814536130254c904363f09e2c34d5207a7b10
   models/apierrors/paymentrequiredresponse.go:
     id: b63224c3cf14
-    last_write_checksum: sha1:84beb9965dc3823b6cc96ef4f4b73e45322f7192
-    pristine_git_object: 466ce3c8a9b1d676f47e78b1a2b9ea0df8c59c69
+    last_write_checksum: sha1:71f88dc578c2825b1482002a6f467ca64a207244
+    pristine_git_object: 89e134b2101bda24c5dde757ae7af9ddec0b29fe
   models/apierrors/responsevalidationerror.go:
     id: 8e1f4cac7910
     last_write_checksum: sha1:593de5fc935fb91206142dfeca06887a84e8a507
     pristine_git_object: ac8ea557ff2316911d1311df421841bbc917e289
   models/apierrors/unauthorized.go:
     id: 7b753e99e3eb
-    last_write_checksum: sha1:a2e9ab4f0831301eda7ef674e49130f01bb19aca
-    pristine_git_object: c5817c9409739e0df379639f4277845dab16d55f
+    last_write_checksum: sha1:ad13184d64851c2cab5015b084b6645bb71aed08
+    pristine_git_object: 47c2360d634b0e47be789693b61ea6c48afcc5c0
   models/apierrors/unauthorizedresponse.go:
     id: 3404724b4946
-    last_write_checksum: sha1:b85da5c950fd91c6b3722c1ac5c1c8b94a93beca
-    pristine_git_object: 6b87d3bfa75f3b087f90024042ec4e47f7f26665
+    last_write_checksum: sha1:6586422182225c87e2c0b52c80587618862160c0
+    pristine_git_object: 8a06b7d42a719641cbeeee6c9ac9349fc3d4152c
   models/apierrors/unprocessableresponse.go:
     id: 98ade34175a7
-    last_write_checksum: sha1:368c2be7ab029d6ce8cb3bd94b236c6ebf68b506
-    pristine_git_object: 8fec626cd348fb357532c3573f3e4e0fea51a7e1
+    last_write_checksum: sha1:74aeea25491e607414d2f0045f1a7324f37a07d0
+    pristine_git_object: 93187804f2431020820a34fa2fe1479ef3c0d1a9
   models/components/accountingbankaccount.go:
     id: e6d67fa3a076
     last_write_checksum: sha1:4d77974c70bd9b4e4fcec920602c449f78dd3dd2
@@ -33519,7 +33519,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes:\n* `Apideck.Accounting.Bills.List()`:  `response.Data[]` **Changed**\n* `Apideck.Accounting.Bills.Create()`: \n  *  `request.Request.Bill.LineItems[].CustomFields` **Added**\n* `Apideck.Accounting.Bills.Get()`:  `response.Data` **Changed**\n* `Apideck.Accounting.Bills.Update()`: \n  *  `request.Request.Bill.LineItems[].CustomFields` **Added**\n* `Apideck.Accounting.Bills.CreateBatch()`: \n  *  `request.Request.BatchBillsRequest.Items[].Data.LineItems[].CustomFields` **Added**\n* `Apideck.Accounting.Quotes.List()`:  `response.Data[].PoNumber` **Added**\n* `Apideck.Accounting.Quotes.Create()`: \n  *  `request.Request.Quote.PoNumber` **Added**\n* `Apideck.Accounting.Quotes.Get()`:  `response.Data.PoNumber` **Added**\n* `Apideck.Accounting.Quotes.Update()`: \n  *  `request.Request.Quote.PoNumber` **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json

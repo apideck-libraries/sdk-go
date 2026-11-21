@@ -246,7 +246,7 @@ func (u UnauthorizedResponseDetail) Error() string {
 		return string(data)
 	case UnauthorizedResponseDetailTypeTwo:
 		if u.Two != nil {
-			if u.Two.Message != nil {
+			if u.Two.Message != nil && *u.Two.Message != "" {
 				return *u.Two.Message
 			}
 		}
@@ -277,7 +277,7 @@ type UnauthorizedResponse struct {
 var _ error = &UnauthorizedResponse{}
 
 func (e *UnauthorizedResponse) Error() string {
-	if e.Message == nil {
+	if e.Message == nil || *e.Message == "" {
 		return "unknown error"
 	}
 
