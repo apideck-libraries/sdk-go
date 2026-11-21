@@ -114,7 +114,7 @@ type NotFoundResponse struct {
 var _ error = &NotFoundResponse{}
 
 func (e *NotFoundResponse) Error() string {
-	if e.Message == nil {
+	if e.Message == nil || *e.Message == "" {
 		return "unknown error"
 	}
 

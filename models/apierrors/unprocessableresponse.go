@@ -114,7 +114,7 @@ type UnprocessableResponse struct {
 var _ error = &UnprocessableResponse{}
 
 func (e *UnprocessableResponse) Error() string {
-	if e.Message == nil {
+	if e.Message == nil || *e.Message == "" {
 		return "unknown error"
 	}
 
