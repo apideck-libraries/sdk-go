@@ -2,6 +2,41 @@
 
 package components
 
+// CustomFieldFinderType - The declared data type of the custom field. Only returned by connectors that can read the field's definition; omitted otherwise.
+type CustomFieldFinderType string
+
+const (
+	CustomFieldFinderTypeText           CustomFieldFinderType = "text"
+	CustomFieldFinderTypeCheckbox       CustomFieldFinderType = "checkbox"
+	CustomFieldFinderTypeTel            CustomFieldFinderType = "tel"
+	CustomFieldFinderTypeEmail          CustomFieldFinderType = "email"
+	CustomFieldFinderTypeURL            CustomFieldFinderType = "url"
+	CustomFieldFinderTypeTextarea       CustomFieldFinderType = "textarea"
+	CustomFieldFinderTypeSelect         CustomFieldFinderType = "select"
+	CustomFieldFinderTypeFilteredSelect CustomFieldFinderType = "filtered-select"
+	CustomFieldFinderTypeMultiSelect    CustomFieldFinderType = "multi-select"
+	CustomFieldFinderTypeDatetime       CustomFieldFinderType = "datetime"
+	CustomFieldFinderTypeDate           CustomFieldFinderType = "date"
+	CustomFieldFinderTypeTime           CustomFieldFinderType = "time"
+	CustomFieldFinderTypeNumber         CustomFieldFinderType = "number"
+	CustomFieldFinderTypePassword       CustomFieldFinderType = "password"
+)
+
+func (e CustomFieldFinderType) ToPointer() *CustomFieldFinderType {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *CustomFieldFinderType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "text", "checkbox", "tel", "email", "url", "textarea", "select", "filtered-select", "multi-select", "datetime", "date", "time", "number", "password":
+			return true
+		}
+	}
+	return false
+}
+
 type CustomFieldFinder struct {
 	// Custom Field ID
 	ID *string `json:"id,omitempty"`
@@ -11,6 +46,8 @@ type CustomFieldFinder struct {
 	Description *string `json:"description,omitempty"`
 	// Custom Field value
 	Value any `json:"value,omitempty"`
+	// The declared data type of the custom field. Only returned by connectors that can read the field's definition; omitted otherwise.
+	Type *CustomFieldFinderType `json:"type,omitempty"`
 	// JSONPath finder for retrieving this value when mapping a response payload from downstream
 	Finder *string `json:"finder,omitempty"`
 }
@@ -41,6 +78,13 @@ func (c *CustomFieldFinder) GetValue() any {
 		return nil
 	}
 	return c.Value
+}
+
+func (c *CustomFieldFinder) GetType() *CustomFieldFinderType {
+	if c == nil {
+		return nil
+	}
+	return c.Type
 }
 
 func (c *CustomFieldFinder) GetFinder() *string {

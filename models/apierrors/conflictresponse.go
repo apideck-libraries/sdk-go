@@ -114,7 +114,7 @@ type ConflictResponse struct {
 var _ error = &ConflictResponse{}
 
 func (e *ConflictResponse) Error() string {
-	if e.Message == nil {
+	if e.Message == nil || *e.Message == "" {
 		return "unknown error"
 	}
 

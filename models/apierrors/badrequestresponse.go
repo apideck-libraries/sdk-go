@@ -146,7 +146,7 @@ type BadRequestResponse struct {
 var _ error = &BadRequestResponse{}
 
 func (e *BadRequestResponse) Error() string {
-	if e.Message == nil {
+	if e.Message == nil || *e.Message == "" {
 		return "unknown error"
 	}
 
