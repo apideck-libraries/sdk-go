@@ -132,6 +132,7 @@ func main() {
     res, err := s.Accounting.LedgerAccounts.Create(ctx, operations.AccountingLedgerAccountsAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
         CompanyID: sdkgo.Pointer("12345"),
+        IdempotencyKey: sdkgo.Pointer("your-unique-key-per-create"),
         LedgerAccount: components.LedgerAccountInput{
             DisplayID: sdkgo.Pointer("1-12345"),
             Code: sdkgo.Pointer("453"),
