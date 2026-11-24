@@ -22,6 +22,8 @@ type InvoicesFilter struct {
 	SubsidiaryID *string `queryParam:"name=subsidiary_id"`
 	// Filter by customer id
 	CustomerID *string `queryParam:"name=customer_id"`
+	// Filter by the purchase order number (customer reference) set on the invoice. Exact match; more than one invoice can carry the same PO number.
+	PoNumber *string `queryParam:"name=po_number"`
 }
 
 func (i InvoicesFilter) MarshalJSON() ([]byte, error) {
@@ -89,4 +91,11 @@ func (i *InvoicesFilter) GetCustomerID() *string {
 		return nil
 	}
 	return i.CustomerID
+}
+
+func (i *InvoicesFilter) GetPoNumber() *string {
+	if i == nil {
+		return nil
+	}
+	return i.PoNumber
 }

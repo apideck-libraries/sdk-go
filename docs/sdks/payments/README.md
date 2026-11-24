@@ -133,6 +133,7 @@ func main() {
     res, err := s.Accounting.Payments.Create(ctx, operations.AccountingPaymentsAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
         CompanyID: sdkgo.Pointer("12345"),
+        IdempotencyKey: sdkgo.Pointer("your-unique-key-per-create"),
         Payment: components.PaymentInput{
             Currency: components.CurrencyUsd.ToPointer(),
             CurrencyRate: sdkgo.Pointer[float64](0.69),

@@ -138,6 +138,7 @@ func main() {
     res, err := s.Accounting.Customers.Create(ctx, operations.AccountingCustomersAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
         CompanyID: sdkgo.Pointer("12345"),
+        IdempotencyKey: sdkgo.Pointer("your-unique-key-per-create"),
         Customer: components.CustomerInput{
             DisplayID: sdkgo.Pointer("EMP00101"),
             DisplayName: sdkgo.Pointer("Windsurf Shop"),
