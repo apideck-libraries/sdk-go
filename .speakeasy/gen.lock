@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: a6dcebe4-2c17-41e4-82d6-4019bcec33d5
 management:
-  docChecksum: 6426f951b024d385bb1b8435b6815d40
-  docVersion: 10.90.0
+  docChecksum: 09537de549f6ac525e5a910ffed61cb0
+  docVersion: 10.90.2
   speakeasyVersion: 1.811.0
   generationVersion: 2.968.1
-  releaseVersion: 0.62.0
-  configChecksum: 02dcd7b3cc5c05ac6d631940a10eaeef
+  releaseVersion: 0.62.1
+  configChecksum: 0b2048bade34359c167cb912752b8751
   repoURL: https://github.com/apideck-libraries/sdk-go.git
   installationURL: https://github.com/apideck-libraries/sdk-go
 persistentEdits:
-  generation_id: a0ca1018-53ea-4c56-a8cc-67ad58289398
-  pristine_commit_hash: aa644685738ee6d3ff7803edf1b1b6f10daafa41
-  pristine_tree_hash: 444273d7d7321acc0bba55f06b56e3284d5e83f2
+  generation_id: c7e4e160-4172-4037-a1c4-f630a6450f57
+  pristine_commit_hash: 78375742c235c6550698cb6bc65b2322996384b3
+  pristine_tree_hash: 4b6aab68d92330cb96fa6893f985d7968d8a96de
 features:
   go:
     acceptHeaders: 2.81.2
@@ -86,8 +86,8 @@ trackedFiles:
     pristine_git_object: c8a7789214496a3e119e9016b92c1d1673848dcd
   apideck.go:
     id: 6038e194b5d6
-    last_write_checksum: sha1:cdcc1a8613fbbe8c60c7e78f34caa803cc57e915
-    pristine_git_object: fe5147f0600c937aed27a34dff198a133e45da65
+    last_write_checksum: sha1:e292d62b7785cc121e0cf7961e6e1dfd9287357f
+    pristine_git_object: 794b48aaec128839c393b27abb826fd5c0728d39
   apideckcompanies.go:
     id: db9db2359d33
     last_write_checksum: sha1:8983663485b56992d031ce959db7ee182a9a2f56
@@ -33527,7 +33527,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes:\n* `Apideck.Accounting.Invoices.List()`: \n  *  `request.Request.Filter` **Changed**\n* `Apideck.Accounting.LedgerAccounts.Create()`: \n  *  `request.Request.IdempotencyKey` **Added**\n* `Apideck.Accounting.InvoiceItems.Create()`: \n  *  `request.Request.IdempotencyKey` **Added**\n* `Apideck.Accounting.Customers.Create()`: \n  *  `request.Request.IdempotencyKey` **Added**\n* `Apideck.Accounting.Payments.Create()`: \n  *  `request.Request.IdempotencyKey` **Added**\n* `Apideck.Accounting.SalesOrders.List()`: \n  *  `request.Request.Filter` **Changed**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
