@@ -5,6 +5,7 @@
 ### Available Operations
 
 * [List](#list) - List Goods Receipts
+* [Create](#create) - Create Goods Receipt
 * [Get](#get) - Get Goods Receipt
 
 ## List
@@ -85,6 +86,96 @@ func main() {
 ### Response
 
 **[*operations.AccountingGoodsReceiptsAllResponse](../../models/operations/accountinggoodsreceiptsallresponse.md), error**
+
+### Errors
+
+| Error Type                         | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| apierrors.BadRequestResponse       | 400                                | application/json                   |
+| apierrors.UnauthorizedResponse     | 401                                | application/json                   |
+| apierrors.PaymentRequiredResponse  | 402                                | application/json                   |
+| apierrors.NotFoundResponse         | 404                                | application/json                   |
+| apierrors.MethodNotAllowedResponse | 405                                | application/json                   |
+| apierrors.UnprocessableResponse    | 422                                | application/json                   |
+| apierrors.APIError                 | 4XX, 5XX                           | \*/\*                              |
+
+## Create
+
+Create a Goods Receipt against a purchase order. `purchase_order_id` is required and every line names the purchase order line it receives against; a receipt that is not tied to a purchase order cannot be created. The response returns the `id` of the new receipt only: read it with `GET /accounting/goods-receipts/{id}` to see the posted document.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="accounting.goodsReceiptsAdd" method="post" path="/accounting/goods-receipts" -->
+```go
+package main
+
+import(
+	"context"
+	"os"
+	sdkgo "github.com/apideck-libraries/sdk-go"
+	"github.com/apideck-libraries/sdk-go/types"
+	"github.com/apideck-libraries/sdk-go/models/components"
+	"github.com/apideck-libraries/sdk-go/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := sdkgo.New(
+        sdkgo.WithConsumerID("test-consumer"),
+        sdkgo.WithAppID("dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"),
+        sdkgo.WithSecurity(os.Getenv("APIDECK_API_KEY")),
+    )
+
+    res, err := s.Accounting.GoodsReceipts.Create(ctx, operations.AccountingGoodsReceiptsAddRequest{
+        ServiceID: sdkgo.Pointer("salesforce"),
+        CompanyID: sdkgo.Pointer("12345"),
+        GoodsReceiptCreateInput: components.GoodsReceiptCreateInput{
+            PurchaseOrderID: "4500000004",
+            ReceivedDate: types.MustNewDateFromString("2026-09-01"),
+            PostedDate: types.MustNewDateFromString("2026-09-01"),
+            Reference: sdkgo.Pointer("DN-78910"),
+            Notes: sdkgo.Pointer("Partial delivery, remainder expected next week."),
+            LocationID: sdkgo.Pointer("1710/171A"),
+            LineItems: []components.GoodsReceiptLineCreateInput{},
+            PassThrough: []components.PassThroughBody{
+                components.PassThroughBody{
+                    ServiceID: "<id>",
+                    ExtendPaths: []components.ExtendPaths{
+                        components.ExtendPaths{
+                            Path: "$.nested.property",
+                            Value: map[string]any{
+                                "TaxClassificationRef": map[string]any{
+                                    "value": "EUC-99990201-V1-00020000",
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.CreateGoodsReceiptResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                        | :heavy_check_mark:                                                                                           | The context to use for the request.                                                                          |
+| `request`                                                                                                    | [operations.AccountingGoodsReceiptsAddRequest](../../models/operations/accountinggoodsreceiptsaddrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| `opts`                                                                                                       | [][operations.Option](../../models/operations/option.md)                                                     | :heavy_minus_sign:                                                                                           | The options for this request.                                                                                |
+
+### Response
+
+**[*operations.AccountingGoodsReceiptsAddResponse](../../models/operations/accountinggoodsreceiptsaddresponse.md), error**
 
 ### Errors
 
