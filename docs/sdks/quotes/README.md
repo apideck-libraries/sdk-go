@@ -129,6 +129,7 @@ func main() {
     res, err := s.Accounting.Quotes.Create(ctx, operations.AccountingQuotesAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
         CompanyID: sdkgo.Pointer("12345"),
+        IdempotencyKey: sdkgo.Pointer("your-unique-key-per-create"),
         Quote: components.QuoteInput{
             Number: sdkgo.Pointer("QT00546"),
             Customer: &components.LinkedCustomerInput{

@@ -136,6 +136,7 @@ func main() {
     res, err := s.Accounting.Suppliers.Create(ctx, operations.AccountingSuppliersAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
         CompanyID: sdkgo.Pointer("12345"),
+        IdempotencyKey: sdkgo.Pointer("your-unique-key-per-create"),
         Supplier: components.SupplierInput{
             DisplayID: sdkgo.Pointer("EMP00101"),
             DisplayName: sdkgo.Pointer("Windsurf Shop"),

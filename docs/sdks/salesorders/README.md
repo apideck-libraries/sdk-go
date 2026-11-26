@@ -130,6 +130,7 @@ func main() {
     res, err := s.Accounting.SalesOrders.Create(ctx, operations.AccountingSalesOrdersAddRequest{
         ServiceID: sdkgo.Pointer("salesforce"),
         CompanyID: sdkgo.Pointer("12345"),
+        IdempotencyKey: sdkgo.Pointer("your-unique-key-per-create"),
         SalesOrder: components.SalesOrderInput{
             Number: sdkgo.Pointer("SO000123"),
             Customer: &components.LinkedCustomerInput{

@@ -343,6 +343,7 @@ func main() {
 ### [Accounting.GoodsReceipts](docs/sdks/goodsreceipts/README.md)
 
 * [List](docs/sdks/goodsreceipts/README.md#list) - List Goods Receipts
+* [Create](docs/sdks/goodsreceipts/README.md#create) - Create Goods Receipt
 * [Get](docs/sdks/goodsreceipts/README.md#get) - Get Goods Receipt
 
 ### [Accounting.InvoiceItems](docs/sdks/invoiceitems/README.md)
