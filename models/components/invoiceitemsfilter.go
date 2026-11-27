@@ -20,6 +20,15 @@ func (e InvoiceItemType) ToPointer() *InvoiceItemType {
 	return &e
 }
 
+// InvoiceItemTypeValues returns every known InvoiceItemType value in schema order.
+func InvoiceItemTypeValues() []InvoiceItemType {
+	return []InvoiceItemType{
+		InvoiceItemTypeInventory,
+		InvoiceItemTypeService,
+		InvoiceItemTypeOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *InvoiceItemType) IsExact() bool {
 	if e != nil {
@@ -41,6 +50,14 @@ const (
 
 func (e TransactionType) ToPointer() *TransactionType {
 	return &e
+}
+
+// TransactionTypeValues returns every known TransactionType value in schema order.
+func TransactionTypeValues() []TransactionType {
+	return []TransactionType{
+		TransactionTypeSale,
+		TransactionTypePurchase,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

@@ -26,6 +26,21 @@ func (e GeneralLedgerTransactionSourceType) ToPointer() *GeneralLedgerTransactio
 	return &e
 }
 
+// GeneralLedgerTransactionSourceTypeValues returns every known GeneralLedgerTransactionSourceType value in schema order.
+func GeneralLedgerTransactionSourceTypeValues() []GeneralLedgerTransactionSourceType {
+	return []GeneralLedgerTransactionSourceType{
+		GeneralLedgerTransactionSourceTypeOther,
+		GeneralLedgerTransactionSourceTypeInvoice,
+		GeneralLedgerTransactionSourceTypeBill,
+		GeneralLedgerTransactionSourceTypeCreditNote,
+		GeneralLedgerTransactionSourceTypePayment,
+		GeneralLedgerTransactionSourceTypeRefund,
+		GeneralLedgerTransactionSourceTypeExpense,
+		GeneralLedgerTransactionSourceTypeJournalEntry,
+		GeneralLedgerTransactionSourceTypePayroll,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *GeneralLedgerTransactionSourceType) IsExact() bool {
 	if e != nil {

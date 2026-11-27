@@ -19,6 +19,15 @@ func (e AccountingEmployeesFilterStatus) ToPointer() *AccountingEmployeesFilterS
 	return &e
 }
 
+// AccountingEmployeesFilterStatusValues returns every known AccountingEmployeesFilterStatus value in schema order.
+func AccountingEmployeesFilterStatusValues() []AccountingEmployeesFilterStatus {
+	return []AccountingEmployeesFilterStatus{
+		AccountingEmployeesFilterStatusActive,
+		AccountingEmployeesFilterStatusInactive,
+		AccountingEmployeesFilterStatusTerminated,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *AccountingEmployeesFilterStatus) IsExact() bool {
 	if e != nil {

@@ -18,6 +18,14 @@ func (e PaymentsSortBy) ToPointer() *PaymentsSortBy {
 	return &e
 }
 
+// PaymentsSortByValues returns every known PaymentsSortBy value in schema order.
+func PaymentsSortByValues() []PaymentsSortBy {
+	return []PaymentsSortBy{
+		PaymentsSortByUpdatedAt,
+		PaymentsSortByCreatedAt,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *PaymentsSortBy) IsExact() bool {
 	if e != nil {

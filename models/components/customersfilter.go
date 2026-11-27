@@ -21,6 +21,16 @@ func (e CustomersFilterStatus) ToPointer() *CustomersFilterStatus {
 	return &e
 }
 
+// CustomersFilterStatusValues returns every known CustomersFilterStatus value in schema order.
+func CustomersFilterStatusValues() []CustomersFilterStatus {
+	return []CustomersFilterStatus{
+		CustomersFilterStatusActive,
+		CustomersFilterStatusInactive,
+		CustomersFilterStatusArchived,
+		CustomersFilterStatusAll,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *CustomersFilterStatus) IsExact() bool {
 	if e != nil {

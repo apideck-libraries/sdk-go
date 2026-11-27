@@ -15,6 +15,15 @@ func (e PeriodType) ToPointer() *PeriodType {
 	return &e
 }
 
+// PeriodTypeValues returns every known PeriodType value in schema order.
+func PeriodTypeValues() []PeriodType {
+	return []PeriodType{
+		PeriodTypeMonth,
+		PeriodTypeQuarter,
+		PeriodTypeYear,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *PeriodType) IsExact() bool {
 	if e != nil {
@@ -36,6 +45,14 @@ const (
 
 func (e BalanceSheetFilterAccountingMethod) ToPointer() *BalanceSheetFilterAccountingMethod {
 	return &e
+}
+
+// BalanceSheetFilterAccountingMethodValues returns every known BalanceSheetFilterAccountingMethod value in schema order.
+func BalanceSheetFilterAccountingMethodValues() []BalanceSheetFilterAccountingMethod {
+	return []BalanceSheetFilterAccountingMethod{
+		BalanceSheetFilterAccountingMethodCash,
+		BalanceSheetFilterAccountingMethodAccrual,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

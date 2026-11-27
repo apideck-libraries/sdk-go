@@ -14,6 +14,14 @@ func (e ProfitAndLossType) ToPointer() *ProfitAndLossType {
 	return &e
 }
 
+// ProfitAndLossTypeValues returns every known ProfitAndLossType value in schema order.
+func ProfitAndLossTypeValues() []ProfitAndLossType {
+	return []ProfitAndLossType{
+		ProfitAndLossTypeSection,
+		ProfitAndLossTypeRecord,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ProfitAndLossType) IsExact() bool {
 	if e != nil {

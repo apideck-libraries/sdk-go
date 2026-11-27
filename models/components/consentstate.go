@@ -18,6 +18,18 @@ func (e ConsentState) ToPointer() *ConsentState {
 	return &e
 }
 
+// ConsentStateValues returns every known ConsentState value in schema order.
+func ConsentStateValues() []ConsentState {
+	return []ConsentState{
+		ConsentStateImplicit,
+		ConsentStatePending,
+		ConsentStateGranted,
+		ConsentStateDenied,
+		ConsentStateRevoked,
+		ConsentStateRequiresReconsent,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ConsentState) IsExact() bool {
 	if e != nil {

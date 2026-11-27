@@ -246,6 +246,13 @@ func (e OptionType) ToPointer() *OptionType {
 	return &e
 }
 
+// OptionTypeValues returns every known OptionType value in schema order.
+func OptionTypeValues() []OptionType {
+	return []OptionType{
+		OptionTypeSimple,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *OptionType) IsExact() bool {
 	if e != nil {

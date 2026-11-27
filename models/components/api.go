@@ -14,6 +14,14 @@ func (e APIType) ToPointer() *APIType {
 	return &e
 }
 
+// APITypeValues returns every known APIType value in schema order.
+func APITypeValues() []APIType {
+	return []APIType{
+		APITypePlatform,
+		APITypeUnified,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *APIType) IsExact() bool {
 	if e != nil {

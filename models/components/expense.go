@@ -21,6 +21,16 @@ func (e ExpensePaymentType) ToPointer() *ExpensePaymentType {
 	return &e
 }
 
+// ExpensePaymentTypeValues returns every known ExpensePaymentType value in schema order.
+func ExpensePaymentTypeValues() []ExpensePaymentType {
+	return []ExpensePaymentType{
+		ExpensePaymentTypeCash,
+		ExpensePaymentTypeCheck,
+		ExpensePaymentTypeCreditCard,
+		ExpensePaymentTypeOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ExpensePaymentType) IsExact() bool {
 	if e != nil {
@@ -42,6 +52,14 @@ const (
 
 func (e ExpenseType) ToPointer() *ExpenseType {
 	return &e
+}
+
+// ExpenseTypeValues returns every known ExpenseType value in schema order.
+func ExpenseTypeValues() []ExpenseType {
+	return []ExpenseType{
+		ExpenseTypeExpense,
+		ExpenseTypeRefund,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
@@ -66,6 +84,15 @@ const (
 
 func (e ExpenseStatus) ToPointer() *ExpenseStatus {
 	return &e
+}
+
+// ExpenseStatusValues returns every known ExpenseStatus value in schema order.
+func ExpenseStatusValues() []ExpenseStatus {
+	return []ExpenseStatus{
+		ExpenseStatusDraft,
+		ExpenseStatusPosted,
+		ExpenseStatusVoided,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

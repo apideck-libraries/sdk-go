@@ -19,6 +19,15 @@ func (e By) ToPointer() *By {
 	return &e
 }
 
+// ByValues returns every known By value in schema order.
+func ByValues() []By {
+	return []By{
+		ByUpdatedAt,
+		ByCreatedAt,
+		ByID,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *By) IsExact() bool {
 	if e != nil {

@@ -14,6 +14,14 @@ func (e ProfitAndLossFilterAccountingMethod) ToPointer() *ProfitAndLossFilterAcc
 	return &e
 }
 
+// ProfitAndLossFilterAccountingMethodValues returns every known ProfitAndLossFilterAccountingMethod value in schema order.
+func ProfitAndLossFilterAccountingMethodValues() []ProfitAndLossFilterAccountingMethod {
+	return []ProfitAndLossFilterAccountingMethod{
+		ProfitAndLossFilterAccountingMethodCash,
+		ProfitAndLossFilterAccountingMethodAccrual,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ProfitAndLossFilterAccountingMethod) IsExact() bool {
 	if e != nil {

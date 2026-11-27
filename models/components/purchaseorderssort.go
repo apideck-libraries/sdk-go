@@ -18,6 +18,14 @@ func (e PurchaseOrdersSortBy) ToPointer() *PurchaseOrdersSortBy {
 	return &e
 }
 
+// PurchaseOrdersSortByValues returns every known PurchaseOrdersSortBy value in schema order.
+func PurchaseOrdersSortByValues() []PurchaseOrdersSortBy {
+	return []PurchaseOrdersSortBy{
+		PurchaseOrdersSortByUpdatedAt,
+		PurchaseOrdersSortByCreatedAt,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *PurchaseOrdersSortBy) IsExact() bool {
 	if e != nil {

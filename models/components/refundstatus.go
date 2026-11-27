@@ -18,6 +18,18 @@ func (e RefundStatus) ToPointer() *RefundStatus {
 	return &e
 }
 
+// RefundStatusValues returns every known RefundStatus value in schema order.
+func RefundStatusValues() []RefundStatus {
+	return []RefundStatus{
+		RefundStatusDraft,
+		RefundStatusAuthorised,
+		RefundStatusPosted,
+		RefundStatusPaid,
+		RefundStatusVoided,
+		RefundStatusDeleted,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *RefundStatus) IsExact() bool {
 	if e != nil {

@@ -22,6 +22,17 @@ func (e BalanceByTransactionTransactionType) ToPointer() *BalanceByTransactionTr
 	return &e
 }
 
+// BalanceByTransactionTransactionTypeValues returns every known BalanceByTransactionTransactionType value in schema order.
+func BalanceByTransactionTransactionTypeValues() []BalanceByTransactionTransactionType {
+	return []BalanceByTransactionTransactionType{
+		BalanceByTransactionTransactionTypeInvoice,
+		BalanceByTransactionTransactionTypeCreditNote,
+		BalanceByTransactionTransactionTypeBill,
+		BalanceByTransactionTransactionTypePayment,
+		BalanceByTransactionTransactionTypeBillPayment,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *BalanceByTransactionTransactionType) IsExact() bool {
 	if e != nil {

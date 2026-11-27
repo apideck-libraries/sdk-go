@@ -28,6 +28,22 @@ func (e LedgerAccountClassification) ToPointer() *LedgerAccountClassification {
 	return &e
 }
 
+// LedgerAccountClassificationValues returns every known LedgerAccountClassification value in schema order.
+func LedgerAccountClassificationValues() []LedgerAccountClassification {
+	return []LedgerAccountClassification{
+		LedgerAccountClassificationAsset,
+		LedgerAccountClassificationEquity,
+		LedgerAccountClassificationExpense,
+		LedgerAccountClassificationLiability,
+		LedgerAccountClassificationRevenue,
+		LedgerAccountClassificationIncome,
+		LedgerAccountClassificationOtherIncome,
+		LedgerAccountClassificationOtherExpense,
+		LedgerAccountClassificationCostsOfSales,
+		LedgerAccountClassificationOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *LedgerAccountClassification) IsExact() bool {
 	if e != nil {
@@ -69,6 +85,32 @@ func (e LedgerAccountType) ToPointer() *LedgerAccountType {
 	return &e
 }
 
+// LedgerAccountTypeValues returns every known LedgerAccountType value in schema order.
+func LedgerAccountTypeValues() []LedgerAccountType {
+	return []LedgerAccountType{
+		LedgerAccountTypeAccountsPayable,
+		LedgerAccountTypeAccountsReceivable,
+		LedgerAccountTypeBalancesheet,
+		LedgerAccountTypeBank,
+		LedgerAccountTypeCostsOfSales,
+		LedgerAccountTypeCreditCard,
+		LedgerAccountTypeCurrentAsset,
+		LedgerAccountTypeCurrentLiability,
+		LedgerAccountTypeEquity,
+		LedgerAccountTypeExpense,
+		LedgerAccountTypeFixedAsset,
+		LedgerAccountTypeNonCurrentAsset,
+		LedgerAccountTypeNonCurrentLiability,
+		LedgerAccountTypeOtherAsset,
+		LedgerAccountTypeOtherExpense,
+		LedgerAccountTypeOtherIncome,
+		LedgerAccountTypeOtherLiability,
+		LedgerAccountTypeRevenue,
+		LedgerAccountTypeSales,
+		LedgerAccountTypeOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *LedgerAccountType) IsExact() bool {
 	if e != nil {
@@ -92,6 +134,16 @@ const (
 
 func (e DepreciationMethod) ToPointer() *DepreciationMethod {
 	return &e
+}
+
+// DepreciationMethodValues returns every known DepreciationMethod value in schema order.
+func DepreciationMethodValues() []DepreciationMethod {
+	return []DepreciationMethod{
+		DepreciationMethodOther,
+		DepreciationMethodStraightLine,
+		DepreciationMethodDecliningBalance,
+		DepreciationMethodNone,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
@@ -185,6 +237,15 @@ const (
 
 func (e AccountStatus) ToPointer() *AccountStatus {
 	return &e
+}
+
+// AccountStatusValues returns every known AccountStatus value in schema order.
+func AccountStatusValues() []AccountStatus {
+	return []AccountStatus{
+		AccountStatusActive,
+		AccountStatusInactive,
+		AccountStatusArchived,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

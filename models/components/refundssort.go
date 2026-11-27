@@ -18,6 +18,14 @@ func (e RefundsSortBy) ToPointer() *RefundsSortBy {
 	return &e
 }
 
+// RefundsSortByValues returns every known RefundsSortBy value in schema order.
+func RefundsSortByValues() []RefundsSortBy {
+	return []RefundsSortBy{
+		RefundsSortByUpdatedAt,
+		RefundsSortByCreatedAt,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *RefundsSortBy) IsExact() bool {
 	if e != nil {

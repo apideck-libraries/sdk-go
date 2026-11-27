@@ -21,6 +21,15 @@ func (e Visibility) ToPointer() *Visibility {
 	return &e
 }
 
+// VisibilityValues returns every known Visibility value in schema order.
+func VisibilityValues() []Visibility {
+	return []Visibility{
+		VisibilityDraft,
+		VisibilityPublic,
+		VisibilityInternal,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *Visibility) IsExact() bool {
 	if e != nil {
@@ -49,6 +58,22 @@ const (
 
 func (e EmploymentTerms) ToPointer() *EmploymentTerms {
 	return &e
+}
+
+// EmploymentTermsValues returns every known EmploymentTerms value in schema order.
+func EmploymentTermsValues() []EmploymentTerms {
+	return []EmploymentTerms{
+		EmploymentTermsFullTime,
+		EmploymentTermsPartTime,
+		EmploymentTermsInternship,
+		EmploymentTermsContractor,
+		EmploymentTermsEmployee,
+		EmploymentTermsFreelance,
+		EmploymentTermsTemp,
+		EmploymentTermsSeasonal,
+		EmploymentTermsVolunteer,
+		EmploymentTermsOther,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
@@ -150,6 +175,14 @@ const (
 
 func (e JobType) ToPointer() *JobType {
 	return &e
+}
+
+// JobTypeValues returns every known JobType value in schema order.
+func JobTypeValues() []JobType {
+	return []JobType{
+		JobTypeJobPortal,
+		JobTypeJobDescription,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

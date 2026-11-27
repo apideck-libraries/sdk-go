@@ -26,6 +26,20 @@ func (e SalesOrderStatus) ToPointer() *SalesOrderStatus {
 	return &e
 }
 
+// SalesOrderStatusValues returns every known SalesOrderStatus value in schema order.
+func SalesOrderStatusValues() []SalesOrderStatus {
+	return []SalesOrderStatus{
+		SalesOrderStatusDraft,
+		SalesOrderStatusOpen,
+		SalesOrderStatusOnHold,
+		SalesOrderStatusBackOrdered,
+		SalesOrderStatusInvoiced,
+		SalesOrderStatusClosed,
+		SalesOrderStatusCancelled,
+		SalesOrderStatusOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *SalesOrderStatus) IsExact() bool {
 	if e != nil {

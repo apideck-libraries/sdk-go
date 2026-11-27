@@ -19,6 +19,20 @@ func (e AttachmentReferenceType) ToPointer() *AttachmentReferenceType {
 	return &e
 }
 
+// AttachmentReferenceTypeValues returns every known AttachmentReferenceType value in schema order.
+func AttachmentReferenceTypeValues() []AttachmentReferenceType {
+	return []AttachmentReferenceType{
+		AttachmentReferenceTypeInvoice,
+		AttachmentReferenceTypeBill,
+		AttachmentReferenceTypeBillCreditNote,
+		AttachmentReferenceTypeCreditNote,
+		AttachmentReferenceTypeExpense,
+		AttachmentReferenceTypeExpenseReport,
+		AttachmentReferenceTypeQuote,
+		AttachmentReferenceTypeJournalEntry,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *AttachmentReferenceType) IsExact() bool {
 	if e != nil {

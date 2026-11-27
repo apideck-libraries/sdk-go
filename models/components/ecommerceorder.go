@@ -25,6 +25,20 @@ func (e EcommerceOrderPaymentStatus) ToPointer() *EcommerceOrderPaymentStatus {
 	return &e
 }
 
+// EcommerceOrderPaymentStatusValues returns every known EcommerceOrderPaymentStatus value in schema order.
+func EcommerceOrderPaymentStatusValues() []EcommerceOrderPaymentStatus {
+	return []EcommerceOrderPaymentStatus{
+		EcommerceOrderPaymentStatusPending,
+		EcommerceOrderPaymentStatusAuthorized,
+		EcommerceOrderPaymentStatusPaid,
+		EcommerceOrderPaymentStatusPartial,
+		EcommerceOrderPaymentStatusRefunded,
+		EcommerceOrderPaymentStatusVoided,
+		EcommerceOrderPaymentStatusUnknown,
+		EcommerceOrderPaymentStatusPartiallyRefunded,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *EcommerceOrderPaymentStatus) IsExact() bool {
 	if e != nil {
@@ -51,6 +65,19 @@ const (
 
 func (e FulfillmentStatus) ToPointer() *FulfillmentStatus {
 	return &e
+}
+
+// FulfillmentStatusValues returns every known FulfillmentStatus value in schema order.
+func FulfillmentStatusValues() []FulfillmentStatus {
+	return []FulfillmentStatus{
+		FulfillmentStatusPending,
+		FulfillmentStatusShipped,
+		FulfillmentStatusPartial,
+		FulfillmentStatusDelivered,
+		FulfillmentStatusCancelled,
+		FulfillmentStatusReturned,
+		FulfillmentStatusUnknown,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

@@ -17,6 +17,17 @@ func (e FlsaStatus) ToPointer() *FlsaStatus {
 	return &e
 }
 
+// FlsaStatusValues returns every known FlsaStatus value in schema order.
+func FlsaStatusValues() []FlsaStatus {
+	return []FlsaStatus{
+		FlsaStatusExempt,
+		FlsaStatusSalariedNonexempt,
+		FlsaStatusNonexempt,
+		FlsaStatusOwner,
+		FlsaStatusOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *FlsaStatus) IsExact() bool {
 	if e != nil {

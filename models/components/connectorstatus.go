@@ -17,6 +17,17 @@ func (e ConnectorStatus) ToPointer() *ConnectorStatus {
 	return &e
 }
 
+// ConnectorStatusValues returns every known ConnectorStatus value in schema order.
+func ConnectorStatusValues() []ConnectorStatus {
+	return []ConnectorStatus{
+		ConnectorStatusLive,
+		ConnectorStatusBeta,
+		ConnectorStatusEarlyAccess,
+		ConnectorStatusDevelopment,
+		ConnectorStatusConsidering,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ConnectorStatus) IsExact() bool {
 	if e != nil {

@@ -30,6 +30,16 @@ func (e BatchItemResultStatus) ToPointer() *BatchItemResultStatus {
 	return &e
 }
 
+// BatchItemResultStatusValues returns every known BatchItemResultStatus value in schema order.
+func BatchItemResultStatusValues() []BatchItemResultStatus {
+	return []BatchItemResultStatus{
+		BatchItemResultStatusCreated,
+		BatchItemResultStatusUpdated,
+		BatchItemResultStatusFailed,
+		BatchItemResultStatusUncertain,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *BatchItemResultStatus) IsExact() bool {
 	if e != nil {

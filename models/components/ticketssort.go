@@ -18,6 +18,14 @@ func (e TicketsSortBy) ToPointer() *TicketsSortBy {
 	return &e
 }
 
+// TicketsSortByValues returns every known TicketsSortBy value in schema order.
+func TicketsSortByValues() []TicketsSortBy {
+	return []TicketsSortBy{
+		TicketsSortByCreatedAt,
+		TicketsSortByUpdatedAt,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *TicketsSortBy) IsExact() bool {
 	if e != nil {

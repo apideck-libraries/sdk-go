@@ -22,6 +22,18 @@ func (e OpportunitiesSortBy) ToPointer() *OpportunitiesSortBy {
 	return &e
 }
 
+// OpportunitiesSortByValues returns every known OpportunitiesSortBy value in schema order.
+func OpportunitiesSortByValues() []OpportunitiesSortBy {
+	return []OpportunitiesSortBy{
+		OpportunitiesSortByCreatedAt,
+		OpportunitiesSortByUpdatedAt,
+		OpportunitiesSortByTitle,
+		OpportunitiesSortByWinProbability,
+		OpportunitiesSortByMonetaryAmount,
+		OpportunitiesSortByStatus,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *OpportunitiesSortBy) IsExact() bool {
 	if e != nil {

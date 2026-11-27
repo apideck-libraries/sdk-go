@@ -25,6 +25,20 @@ func (e JournalEntriesFilterStatus) ToPointer() *JournalEntriesFilterStatus {
 	return &e
 }
 
+// JournalEntriesFilterStatusValues returns every known JournalEntriesFilterStatus value in schema order.
+func JournalEntriesFilterStatusValues() []JournalEntriesFilterStatus {
+	return []JournalEntriesFilterStatus{
+		JournalEntriesFilterStatusDraft,
+		JournalEntriesFilterStatusPendingApproval,
+		JournalEntriesFilterStatusApproved,
+		JournalEntriesFilterStatusPosted,
+		JournalEntriesFilterStatusVoided,
+		JournalEntriesFilterStatusRejected,
+		JournalEntriesFilterStatusDeleted,
+		JournalEntriesFilterStatusOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *JournalEntriesFilterStatus) IsExact() bool {
 	if e != nil {
@@ -46,6 +60,14 @@ const (
 
 func (e JournalEntriesFilterScope) ToPointer() *JournalEntriesFilterScope {
 	return &e
+}
+
+// JournalEntriesFilterScopeValues returns every known JournalEntriesFilterScope value in schema order.
+func JournalEntriesFilterScopeValues() []JournalEntriesFilterScope {
+	return []JournalEntriesFilterScope{
+		JournalEntriesFilterScopeManual,
+		JournalEntriesFilterScopeSystem,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

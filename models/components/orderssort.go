@@ -19,6 +19,15 @@ func (e OrdersSortBy) ToPointer() *OrdersSortBy {
 	return &e
 }
 
+// OrdersSortByValues returns every known OrdersSortBy value in schema order.
+func OrdersSortByValues() []OrdersSortBy {
+	return []OrdersSortBy{
+		OrdersSortByCreatedAt,
+		OrdersSortByUpdatedAt,
+		OrdersSortByName,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *OrdersSortBy) IsExact() bool {
 	if e != nil {

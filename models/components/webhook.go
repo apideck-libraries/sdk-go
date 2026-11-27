@@ -21,6 +21,16 @@ func (e DisabledReason) ToPointer() *DisabledReason {
 	return &e
 }
 
+// DisabledReasonValues returns every known DisabledReason value in schema order.
+func DisabledReasonValues() []DisabledReason {
+	return []DisabledReason{
+		DisabledReasonNone,
+		DisabledReasonRetryLimit,
+		DisabledReasonUsageLimit,
+		DisabledReasonDeliveryURLValidationFailed,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *DisabledReason) IsExact() bool {
 	if e != nil {

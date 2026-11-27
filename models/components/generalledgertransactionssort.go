@@ -19,6 +19,15 @@ func (e GeneralLedgerTransactionsSortBy) ToPointer() *GeneralLedgerTransactionsS
 	return &e
 }
 
+// GeneralLedgerTransactionsSortByValues returns every known GeneralLedgerTransactionsSortBy value in schema order.
+func GeneralLedgerTransactionsSortByValues() []GeneralLedgerTransactionsSortBy {
+	return []GeneralLedgerTransactionsSortBy{
+		GeneralLedgerTransactionsSortByPostedAt,
+		GeneralLedgerTransactionsSortByUpdatedAt,
+		GeneralLedgerTransactionsSortByCreatedAt,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *GeneralLedgerTransactionsSortBy) IsExact() bool {
 	if e != nil {

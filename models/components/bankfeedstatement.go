@@ -20,6 +20,15 @@ func (e StatementStatus) ToPointer() *StatementStatus {
 	return &e
 }
 
+// StatementStatusValues returns every known StatementStatus value in schema order.
+func StatementStatusValues() []StatementStatus {
+	return []StatementStatus{
+		StatementStatusPending,
+		StatementStatusRejected,
+		StatementStatusSuccess,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *StatementStatus) IsExact() bool {
 	if e != nil {
@@ -45,6 +54,18 @@ const (
 
 func (e BankFeedStatementTransactionType) ToPointer() *BankFeedStatementTransactionType {
 	return &e
+}
+
+// BankFeedStatementTransactionTypeValues returns every known BankFeedStatementTransactionType value in schema order.
+func BankFeedStatementTransactionTypeValues() []BankFeedStatementTransactionType {
+	return []BankFeedStatementTransactionType{
+		BankFeedStatementTransactionTypeCredit,
+		BankFeedStatementTransactionTypeDebit,
+		BankFeedStatementTransactionTypeDeposit,
+		BankFeedStatementTransactionTypeTransfer,
+		BankFeedStatementTransactionTypePayment,
+		BankFeedStatementTransactionTypeOther,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

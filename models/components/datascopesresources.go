@@ -19,6 +19,13 @@ func (e DataScopesResources2) ToPointer() *DataScopesResources2 {
 	return &e
 }
 
+// DataScopesResources2Values returns every known DataScopesResources2 value in schema order.
+func DataScopesResources2Values() []DataScopesResources2 {
+	return []DataScopesResources2{
+		DataScopesResources2Wildcard,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *DataScopesResources2) IsExact() bool {
 	if e != nil {

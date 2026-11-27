@@ -21,6 +21,15 @@ func (e ConnectionStatus) ToPointer() *ConnectionStatus {
 	return &e
 }
 
+// ConnectionStatusValues returns every known ConnectionStatus value in schema order.
+func ConnectionStatusValues() []ConnectionStatus {
+	return []ConnectionStatus{
+		ConnectionStatusLive,
+		ConnectionStatusUpcoming,
+		ConnectionStatusRequested,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ConnectionStatus) IsExact() bool {
 	if e != nil {
@@ -73,6 +82,14 @@ const (
 
 func (e Target) ToPointer() *Target {
 	return &e
+}
+
+// TargetValues returns every known Target value in schema order.
+func TargetValues() []Target {
+	return []Target{
+		TargetCustomFields,
+		TargetResource,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
@@ -384,6 +401,20 @@ const (
 
 func (e Health) ToPointer() *Health {
 	return &e
+}
+
+// HealthValues returns every known Health value in schema order.
+func HealthValues() []Health {
+	return []Health{
+		HealthRevoked,
+		HealthMissingSettings,
+		HealthNeedsConsent,
+		HealthPendingConfirmation,
+		HealthNeedsAuth,
+		HealthPendingRefresh,
+		HealthOk,
+		HealthDegraded,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

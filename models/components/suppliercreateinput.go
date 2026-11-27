@@ -17,6 +17,17 @@ func (e SupplierCreateInputStatus) ToPointer() *SupplierCreateInputStatus {
 	return &e
 }
 
+// SupplierCreateInputStatusValues returns every known SupplierCreateInputStatus value in schema order.
+func SupplierCreateInputStatusValues() []SupplierCreateInputStatus {
+	return []SupplierCreateInputStatus{
+		SupplierCreateInputStatusActive,
+		SupplierCreateInputStatusInactive,
+		SupplierCreateInputStatusArchived,
+		SupplierCreateInputStatusGdprErasureRequest,
+		SupplierCreateInputStatusUnknown,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *SupplierCreateInputStatus) IsExact() bool {
 	if e != nil {

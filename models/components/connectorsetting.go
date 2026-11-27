@@ -29,6 +29,26 @@ const (
 func (e ConnectorSettingType) ToPointer() *ConnectorSettingType {
 	return &e
 }
+
+// ConnectorSettingTypeValues returns every known ConnectorSettingType value in schema order.
+func ConnectorSettingTypeValues() []ConnectorSettingType {
+	return []ConnectorSettingType{
+		ConnectorSettingTypeText,
+		ConnectorSettingTypeCheckbox,
+		ConnectorSettingTypeTel,
+		ConnectorSettingTypeEmail,
+		ConnectorSettingTypeURL,
+		ConnectorSettingTypeTextarea,
+		ConnectorSettingTypeSelect,
+		ConnectorSettingTypeFilteredSelect,
+		ConnectorSettingTypeMultiSelect,
+		ConnectorSettingTypeDatetime,
+		ConnectorSettingTypeDate,
+		ConnectorSettingTypeTime,
+		ConnectorSettingTypeNumber,
+		ConnectorSettingTypePassword,
+	}
+}
 func (e *ConnectorSettingType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {

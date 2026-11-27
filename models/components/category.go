@@ -21,6 +21,16 @@ func (e CategoryType) ToPointer() *CategoryType {
 	return &e
 }
 
+// CategoryTypeValues returns every known CategoryType value in schema order.
+func CategoryTypeValues() []CategoryType {
+	return []CategoryType{
+		CategoryTypeSupplier,
+		CategoryTypeExpense,
+		CategoryTypeRevenue,
+		CategoryTypeCustomer,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *CategoryType) IsExact() bool {
 	if e != nil {
@@ -42,6 +52,14 @@ const (
 
 func (e CategoryStatus) ToPointer() *CategoryStatus {
 	return &e
+}
+
+// CategoryStatusValues returns every known CategoryStatus value in schema order.
+func CategoryStatusValues() []CategoryStatus {
+	return []CategoryStatus{
+		CategoryStatusActive,
+		CategoryStatusInactive,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

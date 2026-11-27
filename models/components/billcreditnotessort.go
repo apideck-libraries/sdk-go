@@ -19,6 +19,15 @@ func (e BillCreditNotesSortBy) ToPointer() *BillCreditNotesSortBy {
 	return &e
 }
 
+// BillCreditNotesSortByValues returns every known BillCreditNotesSortBy value in schema order.
+func BillCreditNotesSortByValues() []BillCreditNotesSortBy {
+	return []BillCreditNotesSortBy{
+		BillCreditNotesSortByCreatedAt,
+		BillCreditNotesSortByUpdatedAt,
+		BillCreditNotesSortByID,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *BillCreditNotesSortBy) IsExact() bool {
 	if e != nil {

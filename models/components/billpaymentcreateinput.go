@@ -21,6 +21,16 @@ func (e BillPaymentCreateInputBillPaymentType) ToPointer() *BillPaymentCreateInp
 	return &e
 }
 
+// BillPaymentCreateInputBillPaymentTypeValues returns every known BillPaymentCreateInputBillPaymentType value in schema order.
+func BillPaymentCreateInputBillPaymentTypeValues() []BillPaymentCreateInputBillPaymentType {
+	return []BillPaymentCreateInputBillPaymentType{
+		BillPaymentCreateInputBillPaymentTypeAccountsPayableCredit,
+		BillPaymentCreateInputBillPaymentTypeAccountsPayableOverpayment,
+		BillPaymentCreateInputBillPaymentTypeAccountsPayablePrepayment,
+		BillPaymentCreateInputBillPaymentTypeAccountsPayable,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *BillPaymentCreateInputBillPaymentType) IsExact() bool {
 	if e != nil {
@@ -47,6 +57,19 @@ const (
 
 func (e BillPaymentCreateInputAllocationType) ToPointer() *BillPaymentCreateInputAllocationType {
 	return &e
+}
+
+// BillPaymentCreateInputAllocationTypeValues returns every known BillPaymentCreateInputAllocationType value in schema order.
+func BillPaymentCreateInputAllocationTypeValues() []BillPaymentCreateInputAllocationType {
+	return []BillPaymentCreateInputAllocationType{
+		BillPaymentCreateInputAllocationTypeBill,
+		BillPaymentCreateInputAllocationTypeExpense,
+		BillPaymentCreateInputAllocationTypeCreditMemo,
+		BillPaymentCreateInputAllocationTypeOverPayment,
+		BillPaymentCreateInputAllocationTypePrePayment,
+		BillPaymentCreateInputAllocationTypeJournalEntry,
+		BillPaymentCreateInputAllocationTypeOther,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

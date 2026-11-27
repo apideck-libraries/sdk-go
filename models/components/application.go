@@ -21,6 +21,17 @@ func (e ApplicationStatus) ToPointer() *ApplicationStatus {
 	return &e
 }
 
+// ApplicationStatusValues returns every known ApplicationStatus value in schema order.
+func ApplicationStatusValues() []ApplicationStatus {
+	return []ApplicationStatus{
+		ApplicationStatusOpen,
+		ApplicationStatusRejected,
+		ApplicationStatusHired,
+		ApplicationStatusConverted,
+		ApplicationStatusOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ApplicationStatus) IsExact() bool {
 	if e != nil {

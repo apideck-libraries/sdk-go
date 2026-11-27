@@ -23,6 +23,18 @@ func (e TimeOffRequestStatusStatus) ToPointer() *TimeOffRequestStatusStatus {
 	return &e
 }
 
+// TimeOffRequestStatusStatusValues returns every known TimeOffRequestStatusStatus value in schema order.
+func TimeOffRequestStatusStatusValues() []TimeOffRequestStatusStatus {
+	return []TimeOffRequestStatusStatus{
+		TimeOffRequestStatusStatusRequested,
+		TimeOffRequestStatusStatusApproved,
+		TimeOffRequestStatusStatusDeclined,
+		TimeOffRequestStatusStatusCancelled,
+		TimeOffRequestStatusStatusDeleted,
+		TimeOffRequestStatusStatusOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *TimeOffRequestStatusStatus) IsExact() bool {
 	if e != nil {
@@ -51,6 +63,19 @@ func (e RequestType) ToPointer() *RequestType {
 	return &e
 }
 
+// RequestTypeValues returns every known RequestType value in schema order.
+func RequestTypeValues() []RequestType {
+	return []RequestType{
+		RequestTypeVacation,
+		RequestTypeSick,
+		RequestTypePersonal,
+		RequestTypeJuryDuty,
+		RequestTypeVolunteer,
+		RequestTypeBereavement,
+		RequestTypeOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *RequestType) IsExact() bool {
 	if e != nil {
@@ -73,6 +98,15 @@ const (
 
 func (e Units) ToPointer() *Units {
 	return &e
+}
+
+// UnitsValues returns every known Units value in schema order.
+func UnitsValues() []Units {
+	return []Units{
+		UnitsDays,
+		UnitsHours,
+		UnitsOther,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

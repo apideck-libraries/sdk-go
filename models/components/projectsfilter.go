@@ -25,6 +25,20 @@ func (e ProjectStatus) ToPointer() *ProjectStatus {
 	return &e
 }
 
+// ProjectStatusValues returns every known ProjectStatus value in schema order.
+func ProjectStatusValues() []ProjectStatus {
+	return []ProjectStatus{
+		ProjectStatusActive,
+		ProjectStatusCompleted,
+		ProjectStatusOnHold,
+		ProjectStatusCancelled,
+		ProjectStatusDraft,
+		ProjectStatusInProgress,
+		ProjectStatusApproved,
+		ProjectStatusOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ProjectStatus) IsExact() bool {
 	if e != nil {

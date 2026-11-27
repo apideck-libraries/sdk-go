@@ -18,6 +18,18 @@ func (e TimeOffRequestStatus) ToPointer() *TimeOffRequestStatus {
 	return &e
 }
 
+// TimeOffRequestStatusValues returns every known TimeOffRequestStatus value in schema order.
+func TimeOffRequestStatusValues() []TimeOffRequestStatus {
+	return []TimeOffRequestStatus{
+		TimeOffRequestStatusRequested,
+		TimeOffRequestStatusApproved,
+		TimeOffRequestStatusDeclined,
+		TimeOffRequestStatusCancelled,
+		TimeOffRequestStatusDeleted,
+		TimeOffRequestStatusOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *TimeOffRequestStatus) IsExact() bool {
 	if e != nil {

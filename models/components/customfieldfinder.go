@@ -26,6 +26,26 @@ func (e CustomFieldFinderType) ToPointer() *CustomFieldFinderType {
 	return &e
 }
 
+// CustomFieldFinderTypeValues returns every known CustomFieldFinderType value in schema order.
+func CustomFieldFinderTypeValues() []CustomFieldFinderType {
+	return []CustomFieldFinderType{
+		CustomFieldFinderTypeText,
+		CustomFieldFinderTypeCheckbox,
+		CustomFieldFinderTypeTel,
+		CustomFieldFinderTypeEmail,
+		CustomFieldFinderTypeURL,
+		CustomFieldFinderTypeTextarea,
+		CustomFieldFinderTypeSelect,
+		CustomFieldFinderTypeFilteredSelect,
+		CustomFieldFinderTypeMultiSelect,
+		CustomFieldFinderTypeDatetime,
+		CustomFieldFinderTypeDate,
+		CustomFieldFinderTypeTime,
+		CustomFieldFinderTypeNumber,
+		CustomFieldFinderTypePassword,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *CustomFieldFinderType) IsExact() bool {
 	if e != nil {

@@ -22,6 +22,16 @@ func (e FiscalPeriodStatus) ToPointer() *FiscalPeriodStatus {
 	return &e
 }
 
+// FiscalPeriodStatusValues returns every known FiscalPeriodStatus value in schema order.
+func FiscalPeriodStatusValues() []FiscalPeriodStatus {
+	return []FiscalPeriodStatus{
+		FiscalPeriodStatusOpen,
+		FiscalPeriodStatusLocked,
+		FiscalPeriodStatusClosed,
+		FiscalPeriodStatusFuture,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *FiscalPeriodStatus) IsExact() bool {
 	if e != nil {
@@ -44,6 +54,15 @@ const (
 
 func (e FiscalPeriodPeriodType) ToPointer() *FiscalPeriodPeriodType {
 	return &e
+}
+
+// FiscalPeriodPeriodTypeValues returns every known FiscalPeriodPeriodType value in schema order.
+func FiscalPeriodPeriodTypeValues() []FiscalPeriodPeriodType {
+	return []FiscalPeriodPeriodType{
+		FiscalPeriodPeriodTypePeriod,
+		FiscalPeriodPeriodTypeQuarter,
+		FiscalPeriodPeriodTypeYear,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

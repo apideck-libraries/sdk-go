@@ -15,6 +15,15 @@ func (e AccountType) ToPointer() *AccountType {
 	return &e
 }
 
+// AccountTypeValues returns every known AccountType value in schema order.
+func AccountTypeValues() []AccountType {
+	return []AccountType{
+		AccountTypeBankAccount,
+		AccountTypeCreditCard,
+		AccountTypeOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *AccountType) IsExact() bool {
 	if e != nil {

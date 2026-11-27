@@ -23,6 +23,19 @@ func (e ExpenseReportsFilterStatus) ToPointer() *ExpenseReportsFilterStatus {
 	return &e
 }
 
+// ExpenseReportsFilterStatusValues returns every known ExpenseReportsFilterStatus value in schema order.
+func ExpenseReportsFilterStatusValues() []ExpenseReportsFilterStatus {
+	return []ExpenseReportsFilterStatus{
+		ExpenseReportsFilterStatusDraft,
+		ExpenseReportsFilterStatusSubmitted,
+		ExpenseReportsFilterStatusApproved,
+		ExpenseReportsFilterStatusReimbursed,
+		ExpenseReportsFilterStatusRejected,
+		ExpenseReportsFilterStatusReversed,
+		ExpenseReportsFilterStatusVoided,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ExpenseReportsFilterStatus) IsExact() bool {
 	if e != nil {

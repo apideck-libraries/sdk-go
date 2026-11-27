@@ -21,6 +21,16 @@ func (e ContactType) ToPointer() *ContactType {
 	return &e
 }
 
+// ContactTypeValues returns every known ContactType value in schema order.
+func ContactTypeValues() []ContactType {
+	return []ContactType{
+		ContactTypeCustomer,
+		ContactTypeSupplier,
+		ContactTypeEmployee,
+		ContactTypePersonal,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ContactType) IsExact() bool {
 	if e != nil {
@@ -43,6 +53,15 @@ const (
 
 func (e ContactGender) ToPointer() *ContactGender {
 	return &e
+}
+
+// ContactGenderValues returns every known ContactGender value in schema order.
+func ContactGenderValues() []ContactGender {
+	return []ContactGender{
+		ContactGenderMale,
+		ContactGenderFemale,
+		ContactGenderUnisex,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

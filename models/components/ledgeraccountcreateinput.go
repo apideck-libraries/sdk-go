@@ -27,6 +27,22 @@ func (e LedgerAccountCreateInputClassification) ToPointer() *LedgerAccountCreate
 	return &e
 }
 
+// LedgerAccountCreateInputClassificationValues returns every known LedgerAccountCreateInputClassification value in schema order.
+func LedgerAccountCreateInputClassificationValues() []LedgerAccountCreateInputClassification {
+	return []LedgerAccountCreateInputClassification{
+		LedgerAccountCreateInputClassificationAsset,
+		LedgerAccountCreateInputClassificationEquity,
+		LedgerAccountCreateInputClassificationExpense,
+		LedgerAccountCreateInputClassificationLiability,
+		LedgerAccountCreateInputClassificationRevenue,
+		LedgerAccountCreateInputClassificationIncome,
+		LedgerAccountCreateInputClassificationOtherIncome,
+		LedgerAccountCreateInputClassificationOtherExpense,
+		LedgerAccountCreateInputClassificationCostsOfSales,
+		LedgerAccountCreateInputClassificationOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *LedgerAccountCreateInputClassification) IsExact() bool {
 	if e != nil {
@@ -68,6 +84,32 @@ func (e LedgerAccountCreateInputType) ToPointer() *LedgerAccountCreateInputType 
 	return &e
 }
 
+// LedgerAccountCreateInputTypeValues returns every known LedgerAccountCreateInputType value in schema order.
+func LedgerAccountCreateInputTypeValues() []LedgerAccountCreateInputType {
+	return []LedgerAccountCreateInputType{
+		LedgerAccountCreateInputTypeAccountsPayable,
+		LedgerAccountCreateInputTypeAccountsReceivable,
+		LedgerAccountCreateInputTypeBalancesheet,
+		LedgerAccountCreateInputTypeBank,
+		LedgerAccountCreateInputTypeCostsOfSales,
+		LedgerAccountCreateInputTypeCreditCard,
+		LedgerAccountCreateInputTypeCurrentAsset,
+		LedgerAccountCreateInputTypeCurrentLiability,
+		LedgerAccountCreateInputTypeEquity,
+		LedgerAccountCreateInputTypeExpense,
+		LedgerAccountCreateInputTypeFixedAsset,
+		LedgerAccountCreateInputTypeNonCurrentAsset,
+		LedgerAccountCreateInputTypeNonCurrentLiability,
+		LedgerAccountCreateInputTypeOtherAsset,
+		LedgerAccountCreateInputTypeOtherExpense,
+		LedgerAccountCreateInputTypeOtherIncome,
+		LedgerAccountCreateInputTypeOtherLiability,
+		LedgerAccountCreateInputTypeRevenue,
+		LedgerAccountCreateInputTypeSales,
+		LedgerAccountCreateInputTypeOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *LedgerAccountCreateInputType) IsExact() bool {
 	if e != nil {
@@ -90,6 +132,15 @@ const (
 
 func (e LedgerAccountCreateInputAccountStatus) ToPointer() *LedgerAccountCreateInputAccountStatus {
 	return &e
+}
+
+// LedgerAccountCreateInputAccountStatusValues returns every known LedgerAccountCreateInputAccountStatus value in schema order.
+func LedgerAccountCreateInputAccountStatusValues() []LedgerAccountCreateInputAccountStatus {
+	return []LedgerAccountCreateInputAccountStatus{
+		LedgerAccountCreateInputAccountStatusActive,
+		LedgerAccountCreateInputAccountStatusInactive,
+		LedgerAccountCreateInputAccountStatusArchived,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

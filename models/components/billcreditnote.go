@@ -24,6 +24,19 @@ func (e BillCreditNoteStatus) ToPointer() *BillCreditNoteStatus {
 	return &e
 }
 
+// BillCreditNoteStatusValues returns every known BillCreditNoteStatus value in schema order.
+func BillCreditNoteStatusValues() []BillCreditNoteStatus {
+	return []BillCreditNoteStatus{
+		BillCreditNoteStatusDraft,
+		BillCreditNoteStatusAuthorised,
+		BillCreditNoteStatusPosted,
+		BillCreditNoteStatusPartiallyPaid,
+		BillCreditNoteStatusPaid,
+		BillCreditNoteStatusVoided,
+		BillCreditNoteStatusDeleted,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *BillCreditNoteStatus) IsExact() bool {
 	if e != nil {
@@ -44,6 +57,13 @@ const (
 
 func (e BillCreditNoteType) ToPointer() *BillCreditNoteType {
 	return &e
+}
+
+// BillCreditNoteTypeValues returns every known BillCreditNoteType value in schema order.
+func BillCreditNoteTypeValues() []BillCreditNoteType {
+	return []BillCreditNoteType{
+		BillCreditNoteTypeAccountsPayableCredit,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

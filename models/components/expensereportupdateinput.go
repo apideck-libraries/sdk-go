@@ -47,6 +47,19 @@ func (e ExpenseReportUpdateInputStatus) ToPointer() *ExpenseReportUpdateInputSta
 	return &e
 }
 
+// ExpenseReportUpdateInputStatusValues returns every known ExpenseReportUpdateInputStatus value in schema order.
+func ExpenseReportUpdateInputStatusValues() []ExpenseReportUpdateInputStatus {
+	return []ExpenseReportUpdateInputStatus{
+		ExpenseReportUpdateInputStatusDraft,
+		ExpenseReportUpdateInputStatusSubmitted,
+		ExpenseReportUpdateInputStatusApproved,
+		ExpenseReportUpdateInputStatusReimbursed,
+		ExpenseReportUpdateInputStatusRejected,
+		ExpenseReportUpdateInputStatusReversed,
+		ExpenseReportUpdateInputStatusVoided,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ExpenseReportUpdateInputStatus) IsExact() bool {
 	if e != nil {

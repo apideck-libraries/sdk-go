@@ -26,6 +26,21 @@ func (e JournalType) ToPointer() *JournalType {
 	return &e
 }
 
+// JournalTypeValues returns every known JournalType value in schema order.
+func JournalTypeValues() []JournalType {
+	return []JournalType{
+		JournalTypeGeneral,
+		JournalTypeSales,
+		JournalTypePurchase,
+		JournalTypeSalesCreditNote,
+		JournalTypePurchaseCreditNote,
+		JournalTypeCash,
+		JournalTypeBank,
+		JournalTypePaymentService,
+		JournalTypeOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *JournalType) IsExact() bool {
 	if e != nil {

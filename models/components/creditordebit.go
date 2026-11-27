@@ -14,6 +14,14 @@ func (e CreditOrDebit) ToPointer() *CreditOrDebit {
 	return &e
 }
 
+// CreditOrDebitValues returns every known CreditOrDebit value in schema order.
+func CreditOrDebitValues() []CreditOrDebit {
+	return []CreditOrDebit{
+		CreditOrDebitCredit,
+		CreditOrDebitDebit,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *CreditOrDebit) IsExact() bool {
 	if e != nil {

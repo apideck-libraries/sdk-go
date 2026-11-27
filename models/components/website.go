@@ -17,6 +17,17 @@ func (e WebsiteType) ToPointer() *WebsiteType {
 	return &e
 }
 
+// WebsiteTypeValues returns every known WebsiteType value in schema order.
+func WebsiteTypeValues() []WebsiteType {
+	return []WebsiteType{
+		WebsiteTypePrimary,
+		WebsiteTypeSecondary,
+		WebsiteTypeWork,
+		WebsiteTypePersonal,
+		WebsiteTypeOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *WebsiteType) IsExact() bool {
 	if e != nil {

@@ -15,6 +15,15 @@ func (e Mode) ToPointer() *Mode {
 	return &e
 }
 
+// ModeValues returns every known Mode value in schema order.
+func ModeValues() []Mode {
+	return []Mode{
+		ModeNative,
+		ModeVirtual,
+		ModeNone,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *Mode) IsExact() bool {
 	if e != nil {
@@ -36,6 +45,14 @@ const (
 
 func (e SubscriptionLevel) ToPointer() *SubscriptionLevel {
 	return &e
+}
+
+// SubscriptionLevelValues returns every known SubscriptionLevel value in schema order.
+func SubscriptionLevelValues() []SubscriptionLevel {
+	return []SubscriptionLevel{
+		SubscriptionLevelConnection,
+		SubscriptionLevelIntegration,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
@@ -61,6 +78,14 @@ func (e ManagedVia) ToPointer() *ManagedVia {
 	return &e
 }
 
+// ManagedViaValues returns every known ManagedVia value in schema order.
+func ManagedViaValues() []ManagedVia {
+	return []ManagedVia{
+		ManagedViaManual,
+		ManagedViaAPI,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ManagedVia) IsExact() bool {
 	if e != nil {
@@ -82,6 +107,14 @@ const (
 
 func (e TargetURLScope) ToPointer() *TargetURLScope {
 	return &e
+}
+
+// TargetURLScopeValues returns every known TargetURLScope value in schema order.
+func TargetURLScopeValues() []TargetURLScope {
+	return []TargetURLScope{
+		TargetURLScopeApp,
+		TargetURLScopeTenant,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
@@ -107,6 +140,16 @@ const (
 
 func (e Unit) ToPointer() *Unit {
 	return &e
+}
+
+// UnitValues returns every known Unit value in schema order.
+func UnitValues() []Unit {
+	return []Unit{
+		UnitSecond,
+		UnitMinute,
+		UnitHour,
+		UnitDay,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

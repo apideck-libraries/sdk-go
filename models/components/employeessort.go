@@ -20,6 +20,16 @@ func (e EmployeesSortBy) ToPointer() *EmployeesSortBy {
 	return &e
 }
 
+// EmployeesSortByValues returns every known EmployeesSortBy value in schema order.
+func EmployeesSortByValues() []EmployeesSortBy {
+	return []EmployeesSortBy{
+		EmployeesSortByFirstName,
+		EmployeesSortByLastName,
+		EmployeesSortByCreatedAt,
+		EmployeesSortByUpdatedAt,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *EmployeesSortBy) IsExact() bool {
 	if e != nil {

@@ -16,6 +16,13 @@ func (e FormFieldOptionGroupOptionType) ToPointer() *FormFieldOptionGroupOptionT
 	return &e
 }
 
+// FormFieldOptionGroupOptionTypeValues returns every known FormFieldOptionGroupOptionType value in schema order.
+func FormFieldOptionGroupOptionTypeValues() []FormFieldOptionGroupOptionType {
+	return []FormFieldOptionGroupOptionType{
+		FormFieldOptionGroupOptionTypeGroup,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *FormFieldOptionGroupOptionType) IsExact() bool {
 	if e != nil {

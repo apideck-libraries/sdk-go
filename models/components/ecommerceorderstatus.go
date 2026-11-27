@@ -18,6 +18,18 @@ func (e EcommerceOrderStatus) ToPointer() *EcommerceOrderStatus {
 	return &e
 }
 
+// EcommerceOrderStatusValues returns every known EcommerceOrderStatus value in schema order.
+func EcommerceOrderStatusValues() []EcommerceOrderStatus {
+	return []EcommerceOrderStatus{
+		EcommerceOrderStatusActive,
+		EcommerceOrderStatusCompleted,
+		EcommerceOrderStatusCancelled,
+		EcommerceOrderStatusArchived,
+		EcommerceOrderStatusUnknown,
+		EcommerceOrderStatusOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *EcommerceOrderStatus) IsExact() bool {
 	if e != nil {

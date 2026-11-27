@@ -20,6 +20,16 @@ func (e HrisCompanyStatus) ToPointer() *HrisCompanyStatus {
 	return &e
 }
 
+// HrisCompanyStatusValues returns every known HrisCompanyStatus value in schema order.
+func HrisCompanyStatusValues() []HrisCompanyStatus {
+	return []HrisCompanyStatus{
+		HrisCompanyStatusActive,
+		HrisCompanyStatusInactive,
+		HrisCompanyStatusTrial,
+		HrisCompanyStatusOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *HrisCompanyStatus) IsExact() bool {
 	if e != nil {

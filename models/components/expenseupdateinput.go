@@ -21,6 +21,16 @@ func (e ExpenseUpdateInputPaymentType) ToPointer() *ExpenseUpdateInputPaymentTyp
 	return &e
 }
 
+// ExpenseUpdateInputPaymentTypeValues returns every known ExpenseUpdateInputPaymentType value in schema order.
+func ExpenseUpdateInputPaymentTypeValues() []ExpenseUpdateInputPaymentType {
+	return []ExpenseUpdateInputPaymentType{
+		ExpenseUpdateInputPaymentTypeCash,
+		ExpenseUpdateInputPaymentTypeCheck,
+		ExpenseUpdateInputPaymentTypeCreditCard,
+		ExpenseUpdateInputPaymentTypeOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ExpenseUpdateInputPaymentType) IsExact() bool {
 	if e != nil {
@@ -42,6 +52,14 @@ const (
 
 func (e ExpenseUpdateInputExpenseType) ToPointer() *ExpenseUpdateInputExpenseType {
 	return &e
+}
+
+// ExpenseUpdateInputExpenseTypeValues returns every known ExpenseUpdateInputExpenseType value in schema order.
+func ExpenseUpdateInputExpenseTypeValues() []ExpenseUpdateInputExpenseType {
+	return []ExpenseUpdateInputExpenseType{
+		ExpenseUpdateInputExpenseTypeExpense,
+		ExpenseUpdateInputExpenseTypeRefund,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
@@ -66,6 +84,15 @@ const (
 
 func (e ExpenseUpdateInputStatus) ToPointer() *ExpenseUpdateInputStatus {
 	return &e
+}
+
+// ExpenseUpdateInputStatusValues returns every known ExpenseUpdateInputStatus value in schema order.
+func ExpenseUpdateInputStatusValues() []ExpenseUpdateInputStatus {
+	return []ExpenseUpdateInputStatus{
+		ExpenseUpdateInputStatusDraft,
+		ExpenseUpdateInputStatusPosted,
+		ExpenseUpdateInputStatusVoided,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

@@ -24,6 +24,19 @@ func (e CreditNoteStatus) ToPointer() *CreditNoteStatus {
 	return &e
 }
 
+// CreditNoteStatusValues returns every known CreditNoteStatus value in schema order.
+func CreditNoteStatusValues() []CreditNoteStatus {
+	return []CreditNoteStatus{
+		CreditNoteStatusDraft,
+		CreditNoteStatusAuthorised,
+		CreditNoteStatusPosted,
+		CreditNoteStatusPartiallyPaid,
+		CreditNoteStatusPaid,
+		CreditNoteStatusVoided,
+		CreditNoteStatusDeleted,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *CreditNoteStatus) IsExact() bool {
 	if e != nil {
@@ -45,6 +58,14 @@ const (
 
 func (e CreditNoteType) ToPointer() *CreditNoteType {
 	return &e
+}
+
+// CreditNoteTypeValues returns every known CreditNoteType value in schema order.
+func CreditNoteTypeValues() []CreditNoteType {
+	return []CreditNoteType{
+		CreditNoteTypeAccountsReceivableCredit,
+		CreditNoteTypeAccountsPayableCredit,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

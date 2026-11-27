@@ -19,6 +19,14 @@ func (e JournalEntryLineItemType) ToPointer() *JournalEntryLineItemType {
 	return &e
 }
 
+// JournalEntryLineItemTypeValues returns every known JournalEntryLineItemType value in schema order.
+func JournalEntryLineItemTypeValues() []JournalEntryLineItemType {
+	return []JournalEntryLineItemType{
+		JournalEntryLineItemTypeDebit,
+		JournalEntryLineItemTypeCredit,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *JournalEntryLineItemType) IsExact() bool {
 	if e != nil {
@@ -40,6 +48,14 @@ const (
 
 func (e TaxType) ToPointer() *TaxType {
 	return &e
+}
+
+// TaxTypeValues returns every known TaxType value in schema order.
+func TaxTypeValues() []TaxType {
+	return []TaxType{
+		TaxTypeSales,
+		TaxTypePurchase,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

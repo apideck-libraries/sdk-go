@@ -14,6 +14,14 @@ func (e Audience) ToPointer() *Audience {
 	return &e
 }
 
+// AudienceValues returns every known Audience value in schema order.
+func AudienceValues() []Audience {
+	return []Audience{
+		AudienceApplicationOwner,
+		AudienceConsumer,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *Audience) IsExact() bool {
 	if e != nil {
@@ -34,6 +42,13 @@ const (
 
 func (e Format) ToPointer() *Format {
 	return &e
+}
+
+// FormatValues returns every known Format value in schema order.
+func FormatValues() []Format {
+	return []Format{
+		FormatMarkdown,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

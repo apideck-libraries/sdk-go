@@ -14,6 +14,14 @@ func (e EventSource) ToPointer() *EventSource {
 	return &e
 }
 
+// EventSourceValues returns every known EventSource value in schema order.
+func EventSourceValues() []EventSource {
+	return []EventSource{
+		EventSourceNative,
+		EventSourceVirtual,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *EventSource) IsExact() bool {
 	if e != nil {

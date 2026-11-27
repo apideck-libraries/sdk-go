@@ -16,6 +16,16 @@ func (e Difficulty) ToPointer() *Difficulty {
 	return &e
 }
 
+// DifficultyValues returns every known Difficulty value in schema order.
+func DifficultyValues() []Difficulty {
+	return []Difficulty{
+		DifficultyStraightforward,
+		DifficultyModerate,
+		DifficultyInvolved,
+		DifficultyHighlyComplex,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *Difficulty) IsExact() bool {
 	if e != nil {

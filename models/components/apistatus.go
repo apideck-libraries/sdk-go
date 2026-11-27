@@ -16,6 +16,16 @@ func (e APIStatus) ToPointer() *APIStatus {
 	return &e
 }
 
+// APIStatusValues returns every known APIStatus value in schema order.
+func APIStatusValues() []APIStatus {
+	return []APIStatus{
+		APIStatusLive,
+		APIStatusBeta,
+		APIStatusDevelopment,
+		APIStatusConsidering,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *APIStatus) IsExact() bool {
 	if e != nil {

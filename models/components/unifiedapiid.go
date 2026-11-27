@@ -40,6 +40,40 @@ func (e UnifiedAPIID) ToPointer() *UnifiedAPIID {
 	return &e
 }
 
+// UnifiedAPIIDValues returns every known UnifiedAPIID value in schema order.
+func UnifiedAPIIDValues() []UnifiedAPIID {
+	return []UnifiedAPIID{
+		UnifiedAPIIDAccounting,
+		UnifiedAPIIDAts,
+		UnifiedAPIIDCalendar,
+		UnifiedAPIIDCrm,
+		UnifiedAPIIDCsp,
+		UnifiedAPIIDCustomerSupport,
+		UnifiedAPIIDEcommerce,
+		UnifiedAPIIDEmail,
+		UnifiedAPIIDEmailMarketing,
+		UnifiedAPIIDExpenseManagement,
+		UnifiedAPIIDFileStorage,
+		UnifiedAPIIDForm,
+		UnifiedAPIIDHris,
+		UnifiedAPIIDLead,
+		UnifiedAPIIDPayroll,
+		UnifiedAPIIDPos,
+		UnifiedAPIIDProcurement,
+		UnifiedAPIIDProjectManagement,
+		UnifiedAPIIDScript,
+		UnifiedAPIIDSms,
+		UnifiedAPIIDSpreadsheet,
+		UnifiedAPIIDSubscriptionAnalytics,
+		UnifiedAPIIDTeamMessaging,
+		UnifiedAPIIDIssueTracking,
+		UnifiedAPIIDTimeRegistration,
+		UnifiedAPIIDTransactionalEmail,
+		UnifiedAPIIDVault,
+		UnifiedAPIIDDataWarehouse,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *UnifiedAPIID) IsExact() bool {
 	if e != nil {

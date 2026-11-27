@@ -16,6 +16,16 @@ func (e RefundType) ToPointer() *RefundType {
 	return &e
 }
 
+// RefundTypeValues returns every known RefundType value in schema order.
+func RefundTypeValues() []RefundType {
+	return []RefundType{
+		RefundTypeRefundReceipt,
+		RefundTypeCashRefund,
+		RefundTypeCreditNoteRefund,
+		RefundTypeSaleRefund,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *RefundType) IsExact() bool {
 	if e != nil {
