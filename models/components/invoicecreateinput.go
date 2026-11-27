@@ -24,6 +24,18 @@ func (e InvoiceCreateInputInvoiceType) ToPointer() *InvoiceCreateInputInvoiceTyp
 	return &e
 }
 
+// InvoiceCreateInputInvoiceTypeValues returns every known InvoiceCreateInputInvoiceType value in schema order.
+func InvoiceCreateInputInvoiceTypeValues() []InvoiceCreateInputInvoiceType {
+	return []InvoiceCreateInputInvoiceType{
+		InvoiceCreateInputInvoiceTypeStandard,
+		InvoiceCreateInputInvoiceTypeCredit,
+		InvoiceCreateInputInvoiceTypeService,
+		InvoiceCreateInputInvoiceTypeProduct,
+		InvoiceCreateInputInvoiceTypeSupplier,
+		InvoiceCreateInputInvoiceTypeOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *InvoiceCreateInputInvoiceType) IsExact() bool {
 	if e != nil {
@@ -53,6 +65,22 @@ const (
 
 func (e InvoiceCreateInputStatus) ToPointer() *InvoiceCreateInputStatus {
 	return &e
+}
+
+// InvoiceCreateInputStatusValues returns every known InvoiceCreateInputStatus value in schema order.
+func InvoiceCreateInputStatusValues() []InvoiceCreateInputStatus {
+	return []InvoiceCreateInputStatus{
+		InvoiceCreateInputStatusDraft,
+		InvoiceCreateInputStatusSubmitted,
+		InvoiceCreateInputStatusAuthorised,
+		InvoiceCreateInputStatusPartiallyPaid,
+		InvoiceCreateInputStatusPaid,
+		InvoiceCreateInputStatusUnpaid,
+		InvoiceCreateInputStatusVoid,
+		InvoiceCreateInputStatusCredit,
+		InvoiceCreateInputStatusDeleted,
+		InvoiceCreateInputStatusPosted,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

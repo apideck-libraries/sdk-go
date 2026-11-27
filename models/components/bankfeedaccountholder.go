@@ -14,6 +14,14 @@ func (e HolderType) ToPointer() *HolderType {
 	return &e
 }
 
+// HolderTypeValues returns every known HolderType value in schema order.
+func HolderTypeValues() []HolderType {
+	return []HolderType{
+		HolderTypeConsumer,
+		HolderTypeBusiness,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *HolderType) IsExact() bool {
 	if e != nil {
@@ -54,6 +62,33 @@ const (
 
 func (e HolderRelationship) ToPointer() *HolderRelationship {
 	return &e
+}
+
+// HolderRelationshipValues returns every known HolderRelationship value in schema order.
+func HolderRelationshipValues() []HolderRelationship {
+	return []HolderRelationship{
+		HolderRelationshipAuthorizedSigner,
+		HolderRelationshipAuthorizedUser,
+		HolderRelationshipBusiness,
+		HolderRelationshipForBenefitOf,
+		HolderRelationshipForBenefitOfPrimary,
+		HolderRelationshipForBenefitOfPrimaryJointRestricted,
+		HolderRelationshipForBenefitOfSecondary,
+		HolderRelationshipForBenefitOfSecondaryJointRestricted,
+		HolderRelationshipForBenefitOfSoleOwnerRestricted,
+		HolderRelationshipPowerOfAttorney,
+		HolderRelationshipPrimary,
+		HolderRelationshipPrimaryBorrower,
+		HolderRelationshipPrimaryJoint,
+		HolderRelationshipPrimaryJointTenants,
+		HolderRelationshipSecondary,
+		HolderRelationshipSecondaryBorrower,
+		HolderRelationshipSecondaryJoint,
+		HolderRelationshipSecondaryJointTenants,
+		HolderRelationshipSoleOwner,
+		HolderRelationshipTrustee,
+		HolderRelationshipUniformTransferToMinor,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

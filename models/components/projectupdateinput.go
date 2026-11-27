@@ -25,6 +25,20 @@ func (e ProjectUpdateInputProjectStatus) ToPointer() *ProjectUpdateInputProjectS
 	return &e
 }
 
+// ProjectUpdateInputProjectStatusValues returns every known ProjectUpdateInputProjectStatus value in schema order.
+func ProjectUpdateInputProjectStatusValues() []ProjectUpdateInputProjectStatus {
+	return []ProjectUpdateInputProjectStatus{
+		ProjectUpdateInputProjectStatusActive,
+		ProjectUpdateInputProjectStatusCompleted,
+		ProjectUpdateInputProjectStatusOnHold,
+		ProjectUpdateInputProjectStatusCancelled,
+		ProjectUpdateInputProjectStatusDraft,
+		ProjectUpdateInputProjectStatusInProgress,
+		ProjectUpdateInputProjectStatusApproved,
+		ProjectUpdateInputProjectStatusOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ProjectUpdateInputProjectStatus) IsExact() bool {
 	if e != nil {
@@ -52,6 +66,18 @@ func (e ProjectUpdateInputProjectType) ToPointer() *ProjectUpdateInputProjectTyp
 	return &e
 }
 
+// ProjectUpdateInputProjectTypeValues returns every known ProjectUpdateInputProjectType value in schema order.
+func ProjectUpdateInputProjectTypeValues() []ProjectUpdateInputProjectType {
+	return []ProjectUpdateInputProjectType{
+		ProjectUpdateInputProjectTypeClientProject,
+		ProjectUpdateInputProjectTypeInternalProject,
+		ProjectUpdateInputProjectTypeMaintenance,
+		ProjectUpdateInputProjectTypeResearchDevelopment,
+		ProjectUpdateInputProjectTypeTraining,
+		ProjectUpdateInputProjectTypeOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ProjectUpdateInputProjectType) IsExact() bool {
 	if e != nil {
@@ -75,6 +101,16 @@ const (
 
 func (e ProjectUpdateInputPriority) ToPointer() *ProjectUpdateInputPriority {
 	return &e
+}
+
+// ProjectUpdateInputPriorityValues returns every known ProjectUpdateInputPriority value in schema order.
+func ProjectUpdateInputPriorityValues() []ProjectUpdateInputPriority {
+	return []ProjectUpdateInputPriority{
+		ProjectUpdateInputPriorityLow,
+		ProjectUpdateInputPriorityMedium,
+		ProjectUpdateInputPriorityHigh,
+		ProjectUpdateInputPriorityCritical,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
@@ -147,6 +183,17 @@ func (e ProjectUpdateInputBillingMethod) ToPointer() *ProjectUpdateInputBillingM
 	return &e
 }
 
+// ProjectUpdateInputBillingMethodValues returns every known ProjectUpdateInputBillingMethod value in schema order.
+func ProjectUpdateInputBillingMethodValues() []ProjectUpdateInputBillingMethod {
+	return []ProjectUpdateInputBillingMethod{
+		ProjectUpdateInputBillingMethodFixedPrice,
+		ProjectUpdateInputBillingMethodTimeAndMaterials,
+		ProjectUpdateInputBillingMethodMilestoneBased,
+		ProjectUpdateInputBillingMethodRetainer,
+		ProjectUpdateInputBillingMethodNonBillable,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ProjectUpdateInputBillingMethod) IsExact() bool {
 	if e != nil {
@@ -174,6 +221,18 @@ func (e ProjectUpdateInputProjectPhase) ToPointer() *ProjectUpdateInputProjectPh
 	return &e
 }
 
+// ProjectUpdateInputProjectPhaseValues returns every known ProjectUpdateInputProjectPhase value in schema order.
+func ProjectUpdateInputProjectPhaseValues() []ProjectUpdateInputProjectPhase {
+	return []ProjectUpdateInputProjectPhase{
+		ProjectUpdateInputProjectPhaseInitiation,
+		ProjectUpdateInputProjectPhasePlanning,
+		ProjectUpdateInputProjectPhaseExecution,
+		ProjectUpdateInputProjectPhaseMonitoring,
+		ProjectUpdateInputProjectPhaseClosure,
+		ProjectUpdateInputProjectPhaseOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ProjectUpdateInputProjectPhase) IsExact() bool {
 	if e != nil {
@@ -197,6 +256,16 @@ const (
 
 func (e ProjectUpdateInputScheduleStatus) ToPointer() *ProjectUpdateInputScheduleStatus {
 	return &e
+}
+
+// ProjectUpdateInputScheduleStatusValues returns every known ProjectUpdateInputScheduleStatus value in schema order.
+func ProjectUpdateInputScheduleStatusValues() []ProjectUpdateInputScheduleStatus {
+	return []ProjectUpdateInputScheduleStatus{
+		ProjectUpdateInputScheduleStatusAheadOfSchedule,
+		ProjectUpdateInputScheduleStatusOnSchedule,
+		ProjectUpdateInputScheduleStatusBehindSchedule,
+		ProjectUpdateInputScheduleStatusCriticalDelay,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

@@ -14,6 +14,14 @@ func (e TrialBalanceFilterAccountingMethod) ToPointer() *TrialBalanceFilterAccou
 	return &e
 }
 
+// TrialBalanceFilterAccountingMethodValues returns every known TrialBalanceFilterAccountingMethod value in schema order.
+func TrialBalanceFilterAccountingMethodValues() []TrialBalanceFilterAccountingMethod {
+	return []TrialBalanceFilterAccountingMethod{
+		TrialBalanceFilterAccountingMethodCash,
+		TrialBalanceFilterAccountingMethodAccrual,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *TrialBalanceFilterAccountingMethod) IsExact() bool {
 	if e != nil {

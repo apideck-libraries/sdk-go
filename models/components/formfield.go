@@ -30,6 +30,26 @@ const (
 func (e FormFieldType) ToPointer() *FormFieldType {
 	return &e
 }
+
+// FormFieldTypeValues returns every known FormFieldType value in schema order.
+func FormFieldTypeValues() []FormFieldType {
+	return []FormFieldType{
+		FormFieldTypeText,
+		FormFieldTypeCheckbox,
+		FormFieldTypeTel,
+		FormFieldTypeEmail,
+		FormFieldTypeURL,
+		FormFieldTypeTextarea,
+		FormFieldTypeSelect,
+		FormFieldTypeFilteredSelect,
+		FormFieldTypeMultiSelect,
+		FormFieldTypeDatetime,
+		FormFieldTypeDate,
+		FormFieldTypeTime,
+		FormFieldTypeNumber,
+		FormFieldTypePassword,
+	}
+}
 func (e *FormFieldType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {

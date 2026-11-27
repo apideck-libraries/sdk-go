@@ -21,6 +21,16 @@ func (e PathMatchMode) ToPointer() *PathMatchMode {
 	return &e
 }
 
+// PathMatchModeValues returns every known PathMatchMode value in schema order.
+func PathMatchModeValues() []PathMatchMode {
+	return []PathMatchMode{
+		PathMatchModeContains,
+		PathMatchModeStartsWith,
+		PathMatchModeEndsWith,
+		PathMatchModeExact,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *PathMatchMode) IsExact() bool {
 	if e != nil {

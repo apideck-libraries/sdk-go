@@ -16,6 +16,16 @@ func (e CategoriesFilterType) ToPointer() *CategoriesFilterType {
 	return &e
 }
 
+// CategoriesFilterTypeValues returns every known CategoriesFilterType value in schema order.
+func CategoriesFilterTypeValues() []CategoriesFilterType {
+	return []CategoriesFilterType{
+		CategoriesFilterTypeSupplier,
+		CategoriesFilterTypeExpense,
+		CategoriesFilterTypeRevenue,
+		CategoriesFilterTypeCustomer,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *CategoriesFilterType) IsExact() bool {
 	if e != nil {

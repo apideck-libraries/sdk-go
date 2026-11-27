@@ -23,6 +23,17 @@ func (e ApplicantGender) ToPointer() *ApplicantGender {
 	return &e
 }
 
+// ApplicantGenderValues returns every known ApplicantGender value in schema order.
+func ApplicantGenderValues() []ApplicantGender {
+	return []ApplicantGender{
+		ApplicantGenderMale,
+		ApplicantGenderFemale,
+		ApplicantGenderUnisex,
+		ApplicantGenderOther,
+		ApplicantGenderNotSpecified,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ApplicantGender) IsExact() bool {
 	if e != nil {
@@ -47,6 +58,17 @@ const (
 
 func (e ApplicantType) ToPointer() *ApplicantType {
 	return &e
+}
+
+// ApplicantTypeValues returns every known ApplicantType value in schema order.
+func ApplicantTypeValues() []ApplicantType {
+	return []ApplicantType{
+		ApplicantTypePrimary,
+		ApplicantTypeSecondary,
+		ApplicantTypeWork,
+		ApplicantTypePersonal,
+		ApplicantTypeOther,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

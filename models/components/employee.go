@@ -23,6 +23,17 @@ func (e LeavingReason) ToPointer() *LeavingReason {
 	return &e
 }
 
+// LeavingReasonValues returns every known LeavingReason value in schema order.
+func LeavingReasonValues() []LeavingReason {
+	return []LeavingReason{
+		LeavingReasonDismissed,
+		LeavingReasonResigned,
+		LeavingReasonRedundancy,
+		LeavingReasonRetired,
+		LeavingReasonOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *LeavingReason) IsExact() bool {
 	if e != nil {
@@ -50,6 +61,18 @@ func (e EmploymentType) ToPointer() *EmploymentType {
 	return &e
 }
 
+// EmploymentTypeValues returns every known EmploymentType value in schema order.
+func EmploymentTypeValues() []EmploymentType {
+	return []EmploymentType{
+		EmploymentTypeContractor,
+		EmploymentTypeEmployee,
+		EmploymentTypeFreelance,
+		EmploymentTypeTemp,
+		EmploymentTypeInternship,
+		EmploymentTypeOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *EmploymentType) IsExact() bool {
 	if e != nil {
@@ -74,6 +97,17 @@ const (
 
 func (e EmploymentSubType) ToPointer() *EmploymentSubType {
 	return &e
+}
+
+// EmploymentSubTypeValues returns every known EmploymentSubType value in schema order.
+func EmploymentSubTypeValues() []EmploymentSubType {
+	return []EmploymentSubType{
+		EmploymentSubTypeFullTime,
+		EmploymentSubTypePartTime,
+		EmploymentSubTypeHourly,
+		EmploymentSubTypeOther,
+		EmploymentSubTypeNotSpecified,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

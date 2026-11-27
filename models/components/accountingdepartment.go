@@ -19,6 +19,14 @@ func (e DepartmentStatus) ToPointer() *DepartmentStatus {
 	return &e
 }
 
+// DepartmentStatusValues returns every known DepartmentStatus value in schema order.
+func DepartmentStatusValues() []DepartmentStatus {
+	return []DepartmentStatus{
+		DepartmentStatusActive,
+		DepartmentStatusInactive,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *DepartmentStatus) IsExact() bool {
 	if e != nil {

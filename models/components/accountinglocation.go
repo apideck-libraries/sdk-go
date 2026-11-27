@@ -19,6 +19,14 @@ func (e LocationStatus) ToPointer() *LocationStatus {
 	return &e
 }
 
+// LocationStatusValues returns every known LocationStatus value in schema order.
+func LocationStatusValues() []LocationStatus {
+	return []LocationStatus{
+		LocationStatusActive,
+		LocationStatusInactive,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *LocationStatus) IsExact() bool {
 	if e != nil {

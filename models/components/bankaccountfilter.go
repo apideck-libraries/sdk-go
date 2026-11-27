@@ -19,6 +19,19 @@ func (e BankAccountFilterAccountType) ToPointer() *BankAccountFilterAccountType 
 	return &e
 }
 
+// BankAccountFilterAccountTypeValues returns every known BankAccountFilterAccountType value in schema order.
+func BankAccountFilterAccountTypeValues() []BankAccountFilterAccountType {
+	return []BankAccountFilterAccountType{
+		BankAccountFilterAccountTypeChecking,
+		BankAccountFilterAccountTypeSavings,
+		BankAccountFilterAccountTypeCreditCard,
+		BankAccountFilterAccountTypeMoneyMarket,
+		BankAccountFilterAccountTypeLineOfCredit,
+		BankAccountFilterAccountTypeOther,
+		BankAccountFilterAccountTypeCash,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *BankAccountFilterAccountType) IsExact() bool {
 	if e != nil {

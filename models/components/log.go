@@ -68,6 +68,24 @@ func (e LogUnifiedAPI) ToPointer() *LogUnifiedAPI {
 	return &e
 }
 
+// LogUnifiedAPIValues returns every known LogUnifiedAPI value in schema order.
+func LogUnifiedAPIValues() []LogUnifiedAPI {
+	return []LogUnifiedAPI{
+		LogUnifiedAPICrm,
+		LogUnifiedAPILead,
+		LogUnifiedAPIProxy,
+		LogUnifiedAPIVault,
+		LogUnifiedAPIAccounting,
+		LogUnifiedAPIHris,
+		LogUnifiedAPIAts,
+		LogUnifiedAPIEcommerce,
+		LogUnifiedAPIIssueTracking,
+		LogUnifiedAPIPos,
+		LogUnifiedAPIFileStorage,
+		LogUnifiedAPISms,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *LogUnifiedAPI) IsExact() bool {
 	if e != nil {

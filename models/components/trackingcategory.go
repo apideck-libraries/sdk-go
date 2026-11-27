@@ -19,6 +19,14 @@ func (e TrackingCategoryStatus) ToPointer() *TrackingCategoryStatus {
 	return &e
 }
 
+// TrackingCategoryStatusValues returns every known TrackingCategoryStatus value in schema order.
+func TrackingCategoryStatusValues() []TrackingCategoryStatus {
+	return []TrackingCategoryStatus{
+		TrackingCategoryStatusActive,
+		TrackingCategoryStatusInactive,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *TrackingCategoryStatus) IsExact() bool {
 	if e != nil {

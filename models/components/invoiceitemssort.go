@@ -18,6 +18,14 @@ func (e InvoiceItemsSortBy) ToPointer() *InvoiceItemsSortBy {
 	return &e
 }
 
+// InvoiceItemsSortByValues returns every known InvoiceItemsSortBy value in schema order.
+func InvoiceItemsSortByValues() []InvoiceItemsSortBy {
+	return []InvoiceItemsSortBy{
+		InvoiceItemsSortByCreatedAt,
+		InvoiceItemsSortByUpdatedAt,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *InvoiceItemsSortBy) IsExact() bool {
 	if e != nil {

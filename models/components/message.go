@@ -19,6 +19,14 @@ func (e MessageType) ToPointer() *MessageType {
 	return &e
 }
 
+// MessageTypeValues returns every known MessageType value in schema order.
+func MessageTypeValues() []MessageType {
+	return []MessageType{
+		MessageTypeSms,
+		MessageTypeMms,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *MessageType) IsExact() bool {
 	if e != nil {
@@ -43,6 +51,17 @@ const (
 
 func (e Direction) ToPointer() *Direction {
 	return &e
+}
+
+// DirectionValues returns every known Direction value in schema order.
+func DirectionValues() []Direction {
+	return []Direction{
+		DirectionInbound,
+		DirectionOutboundAPI,
+		DirectionOutboundCall,
+		DirectionOutboundReply,
+		DirectionUnknown,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
@@ -76,6 +95,24 @@ const (
 
 func (e MessageStatus) ToPointer() *MessageStatus {
 	return &e
+}
+
+// MessageStatusValues returns every known MessageStatus value in schema order.
+func MessageStatusValues() []MessageStatus {
+	return []MessageStatus{
+		MessageStatusAccepted,
+		MessageStatusScheduled,
+		MessageStatusCanceled,
+		MessageStatusQueued,
+		MessageStatusSending,
+		MessageStatusSent,
+		MessageStatusFailed,
+		MessageStatusDelivered,
+		MessageStatusUndelivered,
+		MessageStatusReceiving,
+		MessageStatusReceived,
+		MessageStatusRead,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

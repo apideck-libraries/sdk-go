@@ -22,6 +22,17 @@ func (e SupplierStatus) ToPointer() *SupplierStatus {
 	return &e
 }
 
+// SupplierStatusValues returns every known SupplierStatus value in schema order.
+func SupplierStatusValues() []SupplierStatus {
+	return []SupplierStatus{
+		SupplierStatusActive,
+		SupplierStatusInactive,
+		SupplierStatusArchived,
+		SupplierStatusGdprErasureRequest,
+		SupplierStatusUnknown,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *SupplierStatus) IsExact() bool {
 	if e != nil {

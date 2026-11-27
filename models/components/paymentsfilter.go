@@ -24,6 +24,20 @@ func (e PaymentsFilterType) ToPointer() *PaymentsFilterType {
 	return &e
 }
 
+// PaymentsFilterTypeValues returns every known PaymentsFilterType value in schema order.
+func PaymentsFilterTypeValues() []PaymentsFilterType {
+	return []PaymentsFilterType{
+		PaymentsFilterTypeAccountsReceivable,
+		PaymentsFilterTypeAccountsPayable,
+		PaymentsFilterTypeAccountsReceivableCredit,
+		PaymentsFilterTypeAccountsPayableCredit,
+		PaymentsFilterTypeAccountsReceivableOverpayment,
+		PaymentsFilterTypeAccountsPayableOverpayment,
+		PaymentsFilterTypeAccountsReceivablePrepayment,
+		PaymentsFilterTypeAccountsPayablePrepayment,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *PaymentsFilterType) IsExact() bool {
 	if e != nil {
@@ -49,6 +63,18 @@ const (
 
 func (e PaymentsFilterPaymentStatus) ToPointer() *PaymentsFilterPaymentStatus {
 	return &e
+}
+
+// PaymentsFilterPaymentStatusValues returns every known PaymentsFilterPaymentStatus value in schema order.
+func PaymentsFilterPaymentStatusValues() []PaymentsFilterPaymentStatus {
+	return []PaymentsFilterPaymentStatus{
+		PaymentsFilterPaymentStatusDraft,
+		PaymentsFilterPaymentStatusAuthorised,
+		PaymentsFilterPaymentStatusRejected,
+		PaymentsFilterPaymentStatusPaid,
+		PaymentsFilterPaymentStatusVoided,
+		PaymentsFilterPaymentStatusDeleted,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

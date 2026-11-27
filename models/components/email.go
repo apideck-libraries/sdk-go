@@ -18,6 +18,18 @@ func (e EmailType) ToPointer() *EmailType {
 	return &e
 }
 
+// EmailTypeValues returns every known EmailType value in schema order.
+func EmailTypeValues() []EmailType {
+	return []EmailType{
+		EmailTypePrimary,
+		EmailTypeSecondary,
+		EmailTypeWork,
+		EmailTypePersonal,
+		EmailTypeBilling,
+		EmailTypeOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *EmailType) IsExact() bool {
 	if e != nil {

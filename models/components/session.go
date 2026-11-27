@@ -19,6 +19,16 @@ func (e AllowActions) ToPointer() *AllowActions {
 	return &e
 }
 
+// AllowActionsValues returns every known AllowActions value in schema order.
+func AllowActionsValues() []AllowActions {
+	return []AllowActions{
+		AllowActionsDelete,
+		AllowActionsDisconnect,
+		AllowActionsReauthorize,
+		AllowActionsDisable,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *AllowActions) IsExact() bool {
 	if e != nil {

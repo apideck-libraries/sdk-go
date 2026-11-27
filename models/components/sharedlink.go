@@ -19,6 +19,14 @@ func (e Scope) ToPointer() *Scope {
 	return &e
 }
 
+// ScopeValues returns every known Scope value in schema order.
+func ScopeValues() []Scope {
+	return []Scope{
+		ScopePublic,
+		ScopeCompany,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *Scope) IsExact() bool {
 	if e != nil {

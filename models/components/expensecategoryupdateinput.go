@@ -14,6 +14,14 @@ func (e ExpenseCategoryUpdateInputStatus) ToPointer() *ExpenseCategoryUpdateInpu
 	return &e
 }
 
+// ExpenseCategoryUpdateInputStatusValues returns every known ExpenseCategoryUpdateInputStatus value in schema order.
+func ExpenseCategoryUpdateInputStatusValues() []ExpenseCategoryUpdateInputStatus {
+	return []ExpenseCategoryUpdateInputStatus{
+		ExpenseCategoryUpdateInputStatusActive,
+		ExpenseCategoryUpdateInputStatusInactive,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ExpenseCategoryUpdateInputStatus) IsExact() bool {
 	if e != nil {

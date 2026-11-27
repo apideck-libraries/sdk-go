@@ -19,6 +19,15 @@ func (e FilesSortBy) ToPointer() *FilesSortBy {
 	return &e
 }
 
+// FilesSortByValues returns every known FilesSortBy value in schema order.
+func FilesSortByValues() []FilesSortBy {
+	return []FilesSortBy{
+		FilesSortByCreatedAt,
+		FilesSortByUpdatedAt,
+		FilesSortByName,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *FilesSortBy) IsExact() bool {
 	if e != nil {

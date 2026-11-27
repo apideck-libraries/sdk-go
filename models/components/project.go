@@ -26,6 +26,20 @@ func (e ProjectProjectStatus) ToPointer() *ProjectProjectStatus {
 	return &e
 }
 
+// ProjectProjectStatusValues returns every known ProjectProjectStatus value in schema order.
+func ProjectProjectStatusValues() []ProjectProjectStatus {
+	return []ProjectProjectStatus{
+		ProjectProjectStatusActive,
+		ProjectProjectStatusCompleted,
+		ProjectProjectStatusOnHold,
+		ProjectProjectStatusCancelled,
+		ProjectProjectStatusDraft,
+		ProjectProjectStatusInProgress,
+		ProjectProjectStatusApproved,
+		ProjectProjectStatusOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ProjectProjectStatus) IsExact() bool {
 	if e != nil {
@@ -53,6 +67,18 @@ func (e ProjectType) ToPointer() *ProjectType {
 	return &e
 }
 
+// ProjectTypeValues returns every known ProjectType value in schema order.
+func ProjectTypeValues() []ProjectType {
+	return []ProjectType{
+		ProjectTypeClientProject,
+		ProjectTypeInternalProject,
+		ProjectTypeMaintenance,
+		ProjectTypeResearchDevelopment,
+		ProjectTypeTraining,
+		ProjectTypeOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ProjectType) IsExact() bool {
 	if e != nil {
@@ -76,6 +102,16 @@ const (
 
 func (e Priority) ToPointer() *Priority {
 	return &e
+}
+
+// PriorityValues returns every known Priority value in schema order.
+func PriorityValues() []Priority {
+	return []Priority{
+		PriorityLow,
+		PriorityMedium,
+		PriorityHigh,
+		PriorityCritical,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
@@ -148,6 +184,17 @@ func (e BillingMethod) ToPointer() *BillingMethod {
 	return &e
 }
 
+// BillingMethodValues returns every known BillingMethod value in schema order.
+func BillingMethodValues() []BillingMethod {
+	return []BillingMethod{
+		BillingMethodFixedPrice,
+		BillingMethodTimeAndMaterials,
+		BillingMethodMilestoneBased,
+		BillingMethodRetainer,
+		BillingMethodNonBillable,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *BillingMethod) IsExact() bool {
 	if e != nil {
@@ -175,6 +222,18 @@ func (e ProjectPhase) ToPointer() *ProjectPhase {
 	return &e
 }
 
+// ProjectPhaseValues returns every known ProjectPhase value in schema order.
+func ProjectPhaseValues() []ProjectPhase {
+	return []ProjectPhase{
+		ProjectPhaseInitiation,
+		ProjectPhasePlanning,
+		ProjectPhaseExecution,
+		ProjectPhaseMonitoring,
+		ProjectPhaseClosure,
+		ProjectPhaseOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ProjectPhase) IsExact() bool {
 	if e != nil {
@@ -198,6 +257,16 @@ const (
 
 func (e ScheduleStatus) ToPointer() *ScheduleStatus {
 	return &e
+}
+
+// ScheduleStatusValues returns every known ScheduleStatus value in schema order.
+func ScheduleStatusValues() []ScheduleStatus {
+	return []ScheduleStatus{
+		ScheduleStatusAheadOfSchedule,
+		ScheduleStatusOnSchedule,
+		ScheduleStatusBehindSchedule,
+		ScheduleStatusCriticalDelay,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

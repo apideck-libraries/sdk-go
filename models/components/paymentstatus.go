@@ -18,6 +18,18 @@ func (e PaymentStatus) ToPointer() *PaymentStatus {
 	return &e
 }
 
+// PaymentStatusValues returns every known PaymentStatus value in schema order.
+func PaymentStatusValues() []PaymentStatus {
+	return []PaymentStatus{
+		PaymentStatusDraft,
+		PaymentStatusAuthorised,
+		PaymentStatusRejected,
+		PaymentStatusPaid,
+		PaymentStatusVoided,
+		PaymentStatusDeleted,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *PaymentStatus) IsExact() bool {
 	if e != nil {

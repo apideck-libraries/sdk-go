@@ -27,6 +27,22 @@ func (e Classification) ToPointer() *Classification {
 	return &e
 }
 
+// ClassificationValues returns every known Classification value in schema order.
+func ClassificationValues() []Classification {
+	return []Classification{
+		ClassificationAsset,
+		ClassificationEquity,
+		ClassificationExpense,
+		ClassificationLiability,
+		ClassificationRevenue,
+		ClassificationIncome,
+		ClassificationOtherIncome,
+		ClassificationOtherExpense,
+		ClassificationCostsOfSales,
+		ClassificationOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *Classification) IsExact() bool {
 	if e != nil {
@@ -48,6 +64,14 @@ const (
 
 func (e LedgerAccountsFilterStatus) ToPointer() *LedgerAccountsFilterStatus {
 	return &e
+}
+
+// LedgerAccountsFilterStatusValues returns every known LedgerAccountsFilterStatus value in schema order.
+func LedgerAccountsFilterStatusValues() []LedgerAccountsFilterStatus {
+	return []LedgerAccountsFilterStatus{
+		LedgerAccountsFilterStatusActive,
+		LedgerAccountsFilterStatusInactive,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

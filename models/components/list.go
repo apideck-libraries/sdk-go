@@ -19,6 +19,14 @@ func (e ListType) ToPointer() *ListType {
 	return &e
 }
 
+// ListTypeValues returns every known ListType value in schema order.
+func ListTypeValues() []ListType {
+	return []ListType{
+		ListTypeStatic,
+		ListTypeDynamic,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ListType) IsExact() bool {
 	if e != nil {
@@ -41,6 +49,15 @@ const (
 
 func (e ListVisibility) ToPointer() *ListVisibility {
 	return &e
+}
+
+// ListVisibilityValues returns every known ListVisibility value in schema order.
+func ListVisibilityValues() []ListVisibility {
+	return []ListVisibility{
+		ListVisibilityPrivate,
+		ListVisibilityShared,
+		ListVisibilityPublic,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

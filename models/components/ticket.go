@@ -21,6 +21,16 @@ func (e TicketPriority) ToPointer() *TicketPriority {
 	return &e
 }
 
+// TicketPriorityValues returns every known TicketPriority value in schema order.
+func TicketPriorityValues() []TicketPriority {
+	return []TicketPriority{
+		TicketPriorityLow,
+		TicketPriorityNormal,
+		TicketPriorityHigh,
+		TicketPriorityUrgent,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *TicketPriority) IsExact() bool {
 	if e != nil {

@@ -19,6 +19,13 @@ func (e Two) ToPointer() *Two {
 	return &e
 }
 
+// TwoValues returns every known Two value in schema order.
+func TwoValues() []Two {
+	return []Two{
+		TwoWildcard,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *Two) IsExact() bool {
 	if e != nil {

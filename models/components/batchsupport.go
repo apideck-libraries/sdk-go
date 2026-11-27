@@ -15,6 +15,15 @@ func (e BatchSupportMode) ToPointer() *BatchSupportMode {
 	return &e
 }
 
+// BatchSupportModeValues returns every known BatchSupportMode value in schema order.
+func BatchSupportModeValues() []BatchSupportMode {
+	return []BatchSupportMode{
+		BatchSupportModeNone,
+		BatchSupportModeNative,
+		BatchSupportModeLoop,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *BatchSupportMode) IsExact() bool {
 	if e != nil {
@@ -37,6 +46,15 @@ const (
 
 func (e BatchSupportResourcesMode) ToPointer() *BatchSupportResourcesMode {
 	return &e
+}
+
+// BatchSupportResourcesModeValues returns every known BatchSupportResourcesMode value in schema order.
+func BatchSupportResourcesModeValues() []BatchSupportResourcesMode {
+	return []BatchSupportResourcesMode{
+		BatchSupportResourcesModeNone,
+		BatchSupportResourcesModeNative,
+		BatchSupportResourcesModeLoop,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

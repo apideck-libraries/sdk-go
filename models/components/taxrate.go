@@ -55,6 +55,15 @@ func (e TaxRateStatus) ToPointer() *TaxRateStatus {
 	return &e
 }
 
+// TaxRateStatusValues returns every known TaxRateStatus value in schema order.
+func TaxRateStatusValues() []TaxRateStatus {
+	return []TaxRateStatus{
+		TaxRateStatusActive,
+		TaxRateStatusInactive,
+		TaxRateStatusArchived,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *TaxRateStatus) IsExact() bool {
 	if e != nil {

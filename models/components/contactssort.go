@@ -22,6 +22,18 @@ func (e ContactsSortBy) ToPointer() *ContactsSortBy {
 	return &e
 }
 
+// ContactsSortByValues returns every known ContactsSortBy value in schema order.
+func ContactsSortByValues() []ContactsSortBy {
+	return []ContactsSortBy{
+		ContactsSortByCreatedAt,
+		ContactsSortByUpdatedAt,
+		ContactsSortByName,
+		ContactsSortByFirstName,
+		ContactsSortByLastName,
+		ContactsSortByEmail,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ContactsSortBy) IsExact() bool {
 	if e != nil {

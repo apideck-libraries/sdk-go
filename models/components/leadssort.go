@@ -22,6 +22,18 @@ func (e LeadsSortBy) ToPointer() *LeadsSortBy {
 	return &e
 }
 
+// LeadsSortByValues returns every known LeadsSortBy value in schema order.
+func LeadsSortByValues() []LeadsSortBy {
+	return []LeadsSortBy{
+		LeadsSortByCreatedAt,
+		LeadsSortByUpdatedAt,
+		LeadsSortByName,
+		LeadsSortByFirstName,
+		LeadsSortByLastName,
+		LeadsSortByEmail,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *LeadsSortBy) IsExact() bool {
 	if e != nil {

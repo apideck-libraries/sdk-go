@@ -17,6 +17,17 @@ func (e ResourceStatus) ToPointer() *ResourceStatus {
 	return &e
 }
 
+// ResourceStatusValues returns every known ResourceStatus value in schema order.
+func ResourceStatusValues() []ResourceStatus {
+	return []ResourceStatus{
+		ResourceStatusLive,
+		ResourceStatusBeta,
+		ResourceStatusDevelopment,
+		ResourceStatusUpcoming,
+		ResourceStatusConsidering,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ResourceStatus) IsExact() bool {
 	if e != nil {

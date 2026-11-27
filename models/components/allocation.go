@@ -21,6 +21,21 @@ func (e AllocationType) ToPointer() *AllocationType {
 	return &e
 }
 
+// AllocationTypeValues returns every known AllocationType value in schema order.
+func AllocationTypeValues() []AllocationType {
+	return []AllocationType{
+		AllocationTypeInvoice,
+		AllocationTypeOrder,
+		AllocationTypeExpense,
+		AllocationTypeCreditMemo,
+		AllocationTypeOverPayment,
+		AllocationTypePrePayment,
+		AllocationTypeJournalEntry,
+		AllocationTypeOther,
+		AllocationTypeBill,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *AllocationType) IsExact() bool {
 	if e != nil {

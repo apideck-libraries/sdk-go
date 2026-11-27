@@ -24,6 +24,18 @@ func (e QuoteLineItemType) ToPointer() *QuoteLineItemType {
 	return &e
 }
 
+// QuoteLineItemTypeValues returns every known QuoteLineItemType value in schema order.
+func QuoteLineItemTypeValues() []QuoteLineItemType {
+	return []QuoteLineItemType{
+		QuoteLineItemTypeSalesItem,
+		QuoteLineItemTypeDiscount,
+		QuoteLineItemTypeInfo,
+		QuoteLineItemTypeSubTotal,
+		QuoteLineItemTypeService,
+		QuoteLineItemTypeOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *QuoteLineItemType) IsExact() bool {
 	if e != nil {

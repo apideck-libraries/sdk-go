@@ -14,6 +14,14 @@ func (e PaginationCoverageMode) ToPointer() *PaginationCoverageMode {
 	return &e
 }
 
+// PaginationCoverageModeValues returns every known PaginationCoverageMode value in schema order.
+func PaginationCoverageModeValues() []PaginationCoverageMode {
+	return []PaginationCoverageMode{
+		PaginationCoverageModeNative,
+		PaginationCoverageModeVirtual,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *PaginationCoverageMode) IsExact() bool {
 	if e != nil {

@@ -15,6 +15,15 @@ func (e LineType) ToPointer() *LineType {
 	return &e
 }
 
+// LineTypeValues returns every known LineType value in schema order.
+func LineTypeValues() []LineType {
+	return []LineType{
+		LineTypeAccount,
+		LineTypeUnappropriatedResult,
+		LineTypeUnmapped,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *LineType) IsExact() bool {
 	if e != nil {

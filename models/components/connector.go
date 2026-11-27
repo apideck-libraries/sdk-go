@@ -17,6 +17,17 @@ func (e ConnectorAuthType) ToPointer() *ConnectorAuthType {
 	return &e
 }
 
+// ConnectorAuthTypeValues returns every known ConnectorAuthType value in schema order.
+func ConnectorAuthTypeValues() []ConnectorAuthType {
+	return []ConnectorAuthType{
+		ConnectorAuthTypeOauth2,
+		ConnectorAuthTypeAPIKey,
+		ConnectorAuthTypeBasic,
+		ConnectorAuthTypeCustom,
+		ConnectorAuthTypeNone,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ConnectorAuthType) IsExact() bool {
 	if e != nil {
@@ -41,6 +52,15 @@ func (e ConnectorOauthGrantType) ToPointer() *ConnectorOauthGrantType {
 	return &e
 }
 
+// ConnectorOauthGrantTypeValues returns every known ConnectorOauthGrantType value in schema order.
+func ConnectorOauthGrantTypeValues() []ConnectorOauthGrantType {
+	return []ConnectorOauthGrantType{
+		ConnectorOauthGrantTypeAuthorizationCode,
+		ConnectorOauthGrantTypeClientCredentials,
+		ConnectorOauthGrantTypePassword,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ConnectorOauthGrantType) IsExact() bool {
 	if e != nil {
@@ -62,6 +82,14 @@ const (
 
 func (e OauthCredentialsSource) ToPointer() *OauthCredentialsSource {
 	return &e
+}
+
+// OauthCredentialsSourceValues returns every known OauthCredentialsSource value in schema order.
+func OauthCredentialsSourceValues() []OauthCredentialsSource {
+	return []OauthCredentialsSource{
+		OauthCredentialsSourceIntegration,
+		OauthCredentialsSourceConnection,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

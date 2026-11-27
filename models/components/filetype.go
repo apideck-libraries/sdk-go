@@ -15,6 +15,15 @@ func (e FileType) ToPointer() *FileType {
 	return &e
 }
 
+// FileTypeValues returns every known FileType value in schema order.
+func FileTypeValues() []FileType {
+	return []FileType{
+		FileTypeFile,
+		FileTypeFolder,
+		FileTypeURL,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *FileType) IsExact() bool {
 	if e != nil {

@@ -25,6 +25,20 @@ func (e JournalEntryCreateInputStatus) ToPointer() *JournalEntryCreateInputStatu
 	return &e
 }
 
+// JournalEntryCreateInputStatusValues returns every known JournalEntryCreateInputStatus value in schema order.
+func JournalEntryCreateInputStatusValues() []JournalEntryCreateInputStatus {
+	return []JournalEntryCreateInputStatus{
+		JournalEntryCreateInputStatusDraft,
+		JournalEntryCreateInputStatusPendingApproval,
+		JournalEntryCreateInputStatusApproved,
+		JournalEntryCreateInputStatusPosted,
+		JournalEntryCreateInputStatusVoided,
+		JournalEntryCreateInputStatusRejected,
+		JournalEntryCreateInputStatusDeleted,
+		JournalEntryCreateInputStatusOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *JournalEntryCreateInputStatus) IsExact() bool {
 	if e != nil {

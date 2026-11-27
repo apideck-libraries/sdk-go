@@ -15,6 +15,15 @@ func (e IntegrationState) ToPointer() *IntegrationState {
 	return &e
 }
 
+// IntegrationStateValues returns every known IntegrationState value in schema order.
+func IntegrationStateValues() []IntegrationState {
+	return []IntegrationState{
+		IntegrationStateDisabled,
+		IntegrationStateNeedsConfiguration,
+		IntegrationStateConfigured,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *IntegrationState) IsExact() bool {
 	if e != nil {

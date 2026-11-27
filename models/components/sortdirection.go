@@ -14,6 +14,14 @@ func (e SortDirection) ToPointer() *SortDirection {
 	return &e
 }
 
+// SortDirectionValues returns every known SortDirection value in schema order.
+func SortDirectionValues() []SortDirection {
+	return []SortDirection{
+		SortDirectionAsc,
+		SortDirectionDesc,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *SortDirection) IsExact() bool {
 	if e != nil {

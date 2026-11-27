@@ -18,6 +18,14 @@ func (e ActivitiesSortBy) ToPointer() *ActivitiesSortBy {
 	return &e
 }
 
+// ActivitiesSortByValues returns every known ActivitiesSortBy value in schema order.
+func ActivitiesSortByValues() []ActivitiesSortBy {
+	return []ActivitiesSortBy{
+		ActivitiesSortByCreatedAt,
+		ActivitiesSortByUpdatedAt,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ActivitiesSortBy) IsExact() bool {
 	if e != nil {

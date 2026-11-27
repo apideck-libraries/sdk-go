@@ -18,6 +18,14 @@ func (e LedgerAccountsSortBy) ToPointer() *LedgerAccountsSortBy {
 	return &e
 }
 
+// LedgerAccountsSortByValues returns every known LedgerAccountsSortBy value in schema order.
+func LedgerAccountsSortByValues() []LedgerAccountsSortBy {
+	return []LedgerAccountsSortBy{
+		LedgerAccountsSortByCreatedAt,
+		LedgerAccountsSortByUpdatedAt,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *LedgerAccountsSortBy) IsExact() bool {
 	if e != nil {

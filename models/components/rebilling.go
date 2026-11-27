@@ -16,6 +16,16 @@ func (e RebillStatus) ToPointer() *RebillStatus {
 	return &e
 }
 
+// RebillStatusValues returns every known RebillStatus value in schema order.
+func RebillStatusValues() []RebillStatus {
+	return []RebillStatus{
+		RebillStatusPending,
+		RebillStatusBilled,
+		RebillStatusVoided,
+		RebillStatusOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *RebillStatus) IsExact() bool {
 	if e != nil {

@@ -26,6 +26,21 @@ func (e SourceType) ToPointer() *SourceType {
 	return &e
 }
 
+// SourceTypeValues returns every known SourceType value in schema order.
+func SourceTypeValues() []SourceType {
+	return []SourceType{
+		SourceTypeOther,
+		SourceTypeInvoice,
+		SourceTypeBill,
+		SourceTypeCreditNote,
+		SourceTypePayment,
+		SourceTypeRefund,
+		SourceTypeExpense,
+		SourceTypeJournalEntry,
+		SourceTypePayroll,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *SourceType) IsExact() bool {
 	if e != nil {

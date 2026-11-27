@@ -20,6 +20,14 @@ func (e CompanyStatus) ToPointer() *CompanyStatus {
 	return &e
 }
 
+// CompanyStatusValues returns every known CompanyStatus value in schema order.
+func CompanyStatusValues() []CompanyStatus {
+	return []CompanyStatus{
+		CompanyStatusActive,
+		CompanyStatusInactive,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *CompanyStatus) IsExact() bool {
 	if e != nil {
@@ -53,6 +61,24 @@ func (e TheStartMonthOfFiscalYear) ToPointer() *TheStartMonthOfFiscalYear {
 	return &e
 }
 
+// TheStartMonthOfFiscalYearValues returns every known TheStartMonthOfFiscalYear value in schema order.
+func TheStartMonthOfFiscalYearValues() []TheStartMonthOfFiscalYear {
+	return []TheStartMonthOfFiscalYear{
+		TheStartMonthOfFiscalYearJanuary,
+		TheStartMonthOfFiscalYearFebruary,
+		TheStartMonthOfFiscalYearMarch,
+		TheStartMonthOfFiscalYearApril,
+		TheStartMonthOfFiscalYearMay,
+		TheStartMonthOfFiscalYearJune,
+		TheStartMonthOfFiscalYearJuly,
+		TheStartMonthOfFiscalYearAugust,
+		TheStartMonthOfFiscalYearSeptember,
+		TheStartMonthOfFiscalYearOctober,
+		TheStartMonthOfFiscalYearNovember,
+		TheStartMonthOfFiscalYearDecember,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *TheStartMonthOfFiscalYear) IsExact() bool {
 	if e != nil {
@@ -78,6 +104,16 @@ func (e TrackingCategoriesMode) ToPointer() *TrackingCategoriesMode {
 	return &e
 }
 
+// TrackingCategoriesModeValues returns every known TrackingCategoriesMode value in schema order.
+func TrackingCategoriesModeValues() []TrackingCategoriesMode {
+	return []TrackingCategoriesMode{
+		TrackingCategoriesModeTransaction,
+		TrackingCategoriesModeLine,
+		TrackingCategoriesModeBoth,
+		TrackingCategoriesModeDisabled,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *TrackingCategoriesMode) IsExact() bool {
 	if e != nil {
@@ -99,6 +135,14 @@ const (
 
 func (e AccountingMethod) ToPointer() *AccountingMethod {
 	return &e
+}
+
+// AccountingMethodValues returns every known AccountingMethod value in schema order.
+func AccountingMethodValues() []AccountingMethod {
+	return []AccountingMethod{
+		AccountingMethodCash,
+		AccountingMethodAccrual,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

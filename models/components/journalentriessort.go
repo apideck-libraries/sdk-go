@@ -18,6 +18,14 @@ func (e JournalEntriesSortBy) ToPointer() *JournalEntriesSortBy {
 	return &e
 }
 
+// JournalEntriesSortByValues returns every known JournalEntriesSortBy value in schema order.
+func JournalEntriesSortByValues() []JournalEntriesSortBy {
+	return []JournalEntriesSortBy{
+		JournalEntriesSortByCreatedAt,
+		JournalEntriesSortByUpdatedAt,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *JournalEntriesSortBy) IsExact() bool {
 	if e != nil {

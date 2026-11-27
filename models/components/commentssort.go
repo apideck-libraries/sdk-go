@@ -18,6 +18,14 @@ func (e CommentsSortBy) ToPointer() *CommentsSortBy {
 	return &e
 }
 
+// CommentsSortByValues returns every known CommentsSortBy value in schema order.
+func CommentsSortByValues() []CommentsSortBy {
+	return []CommentsSortBy{
+		CommentsSortByCreatedAt,
+		CommentsSortByUpdatedAt,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *CommentsSortBy) IsExact() bool {
 	if e != nil {

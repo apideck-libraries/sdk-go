@@ -24,6 +24,24 @@ func (e PhoneNumberType) ToPointer() *PhoneNumberType {
 	return &e
 }
 
+// PhoneNumberTypeValues returns every known PhoneNumberType value in schema order.
+func PhoneNumberTypeValues() []PhoneNumberType {
+	return []PhoneNumberType{
+		PhoneNumberTypePrimary,
+		PhoneNumberTypeSecondary,
+		PhoneNumberTypeHome,
+		PhoneNumberTypeWork,
+		PhoneNumberTypeOffice,
+		PhoneNumberTypeMobile,
+		PhoneNumberTypeAssistant,
+		PhoneNumberTypeFax,
+		PhoneNumberTypeDirectDialIn,
+		PhoneNumberTypePersonal,
+		PhoneNumberTypeBilling,
+		PhoneNumberTypeOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *PhoneNumberType) IsExact() bool {
 	if e != nil {

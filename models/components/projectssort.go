@@ -24,6 +24,20 @@ func (e ProjectsSortSortBy) ToPointer() *ProjectsSortSortBy {
 	return &e
 }
 
+// ProjectsSortSortByValues returns every known ProjectsSortSortBy value in schema order.
+func ProjectsSortSortByValues() []ProjectsSortSortBy {
+	return []ProjectsSortSortBy{
+		ProjectsSortSortByName,
+		ProjectsSortSortByStatus,
+		ProjectsSortSortByStartDate,
+		ProjectsSortSortByEndDate,
+		ProjectsSortSortByBudgetAmount,
+		ProjectsSortSortByActualAmount,
+		ProjectsSortSortByCreatedAt,
+		ProjectsSortSortByUpdatedAt,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ProjectsSortSortBy) IsExact() bool {
 	if e != nil {

@@ -21,6 +21,21 @@ func (e ActivityType) ToPointer() *ActivityType {
 	return &e
 }
 
+// ActivityTypeValues returns every known ActivityType value in schema order.
+func ActivityTypeValues() []ActivityType {
+	return []ActivityType{
+		ActivityTypeCall,
+		ActivityTypeMeeting,
+		ActivityTypeEmail,
+		ActivityTypeNote,
+		ActivityTypeTask,
+		ActivityTypeDeadline,
+		ActivityTypeSendLetter,
+		ActivityTypeSendQuote,
+		ActivityTypeOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ActivityType) IsExact() bool {
 	if e != nil {
@@ -41,6 +56,14 @@ const (
 
 func (e ShowAs) ToPointer() *ShowAs {
 	return &e
+}
+
+// ShowAsValues returns every known ShowAs value in schema order.
+func ShowAsValues() []ShowAs {
+	return []ShowAs{
+		ShowAsFree,
+		ShowAsBusy,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

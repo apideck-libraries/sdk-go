@@ -17,6 +17,17 @@ func (e CustomerCreateInputStatus) ToPointer() *CustomerCreateInputStatus {
 	return &e
 }
 
+// CustomerCreateInputStatusValues returns every known CustomerCreateInputStatus value in schema order.
+func CustomerCreateInputStatusValues() []CustomerCreateInputStatus {
+	return []CustomerCreateInputStatus{
+		CustomerCreateInputStatusActive,
+		CustomerCreateInputStatusInactive,
+		CustomerCreateInputStatusArchived,
+		CustomerCreateInputStatusGdprErasureRequest,
+		CustomerCreateInputStatusUnknown,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *CustomerCreateInputStatus) IsExact() bool {
 	if e != nil {

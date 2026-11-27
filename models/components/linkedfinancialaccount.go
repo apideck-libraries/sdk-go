@@ -15,6 +15,15 @@ func (e LinkedFinancialAccountAccountType) ToPointer() *LinkedFinancialAccountAc
 	return &e
 }
 
+// LinkedFinancialAccountAccountTypeValues returns every known LinkedFinancialAccountAccountType value in schema order.
+func LinkedFinancialAccountAccountTypeValues() []LinkedFinancialAccountAccountType {
+	return []LinkedFinancialAccountAccountType{
+		LinkedFinancialAccountAccountTypeLedgerAccount,
+		LinkedFinancialAccountAccountTypeBankAccount,
+		LinkedFinancialAccountAccountTypeEmployee,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *LinkedFinancialAccountAccountType) IsExact() bool {
 	if e != nil {

@@ -23,6 +23,18 @@ func (e PurchaseOrderStatus) ToPointer() *PurchaseOrderStatus {
 	return &e
 }
 
+// PurchaseOrderStatusValues returns every known PurchaseOrderStatus value in schema order.
+func PurchaseOrderStatusValues() []PurchaseOrderStatus {
+	return []PurchaseOrderStatus{
+		PurchaseOrderStatusDraft,
+		PurchaseOrderStatusOpen,
+		PurchaseOrderStatusClosed,
+		PurchaseOrderStatusDeleted,
+		PurchaseOrderStatusBilled,
+		PurchaseOrderStatusOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *PurchaseOrderStatus) IsExact() bool {
 	if e != nil {
@@ -46,6 +58,16 @@ const (
 
 func (e PurchaseOrderAmortizationType) ToPointer() *PurchaseOrderAmortizationType {
 	return &e
+}
+
+// PurchaseOrderAmortizationTypeValues returns every known PurchaseOrderAmortizationType value in schema order.
+func PurchaseOrderAmortizationTypeValues() []PurchaseOrderAmortizationType {
+	return []PurchaseOrderAmortizationType{
+		PurchaseOrderAmortizationTypeManual,
+		PurchaseOrderAmortizationTypeReceipt,
+		PurchaseOrderAmortizationTypeSchedule,
+		PurchaseOrderAmortizationTypeOther,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

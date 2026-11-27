@@ -19,6 +19,14 @@ func (e CustomerStatus) ToPointer() *CustomerStatus {
 	return &e
 }
 
+// CustomerStatusValues returns every known CustomerStatus value in schema order.
+func CustomerStatusValues() []CustomerStatus {
+	return []CustomerStatus{
+		CustomerStatusActive,
+		CustomerStatusArchived,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *CustomerStatus) IsExact() bool {
 	if e != nil {
@@ -40,6 +48,15 @@ const (
 
 func (e EcommerceCustomerType) ToPointer() *EcommerceCustomerType {
 	return &e
+}
+
+// EcommerceCustomerTypeValues returns every known EcommerceCustomerType value in schema order.
+func EcommerceCustomerTypeValues() []EcommerceCustomerType {
+	return []EcommerceCustomerType{
+		EcommerceCustomerTypeBilling,
+		EcommerceCustomerTypeShipping,
+		EcommerceCustomerTypeOther,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

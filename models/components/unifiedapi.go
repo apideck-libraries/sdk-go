@@ -44,6 +44,40 @@ const (
 func (e UnifiedAPI) ToPointer() *UnifiedAPI {
 	return &e
 }
+
+// UnifiedAPIValues returns every known UnifiedAPI value in schema order.
+func UnifiedAPIValues() []UnifiedAPI {
+	return []UnifiedAPI{
+		UnifiedAPIAccounting,
+		UnifiedAPIAts,
+		UnifiedAPICalendar,
+		UnifiedAPICrm,
+		UnifiedAPICsp,
+		UnifiedAPICustomerSupport,
+		UnifiedAPIEcommerce,
+		UnifiedAPIEmail,
+		UnifiedAPIEmailMarketing,
+		UnifiedAPIExpenseManagement,
+		UnifiedAPIFileStorage,
+		UnifiedAPIForm,
+		UnifiedAPIHris,
+		UnifiedAPILead,
+		UnifiedAPIPayroll,
+		UnifiedAPIPos,
+		UnifiedAPIProcurement,
+		UnifiedAPIProjectManagement,
+		UnifiedAPIScript,
+		UnifiedAPISms,
+		UnifiedAPISpreadsheet,
+		UnifiedAPISubscriptionAnalytics,
+		UnifiedAPITeamMessaging,
+		UnifiedAPIIssueTracking,
+		UnifiedAPITimeRegistration,
+		UnifiedAPITransactionalEmail,
+		UnifiedAPIVault,
+		UnifiedAPIDataWarehouse,
+	}
+}
 func (e *UnifiedAPI) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {

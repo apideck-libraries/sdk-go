@@ -23,6 +23,17 @@ func (e GoodsReceiptStatus) ToPointer() *GoodsReceiptStatus {
 	return &e
 }
 
+// GoodsReceiptStatusValues returns every known GoodsReceiptStatus value in schema order.
+func GoodsReceiptStatusValues() []GoodsReceiptStatus {
+	return []GoodsReceiptStatus{
+		GoodsReceiptStatusDraft,
+		GoodsReceiptStatusPendingApproval,
+		GoodsReceiptStatusReceived,
+		GoodsReceiptStatusCancelled,
+		GoodsReceiptStatusOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *GoodsReceiptStatus) IsExact() bool {
 	if e != nil {

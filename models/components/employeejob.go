@@ -20,6 +20,15 @@ func (e EmployeeJobStatus) ToPointer() *EmployeeJobStatus {
 	return &e
 }
 
+// EmployeeJobStatusValues returns every known EmployeeJobStatus value in schema order.
+func EmployeeJobStatusValues() []EmployeeJobStatus {
+	return []EmployeeJobStatus{
+		EmployeeJobStatusActive,
+		EmployeeJobStatusInactive,
+		EmployeeJobStatusOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *EmployeeJobStatus) IsExact() bool {
 	if e != nil {

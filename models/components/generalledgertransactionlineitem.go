@@ -14,6 +14,14 @@ func (e GeneralLedgerTransactionLineItemType) ToPointer() *GeneralLedgerTransact
 	return &e
 }
 
+// GeneralLedgerTransactionLineItemTypeValues returns every known GeneralLedgerTransactionLineItemType value in schema order.
+func GeneralLedgerTransactionLineItemTypeValues() []GeneralLedgerTransactionLineItemType {
+	return []GeneralLedgerTransactionLineItemType{
+		GeneralLedgerTransactionLineItemTypeDebit,
+		GeneralLedgerTransactionLineItemTypeCredit,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *GeneralLedgerTransactionLineItemType) IsExact() bool {
 	if e != nil {

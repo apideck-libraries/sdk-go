@@ -23,6 +23,24 @@ func (e CustomObjectSchemaType) ToPointer() *CustomObjectSchemaType {
 	return &e
 }
 
+// CustomObjectSchemaTypeValues returns every known CustomObjectSchemaType value in schema order.
+func CustomObjectSchemaTypeValues() []CustomObjectSchemaType {
+	return []CustomObjectSchemaType{
+		CustomObjectSchemaTypeString,
+		CustomObjectSchemaTypeNumber,
+		CustomObjectSchemaTypeInteger,
+		CustomObjectSchemaTypeBoolean,
+		CustomObjectSchemaTypeDate,
+		CustomObjectSchemaTypeDatetime,
+		CustomObjectSchemaTypeCurrency,
+		CustomObjectSchemaTypeEmail,
+		CustomObjectSchemaTypePhone,
+		CustomObjectSchemaTypeReference,
+		CustomObjectSchemaTypeSelect,
+		CustomObjectSchemaTypeMultiselect,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *CustomObjectSchemaType) IsExact() bool {
 	if e != nil {

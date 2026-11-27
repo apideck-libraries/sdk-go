@@ -15,6 +15,15 @@ func (e OAuthGrantType) ToPointer() *OAuthGrantType {
 	return &e
 }
 
+// OAuthGrantTypeValues returns every known OAuthGrantType value in schema order.
+func OAuthGrantTypeValues() []OAuthGrantType {
+	return []OAuthGrantType{
+		OAuthGrantTypeAuthorizationCode,
+		OAuthGrantTypeClientCredentials,
+		OAuthGrantTypePassword,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *OAuthGrantType) IsExact() bool {
 	if e != nil {

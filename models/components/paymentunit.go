@@ -18,6 +18,18 @@ func (e PaymentUnit) ToPointer() *PaymentUnit {
 	return &e
 }
 
+// PaymentUnitValues returns every known PaymentUnit value in schema order.
+func PaymentUnitValues() []PaymentUnit {
+	return []PaymentUnit{
+		PaymentUnitHour,
+		PaymentUnitWeek,
+		PaymentUnitMonth,
+		PaymentUnitYear,
+		PaymentUnitPaycheck,
+		PaymentUnitOther,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *PaymentUnit) IsExact() bool {
 	if e != nil {

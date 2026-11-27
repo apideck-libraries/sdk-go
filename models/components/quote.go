@@ -26,6 +26,20 @@ func (e QuoteStatus) ToPointer() *QuoteStatus {
 	return &e
 }
 
+// QuoteStatusValues returns every known QuoteStatus value in schema order.
+func QuoteStatusValues() []QuoteStatus {
+	return []QuoteStatus{
+		QuoteStatusDraft,
+		QuoteStatusSent,
+		QuoteStatusAccepted,
+		QuoteStatusRejected,
+		QuoteStatusExpired,
+		QuoteStatusConverted,
+		QuoteStatusVoid,
+		QuoteStatusDeleted,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *QuoteStatus) IsExact() bool {
 	if e != nil {

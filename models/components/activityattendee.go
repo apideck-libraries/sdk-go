@@ -20,6 +20,15 @@ func (e ActivityAttendeeStatus) ToPointer() *ActivityAttendeeStatus {
 	return &e
 }
 
+// ActivityAttendeeStatusValues returns every known ActivityAttendeeStatus value in schema order.
+func ActivityAttendeeStatusValues() []ActivityAttendeeStatus {
+	return []ActivityAttendeeStatus{
+		ActivityAttendeeStatusAccepted,
+		ActivityAttendeeStatusTentative,
+		ActivityAttendeeStatusDeclined,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ActivityAttendeeStatus) IsExact() bool {
 	if e != nil {

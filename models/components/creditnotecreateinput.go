@@ -24,6 +24,19 @@ func (e CreditNoteCreateInputCreditNoteStatus) ToPointer() *CreditNoteCreateInpu
 	return &e
 }
 
+// CreditNoteCreateInputCreditNoteStatusValues returns every known CreditNoteCreateInputCreditNoteStatus value in schema order.
+func CreditNoteCreateInputCreditNoteStatusValues() []CreditNoteCreateInputCreditNoteStatus {
+	return []CreditNoteCreateInputCreditNoteStatus{
+		CreditNoteCreateInputCreditNoteStatusDraft,
+		CreditNoteCreateInputCreditNoteStatusAuthorised,
+		CreditNoteCreateInputCreditNoteStatusPosted,
+		CreditNoteCreateInputCreditNoteStatusPartiallyPaid,
+		CreditNoteCreateInputCreditNoteStatusPaid,
+		CreditNoteCreateInputCreditNoteStatusVoided,
+		CreditNoteCreateInputCreditNoteStatusDeleted,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *CreditNoteCreateInputCreditNoteStatus) IsExact() bool {
 	if e != nil {
@@ -45,6 +58,14 @@ const (
 
 func (e CreditNoteCreateInputCreditNoteType) ToPointer() *CreditNoteCreateInputCreditNoteType {
 	return &e
+}
+
+// CreditNoteCreateInputCreditNoteTypeValues returns every known CreditNoteCreateInputCreditNoteType value in schema order.
+func CreditNoteCreateInputCreditNoteTypeValues() []CreditNoteCreateInputCreditNoteType {
+	return []CreditNoteCreateInputCreditNoteType{
+		CreditNoteCreateInputCreditNoteTypeAccountsReceivableCredit,
+		CreditNoteCreateInputCreditNoteTypeAccountsPayableCredit,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

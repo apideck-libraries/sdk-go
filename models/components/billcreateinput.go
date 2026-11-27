@@ -26,6 +26,21 @@ func (e BillCreateInputStatus) ToPointer() *BillCreateInputStatus {
 	return &e
 }
 
+// BillCreateInputStatusValues returns every known BillCreateInputStatus value in schema order.
+func BillCreateInputStatusValues() []BillCreateInputStatus {
+	return []BillCreateInputStatus{
+		BillCreateInputStatusDraft,
+		BillCreateInputStatusSubmitted,
+		BillCreateInputStatusAuthorised,
+		BillCreateInputStatusPartiallyPaid,
+		BillCreateInputStatusPaid,
+		BillCreateInputStatusVoid,
+		BillCreateInputStatusCredit,
+		BillCreateInputStatusDeleted,
+		BillCreateInputStatusPosted,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *BillCreateInputStatus) IsExact() bool {
 	if e != nil {
@@ -49,6 +64,16 @@ const (
 
 func (e BillCreateInputAmortizationType) ToPointer() *BillCreateInputAmortizationType {
 	return &e
+}
+
+// BillCreateInputAmortizationTypeValues returns every known BillCreateInputAmortizationType value in schema order.
+func BillCreateInputAmortizationTypeValues() []BillCreateInputAmortizationType {
+	return []BillCreateInputAmortizationType{
+		BillCreateInputAmortizationTypeManual,
+		BillCreateInputAmortizationTypeReceipt,
+		BillCreateInputAmortizationTypeSchedule,
+		BillCreateInputAmortizationTypeOther,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.

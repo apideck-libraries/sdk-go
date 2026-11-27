@@ -19,6 +19,14 @@ func (e SubsidiaryStatus) ToPointer() *SubsidiaryStatus {
 	return &e
 }
 
+// SubsidiaryStatusValues returns every known SubsidiaryStatus value in schema order.
+func SubsidiaryStatusValues() []SubsidiaryStatus {
+	return []SubsidiaryStatus{
+		SubsidiaryStatusActive,
+		SubsidiaryStatusInactive,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *SubsidiaryStatus) IsExact() bool {
 	if e != nil {

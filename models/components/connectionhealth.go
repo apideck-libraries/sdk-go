@@ -20,6 +20,20 @@ func (e ConnectionHealth) ToPointer() *ConnectionHealth {
 	return &e
 }
 
+// ConnectionHealthValues returns every known ConnectionHealth value in schema order.
+func ConnectionHealthValues() []ConnectionHealth {
+	return []ConnectionHealth{
+		ConnectionHealthOk,
+		ConnectionHealthPendingRefresh,
+		ConnectionHealthNeedsAuth,
+		ConnectionHealthPendingConfirmation,
+		ConnectionHealthNeedsConsent,
+		ConnectionHealthRevoked,
+		ConnectionHealthMissingSettings,
+		ConnectionHealthDegraded,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *ConnectionHealth) IsExact() bool {
 	if e != nil {

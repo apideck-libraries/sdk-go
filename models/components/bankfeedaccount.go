@@ -19,6 +19,14 @@ func (e BankAccountType) ToPointer() *BankAccountType {
 	return &e
 }
 
+// BankAccountTypeValues returns every known BankAccountType value in schema order.
+func BankAccountTypeValues() []BankAccountType {
+	return []BankAccountType{
+		BankAccountTypeBank,
+		BankAccountTypeCreditCard,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *BankAccountType) IsExact() bool {
 	if e != nil {
@@ -42,6 +50,14 @@ func (e FeedStatus) ToPointer() *FeedStatus {
 	return &e
 }
 
+// FeedStatusValues returns every known FeedStatus value in schema order.
+func FeedStatusValues() []FeedStatus {
+	return []FeedStatus{
+		FeedStatusPending,
+		FeedStatusRejected,
+	}
+}
+
 // IsExact returns true if the value matches a known enum value, false otherwise.
 func (e *FeedStatus) IsExact() bool {
 	if e != nil {
@@ -63,6 +79,14 @@ const (
 
 func (e BankFeedAccountStatus) ToPointer() *BankFeedAccountStatus {
 	return &e
+}
+
+// BankFeedAccountStatusValues returns every known BankFeedAccountStatus value in schema order.
+func BankFeedAccountStatusValues() []BankFeedAccountStatus {
+	return []BankFeedAccountStatus{
+		BankFeedAccountStatusActive,
+		BankFeedAccountStatusRevoked,
+	}
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
